@@ -1,0 +1,178 @@
+\documentclass[11pt, twoside, a4paper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Attention, UTF-8 inside : àéïôù =? aeiou  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+
+\input{pre-gene}
+
+\usepackage[colorlinks=true, urlcolor=black, linkcolor=black,
+	 pdftex, bookmarks=true, bookmarksnumbered=true, bookmarksopen=true]{hyperref}
+
+\newcommand*\lgr[1]{\abs{#1}}
+\newcommand*\vlg[1]{\abs{#1}}
+\newcommand*\der[1]{\partial_{#1}}
+\newcommand*\ncoef[1]{\mathcal N(#1)}
+\newcommand*\maxbin[1]{m(#1)}
+\newcommand*\normsup[1]{\norm{#1}_\infty}
+\newcommand*\normlun[1]{\norm{#1}_1}
+\newcommand*\normeuc[1]{\norm{#1}_2}
+\newcommand*\normhom[1]{\norm{#1}_{\mathrm h}}
+\newcommand*\mespph[1]{\mathrm{M}(#1)}
+\newcommand*\mahler[1]{\mathcal{M}(#1)}
+
+\author{\href{http://math.jussieu.fr/~mpg/}{Manuel \bsc{Pégourié-Gonnard}}}
+\title{Normes et mesures archimédiennes des polynômes \\ (aide-mémoire)}
+
+\hypersetup{
+ pdfauthor={Manuel Pégourié-Gonnard},
+ pdftitle={Normes et mesures des polynômes (aide-mémoire)},
+}
+
+\begin{document}
+\maketitle
+
+	\section*{Introduction}
+
+Sur un corps $\cdn$ muni d'une valeur absolue $\abs\truc$ ultramétrique, on définit la norme d'un polynôme $P = \sum p_i X^i$ par $\norm P = \sup_i \abs{p_i}$. (Ici, $X$ designe un groupe de variables ; les notations seront précisées plus bas.) Cette norme définie naïvement jouit de toutes les propriétés agréables auxquelles on peut s'attendre : elle vérifie l'inégalité triangulaire (même ultramétrique), est multiplicative, se comporte bien vis-à-vis de la composition des polynômes et en particulier de l'évalutation en un point, ainsi que sous l'action de dérivations. Elle est par ailleurs invariante par ajout de variables muettes. Plus précisément, on a les relations évidentes suivantes :
+\begin{align*}
+ \norm{P'(X, Y)} &= \norm P 	
+  & \norm{P+Q} &\le \max(\norm P, \norm Q)	
+  & \norm{P\cdot Q} &= \norm P \cdot \norm Q  \\
+ \norm{\frac{1}{i!}\frac{\partial^i P}{\partial X^i}} &\le \norm P 
+  & \abs{P(X)} &\le \norm P \cdot \norm X^d 	
+  & \norm{P(Q)} &\le \norm P \cdot \norm Q^d  \pmm,
+\end{align*}
+où $d$ est le degré de $P$, $Y$ un groupe de variables indépendantes de $X$, et $P'$ l'image de $P$ par l'inclusion évidente $\cdn[X] \hookrightarrow \cdn[X, Y]$. De plus, pour que les deux dernières inégalites soient vraies, il convient de supposer $P$ homogène en un ou plusieurs groupes de variables, avec les notations qui seront détaillées ci-dessous.
+
+Sur les corps archimédiens par contre, aucune norme ou mesure usuelle n'est vraiment \og la\fg{} bonne notion comme c'est le cas de la norme ci-dessus dans le cas ultramétrique. On est donc amené suivant les circonstances à considérer diverses grandeurs, qui présenteront chacune certaines des qualités recherchées ; on aura alors besoin de les comparer entre elles. L'objet de ce mémento est de réunir et de présenter de façon cohérente les diverses notion utilisées, leurs propriétés, et les constantes de comparaison, qui sont souvent bien connues mais un peu dispersées dans la littérature.
+
+	\section{Notations}
+
+On note $X = (X_1, \dots, X_n)$ un groupe de variables. Pour $i \in \N^n$ un multi-indice, on notera $X^i = \prod_i X_j^{i_j}$. De même, notera $\frac{\partial^i}{\partial X^i} = \frac{\partial^{i_1}}{\partial X_1^{i_1}}\cdots\frac{\partial^{i_n}}{\partial X_n^{i_n}}$. On portera notre attention sur les dérivations $\der{i} = \frac1{i!}\frac{\partial^i}{\partial X^i}$, où l'on a noté $i! = i_1! \cdots i_n!$. On introduit par ailleurs les notations $\lgr i = i_1 + \dots + i_n$ et, pour $d = \lgr i$, on note $\binom{d}{i} = \frac{d!}{i!}$ le symbole multinômial. On notera à l'occasion $d_i$ le degré partiel de $P$ en la variable $X_i$.
+
+Introduisons maintenant les notations utiles dans le cas multi-homogène. On regardera des polynômes homogènes de multidegré $\delta = (\delta_1, \dots, \delta_l)$ en $l$ groupes de $n_k$ variables $U_0^{(k)}, \dots, U_{n_l}^{(k)}$, pour $1\le k \le l$. Pour un multi-indice $\alpha = (\alpha^{(1)}, \dots, \alpha^{(l)}) \in \N^{n_1} \times \dots \times \N^{n_l}$, on introduit son vecteur longueur $\vlg\alpha = (\lgr{\alpha_1},\dots, \lgr{\alpha_l})$, et on notera ainsi $F = \sum_{\vlg\alpha = \delta} f_\alpha X^\alpha$, avec la notation évidente pour $X^\alpha$. On définit également $\der\alpha$, $\alpha!$ et $\binom{\delta}{\alpha}$ comme dans le cas précédent, dont le cas multi-homogène est bien sûr un cas particulier (avec $n = \sum_k (n_k + 1)$, $d = \lgr\delta$, et $\alpha$ correspondant naturellement à un $i \in \N^n$). Toutefois, il faudra préter attention au fait que $\delta = \vlg\alpha$ est maintenant une égalité de vecteurs.
+
+Par ailleurs, on est amené à considérer des familles $\mathcal F = (F_1, \dots, F_p)$ de polynômes. Pour chaque norme que l'on introduira ci-dessous, se présentera une norme naturellement associée pour les vecteurs. On notera alors $\norm{\mathcal F} = (\norm {F_1}, \ldots, \norm {F_p})$ le vecteur des normes de la famille, $\nnorm F$ la norme de ce vecteur. Si $\mathcal Q = \big(Q_j^{(k)}\big)_{0 \le j \le n_k}^{1 \le k \le l}$ est une famille de polynômes quelconques, on notera également $\norm{\mathcal Q} = (\nnorm{\smash{Q^{(1)}}}, \ldots, \nnorm{\smash{Q^{(l)}}})$ son vecteur norme, de sorte que $\norm{\mathcal Q} ^\delta$ aura un sens naturel. 
+
+Pour les quatre normes, à chaque fois que l'on aura une majoration du type $\norm{F(\mathcal Q)}_\truc \le C \norm F _\truc \norm{\mathcal Q}_\truc^\delta$, on aura également la majoration $\norm{\mathcal F(\mathcal Q)}_\truc \le C \nnorm{\mathcal F}_\truc \norm{\mathcal Q}^\delta$ si tous les éléments de le famille $\mathcal F$ sont homogènes de même degré $\delta$. Dans chaque cas, on ne notera donc que la majoration $\norm{F(\mathcal Q)} \le C \norm F \norm{\mathcal Q}^\delta$, et on laissera le soin au lecteur d'en déduire les autres majorations. En particulier, le cas où les $Q_j^{(k)}$ sont des constantes correspond à l'évaluation en un point.
+
+Enfin, la notation $\ncoef P$ désignera le nombre de coefficients non nuls dans l'écriture de $P$ comme somme réduite de monômes. Ainsi, on a en général $\ncoef P \le (d+1)^n$, et plus précisément dans le cas homogène, $\ncoef F \le \prod\nolimits_k \binom{\delta_k + n_k}{n_k}$. On rappelle les majorations commodes $\binom{d + n}{n} \le (d + 1)^{n+1}$ et symétriquement $\binom{d + n}{n} \le (n + 1)^{d+1}$. On notera $m(\delta) = \max_{\lgr\alpha = \delta} {\textstyle \binom\delta\alpha} $, qui est majorée par $\prod\nolimits_k (n_k + 1)^{\delta_k}$. On introduit également la constante (liée à la hauteur arakelovienne de l'espace projectif) $\gamma_n = \frac12 \sum_{q=1}^{n} \frac1q$, dont on rapelle la majoration évidente $\gamma_n \le \frac12 (\log(n) + 1)$.
+
+Certaines normes ou mesures seront définies uniquement pour les polynômes homogènes. Les trois autres normes sont invariantes par homogénisation. Ce n'est par contre \lat{a priori} pas le cas de la mesure de \bsc{Mahler}. Certaines opérations (évaluation) n'ont un comportement satisfaisant que dans le cas homogène. On peut en déduire facilement des résultats dans le cas général par homogénisation. Dans d'autres cas, on supposera les polynômes homogènes par commodité de notation (degrés partiels et coefficients multinomiaux). Parfois même on notera $F$ n'importe quel multihomogénisé de $P$ de multidegré $\delta$. Ce sera implicitement le cas chaque fois que $F$ et $P$ apparaîront dans une même inégalité.
+
+Dans toute la suite, on conserve les notations introduites ci-dessus ; en particulier $F$ et $G$ seront toujours des formes multi-homogènes tandis que $P$ et $Q$ incarneront des polynômes parfaitement généraux. De plus, $f_e$ sera un famille de polynômes dont le pruduit vaut $F$. On supposera par ailleurs les polynômes non nuls chaque fois que ce sera utile. Enfin, comme on s'intéresse ici au cas archimédien, on supposera que tous les polynômes prennent leurs coefficients dans $\C$, quitte à fixer un plongement $\cdn \hookrightarrow \C$ s'ils provenaient initialement d'un corps de nombres $\cdn$.
+
+	\section{Norme du \texorpdfstring{$\sup$}{sup}}
+
+\todo Elle est définie pour tout $P$ par $\normsup P = \sup_i \abs{P_i}$ et naturellement associée à la norme similaire pour les vecteurs.
+\[x^2 = \dots \todom[calcul] \]
+C'est une norme, évidemment invariante par ajout de variables muettes, qui jouit par ailleurs des propriétés suivantes :
+\begin{gather}
+ \normsup P \normsup Q \le \normsup {PQ} \le  \normsup P \normsup Q \todom \\
+ \normsup {F(\mathcal Q)}  \le  \normsup F \normsup {\mathcal Q}^\delta \todom \\
+ \normsup{\der\alpha F} \le {\textstyle \binom\delta\alpha}  \normsup F 
+\end{gather}
+Elle se compare aux autres normes et mesures de la façon suivante :
+\begin{align}
+ \normlun P / \ncoef P &\le \normsup P \le \normlun P \\
+ \normeuc P / \sqrt{\ncoef P} &\le \normsup P \le \normeuc P \\
+ \normhom F / \exp\big({\textstyle\sum_k} \sqrt{n_k}\,\big) &\le \normsup F \le \normhom F \sqrt{m(\delta)} \\
+ \mespph F / \exp\big({\textstyle\sum_k} \delta_k\gamma_{n_k}\sqrt{n_k}\,\big) &\le \normsup F \le \mespph F m(\delta) \\
+ \mahler P / \sqrt{\ncoef P} &\le \normsup F \le \mahler P m(\delta)
+\end{align}
+
+	\section{Norme \texorpdfstring{$L_1$}{1}, ou longueur}
+
+Elle est définie pour tout $P$ par $\normlun P = \sum_i \abs{P_i}$ et naturellement associée à la norme similaire pour les vecteurs.
+
+C'est une norme, évidemment invariante par ajout de variables muettes, qui jouit par ailleurs des propriétés suivantes :
+\begin{gather}
+ \prod\nolimits_e \normlun{f_e} / \prod\nolimits_k (n_k +1)^{\delta_k} \le \normlun {F} \le \prod\nolimits_e \normlun{f_e} \\
+ \normlun {F(\mathcal Q)}  \le  \normlun F \normlun {\mathcal Q}^\delta \\
+ \normlun L(Q_1, \dots, Q_l) \le \normlun L \max_k\normlun{Q_k} \\
+ \normlun{\der\alpha F} \le {\textstyle \binom\delta\alpha}  \normlun P 
+\end{gather}
+Elle se compare aux autres normes et mesures de la façon suivante :
+\begin{align}
+ \normeuc P &\le \normlun P \le \normeuc P \sqrt{\ncoef P}\\
+ \normhom F &\le \normlun F \le \normhom F \prod\nolimits_k (n_k +1)^{\delta_k/2} \\
+ \mespph F / \exp\big({\textstyle \sum_k} \delta_k\gamma_{n_k}\big) &\le \normlun F \le \mespph F \prod\nolimits_k (n_k +1)^{\delta_k/2} \\
+ \mahler P &\le \normlun F \le \mahler P \prod\nolimits_k (n_k +1)^{\delta_k/2}
+\end{align}
+
+	\section{Norme euclidienne}
+
+Elle est définie pour tout $P$ par $\normeuc P = \big(\sum_i \abs{P_i}^2\big)^{1/2}$ et naturellement associée à la norme similaire pour les vecteurs.
+
+C'est une norme, évidemment invariante par ajout de variables muettes, qui jouit par ailleurs des propriétés suivantes :
+\begin{gather}
+ \normeuc P \cdot \normeuc Q \le \normeuc {PQ} \le \normeuc P \cdot \normeuc Q \todom \\
+ \normeuc {F(\mathcal Q)}  \le  \normeuc F \normeuc {\mathcal Q}^\delta \todom \\
+ \abs{F (u)} \le \normeuc{F}  \normeuc u ^\delta \\
+ \normeuc{\der\alpha F} \le {\textstyle \binom\delta\alpha}  \normeuc F 
+\end{gather}
+Elle se compare aux autres normes et mesures de la façon suivante :
+\begin{align}
+ \normhom F &\le \normeuc P \le \sqrt{m(\delta)} \normhom F \\
+ \mespph F / \exp\big({\textstyle \sum_k}\delta_k\gamma_{n_k}\big) &\le \normeuc F \le \prod\nolimits_k (n_k +1)^{\delta_k} \mespph F \\
+ \mahler P &\le \normeuc F \le \prod\nolimits_k (n_k +1)^{\delta_k} \mahler P
+\end{align}
+De plus si $L$ est une forme linéaire on a $\normeuc L = \normhom L = \mespph L$.
+
+	\section{Norme euclidienne remodelée}
+
+Elle est définie pour $F$ homogène par $\normhom F = \big(\sum_\alpha \abs{P_\alpha}^2 \cdot\binom{\delta}{\alpha}^{-1} \big)^{1/2}$ et naturellement associée à la norme euclidienne pour les vecteurs.
+		
+C'est une norme, évidemment invariante par ajout de variables muettes, qui jouit par ailleurs des propriétés suivantes :
+\begin{gather}
+ \normhom F \normhom G \le \normhom {FG} \le \normhom F \normhom G  \todom \\
+ \normhom {F(\mathcal Q)}  \le  \normhom F \normhom {\mathcal Q}^\delta \todom \\
+  \abs{F (u)} \le \normhom{F}  \normeuc u ^\delta \\
+ \normhom{\der{i} P} \le \normhom P \todom
+\end{gather}
+Elle se compare aux autres normes et mesures de la façon suivante :
+\begin{align}
+ \mespph F / \exp(\sum\delta_k\gamma_{n_k}) &\le \normhom F \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mespph F \\
+ \mahler F / \sqrt{m(\delta)} \le \normhom F &\le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mahler F
+\end{align}
+
+	\section{Mesure homogène à la \texorpdfstring{\bsc{Philippon}}{Philippon}}
+
+Elle est définie pour $F$ homogène par 
+\[
+ \log \mespph F = \big(\int_{S_{1}\times\cdots\times S_{l}} \log\abs F\ \mu_1 \wedge \cdots \wedge \mu_l\big) + \sum_{k=1}^l \delta_k \cdot \gamma_{n_k} \pmm,
+\]
+où $S_k = \{ u \in \C^{n_k},\ \normeuc u = 1 \}$ est la sphère de dimension $2n_k-1$ plongée dans $\C^{n_k}$ muni de sa structure hermitienne usuelle, $\mu_k$ désigne la mesure sur $S_k$ invariante par l'action du groupe unitaire et normalisée par $\mu_k(S_k) = 1$, et enfin $\gamma_n = \frac12 \sum_{q=1}^{n} \frac1q$. 
+
+C'est une mesure multiplicative ($\mespph{FG} = \mespph F \cdot \mespph G$), invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui jouit par ailleurs des propriétés suivantes ?]
+Elle se compare à la mesure de \bsc{Mahler} de la façon suivante :
+\begin{equation}
+ \mahler F \le \mespph F \le \mahler F \exp(\sum\delta_k\gamma{n_k})
+\end{equation}
+
+	\section{Mesure de \texorpdfstring{\bsc{Malher}}{Mahler}}
+
+Elle est définie pour tout $P$ par 
+\[
+ \log\mahler P = \int_S \log\abs P\, \mu_S \pmm,
+\]
+où $S$ est le produit des cercles unités de $\C$, muni de la mesure $\mu$ produit des mesures de \bsc{Haar} normalisées de masse $1$. 
+
+C'est une mesure multiplicative ($\mahler{PQ} = \mahler P \cdot \mahler Q$), invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui jouit par ailleurs des propriétés suivantes ?]
+Ses comparaisons avec les autres normes et mesures ont été énoncées précedement.
+
+	\section{Preuves et questions d'optimalité}
+
+
+\begin{thebibliography}{9}
+ \bibitem{1} Philippon IHES
+ \bibitem{2} Rémond lecture notes
+ \bibitem{3} Mahler
+ \bibitem{4} Lelong
+ \bibitem{5} Rémond sur le thm du produit
+\end{thebibliography}
+
+
+
+\end{document}

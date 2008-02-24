@@ -1,0 +1,28 @@
+% objets mathématiques utiles
+% 
+\newcommand\va{\mathcal A}
+\newcommand\point{x}
+\newcommand\pointi{y}
+\newcommand\coord{{\mathrm{x}}}
+\newcommand\coordi{{\mathrm{y}}}
+\newcommand\genre{g}
+\newcommand\fibre{\mathcal L}
+\newcommand\proj[2][]{%
+  \Proj\ssup{#2}\ssub{#1}}
+\newcommand\place{v}
+
+\DeclareMathOperator\Haut{H}
+\newcommand\haut[1]{%
+  \Haut(#1)}
+
+\newcommand\absv[2][\place]{%
+  \abs{#2}\ssub{#1}}
+\newcommand\normv[2][\place]{%
+  \norm{#2}\ssub{#1}}
+\newcommand\distv[3][\place]{%
+  \mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+
+\newcommand\noref[1]{%
+  [?#1?]}
+
+\newtheorem{thm}{Théorème}

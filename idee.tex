@@ -1,0 +1,124 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc} % àéïôù = aeiou %
+
+\usepackage{svn-multi}
+\svnid{$Id$}
+\newcommand\svnnatdate{%
+  \begingroup \year\svnyear \month\svnmonth \day\svnday \relax 
+  \today \endgroup}
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[sc, osf]{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{amssymb}
+
+\usepackage{lipsum}
+
+\input{pre-gene.tex}
+\input{pre-idee.tex}
+
+\title{Approximation dans les variétés abéliennes}
+\date{\svnnatdate\thanks{%
+    Date de dernière modification --- 
+    révision \no \svnrev\ du dépôt \emph{Subversion}.}}
+\author{Manuel \bsc{Pégourié-Gonnard}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Ce document se veut un aperçu un peu technique mais lisible (par un
+  théoricien des nombres, mettons) de mon sujet de thèse : un énoncé du
+  problème, ses relations avec d'autres questions en géométrie diophantienne,
+  et une description (forcément un peu vague pour l'instant) des techniques
+  que je souhaite utiliser pour y répondre. 
+\end{abstract}
+
+\section{L'énoncé du problème}
+
+Soit $\va$ une variété abélienne, de dimension $\genre$, définie sur un corps
+de nombres $\cdn$. On suppose selon ses goûts que $\va$ est
+munie d'un fibré ample et symétrique $\fibre$, ou que $\va$ est plongée une
+fois pour toute dans un espace projectif $\proj{n}$ par un plongement associé
+à un tel fibré.
+
+On dispose alors sur $\va$ de deux notions intéressantes, héritées de
+l'espace projectif ambiant : une hauteur, et (pour tout place $\place$ de
+$\cdn$) une distance $\place$-adique. Je ne dirai pas grand-chose de la
+hauteur, avec laquelle je suppose le lecteur familier. Parlons un peu de la
+notion de distance, et de quelques-une de ses propriétés.
+
+La distance que j'utilise est celle définie dans \noref{Pph-LNM}, qui se
+mesure entre un point (fermé) et une sous-variété (pas forcément réduite ni
+irréductible, c'est-à-dire un sous-schéma fermé) de $\proj{n}$. Dans le cas
+où la sous-variété en question est une hypersurface $H$, définie par une
+équation $F$, la distance entre un point $\point$ de coordonnées $\coord$ et
+$V$ est définie comme
+\[
+  \distv{\point}{H} = 
+  \frac {\absv{F(\coord)}} {\normv{F}\normv{\coord}}
+  \pmm.
+\]
+Intuitivement, cette quantité traduit bien la notion de distance, et
+notament s'annule si et seulement si $\point$ est sur $H$. La théorie de
+l'élimination permet d'étendre cette idée au cas général.
+
+On peut aussi définir une notion \og naïve \fg de distance entre les points de
+l'espace projectif, par la formule
+\[
+  \distv{\point}{\pointi} = 
+  \frac {\normv{\coord \wedge \coordi}} {\normv\coord \normv\coordi}
+  \pmm.
+\]
+Pour peu qu'on ai choisi une bonne norme aux places archimédiennes, ceci
+définit une distance au sens usuel \noref{Jadot}. On peut alors en déduire une
+notion de distance entre un point $\point$ et une variété $V$, en prenant le
+minimum de la distance entre $\point$ et les points de $V(\C_\place)$. Ceci
+définit une notion différente de la précédent, mais les deux sont comparables.
+
+J'attire l'attention du lecteur sur le fait que cette notion locale,
+projactive, de distance n'a \lat{a priori} rien à voir avec la notion de
+distance dans l'espace de \bsc{Mordell}-\bsc{Weil}, qui est globale et repose
+sur l'existence d'une variété abélienne ambiante. Maintenant que nous sommes
+familiers avec les objets en jeu, énonçons le théorème~2 de
+\noref{Faltings91}.
+
+\begin{thm}
+  Soit $V$ une sous-variété quelconque d'une variété abélienne $\va$ plongée
+  comme précédement, $\place$ une place de $\cdn$, et $\eps > 0$. Il n'existe
+  qu'un nombre fini de points $\point$ dans $\va(\cdn)$ tels que
+  \[
+    0 < \distv{\point}{V} \le \haut{\point}^{-\eps} \pmm, 
+    \tag{\textsc{ha}} \label{e-approx}
+  \]
+  où $\Haut$ désigne la hauteur de \bsc{Weil} multiplicative. 
+\end{thm}
+
+Comme de nombreux énoncés de géométrie diophantiennes, ce résultat n'est
+malheureusement pas effectif au sens suivant : on ne voit à l'heure actuelle
+pas de moyen de borner la hauteur des points satisfaisant à l'hypothèse
+d'approximation \eqref{e-approx}. Ainsi que le fait remarquer \bsc{Faltings}
+dans l'introduction de son article : \og \eng{As far as I can see, everything
+  here is ineffective beyong hope.} \fg
+
+Il semble néamoins raisonnable d'espérer majorer le nombre de points
+rationnels satisfaisant à \eqref{e-approx} (que nous appellerons à l'occasion
+les approximations exceptionnelles), ou au moins de donner quelques
+informations quantitatives explicites à leur sujet. C'est à cette question que
+me thèse vise à répondre.
+
+\section{Ses relations avec d'autres énoncés}
+
+\subsection{Le théorème de Roth}
+
+\subsection{L'ex-conjecture de Mordell-Lang}
+
+\subsection{Le théorème de Siegel et une ex-conjecture de Lang}
+
+\section{Approche envisagée}
+
+\end{document}
+
+

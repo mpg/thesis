@@ -1,0 +1,44 @@
+\newcommand*\av[2][v]{\abs{#2}_{#1}} 			% valeur absolue v-adique, ou indice en option
+\newcommand*\nv[2][v]{\norm{#2}_{#1}} 			% norme v-adique, idem
+\newcommand*\nnv[2][v]{\nnorm{#2}_{#1}} 		% norme v-adique d'une famille, idem
+\newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}} 		% norme idem mais en forçant une petite taille
+\newcommand*\mv[2][v]{M_{#1}(#2)}			% mesure homogène en une place v ou autre
+\newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}		% mesure de Mahler
+\newcommand\dv{{\delta\smash{_v}}} 				% sélecteur v ultramétrique ou non
+\newcommand\dpv{{\delta'_v}}				% idem plus places divisant 2
+\newcommand\Dv{\mathrm{dist}_v} 			% distance v-adique projective
+\newcommand\A{\mathcal A} 				% la variété abélienne
+\newcommand\B{\mathcal B}				% une sous-v.a.
+\newcommand*\p[1]{\boldsymbol{#1}} 			% un point ; on notera en « normal » ses coordonnées
+\newcommand\OA{\p 0} 					% l'origine de la variété
+\newcommand\coa{\theta} 				% des coordonnées de l'origine
+\newcommand\BA{\mathfrak b} 				% vecteur "B" avec coordonnées inverses de l'origine
+\newcommand\hn{\smash{\hat h}}				% la hauteur normalisée
+\newcommand*\lgr[1]{{\lvert#1\rvert}}			% longueur d'un multi-indice
+\newcommand*\vlg[1]{\lgr#1} 				% multi-longueur partielles d'un multi-multi-indice
+\newcommand*\lgt[1]{\lVert#1\rVert}			% longueur totale
+\newcommand\md{\mathfrak{d}}				% le morphisme « d »
+\newcommand*\MW[2][\A]{MW_{\!#1}(#2)}			% l'espace de mordell-weil de #2 sur #1
+\newcommand*\hatxs{\smash{\hat x}}			% x chapeau rapetissé
+\newcommand*\hatys{\smash{\hat y}}			% y chapeau rapetissé
+\newcommand*\cube[1]{\mathcal C(#1)}			% le « cube » \abs{w} \le #1 et w entier
+
+\makeatletter
+\newcommandx*\pexp[2][2]{%
+  \@ifmtarg{#2}%
+    {\cramped{^{(#1)}}}%
+    {^{(#1)}_{#2}}}
+\makeatother
+
+\newcounter{cst}
+\newcommand*\cst[2][, v]{%
+  \ensuremath{c\ssub{\ref{#2}#1}}}
+\newcommand*\newcst[2][, v]{%
+  \refstepcounter{cst}\label{#2}%
+  \cst[#1]{#2}}
+
+\newcommand\iq{{\mathfrak q}}
+
+\newcommand\vb{{\mathbf e}}
+\newcommand\Mbase{{\mathcal M}}
+\newcommand\monome{{\mathfrak m}}
