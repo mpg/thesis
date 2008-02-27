@@ -101,7 +101,7 @@ malheureusement pas effectif au sens suivant : on ne voit à l'heure actuelle
 pas de moyen de borner la hauteur des points satisfaisant à l'hypothèse
 d'approximation \eqref{e-approx}. Ainsi que le fait remarquer \bsc{Faltings}
 dans l'introduction de son article : \og \eng{As far as I can see, everything
-  here is ineffective beyong hope.} \fg
+  here is ineffective beyond hope.} \fg
 
 Il semble néamoins raisonnable d'espérer majorer le nombre de points
 rationnels satisfaisant à \eqref{e-approx} (que nous appellerons à l'occasion
@@ -109,15 +109,198 @@ les approximations exceptionnelles), ou au moins de donner quelques
 informations quantitatives explicites à leur sujet. C'est à cette question que
 me thèse vise à répondre.
 
-\section{Ses relations avec d'autres énoncés}
+Plus précisément, ce type d'énoncé quantitatif est généralement obtenu en
+combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford}.
+Il est peut-être utile de rappeler ici brièvement en quoi consitent ces deux
+inégalités. Toutes deux s'énoncent dans l'espace de \bsc{Mordell-Weil} de la
+variété, muni de la forme quadratique donnée par la hauteur normalisée de
+\bsc{Néron-Tate}. Je les énonce ici sous une forme générique avec une
+condition (C) qui peut être par exemple l'hypothèse d'approximation
+\eqref{e-approx} ci-dessus, ou une autre condition pour l'ex-conjecture de
+\bsc{Mordell-Lang}.
+
+L'inégalité de \bsc{Vojta} affirme qu'il n'existe pas de suite $x_1, \dots,
+x_m$ de points satisfaisant simultanément à la condition (C) et aux trois
+conditions suivantes :
+\begin{enumthm}
+  \item $\hautn{x_1} > \alpha$ ; \label{i-grand}
+  \item $\angleabs{x_i, x_j} < \beta$ pour tous $i$ et $j$ ; \label{i-proche}
+  \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$ ; 
+\end{enumthm}
+où l'angle est relatif à la structure euclidienne de l'espace. Nous
+appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
+conditions \ref{i-grand} et \ref{i-proche}. Il est clair que l'espace privé
+d'une boule de rayon $\sqrt{\alpha}$ peut être recouvert par un nombre fini de
+tels cônes tronqués dès qu'il est de dimension finie (ce qui est la cas si on
+se place sur un corps de nombre. L'inégalité de \bsc{Vojta} assurant qu'il n'y
+a qu'un nombre fini de points sous la condition (C) dans chaque cône, permet e
+conclure à la finitude.
+
+Linégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle dit
+qu'il n'esxiste pas de paire de points $x$ et $y$ satisfaisant à (C) et aux
+conditions suivantes :
+\begin{enumthm}
+  \item $\hautn{y} > \hautn{x_1} > \alpha$ ; 
+  \item $\angleabs{x, y} < \beta$ ;
+  \item $\hautn{y} < \delta \hautn{x}$.
+\end{enumthm}
+Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
+constantes apparaissant dans ces deux inégalités soient effectives, elle
+permet de majorer le nombre de points dans chaque cône tronqué, donc le nombre
+total de point (modulo un résultat, assez indépendant, de décompte des «
+petits » points).
+
+La démonstration de \bsc{Faltings} consiste précisément à démontrer une
+inégalité de \bsc{Vojta}, non effective, qui suffit à assurer la finitude. Mon
+travail consiste donc d'une part à rendre effective cette inégalité de
+\bsc{Vojta}, et à lui adjoindre une inégalité de \bsc{Mumford}, elle aussi
+effective.
+
+\section{Relation avec d'autres énoncés}
 
 \subsection{Le théorème de Roth}
 
+Le théorème de \bsc{Roth}, dans sa version étendue aux places quelconques par
+\bsc{Ridout}, peut s'énoncer de la façon suivante.
+
+\begin{thm}
+  Soit $\alpha \in \Qbar$ un algébrique. Soient par ailleurs $\cdn$ un corps de
+  nombres et $\place$ une place de $\cdn$, étendue de façon arbitraire à
+  $\cdn(\alpha)$. Pour tout $\eps > 0$, il n'existe qu'un nombre fini de
+  points $x \in \cdn$ tels que 
+  \[ 
+    \absv{x - \alpha} < H(x)^{-2-\eps} \pmm.
+  \]
+\end{thm}
+
+Le lien avec le théorème précédent est clair : on passe de l'un à l'autre en
+remplaçant $\alpha$ par $V$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
+distance étant bien sûr représentée par $\absv{x - \alpha}$. Le théorème~2 de
+\noref{Faltings91} est donc aux variétés abéliennes ce que le théorème de
+\bsc{Roth} est à la droite.
+
+Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établir
+des versions quantitatives du théorème. Plus précisément, la démonstration de
+\bsc{Roth} consiste en un fait qu'on peut, anachroniquement, appeler une
+inégalité à la \bsc{Vojta} : il n'existe pas de suite $x_1, \dots, x_m$
+d'approximations exceptionneles telle que $\haut{x_1} > c_1$ et pour tout $i >
+1$, $\haut{x_i} > c_2 \cdot \haut{x_{i-1}}$. 
+
+Pour établir une version quantitative du théorème de \bsc{Roth}, il a fallu
+expliciter une valeur admissible des constantes $c_1$ et $c_2$, d'une part, et
+d'autre part lui adjoindre un inégalité que j'appellerai encore
+anachroniquement à la \bsc{Mumford}, disant qu'il existe une constante $c_3$
+telle que deux approximations exceptionneles $x$ et $y$, de hauteur assez
+grande, satisfont toujours $H(x) > c_3 H(y)$. Dans le cas du théorème de
+\bsc{Roth}, ceci découle immédiatement de l'inégalité de la taille. La
+conjonction de ces deux inégalités donne clairement un décompte des
+approximations exceptionnelles de hauteur assez grande.
+
+Rappelons aussi que le théorème de \bsc{Roth} a été l'aboutissement d'une
+longue série de théorèmes d'approximations moins précis, en ce sens que
+l'exposant optimal $2+\eps$ n'était pas atteint. Ce série a débuté avec le
+téhorème de \bsc{Liouville}. Dans le contexte de ma thèse, l'équivalent de
+l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
+
+\begin{thm}
+  Soient $V$ une variété projective de degré $d$, et $x \in \proj{n}(\Qbar)$
+  un point algébrique. Si $x$ n'appartient pas à $V$, on a 
+  \[
+    \distv{x}{V} \ge c(n, d) \haut{V}^{-1} \cdot \haut{x}^{-d} \pmm.
+  \]
+\end{thm}
+
+Dans le cas où $V$ est une hypersurface, c'est une application directe du
+théorème du produit (et $c(n, d) = 1$), et on peut se ramener à ce cas en
+général, quitte à payer un peu sur $c(n, d)$. Comme on le verra en
+\ref{s-siegel}, il est intéressant dans les applications de disposer d'un
+exposant meilleur que $d$.
+
 \subsection{L'ex-conjecture de Mordell-Lang}
 
-\subsection{Le théorème de Siegel et une ex-conjecture de Lang}
+Dès 1922, \bsc{Mordell} avait conjecturé l'énoncé suivant, aujourd'hui
+thèorème de \bsc{Faltings}.
 
-\section{Approche envisagée}
+\begin{thm}
+  Soit $C$ une courbe projective lisse de genre $g \ge 2$, définie sur un
+  corps de nombre $\cdn$. L'ensemble $C(\cdn)$ des points rationnels de $C$
+  est fini.
+\end{thm}
+
+Ce résultat a d'abord été prouvé par \bsc{Faltings} en 1983 comme conséquence
+d'une conjecture de \bsc{Shafarevitch}. La preuve fait intervenir des espaces
+de modules de variétés abéliennes, et c'est à cette occasion que
+\bsc{Faltings} a introduit la hauteur qui porte désormais son nom, sur cet
+espace. Néamoins, cette preuve reste assez éloignée des méthodes
+traditionnelles de l'approximation diophantienne.
+
+Une preuve totalement indépandante a été publiée en 1991 par \bsc{Vojta}. Elle
+se rapproche grandement des idées habituelles de l'approximation
+diophantienne, en introduisant ce qu'on appelle maintenant l'inagalité de
+\bsc{Vojta}. La preuve est ensuite simplifiée (« \eng{avoid[ing] the difficult
+  Arakelov theory in Vojta's paper} ») et étendue par \bsc{Faltings} pour
+prouver une conjecture de \bsc{Lang}, généralisant celle de \bsc{Mordell}, et
+qui s'énonce ainsi.
+
+\begin{thm}
+  Soit $V$ une sous-variété d'une variété abélienne $\va$, définie sur un
+  coprs de nombres $\cdn$. Si $V$ ne contient pas de translaté de sous-variété
+  abélienne stricte, alors $V(\cdn)$ est fini.
+\end{thm}
+
+Ceci généralise la conjecture de \bsc{Mordell}, qui correspond au cas où $V$
+est une courbe et $\va$ sa jacobienne. Ce résultat est proche du sujet de ma
+thèse dans le sens suivant : il consite à montrer la finitude des points
+rationnels \emph{sur} une sous-variété de variété abélienne, alors que je
+cherche à contrôler les points \emph{proches} d'une telle sous-variété. Il est
+d'ailleurs significatif que \bsc{Faltings} a prouvé ces deux théorèmes (la
+conjecture de \bsc{Mordell-Lang} et celui que je cherche à rendre quantitatif)
+dans le même article : une bonne partie des outils sont commun aux deux
+preuves.
+
+Des versions quantitatives du théorème 1 de \noref{faltings91} ont été établies
+ensuite. Signalons la relecture de la preuve par \bsc{Bombieri}, qui siplifie
+certains arguments en les rapprochant de l'effectivité, et le travail de
+\bsc{De Diego} sur les familles de courbes. En 1999, \bsc{Rémond} prouve une
+version totalement effective de l'inégalité de \bsc{Vojta}, puis lui adjoint
+une inégalité à la \bsc{Mumford}, établissant ainsi une version quantitavie
+explicite de l'ex-conjecture de \bsc{Mordel-Lang}. Signalons également le
+chapitre~3 de la thèse de \bsc{Fahri} qui donne une version quantitative de
+\bsc{Mordell}, démontrée dans un formalisme plus élémentaire que celui de
+\bsc{Rémond}.
+
+\subsection{Le théorème de Siegel et une ex-conjecture de Lang}
+\label{s-siegel}
+
+Le théorème de \bsc{Siegel}, démontré en 1929, affirme qu'une courbe de genre
+supérieur ou égal à 1 ne possède qu'on nombre fini de points entiers. Sa
+démonstration repose sur le théorème de \bsc{Roth} énoncé plus haut, et avait
+été obtenu par \bsc{Siegel} avec la version faible de cet énoncé dont il
+disposait en 1929.  Une généralisation du théorème a été conjecturée par
+\bsc{Lang}, de façon analogue à sa généralisation de la conjecture de
+\bsc{Mordell} : si $E$ est un diviseur ample d'une variété abélienne $\va$,
+alors $A \setminus E$ ne possède qu'un nombre fini de points entiers. Le
+théorème original s'en déduit là aussi en considérant la courbe dans sa
+jacobienne (à cette différence qu'ici la courbe peut être sa jacobienne, dans
+le cas $g=1$).
+
+Cette conjecture de \bsc{Lang} est en fait un corollaire du théorème~2 de
+\noref{Faltings91} : on remarque que la hauteur (relative à $E$) d'un point
+entier $x$ est essentiellement donné par le produit des inverse des distances
+$v$-adiques de $x$ à $E$ quand $v$ parcourt les places archimédiennes de
+$\cdn$. Or ces distances sont minorées par $\haut(x)^{-\eps}$ pour tout
+$\eps>0$, sauf pour un nombe fini de points. Ceci est bien sûr contradictoire
+dès que $\eps < 1$, ce qui prouve que seules les aprroxiamtions
+exceptionnelles de $E$ peuvent donner des points entiers. Dénombrer ces
+dernières donne donc immédiatement une version quantitative de cette
+ex-conjecture de \bsc{Lang}.
+
+Signalons qu'on connaît des versions quantitatives du théorème de \bsc{Siegel}
+(\noref{???}). Par contre, à ma conaissance, la seule démonstration connue de
+sa généralisation est celle de \bsc{Faltings} : en particulier on ne connaît
+pas de version quantitative de cette ex-conjecture de \bsc{Lang}.
+
+\section{Approche envisagée}\label{s-approche}
 
 \end{document}
 
