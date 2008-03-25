@@ -1,4 +1,4 @@
-\usepackage{mathtools, amsthm}
+\usepackage{mathtools, amsmath, amsthm}
 \usepackage[all]{xy}
 
 \usepackage{ifmtarg, fixltx2e, xargs}
@@ -39,6 +39,10 @@
 \makeatletter
 \newcommand*\ssub[1]{\@ifnotmtarg{#1}{_{#1}}}
 \newcommand*\ssup[1]{\@ifnotmtarg{#1}{^{#1}}}
+\newcommandx*\pexp[2][2]{%
+  \@ifmtarg{#2}%
+    {\cramped{^{(#1)}}}%
+    {^{(#1)}_{#2}}}
 \makeatother
 
 \newcommand\suchthat{\ \middle\vert\ }

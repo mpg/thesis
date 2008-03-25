@@ -23,13 +23,6 @@
 \newcommand*\hatys{\smash{\hat y}}			% y chapeau rapetissé
 \newcommand*\cube[1]{\mathcal C(#1)}			% le « cube » \abs{w} \le #1 et w entier
 
-\makeatletter
-\newcommandx*\pexp[2][2]{%
-  \@ifmtarg{#2}%
-    {\cramped{^{(#1)}}}%
-    {^{(#1)}_{#2}}}
-\makeatother
-
 \newcounter{cst}
 \newcommand*\cst[2][, v]{%
   \ensuremath{c\ssub{\ref{#2}#1}}}

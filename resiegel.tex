@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, twoside]{article}
 \usepackage[utf8]{inputenc}
 
 \usepackage{svn-multi}
@@ -13,17 +13,29 @@
 \usepackage{amssymb}
 
 \input{pre-gene.tex}
-\input{pre-idee.tex}
+\input{pre-resiegel.tex}
 
 \title{Notes de travail vers une fonction auxiliaire}
-\date{\svnnatdate\thanks{%
-    Date de dernière modification --- 
-    révision \no \svnrev\ du dépôt \emph{Subversion}.}}
+\date{\svnnatdate}
 \author{Manuel \bsc{Pégourié-Gonnard}}
+
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[LO, RE]{\textup{rév. \svnrev}}
+\fancyfoot[RO, LE]{\svnnatdate}
 
 \begin{document}
 
-\maketitle
+\maketitle\thispagestyle{fancy}
+
+Soit $\va$ une variété abélienne sur un corps de nombres $\cdn$, plongée dans
+un espace projectif $\proj\dimp$ muni de coordonnées homogènes $\ch0, \ldots,
+\ch\dimp$. On suppose que $\va$ n'est pas contenue dans l'hyperplan
+d'équation $\ch0 = 0$, et on considère le diviseur $\divi$ découpé par
+$\ch0$ sur $\va$. On note enfin $\ideal\va$ idéal homogène saturé
+définissant $\va$ dans $\cdn[\ch0, \ldots, \ch\dimp]$.
+
+On considère $\puiss$ un entier positif, 
 
 \end{document}
 
