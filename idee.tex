@@ -17,24 +17,26 @@
 
 \input{pre-gene.tex}
 \input{pre-idee.tex}
+\renewcommand*\bsc{}
 
 \title{Approximation dans les variétés abéliennes}
-\date{\svnnatdate\thanks{%
-    Date de dernière modification --- 
-    révision \no \svnrev\ du dépôt \emph{Subversion}.}}
+\date{\svnnatdate}
+% \thanks{%
+%     Date de dernière modification --- 
+%     révision \no \svnrev\ du dépôt \emph{Subversion}.}}
 \author{Manuel \bsc{Pégourié-Gonnard}}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-  Ce document se veut un aperçu un peu technique mais lisible (par un
-  théoricien des nombres, mettons) de mon sujet de thèse : un énoncé du
-  problème, ses relations avec d'autres questions en géométrie diophantienne,
-  et une description (forcément un peu vague pour l'instant) des techniques
-  que je souhaite utiliser pour y répondre. 
-\end{abstract}
+% \begin{abstract}
+%   Ce document se veut un aperçu un peu technique mais lisible (par un
+%   théoricien des nombres, mettons) de mon sujet de thèse : un énoncé du
+%   problème, ses relations avec d'autres questions en géométrie diophantienne,
+%   et une description (forcément un peu vague pour l'instant) des techniques
+%   que je souhaite utiliser pour y répondre. 
+% \end{abstract}
 
 \section{L'énoncé du problème}
 
@@ -50,7 +52,7 @@ $\cdn$) une distance $\place$-adique. Je ne dirai pas grand-chose de la
 hauteur, avec laquelle je suppose le lecteur familier. Parlons un peu de la
 notion de distance, et de quelques-une de ses propriétés.
 
-La distance que j'utilise est celle définie dans \noref{Pph-LNM}, qui se
+La distance que j'utilise est celle définie dans \cite{pphdg}, qui se
 mesure entre un point (fermé) et une sous-variété (pas forcément réduite ni
 irréductible, c'est-à-dire un sous-schéma fermé) de $\proj{n}$. Dans le cas
 où la sous-variété en question est une hypersurface $H$, définie par une
@@ -73,7 +75,7 @@ l'espace projectif, par la formule
   \pmm.
 \]
 Pour peu qu'on ai choisi une bonne norme aux places archimédiennes, ceci
-définit une distance au sens usuel \noref{Jadot}. On peut alors en déduire une
+définit une distance au sens usuel \cite{jadotth}. On peut alors en déduire une
 notion de distance entre un point $\point$ et une variété $V$, en prenant le
 minimum de la distance entre $\point$ et les points de $V(\C_\place)$. Ceci
 définit une notion différente de la précédent, mais les deux sont comparables.
@@ -83,7 +85,7 @@ projactive, de distance n'a \lat{a priori} rien à voir avec la notion de
 distance dans l'espace de \bsc{Mordell}-\bsc{Weil}, qui est globale et repose
 sur l'existence d'une variété abélienne ambiante. Maintenant que nous sommes
 familiers avec les objets en jeu, énonçons le théorème~2 de
-\noref{Faltings91}.
+\cite{falda}.
 
 \begin{thm}
   Soit $V$ une sous-variété quelconque d'une variété abélienne $\va$ plongée
@@ -107,7 +109,7 @@ Il semble néamoins raisonnable d'espérer majorer le nombre de points
 rationnels satisfaisant à \eqref{e-approx} (que nous appellerons à l'occasion
 les approximations exceptionnelles), ou au moins de donner quelques
 informations quantitatives explicites à leur sujet. C'est à cette question que
-me thèse vise à répondre.
+ma thèse vise à répondre.
 
 Plus précisément, ce type d'énoncé quantitatif est généralement obtenu en
 combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford}.
@@ -124,7 +126,7 @@ x_m$ de points satisfaisant simultanément à la condition (C) et aux trois
 conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha$ ; \label{i-grand}
-  \item $\angleabs{x_i, x_j} < \beta$ pour tous $i$ et $j$ ; \label{i-proche}
+  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i-proche}
   \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$ ; 
 \end{enumthm}
 où l'angle est relatif à la structure euclidienne de l'espace. Nous
@@ -136,12 +138,12 @@ se place sur un corps de nombre. L'inégalité de \bsc{Vojta} assurant qu'il n'y
 a qu'un nombre fini de points sous la condition (C) dans chaque cône, permet e
 conclure à la finitude.
 
-Linégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle dit
+L'inégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle dit
 qu'il n'esxiste pas de paire de points $x$ et $y$ satisfaisant à (C) et aux
 conditions suivantes :
 \begin{enumthm}
   \item $\hautn{y} > \hautn{x_1} > \alpha$ ; 
-  \item $\angleabs{x, y} < \beta$ ;
+  \item $\angleabs x y < \beta$ ;
   \item $\hautn{y} < \delta \hautn{x}$.
 \end{enumthm}
 Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
@@ -176,7 +178,7 @@ Le théorème de \bsc{Roth}, dans sa version étendue aux places quelconques par
 Le lien avec le théorème précédent est clair : on passe de l'un à l'autre en
 remplaçant $\alpha$ par $V$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
 distance étant bien sûr représentée par $\absv{x - \alpha}$. Le théorème~2 de
-\noref{Faltings91} est donc aux variétés abéliennes ce que le théorème de
+\cite{falda} est donc aux variétés abéliennes ce que le théorème de
 \bsc{Roth} est à la droite.
 
 Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établir
@@ -212,9 +214,9 @@ l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
 
 Dans le cas où $V$ est une hypersurface, c'est une application directe du
 théorème du produit (et $c(n, d) = 1$), et on peut se ramener à ce cas en
-général, quitte à payer un peu sur $c(n, d)$. Comme on le verra en
-\ref{s-siegel}, il est intéressant dans les applications de disposer d'un
-exposant meilleur que $d$.
+général, quitte à prendre une valeur beaucoup plus petite pour $c(n, d)$.
+Comme on le verra en \ref{s-siegel}, il est intéressant dans les applications
+de disposer d'un exposant meilleur que $d$.
 
 \subsection{L'ex-conjecture de Mordell-Lang}
 
@@ -234,7 +236,7 @@ de modules de variétés abéliennes, et c'est à cette occasion que
 espace. Néamoins, cette preuve reste assez éloignée des méthodes
 traditionnelles de l'approximation diophantienne.
 
-Une preuve totalement indépandante a été publiée en 1991 par \bsc{Vojta}. Elle
+Une preuve totalement indépendante a été publiée en 1991 par \bsc{Vojta}. Elle
 se rapproche grandement des idées habituelles de l'approximation
 diophantienne, en introduisant ce qu'on appelle maintenant l'inagalité de
 \bsc{Vojta}. La preuve est ensuite simplifiée (« \eng{avoid[ing] the difficult
@@ -244,7 +246,7 @@ qui s'énonce ainsi.
 
 \begin{thm}
   Soit $V$ une sous-variété d'une variété abélienne $\va$, définie sur un
-  coprs de nombres $\cdn$. Si $V$ ne contient pas de translaté de sous-variété
+  corps de nombres $\cdn$. Si $V$ ne contient pas de translaté de sous-variété
   abélienne stricte, alors $V(\cdn)$ est fini.
 \end{thm}
 
@@ -258,14 +260,20 @@ conjecture de \bsc{Mordell-Lang} et celui que je cherche à rendre quantitatif)
 dans le même article : une bonne partie des outils sont commun aux deux
 preuves.
 
-Des versions quantitatives du théorème 1 de \noref{faltings91} ont été établies
+Une différence notable entre les deux situations est toutefois la suivante :
+pour étudier les points iqui sont proches d'une sous-variété, sans appartenir
+à cette variété, on n'a pas besoin de supposer que celle-ci ne contient pas de
+translaté de sous-groupe. En fait, le résultat reste valable même pour les
+approxiamtions d'une sous-variété abélienne.
+
+Des versions quantitatives du théorème 1 de \cite{falda} ont été établies
 ensuite. Signalons la relecture de la preuve par \bsc{Bombieri}, qui siplifie
 certains arguments en les rapprochant de l'effectivité, et le travail de
 \bsc{De Diego} sur les familles de courbes. En 1999, \bsc{Rémond} prouve une
 version totalement effective de l'inégalité de \bsc{Vojta}, puis lui adjoint
 une inégalité à la \bsc{Mumford}, établissant ainsi une version quantitavie
-explicite de l'ex-conjecture de \bsc{Mordel-Lang}. Signalons également le
-chapitre~3 de la thèse de \bsc{Fahri} qui donne une version quantitative de
+explicite de l'ex-conjecture de \bsc{Mordel-Lang}. Enfin, le chapitre~3 de la
+thèse de \bsc{Farhi} \cite{farhith} donne une version quantitative de
 \bsc{Mordell}, démontrée dans un formalisme plus élémentaire que celui de
 \bsc{Rémond}.
 
@@ -285,7 +293,7 @@ jacobienne (à cette différence qu'ici la courbe peut être sa jacobienne, dans
 le cas $g=1$).
 
 Cette conjecture de \bsc{Lang} est en fait un corollaire du théorème~2 de
-\noref{Faltings91} : on remarque que la hauteur (relative à $E$) d'un point
+\cite{falda} : on remarque que la hauteur (relative à $E$) d'un point
 entier $x$ est essentiellement donné par le produit des inverse des distances
 $v$-adiques de $x$ à $E$ quand $v$ parcourt les places archimédiennes de
 $\cdn$. Or ces distances sont minorées par $\haut(x)^{-\eps}$ pour tout
@@ -293,14 +301,115 @@ $\eps>0$, sauf pour un nombe fini de points. Ceci est bien sûr contradictoire
 dès que $\eps < 1$, ce qui prouve que seules les aprroxiamtions
 exceptionnelles de $E$ peuvent donner des points entiers. Dénombrer ces
 dernières donne donc immédiatement une version quantitative de cette
-ex-conjecture de \bsc{Lang}.
+ex-conjecture de \bsc{Lang}. C'est pour ce type d'applications qu'il devient
+essentiel dans l'énoncé d'approximatio nde pouvoir prendre $\eps$ petit, au
+moins inférieur à $1$, alors que l'exposant $d$ de l'inégalité de
+\bsc{Liouville} ne suffit en aucun cas.
 
 Signalons qu'on connaît des versions quantitatives du théorème de \bsc{Siegel}
-(\noref{???}). Par contre, à ma conaissance, la seule démonstration connue de
+(\cite{XXX}). Par contre, à ma conaissance, la seule démonstration connue de
 sa généralisation est celle de \bsc{Faltings} : en particulier on ne connaît
 pas de version quantitative de cette ex-conjecture de \bsc{Lang}.
 
+Enfin, en un sens, on peut avoir l'impression que le théorème de
+\bsc{Faltings} (ex-conjecture de \bsc{Mordell-Lang}) rend obsolète le théorème
+de \bsc{Siegel} et sa généralisation conjecturée par \bsc{Lang} : en effet,
+n'avoir qu'un nombre fini de point rationnels implique de n'avoir qu'un
+nombre fini de points entiers. En fait, les énoncés de type \bsc{Siegel}
+conservent un intérêt essentiellement grâce à la restriction \og ne pas
+contenir de sous-variété abélienne \fg dans \bsc{Mordell-Lang} : si on prend
+le cas extrème d'un variété abélienne, il est clair que (sur un corps de
+nombres pas trop petit) ele possède une infinité de points rationnels, alors
+qu'elle n'a qu'un nombre fini de points entiers. 
+
+\section{Formes linéaires de logarithmes abéliens}
+
+Il faudra que je lise des trucs à ce sujet\dots
+
 \section{Approche envisagée}\label{s-approche}
+
+Il s'agit essentiellement d'employer la méthode de \bsc{Vojta}, en s'inspirant
+des travaux de \bsc{Rémond} \cites{remivds}{remivg}{remdcl}, de \bsc{Farhi}
+\cite{farhith},
+et de la preuve originale de \bsc{Faltings} \cite{falda}. Dans les grandes lignes, la
+preuve consistera donc à établir une inégalité à la \bsc{Mumford}, explicite,
+et à rendre explicites les constantes dans l'inégalité à la \bsc{Vojta}
+obtenue par \bsc{Faltings}.
+
+\subsection{Inégalité de \bsc{Mumford}}
+
+J'ai pour le moment obtenu une version de cette inégalité dans le cas
+particulier où la sous-variété à approcher est une variété abélienne.
+L'énoncé obtenu est la suivant.
+
+\begin{thm}
+  Soeint $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
+  deux points de $\va(\Qbar)$ satisafaisant à la condition d'approximation
+  \eqref{e-approx} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$ telles
+  que si
+  \begin{enumthm}
+    \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
+    \item $\hautn{\point} \le \hautn{\pointi} \le (1+\rho) \hautn{\pointi}$ ;
+    \item $\hautn{\point} > B$ ;
+  \end{enumthm}
+  alors $\point - \pointi \in \vai(\Qbar)$.
+\end{thm}
+
+Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalmeent explicitées
+en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
+\eqref{e-approx}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
+du plongement ambiant.
+
+L'approche adoptée la suivante : étant donné deux points satsifaisant aux
+trois conditions du théorème, on considère leur différence $\pointii$. La
+géométrie euclidienne élémentaire montre qu'il est de petite hauteur
+normalisée, donc de petite hauteur projective. Une constante de comparaison
+explicite entre ces deux hauteurs est fournie par \cite{daphiminvaii}.
+
+Il s'agit ensuite de montrer que cette différence reste une bonne appoximation
+de $\vai$ : c'est ici qu'on utilise que $\vai$ est un groupe. Pour cela, on
+utilise la comparaison entre distance ponctuelle et distance algébrique établie
+dans \cite[p. 103]{pphdg}, qu'on complète par une inégalité dans l'autre sens.
+On se ramène ainsi à montrer que si des points sont proches, alors leur somme
+l'est aussi. Ce résultat est en lui-même trivial (la loi de groupe, algébrique,
+est lipschitzienne en toute place), mais expliciter une constante de
+\bsc{Lipschitz} nécessite d'utiliser assez soigneusement les formules d'addition
+de \cite{daphiminvaii}.
+
+Une fois ceci établi, on constate que $\pointii$ est une très bonne
+approximation de $\vai$, de petite hauteur, suffisament pour contredire
+l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
+$\vai$.
+
+\subsection{Inégalité de Vojta}
+
+Le schéma général de cette partie de la preuve est commun à celui adopté dans
+\cite{remivds} et \cite{falda} : on suppose pour commencer qu'il existe une
+suite d'approximations $x_1, \ldots, x_m$ satisfaisant simultanément à
+\eqref{e-approx} et aux trois conditions suivantes :
+\begin{enumthm}
+  \item $\hautn{x_1} > \alpha$ ;
+  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ;
+  \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$.
+\end{enumthm}
+On regarde alors cette suite comme un point de $\va^m$, et on cherche à
+construire par récurrence, en partant de $\va^m$,  une suite
+décroissante de sous-variétés produit $Y\pexp{u} = Y\pexp{u}[i]$ pour $u$
+variant de $gm$ à $m-1$ telles que :
+\begin{enumthm}
+  \item $\dim Y\pexp u = u$ ;
+  \item $x \in Y\pexp u$ ;
+  \item $\deg Y\pexp u \le f(u)$ et $\deg Y\pexp u[i] \le f_i(u)$ ;
+  \item $\sum_{i=1}^m a_i \haut{Y\pexp u[i]} \le g(u)$ ;
+\end{enumthm}
+où les $a_i$ sont des entiers choisis de telle sorte que la quantité $a_i^2
+\hautn{x_i}$ soit à peu près constante, et $f$, $f_i$ et $g$ sont des
+fonctions de $u$ à expliciter. Plus précisément, on s'attend à ce que $f$ et
+$f_i$ ne dépendent que du degré de $V$ est des dimensions ambiantes, et que
+$g$ ne dépende que de la hauteur de $\va$, et des degrés et dimensions
+ambiants.
+
+\printbibliography
 
 \end{document}
 
