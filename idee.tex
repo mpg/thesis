@@ -13,30 +13,18 @@
 \usepackage[scaled]{helvet}
 \usepackage{amssymb}
 
-\usepackage{lipsum}
-
 \input{pre-gene.tex}
 \input{pre-idee.tex}
 \renewcommand*\bsc{}
+\frenchbsetup{og=«,fg=»}
 
 \title{Approximation dans les variétés abéliennes}
 \date{\svnnatdate}
-% \thanks{%
-%     Date de dernière modification --- 
-%     révision \no \svnrev\ du dépôt \emph{Subversion}.}}
 \author{Manuel \bsc{Pégourié-Gonnard}}
 
 \begin{document}
 
 \maketitle
-
-% \begin{abstract}
-%   Ce document se veut un aperçu un peu technique mais lisible (par un
-%   théoricien des nombres, mettons) de mon sujet de thèse : un énoncé du
-%   problème, ses relations avec d'autres questions en géométrie diophantienne,
-%   et une description (forcément un peu vague pour l'instant) des techniques
-%   que je souhaite utiliser pour y répondre. 
-% \end{abstract}
 
 \section{L'énoncé du problème}
 
@@ -432,11 +420,15 @@ Reste donc à savoir construire une telle forme $T$. Pour cela, on va utiliser
 la méthode de \bsc{Thue} (dite aussi « méthode de transcendance ») :
 construire une forme auxiliaire $F$ de degré et hauteur contrôlés, grâce à un
 lemme de \bsc{Siegel}, puis extrapoler pour constater de cette forme s'annule
-beaucoup, et utiliser cette information dans un lemme de zéros. Ici, le lemme
-de zéros utilisé sera une variante explicite du lemme de produit de
-\bsc{Faltings}, dont la conclusion est justement l'existence d'une forme $T$
-comme celle recherchée, pour peu qu'on contrôle bien l'indice en $x$ de $F$
-relativement à des poids suffisamment étagés.
+beaucoup, et utiliser cette information dans un lemme de zéros. 
+
+Ici, le lemme de zéros utilisé sera une variante explicite du lemme de produit
+de \bsc{Faltings}, dont la conclusion est justement l'existence d'une forme
+$T$ comme celle recherchée, pour peu qu'on contrôle bien l'indice en $x$ de
+$F$ relativement à des poids suffisamment étagés : ici, les poids sont
+contrôlés par les $a_i$, donc en définitive par les rapport des hauteurs des
+$x_i$ successifs : c'est l'hypothèse~\ref{iv-ecart} qui garanti ainsi leur
+étagement.
 
 Dans toute la suite, on supposera que la variété qu'on cherche à approcher est
 en fait un diviseur $E$ de $A$. Cette hypothèse n'est pas restrictive dans le
@@ -445,7 +437,60 @@ degré comparable et, à une certaine constante près qu'on pourrait expliciter
 (dépendant au plus du degré de $V$ et des dimensions ambiantes), la distance
 d'un point à $V$ est majorée par sa distance à $E$.
 
-Introduisons maintenant les plongements éclatant.
+Pour construire cette forme auxiliaire, on ne travaillera en fait pas sur $Y$
+directement, mais sur son image par un certain plongement. Ce dernier fait
+intervenir les $a_i$ définis ci-dessus, et joue dans la construction un rôle
+semblable au fibré $\mathcal L(\eps, s)$ de \cite{falda} ou $\mathcal Q_{eps,
+  a, d}$ de \cite{remivds}.
+\begin{align*}
+  \phi \colon Y & \to \va^{2m-1} \\
+  (y_1, \dots, y_m)  & \mapsto 
+  (y_1, \dots, y_m, a_1 y_1 - y_m, \dots a_{m-1} y_{m-1} - y_m)
+\end{align*}
+On cherche alors à construire une forme sur $Y$, s'annulant avec un indice
+élevé le long de $Y \cap E^m$, et provenant (\lat{via} $\phi^*$) d'une forme
+sur $\phi(Y)$ de multidegré $\delta(\eps_0 a_1^2, \dots, \eps_0 a_m^2, 1,
+\dots, 1)$, pour un certain $\eps_0$.
+
+On utilise pour ça un lemme de \bsc{Siegel}. Pour peu que $\delta$ soit assez
+grand (et c'est sa raison d'être), le théorème de \bsc{Hilbert} multiprojectif
+estime la dimension de l'espace des formes sur $Y$ de degré adéquat. Les
+formules d'addition et de multiplication de \cite{daphiminvaii} nous
+permettent d'estimer la hauteur du système ; cependant une estimation
+brutale ne permet pas de contrôler correctement son rang. Il s'agit alors de
+réduire le système modulo les équations de $Y$, en présentant ce dernier comme
+un revêtement fini de l'espace multiprojectif $\proj{u}$, comme par exemple
+dans le lemme~2.5 de \cite{remivg}. Un dénominateur, lié au lieu de
+ramification du revêtement considéré, apparaît cependant, qu'on espère
+néanmoins contrôler suffisamment pour qu'il ne perturbe pas trop la
+construction.
+
+On cherche ensuite à extrapoler, c'est-à-dire à montrer que notre forme
+auxiliaire s'annule aussi en $x$, et même avec un indice encore assez élevé
+pour pouvoir ensuite appliquer le lemme du produit. Pour cela, l'idée est bien
+sûr de majorer la hauteur de $F(x)$, puis d'estimer sa composante locale en
+$\place$ exploitant le fait que $x$ est $\place$-adiquement proche de $E$,  et
+de conclure à une contradiction par la formule du produit à moins de $F(x)$ ne
+soit nul. Dans la phrase précédente, il faut en fait remplacer $F$ par ses
+dérivées jusqu'à un ordre convenable. C'est en tous cas l'hypothèse
+d'approximation \eqref{e-approx} qui établit la contrainte nécessaire en liant
+$\distv{x}{E}$ à $H(x)$, donc indirectement $\absv{F(x)}$ à $H(F(x))$.
+
+Pour estimer la norme locale de $F(x)$ en $\place$, la difficulté est que $F$
+s'annule le long de $Y \cap E$, alors qu'on sait que $x$ est proche de $E$,
+mais pas nécessairement de $Y \cap E$. En fait, $F$ est congrue modulo l'idéal
+de $Y$ à une forme s'annulant le long de $E$. On exploite alors le fait que
+$x$ est sur $Y$ pour extrapoler plutôt sur cette nouvelle forme, de façon à
+mieux exploiter l'hypothèse sur $x$. Enfin, pour l'extrapolation, on utilise
+un paramétrisation locale de $Y$ (ou $\va$ ?) au voisinage de $x$, afin
+d'estimer confortablement les dérivées.
+
+\medskip
+
+Si tout s'est bien passé, c'est fini : il ne reste plus (!) qu'à remonter les
+explications que j'ai données essentiellement dans l'ordre inverse de leur
+dépendance logique, et à vérifier que les constantes s'ajustent bien entre
+elles en raccordant les différentes étapes, et notamment la récurrence\dots
 
 \printbibliography
 

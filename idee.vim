@@ -24,6 +24,7 @@ set ruler
 set shiftwidth=4
 set showcmd
 set smartcase
+set spelllang=fr
 set suffixes=.aux,.pdf,.dvi,.ps,.bbl,.blg,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=4
 set textwidth=80
@@ -39,7 +40,7 @@ endif
 set shortmess=aoO
 badd +115 idee.tex
 badd +1 pre-gene.tex
-badd +0 pre-idee.tex
+badd +1 pre-idee.tex
 args idee.tex
 edit pre-idee.tex
 set splitbelow splitright
@@ -165,6 +166,8 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+1
+normal zc
 let s:l = 1 - ((0 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
@@ -215,7 +218,7 @@ setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
-setlocal foldlevel=0
+setlocal foldlevel=1
 setlocal foldmarker={{{,}}}
 set foldmethod=syntax
 setlocal foldmethod=syntax
@@ -278,11 +281,13 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 14) / 28)
+1
+normal zc
+let s:l = 3 - ((2 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+3
 normal! 0
 wincmd w
 argglobal
@@ -328,7 +333,7 @@ setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
-setlocal foldlevel=4
+setlocal foldlevel=5
 setlocal foldmarker={{{,}}}
 set foldmethod=syntax
 setlocal foldmethod=syntax
@@ -372,10 +377,11 @@ setlocal shiftwidth=2
 setlocal noshortname
 setlocal nosmartindent
 setlocal softtabstop=0
-setlocal nospell
+set spell
+setlocal spell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
-setlocal spelllang=en
+setlocal spelllang=fr
 setlocal statusline=
 setlocal suffixesadd=.tex
 setlocal swapfile
@@ -391,12 +397,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 116 - ((42 * winheight(0) + 29) / 58)
+let s:l = 1 - ((0 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-116
-normal! 0
+1
+normal! 023l
 wincmd w
 3wincmd w
 exe '1resize ' . ((&lines * 29 + 30) / 60)
