@@ -11,11 +11,17 @@
 \usepackage[colorlinks=true, urlcolor=black, linkcolor=black,
 	 bookmarks=true, bookmarksnumbered=true, bookmarksopen=true]{hyperref}
 
-\newcommand*\lgr[1]{\abs{#1}}
-\newcommand*\vlg[1]{\abs{#1}}
-\newcommand*\der[1]{\partial_{#1}}
-\newcommand*\ncoef[1]{\mathcal N(#1)}
-\newcommand*\maxbin[1]{m(#1)}
+% compléments de macros maths
+% 
+\newcommand*\lgr[1]{\abs{#1}} % longueur
+\newcommand*\vlg[1]{\abs{#1}} % vecteur longueur
+\newcommand*\der[1]{\partial_{#1}} % dérivée divisée
+\newcommand*\ncoef[1]{\mathcal N(#1)} % nombre de coefficients
+\newcommand*\maxbin[1]{m(#1)} % max des coefficient binomiaux avec #1 en haut
+
+
+% les six normes et mesures étudiées
+%
 \newcommand*\normsup[1]{\norm{#1}_\infty}
 \newcommand*\normlun[1]{\norm{#1}_1}
 \newcommand*\normeuc[1]{\norm{#1}_2}
@@ -47,12 +53,24 @@ en un point, ainsi que sous l'action de dérivations. Elle est par ailleurs
 invariante par ajout de variables muettes. Plus précisément, on a les
 relations évidentes suivantes :
 \begin{align*}
-  \norm{P'(X, Y)} &= \norm P 	
-  & \norm{P+Q} &\le \max(\norm P, \norm Q)	
-  & \norm{P\cdot Q} &= \norm P \cdot \norm Q  \\
-  \norm{\frac{1}{i!}\frac{\partial^i P}{\partial X^i}} &\le \norm P 
-  & \abs{P(X)} &\le \norm P \cdot \norm X^d 	
-  & \norm{P(Q)} &\le \norm P \cdot \norm Q^d  \pmm,
+  \norm{P'(X, Y)} 
+  & = \norm P 	
+  & 
+  \norm{P+Q} 
+  & \le \max (\norm P, \norm Q)	
+  &
+  \norm{P\cdot Q} 
+  & = \norm P \cdot \norm Q
+  \\
+  \norm { \frac{1}{i!} \frac {\partial^i P} {\partial X^i} } 
+  & \le \norm P 
+  & 
+  \abs{P(X)} 
+  & \le \norm P \cdot \norm X^d 	
+  & 
+  \norm{P(Q)} 
+  & \le \norm P \cdot \norm Q^d
+  \pmm,
 \end{align*}
 où $d$ est le degré de $P$, $Y$ un groupe de variables indépendantes de $X$,
 et $P'$ l'image de $P$ par l'inclusion évidente $\cdn[X] \hookrightarrow
@@ -61,9 +79,9 @@ convient de supposer $P$ homogène en un ou plusieurs groupes de variables,
 avec les notations qui seront détaillées ci-dessous.
 
 Sur les corps archimédiens par contre, aucune norme ou mesure usuelle n'est
-vraiment \og la\fg{} bonne notion comme c'est le cas de la norme ci-dessus
-dans le cas ultramétrique. On est donc amené suivant les circonstances à
-considérer diverses grandeurs, qui présenteront chacune certaines des qualités
+vraiment \og la\fg bonne notion comme c'est le cas de la norme ci-dessus dans
+le cas ultramétrique. On est donc amené suivant les circonstances à considérer
+diverses grandeurs, qui présenteront chacune certaines des qualités
 recherchées ; on aura alors besoin de les comparer entre elles. L'objet de ce
 mémento est de réunir et de présenter de façon cohérente les diverses notion
 utilisées, leurs propriétés, et les constantes de comparaison, qui sont
@@ -144,21 +162,43 @@ $\cdn$.
 \section{Norme du \texorpdfstring{$\sup$}{sup}}
 
 \todo Elle est définie pour tout $P$ par $\normsup P = \sup_i \abs{P_i}$ et
-naturellement associée à la norme similaire pour les vecteurs.  \[x^2 = \dots
-\todom[calcul] \] C'est une norme, évidemment invariante par ajout de
-variables muettes, qui jouit par ailleurs des propriétés suivantes :
+naturellement associée à la norme similaire pour les vecteurs.  C'est une
+norme, évidemment invariante par ajout de variables muettes, qui jouit par
+ailleurs des propriétés suivantes :
 \begin{gather}
-  \normsup P \normsup Q \le \normsup {PQ} \le  \normsup P \normsup Q \todom \\
-  \normsup {F(\mathcal Q)}  \le  \normsup F \normsup {\mathcal Q}^\delta \todom \\
-  \normsup{\der\alpha F} \le {\textstyle \binom\delta\alpha}  \normsup F 
+  \normsup P \normsup Q 
+  \le \normsup {PQ} 
+  \le  \normsup P \normsup Q \todom
+  \\
+  \normsup {F(\mathcal Q)}
+  \le \normsup F \normsup {\mathcal Q}^\delta \todom 
+  \\
+  \normsup {\der\alpha F}
+  \le \tbinom\delta\alpha \normsup F 
 \end{gather}
 Elle se compare aux autres normes et mesures de la façon suivante :
-\begin{align} \normlun P / \ncoef P &\le \normsup P \le \normlun P \\ \normeuc
-  P / \sqrt{\ncoef P} &\le \normsup P \le \normeuc P \\ \normhom F /
-  \exp\big({\textstyle\sum_k} \sqrt{n_k}\,\big) &\le \normsup F \le \normhom F
-  \sqrt{m(\delta)} \\ \mespph F / \exp\big({\textstyle\sum_k}
-\delta_k\gamma_{n_k}\sqrt{n_k}\,\big) &\le \normsup F \le \mespph F m(\delta)
-\\ \mahler P / \sqrt{\ncoef P} &\le \normsup F \le \mahler P m(\delta)
+\begin{align} 
+  \normlun P / \ncoef P 
+  & \le \normsup P 
+  \le \normlun P 
+  \\ 
+  \normeuc P / \sqrt{\ncoef P} 
+  & \le \normsup P 
+  \le \normeuc P 
+  \\
+  \normhom F / \exp\big( {\textstyle\sum_k} \sqrt{n_k} \,\big) 
+  & \le \normsup F 
+  \le \normhom F \sqrt{m(\delta)} 
+  \\
+  \mespph F / \exp\big(
+  {\textstyle\sum_k} \delta_k \gamma_{n_k} \sqrt{n_k}
+  \,\big) 
+  & \le \normsup F 
+  \le \mespph F m(\delta) 
+  \\
+  \mahler P / \sqrt{\ncoef P} 
+  & \le \normsup F 
+  \le \mahler P m(\delta)
 \end{align}
 
 \section{Norme \texorpdfstring{$L_1$}{1}, ou longueur}
@@ -169,17 +209,40 @@ naturellement associée à la norme similaire pour les vecteurs.
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
-  \prod\nolimits_e \normlun{f_e} / \prod\nolimits_k (n_k +1)^{\delta_k} \le \normlun {F} \le \prod\nolimits_e \normlun{f_e} \\
-  \normlun {F(\mathcal Q)}  \le  \normlun F \normlun {\mathcal Q}^\delta \\
-  \normlun L(Q_1, \dots, Q_l) \le \normlun L \max_k\normlun{Q_k} \\
-  \normlun{\der\alpha F} \le {\textstyle \binom\delta\alpha}  \normlun P 
+  \prod\nolimits_e \normlun{f_e} / \prod\nolimits_k (n_k +1)^{\delta_k} 
+  \le 
+  \normlun {F} 
+  \le 
+  \prod\nolimits_e \normlun{f_e} \\
+  \normlun {F(\mathcal Q)}
+  \le
+  \normlun F \normlun {\mathcal Q}^\delta \\
+  \normlun L(Q_1, \dots, Q_l)
+  \le
+  \normlun L \max_k\normlun{Q_k} \\
+  \normlun{\der\alpha F}
+  \le
+  {\textstyle \binom\delta\alpha} \normlun P 
 \end{gather}
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
-  \normeuc P &\le \normlun P \le \normeuc P \sqrt{\ncoef P}\\
-  \normhom F &\le \normlun F \le \normhom F \prod\nolimits_k (n_k +1)^{\delta_k/2} \\
-  \mespph F / \exp\big({\textstyle \sum_k} \delta_k\gamma_{n_k}\big) &\le \normlun F \le \mespph F \prod\nolimits_k (n_k +1)^{\delta_k/2} \\
-  \mahler P &\le \normlun F \le \mahler P \prod\nolimits_k (n_k +1)^{\delta_k/2}
+  \normeuc P 
+  & \le \normlun P
+  \le \normeuc P \sqrt{\ncoef P}
+  \\
+  \normhom F 
+  & \le \normlun F
+  \le \normhom F \prod\nolimits_k (n_k +1)^{\delta_k/2}
+  \\
+  \mespph F / \exp\big(
+  {\textstyle \sum_k} \delta_k\gamma_{n_k}
+  \big) 
+  & \le \normlun F 
+  \le \mespph F \prod\nolimits_k (n_k +1)^{\delta_k/2}
+  \\
+  \mahler P 
+  & \le \normlun F 
+  \le \mahler P \prod\nolimits_k (n_k +1)^{\delta_k/2}
 \end{align}
 
 \section{Norme euclidienne}
@@ -191,16 +254,33 @@ les vecteurs.
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
-  \normeuc P \cdot \normeuc Q \le \normeuc {PQ} \le \normeuc P \cdot \normeuc Q \todom \\
-  \normeuc {F(\mathcal Q)}  \le  \normeuc F \normeuc {\mathcal Q}^\delta \todom \\
-  \abs{F (u)} \le \normeuc{F}  \normeuc u ^\delta \\
-  \normeuc{\der\alpha F} \le {\textstyle \binom\delta\alpha}  \normeuc F 
+  \normeuc P \cdot \normeuc Q 
+  \le \normeuc {PQ} 
+  \le \normeuc P \cdot \normeuc Q \todom 
+  \\
+  \normeuc {F(\mathcal Q)}  
+  \le  
+  \normeuc F \normeuc {\mathcal Q}^\delta \todom 
+  \\
+  \abs{F (u)} 
+  \le \normeuc{F}  \normeuc u ^\delta 
+  \\
+  \normeuc{\der\alpha F} 
+  \le {\textstyle \binom\delta\alpha}  \normeuc F 
 \end{gather}
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
-  \normhom F &\le \normeuc P \le \sqrt{m(\delta)} \normhom F \\
-  \mespph F / \exp\big({\textstyle \sum_k}\delta_k\gamma_{n_k}\big) &\le \normeuc F \le \prod\nolimits_k (n_k +1)^{\delta_k} \mespph F \\
-  \mahler P &\le \normeuc F \le \prod\nolimits_k (n_k +1)^{\delta_k} \mahler P
+  \normhom F 
+  & \le \normeuc P 
+  \le \sqrt{m(\delta)} \normhom F 
+  \\
+  \mespph F / \exp\big( {\textstyle \sum_k}\delta_k\gamma_{n_k} \big) 
+  & \le \normeuc F 
+  \le \prod\nolimits_k (n_k +1)^{\delta_k} \mespph F 
+  \\
+  \mahler P 
+  & \le \normeuc F 
+  \le \prod\nolimits_k (n_k +1)^{\delta_k} \mahler P
 \end{align}
 De plus si $L$ est une forme linéaire on a $\normeuc L = \normhom L = \mespph
 L$.
@@ -214,23 +294,39 @@ naturellement associée à la norme euclidienne pour les vecteurs.
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
-  \normhom F \normhom G \le \normhom {FG} \le \normhom F \normhom G  \todom \\
-  \normhom {F(\mathcal Q)}  \le  \normhom F \normhom {\mathcal Q}^\delta \todom \\
-  \abs{F (u)} \le \normhom{F}  \normeuc u ^\delta \\
-  \normhom{\der{i} P} \le \normhom P \todom
+  \normhom F \normhom G 
+  \le \normhom {FG} 
+  \le \normhom F \normhom G  \todom 
+  \\
+  \normhom {F(\mathcal Q)}  
+  \le  \normhom F \normhom {\mathcal Q}^\delta \todom 
+  \\
+  \abs {F (u)} 
+  \le \normhom F  \normeuc u ^\delta 
+  \\
+  \normhom {\der{i} P} 
+  \le \normhom P \todom
 \end{gather}
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
-  \mespph F / \exp(\sum\delta_k\gamma_{n_k}) &\le \normhom F \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mespph F \\
-  \mahler F / \sqrt{m(\delta)} \le \normhom F &\le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mahler F
+  \mespph F / \exp(\sum\delta_k\gamma_{n_k}) 
+  & \le \normhom F 
+  \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mespph F 
+  \\
+  \mahler F / \sqrt{m(\delta)} 
+  \le \normhom F 
+  & \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mahler F
 \end{align}
 
 \section{Mesure homogène à la \texorpdfstring{\bsc{Philippon}}{Philippon}}
 
 Elle est définie pour $F$ homogène par 
 \[
-  \log \mespph F = \big(\int_{S_{1}\times\cdots\times S_{l}} \log\abs F\ \mu_1
-  \wedge \cdots \wedge \mu_l\big) + \sum_{k=1}^l \delta_k \cdot \gamma_{n_k}
+  \log \mespph F 
+  = \big( 
+  \int_{S_{1}\times\cdots\times S_{l}} 
+  \log\abs F\ \mu_1 \wedge \cdots \wedge \mu_l
+  \big) + \sum_{k=1}^l \delta_k \cdot \gamma_{n_k}
   \pmm,
 \]
 où $S_k = \{ u \in \C^{n_k},\ \normeuc u = 1 \}$ est la sphère de dimension
@@ -244,26 +340,28 @@ invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
 jouit par ailleurs des propriétés suivantes ?] Elle se compare à la mesure de
 \bsc{Mahler} de la façon suivante :
 \begin{equation}
-  \mahler F \le \mespph F \le \mahler F \exp(\sum\delta_k\gamma{n_k})
+  \mahler F 
+  \le \mespph F 
+  \le \mahler F \exp(\sum\delta_k\gamma{n_k})
 \end{equation}
 
 \section{Mesure de \texorpdfstring{\bsc{Malher}}{Mahler}}
 
 Elle est définie pour tout $P$ par 
 \[
-  \log\mahler P = \int_S \log\abs P\, \mu_S \pmm,
+  \log\mahler P 
+  = \int_S \log\abs P\, \mu_S \pmm,
 \]
 où $S$ est le produit des cercles unités de $\C$, muni de la mesure $\mu$
 produit des mesures de \bsc{Haar} normalisées de masse $1$. 
 
-C'est une mesure multiplicative ($\mahler{PQ} = \mahler P \cdot \mahler Q$),
+C'est une mesure multiplicative ($\mahler {PQ} = \mahler P \cdot \mahler Q$),
 invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
 jouit par ailleurs des propriétés suivantes ?]
 Ses comparaisons avec les autres normes et mesures ont été énoncées
 précedement.
 
 \section{Preuves et questions d'optimalité}
-
 
 \begin{thebibliography}{9}
   \bibitem{1} Philippon IHES
