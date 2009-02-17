@@ -1,26 +1,29 @@
 \input{pre-gene}
 
-\newtheorem{thm}{Théorème} \newtheorem{prop}[thm]{Proposition} \newtheorem{lem}[thm]{Lemme} \newtheorem{coro}[thm]{Corollaire}
-\numberwithin{equation}{section}
+\newtheorem{thm}{Théorème}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{coro}[thm]{Corollaire}
 
-
-\newcommand{\av}[2][v]{\left\lvert#2\right\rvert_{#1}} 		% valeur absolue v-adique, ou en option ce qu'on veut en indice
-\newcommand{\nv}[2][v]{\left\lVert#2\right\rVert_{#1}} 		% norme v-adique, idem
-\newcommand{\nnv}[2][v]{\left\lvert\hspace{-1pt}\left\lvert\hspace{-1pt}\left\lvert#2\right\rvert\hspace{-1pt}\right\rvert\hspace{-1pt}\right\rvert_{#1}}
-								% norme v-adique d'une famille, idem
-\newcommand{\nvp}[2][v]{\|#2\|_{#1}} 				% norme idem mais en forçant une petite taille
-\newcommand{\dv}{{\delta_v}} 					% sélecteur v ultramétrique ou non
-\newcommand{\Dv}{\mathrm{dist}_v} 				% distance v-adique projective
-\newcommand{\A}{\mathcal{A}} 					% la variété abélienne
-\newcommand{\p}[1]{{\boldsymbol{#1}}} 				% un point dessus, on notera en "normal" ses coordonnées
-\newcommand{\OA}{\p{0}} 					% l'origine de la variété
-\newcommand{\coa}{\theta} 					% des coordonnées de l'origine
-\newcommand{\BA}{\mathfrak{B}} 					% vecteur "B" avec coordonnées inverses de l'origine
-\newcommand{\hn}{\hat{h}} 					% la hauteur normalisée
-\newcommand{\lgr}[1]{{|#1|}} 					% longueur d'un multi-indice
-\newcommand{\vlg}[1]{\lgr #1} 					% multi-longueur partielles d'un multi-multi-indice
-
-
+\newcommand{\av}[2][v]{\left\lvert#2\right\rvert_{#1}}
+\newcommand{\nv}[2][v]{\left\lVert#2\right\rVert_{#1}}
+\newcommand{\nnv}[2][v]{%
+  \left\lvert\hspace{-1pt}%
+  \left\lvert\hspace{-1pt}%
+  \left\lvert#2\right\rvert%
+  \hspace{-1pt}\right\rvert%
+  \hspace{-1pt}\right\rvert_{#1}}
+\newcommand{\nvp}[2][v]{\|#2\|_{#1}}
+\newcommand{\dv}{{\delta_v}}
+\newcommand{\Dv}{\mathrm{dist}_v}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\p}[1]{{\boldsymbol{#1}}}
+\newcommand{\OA}{\p{0}}
+\newcommand{\coa}{\theta}
+\newcommand{\BA}{\mathfrak{B}}
+\newcommand{\hn}{\hat{h}}
+\newcommand{\lgr}[1]{{|#1|}}
+\newcommand{\vlg}[1]{\lgr #1}
 
 \author{Manuel \bsc{Pégourié-Gonnard}}
 \title{Une inégalité de Mumford explicite}
@@ -32,188 +35,504 @@
 
 \section*{Introduction et notations}
 
-On travaille dans une variété abélienne $\A$ de dimension $g$, définie sur $\Qbar$, qu'on suppose munie d'un fibré $\mathcal{M}$ ample et symétrique, de degré $d$. On choisit sur $\mathcal{M}^{\otimes 16}$ une structure thêta, et on plonge $\A$ dans $\Proj^n$, où $n=16^g d - 1$, par un plongement de \bsc{Mumford} modifié, tel que décrit au §3.1 de [Da-Phi], que nous noterons $\Theta$. On identifiera volontiers $\A$ et son image par $\Theta$. On reprend sans les rappeler les définitions de \lat{loc. cit.}, ainsi que les notations, sauf sur les points suivants : on omettra systématiquement les indices se rapportant à la puissance de $\mathcal{M}$ utilisée et on notera plus volontiers en indice les coordonnées. On écrira ainsi $\coa_{(a, l)} = \Delta_{(a, l)}(\coa)  = \Delta_{a, l}^{(2)}(\coa) = \coa_{\mathcal{L}^{\otimes 4}}(a, l)$. Par ailleurs, bien que les coordonnées soient naturellement indexées (\lat{ibid.} p. 651) par $\mathcal{Z}_2 \times \widehat{K_2(4)}$, on les indexera souvent par $\{0, \dots, n\}$ pour alléger l'écriture.
+On travaille dans une variété abélienne $\A$ de dimension $g$, définie sur
+$\Qbar$, qu'on suppose munie d'un fibré $\mathcal{M}$ ample et symétrique, de
+degré $d$. On choisit sur $\mathcal{M}^{\otimes 16}$ une structure thêta, et
+on plonge $\A$ dans $\Proj^n$, où $n=16^g d - 1$, par un plongement de
+\bsc{Mumford} modifié, tel que décrit au §3.1 de [Da-Phi], que nous noterons
+$\Theta$. On identifiera volontiers $\A$ et son image par $\Theta$. On reprend
+sans les rappeler les définitions de \lat{loc. cit.}, ainsi que les notations,
+sauf sur les points suivants : on omettra systématiquement les indices se
+rapportant à la puissance de $\mathcal{M}$ utilisée et on notera plus
+volontiers en indice les coordonnées. On écrira ainsi $\coa_{(a, l)} =
+\Delta_{(a, l)}(\coa)  = \Delta_{a, l}^{(2)}(\coa) =
+\coa_{\mathcal{L}^{\otimes 4}}(a, l)$. Par ailleurs, bien que les coordonnées
+soient naturellement indexées (\lat{ibid.} p. 651) par $\mathcal{Z}_2 \times
+\widehat{K_2(4)}$, on les indexera souvent par $\{0, \dots, n\}$ pour alléger
+l'écriture.
 
-On fixe un corps de nombres $\cdn$ contenant un corps de définition de $\A$ plongée; on suppose de plus qu'il contient un système de coordonnées $\coa = (\coa_0,\dots,\coa_n)$ de l'origine $\OA$, ainsi que les racines quatrièmes de l'unité. Si $\p{x}$ est un point de $\A(\cdn)$, on notera $x = (x_0, \dots, x_n)$ un de ses représentants dans $\cdn^{n+1}$. De même, on notera $\cdn[X] = \cdn[X_0, \dots X_n]$ l'anneau des coordonnées homogènes. Si $P$ est une forme sur $\Proj^n$, on notera $P= \sum_i a_i X^i$ où $i \in \N^{n+1}$ est un multi-indice, et par convention $X^i = X_0^{i_0}\cdots X_n^{i_n}$. On notera également $\frac{\partial^{|i|} P}{\partial X^i} = \frac{\partial^{|i|} P}{\partial X_0^{i_0}\cdots \partial X_n^{i_n}}$, où $|i| = i_0 + \cdots + i_n$ est la longueur du multi-indice $i$.
+On fixe un corps de nombres $\cdn$ contenant un corps de définition de $\A$
+plongée ; on suppose de plus qu'il contient un système de coordonnées $\coa =
+(\coa_0,\dots,\coa_n)$ de l'origine $\OA$, ainsi que les racines quatrièmes de
+l'unité. Si $\p{x}$ est un point de $\A(\cdn)$, on notera $x = (x_0, \dots,
+x_n)$ un de ses représentants dans $\cdn^{n+1}$. De même, on notera $\cdn[X] =
+\cdn[X_0, \dots X_n]$ l'anneau des coordonnées homogènes. Si $P$ est une forme
+sur $\Proj^n$, on notera $P= \sum_i a_i X^i$ où $i \in \N^{n+1}$ est un
+multi-indice, et par convention $X^i = X_0^{i_0}\cdots X_n^{i_n}$. On notera
+également $\frac{\partial^{|i|} P}{\partial X^i} = \frac{\partial^{|i|}
+  P}{\partial X_0^{i_0}\cdots \partial X_n^{i_n}}$, où $|i| = i_0 + \cdots +
+i_n$ est la longueur du multi-indice $i$.
 
-Définissons maintenant les normes locales utilisées pour les vecteurs. Si $v$ est une place finie, on pose $\nv{x} = \sup_i(\av{x_i})$; pour une place $v$ infinie on utilise sauf précision contraire la norme euclidienne $\nv{x} = ( \sum_i \av{x_i}^2 )^{1/2}$. Notant $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ le degré local relatif, on définit ainsi la hauteur projective d'un point $\p{x} \in \Proj^n$ par $H(\p{x}) = \prod_v \nv{x}^{e_v}$; on utilisera couramment la hauteur additive $h = \log H$.
+Définissons maintenant les normes locales utilisées pour les vecteurs. Si $v$
+est une place finie, on pose $\nv{x} = \sup_i(\av{x_i})$ ; pour une place $v$
+infinie on utilise sauf précision contraire la norme euclidienne $\nv{x} = (
+\sum_i \av{x_i}^2 )^{1/2}$. Notant $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ le
+degré local relatif, on définit ainsi la hauteur projective d'un point $\p{x}
+\in \Proj^n$ par $H(\p{x}) = \prod_v \nv{x}^{e_v}$ ; on utilisera couramment
+la hauteur additive $h = \log H$.
 
-On définit ensuite des normes locales pour les formes homogènes. Si $P = \sum_{\lgr{i} =d} a_i X^i$ est une forme homogène de degré $d$, on pose aux places finies $\nv{P} = \sup_i \av{a_i}$, et aux place infinies $\nv{P} = \left( \sum_i \av{a_i}^2/\binom{d}{i} \right)^{1/2}$, où on a noté $\binom{d}{i} = d!/(i_0!\cdots i_n!)$ le coefficient multinomial. On a ainsi l'inégalité $\av{P(x)} \le \nv{P} \nv{x}^d$. Concernant les dérivées, on a $\nv{\frac{1}{i!}\frac{\partial^\lgr{i}P}{\partial X^i}} \le \binom{d}{i}^\dv \nv{P}$, où l'on a noté $i! = i_0! \cdots i_n!$, et $\dv$ valant $0$ si $v$ est finie, et $1$ sinon. Nous utiliserons couramment cette notation $\dv$ pour regrouper en une seule formule les cas $v$ finie et $v$ infinie.
+On définit ensuite des normes locales pour les formes homogènes. Si $P =
+\sum_{\lgr{i} =d} a_i X^i$ est une forme homogène de degré $d$, on pose aux
+places finies $\nv{P} = \sup_i \av{a_i}$, et aux place infinies $\nv{P} =
+\left( \sum_i \av{a_i}^2/\binom{d}{i} \right)^{1/2}$, où on a noté
+$\binom{d}{i} = d!/(i_0!\cdots i_n!)$ le coefficient multinomial. On a ainsi
+l'inégalité $\av{P(x)} \le \nv{P} \nv{x}^d$. Concernant les dérivées, on a
+$\nv{\frac{1}{i!}\frac{\partial^\lgr{i}P}{\partial X^i}} \le \binom{d}{i}^\dv
+\nv{P}$, où l'on a noté $i! = i_0! \cdots i_n!$, et $\dv$ valant $0$ si $v$
+est finie, et $1$ sinon. Nous utiliserons couramment cette notation $\dv$ pour
+regrouper en une seule formule les cas $v$ finie et $v$ infinie.
 
-Passons maintenant au cas multihomogène; seul le cas d'une puissance de projectifs nous sera utile. Pour chaque point $\p{x} = (\p{x}^{(1)}, \dots, \p{x}^{(m)})$ de $(\Proj^n)^m$, on note $x = (x^{(1)}, \dots x^{(m)}) = (x_0^{(1)}, \dots, x_n^{(m)})$ un système de coordonnées multiprojectives. On note de plus $\nv{x} = (\nv{x^{(1)}},\dots, \nv{x^{(m)}})$ son vecteur norme. Si $P$ est une forme multihomogène de multidegré $d= (d^{(1)}, \dots, d^{(m)})$, on écrira encore $P = \sum_{\vlg{i}=d} a_i X^i$, avec cette fois $i \in \N^{m(n+1)}$ de vecteur longueur $\vlg{i} = (|i^{(1)}|, \dots, |i^{(m)}|$, et la notation évidente $X^i = \prod_{k} (X^{(k)})^{i^{(k)}} = \prod_{k, l} (X_l^{(k)})^{i_l^{(k)}}$. On définit une norme similaire au cas homogène par 
-\[\nv{P} = \left( \sum \frac{ \av{a_i}^2}{\binom{d^{(1)}}{i^{(1)}} \cdots \binom{d^{(m)}}{i^{(m)}} } \right)^{1/2}  \] 
-aux places archimédiennes, et $\nv{P} = \max(\av{a_i})$ aux places finies. Si $F = (F_0, \dots, F_p)$ est une famille de formes multi-homogènes de même multidegré, on note de plus $\nv{F} = (\nv{F_0}, \dots, \nv{F_p})$ son vecteur norme, et enfin $\nnv{F} = \nv{(\nv{F})}$. On a bien ainsi $\nv{F(x)} \le \nnv{F}\nv{x}^d$.
+Passons maintenant au cas multihomogène ; seul le cas d'une puissance de
+projectifs nous sera utile. Pour chaque point $\p{x} = (\p{x}^{(1)}, \dots,
+\p{x}^{(m)})$ de $(\Proj^n)^m$, on note $x = (x^{(1)}, \dots x^{(m)}) =
+(x_0^{(1)}, \dots, x_n^{(m)})$ un système de coordonnées multiprojectives. On
+note de plus $\nv{x} = (\nv{x^{(1)}},\dots, \nv{x^{(m)}})$ son vecteur norme.
+Si $P$ est une forme multihomogène de multidegré $d= (d^{(1)}, \dots,
+d^{(m)})$, on écrira encore $P = \sum_{\vlg{i}=d} a_i X^i$, avec cette fois $i
+\in \N^{m(n+1)}$ de vecteur longueur $\vlg{i} = (|i^{(1)}|, \dots, |i^{(m)}|$,
+et la notation évidente $X^i = \prod_{k} (X^{(k)})^{i^{(k)}} = \prod_{k, l}
+(X_l^{(k)})^{i_l^{(k)}}$. On définit une norme similaire au cas homogène par
+\[
+  \nv{P} = \left( \sum \frac{ \av{a_i}^2}{\binom{d^{(1)}}{i^{(1)}} \cdots
+	\binom{d^{(m)}}{i^{(m)}} } \right)^{1/2}
+\]
+aux places archimédiennes, $\nv{P} = \max(\av{a_i})$ aux places finies. Si
+$F = (F_0, \dots, F_p)$ est une famille de formes multi-homogènes de même
+multidegré, on note de plus $\nv{F} = (\nv{F_0}, \dots, \nv{F_p})$ son vecteur
+norme, et enfin $\nnv{F} = \nv{(\nv{F})}$. On a bien ainsi $\nv{F(x)} \le
+\nnv{F}\nv{x}^d$.
 
-Pour chaque place $v$ de $\cdn$, on définit une distance locale entre les points de $\Proj^n(\cdn)$ par :
-\[ \Dv(\p{x}, \p{y}) = \frac{\nv{x\wedge y }}{\nv{x}\nv{y}}\pmm{.} \]
-On s'intéresse alors aux approximations exceptionnelles de l'origine, \lat{i. e.} aux points $\p{x} \in \A(\cdn)$ satisfaisant $\Dv(\p{x}, \OA) \le H(\p{x})^{-\eps}$, où $0<\eps<1$ est fixé. Plus généralement, on considère un ensemble fini $S$ de places de $\cdn$, et une famille de réels positifs $(\lambda_v)_{v\in S}$ telle que $\sum_{v\in S} e_v \lambda_v = 1$, où on rappelle que $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ est le degré local relatif. On considère alors les points satisfaisant le système d'inégalités \[\Dv(\p{x}, \OA) \le t_v H(\p{x})^{-\lambda_v \eps} \quad \forall v \in S \pmm{,} \tag{HP} \label{hyp} \] où $0<t_v\le 1$ est une constante présente pour des raisons techniques, que l'on précisera.
+Pour chaque place $v$ de $\cdn$, on définit une distance locale entre les
+points de $\Proj^n(\cdn)$ par :
+\[
+  \Dv(\p{x}, \p{y}) = \frac{\nv{x\wedge y }}{\nv{x}\nv{y}}\pmm{.}
+\]
+On s'intéresse alors aux approximations exceptionnelles de l'origine, \lat{i.
+  e.} aux points $\p{x} \in \A(\cdn)$ satisfaisant $\Dv(\p{x}, \OA) \le
+H(\p{x})^{-\eps}$, où $0<\eps<1$ est fixé.  Plus généralement, on considère un
+ensemble fini $S$ de places de $\cdn$, et une famille de réels positifs
+$(\lambda_v)_{v\in S}$ telle que $\sum_{v\in S} e_v \lambda_v = 1$, où on
+rappelle que $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ est le degré local relatif.
+On considère alors les points satisfaisant le système d'inégalités
+\[
+  \Dv(\p{x}, \OA) \le t_v H(\p{x})^{-\lambda_v \eps} \quad
+  \forall v \in S \pmm{,} \tag{HP} \label{hyp} 
+\]
+où $0<t_v\le 1$ est une constante présente pour des raisons techniques, que
+l'on précisera.
 
-D'après un résultat plus général de \bsc{Faltings}, ces points sont en nombre fini avec $t_v = 1$ (et $S= \{v\}$). On cherche à préciser ce résultat en majorant le nombre de tels points, en fonction du $\eps$ choisi, de la dimension $g$ de $\A$, de son rang $r$ sur $\cdn$, et de paramètres diophantiens liés à $\A$ plongée, que sont la hauteur projective de $\OA$, (le degré $d_\OA$ de son corps de définition?), et pour chaque $v$ de $S$ les constantes locales $c_v(\A) = \nv{\OA}\nv{\BA}$, où $\BA$, qui sera défini précisément plus bas, est obtenu en inversant certaines coordonnées de l'origine. De tels résultats quantitatifs sont usuellement obtenus en combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford}, toutes deux explicites.
+D'après un résultat plus général de \bsc{Faltings}, ces points sont en nombre
+fini avec $t_v = 1$ (et $S= \{v\}$). On cherche à préciser ce résultat en
+majorant le nombre de tels points, en fonction du $\eps$ choisi, de la
+dimension $g$ de $\A$, de son rang $r$ sur $\cdn$, et de paramètres
+diophantiens liés à $\A$ plongée, que sont la hauteur projective de $\OA$, (le
+degré $d_\OA$ de son corps de définition ?), et pour chaque $v$ de $S$ les
+constantes locales $c_v(\A) = \nv{\OA}\nv{\BA}$, où $\BA$, qui sera défini
+précisément plus bas, est obtenu en inversant certaines coordonnées de
+l'origine. De tels résultats quantitatifs sont usuellement obtenus en
+combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford},
+toutes deux explicites.
 
-On prouve ici une inégalité explicite à la \bsc{Mumford} sur ces approximations. Celle-ci s'énonce dans l'espace de \bsc{Mordell-Weil} de $\A(\cdn)$, qui est par définition l'espace $\A(\cdn)\otimes_\Z \R$ muni de la forme quadratique définie positive donnée par la hauteur normalisée de \bsc{Néron-Tate}, notée $\hn$. C'est un espace vectoriel euclidien de dimension le rang de \bsc{Mordell-Weil} $r$ de $\A$ sur $\cdn$. Si $\p{x}$ est un point de $\A(\cdn)$, nous noterons encore $\p{x}$ son image dans l'espace de \bsc{Mordell-Weil}. On rapelle la notation $\dv = 1$ si $v$ est archimédienne, $0$ sinon. On est alors en mesure d'énoncer :
+On prouve ici une inégalité explicite à la \bsc{Mumford} sur ces
+approximations. Celle-ci s'énonce dans l'espace de \bsc{Mordell-Weil} de
+$\A(\cdn)$, qui est par définition l'espace $\A(\cdn)\otimes_\Z \R$ muni de la
+forme quadratique définie positive donnée par la hauteur normalisée de
+\bsc{Néron-Tate}, notée $\hn$. C'est un espace vectoriel euclidien de
+dimension le rang de \bsc{Mordell-Weil} $r$ de $\A$ sur $\cdn$. Si $\p{x}$ est
+un point de $\A(\cdn)$, nous noterons encore $\p{x}$ son image dans l'espace
+de \bsc{Mordell-Weil}. On rapelle la notation $\dv = 1$ si $v$ est
+archimédienne, $0$ sinon. On est alors en mesure d'énoncer :
 
 \begin{thm} \label{mumpt}
-Soient $\p{x}$ et $\p{y}$ deux points de $\A(\cdn)$ satisfaisant (\ref{hyp}), avec $r_v = \av{2}^g(2^g20n(n+1)^2)^{-\dv} c_v(\A)^{-1}$. Posons $B = 4^gh(\OA)+ 3g\log(2)$, et choisissons $\phi > 0$ et $\rho > 0$ tels que $(\rho^2/4) + 2\phi + \rho\phi< \eps$. Supposons :
-\begin{enumerate}
-\item $\cos(\p{x},\p{y}) \ge 1-\phi$, \label{cone}
-\item $\hn(\p{x}) \le \hn(\p{y}) \le (1+\rho)\hn(\p{x})$, \label{sect}
-\item $\hn(\p{x}) > (1+\eps)B/(\eps - (\rho^2/4) - 2\phi - \rho\phi)$, \label{tronk}
-\end{enumerate}
-alors $\p{x} = \p{y}$.
+  Soient $\p{x}$ et $\p{y}$ deux points de $\A(\cdn)$ satisfaisant (\ref{hyp}),
+  avec 
+  \[
+	r_v = \av{2}^g(2^g20n(n+1)^2)^{-\dv} c_v(\A)^{-1} \pmm.
+  \]
+  Posons $B =
+  4^gh(\OA)+ 3g\log(2)$, et choisissons $\phi > 0$ et $\rho > 0$ tels que
+  $(\rho^2/4) + 2\phi + \rho\phi< \eps$. Supposons :
+  \begin{enumerate}
+	\item $\cos(\p{x},\p{y}) \ge 1-\phi$, \label{cone}
+	\item $\hn(\p{x}) \le \hn(\p{y}) \le (1+\rho)\hn(\p{x})$, \label{sect}
+	\item $\hn(\p{x}) > (1+\eps)B/(\eps - (\rho^2/4) - 2\phi - \rho\phi)$,
+	  \label{tronk}
+  \end{enumerate}
+  alors $\p{x} = \p{y}$.
 \end{thm}
 
-Les conditions sur $\p{x}$ et $\p{y}$ ont une interprétation géométrique très simple dans l'espace de \bsc{Mordell-Weil}. En effet (\ref{cone}) demande que les points se trouvent dans un même demi-cône d'angle petit, (\ref{sect}) précise qu'ils doivent se trouver dans un même secteur de petite largeur exponentielle, et (\ref{tronk}) que ce secteur est suffisamment loin de l'origine. Le théorème affirme alors qu'il y a au plus une bonne approximation de l'origine dans un secteur de cône d'angle $\arccos(1-\phi)$, de largeur exponentielle $1+\rho$, et extérieur à une sphère de rayon $(1+\eps)B/(\eps - \rho^2/4 - 2\phi - \rho\phi )$ centrée en l'origine.
+Les conditions sur $\p{x}$ et $\p{y}$ ont une interprétation géométrique très
+simple dans l'espace de \bsc{Mordell-Weil}. En effet (\ref{cone}) demande que
+les points se trouvent dans un même demi-cône d'angle petit, (\ref{sect})
+précise qu'ils doivent se trouver dans un même secteur de petite largeur
+exponentielle, et (\ref{tronk}) que ce secteur est suffisamment loin de
+l'origine. Le théorème affirme alors qu'il y a au plus une bonne approximation
+de l'origine dans un secteur de cône d'angle $\arccos(1-\phi)$, de largeur
+exponentielle $1+\rho$, et extérieur à une sphère de rayon $(1+\eps)B/(\eps -
+\rho^2/4 - 2\phi - \rho\phi )$ centrée en l'origine.
 
-\section{Au travail!}
+\section{Au travail !}
 
-On suppose désormais que $r_v$ est fixé comme dans les hypothèses du théorème. Le point central de la démonstration est le fait suivant : si $\p{x}$ et $\p{y}$ sont suffisament proches $v$-adiquement de $\OA$, alors leur différence aussi. Le lemme principal consistera à rendre cette affirmation quantitative. On aura besoin du lemme technique suivant.
+On suppose désormais que $r_v$ est fixé comme dans les hypothèses du théorème.
+Le point central de la démonstration est le fait suivant : si $\p{x}$ et
+$\p{y}$ sont suffisament proches $v$-adiquement de $\OA$, alors leur
+différence aussi. Le lemme principal consistera à rendre cette affirmation
+quantitative. On aura besoin du lemme technique suivant.
 
 \begin{lem} \label{pv}
-Soit $v$ une place de $k$, on peut choisir $i_v \in \{ 0, \dots, n\}$ de sorte que $\frac{\av{\coa_{i_v}}}{\nv{\coa}} \ge (\frac{1}{\sqrt{n+1}})^\dv $. Soient aussi $\eps_0 < (\frac{1}{\sqrt{n+1}})^\dv$ et $\p{x} \in \A(\cdn)$ satisfaisant $\Dv(\p{x}, \OA) < \eps_0$, on a alors $\frac{\av{x_{i_v}}}{\nv{x}} \ge (\frac{\sqrt{n+1}}{n+2}-\eps_0)^\dv$. \\
-En particulier, si $\eps_0 < (\frac{1}{4\sqrt{n+1}})^\dv$ on a $\frac{\av{x_{i_v}}}{\nv{x}} \ge (\frac{1}{2\sqrt{n+1}})^\dv$ et $x_{i_v}$ est non nul.
+  Soit $v$ une place de $k$, on peut choisir $i_v \in \{ 0, \dots, n\}$ de
+  sorte que $\frac{\av{\coa_{i_v}}}{\nv{\coa}} \ge (\frac{1}{\sqrt{n+1}})^\dv
+  $.  Soient aussi $\eps_0 < (\frac{1}{\sqrt{n+1}})^\dv$ et $\p{x} \in
+  \A(\cdn)$ satisfaisant $\Dv(\p{x}, \OA) < \eps_0$, on a alors
+  $\frac{\av{x_{i_v}}}{\nv{x}} \ge (\frac{\sqrt{n+1}}{n+2}-\eps_0)^\dv$. \\ En
+  particulier, si $\eps_0 < (\frac{1}{4\sqrt{n+1}})^\dv$ on a
+  $\frac{\av{x_{i_v}}}{\nv{x}} \ge (\frac{1}{2\sqrt{n+1}})^\dv$ et $x_{i_v}$
+  est non nul.
 \end{lem}
 
 \begin{proof}
-Pour le premier point, il suffit de choisir $i_v \in \{ 0, \dots, n\}$ maximisant $\av{\coa_i}$. Afin d'alléger les notations, on supposera par la suite $i_v = 0$. Pour chaque $z = (z_0, \dots, z_n)$ on notera $\hat{z} = (z_1, \dots, z_n)$ le vecteur obtenu en omettant la première coordonnée. On a alors, vu l'hypothèse sur $\p{x}$ et la définition de la distance :
-\[ \eps_0 \nv{x}\nv{\coa}  \ge \nv{x \wedge \coa} \ge \nvp{\coa_0 \hat{x} - x_0 \hat{\coa}} \pmm{,} \label{pva} \tag{1}\]
-où la deuxième inégalité vient en remarquant que toutes les coordonnées de $\coa_0 \hat{x} - x_0 \hat{\coa}$ apparaissent également comme coordonnées de $x \wedge \coa$.
+  Pour le premier point, il suffit de choisir $i_v \in \{ 0, \dots, n\}$
+  maximisant $\av{\coa_i}$. Afin d'alléger les notations, on supposera par la
+  suite $i_v = 0$. Pour chaque $z = (z_0, \dots, z_n)$ on notera $\hat{z} =
+  (z_1, \dots, z_n)$ le vecteur obtenu en omettant la première coordonnée. On
+  a alors, vu l'hypothèse sur $\p{x}$ et la définition de la distance :
+  \begin{equation}
+	\eps_0 \nv{x}\nv{\coa}  \ge \nv{x \wedge \coa} \ge \nvp{\coa_0 \hat{x} -
+	  x_0 \hat{\coa}} \pmm{,} \label{pva}
+  \end{equation}
+  où la deuxième inégalité vient en remarquant que toutes les coordonnées de
+  $\coa_0 \hat{x} - x_0 \hat{\coa}$ apparaissent également comme coordonnées
+  de $x \wedge \coa$.
 
-On traite d'abord le cas ultramétrique, par l'absurde. En effet, si on avait $\av{x_0}< \nv{\hat{x}} = \nv{x}$, il viendrait $\nvp{\coa_0 \hat{x}} > \nvp{x_0 \hat{\coa}}$ et la propriété ultramétrique appliquée au dernier membre de (\ref{pva}) donnerait $\eps_0 \nv{x}\nv{\coa}  \ge \av{\coa_0}\nvp{\hat{x}}$, puis $\eps_0 \ge 1$ contrairement aux hypothèses.
+  On traite d'abord le cas ultramétrique, par l'absurde. En effet, si on avait
+  $\av{x_0}< \nv{\hat{x}} = \nv{x}$, il viendrait $\nvp{\coa_0 \hat{x}} >
+  \nvp{x_0 \hat{\coa}}$ et la propriété ultramétrique appliquée au dernier
+  membre de (\ref{pva}) donnerait $\eps_0 \nv{x}\nv{\coa}  \ge
+  \av{\coa_0}\nvp{\hat{x}}$, puis $\eps_0 \ge 1$ contrairement aux hypothèses.
 
-Pour le cas archimédien, l'inégalité triangulaire dans (\ref{pva}) montre que $\eps_0 \nv{x}\nv{\coa}  \ge \av{\coa_0}\nvp{\hat{x}} - \av{x_0}\nvp{\hat{\coa}} $. En regroupant les termes et en divisant par $\nv{x}\nv{\coa}$, puis en remarquant que $\nvp{\hat{\coa}}/\nvp{\coa} \le 1$ il vient successivement :
-\begin{align}
-\frac{\nvp{\hat{\coa}}}{\nvp{\coa}} \cdot \frac{\av{x_0}}{\nv{x}}
-	& \ge \frac{\nv{\hat{x}}}{\nv{x}}\cdot \frac{\av{\coa_0}}{\nv{\coa}} - \eps_0 \pmm{,} \notag \\
-\frac{\av{x_0}}{\nv{x}} & \ge \frac{\nv{\hat{x}}}{\nv{x}}\cdot\frac{1}{\sqrt{n+1}} - \eps_0 \pmm{.} \label{contrainte}
-\end{align}
-Notons $t = \av{x_0}/\nv{x} \in [0; 1]$; comme $\nv{x}^2 = \av{x_0}^2 + \nv{\hat{x}}^2$, on réécrit (\ref{contrainte}) sous la forme $t \ge \sqrt{\frac{1-t^2}{n+1}}-\eps_0$, ou encore :
-\[ \left(\frac{n+2}{n+1}\right)t^2 + 2t\eps_0 + \eps_0^2 - \frac{1}{n+1} \ge 0 \pmm{,}\]
-qui, compte tenu de l'hypothèse sur $\eps_0$ et de la positivité de $t$, implique :
-\begin{align*}
-t & \ge \frac{n+1}{n+2}\sqrt{\frac{-\eps_0^2}{n+1}+\frac{n+2}{(n+1)^2}} - \left(\frac{n+1}{n+2}\right)\eps_0\\
-& \ge \frac{\sqrt{n+1}}{n+2} - \eps_0 \pmm{,}
-\end{align*}
-comme annoncé. Le cas particulier s'en déduit immédiatement en substituant et en observant que $n \ge 2$.
+  Pour le cas archimédien, l'inégalité triangulaire dans (\ref{pva}) donne
+  $\eps_0 \nv{x}\nv{\coa}  \ge \av{\coa_0}\nvp{\hat{x}} -
+  \av{x_0}\nvp{\hat{\coa}} $. En regroupant les termes et en divisant par
+  $\nv{x}\nv{\coa}$, puis en remarquant que $\nvp{\hat{\coa}}/\nvp{\coa} \le
+  1$ il vient successivement :
+  \begin{align}
+	\frac{\nvp{\hat{\coa}}}{\nvp{\coa}} \cdot \frac{\av{x_0}}{\nv{x}}
+	& \ge \frac{\nv{\hat{x}}}{\nv{x}}\cdot \frac{\av{\coa_0}}{\nv{\coa}} -
+	\eps_0 \pmm{,} \notag \\
+	\frac{\av{x_0}}{\nv{x}} & \ge
+	\frac{\nv{\hat{x}}}{\nv{x}}\cdot\frac{1}{\sqrt{n+1}} - \eps_0 \pmm{.}
+	\label{contrainte}
+  \end{align}
+  Notons $t = \av{x_0}/\nv{x} \in [0; 1]$ ; comme $\nv{x}^2 = \av{x_0}^2 +
+  \nv{\hat{x}}^2$, on réécrit (\ref{contrainte}) sous la forme $t \ge
+  \sqrt{\frac{1-t^2}{n+1}}-\eps_0$, ou encore :
+  \[
+	\left(\frac{n+2}{n+1}\right)t^2 + 2t\eps_0 + \eps_0^2 - \frac{1}{n+1} \ge
+	0 \pmm{,}
+  \]
+  qui, compte tenu de l'hypothèse sur $\eps_0$ et de la positivité de $t$,
+  implique :
+  \begin{align*}
+	t & \ge \frac{n+1}{n+2}\sqrt{\frac{-\eps_0^2}{n+1}+\frac{n+2}{(n+1)^2}} -
+	\left(\frac{n+1}{n+2}\right)\eps_0\\
+	& \ge \frac{\sqrt{n+1}}{n+2} - \eps_0 \pmm{,}
+  \end{align*}
+  comme annoncé. Le cas particulier s'en déduit immédiatement en substituant
+  et en observant que $n \ge 2$.
 \end{proof}
 
-On va maintenant s'attacher à contrôler la variation de distance quand on prend la différence de deux points proches de l'origine. D'après la proposition 3.7 de [Da-Phi], il existe des familles de formes bihomogènes de degrés $(2, 2)$ représentant le morphisme de différence $\A\times\A \to \A$ dans le plongement choisi en tout point où elles sont définies, c'est-à-dire non identiquement nulles. De plus, pour chaque couple $(x, y)$, il existe une famille de telles formes ne s'y annulant pas identiquement. On peut en particulier choisir une famille de formes représentant la différence dans un voisinage de \bsc{Zariski} de $(\OA, \OA)$. Un tel voisinage contient certainement un produit de boules $v$-adiques de rayon non nul centrées en l'origine. Le lemme suivant donne une valeur admissible pour le rayon.
+On va maintenant s'attacher à contrôler la variation de distance quand on
+prend la différence de deux points proches de l'origine. D'après la
+proposition 3.7 de [Da-Phi], il existe des familles de formes bihomogènes de
+degrés $(2, 2)$ représentant le morphisme de différence $\A\times\A \to \A$
+dans le plongement choisi en tout point où elles sont définies, c'est-à-dire
+non identiquement nulles. De plus, pour chaque couple $(x, y)$, il existe une
+famille de telles formes ne s'y annulant pas identiquement. On peut en
+particulier choisir une famille de formes représentant la différence dans un
+voisinage de \bsc{Zariski} de $(\OA, \OA)$. Un tel voisinage contient
+certainement un produit de boules $v$-adiques de rayon non nul centrées en
+l'origine. Le lemme suivant donne une valeur admissible pour le rayon.
 
 \begin{lem} \label{rayonRel}
-Soient $v$ une place de $\cdn$ et $D$ une famille de formes représentant la différence dans un voisinage de \bsc{Zariski} de $(\OA, \OA)$. On pose $c_v(D) = \nv{D(\coa, \coa)}/(\nnv{D}\nv{\coa}^4)$ et $r_v(D) = c_v(D)/(20n\sqrt{n+1})^\dv$. La famille $D$ représente alors la différence sur tout $(B_v(\OA, r_v(D)))^2 \subset \A^2$.
+  Soient $v$ une place de $\cdn$ et $D$ une famille de formes représentant la
+  différence dans un voisinage de \bsc{Zariski} de $(\OA, \OA)$. On pose
+  $c_v(D) = \nv{D(\coa, \coa)}/(\nnv{D}\nv{\coa}^4)$ et $r_v(D) =
+  c_v(D)/(20n\sqrt{n+1})^\dv$. La famille $D$ représente alors la différence
+  sur tout $(B_v(\OA, r_v(D)))^2 \subset \A^2$.
 \end{lem}
 
 \begin{proof}
-Après avoir fixé $v$, on choisit $i_v$ donné par la première partie du lemme \ref{pv}, et comme on travaille à $v$ fixé on supposera encore $i_v = 0$ pour alléger les notations. On choisit de plus $\p{x}$ et $\p{y}$ dans $(B_v(\OA, r_v(D)))^2$; on peut ainsi écrire $\max(\Dv(\p x, \OA), \Dv(\p y, \OA)) \le r_v(D)\cdot\eps_{1, v}$ pour un certain $0 < \eps_{1, v} < 1$. Ces points vérifient \lat{a fortiori} les hypothèses du lemme \ref{pv}; en particulier $\coa_0$, $x_0$, $y_0$ sont tous non nuls et on peut écrire comme suit le développement de \bsc{Taylor} bihomogène de $D$ au voisinage de $(\coa, \coa)$ :
-\[ D(x, y) = \frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa) + \sum_E R_{i, j} \pmm{, où :} \]
-\[
-R_{i, j} = \frac{x_0^{2-\lgr{i}}y_0^{2-\lgr{j}}}{\coa_0^{4-\lgr{i}-\lgr{j}}}\cdot \frac{1}{i!j!} \cdot
-\frac{\partial^{\lgr{i}+\lgr{j}}D}{\partial X^i \partial Y^j}(\coa, \coa) \cdot
-\prod_{k=1}^n \left( x_{k} - \frac{x_0}{\coa_0} \coa_{k} \right)^{i_k} \cdot \prod_{k=1}^n \left( y_{k} - \frac{y_0}{\coa_0} \coa_{k} \right)^{j_k}
-\]
-et la somme est prise sur :
-\[E = \left\{ (i, j) \in (\{0\} \times \N^n)^2 \text{ tels que } \lgr{i},\lgr{j} \le 2 \text{ et } \lgr{i}+\lgr{j} \neq 0 \right\} \pmm{.} \]
+  Après avoir fixé $v$, on choisit $i_v$ donné par la première partie du lemme
+  \ref{pv}, et comme on travaille à $v$ fixé on supposera encore $i_v = 0$
+  pour alléger les notations. On choisit de plus $\p{x}$ et $\p{y}$ dans
+  $(B_v(\OA, r_v(D)))^2$ ; on peut ainsi écrire $\max(\Dv(\p x, \OA), \Dv(\p
+  y, \OA)) \le r_v(D)\cdot\eps_{1, v}$ pour un certain $0 < \eps_{1, v} < 1$.
+  Ces points vérifient \lat{a fortiori} les hypothèses du lemme \ref{pv} ; en
+  particulier $\coa_0$, $x_0$, $y_0$ sont tous non nuls et on peut écrire
+  comme suit le développement de \bsc{Taylor} bihomogène de $D$ au voisinage
+  de $(\coa, \coa)$ :
+  \[
+	D(x, y) = \frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa) + \sum_E R_{i, j}
+	\pmm{, où :}
+  \]
+  \[
+	R_{i, j} =
+	\frac{x_0^{2-\lgr{i}}y_0^{2-\lgr{j}}}{\coa_0^{4-\lgr{i}-\lgr{j}}}\cdot
+	\frac{1}{i!j!} \cdot
+	\frac{\partial^{\lgr{i}+\lgr{j}}D}{\partial X^i \partial Y^j}(\coa, \coa)
+	\cdot
+	\prod_{k=1}^n \left( x_{k} - \frac{x_0}{\coa_0} \coa_{k} \right)^{i_k}
+	\cdot \prod_{k=1}^n \left( y_{k} - \frac{y_0}{\coa_0} \coa_{k}
+	\right)^{j_k}
+  \]
+  et la somme est prise sur :
+  \[
+	E = \left\{ (i, j) \in (\{0\} \times \N^n)^2 \text{ tels que }
+	  \lgr{i},\lgr{j} \le 2 \text{ et } \lgr{i}+\lgr{j} \neq 0 \right\}
+	\pmm{.}
+  \]
 
-On majore $\nv{x_k - \frac{x_0}{\coa_0} \coa_k}$ par $\nv{x \wedge \coa}/\av{\coa_0}$, qui, vu l'hypothèse sur $\p{x}$, est lui-même majoré par $r_v(D)\cdot\eps_{1, v} \nv{x} (\nv{\coa}/\av{\coa_0})$; on procède de même pour les facteurs en $y$.
+  On majore $\nv{x_k - \frac{x_0}{\coa_0} \coa_k}$ par $\nv{x \wedge
+	\coa}/\av{\coa_0}$, qui, vu l'hypothèse sur $\p{x}$, est lui-même majoré
+  par $r_v(D)\cdot\eps_{1, v} \nv{x} (\nv{\coa}/\av{\coa_0})$ ; on procède de
+  même pour les facteurs en $y$.
 
-On note $a = \lgr{i}$, $b=\lgr{j}$; chaque $\nv{R_{i, j}}$ est alors majoré comme suit :
-\begin{align*}
-\nv{R_{i, j}} & \le
-\nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}
-\frac{(c(a)c(b))^\dv \nnv{D}\nv{\coa}^4}{\nv{D(\coa, \coa)}}
-\frac{\nv{x}^a}{\av{x_0}^a} \frac{\nv{y}^b}{\av{y_0}^b} (r_v(D)\eps_{1, v})^{a+b}\\
-& \le \left( \frac{c(a)c(b)}{\left( 10n \right)^{a+b}} \right)^\dv \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)} \eps_{1, v} \pmm{,}
-\end{align*}
-où $c(u)$ vaut $1$ si $u=0$, $2$ si $u=1$, $\sqrt{2}$ si $u=2$, de sorte que
-\[ \frac{1}{i!j!}\nnv{\frac{\partial^{a+b}D}{\partial X^i \partial Y^j}} \le (c(a) c(b))^\dv \nnv{D}\pmm{,} \]
-comme on s'en convainc en le vérifiant sur chaque type de monôme intervenant dans $D$.
+  On note $a = \lgr{i}$, $b=\lgr{j}$ ; chaque $\nv{R_{i, j}}$ est alors majoré
+  comme suit :
+  \begin{align*}
+	\nv{R_{i, j}} & \le
+	\nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}
+	\frac{(c(a)c(b))^\dv \nnv{D}\nv{\coa}^4}{\nv{D(\coa, \coa)}}
+	\frac{\nv{x}^a}{\av{x_0}^a} \frac{\nv{y}^b}{\av{y_0}^b} (r_v(D)\eps_{1,
+	  v})^{a+b}\\
+	& \le \left( \frac{c(a)c(b)}{\left( 10n \right)^{a+b}} \right)^\dv
+	\nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)} \eps_{1, v} \pmm{,}
+  \end{align*}
+  où $c(u)$ vaut $1$ si $u=0$, $2$ si $u=1$, $\sqrt{2}$ si $u=2$, de sorte que
+  \[
+	\frac{1}{i!j!}\nnv{\frac{\partial^{a+b}D}{\partial X^i \partial Y^j}} \le
+	(c(a) c(b))^\dv \nnv{D}\pmm{,}
+  \]
+  comme on s'en convainc en le vérifiant sur chaque type de monôme intervenant
+  dans $D$.
 
-Aux places finies, chaque $R_{i, j}$ est ainsi strictement plus petit en norme que $\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)$, et $\nv{D(x, y)} = \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}$ par la propriété ultramétrique. Aux places infinies, l'inégalité triangulaire donne $\nv{D(x, y)} \ge (1-\sum_E R'_{i, j}) \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}$, où l'on a posé $R'_{i, j} = \frac{c(a)c(b)}{ \left( 10n \right)^{a+b}}$. Il s'agit alors de majorer la somme des $R'_{i, j}$. Pour celà on remarque que, dans chaque sous-ensemble de $E$ où $a$ et $b$ sont fixés, $R'_{i, j}$ est constant. En comptant maintenant le nombre de termes intervenant dans chacune de ces sommes partielles, il vient $\sum_E R'_{i, j} \le 1/2$, et finalement $\nv{D(x, y)} \ge \frac{1}{2} \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}$. En particulier, $D(x, y)$ n'est pas identiquement nulle et $D$ représente bien la différence au voisinage de $(\p{x}, \p{y})$.
+  Aux places finies, chaque $R_{i, j}$ est ainsi strictement plus petit en
+  norme que $\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)$, et $\nv{D(x, y)} =
+  \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}$ par la propriété
+  ultramétrique.  Aux places infinies, $\nv{D(x, y)} \ge (1-\sum_E R'_{i, j})
+  \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}$, où l'on a posé $R'_{i, j} =
+  \frac{c(a)c(b)}{ \left( 10n \right)^{a+b}}$. Il s'agit alors de majorer la
+  somme des $R'_{i, j}$. Pour celà on remarque que, dans chaque sous-ensemble
+  de $E$ où $a$ et $b$ sont fixés, $R'_{i, j}$ est constant. En comptant
+  maintenant le nombre de termes intervenant dans chacune de ces sommes
+  partielles, il vient $\sum_E R'_{i, j} \le 1/2$, et finalement $\nv{D(x, y)}
+  \ge \frac{1}{2} \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}$. En
+  particulier, $D(x, y)$ n'est pas identiquement nulle et $D$ représente bien
+  la différence au voisinage de $(\p{x}, \p{y})$.
 \end{proof}
 
-On remarque que la valeur annoncée pour le rayon aux places archimédiennes n'est pas optimale; on pouvait prendre $r_v(D) = c_v(D)/(11n\sqrt{n+1})$ sans plus de peine. L'intérêt de la valeur choisie est de pouvoir réutiliser tels quels les calculs ci-dessus dans le lemme suivant, qui énonce quantitativement ce que l'on perd en précision d'approximation de l'origine en prenant une différence.
+On remarque que la valeur annoncée pour le rayon aux places archimédiennes
+n'est pas optimale ; on pouvait prendre $r_v(D) = c_v(D)/(11n\sqrt{n+1})$ sans
+plus de peine. L'intérêt de la valeur choisie est de pouvoir réutiliser tels
+quels les calculs ci-dessus dans le lemme suivant, qui énonce quantitativement
+ce que l'on perd en précision d'approximation de l'origine en prenant une
+différence.
 
 \begin{lem} \label{DistRel}
-On reprend les notations du lemme précédent; on fixe de plus $0 < \eps_{1, v} < 1$. Pour tous points $\p{x}$ et $\p{y}$ de $\A(\cdn)$ satisfaisant
-\[ \max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v(D) \cdot \eps_{1,v} \pmm{,} \]
-on a : $\Dv(\p{x}-\p{y}, \OA) \le \eps_{1,v}$.
+  On reprend les notations du lemme précédent ; on fixe de plus $0 < \eps_{1,
+	v} < 1$. Pour tous points $\p{x}$ et $\p{y}$ de $\A(\cdn)$ satisfaisant
+  \[
+	\max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v(D) \cdot \eps_{1,v} \pmm{,}
+  \]
+  on a : $\Dv(\p{x}-\p{y}, \OA) \le \eps_{1,v}$.
 \end{lem}
 
 
 \begin{proof}
-Le lemme précédent s'applique, et nous assure que la distance de $\p{x}-\p{y}$ à l'origine  est donnée par :
-\begin{align*}
-\Dv(\p{x}-\p{y}, \OA) & = \frac{\nv{D(x, y) \wedge \coa}}{\nv{D(x, y)}\nv{\coa}} \\
-& \le \av{\frac{x_0^2y_0^2}{\coa_0^4}}\frac{\nv{D(\coa, \coa)\wedge \coa}}{\nv{D(x, y)}\nv{\coa}} + \frac{\nv{\sum_E (R_{i, j} \wedge \coa)}}{\nv{D(x, y)}\nv{\coa}} \pmm{.}
-\end{align*}
-Le premier terme est nul car $D(\coa, \coa)$ et $\coa$ étant deux systèmes de coordonnées de l'origine sont colinéaires et ont un produit extérieur nul. On majore ensuite brutalement chaque $\nv{R_{i, j} \wedge \coa}$ par $\nv{R_{i, j}} \cdot \nv{\coa}$. Vu la minoration précédente de $\nv{D(x, y)}$ et après simplification, la norme de chaque terme de la somme restante est majorée par $(2R'_{i, j})^\dv \eps_{1, v}$. La propriété ultramétrique aux places finies, resp. la majoration ci-dessus de $\sum_E R'_{i, j}$ aux places infines, permettent alors de conclure.
+  Le lemme précédent s'applique, et nous assure que la distance de
+  $\p{x}-\p{y}$ à l'origine  est donnée par :
+  \begin{align*}
+	\Dv(\p{x}-\p{y}, \OA) & = \frac{\nv{D(x, y) \wedge \coa}}{\nv{D(x,
+		y)}\nv{\coa}} \\
+	& \le \av{\frac{x_0^2y_0^2}{\coa_0^4}}\frac{\nv{D(\coa, \coa)\wedge
+		\coa}}{\nv{D(x, y)}\nv{\coa}} + \frac{\nv{\sum_E (R_{i, j} \wedge
+		\coa)}}{\nv{D(x, y)}\nv{\coa}} \pmm{.}
+  \end{align*}
+  Le premier terme est nul car $D(\coa, \coa)$ et $\coa$ étant deux systèmes
+  de coordonnées de l'origine sont colinéaires et ont un produit extérieur
+  nul. On majore ensuite brutalement chaque $\nv{R_{i, j} \wedge \coa}$ par
+  $\nv{R_{i, j}} \cdot \nv{\coa}$. Vu la minoration précédente de $\nv{D(x,
+	y)}$ et après simplification, la norme de chaque terme de la somme
+  restante est majorée par $(2R'_{i, j})^\dv \eps_{1, v}$. La propriété
+  ultramétrique aux places finies, resp. la majoration ci-dessus de $\sum_E
+  R'_{i, j}$ aux places infines, permettent alors de conclure.
 \end{proof}
 
-Le défaut des deux énoncés précédents est que les constantes $c_v(D)$, donc $r_v(D)$ dépendent \lat{a priori} du choix de $D$. On aimerait donc choisir une famille $D$ pour laquelle on puisse contrôler $c_v(D)$ en fontion de paramètres plus intrinsèques. Le candidat naturel est la constante locale $c_v(\A)$, que nous allons maintenant définir précisément. D'après le lemme 3.5 de [Da-Phi], il existe dans chaque classe de $K_2 \times \widehat{K_2(4)} \mod 2K_2 \times \widehat{K_2(4)}^2$ au moins un indice $(a, l)$ tel que $\coa_{(a,l)} \neq 0$. On note $\mathcal{Z}_\BA$ un système complet de représentants vérifiant cette condition, et on pose $\BA = (\coa_{(a, l)}^{-1})_{(a, l) \in \mathcal{Z}_\BA}$. La constante $c_v(\A) = \nv{\OA}\nv{\BA} \ge 1$ est alors bien définie; c'est l'équivalent local de $h(\OA)$. Le lemme suivant affirme qu'un bon choix de $D$ est possible et précise la constante de comparaison.
+Le défaut des deux énoncés précédents est que les constantes $c_v(D)$, donc
+$r_v(D)$ dépendent \lat{a priori} du choix de $D$. On aimerait donc choisir
+une famille $D$ pour laquelle on puisse contrôler $c_v(D)$ en fontion de
+paramètres plus intrinsèques. Le candidat naturel est la constante locale
+$c_v(\A)$, que nous allons maintenant définir précisément. D'après le lemme
+3.5 de [Da-Phi], il existe dans chaque classe de $K_2 \times \widehat{K_2(4)}
+\mod 2K_2 \times \widehat{K_2(4)}^2$ au moins un indice $(a, l)$ tel que
+$\coa_{(a,l)} \neq 0$. On note $\mathcal{Z}_\BA$ un système complet de
+représentants vérifiant cette condition, et on pose $\BA = (\coa_{(a,
+  l)}^{-1})_{(a, l) \in \mathcal{Z}_\BA}$. La constante $c_v(\A) =
+\nv{\OA}\nv{\BA} \ge 1$ est alors bien définie ; c'est l'équivalent local de
+$h(\OA)$. Le lemme suivant affirme qu'un bon choix de $D$ est possible et
+précise la constante de comparaison.
 
 \begin{lem} \label{RayonAbs}
-Pour toute place $v$ de $\cdn$, il existe une famille $D$ de formes multihomogènes de degré $(2, 2)$ représentant la différence dans un voisinage de $(\OA, \OA)$, et telle que $c_v(D) \ge \nv{2}^g(2^g(n+1)^{3/2})^{-\dv} c_v(\A)^{-1}$.
+  Pour toute place $v$ de $\cdn$, il existe une famille $D$ de formes
+  multihomogènes de degré $(2, 2)$ représentant la différence dans un
+  voisinage de $(\OA, \OA)$, et telle que $c_v(D) \ge
+  \nv{2}^g(2^g(n+1)^{3/2})^{-\dv} c_v(\A)^{-1}$.
 \end{lem}
 
-Avant de démontrer le lemme, il convient de rappeler quelques faits concernant le plongement utilisé. On a dit que les coordonnées étaient naturellement indexées par $\mathcal{Z}_2 \times \widehat{K_2(4)}$, où $\mathcal{Z}_2$ est un système complet de représentants des classes de $K_2$ modulo $K_2(4)$. Il est parfois plus commode d'utiliser un système étendu de coordonnées, indexées par tout $K_2 \times \widehat{K_2(4)}$, comme définies dans [Da-Phi] p. 651; nous noterons $\tilde{\Theta}$ le plongement correspondant, $\tilde{\coa}$ des coordonnées de l'origine dans ce plongement, et ainsi de suite. Le passage de $\tilde{\Theta}$ à $\Theta$ consiste en une simple projection linéaire; le sens contraire est donné par le point (iv) du fait 3.3 de \lat{loc. cit.} : il nous suffira de savoir que les coordonnées manquantes s'obtiennent en multipliant les anciennes par des racines quatrièmes de l'unité.
+Avant de démontrer le lemme, il convient de rappeler quelques faits concernant
+le plongement utilisé. On a dit que les coordonnées étaient naturellement
+indexées par $\mathcal{Z}_2 \times \widehat{K_2(4)}$, où $\mathcal{Z}_2$ est
+un système complet de représentants des classes de $K_2$ modulo $K_2(4)$. Il
+est parfois plus commode d'utiliser un système étendu de coordonnées, indexées
+par tout $K_2 \times \widehat{K_2(4)}$, comme définies dans [Da-Phi] p. 651 ;
+nous noterons $\tilde{\Theta}$ le plongement correspondant, $\tilde{\coa}$ des
+coordonnées de l'origine dans ce plongement, et ainsi de suite. Le passage de
+$\tilde{\Theta}$ à $\Theta$ consiste en une simple projection linéaire ; le
+sens contraire est donné par le point (iv) du fait 3.3 de \lat{loc. cit.} : il
+nous suffira de savoir que les coordonnées manquantes s'obtiennent en
+multipliant les anciennes par des racines quatrièmes de l'unité.
 
 \begin{proof}
-Après avoir fixé la place $v$, on choisit comme au lemme \ref{pv} un indice $i_v$, correspondant à $(a, l) \in \mathcal{Z}_2 \times \widehat{K_2(4)}$ et maximisant $\av{\coa_i}$. On définit alors une famille de formes $\tilde{D}$ en posant, pour tout $(b, k)$ de $K_2 \times \widehat{K_2(4)}$ :
-\begin{multline*}
-\tilde{D}_{(b, k)}(\tilde{X}, \tilde{Y}) = \tilde{\coa}_{(b, k)}^{-1} 
-\sum_{\stackrel{d \in K(4)/K(2)}{u \in \widehat{K(2)}}} l(d) \tilde{X}_{(\frac{c_1+d}{2}, l_1\cdot2\star u)}
-\tilde{X}_{(\frac{c_2+d}{2}, l_2\cdot2\star u)} \\\times \tilde{Y}_{(\frac{c_3+d}{2}, l_3\cdot2\star u)} \tilde{Y}_{(\frac{c_4+d}{2}, l_4\cdot2\star u)} \pmm{,}
-\end{multline*}
-où les différents indices $(a', l')$, $(b', k')$, $c_i$, $l_i$, sont définis comme indiqué dans la proposition 3.7 de [Da-Phi]. On peut de plus choisir ici $(a', l')= (a, l)$, vu que $\coa_{(a, l)}$ est déjà non nul par hypothèse, et exiger $(b', k') \in \mathcal{Z}_\BA$. La proposition citée affirme alors que la famille $\tilde{D}$ représente le morphisme de différence $(\tilde\Theta(\A))^2 \to \tilde\Theta(\A)$ et qu'en $(\tilde\coa, \tilde\coa)$ on a plus précisément l'égalité vectorielle $\tilde{D}(\tilde\coa, \tilde\coa) = \left( 2^g (\tilde\coa_{(a, l)})^2\right) \tilde\coa$. On savait bien sûr que ces deux vecteurs étaient colinéaires, le point est qu'on connait explicitement le coefficient qui les relie.
+  Après avoir fixé la place $v$, on choisit comme au lemme \ref{pv} un indice
+  $i_v$, correspondant à $(a, l) \in \mathcal{Z}_2 \times \widehat{K_2(4)}$ et
+  maximisant $\av{\coa_i}$. On définit alors une famille de formes $\tilde{D}$
+  en posant, pour tout $(b, k)$ de $K_2 \times \widehat{K_2(4)}$ :
+  \begin{multline*}
+	\tilde{D}_{(b, k)}(\tilde{X}, \tilde{Y}) = \tilde{\coa}_{(b, k)}^{-1} 
+	\sum_{\stackrel{d \in K(4)/K(2)}{u \in \widehat{K(2)}}} l(d)
+	\tilde{X}_{(\frac{c_1+d}{2}, l_1\cdot2\star u)}
+	\tilde{X}_{(\frac{c_2+d}{2}, l_2\cdot2\star u)} \\\times
+	\tilde{Y}_{(\frac{c_3+d}{2}, l_3\cdot2\star u)}
+	\tilde{Y}_{(\frac{c_4+d}{2}, l_4\cdot2\star u)} \pmm{,}
+  \end{multline*}
+  où les différents indices $(a', l')$, $(b', k')$, $c_i$, $l_i$, sont définis
+  comme indiqué dans la proposition 3.7 de [Da-Phi]. On peut de plus choisir
+  ici $(a', l')= (a, l)$, vu que $\coa_{(a, l)}$ est déjà non nul par
+  hypothèse, et exiger $(b', k') \in \mathcal{Z}_\BA$. La proposition citée
+  affirme alors que la famille $\tilde{D}$ représente le morphisme de
+  différence $(\tilde\Theta(\A))^2 \to \tilde\Theta(\A)$ et qu'en
+  $(\tilde\coa, \tilde\coa)$ on a plus précisément l'égalité vectorielle
+  $\tilde{D}(\tilde\coa, \tilde\coa) = \left( 2^g (\tilde\coa_{(a,
+	l)})^2\right) \tilde\coa$. On savait bien sûr que ces deux vecteurs
+  étaient colinéaires, le point est qu'on connait explicitement le coefficient
+  qui les relie.
 
-On redescend de $\tilde\Theta$ au plongement $\Theta$ comme évoqué dans la discussion précédente. On déduit ainsi de $\tilde D$ une famille $D$ de formes bihomogènes de degré $(2, 2)$ représentant la différence au voisinage de $(\OA, \OA)$ dans le plongement $\Theta$, satisfaisant $D(\coa, \coa) = 2^g \coa_{i_v}^2 \cdot \coa$, et de la forme $D_i(X, Y)= \coa_{j(i)} \sum \zeta_{k,l,m,n} X_kX_lY_mY_n$, où $\zeta_{k,l,m,n}$ est une racine de l'unité et la somme est prise sur une famille\footnote{Rien ne permet \lat{a priori} d'affirmer qu'il s'agit d'un sous-ensemble, certains indices pouvant être répétés.} à $4^g$ éléments de $\{0, \dots, n\}^4$. Sans avoir besoin d'expliciter davantage, un calcul direct donne $\nv D \le 2^{g\dv} \nv\BA$ puis $\nnv{D} \le (2^g\sqrt{n+1})^\dv \nv\BA$. Comme on a de plus $\nv{D(\coa, \coa)} \ge \av{2}^g(n+1)^{-\dv}\nv\coa^3$, il vient finalement $c_v(D) \ge \av2^g (2^g(n+1)^{3/2})^{-\dv} c_v(\A)^{-1}$ et le lemme.
+  On redescend de $\tilde\Theta$ au plongement $\Theta$ comme évoqué dans la
+  discussion précédente. On déduit ainsi de $\tilde D$ une famille $D$ de
+  formes bihomogènes de degré $(2, 2)$ représentant la différence au voisinage
+  de $(\OA, \OA)$ dans le plongement $\Theta$, satisfaisant $D(\coa, \coa) =
+  2^g \coa_{i_v}^2 \cdot \coa$, et de la forme $D_i(X, Y)= \coa_{j(i)} \sum
+  \zeta_{k,l,m,n} X_kX_lY_mY_n$, où $\zeta_{k,l,m,n}$ est une racine de
+  l'unité et la somme est prise sur une famille\footnote{Rien ne permet \lat{a
+	  priori} d'affirmer qu'il s'agit d'un sous-ensemble, certains indices
+	pouvant être répétés.} à $4^g$ éléments de $\{0, \dots, n\}^4$. Sans avoir
+  besoin d'expliciter davantage, un calcul direct donne $\nv D \le 2^{g\dv}
+  \nv\BA$ puis $\nnv{D} \le (2^g\sqrt{n+1})^\dv \nv\BA$. Comme on a de plus
+  $\nv{D(\coa, \coa)} \ge \av{2}^g(n+1)^{-\dv}\nv\coa^3$, il vient finalement
+  $c_v(D) \ge \av2^g (2^g(n+1)^{3/2})^{-\dv} c_v(\A)^{-1}$ et le lemme.
 \end{proof}
 
-Mettant bout à bout les résultats des lemmes \ref{DistRel} et \ref{RayonAbs}, on a ainsi montré le lemme principal, qui s'énonce comme suit.
+Mettant bout à bout les résultats des lemmes \ref{DistRel} et \ref{RayonAbs},
+on a ainsi montré le lemme principal, qui s'énonce comme suit.
 
 \begin{lem} \label{clef}
-Soient $0 < \eps_{1,v} < 1$ et $r_v = \av 2^g (2^g20n(n+1)^2)^{-\dv}c_v(\A)^{-1}$. Pour tous $\p x$ et $\p y$ de $\A(\cdn)$ satisfaisant 
-\[ \max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v \cdot \eps_{1,v} \pmm{,} \]
-on a : $\Dv(\p{x}-\p{y}, \OA) \le \eps_{1,v}$.
+  Soient $0 < \eps_{1,v} < 1$ et $r_v = \av 2^g
+  (2^g20n(n+1)^2)^{-\dv}c_v(\A)^{-1}$. Pour tous $\p x$ et $\p y$ de
+  $\A(\cdn)$ satisfaisant 
+  \[
+	\max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v \cdot \eps_{1,v} \pmm{,}
+  \]
+  on a : $\Dv(\p{x}-\p{y}, \OA) \le \eps_{1,v}$.
 \end{lem}
 
-On est maintenant en mesure de prouver le théorème \ref{mumpt}. On procède par l'absurde en supposant que $\p{z} = \p{x} - \p{y}$ est différent de $\OA$, on en déduit alors grâce au lemme précédent et à l'hypothèse principale (\ref{hyp}) sur $\p{x}$ et $\p{y}$ que sa hauteur projective ne peut pas être trop petite devant celle de $\p{x}$. Or la géométrie euclidienne élémentaire et les hypothèses sur les positions de $\p{x}$ et $\p{y}$ dans l'espace de \bsc{Mordell-Weill} montrent que sa hauteur normalisée $\hn(\p{z})$ est au contraire négligeable devant $\hn(\p{x})$. Il n'y aura alors plus qu'à comparer $h$ et $\hn$ pour conclure. Les lemmes suivants précisent ces deux affirmations.
+On est maintenant en mesure de prouver le théorème \ref{mumpt}. On procède par
+l'absurde en supposant que $\p{z} = \p{x} - \p{y}$ est différent de $\OA$, on
+en déduit alors grâce au lemme précédent et à l'hypothèse principale
+(\ref{hyp}) sur $\p{x}$ et $\p{y}$ que sa hauteur projective ne peut pas être
+trop petite devant celle de $\p{x}$. Or la géométrie euclidienne élémentaire
+et les hypothèses sur les positions de $\p{x}$ et $\p{y}$ dans l'espace de
+\bsc{Mordell-Weill} montrent que sa hauteur normalisée $\hn(\p{z})$ est au
+contraire négligeable devant $\hn(\p{x})$. Il n'y aura alors plus qu'à
+comparer $h$ et $\hn$ pour conclure. Les lemmes suivants précisent ces deux
+affirmations.
 
 \begin{lem} \label{papti}
-Soient $\p{x}$ et $\p{y}$ sont deux points distincts satisfaisant (\ref{hyp}); si leur différence $\p{z}$ n'est pas nulle, elle est de hauteur projective minorée par $\eps \min(h(\p{x}), h(\p{y})) - h(\OA)$.
+  Soient $\p{x}$ et $\p{y}$ sont deux points distincts satisfaisant
+  (\ref{hyp}) ; si leur différence $\p{z}$ n'est pas nulle, elle est de hauteur
+  projective minorée par $\eps \min(h(\p{x}), h(\p{y})) - h(\OA)$.
 \end{lem}
 
 \begin{proof}
-Comme $\p{x}$ et $\p{y}$ satisfont (\ref{hyp}), on peut leur appliquer le lemme \ref{clef} avec $\eps_{1, v} = \min(H(\p{x}), H(\p{y}))^{-\eps\lambda_v}$. Par ailleurs, dire que $\p{z} \neq \OA$, c'est dire qu'il exite $i$ et $j$ tels que le nombre $z_i \coa_j - \coa_i z_j$ est non nul. On peut donc lui appliquer la formule du produit, après avoir remarqué que $\av{z_i \coa_j - \coa_i z_j} \le \nv{z\wedge \coa}$. Il vient :
-\[ \prod_v \Dv(\p{z}, \OA)^{e_v} \ge \prod_v \frac{\av{z_i \coa_j - \coa_i z_j}^{e_v}}{\nv{z}^{e_v}\cdot\nv{\coa}^{e_v}}
-  \ge \frac{1}{H(\p{z}) H(\OA)} \pmm{.} \]
-On majore ensuite $\Dv(\p{z}, \OA)$ par $\min(H(\p{x}), H(\p{y}))^{-\eps\lambda_v}$ aux places $v$ de $S$, et par $1$ ailleurs. Grâce à l'hypothèse sur les $\lambda_v$, le produit de gauche est alors majoré par $\min(H(\p{x}), H(\p{y}))^{-\eps}$. Prenant alors les opposés des logarithmes dans l'inégalité précédente, on a bien $\eps \cdot \min(h(\p{x}), h(\p{y})) \le h(\p{z}) + h(\OA)$.
+  Comme $\p{x}$ et $\p{y}$ satisfont (\ref{hyp}), on peut leur appliquer le
+  lemme \ref{clef} avec $\eps_{1, v} = \min(H(\p{x}),
+  H(\p{y}))^{-\eps\lambda_v}$. Par ailleurs, dire que $\p{z} \neq \OA$, c'est
+  dire qu'il exite $i$ et $j$ tels que le nombre $z_i \coa_j - \coa_i z_j$ est
+  non nul. On peut donc lui appliquer la formule du produit, après avoir
+  remarqué que $\av{z_i \coa_j - \coa_i z_j} \le \nv{z\wedge \coa}$. Il vient
+  :
+  \[
+	\prod_v \Dv(\p{z}, \OA)^{e_v} \ge \prod_v \frac{\av{z_i \coa_j - \coa_i
+		z_j}^{e_v}}{\nv{z}^{e_v}\cdot\nv{\coa}^{e_v}} \ge \frac{1}{H(\p{z})
+	  H(\OA)} \pmm{.}
+  \]
+  On majore ensuite $\Dv(\p{z}, \OA)$ par $\min(H(\p{x}),
+  H(\p{y}))^{-\eps\lambda_v}$ aux places $v$ de $S$, et par $1$ ailleurs.
+  Grâce à l'hypothèse sur les $\lambda_v$, le produit de gauche est alors
+  majoré par $\min(H(\p{x}), H(\p{y}))^{-\eps}$. Prenant alors les opposés des
+  logarithmes dans l'inégalité précédente, on a bien $\eps \cdot
+  \min(h(\p{x}), h(\p{y})) \le h(\p{z}) + h(\OA)$.
 \end{proof}
 
 \begin{lem} \label{pti}
-Si $\p{x}$ et $\p{y}$ satisfont aux hypothèses \ref{cone} et \ref{sect} du théorème \ref{mumpt}, alors leur différence $\p{z}$ est de hauteur normalisée majorée par $(\rho^2/4 + 3\phi) \hn(\p{x})$.
+  Si $\p{x}$ et $\p{y}$ satisfont aux hypothèses \ref{cone} et \ref{sect} du
+  théorème \ref{mumpt}, alors leur différence $\p{z}$ est de hauteur
+  normalisée majorée par $(\rho^2/4 + 3\phi) \hn(\p{x})$.
 \end{lem}
 
 \begin{proof}
-On note $\left<\truc; \truc \right>$ le produit scalaire et $\nv[N]{\truc} = \sqrt{\hn(\truc)}$ la norme dans l'espace de \bsc{Mordell-Weil}. On remarque de plus que l'hypothèse \ref{sect} implique $\nv[N]{\p{y}} \le (1+\rho)^{1/2}\nv[N]{\p{x}} \le (1+\rho/2) \nv[N]{\p{x}}$. Il vient alors :
-\begin{align*}
-\hn(\p{z}) & = \nv[N]{\p{x}-\p{y}}^2 \\ & = \nv[N]{\p{x}}^2 + \nv[N]{\p{y}}^2 - 2\left< \p{x}; \p{y} \right> \\
-& = \left(\nv[N]{\p{y}} - \nv[N]{\p{x}}\right)^2 + 2\nv[N]{\p{x}}\nv[N]{\p{y}}\left( 1- \cos(\p{x}, \p{y}) \right) \\
-& \le \left( \frac{\rho}{2}\nv[N]{\p{x}} \right)^2 + 2\left( 1+\frac{\rho}{2} \right) \nv[N]{\p{x}}^2 \cdot \phi \\
-& \le ((\rho^2/4) + 2\phi + \rho\phi) \hn(\p{x})\pmm{.}\qedhere
-\end{align*}
+  On note $\left<\truc ; \truc \right>$ le produit scalaire et $\nv[N]{\truc} =
+  \sqrt{\hn(\truc)}$ la norme dans l'espace de \bsc{Mordell-Weil}. On remarque
+  de plus que l'hypothèse \ref{sect} implique $\nv[N]{\p{y}} \le
+  (1+\rho)^{1/2}\nv[N]{\p{x}} \le (1+\rho/2) \nv[N]{\p{x}}$. Il vient alors :
+  \begin{align*}
+	\hn(\p{z}) & = \nv[N]{\p{x}-\p{y}}^2 \\ & = \nv[N]{\p{x}}^2 +
+	\nv[N]{\p{y}}^2 - 2\left< \p{x} ; \p{y} \right> \\
+	& = \left(\nv[N]{\p{y}} - \nv[N]{\p{x}}\right)^2 +
+	2\nv[N]{\p{x}}\nv[N]{\p{y}}\left( 1- \cos(\p{x}, \p{y}) \right) \\
+	& \le \left( \frac{\rho}{2}\nv[N]{\p{x}} \right)^2 + 2\left(
+	1+\frac{\rho}{2} \right) \nv[N]{\p{x}}^2 \cdot \phi \\
+	& \le ((\rho^2/4) + 2\phi + \rho\phi) \hn(\p{x})\pmm{.}\qedhere
+  \end{align*}
 \end{proof}
-
 
 \begin{proof}[Démonstration du théorème \ref{mumpt}.]
-Elle consiste, comme annoncé, à confronter les conclusions des deux lemmes précédents en supposant $\p{z} \neq \OA$, et à en déduire une contradiction grâce à l'hypothèse \ref{tronk} du thèorème. On a besoin de pouvoir comparer les hauteurs projective et normalisée. On utilise à cet effet le lemme 3.9 de [Da-Phi] et la remarque subséquente : $\av[]{\hn(\truc) - h(\truc)} \le (4^g-1)h(\OA) + 3g\log(2)$. On passe ainsi aux hauteurs normalisées dans le résultat du lemme \ref{papti} :
-\begin{align*}
-\hn(\p{z}) & \ge h(\p{z}) - (4^g-1)h(\OA) - 3g\log(2)\\
-& \ge \eps \min(h(\p{x}), h(\p{y})) - h(\OA) - (4^g-1)h(\OA) - 3g\log(2) \\
-& \ge \eps \left(\hn(\p{x}) - (4^g-1)h(\OA) - 3g\log(2)\right) - B \\
-& \ge \eps \hn(\p{x}) - (1+\eps)B \pmm{.}
-\end{align*}
-Mais le lemme \ref{pti} donne alors $((\rho^2/4) + 3\phi) \hn(\p{x}) \ge \eps \hn(\p{x}) - (1+\eps)B$, ce qui contredit très précisément l'hypothèse \ref{tronk}.
+  Elle consiste, à confronter les conclusions des deux lemmes précédents en
+  supposant $\p{z} \neq \OA$, et à en déduire une contradiction grâce à
+  l'hypothèse \ref{tronk} du thèorème. On a besoin de pouvoir comparer les
+  hauteurs projective et normalisée. On utilise à cet effet le lemme 3.9 de
+  [Da-Phi] et la remarque subséquente : $\av[]{\hn(\truc) - h(\truc)} \le
+  (4^g-1)h(\OA) + 3g\log(2)$. On passe ainsi aux hauteurs normalisées dans le
+  résultat du lemme \ref{papti} :
+  \begin{align*}
+	\hn(\p{z}) & \ge h(\p{z}) - (4^g-1)h(\OA) - 3g\log(2)\\
+	& \ge \eps \min(h(\p{x}), h(\p{y})) - h(\OA) - (4^g-1)h(\OA) - 3g\log(2)
+	\\
+	& \ge \eps \left(\hn(\p{x}) - (4^g-1)h(\OA) - 3g\log(2)\right) - B \\
+	& \ge \eps \hn(\p{x}) - (1+\eps)B \pmm{.}
+  \end{align*}
+  Mais le lemme \ref{pti} donne alors $((\rho^2/4) + 3\phi) \hn(\p{x}) \ge
+  \eps \hn(\p{x}) - (1+\eps)B$, ce qui contredit très précisément l'hypothèse
+  \ref{tronk}.
 \end{proof}
-
 
 \end{document}
