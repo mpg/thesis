@@ -1,26 +1,8 @@
-\documentclass[11pt, twoside, a4paper, french]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc} \usepackage{lmodern}
-\usepackage{babel}
-
-\usepackage[active]{srcltx} % Utile pour la mise au point, à commenter par la suite.
-
-\usepackage{amssymb, amsmath, amsthm}
+\input{pre-gene}
 
 \newtheorem{thm}{Théorème} \newtheorem{prop}[thm]{Proposition} \newtheorem{lem}[thm]{Lemme} \newtheorem{coro}[thm]{Corollaire}
 \numberwithin{equation}{section}
 
-\newcommand{\lat}[1]{\emph{#1}} \newcommand{\pmm}[1]{\ \text{#1}}
-
-\newcommand{\std}[1]{\mathbf{#1}} \newcommand{\N}{\std{N}} \newcommand{\Z}{\std{Z}}
-\newcommand{\Q}{\std{Q}} \newcommand{\R}{\std{R}} \newcommand{\C}{\std{C}}
-\newcommand{\Proj}{\std{P}} \newcommand{\Qbar}{\overline{\Q}} \newcommand{\cdn}{\boldsymbol{k}}
-\newcommand{\I}[1]{\std{Id}_{#1}} \newcommand{\ind}[1]{\std{1}_{#1}}
-\renewcommand{\ge}{\geqslant} \renewcommand{\le}{\leqslant}
-\newcommand{\eps}{\varepsilon} \newcommand{\truc}{\,\cdot\,}
-\newcommand{\OO}{\mathcal{O}} \newcommand{\disc}{\mathrm{Disc}}
-\newcommand{\ord}{\mathrm{ord}} \newcommand{\Div}{\mathrm{div}}
 
 \newcommand{\av}[2][v]{\left\lvert#2\right\rvert_{#1}} 		% valeur absolue v-adique, ou en option ce qu'on veut en indice
 \newcommand{\nv}[2][v]{\left\lVert#2\right\rVert_{#1}} 		% norme v-adique, idem

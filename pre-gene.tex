@@ -1,6 +1,15 @@
 % préambule général pour tous les trucs préparatoire à la thèse
 % (en attendant un classe ou une extension un peu plus propre ?)
 %
+\documentclass[a4paper, 11pt, twoside, BCOR=1cm]{scrartcl}
+
+\setlength{\overfullrule}{5pt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[sc, osf]{mathpazo} \usepackage{amssymb}
+\renewcommand\sfdefault{iwona}
 
 \usepackage{mathtools, amsmath, amsthm}
 \usepackage[all]{xy}
@@ -9,16 +18,10 @@
 
 \usepackage{enumitem}
 
-\usepackage{fancyhdr} \pagestyle{fancy}
-\renewcommand\headrulewidth{0pt} \setlength\headheight{0pt}
-\fancyhead{} \fancyfoot{}
-\fancyfoot[C]{\thepage}
-% \fancyfoot[RO, LE]{\today}
-
 \usepackage{xspace}
+\usepackage[expansion=false]{microtype}
 \usepackage[british, frenchb]{babel}
-\usepackage[babel=true, expansion=false]{microtype}
-\frenchbsetup{AutoSpacePunctuation=false}
+\frenchbsetup{og=«,fg=», AutoSpacePunctuation=false}
 
 \newcommand*\notemarge[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand\todotext{\textsc{todo}}
