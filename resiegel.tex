@@ -1,32 +1,15 @@
-\documentclass[a4paper, twoside]{article}
-\usepackage[utf8]{inputenc}
-
-\usepackage{svn-multi}
-\svnid{$Id$}
-\newcommand\svnnatdate{%
-  \begingroup \year\svnyear \month\svnmonth \day\svnday \relax 
-  \today \endgroup}
-
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
-\usepackage{amssymb}
+% notes de travail pour Siegel, nouvelle version
 
 \input{pre-gene.tex}
 \input{pre-resiegel.tex}
 
 \title{Notes de travail vers une fonction auxiliaire}
-\date{\svnnatdate}
+\date{\today}
 \author{Manuel \bsc{Pégourié-Gonnard}}
-
-\fancyfoot{}
-\fancyfoot[C]{\thepage}
-\fancyfoot[LO, RE]{\textup{rév. \svnrev}}
-\fancyfoot[RO, LE]{\svnnatdate}
 
 \begin{document}
 
-\maketitle\thispagestyle{fancy}
+\maketitle
 
 Soit $\va$ une variété abélienne sur un corps de nombres $\cdn$, plongée dans
 un espace projectif $\proj\dimp$ muni de coordonnées homogènes $\ch0, \ldots,
@@ -38,5 +21,3 @@ définissant $\va$ dans $\cdn[\ch0, \ldots, \ch\dimp]$.
 On considère $\puiss$ un entier positif, 
 
 \end{document}
-
-
