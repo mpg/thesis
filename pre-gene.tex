@@ -1,4 +1,4 @@
-% préambule général pour tous les trucs préparatoire à la thèse
+% préambule général pour tous les trucs préparatoires à la thèse
 % (en attendant un classe ou une extension un peu plus propre ?)
 %
 \documentclass[a4paper, 11pt, twoside, BCOR=1cm]{scrartcl}
@@ -11,7 +11,7 @@
 \usepackage[sc, osf]{mathpazo} \usepackage{amssymb}
 \renewcommand\sfdefault{iwona}
 
-\usepackage{mathtools, amsmath, amsthm}
+\usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
 
 \usepackage{ifmtarg, fixltx2e, xargs}
@@ -45,12 +45,15 @@
 \newcommand*\pmm[1]{\text{ #1}}
 
 \makeatletter
-\newcommand*\ssub[1]{\@ifnotmtarg{#1}{_{#1}}}
-\newcommand*\ssup[1]{\@ifnotmtarg{#1}{^{#1}}}
+\newcommand*\ssub[1]{%
+  \@ifnotmtarg{#1}{_{#1}}}
+\newcommand*\ssup[1]{%
+  \@ifnotmtarg{#1}{^{#1}}}
 \newcommandx*\pexp[2][2]{%
-  \@ifmtarg{#2}%
-    {\cramped{^{(#1)}}}%
-    {^{(#1)}_{#2}}}
+  \@ifmtarg{#2}{%
+    \@ifnotmtarg{#1}{\cramped{^{(#1)}}}%
+    }{%
+    \@ifnotmtarg{#1}{^{(#1)}}_{#2}}}
 \makeatother
 
 \newcommand\suchthat{\ \middle\vert\ }

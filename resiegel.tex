@@ -16,8 +16,38 @@ un espace projectif $\proj\dimp$ muni de coordonnées homogènes $\ch0, \ldots,
 \ch\dimp$. On suppose que $\va$ n'est pas contenue dans l'hyperplan
 d'équation $\ch0 = 0$, et on considère le diviseur $\divi$ découpé par
 $\ch0$ sur $\va$. On note enfin $\ideal\va$ l'idéal homogène saturé
-définissant $\va$ dans $\cdn[\ch0, \ldots, \ch\dimp]$.
+définissant $\va$ dans $\cdn [\ch0, \ldots, \ch\dimp]$.
 
-On considère $\puiss$ un entier positif, 
+On considère $\puiss$ un entier positif, et $(\proj\dimp)^\puiss$ l'espace
+multiprojectif associé à l'anneau multi-gradué
+\begin{math}
+  \cdn [
+    \cmh1[0], \dots, \cmh1[\dimp];
+    \dots;
+    \cmh\puiss[0], \dots \cmh\puiss[\dimp]
+  ]
+  =
+  \cdn [ \cmh1, \dots, \cmh\puiss ]
+\end{math}.
+On s'intéresse à une sous-variété produit de $\va^\puiss$ plongée dans
+$(\proj\dimp)^\puiss$, notée 
+\begin{math}
+  \var = \var[1] \times \dots \times \var[\puiss]
+\end{math}.
+On notera en outre
+\begin{align*}
+  \vardim[\fct] &= \dim {\var[\fct]}
+  & \vardim &= \dim \var = \sum_\fct \vardim[\fct]
+  \\
+  \vardeg[\fct] &= \deg {\var[\fct]}
+  & \vardeg &= \deg \var = \sum_\fct \vardeg[\fct]
+  \\
+  \varht[\fct] &= \haut {\var[\fct]} 
+  & \varht &= \haut \var = \sum_\fct \varht[\fct]
+\end{align*}
+et $\varfc[\fct]$ une forme de \bsc{Chow} de $\var[\fct]$, de sorte que
+$\varht[\fct] = \haut{\varfc[\fct]}$.
+
+
 
 \end{document}

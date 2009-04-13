@@ -167,30 +167,6 @@ ailleurs des propriétés suivantes :
   \normsup {\der\alpha F}
   \le \tbinom\delta\alpha \normsup F 
 \end{gather}
-Elle se compare aux autres normes et mesures de la façon suivante :
-\begin{align} 
-  \normlun P / \ncoef P 
-  & \le \normsup P 
-  \le \normlun P 
-  \\ 
-  \normeuc P / \sqrt{\ncoef P} 
-  & \le \normsup P 
-  \le \normeuc P 
-  \\
-  \normhom F / \exp\big( {\textstyle\sum_k} \sqrt{n_k} \,\big) 
-  & \le \normsup F 
-  \le \normhom F \sqrt{m(\delta)} 
-  \\
-  \mespph F / \exp\big(
-  {\textstyle\sum_k} \delta_k \gamma_{n_k} \sqrt{n_k}
-  \,\big) 
-  & \le \normsup F 
-  \le \mespph F m(\delta) 
-  \\
-  \mahler P / \sqrt{\ncoef P} 
-  & \le \normsup F 
-  \le \mahler P m(\delta)
-\end{align}
 
 \section{Norme \texorpdfstring{$L_1$}{1}, ou longueur}
 
@@ -215,12 +191,13 @@ jouit par ailleurs des propriétés suivantes :
   \le
   {\textstyle \binom\delta\alpha} \normlun P 
 \end{gather}
-Elle se compare aux autres normes et mesures de la façon suivante :
+
+Elle se compare aux autres normes et mesures de la façon suivante.
 \begin{align}
-  \normeuc P 
-  & \le \normlun P
-  \le \normeuc P \sqrt{\ncoef P}
-  \\
+  \normlun P / \ncoef P 
+  & \le \normsup P 
+  \le \normlun P 
+  \\ 
   \normhom F 
   & \le \normlun F
   \le \normhom F \prod\nolimits_k (n_k +1)^{\delta_k/2}
@@ -238,10 +215,8 @@ Elle se compare aux autres normes et mesures de la façon suivante :
 
 \section{Norme euclidienne}
 
-Elle est définie pour tout $P$ par $\normeuc P = \big(\sum_i
-\abs{P_i}^2\big)^{1/2}$ et naturellement associée à la norme similaire pour
-les vecteurs.
-
+Elle est définie pour tout $P$ par
+$\normeuc P = \big( \sum_i \abs{P_i}^2 \big)^{1/2}$.
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
@@ -259,8 +234,17 @@ jouit par ailleurs des propriétés suivantes :
   \normeuc{\der\alpha F} 
   \le {\textstyle \binom\delta\alpha}  \normeuc F 
 \end{gather}
+
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
+  \normeuc P / \sqrt{\ncoef P} 
+  & \le \normsup P 
+  \le \normeuc P 
+  \\
+  \normeuc P 
+  & \le \normlun P
+  \le \normeuc P \sqrt{\ncoef P}
+  \\
   \normhom F 
   & \le \normeuc P 
   \le \sqrt{m(\delta)} \normhom F 
@@ -273,8 +257,8 @@ Elle se compare aux autres normes et mesures de la façon suivante :
   & \le \normeuc F 
   \le \prod\nolimits_k (n_k +1)^{\delta_k} \mahler P
 \end{align}
-De plus si $L$ est une forme linéaire on a $\normeuc L = \normhom L = \mespph
-L$.
+De plus si $L$ est une forme linéaire on a
+$\normeuc L = \normhom L = \mespph L$.
 
 \section{Norme euclidienne remodelée}
 
@@ -298,8 +282,13 @@ jouit par ailleurs des propriétés suivantes :
   \normhom {\der{i} P} 
   \le \normhom P \todom
 \end{gather}
+
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
+  \normhom F / \exp\big( {\textstyle\sum_k} \sqrt{n_k} \,\big) 
+  & \le \normsup F 
+  \le \normhom F \sqrt{m(\delta)} 
+  \\
   \mespph F / \exp(\sum\delta_k\gamma_{n_k}) 
   & \le \normhom F 
   \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mespph F 
@@ -328,9 +317,15 @@ et normalisée par $\mu_k(S_k) = 1$, et enfin $\gamma_n = \frac12
 
 C'est une mesure multiplicative ($\mespph{FG} = \mespph F \cdot \mespph G$),
 invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
-jouit par ailleurs des propriétés suivantes ?] Elle se compare à la mesure de
-\bsc{Mahler} de la façon suivante :
+jouit par ailleurs des propriétés suivantes ?] Elle se compare aux autres
+notions de la façon suivante.
 \begin{equation}
+  \mespph F / \exp\big(
+    {\textstyle\sum_k} \delta_k \gamma_{n_k} \sqrt{n_k}
+  \,\big) 
+  & \le \normsup F 
+  \le \mespph F m(\delta) 
+  \\
   \mahler F 
   \le \mespph F 
   \le \mahler F \exp(\sum\delta_k\gamma{n_k})
@@ -349,8 +344,13 @@ produit des mesures de \bsc{Haar} normalisées de masse $1$.
 C'est une mesure multiplicative ($\mahler {PQ} = \mahler P \cdot \mahler Q$),
 invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
 jouit par ailleurs des propriétés suivantes ?]
-Ses comparaisons avec les autres normes et mesures ont été énoncées
-précedement.
+
+Elle se compare aux autres normes et mesures de la façon suivante.
+\begin{align} 
+  \mahler P / \sqrt{\ncoef P} 
+  & \le \normsup F 
+  \le \mahler P m(\delta)
+\end{align}
 
 \section{Preuves et questions d'optimalité}
 

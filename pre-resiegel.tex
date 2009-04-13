@@ -8,22 +8,33 @@
 \newcommand\place{v}
 \newcommand\divi{E}
 \newcommand\dimp{n}
+
+% multiprojectif
 \newcommand\puiss{m}
-\newcommand\dimvar{u}
-\newcommand\var{Y}
-\newcommand\fact[1]{\var\pexp{#1}}
+\newcommand\fct{i}
 \newcommand\ch[1]{X\ssub{#1}}
+\newcommand\cmh[1]{X\pexp{#1}}
+
+% la sous-variété produit et ses attribus
+\newcommand\varname{Z}
+\newcommand\var[1][]{\varname\pexp{#1}}
+\newcommand\vardim[1][]{{u\ssub{#1}}}
+\newcommand\vardeg[1][]{{D\ssub{#1}}}
+\newcommand\varht[1][]{\Haut\pexp{#1}[\varname]}
+\newcommand\varfc[1][]{\Chow\pexp{#1}[\varname]}
 
 \newcommand*\proj[2][]{%
   \Proj\ssup{#2}\ssub{#1}}
 \newcommand*\aff[2][]{%
   \Aff\ssup{#2}\ssub{#1}}
 
-\DeclareMathOperator\Haut{H}
+\newcommand\Chow{f}
+
+\newcommand\Haut{h}
 \newcommand\haut[1]{%
   \Haut(#1)}
 \newcommand\hautn[1]{%
-  \mathop{\smash{\hat h}}(#1)}
+  \mathop{\smash{\hat \Haut}}(#1)}
 
 \newcommand\Ideal{\mathcal I}
 \let\ideal\relax % en attendant de rendre mes trucs cohérents
