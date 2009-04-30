@@ -28,7 +28,7 @@
 \makeatletter
   \newcommand*\todo[1][]{%
     \leavevmode\notemarge{\todotext}%
-    \@ifnotmtarg{#1}{[#1]}}
+	\@ifnotmtarg{#1}{\emph{#1}}}
   \newcommand*\todom[1][]{\tag{\todotext%
     \@ifnotmtarg{#1}{ : #1}}}
 \makeatother

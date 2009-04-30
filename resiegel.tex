@@ -11,6 +11,8 @@
 
 \maketitle
 
+\section{Situation générale}
+
 Soit $\va$ une variété abélienne sur un corps de nombres $\cdn$, plongée dans
 un espace projectif $\proj\dimp$ muni de coordonnées homogènes $\ch0, \ldots,
 \ch\dimp$. On suppose que $\va$ n'est pas contenue dans l'hyperplan
@@ -46,8 +48,214 @@ On notera en outre
   & \varht &= \haut \var = \sum_\fct \varht[\fct]
 \end{align*}
 et $\varfc[\fct]$ une forme de \bsc{Chow} de $\var[\fct]$, de sorte que
-$\varht[\fct] = \haut{\varfc[\fct]}$.
+$\varht[\fct] = \haut{\varfc[\fct]}$. On note enfin $\varid$ l'idéal homogène
+saturé de $\var$ et $\varid[\fct]$ ceux de ses facteurs.
 
+De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
+homogène, on notera $A\ph{d}$ et $\Ideal\ph{d}$ leur partie homogène de degré
+$d$.
 
+\begin{tdef}
+  Plongement adapté : voir \bsc{Rémond}.
+\end{tdef}
+
+\begin{lem}\label{l-adapt-exists}
+  Soit $\iota\colon \varname \hookrightarrow \proj{\dimp}$ un sous-schéma
+  fermé intègre de degré $\vardeg$, non contenu dans l'hyperplan d'équation
+  $\ch0 = 0$. Il existe une matrice $\mat \in GL_{\dimp+1}(\bar\Q)$, à
+  coefficients entiers de valeur absolue (archimédienne) majorée au sens large
+  par $\max(\frac\vardeg2, 1)$, telle que, si $e_\mat$ est l'automorphisme
+  linéaire de $\proj{\dimp}$ associé à $\mat$, alors $e_\mat \circ \iota$ est
+  un plongement adapté.
+\end{lem}
+
+\begin{proof}
+  On reprend la preuve de la proposition~2.2 de \noref{IVG} (p.\,469). Au
+  moment de choisir des formes linéaires $V_0, \dots, V_n$ telles que
+  \[
+	f_Z(V_0, \dots, V_n) \neq 0 \pmm,
+  \]
+  on commence en fait par fixer $V_0 = X_0$. Le polynôme $f(V_0, \truc, \dots,
+  \truc)$ est multi-homogène de degré $D$ en chaque variable ; vu l'hypothèse
+  sur $Z$, il est non nul grâce au théorème fondamental de l'élimination. On
+  peut donc choisir $V_1, \dots, V_n$ comme dans \noref[IVG] et continuer la
+  preuve sans autre modification.
+\end{proof}
+
+\begin{lem}\label{l-adapt-cost}
+  Soit $Z \hookrightarrow \proj{n}$ un sous-schéma fermé intègre, et 
+  $
+  \mat \in GL_{\dimp+1}(\bar\Q) \cap \Z^{\dimp+1} \cap [-B, B]^{\dimp+1}
+  $,
+  où $B$ est un réel positif fixé, et $e_\mat$ l'automorphisme linéaire de
+  $\proj{n}$ associé à $\mat$. Alors 
+  \[
+	\Haut_1(e_\mat(Z)) \leq B^{\vardeg(\dimp+1)} \pmm.
+  \]
+\end{lem}
+
+\begin{proof}
+  Inégalité classique sur la norme $L_1$ et la spécialisation des polynômes.
+\end{proof}
+
+\begin{scho}
+  Vu les hypothèses sur $\var$, on peut sans perte de généralité supposer de
+  plus que $\var \hookrightarrow \proj{\dimp}$ est adapté, quitte à multiplier
+  sa hauteur ($L_1$) par $\max(\frac\vardeg2, 1)^{\vardeg(\dimp+1})$.
+
+  On fera donc désormais cette hypothèse.
+\end{scho}
+
+\section{Idéal d'annulation}
+
+Introduisons un rationnel $\eps_0 > 0$ et un entier $\delta$ tel que
+$\eps_0\delta \in \N$. Fixons un réel $\eps_1 > 0$, liée à $\eps_0$ par une
+inégalité \todo[à expliciter ultérieurement], et notons $\tilde\delta =
+\eps_1\delta$. 
+Considérons par ailleurs une famille d'entiers $a_1 \ge \dots \ge a_\puiss =
+1$. Cette famille sera fixée à la fin de la section en cours, il suffit pour
+l'instant de savoir que ses éléments seront suffisamment étagés pour qu'on
+puisse choisir $\eps_3$ pas trop gros \todo[à expliciter] tel que
+\[
+  \sum_{i=1}^{m} (a_i^2 +1) < a_1^2 (1 + \eps_3) \pmm.
+\]
+
+On introduit alors le dessous de multi-escalier
+\[
+  L_a^\delta = \left\{
+	(\lambda\pexp1, \ldots, \lambda\pexp\puiss) \in \N^{\puiss(\dimp+1)}
+	\text{ tels que }
+	\frac {\lambda\pexp1[0]} {a_1^2} 
+	+ \dots +
+	\frac {\lambda\pexp\puiss[0]} {m-1}
+	\le \eps_1 \delta
+	\right\}
+  \pmm,
+\]
+auquel on associe l'idéal d'annulation
+\[
+  \mathfrak{\tilde q}_a^\delta
+  = \left\{
+	\sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda X^\lambda \in \cdn [X]
+	\text{ tels que }
+	\lambda \in L_a^\delta \Rightarrow f_\lambda = 0
+	\right\}
+  \pmm.
+\]
+On considère enfin $\mathfrak{q}_a^\delta = \mathfrak{\tilde q}_a^\delta +
+\varid$. Par abus, on notera de même son image dans $\mathcal{A}_{\var} = \cdn
+[X] / \varid$, ce qui est légitime puisqu'on a fait en sorte que $\varid
+\subset q_a^\delta$.
+
+On dira que $q_a^\delta \subset \mathcal{A}_{\var}$ est l'idéal des formes sur
+$\var$ s'annulant le long de $\divi$ avec indice au moins $\eps_1 \delta$
+relativement à $a$.
+
+On fixe désormais une famille $(e_1, \dots, e_\puiss)$ de points de
+$\var(\bar\Q)$. La famille d'entiers $a$ introduite ci-dessus est alors définie
+par 
+\[
+  a_i = \left\lfloor 
+  \frac {\norm{x_i}} {\norm{x_m}} + \frac12 
+  \right\rfloor
+  \pmm,
+\]
+où $\norm\truc$ représente la norme associée à la hauteur normalisée dans
+l'espace de \bsc{Mordell}-\bsc{Weil} de $\va$ (on commet l'abus consistant à
+toujours noter $e_i$ l'image de $e_i$ dans cet espace).
+
+Les points $e_\fct$ sont supposés de hauteurs suffisamment grandes et étagés
+pour qu'il soit possible de choisir $\eps_3$ comme plus haut. 
+
+\section{Plongement éclatant}
+
+La troisième et dernière hypothèse qui sera faite sur les $e_i$ est qu'il sont
+angulairement proches dans l'espace de \bsc{Mordell}-\bsc{Weil}. La géométrie
+euclidienne montre alors que $a_i e_i - e_m$ est de hauteur petite. Pour nous
+aider à exploiter ultérieurement cette information, on introduit un
+plongement, dit \emph{éclatant}, associé à $a$, définit par
+\begin{alignat*}{2}
+  \phi_a \colon
+  && \var 
+  & \longrightarrow \va^{2\puiss-1}
+  \\
+  && (x_1, \dots, x_\puiss) 
+  & \longmapsto (x_1, \dots, x_m, a_1 x_1 - x_m, a_{m-1} x_{m-1} - x_m)
+\end{alignat*}
+
+On munit l'espace d'arrivée $\proj{2m-1}$ des coordonnées multi-homogènes
+$
+X, Y = X\pexp1, \dots X\pexp\puiss, Y\pexp1, \dots, Y\pexp{\puiss-1}
+$
+; dans toute la suite quand $i$ et $j$ sont deux indices non précisés, on
+supposera implicitement $1 \le i \le \puiss$ et $1 \le j \le \puiss-1$.
+
+Tout point $x \in \var(\bar\Q)$, est contenu dans un ouvert $U \subset \var$
+sur lequel il existe des polynômes représentant $\phi_a\vert_U \colon U \to
+\proj{2\puiss-1}$. Plus précisément, il existe un morphisme d'algèbres,
+dépendant de $U$,
+\begin{alignat*}{2}
+  \psi_a \colon 
+  && \cdn [X, Y] & \to \cdn [X]
+  \\
+  && X\pexp{i} & \mapsto X\pexp{i}
+  \\
+  && Y\pexp{j} & \mapsto S( Q_{a_j}(X\pexp{j}), X\pexp\puiss )
+\end{alignat*}
+tel que le diagramme suivant, dont les flèches verticales sont les projections
+canoniques, commute.
+\[
+  \xymatrix{
+	\cdn [X, Y] \ar[r]^{\psi_a} \ar[d]^{\chi}
+	& \cdn [X] \ar[d]^{\chi}
+	\\
+	\cdn [X, Y] / \ideal{\phi_a(\var)} \ar[r]_{\phi_a^*} 
+	& \cdn [X] / \ideal{\var}
+	}
+\]
+Les formes $S$ et $Q_{a_j}$ dépendent de l'ouvert $U$ et sont données
+explicitement par \noref{mhsvva2} et \noref{ivds}.
+
+\begin{prop}\label{p-control-embed}
+  Soient $\psi_a$ un morphisme d'algèbre comme ci-dessus, et $F \in \bar\Q [
+  X, Y]$ une forme multi-homogène de multi-degré $(\alpha, \beta)$, où $\alpha
+  \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
+  \begin{align*}
+	\deg \psi_a(F) 
+	& =
+	\psi_a^{\deg} (\alpha, \beta)
+	&
+	\normv{\psi_a(F)} 
+	& \le
+	\psi_a^{\mathrm{norm}} (\alpha, \beta, \normv{F})
+  \end{align*}
+  où l'on peut prendre
+  \begin{align*}
+	\psi_a^{\deg} (\alpha, \beta)
+	& = 
+	\alpha_1 + \frac94 \beta_1 a_1^2, \dots,
+	\alpha_{m-1} + \frac94 \beta{m-1} a_{m-1}^2,
+	\alpha_m + 2 \abs\beta
+	\\
+	\psi_a^{\mathrm{norm}} (\alpha, \beta, N)
+	& =
+	N 
+	\cdot \normv\coi ^{\abs\beta + 2\sum(a_j^2 -1)\beta_j)}
+	\cdot \big( 4^\genre(\dimp+1) \big)
+	^ {\delta_v (\abs\beta + \sum (a_j^2-1)\beta_j)}
+  \end{align*}
+\end{prop}
+
+\begin{proof}
+  Voir les notes de la précédente tentative construction d'une fonction
+  auxiliaire.
+\end{proof}
+
+\section{La problématique}
+
+Il s'agit de trouver une forme multi-homogène non nulle sur $\var$, de degré
+
+On pose $d = \delta \cdot (\eps_0 a_1^2, \dots, \eps_0 a_\puiss^2, 1, \dots,
+1$ et on note $d' = \psi_a^{\deg}(d)$. 
 
 \end{document}
