@@ -3,7 +3,7 @@
 \usepackage{svn-multi}
 \svnid{$Id$}
 \newcommand\svnnatdate{%
-  \begingroup \year\svnyear \month\svnmonth \day\svnday \relax 
+  \begingroup \year\svnyear \month\svnmonth \day\svnday \relax
   \today \endgroup}
 
 \input{pre-idee.tex}
@@ -54,7 +54,7 @@ où la sous-variété en question est une hypersurface $H$, définie par une
 équation $F$, la distance entre un point $\point$ de coordonnées $\coord$ et
 $V$ est définie comme
 \[
-  \distv{\point}{H} = 
+  \distv{\point}{H} =
   \frac {\absv{F(\coord)}} {\normv{F}\normv{\coord}}
   \pmm.
 \]
@@ -65,7 +65,7 @@ l'élimination permet d'étendre cette idée au cas général.
 On peut aussi définir une notion \og naïve \fg de distance entre les points de
 l'espace projectif, par la formule
 \[
-  \distv{\point}{\pointi} = 
+  \distv{\point}{\pointi} =
   \frac {\normv{\coord \wedge \coordi}} {\normv\coord \normv\coordi}
   \pmm.
 \]
@@ -87,10 +87,10 @@ familiers avec les objets en jeu, énonçons le théorème~2 de
   comme précédemment, $\place$ une place de $\cdn$, et $\eps > 0$. Il n'existe
   qu'un nombre fini de points $\point$ dans $\va(\cdn)$ tels que
   \[
-    0 < \distv{\point}{V} \le \haut{\point}^{-\eps} \pmm, 
+    0 < \distv{\point}{V} \le \haut{\point}^{-\eps} \pmm,
     \tag{\textsc{ha}} \label{e-approx}
   \]
-  où $\Haut$ désigne la hauteur de \bsc{Weil} multiplicative. 
+  où $\Haut$ désigne la hauteur de \bsc{Weil} multiplicative.
 \end{thm}
 
 Comme de nombreux énoncés de géométrie diophantiennes, ce résultat n'est
@@ -122,7 +122,7 @@ conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha$ ; \label{i-grand}
   \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i-proche}
-  \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$ ; 
+  \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$ ;
 \end{enumthm}
 où l'angle est relatif à la structure euclidienne de l'espace. Nous
 appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
@@ -137,7 +137,7 @@ L'inégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle d
 qu'il n'existe pas de paire de points $x$ et $y$ satisfaisant à (C) et aux
 conditions suivantes :
 \begin{enumthm}
-  \item $\hautn{y} > \hautn{x_1} > \alpha$ ; 
+  \item $\hautn{y} > \hautn{x_1} > \alpha$ ;
   \item $\angleabs x y < \beta$ ;
   \item $\hautn{y} < \delta \hautn{x}$.
 \end{enumthm}
@@ -165,8 +165,8 @@ Le théorème de \bsc{Roth}, dans sa version étendue aux places quelconques par
   Soit $\alpha \in \Qbar$ un algébrique. Soient par ailleurs $\cdn$ un corps de
   nombres et $\place$ une place de $\cdn$, étendue de façon arbitraire à
   $\cdn(\alpha)$. Pour tout $\eps > 0$, il n'existe qu'un nombre fini de
-  points $x \in \cdn$ tels que 
-  \[ 
+  points $x \in \cdn$ tels que
+  \[
     \absv{x - \alpha} < H(x)^{-2-\eps} \pmm.
   \]
 \end{thm}
@@ -182,7 +182,7 @@ des versions quantitatives du théorème. Plus précisément, la démonstration 
 \bsc{Roth} consiste en un fait qu'on peut, anachroniquement, appeler une
 inégalité à la \bsc{Vojta} : il n'existe pas de suite $x_1, \dots, x_m$
 d'approximations exceptionnelles telle que $\haut{x_1} > c_1$ et pour tout $i >
-1$, $\haut{x_i} > c_2 \cdot \haut{x_{i-1}}$. 
+1$, $\haut{x_i} > c_2 \cdot \haut{x_{i-1}}$.
 
 Pour établir une version quantitative du théorème de \bsc{Roth}, il a fallu
 expliciter une valeur admissible des constantes $c_1$ et $c_2$, d'une part, et
@@ -202,7 +202,7 @@ l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
 
 \begin{thm}
   Soient $V$ une variété projective de degré $d$, et $x \in \proj{n}(\Qbar)$
-  un point algébrique. Si $x$ n'appartient pas à $V$, on a 
+  un point algébrique. Si $x$ n'appartient pas à $V$, on a
   \[
     \distv{x}{V} \ge c(n, d) \haut{V}^{-1} \cdot \haut{x}^{-d} \pmm.
   \]
@@ -316,7 +316,7 @@ conservent un intérêt essentiellement grâce à la restriction \og ne pas
 contenir de sous-variété abélienne \fg dans \bsc{Mordell-Lang} : si on prend
 le cas extrême d'un variété abélienne, il est clair que (sur un corps de
 nombres pas trop petit) elle possède une infinité de points rationnels, alors
-qu'elle n'a qu'un nombre fini de points entiers. 
+qu'elle n'a qu'un nombre fini de points entiers.
 
 \clearpage
 \section{Références}

@@ -1,9 +1,9 @@
 \input{pre-gene}
 \usepackage[colorlinks=true, urlcolor=black, linkcolor=black,
-	 bookmarks=true, bookmarksnumbered=true, bookmarksopen=true]{hyperref}
+   bookmarks=true, bookmarksnumbered=true, bookmarksopen=true]{hyperref}
 
 % compléments de macros maths
-% 
+%
 \newcommand*\lgr[1]{\abs{#1}} % longueur
 \newcommand*\vlg[1]{\abs{#1}} % vecteur longueur
 \newcommand*\der[1]{\partial_{#1}} % dérivée divisée
@@ -44,22 +44,22 @@ en un point, ainsi que sous l'action de dérivations. Elle est par ailleurs
 invariante par ajout de variables muettes. Plus précisément, on a les
 relations évidentes suivantes :
 \begin{align*}
-  \norm{P'(X, Y)} 
-  & = \norm P 	
-  & 
-  \norm{P+Q} 
-  & \le \max (\norm P, \norm Q)	
+  \norm{P'(X, Y)}
+  & = \norm P   
   &
-  \norm{P\cdot Q} 
+  \norm{P+Q}
+  & \le \max (\norm P, \norm Q) 
+  &
+  \norm{P\cdot Q}
   & = \norm P \cdot \norm Q
   \\
-  \norm { \frac{1}{i!} \frac {\partial^i P} {\partial X^i} } 
-  & \le \norm P 
-  & 
-  \abs{P(X)} 
-  & \le \norm P \cdot \norm X^d 	
-  & 
-  \norm{P(Q)} 
+  \norm { \frac{1}{i!} \frac {\partial^i P} {\partial X^i} }
+  & \le \norm P
+  &
+  \abs{P(X)}
+  & \le \norm P \cdot \norm X^d   
+  &
+  \norm{P(Q)}
   & \le \norm P \cdot \norm Q^d
   \pmm,
 \end{align*}
@@ -113,7 +113,7 @@ normes de la famille, $\nnorm F$ la norme de ce vecteur. Si $\mathcal Q =
 \big(Q_j^{(k)}\big)_{0 \le j \le n_k}^{1 \le k \le l}$ est une famille de
 polynômes quelconques, on notera également $\norm{\mathcal Q} =
 (\nnorm{\smash{Q^{(1)}}}, \ldots, \nnorm{\smash{Q^{(l)}}})$ son vecteur norme,
-de sorte que $\norm{\mathcal Q} ^\delta$ aura un sens naturel. 
+de sorte que $\norm{\mathcal Q} ^\delta$ aura un sens naturel.
 
 Pour les quatre normes, à chaque fois que l'on aura une majoration du type $\norm{F(\mathcal Q)}_\truc \le C \norm F _\truc \norm{\mathcal Q}_\truc^\delta$, on aura également la majoration $\norm{\mathcal F(\mathcal Q)}_\truc \le C \nnorm{\mathcal F}_\truc \norm{\mathcal Q}^\delta$ si tous les éléments de le famille $\mathcal F$ sont homogènes de même degré $\delta$. Dans chaque cas, on ne notera donc que la majoration $\norm{F(\mathcal Q)} \le C \norm F \norm{\mathcal Q}^\delta$, et on laissera le soin au lecteur d'en déduire les autres majorations. En particulier, le cas où les $Q_j^{(k)}$ sont des constantes correspond à l'évaluation en un point.
 
@@ -157,15 +157,15 @@ naturellement associée à la norme similaire pour les vecteurs.  C'est une
 norme, évidemment invariante par ajout de variables muettes, qui jouit par
 ailleurs des propriétés suivantes :
 \begin{gather}
-  \normsup P \normsup Q 
-  \le \normsup {PQ} 
+  \normsup P \normsup Q
+  \le \normsup {PQ}
   \le \normsup P \normsup Q \todom
   \\
   \normsup {F(\mathcal Q)}
-  \le \normsup F \normsup {\mathcal Q}^\delta \todom 
+  \le \normsup F \normsup {\mathcal Q}^\delta \todom
   \\
   \normsup {\der\alpha F}
-  \le \tbinom\delta\alpha \normsup F 
+  \le \tbinom\delta\alpha \normsup F
 \end{gather}
 
 \section{Norme \texorpdfstring{$L_1$}{1}, ou longueur}
@@ -176,10 +176,10 @@ naturellement associée à la norme similaire pour les vecteurs.
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
-  \prod\nolimits_e \normlun{f_e} / \prod\nolimits_k (n_k +1)^{\delta_k} 
-  \le 
-  \normlun {F} 
-  \le 
+  \prod\nolimits_e \normlun{f_e} / \prod\nolimits_k (n_k +1)^{\delta_k}
+  \le
+  \normlun {F}
+  \le
   \prod\nolimits_e \normlun{f_e} \\
   \normlun {F(\mathcal Q)}
   \le
@@ -189,27 +189,27 @@ jouit par ailleurs des propriétés suivantes :
   \normlun L \max_k\normlun{Q_k} \\
   \normlun{\der\alpha F}
   \le
-  {\textstyle \binom\delta\alpha} \normlun P 
+  {\textstyle \binom\delta\alpha} \normlun P
 \end{gather}
 
 Elle se compare aux autres normes et mesures de la façon suivante.
 \begin{align}
-  \normlun P / \ncoef P 
-  & \le \normsup P 
-  \le \normlun P 
-  \\ 
-  \normhom F 
+  \normlun P / \ncoef P
+  & \le \normsup P
+  \le \normlun P
+  \\
+  \normhom F
   & \le \normlun F
   \le \normhom F \prod\nolimits_k (n_k +1)^{\delta_k/2}
   \\
   \mespph F / \exp\big(
   {\textstyle \sum_k} \delta_k\gamma_{n_k}
-  \big) 
-  & \le \normlun F 
+  \big)
+  & \le \normlun F
   \le \mespph F \prod\nolimits_k (n_k +1)^{\delta_k/2}
   \\
-  \mahler P 
-  & \le \normlun F 
+  \mahler P
+  & \le \normlun F
   \le \mahler P \prod\nolimits_k (n_k +1)^{\delta_k/2}
 \end{align}
 
@@ -220,41 +220,41 @@ $\normeuc P = \big( \sum_i \abs{P_i}^2 \big)^{1/2}$.
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
-  \normeuc P \cdot \normeuc Q 
-  \le \normeuc {PQ} 
-  \le \normeuc P \cdot \normeuc Q \todom 
+  \normeuc P \cdot \normeuc Q
+  \le \normeuc {PQ}
+  \le \normeuc P \cdot \normeuc Q \todom
   \\
-  \normeuc {F(\mathcal Q)}  
-  \le  
-  \normeuc F \normeuc {\mathcal Q}^\delta \todom 
+  \normeuc {F(\mathcal Q)}
+  \le
+  \normeuc F \normeuc {\mathcal Q}^\delta \todom
   \\
-  \abs{F (u)} 
-  \le \normeuc{F}  \normeuc u ^\delta 
+  \abs{F (u)}
+  \le \normeuc{F}  \normeuc u ^\delta
   \\
-  \normeuc{\der\alpha F} 
-  \le {\textstyle \binom\delta\alpha}  \normeuc F 
+  \normeuc{\der\alpha F}
+  \le {\textstyle \binom\delta\alpha}  \normeuc F
 \end{gather}
 
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
-  \normeuc P / \sqrt{\ncoef P} 
-  & \le \normsup P 
-  \le \normeuc P 
+  \normeuc P / \sqrt{\ncoef P}
+  & \le \normsup P
+  \le \normeuc P
   \\
-  \normeuc P 
+  \normeuc P
   & \le \normlun P
   \le \normeuc P \sqrt{\ncoef P}
   \\
-  \normhom F 
-  & \le \normeuc P 
-  \le \sqrt{m(\delta)} \normhom F 
+  \normhom F
+  & \le \normeuc P
+  \le \sqrt{m(\delta)} \normhom F
   \\
-  \mespph F / \exp\big( {\textstyle \sum_k}\delta_k\gamma_{n_k} \big) 
-  & \le \normeuc F 
-  \le \prod\nolimits_k (n_k +1)^{\delta_k} \mespph F 
+  \mespph F / \exp\big( {\textstyle \sum_k}\delta_k\gamma_{n_k} \big)
+  & \le \normeuc F
+  \le \prod\nolimits_k (n_k +1)^{\delta_k} \mespph F
   \\
-  \mahler P 
-  & \le \normeuc F 
+  \mahler P
+  & \le \normeuc F
   \le \prod\nolimits_k (n_k +1)^{\delta_k} \mahler P
 \end{align}
 De plus si $L$ est une forme linéaire on a
@@ -265,46 +265,46 @@ $\normeuc L = \normhom L = \mespph L$.
 Elle est définie pour $F$ homogène par $\normhom F = \big(\sum_\alpha
 \abs{P_\alpha}^2 \cdot\binom{\delta}{\alpha}^{-1} \big)^{1/2}$ et
 naturellement associée à la norme euclidienne pour les vecteurs.
-		
+    
 C'est une norme, évidemment invariante par ajout de variables muettes, qui
 jouit par ailleurs des propriétés suivantes :
 \begin{gather}
-  \normhom F \normhom G 
-  \le \normhom {FG} 
-  \le \normhom F \normhom G  \todom 
+  \normhom F \normhom G
+  \le \normhom {FG}
+  \le \normhom F \normhom G  \todom
   \\
-  \normhom {F(\mathcal Q)}  
-  \le  \normhom F \normhom {\mathcal Q}^\delta \todom 
+  \normhom {F(\mathcal Q)}
+  \le  \normhom F \normhom {\mathcal Q}^\delta \todom
   \\
-  \abs {F (u)} 
-  \le \normhom F  \normeuc u ^\delta 
+  \abs {F (u)}
+  \le \normhom F  \normeuc u ^\delta
   \\
-  \normhom {\der{i} P} 
+  \normhom {\der{i} P}
   \le \normhom P \todom
 \end{gather}
 
 Elle se compare aux autres normes et mesures de la façon suivante :
 \begin{align}
-  \normhom F / \exp\big( {\textstyle\sum_k} \sqrt{n_k} \,\big) 
-  & \le \normsup F 
-  \le \normhom F \sqrt{m(\delta)} 
+  \normhom F / \exp\big( {\textstyle\sum_k} \sqrt{n_k} \,\big)
+  & \le \normsup F
+  \le \normhom F \sqrt{m(\delta)}
   \\
-  \mespph F / \exp(\sum\delta_k\gamma_{n_k}) 
-  & \le \normhom F 
-  \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mespph F 
+  \mespph F / \exp(\sum\delta_k\gamma_{n_k})
+  & \le \normhom F
+  \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mespph F
   \\
-  \mahler F / \sqrt{m(\delta)} 
-  \le \normhom F 
+  \mahler F / \sqrt{m(\delta)}
+  \le \normhom F
   & \le \prod\nolimits_k (n_k +1)^{\delta_k/2} \mahler F
 \end{align}
 
 \section{Mesure homogène à la \texorpdfstring{\bsc{Philippon}}{Philippon}}
 
-Elle est définie pour $F$ homogène par 
+Elle est définie pour $F$ homogène par
 \[
-  \log \mespph F 
-  = \big( 
-  \int_{S_{1}\times\cdots\times S_{l}} 
+  \log \mespph F
+  = \big(
+  \int_{S_{1}\times\cdots\times S_{l}}
   \log\abs F\ \mu_1 \wedge \cdots \wedge \mu_l
   \big) + \sum_{k=1}^l \delta_k \cdot \gamma_{n_k}
   \pmm,
@@ -313,7 +313,7 @@ où $S_k = \{ u \in \C^{n_k},\ \normeuc u = 1 \}$ est la sphère de dimension
 $2n_k-1$ plongée dans $\C^{n_k}$ muni de sa structure hermitienne usuelle,
 $\mu_k$ désigne la mesure sur $S_k$ invariante par l'action du groupe unitaire
 et normalisée par $\mu_k(S_k) = 1$, et enfin $\gamma_n = \frac12
-\sum_{q=1}^{n} \frac1q$. 
+\sum_{q=1}^{n} \frac1q$.
 
 C'est une mesure multiplicative ($\mespph{FG} = \mespph F \cdot \mespph G$),
 invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
@@ -322,33 +322,33 @@ notions de la façon suivante.
 \begin{equation}
   \mespph F / \exp\big(
     {\textstyle\sum_k} \delta_k \gamma_{n_k} \sqrt{n_k}
-  \,\big) 
-  & \le \normsup F 
-  \le \mespph F m(\delta) 
+  \,\big)
+  & \le \normsup F
+  \le \mespph F m(\delta)
   \\
-  \mahler F 
-  \le \mespph F 
+  \mahler F
+  \le \mespph F
   \le \mahler F \exp(\sum\delta_k\gamma{n_k})
 \end{equation}
 
 \section{Mesure de \texorpdfstring{\bsc{Malher}}{Mahler}}
 
-Elle est définie pour tout $P$ par 
+Elle est définie pour tout $P$ par
 \[
-  \log\mahler P 
+  \log\mahler P
   = \int_S \log\abs P\, \mu_S \pmm,
 \]
 où $S$ est le produit des cercles unités de $\C$, muni de la mesure $\mu$
-produit des mesures de \bsc{Haar} normalisées de masse $1$. 
+produit des mesures de \bsc{Haar} normalisées de masse $1$.
 
 C'est une mesure multiplicative ($\mahler {PQ} = \mahler P \cdot \mahler Q$),
 invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
 jouit par ailleurs des propriétés suivantes ?]
 
 Elle se compare aux autres normes et mesures de la façon suivante.
-\begin{align} 
-  \mahler P / \sqrt{\ncoef P} 
-  & \le \normsup F 
+\begin{align}
+  \mahler P / \sqrt{\ncoef P}
+  & \le \normsup F
   \le \mahler P m(\delta)
 \end{align}
 

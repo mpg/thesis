@@ -94,7 +94,7 @@ et la notation évidente $X^i = \prod_{k} (X^{(k)})^{i^{(k)}} = \prod_{k, l}
 (X_l^{(k)})^{i_l^{(k)}}$. On définit une norme similaire au cas homogène par
 \[
   \nv{P} = \left( \sum \frac{ \av{a_i}^2}{\binom{d^{(1)}}{i^{(1)}} \cdots
-	\binom{d^{(m)}}{i^{(m)}} } \right)^{1/2}
+  \binom{d^{(m)}}{i^{(m)}} } \right)^{1/2}
 \]
 aux places archimédiennes, $\nv{P} = \max(\av{a_i})$ aux places finies. Si
 $F = (F_0, \dots, F_p)$ est une famille de formes multi-homogènes de même
@@ -116,7 +116,7 @@ rappelle que $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ est le degré local relatif.
 On considère alors les points satisfaisant le système d'inégalités
 \[
   \Dv(\p{x}, \OA) \le t_v H(\p{x})^{-\lambda_v \eps} \quad
-  \forall v \in S \pmm{,} \tag{HP} \label{hyp} 
+  \forall v \in S \pmm{,} \tag{HP} \label{hyp}
 \]
 où $0<t_v\le 1$ est une constante présente pour des raisons techniques, que
 l'on précisera.
@@ -145,18 +145,18 @@ archimédienne, $0$ sinon. On est alors en mesure d'énoncer :
 
 \begin{thm} \label{mumpt}
   Soient $\p{x}$ et $\p{y}$ deux points de $\A(\cdn)$ satisfaisant (\ref{hyp}),
-  avec 
+  avec
   \[
-	r_v = \av{2}^g(2^g20n(n+1)^2)^{-\dv} c_v(\A)^{-1} \pmm.
+  r_v = \av{2}^g(2^g20n(n+1)^2)^{-\dv} c_v(\A)^{-1} \pmm.
   \]
   Posons $B =
   4^gh(\OA)+ 3g\log(2)$, et choisissons $\phi > 0$ et $\rho > 0$ tels que
   $(\rho^2/4) + 2\phi + \rho\phi< \eps$. Supposons :
   \begin{enumerate}
-	\item $\cos(\p{x},\p{y}) \ge 1-\phi$, \label{cone}
-	\item $\hn(\p{x}) \le \hn(\p{y}) \le (1+\rho)\hn(\p{x})$, \label{sect}
-	\item $\hn(\p{x}) > (1+\eps)B/(\eps - (\rho^2/4) - 2\phi - \rho\phi)$,
-	  \label{tronk}
+  \item $\cos(\p{x},\p{y}) \ge 1-\phi$, \label{cone}
+  \item $\hn(\p{x}) \le \hn(\p{y}) \le (1+\rho)\hn(\p{x})$, \label{sect}
+  \item $\hn(\p{x}) > (1+\eps)B/(\eps - (\rho^2/4) - 2\phi - \rho\phi)$,
+    \label{tronk}
   \end{enumerate}
   alors $\p{x} = \p{y}$.
 \end{thm}
@@ -197,8 +197,8 @@ quantitative. On aura besoin du lemme technique suivant.
   (z_1, \dots, z_n)$ le vecteur obtenu en omettant la première coordonnée. On
   a alors, vu l'hypothèse sur $\p{x}$ et la définition de la distance :
   \begin{equation}
-	\eps_0 \nv{x}\nv{\coa}  \ge \nv{x \wedge \coa} \ge \nvp{\coa_0 \hat{x} -
-	  x_0 \hat{\coa}} \pmm{,} \label{pva}
+  \eps_0 \nv{x}\nv{\coa}  \ge \nv{x \wedge \coa} \ge \nvp{\coa_0 \hat{x} -
+    x_0 \hat{\coa}} \pmm{,} \label{pva}
   \end{equation}
   où la deuxième inégalité vient en remarquant que toutes les coordonnées de
   $\coa_0 \hat{x} - x_0 \hat{\coa}$ apparaissent également comme coordonnées
@@ -216,26 +216,26 @@ quantitative. On aura besoin du lemme technique suivant.
   $\nv{x}\nv{\coa}$, puis en remarquant que $\nvp{\hat{\coa}}/\nvp{\coa} \le
   1$ il vient successivement :
   \begin{align}
-	\frac{\nvp{\hat{\coa}}}{\nvp{\coa}} \cdot \frac{\av{x_0}}{\nv{x}}
-	& \ge \frac{\nv{\hat{x}}}{\nv{x}}\cdot \frac{\av{\coa_0}}{\nv{\coa}} -
-	\eps_0 \pmm{,} \notag \\
-	\frac{\av{x_0}}{\nv{x}} & \ge
-	\frac{\nv{\hat{x}}}{\nv{x}}\cdot\frac{1}{\sqrt{n+1}} - \eps_0 \pmm{.}
-	\label{contrainte}
+  \frac{\nvp{\hat{\coa}}}{\nvp{\coa}} \cdot \frac{\av{x_0}}{\nv{x}}
+  & \ge \frac{\nv{\hat{x}}}{\nv{x}}\cdot \frac{\av{\coa_0}}{\nv{\coa}} -
+  \eps_0 \pmm{,} \notag \\
+  \frac{\av{x_0}}{\nv{x}} & \ge
+  \frac{\nv{\hat{x}}}{\nv{x}}\cdot\frac{1}{\sqrt{n+1}} - \eps_0 \pmm{.}
+  \label{contrainte}
   \end{align}
   Notons $t = \av{x_0}/\nv{x} \in [0; 1]$ ; comme $\nv{x}^2 = \av{x_0}^2 +
   \nv{\hat{x}}^2$, on réécrit (\ref{contrainte}) sous la forme $t \ge
   \sqrt{\frac{1-t^2}{n+1}}-\eps_0$, ou encore :
   \[
-	\left(\frac{n+2}{n+1}\right)t^2 + 2t\eps_0 + \eps_0^2 - \frac{1}{n+1} \ge
-	0 \pmm{,}
+  \left(\frac{n+2}{n+1}\right)t^2 + 2t\eps_0 + \eps_0^2 - \frac{1}{n+1} \ge
+  0 \pmm{,}
   \]
   qui, compte tenu de l'hypothèse sur $\eps_0$ et de la positivité de $t$,
   implique :
   \begin{align*}
-	t & \ge \frac{n+1}{n+2}\sqrt{\frac{-\eps_0^2}{n+1}+\frac{n+2}{(n+1)^2}} -
-	\left(\frac{n+1}{n+2}\right)\eps_0\\
-	& \ge \frac{\sqrt{n+1}}{n+2} - \eps_0 \pmm{,}
+  t & \ge \frac{n+1}{n+2}\sqrt{\frac{-\eps_0^2}{n+1}+\frac{n+2}{(n+1)^2}} -
+  \left(\frac{n+1}{n+2}\right)\eps_0\\
+  & \ge \frac{\sqrt{n+1}}{n+2} - \eps_0 \pmm{,}
   \end{align*}
   comme annoncé. Le cas particulier s'en déduit immédiatement en substituant
   et en observant que $n \ge 2$.
@@ -272,46 +272,46 @@ l'origine. Le lemme suivant donne une valeur admissible pour le rayon.
   comme suit le développement de \bsc{Taylor} bihomogène de $D$ au voisinage
   de $(\coa, \coa)$ :
   \[
-	D(x, y) = \frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa) + \sum_E R_{i, j}
-	\pmm{, où :}
+  D(x, y) = \frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa) + \sum_E R_{i, j}
+  \pmm{, où :}
   \]
   \[
-	R_{i, j} =
-	\frac{x_0^{2-\lgr{i}}y_0^{2-\lgr{j}}}{\coa_0^{4-\lgr{i}-\lgr{j}}}\cdot
-	\frac{1}{i!j!} \cdot
-	\frac{\partial^{\lgr{i}+\lgr{j}}D}{\partial X^i \partial Y^j}(\coa, \coa)
-	\cdot
-	\prod_{k=1}^n \left( x_{k} - \frac{x_0}{\coa_0} \coa_{k} \right)^{i_k}
-	\cdot \prod_{k=1}^n \left( y_{k} - \frac{y_0}{\coa_0} \coa_{k}
-	\right)^{j_k}
+  R_{i, j} =
+  \frac{x_0^{2-\lgr{i}}y_0^{2-\lgr{j}}}{\coa_0^{4-\lgr{i}-\lgr{j}}}\cdot
+  \frac{1}{i!j!} \cdot
+  \frac{\partial^{\lgr{i}+\lgr{j}}D}{\partial X^i \partial Y^j}(\coa, \coa)
+  \cdot
+  \prod_{k=1}^n \left( x_{k} - \frac{x_0}{\coa_0} \coa_{k} \right)^{i_k}
+  \cdot \prod_{k=1}^n \left( y_{k} - \frac{y_0}{\coa_0} \coa_{k}
+  \right)^{j_k}
   \]
   et la somme est prise sur :
   \[
-	E = \left\{ (i, j) \in (\{0\} \times \N^n)^2 \text{ tels que }
-	  \lgr{i},\lgr{j} \le 2 \text{ et } \lgr{i}+\lgr{j} \neq 0 \right\}
-	\pmm{.}
+  E = \left\{ (i, j) \in (\{0\} \times \N^n)^2 \text{ tels que }
+    \lgr{i},\lgr{j} \le 2 \text{ et } \lgr{i}+\lgr{j} \neq 0 \right\}
+  \pmm{.}
   \]
 
   On majore $\nv{x_k - \frac{x_0}{\coa_0} \coa_k}$ par $\nv{x \wedge
-	\coa}/\av{\coa_0}$, qui, vu l'hypothèse sur $\p{x}$, est lui-même majoré
+  \coa}/\av{\coa_0}$, qui, vu l'hypothèse sur $\p{x}$, est lui-même majoré
   par $r_v(D)\cdot\eps_{1, v} \nv{x} (\nv{\coa}/\av{\coa_0})$ ; on procède de
   même pour les facteurs en $y$.
 
   On note $a = \lgr{i}$, $b=\lgr{j}$ ; chaque $\nv{R_{i, j}}$ est alors majoré
   comme suit :
   \begin{align*}
-	\nv{R_{i, j}} & \le
-	\nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}
-	\frac{(c(a)c(b))^\dv \nnv{D}\nv{\coa}^4}{\nv{D(\coa, \coa)}}
-	\frac{\nv{x}^a}{\av{x_0}^a} \frac{\nv{y}^b}{\av{y_0}^b} (r_v(D)\eps_{1,
-	  v})^{a+b}\\
-	& \le \left( \frac{c(a)c(b)}{\left( 10n \right)^{a+b}} \right)^\dv
-	\nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)} \eps_{1, v} \pmm{,}
+  \nv{R_{i, j}} & \le
+  \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)}
+  \frac{(c(a)c(b))^\dv \nnv{D}\nv{\coa}^4}{\nv{D(\coa, \coa)}}
+  \frac{\nv{x}^a}{\av{x_0}^a} \frac{\nv{y}^b}{\av{y_0}^b} (r_v(D)\eps_{1,
+    v})^{a+b}\\
+  & \le \left( \frac{c(a)c(b)}{\left( 10n \right)^{a+b}} \right)^\dv
+  \nv{\frac{x_0^2y_0^2}{\coa_0^4}D(\coa, \coa)} \eps_{1, v} \pmm{,}
   \end{align*}
   où $c(u)$ vaut $1$ si $u=0$, $2$ si $u=1$, $\sqrt{2}$ si $u=2$, de sorte que
   \[
-	\frac{1}{i!j!}\nnv{\frac{\partial^{a+b}D}{\partial X^i \partial Y^j}} \le
-	(c(a) c(b))^\dv \nnv{D}\pmm{,}
+  \frac{1}{i!j!}\nnv{\frac{\partial^{a+b}D}{\partial X^i \partial Y^j}} \le
+  (c(a) c(b))^\dv \nnv{D}\pmm{,}
   \]
   comme on s'en convainc en le vérifiant sur chaque type de monôme intervenant
   dans $D$.
@@ -340,9 +340,9 @@ différence.
 
 \begin{lem} \label{DistRel}
   On reprend les notations du lemme précédent ; on fixe de plus $0 < \eps_{1,
-	v} < 1$. Pour tous points $\p{x}$ et $\p{y}$ de $\A(\cdn)$ satisfaisant
+  v} < 1$. Pour tous points $\p{x}$ et $\p{y}$ de $\A(\cdn)$ satisfaisant
   \[
-	\max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v(D) \cdot \eps_{1,v} \pmm{,}
+  \max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v(D) \cdot \eps_{1,v} \pmm{,}
   \]
   on a : $\Dv(\p{x}-\p{y}, \OA) \le \eps_{1,v}$.
 \end{lem}
@@ -352,17 +352,17 @@ différence.
   Le lemme précédent s'applique, et nous assure que la distance de
   $\p{x}-\p{y}$ à l'origine  est donnée par :
   \begin{align*}
-	\Dv(\p{x}-\p{y}, \OA) & = \frac{\nv{D(x, y) \wedge \coa}}{\nv{D(x,
-		y)}\nv{\coa}} \\
-	& \le \av{\frac{x_0^2y_0^2}{\coa_0^4}}\frac{\nv{D(\coa, \coa)\wedge
-		\coa}}{\nv{D(x, y)}\nv{\coa}} + \frac{\nv{\sum_E (R_{i, j} \wedge
-		\coa)}}{\nv{D(x, y)}\nv{\coa}} \pmm{.}
+  \Dv(\p{x}-\p{y}, \OA) & = \frac{\nv{D(x, y) \wedge \coa}}{\nv{D(x,
+    y)}\nv{\coa}} \\
+  & \le \av{\frac{x_0^2y_0^2}{\coa_0^4}}\frac{\nv{D(\coa, \coa)\wedge
+    \coa}}{\nv{D(x, y)}\nv{\coa}} + \frac{\nv{\sum_E (R_{i, j} \wedge
+    \coa)}}{\nv{D(x, y)}\nv{\coa}} \pmm{.}
   \end{align*}
   Le premier terme est nul car $D(\coa, \coa)$ et $\coa$ étant deux systèmes
   de coordonnées de l'origine sont colinéaires et ont un produit extérieur
   nul. On majore ensuite brutalement chaque $\nv{R_{i, j} \wedge \coa}$ par
   $\nv{R_{i, j}} \cdot \nv{\coa}$. Vu la minoration précédente de $\nv{D(x,
-	y)}$ et après simplification, la norme de chaque terme de la somme
+  y)}$ et après simplification, la norme de chaque terme de la somme
   restante est majorée par $(2R'_{i, j})^\dv \eps_{1, v}$. La propriété
   ultramétrique aux places finies, resp. la majoration ci-dessus de $\sum_E
   R'_{i, j}$ aux places infines, permettent alors de conclure.
@@ -408,12 +408,12 @@ multipliant les anciennes par des racines quatrièmes de l'unité.
   maximisant $\av{\coa_i}$. On définit alors une famille de formes $\tilde{D}$
   en posant, pour tout $(b, k)$ de $K_2 \times \widehat{K_2(4)}$ :
   \begin{multline*}
-	\tilde{D}_{(b, k)}(\tilde{X}, \tilde{Y}) = \tilde{\coa}_{(b, k)}^{-1} 
-	\sum_{\stackrel{d \in K(4)/K(2)}{u \in \widehat{K(2)}}} l(d)
-	\tilde{X}_{(\frac{c_1+d}{2}, l_1\cdot2\star u)}
-	\tilde{X}_{(\frac{c_2+d}{2}, l_2\cdot2\star u)} \\\times
-	\tilde{Y}_{(\frac{c_3+d}{2}, l_3\cdot2\star u)}
-	\tilde{Y}_{(\frac{c_4+d}{2}, l_4\cdot2\star u)} \pmm{,}
+  \tilde{D}_{(b, k)}(\tilde{X}, \tilde{Y}) = \tilde{\coa}_{(b, k)}^{-1}
+  \sum_{\stackrel{d \in K(4)/K(2)}{u \in \widehat{K(2)}}} l(d)
+  \tilde{X}_{(\frac{c_1+d}{2}, l_1\cdot2\star u)}
+  \tilde{X}_{(\frac{c_2+d}{2}, l_2\cdot2\star u)} \\\times
+  \tilde{Y}_{(\frac{c_3+d}{2}, l_3\cdot2\star u)}
+  \tilde{Y}_{(\frac{c_4+d}{2}, l_4\cdot2\star u)} \pmm{,}
   \end{multline*}
   où les différents indices $(a', l')$, $(b', k')$, $c_i$, $l_i$, sont définis
   comme indiqué dans la proposition 3.7 de [Da-Phi]. On peut de plus choisir
@@ -423,7 +423,7 @@ multipliant les anciennes par des racines quatrièmes de l'unité.
   différence $(\tilde\Theta(\A))^2 \to \tilde\Theta(\A)$ et qu'en
   $(\tilde\coa, \tilde\coa)$ on a plus précisément l'égalité vectorielle
   $\tilde{D}(\tilde\coa, \tilde\coa) = \left( 2^g (\tilde\coa_{(a,
-	l)})^2\right) \tilde\coa$. On savait bien sûr que ces deux vecteurs
+  l)})^2\right) \tilde\coa$. On savait bien sûr que ces deux vecteurs
   étaient colinéaires, le point est qu'on connait explicitement le coefficient
   qui les relie.
 
@@ -434,8 +434,8 @@ multipliant les anciennes par des racines quatrièmes de l'unité.
   2^g \coa_{i_v}^2 \cdot \coa$, et de la forme $D_i(X, Y)= \coa_{j(i)} \sum
   \zeta_{k,l,m,n} X_kX_lY_mY_n$, où $\zeta_{k,l,m,n}$ est une racine de
   l'unité et la somme est prise sur une famille\footnote{Rien ne permet \lat{a
-	  priori} d'affirmer qu'il s'agit d'un sous-ensemble, certains indices
-	pouvant être répétés.} à $4^g$ éléments de $\{0, \dots, n\}^4$. Sans avoir
+    priori} d'affirmer qu'il s'agit d'un sous-ensemble, certains indices
+  pouvant être répétés.} à $4^g$ éléments de $\{0, \dots, n\}^4$. Sans avoir
   besoin d'expliciter davantage, un calcul direct donne $\nv D \le 2^{g\dv}
   \nv\BA$ puis $\nnv{D} \le (2^g\sqrt{n+1})^\dv \nv\BA$. Comme on a de plus
   $\nv{D(\coa, \coa)} \ge \av{2}^g(n+1)^{-\dv}\nv\coa^3$, il vient finalement
@@ -448,9 +448,9 @@ on a ainsi montré le lemme principal, qui s'énonce comme suit.
 \begin{lem} \label{clef}
   Soient $0 < \eps_{1,v} < 1$ et $r_v = \av 2^g
   (2^g20n(n+1)^2)^{-\dv}c_v(\A)^{-1}$. Pour tous $\p x$ et $\p y$ de
-  $\A(\cdn)$ satisfaisant 
+  $\A(\cdn)$ satisfaisant
   \[
-	\max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v \cdot \eps_{1,v} \pmm{,}
+  \max ( \Dv(\p{x}, \OA), \Dv(\p{y}, \OA) ) < r_v \cdot \eps_{1,v} \pmm{,}
   \]
   on a : $\Dv(\p{x}-\p{y}, \OA) \le \eps_{1,v}$.
 \end{lem}
@@ -481,9 +481,9 @@ affirmations.
   remarqué que $\av{z_i \coa_j - \coa_i z_j} \le \nv{z\wedge \coa}$. Il vient
   :
   \[
-	\prod_v \Dv(\p{z}, \OA)^{e_v} \ge \prod_v \frac{\av{z_i \coa_j - \coa_i
-		z_j}^{e_v}}{\nv{z}^{e_v}\cdot\nv{\coa}^{e_v}} \ge \frac{1}{H(\p{z})
-	  H(\OA)} \pmm{.}
+  \prod_v \Dv(\p{z}, \OA)^{e_v} \ge \prod_v \frac{\av{z_i \coa_j - \coa_i
+    z_j}^{e_v}}{\nv{z}^{e_v}\cdot\nv{\coa}^{e_v}} \ge \frac{1}{H(\p{z})
+    H(\OA)} \pmm{.}
   \]
   On majore ensuite $\Dv(\p{z}, \OA)$ par $\min(H(\p{x}),
   H(\p{y}))^{-\eps\lambda_v}$ aux places $v$ de $S$, et par $1$ ailleurs.
@@ -505,13 +505,13 @@ affirmations.
   de plus que l'hypothèse \ref{sect} implique $\nv[N]{\p{y}} \le
   (1+\rho)^{1/2}\nv[N]{\p{x}} \le (1+\rho/2) \nv[N]{\p{x}}$. Il vient alors :
   \begin{align*}
-	\hn(\p{z}) & = \nv[N]{\p{x}-\p{y}}^2 \\ & = \nv[N]{\p{x}}^2 +
-	\nv[N]{\p{y}}^2 - 2\left< \p{x} ; \p{y} \right> \\
-	& = \left(\nv[N]{\p{y}} - \nv[N]{\p{x}}\right)^2 +
-	2\nv[N]{\p{x}}\nv[N]{\p{y}}\left( 1- \cos(\p{x}, \p{y}) \right) \\
-	& \le \left( \frac{\rho}{2}\nv[N]{\p{x}} \right)^2 + 2\left(
-	1+\frac{\rho}{2} \right) \nv[N]{\p{x}}^2 \cdot \phi \\
-	& \le ((\rho^2/4) + 2\phi + \rho\phi) \hn(\p{x})\pmm{.}\qedhere
+  \hn(\p{z}) & = \nv[N]{\p{x}-\p{y}}^2 \\ & = \nv[N]{\p{x}}^2 +
+  \nv[N]{\p{y}}^2 - 2\left< \p{x} ; \p{y} \right> \\
+  & = \left(\nv[N]{\p{y}} - \nv[N]{\p{x}}\right)^2 +
+  2\nv[N]{\p{x}}\nv[N]{\p{y}}\left( 1- \cos(\p{x}, \p{y}) \right) \\
+  & \le \left( \frac{\rho}{2}\nv[N]{\p{x}} \right)^2 + 2\left(
+  1+\frac{\rho}{2} \right) \nv[N]{\p{x}}^2 \cdot \phi \\
+  & \le ((\rho^2/4) + 2\phi + \rho\phi) \hn(\p{x})\pmm{.}\qedhere
   \end{align*}
 \end{proof}
 
@@ -524,11 +524,11 @@ affirmations.
   (4^g-1)h(\OA) + 3g\log(2)$. On passe ainsi aux hauteurs normalisées dans le
   résultat du lemme \ref{papti} :
   \begin{align*}
-	\hn(\p{z}) & \ge h(\p{z}) - (4^g-1)h(\OA) - 3g\log(2)\\
-	& \ge \eps \min(h(\p{x}), h(\p{y})) - h(\OA) - (4^g-1)h(\OA) - 3g\log(2)
-	\\
-	& \ge \eps \left(\hn(\p{x}) - (4^g-1)h(\OA) - 3g\log(2)\right) - B \\
-	& \ge \eps \hn(\p{x}) - (1+\eps)B \pmm{.}
+  \hn(\p{z}) & \ge h(\p{z}) - (4^g-1)h(\OA) - 3g\log(2)\\
+  & \ge \eps \min(h(\p{x}), h(\p{y})) - h(\OA) - (4^g-1)h(\OA) - 3g\log(2)
+  \\
+  & \ge \eps \left(\hn(\p{x}) - (4^g-1)h(\OA) - 3g\log(2)\right) - B \\
+  & \ge \eps \hn(\p{x}) - (1+\eps)B \pmm{.}
   \end{align*}
   Mais le lemme \ref{pti} donne alors $((\rho^2/4) + 3\phi) \hn(\p{x}) \ge
   \eps \hn(\p{x}) - (1+\eps)B$, ce qui contredit très précisément l'hypothèse

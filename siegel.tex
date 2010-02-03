@@ -32,7 +32,7 @@ multiprojectif associé à l'anneau multi-gradué
   \cdn [ \cmh1, \dots, \cmh\puiss ]
 \end{math}.
 On s'intéresse à une sous-variété produit de $\va^\puiss$ plongée dans
-$(\proj\dimp)^\puiss$, notée 
+$(\proj\dimp)^\puiss$, notée
 \begin{math}
   \var = \var[1] \times \dots \times \var[\puiss]
 \end{math}.
@@ -44,7 +44,7 @@ On notera en outre
   \vardeg[\fct] &= \deg {\var[\fct]}
   & \vardeg &= \deg \var = \sum_\fct \vardeg[\fct]
   \\
-  \varht[\fct] &= \haut {\var[\fct]} 
+  \varht[\fct] &= \haut {\var[\fct]}
   & \varht &= \haut \var = \sum_\fct \varht[\fct]
 \end{align*}
 et $\varfc[\fct]$ une forme de \bsc{Chow} de $\var[\fct]$, de sorte que
@@ -73,7 +73,7 @@ $d$.
   On reprend la preuve de la proposition~2.2 de \noref{IVG} (p.\,469). Au
   moment de choisir des formes linéaires $V_0, \dots, V_n$ telles que
   \[
-	f_Z(V_0, \dots, V_n) \neq 0 \pmm,
+  f_Z(V_0, \dots, V_n) \neq 0 \pmm,
   \]
   on commence en fait par fixer $V_0 = X_0$. Le polynôme $f(V_0, \truc, \dots,
   \truc)$ est multi-homogène de degré $D$ en chaque variable ; vu l'hypothèse
@@ -83,14 +83,14 @@ $d$.
 \end{proof}
 
 \begin{lem}\label{l-adapt-cost}
-  Soit $Z \hookrightarrow \proj{n}$ un sous-schéma fermé intègre, et 
+  Soit $Z \hookrightarrow \proj{n}$ un sous-schéma fermé intègre, et
   $
   \mat \in GL_{\dimp+1}(\bar\Q) \cap \Z^{\dimp+1} \cap [-B, B]^{\dimp+1}
   $,
   où $B$ est un réel positif fixé, et $e_\mat$ l'automorphisme linéaire de
-  $\proj{n}$ associé à $\mat$. Alors 
+  $\proj{n}$ associé à $\mat$. Alors
   \[
-	\Haut_1(e_\mat(Z)) \leq B^{\vardeg(\dimp+1)} \pmm.
+  \Haut_1(e_\mat(Z)) \leq B^{\vardeg(\dimp+1)} \pmm.
   \]
 \end{lem}
 
@@ -111,7 +111,7 @@ $d$.
 Introduisons un rationnel $\eps_0 > 0$ et un entier $\delta$ tel que
 $\eps_0\delta \in \N$. Fixons un réel $\eps_1 > 0$, liée à $\eps_0$ par une
 inégalité \todo[à expliciter ultérieurement], et notons $\tilde\delta =
-\eps_1\delta$. 
+\eps_1\delta$.
 Considérons par ailleurs une famille d'entiers $a_1 \ge \dots \ge a_\puiss =
 1$. Cette famille sera fixée à la fin de la section en cours, il suffit pour
 l'instant de savoir que ses éléments seront suffisamment étagés pour qu'on
@@ -123,23 +123,23 @@ puisse choisir $\eps_3$ pas trop gros \todo[à expliciter] tel que
 On introduit alors le dessous de multi-escalier
 \[
   L_a^\delta = \left\{
-	(\lambda\pexp1, \ldots, \lambda\pexp\puiss) \in \N^{\puiss(\dimp+1)}
-	\text{ tels que }
-	\frac {\lambda\pexp1[0]} {a_1^2} 
-	+ \dots +
-	\frac {\lambda\pexp\puiss[0]} {m-1}
-	\le \eps_1 \delta
-	\right\}
+  (\lambda\pexp1, \ldots, \lambda\pexp\puiss) \in \N^{\puiss(\dimp+1)}
+  \text{ tels que }
+  \frac {\lambda\pexp1[0]} {a_1^2}
+  + \dots +
+  \frac {\lambda\pexp\puiss[0]} {m-1}
+  \le \eps_1 \delta
+  \right\}
   \pmm,
 \]
 auquel on associe l'idéal d'annulation
 \[
   \mathfrak{\tilde q}_a^\delta
   = \left\{
-	\sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda X^\lambda \in \cdn [X]
-	\text{ tels que }
-	\lambda \in L_a^\delta \Rightarrow f_\lambda = 0
-	\right\}
+  \sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda X^\lambda \in \cdn [X]
+  \text{ tels que }
+  \lambda \in L_a^\delta \Rightarrow f_\lambda = 0
+  \right\}
   \pmm.
 \]
 On considère enfin $\mathfrak{q}_a^\delta = \mathfrak{\tilde q}_a^\delta +
@@ -153,10 +153,10 @@ relativement à $a$.
 
 On fixe désormais une famille $(e_1, \dots, e_\puiss)$ de points de
 $\var(\bar\Q)$. La famille d'entiers $a$ introduite ci-dessus est alors définie
-par 
+par
 \[
-  a_i = \left\lfloor 
-  \frac {\norm{x_i}} {\norm{x_m}} + \frac12 
+  a_i = \left\lfloor
+  \frac {\norm{x_i}} {\norm{x_m}} + \frac12
   \right\rfloor
   \pmm,
 \]
@@ -165,7 +165,7 @@ l'espace de \bsc{Mordell}-\bsc{Weil} de $\va$ (on commet l'abus consistant à
 toujours noter $e_i$ l'image de $e_i$ dans cet espace).
 
 Les points $e_\fct$ sont supposés de hauteurs suffisamment grandes et étagés
-pour qu'il soit possible de choisir $\eps_3$ comme plus haut. 
+pour qu'il soit possible de choisir $\eps_3$ comme plus haut.
 
 \section{Plongement éclatant}
 
@@ -176,10 +176,10 @@ aider à exploiter ultérieurement cette information, on introduit un
 plongement, dit \emph{éclatant}, associé à $a$, définit par
 \begin{alignat*}{2}
   \phi_a \colon
-  && \var 
+  && \var
   & \longrightarrow \va^{2\puiss-1}
   \\
-  && (x_1, \dots, x_\puiss) 
+  && (x_1, \dots, x_\puiss)
   & \longmapsto (x_1, \dots, x_m, a_1 x_1 - x_m, a_{m-1} x_{m-1} - x_m)
 \end{alignat*}
 
@@ -195,7 +195,7 @@ sur lequel il existe des polynômes représentant $\phi_a\vert_U \colon U \to
 \proj{2\puiss-1}$. Plus précisément, il existe un morphisme d'algèbres,
 dépendant de $U$,
 \begin{alignat*}{2}
-  \psi_a \colon 
+  \psi_a \colon
   && \cdn [X, Y] & \to \cdn [X]
   \\
   && X\pexp{i} & \mapsto X\pexp{i}
@@ -206,12 +206,12 @@ tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute.
 \[
   \xymatrix{
-	\cdn [X, Y] \ar[r]^{\psi_a} \ar[d]^{\chi}
-	& \cdn [X] \ar[d]^{\chi}
-	\\
-	\cdn [X, Y] / \ideal{\phi_a(\var)} \ar[r]_{\phi_a^*} 
-	& \cdn [X] / \ideal{\var}
-	}
+  \cdn [X, Y] \ar[r]^{\psi_a} \ar[d]^{\chi}
+  & \cdn [X] \ar[d]^{\chi}
+  \\
+  \cdn [X, Y] / \ideal{\phi_a(\var)} \ar[r]_{\phi_a^*}
+  & \cdn [X] / \ideal{\var}
+  }
 \]
 Les formes $S$ et $Q_{a_j}$ dépendent de l'ouvert $U$ et sont données
 explicitement par \noref{mhsvva2} et \noref{ivds}.
@@ -221,28 +221,28 @@ explicitement par \noref{mhsvva2} et \noref{ivds}.
   X, Y]$ une forme multi-homogène de multi-degré $(\alpha, \beta)$, où $\alpha
   \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
   \begin{align*}
-	\deg \psi_a(F) 
-	& =
-	\psi_a^{\deg} (\alpha, \beta)
-	&
-	\normv{\psi_a(F)} 
-	& \le
-	\psi_a^{\mathrm{norm}} (\alpha, \beta, \normv{F})
+  \deg \psi_a(F)
+  & =
+  \psi_a^{\deg} (\alpha, \beta)
+  &
+  \normv{\psi_a(F)}
+  & \le
+  \psi_a^{\mathrm{norm}} (\alpha, \beta, \normv{F})
   \end{align*}
   où l'on peut prendre
   \begin{align*}
-	\psi_a^{\deg} (\alpha, \beta)
-	& = 
-	\alpha_1 + \frac94 \beta_1 a_1^2, \dots,
-	\alpha_{m-1} + \frac94 \beta{m-1} a_{m-1}^2,
-	\alpha_m + 2 \abs\beta
-	\\
-	\psi_a^{\mathrm{norm}} (\alpha, \beta, N)
-	& =
-	N 
-	\cdot \normv\coi ^{\abs\beta + 2\sum(a_j^2 -1)\beta_j)}
-	\cdot \big( 4^\genre(\dimp+1) \big)
-	^ {\delta_v (\abs\beta + \sum (a_j^2-1)\beta_j)}
+  \psi_a^{\deg} (\alpha, \beta)
+  & =
+  \alpha_1 + \frac94 \beta_1 a_1^2, \dots,
+  \alpha_{m-1} + \frac94 \beta{m-1} a_{m-1}^2,
+  \alpha_m + 2 \abs\beta
+  \\
+  \psi_a^{\mathrm{norm}} (\alpha, \beta, N)
+  & =
+  N
+  \cdot \normv\coi ^{\abs\beta + 2\sum(a_j^2 -1)\beta_j)}
+  \cdot \big( 4^\genre(\dimp+1) \big)
+  ^ {\delta_v (\abs\beta + \sum (a_j^2-1)\beta_j)}
   \end{align*}
 \end{prop}
 
@@ -258,6 +258,6 @@ hauteur, provenant d'une forme sur $\phi(\var)$, qui s'annule le long de
 $\divi$ avec un indice (pondéré par $a$) élevé relativement à son multi-degré.
 
 Plus précisément, on pose $d = \delta \cdot (\eps_0 a_1^2, \dots, \eps_0
-a_\puiss^2, 1, \dots, 1$ et on note $d' = \psi_a^{\deg}(d)$. 
+a_\puiss^2, 1, \dots, 1$ et on note $d' = \psi_a^{\deg}(d)$.
 
 \end{document}

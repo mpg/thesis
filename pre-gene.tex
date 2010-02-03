@@ -28,7 +28,7 @@
 \makeatletter
   \newcommand*\todo[1][]{%
     \leavevmode\notemarge{\todotext}%
-	\@ifnotmtarg{#1}{\emph{#1}}}
+  \@ifnotmtarg{#1}{\emph{#1}}}
   \newcommand*\todom[1][]{\tag{\todotext%
     \@ifnotmtarg{#1}{ : #1}}}
 \makeatother
@@ -60,7 +60,7 @@
 
 \newcommand*\std[1]{\mathbf{#1}} \newcommand\N{\std N} \newcommand\Z{\std Z}
 \newcommand\Q{\std Q} \newcommand\R{\std R} \newcommand\C{\std C}
-\newcommand\Proj{\std{P}} \newcommand\Aff{\std{A}} 
+\newcommand\Proj{\std{P}} \newcommand\Aff{\std{A}}
 \newcommand\Qbar{\overline{\Q}}
 \newcommand\cdn{\boldsymbol{k}} \newcommand\Cdn{\boldsymbol{K}}
 \newcommand*\I[1]{\std{Id}_{#1}} \newcommand*\ind[1]{\std{1}_{#1}}
