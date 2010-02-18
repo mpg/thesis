@@ -16,14 +16,29 @@
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
 
-\usepackage{ifmtarg, fixltx2e, xargs}
-
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs}
 \usepackage{enumitem}
+\usepackage{git-info, eso-pic, xcolor}
 
 \usepackage{xspace}
 \usepackage[expansion=false]{microtype}
 \usepackage[british, frenchb]{babel}
-\frenchbsetup{og=«,fg=», AutoSpacePunctuation=false}
+\frenchbsetup{og=«,fg=»,
+  AutoSpacePunctuation=false,
+  SuppressWarning=true}
+
+% use git information
+\AddToShipoutPicture{%
+  \AtPageLowerLeft{%
+    \parbox[b]{\paperwidth}{%
+      \centering \itshape \color{black!30}%
+      \jobname.tex $\le$ \gitinfo{@head}{dt}%
+      \par \kern2cm
+      }}}
+
+% provide generic title information
+\author{Manuel \bsc{P\'egouri\'e-Gonnard}}
+\date{\itshape Notes de travail}
 
 \newcommand*\notemarge[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand\todotext{\textsc{todo}}
