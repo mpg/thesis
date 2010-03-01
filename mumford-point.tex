@@ -1,5 +1,11 @@
 \input{pre-gene}
 
+\usepackage{csquotes}
+\usepackage[style=alphabetic, sorting=nyt, sortcites=true,
+  autopunct=true, babel=hyphen,
+  hyperref=true, backref=false]{biblatex}
+\bibliography{these}
+
 \newtheorem{thm}{Théorème}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lem}[thm]{Lemme}
@@ -38,12 +44,12 @@ On travaille dans une variété abélienne $\A$ de dimension $g$, définie sur
 $\Qbar$, qu'on suppose munie d'un fibré $\mathcal{M}$ ample et symétrique, de
 degré $d$. On choisit sur $\mathcal{M}^{\otimes 16}$ une structure thêta, et
 on plonge $\A$ dans $\Proj^n$, où $n=16^g d - 1$, par un plongement de
-\bsc{Mumford} modifié, tel que décrit au §3.1 de [Da-Phi], que nous noterons
-$\Theta$. On identifiera volontiers $\A$ et son image par $\Theta$. On reprend
-sans les rappeler les définitions de \lat{loc. cit.}, ainsi que les notations,
-sauf sur les points suivants : on omettra systématiquement les indices se
-rapportant à la puissance de $\mathcal{M}$ utilisée et on notera plus
-volontiers en indice les coordonnées. On écrira ainsi $\coa_{(a, l)} =
+\bsc{Mumford} modifié, tel que décrit au §3.1 de \cite{daphiminvaii}, que nous
+noterons $\Theta$. On identifiera volontiers $\A$ et son image par $\Theta$.
+On reprend sans les rappeler les définitions de \lat{loc. cit.}, ainsi que les
+notations, sauf sur les points suivants : on omettra systématiquement les
+indices se rapportant à la puissance de $\mathcal{M}$ utilisée et on notera
+plus volontiers en indice les coordonnées. On écrira ainsi $\coa_{(a, l)} =
 \Delta_{(a, l)}(\coa)  = \Delta_{a, l}^{(2)}(\coa) =
 \coa_{\mathcal{L}^{\otimes 4}}(a, l)$. Par ailleurs, bien que les coordonnées
 soient naturellement indexées (\lat{ibid.} p. 651) par $\mathcal{Z}_2 \times
@@ -65,10 +71,10 @@ i_n$ est la longueur du multi-indice $i$.
 Définissons maintenant les normes locales utilisées pour les vecteurs. Si $v$
 est une place finie, on pose $\nv{x} = \sup_i(\av{x_i})$ ; pour une place $v$
 infinie on utilise sauf précision contraire la norme euclidienne $\nv{x} = (
-\sum_i \av{x_i}^2 )^{1/2}$. Notant $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ le
-degré local relatif, on définit ainsi la hauteur projective d'un point $\p{x}
-\in \Proj^n$ par $H(\p{x}) = \prod_v \nv{x}^{e_v}$ ; on utilisera couramment
-la hauteur additive $h = \log H$.
+\sum_i \av{x_i}^2 )^{1/2}$. Notant $e_v = [\cdn_v : \Q_v]/[\cdn : \Q]$ le degré
+local relatif de $\cdn$, on définit ainsi la hauteur projective d'un point
+$\p{x} \in \Proj^n(\cdn)$ par $H(\p{x}) = \prod_v \nv{x}^{e_v}$ ; on utilisera
+couramment la hauteur additive $h = \log H$.
 
 On définit ensuite des normes locales pour les formes homogènes. Si $P =
 \sum_{\lgr{i} =d} a_i X^i$ est une forme homogène de degré $d$, on pose aux
@@ -106,8 +112,8 @@ points de $\Proj^n(\cdn)$ par :
 \[
   \Dv(\p{x}, \p{y}) = \frac{\nv{x\wedge y }}{\nv{x}\nv{y}}\pmm{.}
 \]
-On s'intéresse alors aux approximations exceptionnelles de l'origine, \lat{i.
-  e.} aux points $\p{x} \in \A(\cdn)$ satisfaisant $\Dv(\p{x}, \OA) \le
+On s'intéresse alors aux approximations exceptionnelles de l'origine,
+c'est-à-dire aux points $\p{x} \in \A(\cdn)$ satisfaisant $\Dv(\p{x}, \OA) \le
 H(\p{x})^{-\eps}$, où $0<\eps<1$ est fixé.  Plus généralement, on considère un
 ensemble fini $S$ de places de $\cdn$, et une famille de réels positifs
 $(\lambda_v)_{v\in S}$ telle que $\sum_{v\in S} e_v \lambda_v = 1$, où on
@@ -136,10 +142,10 @@ On prouve ici une inégalité explicite à la \bsc{Mumford} sur ces
 approximations. Celle-ci s'énonce dans l'espace de \bsc{Mordell-Weil} de
 $\A(\cdn)$, qui est par définition l'espace $\A(\cdn)\otimes_\Z \R$ muni de la
 forme quadratique définie positive donnée par la hauteur normalisée de
-\bsc{Néron-Tate}, notée $\hn$. C'est un espace vectoriel euclidien de
-dimension le rang de \bsc{Mordell-Weil} $r$ de $\A$ sur $\cdn$. Si $\p{x}$ est
-un point de $\A(\cdn)$, nous noterons encore $\p{x}$ son image dans l'espace
-de \bsc{Mordell-Weil}. On rapelle la notation $\dv = 1$ si $v$ est
+\bsc{Néron-Tate}, notée $\hn$. C'est un espace vectoriel euclidien dont la
+dimension est le rang de \bsc{Mordell-Weil} $r$ de $\A$ sur $\cdn$. Si $\p{x}$
+est un point de $\A(\cdn)$, nous noterons encore $\p{x}$ son image dans
+l'espace de \bsc{Mordell-Weil}. On rapelle la notation $\dv = 1$ si $v$ est
 archimédienne, $0$ sinon. On est alors en mesure d'énoncer :
 
 \begin{thm} \label{mumpt}
@@ -242,15 +248,16 @@ quantitative. On aura besoin du lemme technique suivant.
 
 On va maintenant s'attacher à contrôler la variation de distance quand on
 prend la différence de deux points proches de l'origine. D'après la
-proposition 3.7 de [Da-Phi], il existe des familles de formes bihomogènes de
-degrés $(2, 2)$ représentant le morphisme de différence $\A\times\A \to \A$
-dans le plongement choisi en tout point où elles sont définies, c'est-à-dire
-non identiquement nulles. De plus, pour chaque couple $(x, y)$, il existe une
-famille de telles formes ne s'y annulant pas identiquement. On peut en
-particulier choisir une famille de formes représentant la différence dans un
-voisinage de \bsc{Zariski} de $(\OA, \OA)$. Un tel voisinage contient
-certainement un produit de boules $v$-adiques de rayon non nul centrées en
-l'origine. Le lemme suivant donne une valeur admissible pour le rayon.
+proposition 3.7 de \cite{daphiminvaii}, il existe des familles de formes
+bihomogènes de degrés $(2, 2)$ représentant le morphisme de différence
+$\A\times\A \to \A$ dans le plongement choisi en tout point où elles
+définissent un morphisme projectif, c'est-à-dire ne sont pas identiquement
+nulles. De plus, pour chaque couple $(x, y)$, il existe une famille de telles
+formes ne s'y annulant pas identiquement. On peut en particulier choisir une
+famille de formes représentant la différence dans un voisinage de
+\bsc{Zariski} de $(\OA, \OA)$. Un tel voisinage contient certainement un
+produit de boules $v$-adiques de rayon non nul centrées en l'origine. Le lemme
+suivant donne une valeur admissible pour le rayon.
 
 \begin{lem} \label{rayonRel}
   Soient $v$ une place de $\cdn$ et $D$ une famille de formes représentant la
@@ -265,7 +272,7 @@ l'origine. Le lemme suivant donne une valeur admissible pour le rayon.
   \ref{pv}, et comme on travaille à $v$ fixé on supposera encore $i_v = 0$
   pour alléger les notations. On choisit de plus $\p{x}$ et $\p{y}$ dans
   $(B_v(\OA, r_v(D)))^2$ ; on peut ainsi écrire $\max(\Dv(\p x, \OA), \Dv(\p
-  y, \OA)) \le r_v(D)\cdot\eps_{1, v}$ pour un certain $0 < \eps_{1, v} < 1$.
+  y, \OA)) = r_v(D)\cdot\eps_{1, v}$ pour un certain $0 < \eps_{1, v} < 1$.
   Ces points vérifient \lat{a fortiori} les hypothèses du lemme \ref{pv} ; en
   particulier $\coa_0$, $x_0$, $y_0$ sont tous non nuls et on peut écrire
   comme suit le développement de \bsc{Taylor} bihomogène de $D$ au voisinage
@@ -357,26 +364,26 @@ différence.
     \coa}}{\nv{D(x, y)}\nv{\coa}} + \frac{\nv{\sum_E (R_{i, j} \wedge
     \coa)}}{\nv{D(x, y)}\nv{\coa}} \pmm{.}
   \end{align*}
-  Le premier terme est nul car $D(\coa, \coa)$ et $\coa$ étant deux systèmes
-  de coordonnées de l'origine sont colinéaires et ont un produit extérieur
-  nul. On majore ensuite brutalement chaque $\nv{R_{i, j} \wedge \coa}$ par
-  $\nv{R_{i, j}} \cdot \nv{\coa}$. Vu la minoration précédente de $\nv{D(x,
-  y)}$ et après simplification, la norme de chaque terme de la somme
+  Le premier terme est nul car, $D(\coa, \coa)$ et $\coa$ étant deux systèmes
+  de coordonnées de l'origine, ils sont colinéaires et ont donc un produit
+  extérieur nul. On majore ensuite brutalement chaque $\nv{R_{i, j} \wedge
+    \coa}$ par $\nv{R_{i, j}} \cdot \nv{\coa}$. Vu la minoration précédente de
+  $\nv{D(x, y)}$ et après simplification, la norme de chaque terme de la somme
   restante est majorée par $(2R'_{i, j})^\dv \eps_{1, v}$. La propriété
   ultramétrique aux places finies, resp. la majoration ci-dessus de $\sum_E
   R'_{i, j}$ aux places infines, permettent alors de conclure.
 \end{proof}
 
 Le défaut des deux énoncés précédents est que les constantes $c_v(D)$, donc
-$r_v(D)$ dépendent \lat{a priori} du choix de $D$. On aimerait donc choisir
-une famille $D$ pour laquelle on puisse contrôler $c_v(D)$ en fontion de
-paramètres plus intrinsèques. Le candidat naturel est la constante locale
-$c_v(\A)$, que nous allons maintenant définir précisément. D'après le lemme
-3.5 de [Da-Phi], il existe dans chaque classe de $K_2 \times \widehat{K_2(4)}
-\mod 2K_2 \times \widehat{K_2(4)}^2$ au moins un indice $(a, l)$ tel que
-$\coa_{(a,l)} \neq 0$. On note $\mathcal{Z}_\BA$ un système complet de
-représentants vérifiant cette condition, et on pose $\BA = (\coa_{(a,
-  l)}^{-1})_{(a, l) \in \mathcal{Z}_\BA}$. La constante $c_v(\A) =
+$r_v(D)$ dépendent \lat{a priori} du choix de $D$. On aimerait donc choisir une
+famille $D$ pour laquelle on puisse contrôler $c_v(D)$ en fontion de paramètres
+plus intrinsèques. Le candidat naturel est la constante locale $c_v(\A)$, que
+nous allons maintenant définir précisément. D'après le lemme 3.5 de
+\cite{daphiminvaii}, il existe dans chaque classe de $K_2 \times
+\widehat{K_2(4)} \mod 2K_2 \times \widehat{K_2(4)}^2$ au moins un indice $(a,
+l)$ tel que $\coa_{(a,l)} \neq 0$. On note $\mathcal{Z}_\BA$ un système complet
+de représentants vérifiant cette condition, et on pose $\BA = (\coa_{(a,
+l)}^{-1})_{(a, l) \in \mathcal{Z}_\BA}$. La constante $c_v(\A) =
 \nv{\OA}\nv{\BA} \ge 1$ est alors bien définie ; c'est l'équivalent local de
 $h(\OA)$. Le lemme suivant affirme qu'un bon choix de $D$ est possible et
 précise la constante de comparaison.
@@ -393,13 +400,14 @@ le plongement utilisé. On a dit que les coordonnées étaient naturellement
 indexées par $\mathcal{Z}_2 \times \widehat{K_2(4)}$, où $\mathcal{Z}_2$ est
 un système complet de représentants des classes de $K_2$ modulo $K_2(4)$. Il
 est parfois plus commode d'utiliser un système étendu de coordonnées, indexées
-par tout $K_2 \times \widehat{K_2(4)}$, comme définies dans [Da-Phi] p. 651 ;
-nous noterons $\tilde{\Theta}$ le plongement correspondant, $\tilde{\coa}$ des
-coordonnées de l'origine dans ce plongement, et ainsi de suite. Le passage de
-$\tilde{\Theta}$ à $\Theta$ consiste en une simple projection linéaire ; le
-sens contraire est donné par le point (iv) du fait 3.3 de \lat{loc. cit.} : il
-nous suffira de savoir que les coordonnées manquantes s'obtiennent en
-multipliant les anciennes par des racines quatrièmes de l'unité.
+par tout $K_2 \times \widehat{K_2(4)}$, comme définies dans
+\cite{daphiminvaii} p.~651 ; nous noterons $\tilde{\Theta}$ le plongement
+correspondant, $\tilde{\coa}$ des coordonnées de l'origine dans ce plongement,
+et ainsi de suite. Le passage de $\tilde{\Theta}$ à $\Theta$ consiste en une
+simple projection linéaire ; le sens contraire est donné par le point (iv) du
+fait 3.3 de \lat{loc. cit.} : il nous suffira de savoir que les coordonnées
+manquantes s'obtiennent en multipliant les anciennes par des racines
+quatrièmes de l'unité.
 
 \begin{proof}
   Après avoir fixé la place $v$, on choisit comme au lemme \ref{pv} un indice
@@ -415,14 +423,14 @@ multipliant les anciennes par des racines quatrièmes de l'unité.
   \tilde{Y}_{(\frac{c_4+d}{2}, l_4\cdot2\star u)} \pmm{,}
   \end{multline*}
   où les différents indices $(a', l')$, $(b', k')$, $c_i$, $l_i$, sont définis
-  comme indiqué dans la proposition 3.7 de [Da-Phi]. On peut de plus choisir
-  ici $(a', l')= (a, l)$, vu que $\coa_{(a, l)}$ est déjà non nul par
-  hypothèse, et exiger $(b', k') \in \mathcal{Z}_\BA$. La proposition citée
-  affirme alors que la famille $\tilde{D}$ représente le morphisme de
+  comme indiqué dans la proposition 3.7 de \cite{daphiminvaii}. On peut de
+  plus choisir ici $(a', l')= (a, l)$, vu que $\coa_{(a, l)}$ est déjà non nul
+  par hypothèse, et exiger $(b', k') \in \mathcal{Z}_\BA$. La proposition
+  citée affirme alors que la famille $\tilde{D}$ représente le morphisme de
   différence $(\tilde\Theta(\A))^2 \to \tilde\Theta(\A)$ et qu'en
   $(\tilde\coa, \tilde\coa)$ on a plus précisément l'égalité vectorielle
   $\tilde{D}(\tilde\coa, \tilde\coa) = \left( 2^g (\tilde\coa_{(a,
-  l)})^2\right) \tilde\coa$. On savait bien sûr que ces deux vecteurs
+    l)})^2\right) \tilde\coa$. On savait bien sûr que ces deux vecteurs
   étaient colinéaires, le point est qu'on connait explicitement le coefficient
   qui les relie.
 
@@ -515,13 +523,13 @@ affirmations.
 \end{proof}
 
 \begin{proof}[Démonstration du théorème \ref{mumpt}.]
-  Elle consiste, à confronter les conclusions des deux lemmes précédents en
+  Elle consiste à confronter les conclusions des deux lemmes précédents en
   supposant $\p{z} \neq \OA$, et à en déduire une contradiction grâce à
   l'hypothèse \ref{tronk} du thèorème. On a besoin de pouvoir comparer les
   hauteurs projective et normalisée. On utilise à cet effet le lemme 3.9 de
-  [Da-Phi] et la remarque subséquente : $\av[]{\hn(\truc) - h(\truc)} \le
-  (4^g-1)h(\OA) + 3g\log(2)$. On passe ainsi aux hauteurs normalisées dans le
-  résultat du lemme \ref{papti} :
+  \cite{daphiminvaii} et la remarque subséquente : $\av[]{\hn(\truc) -
+    h(\truc)} \le (4^g-1)h(\OA) + 3g\log(2)$. On passe ainsi aux hauteurs
+  normalisées dans le résultat du lemme \ref{papti} :
   \begin{align*}
   \hn(\p{z}) & \ge h(\p{z}) - (4^g-1)h(\OA) - 3g\log(2)\\
   & \ge \eps \min(h(\p{x}), h(\p{y})) - h(\OA) - (4^g-1)h(\OA) - 3g\log(2)
@@ -533,5 +541,7 @@ affirmations.
   \eps \hn(\p{x}) - (1+\eps)B$, ce qui contredit très précisément l'hypothèse
   \ref{tronk}.
 \end{proof}
+
+\printbibliography
 
 \end{document}
