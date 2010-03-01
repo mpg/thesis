@@ -1,16 +1,6 @@
 \input{pre-gene}
 \input{pre-mumgrp}
 
-\newtheorem{thm}{Théorème}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{lem}[thm]{Lemme}
-\newtheorem{coro}[thm]{Corollaire}
-\newtheorem{fait}[thm]{Fait}
-
-\theoremstyle{definition}
-\newtheorem{rem}{Remarque}
-\newtheorem*{Rem}{Remarque}
-
 \title{Paramétrisations locales}
 
 \begin{document}
@@ -159,7 +149,7 @@ polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   $\nv{P_1^\kappa}$ ci-dessus.
 \end{Rem}
 
-\begin{fait}
+\begin{fact}
   Si le plongement $Z \hookrightarrow \Proj^n$ est \og adapté \fg{}, alors
   dans $K(Z)$ les variables $w_1, \ldots, w_u$ sont algébriquement
   indépendantes, et chaque $w_j$ est lié aux $w_1, \ldots, w_u$ par un
@@ -167,7 +157,7 @@ polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   $P_j$ du lemme 4.2) de degré $D := \deg Z$, unitaire en la dernière
   variable, et tel qu'en toute place, $\nv{\smash{\widetilde P}_j} \le
   \nv{f_Z}$.
-\end{fait}
+\end{fact}
 
 \begin{proof}
   C'est la partie~4.1 de \bsc{Rémond} (p.\,114). Seule l'assertion sur la norme
@@ -395,7 +385,7 @@ version de la proposition~5.2 de \bsc{Rémond}, adaptée pour tenir compte des
 différences de normes utilisées, et du fait que sa constante $h_1$ est explicite
 depuis les travaux de \bsc{David} et \bsc{Philippon}.
 
-\begin{fait}[\bsc{David} et \bsc{Philippon}, prop.~3.7]
+\begin{fact}[\bsc{David} et \bsc{Philippon}, prop.~3.7]
   Il existe une famille $S_{l, l'}$ de formes bihomogènes de degré $(2, 2)$
   représentant globalement le morphisme d'addition-soustraction dans $\A^2$ dans
   le plongement de \bsc{Mumford} modifié suivi d'un plongement de \bsc{Segre},
@@ -409,7 +399,7 @@ depuis les travaux de \bsc{David} et \bsc{Philippon}.
   $\zeta_{i, i'\!, j, j'}$ sont des racines quatrièmes de l'unité, et $k$ est
   une certaine fonction $\{0, \ldots, n \} \to \{0, \ldots, n \}$ telle que pour
   tout $i$, $\coa_{k(i)}^{-1}$ existe et est une coordonnée de $\BA$.
-\end{fait}
+\end{fact}
 
 En particulier, on a immédiatement les estimations de norme locale
 $\nv{\smash{S_{l, l'}}} \le 4^{g\dv} \nv{\BA}^2$ et $\nnv{\smash{S_{l, l'}}} \le
@@ -421,12 +411,12 @@ simplifier par un facteur $\coa_{k(l)}$ ou $\coa_{k(l')}$), représentant
 respectivement l'addition et la soustraction au voisinage de n'importe quel
 point fixé, et telles que $\nv{S^\bullet} \le 4^{g\dv} \nv\BA$.
 
-\begin{fait}[\bsc{Rémond}, démonstration de la prop.~5.2]
+\begin{fact}[\bsc{Rémond}, démonstration de la prop.~5.2]
   Pour tout entier $b$ non nul, il existe une famille de formes homogènes
   $Q^b_i$ représentant globalement la multiplication par $b$ sur $\A$ dans le
   plongement de \bsc{Mumford} modifié, de degré au plus $\frac98 m^2$, telles
   qu'en toute place $v$, $\nnv{Q^b} \le (2^g\sqrt{n+1})^{\dv(m^2-1)}$.
-\end{fait}
+\end{fact}
 
 On considère alors le morphisme $\tau \colon A(\widetilde Z) \to
 A(O)[[t\pexp1, \ldots, t\pexp{m}]]$ de paramétrisation de $O$, qui est \og

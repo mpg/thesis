@@ -8,8 +8,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[sc, osf]{mathpazo}
-\linespread{1.05}
+\usepackage[sc, osf]{mathpazo} \linespread{1.05}
 \usepackage{amssymb}
 \usepackage[scaled=0.93]{helvet}
 
@@ -21,12 +20,17 @@
 \usepackage{git-info, eso-pic, xcolor}
 
 \usepackage{xspace}
-\usepackage[expansion=false]{microtype}
+\usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
-\usepackage[colorlinks=true]{hyperref}
 \frenchbsetup{og=«,fg=»,
   AutoSpacePunctuation=false,
   SuppressWarning=true}
+
+\usepackage[colorlinks=true, urlcolor=black, linkcolor=black, citecolor=black,
+  bookmarks=true, bookmarksnumbered=true]{hyperref}
+\hypersetup{%
+  pdfauthor={Manuel Pégourié-Gonnard},
+  }
 
 % use git information
 \AddToShipoutPicture{%
@@ -104,3 +108,16 @@
 \newcommand\mmax{{\mathrm{max}}}
 
 \newcommand\diff{\mathrm d}
+
+\newtheorem {thm}        {Théorème}
+\newtheorem {prop} [thm] {Proposition}
+\newtheorem {lem}  [thm]  {Lemme}
+\newtheorem {coro} [thm] {Corollaire}
+\newtheorem {fact} [thm] {Fait}
+\newtheorem {scho} [thm] {Scholie}
+\newtheorem*{flemme}     {À démontrer plus tard}
+  \theoremstyle{definition}
+\newtheorem {tdef} [thm] {Définition}
+  \theoremstyle{remark}
+\newtheorem*{rem}        {Remarque}
+\newtheorem*{Rem}        {Remarque}

@@ -1,17 +1,6 @@
 \input{pre-gene}
 \input{pre-mumgrp}
 
-\usepackage[colorlinks=true, urlcolor=black, linkcolor=black, citecolor=black,
-   pdftex, bookmarks=true, bookmarksnumbered=true]{hyperref}
-
-\newtheorem{thm}{Théorème}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{lem}[thm]{Lemme}
-\newtheorem{coro}[thm]{Corollaire}
-\newtheorem{fait}[thm]{Fait}
-\theoremstyle{remark}
-\newtheorem*{rem}{Remarque}
-
 \title{Une inégalité de Mumford explicite pour \\
   les approximations d'un sous-groupe}
 
@@ -248,11 +237,11 @@ p.~103]{phi1}. On rappelle pour la lecture de ces énoncés les notations
 $\gamma_n = \sum_{q=1}^{n-1} 1/2q$ et $\dv = 0$ si $v$ est ultramétrique, $\dv
 = 1$ sinon.
 
-\begin{fait} \label{ClosestPoint}
+\begin{fact} \label{ClosestPoint}
   Pour toute variété $V \subset \Proj^n$ et tout point $\p x \in
   \Proj^n(\C_v)$, il existe un point $\p y \in V(\C_v)$ tel que $\Dv(\p x, \p
   y) \le \Dv(\p x, V)^{1/\deg V} e^{\dv\gamma_{n+1}}$.
-\end{fait}
+\end{fact}
 
 \begin{lem} \label{PonctuelAlg}
   Pour toute variété $V \subset \Proj^n$ et tous points $\p x \in
@@ -524,7 +513,7 @@ morphisme $\xi$ sur le système de coordonnées $\tilde\Delta^{(\text{ét})}$. E
 ramenant cette description à notre système restreint de coordonnées, cette
 proposition se lit :
 
-\begin{fait}
+\begin{fact}
   Il existe une famille de formes $F$ sur $\Proj^N$ satisfaisant\footnote{Dans
   cette égalité, on a identifié sections globales de $\xi^*\mathcal N$ et de
   $\mathcal N ^{\otimes 2}$ \lat{via} l'isomorphisme naturel, où $\mathcal N
@@ -538,7 +527,7 @@ proposition se lit :
   où $\zeta_{ij}(k, l)$ est une racine quatrième de l'unité, $I$ un certain
   ensemble à $4^g$ éléments, $\alpha$ et $\beta$ des applications de $I^2$
   dans $\{0,\dots,N\}^2$ et $i'$, $j'$ sont dans $\mathcal Z_\mathcal B$.
-\end{fait}
+\end{fact}
 
 En particulier cette famille $F$ représente le morphisme $\xi$ dans le
 plongement $\tilde\Theta$, c'est-à-dire que $F(\tilde\Delta(z))$ et
