@@ -1,65 +1,97 @@
-% préambule général pour tous les trucs préparatoires à la thèse
-% (en attendant un classe ou une extension un peu plus propre ?)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{mpg-preth}
+
+% booleans for options, default values
 %
-\documentclass[a4paper, 11pt, twoside, BCOR=1cm]{scrartcl}
+\newif\if@webversion    \@webversionfalse
+\newif\if@showbad       \@showbadtrue
+\newif\if@domark        \@domarktrue
 
-\setlength{\overfullrule}{5pt}
+% options
+%
+\DeclareOption {web}    {\@webversiontrue}
+\DeclareOption {nobad}  {\@showbadfalse}
+\DeclareOption {nomark} {\@domarkfalse}
+\ProcessOptions \relax
 
+% use Koma-article with custom encoding and fonts
+%
+\LoadClass[a4paper, 11pt, twoside, BCOR=1cm]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
 \usepackage[sc, osf]{mathpazo} \linespread{1.05}
 \usepackage{amssymb}
 \renewcommand\sfdefault{iwona}
 
+% load various usefull packages
+%
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
-
-\usepackage{ifmtarg, fixltx2e, mparhack, xargs}
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic, xcolor}
-
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true,
   autopunct=true, babel=hyphen,
   hyperref=true, backref=false]{biblatex}
-\bibliography{these}
-\defbibheading{bibempty}{}
-
-\usepackage{xspace}
 \usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
-\frenchbsetup{og=«,fg=»,
-  AutoSpacePunctuation=false,
-  SuppressWarning=true}
+\if@webversion\else \PassOptionsToPackage{bookmarks=false}{hyperref} \fi
+\usepackage[colorlinks=true]{hyperref}
 
-\usepackage[colorlinks=true, urlcolor=black, linkcolor=black, citecolor=black,
-  bookmarks=true, bookmarksnumbered=true]{hyperref}
+% hyperref settings (web option)
+%
+\if@webversion
+  \hypersetup{urlcolor=blue, linkcolor=red, citecolor=green,
+    bookmarksnumbered=true}
+\else
+  \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
+\fi
 
-% use git information
-\AddToShipoutPicture{%
-  \AtPageLowerLeft{%
-    \parbox[b]{\paperwidth}{%
-      \centering \itshape \color{black!30}%
-      \jobname.tex $\le$ \gitinfo{@head}{dt}%
-      \par \kern2cm
-      }}}
+% overfullrule (nobad option)
+%
+\setlength{\overfullrule}{\if@showbad 5\else 0\fi pt}
 
-% provide generic title information
+% use git information (nomark option)
+%
+\if@domark
+  \AddToShipoutPicture{%
+    \AtPageLowerLeft{%
+      \parbox[b]{\paperwidth}{%
+        \centering \itshape \color{black!30}%
+        \jobname.tex $\le$ \gitinfo{@head}{dt}%
+        \par \kern2cm
+        }}}
+\fi
+
+% generic title information
+%
 \author{Manuel \bsc{P\'egouri\'e-Gonnard}}
 \subtitle{Notes de travail}
 \date{}
 \hypersetup{pdfauthor={Manuel Pégourié-Gonnard}}
 
+% bibliography settings
+%
+\bibliography{these}
+\defbibheading{bibempty}{}
+
+% frenchb settings
+%
+\frenchbsetup{og=«,fg=»,
+  AutoSpacePunctuation=false,
+  SuppressWarning=true}
+
+% misc unsorted stuff from now on
+% -------------------------------
+
 \newcommand*\notemarge[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand\todotext{\textsc{todo}}
-\makeatletter
-  \newcommand*\todo[1][]{%
-    \leavevmode\notemarge{\todotext}%
-  \@ifnotmtarg{#1}{\emph{#1}}}
-  \newcommand*\todom[1][]{\tag{\todotext%
-    \@ifnotmtarg{#1}{ : #1}}}
-\makeatother
+\newcommand*\todo[1][]{%
+  \leavevmode\notemarge{\todotext}%
+\@ifnotmtarg{#1}{\emph{#1}}}
+\newcommand*\todom[1][]{\tag{\todotext%
+  \@ifnotmtarg{#1}{ : #1}}}
 
 \newenvironment{enumthm}
   {\begin{enumerate}[label=(\textit{\roman*})]}
@@ -71,7 +103,6 @@
 \newcommand*\defn[1]{\emph{#1}}
 \newcommand*\pmm[1]{\text{ #1}}
 
-\makeatletter
 \newcommand*\ssub[1]{%
   \@ifnotmtarg{#1}{_{#1}}}
 \newcommand*\ssup[1]{%
@@ -81,7 +112,6 @@
     \@ifnotmtarg{#1}{\cramped{^{(#1)}}}%
     }{%
     \@ifnotmtarg{#1}{^{(#1)}}_{#2}}}
-\makeatother
 
 \newcommand\suchthat{\ \middle\vert\ }
 
