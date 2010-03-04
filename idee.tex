@@ -1,12 +1,27 @@
 \input{pre-gene.tex}
 \input{pre-idee.tex}
 
-\title{Approximation dans les variétés abéliennes}
-\subtitle{}
+\title{Approximation diophantienne\\dans les variétés abéliennes}
+\ifdefined\publicversion
+  \subtitle{}
+  \date{16 avril 2009}
+\else
+  \subtitle{Ébauche d'introduction avec plan}
+\fi
 
 \begin{document}
 
 \maketitle
+
+\ifdefined\publicversion
+\begin{abstract}
+  Ce texte s'adresse à un lecteur familier avec au moins quelques notions
+  d'approximation diophantiennes. Il vise à donner un aperçu relativement
+  précis, mais lisible, de mon sujet de thèse et de ses relations avec
+  d'autres résultats en approximation diophantienne.
+\end{abstract}
+\tableofcontents
+\fi
 
 \section{L'énoncé du problème}
 
@@ -48,7 +63,7 @@ Pour peu qu'on ai choisi une bonne norme aux places archimédiennes, ceci
 définit une distance au sens usuel \cite{jadotth}. On peut alors en déduire une
 notion de distance entre un point $\point$ et une variété $V$, en prenant le
 minimum de la distance entre $\point$ et les points de $V(\C_\place)$. Ceci
-définit une notion différente de la précédent, mais les deux sont comparables.
+définit une notion différente de la précédente, mais les deux sont comparables.
 
 J'attire l'attention du lecteur sur le fait que cette notion locale,
 projective, de distance n'a \lat{a priori} rien à voir avec la notion de
@@ -128,6 +143,7 @@ travail consiste donc d'une part à rendre effective cette inégalité de
 \bsc{Vojta}, et à lui adjoindre une inégalité de \bsc{Mumford}, elle aussi
 effective.
 
+\ifdefined\publicversion \clearpage \fi
 \section{Relation avec d'autres énoncés}
 
 \subsection{Le théorème de Roth}
@@ -291,6 +307,19 @@ contenir de sous-variété abélienne \fg dans \bsc{Mordell-Lang} : si on prend
 le cas extrême d'un variété abélienne, il est clair que (sur un corps de
 nombres pas trop petit) elle possède une infinité de points rationnels, alors
 qu'elle n'a qu'un nombre fini de points entiers.
+
+\ifdefined\publicversion
+\section{Références}
+
+La preuve utilise la méthode de \bsc{Vojta}. Dans mon travail, je m'appuie
+principalement sur les travaux de \bsc{Rémond} \cite{remivds,remivg,remdcl},
+de \bsc{Farhi} \cite{farhith}, ainsi que la preuve originale de \bsc{Faltings}
+\cite{falda}. Le formalisme majoritairement utilisé est celui exposé dans
+\cite{pphdg, remgdmp}.
+
+\printbibliography[heading=bibempty]
+
+\else
 
 \section{Formes linéaires de logarithmes abéliens}
 
@@ -475,5 +504,6 @@ dépendance logique, et à vérifier que les constantes s'ajustent bien entre
 elles en raccordant les différentes étapes, et notamment la récurrence\dots
 
 \printbibliography
+\fi
 
 \end{document}
