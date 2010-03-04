@@ -19,6 +19,13 @@
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic, xcolor}
 
+\usepackage{csquotes}
+\usepackage[style=alphabetic, sorting=nyt, sortcites=true,
+  autopunct=true, babel=hyphen,
+  hyperref=true, backref=false]{biblatex}
+\bibliography{these}
+\defbibheading{bibempty}{}
+
 \usepackage{xspace}
 \usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
@@ -53,7 +60,6 @@
   \newcommand*\todom[1][]{\tag{\todotext%
     \@ifnotmtarg{#1}{ : #1}}}
 \makeatother
-%\newcommand\todo{\TextOrMath{\todot}{\todom}}
 
 \newenvironment{enumthm}
   {\begin{enumerate}[label=(\textit{\roman*})]}
