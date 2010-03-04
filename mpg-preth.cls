@@ -209,3 +209,43 @@
 % \newcommand{\lgr}[1]{{|#1|}}
 % \newcommand{\vlg}[1]{\lgr #1}
 
+% ---------------------------------------------------------------------------- %
+%                          anciennement pre-idee
+% ---------------------------------------------------------------------------- %
+
+% objets mathématiques utiles
+%
+\newcommand\va{\mathcal A}
+\newcommand\vai{\mathcal B}
+\newcommand\point{x}
+\newcommand\pointi{y}
+\newcommand\pointii{z}
+\newcommand\coord{{\mathrm{x}}}
+\newcommand\coordi{{\mathrm{y}}}
+\newcommand\genre{g}
+\newcommand\fibre{\mathcal L}
+\newcommand\place{v}
+
+\newcommand*\proj[2][]{%
+  \Proj\ssup{#2}\ssub{#1}}
+\newcommand*\aff[2][]{%
+  \Aff\ssup{#2}\ssub{#1}}
+
+\DeclareMathOperator\Haut{H}
+\newcommand\haut[1]{%
+  \Haut(#1)}
+\newcommand\hautn[1]{%
+  \mathop{\smash{\hat h}}(#1)}
+
+\newcommand*\absv[2][\place]{%
+  \abs{#2}\ssub{#1}}
+\newcommand*\normv[2][\place]{%
+  \norm{#2}\ssub{#1}}
+\newcommand*\distv[3][\place]{%
+  \mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+
+\newcommand*\scalaire[2]{%
+  \langle#1,#2\rangle}
+\newcommand*\angleabs[2]{%
+  \widehat{(#1,#2)}}
+
