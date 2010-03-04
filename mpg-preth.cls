@@ -66,7 +66,7 @@
 
 % generic title information
 %
-\author{Manuel \bsc{P\'egouri\'e-Gonnard}}
+\author{Manuel \bsc{Pégourié-Gonnard}}
 \subtitle{Notes de travail}
 \date{}
 \hypersetup{pdfauthor={Manuel Pégourié-Gonnard}}
@@ -156,3 +156,26 @@
   \theoremstyle{remark}
 \newtheorem*{rem}        {Remarque}
 \newtheorem*{Rem}        {Remarque}
+
+% ---------------------------------------------------------------------------- %
+%                          anciennement pre-normes
+% ---------------------------------------------------------------------------- %
+
+% compléments de macros maths
+%
+\newcommand*\lgr[1]{\abs{#1}} % longueur
+\newcommand*\vlg[1]{\abs{#1}} % vecteur longueur
+\newcommand*\der[1]{\partial_{#1}} % dérivée divisée
+\newcommand*\ncoef[1]{\mathcal N(#1)} % nombre de coefficients
+\newcommand*\maxbin[1]{m(#1)} % max des coefficient binomiaux avec #1 en haut
+
+
+% les six normes et mesures étudiées
+%
+\newcommand*\normsup[1]{\norm{#1}_\infty}
+\newcommand*\normlun[1]{\norm{#1}_1}
+\newcommand*\normeuc[1]{\norm{#1}_2}
+\newcommand*\normhom[1]{\norm{#1}_{\mathrm h}}
+\newcommand*\mespph[1]{\mathrm{M}(#1)}
+% \newcommand*\mahler[1]{\mathcal{M}(#1)}
+\newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}   % mesure de Mahler
