@@ -249,3 +249,112 @@
 \newcommand*\angleabs[2]{%
   \widehat{(#1,#2)}}
 
+% ---------------------------------------------------------------------------- %
+%                          anciennement pre-mumgrp
+% ---------------------------------------------------------------------------- %
+
+% \newcommand*\av[2][v]{\abs{#2}_{#1}}      % valeur absolue v-adique, ou indice en option
+% \newcommand*\nv[2][v]{\norm{#2}_{#1}}       % norme v-adique, idem
+% \newcommand*\nnv[2][v]{\nnorm{#2}_{#1}}     % norme v-adique d'une famille, idem
+% \newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}}     % norme idem mais en forçant une petite taille
+\newcommand*\mv[2][v]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
+% \newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}   % mesure de Mahler
+% \newcommand\dv{{\delta\smash{_v}}}        % sélecteur v ultramétrique ou non
+\newcommand\dpv{{\delta'_v}}        % idem plus places divisant 2
+% \newcommand\Dv{\mathrm{dist}_v}       % distance v-adique projective
+% \newcommand\A{\mathcal A}         % la variété abélienne
+\newcommand\B{\mathcal B}       % une sous-v.a.
+% \newcommand*\p[1]{\boldsymbol{#1}}      % un point ; on notera en « normal » ses coordonnées
+% \newcommand\OA{\p 0}          % l'origine de la variété
+% \newcommand\coa{\theta}         % des coordonnées de l'origine
+% \newcommand\BA{\mathfrak b}         % vecteur "B" avec coordonnées inverses de l'origine
+% \newcommand\hn{\smash{\hat h}}        % la hauteur normalisée
+% \newcommand*\lgr[1]{{\lvert#1\rvert}}     % longueur d'un multi-indice
+% \newcommand*\vlg[1]{\lgr#1}         % multi-longueur partielles d'un multi-multi-indice
+\newcommand*\lgt[1]{\lVert#1\rVert}     % longueur totale
+\newcommand\md{\mathfrak{d}}        % le morphisme « d »
+\newcommand*\MW[2][\A]{MW_{\!#1}(#2)}     % l'espace de mordell-weil de #2 sur #1
+\newcommand*\hatxs{\smash{\hat x}}      % x chapeau rapetissé
+\newcommand*\hatys{\smash{\hat y}}      % y chapeau rapetissé
+\newcommand*\cube[1]{\mathcal C(#1)}      % le « cube » \abs{w} \le #1 et w entier
+
+\newcounter{cst}
+\newcommand*\cst[2][, v]{%
+  \ensuremath{c\ssub{\ref{#2}#1}}}
+\newcommand*\newcst[2][, v]{%
+  \refstepcounter{cst}\label{#2}%
+  \cst[#1]{#2}}
+
+\newcommand\iq{{\mathfrak q}}
+
+\newcommand\vb{{\mathbf e}}
+\newcommand\Mbase{{\mathcal M}}
+\newcommand\monome{{\mathfrak m}}
+
+% ---------------------------------------------------------------------------- %
+%                          anciennement pre-siegel
+% ---------------------------------------------------------------------------- %
+
+% \newcommand\va{{\mathcal A}}
+\newcommand\coi{{\mathfrak b}} % coordonnées de l'origine inversées
+% \newcommand\point{x}
+% \newcommand\pointi{y}
+% \newcommand\coord{{\mathrm{x}}}
+% \newcommand\coordi{{\mathrm{y}}}
+% \newcommand\genre{g}
+% \newcommand\fibre{{\mathcal L}}
+% \newcommand\place{v}
+\newcommand\divi{E}
+\newcommand\dimp{n}
+
+\newcommand\ph{\ssub} % partie homogène
+\newcommand\mat{M} % matrice
+
+% multiprojectif
+\newcommand\puiss{m}
+\newcommand\fct{i}
+\newcommand\ch[1]{X\ssub{#1}}
+\newcommand\cmh[1]{X\pexp{#1}}
+
+% la sous-variété produit et ses attribus
+\newcommand\varname{Z}
+\newcommand\var[1][]{\varname\pexp{#1}}
+\newcommand\vardim[1][]{{u\ssub{#1}}}
+\newcommand\vardeg[1][]{{D\ssub{#1}}}
+\newcommand\varht[1][]{\Haut\pexp{#1}[\varname]}
+\newcommand\varfc[1][]{\Chow\pexp{#1}[\varname]}
+\newcommand\varid[1][]{\Ideal\pexp{#1}[\varname]}
+
+% \newcommand*\proj[2][]{%
+%   \Proj\ssup{#2}\ssub{#1}}
+% \newcommand*\aff[2][]{%
+%   \Aff\ssup{#2}\ssub{#1}}
+
+\newcommand\Chow{f}
+
+% \newcommand\Haut{h}
+% \newcommand\haut[1]{%
+%   \Haut(#1)}
+% \newcommand\hautn[1]{%
+%   \mathop{\smash{\hat \Haut}}(#1)}
+
+\newcommand\Ideal{\mathcal I}
+\let\ideal\relax % en attendant de rendre mes trucs cohérents
+\newcommand*\ideal[1]{%
+  \Ideal\ssub{#1}}
+
+% \newcommand*\absv[2][\place]{%
+%   \abs{#2}\ssub{#1}}
+% \newcommand*\normv[2][\place]{%
+%   \norm{#2}\ssub{#1}}
+% \newcommand*\distv[3][\place]{%
+%   \mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+% 
+% \newcommand*\scalaire[2]{%
+%   \langle#1,#2\rangle}
+% \newcommand*\angleabs[2]{%
+%   \widehat{(#1,#2)}}
+
+\newcommand*\noref[1]{%
+  [#1]}
+
