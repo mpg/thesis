@@ -355,6 +355,4 @@
 % \newcommand*\angleabs[2]{%
 %   \widehat{(#1,#2)}}
 
-\newcommand*\noref[1]{%
-  [#1]}
-
+% vim: ft=tex
