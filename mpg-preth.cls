@@ -179,3 +179,33 @@
 \newcommand*\mespph[1]{\mathrm{M}(#1)}
 % \newcommand*\mahler[1]{\mathcal{M}(#1)}
 \newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}   % mesure de Mahler
+
+% ---------------------------------------------------------------------------- %
+%                          anciennement pre-mumpt
+% ---------------------------------------------------------------------------- %
+
+% \newcommand{\av}[2][v]{\left\lvert#2\right\rvert_{#1}}
+% \newcommand{\nv}[2][v]{\left\lVert#2\right\rVert_{#1}}
+% \newcommand{\nnv}[2][v]{%
+%   \left\lvert\hspace{-1pt}%
+%   \left\lvert\hspace{-1pt}%
+%   \left\lvert#2\right\rvert%
+%   \hspace{-1pt}\right\rvert%
+%   \hspace{-1pt}\right\rvert_{#1}}
+% \newcommand{\nvp}[2][v]{\|#2\|_{#1}}
+\newcommand*\av[2][v]{\abs{#2}_{#1}}      % valeur absolue v-adique, ou indice en option
+\newcommand*\nv[2][v]{\norm{#2}_{#1}}       % norme v-adique, idem
+\newcommand*\nnv[2][v]{\nnorm{#2}_{#1}}     % norme v-adique d'une famille, idem
+\newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}}     % norme idem mais en forçant une petite taille
+% \newcommand{\dv}{{\delta_v}}
+\newcommand\dv{{\delta\smash{_v}}}        % sélecteur v ultramétrique ou non
+\newcommand{\Dv}{\mathrm{dist}_v}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\p}[1]{{\boldsymbol{#1}}}
+\newcommand{\OA}{\p{0}}
+\newcommand{\coa}{\theta}
+\newcommand{\BA}{\mathfrak{B}}
+\newcommand{\hn}{\hat{h}}
+% \newcommand{\lgr}[1]{{|#1|}}
+% \newcommand{\vlg}[1]{\lgr #1}
+
