@@ -32,7 +32,7 @@
 %
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
-\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace}
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, trace}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic, xcolor}
 \usepackage{csquotes}
@@ -295,15 +295,26 @@
 \newcommand\fct{i}
 \newcommand\ch[1]{X\ssub{#1}}
 \newcommand\cmh[1]{X\pexp{#1}}
+\newcommand\cmmh{\boldsymbol X}
 
-% la sous-variété produit et ses attribus
-\newcommand\varname{Z}
-\newcommand\var[1][]{\varname\pexp{#1}}
-\newcommand\vardim[1][]{{u\ssub{#1}}}
-\newcommand\vardeg[1][]{{D\ssub{#1}}}
-\newcommand\varht[1][]{\Haut\pexp{#1}[\varname]}
-\newcommand\varfc[1][]{\Chow\pexp{#1}[\varname]}
-\newcommand\varid[1][]{\Ideal\pexp{#1}[\varname]}
+% helper macro optional arguments with second default value using a star [[2
+%
+\newcommand\newc@star@default[1]{%
+  \expandafter\newc@star@default@
+  \csname \expandafter\@gobble\string#1 \endcsname#1}
+\newcommand\newc@star@default@[5]{%
+  \newcommand*#1[#3][]{#5}%
+  \newcommand*#2{\@ifstar{#1[#4]}{#1}}}
+
+% the product sub-variety considered and its attributes [[2
+%
+\newcommand\Var{Z}
+\newc@star@default \var     {1}{\fct} {\Var\pexp{#1}}
+\newc@star@default \vardim  {1}{\fct} {{u\ssub{#1}}}
+\newc@star@default \vardeg  {1}{\fct} {{D\ssub{#1}}}
+\newc@star@default \varht   {1}{\fct} {\Haut\pexp{#1}[\Var]}
+\newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
+\newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
 \newcommand\Chow{f}
 
