@@ -89,13 +89,10 @@
 
 % marginal notes and todos [[2
 %
-\newcommand*\notemarge[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
-\newcommand\todotext{\textsc{todo}}
-\newcommand*\todo[1][]{%
-  \leavevmode\notemarge{\todotext}%
-\@ifnotmtarg{#1}{\emph{#1}}}
-\newcommand*\todom[1][]{\tag{\todotext%
-  \@ifnotmtarg{#1}{ : #1}}}
+\newcommand*\marginnote[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
+\newcommand*\worknote[1]{\marginnote{\color{black!50}\itshape #1}}
+\newcommand\todo{\worknote{\textsc{todo}}}
+\newcommand\later{\worknote{(à détailler ultérieurement)}}
 
 % languages and special text items [[2
 %
@@ -161,6 +158,7 @@
 \newcommand     \C      {\std C}
 \newcommand     \Proj   {\std P}
 \newcommand     \Aff    {\std A}
+\newcommand     \GL     {\std{GL}}
 
 % standard functions [[2
 %
@@ -186,9 +184,6 @@
 
 % unsorted math stuff [[1
 % -------------------
-
-\newcommand\zeros{\mathcal Z}
-\newcommand\ideal{\mathcal I}
 
 \newcommand\mmax{{\mathrm{max}}}
 
@@ -241,10 +236,16 @@
   \Proj\ssup{#2}\ssub{#1}}
 \newcommand*\aff[2][]{%
   \Aff\ssup{#2}\ssub{#1}}
+\newcommand\projd[1][]{%
+  \Proj^\dimp\ssub{#1}}
 
-\DeclareMathOperator\Haut{H}
-\newcommand\haut[1]{%
-  \Haut(#1)}
+\newcommand\Haut{\mathrm H}
+\newcommand\Hautl{\mathrm h}
+\newcommand\Hautn{\smash{\hat\Hautl}}
+\newcommand\haut[2][]{%
+  \Haut\ssub{#1}(#2)}
+\newcommand\hautl[2][]{%
+  \Hautl\ssub{#1}(#2)}
 \newcommand\hautn[1]{%
   \mathop{\smash{\hat h}}(#1)}
 
@@ -287,6 +288,7 @@
 \newcommand\divi{E}
 \newcommand\dimp{n}
 
+
 \newcommand\ph{\ssub} % partie homogène
 \newcommand\mat{M} % matrice
 
@@ -316,12 +318,22 @@
 \newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
-\newcommand\Chow{f}
-
+% ideal of a variety
 \newcommand\Ideal{\mathcal I}
-\let\ideal\relax % en attendant de rendre mes trucs cohérents
-\newcommand*\ideal[1]{%
-  \Ideal\ssub{#1}}
+\newcommand*\ideal[1]{\Ideal(#1)}
+% fractions field
+\newcommand\Korper{\mathcal K}
+\newcommand\korper[1]{\Korper(#1)}
+% zeros of polynomials
+\newcommand\Zeros{\mathcal Z}
+\newcommand\zeros[1]{\Zeros(#1)}
+% Chow form of a variety
+\newcommand\Chow{f}
+\newcommand\chow[1]{\Chow_{#1}}
+
+
+\newcommand\embedin{\hookrightarrow}
+
 
 % [[1
 % vim: ft=tex fdm=marker foldmarker=[[,]] foldlevel=1
