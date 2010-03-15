@@ -118,7 +118,60 @@ désignera une famille d'entiers.
 
 \section{Idéal d'annulation}
 
+Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
+$\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
+l'énoncé de la proposition~\ref{build-aux}, on demandera à $\delta$ d'être
+assez grand, et à $\epsi$ d'être majoré par une certaine expression dépendant
+de $\epsz$ (voir fin de la section~\ref{sec-comp-dim}). Considérons par
+ailleurs une famille d'entiers $a_1 \ge \dots \ge a_m = 1$ et un réel
+$\epsiii$ satisfaisant à
+\[
+  \sum_{\fct=1}^\puiss (a_\fct^2 + 1) < a_1^2 (1 + \epsiii)
+  \pmm.
+\]
+
+On fera plus tard une hypothèse sur la famille $a$ de sorte qu'il soit
+possible de choisir $\epsiii$ plutôt petit, mais cette information n'est pas
+utile pour le moment.
+
+On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
+\[
+  \Stairs_a^\delta = \left\{
+    (\lambda\pexp1, \dots, \lambda\pexp\puiss) \in \N^{m(n+1)}
+    \text{ tels que }
+    \frac {\lambda\pexp1[0]} {a_1^2}
+    + \dots +
+    \frac {\lambda\pexp{\puiss-1}[0]} {a_{\puiss-1}^2}
+    \frac {\lambda\pexp\puiss[0]} {\puiss-1}
+    \le \epsi \delta
+    \right\}
+  \pmm,
+\]
+auquel on associe l'idéal d'annulation
+\[
+  \Vanish*_a^\delta = \left\{
+    \sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda
+    \in \cdn [\cmmh]
+    \text{ tels que }
+    \lambda \in \Stairs_a^\delta
+    \implies
+    f_\lambda = 0
+    \right\}
+  \pmm.
+\]
+On considère enfin $\Vanish_a^\delta = \Vanish_a^\delta + \varid$. Par abus,
+on notera de même son image dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui
+est légitime puisqu'on a fait en sorte que $\varid \subset \Vanish_a^\delta$.
+
+\section{Plongement éclatant}
+
 \clearpage
+
+\section{Deux calculs de dimension} \label{sec-comp-dim}
+
+\begin{prop} \label{build-aux}
+  \dots
+\end{prop}
 \printbibliography
 
 \end{document}

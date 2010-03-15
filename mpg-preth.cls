@@ -211,6 +211,7 @@
 \newcommand*\nnv[2][v]{\nnorm{#2}_{#1}}     % norme v-adique d'une famille, idem
 \newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}}     % norme idem mais en forçant une petite taille
 \newcommand\dv{{\delta\smash{_v}}}        % sélecteur v ultramétrique ou non
+\newcommand\dpv{{\delta'_v}}        % idem plus places divisant 2
 \newcommand{\Dv}{\mathrm{dist}_v}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\p}[1]{{\boldsymbol{#1}}}
@@ -262,7 +263,6 @@
   \widehat{(#1,#2)}}
 
 \newcommand*\mv[2][v]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
-\newcommand\dpv{{\delta'_v}}        % idem plus places divisant 2
 \newcommand\B{\mathcal B}       % une sous-v.a.
 \newcommand*\lgt[1]{\lVert#1\rVert}     % longueur totale
 \newcommand\md{\mathfrak{d}}        % le morphisme « d »
@@ -270,6 +270,18 @@
 \newcommand*\hatxs{\smash{\hat x}}      % x chapeau rapetissé
 \newcommand*\hatys{\smash{\hat y}}      % y chapeau rapetissé
 \newcommand*\cube[1]{\mathcal C(#1)}      % le « cube » \abs{w} \le #1 et w entier
+
+% various "epsilons"
+%
+\newcommand\epsz{{\eps_0}}
+\newcommand\epsi{{\eps_1}}
+\newcommand\epsii{{\eps_2}}
+\newcommand\epsiii{{\eps_3}}
+
+% various notations for vanishing
+%
+\newcommand\Stairs{\mathcal E}
+\newcommand\Vanish{\@ifstar{\mathfrak{\tilde q}}{\mathfrak q}}
 
 \newcounter{cst}
 \newcommand*\cst[2][, v]{%
@@ -318,10 +330,13 @@
 \newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
-% ideal of a variety
+% (homogenous, saturated) ideal of a variety
 \newcommand\Ideal{\mathcal I}
-\newcommand*\ideal[1]{\Ideal(#1)}
-% fractions field
+\newcommand*\ideal[1]{\Ideal_{#1}}
+% ring of (homogenous) coordinates of a variety
+\newcommand\Ring{\mathcal R}
+\newcommand*\ring[1]{\Ring_{#1}}
+% (homogenous) fraction field of a variety
 \newcommand\Korper{\mathcal K}
 \newcommand\korper[1]{\Korper(#1)}
 % zeros of polynomials
