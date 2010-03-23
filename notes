@@ -1,0 +1,62 @@
+Notations et TeX
+================
+
+Faire un index des notations, par exemple avec nomencl.
+
+Notations lié au plongement adapté : faire des macros spécifiques pour i et j et
+leurs bornes ?
+
+Pour les trucs ayant des indices souvent, faire des trucs pour les bornes ?
+
+Faire tout compiler sans overfull.
+
+Réorganiser un peu les macros, c'est la bazar.
+
+Traduire tous les noms de macros en anglais.
+
+Utiliser breqn ?
+
+Utiliser \DeclarePairedDelim et revoir les indices des normes (v, 1).
+
+Revoir les problèmes de H())x (idee-pub page 6).
+
+Finir de retaper Siegel.
+
+Remanier la paramtérisation dès que les math sont prêtes.
+
+Document commun
+---------------
+
+Tout réunir en un document avec notations homogènes et index des notations,
+ainsi qu'avec un squelette de ce qui manque.
+
+
+Maths
+=====
+
+Vojta
+-----
+
+Mettre au propre une bonne version de la paramétrisation.
+
+[... reprendre les notes papiers ici sur le plan ...]
+
+Mumford
+-------
+
+Lire attentivement le papier de Rémond.
+
+Relire ma version de Mumford groupes, ou son plan dans idee.pdf.
+
+Relire le Mumford de Fahri.
+
+Glue et réductions
+------------------
+
+Peut-on supposer à la fois que le plongement est adapté et est un Mumford
+modifié ? Probablement non... voir comment adapter ça.
+
+Peut-on supposer si facilement que le diviseur est découpé par un hyperplan ? Ça
+revient à dire que le truc qu'on considère est très ample (et totalement
+symétrique si on veut avoir un Mumford modifié aussi). À voir.
+
