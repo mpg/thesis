@@ -372,13 +372,172 @@ immédiatement le résultat suivant.
 
 \section{Stratégie de construction de la forme auxiliaire}
 
+Il s'agit de trouver une forme multi-homogène non nulle sur $\var$, de petite
+hauteur, provenant d'une forme sur $\wemb(\var)$, qui s'annule le long de
+$\divi$ avec un indice (pondéré par $\weight$) du même ordre de grandeur que
+son multi-degré.
+
+Plus précisément, posons
+\begin{align}
+  d & = \bigl(
+  \epsz \weight[1],
+  \dots,
+  \epsz \weight[\puiss],
+  1, \dots, 1
+  \bigr) \in \Q^{2\puiss-1} \\
+  d' & = \bigl(
+  \weight[1] (\frac94 + \epsz),
+  \dots,
+  \weight[\puiss] (\frac94 + \epsz),
+  2\puiss + \epsz
+  \bigr) \in \Q^\puiss
+  \pmm.
+\end{align}
+On a déjà supposé $\delta\epsz$ entier ; on supposera désormais de plus
+$\delta/4$ entier, de sorte que si $F$ est une forme de multi-degré $\delta d$
+dans $\cdn[\cmmh, \cmmhi]$, son image par $\wemba$ est de multi-degré
+exactement $\delta d'$.
+
+On cherche ainsi une forme
+\[
+  F'
+  \in \cdn[\cmmh]\ph{\delta d'}
+  \cap \iq_a^\delta
+  \cap \wemba(\cdn[\cmmh, \cmmhi]\ph{\delta d})
+\]
+non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
+\wemb(F)$), on cherche une forme
+\[
+  F
+  \in \cdn[\cmmh, \cmmhi]\ph{\delta d}
+  \cap \wemba^{-1}(\iq_a^\delta)
+\]
+non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
+
+Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
+Cependant, il est difficile d'expliciter un système essentiellement minimal
+d'équations linéaires exprimant l'appartenance à $\iq_a^\delta$. Il est en
+revanche immédiat d'expliciter un tel système pour $\tilde\iq_a^\delta$, mais
+il comporte beaucoup trop d'équations (géométriquement, il correspond à une
+condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
+$\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
+
+Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
+système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
+un sous-espace de $\cdn[\cmh]\ph{\delta d'}$ dans lequel $\tilde\iq_a^\delta$
+est de co-dimension suffisamment petite pour pouvoir demander que l'image de
+$F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
+
+Pour commencer, on choisit dans $\cdn[\cmmh, \cmmhi]\ph{\delta d}$ un
+supplémentaire de $(\ideal{\wemb(\var)})\ph{\delta d}$ engendré par des
+monômes, que l'on notera $\Ideal\ph{\delta d}$, et dans lequel on cherchera
+$F$.
+
+On considérera des sous-espaces vectoriels de partie homogènes de
+$\cdn[\cmmh]$ définis par des restrictions de degré ; introduisons à cet effet
+quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
+  \})^{\puiss(\dimp+1)}$, on notera
+\begin{equation}
+  \cdn[\cmmh]^C
+  = \{
+    F \in \cdn[\cmmh]
+    \text{ tels que }
+    \deg_{\cmh{\fct}[k]} F \le C\pexp{\fct}[k]
+    \quad \forall i, k
+    \}
+  \pmm.
+\end{equation}
+On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
+par
+\begin{gather}
+  (C')\pexp\fct[k] =
+  \begin{cases}
+    +\infty & \text{si $k \le \vardim*$} \\
+    \vardeg* - 1 & \text{sinon}
+  \end{cases}
+  \qquad
+  (C'')\pexp\fct[k] =
+  \begin{cases}
+    +\infty & \text{si $k \le \vardim* + 1$} \\
+    0 & \text{sinon}
+  \end{cases}
+  \\
+  C''' = \min(C', C'')
+  \pmm,
+\end{gather}
+pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$, et avec l'ordre produit
+évident pour la dernière définition. Par ailleurs, on notera $C'_\Delta$ et
+$C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un certain $\Delta$
+dans la définition précédente.
+
+Le plan général de l'écriture du système se résume alors par le diagramme
+commutatif suivant, où l'on note
+\( \ring{\wemb(\var)} = \cdn[\cmmh, \cmmhi] / \ideal{\wemb(\var)} \)
+et
+\( \ring{\opdef} = (\cdn[\cmmh])_\opdef \)
+et où les flèches verticales sont les morphismes de réduction.
+
+\[
+  \dots % TODO
+\]
+
+Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
+représente une réduction par division euclidienne par certaines relations de
+dépendance intégrale, les second permet d'éliminer les variables en utilisant
+des relations linéaires dans $\korper(\var)$ et correspond modulo $\varid$ à
+une multiplication par une certaine forme $R$ de degré $r$ ne dépendant que de
+$\var$, de façon à éliminer les dénominateurs apparaissant dans ces relations
+linéaires. Notons qu'il est essentiel d'effectuer $\rdiv$ avant $\relim$ pour
+que le degré en les variables à éliminer ne dépende pas de $\delta$, ce qui
+assure que $R$ ne dépend en effet que de $\var$.
+
+Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
+notre objectif : il s'agira en fait de construire une forme $F \in
+\Ideal\ph{\delta d} \setminus \{0\}$ telle que
+\[
+  \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
+  \in \tilde\iq_a^\delta
+  \pmm,
+\]
+ce qui implique que $R \cdot \wemba(F) \in \iq_a^\delta$ car
+\[
+  R \cdot \wemba(F)
+  - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
+  \in \varid
+  \subset \iq_a^\delta
+  \pmm.
+\]
+
+Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
+sera composé des équations définissant $\tilde\iq_a^\delta$ dans
+\( \cdn[\cmmh]\ph{\delta d' + r'}^{C'''} \),
+tirées en arrière sur $\Ideal\ph{\delta d}$ par
+\( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
+Pour pouvoir procéder, nous devons donc :
+\begin{enumerate}
+  \item calculer la codimension de $\Ideal\ph{\delta d}$ ;
+  \item calculer la codimension de $\tilde\iq_a^\delta$ dans
+    $\cdn[\cmmh]\ph{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
+    petite que la dimension précédente ;
+  \item expliciter les morphismes de la première ligne du diagramme et majorer
+    la hauteur de leurs matrices dans les bases monômiales évidentes.
+\end{enumerate}
+
+Dans tous ces calculs, $\delta$ sera moralement arbitrairement grand devant
+les autres termes, on n'explicitera donc à chaque fois que le terme de plus
+haut degré en $\delta$ ; ainsi lorsqu'on utilisera la notation $o(\truc)$ ou
+$\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
+
 \clearpage
 
 \section{Deux calculs de dimension} \label{sec-comp-dim}
 
+\clearpage
+
 \begin{prop} \label{build-aux}
   \dots
 \end{prop}
+
 \printbibliography
 
 \end{document}

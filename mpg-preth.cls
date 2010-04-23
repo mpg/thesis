@@ -360,6 +360,10 @@
 \newcommand\Chow{f}
 \newcommand\chow[1]{\Chow_{#1}}
 
+% reduction morphisms
+\newcommand\rdiv{\rho_{\text{div}}}
+\newcommand\relim{\rho_{\text{elim}}}
+
 
 \newcommand\longto{\longrightarrow}
 \newcommand\embedin{\hookrightarrow}
