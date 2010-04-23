@@ -100,6 +100,10 @@
 \newcommand*\eng[1]{%
   \foreignlanguage{english}{\emph{#1}}}
 
+% mathtools settings
+%
+\mathtoolsset{showonlyrefs,showmanualtags}
+
 % lists for theorems [[2
 %
 \newenvironment{enumthm}
@@ -310,6 +314,9 @@
 \newcommand\ch[1]{X\ssub{#1}}
 \newcommand\cmh[1]{X\pexp{#1}}
 \newcommand\cmmh{\boldsymbol X}
+\newcommand\cmhi[1]{Y\pexp{#1}}
+\newcommand\cmmhi{\boldsymbol Y}
+
 
 % helper macro optional arguments with second default value using a star [[2
 %
@@ -330,6 +337,13 @@
 \newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
+\newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
+\newc@star@default \weight  {1}{\fct} {a\ssub{#1}}
+
+% weithed embeding
+\newcommand\wemb[1][\weight]{\varphi\ssub{#1}}
+\newcommand\wemba[1][\weight]{\psi\ssub{#1}} % associated morphims of algebras
+
 % (homogenous, saturated) ideal of a variety
 \newcommand\Ideal{\mathcal I}
 \newcommand*\ideal[1]{\Ideal_{#1}}
@@ -347,8 +361,10 @@
 \newcommand\chow[1]{\Chow_{#1}}
 
 
+\newcommand\longto{\longrightarrow}
 \newcommand\embedin{\hookrightarrow}
 
+\newcommand\opdef{{\mathcal U}}
 
 % [[1
 % vim: ft=tex fdm=marker foldmarker=[[,]] foldlevel=1
