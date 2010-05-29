@@ -232,7 +232,7 @@ définition présente l'inconvénient de ne pas tenir compte de la structure
 géométrique de $V$, notamment des singularités éventuelles. Néanmoins, les
 deux notions se comparent tout à fait bien, à l'aide des deux résultats
 suivants, dont le premier est tiré de \cite[« Closest point property »
-p.~103]{phidg}. On rappelle pour la lecture de ces énoncés les notations
+p.~89]{phidg}. On rappelle pour la lecture de ces énoncés les notations
 $\gamma_n = \sum_{q=1}^{n-1} 1/2q$ et $\dv = 0$ si $v$ est ultramétrique, $\dv
 = 1$ sinon.
 
@@ -1020,22 +1020,23 @@ On peut alors démontrer notre deuxième version de l'inégalité de
 \begin{proof}
   Si $\p z \not\in V(\Qbar)$, on choisit par le lemme~\ref{lProjection} une
   bonne projection $\pi$. On choisit une équation $E$ de $\pi_* V$, qui est
-  donc de degré $d = \deg(V)$ et on écrit
+  donc de degré $d = \deg(V)$. En utilisant l'expression de la distance d'un
+  point à une hypersurface, ainsi que de la hauteur de cette dernière, en
+  fonction d'une de ses équations, il vient :
   \begin{align*}
   \prod_{v \in S} \Dv(\p z, V)^{e_v}
   & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \Dv(\pi(\p z), \pi_* V)^{e_v} \\
-  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \prod_{v \in M(\cdn)}
-  \left(\frac {\av{E(\p z)}} {\mv{E}\nv{\pi(z)}} \right)^{e_v} \\
-  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \frac1{H(\pi_* V) H(\pi(\p z))}
+  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} 
+  \cdot \prod_{v \in M(\cdn)}
+  \left(\frac {\av{E(\p z)}} {\mv{E} \nv{\pi(z)}^d} \right)^{e_v} \\
+  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \frac1{H(\pi_* V) H(\pi(\p z))^d}
   \\
-  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \frac1{H(V) H(\p z)} \\
+  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \frac1{H(V) H(\p z)^d} \\
   & \qquad \cdot \frac1 {(n+1)^{3/2}
     \big( l(n+1)^2 \cdot e \big)^{ld} (\abs S /2 +2)(ld +1)} \\
-  &\ge \cst[]{cLiouville} \frac1{H(V) H(\p z)}
+  &\ge \cst[]{cLiouville} \frac1{H(V) H(\p z)^d}
+  \qedhere
   \end{align*}
-  en utilisant le fait que la distance d'un point à une hypersurface, ainsi
-  que la hauteur de cette dernière, s'expriment simplement en fonction d'une
-  des ses équations comme ci-dessus.
 \end{proof}
 
 \section{Inégalité de \texorpdfstring{\bsc{Mumford}}{Mumford}}

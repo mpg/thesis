@@ -35,6 +35,7 @@
 \usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, trace}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic, xcolor}
+\usepackage[noprefix, nocfg, french]{nomencl}
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true,
   autopunct=true, babel=hyphen,

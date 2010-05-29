@@ -54,9 +54,11 @@ Glue et réductions
 ------------------
 
 Peut-on supposer à la fois que le plongement est adapté et est un Mumford
-modifié ? Probablement non... voir comment adapter ça.
+modifié ? Probablement non... voir comment gérer ça.
 
 Peut-on supposer si facilement que le diviseur est découpé par un hyperplan ? Ça
 revient à dire que le truc qu'on considère est très ample (et totalement
 symétrique si on veut avoir un Mumford modifié aussi). À voir.
 
+Dans la « closest point property » de pph (p. 89 du LNM), peut-on remplacer \C_v
+par k_v (voire k) ?
