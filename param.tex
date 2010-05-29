@@ -28,12 +28,13 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   extension finie. On choisit $y$ un élément de $L$, on note $\chi : \cdn[X, Y]
   \to L$ le $\cdn(X)$-morphisme donné par $Y \mapsto y$. On fixe $P$ de degré
   $D$ dans son noyau, on pose $R = \frac{\partial P}{\partial Y}$. On considère
-  de plus les $\cdn$-dérivations de $\cdn(X)$ caractérisées par $\diff_i(X_j)$
-  pour $1 \le i, j \le u$, et on notera de même leurs extensions à $L$. Pour
-  chaque $\kappa \in \N^u$, on note $\diff^\kappa = \diff_1^{\kappa_1}\cdots
-  \diff_u^{\kappa_u}$ et $\partial^\kappa = \frac1{\kappa!}\diff^\kappa$. Pour
-  chaque $\kappa \neq 0$, il existe des polynômes $P_a^\kappa$, $a \in \{0,
-  1\}$, tels que :
+  de plus les $\cdn$-dérivations de $\cdn(X)$ caractérisées par $\diff_i(X_j)
+  = \delta_i^j$ pour $1 \le i, j \le u$, et on notera de même leurs extensions
+  à $L$. Pour chaque $\kappa \in \N^u$, on note $\diff^\kappa =
+  \diff_1^{\kappa_1}\cdots \diff_u^{\kappa_u}$ et $\partial^\kappa =
+  \frac1{\kappa!}\diff^\kappa$. Pour chaque $\kappa \neq 0$ et $a \in \{0,
+    1\}$, il existe des polynômes $P_a^\kappa \in \cdn[X_1, \dots, X_u, Y]$,
+  tels que :
   \begin{enumthm}
     \item $\partial^\kappa y =
       \frac{\chi(P_a^\kappa)}{\chi(R)^{2\lgr\kappa-1}}$, \label{i-repres}
@@ -41,7 +42,7 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
     \item $\deg P_a^\kappa \le (D -1)(2 \lgr\kappa -1)$,
       pour tous $a$ et $\kappa$.
     \item $\nv{P_\dv^{\kappa}} \le \nv P ^{2\lgr\kappa - 1}
-      \cdot \left((8u)^{\lgr\kappa -1} D^{3\lgr\kappa -2} \right)^\dv$
+      \cdot \left((4u)^{\lgr\kappa -1} D^{3\lgr\kappa -2} \right)^\dv$
       pour tout $\kappa$ et toute place $v$ de $\cdn$.
   \end{enumthm}
   En particulier, l'image de $\cdn[X, y]$ par les différents $\partial^\kappa$
@@ -49,10 +50,12 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
 \end{lem}
 
 \begin{proof}
-  Il s'agit en fait de compléter la preuve du lemme~6.1 de \cite{remivds}, en
-  utilisant aux places archimédiennes une généralisation de de
+  Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
+    autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
+    fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
+  utilisant aux places archimédiennes une généralisation de
   \cite[relation~2.3.1, p.~63]{farhith}. On reprend toutes les notations de
-  \cite{remivds}. On va contruire $P_0^\kappa$ et $P_1^\kappa$ par récurrence
+  \cite{remivds}. On va construire $P_0^\kappa$ et $P_1^\kappa$ par récurrence
   sur la longueur de $\kappa$, en partant à chaque fois de $P_a^\kappa = -
   d_{k_0}P$ quand $\kappa_{k_0} = 1$ et $\kappa_k = 0$ sinon (cas $\lgr\kappa
   = 1$), car ce choix convient. Pour la suite, on fixe un $a$, un $\kappa$ de
@@ -92,12 +95,12 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   \]
   Réciproquement, il suffit donc de définir $P\kappa$ par la relation de
   récurrence
-  \[ P^\kappa =
+  \[ - P^\kappa =
     \sum_{\substack{(\lambda,\mu)\in\N^{u+1}\setminus\{(0,0), (0,1)\}\\
     l\pexp{i} \in \N^u\setminus\{0\} \\ \sum l\pexp i + \lambda = \kappa}}
     \frac1{\lambda!\mu!}\,\diff\pexp{\lambda,\mu}P
-    R^{2\lgr\kappa - 2}
-    \prod_{1\le i \le \mu} \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}}
+    \cdot R^{2\lgr\kappa - 2}
+    \cdot \prod_{1\le i \le \mu} \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}}
   \]
   pour que \ref{i-repres} soit satisfait pour $a=0$
 
@@ -114,9 +117,9 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   la norme aux places ultramétriques.
 
   Traitons maintenant le cas archimédien (désormais $P^\kappa = P^\kappa_1$
-  pour alléger). On part de la relation de récurrence suivante (Rémond, avec
-  $Q_\kappa = P^\kappa/\kappa!$) où l'on rappelle que $\kappa'$ est tel que
-  $\kappa_{k_0} = \kappa'_{k_0} + 1$ est $\kappa_k = \kappa'_k$ sinon.
+  pour alléger). On part de la relation de récurrence suivante (\bsc{Rémond},
+  avec $Q_\kappa = P^\kappa \cdot \kappa!$) où l'on rappelle que $\kappa'$ est
+  tel que $\kappa_{k_0} = \kappa'_{k_0} + 1$ est $\kappa_k = \kappa'_k$ sinon.
   \[
     Q_\kappa = R^2 d_{k_0}Q_{\kappa'} - R d_{k_0}P d_Y Q_{\kappa'} + (2
     \lgr{\kappa'} -1)Q_{\kappa'}(d_{k_0} P d_Y R - R d_{k_0}R) \pmm.
@@ -127,16 +130,16 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
     -1)(2\lgr\kappa -1) \pmm.
   \]
   Pour la norme, on prouve que $\nv{Q_\kappa} \le \nv P ^{2 \lgr\kappa - 1}
-  8^{\lgr\kappa -1} D^{3\lgr\kappa -2} (\lgr\kappa -1)!$ (ce qui implique le
-  résultat annoncé vu que $\binom{\lgr\kappa}{\kappa} \le u^{\lgr\kappa}$) en
-  exploitant l'estimation obtenue sur le degré sous la forme $D^\kappa \le
+  4^{\lgr\kappa -1} D^{3\lgr\kappa -2} (\lgr\kappa -1)!$ (ce qui implique le
+  résultat annoncé vu que $\binom{\lgr\kappa}{\kappa} \le u^{\lgr\kappa - 1}$)
+  en exploitant l'estimation obtenue sur le degré sous la forme $D^\kappa \le
   2\lgr\kappa D$.
   \begin{align*}
     \nv{Q_\kappa}
     & \le 2 D^2 (\deg Q_{\kappa'})\nv P ^2 \nv{\smash{Q_{\kappa'}}} +
       2(2\lgr{\kappa'} -1) D^3 \nv {P}^2 \\
-    & \le \nv P ^2 \nv{ \smash{Q_{\kappa'}}} 8D^3 \lgr{\kappa'} \\
-    & \le \nv P ^{2 \lgr\kappa - 1} 8^{\lgr\kappa -1} D^{3\lgr\kappa -2}
+    & \le \nv P ^2 \nv{ \smash{Q_{\kappa'}}} 4D^3 \lgr{\kappa'} \\
+    & \le \nv P ^{2 \lgr\kappa - 1} 4^{\lgr\kappa -1} D^{3\lgr\kappa -2}
       (\lgr\kappa -1)! \qedhere
   \end{align*}
 \end{proof}
@@ -145,7 +148,7 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   On peut obtenir des estimations similaires en fonction d'un majorant $D'$
   quelconque de $\deg_X P$ et $\deg_Y P$. Il vient par exemple $\deg_X
   P_a^\kappa \le D'\lgr\kappa$ et de même pour le degré en $Y$. On peut
-  également remplacer $D$ par $D'$ et $8$ par $4$ dans la majoration de
+  également remplacer $D$ par $D'$ et $4$ par $2$ dans la majoration de
   $\nv{P_1^\kappa}$ ci-dessus.
 \end{Rem}
 
@@ -154,16 +157,16 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   dans $K(Z)$ les variables $w_1, \ldots, w_u$ sont algébriquement
   indépendantes, et chaque $w_j$ est lié aux $w_1, \ldots, w_u$ par un
   polynôme $\widetilde P _j$ (obtenu en déshomogénéisant par $W_0 = 1$ le
-  $P_j$ du lemme 4.2) de degré $D := \deg Z$, unitaire en la dernière
-  variable, et tel qu'en toute place, $\nv{\smash{\widetilde P}_j} \le
-  \nv{f_Z}$.
+  $P_j$ du lemme 4.2 de \cite{remivds}) de degré $D := \deg Z$, unitaire en la
+  dernière variable, et tel qu'en toute place, $\nv{\smash{\widetilde P}_j}
+  \le \nv{f_Z}$.
 \end{fact}
 
 \begin{proof}
   C'est \cite[partie~4.1, p.~114]{remivds}. Seule l'assertion sur la
   norme n'est pas énoncée sous cette forme par \bsc{Rémond}, mais elle vient
   de même que la proposition~4.2 en remarquant que $P_j$ est une
-  spécialisation de $f_Z$ qui annulle certaines variables et remplace les
+  spécialisation de $f_Z$ qui annule certaines variables et remplace les
   autres par des monômes unitaires.
 \end{proof}
 
@@ -188,14 +191,14 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
       R_j)^{f(\kappa)}} t^\kappa$ pour tous $a$ et $j$ ;
     \item $\deg \widetilde P_{a, j}^\kappa \le g(\kappa)$ pour tous $a$, $j$ et
       $\kappa$ ;
-    \item $\nv{\widetilde P_{\dv, j}^\kappa} \le \bigl( \nv{f_Z} (\sqrt{8u}
+    \item $\nv{\widetilde P_{\dv, j}^\kappa} \le \bigl( \nv{f_Z} (\sqrt{4u}
       D^{3/2})^\dv \bigr)^{f(\kappa)}$ pour tous $j$ et $\kappa$.
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
   Vu la définition de $\tilde\tau$, il suffit avec d'appliquer le lemme
-  précédent, avec $L = K(Z)$, indépendament à chaque $w_j$ en tenant compte de
+  précédent, avec $L = K(Z)$, indépendamment à chaque $w_j$ en tenant compte de
   l'information connue sur le degré et la norme des $P_j$.
 \end{proof}
 
@@ -213,7 +216,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
     \item $\deg \widetilde Q_{a, \gamma}^\kappa \le (D-1)(n-u)f(\kappa) +
       \lgr\gamma$ pour tous $a$, $\gamma$ et $\kappa$ ;
     \item $\nv{\widetilde Q_{\dv, \gamma}^\kappa} \le 2^{\dv(\lgr\kappa +
-        n(\lgr\gamma -1))} \big( \nv{f_Z} \cdot (\sqrt{8u} D^{3/2})^\dv
+        n(\lgr\gamma -1))} \big( \nv{f_Z} \cdot (\sqrt{4u} D^{3/2})^\dv
       \big)^{(n-u)f(\kappa)}$ pour tous $v$, $\gamma$ et $\kappa$ ;
     \item $\deg{\widetilde R} \le (D-1)(n-u)$ ;
     \item $\nv{\widetilde R} \le (D^\dv \nv{f_Z})^{n-u}$.
@@ -223,7 +226,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
 \begin{proof}
   On applique le lemme précédent, en remarquant de plus que pour $1\le j \le u$
   on peut choisir $\widetilde Q_{a, j}^\kappa$ et $\widetilde R_j$ satisfaisant
-  à sa condition \ref{i-repres} avec $\deg{\widetilde Q}_{a, j}^\kappa \le 0$,
+  à la condition \ref{i-repres} avec $\deg{\widetilde Q}_{a, j}^\kappa \le 0$,
   $\nv{\widetilde Q_{a, j}^\kappa} \le 1$ et $\widetilde R_j = 1$. Il vient
   alors :
   \begin{align*}
@@ -239,11 +242,16 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
         {\chi(\widetilde R_j)^{f(l\pexp{j, k_j})}}
       \Bigg) t^\kappa \\
     & = \sum_\kappa \frac1{\chi(\widetilde R)^{f(\kappa)}}v
-      \cdot\chi\Bigg(\underbrace{ \sum_{\sum l\pexp{j, k_j} = \kappa}
-        \prod_{j=1}^n  \widetilde R_j^{f(\kappa) -
+      \cdot\chi\Biggl(\underbrace{
+        \sum_{\sum l\pexp{j, k_j} = \kappa} \prod_{j=1}^n
+        \Bigl(
+        \widetilde R_j^{f(\kappa) -
         \smash{\sum\limits_{k_j=1}^{\gamma_j}}f(l\pexp{j, k_j})}
-        \prod_{k_j=1}^{\gamma_j} \widetilde Q_{a, j}^{l\pexp{j, k_j}} }
-      _{=: \widetilde Q_{a, \gamma}^\kappa} \Bigg) t^\kappa \pmm,
+        \prod_{k_j=1}^{\gamma_j} \widetilde Q_{a, j}^{l\pexp{j, k_j}} 
+        \Bigr)
+        }_{=: \widetilde Q_{a, \gamma}^\kappa}
+      \Biggl) t^\kappa
+      \pmm,
   \end{align*}
   en posant $\widetilde R = \prod \widetilde R_j$. Les estimations de degré et
   de norme de $\widetilde R$ sont immédiates.  On remarque également que
@@ -270,12 +278,12 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   \dv$) par
   \begin{align*}
     & \prod_{j=u+1}^n \left( \nv{\smash{\widetilde R_j}}^{f(\kappa) - \sum
-        f(l\pexp{j, k_j}}) \smash{\prod_{\substack{j, k_j \\ j > u}}}
+        f(l\pexp{j, k_j})} \smash{\prod_{\substack{j, k_j \\ j > u}}}
       \nv{P_{\dv, j}}^{l\pexp{j, k_j}} \right) \\
     & \qquad\le \prod_{j=u+1}^n \big( (D^\dv \nv{f_Z})^{f(\kappa)} \big)
-      \prod_{\substack{j, k_j \\ j > u}}  \big( (\sqrt{8u} D^{1/2})^\dv
+      \prod_{\substack{j, k_j \\ j > u}}  \big( (\sqrt{4u} D^{1/2})^\dv
       \big)^{f(l\pexp{j, k_j})} \\
-    & \qquad\le \big( \nv{f_Z} \cdot (\sqrt{8u}D^{3/2})^\dv
+    & \qquad\le \big( \nv{f_Z} \cdot (\sqrt{4u}D^{3/2})^\dv
       \big)^{(n-u)f(\kappa)} \pmm,
   \end{align*}
   d'où l'estimation annoncée et le lemme.
@@ -286,7 +294,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   sur un corps de nombres $\cdn$, plongée de façon adaptée dans $\Proj^n$, dont
   on note $f_Z$ une forme de \bsc{Chow}. On considère le monomorphisme de
   paramétrisation $\tau \colon A(\widetilde Z) \to A(U)[[t]]$ (où $\widetilde Z
-  = Z \subset (X_0)$ et $U$ est un certain ouvert de $Z$) qui applique chaque
+  = Z \setminus (X_0)$ et $U$ est un certain ouvert de $Z$) qui applique chaque
   fonction $f$ sur son développement en série $\sum \partial^\kappa \tilde F \,
   t^\kappa$.  On note enfin $\chi \colon \cdn[X_0, \ldots, X_n] \to K(Z)$ le
   morphisme appliquant $X_0$ sur $1$ et $X_i$ sur $w_i$.
@@ -299,7 +307,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
     \item $\tau(\chi(F)) = \chi\left( \frac1{X_0^d} \sum\limits_{\kappa \in
         \N^u} \frac {\nu_a^\kappa(F)} {R^{f(\kappa)}} \, t^\kappa \right)$  ;
     \item $\nv{\nu_\dv^\kappa(F)} \le \nv F \cdot \big( \nv{f_Z}
-      (\sqrt{8u}D^{3/2})^\dv \big)^{(n-u)f(\kappa)} \cdot 2^{\dv (\lgr\kappa +
+      (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\kappa)} \cdot 2^{\dv (\lgr\kappa +
         u(d-1))}$ ; \label{i-norme}
     \item $\nv R \le (D^\dv \nv{F_Z})^{n-u}$.
   \end{enumthm}
@@ -361,7 +369,7 @@ dont toutes les coordonnées valent $1$.
     \item \label{i-norm-prod} $\nv{\smash{\nu_{m, \dv}^\lambda(F)}} \le \nv F
       \nv{f_Z}^{2n\lgt\lambda} \bigl(
       (16uD^3)^{n\lgt{\lambda}} \cdot 2^{u(\lgr d -1)} \bigr)^\dv$ ;
-      % \big(\nv{f_Z}    (\sqrt{8u}D^{3/2})^\dv \big)^{(n-u)f(\lambda)}
+      % \big(\nv{f_Z}    (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\lambda)}
       % 2^{\dv(\lgt\lambda + u(\lgr d-1)}$ ;
     \item $\nv{U_l} \le (D^\dv \nv{F_Z})^{n-u_l}$.
   \end{enumthm}
