@@ -94,6 +94,7 @@
 \newcommand*\marginnote[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand*\worknote[1]{\marginnote{\color{black!50}\itshape #1}}
 \newcommand\todo{\worknote{\textsc{todo}}}
+\newcommand\todom{\tag{\textsc{todo}}}
 \newcommand\later{\worknote{(à détailler ultérieurement)}}
 
 % languages and special text items [[2
