@@ -1,11 +1,13 @@
 SOURCES=$(wildcard *.tex)
 BASENAMES=$(basename $(SOURCES))
-ALL=$(filter-out normes-mesures, $(BASENAMES))
+ALL=$(BASENAMES)
 
 all: $(addsuffix .pdf, $(ALL))
 
 %.pdf: %.tex
 	latexmk -pdf $<
+
+idee-pub.pdf: idee.tex
 
 clean:
 	latexmk -c

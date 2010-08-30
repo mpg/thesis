@@ -69,9 +69,9 @@ $d_i$ le degré partiel de $P$ en la variable $X_i$.
 Introduisons maintenant les notations utiles dans le cas multi-homogène. On
 regardera des polynômes homogènes de multidegré $\delta = (\delta_1, \dots,
 \delta_l)$ en $l$ groupes de $n_k$ variables $U_0^{(k)}, \dots,
-U_{n_l}^{(k)}$, pour $1\le k \le l$. Pour un multi-indice $\alpha =
+U_{n_l}^{(k)}$, pour $1\le k \le l$. À un multi-indice $\alpha =
 (\alpha^{(1)}, \dots, \alpha^{(l)}) \in \N^{n_1} \times \dots \times
-\N^{n_l}$, on introduit son vecteur longueur $\vlg\alpha =
+\N^{n_l}$, on associe son vecteur longueur $\vlg\alpha =
 (\lgr{\alpha_1},\dots, \lgr{\alpha_l})$, et on notera ainsi $F =
 \sum_{\vlg\alpha = \delta} f_\alpha X^\alpha$, avec la notation évidente pour
 $X^\alpha$. On définit également $\der\alpha$, $\alpha!$ et
@@ -82,16 +82,24 @@ Toutefois, il faudra préter attention au fait que $\delta = \vlg\alpha$ est
 maintenant une égalité de vecteurs.
 
 Par ailleurs, on est amené à considérer des familles $\mathcal F = (F_1,
-\dots, F_p)$ de polynômes. Pour chaque norme que l'on introduira ci-dessous,
-se présentera une norme naturellement associée pour les vecteurs. On notera
-alors $\norm{\mathcal F} = (\norm {F_1}, \ldots, \norm {F_p})$ le vecteur des
+\dots, F_p)$ de polynômes. À chaque norme que l'on introduira ci-dessous,
+on associera une norme naturelle pour ces familles. On notera
+ainsi $\norm{\mathcal F} = (\norm {F_1}, \ldots, \norm {F_p})$ le vecteur des
 normes de la famille, $\nnorm F$ la norme de ce vecteur. Si $\mathcal Q =
 \big(Q_j^{(k)}\big)_{0 \le j \le n_k}^{1 \le k \le l}$ est une famille de
-polynômes quelconques, on notera également $\norm{\mathcal Q} =
+polynômes quelconques, on notera enfin $\norm{\mathcal Q} =
 (\nnorm{\smash{Q^{(1)}}}, \ldots, \nnorm{\smash{Q^{(l)}}})$ son vecteur norme,
 de sorte que $\norm{\mathcal Q} ^\delta$ aura un sens naturel.
 
-Pour les quatre normes, à chaque fois que l'on aura une majoration du type $\norm{F(\mathcal Q)}_\truc \le C \norm F _\truc \norm{\mathcal Q}_\truc^\delta$, on aura également la majoration $\norm{\mathcal F(\mathcal Q)}_\truc \le C \nnorm{\mathcal F}_\truc \norm{\mathcal Q}^\delta$ si tous les éléments de le famille $\mathcal F$ sont homogènes de même degré $\delta$. Dans chaque cas, on ne notera donc que la majoration $\norm{F(\mathcal Q)} \le C \norm F \norm{\mathcal Q}^\delta$, et on laissera le soin au lecteur d'en déduire les autres majorations. En particulier, le cas où les $Q_j^{(k)}$ sont des constantes correspond à l'évaluation en un point.
+Pour les quatre normes, à chaque fois que l'on aura une majoration du type
+$\norm{F(\mathcal Q)}_\truc \le C \norm F _\truc \norm{\mathcal
+  Q}_\truc^\delta$, on aura aussi la majoration $\norm{\mathcal F(\mathcal
+  Q)}_\truc \le C \nnorm{\mathcal F}_\truc \norm{\mathcal Q}^\delta$ si tous
+les éléments de le famille $\mathcal F$ sont homogènes de même degré $\delta$.
+Dans chaque cas, on ne notera donc que la majoration $\norm{F(\mathcal Q)} \le
+C \norm F \norm{\mathcal Q}^\delta$, et on laissera le soin au lecteur d'en
+déduire les autres majorations. En particulier, le cas où les $Q_j^{(k)}$ sont
+des constantes correspond à l'évaluation en un point.
 
 Enfin, la notation $\ncoef P$ désignera le nombre de coefficients non nuls
 dans l'écriture de $P$ comme somme réduite de monômes. Ainsi, on a en général
