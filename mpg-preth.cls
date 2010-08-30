@@ -86,7 +86,8 @@
 %
 \frenchbsetup{og=«,fg=»,
   AutoSpacePunctuation=false,
-  SuppressWarning=true}
+%   SuppressWarning=true,
+  }
 
 % marginal notes and todos [[2
 %

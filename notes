@@ -3,8 +3,8 @@ Notations et TeX
 
 Faire un index des notations, par exemple avec nomencl.
 
-Notations lié au plongement éclatant : faire des macros spécifiques pour i et j et
-leurs bornes ? Distinquer X seul que X, Y ?
+Notations lié au plongement éclatant : faire des macros spécifiques pour i et
+j et leurs bornes ? Distinquer X seul de X, Y ?
 
 Pour les trucs ayant des indices souvent, faire des trucs pour les bornes ?
 
@@ -17,8 +17,6 @@ Traduire tous les noms de macros en anglais.
 Utiliser breqn ?
 
 Utiliser \DeclarePairedDelim et revoir les indices des normes (v, 1).
-
-Revoir les problèmes de H())x (idee-pub page 6).
 
 Finir de retaper Siegel.
 
