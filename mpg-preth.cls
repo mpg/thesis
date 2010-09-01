@@ -82,6 +82,31 @@
 \bibliography{these}
 \defbibheading{bibempty}{}
 
+% nomenclature [[2
+%
+\makenomenclature
+
+\newcommand\noms[2]{% % symbols
+  \nomenclature[A-$#1$--]{$#2$}}
+\newcommand\nomn[2]{% % numeric
+  \nomenclature[B-$#1$--]{$#2$}}
+\newcommand\noma[2]{% % alphabetic
+  \nomenclature[C-$#1$--]{$#2$}}
+
+\newcommand\PH{% place holder
+  \ensuremath{\text{\color{gray}$\bullet$}}}
+
+\renewenvironment{thenomenclature}{% original without \chapter and \preamble
+  \list{}{%
+    \labelwidth\nom@tempdim
+    \leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+  \itemsep\nomitemsep
+    \let\makelabel\nomlabel}%
+  }{%
+  \endlist
+  \nompostamble}
+
 % frenchb settings [[2
 %
 \frenchbsetup{og=«,fg=»,
@@ -169,8 +194,10 @@
 
 % standard functions [[2
 %
-\newcommand*    \I[1]   {\std{Id}_{#1}}
-\newcommand*    \ind[1] {\std{1}_{#1}}
+\newcommand*\I[1]{\std{Id}_{#1}}
+\noma{Id}{\I\PH}{Fonction identité sur l'ensemble \PH}
+\newcommand*\ind[1]{\std{1}_{#1}}
+\nomn{1}{\ind\PH}{Fonction indicatrice de l'ensemble \PH}
 
 % less standard but still usefull sets [[2
 %

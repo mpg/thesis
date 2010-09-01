@@ -4,7 +4,7 @@ ALL=$(BASENAMES)
 
 all: $(addsuffix .pdf, $(ALL))
 
-%.pdf: %.tex
+%.pdf: %.tex mpg-preth.cls
 	latexmk -pdf $<
 
 idee-pub.pdf: idee.tex
