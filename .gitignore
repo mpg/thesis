@@ -1,10 +1,12 @@
 *.pdf
 *.bbl
 *-blx.bib
-*.xml
 *.aux
 *.blg
 *.fdb_latexmk
 *.log
 *.out
 *.toc
+*.ilg
+*.nlo
+*.nls
