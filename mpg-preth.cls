@@ -124,7 +124,7 @@
 % marginal notes and todos [[2
 %
 \newcommand*\marginnote[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
-\newcommand*\worknote[1]{\marginnote{\color{black!50}\itshape #1}}
+\newcommand*\worknote[1]{\marginnote{\leavevmode\color{black!50}\itshape #1}}
 \newcommand\todo{\worknote{\textsc{todo}}}
 \newcommand\todom{\tag{\textsc{todo}}}
 \newcommand\later{\worknote{(à détailler ultérieurement)}}
@@ -226,6 +226,7 @@
 %
 \newcommand\orbrack{\mathopen\rbrack}
 \newcommand\clbrack{\mathopen\lbrack}
+
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
 \newcommand*\nnorm[1]{% argh!
@@ -375,7 +376,7 @@
   quadratique de \NT, entre les points \PH et \PHi de $\va$ ou de son espace
   de \MoW}
 
-\newcommand*\mv[2][v]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
+\newcommand*\mv[2][\place]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
 \newcommand\B{\mathcal B}       % une sous-v.a.
 \newcommand*\lgt[1]{\lVert#1\rVert}     % longueur totale
 \newcommand\md{\mathfrak{d}}        % le morphisme « d »
@@ -384,6 +385,15 @@
 \newcommand*\hatys{\smash{\hat y}}      % y chapeau rapetissé
 \newcommand*\cube[1]{\mathcal C(#1)}      % le « cube » \abs{w} \le #1 et w entier
 
+\noma{M}{\mv\PH}{Mesure homogène (\todo laquelle ?) locale en $\place$ de la
+  forme \PH}
+\noma{B}{\B}{Une sous-variété (\todo fixée ?) de $\va$}
+\noms{N}{\lgt\PH}{Longueur totale du multi-multi-indice \PH}
+\noma{MW}{\MW\PH}{Espace de \MoW de \PH}
+
+\noma{C}{\cube\PH}{L'ensemble des points à coordonnées entières du cube de
+  demi-arête \PH centré en l'origine}
+
 % various "epsilons"
 %
 \newcommand\epsz{{\eps_0}}
@@ -391,10 +401,20 @@
 \newcommand\epsii{{\eps_2}}
 \newcommand\epsiii{{\eps_3}}
 
+\nomg{eps0}{\epsz}{Un epsilon (\todo portée à préciser)}
+\nomg{eps1}{\epsi}{Un autre epsilon (\todo portée à préciser)}
+\nomg{eps2}{\epsii}{Encore un autre epsilon (\todo portée à préciser)}
+\nomg{eps3}{\epsiii}{Toujours un autre epsilon (\todo portée à préciser)}
+
 % various notations for vanishing
 %
 \newcommand\Stairs{\mathcal E}
 \newcommand\Vanish{\@ifstar{\mathfrak{\tilde q}}{\mathfrak q}}
+
+\noma{E}{\Stairs}{Dessous de (multi ?) escalier (\todo paramètres à préciser)}
+\noma{q1}{\Vanish}{Idéal d'annulation pour la forme auxiliaire plus (ou
+  modulo) l'idéal de la variété ambiante (\todo préciser ?)}
+\noma{q2}{\Vanish*}{Idéal d'annulation pour la forme auxiliaire}
 
 \newcounter{cst}
 \newcommand*\cst[2][, v]{%
@@ -403,19 +423,39 @@
   \refstepcounter{cst}\label{#2}%
   \cst[#1]{#2}}
 
+\noma{cvx}{c_{\PH, \PHi}}{Constante (en général intermédiaire) numéro \PH,
+  éventuellement dépendante de la place \PHi}
+
 \newcommand\iq{{\mathfrak q}}
+
+\noma{q0}{iq}{Idéal d'annulation pour la forme auxiliare (\todo dupliqué ;
+  quelle version ?)}
 
 \newcommand\vb{{\mathbf e}}
 \newcommand\Mbase{{\mathcal M}}
 \newcommand\monome{{\mathfrak m}}
 
+\noma{e}{\vb}{Vecteur \todo ??? (de base ?)}
+\noma{M}{\Mbase}{Matrice d'une application dans une base donnée (\todo sûr ?
+  paramètre ?)}
+\noma{m}{\monome}{Un monome (\todo fixé, avec des paramètres ?)}
+
 \newcommand\coi{{\mathfrak b}} % coordonnées de l'origine inversées
 \newcommand\divi{E}
 \newcommand\dimp{n}
 
+\noma{b}{\coi}{Vecteur dont les composantes sont les inverses de composantes
+  de $\coa$ bien choisies}
+\noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
+\noma{n}{\dimp}{Dimension de l'espace projectif ambiant (\todo expliciter la
+  portée si on change de plongements des fois)}
 
 \newcommand\ph{\ssub} % partie homogène
 \newcommand\mat{M} % matrice
+
+\noms{}{\PH\ph\PHi}{Partie homogène de degré \PHi de l'algèbre (multi-)graduée
+  ou idéal (multi-)homogène \PH}
+\noma{M}{\mat}{Une matrice (\todo qui, où, comment, pourquoi ?)}
 
 % multiprojectif
 \newcommand\puiss{m}
@@ -426,12 +466,18 @@
 \newcommand\cmhi[1]{Y\pexp{#1}}
 \newcommand\cmmhi{\boldsymbol Y}
 
+\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
+  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
+\noma{i}{\fct}{Un indice entier, variant en général entre (\todo uniformiser
+  et préciser)}
 
-% helper macro optional arguments with second default value using a star [[2
+% helper macro for optional arguments that are empty by default, [[2
+% but have a second default value, accessed using the starred form
 %
+% \newcs@start@default <name> <arg. nb.> <2nd default> <repl. text>
 \newcommand\newc@star@default[1]{%
   \expandafter\newc@star@default@
-  \csname \expandafter\@gobble\string#1 \endcsname#1}
+  \csname \expandafter\@gobble\string#1 \endcsname#1}% TODO: use \cmdstring
 \newcommand\newc@star@default@[5]{%
   \newcommand*#1[#3][]{#5}%
   \newcommand*#2{\@ifstar{#1[#4]}{#1}}}
@@ -446,38 +492,68 @@
 \newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
+\noma{Z} {\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
+\noma{Zi}{\var*   }{Le $\fct$-ième facteur de $\var$}
+\noma{u} {\vardim }{Le vecteur des dimensions des facteurs de $\var$}
+\noma{ui}{\vardim*}{La dimension de $\var*$}
+\noma{D} {\vardeg }{Le vecteur des degrés de facteurs de $\var$}
+\noma{Di}{\vardeg*}{Le degré de $\var*$}
+\noma{H} {\varht  }{La hauteur projective multiplicative de $\var$}
+\noma{Hi}{\varht* }{La hauteur projective multiplicative de $\var*$}
+\noma{f} {\varfc  }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var$}
+\noma{fi}{\varfc* }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var*$}
+\noma{I} {\varid  }{L'idéal multi-homogène sature de $\var$}
+\noma{Ii}{\varid* }{L'idéal multi-homogène sature de $\var*$}
+
 \newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
 \newc@star@default \weight  {1}{\fct} {a\ssub{#1}}
 
-% weithed embeding
-\newcommand\wemb[1][\weight]{\varphi\ssub{#1}}
-\newcommand\wemba[1][\weight]{\psi\ssub{#1}} % associated morphims of algebras
+\noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
+\noma{a}{\weight}{Le vecteur de poids associé à $\excep$}
 
-% (homogenous, saturated) ideal of a variety
+% weithed embeding
+\newcommand\wemb  [1][\weight] {\varphi\ssub{#1}}
+\newcommand\wemba [1][\weight] {\psi\ssub{#1}}
+
+\nomg{phi}{\wemb }{Plongement éclatant associé au vecteur de poids $\weight$}
+\nomg{psi}{\wemba}{Morphisme d'allgèbres graduées associé au plongement
+  éclatant $\wemb$}
+
 \newcommand\Ideal{\mathcal I}
 \newcommand*\ideal[1]{\Ideal_{#1}}
-% ring of (homogenous) coordinates of a variety
+\noma{I}{\ideal\PH}{Idéal (multi-)homogène saturé de la variété plongée \PH}
+
 \newcommand\Ring{\mathcal R}
 \newcommand*\ring[1]{\Ring_{#1}}
-% (homogenous) fraction field of a variety
+\noma{R}{\ring\PH}{Anneau des coordonnées (multi-)homogènes de la variété
+  plongée \PH}
+
 \newcommand\Korper{\mathcal K}
 \newcommand\korper[1]{\Korper(#1)}
-% zeros of polynomials
+\noma{K}{\korper\PH}{Corps des fonctions rationnelles de la variété \PH}
+
 \newcommand\Zeros{\mathcal Z}
 \newcommand\zeros[1]{\Zeros(#1)}
-% Chow form of a variety
+\noma{Z}{\zeros\PH}{Lieu des zéros de la (famille de) forme(s) \PH}
+
 \newcommand\Chow{f}
 \newcommand\chow[1]{\Chow_{#1}}
+\noma{f}{\chow\PH}{Forme de \bsc{Chow} de la variété plongée \PH}
 
-% reduction morphisms
 \newcommand\rdiv{\rho_{\text{div}}}
 \newcommand\relim{\rho_{\text{elim}}}
 
+\nomg{rho}{\rdiv}{Morphimse de réduction par division dans la construction de
+  la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
+\nomg{rho}{\relim}{Morphisme de réduction par élimination de variables dans le
+  construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
 
 \newcommand\longto{\longrightarrow}
 \newcommand\embedin{\hookrightarrow}
 
 \newcommand\opdef{{\mathcal U}}
+
+\noma{U}{\opdef}{Ouvert de définition d'un certain morphisme (\todo préciser)}
 
 % [[1
 % vim: ft=tex fdm=marker foldmarker=[[,]] foldlevel=1
