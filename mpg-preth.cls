@@ -86,14 +86,16 @@
 %
 \makenomenclature
 
-\newcommand\noms[2]{% % symbols
-  \nomenclature[A-$#1$--]{$#2$}}
-\newcommand\nomn[2]{% % numeric
-  \nomenclature[B-$#1$--]{$#2$}}
-\newcommand\noma[2]{% % alphabetic
-  \nomenclature[C-$#1$--]{$#2$}}
+\newcommand*\nom@type[2]{%
+  \newcommand*#1[2]{%
+    \nomenclature[#2-##1--]{$##2$}}}
 
-\newcommand\PH{% place holder
+\nom@type \noms A % first symbols
+\nom@type \nomn B % then numeric
+\nom@type \nomg C % then greek letter
+\nom@type \noma D % finally alphabetic stuff
+
+\newcommand\PH{% place holder for descriptions
   \ensuremath{\text{\color{gray}$\bullet$}}}
 
 \renewenvironment{thenomenclature}{% original without \chapter and \preamble
@@ -195,8 +197,9 @@
 % standard functions [[2
 %
 \newcommand*\I[1]{\std{Id}_{#1}}
-\noma{Id}{\I\PH}{Fonction identité sur l'ensemble \PH}
 \newcommand*\ind[1]{\std{1}_{#1}}
+
+\noma{Id}{\I\PH}{Fonction identité sur l'ensemble \PH}
 \nomn{1}{\ind\PH}{Fonction indicatrice de l'ensemble \PH}
 
 % less standard but still usefull sets [[2
@@ -204,6 +207,10 @@
 \newcommand\Qbar{\overline{\Q}}
 \newcommand\cdn{\boldsymbol{k}}
 \newcommand\Cdn{\boldsymbol{K}}
+
+\noma{Q}{\Qbar}{Une clôture algébrique fixée de $\Q$}
+\noma{k}{\cdn}{Un corps de nombres}
+\noma{K}{\Cdn}{Une extension finie de $\cdn$}
 
 % delimiters [[2
 %
@@ -222,14 +229,23 @@
 \newcommand\mmax{{\mathrm{max}}}
 
 \newcommand\diff{\mathrm d}
+\noma{d}{\diff\PH}{Différentielle par rapport à \PH}
+
+\newcommand{\p}[1]{{\boldsymbol{#1}}} % point (par opposition à coordonnées)
 
 % compléments de macros maths
 %
-\newcommand*\lgr[1]{\abs{#1}} % longueur
-\newcommand*\vlg[1]{\abs{#1}} % vecteur longueur
-\newcommand*\der[1]{\partial_{#1}} % dérivée divisée
-\newcommand*\ncoef[1]{\mathcal N(#1)} % nombre de coefficients
-\newcommand*\maxbin[1]{m(#1)} % max des coefficient binomiaux avec #1 en haut
+\newcommand*\lgr[1]{\abs{#1}}
+\newcommand*\vlg[1]{\abs{#1}}
+\newcommand*\der[1]{\partial_{#1}}
+\newcommand*\ncoef[1]{\mathcal N(#1)}
+\newcommand*\maxbin[1]{m(#1)}
+
+\noms{n}{\lgr\PH}{Longueur du multi-indice \PH}
+\noms{n}{\vlg\PH}{Vecteur des longueurs du multi-multi-indice \PH}
+\noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
+\noma{N}{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
+\noma{m}{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
 
 % les six normes et mesures étudiées
 %
@@ -238,21 +254,47 @@
 \newcommand*\normeuc[1]{\norm{#1}_2}
 \newcommand*\normhom[1]{\norm{#1}_{\mathrm h}}
 \newcommand*\mespph[1]{\mathrm{M}(#1)}
-\newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}   % mesure de Mahler
+\newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}
 
-\newcommand*\av[2][v]{\abs{#2}_{#1}}      % valeur absolue v-adique, ou indice en option
-\newcommand*\nv[2][v]{\norm{#2}_{#1}}       % norme v-adique, idem
-\newcommand*\nnv[2][v]{\nnorm{#2}_{#1}}     % norme v-adique d'une famille, idem
-\newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}}     % norme idem mais en forçant une petite taille
+\noma{M}{\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
+\noma{M}{\mahler}{Mesure de \bsc{Mahler} de la forme \PH}
+
+\newcommand*\av[2][v]{\abs{#2}_{#1}}
+\newcommand*\nv[2][v]{\norm{#2}_{#1}}
+\newcommand*\nnv[2][v]{\nnorm{#2}_{#1}}
+\newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}} % \nv avec petits délimiteurs
+
+\noms{nv}{\av\PH}{Valeur absolue $v$-adique d'un nombre}
+\noms{Nv2}{\nv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
+\noms{Nv3}{\nnv\PH}{Norme $v$-adique d'un multi-vecteur ou d'une forme
+  multi-homogène}
+
 \newcommand\dv{{\delta\smash{_v}}}        % sélecteur v ultramétrique ou non
 \newcommand\dpv{{\delta'_v}}        % idem plus places divisant 2
+
+\noma{dv1}{\dv}{Vaut $1$ si $v$ est archimédienne, est nul sinon}
+\noma{dv2}{\dpv}{Vaut $1$ si $v$ est archimédienne ou divise $2$, nul sinon}
+
 \newcommand{\Dv}{\mathrm{dist}_v}
+
+\noma{Dv}{\Dv}{Distance $v$-adique projective (\todo entre point et variété
+  seulement, ou aussi entre points, ou bien ?)}
+
 \newcommand{\A}{\mathcal{A}}
-\newcommand{\p}[1]{{\boldsymbol{#1}}}
+\newcommand{\BA}{\mathfrak{B}}
 \newcommand{\OA}{\p{0}}
 \newcommand{\coa}{\theta}
-\newcommand{\BA}{\mathfrak{B}}
+
+\noma{A}{\A}{La variété abélienne ambiante}
+\noma{BA}{\BA}{Une sous-variété abélienne fixée de $\A$}
+\nomn{0}{\OA}{L'origine de $\A$}
+\nomg{theta}{\coa}{Les coordonnées de l'origine de $\A$ dans un plongement de
+  \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe, ce
+    plongement ?)}
+
 \newcommand{\hn}{\hat{h}}
+
+\noma{hn}{\hn}{Hauteur normalisée de \bsc{Néron}-\bsc{Tate}}
 
 % objets mathématiques utiles
 %
