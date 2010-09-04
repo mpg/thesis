@@ -195,7 +195,7 @@ $\weight$, défini par
   & \longto \va^\puiss \times \va^{\puiss-1}
   = \va^{2\puiss-1} \subset (\projd)^{2\puiss-1}
   \\
-  (x_1, \dots, x_\puiss) 
+  (x_1, \dots, x_\puiss)
   & \longmapsto
   (x_1, \dots, x_\puiss;
   \weight[1] x_1 - x_\puiss, \weight[\puiss-1] x_{\puiss-1} - x_\puiss)
@@ -233,7 +233,7 @@ proposition~3.6 de \cite{daphimhva2}.
     S_{l, l'} (V, W)
     =
     \coi{k(l)} \coi{k(l')}
-    \sum_{p, p', q, q'} \in E 
+    \sum_{p, p', q, q'} \in E
     \zeta_{p, p', q, q'} V_p V_{p'} W_q W_{q'}
     \pmm,
   \end{equation}
@@ -542,7 +542,7 @@ ce qu'on aura besoin de savoir sur le degré.
     \deg_{(0, \dots, 0, \vardim[\puiss]; \vardim[1], \dots, \vardim[\puiss-1])}
     \bigl( \wemb(\var) \bigr)
     =
-    \prod_{\fct=1}^{\puiss}
+    \prod\fctrange
     \vardeg* \weight ^{2\vardim*}
     \pmm.
   \]
@@ -550,8 +550,101 @@ ce qu'on aura besoin de savoir sur le degré.
 
 \begin{proof}
   Ce degré est donné par le cardinal de l'intersection de $\wemb(\var)$ avec
-  des hyperplans génériques choisis de la façon suivante : 
+  des hyperplans génériques choisis de la façon suivante : $\vardim[\puiss]$
+  provenant du $\puiss$-ième facteur $\projd$, et $\vardim*$ hyperplans
+  provenant du facteur $\puiss + \fct$ pour $\fct \in \{1, \dots, \puiss-1\}$.
+
+  On commence par choisir les hyperplans sur le facteur $\puiss$ : on remarque
+  qu'ils se remontent par $\wemb$ en des hyperplans sur le dernier facteur de
+  l'espace de départ $(\projd)^\puiss$. Ainsi, couper $\wemb(\var)$ par ces
+  hyperplans revient à imposer à $\point_\puiss$ de parcourir un ensemble de
+  cardinal $\vardeg[\puiss]$.
+
+  Fixons maintenant un point $p$ dans cet ensemble. On constate que
+  $\wemb(\var) \cap \zeros{\cmh\puiss = p}$ coïncide avec l'image de
+  \begin{align}
+    \wemb[\weight, p]'
+    \colon
+    \var[1] \times \dots \times \var[\puiss]
+    & \to
+    \va^{2\puiss-1}
+    \\
+    (\point_1, \dots, \point_{\puiss-1})
+    & \mapsto
+    (\point_1, \dots, \point_{\puiss-1}, p;
+    \weight[1] \point_1 - p,
+    \dots,
+    \weight[\puiss-1] \point_{\puiss-1} - p)
+  \end{align}
+  qui est le produit d'un point par des variétés de la forme
+  $\wemb[\weight*, p]''(\var*)$ pour $\fct$ variant de $1$ à $\puiss-1$ en
+  notant
+  \begin{align}
+    \wemb[\weight*, p]''(\var*)
+    \colon
+    \var*
+    & \to
+    \va^2
+    \\
+    \point
+    & \mapsto
+    (\point, \weight* \point - p)
+  \end{align}
+  Il suffit donc de calculer le degré de ces variétés. La translation par $p$
+  n'ayant pas d'influence sur le degré, il suffit de regarder l'action de la
+  multiplication par $\weight*$. Or, celle-ci pouvant être représentée
+  globalement par des formes de degré $\weight*^2$ en tirant en arrière par
+  $\wemb[\weight*, p]''(\var*)$ une famille de $\vardim*$ hyperplans
+  génériques sur le second facteur, on obtient des hypersurfaces génériques de
+  degré $\weight*^2$ qui coupent donc $\var*$ en $\vardeg*
+  \weight*^{2\vardim*}$ points.
+
+  Le résultat suit en prenant le produit et en se rappelant que
+  $\weight[\puiss] = 1$.
 \end{proof}
+
+\begin{lem}
+  Avec les notations précédentes, on a
+  \begin{align}
+    \dim \Ideal\ph{\delta d}
+    \ge
+    \frac{ \epsz^{\vardim[\puiss]}
+      \prod\fctrange \vardeg* \, \weight* ^{2\vardim*}
+      }{ \vardim ! }
+    \delta^{\vlg\vardim}
+    + o( \delta^{\vlg\vardim} )
+    \pmm.
+  \end{align}
+\end{lem}
+
+\begin{proof}
+  Il suffit d'appliquer le théorème de \bsc{Hilbert} multi-homogène en
+  utilisant le lemme précédent, car une somme de nombre positifs est minorée
+  par chacun de ses termes. Il vient
+  \begin{align}
+    \dim \Ideal\ph{\delta d}
+    & =
+    \left(
+    \sum_{\substack{ t \in \N^{2\puiss-1} \\ \lg t = \lg u }}
+    \deg_t \wemb(\var) \frac{ d^t }{ t! }
+    \right)
+    \delta^{\vlg\vardim}
+    + o( \delta^{\vlg\vardim} )
+    \\
+    & \ge
+    \deg_{(0, \dots, 0, \vardim[\puiss]; \vardim[1], \dots, \vardim[\puiss-1])}
+    \bigl( \wemb(\var) \bigr)
+    \cdot
+    \frac { \epsz^{\vardim[\puiss]} }{ \vardim ! }
+    \delta^{\vlg\vardim}
+    + o( \delta^{\vlg\vardim} )
+  \end{align}
+\end{proof}
+
+Nous allons maintenant calculer la codimension de $\Vanish*_{\weight}^\delta$
+dans $\cdn[\cmmh]\ph{ \delta d' + r }^{ C''' }$. On introduit à cet effet le
+sous-ensemble de $\Stairs_{\weight}^\delta$ suivant :
+
 
 \clearpage
 

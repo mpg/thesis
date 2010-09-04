@@ -460,6 +460,7 @@
 % multiprojectif
 \newcommand\puiss{m}
 \newcommand\fct{i}
+\newcommand\fctrange{_{\fct=1}^\puiss}
 \newcommand\ch[1]{X\ssub{#1}}
 \newcommand\cmh[1]{X\pexp{#1}}
 \newcommand\cmmh{\boldsymbol X}
@@ -468,8 +469,9 @@
 
 \noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
   donc aussi la puissance de $\va$ dans laquelle ont travaille.}
-\noma{i}{\fct}{Un indice entier, variant en général entre (\todo uniformiser
-  et préciser)}
+\noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$
+  (\todo pas vrai partout!)}
+%TODO: \ch etc
 
 % helper macro for optional arguments that are empty by default, [[2
 % but have a second default value, accessed using the starred form
@@ -481,6 +483,8 @@
 \newcommand\newc@star@default@[5]{%
   \newcommand*#1[#3][]{#5}%
   \newcommand*#2{\@ifstar{#1[#4]}{#1}}}
+% Maybe to-do: use a \bgroup-\egroup trick to make the macros usable as
+% indices/exponents without braces?
 
 % the product sub-variety considered and its attributes [[2
 %
@@ -554,6 +558,23 @@
 \newcommand\opdef{{\mathcal U}}
 
 \noma{U}{\opdef}{Ouvert de définition d'un certain morphisme (\todo préciser)}
+
+% global or long-term notations without a dedicated macro [[2
+% (btw, isn't this evil?)
+%
+\noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
+  son tiré ou poussé ?)}
+\noma{d'}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
+  son tiré ou poussé ?)}
+\nomg{delta}{\delta}{Un entier suffisament divisible et grand, gouvernant
+  l'ordre de grandeur du degré de la forme auxiliaire}
+\noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
+  des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
+\nomg{lambda}{\lambda}{Souvent un multi-multi-indice dans la définition de
+  dessous-d'escalier-oïdes}
+
+\noma{r}{r}{La correction de degré d'un tiré ou poussé de la forme auxiliaire
+  (\todo à préciser)}
 
 % [[1
 % vim: ft=tex fdm=marker foldmarker=[[,]] foldlevel=1
