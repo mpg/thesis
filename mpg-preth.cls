@@ -95,10 +95,15 @@
 \nom@type \nomg C % then greek letter
 \nom@type \noma D % finally alphabetic stuff
 
-\newcommand\PH{% place holder for descriptions
-  \ensuremath{\text{\color{gray}$\bullet$}}}
+% placeholders for descriptions
+\newcommand*\nom@ph[2]{%
+  \newcommand#1{\ensuremath{\text{\color{gray}$#2$}}\xspace}}
 
-\renewenvironment{thenomenclature}{% original without \chapter and \preamble
+\nom@ph \PH   \bullet
+\nom@ph \PHi  \star
+
+% remove \chapter and \preamble from original definition
+\renewenvironment{thenomenclature}{%
   \list{}{%
     \labelwidth\nom@tempdim
     \leftmargin\labelwidth
@@ -154,6 +159,11 @@
   \theoremstyle{remark}
 \newtheorem*{rem}        {Remarque}
 \newtheorem*{Rem}        {Remarque}
+
+% shortcut macros [[2
+%
+\newcommand \NT  {\bsc{Néron}-\bsc{Tate}\xspace}
+\newcommand \MoW {\bsc{Mordell}-\bsc{Weil}\xspace}
 
 % math stuff [[1
 % ----------
@@ -257,7 +267,7 @@
 \newcommand*\mahler[2][]{\mathcal M_{#1}(#2)}
 
 \noma{M}{\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
-\noma{M}{\mahler}{Mesure de \bsc{Mahler} de la forme \PH}
+\noma{M}{\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
 
 \newcommand*\av[2][v]{\abs{#2}_{#1}}
 \newcommand*\nv[2][v]{\norm{#2}_{#1}}
@@ -285,8 +295,10 @@
 \newcommand{\OA}{\p{0}}
 \newcommand{\coa}{\theta}
 
-\noma{A}{\A}{La variété abélienne ambiante}
-\noma{BA}{\BA}{Une sous-variété abélienne fixée de $\A$}
+\noma{A}{\A}{La variété abélienne ambiante (\todo macro dupliquée)}
+\noma{BA}{\BA}{Une sous-variété abélienne fixée de $\A$ (\todo macro
+  dupliquée)}
+
 \nomn{0}{\OA}{L'origine de $\A$}
 \nomg{theta}{\coa}{Les coordonnées de l'origine de $\A$ dans un plongement de
   \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe, ce
@@ -294,49 +306,74 @@
 
 \newcommand{\hn}{\hat{h}}
 
-\noma{hn}{\hn}{Hauteur normalisée de \bsc{Néron}-\bsc{Tate}}
+\noma{hn}{\hn}{Hauteur normalisée de \bsc{Néron}-\bsc{Tate} (\todo macro
+  dupliquée ?)}
 
 % objets mathématiques utiles
 %
 \newcommand\va{\mathcal A}
 \newcommand\vai{\mathcal B}
+\newcommand\genre{g}
+\newcommand\fibre{\mathcal L}
+
+\noma{A}{\va}{La variété abélienne ambiante}
+\noma{B}{\vai}{Une sous-variété abélienne fixée de $\va$}
+\noma{g}{\genre}{La dimension de $\va$}
+
 \newcommand\point{x}
 \newcommand\pointi{y}
 \newcommand\pointii{z}
 \newcommand\coord{{\mathrm{x}}}
 \newcommand\coordi{{\mathrm{y}}}
-\newcommand\genre{g}
-\newcommand\fibre{\mathcal L}
+
+\noma{x}{\point}{Un point non fixé (\todo vraiment ?) de $\va$}
+\noma{y}{\point}{Un autre point non fixé (\todo vraiment ?) de $\va$}
+\noma{z}{\point}{Encore un autre point non fixé de $\va$}
+
 \newcommand\place{v}
+
+\noma{v}{\place}{Une place, en général non fixée, de $\cdn$}
 
 \newcommand*\proj[2][]{%
   \Proj\ssup{#2}\ssub{#1}}
-\newcommand*\aff[2][]{%
+\newcommand*\aff[2][]{% TODO: \! exposant ?
   \Aff\ssup{#2}\ssub{#1}}
-\newcommand\projd[1][]{%
+\newcommand\projd[1][]{%TODO: \! exposant ?
   \Proj^\dimp\ssub{#1}}
 
-\newcommand\Haut{\mathrm H}
-\newcommand\Hautl{\mathrm h}
-\newcommand\Hautn{\smash{\hat\Hautl}}
-\newcommand\haut[2][]{%
-  \Haut\ssub{#1}(#2)}
-\newcommand\hautl[2][]{%
-  \Hautl\ssub{#1}(#2)}
-\newcommand\hautn[1]{%
-  \mathop{\smash{\hat h}}(#1)}
+\noma{P}{\proj\PH}{L'espace projectif standard de dimension \PH}
+\noma{A}{\aff\PH}{L'espace affine standard de dimension \PH}
 
-\newcommand*\absv[2][\place]{%
-  \abs{#2}\ssub{#1}}
-\newcommand*\normv[2][\place]{%
-  \norm{#2}\ssub{#1}}
-\newcommand*\distv[3][\place]{%
-  \mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+\newcommand \Haut  {\mathrm H}
+\newcommand \Hautl {\mathrm h}
+\newcommand \Hautn {\smash{\hat\Hautl}}
 
-\newcommand*\scalaire[2]{%
-  \langle#1,#2\rangle}
-\newcommand*\angleabs[2]{%
-  \widehat{(#1,#2)}}
+\newcommand \haut  [2][] {\Haut \ssub{#1}(#2)}
+\newcommand \hautl [2][] {\Hautl\ssub{#1}(#2)}
+\newcommand \hautn [1]   {\Hautn         (#1)}
+
+\noma{h}{\haut [\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
+  utilisant la norme \PHi aux places archimédiennes}
+\noma{h}{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
+  utilisant la norme \PHi aux places archimédiennes}
+\noma{h}{\hautn[\PHi]{\PH}}{Hauteur normalisée à la \bsc{Néron}-\bsc{Tate} de
+  \PH}
+
+\newcommand* \absv  [2][\place] {\abs {#2}\ssub{#1}}
+\newcommand* \normv [2][\place] {\norm{#2}\ssub{#1}}
+\newcommand* \distv [3][\place] {\mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+
+\noms{nv} {\absv\PH }{Valeur absolue $v$-adique d'un nombre}
+\noms{Nv2}{\normv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
+
+\newcommand* \scalaire [2] {\langle#1,#2\rangle}
+\newcommand* \angleabs [2] {\widehat{(#1,#2)}}
+
+\noms{angle}{\scalaire\PH\PHi}{Produit scalaire, relativement à la forme
+  quadratique de \NT, des points \PH et \PHi de $\va$ ou de son espace de \MoW}
+\noms{hat}{\angleabs\PH\PHi}{Angle non orienté, relativement à la forme
+  quadratique de \NT, entre les points \PH et \PHi de $\va$ ou de son espace
+  de \MoW}
 
 \newcommand*\mv[2][v]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
 \newcommand\B{\mathcal B}       % une sous-v.a.
