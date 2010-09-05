@@ -3,8 +3,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mpg-preth}
 
-% Non-math stuff [[1
-% --------------
+% non-math [[1
+% --------
 
 % booleans for options, default values [[2
 %
@@ -12,7 +12,7 @@
 \newif\if@showbad       \@showbadtrue
 \newif\if@domark        \@domarktrue
 
-% options [[2
+% option declarations [[2
 %
 \DeclareOption {web}    {\@webversiontrue}
 \DeclareOption {nobad}  {\@showbadfalse}
@@ -45,7 +45,7 @@
 \if@webversion\else \PassOptionsToPackage{bookmarks=false}{hyperref} \fi
 \usepackage[colorlinks=true]{hyperref}
 
-% hyperref settings (web option) [[2
+% hyperref settings (implement 'web' option) [[2
 %
 \if@webversion
   \hypersetup{urlcolor=blue, linkcolor=red, citecolor=green,
@@ -54,11 +54,11 @@
   \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
 \fi
 
-% overfullrule (nobad option) [[2
+% overfullrule (implement 'nobad' option) [[2
 %
 \setlength{\overfullrule}{\if@showbad 5\else 0\fi pt}
 
-% use git information (nomark option) [[2
+% use git information (implement 'nomark' option) [[2
 %
 \if@domark
   \AddToShipoutPicture{%
@@ -90,10 +90,10 @@
   \newcommand*#1[2]{%
     \nomenclature[#2-##1--]{$##2$}}}
 
-\nom@type \noms A % first symbols
+\nom@type \noms A % first, symbols
 \nom@type \nomn B % then numeric
 \nom@type \nomg C % then greek letter
-\nom@type \noma D % finally alphabetic stuff
+\nom@type \noma D % finally, alphabetic stuff
 
 % placeholders for descriptions
 \newcommand*\nom@ph[2]{%
@@ -125,15 +125,14 @@
 %
 \newcommand*\marginnote[1]{\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand*\worknote[1]{\marginnote{\leavevmode\color{black!50}\itshape #1}}
-\newcommand\todo{\worknote{\textsc{todo}}}
-\newcommand\todom{\tag{\textsc{todo}}}
-\newcommand\later{\worknote{(à détailler ultérieurement)}}
+\newcommand \todo  {\worknote{\textsc{todo}}}
+\newcommand \todom {\tag{\textsc{todo}}}
+\newcommand \later {\worknote{(à détailler ultérieurement)}}
 
 % languages and special text items [[2
 %
-\newcommand*\lat[1]{\emph{#1}}
-\newcommand*\eng[1]{%
-  \foreignlanguage{english}{\emph{#1}}}
+\newcommand*\lat [1] {\emph{#1}}
+\newcommand*\eng [1] {\foreignlanguage{english}{\emph{#1}}}
 
 % mathtools settings
 %
@@ -165,28 +164,29 @@
 \newcommand \NT  {\bsc{Néron}-\bsc{Tate}\xspace}
 \newcommand \MoW {\bsc{Mordell}-\bsc{Weil}\xspace}
 
-% math stuff [[1
-% ----------
+% non thesis-specific math [[1
+% ------------------------
 
-% misc [[2
+% misc symbols and shortcuts [[2
 %
-\newcommand*\pmm[1]{\text{ #1}}         % ponctuation in math mode
-\newcommand\suchthat{\ \middle\vert\ }
-\newcommand\truc{{\,\cdot\,}}
+\newcommand*\pmm [1] {\text{ #1}} % ponctuation in math mode
+\newcommand \suchthat {\ \middle\vert\ }
+\newcommand \truc {{\,\cdot\,}}
 
-% my preferred version of a few symbols [[2
-%
-\newcommand\eps{\varepsilon}
-\renewcommand\ge{\geqslant}
-\renewcommand\le{\leqslant}
+\newcommand \longto  {\longrightarrow}
+\newcommand \embedin {\hookrightarrow}
+
+\newcommand \eps {\varepsilon}
+\renewcommand \ge {\geqslant}
+\renewcommand \le {\leqslant}
 
 % supscripts and subscripts [[2
 %
-\newcommand*\ssub[1]{%
-  \@ifnotmtarg{#1}{_{#1}}}
-\newcommand*\ssup[1]{%
-  \@ifnotmtarg{#1}{^{#1}}}
-\newcommandx*\pexp[2][2]{%
+\newcommand* \ssub [1] {\@ifnotmtarg{#1}{_{#1}}}
+\newcommand* \ssup [1] {\@ifnotmtarg{#1}{^{#1}}}
+
+% parenthesized superscript with optional subscript
+\newcommandx*\pexp [2][2] {%
   \@ifmtarg{#2}{%
     \@ifnotmtarg{#1}{\cramped{^{(#1)}}}%
     }{%
@@ -204,19 +204,25 @@
 \newcommand     \Aff    {\std A}
 \newcommand     \GL     {\std{GL}}
 
+\newcommand* \proj [2][] {\Proj \ssup{#2}                 \ssub{#1}}
+\newcommand* \aff  [2][] {\Aff  \@ifnotmtarg{#2}{^{\!#2}} \ssub{#1}}
+
+\noma{P}{\proj\PH}{L'espace projectif standard de dimension \PH}
+\noma{A}{\aff \PH}{L'espace affine standard de dimension \PH}
+
 % standard functions [[2
 %
-\newcommand*\I[1]{\std{Id}_{#1}}
-\newcommand*\ind[1]{\std{1}_{#1}}
+\newcommand*\I [1] {\std{Id}_{#1}}
+\newcommand*\ind [1] {\std{1}_{#1}}
 
 \noma{Id}{\I\PH}{Fonction identité sur l'ensemble \PH}
 \nomn{1}{\ind\PH}{Fonction indicatrice de l'ensemble \PH}
 
 % less standard but still usefull sets [[2
 %
-\newcommand\Qbar{\overline{\Q}}
-\newcommand\cdn{\boldsymbol{k}}
-\newcommand\Cdn{\boldsymbol{K}}
+\newcommand \Qbar {\overline\Q}
+\newcommand \cdn {\boldsymbol k}
+\newcommand \Cdn {\boldsymbol K}
 
 \noma{Q}{\Qbar}{Une clôture algébrique fixée de $\Q$}
 \noma{k}{\cdn}{Un corps de nombres}
@@ -224,41 +230,42 @@
 
 % delimiters [[2
 %
-\newcommand\orbrack{\mathopen\rbrack}
-\newcommand\clbrack{\mathopen\lbrack}
+\newcommand \orbrack {\mathopen\rbrack}
+\newcommand \clbrack {\mathopen\lbrack}
 
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter \abs  {\lvert} {\rvert}
+\DeclarePairedDelimiter \norm {\lVert} {\rVert}
+
 \newcommand*\nnorm[1]{% argh!
   \left\lvert\hspace{-1pt}\left\lvert\hspace{-1pt}%
   \left\lvert#1\right\rvert
   \hspace{-1pt}\right\rvert\hspace{-1pt}\right\rvert}
 
-% unsorted math stuff [[1
-% -------------------
+% missing operators [[2
+%
+\newcommand \mmax {{\mathrm{max}}}
+%TODO: why not just \max?
 
-\newcommand\mmax{{\mathrm{max}}}
-
-\newcommand\diff{\mathrm d}
+\newcommand \diff {\mathrm d}
+%TODO: why not \DeclareMathOperator?
 \noma{d}{\diff\PH}{Différentielle par rapport à \PH}
 
-\newcommand{\p}[1]{{\boldsymbol{#1}}} % point (par opposition à coordonnées)
-
-% compléments de macros maths
+% automatic constants [[2
 %
-\newcommand*\lgr[1]{\abs{#1}}
-\newcommand*\vlg[1]{\abs{#1}}
-\newcommand*\der[1]{\partial_{#1}}
-\newcommand*\ncoef[1]{\mathcal N(#1)}
-\newcommand*\maxbin[1]{m(#1)}
+\newcounter{cst}
+\newcommand*\cst[2][, v]{%
+  \ensuremath{c\ssub{\ref{#2}#1}}}
+\newcommand*\newcst[2][, v]{%
+  \refstepcounter{cst}\label{#2}%
+  \cst[#1]{#2}}
 
-\noms{n}{\lgr\PH}{Longueur du multiindice \PH}
-\noms{n}{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
-\noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
-\noma{N}{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
-\noma{m}{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
+\noma{cvx}{c_{\PH, \PHi}}{Constante (en général intermédiaire) numéro \PH,
+  dépendant éventuellement de la place \PHi}
 
-% les six normes et mesures étudiées
+% thesis-specific math [[1
+% --------------------
+
+% archimedian norms and measures [[2
 %
 \newcommand*\normsup[1]{\norm{#1}_\infty}
 \newcommand*\normlun[1]{\norm{#1}_1}
@@ -270,48 +277,51 @@
 \noma{M}{\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
 \noma{M}{\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
 
-\newcommand*\av[2][v]{\abs{#2}_{#1}}
-\newcommand*\nv[2][v]{\norm{#2}_{#1}}
-\newcommand*\nnv[2][v]{\nnorm{#2}_{#1}}
-\newcommand*\nvp[2][v]{\lVert#2\rVert_{#1}} % \nv avec petits délimiteurs
+% local absolute values, norms, distances, ... [[2
+%
+\newcommand\place{v}
+
+\noma{v}{\place}{Une place, en général non fixée, de $\cdn$}
+
+\newcommand* \av  [2][v] {\abs{#2}_{#1}}
+\newcommand* \nv  [2][v] {\norm{#2}_{#1}}
+\newcommand* \nnv [2][v] {\nnorm{#2}_{#1}}
+\newcommand* \nvp [2][v] {\lVert#2\rVert_{#1}} % \nv with small delims
 
 \noms{nv}{\av\PH}{Valeur absolue $v$-adique d'un nombre}
 \noms{Nv2}{\nv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
 \noms{Nv3}{\nnv\PH}{Norme $v$-adique d'un multivecteur ou d'une forme
   multihomogène}
 
-\newcommand\dv{{\delta\smash{_v}}}        % sélecteur v ultramétrique ou non
-\newcommand\dpv{{\delta'_v}}        % idem plus places divisant 2
+\newcommand* \absv  [2][\place] {\abs {#2}\ssub{#1}}
+\newcommand* \normv [2][\place] {\norm{#2}\ssub{#1}}
+\newcommand* \distv [3][\place] {\mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+
+\noms{nv} {\absv\PH }{Valeur absolue $v$-adique d'un nombre}
+\noms{Nv2}{\normv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
+
+\newcommand \dv  {{\delta\smash{_v}}}
+\newcommand \dpv {{\delta'_v}}
 
 \noma{dv1}{\dv}{Vaut $1$ si $v$ est archimédienne, est nul sinon}
 \noma{dv2}{\dpv}{Vaut $1$ si $v$ est archimédienne ou divise $2$, nul sinon}
 
-\newcommand{\Dv}{\mathrm{dist}_v}
+\newcommand \Dv {\mathrm{dist}_v}
 
 \noma{Dv}{\Dv}{Distance $v$-adique projective (\todo entre point et variété
   seulement, ou aussi entre points, ou bien ?)}
 
+% general situation (abelian variety, etc) [[2
+%
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\BA}{\mathfrak{B}}
-\newcommand{\OA}{\p{0}}
-\newcommand{\coa}{\theta}
 
 \noma{A}{\A}{La variété abélienne ambiante (\todo macro dupliquée)}
 \noma{BA}{\BA}{Une sous-variété abélienne fixée de $\A$ (\todo macro
   dupliquée)}
-
+\newcommand{\OA}{\p{0}}
 \nomn{0}{\OA}{L'origine de $\A$}
-\nomg{theta}{\coa}{Les coordonnées de l'origine de $\A$ dans un plongement de
-  \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe, ce
-    plongement ?)}
 
-\newcommand{\hn}{\hat{h}}
-
-\noma{hn}{\hn}{Hauteur normalisée de \bsc{Néron}-\bsc{Tate} (\todo macro
-  dupliquée ?)}
-
-% objets mathématiques utiles
-%
 \newcommand\va{\mathcal A}
 \newcommand\vai{\mathcal B}
 \newcommand\genre{g}
@@ -320,31 +330,45 @@
 \noma{A}{\va}{La variété abélienne ambiante}
 \noma{B}{\vai}{Une sous-variété abélienne fixée de $\va$}
 \noma{g}{\genre}{La dimension de $\va$}
+\noma{L}{\fibre}{Le fibré donnant « \todo le » plongement projectif}
 
-\newcommand\point{x}
-\newcommand\pointi{y}
-\newcommand\pointii{z}
-\newcommand\coord{{\mathrm{x}}}
-\newcommand\coordi{{\mathrm{y}}}
+% embeding-dependant values [[2
+%
+\newcommand \coa {\theta}
 
-\noma{x}{\point  }{Un point non fixé (\todo vraiment ?) de $\va$}
-\noma{y}{\pointi }{Un autre point non fixé (\todo vraiment ?) de $\va$}
-\noma{z}{\pointii}{Encore un autre point non fixé de $\va$}
+\nomg{theta}{\coa}{Les coordonnées de l'origine de $\A$ dans un plongement de
+  \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe, ce
+  plongement ?)}
 
-\newcommand\place{v}
+\newcommand \projd [1][] {\proj[#1]\dimp}
 
-\noma{v}{\place}{Une place, en général non fixée, de $\cdn$}
+\newcommand\coi{{\mathfrak b}} % coordonnées de l'origine inversées
+\newcommand\dimp{n}
 
-\newcommand*\proj[2][]{%
-  \Proj\ssup{#2}\ssub{#1}}
-\newcommand*\aff[2][]{% TODO: \! exposant ?
-  \Aff\ssup{#2}\ssub{#1}}
-\newcommand\projd[1][]{%TODO: \! exposant ?
-  \Proj^\dimp\ssub{#1}}
+\noma{b}{\coi}{Vecteur dont les composantes sont les inverses de composantes
+  de $\coa$ bien choisies}
+\noma{n}{\dimp}{Dimension de l'espace projectif ambiant (\todo expliciter la
+  portée si on change de plongement des fois)}
 
-\noma{P}{\proj\PH}{L'espace projectif standard de dimension \PH}
-\noma{A}{\aff\PH}{L'espace affine standard de dimension \PH}
+% (multi)projective indices and coordinates [[2
+%
+\newcommand\puiss{m}
+\newcommand\fct{i}
+\newcommand\fctrange{_{\fct=1}^\puiss}
+\newcommand\ch[1]{X\ssub{#1}}
+\newcommand\cmh[1]{X\pexp{#1}}
+\newcommand\cmmh{\boldsymbol X}
+\newcommand\cmhi[1]{Y\pexp{#1}}
+\newcommand\cmmhi{\boldsymbol Y}
 
+\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
+  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
+\noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$
+  (\todo pas vrai partout)}
+%TODO: \ch etc
+
+% height functions [[2
+%
 \newcommand \Haut  {\mathrm H}
 \newcommand \Hautl {\mathrm h}
 \newcommand \Hautn {\smash{\hat\Hautl}}
@@ -360,13 +384,6 @@
 \noma{h}{\hautn      {\PH}}{Hauteur normalisée à la \bsc{Néron}-\bsc{Tate} de
   \PH}
 
-\newcommand* \absv  [2][\place] {\abs {#2}\ssub{#1}}
-\newcommand* \normv [2][\place] {\norm{#2}\ssub{#1}}
-\newcommand* \distv [3][\place] {\mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
-
-\noms{nv} {\absv\PH }{Valeur absolue $v$-adique d'un nombre}
-\noms{Nv2}{\normv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
-
 \newcommand* \scalaire [2] {\langle#1,#2\rangle}
 \newcommand* \angleabs [2] {\widehat{(#1,#2)}}
 
@@ -376,26 +393,7 @@
   quadratique de \NT, entre les points \PH et \PHi de $\va$ ou de son espace
   de \MoW}
 
-\newcommand*\mv[2][\place]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
-\newcommand\B{\mathcal B}       % une sous-v.a.
-\newcommand*\lgt[1]{\lVert#1\rVert}     % longueur totale
-\newcommand\md{\mathfrak{d}}        % le morphisme « d »
-\newcommand*\MW[2][\A]{MW_{\!#1}(#2)}     % l'espace de mordell-weil de #2 sur #1
-%TODO: \MW ne fait pas ce qu'il faut (\A et non \cdn en indice)
-\newcommand*\hatxs{\smash{\hat x}}      % x chapeau rapetissé
-\newcommand*\hatys{\smash{\hat y}}      % y chapeau rapetissé
-\newcommand*\cube[1]{\mathcal C(#1)}      % le « cube » \abs{w} \le #1 et w entier
-
-\noma{M}{\mv\PH}{Mesure homogène (\todo laquelle ?) locale en $\place$ de la
-  forme \PH}
-\noma{B}{\B}{Une sous-variété (\todo fixée ?) de $\va$}
-\noms{N}{\lgt\PH}{Longueur totale du multimultiindice \PH}
-\noma{MW}{\MW\PH}{Espace de \MoW de \PH}
-
-\noma{C}{\cube\PH}{L'ensemble des points à coordonnées entières du cube de
-  demi-arête \PH centré en l'origine}
-
-% various "epsilons"
+% various "epsilons" [[2
 %
 \newcommand\epsz{{\eps_0}}
 \newcommand\epsi{{\eps_1}}
@@ -407,7 +405,15 @@
 \nomg{eps2}{\epsii}{Encore un autre epsilon (\todo portée à préciser)}
 \nomg{eps3}{\epsiii}{Toujours un autre epsilon (\todo portée à préciser)}
 
-% various notations for vanishing
+% Vojta-specific math [[1
+% -------------------
+
+% general situation [[2
+%
+\newcommand\divi{E}
+\noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
+
+% vanishing conditions [[2
 %
 \newcommand\Stairs{\mathcal E}
 \newcommand\Vanish{\@ifstar{\mathfrak{\tilde q}}{\mathfrak q}}
@@ -417,62 +423,10 @@
   modulo) l'idéal de la variété ambiante (\todo préciser ?)}
 \noma{q2}{\Vanish*}{Idéal d'annulation pour la forme auxiliaire}
 
-\newcounter{cst}
-\newcommand*\cst[2][, v]{%
-  \ensuremath{c\ssub{\ref{#2}#1}}}
-\newcommand*\newcst[2][, v]{%
-  \refstepcounter{cst}\label{#2}%
-  \cst[#1]{#2}}
-
-\noma{cvx}{c_{\PH, \PHi}}{Constante (en général intermédiaire) numéro \PH,
-  dépendant éventuellement de la place \PHi}
-
 \newcommand\iq{{\mathfrak q}}
 
 \noma{q0}{\iq}{Idéal d'annulation pour la forme auxiliare (\todo dupliqué ;
   quelle version ?)}
-
-\newcommand\vb{{\mathbf e}}
-\newcommand\Mbase{{\mathcal M}}
-\newcommand\monome{{\mathfrak m}}
-
-\noma{e}{\vb}{Vecteur \todo ??? (de base ?)}
-\noma{M}{\Mbase}{Matrice d'une application dans une base donnée (\todo sûr ?
-  paramètre ?)}
-\noma{m}{\monome}{Un monome (\todo fixé, avec des paramètres ?)}
-
-\newcommand\coi{{\mathfrak b}} % coordonnées de l'origine inversées
-\newcommand\divi{E}
-\newcommand\dimp{n}
-
-\noma{b}{\coi}{Vecteur dont les composantes sont les inverses de composantes
-  de $\coa$ bien choisies}
-\noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
-\noma{n}{\dimp}{Dimension de l'espace projectif ambiant (\todo expliciter la
-  portée si on change de plongement des fois)}
-
-\newcommand\ph{\ssub} % partie homogène
-\newcommand\mat{M} % matrice
-
-\noms{}{\PH\ph\PHi}{Partie homogène de (multi)degré \PHi de l'algèbre
-  (multi)graduée ou idéal (multi)homogène \PH}
-\noma{M}{\mat}{Une matrice (\todo qui, où, comment, pourquoi ?)}
-
-% multiprojectif
-\newcommand\puiss{m}
-\newcommand\fct{i}
-\newcommand\fctrange{_{\fct=1}^\puiss}
-\newcommand\ch[1]{X\ssub{#1}}
-\newcommand\cmh[1]{X\pexp{#1}}
-\newcommand\cmmh{\boldsymbol X}
-\newcommand\cmhi[1]{Y\pexp{#1}}
-\newcommand\cmmhi{\boldsymbol Y}
-
-\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
-  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
-\noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$
-  (\todo pas vrai partout)}
-%TODO: \ch etc
 
 % helper macro for optional arguments that are empty by default, [[2
 % but have a second default value, accessed using the starred form
@@ -509,6 +463,95 @@
 \noma{f}{\varfc* }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var*$}
 \noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}
 \noma{I}{\varid* }{L'idéal multihomogène saturé de $\var*$}
+
+% Vojta-wide notations without a dedicated macro [[2
+% (btw, isn't this evil?)
+%
+\noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
+  son tiré ou poussé ?)}
+\noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
+  son tiré ou poussé ?)}
+\nomg{delta}{\delta}{Un entier suffisament divisible et grand, gouvernant
+  l'ordre de grandeur du degré de la forme auxiliaire}
+\noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
+  des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
+\nomg{lambda}{\lambda}{Souvent un multimultiindice dans la définition de
+  dessous-d'escalier-oïdes}
+
+\noma{r}{r}{La correction de degré d'un tiré ou poussé de la forme auxiliaire
+  (\todo à préciser)}
+
+% misc, ??? [[2
+%
+\newcommand\vb{{\mathbf e}}
+\newcommand\Mbase{{\mathcal M}}
+\newcommand\monome{{\mathfrak m}}
+
+\noma{e}{\vb}{Vecteur \todo ??? (de base ?)}
+\noma{M}{\Mbase}{Matrice d'une application dans une base donnée (\todo sûr ?
+  paramètre ?)}
+\noma{m}{\monome}{Un monome (\todo fixé, avec des paramètres ?)}
+
+
+% unsorted math stuff [[1
+% -------------------
+
+\newcommand \p [1] {{\boldsymbol{#1}}} % point (par opposition à coordonnées)
+
+% compléments de macros maths
+%
+\newcommand*\lgr[1]{\abs{#1}}
+\newcommand*\vlg[1]{\abs{#1}}
+\newcommand*\der[1]{\partial_{#1}}
+\newcommand*\ncoef[1]{\mathcal N(#1)}
+\newcommand*\maxbin[1]{m(#1)}
+
+\noms{n}{\lgr\PH}{Longueur du multiindice \PH}
+\noms{n}{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
+\noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
+\noma{N}{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
+\noma{m}{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
+
+\newcommand{\hn}{\hat{h}}
+
+\noma{hn}{\hn}{Hauteur normalisée de \bsc{Néron}-\bsc{Tate} (\todo macro
+  dupliquée ?)}
+
+\newcommand\point{x}
+\newcommand\pointi{y}
+\newcommand\pointii{z}
+\newcommand\coord{{\mathrm{x}}}
+\newcommand\coordi{{\mathrm{y}}}
+
+\noma{x}{\point  }{Un point non fixé (\todo vraiment ?) de $\va$}
+\noma{y}{\pointi }{Un autre point non fixé (\todo vraiment ?) de $\va$}
+\noma{z}{\pointii}{Encore un autre point non fixé de $\va$}
+
+\newcommand*\mv[2][\place]{M_{#1}(#2)}     % mesure homogène en une place v ou autre
+\newcommand\B{\mathcal B}       % une sous-v.a.
+\newcommand*\lgt[1]{\lVert#1\rVert}     % longueur totale
+\newcommand\md{\mathfrak{d}}        % le morphisme « d »
+\newcommand*\MW[2][\A]{MW_{\!#1}(#2)}     % l'espace de mordell-weil de #2 sur #1
+%TODO: \MW ne fait pas ce qu'il faut (\A et non \cdn en indice)
+\newcommand*\hatxs{\smash{\hat x}}      % x chapeau rapetissé
+\newcommand*\hatys{\smash{\hat y}}      % y chapeau rapetissé
+\newcommand*\cube[1]{\mathcal C(#1)}      % le « cube » \abs{w} \le #1 et w entier
+
+\noma{M}{\mv\PH}{Mesure homogène (\todo laquelle ?) locale en $\place$ de la
+  forme \PH}
+\noma{B}{\B}{Une sous-variété (\todo fixée ?) de $\va$}
+\noms{N}{\lgt\PH}{Longueur totale du multimultiindice \PH}
+\noma{MW}{\MW\PH}{Espace de \MoW de \PH}
+
+\noma{C}{\cube\PH}{L'ensemble des points à coordonnées entières du cube de
+  demi-arête \PH centré en l'origine}
+
+\newcommand\ph{\ssub} % partie homogène
+\newcommand\mat{M} % matrice
+
+\noms{}{\PH\ph\PHi}{Partie homogène de (multi)degré \PHi de l'algèbre
+  (multi)graduée ou idéal (multi)homogène \PH}
+\noma{M}{\mat}{Une matrice (\todo qui, où, comment, pourquoi ?)}
 
 \newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
 \newc@star@default \weight  {1}{\fct} {a\ssub{#1}}
@@ -553,29 +596,9 @@
 \nomg{rho}{\relim}{Morphisme de réduction par élimination de variables dans le
   construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
 
-\newcommand\longto{\longrightarrow}
-\newcommand\embedin{\hookrightarrow}
-
 \newcommand\opdef{{\mathcal U}}
 
 \noma{U}{\opdef}{Ouvert de définition d'un certain morphisme (\todo préciser)}
 
-% global or long-term notations without a dedicated macro [[2
-% (btw, isn't this evil?)
-%
-\noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
-  son tiré ou poussé ?)}
-\noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
-  son tiré ou poussé ?)}
-\nomg{delta}{\delta}{Un entier suffisament divisible et grand, gouvernant
-  l'ordre de grandeur du degré de la forme auxiliaire}
-\noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
-  des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
-\nomg{lambda}{\lambda}{Souvent un multimultiindice dans la définition de
-  dessous-d'escalier-oïdes}
-
-\noma{r}{r}{La correction de degré d'un tiré ou poussé de la forme auxiliaire
-  (\todo à préciser)}
-
 % [[1
-% vim: ft=tex fdm=marker foldmarker=[[,]] foldlevel=1
+% vim: ft=tex fdm=marker fmr=[[,]] fdl=1
