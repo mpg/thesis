@@ -252,8 +252,8 @@
 \newcommand*\ncoef[1]{\mathcal N(#1)}
 \newcommand*\maxbin[1]{m(#1)}
 
-\noms{n}{\lgr\PH}{Longueur du multi-indice \PH}
-\noms{n}{\vlg\PH}{Vecteur des longueurs du multi-multi-indice \PH}
+\noms{n}{\lgr\PH}{Longueur du multiindice \PH}
+\noms{n}{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
 \noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
 \noma{N}{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
 \noma{m}{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
@@ -277,8 +277,8 @@
 
 \noms{nv}{\av\PH}{Valeur absolue $v$-adique d'un nombre}
 \noms{Nv2}{\nv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
-\noms{Nv3}{\nnv\PH}{Norme $v$-adique d'un multi-vecteur ou d'une forme
-  multi-homogène}
+\noms{Nv3}{\nnv\PH}{Norme $v$-adique d'un multivecteur ou d'une forme
+  multihomogène}
 
 \newcommand\dv{{\delta\smash{_v}}}        % sélecteur v ultramétrique ou non
 \newcommand\dpv{{\delta'_v}}        % idem plus places divisant 2
@@ -388,7 +388,7 @@
 \noma{M}{\mv\PH}{Mesure homogène (\todo laquelle ?) locale en $\place$ de la
   forme \PH}
 \noma{B}{\B}{Une sous-variété (\todo fixée ?) de $\va$}
-\noms{N}{\lgt\PH}{Longueur totale du multi-multi-indice \PH}
+\noms{N}{\lgt\PH}{Longueur totale du multimultiindice \PH}
 \noma{MW}{\MW\PH}{Espace de \MoW de \PH}
 
 \noma{C}{\cube\PH}{L'ensemble des points à coordonnées entières du cube de
@@ -453,8 +453,8 @@
 \newcommand\ph{\ssub} % partie homogène
 \newcommand\mat{M} % matrice
 
-\noms{}{\PH\ph\PHi}{Partie homogène de degré \PHi de l'algèbre (multi-)graduée
-  ou idéal (multi-)homogène \PH}
+\noms{}{\PH\ph\PHi}{Partie homogène de degré \PHi de l'algèbre (multi)graduée
+  ou idéal (multi)homogène \PH}
 \noma{M}{\mat}{Une matrice (\todo qui, où, comment, pourquoi ?)}
 
 % multiprojectif
@@ -506,8 +506,8 @@
 \noma{Hi}{\varht* }{La hauteur projective multiplicative de $\var*$}
 \noma{f} {\varfc  }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var$}
 \noma{fi}{\varfc* }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var*$}
-\noma{I} {\varid  }{L'idéal multi-homogène sature de $\var$}
-\noma{Ii}{\varid* }{L'idéal multi-homogène sature de $\var*$}
+\noma{I} {\varid  }{L'idéal multihomogène saturé de $\var$}
+\noma{Ii}{\varid* }{L'idéal multihomogène saturé de $\var*$}
 
 \newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
 \newc@star@default \weight  {1}{\fct} {a\ssub{#1}}
@@ -525,11 +525,11 @@
 
 \newcommand\Ideal{\mathcal I}
 \newcommand*\ideal[1]{\Ideal_{#1}}
-\noma{I}{\ideal\PH}{Idéal (multi-)homogène saturé de la variété plongée \PH}
+\noma{I}{\ideal\PH}{Idéal (multi)homogène saturé de la variété plongée \PH}
 
 \newcommand\Ring{\mathcal R}
 \newcommand*\ring[1]{\Ring_{#1}}
-\noma{R}{\ring\PH}{Anneau des coordonnées (multi-)homogènes de la variété
+\noma{R}{\ring\PH}{Anneau des coordonnées (multi)homogènes de la variété
   plongée \PH}
 
 \newcommand\Korper{\mathcal K}
@@ -570,7 +570,7 @@
   l'ordre de grandeur du degré de la forme auxiliaire}
 \noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
   des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
-\nomg{lambda}{\lambda}{Souvent un multi-multi-indice dans la définition de
+\nomg{lambda}{\lambda}{Souvent un multimultiindice dans la définition de
   dessous-d'escalier-oïdes}
 
 \noma{r}{r}{La correction de degré d'un tiré ou poussé de la forme auxiliaire
