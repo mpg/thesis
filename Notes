@@ -2,6 +2,13 @@ Notations et TeX
 ================
 
 Faire un index des notations, par exemple avec nomencl.
+    Still todo wrt nomenclature & macros:
+    - proofread
+    - make a class option to print macro names
+    - re-order macros & make source prettier
+    - remove duplicated macros (in documents too!)
+    - look at \todo and % TODO
+    - print & enjoy :-)
 
 Notations lié au plongement éclatant : faire des macros spécifiques pour i et
 j et leurs bornes ? Distinquer X seul de X, Y ?
