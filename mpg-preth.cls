@@ -327,9 +327,9 @@
 \newcommand\coord{{\mathrm{x}}}
 \newcommand\coordi{{\mathrm{y}}}
 
-\noma{x}{\point}{Un point non fixé (\todo vraiment ?) de $\va$}
-\noma{y}{\point}{Un autre point non fixé (\todo vraiment ?) de $\va$}
-\noma{z}{\point}{Encore un autre point non fixé de $\va$}
+\noma{x}{\point  }{Un point non fixé (\todo vraiment ?) de $\va$}
+\noma{y}{\pointi }{Un autre point non fixé (\todo vraiment ?) de $\va$}
+\noma{z}{\pointii}{Encore un autre point non fixé de $\va$}
 
 \newcommand\place{v}
 
@@ -357,7 +357,7 @@
   utilisant la norme \PHi aux places archimédiennes}
 \noma{h}{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
   utilisant la norme \PHi aux places archimédiennes}
-\noma{h}{\hautn[\PHi]{\PH}}{Hauteur normalisée à la \bsc{Néron}-\bsc{Tate} de
+\noma{h}{\hautn      {\PH}}{Hauteur normalisée à la \bsc{Néron}-\bsc{Tate} de
   \PH}
 
 \newcommand* \absv  [2][\place] {\abs {#2}\ssub{#1}}
@@ -381,6 +381,7 @@
 \newcommand*\lgt[1]{\lVert#1\rVert}     % longueur totale
 \newcommand\md{\mathfrak{d}}        % le morphisme « d »
 \newcommand*\MW[2][\A]{MW_{\!#1}(#2)}     % l'espace de mordell-weil de #2 sur #1
+%TODO: \MW ne fait pas ce qu'il faut (\A et non \cdn en indice)
 \newcommand*\hatxs{\smash{\hat x}}      % x chapeau rapetissé
 \newcommand*\hatys{\smash{\hat y}}      % y chapeau rapetissé
 \newcommand*\cube[1]{\mathcal C(#1)}      % le « cube » \abs{w} \le #1 et w entier
@@ -424,11 +425,11 @@
   \cst[#1]{#2}}
 
 \noma{cvx}{c_{\PH, \PHi}}{Constante (en général intermédiaire) numéro \PH,
-  éventuellement dépendante de la place \PHi}
+  dépendant éventuellement de la place \PHi}
 
 \newcommand\iq{{\mathfrak q}}
 
-\noma{q0}{iq}{Idéal d'annulation pour la forme auxiliare (\todo dupliqué ;
+\noma{q0}{\iq}{Idéal d'annulation pour la forme auxiliare (\todo dupliqué ;
   quelle version ?)}
 
 \newcommand\vb{{\mathbf e}}
@@ -448,13 +449,13 @@
   de $\coa$ bien choisies}
 \noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
 \noma{n}{\dimp}{Dimension de l'espace projectif ambiant (\todo expliciter la
-  portée si on change de plongements des fois)}
+  portée si on change de plongement des fois)}
 
 \newcommand\ph{\ssub} % partie homogène
 \newcommand\mat{M} % matrice
 
-\noms{}{\PH\ph\PHi}{Partie homogène de degré \PHi de l'algèbre (multi)graduée
-  ou idéal (multi)homogène \PH}
+\noms{}{\PH\ph\PHi}{Partie homogène de (multi)degré \PHi de l'algèbre
+  (multi)graduée ou idéal (multi)homogène \PH}
 \noma{M}{\mat}{Une matrice (\todo qui, où, comment, pourquoi ?)}
 
 % multiprojectif
@@ -470,7 +471,7 @@
 \noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
   donc aussi la puissance de $\va$ dans laquelle ont travaille.}
 \noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$
-  (\todo pas vrai partout!)}
+  (\todo pas vrai partout)}
 %TODO: \ch etc
 
 % helper macro for optional arguments that are empty by default, [[2
@@ -496,18 +497,18 @@
 \newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
-\noma{Z} {\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
-\noma{Zi}{\var*   }{Le $\fct$-ième facteur de $\var$}
-\noma{u} {\vardim }{Le vecteur des dimensions des facteurs de $\var$}
-\noma{ui}{\vardim*}{La dimension de $\var*$}
-\noma{D} {\vardeg }{Le vecteur des degrés de facteurs de $\var$}
-\noma{Di}{\vardeg*}{Le degré de $\var*$}
-\noma{H} {\varht  }{La hauteur projective multiplicative de $\var$}
-\noma{Hi}{\varht* }{La hauteur projective multiplicative de $\var*$}
-\noma{f} {\varfc  }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var$}
-\noma{fi}{\varfc* }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var*$}
-\noma{I} {\varid  }{L'idéal multihomogène saturé de $\var$}
-\noma{Ii}{\varid* }{L'idéal multihomogène saturé de $\var*$}
+\noma{Z}{\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
+\noma{Z}{\var*   }{Le $\fct$-ième facteur de $\var$}
+\noma{u}{\vardim }{Le vecteur des dimensions des facteurs de $\var$}
+\noma{u}{\vardim*}{La dimension de $\var*$}
+\noma{D}{\vardeg }{Le vecteur des degrés de facteurs de $\var$}
+\noma{D}{\vardeg*}{Le degré de $\var*$}
+\noma{H}{\varht  }{La hauteur projective multiplicative de $\var$}
+\noma{H}{\varht* }{La hauteur projective multiplicative de $\var*$}
+\noma{f}{\varfc  }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var$}
+\noma{f}{\varfc* }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var*$}
+\noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}
+\noma{I}{\varid* }{L'idéal multihomogène saturé de $\var*$}
 
 \newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
 \newc@star@default \weight  {1}{\fct} {a\ssub{#1}}
@@ -564,7 +565,7 @@
 %
 \noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
   son tiré ou poussé ?)}
-\noma{d'}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
+\noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
   son tiré ou poussé ?)}
 \nomg{delta}{\delta}{Un entier suffisament divisible et grand, gouvernant
   l'ordre de grandeur du degré de la forme auxiliaire}
