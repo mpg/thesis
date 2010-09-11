@@ -272,10 +272,14 @@
 \DeclarePairedDelimiter \abs  {\lvert} {\rvert}
 \DeclarePairedDelimiter \norm {\lVert} {\rVert}
 
-\newcommand*\nnorm[1]{% argh!
-  \left\lvert\hspace{-1pt}\left\lvert\hspace{-1pt}%
-  \left\lvert#1\right\rvert
-  \hspace{-1pt}\right\rvert\hspace{-1pt}\right\rvert}
+% no good delimiter for triple norm, booh
+\newcommand \nnorm      {\@ifstar {\nnorm@@@{\left}{\right}} {\nnorm@}}
+\newcommand \nnorm@     {\@testopt\nnorm@@{}}
+\def        \nnorm@@[#1]{\nnorm@@@{#1}{#1}}
+\newcommand \nnorm@@@ [3] {%
+  #1\lvert\hspace{-1pt}#1\lvert\hspace{-1pt}#1\lvert
+  #3
+  #2\rvert\hspace{-1pt}#2\rvert\hspace{-1pt}#2\rvert}
 
 % general algebraic geometry [[2
 %
@@ -337,31 +341,19 @@
 
 % general situation (abelian variety, etc) [[2
 %
-\newcommand \A  {\mathcal{A}}
-\newcommand \BA {\mathfrak{B}}
-
-\noma{A}{\A}{La variété abélienne ambiante (\todo macro dupliquée)}
-\noma{BA}{\BA}{Une sous-variété abélienne fixée de $\A$ (\todo macro
-  dupliquée)}
-\newcommand{\OA}{\p{0}}
-\nomn{0}{\OA}{L'origine de $\A$}
-
 \newcommand \va    {\mathcal A}
 \newcommand \vai   {\mathcal B}
-\newcommand \fibre {\mathcal L}
+\newcommand \oa    {\p{0}}
 \newcommand \genre {g}
 
-\noma{A}{\va}{La variété abélienne ambiante}
-\noma{B}{\vai}{Une sous-variété abélienne fixée de $\va$}
-\noma{L}{\fibre}{Le fibré donnant « \todo le » plongement projectif}
-\noma{g}{\genre}{La dimension de $\va$}
+\noma{A} {\va}     {La variété abélienne ambiante}
+\noma{B} {\vai}    {Une sous-variété abélienne fixée de $\A$}
+\nomn{0} {\oa}     {L'origine de $\A$}
+\noma{g} {\genre}  {La dimension de $\va$}
 
-\newcommand \B {\mathcal B}
-\noma{B}{\B}{Une sous-variété (\todo fixée ?) de $\va$}
-
-\newcommand*\MW[2][\A]{MW_{\!#1}(#2)}
-%TODO: \MW ne fait pas ce qu'il faut (\A et non \cdn en indice)
-\noma{MW}{\MW\PH}{Espace de \MoW de \PH}
+\newcommand*\MW[2][\va]{MW_{\!#1}(#2)}
+\noma{MW}{\MW[\PHi]\PH}{Espace de \MoW de la variété abélienne \PHi sur le
+  corps \PH}
 
 % archimedian norms and measures [[2
 %
@@ -379,37 +371,30 @@
 % local absolute values, norms, distances, ... [[2
 %
 \newcommand \place {v}
-%TODO: s/\<v\>/\place/g below
-
 \noma{v}{\place}{Une place, en général non fixée, de $\cdn$}
 
-\newcommand* \av  [2][v] {\abs{#2}_{#1}}
-\newcommand* \nv  [2][v] {\norm{#2}_{#1}}
-\newcommand* \nnv [2][v] {\nnorm{#2}_{#1}}
-\newcommand* \nvp [2][v] {\lVert#2\rVert_{#1}} % \nv with small delims
+\newcommand* \av  [2][\place] {\abs   {#2}\ssub{#1}}
+\newcommand* \nv  [2][\place] {\norm  {#2}\ssub{#1}}
+\newcommand* \nnv [2][\place] {\nnorm {#2}\ssub{#1}}
 
-\noms{nv}{\av\PH}{Valeur absolue $v$-adique d'un nombre}
-\noms{Nv2}{\nv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
-\noms{Nv3}{\nnv\PH}{Norme $v$-adique d'un multivecteur ou d'une forme
+\noms{nv1}{\av\PH }{Valeur absolue $\place$-adique d'un nombre}
+\noms{nv2}{\nv\PH }{Norme $\place$-adique d'un vecteur ou d'une forme}
+\noms{nv3}{\nnv\PH}{Norme $\place$-adique d'un multivecteur ou d'une forme
   multihomogène}
 
-\newcommand* \absv  [2][\place] {\abs {#2}\ssub{#1}}
-\newcommand* \normv [2][\place] {\norm{#2}\ssub{#1}}
-\newcommand* \distv [3][\place] {\mathop{\mathrm{dist}\ssub{#1}}(#2,#3)}
+\newcommand \dv  {{\delta\smash{_\place}}}
+\newcommand \dpv {{\delta'_\place}}
 
-\noms{nv} {\absv\PH }{Valeur absolue $v$-adique d'un nombre}
-\noms{Nv2}{\normv\PH}{Norme $v$-adique d'un vecteur ou d'une forme}
+\noma{dv1}{\dv }{Vaut $1$ si $\place$ est archimédienne, est nul sinon}
+\noma{dv2}{\dpv}{Vaut $1$ si $\place$ est archimédienne ou divise $2$, est nul
+  sinon}
 
-\newcommand \dv  {{\delta\smash{_v}}}
-\newcommand \dpv {{\delta'_v}}
+\DeclareMathOperator \Dist {dist}
+\newcommand*\Distv [1][\place] {\Dist\ssub{place}}
+\newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
 
-\noma{dv1}{\dv}{Vaut $1$ si $v$ est archimédienne, est nul sinon}
-\noma{dv2}{\dpv}{Vaut $1$ si $v$ est archimédienne ou divise $2$, nul sinon}
-
-\newcommand \Dv {\mathrm{dist}_v}
-
-\noma{Dv}{\Dv}{Distance $v$-adique projective (\todo entre point et variété
-  seulement, ou aussi entre points, ou bien ?)}
+\noma{dist}{\distv\PH\PHi}{Distance $\place$-adique projective entre \PH et
+  \PHi (\todo point et variété seulement, ou aussi deux points, ou bien ?)}
 
 \newcommand*\mv [2][\place] {M_{#1}(#2)}
 \noma{M}{\mv\PH}{Mesure homogène (\todo laquelle ?) locale en $\place$ de la
@@ -417,21 +402,21 @@
 
 % embeding-dependant values [[2
 %
-\newcommand \coa {\theta}
-
-\nomg{theta}{\coa}{Les coordonnées de l'origine de $\A$ dans un plongement de
-  \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe, ce
-  plongement ?)}
-
-\newcommand*\projd [1][] {\proj[#1]\dimp}
-
-\newcommand \coi  {{\mathfrak b}} % coordonnées de l'origine inversées
 \newcommand \dimp {n}
+\newcommand*\projd [1][] {\proj[#1]\dimp}
+\newcommand \fibre {\mathcal L}
 
-\noma{b}{\coi}{Vecteur dont les composantes sont les inverses de composantes
-  de $\coa$ bien choisies}
-\noma{n}{\dimp}{Dimension de l'espace projectif ambiant (\todo expliciter la
-  portée si on change de plongement des fois)}
+\noma{n}{\dimp}{Dimension de l'espace projectif ambiant}
+\noma{L}{\fibre}{Le fibré donnant « le » plongement projectif}
+
+\newcommand \coa {\theta}
+\newcommand \coi  {{\mathfrak b}}
+
+\nomg{theta} {\coa} {Les coordonnées de l'origine de $\A$ dans un plongement
+  de \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe,
+  ce plongement ?)}
+\noma{b}     {\coi} {Vecteur dont les composantes sont les inverses de
+  composantes de $\coa$ bien choisies}
 
 % (multi)projective indices and coordinates [[2
 %
@@ -491,15 +476,10 @@
 \newcommand*\hautn [1]   {\Hautn         (#1)}
 
 \noma{h}{\haut [\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
-  utilisant la norme \PHi aux places archimédiennes}
+                            utilisant la norme \PHi aux places archimédiennes}
 \noma{h}{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
-  utilisant la norme \PHi aux places archimédiennes}
-\noma{h}{\hautn      {\PH}}{Hauteur normalisée à la \bsc{Néron}-\bsc{Tate} de
-  \PH}
-
-\newcommand \hn {\hat{h}}
-\noma{hn}{\hn}{Hauteur normalisée de \bsc{Néron}-\bsc{Tate} (\todo macro
-  dupliquée ?)}
+                            utilisant la norme \PHi aux places archimédiennes}
+\noma{h}{\hautn      {\PH}}{Hauteur de \bsc{Néron}-\bsc{Tate} de \PH}
 
 \newcommand* \scalaire [2] {\langle#1,#2\rangle}
 \newcommand* \angleabs [2] {\widehat{(#1,#2)}}
@@ -535,6 +515,7 @@
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\weight}{Le vecteur de poids associé à $\excep$}
+% \weight isn't used consistently :/
 
 % weighted embedding [[2
 %
@@ -554,11 +535,6 @@
 \noma{q1}{\Vanish}{Idéal d'annulation pour la forme auxiliaire plus (ou
   modulo) l'idéal de la variété ambiante (\todo préciser ?)}
 \noma{q2}{\Vanish*}{Idéal d'annulation pour la forme auxiliaire}
-
-\newcommand \iq {{\mathfrak q}}
-
-\noma{q0}{\iq}{Idéal d'annulation pour la forme auxiliare (\todo dupliqué ;
-  quelle version ?)}
 
 % the product sub-variety considered and its attributes [[2
 %

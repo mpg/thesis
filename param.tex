@@ -329,16 +329,16 @@ On considère $m \ge 2$ un entier fixé (à choisir ultérieurement), et $a = (a
 \ldots, a_m)$ un $m$-uplet d'entiers non nuls. À un tel $a$ on associe un
 morphisme, dit plongement éclatant,
 \begin{align*}
-  \phi_a \colon\quad \A^m &\longrightarrow \A^m\times \A^{m-1} \\
+  \phi_a \colon\quad \va^m &\longrightarrow \va^m\times \va^{m-1} \\
   (x_1, \ldots, x_m)&\longmapsto (x_1, \ldots, x_m, a_1 x_1 - x_m, \ldots,
   a_{m-1} x_{m-1} - x_m) \pmm.
 \end{align*}
 
 On étudie dans cette partie l'image par un tel plongement éclatant d'une
-sous-variété produit $Z$ de $\A$, qu'on supposera contenir l'origine $\OA$. Plus
+sous-variété produit $Z$ de $\va$, qu'on supposera contenir l'origine $\oa$. Plus
 particulièrement, on souhaite en contrôler une paramétrisation sur un ouvert
 contenant l'origine, et calculer ses multidegrés quand on regarde l'image
-plongée dans $(\Proj^n)^{2m-1}$ de la façon induite par le plongement $\A
+plongée dans $(\Proj^n)^{2m-1}$ de la façon induite par le plongement $\va
 \hookrightarrow \Proj^n$ initialement fixé. Si $Z = \prod_{l=1}^m Z_l$, on note
 $u_l = \dim Z_l$ et $u=\sum_l u_l = \dim Z$.
 
@@ -388,7 +388,7 @@ dont toutes les coordonnées valent $1$.
 \end{proof}
 
 Pour continuer, on a besoin de représenter par des polynômes les morphismes de
-multiplication par un entier et de différence sur $\A$. On utilise pour cela
+multiplication par un entier et de différence sur $\va$. On utilise pour cela
 une version de la proposition~5.2 de \cite{remivds}, adaptée pour tenir compte
 des différences de normes utilisées, et du fait que sa constante $h_1$ est
 explicite depuis les travaux de \bsc{David} et \bsc{Philippon}
@@ -396,7 +396,7 @@ explicite depuis les travaux de \bsc{David} et \bsc{Philippon}
 
 \begin{fact}
   Il existe une famille $S_{l, l'}$ de formes bihomogènes de degré $(2, 2)$
-  représentant globalement le morphisme d'addition-soustraction dans $\A^2$ dans
+  représentant globalement le morphisme d'addition-soustraction dans $\va^2$ dans
   le plongement de \bsc{Mumford} modifié suivi d'un plongement de \bsc{Segre},
   et de la forme
   \[
@@ -407,22 +407,22 @@ explicite depuis les travaux de \bsc{David} et \bsc{Philippon}
   où $E_x$ est un sous-ensemble à $4^g$ éléments de $\{0, \ldots, n \}$, les
   $\zeta_{i, i'\!, j, j'}$ sont des racines quatrièmes de l'unité, et $k$ est
   une certaine fonction $\{0, \ldots, n \} \to \{0, \ldots, n \}$ telle que pour
-  tout $i$, $\coa_{k(i)}^{-1}$ existe et est une coordonnée de $\BA$.
+  tout $i$, $\coa_{k(i)}^{-1}$ existe et est une coordonnée de $\vai$.
 \end{fact}
 
 En particulier, on a immédiatement les estimations de norme locale
-$\nv{\smash{S_{l, l'}}} \le 4^{g\dv} \nv{\BA}^2$ et $\nnv{\smash{S_{l, l'}}} \le
-\big(4^g (n+1)^2\big)^\dv \nv{\BA}^2$.
+$\nv{\smash{S_{l, l'}}} \le 4^{g\dv} \nv{\vai}^2$ et $\nnv{\smash{S_{l, l'}}} \le
+\big(4^g (n+1)^2\big)^\dv \nv{\vai}^2$.
 
 Par ailleurs, par projection sur un facteur, on en déduit l'existence de
 familles de formes bihomogènes $S^+$ et $S^-$ de forme similaire (mais on peut
 simplifier par un facteur $\coa_{k(l)}$ ou $\coa_{k(l')}$), représentant
 respectivement l'addition et la soustraction au voisinage de n'importe quel
-point fixé, et telles que $\nv{S^\bullet} \le 4^{g\dv} \nv\BA$.
+point fixé, et telles que $\nv{S^\bullet} \le 4^{g\dv} \nv\vai$.
 
 \begin{fact}[\cite{remivds}, démonstration de la prop.~5.2]
   Pour tout entier $b$ non nul, il existe une famille de formes homogènes
-  $Q^b_i$ représentant globalement la multiplication par $b$ sur $\A$ dans le
+  $Q^b_i$ représentant globalement la multiplication par $b$ sur $\va$ dans le
   plongement de \bsc{Mumford} modifié, de degré au plus $\frac98 m^2$, telles
   qu'en toute place $v$, $\nnv{Q^b} \le (2^g\sqrt{n+1})^{\dv(m^2-1)}$.
 \end{fact}
@@ -460,9 +460,9 @@ locales comme suit :
   & \le \nv F \prod_{j=1}^{m-1} \nnv{S^-(Q^{a_j}, \truc)}^{\beta_j} \\
   & \le \nv F \prod_{j=1}^{m-1} \left( \nnv{S^-} \nnv{Q^{a_j}}^2
     \right)^{\beta_j} \\
-  & \le ((4^g(n+1))^\dv \nv\BA)^{\lgr\beta} \cdot (4^g(n+1))^{\dv\sum(a_j^2
-      -1)\beta_j} \nv\BA^{2\sum(a_j^2-1)\beta_j} \\
-  & \le \nv F \nv\BA^{\lgr\beta + 2\sum(a_j^2-1)\beta_j} \cdot
+  & \le ((4^g(n+1))^\dv \nv\vai)^{\lgr\beta} \cdot (4^g(n+1))^{\dv\sum(a_j^2
+      -1)\beta_j} \nv\vai^{2\sum(a_j^2-1)\beta_j} \\
+  & \le \nv F \nv\vai^{\lgr\beta + 2\sum(a_j^2-1)\beta_j} \cdot
     (4^g(n+1))^{\dv(\lgr\beta + \sum(a_j^2-1)\beta_j)} \pmm.
 \end{align*}
 
@@ -476,7 +476,7 @@ On a alors immédiatemment le résultat suivant.
   Il existe alors des polynômes homogènes $V^\lambda_\dv(G)$ tels que :
   \begin{enumthm}
     \item $\deg_i(V_\dv^\lambda(G)) = d_i + (D-1)(n-u_i)f(\lambda\pexp i)$ ;
-    \item $\nv{V_\dv^\lambda(G)} \le \nv G \nv\BA ^{\lgr\beta + 2\sum
+    \item $\nv{V_\dv^\lambda(G)} \le \nv G \nv\vai ^{\lgr\beta + 2\sum
       (a_j^2-1)\beta_j} \nv{f_Z}^{2n\lgt\lambda} \\ \null\qquad \cdot
       \Big( \big(4^g 2^{9u/4}(n+1)\big)^{\lgr\beta + \sum(a_j^2-1)\beta_j}
       \cdot (16uD^3)^{n\lgt\lambda} \cdot 2^{u(\lgr d -1)}

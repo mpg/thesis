@@ -241,7 +241,7 @@ proposition~3.6 de \cite{daphimhva2}.
   les $\zeta_{p, p', q, q'}$ sont des racines quatrièmes de l'unité, et $k$
   est une certaine fonction $\{0, \dots, \dimp\} \to \{0, \dots, \dimp\}$
   telle que pour tout $p$, $\coi^{-1}_{k(p)}$ est un coordonnée (non nulle) de
-  $\OA$.
+  $\oa$.
 
   En particulier, on peut estimer les normes locales :
   $\norm{S_{l, l'}}_{v, 1} \le 4^{\genre\dv} \norm{\coi}^2_{v, 1}$
@@ -402,7 +402,7 @@ On cherche ainsi une forme
 \[
   F'
   \in \cdn[\cmmh]\ph{\delta d'}
-  \cap \iq_a^\delta
+  \cap \Vanish_a^\delta
   \cap \wemba(\cdn[\cmmh, \cmmhi]\ph{\delta d})
 \]
 non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
@@ -410,21 +410,21 @@ non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' 
 \[
   F
   \in \cdn[\cmmh, \cmmhi]\ph{\delta d}
-  \cap \wemba^{-1}(\iq_a^\delta)
+  \cap \wemba^{-1}(\Vanish_a^\delta)
 \]
 non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
 
 Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
 Cependant, il est difficile d'expliciter un système essentiellement minimal
-d'équations linéaires exprimant l'appartenance à $\iq_a^\delta$. Il est en
-revanche immédiat d'expliciter un tel système pour $\tilde\iq_a^\delta$, mais
+d'équations linéaires exprimant l'appartenance à $\Vanish_a^\delta$. Il est en
+revanche immédiat d'expliciter un tel système pour $\Vanish*_a^\delta$, mais
 il comporte beaucoup trop d'équations (géométriquement, il correspond à une
 condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
 $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
 Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\cmh]\ph{\delta d'}$ dans lequel $\tilde\iq_a^\delta$
+un sous-espace de $\cdn[\cmh]\ph{\delta d'}$ dans lequel $\Vanish*_a^\delta$
 est de co-dimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
@@ -496,27 +496,27 @@ notre objectif : il s'agira en fait de construire une forme $F \in
 \Ideal\ph{\delta d} \setminus \{0\}$ telle que
 \[
   \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
-  \in \tilde\iq_a^\delta
+  \in \Vanish*_a^\delta
   \pmm,
 \]
-ce qui implique que $R \cdot \wemba(F) \in \iq_a^\delta$ car
+ce qui implique que $R \cdot \wemba(F) \in \Vanish_a^\delta$ car
 \[
   R \cdot \wemba(F)
   - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
   \in \varid
-  \subset \iq_a^\delta
+  \subset \Vanish_a^\delta
   \pmm.
 \]
 
 Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
-sera composé des équations définissant $\tilde\iq_a^\delta$ dans
+sera composé des équations définissant $\Vanish*_a^\delta$ dans
 \( \cdn[\cmmh]\ph{\delta d' + r'}^{C'''} \),
 tirées en arrière sur $\Ideal\ph{\delta d}$ par
 \( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
   \item calculer la codimension de $\Ideal\ph{\delta d}$ ;
-  \item calculer la codimension de $\tilde\iq_a^\delta$ dans
+  \item calculer la codimension de $\Vanish*_a^\delta$ dans
     $\cdn[\cmmh]\ph{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
     petite que la dimension précédente ;
   \item expliciter les morphismes de la première ligne du diagramme et majorer

@@ -9,21 +9,21 @@
 
 \section*{Introduction}
 
-Soit $\A$ une variété abélienne ; une fois fixé un plongement projectif, on a
+Soit $\va$ une variété abélienne ; une fois fixé un plongement projectif, on a
 des notions de distances et de hauteurs. Un théorème~de \bsc{Faltings}
 généralise dans ce cas le théorème~de \bsc{Roth} et affirme que, si $V$ est
-une sous-variété quelconque de $\A$, il n'y a qu'un nombre fini de points
+une sous-variété quelconque de $\va$, il n'y a qu'un nombre fini de points
 $\p{x}$ rationnels sur un corps de nombres $\cdn$ fixé, extérieurs à $V$ et
 satisfaisant à l'inégalité
 \[
- \Dv(\p{x}, V) \le H(\p{x})^{-\eps} \pmm{,}
+ \Distv(\p{x}, V) \le H(\p{x})^{-\eps} \pmm{,}
 \]
 où $v$ une place de $\cdn$ et $\eps$ un réel strictement positif.
 
 Ce résultat n'est toutefois pas quantitatif, et on aimerait pouvoir majorer le
 nombre de tels points (les approximations exceptionnelles) en fonction de
-$\eps$, de la dimension $g$ de $\A$, son rang $r$ sur $\cdn$ et la hauteur (en
-un sens à préciser) de $\A$. Plus précisément, le résultat d'approximation
+$\eps$, de la dimension $g$ de $\va$, son rang $r$ sur $\cdn$ et la hauteur (en
+un sens à préciser) de $\va$. Plus précisément, le résultat d'approximation
 obtenu par \bsc{Faltings} provient d'une inégalité à la \bsc{Vojta} ; pour le
 rendre quantitatif il suffirait donc d'expliciter les constantes intervenant
 dans cette dernière, et de lui adjoindre une inégalité de \bsc{Mumford}, ce
@@ -31,10 +31,10 @@ qui est la méthode usuelle pour de tels décomptes de points rationnels.
 
 On prouve ci-dessous une inégalité de \bsc{Mumford} explicite dans le cas
 particulier où $V$ est une sous-variété abélienne, qu'on notera donc désormais
-$\B$. On considère par ailleurs la condition d'approximation légèrement plus
+$\vai$. On considère par ailleurs la condition d'approximation légèrement plus
 générale suivante :
 \[
- \Dv(\p{x}, \B) \le H(\p{x})^{-\lambda_v\eps} \quad \forall v \in S \pmm{,} \tag{HP} \label{HP}
+ \Distv(\p{x}, \vai) \le H(\p{x})^{-\lambda_v\eps} \quad \forall v \in S \pmm{,} \tag{HP} \label{HP}
 \]
 où $S$ est un ensemble fini de places de $\cdn$, les $\lambda_v$ sont des
 réels positifs tels que $\sum_{v \in S} \lambda_v [\cdn_v : \Q_v]/[\cdn : \Q]
@@ -44,31 +44,31 @@ $v$ de $S$, on impose la condition sur la distance $w$-adique avec $\lambda_w
 = \lambda_v$. La normalisation choisie fait que le système ainsi obtenu est
 indépendant de l'extension $\Cdn/\cdn$ dans laquelle on l'écrit.
 
-On associe enfin à $\A$ son espace de \bsc{Mordell-Weil} relatif à un corps
-$\cdn$. C'est l'espace vectoriel euclidien $\MW{\cdn} = \A(\cdn) \otimes_\Z
+On associe enfin à $\va$ son espace de \bsc{Mordell-Weil} relatif à un corps
+$\cdn$. C'est l'espace vectoriel euclidien $\MW{\cdn} = \va(\cdn) \otimes_\Z
 \R$ dont la forme quadratique prolonge la hauteur normalisée de
-\bsc{Néron-Tate}, notée $\hn$. Il est de dimension finie dès que $\cdn$ est un
-corps de nombres. Si $\p x$ est un point dans $\A(\cdn)$, on notera encore $\p
+\bsc{Néron-Tate}, notée $\Hautn$. Il est de dimension finie dès que $\cdn$ est un
+corps de nombres. Si $\p x$ est un point dans $\va(\cdn)$, on notera encore $\p
 x$ son image dans $\MW{\cdn}$, en espérant que cet abus ne causera pas de
 confusion. Toutes les notions d'angle et de produit scalaire entre points de
-$\A$ sont bien sûr à lire sur leurs images dans l'espace de \bsc{Mordell-Weil}
+$\va$ sont bien sûr à lire sur leurs images dans l'espace de \bsc{Mordell-Weil}
 correspondant. On énonce maintenant le résultat principal.
 
 \begin{thm} \label{Mumford}
- Soient $\B$ une sous-variété abélienne de $\A$, $\p x$ et $\p y$ deux points
- de $\A(\Qbar)$ satisfaisant la condition d'approximation (\ref{HP})
- ci-dessus. On note $d = \deg \B$, $l = \dim\B + 1$ et on choisit $\phi > 0$
+ Soient $\vai$ une sous-variété abélienne de $\va$, $\p x$ et $\p y$ deux points
+ de $\va(\Qbar)$ satisfaisant la condition d'approximation (\ref{HP})
+ ci-dessus. On note $d = \deg \vai$, $l = \dim\vai + 1$ et on choisit $\phi > 0$
  et $\rho > 0$ tels que $ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps$. On pose
- $B = (4^g-1)h(\A) + 3g\log(2)$ et $C = 3\cdot4^gh(\A) + \log\Big(
+ $B = (4^g-1)h(\va) + 3g\log(2)$ et $C = 3\cdot4^gh(\va) + \log\Big(
  10\sqrt2\cdot 2^{7g/2} (n+1)^6\big(\frac{16e\sqrt
    2}{30}(n+1)^{9/2}\big)^{ld}\Big)$. On suppose en outre :
  \begin{enumerate}
   \item $\cos(\p{x},\p{y}) \ge 1-\phi$, \label{cone}
-  \item $\hn(\p{x}) \le \hn(\p{y}) \le (1+\rho)\hn(\p{x})$, \label{sect}
-  \item $\hn(\p{x}) > [h(\B) + C + B(ld + \eps/d)] \cdot [\eps/d -
+  \item $\Hautn(\p{x}) \le \Hautn(\p{y}) \le (1+\rho)\Hautn(\p{x})$, \label{sect}
+  \item $\Hautn(\p{x}) > [h(\vai) + C + B(ld + \eps/d)] \cdot [\eps/d -
   ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}$\label{Loin}
   \end{enumerate}
- On a alors $\p x - \p y \in \B(\Qbar)$.
+ On a alors $\p x - \p y \in \vai(\Qbar)$.
 \end{thm}
 
 Les conditions sur $\p{x}$ et $\p{y}$ ont une interprétation géométrique très
@@ -76,20 +76,20 @@ simple dans l'espace de \bsc{Mordell-Weil}. En effet (\ref{cone}) demande que
 les points se trouvent dans un même demi-cône d'angle petit, (\ref{sect})
 précise qu'ils doivent se trouver dans un même secteur de petite largeur
 exponentielle et (\ref{Loin}) que ce secteur est suffisamment loin de
-l'origine. Le théorème~affirme alors qu'il y a, modulo $\B(\Qbar)$, au plus
+l'origine. Le théorème~affirme alors qu'il y a, modulo $\vai(\Qbar)$, au plus
 une approximation exceptionnelle dans un secteur de cône d'angle
 $\arccos(1-\phi)$, de largeur exponentielle $1+\rho$, extérieur à une sphère
 de rayon adéquat centrée en l'origine.
 
   \section{Notations}
 
-On travaille dans une variété abélienne $\A$ de dimension $g$, définie sur
+On travaille dans une variété abélienne $\va$ de dimension $g$, définie sur
 $\Qbar$, qu'on suppose munie d'un fibré $\mathcal{M}$ ample et symétrique, de
 degré $d_\mathcal{M}$. On choisit sur $\mathcal{M}^{\otimes 16}$ une structure
-thêta et on plonge $\A$ dans $\Proj^n$, où $n=16^g d_\mathcal{M} - 1$, par un
+thêta et on plonge $\va$ dans $\Proj^n$, où $n=16^g d_\mathcal{M} - 1$, par un
 plongement de \bsc{Mumford} modifié, tel que décrit au §3.1 de
 \cite{daphimhva2}, que nous noterons $\Theta$. On identifiera volontiers
-$\A$ et son image par $\Theta$. On reprend sans les rappeler les définitions
+$\va$ et son image par $\Theta$. On reprend sans les rappeler les définitions
 de \lat{loc. cit.}, ainsi que les notations, sauf sur les points suivants : on
 omettra systématiquement les indices se rapportant à la puissance de
 $\mathcal{M}$ utilisée et on notera plus volontiers en indice les coordonnées.
@@ -169,18 +169,18 @@ où l'inégalité de gauche provient de l'estimation $\av{p_\alpha} \le
  \binom{d}{\alpha}\big)^2 \le \big(\prod_{k=1}^l {n_k}^{d^{(k)}}\big)^2 \pmm.
 \]
 
-On introduit enfin une constante locale $c_v(\A)$, définie à partir des
+On introduit enfin une constante locale $c_v(\va)$, définie à partir des
 coordonnées de l'origine et de leurs inverses. En effet, d'après le lemme~3.5
 de \cite{daphimhva2}, il existe dans chaque classe de $K_2 \times
 \widehat{K_2(4)}$ modulo $2K_2 \times \widehat{K_2(4)}^2$ au moins un indice
-$(a, l)$ tel que $\coa_{(a,l)} \neq 0$. On note $\mathcal{Z}_\BA$ un système
-complet de représentants vérifiant cette condition, et on pose $\BA =
-(\coa_{(a, l)}^{-1})_{(a, l) \in \mathcal{Z}_\BA}$. La constante $c_v(\A) =
-\nv{\coa}\nv{\BA} \ge 1$ est alors bien définie. On peut la voir comme un
-équivalent local de la hauteur de $\A$. En effet, $\sum_v e_v \log (c_v(\A)) =
-h(\OA) + h(\BA) \le 4^g h(\OA)$. Par ailleurs on notera volontiers $h(\A) =
-h(\OA)$ vu que cette quantité se compare bien à la hauteur de \bsc{Faltings}
-de $\A$ dans le cas semi-stable et principalement polarisé.
+$(a, l)$ tel que $\coa_{(a,l)} \neq 0$. On note $\mathcal{Z}_\vai$ un système
+complet de représentants vérifiant cette condition, et on pose $\vai =
+(\coa_{(a, l)}^{-1})_{(a, l) \in \mathcal{Z}_\vai}$. La constante $c_v(\va) =
+\nv{\coa}\nv{\vai} \ge 1$ est alors bien définie. On peut la voir comme un
+équivalent local de la hauteur de $\va$. En effet, $\sum_v e_v \log (c_v(\va)) =
+h(\oa) + h(\vai) \le 4^g h(\oa)$. Par ailleurs on notera volontiers $h(\va) =
+h(\oa)$ vu que cette quantité se compare bien à la hauteur de \bsc{Faltings}
+de $\va$ dans le cas semi-stable et principalement polarisé.
 
 \section{Distances projectives}
 
@@ -212,22 +212,22 @@ d'évaluation, et $\md_x = ev_x \circ \md$ le morphisme composé.
 L'équivalence $\md_x f = 0 \Leftrightarrow \p x \in V(\C_v)$ justifie alors de
 définir la distance de $\p x$ à $V$ par
 \[
-  \Dv(\p x, V) = \frac{M_v(\md_x f)}{M_v(f) \nv x ^{ld}} \pmm.
+  \Distv(\p x, V) = \frac{M_v(\md_x f)}{M_v(f) \nv x ^{ld}} \pmm.
 \]
 Comme $\md f$ est homogène de degré $ld$ en $X$, cette quantité est bien
 définie. Elle est nulle exactement dans le cas où $\p x \in V$ et est toujours
 majorée par~$1$. Dans le cas où $V = \zeros(F)$ est une hypersurface, on a
-l'expression naturelle $\Dv(\p x, V) = \av{F(x)} / \nv F \nv x$. Dans le cas
+l'expression naturelle $\Distv(\p x, V) = \av{F(x)} / \nv F \nv x$. Dans le cas
 général, on peut penser aux coefficients de $\md f \in \C_v[X][s]$ comme à des
 formes générales s'annulant en tout point de $V$. Enfin, dans le cas où $V$
-est réduite à un point $\p y$, on a la formule explicite $\Dv (\p x, \p y) =
+est réduite à un point $\p y$, on a la formule explicite $\Distv (\p x, \p y) =
 \nv{x \wedge y} / \nv x \nv y$. On peut alors montrer (\lat{confere} [Jad])
 que l'inégalité triangulaire est satisfaite et qu'on a donc bien une distance
 au sens usuel entre les points.
 
 Par ailleurs, on peut également partir de la distance ainsi définie entre les
 points pour définir une distance « ensembliste » entre un point et une variété
-par $\Dv^E(\p x, V) = \inf_{\p y \in V(\C_v)} \Dv(\p x, \p y)$. Cette
+par $\Distv^E(\p x, V) = \inf_{\p y \in V(\C_v)} \Distv(\p x, \p y)$. Cette
 définition présente l'inconvénient de ne pas tenir compte de la structure
 géométrique de $V$, notamment des singularités éventuelles. Néanmoins, les
 deux notions se comparent tout à fait bien, à l'aide des deux résultats
@@ -238,14 +238,14 @@ $\gamma_n = \sum_{q=1}^{n-1} 1/2q$ et $\dv = 0$ si $v$ est ultramétrique, $\dv
 
 \begin{fact} \label{ClosestPoint}
   Pour toute variété $V \subset \Proj^n$ et tout point $\p x \in
-  \Proj^n(\C_v)$, il existe un point $\p y \in V(\C_v)$ tel que $\Dv(\p x, \p
-  y) \le \Dv(\p x, V)^{1/\deg V} e^{\dv\gamma_{n+1}}$.
+  \Proj^n(\C_v)$, il existe un point $\p y \in V(\C_v)$ tel que $\Distv(\p x, \p
+  y) \le \Distv(\p x, V)^{1/\deg V} e^{\dv\gamma_{n+1}}$.
 \end{fact}
 
 \begin{lem} \label{PonctuelAlg}
   Pour toute variété $V \subset \Proj^n$ et tous points $\p x \in
-  \Proj^n(\C_v)$ et $\p y \in V(\C_v)$, on a $\Dv(\p x, V) \le
-  \newcst{CPonctuelAlg}\, \Dv(\p x, \p y)^m$ avec
+  \Proj^n(\C_v)$ et $\p y \in V(\C_v)$, on a $\Distv(\p x, V) \le
+  \newcst{CPonctuelAlg}\, \Distv(\p x, \p y)^m$ avec
   \[
   \cst{CPonctuelAlg} = \left[ 2 (n+1){3m/2} \left(\frac{2n^2+1}{n^2}
   \exp\big(\gamma_{\frac{(n+1)n}2} + \gamma_{n+1}\big) \right)^{ld}
@@ -261,7 +261,7 @@ $\md_x f$ doit être petit pour $\p x$ voisin de $\p y$. De façon générale,
 pour écrire un développement de \bsc{Taylor} , il faudra s'assurer de
 l'existence une carte affine $X_i \neq 0$ contenant à la fois $\p x$ et $\p
 y$. On voit facilement que la non-existence d'un telle carte affine
-impliquerait $\Dv(\p x, \p y) = 1$. En pratique, on pourra supposer sans
+impliquerait $\Distv(\p x, \p y) = 1$. En pratique, on pourra supposer sans
 problème que $\p x$ et $\p y$ sont suffisamment proches. Par ailleurs, il sera
 utile de pouvoir de plus choisir un indice $i$ de sorte que $\av{x_i}$ (resp.
 $\av{y_i}$) soit comparable  à $\nv x$ (resp. $\nv y$). Le lemme facile
@@ -270,7 +270,7 @@ suivant montre que c'est possible.
 \begin{lem} \label{ChoixI}
   Pour chaque $\p x \in \Proj^n$, il existe $i \in \{0,\dots, n\}$ tel que
   $\frac {\av {x_i}} {\nv x} \ge (\frac{1}{\sqrt{n+1}})^\dv$. De plus, pour le
-  même indice $i$, pour tout point $\p y$ satisfaisant $\Dv(\p x, \p y) \le
+  même indice $i$, pour tout point $\p y$ satisfaisant $\Distv(\p x, \p y) \le
   \eps_0$ avec $\eps_0 < (\frac{1}{\sqrt{n+1}})^\dv$, on a
   \[
   \frac{\av{y_i}}{\nv y} \ge \left(\frac{\sqrt{n+1}}{n+2}-\eps_0\right)^\dv
@@ -335,7 +335,7 @@ suivant montre que c'est possible.
 \begin{proof}[Démonstration du lemme~\ref{PonctuelAlg}.]
   On regarde $\md f$ comme un polynôme en $s$ à coefficients dans $k[X]$ et on
   appelle $g$ la famille de ses coefficients; ils sont homogènes de degré $ld$
-  et s'annulent en $y$. On peut supposer que $\Dv(\p x, \p y) <
+  et s'annulent en $y$. On peut supposer que $\Distv(\p x, \p y) <
   (2n^2\sqrt{n+1})^{-\dv}$ car sinon la conclusion du lemme est vide, la
   distance étant identiquement bornée par $1$. On suppose alors grâce au
   lemme~précédent que $y_0 = x_0 = 1$, $\nv y \le (\sqrt{n+1})^\dv$ et $\nv x
@@ -343,7 +343,7 @@ suivant montre que c'est possible.
 
   Par ailleurs, $\nv y \le \nv x + \nv {y-x} \le \nv x + \nv{x \wedge y}$, car
   chaque coefficient de $x - y$ est un coefficient de $x \wedge y$. En
-  substituant $\nv{x \wedge y} = \Dv(\p x, \p y) \nv x \nv y$ et en divisant
+  substituant $\nv{x \wedge y} = \Distv(\p x, \p y) \nv x \nv y$ et en divisant
   l'inégalité obtenue par $\nv x$, compte tenu de l'hypothèse sur la distance,
   il vient $\nv y / \nv x \le 1 + (2n^2)^{-1}$. On dispose alors de toutes les
   estimations utiles pour exploiter le développement de \bsc{Taylor} de la
@@ -369,30 +369,30 @@ suivant montre que c'est possible.
   \frac {\nv{R_{k, \alpha}}} {\nv x ^{ld}}
   & \le \nnv[v, 2]{\frac1{\alpha!}\frac{\partial^kg}{\partial X^\alpha}} \nv
   y^{ld-k} \nv{x \wedge y}^k / \nv x^{ld} \\
-  & \le 2^{ld\dv} \nnv[v, 2]g \nv y^{ld-k} \nv x^k \nv y^k \Dv(\p x, \p y)^k
+  & \le 2^{ld\dv} \nnv[v, 2]g \nv y^{ld-k} \nv x^k \nv y^k \Distv(\p x, \p y)^k
   / \nv x^{ld} \\
-  & \le \left(\frac{2n^2+1}{n^2}\right)^{ld\dv} \nnv[v, 2]g \Dv(\p x, \p
+  & \le \left(\frac{2n^2+1}{n^2}\right)^{ld\dv} \nnv[v, 2]g \Distv(\p x, \p
   y)^k (\sqrt{n+1})^{k\dv} \pmm.
   \end{align*}
   On majore alors le nombre de termes pour obtenir :
   \[
   \frac{\nv{R_k}}{\nv x^{ld}} \le \left(\frac{2n^2+1}{n^2}\right)^{ld\dv}
-  \nnv[v, 2]g \Dv(\p x, \p y)^k (n+1)^{3k\dv/2} \pmm,
+  \nnv[v, 2]g \Distv(\p x, \p y)^k (n+1)^{3k\dv/2} \pmm,
   \]
-  puis, si $v$ est finie, $\nv {g(x)} / \nv x ^{ld} \le \nnv[v, 2]g \Dv(\p x,
+  puis, si $v$ est finie, $\nv {g(x)} / \nv x ^{ld} \le \nnv[v, 2]g \Distv(\p x,
   \p y)^m$ par l'inégalité ultramétrique ; et si $v$ est infinie :
   \begin{align*}
   \frac{\nv{g(x)}}{\nv x^{ld}}
   & \le \left(\frac{2n^2+1}{n^2}\right)^{ld} \nnv[v, 2]g \sum_{k=m}^{ld}
-  \Dv(\p x, \p y)^k (n+1)^{3k/2} \\
-  & \le \left(\frac{2n^2+1}{n^2}\right)^{ld} \nnv[v, 2]g \Dv(\p x, \p y)^m
+  \Distv(\p x, \p y)^k (n+1)^{3k/2} \\
+  & \le \left(\frac{2n^2+1}{n^2}\right)^{ld} \nnv[v, 2]g \Distv(\p x, \p y)^m
   (n+1)^{3m/2} \\
-  & \phantom{\le} \qquad \cdot \sum_{k=0}^{ld-m} \big(\Dv(\p x, \p y)
+  & \phantom{\le} \qquad \cdot \sum_{k=0}^{ld-m} \big(\Distv(\p x, \p y)
   (n+1)^{3/2}\big)^k \pmm,
   \end{align*}
   où la dernière somme est majorée par $2$, d'où finalement :
   \begin{equation} \label{Comp}
-  \frac{\nv{g(x)}}{\nv x^{ld}} \le \nnv[v, 2]g \Dv(\p x, \p y)^m \left[ 2
+  \frac{\nv{g(x)}}{\nv x^{ld}} \le \nnv[v, 2]g \Distv(\p x, \p y)^m \left[ 2
   (n+1)^{3m/2} \left(\frac{2n^2+1}{n^2}\right)^{ld}\right]^\dv \pmm.
   \end{equation}
   La fin de la démonstration consiste alors en des comparaisons de normes :
@@ -425,9 +425,9 @@ plongement de \bsc{Segre} d'autre part. Ces distances se comparent bien en
 général ; on écrit ici la comparaison dans le cas de $(\Proj^n)^2$ (cas $q =
 2$, $d=(1,1)$ de \cite[lemme~4.3]{remgdmp}) :
 \[
-  \max_{i \in \{1, 2\}} \Dv(\p x^{(i)}, \p y^{(i)})
-  \le \Dv(s(\p x), s(\p y))
-  \le \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Dv(\p x^{(i)}, \p y^{(i)}) \pmm,
+  \max_{i \in \{1, 2\}} \Distv(\p x^{(i)}, \p y^{(i)})
+  \le \Distv(s(\p x), s(\p y))
+  \le \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Distv(\p x^{(i)}, \p y^{(i)}) \pmm,
 \]
 où $\p x = (\p x^{(1)}, \p x^{(2)}) \in (\Proj^n)^2$ et $s : (\Proj^n)^2 \to
 \Proj^{n^2+2n}$ est le plongement de \bsc{Segre}.
@@ -435,10 +435,10 @@ où $\p x = (\p x^{(1)}, \p x^{(2)}) \in (\Proj^n)^2$ et $s : (\Proj^n)^2 \to
 \section{Comportement métrique des opérations}
 
 La situation d'approximation considérée met en jeu plusieurs types de
-géométrie sur $\A$ : la géométrie euclidienne de son espace de
+géométrie sur $\va$ : la géométrie euclidienne de son espace de
 \bsc{Mordell-Weil}, la géométrie algébrique et projective de la variété
 plongée, une géométrie métrique, locale, en chaque place de $S$. On s'attend à
-ce que les métriques locales sur $\A$ se comportent de façon agréable
+ce que les métriques locales sur $\va$ se comportent de façon agréable
 vis-à-vis des structures géométrique et arithmétique, par exemple que les
 opérations soient uniformément continues, voire lipschitziennes. On montre ici
 que c'est bien le cas et on explicite une valeur admissible pour la constante
@@ -446,26 +446,26 @@ de \bsc{Lipschitz}.
 
 \begin{prop} \label{MetricOp}
   Il existe une constante $\newcst{CMetricOp}$ telle que, pour tous $\p x$,
-  $\p x'$, $\p y$, $\p y'$ dans $\A(\C_v)$, on a :
+  $\p x'$, $\p y$, $\p y'$ dans $\va(\C_v)$, on a :
   \[
-  \max\big(\Dv(\p x \pm \p y, \p x' \pm \p y')\big) \le \cst{CMetricOp}
-  \cdot \max \big(\Dv(\p x, \p x'), \Dv(\p y, \p y')\big) \pmm,
+  \max\big(\Distv(\p x \pm \p y, \p x' \pm \p y')\big) \le \cst{CMetricOp}
+  \cdot \max \big(\Distv(\p x, \p x'), \Distv(\p y, \p y')\big) \pmm,
   \]
   où dans le membre de gauche il faut prendre le même signe sur les deux termes.
-  De plus, on peut choisir $\cst{CMetricOp} = c_v(\A)^3 \av
+  De plus, on peut choisir $\cst{CMetricOp} = c_v(\va)^3 \av
   2^{-5g/2}[5\sqrt2\cdot2^{7g/2}(n+1)^{9/2}]^\dv$.
 \end{prop}
 
 Pour établir ce résultat, on va en fait étudier les propriétés métriques du
-morphisme $\xi : \A^2 \to \A^2,\ (\p x, \p y) \mapsto (\p x + \p y, \p x - \p
+morphisme $\xi : \va^2 \to \va^2,\ (\p x, \p y) \mapsto (\p x + \p y, \p x - \p
 y)$. Ce dernier présente en effet l'avantage de pouvoir être représenté
 globalement par une famille $F$ de polynômes totalement explicite (en
 particulier, de degré et hauteur contrôlés) à condition toutefois de regarder
-$\A^2$ comme plongée dans $\Proj^N$ (où $N = n^2+2n$) par un plongement de
+$\va^2$ comme plongée dans $\Proj^N$ (où $N = n^2+2n$) par un plongement de
 \bsc{Segre}. Si l'on note $\p z$ (resp. $\p z'$) l'image de $(\p x, \p y)$
 (resp. $(\p x', \p y')$) par ce plongement, on est ainsi ramené à montrer que
-$\Dv(\xi \p z, \xi \p z') \le \cst{CMetricOp} \sqrt2^{\,-\dv} \Dv(\p z, \p
-z')$. Par ailleurs on pourra supposer $\Dv( \p z, \p z') \le \sqrt2\,
+$\Distv(\xi \p z, \xi \p z') \le \cst{CMetricOp} \sqrt2^{\,-\dv} \Distv(\p z, \p
+z')$. Par ailleurs on pourra supposer $\Distv( \p z, \p z') \le \sqrt2\,
 \cst{CMetricOp}^{-1}$, car sinon la conclusion du lemme~est vide, compte tenu
 du fait que la distance est bornée par $1$. On utilisera alors un
 développement de \bsc{Taylor} des formes $F$ représentant $\xi$ au voisinage
@@ -476,17 +476,17 @@ développement, va apparaître une quantité $\nv{F(z)} / (\nnv{F}\nv{z}^2) \le
 1$, qui détermine en grande partie le rayon sur lequel le développement de
 \bsc{Taylor} donne une majoration utile. Il est donc indispensable de pouvoir
 minorer cette quantité uniformément en $\p z$. Le lemme~suivant donne une
-telle minoration en fonction de la constante locale $c_v(\A)$. Notons que
+telle minoration en fonction de la constante locale $c_v(\va)$. Notons que
 cette minoration est la seule étape de la preuve où intervient le fait que le
-morphisme $\xi$ est donné par les opérations de $\A$, le reste s'appliquant en
+morphisme $\xi$ est donné par les opérations de $\va$, le reste s'appliquant en
 fait à n'importe quel morphisme d'espaces projectifs.
 
 \begin{lem} \label{TvIndepF}
-  Il existe un choix de $F$ tel que pour tout $\p z \in \A(\C_v)$ on ait
+  Il existe un choix de $F$ tel que pour tout $\p z \in \va(\C_v)$ on ait
   \[
   \frac{\nv{F(z)}}{\nnv{F}\nv{z}^2} \ge \newcst{Tv} \pmm,
   \]
-  avec $\cst{Tv} = \av 2^{5g/2} 2^{-7g\dv/2} (n+1)^{-3\dv/2} c_v(\A)^{-3}$.
+  avec $\cst{Tv} = \av 2^{5g/2} 2^{-7g\dv/2} (n+1)^{-3\dv/2} c_v(\va)^{-3}$.
 \end{lem}
 
 Il convient de commencer par rappeler quelques faits concernant les
@@ -503,7 +503,7 @@ les coordonnées manquantes s'obtiennent en multipliant les anciennes par des
 racines quatrièmes de l'unité, ce qui préserve les estimations de normes
 locales.
 
-Par ailleurs, on note $\tilde\Theta$ le plongement composé $\A^2 \to
+Par ailleurs, on note $\tilde\Theta$ le plongement composé $\va^2 \to
 (\Proj^n)^2 \to \Proj^N$ et $\tilde\Delta_{ij} = \Delta_i\Delta_j$ les
 coordonnées correspondantes. On définit de façon similaire un plongement
 $\tilde\Theta^{(\text{ét})}$ associé au système étendu de coordonnées. La
@@ -543,8 +543,8 @@ par $2$) et satisfaisant à l'inégalité suivante :
 \begin{proof}[Démonstration (du lemme~\ref{TvIndepF}).]
   On commence par estimer $\nnv{F}$. Chaque $F_{ij}$ s'écrit comme une somme
   de $4^g$ termes de norme $\nv[v, \infty]{\truc}$ au plus $\av 2^{-g} \nv
-  \BA^2$ ; on a donc $\nv {F_{ij}} \le 2^{g\dv} \av 2 ^{-g} \nv \BA ^2$ et
-  $\nnv F \le  \sqrt{N+1}^\dv 2^{g\dv} \av 2 ^{-g} \nv \BA ^2$. Pour la suite,
+  \vai^2$ ; on a donc $\nv {F_{ij}} \le 2^{g\dv} \av 2 ^{-g} \nv \vai ^2$ et
+  $\nnv F \le  \sqrt{N+1}^\dv 2^{g\dv} \av 2 ^{-g} \nv \vai ^2$. Pour la suite,
   on se base sur la minoration (\ref{NormDupl}) et le fait que $\xi^2$ est le
   morphisme de multiplication par $2$ sur les deux facteurs. On a ainsi
   \[
@@ -568,8 +568,8 @@ par $2$) et satisfaisant à l'inégalité suivante :
   \left(\frac {\nv{F(z)}} {\nnv F \nv z ^2} \right)^2
   & \ge \av2^{2g} 4^{-2g\dv} \nv\coa^{-6} \nnv F ^{-3} \\
   % & \ge \av2^{2g} 4^{-2g\dv} \nv\coa^{-6} (n+1)^{-3\dv} 2^{-3g\dv} \av 2
-  % ^{3g} \nv \BA ^{-6} \\
-  & \ge \av2^{5g} 2^{-7d\dv} (n+1)^{-3\dv} c_v(\A)
+  % ^{3g} \nv \vai ^{-6} \\
+  & \ge \av2^{5g} 2^{-7d\dv} (n+1)^{-3\dv} c_v(\va)
   \end{align*}
   et le lemme.
 \end{proof}
@@ -577,9 +577,9 @@ par $2$) et satisfaisant à l'inégalité suivante :
 \begin{proof}[Démonstration (de la proposition~\ref{MetricOp}).]
   Il s'agit de montrer que $\nv{F(z')}$ n'est pas trop petit devant $\nv
   {F(z)}$ et que $\nv{F(z) \wedge F(z')}$ n'est pas trop grand devant $\nv
-  {F(z)}^2$. Comme annoncé, on supposera que $\Dv (\p z, \p z') < \sqrt2^\dv\,
+  {F(z)}^2$. Comme annoncé, on supposera que $\Distv (\p z, \p z') < \sqrt2^\dv\,
   \cst{CMetricOp}^{-1}$. Vu que $\cst{CMetricOp} = (5\sqrt2\cdot
-  N\sqrt{N+1})^\dv / \cst{Tv}$, cela revient à supposer $\Dv (\p z, \p z') =
+  N\sqrt{N+1})^\dv / \cst{Tv}$, cela revient à supposer $\Distv (\p z, \p z') =
   \cst{Tv}\eps_1/(5 N \sqrt{N+1})^\dv$ pour un certain $\eps_1 < 1$. On peut
   en particulier appliquer le lemme~\ref{ChoixI} à $z$ et $z'$ (en remplaçant
   $n$ par $N$) et supposer, quitte à renuméroter les coordonnées, que
@@ -609,7 +609,7 @@ par $2$) et satisfaisant à l'inégalité suivante :
   \]
   Il vient alors, grâce au lemme~\ref{TvIndepF},
   \begin{align*}
-  \frac{\nv{R_i}}{\nvp{F(z) \cdot {z_0'}^2/z_0^2}}
+  \frac{\nv{R_i}}{\nv{F(z) \cdot {z_0'}^2/z_0^2}}
   &\le \frac{\nv{z'}}{\av{z'_0}}\frac{\nnv{F} \nv z^2}{\nv{F(z)}}
   \frac{2^\dv \cst{Tv}\,\eps_1}{(5N\sqrt{N+1})^\dv} \\
   &\le \left(\frac2{5N\sqrt{N+1}}\right)^\dv \frac{\nv{z'}}{\av{z'_0}}
@@ -617,22 +617,22 @@ par $2$) et satisfaisant à l'inégalité suivante :
   \end{align*}
   On obtient de même
   \[
-  \frac{\nv{R_{ij}}}{\nvp{F(z) \cdot {z_0'}^2/z_0^2}} \le
+  \frac{\nv{R_{ij}}}{\nv{F(z) \cdot {z_0'}^2/z_0^2}} \le
   \left(\frac1{25N^2}\right)^\dv \eps_1 \pmm,
   \]
-  puis en sommant : $\nv{\sum R_i + \sum R_{ij}} \le (1/2)^\dv \nvp{F(z) \cdot
+  puis en sommant : $\nv{\sum R_i + \sum R_{ij}} \le (1/2)^\dv \nv{F(z) \cdot
   {z_0'}^2/z_0^2} \eps_1$. Enfin, les inégalités triangulaire aux places
   infinies et ultramétrique aux places finies donnent $\nv{F(z')} \ge
-  (1/2)^\dv \nvp{F(z) \cdot {z_0'}^2/z_0^2}$. Afin d'estimer la distance, il
+  (1/2)^\dv \nv{F(z) \cdot {z_0'}^2/z_0^2}$. Afin d'estimer la distance, il
   reste à majorer $\nv{F(z) \wedge F(z')}$. Pour ce faire, on développe le
   second facteur, on remarque que le premier terme du produit est nul et on
   majore brutalement le terme restant par le produit des normes ; il vient
   ainsi :
   \begin{align*}
-  \Dv(\xi(\p z), \xi(\p z'))
+  \Distv(\xi(\p z), \xi(\p z'))
   & = \frac{\nv{F(z) \wedge F(z')}}{\nv{F(z)}\nv{F(z')}} \\
   & \le \frac{2^\dv \nv{\sum R_i + \sum R_{ij}} \nv{F(z)}}{\nv{F(z)}
-    \nvp{F(z) \cdot {z_0'}^2/z_0^2}} \\
+    \nv{F(z) \cdot {z_0'}^2/z_0^2}} \\
   & \le \eps_1 \pmm,
   \end{align*}
   qui, vu la définition de $\eps_1$, équivaut à la conclusion de la
@@ -649,7 +649,7 @@ L'énoncé suivant est une application directe de la formule du produit :
   $\cdn$ et $S$ un sous-ensemble fini de $M(\cdn)$. Pour tout point $\p z \in
   \Proj^n(\Qbar)$, on a soit $\p z \in V(\Qbar)$, soit
   \[
-  \prod_{v \in S} \Dv(\p z, V)^{e_v} \ge \frac1{H(V) H(\p z)^{ld}} \pmm,
+  \prod_{v \in S} \Distv(\p z, V)^{e_v} \ge \frac1{H(V) H(\p z)^{ld}} \pmm,
   \]
   où $l = \dim V + 1$, $d = \deg V$ et $e_v = [\cdn_v : \Q_v] / [\cdn : \Q]$
   est le degré local relatif, de sorte que le membre de gauche est bien défini
@@ -659,11 +659,11 @@ L'énoncé suivant est une application directe de la formule du produit :
 \begin{proof}
   On remarque en effet que
   \[
-  \prod_{v \in M(\cdn)} \Dv(\p z, V)^{e_v} = \prod_{v \in M(\cdn)}
+  \prod_{v \in M(\cdn)} \Distv(\p z, V)^{e_v} = \prod_{v \in M(\cdn)}
   \frac{\mv{\md_z f}} {\mv f \nv z^{ld}} = \frac{H(\md_z f)}{H(V) H(\p
     z)^{ld}} \pmm.
   \]
-  Or, d'une part cette quantité est majorée par $\prod_{v \in S} \Dv(\p z,
+  Or, d'une part cette quantité est majorée par $\prod_{v \in S} \Distv(\p z,
   V)^{e_v}$ (la distance est bornée par $1$) et d'autre part $H(\md_z f) \ge
   1$ par la formule du produit dès que $\p z \not\in V(\Qbar)$.
 \end{proof}
@@ -696,8 +696,8 @@ principal résultat technique de cette section s'énonce ainsi :
   \item $\zeros(\pi) \cap V = \emptyset$,
   \item $\p z \not\in \zeros(\pi)$,
   \item $\pi(\p z) \not\in \pi(V)$,
-  \item $\forall v \in S,\ \Dv\big(\pi(\p z), \pi_* V)\big) \le \cst{Cproj}
-    \cdot \Dv(\p z, V)$.
+  \item $\forall v \in S,\ \Distv\big(\pi(\p z), \pi_* V)\big) \le \cst{Cproj}
+    \cdot \Distv(\p z, V)$.
   \end{enumerate}
   Plus précisément, on peut choisir $\pi$ définie par des formes linéaires à
   coefficients entiers de valeur absolue inférieure ou égale à
@@ -777,7 +777,7 @@ homogènes de degré $ld$ en $m$.
 \begin{lem} \label{lCramer}
   Soit $R$ une matrice $r \times r$ inversible à coefficients entiers, de
   valeur absolue inférieure ou égale à $C$, et $v$ une place de $\Q$. Alors
-  $\nvp{R^{-1}} \le r! \cdot C^{r-\dv}$, où $\nv{\truc}$ désigne la norme du
+  $\nv{R^{-1}} \le r! \cdot C^{r-\dv}$, où $\nv{\truc}$ désigne la norme du
   sup des coefficients aux places finies et la norme euclidienne de la famille
   des coefficients sinon.
 \end{lem}
@@ -824,10 +824,10 @@ est d'énoncer des conditions suffisantes pour qu'un tel choix soit possible.
   B(w_n))$, on a ainsi $B(W) = B'W'$.
 
   Supposons maintenant que $W'$ est inversible. On a donc ainsi $B' =
-  B(W)\cdot(W')^{-1}$, puis $\nv{B(W)} \ge \nvp{(W')^{-1}}^{-1} \nv{B'}$. Il
+  B(W)\cdot(W')^{-1}$, puis $\nv{B(W)} \ge \nv{(W')^{-1}}^{-1} \nv{B'}$. Il
   existe ainsi par le lemme~\ref{ChoixI} un indice $i_v$ tel que
   \[
-  \nv{B(w_{i_v})} \ge \sqrt{M}^{\,-\dv} \nvp{(W')^{-1}}^{-1} \nv{B} \ge
+  \nv{B(w_{i_v})} \ge \sqrt{M}^{\,-\dv} \nv{(W')^{-1}}^{-1} \nv{B} \ge
   (\sqrt M^\dv \cdot M!)^{-1}D^{-bM} \nv{B}
   \]
   par le lemme~\ref{lCramer}. Or le membre de droite est précisément
@@ -923,7 +923,7 @@ est d'énoncer des conditions suffisantes pour qu'un tel choix soit possible.
   \right)^{ld\dv} \mv{\md_x f_V}  \pmm.
   \end{align}
   La conclusion suit en substituant ces trois dermières inégalités dans la
-  définition de $\Dv(\pi(\p z), \pi_* V)$.
+  définition de $\Distv(\pi(\p z), \pi_* V)$.
 
   %   et on pose $B_{z, v} = g_v\cdot (h_z)^{ld}$, ce qui définit une famille
   %   indexée par $S$ de polynômes homogènes de degré $2ld$.
@@ -1002,7 +1002,7 @@ On peut alors démontrer notre deuxième version de l'inégalité de
   Sous les mêmes hypothèses et notations qu'à la proposition
   \ref{PLiouvilleMal}, on a soit $\p z \in V(\Qbar)$, soit
   \[
-  \prod_{v \in S} \Dv(\p z, V)^{e_v} \ge \newcst[]{cLiouville} \frac1{H(V)
+  \prod_{v \in S} \Distv(\p z, V)^{e_v} \ge \newcst[]{cLiouville} \frac1{H(V)
     H(\p z)^d} \pmm,
   \]
   avec
@@ -1024,8 +1024,8 @@ On peut alors démontrer notre deuxième version de l'inégalité de
   point à une hypersurface, ainsi que de la hauteur de cette dernière, en
   fonction d'une de ses équations, il vient :
   \begin{align*}
-  \prod_{v \in S} \Dv(\p z, V)^{e_v}
-  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \Dv(\pi(\p z), \pi_* V)^{e_v} \\
+  \prod_{v \in S} \Distv(\p z, V)^{e_v}
+  & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \Distv(\pi(\p z), \pi_* V)^{e_v} \\
   & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} 
   \cdot \prod_{v \in M(\cdn)}
   \left(\frac {\av{E(\p z)}} {\mv{E} \nv{\pi(z)}^d} \right)^{e_v} \\
@@ -1045,16 +1045,16 @@ La stratégie de la preuve est la suivante : si on a deux approximations
 exceptionnelles, suffisamment proches dans l'espace de \bsc{Mordell-Weil} (au
 sens des hypothèses (\ref{cone}) et (\ref{sect}) du théorème~\ref{Mumford}) et
 de hauteur assez grande, on fabrique, (en prenant leur différence, sous
-l'hypothèse que $\B$ est un sous-groupe) une approximation de qualité telle
-qu'elle appartiendra nécessairement à $\B$, d'après une des inégalités de
+l'hypothèse que $\vai$ est un sous-groupe) une approximation de qualité telle
+qu'elle appartiendra nécessairement à $\vai$, d'après une des inégalités de
 Liouville énoncées à la section précédente.
 
 \begin{lem} \label{Precis}
   Si $\p z = \p x - \p y$, où $\p x$ et $\p y$ satisfont l'hypothèse
-  (\ref{HP}) du théorème~\ref{Mumford}, on a $\prod_{v \in S} \Dv(\p z,
-  \B)^{e_v} \le \newcst[]{CPrecis}H^{-\eps/d}$, avec
+  (\ref{HP}) du théorème~\ref{Mumford}, on a $\prod_{v \in S} \Distv(\p z,
+  \vai)^{e_v} \le \newcst[]{CPrecis}H^{-\eps/d}$, avec
   \[
-  \cst[]{CPrecis} = H(\A)^{3\cdot4^g} 10\sqrt2\,(n+1)^6
+  \cst[]{CPrecis} = H(\va)^{3\cdot4^g} 10\sqrt2\,(n+1)^6
   2^{7g/2}\left(\frac{(2n^2+1)(n+1)^2}{2n} e^{\gamma_{\frac{(n+1)n}{2}} +
     \gamma_{n+1}} \right)^{ld}
   \]
@@ -1062,50 +1062,50 @@ Liouville énoncées à la section précédente.
 \end{lem}
 
 \begin{proof}
-  On a par hypothèse $\max(\Dv(\p x, \B), \Dv(\p y, \B)) \le H^{-\lambda_v
+  On a par hypothèse $\max(\Distv(\p x, \vai), \Distv(\p y, \vai)) \le H^{-\lambda_v
   \eps}$.  Le fait~\ref{ClosestPoint} assure alors qu'il existe des points
-  $\p x',\p y' \in \B(\C_v)$ tels que
+  $\p x',\p y' \in \vai(\C_v)$ tels que
   \[
-  \max(\Dv(\p x, \p x'), \Dv(\p y, \p y')) \le H^{-\lambda_v \eps/d} e^{\dv
+  \max(\Distv(\p x, \p x'), \Distv(\p y, \p y')) \le H^{-\lambda_v \eps/d} e^{\dv
     \gamma_{n+1}} \pmm.
   \]
   On a alors en utilisant successivement le lemme~\ref{PonctuelAlg} et la
   proposition~\ref{MetricOp} :
   \begin{align*}
-  \Dv(\p z, \B)
-  & \le \cst{CPonctuelAlg}\, \Dv(\p x - \p y, \p x' - \p y') \\
-  & \le \cst{CPonctuelAlg}\, \cst{CMetricOp}\, \max(\Dv(\p x, \p x'), \Dv(\p
+  \Distv(\p z, \vai)
+  & \le \cst{CPonctuelAlg}\, \Distv(\p x - \p y, \p x' - \p y') \\
+  & \le \cst{CPonctuelAlg}\, \cst{CMetricOp}\, \max(\Distv(\p x, \p x'), \Distv(\p
   y, \p y')) \\
   & \le \cst{CPonctuelAlg}\, \cst{CMetricOp}\,e^{\dv
     \gamma_{n+1}}H^{-\lambda_v \eps/d} \pmm.
   \end{align*}
   On prend alors le produit sur $v \in S$, en supposant (c'est le cas
   défavorable) que $S$ contient toutes les places divisant $2$ ou $\infty$.
-  Comme $c_v(\A) \ge 1$, on a $\prod_{v \in S} c_v(\A) \le \prod_{v \in
-  M(\cdn)} c_v(\A) \le H(\A)^{4^g}$. Vu la normalisation des $\lambda_v$, on
+  Comme $c_v(\va) \ge 1$, on a $\prod_{v \in S} c_v(\va) \le \prod_{v \in
+  M(\cdn)} c_v(\va) \le H(\va)^{4^g}$. Vu la normalisation des $\lambda_v$, on
   a ainsi la conclusion du lemme.
 \end{proof}
 
 \begin{lem} \label{Petit}
   Soient $\p{x}$ et $\p{y}$ satisfaisant aux hypothèses (\ref{cone}) et
   (\ref{sect}) du théorème~\ref{Mumford}, notons $\p z$ leur différence. On a
-  alors $\hn(\p z) \le (\rho^2/4 + 2\phi + \rho\phi) \hn(\p{x})$.
+  alors $\Hautn(\p z) \le (\rho^2/4 + 2\phi + \rho\phi) \Hautn(\p{x})$.
 \end{lem}
 
 \begin{proof}
   On note $\langle\truc; \truc \rangle$ le produit scalaire et $\nv[N]{\truc}
-  = \sqrt{\hn(\truc)}$ la norme dans l'espace de \bsc{Mordell-Weil}. On
+  = \sqrt{\Hautn(\truc)}$ la norme dans l'espace de \bsc{Mordell-Weil}. On
   remarque de plus que l'hypothèse \ref{sect} implique $\nv[N]{\p{y}} \le
   (1+\rho)^{1/2}\nv[N]{\p{x}} \le (1+\rho/2) \nv[N]{\p{x}}$. Il vient alors :
   \begin{align*}
-  \hn(\p{z})
+  \Hautn(\p{z})
   & = \nv[N]{\p{x}-\p{y}}^2 \\ & = \nv[N]{\p{x}}^2 + \nv[N]{\p{y}}^2 -
   2\langle \p{x}; \p{y} \rangle \\
   & = \left(\nv[N]{\p{y}} - \nv[N]{\p{x}}\right)^2 +
   2\nv[N]{\p{x}}\nv[N]{\p{y}}\left( 1- \cos(\p{x}, \p{y}) \right) \\
   & \le \left( \frac{\rho}{2}\nv[N]{\p{x}} \right)^2 + 2\left(
   1+\frac{\rho}{2} \right) \nv[N]{\p{x}}^2 \cdot \phi \\
-  & \le ((\rho^2/4) + 2\phi + \rho\phi) \hn(\p{x})\pmm{.}\qedhere
+  & \le ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(\p{x})\pmm{.}\qedhere
   \end{align*}
 \end{proof}
 
@@ -1115,21 +1115,21 @@ Liouville énoncées à la section précédente.
   proposition~\ref{PLiouvilleMal} dès que $\p x$ satisfait l'hypothèse
   (\ref{Loin}) du théorème~\ref{Mumford}.  On a besoin de pouvoir comparer les
   hauteurs projective et normalisée. On utilise à cet effet le lemme~3.9 de
-  \cite{daphimhva2} et la remarque subséquente : $\lvert\hn(\truc) -
+  \cite{daphimhva2} et la remarque subséquente : $\lvert\Hautn(\truc) -
   h(\truc)\rvert \le B$, avec $B$ comme dans l'énoncé du théorème. En
   injectant ceci dans le lemme~\ref{Precis}, on a $\sum_{v \in S} e_v
-  \log\Dv(\p z, \B) \le -(\eps/d) \hn(\p x) + B\eps/d + \cst[]{CPrecis}$. De
+  \log\Distv(\p z, \vai) \le -(\eps/d) \Hautn(\p x) + B\eps/d + \cst[]{CPrecis}$. De
   même, le lemme~\ref{Petit} donne $h(\p z) \le ((\rho^2/4) + 2\phi +
-  \rho\phi) \hn(\p x) + B$. Ces deux estimations contredisent la conclusion de
+  \rho\phi) \Hautn(\p x) + B$. Ces deux estimations contredisent la conclusion de
   la proposition~\ref{PLiouvilleMal} dès que
   \[
-  \big(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\big) \hn(\p x) > h(\B) +
+  \big(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\big) \Hautn(\p x) > h(\vai) +
   \cst[]{CPrecis} + B(ld + \eps/d) \pmm.
   \]
   Or, un calcul facile montre que la constante $C$ du théorème majore
   $\cst[]{CPrecis}$ et que la relation précédente est impliquée par
   l'hypothèse (\ref{Loin}) du théorème ; cette dernière oblige donc $\p z$ à
-  être sur $\B$.
+  être sur $\vai$.
 \end{proof}
 
 \emph{Remarque.} En utilisant la proposition~\ref{pLiouvilleBien} en lieu et
@@ -1138,7 +1138,7 @@ du théorème, avec la même conclusion mais en affaiblissant la condition
 $ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps$ en $d^2((\rho^2/4) + 2\phi +
 \rho\phi)< \eps$ et en remplaçant la condition 3 par
 \[
-  \hn(\p{x}) > [h(\B) + C + \log \cst[]{cLiouville} + B(d + \eps/d)] \cdot
+  \Hautn(\p{x}) > [h(\vai) + C + \log \cst[]{cLiouville} + B(d + \eps/d)] \cdot
   [\eps/d - d((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
 \]
 

@@ -44,7 +44,7 @@ où la sous-variété en question est une hypersurface $H$, définie par une
 $V$ est définie comme
 \[
   \distv{\point}{H} =
-  \frac {\absv{F(\coord)}} {\normv{F}\normv{\coord}}
+  \frac {\av{F(\coord)}} {\nv{F}\nv{\coord}}
   \pmm.
 \]
 Intuitivement, cette quantité traduit bien la notion de distance, et
@@ -55,7 +55,7 @@ On peut aussi définir une notion \og naïve \fg de distance entre les points de
 l'espace projectif, par la formule
 \[
   \distv{\point}{\pointi} =
-  \frac {\normv{\coord \wedge \coordi}} {\normv\coord \normv\coordi}
+  \frac {\nv{\coord \wedge \coordi}} {\nv\coord \nv\coordi}
   \pmm.
 \]
 Pour peu qu'on ai choisi une bonne norme aux places archimédiennes, ceci
@@ -156,13 +156,13 @@ Le théorème de \bsc{Roth}, dans sa version étendue aux places quelconques par
   $\cdn(\alpha)$. Pour tout $\eps > 0$, il n'existe qu'un nombre fini de
   points $x \in \cdn$ tels que
   \[
-    \absv{x - \alpha} < H(x)^{-2-\eps} \pmm.
+    \av{x - \alpha} < H(x)^{-2-\eps} \pmm.
   \]
 \end{thm}
 
 Le lien avec le théorème précédent est clair : on passe de l'un à l'autre en
 remplaçant $\alpha$ par $V$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
-distance étant bien sûr représentée par $\absv{x - \alpha}$. Le théorème~2 de
+distance étant bien sûr représentée par $\av{x - \alpha}$. Le théorème~2 de
 \cite{faldaav} est donc aux variétés abéliennes ce que le théorème de
 \bsc{Roth} est à la droite.
 
@@ -484,7 +484,7 @@ de conclure à une contradiction par la formule du produit à moins de $F(x)$ ne
 soit nul. Dans la phrase précédente, il faut en fait remplacer $F$ par ses
 dérivées jusqu'à un ordre convenable. C'est en tous cas l'hypothèse
 d'approximation \eqref{e-approx} qui établit la contrainte nécessaire en liant
-$\distv{x}{E}$ à $H(x)$, donc indirectement $\absv{F(x)}$ à $H(F(x))$.
+$\distv{x}{E}$ à $H(x)$, donc indirectement $\av{F(x)}$ à $H(F(x))$.
 
 Pour estimer la norme locale de $F(x)$ en $\place$, la difficulté est que $F$
 s'annule le long de $Y \cap E$, alors qu'on sait que $x$ est proche de $E$,

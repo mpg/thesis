@@ -3,7 +3,6 @@ Notations et TeX
 
 Faire un index des notations, par exemple avec nomencl.
     Still todo wrt nomenclature & macros:
-    - remove duplicated macros (in documents too!)
     - look at \todo and % TODO
     - print & enjoy :-)
 
