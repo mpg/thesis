@@ -92,22 +92,24 @@
   \makenomenclature
 \fi
 
-\newcommand*\nom@type[2]{%
-  \if@showmac
-    \newcommand*#1[2]{%
-      \nomenclature[#2-##1--]{$##2$ [\texttt{\detokenize{##2}}]}}%
-  \else
-    \newcommand*#1[2]{%
-      \nomenclature[#2-##1--]{$##2$}}%
-  \fi}
+\newcommand*\nom@type [3] {%
+  \newcommand*#1[3]{%
+    \nomenclature[#2-##1--]{$##2$}{%
+      \if@showmac \texttt{\detokenize{##2}}\unskip\quad \fi
+      ##3}}%
+  \@namedef{nom@group@@#2}{#3}}
 
-\nom@type \noms A % first, symbols
-\nom@type \nomn B % then numeric
-\nom@type \nomg C % then greek letter
-\nom@type \noma D % finally, alphabetic stuff
+\renewcommand*\nomgroup [1] {%
+  \item[\sffamily\bfseries \@nameuse{nom@group@@#1}]
+  }
+
+\nom@type \noms A {Symboles}
+\nom@type \nomn B {Signes numériques}
+\nom@type \nomg C {Lettres grecques}
+\nom@type \noma D {Lettres latines}
 
 % placeholders for descriptions
-\newcommand*\nom@ph[2]{%
+\newcommand*\nom@ph [2] {%
   \newcommand#1{\ensuremath{\text{\color{gray}$#2$}}\xspace}}
 
 \nom@ph \PH   \bullet
