@@ -3,7 +3,6 @@ Notations et TeX
 
 Faire un index des notations, par exemple avec nomencl.
     Still todo wrt nomenclature & macros:
-    - make a class option to print macro names
     - remove duplicated macros (in documents too!)
     - look at \todo and % TODO
     - print & enjoy :-)
@@ -12,8 +11,6 @@ Notations lié au plongement éclatant : faire des macros spécifiques pour i et
 j et leurs bornes ? Distinquer X seul de X, Y ?
 
 Pour les trucs ayant des indices souvent, faire des trucs pour les bornes ?
-
-Réorganiser un peu les macros, c'est le bazar.
 
 Traduire tous les noms de macros en anglais.
 

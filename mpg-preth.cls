@@ -11,12 +11,16 @@
 \newif\if@webversion    \@webversionfalse
 \newif\if@showbad       \@showbadtrue
 \newif\if@domark        \@domarktrue
+\newif\if@nomencl       \@nomenclfalse
+\newif\if@showmac       \@showmacfalse
 
 % option declarations [[2
 %
 \DeclareOption {web}    {\@webversiontrue}
 \DeclareOption {nobad}  {\@showbadfalse}
 \DeclareOption {nomark} {\@domarkfalse}
+\DeclareOption {showmac}{\@showmactrue}
+\DeclareOption {nomencl}{\@nomencltrue}
 \ProcessOptions \relax
 
 % use Koma-article with custom encoding and fonts [[2
@@ -84,11 +88,18 @@
 
 % nomenclature [[2
 %
-\makenomenclature
+\if@nomencl
+  \makenomenclature
+\fi
 
 \newcommand*\nom@type[2]{%
-  \newcommand*#1[2]{%
-    \nomenclature[#2-##1--]{$##2$}}}
+  \if@showmac
+    \newcommand*#1[2]{%
+      \nomenclature[#2-##1--]{$##2$ [\texttt{\detokenize{##2}}]}}%
+  \else
+    \newcommand*#1[2]{%
+      \nomenclature[#2-##1--]{$##2$}}%
+  \fi}
 
 \nom@type \noms A % first, symbols
 \nom@type \nomn B % then numeric
