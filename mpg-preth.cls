@@ -417,7 +417,7 @@
   sinon}
 
 \DeclareMathOperator \Dist {dist}
-\newcommand*\Distv [1][\place] {\Dist\ssub{place}}
+\newcommand*\Distv [1][\place] {\Dist\ssub{\place}}
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
 
 \noma{dist}{\distv\PH\PHi}{Distance $\place$-adique projective entre \PH et
