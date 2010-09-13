@@ -2,12 +2,24 @@
 % pph,
 ] {mpg-preth}
 
+\includeonly{%
+  title+toc,
+  i-idee,
+  i-mumford-groupes,
+  i-siegel,
+  i-param,
+  i-normes-mesures,
+  notations,
+  biblio,
+  }
+
 \title{Approximation diophantienne \\ sur les variétés abéliennes}
 
 \begin{document}
 
-\maketitle
-\listoftoc*{toc}
+\inlineinclude{title+toc}{%
+  \maketitle
+  \listoftoc*{toc}}
 
 \include{i-idee}
 \include{i-mumford-groupes}
@@ -18,10 +30,12 @@
 
 \include{i-normes-mesures}
 
-\chapter{Liste des notations}
-\printnomenclature
+\inlineinclude{notations}{%
+  \chapter{Liste des notations}
+  \printnomenclature}
 
-\chapter{Références bibliographiques}
-\printbibliography[heading=bibempty]
+\inlineinclude{biblio}{%
+  \chapter{Références bibliographiques}
+  \printbibliography[heading=bibempty]}
 
 \end{document}

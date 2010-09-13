@@ -68,6 +68,39 @@
         }}}
 \fi
 
+% inline include [[2
+%
+\newcommand*\inlineinclude [2] {%
+  % from latex.ltx's \@include
+  \clearpage
+  \if@filesw
+    \immediate\write\@mainaux{\string\@input{#1.aux}}%
+  \fi
+  \@tempswatrue
+  \if@partsw
+    \@tempswafalse
+    \edef\reserved@b{#1}%
+    \@for\reserved@a:=\@partlist\do
+      {\ifx\reserved@a\reserved@b\@tempswatrue\fi}%
+  \fi
+  \if@tempswa
+    \let\@auxout\@partaux
+    \if@filesw
+      \immediate\openout\@partaux #1.aux
+      \immediate\write\@partaux{\relax}%
+    \fi
+    #2% was: \@input@{#1.tex}%
+    \clearpage
+    \@writeckpt{#1}%
+    \if@filesw
+      \immediate\closeout\@partaux
+    \fi
+  \else
+    \deadcycles\z@
+    \@nameuse{cp@#1}%
+  \fi
+  \let\@auxout\@mainaux}
+
 % generic title information [[2
 %
 \author{Manuel \bsc{Pégourié-Gonnard}}
