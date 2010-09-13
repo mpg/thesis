@@ -8,19 +8,18 @@
 
 % booleans for options, default values [[2
 %
-\newif\if@webversion    \@webversionfalse
 \newif\if@showbad       \@showbadtrue
 \newif\if@domark        \@domarktrue
-\newif\if@nomencl       \@nomenclfalse
-\newif\if@showmac       \@showmacfalse
+\newif\if@nomencl       \@nomencltrue
+\newif\if@showmac       \@showmactrue
 
 % option declarations [[2
 %
-\DeclareOption {web}    {\@webversiontrue}
+\DeclareOption {pph}    {\@showbadfalse \@showmacfalse}
 \DeclareOption {nobad}  {\@showbadfalse}
-\DeclareOption {nomark} {\@domarkfalse}
 \DeclareOption {showmac}{\@showmactrue}
-\DeclareOption {nomencl}{\@nomencltrue}
+\DeclareOption {nomark} {\@domarkfalse}
+\DeclareOption {mencl}  {\@nomenclfalse}
 \ProcessOptions \relax
 
 % use Koma with custom encoding and fonts [[2
@@ -46,17 +45,12 @@
   hyperref=true, backref=false]{biblatex}
 \usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
-\if@webversion\else \PassOptionsToPackage{bookmarks=false}{hyperref} \fi
 \usepackage[colorlinks=true]{hyperref}
-
-% hyperref settings (implement 'web' option) [[2
-%
-\if@webversion
-  \hypersetup{urlcolor=blue, linkcolor=red, citecolor=green,
-    bookmarksnumbered=true}
-\else
-  \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
-\fi
+\hypersetup{%
+  urlcolor=black, linkcolor=black, citecolor=black,
+  bookmarksnumbered=true,
+  bookmarks=false,
+  }
 
 % overfullrule (implement 'nobad' option) [[2
 %
