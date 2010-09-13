@@ -1,31 +1,56 @@
-Notations et TeX
-================
-
-Faire un index des notations, par exemple avec nomencl.
-    Still todo wrt nomenclature & macros:
-    - look at \todo and % TODO
-    - print & enjoy :-)
-
-Notations lié au plongement éclatant : faire des macros spécifiques pour i et
-j et leurs bornes ? Distinquer X seul de X, Y ?
-
-Pour les trucs ayant des indices souvent, faire des trucs pour les bornes ?
-
-Traduire tous les noms de macros en anglais.
-
-Utiliser breqn ?
-
-Utiliser \DeclarePairedDelim et revoir les indices des normes (v, 1).
-
-Finir de retaper Siegel.
-
-Remanier la paramétrisation dès que les math sont prêtes.
-
-Document commun
----------------
+Rédaction
+=========
 
 Tout réunir en un document avec notations homogènes et index des notations,
 ainsi qu'avec un squelette de ce qui manque.
+
+Revoir les indices des normes : \abs{...}_{v, 1}, c'est-à-dire préciser la
+type de norme utilisé si la place est archimédienne.
+
+Préciser la portée de tout ce qui dépend au plongement (long terme, dépend de
+décisions mathématiques).
+
+Unifier les indices :
+- i et j en haut (de 1 à m ou m-1)
+- k et l en bas (de 0 à n)
+
+Unifier les notations pour la ou les approximations exceptionnelles (x, y et z
+doivent rester des points quelconques, prendre e par exemple).
+
+Préciser la portée des \eps_i (a priori, pour l'instant locaux à Vojta,
+peut-être qu'il y en a d'autres locaux à Mumford). Ça serait plus clair s'ils
+étaient globaux, non ? Utiliser un système comme les constantes automatiques ?
+Voire directement des constantes automatiques ?
+
+La convention \boldsymbol -> le point, \mathit -> ses coordonnées est loin
+d'être utilisée de façon consistante. On fait quoi ?
+
+Clarifier l'utilisation des (multi)variables X, Y : peut-on les réutiliser
+pour le cas d'un projectif simple (pas produit) ? Ou vaut-il mieux utiliser
+une autre lettre (W est sans doute libre) ? (Ensuite, le dire dans la
+nomenclature.)
+
+Préciser à un moment si on normalise les formes de Chow de sorte que le
+dénominateur dans la construction des formules de dépendance intégrale de
+Rémond soit 1, et si c'est systématique ou pas.
+
+Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
+
+Vojta
+-----
+
+Finir de retaper Siegel.
+- revoir évtl les macros pour \Stairs et Vanish, mais en tout cas préciser la
+  nomenclature
+
+Remanier la paramétrisation dès que les math sont prêtes.
+
+La notation \vb est pourrie et entre plus ou moins en conflit avec celles des
+approximatiosn exceptionnelles. Un peu pareil pour \Mbase. Préciser aussi
+\monome et \mat.
+
+Finir d'enregistrer dans la nomenclature les trucs sans macros (dénominateur,
+etc.)
 
 
 Maths

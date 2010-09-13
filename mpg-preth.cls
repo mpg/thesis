@@ -36,7 +36,7 @@
 %
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
-\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, trace}
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, trace, cmdstring}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic, xcolor}
 \usepackage[noprefix, nocfg, french]{nomencl}
@@ -191,7 +191,7 @@
 % \newcs@start@default <name> <arg. nb.> <2nd default> <repl. text>
 \newcommand*\newc@star@default[1]{%
   \expandafter\newc@star@default@
-  \csname \expandafter\@gobble\string#1 \endcsname#1} %TODO: use \cmdstring
+  \csname \cmdstring#1 \endcsname#1}
 \newcommand*\newc@star@default@[5]{%
   \newcommand*#1[#3][]{#5}%
   \newcommand*#2{\@ifstar{#1[#4]}{#1}}}
@@ -314,11 +314,7 @@
 
 % missing operators [[2
 %
-\newcommand \mmax {{\mathrm{max}}}
-%TODO: why not just \max?
-
-\newcommand \diff {\mathrm d}
-%TODO: why not \DeclareMathOperator?
+\DeclareMathOperator \diff {d}
 \noma{d}{\diff\PH}{Différentielle par rapport à \PH}
 
 \newcommand*\der [1] {\partial_{#1}}
@@ -366,7 +362,8 @@
 
 \noma{M}{\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
 \noma{M}{\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
-%TODO: what is \mahler's #1 meant for?
+\noma{Mv}{\mathler[\place]\PH}{Mesure de \bsc{Mahler} de la forme \PH si
+  $\place$ est archimédienne, norme du $\sup$ sinon}
 
 % local absolute values, norms, distances, ... [[2
 %
@@ -394,11 +391,12 @@
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
 
 \noma{dist}{\distv\PH\PHi}{Distance $\place$-adique projective entre \PH et
-  \PHi (\todo point et variété seulement, ou aussi deux points, ou bien ?)}
+  \PHi}
 
 \newcommand*\mv [2][\place] {M_{#1}(#2)}
-\noma{M}{\mv\PH}{Mesure homogène (\todo laquelle ?) locale en $\place$ de la
-  forme \PH}
+\noma{M}{\mv\PH}{Mesure homogène locale en $\place$ de la
+  forme \PH : c'est la norme du $\sup$ aux places finies et la mesure de
+  \bsc{Philippon} aux places infinies}
 
 % embeding-dependant values [[2
 %
@@ -413,8 +411,7 @@
 \newcommand \coi  {{\mathfrak b}}
 
 \nomg{theta} {\coa} {Les coordonnées de l'origine de $\A$ dans un plongement
-  de \bsc{Mumford} modifié fixé (\todo à quel moment précisément on le fixe,
-  ce plongement ?)}
+  de \bsc{Mumford} modifié fixé}
 \noma{b}     {\coi} {Vecteur dont les composantes sont les inverses de
   composantes de $\coa$ bien choisies}
 
@@ -432,9 +429,7 @@
 
 \noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
   donc aussi la puissance de $\va$ dans laquelle ont travaille.}
-\noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$
-  (\todo pas vrai partout)}
-%TODO: \ch etc
+\noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \newcommand*\vlg [1] {\abs{#1}}
@@ -453,7 +448,6 @@
 % points and coordinates [[2
 %
 \newcommand*\p [1] {{\boldsymbol{#1}}} % point (par opposition à coordonnées)
-%FIXME: not used consistently
 
 \newcommand \point   {x}
 \newcommand \pointi  {y}
@@ -461,8 +455,8 @@
 \newcommand \coord   {{\mathrm{x}}}
 \newcommand \coordi  {{\mathrm{y}}}
 
-\noma{x}{\point  }{Un point non fixé (\todo vraiment ?) de $\va$}
-\noma{y}{\pointi }{Un autre point non fixé (\todo vraiment ?) de $\va$}
+\noma{x}{\point  }{Un point non fixé de $\va$}
+\noma{y}{\pointi }{Un autre point non fixé de $\va$}
 \noma{z}{\pointii}{Encore un autre point non fixé de $\va$}
 
 % height functions [[2
@@ -497,10 +491,10 @@
 \newcommand \epsii  {{\eps_2}}
 \newcommand \epsiii {{\eps_3}}
 
-\nomg{eps0}{\epsz  }{Un epsilon (\todo portée à préciser)}
-\nomg{eps1}{\epsi  }{Un autre epsilon (\todo portée à préciser)}
-\nomg{eps2}{\epsii }{Encore un autre epsilon (\todo portée à préciser)}
-\nomg{eps3}{\epsiii}{Toujours un autre epsilon (\todo portée à préciser)}
+\nomg{eps0}{\epsz  }{Un epsilon}
+\nomg{eps1}{\epsi  }{Un autre epsilon}
+\nomg{eps2}{\epsii }{Encore un autre epsilon}
+\nomg{eps3}{\epsiii}{Toujours un autre epsilon}
 
 % Vojta-specific math [[1
 % -------------------
@@ -531,9 +525,9 @@
 \newcommand \Stairs {\mathcal E}
 \newcommand \Vanish {\@ifstar{\mathfrak{\tilde q}}{\mathfrak q}}
 
-\noma{E}{\Stairs}{Dessous de (multi ?) escalier (\todo paramètres à préciser)}
+\noma{E}{\Stairs}{Cylindre sur un dessous de multiescalier}
 \noma{q1}{\Vanish}{Idéal d'annulation pour la forme auxiliaire plus (ou
-  modulo) l'idéal de la variété ambiante (\todo préciser ?)}
+  modulo) l'idéal de la variété ambiante}
 \noma{q2}{\Vanish*}{Idéal d'annulation pour la forme auxiliaire}
 
 % the product sub-variety considered and its attributes [[2
@@ -554,8 +548,8 @@
 \noma{D}{\vardeg*}{Le degré de $\var*$}
 \noma{H}{\varht  }{La hauteur projective multiplicative de $\var$}
 \noma{H}{\varht* }{La hauteur projective multiplicative de $\var*$}
-\noma{f}{\varfc  }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var$}
-\noma{f}{\varfc* }{La forme de \bsc{Chow} (\todo normalisée ?) de $\var*$}
+\noma{f}{\varfc  }{La forme de \bsc{Chow} de $\var$}
+\noma{f}{\varfc* }{La forme de \bsc{Chow} de $\var*$}
 \noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}
 \noma{I}{\varid* }{L'idéal multihomogène saturé de $\var*$}
 
@@ -574,26 +568,25 @@
 \newcommand \vb {{\mathbf e}}
 \newcommand \Mbase {{\mathcal M}}
 
-\noma{e}{\vb}{Vecteur \todo ??? (de base ?)}
-\noma{M}{\Mbase}{Matrice d'une application dans une base donnée (\todo sûr ?
-  paramètre ?)}
+\noma{e}{\vb}{Vecteur (de base ?)}
+\noma{M}{\Mbase}{Matrice d'une application dans une base donnée}
 
 \newcommand \monome {{\mathfrak m}}
-\noma{m}{\monome}{Un monome (\todo fixé, avec des paramètres ?)}
+\noma{m}{\monome}{Un monome}
 
 \newcommand\mat{M} % matrice
-\noma{M}{\mat}{Une matrice (\todo qui, où, comment, pourquoi ?)}
+\noma{M}{\mat}{Une matrice}
 
 \newcommand\opdef{{\mathcal U}}
-\noma{U}{\opdef}{Ouvert de définition d'un certain morphisme (\todo préciser)}
+\noma{U}{\opdef}{Ouvert de définition d'un certain morphisme}
 
 % Vojta-wide notations without a dedicated macro [[2
 % (btw, isn't this evil?)
 %
-\noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
-  son tiré ou poussé ?)}
-\noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire (\todo ou
-  son tiré ou poussé ?)}
+\noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire vue sur
+  l'image par le plongement éclatant}
+\noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire vue sur la
+  variété}
 \nomg{delta}{\delta}{Un entier suffisament divisible et grand, gouvernant
   l'ordre de grandeur du degré de la forme auxiliaire}
 \noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
@@ -601,8 +594,7 @@
 \nomg{lambda}{\lambda}{Souvent un multimultiindice dans la définition de
   dessous-d'escalier-oïdes}
 
-\noma{r}{r}{La correction de degré d'un tiré ou poussé de la forme auxiliaire
-  (\todo à préciser)}
+\noma{r}{r}{Degré du facteur parasitant la forme auxiliaire}
 
 % unsorted math stuff [[1
 % -------------------
