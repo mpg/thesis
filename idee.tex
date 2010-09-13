@@ -8,6 +8,10 @@
   \subtitle{Ébauche d'introduction avec plan}
 \fi
 
+\ifincluded
+  \chapter{Introduction}
+\fi
+
 \begin{document}
 
 \maketitle
@@ -303,9 +307,17 @@ n'avoir qu'un nombre fini de point rationnels implique de n'avoir qu'un
 nombre fini de points entiers. En fait, les énoncés de type \bsc{Siegel}
 conservent un intérêt essentiellement grâce à la restriction \og ne pas
 contenir de sous-variété abélienne \fg dans \bsc{Mordell-Lang} : si on prend
-le cas extrême d'un variété abélienne, il est clair que (sur un corps de
+le cas extrême d'une variété abélienne, il est clair que (sur un corps de
 nombres pas trop petit) elle possède une infinité de points rationnels, alors
 qu'elle n'a qu'un nombre fini de points entiers.
+
+\ifdefined\publiversion \else
+
+\subsection{Formes linéaires de logarithmes abéliens}
+
+Il faudra que je lise des trucs à ce sujet\dots
+
+\fi
 
 \ifdefined\publicversion
 \section{Références}
@@ -320,11 +332,11 @@ de \bsc{Farhi} \cite{farhith}, ainsi que la preuve originale de \bsc{Faltings}
 
 \else
 
-\section{Formes linéaires de logarithmes abéliens}
-
-Il faudra que je lise des trucs à ce sujet\dots
-
-\section{Approche envisagée}\label{s-approche}
+\ifincluded
+  \expandafter \chapter
+\else
+  \expandafter \section
+\fi            {Approche envisagée} \label{s-approche}
 
 Il s'agit essentiellement d'employer la méthode de \bsc{Vojta}, en s'inspirant
 des travaux de \bsc{Rémond} \cite{remivds,remivg,remdcl}, de \bsc{Farhi}
@@ -333,7 +345,11 @@ les grandes lignes, la preuve consistera donc à établir une inégalité à la
 \bsc{Mumford}, explicite, et à rendre explicites les constantes dans
 l'inégalité à la \bsc{Vojta} obtenue par \bsc{Faltings}.
 
-\subsection{Inégalité de \bsc{Mumford}}
+\ifincluded
+  \expandafter \section
+\else
+  \expandafter \subsection
+\fi            {Inégalité de \bsc{Mumford}}
 
 J'ai pour le moment obtenu une version de cette inégalité dans le cas
 particulier où la sous-variété à approcher est une variété abélienne.
@@ -378,7 +394,11 @@ approximation de $\vai$, de petite hauteur, suffisamment pour contredire
 l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
 $\vai$ ; ce qui établit le théorème~\ref{thm-mumford}.
 
-\subsection{Inégalité de Vojta}
+\ifincluded
+  \expandafter \section
+\else
+  \expandafter \subsection
+\fi            {Inégalité de \bsc{Vojta}}
 
 Le schéma général de cette partie de la preuve est commun à celui adopté dans
 \cite{remivds} et \cite{faldaav} : on suppose pour commencer qu'il existe une

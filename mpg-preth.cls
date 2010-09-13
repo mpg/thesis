@@ -23,9 +23,9 @@
 \DeclareOption {nomencl}{\@nomencltrue}
 \ProcessOptions \relax
 
-% use Koma-article with custom encoding and fonts [[2
+% use Koma with custom encoding and fonts [[2
 %
-\LoadClass[a4paper, 11pt, twoside, BCOR=1cm]{scrartcl}
+\LoadClass[a4paper, twoside, BCOR=1cm, 11pt, titlepage=false]{scrreprt}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[sc, osf]{mathpazo} \linespread{1.05}
