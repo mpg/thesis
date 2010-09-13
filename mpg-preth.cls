@@ -36,7 +36,7 @@
 %
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
-\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, trace, cmdstring}
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic, xcolor}
 \usepackage[noprefix, nocfg, french]{nomencl}
@@ -68,7 +68,7 @@
   \AddToShipoutPicture{%
     \AtPageLowerLeft{%
       \parbox[b]{\paperwidth}{%
-        \centering \itshape \color{black!30}%
+        \centering \itshape \color{dev}%
         \jobname.tex $\le$ \gitinfo{@head}{dt}%
         \par \kern2cm
         }}}
@@ -113,13 +113,18 @@
 
 \newcommand*\printmacro [1] {%
   \if@showmac
-    \texttt{\detokenize{#1}}%
-    \unskip\quad
+    \ted@toks{\relax#1\@nil}%
+    \Substitute*{\the\ted@toks} {}                     {\string}%
+    \Substitute*{\the\ted@toks} {\string\@nil\string}  {}%
+    \Substitute*{\the\ted@toks} {\string\PH}           {\PH{}}%
+    \Substitute*{\the\ted@toks} {\string\PHi}          {\PHi{}}%
+    \makebox[0pt][r]{%
+      \color{dev}\ttfamily \the\ted@toks \space}%
   \fi}
 
 \newcommand*\nom@type [3] {%
   \newcommand*#1[3]{%
-    \nomenclature[#2-##1--]{$##2$}{\printmacro{##2}##3}}%
+    \nomenclature[#2-##1--]{\printmacro{##2}$##2$}{##3}}%
   \@namedef{nom@group@@#2}{#3}}
 
 \renewcommand*\nomgroup [1] {%
@@ -133,10 +138,10 @@
 
 % placeholders for descriptions
 \newcommand*\nom@ph [2] {%
-  \newcommand#1{\ensuremath{\text{\color{gray}$#2$}}\xspace}}
+  \newcommand#1{\ensuremath{\text{$#2$}}\xspace}}
 
-\nom@ph \PH   \bullet
-\nom@ph \PHi  \star
+\nom@ph \PH   \star
+\nom@ph \PHi  \bullet
 
 % remove \chapter and \preamble from original definition
 \renewenvironment{thenomenclature}{%
@@ -159,9 +164,11 @@
 
 % marginal notes and todos [[2
 %
+\colorlet{dev}{black!50}
+
 \newcommand*\marginnote [1] {\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand*\worknote   [1] {\marginnote{%
-    \leavevmode\color{black!50}\itshape #1}}
+    \leavevmode\color{dev}\itshape #1}}
 
 \newcommand \todo  {\worknote{\textsc{todo}}}
 \newcommand \todom {\tag{\textsc{todo}}}
