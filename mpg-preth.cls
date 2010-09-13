@@ -74,25 +74,6 @@
         }}}
 \fi
 
-% magic include [[2
-%
-\newif\ifstandalone \standalonetrue
-\newif\ifincluded   \includedfalse
-
-\newcommand \setupmagicinclude {%
-  \standalonefalse
-  \includedtrue
-  % neutralize a few commands
-  \renewcommand*\documentclass [2][] {}%
-  \renewcommand \document {%
-    \let \enddocument \relax}%
-  \let \title    \@gobble
-  \let \subtitle \@gobble
-  }
-
-\newcommand*\maybeprintbibliography {%
-  \ifstandalone \expandafter\printbibliography \fi}
-
 % generic title information [[2
 %
 \author{Manuel \bsc{Pégourié-Gonnard}}

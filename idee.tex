@@ -1,32 +1,4 @@
-\documentclass{mpg-preth}
-
-\title{Approximation diophantienne\\dans les variétés abéliennes}
-\ifdefined\publicversion
-  \subtitle{}
-  \date{16 avril 2009}
-\else
-  \subtitle{Ébauche d'introduction avec plan}
-\fi
-
-\ifincluded
-  \chapter{Introduction}
-\fi
-
-\begin{document}
-
-\maketitle
-
-\ifdefined\publicversion
-\begin{abstract}
-  Ce texte s'adresse à un lecteur familier avec au moins quelques notions
-  d'approximation diophantienne. Il vise à donner un aperçu relativement
-  précis, mais lisible, de mon sujet de thèse et de ses relations avec
-  d'autres résultats en approximation diophantienne.
-\end{abstract}
-\tableofcontents
-\fi
-
-\section{L'énoncé du problème}
+\chapter{Introduction}
 
 Soit $\va$ une variété abélienne, de dimension $\genre$, définie sur un corps
 de nombres $\cdn$. On suppose selon ses goûts que $\va$ est
@@ -146,7 +118,6 @@ travail consiste donc d'une part à rendre effective cette inégalité de
 \bsc{Vojta}, et à lui adjoindre une inégalité de \bsc{Mumford}, elle aussi
 effective.
 
-\ifdefined\publicversion \clearpage \fi
 \section{Relation avec d'autres énoncés}
 
 \subsection{Le théorème de Roth}
@@ -311,32 +282,11 @@ le cas extrême d'une variété abélienne, il est clair que (sur un corps de
 nombres pas trop petit) elle possède une infinité de points rationnels, alors
 qu'elle n'a qu'un nombre fini de points entiers.
 
-\ifdefined\publiversion \else
-
 \subsection{Formes linéaires de logarithmes abéliens}
 
 Il faudra que je lise des trucs à ce sujet\dots
 
-\fi
-
-\ifdefined\publicversion
-\section{Références}
-
-La preuve utilise la méthode de \bsc{Vojta}. Dans mon travail, je m'appuie
-principalement sur les travaux de \bsc{Rémond} \cite{remivds,remivg,remdcl},
-de \bsc{Farhi} \cite{farhith}, ainsi que la preuve originale de \bsc{Faltings}
-\cite{faldaav}. Le formalisme majoritairement utilisé est celui exposé dans
-\cite{phidg, remgdmp}.
-
-\printbibliography[heading=bibempty]
-
-\else
-
-\ifincluded
-  \expandafter \chapter
-\else
-  \expandafter \section
-\fi            {Approche envisagée} \label{s-approche}
+\chapter{Approche envisagée}\label{s-approche}
 
 Il s'agit essentiellement d'employer la méthode de \bsc{Vojta}, en s'inspirant
 des travaux de \bsc{Rémond} \cite{remivds,remivg,remdcl}, de \bsc{Farhi}
@@ -345,11 +295,7 @@ les grandes lignes, la preuve consistera donc à établir une inégalité à la
 \bsc{Mumford}, explicite, et à rendre explicites les constantes dans
 l'inégalité à la \bsc{Vojta} obtenue par \bsc{Faltings}.
 
-\ifincluded
-  \expandafter \section
-\else
-  \expandafter \subsection
-\fi            {Inégalité de \bsc{Mumford}}
+\section{Inégalité de \bsc{Mumford}}
 
 J'ai pour le moment obtenu une version de cette inégalité dans le cas
 particulier où la sous-variété à approcher est une variété abélienne.
@@ -394,11 +340,7 @@ approximation de $\vai$, de petite hauteur, suffisamment pour contredire
 l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
 $\vai$ ; ce qui établit le théorème~\ref{thm-mumford}.
 
-\ifincluded
-  \expandafter \section
-\else
-  \expandafter \subsection
-\fi            {Inégalité de \bsc{Vojta}}
+\section {Inégalité de \bsc{Vojta}}
 
 Le schéma général de cette partie de la preuve est commun à celui adopté dans
 \cite{remivds} et \cite{faldaav} : on suppose pour commencer qu'il existe une
@@ -522,8 +464,4 @@ explications que j'ai données essentiellement dans l'ordre inverse de leur
 dépendance logique, et à vérifier que les constantes s'ajustent bien entre
 elles en raccordant les différentes étapes, et notamment la récurrence\dots
 
-\sloppy
-\maybeprintbibliography
-\fi
-
-\end{document}
+\endinput
