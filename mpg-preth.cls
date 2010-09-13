@@ -201,16 +201,22 @@
 %
 \newtheorem {thm}        {Théorème}
 \newtheorem {prop} [thm] {Proposition}
-\newtheorem {lem}  [thm]  {Lemme}
+\newtheorem {lem}  [thm] {Lemme}
 \newtheorem {coro} [thm] {Corollaire}
 \newtheorem {fact} [thm] {Fait}
 \newtheorem {scho} [thm] {Scholie}
-\newtheorem*{flemme}     {À démontrer plus tard}
-  \theoremstyle{definition}
+
+\theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
-  \theoremstyle{remark}
+
+\theoremstyle{remark}
 \newtheorem*{rem}        {Remarque}
 \newtheorem*{Rem}        {Remarque}
+
+% numbering [[2
+%
+\numberwithin{equation}{section}
+\numberwithin{thm}{chapter}
 
 % shortcut macros [[2
 %
