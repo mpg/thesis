@@ -74,6 +74,20 @@
         }}}
 \fi
 
+% magic include [[2
+%
+\newif\ifstandalone \standalonetrue
+\newif\ifincluded   \includedfalse
+
+\newcommand \setupmagicinclude {%
+  \standalonefalse
+  \includedtrue
+  % neutralize a few commands
+  \renewcommand*\documentclass [2][] {}
+  \renewcommand \document {%
+    \let \enddocument \relax}
+  \renewcommand \maketitle {}}
+
 % generic title information [[2
 %
 \author{Manuel \bsc{Pégourié-Gonnard}}
