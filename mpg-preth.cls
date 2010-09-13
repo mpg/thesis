@@ -106,11 +106,15 @@
   \makenomenclature
 \fi
 
+\newcommand*\printmacro [1] {%
+  \if@showmac
+    \texttt{\detokenize{#1}}%
+    \unskip\quad
+  \fi}
+
 \newcommand*\nom@type [3] {%
   \newcommand*#1[3]{%
-    \nomenclature[#2-##1--]{$##2$}{%
-      \if@showmac \texttt{\detokenize{##2}}\unskip\quad \fi
-      ##3}}%
+    \nomenclature[#2-##1--]{$##2$}{\printmacro{##2}##3}}%
   \@namedef{nom@group@@#2}{#3}}
 
 \renewcommand*\nomgroup [1] {%
@@ -357,8 +361,8 @@
 \newcommand \genre {g}
 
 \noma{A} {\va}     {La variété abélienne ambiante}
-\noma{B} {\vai}    {Une sous-variété abélienne fixée de $\A$}
-\nomn{0} {\oa}     {L'origine de $\A$}
+\noma{B} {\vai}    {Une sous-variété abélienne fixée de $\va$}
+\nomn{0} {\oa}     {L'origine de $\va$}
 \noma{g} {\genre}  {La dimension de $\va$}
 
 \newcommand*\MW[2][\va]{MW_{\!#1}(#2)}
@@ -374,9 +378,9 @@
 \newcommand*\mespph  [1]   {\mathrm{M}(#1)}
 \newcommand*\mahler  [2][] {\mathcal M_{#1}(#2)}
 
-\noma{M}{\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
-\noma{M}{\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
-\noma{Mv}{\mathler[\place]\PH}{Mesure de \bsc{Mahler} de la forme \PH si
+\noma{M} {\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
+\noma{M} {\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
+\noma{Mv}{\mahler[\place]\PH}{Mesure de \bsc{Mahler} de la forme \PH si
   $\place$ est archimédienne, norme du $\sup$ sinon}
 
 % local absolute values, norms, distances, ... [[2
@@ -424,7 +428,7 @@
 \newcommand \coa {\theta}
 \newcommand \coi  {{\mathfrak b}}
 
-\nomg{theta} {\coa} {Les coordonnées de l'origine de $\A$ dans un plongement
+\nomg{theta} {\coa} {Les coordonnées de l'origine de $\va$ dans un plongement
   de \bsc{Mumford} modifié fixé}
 \noma{b}     {\coi} {Vecteur dont les composantes sont les inverses de
   composantes de $\coa$ bien choisies}
