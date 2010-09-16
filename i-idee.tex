@@ -1,87 +1,54 @@
 \chapter{Introduction}
 
-\section{Énoncé du problème}
+\section{Aperçu du problème}
 
-Soit $\va$ une variété abélienne, de dimension $\genre$, définie sur un corps
-de nombres $\cdn$. On suppose selon ses goûts que $\va$ est
-munie d'un fibré ample et symétrique $\fibre$, ou que $\va$ est plongée une
-fois pour toute dans un espace projectif $\proj{n}$ par un plongement associé
-à un tel fibré.
+Soit $\va$ une variété abélienne définie sur un corps de nombres~$\cdn$. Une
+fois $\va$ munie d'un fibré ample et symétrique $\fibre$ et plongée dans un
+espace projectif $\projd$ par un tel fibré, on dispose de deux notions héritées
+de l'espace projectif ambiant : une hauteur, et (pour tout place $\place$ de
+$\cdn$) une distance $\place$-adique (définie précisément plus bas) entre un
+point et une variété.
 
-On dispose alors sur $\va$ de deux notions intéressantes, héritées de
-l'espace projectif ambiant : une hauteur, et (pour tout place $\place$ de
-$\cdn$) une distance $\place$-adique. Je ne dirai pas grand-chose de la
-hauteur, avec laquelle je suppose le lecteur familier. Parlons un peu de la
-notion de distance, et de quelques-une de ses propriétés.
+Dans ces conditions, \bsc{Faltings} a démontré le théorème d'approximation
+suivant \cite[\eng{Theorem~II}]{faldaav}.
 
-La distance que j'utilise est celle définie dans \cite{phidg}, qui se
-mesure entre un point (fermé) et une sous-variété (pas forcément réduite ni
-irréductible, c'est-à-dire un sous-schéma fermé) de $\proj{n}$. Dans le cas
-où la sous-variété en question est une hypersurface $H$, définie par une
-équation $F$, la distance entre un point $\point$ de coordonnées $\coord$ et
-$V$ est définie comme
-\[
-  \distv{\point}{H} =
-  \frac {\av{F(\coord)}} {\nv{F}\nv{\coord}}
-  \pmm.
-\]
-Intuitivement, cette quantité traduit bien la notion de distance, et
-notamment s'annule si et seulement si $\point$ est sur $H$. La théorie de
-l'élimination permet d'étendre cette idée au cas général.
-
-On peut aussi définir une notion \og naïve \fg de distance entre les points de
-l'espace projectif, par la formule
-\[
-  \distv{\point}{\pointi} =
-  \frac {\nv{\coord \wedge \coordi}} {\nv\coord \nv\coordi}
-  \pmm.
-\]
-Pour peu qu'on ai choisi une bonne norme aux places archimédiennes, ceci
-définit une distance au sens usuel \cite{jadotth}. On peut alors en déduire une
-notion de distance entre un point $\point$ et une variété $V$, en prenant le
-minimum de la distance entre $\point$ et les points de $V(\C_\place)$. Ceci
-définit une notion différente de la précédente, mais les deux sont comparables.
-
-J'attire l'attention du lecteur sur le fait que cette notion locale,
-projective, de distance n'a \lat{a priori} rien à voir avec la notion de
-distance dans l'espace de \bsc{Mordell}-\bsc{Weil}, qui est globale et repose
-sur l'existence d'une variété abélienne ambiante. Maintenant que nous sommes
-familiers avec les objets en jeu, énonçons le théorème~2 de
-\cite{faldaav}.
-
-\begin{thm}
-  Soit $V$ une sous-variété quelconque d'une variété abélienne $\va$ plongée
-  comme précédemment, $\place$ une place de $\cdn$, et $\eps > 0$. Il n'existe
-  qu'un nombre fini de points $\point$ dans $\va(\cdn)$ tels que
-  \[
-    0 < \distv{\point}{V} \le \haut{\point}^{-\eps} \pmm,
-    \tag{\textsc{ha}} \label{e-approx}
-  \]
+\begin{thm}[\bsc{Faltings}] \label{t-fal2}
+  Soit $V$ une sous-variété quelconque de $\va$, $\place$ une place de $\cdn$,
+  et $\eps > 0$. Il n'existe qu'un nombre fini de points $\point$ dans
+  $\va(\cdn)$ tels que
+  \begin{equation}
+    0 < \distv{\point}{V} \le \haut{\point}^{-\eps}
+    \pmm,
+    \label{e-has}
+  \end{equation}
   où $\Haut$ désigne la hauteur de \bsc{Weil} multiplicative.
 \end{thm}
 
 Comme de nombreux énoncés de géométrie diophantiennes, ce résultat n'est
 malheureusement pas effectif au sens suivant : on ne voit à l'heure actuelle
 pas de moyen de borner la hauteur des points satisfaisant à l'hypothèse
-d'approximation \eqref{e-approx}. Ainsi que le fait remarquer \bsc{Faltings}
+d'approximation \eqref{e-has}. Ainsi que le fait remarquer \bsc{Faltings}
 dans l'introduction de son article : \og \eng{As far as I can see, everything
   here is ineffective beyond hope.} \fg
 
 Il semble néanmoins raisonnable de vouloir majorer le nombre de points
-rationnels satisfaisant à \eqref{e-approx} (que nous appellerons à l'occasion
+rationnels satisfaisant à \eqref{e-has} (que nous appellerons à l'occasion
 les approximations exceptionnelles), ou au moins de donner quelques
 informations quantitatives explicites à leur sujet. C'est à cette question que
-ma thèse vise à répondre.
+nous nous intéressons ici.
+
+\medskip
 
 Plus précisément, ce type d'énoncé quantitatif est généralement obtenu en
-combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford}.
-Il est peut-être utile de rappeler ici brièvement en quoi consistent ces deux
-inégalités. Toutes deux s'énoncent dans l'espace de \bsc{Mordell-Weil} de la
-variété, muni de la forme quadratique donnée par la hauteur normalisée de
-\bsc{Néron-Tate}. Je les énonce ici sous une forme générique avec une
-condition (C) qui peut être par exemple l'hypothèse d'approximation
-\eqref{e-approx} ci-dessus, ou une autre condition pour l'ex-conjecture de
-\bsc{Mordell-Lang}.
+combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford},
+dont nous rappelons brièvement des énoncés possibles, formulés de façon
+générique avec une condition (C) qui peut être par exemple l'hypothèse
+d'approximation \eqref{e-has} ci-dessus, ou une autre condition pour
+l'ex-conjecture de \bsc{Mordell-Lang}.
+
+Les deux inégalités s'énoncent dans l'espace de \bsc{Mordell-Weil} de $\va$
+muni de la forme quadratique donnée par la hauteur normalisée de
+\bsc{Néron-Tate}.
 
 L'inégalité de \bsc{Vojta} affirme qu'il n'existe pas de suite $x_1, \dots,
 x_m$ de points satisfaisant simultanément à la condition (C) et aux trois
@@ -96,17 +63,18 @@ appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
 conditions \ref{i-grand} et \ref{i-proche}. Il est clair que l'espace privé
 d'une boule de rayon $\sqrt{\alpha}$ peut être recouvert par un nombre fini de
 tels cônes tronqués dès qu'il est de dimension finie (ce qui est la cas si on
-se place sur un corps de nombre. L'inégalité de \bsc{Vojta} assurant qu'il n'y
-a qu'un nombre fini de points sous la condition (C) dans chaque cône, permet e
-conclure à la finitude.
+se place sur un corps de nombres). L'inégalité de \bsc{Vojta} assure qu'il
+n'y a qu'un nombre fini de points sous la condition (C) dans chaque cône,
+et permet donc de conclure à la finitude de l'ensemble des points satisfaisant
+(C).
 
 L'inégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle dit
-qu'il n'existe pas de paire de points $x$ et $y$ satisfaisant à (C) et aux
-conditions suivantes :
+qu'il n'existe pas de suite $x_1, \dots, x_m$ de points satisfaisant
+simultanément à la condition (C) et aux trois conditions suivantes :
 \begin{enumthm}
-  \item $\hautn{y} > \hautn{x_1} > \alpha$ ;
-  \item $\angleabs x y < \beta$ ;
-  \item $\hautn{y} < \delta \hautn{x}$.
+  \item $\hautn{x_1} > \alpha'$ ;
+  \item $\angleabs{x_i}{x_j} < \beta'$ pour tous $i$ et $j$ ;
+  \item $\abs{ \hautn{y} - \hautn{x} } < \delta$.
 \end{enumthm}
 Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
 constantes apparaissant dans ces deux inégalités soient effectives, elle
@@ -115,44 +83,44 @@ total de point (modulo un résultat, assez indépendant, de décompte des «
 petits » points).
 
 La démonstration de \bsc{Faltings} consiste précisément à démontrer une
-inégalité de \bsc{Vojta}, non effective, qui suffit à assurer la finitude. Mon
-travail consiste donc d'une part à rendre effective cette inégalité de
-\bsc{Vojta}, et à lui adjoindre une inégalité de \bsc{Mumford}, elle aussi
-effective.
+inégalité de \bsc{Vojta}, non effective, qui suffit à assurer la finitude.
+L'objectif consiste donc à rendre effective cette inégalité de \bsc{Vojta} et
+à lui adjoindre une inégalité de \bsc{Mumford}, elle aussi effective.
 
 \section{Relation avec d'autres énoncés}
 
 \subsection{Le théorème de Roth}
 
-Le théorème de \bsc{Roth}, dans sa version étendue aux places quelconques par
-\bsc{Ridout}, peut s'énoncer de la façon suivante.
+Le théorème de \bsc{Roth} \cite{daroraan}, dans sa version étendue aux places
+quelconques par \bsc{Ridout} \cite{ripgtsrt}, peut s'énoncer de la façon
+suivante.
 
-\begin{thm}
-  Soit $\alpha \in \Qbar$ un algébrique. Soient par ailleurs $\cdn$ un corps de
+\begin{thm}[\bsc{Roth}]
+  Soit $\xi \in \Qbar$ un algébrique. Soient par ailleurs $\cdn$ un corps de
   nombres et $\place$ une place de $\cdn$, étendue de façon arbitraire à
-  $\cdn(\alpha)$. Pour tout $\eps > 0$, il n'existe qu'un nombre fini de
+  $\cdn(\xi)$. Pour tout $\eps > 0$, il n'existe qu'un nombre fini de
   points $x \in \cdn$ tels que
   \[
-    \av{x - \alpha} < H(x)^{-2-\eps} \pmm.
+    \av{x - \xi} < H(x)^{-2-\eps} \pmm.
   \]
 \end{thm}
 
 Le lien avec le théorème précédent est clair : on passe de l'un à l'autre en
-remplaçant $\alpha$ par $V$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
-distance étant bien sûr représentée par $\av{x - \alpha}$. Le théorème~2 de
-\cite{faldaav} est donc aux variétés abéliennes ce que le théorème de
-\bsc{Roth} est à la droite.
+remplaçant $\xi$ par $V$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
+distance locale étant bien sûr représentée par $\av{x - \xi}$. Le
+théorème~2 de \cite{faldaav} est donc aux variétés abéliennes ce que le
+théorème de \bsc{Roth} est à la droite.
 
 Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établir
 des versions quantitatives du théorème. Plus précisément, la démonstration de
 \bsc{Roth} consiste en un fait qu'on peut, anachroniquement, appeler une
-inégalité à la \bsc{Vojta} : aucune suite $x_1, \dots, x_m$
-d'approximations exceptionnelles n'est telle que $\haut{x_1} > c_1$ et pour tout $i >
-1$, $\haut{x_i} > c_2 \cdot \haut{x_{i-1}}$.
+inégalité à la \bsc{Vojta} : aucune suite $x_1, \dots, x_m$ d'approximations
+exceptionnelles n'est telle que $\haut{x_1} > c_1$ et
+$\haut{x_i} > c_2 \cdot \haut{x_{i-1}}$ pour tout $i > 1$.
 
 Pour établir une version quantitative du théorème de \bsc{Roth}, il a fallu
 expliciter une valeur admissible des constantes $c_1$ et $c_2$, d'une part, et
-d'autre part lui adjoindre un inégalité que j'appellerai encore
+d'autre part lui adjoindre une inégalité que j'appellerai encore
 anachroniquement à la \bsc{Mumford}, disant qu'il existe une constante $c_3$
 telle que deux approximations exceptionnelles $x$ et $y$, de hauteur assez
 grande, satisfont toujours $H(x) > c_3 H(y)$. Dans le cas du théorème de
@@ -163,16 +131,16 @@ approximations exceptionnelles de hauteur assez grande.
 Rappelons aussi que le théorème de \bsc{Roth} a été l'aboutissement d'une
 longue série de théorèmes d'approximations moins précis, en ce sens que
 l'exposant optimal $2+\eps$ n'était pas atteint. Ce série a débuté avec le
-théorème de \bsc{Liouville}. Dans le contexte de ma thèse, l'équivalent de
-l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
+théorème de \bsc{Liouville}. Dans le cadre des variétés abéliennes,
+l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
 
-\begin{thm}
+\begin{prop}
   Soient $V$ une variété projective de degré $d$, et $x \in \proj{n}(\Qbar)$
   un point algébrique. Si $x$ n'appartient pas à $V$, on a
   \[
     \distv{x}{V} \ge c(n, d) \haut{V}^{-1} \cdot \haut{x}^{-d} \pmm.
   \]
-\end{thm}
+\end{prop}
 
 Dans le cas où $V$ est une hypersurface, c'est une application directe du
 théorème du produit (et $c(n, d) = 1$), et on peut se ramener à ce cas en
@@ -183,9 +151,9 @@ de disposer d'un exposant meilleur que $d$.
 \subsection{L'ex-conjecture de Mordell-Lang}
 
 Dès 1922, \bsc{Mordell} avait conjecturé l'énoncé suivant, aujourd'hui
-théorème de \bsc{Faltings}.
+un théorème \cite{faldaav}.
 
-\begin{thm}
+\begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Mordell}]
   Soit $C$ une courbe projective lisse de genre $g \ge 2$, définie sur un
   corps de nombre $\cdn$. L'ensemble $C(\cdn)$ des points rationnels de $C$
   est fini.
@@ -206,18 +174,18 @@ diophantienne, en introduisant ce qu'on appelle maintenant l'inégalité de
 prouver une conjecture de \bsc{Lang}, généralisant celle de \bsc{Mordell}, et
 qui s'énonce ainsi.
 
-\begin{thm}
+\begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Lang}] \label{t-fal1}
   Soit $V$ une sous-variété d'une variété abélienne $\va$, définie sur un
   corps de nombres $\cdn$. Si $V$ ne contient pas de translaté de sous-variété
   abélienne stricte, alors $V(\cdn)$ est fini.
 \end{thm}
 
 Ceci généralise la conjecture de \bsc{Mordell}, qui correspond au cas où $V$
-est une courbe et $\va$ sa jacobienne. Ce résultat est proche du sujet de ma
-thèse dans le sens suivant : il consiste à montrer la finitude des points
-rationnels \emph{sur} une sous-variété de variété abélienne, alors que je
-cherche à contrôler les points \emph{proches} d'une telle sous-variété. Il est
-d'ailleurs significatif que \bsc{Faltings} a prouvé ces deux théorèmes (la
+est une courbe et $\va$ sa jacobienne. Ce résultat est proche de notre problème
+d'approximation dans le sens suivant : il consiste à montrer la finitude des
+points rationnels \emph{sur} une sous-variété de variété abélienne, alors que
+nous nous intéressons aux points \emph{proches} d'une telle sous-variété. Il
+est d'ailleurs significatif que \bsc{Faltings} a prouvé ces deux théorèmes (la
 conjecture de \bsc{Mordell-Lang} et celui que je cherche à rendre quantitatif)
 dans le même article : une bonne partie des outils sont commun aux deux
 preuves.
@@ -226,18 +194,20 @@ Une différence notable entre les deux situations est toutefois la suivante :
 pour étudier les points qui sont proches d'une sous-variété, sans appartenir
 à cette variété, on n'a pas besoin de supposer que celle-ci ne contient pas de
 translaté de sous-groupe. En fait, le résultat reste valable même pour les
-approxitaions d'une sous-variété abélienne.
+approximations d'une sous-variété abélienne.
 
-Des versions quantitatives du théorème 1 de \cite{faldaav} ont été établies
-ensuite. Signalons la relecture de la preuve par \bsc{Bombieri}, qui simplifie
-certains arguments en les rapprochant de l'effectivité, et le travail de
-\bsc{De Diego} sur les familles de courbes. En 1999, \bsc{Rémond} prouve une
-version totalement effective de l'inégalité de \bsc{Vojta}, puis lui adjoint
-une inégalité à la \bsc{Mumford}, établissant ainsi une version quantitative
-explicite de l'ex-conjecture de \bsc{Mordel-Lang}. Enfin, le chapitre~3 de la
-thèse de \bsc{Farhi} \cite{farhith} donne une version quantitative de
-\bsc{Mordell}, démontrée dans un formalisme plus élémentaire que celui de
-\bsc{Rémond}.
+Des versions quantitatives du théorème~\ref{t-fal1} ont été établies ensuite.
+Signalons la relecture de la preuve par \bsc{Bombieri}, qui simplifie certains
+arguments en les rapprochant de l'effectivité, et le travail de \bsc{De Diego}
+sur les familles de courbes. \bsc{Rémond} obtient, dans la lignée de travaux de
+\bsc{Faltings} et \bsc{Bombieri}, une version totalement effective de
+l'inégalité de \bsc{Vojta} \cite{remivds}, puis lui adjoint une inégalité à la
+\bsc{Mumford}, établissant ainsi une version quantitative \cite{remdcl}
+explicite de l'ex-conjecture de \bsc{Mordel-Lang}. Enfin, \bsc{Farhi}
+\cite[chapitre~3]{farhith} donne dans sa thèse une version quantitative de
+l'ex-conjecture de \bsc{Mordell}, démontrée dans un formalisme plus élémentaire
+que celui de \bsc{Rémond}, et légèrement plus précise que son application
+directe au cas des courbes.
 
 \subsection{Le théorème de Siegel et une ex-conjecture de Lang}
 \label{s-siegel}
@@ -254,8 +224,8 @@ théorème original s'en déduit là aussi en considérant la courbe dans sa
 jacobienne (à cette différence qu'ici la courbe peut être sa jacobienne, dans
 le cas $g=1$).
 
-Cette conjecture de \bsc{Lang} est en fait un corollaire du théorème~2 de
-\cite{faldaav} : on remarque que la hauteur (relative à $E$) d'un point
+Cette conjecture de \bsc{Lang} est en fait un corollaire du
+théorème~\ref{t-fal2} : on remarque que la hauteur (relative à $E$) d'un point
 entier $x$ est essentiellement donné par le produit des inverse des distances
 $v$-adiques de $x$ à $E$ quand $v$ parcourt les places archimédiennes de
 $\cdn$. Or ces distances sont minorées par $\haut{x}^{-\eps}$ pour tout
@@ -286,7 +256,7 @@ qu'elle n'a qu'un nombre fini de points entiers.
 
 \subsection{Formes linéaires de logarithmes abéliens}
 
-Il faudra que je lise des trucs à ce sujet\dots
+\todo [\dots]
 
 \section{Stratégie générale}
 
@@ -299,14 +269,14 @@ l'inégalité à la \bsc{Vojta} obtenue par \bsc{Faltings}.
 
 \subsection{Inégalité de \bsc{Mumford}}
 
-J'ai pour le moment obtenu une version de cette inégalité dans le cas
-particulier où la sous-variété à approcher est une variété abélienne.
-L'énoncé obtenu est la suivant.
+On montre une version de cette inégalité dans le cas particulier où la
+sous-variété à approcher est une variété abélienne.  L'énoncé obtenu est le
+suivant.
 
 \begin{thm} \label{thm-mumford}
   Soient $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
   deux points de $\va(\Qbar)$ satisfaisant à la condition d'approximation
-  \eqref{e-approx} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
+  \eqref{e-has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
   telles que si
   \begin{enumthm}
     \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
@@ -318,7 +288,7 @@ L'énoncé obtenu est la suivant.
 
 Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalement explicitées
 en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
-\eqref{e-approx}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
+\eqref{e-has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
 du plongement ambiant.
 
 L'approche adoptée la suivante : étant donné deux points satisfaisant aux
@@ -347,7 +317,7 @@ $\vai$ ; ce qui établit le théorème~\ref{thm-mumford}.
 Le schéma général de cette partie de la preuve est commun à celui adopté dans
 \cite{remivds} et \cite{faldaav} : on suppose pour commencer qu'il existe une
 suite d'approximations $x_1, \ldots, x_m$ satisfaisant simultanément à
-\eqref{e-approx} et aux trois conditions suivantes :
+\eqref{e-has} et aux trois conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha$ ; \label{iv-grand}
   \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{iv-angle}
@@ -414,8 +384,8 @@ d'un point à $V$ est majorée par sa distance à $E$.
 Pour construire cette forme auxiliaire, on ne travaillera en fait pas sur $Y$
 directement, mais sur son image par un certain plongement. Ce dernier fait
 intervenir les $a_i$ définis ci-dessus, et joue dans la construction un rôle
-semblable au fibré $\mathcal L(\eps, s)$ de \cite{faldaav} ou $\mathcal Q_{eps,
-  a, d}$ de \cite{remivds}.
+semblable au fibré $\mathcal L(\eps, s)$ de \cite{faldaav} ou $\mathcal
+Q_{\eps, a, d}$ de \cite{remivds}.
 \begin{align*}
   \phi \colon Y & \to \va^{2m-1} \\
   (y_1, \dots, y_m)  & \mapsto
@@ -447,7 +417,7 @@ $\place$ exploitant le fait que $x$ est $\place$-adiquement proche de $E$,  et
 de conclure à une contradiction par la formule du produit à moins de $F(x)$ ne
 soit nul. Dans la phrase précédente, il faut en fait remplacer $F$ par ses
 dérivées jusqu'à un ordre convenable. C'est en tous cas l'hypothèse
-d'approximation \eqref{e-approx} qui établit la contrainte nécessaire en liant
+d'approximation \eqref{e-has} qui établit la contrainte nécessaire en liant
 $\distv{x}{E}$ à $H(x)$, donc indirectement $\av{F(x)}$ à $H(F(x))$.
 
 Pour estimer la norme locale de $F(x)$ en $\place$, la difficulté est que $F$

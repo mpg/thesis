@@ -36,6 +36,10 @@ Rémond soit 1, et si c'est systématique ou pas.
 
 Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 
+Revoir le source pour utiliser les macros quand elles existent (genre H(x) ->
+\Haut\point).
+
+Ajouter des références biblio pour toute l'intro.
 Vojta
 -----
 

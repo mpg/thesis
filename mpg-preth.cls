@@ -45,12 +45,8 @@
   hyperref=true, backref=false]{biblatex}
 \usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
-\usepackage[colorlinks=true]{hyperref}
-\hypersetup{%
-  urlcolor=black, linkcolor=black, citecolor=black,
-  bookmarksnumbered=true,
-  bookmarks=false,
-  }
+\usepackage[colorlinks=true, bookmarks=false]{hyperref}
+\hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
 
 % overfullrule (implement 'nobad' option) [[2
 %
@@ -63,7 +59,7 @@
     \AtPageLowerLeft{%
       \parbox[b]{\paperwidth}{%
         \centering \itshape \color{dev}%
-        \jobname.tex $\le$ \gitinfo{@head}{dt}%
+        head: \gitinfo{@head}{dt}%
         \par \kern2cm
         }}}
 \fi
@@ -100,6 +96,8 @@
     \@nameuse{cp@#1}%
   \fi
   \let\@auxout\@mainaux}
+
+\newcommand*\noincludeonly [1] {}
 
 % generic title information [[2
 %
