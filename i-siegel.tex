@@ -116,25 +116,25 @@ $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
 l'énoncé de la proposition~\ref{build-aux}, on demandera à $\delta$ d'être
 assez grand, et à $\epsi$ d'être majoré par une certaine expression dépendant
 de $\epsz$ (voir fin de la section~\ref{sec-comp-dim}). Considérons par
-ailleurs une famille d'entiers $a_1 \ge \dots \ge a_m = 1$ et un réel
-$\epsiii$ satisfaisant à
+ailleurs une famille d'entiers $\wt[1] \ge \dots \ge \wt[\puiss] = 1$ et un
+réel $\epsiii$ satisfaisant à
 \[
-  \sum_{\fct=1}^\puiss (a_\fct^2 + 1) < a_1^2 (1 + \epsiii)
+  \sum_{\fct=1}^\puiss (\wt*^2 + 1) < \wt[1]^2 (1 + \epsiii)
   \pmm.
 \]
 
-On fera plus tard une hypothèse sur la famille $a$ de sorte qu'il soit
+On fera plus tard une hypothèse sur la famille $\wt$ de sorte qu'il soit
 possible de choisir $\epsiii$ plutôt petit, mais cette information n'est pas
 utile pour le moment.
 
 On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
 \[
-  \Stairs_a^\delta = \left\{
+  \stairs = \left\{
     (\lambda\pexp1, \dots, \lambda\pexp\puiss) \in \N^{m(n+1)}
     \text{ tels que }
-    \frac {\lambda\pexp1[0]} {a_1^2}
+    \frac {\lambda\pexp1[0]} {\wt[1]^2}
     + \dots +
-    \frac {\lambda\pexp{\puiss-1}[0]} {a_{\puiss-1}^2}
+    \frac {\lambda\pexp{\puiss-1}[0]} {\wt[\puiss-1]^2}
     \frac {\lambda\pexp\puiss[0]} {\puiss-1}
     \le \epsi \delta
     \right\}
@@ -142,19 +142,19 @@ On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
 \]
 auquel on associe l'idéal d'annulation
 \[
-  \Vanish*_a^\delta = \left\{
+  \vanish = \left\{
     \sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda
     \in \cdn [\cmmh]
     \text{ tels que }
-    \lambda \in \Stairs_a^\delta
+    \lambda \in \stairs
     \implies
     f_\lambda = 0
     \right\}
   \pmm.
 \]
-On considère enfin $\Vanish_a^\delta = \Vanish_*a^\delta + \varid$. Par abus,
+On considère enfin $\vanish = \vanish* + \varid$. Par abus,
 on notera de même son image dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui
-est légitime puisqu'on a fait en sorte que $\varid \subset \Vanish_a^\delta$.
+est légitime puisqu'on a fait en sorte que $\varid \subset \vanish$.
 
 \section{Plongement éclatant}
 
@@ -162,9 +162,9 @@ Par la suite, on se donnera un point
 $(\excep = \excep[1], \dots, \excep[\puiss])$
 de $\var(\Qbar)$, où les $\excep*$ sont de hauteur grandes et étagées entre
 elles, contenus dans un secteur de cône de l'espace de \bsc{Mordell-Weil}. On
-définira alors les poids $\weight*$ par
+définira alors les poids $\wt*$ par
 \begin{equation}
-  \weight* =
+  \wt* =
   \left\lfloor
   \frac {\norm{\excep*}} {\norm{\excep1}}
   + \frac12
@@ -179,10 +179,10 @@ La géométrie euclidienne montre\footnote{
   Les détails sont présents dans la preuve de l'inégalité à la \bsc{Mumford}.
   Cette information est en fait inutile ici ; on souhaite seulement justifier
   vaguement le rôle du plongement éclatant.}
-alors que $\weight* \excep* - \excep[\puiss]$ est de hauteur petite devant les
+alors que $\wt* \excep* - \excep[\puiss]$ est de hauteur petite devant les
 hauteurs des différents $\excep*$. Pour nous aider à exploiter ultérieurement
 cette information, on introduit un plongement, dit \emph{éclatant}, associé à
-$\weight$, défini par
+$\wt$, défini par
 \begin{align}
   \wemb \colon \var
   & \longto \va^\puiss \times \va^{\puiss-1}
@@ -191,7 +191,7 @@ $\weight$, défini par
   (x_1, \dots, x_\puiss)
   & \longmapsto
   (x_1, \dots, x_\puiss;
-  \weight[1] x_1 - x_\puiss, \weight[\puiss-1] x_{\puiss-1} - x_\puiss)
+  \wt[1] x_1 - x_\puiss, \wt[\puiss-1] x_{\puiss-1} - x_\puiss)
   \pmm.
 \end{align}
 
@@ -329,19 +329,19 @@ Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
 \begin{align}
   \wemba \colon \cdn [\cmmh, \cmmhi] & \to \cdn[\cmmh] \\
   \cmh{i} & \mapsto \cmh{i} \\
-  \cmhi{j} & \mapsto S^{-}(Q_{a_j}(\cmh{j}, \cmh{\puiss}))
+  \cmhi{j} & \mapsto S^{-}(Q_{\wt[j]}(\cmh{j}, \cmh{\puiss}))
 \end{align}
 tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute :
 \[
   \dots % TODO
 \]
-On a choisi $S^{-}$ et $Q_{a_j}$ parmi les familles de formes données
+On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
 respectivement part le corollaire~\ref{c-addsub-form} et le
 fait~\ref{f-mult-form} de sorte que les formules obtenues soient valables au
 voisinages de $x$.
 
-Les informations connues sur les degrés de $S^{-}$ et des $Q_{a_j}$ donnent
+Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
 immédiatement le résultat suivant.
 
 \begin{lem}
@@ -352,9 +352,9 @@ immédiatement le résultat suivant.
     \deg \wemba(F)
     \le
     \bigr(
-    \alpha_1 + \frac94 \beta_1 a_1^2,
+    \alpha_1 + \frac94 \beta_1 \wt[1]^2,
     \dots,
-    \alpha_{\puiss-1} + \frac94 \beta_{\puiss-1} a_{\puiss-1}^2,
+    \alpha_{\puiss-1} + \frac94 \beta_{\puiss-1} \wt[\puiss-1]^2,
     \alpha_\puiss + 2 \lgr\beta
     \bigl)
     \pmm.
@@ -367,21 +367,21 @@ immédiatement le résultat suivant.
 
 Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de petite
 hauteur, provenant d'une forme sur $\wemb(\var)$, qui s'annule le long de
-$\divi$ avec un indice (pondéré par $\weight$) du même ordre de grandeur que
+$\divi$ avec un indice (pondéré par $\wt$) du même ordre de grandeur que
 son multidegré.
 
 Plus précisément, posons
 \begin{align}
   d & = \bigl(
-  \epsz \weight[1],
+  \epsz \wt[1],
   \dots,
-  \epsz \weight[\puiss],
+  \epsz \wt[\puiss],
   1, \dots, 1
   \bigr) \in \Q^{2\puiss-1} \\
   d' & = \bigl(
-  \weight[1] (\frac94 + \epsz),
+  \wt[1] (\frac94 + \epsz),
   \dots,
-  \weight[\puiss] (\frac94 + \epsz),
+  \wt[\puiss] (\frac94 + \epsz),
   2\puiss + \epsz
   \bigr) \in \Q^\puiss
   \pmm.
@@ -395,7 +395,7 @@ On cherche ainsi une forme
 \[
   F'
   \in \cdn[\cmmh]\ph{\delta d'}
-  \cap \Vanish_a^\delta
+  \cap \vanish
   \cap \wemba(\cdn[\cmmh, \cmmhi]\ph{\delta d})
 \]
 non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
@@ -403,21 +403,21 @@ non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' 
 \[
   F
   \in \cdn[\cmmh, \cmmhi]\ph{\delta d}
-  \cap \wemba^{-1}(\Vanish_a^\delta)
+  \cap \wemba^{-1}(\vanish)
 \]
 non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
 
 Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
 Cependant, il est difficile d'expliciter un système essentiellement minimal
-d'équations linéaires exprimant l'appartenance à $\Vanish_a^\delta$. Il est en
-revanche immédiat d'expliciter un tel système pour $\Vanish*_a^\delta$, mais
+d'équations linéaires exprimant l'appartenance à $\vanish$. Il est en
+revanche immédiat d'expliciter un tel système pour $\vanish$, mais
 il comporte beaucoup trop d'équations (géométriquement, il correspond à une
 condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
 $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
 Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\cmh]\ph{\delta d'}$ dans lequel $\Vanish*_a^\delta$
+un sous-espace de $\cdn[\cmh]\ph{\delta d'}$ dans lequel $\vanish$
 est de co-dimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
@@ -489,27 +489,27 @@ notre objectif : il s'agira en fait de construire une forme $F \in
 \Ideal\ph{\delta d} \setminus \{0\}$ telle que
 \[
   \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
-  \in \Vanish*_a^\delta
+  \in \vanish
   \pmm,
 \]
-ce qui implique que $R \cdot \wemba(F) \in \Vanish_a^\delta$ car
+ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 \[
   R \cdot \wemba(F)
   - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
   \in \varid
-  \subset \Vanish_a^\delta
+  \subset \vanish
   \pmm.
 \]
 
 Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
-sera composé des équations définissant $\Vanish*_a^\delta$ dans
+sera composé des équations définissant $\vanish$ dans
 \( \cdn[\cmmh]\ph{\delta d' + r'}^{C'''} \),
 tirées en arrière sur $\Ideal\ph{\delta d}$ par
 \( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
   \item calculer la codimension de $\Ideal\ph{\delta d}$ ;
-  \item calculer la codimension de $\Vanish*_a^\delta$ dans
+  \item calculer la codimension de $\vanish$ dans
     $\cdn[\cmmh]\ph{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
     petite que la dimension précédente ;
   \item expliciter les morphismes de la première ligne du diagramme et majorer
@@ -536,7 +536,7 @@ ce qu'on aura besoin de savoir sur le degré.
     \bigl( \wemb(\var) \bigr)
     =
     \prod\fctrange
-    \vardeg* \weight ^{2\vardim*}
+    \vardeg* \wt ^{2\vardim*}
     \pmm.
   \]
 \end{lem}
@@ -556,7 +556,7 @@ ce qu'on aura besoin de savoir sur le degré.
   Fixons maintenant un point $p$ dans cet ensemble. On constate que
   $\wemb(\var) \cap \zeros{\cmh\puiss = p}$ coïncide avec l'image de
   \begin{align}
-    \wemb[\weight, p]'
+    \wemb[\wt, p]'
     \colon
     \var[1] \times \dots \times \var[\puiss]
     & \to
@@ -565,15 +565,15 @@ ce qu'on aura besoin de savoir sur le degré.
     (\point_1, \dots, \point_{\puiss-1})
     & \mapsto
     (\point_1, \dots, \point_{\puiss-1}, p;
-    \weight[1] \point_1 - p,
+    \wt[1] \point_1 - p,
     \dots,
-    \weight[\puiss-1] \point_{\puiss-1} - p)
+    \wt[\puiss-1] \point_{\puiss-1} - p)
   \end{align}
   qui est le produit d'un point par des variétés de la forme
-  $\wemb[\weight*, p]''(\var*)$ pour $\fct$ variant de $1$ à $\puiss-1$ en
+  $\wemb[\wt*, p]''(\var*)$ pour $\fct$ variant de $1$ à $\puiss-1$ en
   notant
   \begin{align}
-    \wemb[\weight*, p]''(\var*)
+    \wemb[\wt*, p]''(\var*)
     \colon
     \var*
     & \to
@@ -581,19 +581,19 @@ ce qu'on aura besoin de savoir sur le degré.
     \\
     \point
     & \mapsto
-    (\point, \weight* \point - p)
+    (\point, \wt* \point - p)
   \end{align}
   Il suffit donc de calculer le degré de ces variétés. La translation par $p$
   n'ayant pas d'influence sur le degré, il suffit de regarder l'action de la
-  multiplication par $\weight*$. Or, celle-ci pouvant être représentée
-  globalement par des formes de degré $\weight*^2$ en tirant en arrière par
-  $\wemb[\weight*, p]''(\var*)$ une famille de $\vardim*$ hyperplans
+  multiplication par $\wt*$. Or, celle-ci pouvant être représentée
+  globalement par des formes de degré $\wt*^2$ en tirant en arrière par
+  $\wemb[\wt*, p]''(\var*)$ une famille de $\vardim*$ hyperplans
   génériques sur le second facteur, on obtient des hypersurfaces génériques de
-  degré $\weight*^2$ qui coupent donc $\var*$ en $\vardeg*
-  \weight*^{2\vardim*}$ points.
+  degré $\wt*^2$ qui coupent donc $\var*$ en $\vardeg*
+  \wt*^{2\vardim*}$ points.
 
   Le résultat suit en prenant le produit et en se rappelant que
-  $\weight[\puiss] = 1$.
+  $\wt[\puiss] = 1$.
 \end{proof}
 
 \begin{lem}
@@ -602,7 +602,7 @@ ce qu'on aura besoin de savoir sur le degré.
     \dim \Ideal\ph{\delta d}
     \ge
     \frac{ \epsz^{\vardim[\puiss]}
-      \prod\fctrange \vardeg* \, \weight* ^{2\vardim*}
+      \prod\fctrange \vardeg* \, \wt* ^{2\vardim*}
       }{ \vardim ! }
     \delta^{\vlg\vardim}
     + o( \delta^{\vlg\vardim} )
@@ -634,9 +634,9 @@ ce qu'on aura besoin de savoir sur le degré.
   \end{align}
 \end{proof}
 
-Nous allons maintenant calculer la codimension de $\Vanish*_{\weight}^\delta$
+Nous allons maintenant calculer la codimension de $\vanish$
 dans $\cdn[\cmmh]\ph{ \delta d' + r }^{ C''' }$. On introduit à cet effet le
-sous-ensemble de $\Stairs_{\weight}^\delta$ suivant :
+sous-ensemble de $\stairs$ suivant :
 
 
 \clearpage

@@ -547,30 +547,34 @@
 \noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
 
 \newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
-\newc@star@default \weight  {1}{\fct} {a\ssub{#1}}
+\newc@star@default \wt      {1}{\fct} {a\ssub{#1}}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
-\noma{a}{\weight}{Le vecteur de poids associé à $\excep$}
-% \weight isn't used consistently :/
+\noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
+% \wt isn't used consistently :/
 
 % weighted embedding [[2
 %
-\newcommand*\wemb  [1][\weight] {\varphi\ssub{#1}}
-\newcommand*\wemba [1][\weight] {\psi\ssub{#1}}
+\newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
+\newcommand*\wemba [1][\wt] {\psi\ssub{#1}}
 
-\nomg{phi}{\wemb }{Plongement éclatant associé au vecteur de poids $\weight$}
-\nomg{psi}{\wemba}{Morphisme d'allgèbres graduées associé au plongement
+\nomg{phi}{\wemb }{Plongement éclatant associé au vecteur de poids $\wt$}
+\nomg{psi}{\wemba}{Morphisme d'algèbres graduées associé au plongement
   éclatant $\wemb$}
 
 % vanishing conditions [[2
 %
-\newcommand \Stairs {\mathcal E}
-\newcommand \Vanish {\@ifstar{\mathfrak{\tilde q}}{\mathfrak q}}
+\newcommand \Stairs { \mathcal E }
+\newcommand \Vanish {\@ifstar {\mathfrak{\tilde q}} {\mathfrak q}}
 
-\noma{E}{\Stairs}{Cylindre sur un dessous de multiescalier}
-\noma{q1}{\Vanish}{Idéal d'annulation pour la forme auxiliaire plus (ou
-  modulo) l'idéal de la variété ambiante}
-\noma{q2}{\Vanish*}{Idéal d'annulation pour la forme auxiliaire}
+\newcommand \wt@scale { _{\wt} ^\delta }
+\newcommand \stairs {\Stairs\wt@scale}
+\newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
+
+\noma{E} {\stairs} {Cylindre sur le dessus de multi-escalier défini par les
+  poids $\wt$ et le facteur d'échelle $\epsi\delta$}
+\noma{q1}{\vanish*}{Idéal d'annulation associé à $\stairs$}
+\noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
 % the product sub-variety considered and its attributes [[2
 %
