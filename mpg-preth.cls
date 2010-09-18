@@ -362,6 +362,8 @@
 \newcommand*\der [1] {\partial_{#1}}
 \noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
 
+\DeclareMathOperator \card {Card}
+
 % automatic constants [[2
 %
 \newcounter{cst}
@@ -548,10 +550,17 @@
 
 \newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
 \newc@star@default \wt      {1}{\fct} {a\ssub{#1}}
+\newc@star@default \wts     {1}{\fct} {a\ssub{#1}^2}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
 % \wt isn't used consistently :/
+
+\newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
+
+\newc@star@default \coeff   {1}{\fct} {\lambda\pexp{#1}}
+\nomg{lambda}{\lambda}{Un multimultiindice, en général élément de
+  \( \bigl( \N^{\dimp + 1} \bigr)^\puiss \)}
 
 % weighted embedding [[2
 %
@@ -575,6 +584,16 @@
   poids $\wt$ et le facteur d'échelle $\epsi\delta$}
 \noma{q1}{\vanish*}{Idéal d'annulation associé à $\stairs$}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
+
+% various conditions for subsets in lemmas
+\newcommand \Diii { {\delta d' + r} }
+\newcommand \Ciii { \ph\Diii ^{C'''} }
+
+% weight sum of \lamda in the definition of \stairs
+\newcommand \sumwtlambda {
+  \frac {\coeff[1][0]} {\wt[1]^2} + \dots
+  + \frac {\coeff[\puiss-1][0]} {\wt[\puiss-1]^2}
+  + \frac {\coeff[\puiss][0]} {\puiss-1} }
 
 % the product sub-variety considered and its attributes [[2
 %
@@ -637,8 +656,6 @@
   l'ordre de grandeur du degré de la forme auxiliaire}
 \noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
   des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
-\nomg{lambda}{\lambda}{Souvent un multimultiindice dans la définition de
-  dessous-d'escalier-oïdes}
 
 \noma{r}{r}{Degré du facteur parasitant la forme auxiliaire}
 
