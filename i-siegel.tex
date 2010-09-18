@@ -377,7 +377,9 @@ Plus précisément, posons
   \dots,
   \epsz \wt[\puiss],
   1, \dots, 1
-  \bigr) \in \Q^{2\puiss-1} \\
+  \bigr) \in \Q^{2\puiss-1}
+  \label{eq-def-d}
+  \\
   d' & = \bigl(
   \wt[1] (\frac94 + \epsz),
   \dots,
@@ -385,6 +387,7 @@ Plus précisément, posons
   2\puiss + \epsz
   \bigr) \in \Q^\puiss
   \pmm.
+  \label{eq-def-dp}
 \end{align}
 On a déjà supposé $\delta\epsz$ entier ; on supposera désormais de plus
 $\delta/4$ entier, de sorte que si $F$ est une forme de multidegré $\delta d$
@@ -767,6 +770,69 @@ de sorte que
 \end{equation}
 
 \section{Trois lemmes de hauteurs}
+
+Nous allons maintenant expliciter les différents morphismes intervenant dans
+l'écriture du système et contrôler la hauteur de leurs matrices, en commençant
+par le morphisme \( \wemba \) qui est déjà bien défini.
+
+On va en fait étudier le prolongement
+\begin{equation}
+  \wemba \colon
+  \cdn [\cmmh, \cmmhi]\ph\Di
+  \to
+  \cdn [\cmmh]\ph\Dii
+\end{equation}
+donné par les mêmes formules. La base évidente de ce nouvel espace de départ
+est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
+\begin{equation}
+  (p, q)
+  \in \N^{\puiss(\dimp + 1)} \times \N^{(\puiss - 1) (\dimp - 1)}
+  \text{ tel que }
+  \lgr{p\mexp*} = \Di* \lgr{q\mexpi*} = \Di[\puiss + \fcti]
+  \pmm,
+\end{equation}
+où \( d \) est défini par~\refeq{eq-def-d}.
+
+\begin{lem}
+  Avec les notations précédentes, l'application linéaire
+  \begin{equation}
+    \wemba \colon
+    \cdn [\cmmh, \cmmhi]\ph\Di
+    \to
+    \cdn [\cmmh]\ph\Dii
+  \end{equation}
+  est représentée dans les bases canoniques par une matrice de colonnes
+  \(
+  c_{p, q} = \wemba(\cmmh^p\cmmhi^q)
+  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \cmmh^{s+p}
+  \)
+  satisfaisant
+  \begin{equation}
+    \nvp1{c_{p, q}}
+    \le
+    \left(
+    \prod\fctirange
+    \nvp\infty \coi ^{2\wtis* - 1}
+    \bigl(
+    4^{g\wtis*} (\dimp + 1)^{\wtis* - 1}
+    \bigr) ^\dv
+    \right) ^\delta
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  La définition de \( \wemba \) montre immédiatement que \(
+  \wemba(\cmmh^p\cmmhi^q = \cmmh^p \wemba(\cmmhi^q) \), on a donc \(
+  \nvp1 {c_{p, q}} = \nvp1 {\wemba(\cmmhi^q)} \). Ainsi, avec le
+  corollaire~\ref{c-addsub-form} et le fait~\ref{f-mult-form}, on a
+  \begin{align}
+    \nvp1 {c_{p, q}}
+    & \le \dots
+  \end{align}
+  en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
+  \delta \) pour tout \( \fcti \).
+\end{proof}
 
 \clearpage
 

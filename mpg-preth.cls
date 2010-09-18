@@ -240,6 +240,10 @@
 % Maybe to-do: use a \bgroup-\egroup trick to make the macros usable as
 % indices/exponents without braces?
 
+% coma-seperated list with possibly empty elements [[2
+%
+\newcommand*\sfirst [1] {\@ifnomtarg{#1}{#1,}}
+\newcommand*\slast  [1] {\@ifnomtarg{#1}{,#1}}
 
 % non thesis-specific math [[1
 % ------------------------
@@ -417,6 +421,8 @@
 \newcommand* \av  [2][\place] {\abs   {#2}\ssub{#1}}
 \newcommand* \nv  [2][\place] {\norm  {#2}\ssub{#1}}
 \newcommand* \nnv [2][\place] {\nnorm {#2}\ssub{#1}}
+\newcommand* \nvp [3][\place] {\norm  {#3}_{#1, #2}}
+\newcommand* \nnvp[3][\place] {\nnorm {#3}_{#1, #2}}
 
 \noms{nv1}{\av\PH }{Valeur absolue $\place$-adique d'un nombre}
 \noms{nv2}{\nv\PH }{Norme $\place$-adique d'un vecteur ou d'une forme}
@@ -463,7 +469,9 @@
 %
 \newcommand \puiss    {m}
 \newcommand \fct      {i}
-\newcommand \fctrange {_{\fct=1}^\puiss}
+\newcommand \fcti     {j}
+\newcommand \fctrange {_{\fct=1} ^\puiss}
+\newcommand \fctirange{_{\fcti=1}^{\puiss-1}}
 
 \newcommand*\ch   [1] {X\ssub{#1}}
 \newcommand*\cmh  [1] {X\pexp{#1}}
@@ -473,7 +481,8 @@
 
 \noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
   donc aussi la puissance de $\va$ dans laquelle ont travaille.}
-\noma{i}{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$}
+\noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
+\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss-1$}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \newcommand*\vlg [1] {\abs{#1}}
@@ -548,9 +557,11 @@
 \newcommand \divi {E}
 \noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
 
-\newc@star@default \excep   {1}{\fct} {e\ssub{#1}}
-\newc@star@default \wt      {1}{\fct} {a\ssub{#1}}
-\newc@star@default \wts     {1}{\fct} {a\ssub{#1}^2}
+\newc@star@default \excep   {1}{\fct}  {e\ssub{#1}}
+\newc@star@default \wt      {1}{\fct}  {a\ssub{#1}}
+\newc@star@default \wts     {1}{\fct}  {a\ssub{#1}^2}
+\newc@star@default \wti     {1}{\fcti} {a\ssub{#1}}
+\newc@star@default \wtis    {1}{\fcti} {a\ssub{#1}^2}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
@@ -558,7 +569,10 @@
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
-\newc@star@default \coeff   {1}{\fct} {\lambda\pexp{#1}}
+\newc@star@default \mexp    {1}{\fct}  {\pexp{#1}}
+\newc@star@default \mexpi   {1}{\fcti} {\pexp{#1}}
+
+\newcommand        \coeff {\lambda\mexp}
 \nomg{lambda}{\lambda}{Un multimultiindice, en général élément de
   \( \bigl( \N^{\dimp + 1} \bigr)^\puiss \)}
 
@@ -585,8 +599,10 @@
 \noma{q1}{\vanish*}{Idéal d'annulation associé à $\stairs$}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
-% various conditions for subsets in lemmas
-\newcommand \Diii { {\delta d' + r} }
+% various (degree) conditions for subsets in lemmas
+\newcommand \Di   { \delta d }
+\newcommand \Dii  { \delta d' }
+\newcommand \Diii { \@ifstar {\delta d'_\fct + r\fct} {\delta d' + r} }
 \newcommand \Ciii { \ph\Diii ^{C'''} }
 
 % weight sum of \lamda in the definition of \stairs
