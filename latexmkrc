@@ -6,4 +6,4 @@ sub makenlo2nls {
 push @generated_exts, 'nlo', 'nls';
 
 # more cleanup
-$clean_ext="$clean_ext bbl";
+push @generated_exts, '%-blx.bib';
