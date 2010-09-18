@@ -214,7 +214,8 @@ l'expression naturelle $\Distv(\p x, V) = \av{F(x)} / \nv F \nv x$. Dans le cas
 général, on peut penser aux coefficients de $\md f \in \C_v[X][s]$ comme à des
 formes générales s'annulant en tout point de $V$. Enfin, dans le cas où $V$
 est réduite à un point $\p y$, on a la formule explicite $\Distv (\p x, \p y) =
-\nv{x \wedge y} / \nv x \nv y$. On peut alors montrer (\lat{confere} [Jad])
+\nv{x \wedge y} / \nv x \nv y$. On peut alors montrer (\lat{confere} \todo
+[Jad])
 que l'inégalité triangulaire est satisfaite et qu'on a donc bien une distance
 au sens usuel entre les points.
 
@@ -348,7 +349,7 @@ suivant montre que c'est possible.
   autour du point $y$ de multiplicité $m$ s'écrit donc :
   \[
   g(x) = \sum_{k=m}^{ld} \ \overbrace{%
-    \sum_{\substack{\alpha \in \N^n \\ \lgr\alpha = k}}\
+    \sum_{\substack{\alpha \in \N^n \\ \lgr\alpha = k}}
     \underbrace{%
     \frac 1{\alpha!} \frac{\partial^k g}{\partial X^\alpha} (y)
     \prod_{1 \le i \le n} (x_i - y_i)^{\alpha_i}}
@@ -836,8 +837,8 @@ est d'énoncer des conditions suffisantes pour qu'un tel choix soit possible.
 
 \begin{rem}
   Comme on sait par ailleurs \cite[rem. précédant la prop.~4.1]{remivds} qu'on
-  peut choisir $w$ dans $\cube{D}$ n'anullant pas un polynôme donné de degré
-  $b$ dès que $D \le b/2$, on peut utilser le lemme précédent pour trouver des
+  peut choisir $w$ dans $\cube{D}$ n'annullant pas un polynôme donné de degré
+  $b$ dès que $D \le b/2$, on peut utiliser le lemme précédent pour trouver des
   points entiers de taille contrôlée qui ne sont pas \og trop près \fg{} d'une
   hypersurface donnée.
 \end{rem}
@@ -915,7 +916,7 @@ est d'énoncer des conditions suffisantes pour qu'un tel choix soit possible.
   & \le \left( \frac{l(l+1)n(n+1)}4 e^{\gamma_{l+1}} (\abs S/2 +2)
   \right)^{ld\dv} \mv{\md_x f_V}  \pmm.
   \end{align}
-  La conclusion suit en substituant ces trois dermières inégalités dans la
+  La conclusion suit en substituant ces trois dernières inégalités dans la
   définition de $\Distv(\pi(\p z), \pi_* V)$.
 
   %   et on pose $B_{z, v} = g_v\cdot (h_z)^{ld}$, ce qui définit une famille
@@ -1136,3 +1137,5 @@ $ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps$ en $d^2((\rho^2/4) + 2\phi +
 \]
 
 \endinput
+
+% vim: spell spelllang=fr

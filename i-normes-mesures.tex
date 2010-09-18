@@ -2,11 +2,11 @@
 
 Sur un corps $\cdn$ muni d'une valeur absolue $\abs\truc$ ultramétrique, on
 définit la norme d'un polynôme $P = \sum p_i X^i$ par $\norm P = \sup_i
-\abs{p_i}$. (Ici, $X$ designe un groupe de variables ; les notations seront
+\abs{p_i}$. (Ici, $X$ désigne un groupe de variables ; les notations seront
 précisées plus bas.) Cette norme définie naïvement jouit de toutes les
 propriétés agréables auxquelles on peut s'attendre : elle vérifie l'inégalité
 triangulaire (même ultramétrique), est multiplicative, se comporte bien
-vis-à-vis de la composition des polynômes et en particulier de l'évalutation
+vis-à-vis de la composition des polynômes et en particulier de l'évaluation
 en un point, ainsi que sous l'action de dérivations. Elle est par ailleurs
 invariante par ajout de variables muettes. Plus précisément, on a les
 relations évidentes suivantes :
@@ -32,7 +32,7 @@ relations évidentes suivantes :
 \end{align*}
 où $d$ est le degré de $P$, $Y$ un groupe de variables indépendantes de $X$,
 et $P'$ l'image de $P$ par l'inclusion évidente $\cdn[X] \hookrightarrow
-\cdn[X, Y]$. De plus, pour que les deux dernières inégalites soient vraies, il
+\cdn[X, Y]$. De plus, pour que les deux dernières inégalités soient vraies, il
 convient de supposer $P$ homogène en un ou plusieurs groupes de variables,
 avec les notations qui seront détaillées ci-dessous.
 
@@ -54,7 +54,7 @@ $\frac{\partial^i}{\partial X^i} = \frac{\partial^{i_1}}{\partial
 attention sur les dérivations $\der{i} = \frac1{i!}\frac{\partial^i}{\partial
   X^i}$, où l'on a noté $i! = i_1! \cdots i_n!$. On introduit par ailleurs les
 notations $\lgr i = i_1 + \dots + i_n$ et, pour $d = \lgr i$, on note
-$\binom{d}{i} = \frac{d!}{i!}$ le symbole multinômial. On notera à l'occasion
+$\binom{d}{i} = \frac{d!}{i!}$ le symbole multinomial. On notera à l'occasion
 $d_i$ le degré partiel de $P$ en la variable $X_i$.
 
 Introduisons maintenant les notations utiles dans le cas multihomogène. On
@@ -69,7 +69,7 @@ $X^\alpha$. On définit également $\der\alpha$, $\alpha!$ et
 $\binom{\delta}{\alpha}$ comme dans le cas précédent, dont le cas
 multihomogène est bien sûr un cas particulier (avec $n = \sum_k (n_k + 1)$,
 $d = \lgr\delta$, et $\alpha$ correspondant naturellement à un $i \in \N^n$).
-Toutefois, il faudra préter attention au fait que $\delta = \vlg\alpha$ est
+Toutefois, il faudra prêter attention au fait que $\delta = \vlg\alpha$ est
 maintenant une égalité de vecteurs.
 
 Par ailleurs, on est amené à considérer des familles $\mathcal F = (F_1,
@@ -101,19 +101,19 @@ commodes $\binom{d + n}{n} \le (d + 1)^{n+1}$ et symétriquement $\binom{d +
 {\textstyle \binom\delta\alpha} $, qui est majorée par $\prod\nolimits_k (n_k
 + 1)^{\delta_k}$. On introduit également la constante (liée à la hauteur
 arakelovienne de l'espace projectif) $\gamma_n = \frac12 \sum_{q=1}^{n}
-\frac1q$, dont on rapelle la majoration évidente $\gamma_n \le \frac12
+\frac1q$, dont on rappelle la majoration évidente $\gamma_n \le \frac12
 (\log(n) + 1)$.
 
 Certaines normes ou mesures seront définies uniquement pour les polynômes
-homogènes. Les trois autres normes sont invariantes par homogénisation. Ce
+homogènes. Les trois autres normes sont invariantes par homogénéisation. Ce
 n'est par contre \lat{a priori} pas le cas de la mesure de \bsc{Mahler}.
 Certaines opérations (évaluation) n'ont un comportement satisfaisant que dans
 le cas homogène. On peut en déduire facilement des résultats dans le cas
-général par homogénisation. Dans d'autres cas, on supposera les polynômes
+général par homogénéisation. Dans d'autres cas, on supposera les polynômes
 homogènes par commodité de notation (degrés partiels et coefficients
-multinomiaux). Parfois même on notera $F$ n'importe quel multihomogénisé de
+multinomiaux). Parfois même on notera $F$ n'importe quel multihomogénéisé de
 $P$ de multidegré $\delta$. Ce sera implicitement le cas chaque fois que $F$
-et $P$ apparaîront dans une même inégalité.
+et $P$ apparaîtront dans une même inégalité.
 
 Dans toute la suite, on conserve les notations introduites ci-dessus ; en
 particulier $F$ et $G$ seront toujours des formes multihomogènes tandis que
@@ -291,7 +291,7 @@ et normalisée par $\mu_k(S_k) = 1$, et enfin $\gamma_n = \frac12
 \sum_{q=1}^{n} \frac1q$.
 
 C'est une mesure multiplicative ($\mespph{FG} = \mespph F \cdot \mespph G$),
-invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
+invariante par ajout de variables muettes grâce à la normalisation. \todo[qui
 jouit par ailleurs des propriétés suivantes ?] Elle se compare aux autres
 notions de la façon suivante.
 \begin{align}
@@ -306,7 +306,7 @@ notions de la façon suivante.
   \le \mahler F \exp(\sum\delta_k\gamma{n_k})
 \end{align}
 
-\section{Mesure de \texorpdfstring{\bsc{Malher}}{Mahler}}
+\section{Mesure de \texorpdfstring{\bsc{Mahler}}{Mahler}}
 
 Elle est définie pour tout $P$ par
 \[
@@ -317,7 +317,7 @@ où $S$ est le produit des cercles unités de $\C$, muni de la mesure $\mu$
 produit des mesures de \bsc{Haar} normalisées de masse $1$.
 
 C'est une mesure multiplicative ($\mahler {PQ} = \mahler P \cdot \mahler Q$),
-invariante par ajout de variables muettes grâce à la normalisaton. \todo[qui
+invariante par ajout de variables muettes grâce à la normalisation. \todo[qui
 jouit par ailleurs des propriétés suivantes ?]
 
 Elle se compare aux autres normes et mesures de la façon suivante.
@@ -333,3 +333,5 @@ Elle se compare aux autres normes et mesures de la façon suivante.
 % TODO: mahler, lelong
 
 \endinput
+
+% vim: spell spelllang=fr
