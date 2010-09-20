@@ -1,117 +1,8 @@
 % !TEX root = main.tex
 
-\chapter{Inégalité de Vojta}
+\section{Construction d'une forme auxiliaire}
 
-\section{Stratégie générale et notations additionnelles}
-
-Soit $\va$ une variété abélienne sur un corps de nombres $\cdn$, plongée dans
-un espace projectif $\proj\dimp$ muni de coordonnées homogènes $\ch0, \ldots,
-\ch\dimp$. On suppose que $\va$ n'est pas contenue dans l'hyperplan
-d'équation $\ch0 = 0$, et on considère le diviseur $\divi$ découpé par
-$\ch0$ sur $\va$. On note enfin $\ideal\va$ l'idéal homogène saturé
-définissant $\va$ dans $\cdn [\ch0, \ldots, \ch\dimp]$.
-
-On considère $\puiss$ un entier positif, et $(\proj\dimp)^\puiss$ l'espace
-multiprojectif associé à l'anneau multigradué
-\begin{math}
-  \cdn [
-    \cmh1[0], \dots, \cmh1[\dimp];
-    \dots;
-    \cmh\puiss[0], \dots \cmh\puiss[\dimp]
-  ]
-  =
-  \cdn [ \cmh1, \dots, \cmh\puiss ]
-  =
-  \cdn [ \cmmh ]
-\end{math}.
-On s'intéresse à une sous-variété produit de $\va^\puiss$ plongée dans
-$(\proj\dimp)^\puiss$, notée
-\begin{math}
-  \var = \var[1] \times \dots \times \var[\puiss]
-\end{math}
-et dont aucun facteur n'est contenu dans un hyperplan d'équation $\cmh*0 = 0$.
-On notera en outre $\vardim* = \dim \var*$ et $\vardim = (\vardim*)_\fct$ puis
-$\vardeg* = \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On
-note enfin $\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux
-de ses facteurs.
-
-De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
-homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on
-utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
-désignera une famille d'entiers.
-
-\begin{tdef} \label{def-plong-adapt}
-  Suivant \cite{remivg}, on dit qu'un plongement
-  \begin{math}
-    \iota\colon V \embedin \proj\dimp
-  \end{math}
-  d'une variété de dimension $t$ dans un espace projectif muni de coordonnées
-  homogènes $X_0, \dots, X_\dimp$ est \emph{adapté} si les deux conditions
-  suivantes sont satisfaites :
-  \begin{enumthm}
-    \item $V \cap \zeros{X_0, \dots, X_t} = \emptyset$ ;
-    \item $\korper{V}$ est engendré par
-      $\frac{X_1}{X_0}, \dots, \frac{X_{t+1}}{X_0}$.
-  \end{enumthm}
-\end{tdef}
-
-\begin{lem}
-  Soit $\iota \colon V \embedin \proj\dimp$ un sous-schéma fermé intègre de
-  degré $\Delta$, non contenu dans l'hyperplan d'équation $X_0 = 0$. Il existe
-  une matrice $M \in \GL_{n+1}(\Q)$, à coefficients entiers de valeur absolue
-  (archimédienne) majorée par $\max(\frac\Delta2, 1)$, telle que, si $e_M$ est
-  l'automorphisme linéaire de $\proj\dimp$ associé à $M$, alors $e_M \circ
-  \iota$ est un plongement adapté et que $X_0$ soit invariant par ce
-  changement de coordonnées.
-\end{lem}
-
-\begin{proof} \later
-  On reprend la preuve de la proposition 2.2 de \cite{remivg} (p.~469). Au
-  moment de choisir des formes linéaires $W_0, \dots, W_n$ telles que
-  \begin{equation*}
-    \chow V (W_0, \dots, W_\dimp) \neq 0
-    \pmm,
-  \end{equation*}
-  on commence en fait par fixer $W_0 = \ch0$. Le polynôme $\varfc(W_0, \truc,
-  \dots, \truc)$ est multihomogène de degré $\Delta$ en chaque variable ; vu
-  l'hypothèse sur $V$, il est non nul grâce au théorème fondamental de
-  l'élimination. On peut donc choisir $W_1, \dots W_n$ comme dans
-  \cite{remivg} et continuer la preuve sans autre modification.
-\end{proof}
-
-\begin{lem}
-  Soit $V \colon \embedin \proj\dimp$ un sous-schéma fermé intègre, et $M \in
-  \GL_{\dimp+1}(\Qbar)$ à coefficients entiers dans l'intervalle $[-B, B]$, où
-  $B$ est un réel positif fixé, et $e_M$ l'automorphisme linéaire de
-  $\proj\dimp$ associé à $M$. Alors
-  \[
-    \haut[1]{e_M(V)}
-    \le
-    \haut[1]{V}
-    \cdot \bigl( (n+1)B \bigr)^{\Delta(n+1)}
-    \pmm.
-  \]
-\end{lem}
-
-\begin{proof} \later
-  Inégalité classique sur la norme $L_1$ et la spécialisation des polynômes.
-\end{proof}
-
-\begin{scho} \label{sch-plong-adapt}
-  Vu les hypothèses sur $V$, on peut sans perte de généralité supposer de plus
-  que $V \embedin \proj\dimp$ est adapté, quitte à multiplier sa hauteur
-  ($L_1$) par
-  $\bigl ((\dimp + 1) \max (\frac\Delta2, 1) \bigr)^{\Delta(\dimp+1)}$.
-
-  On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
-  dans son facteur $\proj\dimp$. Ceci implique que
-  $\varfc*(\cmh*0, \dots,\cmh*{\vardim*})$
-  est non nul pour tout $\fct$ ; on normalisera donc notre choix de $\varfc*$
-  (qui est unique à une constante multiplicative près) en imposant que cette
-  quantité vaille $1$.
-\end{scho}
-
-\section{Idéal d'annulation}
+\subsection{Idéal d'annulation}
 
 Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
 $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
@@ -158,7 +49,7 @@ On considère enfin $\vanish = \vanish* + \varid$. Par abus,
 on notera de même son image dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui
 est légitime puisqu'on a fait en sorte que $\varid \subset \vanish$.
 
-\section{Plongement éclatant}
+\subsection{Plongement éclatant}
 
 Par la suite, on se donnera un point
 $(\excep = \excep[1], \dots, \excep[\puiss])$
@@ -374,7 +265,7 @@ immédiatement le résultat suivant.
 
 \clearpage
 
-\section{Stratégie de construction de la forme auxiliaire}
+\subsection{Stratégie de construction de la forme auxiliaire}
 
 Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de petite
 hauteur, provenant d'une forme sur $\wemb(\var)$, qui s'annule le long de
@@ -559,7 +450,7 @@ les autres termes, on n'explicitera donc à chaque fois que le terme de plus
 haut degré en $\delta$ ; ainsi lorsqu'on utilisera la notation $o(\truc)$ ou
 $\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
 
-\section{Deux calculs de dimension} \label{sec-comp-dim}
+\subsection{Deux calculs de dimension} \label{sec-comp-dim}
 
 La dimension de $\Ideal\ph{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
@@ -804,7 +695,7 @@ de sorte que
   \pmm.
 \end{equation}
 
-\section{Trois lemmes de hauteurs}
+\subsection{Trois lemmes de hauteurs}
 
 Nous allons maintenant expliciter les différents morphismes intervenant dans
 l'écriture du système et contrôler la hauteur de leurs matrices, en commençant
@@ -956,7 +847,7 @@ de l'appliquer au cas qui nous intéresse.
 \end{lem}
 
 \begin{proof}
-  C'est essentiellement une variante du lemme~2.5 de~\ref{remivg}, le résultat
+  C'est essentiellement une variante du lemme~2.5 de~\cite{remivg}, le résultat
   étant formulé différemment et dans un cadre d'apparence un peu moins
   générale ; la preuve suivra en tout cas les mêmes lignes. On commence par
   décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
@@ -1126,7 +1017,7 @@ Notons que pour construire la forme auxilaire, on n'a absolument pas besoin
 d'en savoir davantage sur \( R \) ni les \( N'_\fct \). On pourra néanmoins
 vouloir expliciter une valeur acceptable de \( R \) plus tard.
 
-\section{Construction finale de la forme auxiliaire}
+\subsection{Construction finale de la forme auxiliaire}
 
 Commençons par rappeler la version que nous utiliserons du classique lemme de
 \bsc{Siegel}.

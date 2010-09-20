@@ -117,8 +117,8 @@ faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
     (B) Faire un squelette détaillé des réductions.
     (B) Remplir ce squelette avec des preuves.
 
-(B) Factoriser les trucs relatifs au plongement pondéré (entre Siegel et
-certaines étapes de la paramétrisation)
+(B) Factoriser les trucs relatifs au plongement pondéré entre Siegel et
+l'extrapolation : 3.2.2 et une partie 3.3.2 à fusionner dans 3.1.
 
 (B) Dans l:deg-wemba, remplacer le \le par un = en utilisant des parties
 entières supérieures de façon adéquate, ça coute pas cher et ça simplife la
