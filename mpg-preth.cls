@@ -58,7 +58,6 @@
   \usepackage[notref, notcite, color]{showkeys}
   \colorlet{refkey}{dev}
   \colorlet{labelkey}{dev}
-  \renewcommand\bibitem{\ERROR}
 \fi
 
 % overfullrule (implement 'nobad' option) [[2
@@ -385,12 +384,20 @@
 
 % automatic constants [[2
 %
+\AtBeginDocument{\let\mpg@label\label}
 \newcounter{cst}
-\newcommand*\cst[2][, v]{%
-  \ensuremath{c\ssub{\ref{#2}#1}}}
-\newcommand*\newcst[2][, v]{%
-  \refstepcounter{cst}\label{#2}%
-  \cst[#1]{#2}}
+\newcommand*\cst [1] {%
+  \ensuremath{ c_{ \ref{cst@#1} \@nameuse{cst@@#1} } }}
+\newcommand*\newcst [2][\place] {%
+  \begingroup
+  \let\showkeyslabelformat\@gobble
+  \refstepcounter{cst}%
+  \mpg@label{cst@#2}%
+  \endgroup
+  \@ifnotmtarg{#1}{%
+    \protected@write\@auxout{}{\global\string\@namedef{cst@@#2}{, #1}}%
+  }%
+  \cst{#2}}
 
 \noma{cvx}{c_{\PH, \PHi}}{Constante (en général intermédiaire) numéro \PH,
   dépendant éventuellement de la place \PHi}

@@ -1003,10 +1003,10 @@ On peut alors démontrer notre deuxième version de l'inégalité de
   \]
   avec
   \begin{multline*}
-  %   \cst[]{cLiouville} = \big( (n+1)^5(l+1)^2 (2\abs S +3)ld \big)^{ld} \\
+  %   \cst{cLiouville} = \big( (n+1)^5(l+1)^2 (2\abs S +3)ld \big)^{ld} \\
   %     \cdot \left( ld(\abs S +1)(3ld)^{(l+1)(n+1)} \right)^{\abs S
   % (3ld)^{(l+1)(n+1) +1}}
-  \cst[]{cLiouville}^{-1} = (n+1)^{3/2} \big( (l+1)^{11/2} (n+1)^5
+  \cst{cLiouville}^{-1} = (n+1)^{3/2} \big( (l+1)^{11/2} (n+1)^5
   \big)^{ld} \\
   \cdot \big( (\abs S /2 +2)(ld +1) \big)^{\abs S(1 + 2(ld
     +1)^{(l+1)(n+1)})}
@@ -1030,7 +1030,7 @@ On peut alors démontrer notre deuxième version de l'inégalité de
   & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \frac1{H(V) H(\p z)^d} \\
   & \qquad \cdot \frac1 {(n+1)^{3/2}
     \big( l(n+1)^2 \cdot e \big)^{ld} (\abs S /2 +2)(ld +1)} \\
-  &\ge \cst[]{cLiouville} \frac1{H(V) H(\p z)^d}
+  &\ge \cst{cLiouville} \frac1{H(V) H(\p z)^d}
   \qedhere
   \end{align*}
 \end{proof}
@@ -1050,7 +1050,7 @@ Liouville énoncées à la section précédente.
   (\ref{HP}) du théorème~\ref{Mumford}, on a $\prod_{v \in S} \Distv(\p z,
   \vai)^{e_v} \le \newcst[]{CPrecis}H^{-\eps/d}$, avec
   \[
-  \cst[]{CPrecis} = H(\va)^{3\cdot4^g} 10\sqrt2\,(n+1)^6
+  \cst{CPrecis} = H(\va)^{3\cdot4^g} 10\sqrt2\,(n+1)^6
   2^{7g/2}\left(\frac{(2n^2+1)(n+1)^2}{2n} e^{\gamma_{\frac{(n+1)n}{2}} +
     \gamma_{n+1}} \right)^{ld}
   \]
@@ -1114,16 +1114,16 @@ Liouville énoncées à la section précédente.
   \cite{daphimhva2} et la remarque subséquente : $\lvert\Hautn(\truc) -
   h(\truc)\rvert \le B$, avec $B$ comme dans l'énoncé du théorème. En
   injectant ceci dans le lemme~\ref{Precis}, on a $\sum_{v \in S} e_v
-  \log\Distv(\p z, \vai) \le -(\eps/d) \Hautn(\p x) + B\eps/d + \cst[]{CPrecis}$. De
+  \log\Distv(\p z, \vai) \le -(\eps/d) \Hautn(\p x) + B\eps/d + \cst{CPrecis}$. De
   même, le lemme~\ref{Petit} donne $h(\p z) \le ((\rho^2/4) + 2\phi +
   \rho\phi) \Hautn(\p x) + B$. Ces deux estimations contredisent la conclusion de
   la proposition~\ref{PLiouvilleMal} dès que
   \[
   \big(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\big) \Hautn(\p x) > h(\vai) +
-  \cst[]{CPrecis} + B(ld + \eps/d) \pmm.
+  \cst{CPrecis} + B(ld + \eps/d) \pmm.
   \]
   Or, un calcul facile montre que la constante $C$ du théorème majore
-  $\cst[]{CPrecis}$ et que la relation précédente est impliquée par
+  $\cst{CPrecis}$ et que la relation précédente est impliquée par
   l'hypothèse (\ref{Loin}) du théorème ; cette dernière oblige donc $\p z$ à
   être sur $\vai$.
 \end{proof}
@@ -1134,7 +1134,7 @@ du théorème, avec la même conclusion mais en affaiblissant la condition
 $ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps$ en $d^2((\rho^2/4) + 2\phi +
 \rho\phi)< \eps$ et en remplaçant la condition 3 par
 \[
-  \Hautn(\p{x}) > [h(\vai) + C + \log \cst[]{cLiouville} + B(d + \eps/d)] \cdot
+  \Hautn(\p{x}) > [h(\vai) + C + \log \cst{cLiouville} + B(d + \eps/d)] \cdot
   [\eps/d - d((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
 \]
 
