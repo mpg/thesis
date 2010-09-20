@@ -12,10 +12,11 @@
 \newif\if@domark        \@domarktrue
 \newif\if@nomencl       \@nomencltrue
 \newif\if@showmac       \@showmactrue
+\newif\if@showkeys      \@showkeystrue
 
 % option declarations [[2
 %
-\DeclareOption {pph}    {\@showbadfalse \@showmacfalse}
+\DeclareOption {pph}    {\@showbadfalse \@showmacfalse \@showkeysfalse}
 \DeclareOption {nobad}  {\@showbadfalse}
 \DeclareOption {showmac}{\@showmactrue}
 \DeclareOption {nomark} {\@domarkfalse}
@@ -31,13 +32,16 @@
 \usepackage{amssymb}
 \renewcommand\sfdefault{iwona}
 
+\usepackage{xcolor}
+\colorlet{dev}{black!50}
+
 % load various usefull packages [[2
 %
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
 \usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted}
 \usepackage{enumitem}
-\usepackage{git-info, eso-pic, xcolor}
+\usepackage{git-info, eso-pic}
 \usepackage[noprefix, nocfg, french]{nomencl}
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true,
@@ -47,6 +51,15 @@
 \usepackage[british, frenchb]{babel}
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
 \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
+
+% showkeys pseudo-option [[2
+%
+\if@showkeys
+  \usepackage[notref, notcite, color]{showkeys}
+  \colorlet{refkey}{dev}
+  \colorlet{labelkey}{dev}
+  \renewcommand\bibitem{\ERROR}
+\fi
 
 % overfullrule (implement 'nobad' option) [[2
 %
@@ -170,8 +183,6 @@
 
 % marginal notes and todos [[2
 %
-\colorlet{dev}{black!50}
-
 \newcommand*\marginnote [1] {\marginpar[\raggedleft #1]{\raggedright #1}}
 \newcommand*\worknote   [1] {\marginnote{%
     \leavevmode\color{dev}\itshape #1}}
