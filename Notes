@@ -64,10 +64,6 @@ Rémond soit 1, et si c'est systématique ou pas.
 Macros {{{2
 ------
 
-(A) Pareil pour les hauteurs. Aussi renommer \Haut en Hautm, etc.
-
-(A) rationnaliser les préfixes de labels
-
 (A) Faire un truc pour utiliser les \@ifstar en indice/exposant sans
 souci.
 
@@ -77,6 +73,10 @@ etc. ?  (Dépend du \@ifstar traffiqué.)
 (B) Rajouter \vardim** = \vardim[\puiss] etc ?
 
 (B) Renommer \varfoo en \vfoo ?
+
+(B) Reprendre les macros de mumford
+    - présentation du source
+    - labels
 
 (C) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
 -> \Haut\point).
@@ -156,5 +156,20 @@ Défaire : attache (défaire, dédire, ...)
 Semi-truc : trait d'union (semi-circulaire, semi-perméable, etc.)
 
 LaTeX {{{2
+
+Labels:
+c:  coro
+d:  tdef
+e:  equation
+f:  fact
+i:  \item
+l:  lem
+p:  prop
+s:  scho
+t:  thm
+
+chap:   chapter
+sec:    section
+sub:    subsection
 
 # vim: fdm=marker fdl=1 ai syn=mkd

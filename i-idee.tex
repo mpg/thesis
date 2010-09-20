@@ -14,27 +14,27 @@ point et une variété.
 Dans ces conditions, \bsc{Faltings} a démontré le théorème d'approximation
 suivant \cite[\eng{Theorem~II}]{faldaav}.
 
-\begin{thm}[\bsc{Faltings}] \label{t-fal2}
+\begin{thm}[\bsc{Faltings}] \label{t:fal2}
   Soit $V$ une sous-variété quelconque de $\va$, $\place$ une place de $\cdn$,
   et $\eps > 0$. Il n'existe qu'un nombre fini de points $\point$ dans
   $\va(\cdn)$ tels que
   \begin{equation}
-    0 < \distv{\point}{V} \le \haut{\point}^{-\eps}
+    0 < \distv{\point}{V} \le \hautm{\point}^{-\eps}
     \pmm,
-    \label{e-has}
+    \label{e:has}
   \end{equation}
-  où $\Haut$ désigne la hauteur de \bsc{Weil} multiplicative.
+  où $\Hautm$ désigne la hauteur de \bsc{Weil} multiplicative.
 \end{thm}
 
 Comme de nombreux énoncés de géométrie diophantiennes, ce résultat n'est
 malheureusement pas effectif au sens suivant : on ne voit à l'heure actuelle
 pas de moyen de borner la hauteur des points satisfaisant à l'hypothèse
-d'approximation \eqref{e-has}. Ainsi que le fait remarquer \bsc{Faltings}
+d'approximation \1{e:has}. Ainsi que le fait remarquer \bsc{Faltings}
 dans l'introduction de son article : \og \eng{As far as I can see, everything
   here is ineffective beyond hope.} \fg
 
 Il semble néanmoins raisonnable de vouloir majorer le nombre de points
-rationnels satisfaisant à \eqref{e-has} (que nous appellerons à l'occasion
+rationnels satisfaisant à \1{e:has} (que nous appellerons à l'occasion
 les approximations exceptionnelles), ou au moins de donner quelques
 informations quantitatives explicites à leur sujet. C'est à cette question que
 nous nous intéressons ici.
@@ -45,7 +45,7 @@ Plus précisément, ce type d'énoncé quantitatif est généralement obtenu en
 combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford},
 dont nous rappelons brièvement des énoncés possibles, formulés de façon
 générique avec une condition (C) qui peut être par exemple l'hypothèse
-d'approximation \eqref{e-has} ci-dessus, ou une autre condition pour
+d'approximation \1{e:has} ci-dessus, ou une autre condition pour
 l'ex-conjecture de \bsc{Mordell-Lang}.
 
 Les deux inégalités s'énoncent dans l'espace de \bsc{Mordell-Weil} de $\va$
@@ -56,13 +56,13 @@ L'inégalité de \bsc{Vojta} affirme qu'il n'existe pas de suite $x_1, \dots,
 x_m$ de points satisfaisant simultanément à la condition (C) et aux trois
 conditions suivantes :
 \begin{enumthm}
-  \item $\hautn{x_1} > \alpha$ ; \label{i-grand}
-  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i-proche}
+  \item $\hautn{x_1} > \alpha$ ; \label{i:grand}
+  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i:proche}
   \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$ ;
 \end{enumthm}
 où l'angle est relatif à la structure euclidienne de l'espace. Nous
 appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
-conditions \ref{i-grand} et \ref{i-proche}. Il est clair que l'espace privé
+conditions \ref{i:grand} et \ref{i:proche}. Il est clair que l'espace privé
 d'une boule de rayon $\sqrt{\alpha}$ peut être recouvert par un nombre fini de
 tels cônes tronqués dès qu'il est de dimension finie (ce qui est la cas si on
 se place sur un corps de nombres). L'inégalité de \bsc{Vojta} assure qu'il
@@ -117,8 +117,8 @@ Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établ
 des versions quantitatives du théorème. Plus précisément, la démonstration de
 \bsc{Roth} consiste en un fait qu'on peut, anachroniquement, appeler une
 inégalité à la \bsc{Vojta} : aucune suite $x_1, \dots, x_m$ d'approximations
-exceptionnelles n'est telle que $\haut{x_1} > c_1$ et
-$\haut{x_i} > c_2 \cdot \haut{x_{i-1}}$ pour tout $i > 1$.
+exceptionnelles n'est telle que $\hautm{x_1} > c_1$ et
+$\hautm{x_i} > c_2 \cdot \hautm{x_{i-1}}$ pour tout $i > 1$.
 
 Pour établir une version quantitative du théorème de \bsc{Roth}, il a fallu
 expliciter une valeur admissible des constantes $c_1$ et $c_2$, d'une part, et
@@ -140,14 +140,14 @@ l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
   Soient $V$ une variété projective de degré $d$, et $x \in \proj{n}(\Qbar)$
   un point algébrique. Si $x$ n'appartient pas à $V$, on a
   \[
-    \distv{x}{V} \ge c(n, d) \haut{V}^{-1} \cdot \haut{x}^{-d} \pmm.
+    \distv{x}{V} \ge c(n, d) \hautm{V}^{-1} \cdot \hautm{x}^{-d} \pmm.
   \]
 \end{prop}
 
 Dans le cas où $V$ est une hypersurface, c'est une application directe du
 théorème du produit (et $c(n, d) = 1$), et on peut se ramener à ce cas en
 général, quitte à prendre une valeur beaucoup plus petite pour $c(n, d)$.
-Comme on le verra en \ref{s-siegel}, il est intéressant dans les applications
+Comme on le verra en \ref{s:siegel}, il est intéressant dans les applications
 de disposer d'un exposant meilleur que $d$.
 
 \subsection{L'ex-conjecture de Mordell-Lang}
@@ -176,7 +176,7 @@ diophantienne, en introduisant ce qu'on appelle maintenant l'inégalité de
 prouver une conjecture de \bsc{Lang}, généralisant celle de \bsc{Mordell}, et
 qui s'énonce ainsi.
 
-\begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Lang}] \label{t-fal1}
+\begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Lang}] \label{t:fal1}
   Soit $V$ une sous-variété d'une variété abélienne $\va$, définie sur un
   corps de nombres $\cdn$. Si $V$ ne contient pas de translaté de sous-variété
   abélienne stricte, alors $V(\cdn)$ est fini.
@@ -198,7 +198,7 @@ pour étudier les points qui sont proches d'une sous-variété, sans appartenir
 translaté de sous-groupe. En fait, le résultat reste valable même pour les
 approximations d'une sous-variété abélienne.
 
-Des versions quantitatives du théorème~\ref{t-fal1} ont été établies ensuite.
+Des versions quantitatives du théorème~\ref{t:fal1} ont été établies ensuite.
 Signalons la relecture de la preuve par \bsc{Bombieri}, qui simplifie certains
 arguments en les rapprochant de l'effectivité, et le travail de \bsc{De Diego}
 sur les familles de courbes. \bsc{Rémond} obtient, dans la lignée de travaux de
@@ -212,7 +212,7 @@ que celui de \bsc{Rémond}, et légèrement plus précise que son application
 directe au cas des courbes.
 
 \subsection{Le théorème de Siegel et une ex-conjecture de Lang}
-\label{s-siegel}
+\label{s:siegel}
 
 Le théorème de \bsc{Siegel}, démontré en 1929, affirme qu'une courbe de genre
 supérieur ou égal à 1 ne possède qu'on nombre fini de points entiers. Sa
@@ -227,10 +227,10 @@ jacobienne (à cette différence qu'ici la courbe peut être sa jacobienne, dans
 le cas $g=1$).
 
 Cette conjecture de \bsc{Lang} est en fait un corollaire du
-théorème~\ref{t-fal2} : on remarque que la hauteur (relative à $E$) d'un point
+théorème~\ref{t:fal2} : on remarque que la hauteur (relative à $E$) d'un point
 entier $x$ est essentiellement donné par le produit des inverse des distances
 $v$-adiques de $x$ à $E$ quand $v$ parcourt les places archimédiennes de
-$\cdn$. Or ces distances sont minorées par $\haut{x}^{-\eps}$ pour tout
+$\cdn$. Or ces distances sont minorées par $\hautm{x}^{-\eps}$ pour tout
 $\eps>0$, sauf pour un nombre fini de points. Ceci est bien sûr contradictoire
 dès que $\eps < 1$, ce qui prouve que seules les approximations
 exceptionnelles de $E$ peuvent donner des points entiers. Dénombrer ces
@@ -275,10 +275,10 @@ On montre une version de cette inégalité dans le cas particulier où la
 sous-variété à approcher est une variété abélienne.  L'énoncé obtenu est le
 suivant.
 
-\begin{thm} \label{thm-mumford}
+\begin{thm} \1{t:mumford}
   Soient $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
   deux points de $\va(\Qbar)$ satisfaisant à la condition d'approximation
-  \eqref{e-has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
+  \1{e:has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
   telles que si
   \begin{enumthm}
     \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
@@ -290,7 +290,7 @@ suivant.
 
 Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalement explicitées
 en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
-\eqref{e-has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
+\1{e:has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
 du plongement ambiant.
 
 L'approche adoptée la suivante : étant donné deux points satisfaisant aux
@@ -312,18 +312,18 @@ formules d'addition de \cite{daphimhva2}.
 Une fois ceci établi, on constate que $\pointii$ est une très bonne
 approximation de $\vai$, de petite hauteur, suffisamment pour contredire
 l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
-$\vai$ ; ce qui établit le théorème~\ref{thm-mumford}.
+$\vai$ ; ce qui établit le théorème~\1{t:mumford}.
 
 \subsection {Inégalité de \bsc{Vojta}}
 
 Le schéma général de cette partie de la preuve est commun à celui adopté dans
 \cite{remivds} et \cite{faldaav} : on suppose pour commencer qu'il existe une
 suite d'approximations $x_1, \ldots, x_m$ satisfaisant simultanément à
-\eqref{e-has} et aux trois conditions suivantes :
+\1{e:has} et aux trois conditions suivantes :
 \begin{enumthm}
-  \item $\hautn{x_1} > \alpha$ ; \label{iv-grand}
-  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{iv-angle}
-  \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$. \label{iv-ecart}
+  \item $\hautn{x_1} > \alpha$ ; \label{i:vs-grand}
+  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i:vs-angle}
+  \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$. \label{i:vs-ecart}
 \end{enumthm}
 On regarde alors cette suite comme un point de $\va^m$, et on cherche à
 construire par récurrence, en partant de $\va^m$,  une suite
@@ -333,7 +333,7 @@ décroissante de sous-variétés (irréductibles) produit $Y\pexp{u} =
   \item $x \in Y\pexp u$ ;
   \item $\dim Y\pexp u = u$ ;
   \item $\deg Y\pexp u \le f(u)$ et $\deg Y\pexp u[i] \le f_i(u)$ ;
-  \item $\sum_{i=1}^m a_i \haut{Y\pexp u[i]} \le g(u, a)$ ; \label{i-ht}
+  \item $\sum_{i=1}^m a_i \hautm{Y\pexp u[i]} \le g(u, a)$ ; \label{i:ht}
 \end{enumthm}
 où les $a_i$ sont des entiers choisis de telle sorte que la quantité $a_i^2
 \hautn{x_i}$ soit à peu près constante, et $f$, $f_i$ et $g$ sont des
@@ -344,10 +344,10 @@ $\va$, et des degrés et dimensions ambiants.
 
 Supposons un moment cette suite construite, et voyons comment elle permet de
 conclure. On regarde $Y\pexp{m-1}$ : c'est un produit dont un des facteurs est
-nécessairement réduit à un des $x_i$. Mais l'inégalité \ref{i-ht}, le fait que
+nécessairement réduit à un des $x_i$. Mais l'inégalité \ref{i:ht}, le fait que
 $h(x_i)a_i^2$ soit à peu près constant, et la dépendance de $g$ en $\abs a$
 permettent alors de majorer la hauteur de $x_1$, de façon à contredire le
-point \ref{iv-grand} des hypothèses faites sur $x$.
+point \ref{i:vs-grand} des hypothèses faites sur $x$.
 
 Il suffit donc de savoir construire une telle suite, c'est-à-dire étant donné
 une sous-variété produit $Y$ de $\va^m$, de dimension $u$, satisfaisant aux
@@ -373,7 +373,7 @@ de \bsc{Faltings}, dont la conclusion est justement l'existence d'une forme
 $T$ comme celle recherchée, pour peu qu'on contrôle bien l'indice en $x$ de
 $F$ relativement à des poids suffisamment étagés : ici, les poids sont
 contrôlés par les $a_i$, donc en définitive par les rapport des hauteurs des
-$x_i$ successifs : c'est l'hypothèse~\ref{iv-ecart} qui garanti ainsi leur
+$x_i$ successifs : c'est l'hypothèse~\ref{i:vs-ecart} qui garanti ainsi leur
 étagement.
 
 Dans toute la suite, on supposera que la variété qu'on cherche à approcher est
@@ -419,7 +419,7 @@ $\place$ exploitant le fait que $x$ est $\place$-adiquement proche de $E$,  et
 de conclure à une contradiction par la formule du produit à moins de $F(x)$ ne
 soit nul. Dans la phrase précédente, il faut en fait remplacer $F$ par ses
 dérivées jusqu'à un ordre convenable. C'est en tous cas l'hypothèse
-d'approximation \eqref{e-has} qui établit la contrainte nécessaire en liant
+d'approximation \1{e:has} qui établit la contrainte nécessaire en liant
 $\distv{x}{E}$ à $H(x)$, donc indirectement $\av{F(x)}$ à $H(F(x))$.
 
 Pour estimer la norme locale de $F(x)$ en $\place$, la difficulté est que $F$

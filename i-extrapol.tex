@@ -34,7 +34,7 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   tels que :
   \begin{enumthm}
     \item $\partial^\kappa y =
-      \frac{\chi(P_a^\kappa)}{\chi(R)^{2\lgr\kappa-1}}$, \label{i-repres}
+      \frac{\chi(P_a^\kappa)}{\chi(R)^{2\lgr\kappa-1}}$, \label{i:repres}
       pour tous $a$ et $\kappa$.
     \item $\deg P_a^\kappa \le (D -1)(2 \lgr\kappa -1)$,
       pour tous $a$ et $\kappa$.
@@ -99,7 +99,7 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
     \cdot R^{2\lgr\kappa - 2}
     \cdot \prod_{1\le i \le \mu} \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}}
   \]
-  pour que \ref{i-repres} soit satisfait pour $a=0$
+  pour que \ref{i:repres} soit satisfait pour $a=0$
 
   On majore alors le degré de $P^\kappa$ par récurrence :
   \begin{align*}
@@ -223,7 +223,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
 \begin{proof}
   On applique le lemme précédent, en remarquant de plus que pour $1\le j \le u$
   on peut choisir $\widetilde Q_{a, j}^\kappa$ et $\widetilde R_j$ satisfaisant
-  à la condition \ref{i-repres} avec $\deg{\widetilde Q}_{a, j}^\kappa \le 0$,
+  à la condition \ref{i:repres} avec $\deg{\widetilde Q}_{a, j}^\kappa \le 0$,
   $\Onv{\widetilde Q_{a, j}^\kappa} \le 1$ et $\widetilde R_j = 1$. Il vient
   alors :
   \begin{align*}
@@ -286,7 +286,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   d'où l'estimation annoncée et le lemme.
 \end{proof}
 
-\begin{lem} \label{l-param}
+\begin{lem} \label{l:param}
   Soit $Z$ une variété projective de degré $D$ et de dimension $u$, définie
   sur un corps de nombres $\cdn$, plongée de façon adaptée dans $\Proj^n$, dont
   on note $f_Z$ une forme de \bsc{Chow}. On considère le monomorphisme de
@@ -305,7 +305,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
         \N^u} \frac {\nu_a^\kappa(F)} {R^{f(\kappa)}} \, t^\kappa \right)$  ;
     \item $\Onv{\nu_\dv^\kappa(F)} \le \Onv F \cdot \big( \Onv{f_Z}
       (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\kappa)} \cdot 2^{\dv (\lgr\kappa +
-        u(d-1))}$ ; \label{i-norme}
+        u(d-1))}$ ; \label{i:norme}
     \item $\Onv R \le (D^\dv \Onv{F_Z})^{n-u}$.
   \end{enumthm}
 \end{lem}
@@ -314,7 +314,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   On choisit pour $R$ l'homogénéisé de degré $(D-1)(n-u)$ de $\widetilde R$, et
   on définit $\nu_a^\kappa$ sur les monômes en imposant que l'image de $X^\beta$
   soit l'homogénéisé de degré adéquat de $Q_{a, \beta}^\kappa$. On applique
-  alors le lemme précédent, en utilisant pour \ref{i-norme} la sous-linéarité de
+  alors le lemme précédent, en utilisant pour \ref{i:norme} la sous-linéarité de
   la norme.
 \end{proof}
 
@@ -339,7 +339,7 @@ plongée dans $(\Proj^n)^{2m-1}$ de la façon induite par le plongement $\va
 $u_l = \dim Z_l$ et $u=\sum_l u_l = \dim Z$.
 
 \medskip
-Commençons par la paramétrisation. On déduit tout d'abord du lemme~\ref{l-param}
+Commençons par la paramétrisation. On déduit tout d'abord du lemme~\ref{l:param}
 une paramétrisation de $Z$. Pour cela, introduisons quelques notations : $X$
 désigne désormais plusieurs groupes de variables $X\pexp1, \ldots, X\pexp m$
 avec $X\pexp l = (X\pexp l[0], \ldots, X\pexp m[n])$. On utilise les notations
@@ -349,8 +349,8 @@ du produit composante par composante. Enfin, on note $\vb_l$ le vecteur dont
 toutes les coordonnées sont nulles, sauf la $l$-ième égale à $1$, et $\vb$ celui
 dont toutes les coordonnées valent $1$.
 
-\begin{lem} \label{l-par-prod}
-  Sous les hypothèses du lemme~\ref{l-param}, il existe une famille de polynômes
+\begin{lem} \label{l:par-prod}
+  Sous les hypothèses du lemme~\ref{l:param}, il existe une famille de polynômes
   $U = (U_1, \ldots, U_m)$ homogènes de degrés respectifs $\deg U_l =
   (D-1)(n-u_l)\vb_l$, et, pour tout $d \in N^m$, deux applications linéaires
   \[
@@ -359,10 +359,10 @@ dont toutes les coordonnées valent $1$.
   \]
   telles que, pour tout forme $F\in \cdn[X]_d$ et toute place $v$ de $\cdn$ :
   \begin{enumthm}
-    \item \label{i-repr-prod} $\tau(\chi(F)) =
+    \item \label{i:repr-prod} $\tau(\chi(F)) =
       \chi\left( \frac1{X_0^d} \sum_{\lambda \in \cramped{\N^u}}
       \frac {\nu_{m, \dv}^\lambda(F)} {U^{f(\lambda)}} s^\lambda \right)$ ;
-    \item \label{i-norm-prod} $\Onv{\smash{\nu_{m, \dv}^\lambda(F)}} \le \Onv F
+    \item \label{i:norm-prod} $\Onv{\smash{\nu_{m, \dv}^\lambda(F)}} \le \Onv F
       \Onv{f_Z}^{2n\lgt\lambda} \bigl(
       (16uD^3)^{n\lgt{\lambda}} \cdot 2^{u(\lgr d -1)} \bigr)^\dv$ ;
       % \big(\Onv{f_Z}    (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\lambda)}
@@ -372,13 +372,13 @@ dont toutes les coordonnées valent $1$.
 \end{lem}
 
 \begin{proof}
-  On pose $U_l = R(X\pexp l)$, où $R$ est le polynôme du lemme~\ref{l-param}.
+  On pose $U_l = R(X\pexp l)$, où $R$ est le polynôme du lemme~\ref{l:param}.
   On définit ensuite $\nu_{m, \dv}^\lambda$ sur les monômes par $\nu_{m,
   \dv}^\lambda(\mathfrak m) = \prod_l \nu_\dv^{\lambda\pexp l}(\mathfrak m\pexp
   l)$, où $\mathfrak m$ est le produit des monômes $\mathfrak m\pexp l$ en les
   variables $X\pexp l$. On prolonge ensuite par linéarité, on applique alors le
-  lemme~\ref{l-param} qui donne \ref{i-repr-prod} immédiatement. On établit
-  d'abord~\ref{i-norm-prod} pour les monômes (en majorant au passage
+  lemme~\ref{l:param} qui donne \ref{i:repr-prod} immédiatement. On établit
+  d'abord~\ref{i:norm-prod} pour les monômes (en majorant au passage
   $f(\lambda\pexp{l}$ par $\lgr{\lambda\pexp l}$), et on conclut par
   sous-linéarité de la norme.
 \end{proof}
@@ -425,7 +425,7 @@ point fixé, et telles que $\Onv{S^\bullet} \le 4^{g\dv} \Onv\vai$.
 
 On considère alors le morphisme $\tau \colon A(\widetilde Z) \to
 A(O)[[t\pexp1, \ldots, t\pexp{m}]]$ de paramétrisation de $O$, qui est \og
-représenté \fg{} au sens du lemme~\ref{l-par-prod} par des formes linéaires
+représenté \fg{} au sens du lemme~\ref{l:par-prod} par des formes linéaires
 $\nu_{m, \dv}^\kappa = \prod_{i=1}^m \nu_\dv^\kappa$, pour $O$ un ouvert
 convenable. On souhaite contrôler de même le morphisme composé
 \[
@@ -465,7 +465,7 @@ locales comme suit :
 On a alors immédiatement le résultat suivant.
 
 \begin{lem}
-  Dans les hypothèses et notations du lemme~\ref{l-par-prod}, considérons une
+  Dans les hypothèses et notations du lemme~\ref{l:par-prod}, considérons une
   forme $G \in \cdn[X, Y]$ multihomogène de degré $(\alpha, \beta)$. On pose
   \[ d = (\alpha_1 + 9/4 \beta_1 a_1^2, \ldots,
   \alpha_{m-1} + 9/4 \beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta) \pmm. \]
@@ -480,11 +480,11 @@ On a alors immédiatement le résultat suivant.
     \item $\Omega_a(\chi(G)) =\chi \left( \frac1{X_0^d} \sum_{\lambda \in \N^u}
       \frac {V_\dv^\lambda(G)} {U^{f(\lambda)}} \right)$,
   \end{enumthm}
-  où $U$ est la famille de polynômes du lemme~\ref{l-par-prod}.
+  où $U$ est la famille de polynômes du lemme~\ref{l:par-prod}.
 \end{lem}
 
 \begin{proof}
-  Il suffit d'appliquer le lemme~\ref{l-par-prod} à $\Psi_a(G)$.
+  Il suffit d'appliquer le lemme~\ref{l:par-prod} à $\Psi_a(G)$.
 \end{proof}
 
 \endinput

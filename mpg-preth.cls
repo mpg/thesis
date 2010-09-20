@@ -545,15 +545,15 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % height functions [[2
 %
-\newcommand \Haut  {\mathrm H}
-\newcommand \Hautl {\mathrm h}
-\newcommand \Hautn {\smash{\hat\Hautl}}
+\newcommand \Hautm [1][] {\mathrm H \ssub{#1}}
+\newcommand \Hautl [1][] {\mathrm h \ssub{#1}}
+\newcommand \Hautn       {\smash{\hat\Hautl}}
 
-\newcommand*\haut  [2][] {\Haut \ssub{#1}(#2)}
-\newcommand*\hautl [2][] {\Hautl\ssub{#1}(#2)}
-\newcommand*\hautn [1]   {\Hautn         (#1)}
+\newcommand*\hautm [2][] {\Hautm[1](#2)}
+\newcommand*\hautl [2][] {\Hautl[1](#2)}
+\newcommand*\hautn [1]   {\Hautn   (#1)}
 
-\noma{h}{\haut [\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
+\noma{h}{\hautm[\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
                             utilisant la norme \PHi aux places archimédiennes}
 \noma{h}{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
                             utilisant la norme \PHi aux places archimédiennes}
@@ -650,7 +650,6 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newc@star@default \var     {1}{\fct} {\Var\pexp{#1}}
 \newc@star@default \vardim  {1}{\fct} {{u\ssub{#1}}}
 \newc@star@default \vardeg  {1}{\fct} {{D\ssub{#1}}}
-\newc@star@default \varht   {1}{\fct} {\Haut\pexp{#1}[\Var]}
 \newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
 
@@ -660,8 +659,6 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{u}{\vardim*}{La dimension de $\var*$}
 \noma{D}{\vardeg }{Le vecteur des degrés de facteurs de $\var$}
 \noma{D}{\vardeg*}{Le degré de $\var*$}
-\noma{H}{\varht  }{La hauteur projective multiplicative de $\var$}
-\noma{H}{\varht* }{La hauteur projective multiplicative de $\var*$}
 \noma{f}{\varfc  }{La forme de \bsc{Chow} de $\var$}
 \noma{f}{\varfc* }{La forme de \bsc{Chow} de $\var*$}
 \noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}

@@ -6,9 +6,9 @@
 
 Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
 $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
-l'énoncé de la proposition~\ref{p-build-aux}, on demandera à $\delta$ d'être
+l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$ d'être
 assez grand, et à $\epsi$ d'être majoré par une certaine expression dépendant
-de $\epsz$ (voir fin de la section~\ref{sec-comp-dim}). Considérons par
+de $\epsz$ (voir fin de la section~\1{sec:comp-dim}). Considérons par
 ailleurs une famille d'entiers $\wt[1] \ge \dots \ge \wt[\puiss] = 1$ et un
 réel $\epsiii$ satisfaisant à
 \[
@@ -101,7 +101,7 @@ par un entier) par des polynômes, globalement ou localement. Le résultat
 fondamental est le fait suivant, qui est une simple reformulation de la
 proposition~3.6 de \cite{daphimhva2}.
 
-\begin{fact} \label{fact-addsub}
+\begin{fact} \1{f:addsub}
   Il existe une famille $S_{l, l'}$ de formes bihomogènes de bidegré $(2,
   2)$ représentant globalement de morphisme d'addition-soustraction
   \begin{align}
@@ -148,7 +148,7 @@ de représentations locales. En remarquant de plus qu'on peut dans chacune de
 ces formes simplifier par $\coi_{k(l')}$ puisqu'on projette à $l'$ fixé, on a
 donc le résultat suivant.
 
-\begin{coro}\label{c-addsub-form}
+\begin{coro}\label{c:addsub-form}
   Tout couple de points de $\va$ est contenu dans un ouvert $\opdef$ de
   $\va^2$ sur lequel il existe deux familles de formes biquadratiques
   $(S_l^{+})$ et $(S_l^{-})$ pour $0 \le l \le \dimp$ représentant sur
@@ -176,7 +176,7 @@ général\footnote{
 mais on peut néanmoins obtenir des formules locales de multiplication, en
 combinant les formules locales d'addition et de multiplication par deux.
 
-\begin{fact}\label{f-mult-form}
+\begin{fact}\label{f:mult-form}
   Pour tout $j \in \{ 0, \dots, \dimp \}$ et pour tout entier positif, il
   existe une famille de formes homogènes $Q_{b, i, j}$ pour $i \in \{ 0,
     \dots, \dimp \}$ représentant la multiplication par $b$ sur l'ouvert $V_j
@@ -201,7 +201,7 @@ combinant les formules locales d'addition et de multiplication par deux.
   \]
   où le membre de gauche reprend les notations de la preuve de \bsc{Rémond},
   alors que le membre de droite est la famille donnée par le
-  fait~\ref{fact-addsub}, qui n'était pas disponible au moment de la
+  fait~\1{f:addsub}, qui n'était pas disponible au moment de la
   rédaction de \cite{remivds}.
 
   De plus, \bsc{Rémond} donne seulement la majoration du degré. Il est en
@@ -239,8 +239,8 @@ canoniques, commute :
   }
 \end{equation}
 On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
-respectivement part le corollaire~\ref{c-addsub-form} et le
-fait~\ref{f-mult-form} de sorte que les formules obtenues soient valables au
+respectivement part le corollaire~\ref{c:addsub-form} et le
+fait~\ref{f:mult-form} de sorte que les formules obtenues soient valables au
 voisinages de $x$.
 
 Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
@@ -280,7 +280,7 @@ Plus précisément, posons
   \epsz \wt[\puiss],
   1, \dots, 1
   \bigr) \in \Q^{2\puiss-1}
-  \label{eq-def-d}
+  \1{e:def-d}
   \\
   d' & = \bigl(
   \wt[1] (\frac94 + \epsz),
@@ -289,7 +289,7 @@ Plus précisément, posons
   2\puiss + \epsz
   \bigr) \in \Q^\puiss
   \pmm.
-  \label{eq-def-dp}
+  \1{e:def-dp}
 \end{align}
 On a déjà supposé $\delta\epsz$ entier ; on supposera désormais de plus
 $\delta/4$ entier, de sorte que si $F$ est une forme de multidegré $\delta d$
@@ -335,7 +335,7 @@ On considérera des sous-espaces vectoriels de partie homogènes de
 $\cdn[\cmmh]$ définis par des restrictions de degré ; introduisons à cet effet
 quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
   \})^{\puiss(\dimp+1)}$, on notera
-\begin{equation} \label{eq-C-spaces}
+\begin{equation} \1{e:C-spaces}
   \cdn[\cmmh]^C
   = \{
     F \in \cdn[\cmmh]
@@ -347,7 +347,7 @@ quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
 \end{equation}
 On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
 par
-\begin{gather} \label{eq-C-i-iii}
+\begin{gather} \1{e:C-i-iii}
   (C')\pexp\fct[k] =
   \begin{cases}
     +\infty & \text{si $k \le \vardim*$} \\
@@ -375,7 +375,7 @@ et
 \( \ring{\opdef} = (\cdn[\cmmh])_\opdef \)
 et où les flèches verticales sont les morphismes de réduction.
 
-\begin{equation} \label{eq-diag-f-aux}
+\begin{equation} \1{e:diag-f-aux}
   \xymatrix{
     \Ideal\ph\Di
     \ar[r] ^{\wemba}
@@ -450,7 +450,7 @@ les autres termes, on n'explicitera donc à chaque fois que le terme de plus
 haut degré en $\delta$ ; ainsi lorsqu'on utilisera la notation $o(\truc)$ ou
 $\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
 
-\subsection{Deux calculs de dimension} \label{sec-comp-dim}
+\subsection{Deux calculs de dimension} \1{sec:comp-dim}
 
 La dimension de $\Ideal\ph{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
@@ -751,7 +751,7 @@ où \( d \) est défini par~\refeq{eq-def-d}.
   La définition de \( \wemba \) montre que \(
   \wemba( \cmmh^p \cmmhi^q ) = \cmmh^p \wemba(\cmmhi^q) \), on a donc \(
   \nv1 {c_{p, q}} = \nv1 {\wemba(\cmmhi^q)} \). Ainsi, avec le
-  corollaire~\ref{c-addsub-form} et le fait~\ref{f-mult-form}, on a
+  corollaire~\ref{c:addsub-form} et le fait~\ref{f:mult-form}, on a
   \begin{align}
     \nv1 {c_{p, q}}
     & \le
@@ -784,7 +784,7 @@ Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
 relations de dépendance intégrale. Commençons donc par expliciter ces
 relations.
 
-\begin{fact} \label{f-dep-int}
+\begin{fact} \label{f:dep-int}
   Dans les notations et hypothèses précédentes, il existe des formes homogènes
   \( P\mexp*[\ind] \) pour \( 1 \le \fct \le \puiss \) et
   \( \vardim* + 1 \le \ind \le \dimp \), telles que
@@ -830,8 +830,8 @@ de l'appliquer au cas qui nous intéresse.
   \begin{equation}
     \rdiv^f \colon \cdn [\cmmh]\ph f \to \cdn [\cmmh]\ph f^{C'_\Delta}
   \end{equation}
-  qui est l'identité modulo \( \Ideal \) (voir~\eqref{eq-C-spaces}
-  et~\ref{eq-C-i-iii} pour la définition de l'espace d'arrivée). De plus les
+  qui est l'identité modulo \( \Ideal \) (voir~\1{e:C-spaces}
+  et~\1{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
   colonnes \( c_p \) de la matrice de cette application satisfont la majoration
   de norme
   \begin{equation}
@@ -902,7 +902,7 @@ de l'appliquer au cas qui nous intéresse.
 
 \begin{coro} \label{c:hmat-rdiv}
   Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^{\Diii} \)
-  faisant commuter le diagramme~\eqref{eq-diag-f-aux}, dont les matrices dans
+  faisant commuter le diagramme~\1{e:diag-f-aux}, dont les matrices dans
   les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
   majorées par
   \begin{equation}
@@ -916,7 +916,7 @@ de l'appliquer au cas qui nous intéresse.
 
 \begin{proof}
   Découle directement du lemme précédent en utilisant les relations de
-  dépendance données par le fait~\ref{f-dep-int} et en remarquant que
+  dépendance données par le fait~\ref{f:dep-int} et en remarquant que
   \( 2\puiss \ge 9/4 \).
 \end{proof}
 
@@ -979,7 +979,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \begin{coro} \label{c:hmat-relim}
   Il existe une forme \( R \in \cdn [\cmmh]^{C''} \) ne dépendant que de \(
   \var \) et un morphisme \( \relim \) tels que le
-  diagramme~\eqref{eq-diag-f-aux} commute. De plus, les colonnes de la matrice
+  diagramme~\1{e:diag-f-aux} commute. De plus, les colonnes de la matrice
   de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
   majorée par
   \begin{equation}
@@ -994,9 +994,9 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
   l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varid \) ;
   elle découle du fait qu'on a supposé le plongement adapté
-  (scholie~\ref{sch-plong-adapt}).
+  (scholie~\1{s:plong-adapt}).
 
-  En effet, le deuxième point de la définition~\ref{def-plong-adapt} dit que
+  En effet, le deuxième point de la définition~\1{d:plong-adapt} dit que
   pour tous \( \fct \) et \( \ind \),
   \begin{equation}
     \cmh\fct[\ind]
@@ -1041,7 +1041,7 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
 
 Nous sommes maintenant en mesure de construire la forme auxiliaire.
 
-\begin{prop} \label{p-build-aux}
+\begin{prop} \label{p:build-aux}
   Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
   \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
   [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), non nulle modulo
@@ -1068,7 +1068,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \end{prop}
 
 \begin{proof}
-  On reprend le diagramme~\eqref{eq-diag-f-aux}, dont la première ligne est
+  On reprend le diagramme~\1{e:diag-f-aux}, dont la première ligne est
   maintenant bien définie. On considère le produit \( M'' \) des matrices des
   applications \( \wemba \), \( \rdiv^\Dii \), \( \relim \) et \(
   \rdiv^{\Diii} \) composées dans cet ordre. Ses lignes sont naturellement
@@ -1110,11 +1110,11 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 
   On utilise le fait élémentaire suivant : si \( A \) et \( B \) sont deux
   matrices telles que le produit \( A \cdot B \) est défini, alors
-  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \haut[\infty] A \)
+  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \hautm[\infty] A \)
   et d'un majorant de \( \hautl[\infty] c \) où \( c \) parcourt les colonnes
   de \( B \).
 
-  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Haut_\infty \) des
+  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautm_\infty \) des
   colonnes de la matrice de \( \wemba \) est majorée par
   \begin{equation}
     \bigl( \delta + o(\delta) \bigr)
