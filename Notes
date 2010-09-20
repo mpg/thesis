@@ -87,7 +87,7 @@ etc. ?  (Dépend du \@ifstar traffiqué.)
 (C) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
 -> \Haut\point).
 
-Vojta
+Vojta {{{2
 -----
 
 (A) Retaper la paramétrisation dès que les math sont prêtes.
@@ -163,4 +163,4 @@ Semi-truc : trait d'union (semi-circulaire, semi-perméable, etc.)
 
 LaTeX {{{2
 
-# vim: fdm=marker fdl=1 ai
+# vim: fdm=marker fdl=1 ai syn=mkd
