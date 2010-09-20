@@ -64,9 +64,6 @@ Rémond soit 1, et si c'est systématique ou pas.
 Macros {{{2
 ------
 
-(A) Faire un truc pour utiliser les \@ifstar en indice/exposant sans
-souci.
-
 (B) Rajouter \dimp* = \dimp + 1, \dimp** = (\dimp*), \puiss* = \puiss - 1,
 etc. ?  (Dépend du \@ifstar traffiqué.)
 

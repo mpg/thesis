@@ -245,15 +245,20 @@
   \expandafter\newc@star@default@
   \csname \cmdstring#1 \endcsname#1}
 \newcommand*\newc@star@default@[5]{%
-  \newcommand*#1[#3][]{#5}%
-  \newcommand*#2{\@ifstar{#1[#4]}{#1}}}
-% Maybe to-do: use a \bgroup-\egroup trick to make the macros usable as
-% indices/exponents without braces?
+  \newcommand*#1[#3][]{#5\egroup}%
+  \newcommand*#2{\bgroup \@ifstar{#1[#4]}{#1}}}
 
 % coma-seperated list with possibly empty elements [[2
 %
 \newcommand*\sfirst [1] {\@ifnomtarg{#1}{#1,}}
 \newcommand*\slast  [1] {\@ifnomtarg{#1}{,#1}}
+
+% su{b,per}script-friendly starred macros [[2
+%
+\newcommand*\newc@ifstar [3] {%
+  \newcommand#1{\bgroup\@ifstar{#2\egroup} {#3\egroup}}}
+\newcommand*\newc@ifstar@two [4] {%
+  \newcommand#1{\bgroup\@ifstar{\@ifstar{#2\egroup}{#3\egroup}} {#4\egroup}}}
 
 % non thesis-specific math [[1
 % ------------------------
@@ -633,7 +638,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % various (degree) conditions for subsets in lemmas
 \newcommand \Di   { {\delta d} }
 \newcommand \Dii  { {\delta d'} }
-\newcommand \Diii { \@ifstar {\delta d'_\fct + r\fct} {\delta d' + r} }
+\newc@ifstar\Diii {\delta d'_\fct + r\fct} {\delta d' + r}
 \newcommand \Ci   { \ph\Dii  ^{C'}   }
 \newcommand \Cii  { \ph\Dii  ^{C''}  }
 \newcommand \Ciii { \ph\Diii ^{C'''} }
