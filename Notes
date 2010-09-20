@@ -20,6 +20,10 @@ etc. ?
 (macros) régler \newcst pour ne pas avoir besoin de spécifier [, v] ou pas à
 chaque utilisation.
 
+(math) dans l:deg-wemba, remplacer le \le par un = en utilisant des parties
+entières supérieures de façon adéquate, ça coute pas cher et ça simplife la
+suite.
+
 Préciser la portée de tout ce qui dépend au plongement (long terme, dépend de
 décisions mathématiques).
 

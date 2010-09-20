@@ -294,8 +294,8 @@
 
 % standard functions [[2
 %
-\newcommand*\I     [1] {\std{Id}_{#1}}
-\newcommand*\indic [1] {\std{1}_{#1}}
+\newcommand*\I     [1][] {\std{Id}\ssub{#1}}
+\newcommand*\indic [1]   {\std{1}\ssub{#1}}
 
 \noma{Id} {\I\PH}     {Fonction identité sur l'ensemble \PH}
 \nomn{1}  {\indic\PH} {Fonction indicatrice de l'ensemble \PH}
@@ -614,6 +614,8 @@
 \newcommand \Di   { {\delta d} }
 \newcommand \Dii  { {\delta d'} }
 \newcommand \Diii { \@ifstar {\delta d'_\fct + r\fct} {\delta d' + r} }
+\newcommand \Ci   { \ph\Dii  ^{C'}   }
+\newcommand \Cii  { \ph\Dii  ^{C''}  }
 \newcommand \Ciii { \ph\Diii ^{C'''} }
 
 % weight sum of \lamda in the definition of \stairs
@@ -670,7 +672,8 @@
 \noma{M}{\mat}{Une matrice}
 
 \newcommand\opdef{{\mathcal U}}
-\noma{U}{\opdef}{Ouvert de définition d'un certain morphisme}
+\noma{U}{\opdef}{Ouvert de définition d'une certaine famille de formes,
+  précisé localement}
 
 % Vojta-wide notations without a dedicated macro [[2
 % (btw, isn't this evil?)

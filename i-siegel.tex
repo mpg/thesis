@@ -335,8 +335,17 @@ Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
 \end{align}
 tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute :
-\begin{equation} \label{eq-diag-f-aux}
-  \dots % TODO
+\begin{equation}
+  \xymatrix{
+    \cdn [\cmmh, \cmmhi]
+    \ar[r] ^{\wemba}
+    \ar[d]
+    & \cdn [\cmmh]
+    \ar[d]
+    \\ \cdn [\cmmh, \cmmhi] / \ideal{\wemb(\var)}
+    \ar[r] ^{\wemb*}
+    & ( \cdn [\cmmh] / \varid )_\opdef
+  }
 \end{equation}
 On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
 respectivement part le corollaire~\ref{c-addsub-form} et le
@@ -346,7 +355,7 @@ voisinages de $x$.
 Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
 immédiatement le résultat suivant.
 
-\begin{lem}
+\begin{lem} \label{l:deg-wemba}
   Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
   \Qbar[\cmmh, \cmmhi]$ une forme multihomogène de multidegré $(\alpha,
   \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
@@ -475,9 +484,33 @@ et
 \( \ring{\opdef} = (\cdn[\cmmh])_\opdef \)
 et où les flèches verticales sont les morphismes de réduction.
 
-\[
-  \dots % TODO
-\]
+\begin{equation} \label{eq-diag-f-aux}
+  \xymatrix{
+    \Ideal\ph\Di
+    \ar[r] ^{\wemba}
+    \ar[d] _{\sim}
+    & \cdn [\cmmh]\ph\Dii
+    \ar[r] ^{\rdiv^\Dii}
+    \ar[d]
+    & \cdn [\cmmh]\Ci
+    \ar[r] ^{\relim}
+    \ar[d]
+    & \cdn [\cmmh]\Cii
+    \ar[r] ^{\rdiv^{\Diii}}
+    \ar[d]
+    & \cdn [\cmmh]\Ciii
+    \ar[d]
+    \\ \ring{\wemb(\var)}
+    \ar[r] ^{\wemb^*}
+    & \ring\opdef
+    \ar[r] ^{\I}
+    & \ring\opdef
+    \ar[r] ^{R \cdot \null}
+    & \ring\opdef
+    \ar[r] ^{\I}
+    & \ring\opdef
+    }
+\end{equation}
 
 Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
 représente une réduction par division euclidienne par certaines relations de
