@@ -15,6 +15,11 @@ etc. ?
 
 (macros) Renommer \varfoo en \vfoo ?
 
+(source) rationnaliser les préfixes de labels
+
+(macros) régler \newcst pour ne pas avoir besoin de spécifier [, v] ou pas à
+chaque utilisation.
+
 Préciser la portée de tout ce qui dépend au plongement (long terme, dépend de
 décisions mathématiques).
 

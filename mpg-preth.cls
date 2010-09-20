@@ -303,8 +303,8 @@
 % less standard but still usefull sets [[2
 %
 \newcommand \Qbar {\overline\Q}
-\newcommand \cdn {\boldsymbol k}
-\newcommand \Cdn {\boldsymbol K}
+\newcommand \cdn {{\boldsymbol k}}
+\newcommand \Cdn {{\boldsymbol K}}
 
 \noma{Q}{\Qbar}{Une clôture algébrique fixée de $\Q$}
 \noma{k}{\cdn}{Un corps de nombres}
@@ -647,8 +647,8 @@
 
 % misc (ok) [[2
 %
-\newcommand \rdiv  {\rho_{\text{\normalfont div}}}
-\newcommand \relim {\rho_{\text{\normalfont elim}}}
+\newcommand \rdiv  {{ \rho_{\text{\normalfont div}} }}
+\newcommand \relim {{ \rho_{\text{\normalfont elim}} }}
 
 \nomg{rho}{\rdiv}{Morphimse de réduction par division dans la construction de
   la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
@@ -684,12 +684,18 @@
 \noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
   des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
 
+\noma{F}{F}{La forme auxiliaire}
+\noma{R}{R}{Facteur parasitant la forme auxiliaire}
 \noma{r}{r}{Degré du facteur parasitant la forme auxiliaire}
 
 % Local notations without dedicated macro [[2
 %
-\nomg{alpha}{\alpha}{Parfois utilisé localement comme indice ou degré}
-\nomg{beta} {\beta} {Parfois utilisé localement comme indice ou degré}
+\nomg{alpha}{\alpha}{Parfois utilisé localement comme indice ou (multi)degré}
+\nomg{beta} {\beta} {Parfois utilisé localement comme indice ou (multi)degré}
+\noma{f} {f} {Parfois un multiindice, élément de \( \N^\puiss \)}
+\nomg{Delta}{\Delta}{Parfois un multidegré, élément de \( \N^\puiss \)}
+\noma{p}{p}{Parfois un entier ou un (multi)multiindice}
+\noma{q}{q}{Parfois un entier ou un (multi)multiindice}
 
 % unsorted math stuff [[1
 % -------------------

@@ -40,7 +40,7 @@ homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; o
 utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
 désignera une famille d'entiers.
 
-\begin{tdef}
+\begin{tdef} \label{def-plong-adapt}
   Suivant \cite{remivg}, on dit qu'un plongement
   \begin{math}
     \iota\colon V \embedin \proj\dimp
@@ -97,7 +97,7 @@ désignera une famille d'entiers.
   Inégalité classique sur la norme $L_1$ et la spécialisation des polynômes.
 \end{proof}
 
-\begin{scho}
+\begin{scho} \label{sch-plong-adapt}
   Vu les hypothèses sur $V$, on peut sans perte de généralité supposer de plus
   que $V \embedin \proj\dimp$ est adapté, quitte à multiplier sa hauteur
   ($L_1$) par
@@ -115,7 +115,7 @@ désignera une famille d'entiers.
 
 Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
 $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
-l'énoncé de la proposition~\ref{build-aux}, on demandera à $\delta$ d'être
+l'énoncé de la proposition~\ref{p-build-aux}, on demandera à $\delta$ d'être
 assez grand, et à $\epsi$ d'être majoré par une certaine expression dépendant
 de $\epsz$ (voir fin de la section~\ref{sec-comp-dim}). Considérons par
 ailleurs une famille d'entiers $\wt[1] \ge \dots \ge \wt[\puiss] = 1$ et un
@@ -643,7 +643,7 @@ Nous allons maintenant calculer la codimension de $\vanish$ dans
 $\cdn[\cmmh]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
 suivant :
 
-\begin{align}
+\begin{align} \label{e:stairs-c3}
   (\stairs)\Ciii
   & =
   \Biggl\{
@@ -764,7 +764,7 @@ Au vu des lemmes précédents, on introduit la constante
   \pmm,
 \end{equation}
 de sorte que
-\begin{equation}
+\begin{equation} \label{e:good-codim}
   \frac {\card (\stairs)\Ciii} {\dim \Ideal\ph{\delta d}}
   \le
   \epsii + o(1)
@@ -795,7 +795,7 @@ est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
 \end{equation}
 où \( d \) est défini par~\refeq{eq-def-d}.
 
-\begin{lem}
+\begin{lem} \label{l:hmat-wemba}
   Avec les notations précédentes, l'application linéaire
   \begin{equation}
     \wemba \colon
@@ -908,7 +908,7 @@ de l'appliquer au cas qui nous intéresse.
   \end{equation}
   qui est l'identité modulo \( \Ideal \) (voir~\eqref{eq-C-spaces}
   et~\ref{eq-C-i-iii} pour la définition de l'espace d'arrivée). De plus les
-  colonnes \( c_p \) de la matric de cette application satisfont la majoration
+  colonnes \( c_p \) de la matrice de cette application satisfont la majoration
   de norme
   \begin{equation}
     \nvp1{c_p}
@@ -976,7 +976,7 @@ de l'appliquer au cas qui nous intéresse.
   image.
 \end{proof}
 
-\begin{coro}
+\begin{coro} \label{c:hmat-rdiv}
   Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^{\Diii} \)
   faisant commuter le diagramme~\eqref{eq-diag-f-aux}, dont les matrices dans
   les bases monomiales canoniques ont des colonnes de normes \( \nvp1\truc \)
@@ -998,11 +998,253 @@ de l'appliquer au cas qui nous intéresse.
 
 Intéressons-nous maintenant au morphisme \( \relim \).
 
-\clearpage
+\begin{lem}
+  Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
+  \{ \vardim* + 1, \dots \dimp \} \), des formes
+  \( S\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*] ] \) et
+  \( T\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*+1] ] \)
+  telles que \( \deg S\mexp*[\ind] + 1 = T\mexp*[\ind] \) et des entiers
+  \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
+  \( S\mexp*[\ind] \cmh\fct[\ind] - T\mexp*[\ind] \).
 
-\begin{prop} \label{build-aux}
-  \dots
+  Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
+  \Delta \), de degré noté \( r \), et, pour tout \( f \in \N^\puiss \), une
+  application linéaire
+  \begin{equation}
+    \relim \colon
+    \cdn [\cmmh]\ph {f}^{C'_\Delta}
+    \to
+    \cdn [\cmmh]\ph {f+r}^{C'_\Delta}
+  \end{equation}
+  qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
+
+  De plus, on peut prendre
+  \( R = \prod\fctrange \prod_{\ind = \vardim*+1}^{\dimp}
+  ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^\relim \) de la
+  matrice de \( \relim \) dans la base canonique satisfont alors
+  \begin{equation}
+    \nvp1{ c_q^\relim }
+    \le
+    \prod\fctrange N_\fct^{\Delta_\fct}
+  \end{equation}
+  pour tout \( q \) de multilongueur \( f \), où \( N_\fct \) majore
+  \( \nvp1{ S\mexp*[\ind] } \) et \( \nvp1{ T\mexp*[\ind] } \) pour tout
+  \( \ind \).
+\end{lem}
+
+\begin{proof}
+  Soit \( R \) défini comme dans l'énoncé, et \( \cmmh^q \) un monôme de
+  l'espace de départ. Par hypothèse, \( q\mexp*[\ind] \le \Delta_\fct \) pour
+  tout \( \fct \) et \( \ind \le \vardim* + 1 \), de sorte que l'on peut poser
+  \begin{equation}
+    \relim( \cmmh^q )
+    =
+    \prod\fctrange \left(
+    \prod_{\ind=1}^{\vardim*}
+    (\cmh\fct[\ind])^{q\mexp*[\ind]}
+    \prod_{\ind=\vardim*+1}^\dimp
+    (T\mexp*[\ind])^{q\mexp*[\ind]}
+    (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
+    \right)
+  \end{equation}
+  et prolonger par linéarité. On vérifie immédiatement que \( \relim(\cmmh^q)
+  \) est congru à \( R \cdot \cmmh^q \) modulo \( \Ideal_{S, T} \), de même
+  que l'estimation de norme annoncée.
+\end{proof}
+
+\begin{coro} \label{c:hmat-relim}
+  Il existe une forme \( R \in \cdn [\cmmh]^{C''} \) ne dépendant que de \(
+  \var \) et un morphisme \( \relim \) tels que le
+  diagramme~\eqref{eq-diag-f-aux} commute. De plus, les colonnes de la matrice
+  de \( \relim \) dans les bases canoniques ont leur norme \( \nvp1\truc \)
+  majorée par
+  \begin{equation}
+    \prod\fctrange
+    \nvp1{ N'_\fct }^{\vardeg*}
+    \pmm,
+  \end{equation}
+  où \( N'_\fct \) est une constante ne dépendant que de \( \var* \).
+\end{coro}
+
+\begin{proof}
+  Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
+  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varid \) ;
+  elle découle du fait qu'on a supposé le plongement adapté
+  (scholie~\ref{sch-plong-adapt}).
+
+  En effet, le deuxième point de la définition~\ref{def-plong-adapt} dit que
+  pour tous \( \fct \) et \( \ind \),
+  \begin{equation}
+    \cmh\fct[\ind]
+    =
+    \sum_\alpha
+    \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
+    \bigl( \cmh\fct[\ind] \bigr) ^\alpha
+    \mod \varid*
+    \pmm,
+  \end{equation}
+  où \( A\mexp*[\ind, \alpha] \) et \( B\mexp*[\ind, \alpha] \) sont dans
+  \( \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*] ] \). On obtient alors les
+  familles \( S \) et \( T \) recherchées en réduisant au même dénominateur le
+  membre de droite de l'égalité précédente.
+\end{proof}
+
+Notons que pour construire la forme auxilaire, on n'a absolument pas besoin
+d'en savoir davantage sur \( R \) ni les \( N'_\fct \). On pourra néanmoins
+vouloir expliciter une valeur acceptable de \( R \) plus tard.
+
+\section{Construction finale de la forme auxiliaire}
+
+Commençons par rappeler la version que nous utiliserons du classique lemme de
+\bsc{Siegel}.
+
+\begin{fact} \label{f:siegel}
+  Pour toute matrice \( M \) de dimensions \( p \times q \) à coefficients
+  dans un corps de nombres \( \cdn \) avec \( p < q \), il existe un vecteur
+  \( x \in \cdn^q \) non nul tel que \( M x = 0 \) et satisfaisant
+  \begin{equation}
+    \hautl[\infty] x
+    \le
+    \frac q{p-q} \bigl( \hautl[\infty] M + \ln q \bigr) + c_\cdn
+    \pmm,
+  \end{equation}
+  où \( c_\cdn \) est une constante ne dépendant que de \( \cdn \).
+\end{fact}
+
+\begin{proof} \later
+  C'est le lemme de \bsc{Siegel} de \bsc{Bombieri} et \bsc{Vaaler}.
+\end{proof}
+
+Nous sommes maintenant en mesure de construire la forme auxiliaire.
+
+\begin{prop} \label{p-build-aux}
+  Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
+  \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
+  [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), non nulle modulo
+  \( \ideal{\wemb(\var)} \), telle que \( R \cdot F \in \vanish \) et
+  \begin{equation}
+    \hautl[\infty] F
+    \le
+    \delta \Bigr(
+    (4\puiss + 2\epsz) \sum\fctrange \wts* \hautl[1]{\varfc*}
+    + (1 + \epsiii)\wts[1] \cdot \cst{f-aux}
+    \Bigr)
+    + o(\delta)
+    \pmm,
+  \end{equation}
+  où
+  \begin{equation}
+    \newcst{f-aux}
+    \le
+    2 \hautl[\infty] \coi
+    + 2 \ln (\dimp + 1)
+    + (2\puiss + \epsz) \max\fctrange (2\vardim* + 3) \vardeg*
+    \pmm.
+  \end{equation}
 \end{prop}
+
+\begin{proof}
+  On reprend le diagramme~\eqref{eq-diag-f-aux}, dont la première ligne est
+  maintenant bien définie. On considère le produit \( M'' \) des matrices des
+  applications \( \wemba \), \( \rdiv^\Dii \), \( \relim \) et \(
+  \rdiv^{\Diii} \) composées dans cet ordre. Ses lignes sont naturellement
+  indexées par l'ensemble des multiindices
+  \begin{equation}
+    \left\{
+      \coeff \in \prod\fctrange \bigl(
+      \N^{\vardim* + 1}
+      \times \{ 0, \dots, \vardeg* - 1 \}
+      \times \{ 0 \}^{\dimp - \vardim* - 1}
+      \bigr)
+      \middle\|
+      \sum\indrange \coeff*[\ind] = \Diii
+      \right\}
+    \pmm.
+  \end{equation}
+  On extrait les lignes dont l'indice appartient à l'ensemble
+  \( (\stairs)\Ciii \) définit par~\eqref{e:stairs-c3} pour former la matrice
+  \( M' \), dont les colonnes sont naturellement indexées par les monômes de
+  multidegré \( \Di \) en \( (\cmmh, \cmmhi) \). On extrait alors de
+  \( M' \) les colonnes indexées par les monômes constituant la base choisie
+  de \( \Ideal\ph\Di \) pour former la matrice \( M \) à laquelle nous allons
+  appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
+
+  L'hypothèse faite sur \( \epsii \) et la relation~\eqref{e:good-codim}
+  impliquent directement que \( p < q \) et que
+  \begin{equation}
+    \frac q {p-q}
+    \le
+    \frac 1 {\frac1\epsii - 1} + o(1)
+    \le
+    1 + o(1)
+    \pmm.
+  \end{equation}
+  En remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
+  forme \( F \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
+  par \( \hautl[\infty] + o(\delta) \) ; il reste donc à estimer cette
+  hauteur.
+
+  On utilise le fait élémentaire suivant : si \( A \) et \( B \) sont deux
+  matrices telles que le produit \( A \cdot B \) est défini, alors
+  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \haut[\infty] A \)
+  et d'un majorant de \( \hautl[\infty] c \) où \( c \) parcourt les colonnes
+  de \( B \).
+
+  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Haut_\infty \) des
+  colonnes de la matrice de \( \wemba \) est majorée par
+  \begin{equation}
+    \bigl( \delta + o(\delta) \bigr)
+    \sum\fctirange \biggl(
+    2\wtis* \hautl[\infty] \coi
+    + \genre \wtis* \ln(4)
+    + \wtis* \ln(\dimp + 1)
+    \biggr)
+    \pmm,
+  \end{equation}
+  d'après le corollaire~\ref{c:hmat-rdiv}, celle des colonnes des matrices de
+  \( \rdiv^\Dii \) et \( \rdiv^{\Diii} \) par
+  \begin{equation}
+    \bigl( \delta + o(\delta) \bigr)
+    (2\puiss + \epsz)
+    \sum\fctrange \biggl(
+    \hautl[1]{\varfc*}
+    + \ln(\vardeg*)
+    + \ln(2) \cdot \bigl( (\vardim* + 1) \vardeg* + 1 \bigr)
+    \biggr)
+    \pmm,
+  \end{equation}
+  et d'après le corollaire~\ref{c:hmat-relim} celle des colonnes de la matrice
+  de \( \relim \) est un \( o(\delta) \). En sommant (en comptant bien deux
+  fois le majorant commun des hauteurs des deux \( \rdiv \)) et en tenant
+  compte du fait que \( \puiss - 1 + \sum\fctirange \wtis* \le (1 + \epsiii)
+  \wts[1] \), il vient
+  \begin{equation}
+    \hautl[\infty] M
+    \le
+    \delta \Bigr(
+    (4\puiss + 2\epsz) \sum\fctrange \wts* \hautl[1]{\varfc*}
+    + (1 + \epsiii)\wts[1] \cdot \cst{f-aux}
+    \Bigr)
+    + o(\delta)
+    \pmm,
+  \end{equation}
+  avec
+  \begin{align}
+    \cst{f-aux}
+    \le
+    & 2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
+    \\
+    & \null + 2(2\puiss + \epsz)
+    \max\fctrange \Bigl(
+    \ln(\vardeg*) + \ln(2) + \ln(2) (\vardim* + 1) \vardeg*
+    \Bigr)
+    \pmm.
+  \end{align}
+  On remarque alors que \( 4^\genre \le \dimp + 1 \), puis on utilise les
+  estimations élémentaires \( \ln(N) + \ln(2) \le N \ln(2) \), valable pour
+  tout entier \( N \), et \( 2 \ln(2) \le 3/2 \) pour aboutir à la
+  majoration annoncée.
+\end{proof}
 
 \endinput
 
