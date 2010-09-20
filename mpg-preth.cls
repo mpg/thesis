@@ -441,15 +441,17 @@
 \noma{v}{\place}{Une place, en général non fixée, de $\cdn$}
 
 \newcommand* \av  [2][\place] {\abs   {#2}\ssub{#1}}
-\newcommand* \nv  [2][\place] {\norm  {#2}\ssub{#1}}
-\newcommand* \nnv [2][\place] {\nnorm {#2}\ssub{#1}}
-\newcommand* \nvp [3][\place] {\norm  {#3}_{#1, #2}}
-\newcommand* \nnvp[3][\place] {\nnorm {#3}_{#1, #2}}
+\newcommand* \Onv [2][\place] {\norm  {#2}\ssub{#1}}
+\newcommand* \Onnv[2][\place] {\nnorm {#2}\ssub{#1}}
+\newcommand* \nv  [3][\place] {\norm  {#3}_{#1, #2}}
+\newcommand* \nnv [3][\place] {\nnorm {#3}_{#1, #2}}
 
 \noms{nv1}{\av\PH }{Valeur absolue $\place$-adique d'un nombre}
-\noms{nv2}{\nv\PH }{Norme $\place$-adique d'un vecteur ou d'une forme}
-\noms{nv3}{\nnv\PH}{Norme $\place$-adique d'un multivecteur ou d'une forme
-  multihomogène}
+\noms{nv2}{\nv\PHi\PH }{Norme $\place$-adique d'un vecteur ou d'une forme, en
+utilisant norme ou mesure \PHi si $\place$ est archimédienne}
+\noms{nv3}{\nnv\PHi\PH}{Norme $\place$-adique d'un multivecteur ou d'une forme
+  multihomogène, en utilisant norme ou mesure \PHi si $\place$ est
+  archimédienne}
 
 \newcommand \dv  {{\delta\smash{_\place}}}
 \newcommand \dpv {{\delta'_\place}}

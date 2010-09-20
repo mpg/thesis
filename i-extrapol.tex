@@ -38,7 +38,7 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
       pour tous $a$ et $\kappa$.
     \item $\deg P_a^\kappa \le (D -1)(2 \lgr\kappa -1)$,
       pour tous $a$ et $\kappa$.
-    \item $\nv{P_\dv^{\kappa}} \le \nv P ^{2\lgr\kappa - 1}
+    \item $\Onv{P_\dv^{\kappa}} \le \Onv P ^{2\lgr\kappa - 1}
       \cdot \left((4u)^{\lgr\kappa -1} D^{3\lgr\kappa -2} \right)^\dv$
       pour tout $\kappa$ et toute place $v$ de $\cdn$.
   \end{enumthm}
@@ -126,17 +126,17 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
     \deg P^\kappa \le 2(D -1) + \deg P^{\kappa'} \le (D
     -1)(2\lgr\kappa -1) \pmm.
   \]
-  Pour la norme, on prouve que $\nv{Q_\kappa} \le \nv P ^{2 \lgr\kappa - 1}
+  Pour la norme, on prouve que $\Onv{Q_\kappa} \le \Onv P ^{2 \lgr\kappa - 1}
   4^{\lgr\kappa -1} D^{3\lgr\kappa -2} (\lgr\kappa -1)!$ (ce qui implique le
   résultat annoncé vu que $\binom{\lgr\kappa}{\kappa} \le u^{\lgr\kappa - 1}$)
   en exploitant l'estimation obtenue sur le degré sous la forme $D^\kappa \le
   2\lgr\kappa D$.
   \begin{align*}
-    \nv{Q_\kappa}
-    & \le 2 D^2 (\deg Q_{\kappa'})\nv P ^2 \nv{\smash{Q_{\kappa'}}} +
-      2(2\lgr{\kappa'} -1) D^3 \nv {P}^2 \\
-    & \le \nv P ^2 \nv{ \smash{Q_{\kappa'}}} 4D^3 \lgr{\kappa'} \\
-    & \le \nv P ^{2 \lgr\kappa - 1} 4^{\lgr\kappa -1} D^{3\lgr\kappa -2}
+    \Onv{Q_\kappa}
+    & \le 2 D^2 (\deg Q_{\kappa'})\Onv P ^2 \Onv{\smash{Q_{\kappa'}}} +
+      2(2\lgr{\kappa'} -1) D^3 \Onv {P}^2 \\
+    & \le \Onv P ^2 \Onv{ \smash{Q_{\kappa'}}} 4D^3 \lgr{\kappa'} \\
+    & \le \Onv P ^{2 \lgr\kappa - 1} 4^{\lgr\kappa -1} D^{3\lgr\kappa -2}
       (\lgr\kappa -1)! \qedhere
   \end{align*}
 \end{proof}
@@ -146,7 +146,7 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   quelconque de $\deg_X P$ et $\deg_Y P$. Il vient par exemple $\deg_X
   P_a^\kappa \le D'\lgr\kappa$ et de même pour le degré en $Y$. On peut
   également remplacer $D$ par $D'$ et $4$ par $2$ dans la majoration de
-  $\nv{P_1^\kappa}$ ci-dessus.
+  $\Onv{P_1^\kappa}$ ci-dessus.
 \end{Rem}
 
 \begin{fact}
@@ -155,8 +155,8 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   indépendantes, et chaque $w_j$ est lié aux $w_1, \ldots, w_u$ par un
   polynôme $\widetilde P _j$ (obtenu en déshomogénéisant par $W_0 = 1$ le
   $P_j$ du lemme 4.2 de \cite{remivds}) de degré $D := \deg Z$, unitaire en la
-  dernière variable, et tel qu'en toute place, $\nv{\smash{\widetilde P}_j}
-  \le \nv{f_Z}$.
+  dernière variable, et tel qu'en toute place, $\Onv{\smash{\widetilde P}_j}
+  \le \Onv{f_Z}$.
 \end{fact}
 
 \begin{proof}
@@ -188,7 +188,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
       R_j)^{f(\kappa)}} t^\kappa$ pour tous $a$ et $j$ ;
     \item $\deg \widetilde P_{a, j}^\kappa \le g(\kappa)$ pour tous $a$, $j$ et
       $\kappa$ ;
-    \item $\nv{\widetilde P_{\dv, j}^\kappa} \le \bigl( \nv{f_Z} (\sqrt{4u}
+    \item $\Onv{\widetilde P_{\dv, j}^\kappa} \le \bigl( \Onv{f_Z} (\sqrt{4u}
       D^{3/2})^\dv \bigr)^{f(\kappa)}$ pour tous $j$ et $\kappa$.
   \end{enumthm}
 \end{lem}
@@ -212,11 +212,11 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
       t^\kappa$ pour tous $a$ et $\gamma$ ;
     \item $\deg \widetilde Q_{a, \gamma}^\kappa \le (D-1)(n-u)f(\kappa) +
       \lgr\gamma$ pour tous $a$, $\gamma$ et $\kappa$ ;
-    \item $\nv{\widetilde Q_{\dv, \gamma}^\kappa} \le 2^{\dv(\lgr\kappa +
-        n(\lgr\gamma -1))} \big( \nv{f_Z} \cdot (\sqrt{4u} D^{3/2})^\dv
+    \item $\Onv{\widetilde Q_{\dv, \gamma}^\kappa} \le 2^{\dv(\lgr\kappa +
+        n(\lgr\gamma -1))} \big( \Onv{f_Z} \cdot (\sqrt{4u} D^{3/2})^\dv
       \big)^{(n-u)f(\kappa)}$ pour tous $v$, $\gamma$ et $\kappa$ ;
     \item $\deg{\widetilde R} \le (D-1)(n-u)$ ;
-    \item $\nv{\widetilde R} \le (D^\dv \nv{f_Z})^{n-u}$.
+    \item $\Onv{\widetilde R} \le (D^\dv \Onv{f_Z})^{n-u}$.
   \end{enumthm}
 \end{lem}
 
@@ -224,7 +224,7 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   On applique le lemme précédent, en remarquant de plus que pour $1\le j \le u$
   on peut choisir $\widetilde Q_{a, j}^\kappa$ et $\widetilde R_j$ satisfaisant
   à la condition \ref{i-repres} avec $\deg{\widetilde Q}_{a, j}^\kappa \le 0$,
-  $\nv{\widetilde Q_{a, j}^\kappa} \le 1$ et $\widetilde R_j = 1$. Il vient
+  $\Onv{\widetilde Q_{a, j}^\kappa} \le 1$ et $\widetilde R_j = 1$. Il vient
   alors :
   \begin{align*}
     \tilde\tau(w^\gamma) &= \prod_{j=1}^n \tilde\tau(w_j)^\gamma_j \\
@@ -274,13 +274,13 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
     \lgr\gamma - 1}$. On majore ensuite la norme de chaque terme (pour $a =
   \dv$) par
   \begin{align*}
-    & \prod_{j=u+1}^n \left( \nv{\smash{\widetilde R_j}}^{f(\kappa) - \sum
+    & \prod_{j=u+1}^n \left( \Onv{\smash{\widetilde R_j}}^{f(\kappa) - \sum
         f(l\pexp{j, k_j})} \smash{\prod_{\substack{j, k_j \\ j > u}}}
-      \nv{P_{\dv, j}}^{l\pexp{j, k_j}} \right) \\
-    & \qquad\le \prod_{j=u+1}^n \big( (D^\dv \nv{f_Z})^{f(\kappa)} \big)
+      \Onv{P_{\dv, j}}^{l\pexp{j, k_j}} \right) \\
+    & \qquad\le \prod_{j=u+1}^n \big( (D^\dv \Onv{f_Z})^{f(\kappa)} \big)
       \prod_{\substack{j, k_j \\ j > u}}  \big( (\sqrt{4u} D^{1/2})^\dv
       \big)^{f(l\pexp{j, k_j})} \\
-    & \qquad\le \big( \nv{f_Z} \cdot (\sqrt{4u}D^{3/2})^\dv
+    & \qquad\le \big( \Onv{f_Z} \cdot (\sqrt{4u}D^{3/2})^\dv
       \big)^{(n-u)f(\kappa)} \pmm,
   \end{align*}
   d'où l'estimation annoncée et le lemme.
@@ -303,10 +303,10 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   \begin{enumthm}
     \item $\tau(\chi(F)) = \chi\left( \frac1{X_0^d} \sum\limits_{\kappa \in
         \N^u} \frac {\nu_a^\kappa(F)} {R^{f(\kappa)}} \, t^\kappa \right)$  ;
-    \item $\nv{\nu_\dv^\kappa(F)} \le \nv F \cdot \big( \nv{f_Z}
+    \item $\Onv{\nu_\dv^\kappa(F)} \le \Onv F \cdot \big( \Onv{f_Z}
       (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\kappa)} \cdot 2^{\dv (\lgr\kappa +
         u(d-1))}$ ; \label{i-norme}
-    \item $\nv R \le (D^\dv \nv{F_Z})^{n-u}$.
+    \item $\Onv R \le (D^\dv \Onv{F_Z})^{n-u}$.
   \end{enumthm}
 \end{lem}
 
@@ -362,12 +362,12 @@ dont toutes les coordonnées valent $1$.
     \item \label{i-repr-prod} $\tau(\chi(F)) =
       \chi\left( \frac1{X_0^d} \sum_{\lambda \in \cramped{\N^u}}
       \frac {\nu_{m, \dv}^\lambda(F)} {U^{f(\lambda)}} s^\lambda \right)$ ;
-    \item \label{i-norm-prod} $\nv{\smash{\nu_{m, \dv}^\lambda(F)}} \le \nv F
-      \nv{f_Z}^{2n\lgt\lambda} \bigl(
+    \item \label{i-norm-prod} $\Onv{\smash{\nu_{m, \dv}^\lambda(F)}} \le \Onv F
+      \Onv{f_Z}^{2n\lgt\lambda} \bigl(
       (16uD^3)^{n\lgt{\lambda}} \cdot 2^{u(\lgr d -1)} \bigr)^\dv$ ;
-      % \big(\nv{f_Z}    (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\lambda)}
+      % \big(\Onv{f_Z}    (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\lambda)}
       % 2^{\dv(\lgt\lambda + u(\lgr d-1)}$ ;
-    \item $\nv{U_l} \le (D^\dv \nv{F_Z})^{n-u_l}$.
+    \item $\Onv{U_l} \le (D^\dv \Onv{F_Z})^{n-u_l}$.
   \end{enumthm}
 \end{lem}
 
@@ -407,20 +407,20 @@ explicite depuis les travaux de \bsc{David} et \bsc{Philippon}
 \end{fact}
 
 En particulier, on a immédiatement les estimations de norme locale
-$\nv{\smash{S_{l, l'}}} \le 4^{g\dv} \nv{\vai}^2$ et $\nnv{\smash{S_{l, l'}}} \le
-\big(4^g (n+1)^2\big)^\dv \nv{\vai}^2$.
+$\Onv{\smash{S_{l, l'}}} \le 4^{g\dv} \Onv{\vai}^2$ et $\Onnv{\smash{S_{l, l'}}} \le
+\big(4^g (n+1)^2\big)^\dv \Onv{\vai}^2$.
 
 Par ailleurs, par projection sur un facteur, on en déduit l'existence de
 familles de formes bihomogènes $S^+$ et $S^-$ de forme similaire (mais on peut
 simplifier par un facteur $\coa_{k(l)}$ ou $\coa_{k(l')}$), représentant
 respectivement l'addition et la soustraction au voisinage de n'importe quel
-point fixé, et telles que $\nv{S^\bullet} \le 4^{g\dv} \nv\vai$.
+point fixé, et telles que $\Onv{S^\bullet} \le 4^{g\dv} \Onv\vai$.
 
 \begin{fact}[\cite{remivds}, démonstration de la prop.~5.2]
   Pour tout entier $b$ non nul, il existe une famille de formes homogènes
   $Q^b_i$ représentant globalement la multiplication par $b$ sur $\va$ dans le
   plongement de \bsc{Mumford} modifié, de degré au plus $\frac98 m^2$, telles
-  qu'en toute place $v$, $\nnv{Q^b} \le (2^g\sqrt{n+1})^{\dv(m^2-1)}$.
+  qu'en toute place $v$, $\Onnv{Q^b} \le (2^g\sqrt{n+1})^{\dv(m^2-1)}$.
 \end{fact}
 
 On considère alors le morphisme $\tau \colon A(\widetilde Z) \to
@@ -452,13 +452,13 @@ de degré $(\alpha_1 + 9/4 \beta_1 a_1^2, \ldots, \alpha_{m-1} + 9/4
 \beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta)$, et dont on majore les normes
 locales comme suit :
 \begin{align*}
-  \nv{\Psi_a(F)}
-  & \le \nv F \prod_{j=1}^{m-1} \nnv{S^-(Q^{a_j}, \truc)}^{\beta_j} \\
-  & \le \nv F \prod_{j=1}^{m-1} \left( \nnv{S^-} \nnv{Q^{a_j}}^2
+  \Onv{\Psi_a(F)}
+  & \le \Onv F \prod_{j=1}^{m-1} \Onnv{S^-(Q^{a_j}, \truc)}^{\beta_j} \\
+  & \le \Onv F \prod_{j=1}^{m-1} \left( \Onnv{S^-} \Onnv{Q^{a_j}}^2
     \right)^{\beta_j} \\
-  & \le ((4^g(n+1))^\dv \nv\vai)^{\lgr\beta} \cdot (4^g(n+1))^{\dv\sum(a_j^2
-      -1)\beta_j} \nv\vai^{2\sum(a_j^2-1)\beta_j} \\
-  & \le \nv F \nv\vai^{\lgr\beta + 2\sum(a_j^2-1)\beta_j} \cdot
+  & \le ((4^g(n+1))^\dv \Onv\vai)^{\lgr\beta} \cdot (4^g(n+1))^{\dv\sum(a_j^2
+      -1)\beta_j} \Onv\vai^{2\sum(a_j^2-1)\beta_j} \\
+  & \le \Onv F \Onv\vai^{\lgr\beta + 2\sum(a_j^2-1)\beta_j} \cdot
     (4^g(n+1))^{\dv(\lgr\beta + \sum(a_j^2-1)\beta_j)} \pmm.
 \end{align*}
 
@@ -472,8 +472,8 @@ On a alors immédiatement le résultat suivant.
   Il existe alors des polynômes homogènes $V^\lambda_\dv(G)$ tels que :
   \begin{enumthm}
     \item $\deg_i(V_\dv^\lambda(G)) = d_i + (D-1)(n-u_i)f(\lambda\pexp i)$ ;
-    \item $\nv{V_\dv^\lambda(G)} \le \nv G \nv\vai ^{\lgr\beta + 2\sum
-      (a_j^2-1)\beta_j} \nv{f_Z}^{2n\lgt\lambda} \\ \null\qquad \cdot
+    \item $\Onv{V_\dv^\lambda(G)} \le \Onv G \Onv\vai ^{\lgr\beta + 2\sum
+      (a_j^2-1)\beta_j} \Onv{f_Z}^{2n\lgt\lambda} \\ \null\qquad \cdot
       \Big( \big(4^g 2^{9u/4}(n+1)\big)^{\lgr\beta + \sum(a_j^2-1)\beta_j}
       \cdot (16uD^3)^{n\lgt\lambda} \cdot 2^{u(\lgr d -1)}
       \Big)^\dv$ ;

@@ -64,9 +64,6 @@ Rémond soit 1, et si c'est systématique ou pas.
 Macros {{{2
 ------
 
-(A) Revoir les indices des normes : \abs{...}_{v, 1}, c'est-à-dire préciser la
-type de norme utilisé si la place est archimédienne.
-
 (A) Pareil pour les hauteurs. Aussi renommer \Haut en Hautm, etc.
 
 (A) rationnaliser les préfixes de labels

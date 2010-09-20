@@ -734,11 +734,11 @@ où \( d \) est défini par~\refeq{eq-def-d}.
   \)
   satisfaisant
   \begin{equation}
-    \nvp1{c_{p, q}}
+    \nv1{c_{p, q}}
     \le
     \left(
     \prod\fctirange
-    \nvp\infty \coi ^{2\wtis* - 1}
+    \nv\infty \coi ^{2\wtis* - 1}
     \bigl(
     4^{g\wtis*} (\dimp + 1)^{\wtis* - 1}
     \bigr) ^\dv
@@ -750,28 +750,28 @@ où \( d \) est défini par~\refeq{eq-def-d}.
 \begin{proof}
   La définition de \( \wemba \) montre que \(
   \wemba( \cmmh^p \cmmhi^q ) = \cmmh^p \wemba(\cmmhi^q) \), on a donc \(
-  \nvp1 {c_{p, q}} = \nvp1 {\wemba(\cmmhi^q)} \). Ainsi, avec le
+  \nv1 {c_{p, q}} = \nv1 {\wemba(\cmmhi^q)} \). Ainsi, avec le
   corollaire~\ref{c-addsub-form} et le fait~\ref{f-mult-form}, on a
   \begin{align}
-    \nvp1 {c_{p, q}}
+    \nv1 {c_{p, q}}
     & \le
     \prod\fctirange \prod\indrange
-    \nvp1{ S^{-}_\ind\bigl( Q_{\wti*}(\cmh\fcti), \cmh\puiss \bigr) }
+    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\cmh\fcti), \cmh\puiss \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \prod\indrange \left(
-    \nvp1{ S^{-}_\ind } \max\indirange \nvp1{ Q_{\wti*, \indi} }^2
+    \nv1{ S^{-}_\ind } \max\indirange \nv1{ Q_{\wti*, \indi} }^2
     \right) ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \left(
-    \nvp\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
-    \nvp\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
+    \nv\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
+    \nv\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
     \Bigr) ^{q\pexp\fcti[\ind]}
     \right)
     \\ & \le
     \left(
     \prod\fctirange
-    \nvp\infty \coi ^{2\wtis*-1} \bigl(
+    \nv\infty \coi ^{2\wtis*-1} \bigl(
     4^{\genre\wtis*} (\dimp+1)^{\wtis*-1}
     \bigr) ^\dv
     \right) ^\delta
@@ -796,8 +796,8 @@ relations.
       \) ; \label{i:rdiv1}
     \item \( P\mexp*[\ind] \) est unitaire en \( \cmh\fct[\ind] \) ;
     \item \( \deg P\mexp*[\ind] = \vardim* \) ; \label{i:rdiv3}
-    \item \( \nvp1{ P\mexp*[\ind] }
-      \le \nvp1{ \varfc* } \cdot 2^{ (\vardim*+1) \vardeg* \dv } \).
+    \item \( \nv1{ P\mexp*[\ind] }
+      \le \nv1{ \varfc* } \cdot 2^{ (\vardim*+1) \vardeg* \dv } \).
   \end{enumthm}
 \end{fact}
 
@@ -824,7 +824,7 @@ de l'appliquer au cas qui nous intéresse.
       homogène de degré \( \Delta\mexp* \) et unitaire en \( \cmh\fct[\ind]
       \).
   \end{enumthm}
-  On note \( N_\fct = \max_\ind \nvp1 { P\mexp*[\ind] } \) et \( \Ideal \)
+  On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
   l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
   \( f \in N^\puiss \), il existe un (unique) application linéaire
   \begin{equation}
@@ -835,7 +835,7 @@ de l'appliquer au cas qui nous intéresse.
   colonnes \( c_p \) de la matrice de cette application satisfont la majoration
   de norme
   \begin{equation}
-    \nvp1{c_p}
+    \nv1{c_p}
     \le
     \prod\fctrange \bigl(
     N_\fct \cdot (2 \Delta\mexp*)^\dv
@@ -880,10 +880,10 @@ de l'appliquer au cas qui nous intéresse.
   \( ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
   l'estimation de norme
   \begin{equation}
-    \nvp1{ \rho{\fct, \ind, p} }
+    \nv1{ \rho{\fct, \ind, p} }
     \le
     \left(
-    \nvp1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
+    \nv1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
     \right) ^{p\mexp*[\ind]}
     \pmm.
   \end{equation}
@@ -903,11 +903,11 @@ de l'appliquer au cas qui nous intéresse.
 \begin{coro} \label{c:hmat-rdiv}
   Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^{\Diii} \)
   faisant commuter le diagramme~\eqref{eq-diag-f-aux}, dont les matrices dans
-  les bases monomiales canoniques ont des colonnes de normes \( \nvp1\truc \)
+  les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
   majorées par
   \begin{equation}
     \prod\fctrange \left(
-    \nvp1{ \varfc* }
+    \nv1{ \varfc* }
     \cdot ( \vardeg* 2^{(\vardim*+1)\vardeg* + 1} )^\dv
     \right) ^{ \delta \wts* (2\puiss + \epsz) }
     \cdot \expb^{ o(\delta) }
@@ -947,12 +947,12 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^\relim \) de la
   matrice de \( \relim \) dans la base canonique satisfont alors
   \begin{equation}
-    \nvp1{ c_q^\relim }
+    \nv1{ c_q^\relim }
     \le
     \prod\fctrange N_\fct^{\Delta_\fct}
   \end{equation}
   pour tout \( q \) de multilongueur \( f \), où \( N_\fct \) majore
-  \( \nvp1{ S\mexp*[\ind] } \) et \( \nvp1{ T\mexp*[\ind] } \) pour tout
+  \( \nv1{ S\mexp*[\ind] } \) et \( \nv1{ T\mexp*[\ind] } \) pour tout
   \( \ind \).
 \end{lem}
 
@@ -980,11 +980,11 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   Il existe une forme \( R \in \cdn [\cmmh]^{C''} \) ne dépendant que de \(
   \var \) et un morphisme \( \relim \) tels que le
   diagramme~\eqref{eq-diag-f-aux} commute. De plus, les colonnes de la matrice
-  de \( \relim \) dans les bases canoniques ont leur norme \( \nvp1\truc \)
+  de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
   majorée par
   \begin{equation}
     \prod\fctrange
-    \nvp1{ N'_\fct }^{\vardeg*}
+    \nv1{ N'_\fct }^{\vardeg*}
     \pmm,
   \end{equation}
   où \( N'_\fct \) est une constante ne dépendant que de \( \var* \).
