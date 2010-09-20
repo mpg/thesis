@@ -4,8 +4,16 @@ Rédaction
 Tout réunir en un document avec notations homogènes et index des notations,
 ainsi qu'avec un squelette de ce qui manque.
 
-Revoir les indices des normes : \abs{...}_{v, 1}, c'est-à-dire préciser la
+(macros) Revoir les indices des normes : \abs{...}_{v, 1}, c'est-à-dire préciser la
 type de norme utilisé si la place est archimédienne.
+
+(macros) faire un truc pour utiliser les \@ifstar en indice/exposant sans
+souci. Rajouter \dimp* = \dimp + 1, \dimp** = (\dimp*), \puiss* = \puiss - 1,
+etc. ?
+
+(macros) Rajouter \vardim** = \vardim[\puiss] etc ?
+
+(macros) Renommer \varfoo en \vfoo ?
 
 Préciser la portée de tout ce qui dépend au plongement (long terme, dépend de
 décisions mathématiques).
@@ -40,6 +48,7 @@ Revoir le source pour utiliser les macros quand elles existent (genre H(x) ->
 \Haut\point).
 
 Ajouter des références biblio pour toute l'intro.
+
 Vojta
 -----
 

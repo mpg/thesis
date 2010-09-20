@@ -294,11 +294,11 @@
 
 % standard functions [[2
 %
-\newcommand*\I [1] {\std{Id}_{#1}}
-\newcommand*\ind [1] {\std{1}_{#1}}
+\newcommand*\I     [1] {\std{Id}_{#1}}
+\newcommand*\indic [1] {\std{1}_{#1}}
 
-\noma{Id}{\I\PH}{Fonction identité sur l'ensemble \PH}
-\nomn{1}{\ind\PH}{Fonction indicatrice de l'ensemble \PH}
+\noma{Id} {\I\PH}     {Fonction identité sur l'ensemble \PH}
+\nomn{1}  {\indic\PH} {Fonction indicatrice de l'ensemble \PH}
 
 % less standard but still usefull sets [[2
 %
@@ -358,7 +358,7 @@
 \noma{d}{\md}{Le morphisme symétrisant utilisé dans la définition des
   distances projectives}
 
-% missing operators [[2
+% missing operators & general symbols [[2
 %
 \DeclareMathOperator \diff {d}
 \noma{d}{\diff\PH}{Différentielle par rapport à \PH}
@@ -367,6 +367,10 @@
 \noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
 
 \DeclareMathOperator \card {Card}
+
+\newcommand*\expb {\mathrm e}
+
+\noma{e}{\expb}{Base des logarithmes népériens}
 
 % automatic constants [[2
 %
@@ -470,19 +474,26 @@
 \newcommand \puiss    {m}
 \newcommand \fct      {i}
 \newcommand \fcti     {j}
-\newcommand \fctrange {_{\fct=1} ^\puiss}
-\newcommand \fctirange{_{\fcti=1}^{\puiss-1}}
+\newcommand \ind      {k}
+\newcommand \indi     {l}
+
+\newcommand \fctrange  {_{\fct =1}^\puiss}
+\newcommand \fctirange {_{\fcti=1}^{\puiss-1}}
+\newcommand \indrange  {_{\ind =0}^\dimp}
+\newcommand \indirange {_{\indi=0}^\dimp}
+
+\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
+  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
+\noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
+\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss-1$}
+\noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
+\noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
 \newcommand*\ch   [1] {X\ssub{#1}}
 \newcommand*\cmh  [1] {X\pexp{#1}}
 \newcommand \cmmh     {\boldsymbol X}
 \newcommand*\cmhi [1] {Y\pexp{#1}}
 \newcommand \cmmhi    {\boldsymbol Y}
-
-\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
-  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
-\noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
-\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss-1$}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \newcommand*\vlg [1] {\abs{#1}}
@@ -600,8 +611,8 @@
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
 % various (degree) conditions for subsets in lemmas
-\newcommand \Di   { \delta d }
-\newcommand \Dii  { \delta d' }
+\newcommand \Di   { {\delta d} }
+\newcommand \Dii  { {\delta d'} }
 \newcommand \Diii { \@ifstar {\delta d'_\fct + r\fct} {\delta d' + r} }
 \newcommand \Ciii { \ph\Diii ^{C'''} }
 
@@ -636,8 +647,8 @@
 
 % misc (ok) [[2
 %
-\newcommand \rdiv  {\rho_{\text{div}}}
-\newcommand \relim {\rho_{\text{elim}}}
+\newcommand \rdiv  {\rho_{\text{\normalfont div}}}
+\newcommand \relim {\rho_{\text{\normalfont elim}}}
 
 \nomg{rho}{\rdiv}{Morphimse de réduction par division dans la construction de
   la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
@@ -674,6 +685,11 @@
   des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
 
 \noma{r}{r}{Degré du facteur parasitant la forme auxiliaire}
+
+% Local notations without dedicated macro [[2
+%
+\nomg{alpha}{\alpha}{Parfois utilisé localement comme indice ou degré}
+\nomg{beta} {\beta} {Parfois utilisé localement comme indice ou degré}
 
 % unsorted math stuff [[1
 % -------------------

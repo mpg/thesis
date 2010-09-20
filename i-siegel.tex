@@ -335,9 +335,9 @@ Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
 \end{align}
 tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute :
-\[
+\begin{equation} \label{eq-diag-f-aux}
   \dots % TODO
-\]
+\end{equation}
 On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
 respectivement part le corollaire~\ref{c-addsub-form} et le
 fait~\ref{f-mult-form} de sorte que les formules obtenues soient valables au
@@ -435,7 +435,7 @@ On considérera des sous-espaces vectoriels de partie homogènes de
 $\cdn[\cmmh]$ définis par des restrictions de degré ; introduisons à cet effet
 quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
   \})^{\puiss(\dimp+1)}$, on notera
-\begin{equation}
+\begin{equation} \label{eq-C-spaces}
   \cdn[\cmmh]^C
   = \{
     F \in \cdn[\cmmh]
@@ -447,7 +447,7 @@ quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
 \end{equation}
 On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
 par
-\begin{gather}
+\begin{gather} \label{eq-C-i-iii}
   (C')\pexp\fct[k] =
   \begin{cases}
     +\infty & \text{si $k \le \vardim*$} \\
@@ -824,17 +824,179 @@ où \( d \) est défini par~\refeq{eq-def-d}.
 \end{lem}
 
 \begin{proof}
-  La définition de \( \wemba \) montre immédiatement que \(
-  \wemba(\cmmh^p\cmmhi^q = \cmmh^p \wemba(\cmmhi^q) \), on a donc \(
+  La définition de \( \wemba \) montre que \(
+  \wemba( \cmmh^p \cmmhi^q ) = \cmmh^p \wemba(\cmmhi^q) \), on a donc \(
   \nvp1 {c_{p, q}} = \nvp1 {\wemba(\cmmhi^q)} \). Ainsi, avec le
   corollaire~\ref{c-addsub-form} et le fait~\ref{f-mult-form}, on a
   \begin{align}
     \nvp1 {c_{p, q}}
-    & \le \dots
+    & \le
+    \prod\fctirange \prod\indrange
+    \nvp1{ S^{-}_\ind\bigl( Q_{\wti*}(\cmh\fcti), \cmh\puiss \bigr) }
+    ^{q\pexp\fcti[\ind]}
+    \\ & \le
+    \prod\fctirange \prod\indrange \left(
+    \nvp1{ S^{-}_\ind } \max\indirange \nvp1{ Q_{\wti*, \indi} }^2
+    \right) ^{q\pexp\fcti[\ind]}
+    \\ & \le
+    \prod\fctirange \left(
+    \nvp\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
+    \nvp\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
+    \Bigr) ^{q\pexp\fcti[\ind]}
+    \right)
+    \\ & \le
+    \left(
+    \prod\fctirange
+    \nvp\infty \coi ^{2\wtis*-1} \bigl(
+    4^{\genre\wtis*} (\dimp+1)^{\wtis*-1}
+    \bigr) ^\dv
+    \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
   \delta \) pour tout \( \fcti \).
 \end{proof}
+
+Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
+relations de dépendance intégrale. Commençons donc par expliciter ces
+relations.
+
+\begin{fact} \label{f-dep-int}
+  Dans les notations et hypothèses précédentes, il existe des formes homogènes
+  \( P\mexp*[\ind] \) pour \( 1 \le \fct \le \puiss \) et
+  \( \vardim* + 1 \le \ind \le \dimp \), telles que
+  \begin{enumthm}
+    \item \( P\mexp*[\ind]
+      \in
+      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*], \cmh\fct[\ind] ]
+      \cap \varid*
+      \) ; \label{i:rdiv1}
+    \item \( P\mexp*[\ind] \) est unitaire en \( \cmh\fct[\ind] \) ;
+    \item \( \deg P\mexp*[\ind] = \vardim* \) ; \label{i:rdiv3}
+    \item \( \nvp1{ P\mexp*[\ind] }
+      \le \nvp1{ \varfc* } \cdot 2^{ (\vardim*+1) \vardeg* \dv } \).
+  \end{enumthm}
+\end{fact}
+
+\begin{proof} \later
+  On ne fait que rappeler, en changeant un peu les notations, le lemme~4.1 de
+  \cite{remivds}, qui donne explicitement des formes
+  satisfaisant~\ref{i:rdiv1} à~\ref{i:rdiv3}. Le dernier point vient
+  immédiatement vu l'expression des formes dans cette référence et les
+  inégalités classiques sur la norme utilisée.
+\end{proof}
+
+On énonce maintenant sous une forme un peu générale un résultat de réduction
+de formes multihomogènes modulo des relations de dépendance intégrale, avant
+de l'appliquer au cas qui nous intéresse.
+
+\begin{lem}
+  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vardim* + 1,
+  \dots \dimp \} \), on se donne :
+  \begin{enumthm}
+    \item \( \Delta\mexp* \in \N^* \) ;
+    \item \( P\mexp*[\ind]
+      \in
+      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*], \cmh\fct[\ind] ] \)
+      homogène de degré \( \Delta\mexp* \) et unitaire en \( \cmh\fct[\ind]
+      \).
+  \end{enumthm}
+  On note \( N_\fct = \max_\ind \nvp1 { P\mexp*[\ind] } \) et \( \Ideal \)
+  l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
+  \( f \in N^\puiss \), il existe un (unique) application linéaire
+  \begin{equation}
+    \rdiv^f \colon \cdn [\cmmh]\ph f \to \cdn [\cmmh]\ph f^{C'_\Delta}
+  \end{equation}
+  qui est l'identité modulo \( \Ideal \) (voir~\eqref{eq-C-spaces}
+  et~\ref{eq-C-i-iii} pour la définition de l'espace d'arrivée). De plus les
+  colonnes \( c_p \) de la matric de cette application satisfont la majoration
+  de norme
+  \begin{equation}
+    \nvp1{c_p}
+    \le
+    \prod\fctrange \bigl(
+    N_\fct \cdot (2 \Delta\mexp*)^\dv
+    \bigr) ^{f_\fct}
+  \end{equation}
+  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
+  l'image de \( \cdn [\cmmh]\ph f ^{C''_\Delta} \) par \( \rdiv^f \) est
+  contenue dans \( \cdn [\cmmh]\ph f ^{C'''_\Delta} \).
+\end{lem}
+
+\begin{proof}
+  C'est essentiellement une variante du lemme~2.5 de~\ref{remivg}, le résultat
+  étant formulé différemment et dans un cadre d'apparence un peu moins
+  générale ; la preuve suivra en tout cas les mêmes lignes. On commence par
+  décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
+  \begin{equation}
+    P\mexp*[\ind]
+    =
+    \sum _{\alpha=1}^{\Delta\mexp*}
+    P\mexp*[\ind, \alpha] \cdot (\cmh\fct[\ind])^{\Delta\mexp* - \alpha}
+    \pmm,
+  \end{equation}
+  où \( P\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*] ] \).
+  On pose ensuite, pour tout \( \fct \), tout
+  \( \ind \in \{ 0, \dots, \dimp \} \) et tout
+  \( p \in \N^{\puiss(\dimp+1)} \),
+  \begin{equation}
+    \rho{\fct, \ind, p}
+    =
+    \begin{dcases*}
+      ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]}
+      & si \( \fct \le \vardim* \) ;
+      \\
+      \sum _{\alpha=1}^{\Delta\mexp*}
+      U_{p, \alpha, \Delta\mexp*}
+      ( P\mexp*[\ind, 1], \dots, P\mexp*[\ind, \Delta\mexp*] )
+      & sinon,
+    \end{dcases*}
+  \end{equation}
+  où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}. En
+  particulier, \( \rho{\fct, \ind, p} \) est toujours congru à
+  \( ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
+  l'estimation de norme
+  \begin{equation}
+    \nvp1{ \rho{\fct, \ind, p} }
+    \le
+    \left(
+    \nvp1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
+    \right) ^{p\mexp*[\ind]}
+    \pmm.
+  \end{equation}
+  On définit alors \( \rdiv^f \) par son action sur les monômes, en posant
+  \begin{equation}
+    c_p
+    = \rdiv^f(\cmmh^p)
+    = \prod\fctrange \prod\indrange \rho{\fct, \ind, p}
+  \end{equation}
+  et en prolongeant par linéarité. L'estimation de norme annoncée découle
+  directement de la majoration précédente en prenant le produit. Par ailleurs,
+  il est clair que si une forme ne fait intervenir que les variables \(
+  \cmh\fct[\ind] \) pour \( \ind \le \vardim* + 1 \), il en est de même de son
+  image.
+\end{proof}
+
+\begin{coro}
+  Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^{\Diii} \)
+  faisant commuter le diagramme~\eqref{eq-diag-f-aux}, dont les matrices dans
+  les bases monomiales canoniques ont des colonnes de normes \( \nvp1\truc \)
+  majorées par
+  \begin{equation}
+    \prod\fctrange \left(
+    \nvp1{ \varfc* }
+    \cdot ( \vardeg* 2^{(\vardim*+1)\vardeg* + 1} )^\dv
+    \right) ^{ \delta \wts* (2\puiss + \epsz) }
+    \cdot \expb^{ o(\delta) }
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Découle directement du lemme précédent en utilisant les relations de
+  dépendance données par le fait~\ref{f-dep-int} et en remarquant que
+  \( 2\puiss \ge 9/4 \).
+\end{proof}
+
+Intéressons-nous maintenant au morphisme \( \relim \).
 
 \clearpage
 
