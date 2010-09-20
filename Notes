@@ -1,31 +1,46 @@
-Rédaction
+Rédaction {{{1
 =========
 
-Tout réunir en un document avec notations homogènes et index des notations,
-ainsi qu'avec un squelette de ce qui manque.
+Général {{{2
+-------
 
-(macros) Revoir les indices des normes : \abs{...}_{v, 1}, c'est-à-dire préciser la
-type de norme utilisé si la place est archimédienne.
+(A) Factoriser les notations communes à tout le monde au début, et celles
+propres à chaque chapitre au début du chapitre.
 
-(macros) faire un truc pour utiliser les \@ifstar en indice/exposant sans
-souci. Rajouter \dimp* = \dimp + 1, \dimp** = (\dimp*), \puiss* = \puiss - 1,
-etc. ?
+(A) Factoriser les énoncés sur les formules d'addition, soustraction et
+multiplication dans une annexe.
+    Écrire les preuves détaillées de ces énoncés.
 
-(macros) Rajouter \vardim** = \vardim[\puiss] etc ?
+(A) Reprendre le plan général de Vojta, et traduire ça en un structure
+section, squelettes d'énoncés, etc.
 
-(macros) Renommer \varfoo en \vfoo ?
+(A) Faire un squelette relativement fin pour l'extrapolation.
 
-(source) rationnaliser les préfixes de labels
+(B) Commencer à faire un squelette grossier de ce qu'il faut pour mettre
+Vojta et Mumford ensemble. Noter les références précises.
+    - Lire les références notées.
+    - Commencer un squelette d'annexe avec les lemmes de géométrie euclidienne
+      et de décompte.
 
-(macros) régler \newcst pour ne pas avoir besoin de spécifier [, v] ou pas à
-chaque utilisation.
+(B) Reprendre les notes sur les variantes d'énoncés possibles et les
+inclure, soit dans la partie fusion, soit dans l'intro (voire dans une annexe
+flottante si j'hésite).
 
-(math) dans l:deg-wemba, remplacer le \le par un = en utilisant des parties
-entières supérieures de façon adéquate, ça coute pas cher et ça simplife la
-suite.
+(C) Préciser la portée des \eps_i (a priori, pour l'instant locaux à Vojta,
+peut-être qu'il y en a d'autres locaux à Mumford). Ça serait plus clair s'ils
+étaient globaux, non ? Utiliser un système comme les constantes automatiques ?
+Voire directement des constantes automatiques ?
 
-Préciser la portée de tout ce qui dépend au plongement (long terme, dépend de
-décisions mathématiques).
+(C) Ajouter des références biblio pour toute l'intro.
+
+Notations {{{2
+---------
+
+(A) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
+
+À homogénéiser petit à petit. {{{
+Noter ci-dessous les divergences observées, qui seront traitées une par une.
+}}}
 
 Unifier les indices :
 - i et j en haut (de 1 à m ou m-1)
@@ -33,11 +48,6 @@ Unifier les indices :
 
 Unifier les notations pour la ou les approximations exceptionnelles (x, y et z
 doivent rester des points quelconques, prendre e par exemple).
-
-Préciser la portée des \eps_i (a priori, pour l'instant locaux à Vojta,
-peut-être qu'il y en a d'autres locaux à Mumford). Ça serait plus clair s'ils
-étaient globaux, non ? Utiliser un système comme les constantes automatiques ?
-Voire directement des constantes automatiques ?
 
 La convention \boldsymbol -> le point, \mathit -> ses coordonnées est loin
 d'être utilisée de façon consistante. On fait quoi ?
@@ -51,63 +61,96 @@ Préciser à un moment si on normalise les formes de Chow de sorte que le
 dénominateur dans la construction des formules de dépendance intégrale de
 Rémond soit 1, et si c'est systématique ou pas.
 
-Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
+Macros {{{2
+------
 
-Revoir le source pour utiliser les macros quand elles existent (genre H(x) ->
-\Haut\point).
+(A) régler \newcst pour ne pas avoir besoin de spécifier [, v] ou pas à
+chaque utilisation.
 
-Ajouter des références biblio pour toute l'intro.
+(A) Revoir les indices des normes : \abs{...}_{v, 1}, c'est-à-dire préciser la
+type de norme utilisé si la place est archimédienne.
+
+(A) Pareil pour les hauteurs. Aussi renommer \Haut en Hautm, etc.
+
+(A) rationnaliser les préfixes de labels
+
+(A) Faire un truc pour utiliser les \@ifstar en indice/exposant sans
+souci.
+
+(B) Rajouter \dimp* = \dimp + 1, \dimp** = (\dimp*), \puiss* = \puiss - 1,
+etc. ?  (Dépend du \@ifstar traffiqué.)
+
+(B) Rajouter \vardim** = \vardim[\puiss] etc ?
+
+(B) Renommer \varfoo en \vfoo ?
+
+(C) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
+-> \Haut\point).
 
 Vojta
 -----
 
-Finir de retaper Siegel.
-- revoir évtl les macros pour \Stairs et Vanish, mais en tout cas préciser la
-  nomenclature
+(A) Retaper la paramétrisation dès que les math sont prêtes.
 
-Remanier la paramétrisation dès que les math sont prêtes.
+(B) Finir d'enregistrer dans la nomenclature les trucs sans macros
+(dénominateur, etc.)
 
-La notation \vb est pourrie et entre plus ou moins en conflit avec celles des
-approximatiosn exceptionnelles. Un peu pareil pour \Mbase. Préciser aussi
+(C) La notation \vb est pourrie et entre plus ou moins en conflit avec celles
+des approximatiosn exceptionnelles. Un peu pareil pour \Mbase. Préciser aussi
 \monome et \mat.
 
-Finir d'enregistrer dans la nomenclature les trucs sans macros (dénominateur,
-etc.)
-
-
-Maths
+Maths {{{1
 =====
 
-Vojta
+Vojta {{{2
 -----
 
-Mettre au propre une bonne version de la paramétrisation.
+(A) [... reprendre les notes papiers ici sur le plan ...]
 
-[... reprendre les notes papiers ici sur le plan ...]
+(A) Plan (cf rédation).
 
-Mumford
+(A) Mettre au propre une bonne version de la paramétrisation.
+
+(B) Étudier sérieusement la réduction au cas d'un diviseur : peut-être se
+faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
+(Attention, on veut en plus que le truc soit symétrique pour le formulaire.)
+    (B) Faire un squelette détaillé des réductions.
+    (B) Remplir ce squelette avec des preuves.
+
+(B) Factoriser les trucs relatifs au plongement pondéré (entre Siegel et
+certaines étapes de la paramétrisation)
+
+(B) Dans l:deg-wemba, remplacer le \le par un = en utilisant des parties
+entières supérieures de façon adéquate, ça coute pas cher et ça simplife la
+suite.
+
+Mumford {{{2
 -------
 
-Lire attentivement le papier de Rémond.
+(A) Lire attentivement le papier de Rémond.
 
-Relire le Mumford de Fahri.
+(A) Relire le Mumford de Fahri.
 
-Glue et réductions
-------------------
+Annexe normes et mesures {{{2
+------------------------
 
-Peut-on supposer à la fois que le plongement est adapté et est un Mumford
-modifié ? Probablement non... voir comment gérer ça.
+(B) Faire un état des lieux et un plan d'attaque.
 
-Peut-on supposer si facilement que le diviseur est découpé par un hyperplan ? Ça
-revient à dire que le truc qu'on considère est très ample (et totalement
-symétrique si on veut avoir un Mumford modifié aussi). À voir.
+Autres, divers {{{2
+--------------
 
-Dans la « closest point property » de pph (p. 89 du LNM), peut-on remplacer \C_v
-par k_v (voire k) ?
+(C) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
+remplacer \C_v par k_v (voire k) ?
 
-
-Français
-========
+Lecture {{{1
+=======
+
+Regrouper ici les trucs à lire.
+
+Aide-mémoire {{{1
+============
+
+Français {{{2
 
 Multimachin : sans trait d'union ; tous les trucs en multi dans le dico
 (multitâche, multirisque, multiprocesseur, etc.) n'ont pas de trait d'union.
@@ -117,3 +160,7 @@ Refaire : attaché (rééquilibrer, refaire, ...)
 Défaire : attache (défaire, dédire, ...)
 
 Semi-truc : trait d'union (semi-circulaire, semi-perméable, etc.)
+
+LaTeX {{{2
+
+# vim: fdm=marker fdl=1 ai
