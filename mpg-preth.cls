@@ -35,7 +35,10 @@
 \renewcommand\sfdefault{iwona}
 
 \usepackage{xcolor}
-\colorlet{dev}{black!50}
+\colorlet{mark}{black!50}
+\colorlet{keys}{green}
+\colorlet{todo}{red}
+\colorlet{later}{blue}
 
 % load various usefull packages [[2
 %
@@ -58,8 +61,7 @@
 %
 \if@showkeys
   \usepackage[notref, notcite, color]{showkeys}
-  \colorlet{refkey}{dev}
-  \colorlet{labelkey}{dev}
+  \colorlet{labelkey}{keys}
 \fi
 
 % overfullrule (implement 'nobad' option) [[2
@@ -72,7 +74,7 @@
   \AddToShipoutPicture{%
     \AtPageLowerLeft{%
       \parbox[b]{\paperwidth}{%
-        \centering \itshape \color{dev}%
+        \centering \itshape \color{mark}%
         head: \gitinfo{@head}{dt}%
         \par \kern2cm
         }}}
@@ -139,7 +141,7 @@
     \Substitute*{\the\ted@toks} {\string\PH}           {\PH{}}%
     \Substitute*{\the\ted@toks} {\string\PHi}          {\PHi{}}%
     \makebox[0pt][r]{%
-      \color{dev}\ttfamily \the\ted@toks \space}%
+      \color{keys}\ttfamily \the\ted@toks \space}%
   \fi}
 
 \newcommand*\nom@type [3] {%
@@ -185,12 +187,12 @@
 % marginal notes and todos [[2
 %
 \newcommand*\marginnote [1] {\marginpar[\raggedleft #1]{\raggedright #1}}
-\newcommand*\worknote   [1] {\marginnote{%
-    \leavevmode\color{dev}\itshape #1}}
+\newcommand*\worknote   [2][todo] {\marginnote{%
+    \leavevmode\color{#1}\itshape #2}}
 
 \newcommand \todo  {\worknote{\textsc{todo}}}
-\newcommand \todom {\tag{\textsc{todo}}}
-\newcommand \later {\worknote{(à détailler ultérieurement)}}
+\newcommand \todom {\tag*{\color{todo}\textsc{todo}}}
+\newcommand \later {\worknote[later]{(à détailler ultérieurement)}}
 
 % languages and special text items [[2
 %
