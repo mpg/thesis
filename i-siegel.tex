@@ -350,13 +350,13 @@ par
 \begin{gather} \1{e:C-i-iii}
   (C')\pexp\fct[k] =
   \begin{cases}
-    +\infty & \text{si $k \le \vardim*$} \\
-    \vardeg* - 1 & \text{sinon}
+    +\infty & \text{si $k \le \vdim*$} \\
+    \vdeg* - 1 & \text{sinon}
   \end{cases}
   \qquad
   (C'')\pexp\fct[k] =
   \begin{cases}
-    +\infty & \text{si $k \le \vardim* + 1$} \\
+    +\infty & \text{si $k \le \vdim* + 1$} \\
     0 & \text{sinon}
   \end{cases}
   \\
@@ -461,26 +461,26 @@ ce qu'on aura besoin de savoir sur le degré.
 \begin{lem}
   Avec les notations précédentes, on a
   \[
-    \deg_{(0, \dots, 0, \vardim[\puiss]; \vardim[1], \dots, \vardim[\puiss-1])}
+    \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
     \bigl( \wemb(\var) \bigr)
     =
     \prod\fctrange
-    \vardeg* \wt ^{2\vardim*}
+    \vdeg* \wt ^{2\vdim*}
     \pmm.
   \]
 \end{lem}
 
 \begin{proof}
   Ce degré est donné par le cardinal de l'intersection de $\wemb(\var)$ avec
-  des hyperplans génériques choisis de la façon suivante : $\vardim[\puiss]$
-  provenant du $\puiss$-ième facteur $\projd$, et $\vardim*$ hyperplans
+  des hyperplans génériques choisis de la façon suivante : $\vdim[\puiss]$
+  provenant du $\puiss$-ième facteur $\projd$, et $\vdim*$ hyperplans
   provenant du facteur $\puiss + \fct$ pour $\fct \in \{1, \dots, \puiss-1\}$.
 
   On commence par choisir les hyperplans sur le facteur $\puiss$ : on remarque
   qu'ils se remontent par $\wemb$ en des hyperplans sur le dernier facteur de
   l'espace de départ $(\projd)^\puiss$. Ainsi, couper $\wemb(\var)$ par ces
   hyperplans revient à imposer à $\point_\puiss$ de parcourir un ensemble de
-  cardinal $\vardeg[\puiss]$.
+  cardinal $\vdeg[\puiss]$.
 
   Fixons maintenant un point $p$ dans cet ensemble. On constate que
   $\wemb(\var) \cap \zeros{\cmh\puiss = p}$ coïncide avec l'image de
@@ -516,10 +516,10 @@ ce qu'on aura besoin de savoir sur le degré.
   n'ayant pas d'influence sur le degré, il suffit de regarder l'action de la
   multiplication par $\wt*$. Or, celle-ci pouvant être représentée
   globalement par des formes de degré $\wts*$ en tirant en arrière par
-  $\wemb[\wt*, p]''(\var*)$ une famille de $\vardim*$ hyperplans
+  $\wemb[\wt*, p]''(\var*)$ une famille de $\vdim*$ hyperplans
   génériques sur le second facteur, on obtient des hypersurfaces génériques de
-  degré $\wts*$ qui coupent donc $\var*$ en $\vardeg*
-  \wt*^{2\vardim*}$ points.
+  degré $\wts*$ qui coupent donc $\var*$ en $\vdeg*
+  \wt*^{2\vdim*}$ points.
 
   Le résultat suit en prenant le produit et en se rappelant que
   $\wt[\puiss] = 1$.
@@ -530,11 +530,11 @@ ce qu'on aura besoin de savoir sur le degré.
   \begin{align}
     \dim \Ideal\ph{\delta d}
     \ge
-    \frac{ \epsz^{\vardim[\puiss]}
-      \prod\fctrange \vardeg* \, \wt* ^{2\vardim*}
-      }{ \vardim ! }
-    \delta^{\vlg\vardim}
-    + o( \delta^{\vlg\vardim} )
+    \frac{ \epsz^{\vdim[\puiss]}
+      \prod\fctrange \vdeg* \, \wt* ^{2\vdim*}
+      }{ \vdim ! }
+    \delta^{\vlg\vdim}
+    + o( \delta^{\vlg\vdim} )
     \pmm.
   \end{align}
 \end{lem}
@@ -550,16 +550,16 @@ ce qu'on aura besoin de savoir sur le degré.
     \sum_{\substack{ t \in \N^{2\puiss-1} \\ \lg t = \lg u }}
     \deg_t \wemb(\var) \frac{ d^t }{ t! }
     \right)
-    \delta^{\vlg\vardim}
-    + o( \delta^{\vlg\vardim} )
+    \delta^{\vlg\vdim}
+    + o( \delta^{\vlg\vdim} )
     \\
     & \ge
-    \deg_{(0, \dots, 0, \vardim[\puiss]; \vardim[1], \dots, \vardim[\puiss-1])}
+    \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
     \bigl( \wemb(\var) \bigr)
     \cdot
-    \frac { \epsz^{\vardim[\puiss]} }{ \vardim ! }
-    \delta^{\vlg\vardim}
-    + o( \delta^{\vlg\vardim} )
+    \frac { \epsz^{\vdim[\puiss]} }{ \vdim ! }
+    \delta^{\vlg\vdim}
+    + o( \delta^{\vlg\vdim} )
   \end{align}
 \end{proof}
 
@@ -574,9 +574,9 @@ suivant :
     ( \coeff[1], \dots \coeff[\puiss] )
     \in
     \prod\fctrange \bigl(
-      \N^{\vardim* + 1}
-      \times \{ 0, \dots, \vardeg* - 1 \}
-      \times \{ 0 \}^{\dimp - \vardim* - 1}
+      \N^{\vdim* + 1}
+      \times \{ 0, \dots, \vdeg* - 1 \}
+      \times \{ 0 \}^{\dimp - \vdim* - 1}
     \bigr)
     \\ & \quad \text{tel que }
     \sumwtlambda
@@ -599,20 +599,20 @@ dans \( (\stairs)\Ciii \).
     \le
     \frac {
       \epsi^\puiss (\puiss-1)
-      (2\puiss + \epsz) ^{\vardim[\puiss]-1}
-      (\frac94 + \epsz) ^{\lgr\vardim - \puiss - \vardim[\puiss] + 1}
+      (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+      (\frac94 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
       }{
-      \puiss! \prod\fctrange (\vardim* - 1)!
+      \puiss! \prod\fctrange (\vdim* - 1)!
       }
-    \prod\fctrange \vardeg* \wt*^{2\vardim*} \delta^{\lgr\vardim}
-    + o(\delta^{\lgr\vardim})
+    \prod\fctrange \vdeg* \wt*^{2\vdim*} \delta^{\lgr\vdim}
+    + o(\delta^{\lgr\vdim})
   \end{equation}
 \end{lem}
 
 \begin{proof}
   Pour choisir un point dans \( (\stairs)\Ciii \), on peut commencer par
-  choisir \( \coeff*[\vardim*] \) entre \( 0 \) et \( \vardeg* \)
-  pour tout \( \fct \), ce qui représente \( \prod\fctrange \vardeg* \)
+  choisir \( \coeff*[\vdim*] \) entre \( 0 \) et \( \vdeg* \)
+  pour tout \( \fct \), ce qui représente \( \prod\fctrange \vdeg* \)
   possibilités.
 
   On peut ensuite choisir \( \coeff[1][0], \dots \coeff[\puiss][0] \)
@@ -631,32 +631,32 @@ dans \( (\stairs)\Ciii \).
   Il reste alors à choisir pour tout \( \fct \) un élément de l'ensemble
   \begin{equation}
     \left\{
-      (\coeff*[1],  \dots, \coeff*[\vardim*])
-      \in \N ^{\vardim*}
+      (\coeff*[1],  \dots, \coeff*[\vdim*])
+      \in \N ^{\vdim*}
       \text{ tels que }
-      \sum_{j=1}^{\vardim*} \coeff*[j]
+      \sum_{j=1}^{\vdim*} \coeff*[j]
       =
-      \delta d'_\fct + r_\fct - \coeff*[0] - \coeff*[\vardim*]
+      \delta d'_\fct + r_\fct - \coeff*[0] - \coeff*[\vdim*]
     \right\}
     \pmm,
   \end{equation}
   qui est de cardinal
   \begin{align}
     \binom {
-      \delta d'_\fct + r_\fct - \coeff*[0] - \coeff*[\vardim*] - 1
+      \delta d'_\fct + r_\fct - \coeff*[0] - \coeff*[\vdim*] - 1
       }{
-      \vardim* - 1
+      \vdim* - 1
       }
     & \le
     \binom {
       \delta d'_\fct + r_\fct - 1
       }{
-      \vardim* - 1
+      \vdim* - 1
       }
     \\
     & \le
-    \frac {(d'_\fct)^{\vardim* - 1}} {(\vardim* - )!} \delta^{\vardim* - 1}
-    + o( \delta^{\vardim* - 1} )
+    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!} \delta^{\vdim* - 1}
+    + o( \delta^{\vdim* - 1} )
   \end{align}
   On prend alors le produit :
   \begin{equation}
@@ -665,9 +665,9 @@ dans \( (\stairs)\Ciii \).
     \frac {\prodwt} {\puiss !} (\epsi \delta)^\puiss
     (\epsi \delta)^\puiss
     \cdot \prod\fctrange
-    \frac {(d'_\fct)^{\vardim* - 1}} {(\vardim* - )!}
-    \vardeg* \delta^{\vardim* - 1}
-    + o( \delta^{\lgr\vardim} )
+    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!}
+    \vdeg* \delta^{\vdim* - 1}
+    + o( \delta^{\lgr\vdim} )
   \end{equation}
   et le résultat suit en remplaçant \( d'_\fct \) par sa valeur : \( 2\puiss +
   \epsz \) si \( \fct = \puiss \) et \( \wts* (\frac94 + \epsz) \) sinon.
@@ -679,11 +679,11 @@ Au vu des lemmes précédents, on introduit la constante
   =
   \frac {
     \epsi^\puiss (\puiss-1)
-    (2\puiss + \epsz) ^{\vardim[\puiss]-1}
-    (\frac94 + \epsz) ^{\lgr\vardim - \puiss - \vardim[\puiss] + 1}
-    \prod\fctrange \vardim*
+    (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+    (\frac94 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+    \prod\fctrange \vdim*
     }{
-    \puiss! \epsz^{\vardim[\puiss]}
+    \puiss! \epsz^{\vdim[\puiss]}
     }
   \pmm,
 \end{equation}
@@ -787,17 +787,17 @@ relations.
 \begin{fact} \label{f:dep-int}
   Dans les notations et hypothèses précédentes, il existe des formes homogènes
   \( P\mexp*[\ind] \) pour \( 1 \le \fct \le \puiss \) et
-  \( \vardim* + 1 \le \ind \le \dimp \), telles que
+  \( \vdim* + 1 \le \ind \le \dimp \), telles que
   \begin{enumthm}
     \item \( P\mexp*[\ind]
       \in
-      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*], \cmh\fct[\ind] ]
+      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*], \cmh\fct[\ind] ]
       \cap \varid*
       \) ; \label{i:rdiv1}
     \item \( P\mexp*[\ind] \) est unitaire en \( \cmh\fct[\ind] \) ;
-    \item \( \deg P\mexp*[\ind] = \vardim* \) ; \label{i:rdiv3}
+    \item \( \deg P\mexp*[\ind] = \vdim* \) ; \label{i:rdiv3}
     \item \( \nv1{ P\mexp*[\ind] }
-      \le \nv1{ \varfc* } \cdot 2^{ (\vardim*+1) \vardeg* \dv } \).
+      \le \nv1{ \varfc* } \cdot 2^{ (\vdim*+1) \vdeg* \dv } \).
   \end{enumthm}
 \end{fact}
 
@@ -814,13 +814,13 @@ de formes multihomogènes modulo des relations de dépendance intégrale, avant
 de l'appliquer au cas qui nous intéresse.
 
 \begin{lem}
-  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vardim* + 1,
+  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vdim* + 1,
   \dots \dimp \} \), on se donne :
   \begin{enumthm}
     \item \( \Delta\mexp* \in \N^* \) ;
     \item \( P\mexp*[\ind]
       \in
-      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*], \cmh\fct[\ind] ] \)
+      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*], \cmh\fct[\ind] ] \)
       homogène de degré \( \Delta\mexp* \) et unitaire en \( \cmh\fct[\ind]
       \).
   \end{enumthm}
@@ -858,7 +858,7 @@ de l'appliquer au cas qui nous intéresse.
     P\mexp*[\ind, \alpha] \cdot (\cmh\fct[\ind])^{\Delta\mexp* - \alpha}
     \pmm,
   \end{equation}
-  où \( P\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*] ] \).
+  où \( P\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*] ] \).
   On pose ensuite, pour tout \( \fct \), tout
   \( \ind \in \{ 0, \dots, \dimp \} \) et tout
   \( p \in \N^{\puiss(\dimp+1)} \),
@@ -867,7 +867,7 @@ de l'appliquer au cas qui nous intéresse.
     =
     \begin{dcases*}
       ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]}
-      & si \( \fct \le \vardim* \) ;
+      & si \( \fct \le \vdim* \) ;
       \\
       \sum _{\alpha=1}^{\Delta\mexp*}
       U_{p, \alpha, \Delta\mexp*}
@@ -896,7 +896,7 @@ de l'appliquer au cas qui nous intéresse.
   et en prolongeant par linéarité. L'estimation de norme annoncée découle
   directement de la majoration précédente en prenant le produit. Par ailleurs,
   il est clair que si une forme ne fait intervenir que les variables \(
-  \cmh\fct[\ind] \) pour \( \ind \le \vardim* + 1 \), il en est de même de son
+  \cmh\fct[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de même de son
   image.
 \end{proof}
 
@@ -908,7 +908,7 @@ de l'appliquer au cas qui nous intéresse.
   \begin{equation}
     \prod\fctrange \left(
     \nv1{ \varfc* }
-    \cdot ( \vardeg* 2^{(\vardim*+1)\vardeg* + 1} )^\dv
+    \cdot ( \vdeg* 2^{(\vdim*+1)\vdeg* + 1} )^\dv
     \right) ^{ \delta \wts* (2\puiss + \epsz) }
     \cdot \expb^{ o(\delta) }
   \end{equation}
@@ -924,9 +924,9 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 
 \begin{lem}
   Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
-  \{ \vardim* + 1, \dots \dimp \} \), des formes
-  \( S\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*] ] \) et
-  \( T\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*+1] ] \)
+  \{ \vdim* + 1, \dots \dimp \} \), des formes
+  \( S\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*] ] \) et
+  \( T\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*+1] ] \)
   telles que \( \deg S\mexp*[\ind] + 1 = T\mexp*[\ind] \) et des entiers
   \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
   \( S\mexp*[\ind] \cmh\fct[\ind] - T\mexp*[\ind] \).
@@ -943,7 +943,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
 
   De plus, on peut prendre
-  \( R = \prod\fctrange \prod_{\ind = \vardim*+1}^{\dimp}
+  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
   ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^\relim \) de la
   matrice de \( \relim \) dans la base canonique satisfont alors
   \begin{equation}
@@ -959,14 +959,14 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \begin{proof}
   Soit \( R \) défini comme dans l'énoncé, et \( \cmmh^q \) un monôme de
   l'espace de départ. Par hypothèse, \( q\mexp*[\ind] \le \Delta_\fct \) pour
-  tout \( \fct \) et \( \ind \le \vardim* + 1 \), de sorte que l'on peut poser
+  tout \( \fct \) et \( \ind \le \vdim* + 1 \), de sorte que l'on peut poser
   \begin{equation}
     \relim( \cmmh^q )
     =
     \prod\fctrange \left(
-    \prod_{\ind=1}^{\vardim*}
+    \prod_{\ind=1}^{\vdim*}
     (\cmh\fct[\ind])^{q\mexp*[\ind]}
-    \prod_{\ind=\vardim*+1}^\dimp
+    \prod_{\ind=\vdim*+1}^\dimp
     (T\mexp*[\ind])^{q\mexp*[\ind]}
     (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
     \right)
@@ -984,7 +984,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   majorée par
   \begin{equation}
     \prod\fctrange
-    \nv1{ N'_\fct }^{\vardeg*}
+    \nv1{ N'_\fct }^{\vdeg*}
     \pmm,
   \end{equation}
   où \( N'_\fct \) est une constante ne dépendant que de \( \var* \).
@@ -1008,7 +1008,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
     \pmm,
   \end{equation}
   où \( A\mexp*[\ind, \alpha] \) et \( B\mexp*[\ind, \alpha] \) sont dans
-  \( \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vardim*] ] \). On obtient alors les
+  \( \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*] ] \). On obtient alors les
   familles \( S \) et \( T \) recherchées en réduisant au même dénominateur le
   membre de droite de l'égalité précédente.
 \end{proof}
@@ -1062,7 +1062,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \le
     2 \hautl[\infty] \coi
     + 2 \ln (\dimp + 1)
-    + (2\puiss + \epsz) \max\fctrange (2\vardim* + 3) \vardeg*
+    + (2\puiss + \epsz) \max\fctrange (2\vdim* + 3) \vdeg*
     \pmm.
   \end{equation}
 \end{prop}
@@ -1076,9 +1076,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \begin{equation}
     \left\{
       \coeff \in \prod\fctrange \bigl(
-      \N^{\vardim* + 1}
-      \times \{ 0, \dots, \vardeg* - 1 \}
-      \times \{ 0 \}^{\dimp - \vardim* - 1}
+      \N^{\vdim* + 1}
+      \times \{ 0, \dots, \vdeg* - 1 \}
+      \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
       \middle\|
       \sum\indrange \coeff*[\ind] = \Diii
@@ -1132,8 +1132,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     (2\puiss + \epsz)
     \sum\fctrange \biggl(
     \hautl[1]{\varfc*}
-    + \ln(\vardeg*)
-    + \ln(2) \cdot \bigl( (\vardim* + 1) \vardeg* + 1 \bigr)
+    + \ln(\vdeg*)
+    + \ln(2) \cdot \bigl( (\vdim* + 1) \vdeg* + 1 \bigr)
     \biggr)
     \pmm,
   \end{equation}
@@ -1160,7 +1160,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \\
     & \null + 2(2\puiss + \epsz)
     \max\fctrange \Bigl(
-    \ln(\vardeg*) + \ln(2) + \ln(2) (\vardim* + 1) \vardeg*
+    \ln(\vdeg*) + \ln(2) + \ln(2) (\vdim* + 1) \vdeg*
     \Bigr)
     \pmm.
   \end{align}

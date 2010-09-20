@@ -655,17 +655,17 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 %
 \newcommand \Var {Z}
 \newc@star@default \var     {1}{\fct}{\puiss} {\Var\pexp{#1}}
-\newc@star@default \vardim  {1}{\fct}{\puiss} {{u\ssub{#1}}}
-\newc@star@default \vardeg  {1}{\fct}{\puiss} {{D\ssub{#1}}}
+\newc@star@default \vdim    {1}{\fct}{\puiss} {{u\ssub{#1}}}
+\newc@star@default \vdeg    {1}{\fct}{\puiss} {{D\ssub{#1}}}
 \newc@star@default \varfc   {1}{\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {1}{\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
 
 \noma{Z}{\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
 \noma{Z}{\var*   }{Le $\fct$-ième facteur de $\var$}
-\noma{u}{\vardim }{Le vecteur des dimensions des facteurs de $\var$}
-\noma{u}{\vardim*}{La dimension de $\var*$}
-\noma{D}{\vardeg }{Le vecteur des degrés de facteurs de $\var$}
-\noma{D}{\vardeg*}{Le degré de $\var*$}
+\noma{u}{\vdim   }{Le vecteur des dimensions des facteurs de $\var$}
+\noma{u}{\vdim*  }{La dimension de $\var*$}
+\noma{D}{\vdeg   }{Le vecteur des degrés de facteurs de $\var$}
+\noma{D}{\vdeg*  }{Le degré de $\var*$}
 \noma{f}{\varfc  }{La forme de \bsc{Chow} de $\var$}
 \noma{f}{\varfc* }{La forme de \bsc{Chow} de $\var*$}
 \noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}
