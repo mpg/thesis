@@ -64,14 +64,9 @@ Rémond soit 1, et si c'est systématique ou pas.
 Macros {{{2
 ------
 
-(B) Rajouter \dimp* = \dimp + 1, \dimp** = (\dimp*), \puiss* = \puiss - 1,
-etc. ?  (Dépend du \@ifstar traffiqué.)
-
-(B) Rajouter \vardim** = \vardim[\puiss] etc ?
-
 (B) Renommer \varfoo en \vfoo ?
 
-(B) Reprendre les macros de mumford
+(B) Reprendre le source de mumford
     - présentation du source
     - labels
 

@@ -1,3 +1,5 @@
+% !TEX root = main
+
 % personal class for thesis preliminary notes [[2
 %
 \NeedsTeXFormat{LaTeX2e}
@@ -39,7 +41,7 @@
 %
 \usepackage{mathtools, amsthm}
 \usepackage[all]{xy}
-\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted}
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic}
 \usepackage[noprefix, nocfg, french]{nomencl}
@@ -240,13 +242,13 @@
 % - normal []-notation available
 % - *-form yields a default non-empty value
 %
-% \newcs@start@default <name> <arg. nb.> <2nd default> <repl. text>
+% \newcs@start@default <name> <arg. nb.> <2nd default> <3rd one> <repl. text>
 \newcommand*\newc@star@default[1]{%
   \expandafter\newc@star@default@
   \csname \cmdstring#1 \endcsname#1}
-\newcommand*\newc@star@default@[5]{%
-  \newcommand*#1[#3][]{#5\egroup}%
-  \newcommand*#2{\bgroup \@ifstar{#1[#4]}{#1}}}
+\newcommand*\newc@star@default@[6]{%
+  \newcommand*#1[#3][]{#6\egroup}%
+  \newcommand*#2{\bgroup \@ifstar{\@ifstar{#1[#5]}{#1[#4]}}{#1}}}
 
 % coma-seperated list with possibly empty elements [[2
 %
@@ -256,9 +258,9 @@
 % su{b,per}script-friendly starred macros [[2
 %
 \newcommand*\newc@ifstar [3] {%
-  \newcommand#1{\bgroup\@ifstar{#2\egroup} {#3\egroup}}}
+  \newcommand#1{\bgroup\@ifstar{#3\egroup} {#2\egroup}}}
 \newcommand*\newc@ifstar@two [4] {%
-  \newcommand#1{\bgroup\@ifstar{\@ifstar{#2\egroup}{#3\egroup}} {#4\egroup}}}
+  \newcommand#1{\bgroup\@ifstar{\@ifstar{#4\egroup}{#3\egroup}} {#2\egroup}}}
 
 % non thesis-specific math [[1
 % ------------------------
@@ -479,7 +481,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % embeding-dependant values [[2
 %
-\newcommand \dimp {n}
+\newc@ifstar@two \dimp {n} {n+1} {(n+1)}
 \newcommand*\projd [1][] {\proj[#1]\dimp}
 \newcommand \fibre {\mathcal L}
 
@@ -496,21 +498,21 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % (multi)projective indices and coordinates [[2
 %
-\newcommand \puiss    {m}
+\newc@ifstar\puiss    {m} {m-1}
 \newcommand \fct      {i}
 \newcommand \fcti     {j}
 \newcommand \ind      {k}
 \newcommand \indi     {l}
 
 \newcommand \fctrange  {_{\fct =1}^\puiss}
-\newcommand \fctirange {_{\fcti=1}^{\puiss-1}}
+\newcommand \fctirange {_{\fcti=1}^\puiss*}
 \newcommand \indrange  {_{\ind =0}^\dimp}
 \newcommand \indirange {_{\indi=0}^\dimp}
 
 \noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
   donc aussi la puissance de $\va$ dans laquelle ont travaille.}
 \noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
-\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss-1$}
+\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
 \noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
 \noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
@@ -593,11 +595,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \divi {E}
 \noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
 
-\newc@star@default \excep   {1}{\fct}  {e\ssub{#1}}
-\newc@star@default \wt      {1}{\fct}  {a\ssub{#1}}
-\newc@star@default \wts     {1}{\fct}  {a\ssub{#1}^2}
-\newc@star@default \wti     {1}{\fcti} {a\ssub{#1}}
-\newc@star@default \wtis    {1}{\fcti} {a\ssub{#1}^2}
+\newc@star@default \excep   {1}{\fct }{\puiss } {e\ssub{#1}}
+\newc@star@default \wt      {1}{\fct }{\puiss } {a\ssub{#1}}
+\newc@star@default \wts     {1}{\fct }{\puiss } {a\ssub{#1}^2}
+\newc@star@default \wti     {1}{\fcti}{\puiss*} {a\ssub{#1}}
+\newc@star@default \wtis    {1}{\fcti}{\puiss*} {a\ssub{#1}^2}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
@@ -605,8 +607,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
-\newc@star@default \mexp    {1}{\fct}  {\pexp{#1}}
-\newc@star@default \mexpi   {1}{\fcti} {\pexp{#1}}
+\newc@star@default \mexp    {1}{\fct }{\puiss } {\pexp{#1}}
+\newc@star@default \mexpi   {1}{\fcti}{\puiss*} {\pexp{#1}}
 
 \newcommand        \coeff {\lambda\mexp}
 \nomg{lambda}{\lambda}{Un multimultiindice, en général élément de
@@ -652,11 +654,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % the product sub-variety considered and its attributes [[2
 %
 \newcommand \Var {Z}
-\newc@star@default \var     {1}{\fct} {\Var\pexp{#1}}
-\newc@star@default \vardim  {1}{\fct} {{u\ssub{#1}}}
-\newc@star@default \vardeg  {1}{\fct} {{D\ssub{#1}}}
-\newc@star@default \varfc   {1}{\fct} {\Chow\pexp{#1}[\Var]}
-\newc@star@default \varid   {1}{\fct} {\Ideal\pexp{#1}[\Var]}
+\newc@star@default \var     {1}{\fct}{\puiss} {\Var\pexp{#1}}
+\newc@star@default \vardim  {1}{\fct}{\puiss} {{u\ssub{#1}}}
+\newc@star@default \vardeg  {1}{\fct}{\puiss} {{D\ssub{#1}}}
+\newc@star@default \varfc   {1}{\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
+\newc@star@default \varid   {1}{\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
 
 \noma{Z}{\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
 \noma{Z}{\var*   }{Le $\fct$-ième facteur de $\var$}
