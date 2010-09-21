@@ -220,10 +220,11 @@
 
 \theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
-
-\theoremstyle{remark}
 \newtheorem*{rem}        {Remarque}
 \newtheorem*{Rem}        {Remarque}
+\newtheorem*{ide@s}      {Idées}
+\newenvironment{ideas}{\ide@s\todo\color{later}}{\endide@s}
+
 
 % numbering [[2
 %
