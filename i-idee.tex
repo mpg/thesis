@@ -15,11 +15,11 @@ Dans ces conditions, \bsc{Faltings} a démontré le théorème d'approximation
 suivant \cite[\eng{Theorem~II}]{faldaav}.
 
 \begin{thm}[\bsc{Faltings}] \label{t:fal2}
-  Soit $V$ une sous-variété quelconque de $\va$, $\place$ une place de $\cdn$,
+  Soit $\varapx$ une sous-variété quelconque de $\va$, $\place$ une place de $\cdn$,
   et $\eps > 0$. Il n'existe qu'un nombre fini de points $\point$ dans
   $\va(\cdn)$ tels que
   \begin{equation}
-    0 < \distv{\point}{V} \le \hautm{\point}^{-\eps}
+    0 < \distv{\point}{\varapx} \le \hautm{\point}^{-\eps}
     \pmm,
     \label{e:has}
   \end{equation}
@@ -108,7 +108,7 @@ suivante.
 \end{thm}
 
 Le lien avec le théorème précédent est clair : on passe de l'un à l'autre en
-remplaçant $\xi$ par $V$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
+remplaçant $\xi$ par $\varapx$ et $\cdn = \aff{1}(\cdn)$ par $\va(\cdn)$, la
 distance locale étant bien sûr représentée par $\av{x - \xi}$. Le
 théorème~2 de \cite{faldaav} est donc aux variétés abéliennes ce que le
 théorème de \bsc{Roth} est à la droite.
@@ -137,14 +137,17 @@ théorème de \bsc{Liouville}. Dans le cadre des variétés abéliennes,
 l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
 
 \begin{prop}
-  Soient $V$ une variété projective de degré $d$, et $x \in \proj{n}(\Qbar)$
-  un point algébrique. Si $x$ n'appartient pas à $V$, on a
+  Soient $\varapx$ une variété projective de degré $d$, et $x \in
+  \proj{n}(\Qbar)$ un point algébrique. Si $x$ n'appartient pas à $\varapx$,
+  on a
   \[
-    \distv{x}{V} \ge c(n, d) \hautm{V}^{-1} \cdot \hautm{x}^{-d} \pmm.
+    \distv{x}{\varapx}
+    \ge
+    c(n, d) \hautm{\varapx}^{-1} \cdot \hautm{x}^{-d} \pmm.
   \]
 \end{prop}
 
-Dans le cas où $V$ est une hypersurface, c'est une application directe du
+Dans le cas où $\varapx$ est une hypersurface, c'est une application directe du
 théorème du produit (et $c(n, d) = 1$), et on peut se ramener à ce cas en
 général, quitte à prendre une valeur beaucoup plus petite pour $c(n, d)$.
 Comme on le verra en \ref{s:siegel}, il est intéressant dans les applications
@@ -177,12 +180,12 @@ prouver une conjecture de \bsc{Lang}, généralisant celle de \bsc{Mordell}, et
 qui s'énonce ainsi.
 
 \begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Lang}] \label{t:fal1}
-  Soit $V$ une sous-variété d'une variété abélienne $\va$, définie sur un
-  corps de nombres $\cdn$. Si $V$ ne contient pas de translaté de sous-variété
-  abélienne stricte, alors $V(\cdn)$ est fini.
+  Soit $\varapx$ une sous-variété d'une variété abélienne $\va$, définie sur un
+  corps de nombres $\cdn$. Si $\varapx$ ne contient pas de translaté de sous-variété
+  abélienne stricte, alors $\varapx(\cdn)$ est fini.
 \end{thm}
 
-Ceci généralise la conjecture de \bsc{Mordell}, qui correspond au cas où $V$
+Ceci généralise la conjecture de \bsc{Mordell}, qui correspond au cas où $\varapx$
 est une courbe et $\va$ sa jacobienne. Ce résultat est proche de notre problème
 d'approximation dans le sens suivant : il consiste à montrer la finitude des
 points rationnels \emph{sur} une sous-variété de variété abélienne, alors que
@@ -220,20 +223,20 @@ démonstration repose sur le théorème de \bsc{Roth} énoncé plus haut, et ava
 été obtenu par \bsc{Siegel} avec la version faible de cet énoncé dont il
 disposait en 1929.  Une généralisation du théorème a été conjecturée par
 \bsc{Lang}, de façon analogue à sa généralisation de la conjecture de
-\bsc{Mordell} : si $E$ est un diviseur ample d'une variété abélienne $\va$,
-alors $A \setminus E$ ne possède qu'un nombre fini de points entiers. Le
+\bsc{Mordell} : si $\divi$ est un diviseur ample d'une variété abélienne $\va$,
+alors $\va \setminus \divi$ ne possède qu'un nombre fini de points entiers. Le
 théorème original s'en déduit là aussi en considérant la courbe dans sa
 jacobienne (à cette différence qu'ici la courbe peut être sa jacobienne, dans
 le cas $g=1$).
 
 Cette conjecture de \bsc{Lang} est en fait un corollaire du
-théorème~\ref{t:fal2} : on remarque que la hauteur (relative à $E$) d'un point
+théorème~\ref{t:fal2} : on remarque que la hauteur (relative à $\divi$) d'un point
 entier $x$ est essentiellement donné par le produit des inverse des distances
-$v$-adiques de $x$ à $E$ quand $v$ parcourt les places archimédiennes de
+$v$-adiques de $x$ à $\divi$ quand $v$ parcourt les places archimédiennes de
 $\cdn$. Or ces distances sont minorées par $\hautm{x}^{-\eps}$ pour tout
 $\eps>0$, sauf pour un nombre fini de points. Ceci est bien sûr contradictoire
 dès que $\eps < 1$, ce qui prouve que seules les approximations
-exceptionnelles de $E$ peuvent donner des points entiers. Dénombrer ces
+exceptionnelles de $\divi$ peuvent donner des points entiers. Dénombrer ces
 dernières donne donc immédiatement une version quantitative de cette
 ex-conjecture de \bsc{Lang}. C'est pour ce type d'applications qu'il devient
 essentiel dans l'énoncé d'approximation de pouvoir prendre $\eps$ petit, au
@@ -327,40 +330,40 @@ suite d'approximations $x_1, \ldots, x_m$ satisfaisant simultanément à
 \end{enumthm}
 On regarde alors cette suite comme un point de $\va^m$, et on cherche à
 construire par récurrence, en partant de $\va^m$,  une suite
-décroissante de sous-variétés (irréductibles) produit $Y\pexp{u} =
-\prod_i Y\pexp{u}[i]$ pour $u$ variant de $gm$ à $m-1$ telles que :
+décroissante de sous-variétés (irréductibles) produit $\var\pexp{u} =
+\prod_i \var\pexp{u}[i]$ pour $u$ variant de $gm$ à $m-1$ telles que :
 \begin{enumthm}
-  \item $x \in Y\pexp u$ ;
-  \item $\dim Y\pexp u = u$ ;
-  \item $\deg Y\pexp u \le f(u)$ et $\deg Y\pexp u[i] \le f_i(u)$ ;
-  \item $\sum_{i=1}^m a_i \hautm{Y\pexp u[i]} \le g(u, a)$ ; \label{i:ht}
+  \item $x \in \var\pexp u$ ;
+  \item $\dim \var\pexp u = u$ ;
+  \item $\deg \var\pexp u \le f(u)$ et $\deg \var\pexp u[i] \le f_i(u)$ ;
+  \item $\sum_{i=1}^m a_i \hautm{\var\pexp u[i]} \le g(u, a)$ ; \label{i:ht}
 \end{enumthm}
 où les $a_i$ sont des entiers choisis de telle sorte que la quantité $a_i^2
 \hautn{x_i}$ soit à peu près constante, et $f$, $f_i$ et $g$ sont des
 fonctions de $u$ à expliciter (mais $g$ est linéaire en $\abs a^2$). Plus
 précisément, on s'attend à ce que $f$ et $f_i$ ne dépendent que du degré de
-$V$ est des dimensions ambiantes, et que $g$ ne dépende que de la hauteur de
+$\varapx$ est des dimensions ambiantes, et que $g$ ne dépende que de la hauteur de
 $\va$, et des degrés et dimensions ambiants.
 
 Supposons un moment cette suite construite, et voyons comment elle permet de
-conclure. On regarde $Y\pexp{m-1}$ : c'est un produit dont un des facteurs est
+conclure. On regarde $\var\pexp{m-1}$ : c'est un produit dont un des facteurs est
 nécessairement réduit à un des $x_i$. Mais l'inégalité \ref{i:ht}, le fait que
 $h(x_i)a_i^2$ soit à peu près constant, et la dépendance de $g$ en $\abs a$
 permettent alors de majorer la hauteur de $x_1$, de façon à contredire le
 point \ref{i:vs-grand} des hypothèses faites sur $x$.
 
 Il suffit donc de savoir construire une telle suite, c'est-à-dire étant donné
-une sous-variété produit $Y$ de $\va^m$, de dimension $u$, satisfaisant aux
-hypothèses ci-dessus, de savoir construire une variété produit $Y'$ de
+une sous-variété produit $\var$ de $\va^m$, de dimension $u$, satisfaisant aux
+hypothèses ci-dessus, de savoir construire une variété produit $\var'$ de
 dimension $u-1$, satisfaisant aux même hypothèses.
 
-Plus précisément, on cherchera à construire $Y'$ comme une composante de
-l'intersection de $Y$ avec une forme $T$ homogène en le groupe de variable
-$X_i$ (et indépendante des autres), ne s'annulant pas identiquement sur $Y$,
+Plus précisément, on cherchera à construire $\var'$ comme une composante de
+l'intersection de $\var$ avec une forme $T$ homogène en le groupe de variable
+$X_i$ (et indépendante des autres), ne s'annulant pas identiquement sur $\var$,
 dont il faut contrôler le degré et la hauteur : les théorèmes de \bsc{Bézout}
-géométrique et arithmétique assurent alors que $Y'$ satisfait toujours aux
+géométrique et arithmétique assurent alors que $\var'$ satisfait toujours aux
 hypothèses sur la dimension, le degré et la hauteur. Par ailleurs, le choix de
-la composante assurera que $x \in Y'$.
+la composante assurera que $x \in \var'$.
 
 Reste donc à savoir construire une telle forme $T$. Pour cela, on va utiliser
 la méthode de \bsc{Thue} (dite aussi « méthode de transcendance ») :
@@ -377,34 +380,34 @@ $x_i$ successifs : c'est l'hypothèse~\ref{i:vs-ecart} qui garanti ainsi leur
 étagement.
 
 Dans toute la suite, on supposera que la variété qu'on cherche à approcher est
-en fait un diviseur $E$ de $A$. Cette hypothèse n'est pas restrictive dans le
-sens où une variété $V$ quelconque est toujours incluse dans un diviseur de
+en fait un diviseur de $\va$. Cette hypothèse n'est pas restrictive dans le
+sens où une variété $\varapx$ quelconque est toujours incluse dans un diviseur de
 degré comparable et, à une certaine constante près qu'on pourrait expliciter
-(dépendant au plus du degré de $V$ et des dimensions ambiantes), la distance
-d'un point à $V$ est majorée par sa distance à $E$.
+(dépendant au plus du degré de $\varapx$ et des dimensions ambiantes), la distance
+d'un point à la variété est majorée par celle du point au diviseur.
 
-Pour construire cette forme auxiliaire, on ne travaillera en fait pas sur $Y$
+Pour construire cette forme auxiliaire, on ne travaillera en fait pas sur $\var$
 directement, mais sur son image par un certain plongement. Ce dernier fait
 intervenir les $a_i$ définis ci-dessus, et joue dans la construction un rôle
 semblable au fibré $\mathcal L(\eps, s)$ de \cite{faldaav} ou $\mathcal
 Q_{\eps, a, d}$ de \cite{remivds}.
 \begin{align*}
-  \phi \colon Y & \to \va^{2m-1} \\
+  \phi \colon \var & \to \va^{2m-1} \\
   (y_1, \dots, y_m)  & \mapsto
   (y_1, \dots, y_m, a_1 y_1 - y_m, \dots a_{m-1} y_{m-1} - y_m)
 \end{align*}
-On cherche alors à construire une forme sur $Y$, s'annulant avec un indice
-élevé le long de $Y \cap E^m$, et provenant (\lat{via} $\phi^*$) d'une forme
-sur $\phi(Y)$ de multidegré $\delta(\eps_0 a_1^2, \dots, \eps_0 a_m^2, 1,
+On cherche alors à construire une forme sur $\var$, s'annulant avec un indice
+élevé le long de $\var \cap \divi^m$, et provenant (\lat{via} $\phi^*$) d'une forme
+sur $\phi(\var)$ de multidegré $\delta(\eps_0 a_1^2, \dots, \eps_0 a_m^2, 1,
 \dots, 1)$, pour un certain $\eps_0$.
 
 On utilise pour ça un lemme de \bsc{Siegel}. Pour peu que $\delta$ soit assez
 grand (et c'est sa raison d'être), le théorème de \bsc{Hilbert} multiprojectif
-estime la dimension de l'espace des formes sur $Y$ de degré adéquat. Les
+estime la dimension de l'espace des formes sur $\var$ de degré adéquat. Les
 formules d'addition et de multiplication de \cite{daphimhva2} nous
 permettent d'estimer la hauteur du système ; cependant une estimation
 brutale ne permet pas de contrôler correctement son rang. Il s'agit alors de
-réduire le système modulo les équations de $Y$, en présentant ce dernier comme
+réduire le système modulo les équations de $\var$, en présentant ce dernier comme
 un revêtement fini de l'espace multiprojectif $\proj{u}$, comme par exemple
 dans le lemme~2.5 de \cite{remivg}. Un dénominateur, lié au lieu de
 ramification du revêtement considéré, apparaît cependant, qu'on espère
@@ -415,20 +418,20 @@ On cherche ensuite à extrapoler, c'est-à-dire à montrer que notre forme
 auxiliaire s'annule aussi en $x$, et même avec un indice encore assez élevé
 pour pouvoir ensuite appliquer le lemme du produit. Pour cela, l'idée est bien
 sûr de majorer la hauteur de $F(x)$, puis d'estimer sa composante locale en
-$\place$ exploitant le fait que $x$ est $\place$-adiquement proche de $E$,  et
+$\place$ exploitant le fait que $x$ est $\place$-adiquement proche de $\divi$,  et
 de conclure à une contradiction par la formule du produit à moins de $F(x)$ ne
 soit nul. Dans la phrase précédente, il faut en fait remplacer $F$ par ses
 dérivées jusqu'à un ordre convenable. C'est en tous cas l'hypothèse
 d'approximation \ref{e:has} qui établit la contrainte nécessaire en liant
-$\distv{x}{E}$ à $H(x)$, donc indirectement $\av{F(x)}$ à $H(F(x))$.
+$\distv{x}{\divi}$ à $H(x)$, donc indirectement $\av{F(x)}$ à $H(F(x))$.
 
 Pour estimer la norme locale de $F(x)$ en $\place$, la difficulté est que $F$
-s'annule le long de $Y \cap E$, alors qu'on sait que $x$ est proche de $E$,
-mais pas nécessairement de $Y \cap E$. En fait, $F$ est congrue modulo l'idéal
-de $Y$ à une forme s'annulant le long de $E$. On exploite alors le fait que
-$x$ est sur $Y$ pour extrapoler plutôt sur cette nouvelle forme, de façon à
+s'annule le long de $\var \cap \divi$, alors qu'on sait que $x$ est proche de $\divi$,
+mais pas nécessairement de $\var \cap \divi$. En fait, $F$ est congrue modulo l'idéal
+de $\var$ à une forme s'annulant le long de $\divi$. On exploite alors le fait que
+$x$ est sur $\var$ pour extrapoler plutôt sur cette nouvelle forme, de façon à
 mieux exploiter l'hypothèse sur $x$. Enfin, pour l'extrapolation, on utilise
-un paramétrisation locale de $Y$ (ou $\va$ ?) au voisinage de $x$, afin
+une paramétrisation locale de $\var$ (ou $\va$ ?) au voisinage de $x$, afin
 d'estimer confortablement les dérivées.
 
 \medskip
