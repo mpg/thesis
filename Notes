@@ -4,14 +4,14 @@ Rédaction {{{1
 Général {{{2
 -------
 
-(A) Factoriser les notations communes à tout le monde au début, et celles
-propres à chaque chapitre au début du chapitre.
+(B) Vojta : Factoriser les trucs relatifs au plongement pondéré entre Siegel
+et l'extrapolation : 3.2.2 et une partie 3.3.2 à fusionner dans 3.1.
 
 (A) Factoriser les énoncés sur les formules d'addition, soustraction et
 multiplication dans une annexe.
     Écrire les preuves détaillées de ces énoncés.
 
-(A) Reprendre le plan général de Vojta, et traduire ça en un structure
+(A) Reprendre le plan général de Vojta, et traduire ça en une structure
 section, squelettes d'énoncés, etc.
 
 (A) Faire un squelette relativement fin pour l'extrapolation.
@@ -36,11 +36,13 @@ Voire directement des constantes automatiques ?
 Notations {{{2
 ---------
 
+(A) Utiliser les nouvelles notations dans 1.3 (stratégie générale)
+
 (A) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 
-À homogénéiser petit à petit. {{{
-Noter ci-dessous les divergences observées, qui seront traitées une par une.
-}}}
+(C) À homogénéiser petit à petit. {{{3
+Noter ci-dessous les divergences observées, qui seront traitées une par une
+tranquillement.
 
 Unifier les indices :
 - i et j en haut (de 1 à m ou m-1)
@@ -64,7 +66,12 @@ Rémond soit 1, et si c'est systématique ou pas.
 Macros {{{2
 ------
 
-(B) faire une liste des macros numérotées avec leur nom pour moi (et evtl la
+(B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
+
+(C) normes et hauteurs : virer les vieilles version imprécises, indiquer
+systématiquement la norme ou mesure archimédienne utilisée
+
+(B) faire une liste des constante numérotées avec leur nom pour moi (et evtl la
 page où elles sont définies)
 
 (B) Reprendre le source de mumford
@@ -98,14 +105,11 @@ Vojta {{{2
 
 (A) Mettre au propre une bonne version de la paramétrisation.
 
-(B) Étudier sérieusement la réduction au cas d'un diviseur : peut-être se
+(B) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
 faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
 (Attention, on veut en plus que le truc soit symétrique pour le formulaire.)
     (B) Faire un squelette détaillé des réductions.
     (B) Remplir ce squelette avec des preuves.
-
-(B) Factoriser les trucs relatifs au plongement pondéré entre Siegel et
-l'extrapolation : 3.2.2 et une partie 3.3.2 à fusionner dans 3.1.
 
 (B) Dans l:deg-wemba, remplacer le \le par un = en utilisant des parties
 entières supérieures de façon adéquate, ça coute pas cher et ça simplife la

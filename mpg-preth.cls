@@ -430,19 +430,33 @@
 \noma{MW}{\MW[\PHi]\PH}{Espace de \MoW de la variété abélienne \PHi sur le
   corps \PH}
 
+\newcommand \mmemb { \Theta }
+\nomg{Theta} {\mmemb} {Plongement de \bsc{Mumford modifié}}
+
+\newcommand \placesapx { \mathcal S }
+\newcommand \wtapx [1][\place] { \lambda\ssub{#1} }
+\noma{S} {\placesapx} {Ensemble fini de places de \( \cdn \) auxquelles on
+  impose une condition d'approximation}
+\nomg{lambda}{\lambda}{Poids de la place \( \place \) dans la condition
+  d'approximation}
+
+\newcommand \varapx { E }
+\noma{E} {\varapx} {Variété dont on étudie les apximations}
+
+\newcommand \expapx { \eps }
+\nomg{eps} {\expapx} {L'exposant d'apximation}
+
 % archimedian norms and measures [[2
 %
 \newcommand*\normsup [1]   {\norm{#1}_\infty}
 \newcommand*\normlun [1]   {\norm{#1}_1}
 \newcommand*\normeuc [1]   {\norm{#1}_2}
 \newcommand*\normhom [1]   {\norm{#1}_{\mathrm h}}
-\newcommand*\mespph  [1]   {\mathrm{M}(#1)}
-\newcommand*\mahler  [2][] {\mathcal M_{#1}(#2)}
+\newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
+\newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 
 \noma{M} {\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
 \noma{M} {\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
-\noma{Mv}{\mahler[\place]\PH}{Mesure de \bsc{Mahler} de la forme \PH si
-  $\place$ est archimédienne, norme du $\sup$ sinon}
 
 % local absolute values, norms, distances, ... [[2
 %
@@ -454,6 +468,8 @@
 \newcommand* \Onnv[2][\place] {\nnorm {#2}\ssub{#1}}
 \newcommand* \nv  [3][\place] {\norm  {#3}_{#1, #2}}
 \newcommand* \nnv [3][\place] {\nnorm {#3}_{#1, #2}}
+\newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
+\newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
 
 \noms{nv1}{\av\PH }{Valeur absolue $\place$-adique d'un nombre}
 \noms{nv2}{\nv\PHi\PH }{Norme $\place$-adique d'un vecteur ou d'une forme, en
@@ -461,6 +477,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noms{nv3}{\nnv\PHi\PH}{Norme $\place$-adique d'un multivecteur ou d'une forme
   multihomogène, en utilisant norme ou mesure \PHi si $\place$ est
   archimédienne}
+\noma{Mv}{\mvm\PH}{Mesure de \bsc{Mahler} de la forme \PH si
+  $\place$ est archimédienne, norme du $\sup$ sinon}
+\noma{Mv}{\mvp\PH}{Mesure de \bsc{Philippon} de la forme \PH si
+  $\place$ est archimédienne, norme du $\sup$ sinon}
 
 \newcommand \dv  {{\delta\smash{_\place}}}
 \newcommand \dpv {{\delta'_\place}}
@@ -558,8 +578,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Hautl [1][] {\mathrm h \ssub{#1}}
 \newcommand \Hautn       {\smash{\hat\Hautl}}
 
-\newcommand*\hautm [2][] {\Hautm[1](#2)}
-\newcommand*\hautl [2][] {\Hautl[1](#2)}
+\newcommand*\hautm [2][] {\Hautm[#1](#2)}
+\newcommand*\hautl [2][] {\Hautl[#1](#2)}
 \newcommand*\hautn [1]   {\Hautn   (#1)}
 
 \noma{h}{\hautm[\PHi]{\PH}}{Hauteur projective multiplicative de \PH en

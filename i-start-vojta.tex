@@ -4,9 +4,12 @@
 
 \section{Stratégie générale et notations additionnelles}
 
-Soit $\va$ une variété abélienne sur un corps de nombres $\cdn$, plongée dans
-un espace projectif $\proj\dimp$ muni de coordonnées homogènes $\ch0, \ldots,
-\ch\dimp$. On suppose que $\va$ n'est pas contenue dans l'hyperplan
+Le but de cette section de des suivantes est de prouver une inégalité de
+\bsc{Vojta} dans le cas particulier où \( \varapx \) est découpé par un
+hyperplan. Nous en déduirons ensuite le cas général à la
+section~\ref{sec:vojta-gene}.
+
+On suppose que $\va$ n'est pas contenue dans l'hyperplan
 d'équation $\ch0 = 0$, et on considère le diviseur $\divi$ découpé par
 $\ch0$ sur $\va$. On note enfin $\ideal\va$ l'idéal homogène saturé
 définissant $\va$ dans $\cdn [\ch0, \ldots, \ch\dimp]$.
@@ -97,11 +100,13 @@ désignera une famille d'entiers.
   Inégalité classique sur la norme $L_1$ et la spécialisation des polynômes.
 \end{proof}
 
-\begin{scho} \1{s:plong-adapt}
+\begin{scho} \label{s:plong-adapt}
   Vu les hypothèses sur $V$, on peut sans perte de généralité supposer de plus
   que $V \embedin \proj\dimp$ est adapté, quitte à multiplier sa hauteur
   ($L_1$) par
   $\bigl ((\dimp + 1) \max (\frac\Delta2, 1) \bigr)^{\Delta(\dimp+1)}$.
+  \worknote[later]{Il faut aussi estimer le coût sur les formules de
+    multiplication et soustraction.}
 
   On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
   dans son facteur $\proj\dimp$. Ceci implique que
@@ -110,3 +115,7 @@ désignera une famille d'entiers.
   (qui est unique à une constante multiplicative près) en imposant que cette
   quantité vaille $1$.
 \end{scho}
+
+\endinput
+
+% vim: spell spelllang=fr

@@ -440,7 +440,90 @@ elles en raccordant les différentes étapes, et notamment la récurrence\dots
 
 \section{Définitions et notations}
 
-À écrire\dots
+On fixe une variété abélienne \( \va \) de dimension \( \genre \), définie sur
+\( \Qbar \), munie d'un fibré \( \fibre \) ample et symétrique.  On choisit
+sur \( \fibre^{\otimes 16} \) une structure thêta et on plonge \( \va \) dans
+un espace projectif \( \projd \) avec \( \dimp = 16^\genre \deg\fibre - 1 \)
+par un plongement de \bsc{Mumford} modifié (voir~\ref{sec:plong-mm-def}), noté
+\( \mmemb \). On identifiera la plupart du temps \( \va \) et son image par \(
+  \mmemb \).
+
+On note par ailleurs \( \oa \) l'origine de \( \va \), et on fixe un système
+de coordonnées homogènes \( \coa \) de son image par \( \mmemb \). On fixe
+également un corps de nombres \( \cdn \) sur lequel \( \va \), \( \mmemb \) et
+\( \coa \) sont définis, et qui contient les racines quatrièmes de l'unité.
+
+Si \( \place \) est une place finie de \( \cdn \), on définit la norme \(
+  \place \)-adique d'une famille finie comme le maximum des valeurs absolues
+\( \place \)-adiques de ses éléments. On défini alors la norme d'un polynôme
+comme celle de la famille de ses coefficients. Aux places infinies, on dispose
+des différentes normes et mesures définies en~\ref{sec:nma-def}.
+
+On notera \( \nv\star\truc \) la norme locale en \( \place \) correspondant à
+la norme \( \star \) si \( \place \) est archimédienne et à celle du maximum
+sinon. De même, \( \mvp{} \) et \( \mvm{} \) désignent respectivement la
+mesure de \bsc{Philippon} et de \bsc{Mahler} si \( \place \) est archimédienne
+et la norme du maximum sinon.
+
+On définit alors la hauteur additive d'une famille finie d'éléments de \( \cdn
+\), ou d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
+\begin{equation}
+  \hautl[\star]\truc
+  =
+  \sum_{\place}
+  \frac {[\cdn_\place : \Q_\place]} {[\cdn : \Q]}
+  \ln \nv\star\truc
+  \pmm,
+\end{equation}
+où la somme est prise sur l'ensemble des places de \( \cdn \) et \( \star \)
+désigne l'une des normes ou mesures archimédiennes de l'annexe~\ref{chap:nma}.
+On note également \( \Hautm[\star] = \exp(\Hautl[\star]) \) la hauteur
+multiplicative.
+
+Pour un point de \( \va(\Qbar) \), ces deux grandeurs dépendent du plongement
+\( \mmemb \) fixé, mais pas du système de coordonnées homogènes choisies, ni
+même du corps \( \cdn \) utilisé. On utilisera par ailleurs la hauteur
+normalisée de \NT \( \Hautn \) associé à l'une des hauteurs \(
+  \Hautl[\star] \), qui dépend toujours du fibré \( \fibre \), mais plus du
+choix d'un plongement associé à ce fibré, ni de la norme ou mesure utilisée
+aux places archimédiennes.
+
+La hauteur normalisée possède par ailleurs des propriétés agréables vis-à-vis
+des opérations de \( \va \). En particulier, elle induit une forme quadratique
+définie positive sur l'espace de \MoW de \( \va \), défini comme
+\begin{equation}
+  \MW\cdn = \va(\cdn) \otimes_\Z \R
+  \pmm.
+\end{equation}
+Ce dernier est ainsi un espace vectoriel euclidien, de dimension finie (égale
+au rang de \( \va \) sur \( \cdn \)) dès que \( \cdn \) est un corps de
+nombres.
+
+Pour chaque place \( \place \) de \( \cdn \), on utilise la distance \( \place
+\)-adique \( \Distv \) entre un point et une variété définie en
+\ref{sec:distv-def}.
+
+On choisit un ensemble fini \( \placesapx \) de \( \cdn \), une sous-variété
+\( \varapx \) de \( \va \), et un réel \( \expapx > 0 \).  On considère alors
+la condition d'approximation suivante.
+\worknote[later]{préciser la hauteur utilisée}
+\begin{equation} \tag{\textsc{HA}} \label{e:HA}
+  \distv \point \varapx
+  \le
+  \hautm{\point}^{-\wtapx\expapx}
+  \quad \forall \place \in \placesapx
+  \pmm,
+\end{equation}
+où les \( \wtapx \) sont des réels positifs tels que
+\( \sum_{\place \in \placesapx} \wtapx [\cdn_v : \Q_v]/[\cdn : \Q] = 1 \).
+
+On constate alors que ce système d'inégalités a en fait un sens pour $\point
+\in \projd(\Qbar)$ : pour chaque place $w$ prolongeant une place $\place$ de
+$\placesapx$, on impose la condition sur la distance $w$-adique avec
+$\wtapx[w] = \wtapx$. La normalisation choisie fait que le système ainsi
+obtenu est indépendant de l'extension $\Cdn/\cdn$ dans laquelle on l'écrit.
+Ainsi, une large partie des raisonnements effectués par la suite se fera sur
+\( \Qbar \).
 
 \endinput
 
