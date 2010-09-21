@@ -4,15 +4,6 @@ Rédaction {{{1
 Général {{{2
 -------
 
-(A) Factoriser les énoncés sur les formules d'addition, soustraction et
-multiplication dans une annexe.
-    Écrire les preuves détaillées de ces énoncés.
-
-(A) Reprendre le plan général de Vojta, et traduire ça en une structure
-section, squelettes d'énoncés, etc.
-
-(A) Faire un squelette relativement fin pour l'extrapolation.
-
 (B) Les notations sur les coordonnées (multi)homogènes sont sans doute à
 placer dans le chap. 1 plutôt que dans l'intro de Vojta : on utilise au moins
 de l'homogène dans Mumford, et probablement du multi dans NMA.
@@ -92,6 +83,11 @@ page où elles sont définies)
 Vojta {{{2
 -----
 
+(A) Reprendre le plan général de Vojta, et traduire ça en une structure
+section, squelettes d'énoncés, etc.
+
+(A) Faire un squelette relativement fin pour l'extrapolation.
+
 (A) Retaper la paramétrisation dès que les math sont prêtes.
 
 (B) Finir d'enregistrer dans la nomenclature les trucs sans macros
@@ -101,13 +97,20 @@ Vojta {{{2
 des approximatiosn exceptionnelles. Un peu pareil pour \Mbase. Préciser aussi
 \monome et \mat.
 
+Plongements et formulaires {{{2
+--------------------------
+
+(A) Fusionner ce qui peut l'être de sec:form-ab et sec:form-ab2.
+        Ajuster les notations dans mumford et vojta là où ces
+        sections sont référencées.
+
+(B) Compléter les preuves (cf. notes manuscriptes en partie)
+
 Maths {{{1
 =====
 
 Vojta {{{2
 -----
-
-(A) [... reprendre les notes papiers ici sur le plan ...]
 
 (A) Plan (cf rédation).
 
@@ -126,9 +129,7 @@ suite.
 Mumford {{{2
 -------
 
-(A) Lire attentivement le papier de Rémond.
-
-(A) Relire le Mumford de Fahri.
+Rien pour le moment, cf. lecture.
 
 Annexe normes et mesures {{{2
 ------------------------
@@ -147,7 +148,27 @@ de Vojta en trucs sur les `\wt` et les `\epsi*`.
 Lecture {{{1
 =======
 
-Regrouper ici les trucs à lire.
+(B) Lire attentivement la partie proprement mumford de remdcl.
+
+(B) Relire le Mumford de Fahri.
+
+Références à acquérir et à ajouter au .bib {{{2
+
+Faltings, the general case of Lang in "Barsotti Symposium in AG",
+Perspect. Math. 15 Acad Press, San Diego 1994 p 175-182.
+
+Rémond, sur le thm du produit. XXIe journées arithm de Rome, 99
+
+Vojta, Apllications of AAG (?) to Diophantine Approx LNM 1553
+
+Hartshorne, Ample Subvarieties of Abelian Var, LNM 156
+
+(B) Trucs sur Z_X de Rémond {{{2
+
+Pourquoi c'est un sous-fermé de X : Hindry 92 ; LNM 1566 Oort p. 117-122
+
+Pourquoi c'est tout ssi le Stab est de dim non nulle, même références.
+
 
 Aide-mémoire {{{1
 ============
