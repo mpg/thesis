@@ -13,6 +13,14 @@ section, squelettes d'énoncés, etc.
 
 (A) Faire un squelette relativement fin pour l'extrapolation.
 
+(B) Les notations sur les coordonnées (multi)homogènes sont sans doute à
+placer dans le chap. 1 plutôt que dans l'intro de Vojta : on utilise au moins
+de l'homogène dans Mumford, et probablement du multi dans NMA.
+- Penser aux dérivées divisées aussi.
+- majorations multinômiales et autres : les regrouper au début de NMA ?
+    Virer ce qui devient redondant dans Vojta.
+    Virer ce qui devient redondant dans NMA.
+
 (B) Commencer à faire un squelette grossier de ce qu'il faut pour mettre
 Vojta et Mumford ensemble. Noter les références précises.
     - Lire les références notées.
@@ -35,6 +43,12 @@ Notations {{{2
 
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
+
+Dans NMA {{{3
+
+Au début : dire un corps *local* et ne pas le noter \cdn.
+
+Consistance interne et avec le reste : commencer par faire une liste ici.
 
 (C) À homogénéiser petit à petit. {{{3
 Noter ci-dessous les divergences observées, qui seront traitées une par une
