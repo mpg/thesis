@@ -4,9 +4,6 @@ Rédaction {{{1
 Général {{{2
 -------
 
-(B) Vojta : Factoriser les trucs relatifs au plongement pondéré entre Siegel
-et l'extrapolation : 3.2.2 et une partie 3.3.2 à fusionner dans 3.1.
-
 (A) Factoriser les énoncés sur les formules d'addition, soustraction et
 multiplication dans une annexe.
     Écrire les preuves détaillées de ces énoncés.
@@ -58,12 +55,10 @@ pour le cas d'un projectif simple (pas produit) ? Ou vaut-il mieux utiliser
 une autre lettre (W est sans doute libre) ? (Ensuite, le dire dans la
 nomenclature.)
 
-Préciser à un moment si on normalise les formes de Chow de sorte que le
-dénominateur dans la construction des formules de dépendance intégrale de
-Rémond soit 1, et si c'est systématique ou pas.
-
 Macros {{{2
 ------
+
+(B) \ph est un peu inutile, la remplacer par _ ?
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
 
@@ -132,6 +127,9 @@ Autres, divers {{{2
 (C) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
 remplacer \C_v par k_v (voire k) ?
 
+(B) Faire les calculs euclidiens qui traduisent les conditions de notre énoncé
+de Vojta en trucs sur les `\wt` et les `\epsi*`.
+
 Lecture {{{1
 =======
 
@@ -167,5 +165,15 @@ t:  thm
 chap:   chapter
 sec:    section
 sub:    subsection
+
+Math {{{2
+----
+
+Préciser à un moment si on normalise les formes de Chow de sorte que le
+dénominateur dans la construction des formules de dépendance intégrale de
+Rémond soit 1, et si c'est systématique ou pas.
+    Bah non : c'est possible que si le plongement est adapté (ou au moins
+    presque), dont on le fait que quand on dit que le plongement est adapté.
+    C'est signalé en s:plong-adapt, deuxième paragraphe.
 
 # vim: fdm=marker fdl=1 ai syn=mkd

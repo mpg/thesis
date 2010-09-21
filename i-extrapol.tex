@@ -318,36 +318,18 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   la norme.
 \end{proof}
 
+\subsection{Image par le plongement pondéré} \label{sub:param-wemb}
 
-\subsection{Image par le plongement éclatant}
+On souhaite contrôler (degré, hauteur, dénominateurs) une paramétrisation de
+\( \wemb(\var) \) sur un ouvert contenant \( \wemb(\excep) \). On déduit tout
+d'abord du lemme~\ref{l:param} une paramétrisation de $\var$. On reprend les
+notations habituelles (section~\ref{sec:vojta-intro}) concernant \( \var \) et
+les coordonnées multiprojectives.
 
-On considère $m \ge 2$ un entier fixé (à choisir ultérieurement), et $a = (a_1,
-\ldots, a_m)$ un $m$-uplet d'entiers non nuls. À un tel $a$ on associe un
-morphisme, dit plongement éclatant,
-\begin{align*}
-  \phi_a \colon\quad \va^m &\longrightarrow \va^m\times \va^{m-1} \\
-  (x_1, \ldots, x_m)&\longmapsto (x_1, \ldots, x_m, a_1 x_1 - x_m, \ldots,
-  a_{m-1} x_{m-1} - x_m) \pmm.
-\end{align*}
-
-On étudie dans cette partie l'image par un tel plongement éclatant d'une
-sous-variété produit $Z$ de $\va$, qu'on supposera contenir l'origine $\oa$. Plus
-particulièrement, on souhaite en contrôler une paramétrisation sur un ouvert
-contenant l'origine, et calculer ses multidegrés quand on regarde l'image
-plongée dans $(\Proj^n)^{2m-1}$ de la façon induite par le plongement $\va
-\hookrightarrow \Proj^n$ initialement fixé. Si $Z = \prod_{l=1}^m Z_l$, on note
-$u_l = \dim Z_l$ et $u=\sum_l u_l = \dim Z$.
-
-\medskip
-Commençons par la paramétrisation. On déduit tout d'abord du lemme~\ref{l:param}
-une paramétrisation de $Z$. Pour cela, introduisons quelques notations : $X$
-désigne désormais plusieurs groupes de variables $X\pexp1, \ldots, X\pexp m$
-avec $X\pexp l = (X\pexp l[0], \ldots, X\pexp m[n])$. On utilise les notations
-compactes naturelles pour les puissances. Par ailleurs, $u_\truc$ désigne le
-vecteur $(u_1, \ldots, u_l$ et, quand on écrit un produit de vecteurs, il s'agit
-du produit composante par composante. Enfin, on note $\vb_l$ le vecteur dont
-toutes les coordonnées sont nulles, sauf la $l$-ième égale à $1$, et $\vb$ celui
-dont toutes les coordonnées valent $1$.
+De plus, on note $\vb_l$ le vecteur dont toutes les coordonnées sont nulles,
+sauf la $l$-ième égale à $1$, et $\vb$ celui dont toutes les coordonnées
+valent $1$. Enfin, quand on écrit un produit de vecteurs, il s'agit du produit
+composante par composante.
 
 \begin{lem} \label{l:par-prod}
   Sous les hypothèses du lemme~\ref{l:param}, il existe une famille de polynômes
@@ -382,46 +364,6 @@ dont toutes les coordonnées valent $1$.
   $f(\lambda\pexp{l}$ par $\lgr{\lambda\pexp l}$), et on conclut par
   sous-linéarité de la norme.
 \end{proof}
-
-Pour continuer, on a besoin de représenter par des polynômes les morphismes de
-multiplication par un entier et de différence sur $\va$. On utilise pour cela
-une version de la proposition~5.2 de \cite{remivds}, adaptée pour tenir compte
-des différences de normes utilisées, et du fait que sa constante $h_1$ est
-explicite depuis les travaux de \bsc{David} et \bsc{Philippon}
-\cite[prop.~3.7]{daphimhva2}
-
-\begin{fact}
-  Il existe une famille $S_{l, l'}$ de formes bihomogènes de degré $(2, 2)$
-  représentant globalement le morphisme d'addition-soustraction dans $\va^2$ dans
-  le plongement de \bsc{Mumford} modifié suivi d'un plongement de \bsc{Segre},
-  et de la forme
-  \[
-    S_{l, l'}(X, Y) = \big(\coa_{k(l)}\coa_{k(l')}\big)^{-1}
-    \sum_{(i, i'\!,j, j') \in E_x}
-    \zeta_{i, i'\!, j, j'} X_i X_{i'} Y_j Y_{j'} \pmm,
-  \]
-  où $E_x$ est un sous-ensemble à $4^g$ éléments de $\{0, \ldots, n \}$, les
-  $\zeta_{i, i'\!, j, j'}$ sont des racines quatrièmes de l'unité, et $k$ est
-  une certaine fonction $\{0, \ldots, n \} \to \{0, \ldots, n \}$ telle que pour
-  tout $i$, $\coa_{k(i)}^{-1}$ existe et est une coordonnée de $\vai$.
-\end{fact}
-
-En particulier, on a immédiatement les estimations de norme locale
-$\Onv{\smash{S_{l, l'}}} \le 4^{g\dv} \Onv{\vai}^2$ et $\Onnv{\smash{S_{l, l'}}} \le
-\big(4^g (n+1)^2\big)^\dv \Onv{\vai}^2$.
-
-Par ailleurs, par projection sur un facteur, on en déduit l'existence de
-familles de formes bihomogènes $S^+$ et $S^-$ de forme similaire (mais on peut
-simplifier par un facteur $\coa_{k(l)}$ ou $\coa_{k(l')}$), représentant
-respectivement l'addition et la soustraction au voisinage de n'importe quel
-point fixé, et telles que $\Onv{S^\bullet} \le 4^{g\dv} \Onv\vai$.
-
-\begin{fact}[\cite{remivds}, démonstration de la prop.~5.2]
-  Pour tout entier $b$ non nul, il existe une famille de formes homogènes
-  $Q^b_i$ représentant globalement la multiplication par $b$ sur $\va$ dans le
-  plongement de \bsc{Mumford} modifié, de degré au plus $\frac98 m^2$, telles
-  qu'en toute place $v$, $\Onnv{Q^b} \le (2^g\sqrt{n+1})^{\dv(m^2-1)}$.
-\end{fact}
 
 On considère alors le morphisme $\tau \colon A(\widetilde Z) \to
 A(O)[[t\pexp1, \ldots, t\pexp{m}]]$ de paramétrisation de $O$, qui est \og

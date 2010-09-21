@@ -7,21 +7,11 @@
 Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
 $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
 l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$ d'être
-assez grand, et à $\epsi$ d'être majoré par une certaine expression dépendant
-de $\epsz$ (voir fin de la section~\ref{sec:comp-dim}). Considérons par
-ailleurs une famille d'entiers $\wt[1] \ge \dots \ge \wt[\puiss] = 1$ et un
-réel $\epsiii$ satisfaisant à
-\[
-  \sum_{\fct=1}^\puiss (\wts* + 1) < \wts[1] (1 + \epsiii)
-  \pmm.
-\]
-
-On fera plus tard une hypothèse sur la famille $\wt$ de sorte qu'il soit
-possible de choisir $\epsiii$ plutôt petit, mais cette information n'est pas
-utile pour le moment.
+assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et d'autres
+paramètres, voir~\ref{e:def-epsii}.
 
 On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
-\[
+\begin{equation}
   \stairs = \left\{
     (\coeff[1], \dots, \coeff[\puiss]) \in \N^{m(n+1)}
     \text{ tels que }
@@ -32,9 +22,9 @@ On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
     \le \epsi \delta
     \right\}
   \pmm,
-\]
+\end{equation}
 auquel on associe l'idéal d'annulation
-\[
+\begin{equation}
   \vanish = \left\{
     \sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda
     \in \cdn [\cmmh]
@@ -44,226 +34,10 @@ auquel on associe l'idéal d'annulation
     f_\lambda = 0
     \right\}
   \pmm.
-\]
+\end{equation}
 On considère enfin $\vanish = \vanish* + \varid$. Par abus,
 on notera de même son image dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui
 est légitime puisqu'on a fait en sorte que $\varid \subset \vanish$.
-
-\subsection{Plongement éclatant}
-
-Par la suite, on se donnera un point
-$(\excep = \excep[1], \dots, \excep[\puiss])$
-de $\var(\Qbar)$, où les $\excep*$ sont de hauteur grandes et étagées entre
-elles, contenus dans un secteur de cône de l'espace de \bsc{Mordell-Weil}. On
-définira alors les poids $\wt*$ par
-\begin{equation}
-  \wt* =
-  \left\lfloor
-  \frac {\norm{\excep*}} {\norm{\excep1}}
-  + \frac12
-  \right\rfloor
-  \pmm,
-\end{equation}
-où $\norm\truc$ représente la norme associée à la hauteur normalisée dans
-l'espace de \bsc{Mordell-Weil} de $\va$ (on commet l'abus consistant à noter
-encore $\excep*$ l'image de $\excep*$ dans cet espace).
-
-La géométrie euclidienne montre\footnote{
-  Les détails sont présents dans la preuve de l'inégalité à la \bsc{Mumford}.
-  Cette information est en fait inutile ici ; on souhaite seulement justifier
-  vaguement le rôle du plongement éclatant.}
-alors que $\wt* \excep* - \excep[\puiss]$ est de hauteur petite devant les
-hauteurs des différents $\excep*$. Pour nous aider à exploiter ultérieurement
-cette information, on introduit un plongement, dit \emph{éclatant}, associé à
-$\wt$, défini par
-\begin{align}
-  \wemb \colon \var
-  & \longto \va^\puiss \times \va^{\puiss-1}
-  = \va^{2\puiss-1} \subset (\projd)^{2\puiss-1}
-  \\
-  (x_1, \dots, x_\puiss)
-  & \longmapsto
-  (x_1, \dots, x_\puiss;
-  \wt[1] x_1 - x_\puiss, \wt[\puiss-1] x_{\puiss-1} - x_\puiss)
-  \pmm.
-\end{align}
-
-On munit l'espace d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées
-multihomogènes $\cmmh, \cmmhi = \cmh1, \dots, \cmh\puiss, \cmhi1,
-\cmhi{\puiss-1}$ ; dans ce contexte quand $i$ et $j$ sont deux indices non
-précisés, on supposera implicitement $1 \le i \le \puiss$ et $1 \le j \le
-\puiss-1$.
-
-On va maintenant s'attacher à représenter localement ce morphisme par une
-famille de formes multihomogènes. Pour cela, on a besoin de savoir
-représenter les opérations de $\va$ (addition, soustraction, multiplication
-par un entier) par des polynômes, globalement ou localement. Le résultat
-fondamental est le fait suivant, qui est une simple reformulation de la
-proposition~3.6 de \cite{daphimhva2}.
-
-\begin{fact} \label{f:addsub}
-  Il existe une famille $S_{l, l'}$ de formes bihomogènes de bidegré $(2,
-  2)$ représentant globalement de morphisme d'addition-soustraction
-  \begin{align}
-    \va \times \va
-    & \to
-    \va \times \va
-    \\
-    (x, y)
-    & \mapsto
-    (x + y, x - y)
-  \end{align}
-  dans le plongement de \bsc{Mumford} modifié suivi d'un plongement de
-  \bsc{Segre}. On peut les prendre de la forme
-  \begin{equation}
-    S_{l, l'} (V, W)
-    =
-    \coi{k(l)} \coi{k(l')}
-    \sum_{p, p', q, q'} \in E
-    \zeta_{p, p', q, q'} V_p V_{p'} W_q W_{q'}
-    \pmm,
-  \end{equation}
-  où $E$ est un sous-ensemble à $4^\genre$ éléments de $\{0, \dots, \dimp\}$,
-  les $\zeta_{p, p', q, q'}$ sont des racines quatrièmes de l'unité, et $k$
-  est une certaine fonction $\{0, \dots, \dimp\} \to \{0, \dots, \dimp\}$
-  telle que pour tout $p$, $\coi^{-1}_{k(p)}$ est un coordonnée (non nulle) de
-  $\oa$.
-
-  En particulier, on peut estimer les normes locales :
-  $\norm{S_{l, l'}}_{v, 1} \le 4^{\genre\dv} \norm{\coi}^2_{v, 1}$
-  pour tout $(l, l')$ et
-  $\nnorm{S}_{v, 1} \le
-  \bigl( 4^\genre (\dimp+1)^2 \bigr)^\dv \norm{\coi}^2_{v, 1}$
-  pour la famille.
-\end{fact}
-
-Cette représentation suppose $\va^2$ plongée dans un espace projectif
-$\proj{\dimp^2 + 2\dimp}$. Si l'on veut en déduire simplement, par projection
-sur un facteur, des représentations de l'addition et de la soustraction, on
-doit d'abord « redescendre » $\va^2$ dans $(\projd)^2$ : ceci se fait
-simplement par des projections linéaires. Or celles-ci ont un centre en lequel
-elles ne sont pas définies, et qui rencontre $\va$. On n'obtient donc pas une
-représentation globale de l'addition et de la soustraction, mais une famille
-de représentations locales. En remarquant de plus qu'on peut dans chacune de
-ces formes simplifier par $\coi_{k(l')}$ puisqu'on projette à $l'$ fixé, on a
-donc le résultat suivant.
-
-\begin{coro}\label{c:addsub-form}
-  Tout couple de points de $\va$ est contenu dans un ouvert $\opdef$ de
-  $\va^2$ sur lequel il existe deux familles de formes biquadratiques
-  $(S_l^{+})$ et $(S_l^{-})$ pour $0 \le l \le \dimp$ représentant sur
-  $\opdef$ l'addition (resp. la soustraction) de $\va$, telles que
-  \begin{equation}
-    \norm{S^{\bullet}_l}_{v,1}
-    \le
-    4^{\genre\dv} \norm{\coi}_{v, 1}
-    \quad \forall l \in \{0, \dots, \dimp\}
-    \pmm,
-  \end{equation}
-  où $\bullet \in \{ +, - \}$.
-\end{coro}
-
-Par ailleurs, on sait que la multiplication par un entier $b$ peut être
-représentée globalement par une famille de formes homogènes de degré $b^2$. On
-connaît même \cite[prop. 3.8]{daphimhva2} une telle famille de façon
-totalement explicite pour $b = 2$, donc à chaque fois que $b$ est une
-puissance de $2$, en itérant.
-
-On ne sait \lat{a priori} pas expliciter une telle famille dans le cas
-général\footnote{
-  Pour les courbes elliptiques, c'est fait dans \cite[th. 2.13.2]{farhith}
-  pour tout $b$.},
-mais on peut néanmoins obtenir des formules locales de multiplication, en
-combinant les formules locales d'addition et de multiplication par deux.
-
-\begin{fact}\label{f:mult-form}
-  Pour tout $j \in \{ 0, \dots, \dimp \}$ et pour tout entier positif, il
-  existe une famille de formes homogènes $Q_{b, i, j}$ pour $i \in \{ 0,
-    \dots, \dimp \}$ représentant la multiplication par $b$ sur l'ouvert $V_j
-  \neq 0$, telle que, pour tout $i$ :
-  \begin{gather}
-    \deg Q_{b, i, j} = \left\lceil \frac98 b^2 \right\rceil
-    \\
-    \norm {Q_{b, i, j}}_{v, 1}
-    \le
-    \norm{\coi}_{v, 1}^{b^2 -1}
-    \cdot \bigl( 2^\genre \sqrt{\dimp+1} \bigr)^{\dv(b^2-1)}
-    \pmm.
-  \end{gather}
-\end{fact}
-
-\begin{proof} \later
-  Tout est contenu dans la démonstration de la proposition~5.2 de \cite[pp.
-  126-128]{remivds} une fois remarqué qu'on peut choisir
-  \[
-    P_{1, 1, 0, 0, l, l'} = S_{l, l'}
-    \pmm,
-  \]
-  où le membre de gauche reprend les notations de la preuve de \bsc{Rémond},
-  alors que le membre de droite est la famille donnée par le
-  fait~\ref{f:addsub}, qui n'était pas disponible au moment de la
-  rédaction de \cite{remivds}.
-
-  De plus, \bsc{Rémond} donne seulement la majoration du degré. Il est en
-  fait plus commode de fixer une valeur exacte du degré, ce que l'on peut
-  faire en multipliant par $V_j$ sans changer l'ouvert sur lequel les
-  formules sont valables, ni leur hauteur.
-
-  On a par ailleurs utilisé le norme $L_1$ aux places archimédiennes, ce qui
-  réduit légèrement la partie archimédienne de la constante par rapport à
-  celle de \bsc{Rémond}.
-\end{proof}
-
-En appliquant ce formulaire à notre plongement éclatant, on voit que tout
-point $x \in \var(\Qbar)$ est contenu dans un ouvert $\opdef \subset \var$ sur
-lequel il existe des polynômes représentant
-$\wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1}$.
-Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
-\begin{align}
-  \wemba \colon \cdn [\cmmh, \cmmhi] & \to \cdn[\cmmh] \\
-  \cmh{i} & \mapsto \cmh{i} \\
-  \cmhi{j} & \mapsto S^{-}(Q_{\wt[j]}(\cmh{j}, \cmh{\puiss}))
-\end{align}
-tel que le diagramme suivant, dont les flèches verticales sont les projections
-canoniques, commute :
-\begin{equation}
-  \xymatrix{
-    \cdn [\cmmh, \cmmhi]
-    \ar[r] ^{\wemba}
-    \ar[d]
-    & \cdn [\cmmh]
-    \ar[d]
-    \\ \cdn [\cmmh, \cmmhi] / \ideal{\wemb(\var)}
-    \ar[r] ^{\wemb*}
-    & ( \cdn [\cmmh] / \varid )_\opdef
-  }
-\end{equation}
-On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
-respectivement part le corollaire~\ref{c:addsub-form} et le
-fait~\ref{f:mult-form} de sorte que les formules obtenues soient valables au
-voisinages de $x$.
-
-Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
-immédiatement le résultat suivant.
-
-\begin{lem} \label{l:deg-wemba}
-  Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
-  \Qbar[\cmmh, \cmmhi]$ une forme multihomogène de multidegré $(\alpha,
-  \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
-  \[
-    \deg \wemba(F)
-    \le
-    \bigr(
-    \alpha_1 + \frac94 \beta_1 \wts[1],
-    \dots,
-    \alpha_{\puiss-1} + \frac94 \beta_{\puiss-1} \wts[\puiss-1],
-    \alpha_\puiss + 2 \lgr\beta
-    \bigl)
-    \pmm.
-  \]
-\end{lem}
-
-\clearpage
 
 \subsection{Stratégie de construction de la forme auxiliaire}
 
@@ -297,19 +71,19 @@ dans $\cdn[\cmmh, \cmmhi]$, son image par $\wemba$ est de multidegré
 exactement $\delta d'$.
 
 On cherche ainsi une forme
-\[
+\begin{equation}
   F'
   \in \cdn[\cmmh]\ph{\delta d'}
   \cap \vanish
   \cap \wemba(\cdn[\cmmh, \cmmhi]\ph{\delta d})
-\]
+\end{equation}
 non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
 \wemb(F)$), on cherche une forme
-\[
+\begin{equation}
   F
   \in \cdn[\cmmh, \cmmhi]\ph{\delta d}
   \cap \wemba^{-1}(\vanish)
-\]
+\end{equation}
 non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
 
 Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
@@ -416,19 +190,19 @@ assure que $R$ ne dépend en effet que de $\var$.
 Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
 notre objectif : il s'agira en fait de construire une forme $F \in
 \Ideal\ph{\delta d} \setminus \{0\}$ telle que
-\[
+\begin{equation}
   \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
   \in \vanish
   \pmm,
-\]
+\end{equation}
 ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
-\[
+\begin{equation}
   R \cdot \wemba(F)
   - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
   \in \varid
   \subset \vanish
   \pmm.
-\]
+\end{equation}
 
 Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
 sera composé des équations définissant $\vanish$ dans
@@ -460,14 +234,14 @@ ce qu'on aura besoin de savoir sur le degré.
 
 \begin{lem}
   Avec les notations précédentes, on a
-  \[
+  \begin{equation}
     \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
     \bigl( \wemb(\var) \bigr)
     =
     \prod\fctrange
     \vdeg* \wt ^{2\vdim*}
     \pmm.
-  \]
+  \end{equation}
 \end{lem}
 
 \begin{proof}
@@ -674,7 +448,7 @@ dans \( (\stairs)\Ciii \).
 \end{proof}
 
 Au vu des lemmes précédents, on introduit la constante
-\begin{equation}
+\begin{equation} \label{e:def-epsii}
   \epsii
   =
   \frac {
