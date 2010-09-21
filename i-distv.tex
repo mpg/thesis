@@ -32,9 +32,9 @@ d'évaluation, et $\md_x = ev_x \circ \md$ le morphisme composé.
 
 L'équivalence $\md_x f = 0 \Leftrightarrow \p x \in V(\C_v)$ justifie alors de
 définir la distance de $\p x$ à $V$ par
-\[
+\begin{equation}
   \Distv(\p x, V) = \frac{M_v(\md_x f)}{M_v(f) \Onv x ^{ld}} \pmm.
-\]
+\end{equation}
 Comme $\md f$ est homogène de degré $ld$ en $X$, cette quantité est bien
 définie. Elle est nulle exactement dans le cas où $\p x \in V$ et est toujours
 majorée par~$1$. Dans le cas où $V = \zeros(F)$ est une hypersurface, on a
@@ -70,11 +70,11 @@ $\gamma_n = \sum_{q=1}^{n-1} 1/2q$ et $\dv = 0$ si $v$ est ultramétrique, $\dv
   Pour toute variété $V \subset \Proj^n$ et tous points $\p x \in
   \Proj^n(\C_v)$ et $\p y \in V(\C_v)$, on a $\Distv(\p x, V) \le
   \newcst{CPonctuelAlg}\, \Distv(\p x, \p y)^m$ avec
-  \[
+  \begin{equation}
   \cst{CPonctuelAlg} = \left[ 2 (n+1){3m/2} \left(\frac{2n^2+1}{n^2}
   \exp\big(\gamma_{\frac{(n+1)n}2} + \gamma_{n+1}\big) \right)^{ld}
   \right]^\dv \pmm,
-  \]
+  \end{equation}
   où $l = \dim V + 1$, $d = \deg V$ et $m = m_{\p y}(V)$ est la multiplicité
   de $V$ en $\p y$.
 \end{lem}
@@ -96,10 +96,10 @@ suivant montre que c'est possible.
   $\frac {\av {x_i}} {\Onv x} \ge (\frac{1}{\sqrt{n+1}})^\dv$. De plus, pour le
   même indice $i$, pour tout point $\p y$ satisfaisant $\Distv(\p x, \p y) \le
   \eps_0$ avec $\eps_0 < (\frac{1}{\sqrt{n+1}})^\dv$, on a
-  \[
+  \begin{equation}
   \frac{\av{y_i}}{\Onv y} \ge \left(\frac{\sqrt{n+1}}{n+2}-\eps_0\right)^\dv
   \pmm.
-  \]
+  \end{equation}
   En particulier, si $\eps_0 < (\frac{1}{4\sqrt{n+1}})^\dv$ on a
   $\frac{\av{y_i}}{\Onv y} \ge (\frac{1}{2\sqrt{n+1}})^\dv$ et $y_i$ est non
   nul.
@@ -141,10 +141,10 @@ suivant montre que c'est possible.
   Notons $t = \av{y_0}/\Onv{y} \in [0; 1]$ ; comme $\Onv{y}^2 = \av{y_0}^2 +
   \Onv{\hatys}^2$, on réécrit (\ref{contrainte}) sous la forme $t \ge
   \sqrt{\frac{1-t^2}{n+1}}-\eps_0$, ou encore :
-  \[
+  \begin{equation}
   \left(\frac{n+2}{n+1}\right)t^2 + 2t\eps_0 + \eps_0^2 - \frac{1}{n+1} \ge
   0 \pmm,
-  \]
+  \end{equation}
   qui, compte tenu de l'hypothèse sur $\eps_0$ et de la positivité de $t$,
   implique :
   \begin{align*}
@@ -177,7 +177,7 @@ suivant montre que c'est possible.
   le plus grand entier $k$ tel que les dérivées d'ordre total $k-1$ de toutes
   les formes de la famille $g$ soient nulles en $y$. Le développement de $g$
   autour du point $y$ de multiplicité $m$ s'écrit donc :
-  \[
+  \begin{equation}
   g(x) = \sum_{k=m}^{ld} \ \overbrace{%
     \sum_{\substack{\alpha \in \N^n \\ \lgr\alpha = k}}
     \underbrace{%
@@ -186,7 +186,7 @@ suivant montre que c'est possible.
     _{\textstyle R_{k, \alpha}}}i
   ^{\textstyle R_k}
   \pmm.
-  \]
+  \end{equation}
 
   On majore maintenant $\Onv {g(x)} / \Onv x ^{ld}$ en procédant terme à terme.
   \begin{align*}
@@ -199,10 +199,10 @@ suivant montre que c'est possible.
   y)^k (\sqrt{n+1})^{k\dv} \pmm.
   \end{align*}
   On majore alors le nombre de termes pour obtenir :
-  \[
+  \begin{equation}
   \frac{\Onv{R_k}}{\Onv x^{ld}} \le \left(\frac{2n^2+1}{n^2}\right)^{ld\dv}
   \Onnv[v, 2]g \Distv(\p x, \p y)^k (n+1)^{3k\dv/2} \pmm,
-  \]
+  \end{equation}
   puis, si $v$ est finie, $\Onv {g(x)} / \Onv x ^{ld} \le \Onnv[v, 2]g \Distv(\p x,
   \p y)^m$ par l'inégalité ultramétrique ; et si $v$ est infinie :
   \begin{align*}
@@ -220,7 +220,7 @@ suivant montre que c'est possible.
   (n+1)^{3m/2} \left(\frac{2n^2+1}{n^2}\right)^{ld}\right]^\dv \pmm.
   \end{equation}
   La fin de la démonstration consiste alors en des comparaisons de normes :
-  \[
+  \begin{equation}
   \mv{\md_x f} i
   \stackrel{(a)}{\ll} \Onv[v, 2]{\md_x f}
   = \Onv{g(x)}
@@ -229,7 +229,7 @@ suivant montre que c'est possible.
   \stackrel{(c)}{\ll} \mv{\md f} i
   \stackrel{(d)}{\ll} \mv f
   \pmm,
-  \]
+  \end{equation}
   où l'on peut choisir $\exp(\dv \cdot ld \gamma_{(n+1)n/2})$ pour $(a)$ vu la
   définition et une majoration facile de l'intégrale, tandis que pour $(c)$
   l'on peut prendre $[(n+1)^2n/2]^{\dv\cdot ld}$ d'après \cite[dém. du
@@ -248,11 +248,11 @@ distances sur chaque facteur d'une part, et de la distance déduite d'un
 plongement de \bsc{Segre} d'autre part. Ces distances se comparent bien en
 général ; on écrit ici la comparaison dans le cas de $(\Proj^n)^2$ (cas $q =
 2$, $d=(1,1)$ de \cite[lemme~4.3]{remgdmp}) :
-\[
+\begin{equation}
   \max_{i \in \{1, 2\}} \Distv(\p x^{(i)}, \p y^{(i)})
   \le \Distv(s(\p x), s(\p y))
   \le \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Distv(\p x^{(i)}, \p y^{(i)}) \pmm,
-\]
+\end{equation}
 où $\p x = (\p x^{(1)}, \p x^{(2)}) \in (\Proj^n)^2$ et $s : (\Proj^n)^2 \to
 \Proj^{n^2+2n}$ est le plongement de \bsc{Segre}.
 

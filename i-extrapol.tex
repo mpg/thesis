@@ -63,10 +63,10 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   On commence par le cas ultramétrique et on note donc provisoirement $P^\kappa
   = P_0^\kappa$ pour alléger. Si de tels polynômes existent, ils doivent
   satisfaire à la relation
-  \[
+  \begin{equation}
     P\left( X_1+t_1, \ldots, X_n+t_n, y + \sum_{\kappa \in \N^u\setminus\{0\}}
     \frac{\chi(P^\kappa)}{\chi(R)^{2\lgr\kappa -1}}\right) = 0 \pmm.
-  \]
+  \end{equation}
   On écrit alors le développement de \bsc{Taylor} de $P$, il vient :
   \begin{align*}
     0
@@ -83,22 +83,22 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   où l'on a noté $(\lambda, \mu) = (\lambda_1, \ldots, \lambda_n, \mu)$. Chaque
   terme de cette série est donc nul, c'est-à-dire que pour tout $\kappa \neq 0$
   on a
-  \[
+  \begin{equation}
     \chi \Biggl( \frac{P^\kappa}{R^{2\lgr\kappa - 2}} +
     \sum_{\substack{(\lambda,\mu)\in\N^{u+1}\setminus\{(0,0), (0,1)\}\\
     l\pexp{i} \in \N^u\setminus\{0\} \\ \sum l\pexp i + \lambda = \kappa}}
     \frac1{\lambda!\mu!}\,\diff\pexp{\lambda,\mu}P \prod_{1\le i \le \mu}
     \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}} \Biggr) = 0
-  \]
+  \end{equation}
   Réciproquement, il suffit donc de définir $P\kappa$ par la relation de
   récurrence
-  \[ - P^\kappa =
+  \begin{equation} - P^\kappa =
     \sum_{\substack{(\lambda,\mu)\in\N^{u+1}\setminus\{(0,0), (0,1)\}\\
     l\pexp{i} \in \N^u\setminus\{0\} \\ \sum l\pexp i + \lambda = \kappa}}
     \frac1{\lambda!\mu!}\,\diff\pexp{\lambda,\mu}P
     \cdot R^{2\lgr\kappa - 2}
     \cdot \prod_{1\le i \le \mu} \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}}
-  \]
+  \end{equation}
   pour que \ref{i:repres} soit satisfait pour $a=0$
 
   On majore alors le degré de $P^\kappa$ par récurrence :
@@ -117,15 +117,15 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   pour alléger). On part de la relation de récurrence suivante (\bsc{Rémond},
   avec $Q_\kappa = P^\kappa \cdot \kappa!$) où l'on rappelle que $\kappa'$ est
   tel que $\kappa_{k_0} = \kappa'_{k_0} + 1$ est $\kappa_k = \kappa'_k$ sinon.
-  \[
+  \begin{equation}
     Q_\kappa = R^2 d_{k_0}Q_{\kappa'} - R d_{k_0}P d_Y Q_{\kappa'} + (2
     \lgr{\kappa'} -1)Q_{\kappa'}(d_{k_0} P d_Y R - R d_{k_0}R) \pmm.
-  \]
+  \end{equation}
   On en déduit immédiatement l'estimation de degré suivante :
-  \[
+  \begin{equation}
     \deg P^\kappa \le 2(D -1) + \deg P^{\kappa'} \le (D
     -1)(2\lgr\kappa -1) \pmm.
-  \]
+  \end{equation}
   Pour la norme, on prouve que $\Onv{Q_\kappa} \le \Onv P ^{2 \lgr\kappa - 1}
   4^{\lgr\kappa -1} D^{3\lgr\kappa -2} (\lgr\kappa -1)!$ (ce qui implique le
   résultat annoncé vu que $\binom{\lgr\kappa}{\kappa} \le u^{\lgr\kappa - 1}$)
@@ -141,13 +141,13 @@ les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
   \end{align*}
 \end{proof}
 
-\begin{Rem}
+\begin{rem}
   On peut obtenir des estimations similaires en fonction d'un majorant $D'$
   quelconque de $\deg_X P$ et $\deg_Y P$. Il vient par exemple $\deg_X
   P_a^\kappa \le D'\lgr\kappa$ et de même pour le degré en $Y$. On peut
   également remplacer $D$ par $D'$ et $4$ par $2$ dans la majoration de
   $\Onv{P_1^\kappa}$ ci-dessus.
-\end{Rem}
+\end{rem}
 
 \begin{fact}
   Si le plongement $Z \hookrightarrow \Proj^n$ est \og adapté \fg{}, alors
@@ -297,8 +297,8 @@ suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
   morphisme appliquant $X_0$ sur $1$ et $X_i$ sur $w_i$.
 
   Il existe une forme $R$ homogène de degré $(D-1)(n-u)$ et, pour tout entier
-  $d$, des applications linéaires \[ \nu_a^\kappa \colon \cdn[X_0, \ldots,
-  X_n]_d \to \cdn[X_0, \ldots, X_n]_{d + (D-1)(n-u)f(\kappa)} \] telles que,
+  $d$, des applications linéaires \begin{equation} \nu_a^\kappa \colon \cdn[X_0, \ldots,
+  X_n]_d \to \cdn[X_0, \ldots, X_n]_{d + (D-1)(n-u)f(\kappa)} \end{equation} telles que,
   pour toute forme homogène $F$ et toute place $v$ de $\cdn$ :
   \begin{enumthm}
     \item $\tau(\chi(F)) = \chi\left( \frac1{X_0^d} \sum\limits_{\kappa \in
@@ -335,10 +335,10 @@ composante par composante.
   Sous les hypothèses du lemme~\ref{l:param}, il existe une famille de polynômes
   $U = (U_1, \ldots, U_m)$ homogènes de degrés respectifs $\deg U_l =
   (D-1)(n-u_l)\vb_l$, et, pour tout $d \in N^m$, deux applications linéaires
-  \[
+  \begin{equation}
     \nu_{m, \dv}^\lambda \colon \cdn[X\pexp 0, \ldots, X\pexp m]_d \to
     \cdn[X\pexp 0, \ldots, X\pexp m]_{d + (D-1)(n-u_\truc)f(\lambda\pexp\truc)}
-  \]
+  \end{equation}
   telles que, pour tout forme $F\in \cdn[X]_d$ et toute place $v$ de $\cdn$ :
   \begin{enumthm}
     \item \label{i:repr-prod} $\tau(\chi(F)) =
@@ -370,10 +370,10 @@ A(O)[[t\pexp1, \ldots, t\pexp{m}]]$ de paramétrisation de $O$, qui est \og
 représenté \fg{} au sens du lemme~\ref{l:par-prod} par des formes linéaires
 $\nu_{m, \dv}^\kappa = \prod_{i=1}^m \nu_\dv^\kappa$, pour $O$ un ouvert
 convenable. On souhaite contrôler de même le morphisme composé
-\[
+\begin{equation}
   \Omega_a \colon A(\phi_a(Z)) \to A(Z) \to A(O)[[t\pexp1,
   \ldots, t\pexp m]] \pmm,
-\]
+\end{equation}
 où le premier est le morphisme d'anneaux naturellement associé à $\phi_a$.
 
 Pour cela, on commence par remarquer que celui-ci est localement
@@ -386,10 +386,10 @@ représenté par le morphisme
  \end{align*}
 Soit $F$ une forme multihomogène de degré $(\alpha_1, \ldots, \alpha_m,
 \beta_1, \ldots, \beta_{m-1})$. Son image par $\Psi_a$ est
-\[
+\begin{equation}
   F(X\pexp1, \ldots, X\pexp m, S^-(Q^{a_1}(X\pexp 1), X\pexp m), \ldots,
   S^-(Q^{a_{m-1}}(X\pexp{m-1}), X\pexp m) \pmm,
-\]
+\end{equation}
 de degré $(\alpha_1 + 9/4 \beta_1 a_1^2, \ldots, \alpha_{m-1} + 9/4
 \beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta)$, et dont on majore les normes
 locales comme suit :
@@ -409,8 +409,8 @@ On a alors immédiatement le résultat suivant.
 \begin{lem}
   Dans les hypothèses et notations du lemme~\ref{l:par-prod}, considérons une
   forme $G \in \cdn[X, Y]$ multihomogène de degré $(\alpha, \beta)$. On pose
-  \[ d = (\alpha_1 + 9/4 \beta_1 a_1^2, \ldots,
-  \alpha_{m-1} + 9/4 \beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta) \pmm. \]
+  \begin{equation} d = (\alpha_1 + 9/4 \beta_1 a_1^2, \ldots,
+  \alpha_{m-1} + 9/4 \beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta) \pmm. \end{equation}
   Il existe alors des polynômes homogènes $V^\lambda_\dv(G)$ tels que :
   \begin{enumthm}
     \item $\deg_i(V_\dv^\lambda(G)) = d_i + (D-1)(n-u_i)f(\lambda\pexp i)$ ;

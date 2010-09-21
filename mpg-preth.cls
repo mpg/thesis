@@ -221,7 +221,6 @@
 \theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
 \newtheorem*{rem}        {Remarque}
-\newtheorem*{Rem}        {Remarque}
 \newtheorem*{ide@s}      {Idées}
 \newenvironment{ideas}{\ide@s\todo\color{later}}{\endide@s}
 
