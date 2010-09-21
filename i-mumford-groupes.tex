@@ -93,58 +93,9 @@ fait à n'importe quel morphisme d'espaces projectifs.
   avec $\cst{Tv} = \av 2^{5g/2} 2^{-7g\dv/2} (n+1)^{-3\dv/2} c_v(\va)^{-3}$.
 \end{lem}
 
-Il convient de commencer par rappeler quelques faits concernant les
-plongements utilisés. On a dit que les coordonnées étaient naturellement
-indexées par $\mathcal{Z}_2 \times \widehat{K_2(4)}$, où $\mathcal{Z}_2$ est
-un système complet de représentants des classes de $K_2$ modulo $K_2(4)$. Il
-est parfois plus commode d'utiliser un système étendu de coordonnées, indexées
-par tout $K_2 \times \widehat{K_2(4)}$, comme définies dans
-\cite[p.~651]{daphimhva2}, que nous noterons $\Delta^{(\text{ét})}$ au
-besoin. Le changement de système de coordonnées de $\Delta^{(\text{ét})}$ vers
-$\Delta$ consiste à prendre une sous-famille ; le sens contraire est donné par
-le point (iv) du fait~3.3 de \lat{loc. cit.} : il nous suffira de savoir que
-les coordonnées manquantes s'obtiennent en multipliant les anciennes par des
-racines quatrièmes de l'unité, ce qui préserve les estimations de normes
-locales.
-
-Par ailleurs, on note $\tilde\Theta$ le plongement composé $\va^2 \to
-(\Proj^n)^2 \to \Proj^N$ et $\tilde\Delta_{ij} = \Delta_i\Delta_j$ les
-coordonnées correspondantes. On définit de façon similaire un plongement
-$\tilde\Theta^{(\text{ét})}$ associé au système étendu de coordonnées. La
-proposition~3.7 de \cite{daphimhva2} décrit alors explicitement l'action du
-morphisme $\xi$ sur le système de coordonnées $\tilde\Delta^{(\text{ét})}$. En
-ramenant cette description à notre système restreint de coordonnées, cette
-proposition se lit :
-
-\begin{fact}
-  Il existe une famille de formes $F$ sur $\Proj^N$ satisfaisant\footnote{Dans
-  cette égalité, on a identifié sections globales de $\xi^*\mathcal N$ et de
-  $\mathcal N ^{\otimes 2}$ \lat{via} l'isomorphisme naturel, où $\mathcal N
-  = \tilde\Theta^*(O(1))$. Par la suite, on ne signalera plus des
-  identifications similaires.} $F(\tilde\Delta) = \xi^*(\tilde\Delta)$ et de
-  la forme :
-  \[
-  F_{ij}(Z) = \frac 1{2^g \theta_{i'}\theta_{j'}}\sum_{(k,l)\in I^2}
-  \zeta_{ij}(k, l) Z_{\alpha(k, l)} Z_{\beta(k, l)} \pmm,
-  \]
-  où $\zeta_{ij}(k, l)$ est une racine quatrième de l'unité, $I$ un certain
-  ensemble à $4^g$ éléments, $\alpha$ et $\beta$ des applications de $I^2$
-  dans $\{0,\dots,N\}^2$ et $i'$, $j'$ sont dans $\mathcal Z_\mathcal B$.
-\end{fact}
-
-En particulier cette famille $F$ représente le morphisme $\xi$ dans le
-plongement $\tilde\Theta$, c'est-à-dire que $F(\tilde\Delta(z))$ et
-$\tilde\Delta(\xi(z))$ sont colinéaires. La proposition~affirme qu'il sont
-même égaux ; ce supplément d'information joue un rôle crucial dans la preuve du
-lemme. Par ailleurs, on tire de même des propositions 3.8 et 3.11 de \lat{loc.
-  cit.} l'existence d'une famille $G$ de formes sur $\Proj^n$ telles que
-$G(\Delta) = [2]^*\Delta$ (représentant donc le morphisme de multiplication
-par $2$) et satisfaisant à l'inégalité suivante :
-\begin{equation} \label{NormDupl}
-  \frac {\Onv {G(x)}}  {\Onv x ^4} \ge \av 2^g 4^{-g\dv} \Onv\coa^{-3} \pmm.
-\end{equation}
-
 \begin{proof}[Démonstration (du lemme~\ref{TvIndepF}).]
+  On utilise le formulaire de la section~\ref{sec:form-ab2}.
+
   On commence par estimer $\Onnv{F}$. Chaque $F_{ij}$ s'écrit comme une somme
   de $4^g$ termes de norme $\Onv[v, \infty]{\truc}$ au plus $\av 2^{-g} \Onv
   \vai^2$ ; on a donc $\Onv {F_{ij}} \le 2^{g\dv} \av 2 ^{-g} \Onv \vai ^2$ et
