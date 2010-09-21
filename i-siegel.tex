@@ -1,6 +1,6 @@
 % !TEX root = main.tex
 
-\section{Construction d'une forme auxiliaire}
+\section{Construction d'une forme auxiliaire} \label{sec:siegel}
 
 \subsection{Idéal d'annulation}
 
@@ -8,7 +8,7 @@ Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
 $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
 l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$ d'être
 assez grand, et à $\epsi$ d'être majoré par une certaine expression dépendant
-de $\epsz$ (voir fin de la section~\1{sec:comp-dim}). Considérons par
+de $\epsz$ (voir fin de la section~\ref{sec:comp-dim}). Considérons par
 ailleurs une famille d'entiers $\wt[1] \ge \dots \ge \wt[\puiss] = 1$ et un
 réel $\epsiii$ satisfaisant à
 \[
@@ -101,7 +101,7 @@ par un entier) par des polynômes, globalement ou localement. Le résultat
 fondamental est le fait suivant, qui est une simple reformulation de la
 proposition~3.6 de \cite{daphimhva2}.
 
-\begin{fact} \1{f:addsub}
+\begin{fact} \label{f:addsub}
   Il existe une famille $S_{l, l'}$ de formes bihomogènes de bidegré $(2,
   2)$ représentant globalement de morphisme d'addition-soustraction
   \begin{align}
@@ -201,7 +201,7 @@ combinant les formules locales d'addition et de multiplication par deux.
   \]
   où le membre de gauche reprend les notations de la preuve de \bsc{Rémond},
   alors que le membre de droite est la famille donnée par le
-  fait~\1{f:addsub}, qui n'était pas disponible au moment de la
+  fait~\ref{f:addsub}, qui n'était pas disponible au moment de la
   rédaction de \cite{remivds}.
 
   De plus, \bsc{Rémond} donne seulement la majoration du degré. Il est en
@@ -280,7 +280,7 @@ Plus précisément, posons
   \epsz \wt[\puiss],
   1, \dots, 1
   \bigr) \in \Q^{2\puiss-1}
-  \1{e:def-d}
+  \label{e:def-d}
   \\
   d' & = \bigl(
   \wt[1] (\frac94 + \epsz),
@@ -289,7 +289,7 @@ Plus précisément, posons
   2\puiss + \epsz
   \bigr) \in \Q^\puiss
   \pmm.
-  \1{e:def-dp}
+  \label{e:def-dp}
 \end{align}
 On a déjà supposé $\delta\epsz$ entier ; on supposera désormais de plus
 $\delta/4$ entier, de sorte que si $F$ est une forme de multidegré $\delta d$
@@ -335,7 +335,7 @@ On considérera des sous-espaces vectoriels de partie homogènes de
 $\cdn[\cmmh]$ définis par des restrictions de degré ; introduisons à cet effet
 quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
   \})^{\puiss(\dimp+1)}$, on notera
-\begin{equation} \1{e:C-spaces}
+\begin{equation} \label{e:C-spaces}
   \cdn[\cmmh]^C
   = \{
     F \in \cdn[\cmmh]
@@ -347,7 +347,7 @@ quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
 \end{equation}
 On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
 par
-\begin{gather} \1{e:C-i-iii}
+\begin{gather} \label{e:C-i-iii}
   (C')\pexp\fct[k] =
   \begin{cases}
     +\infty & \text{si $k \le \vdim*$} \\
@@ -375,7 +375,7 @@ et
 \( \ring{\opdef} = (\cdn[\cmmh])_\opdef \)
 et où les flèches verticales sont les morphismes de réduction.
 
-\begin{equation} \1{e:diag-f-aux}
+\begin{equation} \label{e:diag-f-aux}
   \xymatrix{
     \Ideal\ph\Di
     \ar[r] ^{\wemba}
@@ -450,7 +450,7 @@ les autres termes, on n'explicitera donc à chaque fois que le terme de plus
 haut degré en $\delta$ ; ainsi lorsqu'on utilisera la notation $o(\truc)$ ou
 $\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
 
-\subsection{Deux calculs de dimension} \1{sec:comp-dim}
+\subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
 La dimension de $\Ideal\ph{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
@@ -830,8 +830,8 @@ de l'appliquer au cas qui nous intéresse.
   \begin{equation}
     \rdiv^f \colon \cdn [\cmmh]\ph f \to \cdn [\cmmh]\ph f^{C'_\Delta}
   \end{equation}
-  qui est l'identité modulo \( \Ideal \) (voir~\1{e:C-spaces}
-  et~\1{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
+  qui est l'identité modulo \( \Ideal \) (voir~\ref{e:C-spaces}
+  et~\ref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
   colonnes \( c_p \) de la matrice de cette application satisfont la majoration
   de norme
   \begin{equation}
@@ -902,7 +902,7 @@ de l'appliquer au cas qui nous intéresse.
 
 \begin{coro} \label{c:hmat-rdiv}
   Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^\Diii \)
-  faisant commuter le diagramme~\1{e:diag-f-aux}, dont les matrices dans
+  faisant commuter le diagramme~\ref{e:diag-f-aux}, dont les matrices dans
   les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
   majorées par
   \begin{equation}
@@ -979,7 +979,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \begin{coro} \label{c:hmat-relim}
   Il existe une forme \( R \in \cdn [\cmmh]^{C''} \) ne dépendant que de \(
   \var \) et un morphisme \( \relim \) tels que le
-  diagramme~\1{e:diag-f-aux} commute. De plus, les colonnes de la matrice
+  diagramme~\ref{e:diag-f-aux} commute. De plus, les colonnes de la matrice
   de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
   majorée par
   \begin{equation}
@@ -994,9 +994,9 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
   l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varid \) ;
   elle découle du fait qu'on a supposé le plongement adapté
-  (scholie~\1{s:plong-adapt}).
+  (scholie~\ref{s:plong-adapt}).
 
-  En effet, le deuxième point de la définition~\1{d:plong-adapt} dit que
+  En effet, le deuxième point de la définition~\ref{d:plong-adapt} dit que
   pour tous \( \fct \) et \( \ind \),
   \begin{equation}
     \cmh\fct[\ind]
@@ -1068,7 +1068,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \end{prop}
 
 \begin{proof}
-  On reprend le diagramme~\1{e:diag-f-aux}, dont la première ligne est
+  On reprend le diagramme~\ref{e:diag-f-aux}, dont la première ligne est
   maintenant bien définie. On considère le produit \( M'' \) des matrices des
   applications \( \wemba \), \( \rdiv^\Dii \), \( \relim \) et \(
   \rdiv^\Diii \) composées dans cet ordre. Ses lignes sont naturellement

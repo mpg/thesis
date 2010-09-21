@@ -1,6 +1,6 @@
 % !TEX root = main.tex
 
-\chapter{Inégalité de Mumford}
+\chapter{Inégalité de Mumford} \label{chap:mumford}
 
 \section{Énoncé principal}
 
@@ -11,7 +11,7 @@ suivant.
 
 \begin{thm} \label{Mumford}
  Soient $\vai$ une sous-variété abélienne de $\va$, $\p x$ et $\p y$ deux points
- de $\va(\Qbar)$ satisfaisant la condition d'approximation (\ref{HP})
+ de $\va(\Qbar)$ satisfaisant la condition d'approximation (\ref{e:HA})
  ci-dessus. On note $d = \deg \vai$, $l = \dim\vai + 1$ et on choisit $\phi > 0$
  et $\rho > 0$ tels que $ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps$. On pose
  $B = (4^g-1)h(\va) + 3g\log(2)$ et $C = 3\cdot4^gh(\va) + \log\Big(
@@ -643,7 +643,7 @@ On peut alors démontrer notre deuxième version de l'inégalité de
   \end{align*}
 \end{proof}
 
-\section{Inégalité de \texorpdfstring{\bsc{Mumford}}{Mumford}}
+\section{Inégalité de \bsc{Mumford}}
 
 La stratégie de la preuve est la suivante : si on a deux approximations
 exceptionnelles, suffisamment proches dans l'espace de \bsc{Mordell-Weil} (au
@@ -655,7 +655,7 @@ Liouville énoncées à la section précédente.
 
 \begin{lem} \label{Precis}
   Si $\p z = \p x - \p y$, où $\p x$ et $\p y$ satisfont l'hypothèse
-  (\ref{HP}) du théorème~\ref{Mumford}, on a $\prod_{v \in S} \Distv(\p z,
+  (\ref{e:HA}) du théorème~\ref{Mumford}, on a $\prod_{v \in S} \Distv(\p z,
   \vai)^{e_v} \le \newcst[]{CPrecis}H^{-\eps/d}$, avec
   \[
   \cst{CPrecis} = H(\va)^{3\cdot4^g} 10\sqrt2\,(n+1)^6

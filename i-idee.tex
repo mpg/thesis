@@ -1,6 +1,6 @@
 % !TEX root = main.tex
 
-\chapter{Introduction}
+\chapter{Introduction} \label{chap:intro}
 
 \section{Aperçu du problème}
 
@@ -29,12 +29,12 @@ suivant \cite[\eng{Theorem~II}]{faldaav}.
 Comme de nombreux énoncés de géométrie diophantiennes, ce résultat n'est
 malheureusement pas effectif au sens suivant : on ne voit à l'heure actuelle
 pas de moyen de borner la hauteur des points satisfaisant à l'hypothèse
-d'approximation \1{e:has}. Ainsi que le fait remarquer \bsc{Faltings}
+d'approximation \ref{e:has}. Ainsi que le fait remarquer \bsc{Faltings}
 dans l'introduction de son article : \og \eng{As far as I can see, everything
   here is ineffective beyond hope.} \fg
 
 Il semble néanmoins raisonnable de vouloir majorer le nombre de points
-rationnels satisfaisant à \1{e:has} (que nous appellerons à l'occasion
+rationnels satisfaisant à \ref{e:has} (que nous appellerons à l'occasion
 les approximations exceptionnelles), ou au moins de donner quelques
 informations quantitatives explicites à leur sujet. C'est à cette question que
 nous nous intéressons ici.
@@ -45,7 +45,7 @@ Plus précisément, ce type d'énoncé quantitatif est généralement obtenu en
 combinant une inégalité à la \bsc{Vojta} et une inégalité à la \bsc{Mumford},
 dont nous rappelons brièvement des énoncés possibles, formulés de façon
 générique avec une condition (C) qui peut être par exemple l'hypothèse
-d'approximation \1{e:has} ci-dessus, ou une autre condition pour
+d'approximation \ref{e:has} ci-dessus, ou une autre condition pour
 l'ex-conjecture de \bsc{Mordell-Lang}.
 
 Les deux inégalités s'énoncent dans l'espace de \bsc{Mordell-Weil} de $\va$
@@ -275,10 +275,10 @@ On montre une version de cette inégalité dans le cas particulier où la
 sous-variété à approcher est une variété abélienne.  L'énoncé obtenu est le
 suivant.
 
-\begin{thm} \1{t:mumford}
+\begin{thm} \label{t:mumford}
   Soient $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
   deux points de $\va(\Qbar)$ satisfaisant à la condition d'approximation
-  \1{e:has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
+  \ref{e:has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
   telles que si
   \begin{enumthm}
     \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
@@ -290,7 +290,7 @@ suivant.
 
 Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalement explicitées
 en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
-\1{e:has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
+\ref{e:has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
 du plongement ambiant.
 
 L'approche adoptée la suivante : étant donné deux points satisfaisant aux
@@ -312,14 +312,14 @@ formules d'addition de \cite{daphimhva2}.
 Une fois ceci établi, on constate que $\pointii$ est une très bonne
 approximation de $\vai$, de petite hauteur, suffisamment pour contredire
 l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
-$\vai$ ; ce qui établit le théorème~\1{t:mumford}.
+$\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 \subsection {Inégalité de \bsc{Vojta}}
 
 Le schéma général de cette partie de la preuve est commun à celui adopté dans
 \cite{remivds} et \cite{faldaav} : on suppose pour commencer qu'il existe une
 suite d'approximations $x_1, \ldots, x_m$ satisfaisant simultanément à
-\1{e:has} et aux trois conditions suivantes :
+\ref{e:has} et aux trois conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha$ ; \label{i:vs-grand}
   \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i:vs-angle}
@@ -419,7 +419,7 @@ $\place$ exploitant le fait que $x$ est $\place$-adiquement proche de $E$,  et
 de conclure à une contradiction par la formule du produit à moins de $F(x)$ ne
 soit nul. Dans la phrase précédente, il faut en fait remplacer $F$ par ses
 dérivées jusqu'à un ordre convenable. C'est en tous cas l'hypothèse
-d'approximation \1{e:has} qui établit la contrainte nécessaire en liant
+d'approximation \ref{e:has} qui établit la contrainte nécessaire en liant
 $\distv{x}{E}$ à $H(x)$, donc indirectement $\av{F(x)}$ à $H(F(x))$.
 
 Pour estimer la norme locale de $F(x)$ en $\place$, la difficulté est que $F$
