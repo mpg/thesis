@@ -2,15 +2,156 @@
 
 \section{Extrapolation} \label{sec:vojta-extrap}
 
-\clearpage
+On rappelle qu'on a construit un forme auxiliaire $F$ sur $\wemb(\var)$, ou
+encore $F'$ sur $\var$, de degré contrôlé par $\delta$ et pondéré par $\wt$,
+telle que $R \cdot F'$ s'annule le long de $\divi$ modulo l'idéal de
+$\var$ avec un indice pondéré par $\wt$ d'ordre $\delta$, où $R$ est une forme
+ne dépendant que de $\var$ plongée, donc pas de $\delta$. On introduit une
+forme $G$ congrue à $R \cdot F'$ modulo l'idéal de $\var$ et de degré
+comparable (on peut prendre l'image de $F'$ par les différents morphismes de
+réduction si on veut).
 
-\begin{prop}
-  Alors\worknote{C'est le but} \( F' \) a un indice supérieur à \( \eps_4
-    \delta \) en \( \excep \), avec
+\worknote{Comment formuler efficacement la partie sur les indices ?}
+On a également des morphismes de paramétrisation de $\var$
+(lemme~\ref{l:par-prod}) et de son image par $\wemb$ (lemme~\ref{l:par-img}).
+De plus, quand on considère l'image d'un monôme par ces morphismes, si
+l'exposant de $\cmh\fct[0]$ est $\alpha$, alors celui de la même variable dans
+le numérateur de l'image est au moins $\alpha - \lambda\pexp\fct[0]$.
+
+\begin{lem}
+  Soit \( \point \) un point de \( \var \) satisfaisant~\ref{e:HA} et de
+  grande hauteur ; on note \( \coord \) ses coordonnées multihomogènes.  Pour
+  chaque \( \fct \in \{ 1, \dots, \puiss \} \), il existe un indice \( \ind
+    \in \{ 1, \dots, \vdim* \} \) tel que
   \begin{equation}
-    \eps_4 = \dots
+    \av{\coord\mexp*[\ind]}
+    \le
+    \cst{ind-norm-dim} \cdot \Onv{\coord\mexp*}
+    \pmm,
   \end{equation}
-\end{prop}
+  avec
+  \begin{equation}
+    \newcst{ind-norm-dim} = \dots
+  \end{equation}
+  En particulier, \( \coord\mexp*[\ind] \) n'est pas nul.
+\end{lem}
+
+\begin{ideas}
+  C'est une variante plus précise du lemme~\ref{ChoixI}. Les points sont :
+  \begin{enumthm}
+  \item pouvoir choisir \( \ind \) plus petit que \( \vdim* \). Pour ça, on
+    utilise que le point est sur \( \var \) pour écrire que les dernières
+    coordonnées sont intégralement dépendantes sur les premières
+    (fait~\ref{f:dep-int} ou directement Rémond si besoin) avec des relations
+    connues, donc majorer la norme en fonction du maximum des valeurs absolues
+    des coordonnées.
+  \item pouvoir choisir \( \ind \) différent de \( 0 \). Là on utilise le fait
+    que le point est proche de \( \divi \), donc par définition de la
+    distance, sa coordonnée d'indice \( 0 \) est petite devant sa norme, donc
+    ça ne peut pas être elle qu'on a choisi avant.
+  \end{enumthm}
+\end{ideas}
+
+\begin{lem}
+  On peut supposer que les dénominateurs dans les développements en série ne
+  s'annullent pas en \( \excep \).
+\end{lem}
+
+\begin{ideas}
+  En effet, ces dénominateurs sont de degré bornés en fonction uniquement de
+  \( \var \) indépendamment de \( \delta \). Donc si l'un d'eux s'annulle en
+  \( \excep \), il fournit le forme par laquelle on veut couper \( \var \)
+  pour montrer qu'elle n'est pas minimale, donc on n'a pas besoin de toute la
+  construction qui suit.
+\end{ideas}
+
+\begin{lem}
+  On peut dont majorer la valeur absolue de l'inverse de la valeur de ces
+  dénominateurs en \( \excep \) par une constante fois sa hauteur.
+\end{lem}
+
+\begin{ideas}
+  C'est la formule du produit.
+\end{ideas}
+
+\begin{lem} \label{l:par-prod-spe}
+  Le développement de $G$ en $\excep$ s'écrit
+  $\tau(G)_\excep = \sum_\lambda \xi_\lambda t^\lambda$ avec :
+  \begin{enumthm}
+  \item \( \hautl{\xi_\lambda} \le c(\hautl\excep, \lgr\lambda, \dots ) \) ;
+  \item \( \av{ \xi_\lambda } \le c(\distv(\excep, \divi), \hautl\excep,
+      \sigma, \dots) \) dès que que \( \lambda \in \Stairs_\wt^{\delta/\sigma}
+    \) et pour \( \place \in \placesapx \).
+  \end{enumthm}
+\end{lem}
+
+\begin{ideas}
+  On spécialise en \( \excep \) le résultat du lemme~\ref{par-prod}, en tenant
+  compte des résultats des lemmes précédents.
+
+  Note : c'est pas vraiment sûr que l'estimation de hauteur soit intéressante
+  ici, mais j'aimerais quand même la faire pour me convaincre que celle qu'on
+  obtiendra après en passant par le plongement pondéré est meilleur.
+\end{ideas}
+
+\begin{lem}
+  La hauteur de \( \wemb(\excep) \) n'est pas trop grosse dès que \( \excep \)
+  satisfait à la condition de secteur de cône. Plus précisément, il faut
+  considérer la hauteur sur chaque composante, et c'est sur les dernières que
+  ce n'est pas trop gros.
+\end{lem}
+
+\begin{ideas}
+  Avec la hauteur normalisée, c'est de la géométrie euclidienne. Il suffit
+  ensuite de comparer à une hauteur projective.
+\end{ideas}
+
+\begin{lem} \label{l:par-img-spe}
+  Le développement de $F$ en $\excep$ s'écrit
+  $\Omega_\wt(G)_{\wemb(\excep)} = \sum_\lambda \zeta_\lambda t^\lambda$ avec
+  \( \hautl{\zeta_\lambda} \le c(\hautl\excep, \lgr\lambda, \dots ) \).
+\end{lem}
+
+\begin{ideas}
+  On spécialise les formes données par le lemme~\ref{l:par-img} en \(
+    \wemb(\excep) \), en tenant compte de l'estimation des hauteurs précédentes,
+  et en utilisant les lemmes du début de la partie pour gérer les
+  dénominateurs, qui sont les mêmes que pour le lemme~\ref{l:par-prod-spe}.
+\end{ideas}
+
+\begin{lem}
+  La forme $R \cdot F'$ a un indice pondéré par \( \wt \) supérieur à \(
+    \delta/\sigma \) en \( \excep \) le long des \( \divi \).
+\end{lem}
+
+\begin{ideas}
+  On veut montrer que les coefficients de son développement appartenant à \(
+    \Stairs_\wt^{\delta/\sigma} \) sont nuls. Or ce sont les mêmes que ceux du
+  développement de \( G \) car ces deux formes sont égales sur \( \var \).
+  \worknote{Pile les mêmes, où à constante près ?} On contrôle donc
+  précisément leur valeur absolue aux places de \( \placesapx \).
+
+  D'un autre côté, le développement de \( F' \) en \( \excep \) est le même
+  que celui de \( F \) en \( \wemb(\excep) \).\worknote{Le plongement ne
+    change rien pour les dérivées et tout ?} Donc on contrôle le hauteur des
+  coefficients. Or, à \( o(\deltaà \), ça sera aussi la hauteur des
+  coefficients de \( R \cdot F' \), puis quel la hauteur de \( R \) est un \(
+    O(1) \).
+
+  Du coup, pour les coefficients de \( \Stairs_\wt^{\delta/\sigma} \), on
+  contrôle finement la valeur absolue en les places de \( \placesapx \), et on
+  contrôle aussi la hauteur. Si tout va bien, c'est assez précis pour
+  contredire la formule du produit, donc ça prouve qu'ils sont nuls.
+\end{ideas}
+
+\begin{rem} \worknote{D'accord ou pas ?}
+  On peut peut-être s'arrêter là, c'est-à-dire ne pas montrer que \( F' \)
+  tout seul a un indice élevé. En effet, on a déjà \( R \cdot F' \) qui a
+  cette propriété et qui les mêmes degrés et hauteurs que \( F' \) à \(
+    o(\delta) \) près. Le fait que \( F' \) provient de \( F \) n'est sans
+  doute pas intéressant pour la suite (c'est pour extrapoler qu'on en avait
+  besoin).
+\end{rem}
 
 \endinput
 
