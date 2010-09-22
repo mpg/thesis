@@ -376,23 +376,10 @@ convenable. On souhaite contrôler de même le morphisme composé
 \end{equation}
 où le premier est le morphisme d'anneaux naturellement associé à $\phi_a$.
 
-Pour cela, on commence par remarquer que celui-ci est localement
-représenté par le morphisme
- \begin{align*}
-   \Psi_a \colon \cdn[X\pexp1, \ldots, X\pexp m, Y\pexp1, \ldots, Y\pexp{m-1}]
-   & \longrightarrow \cdn[X\pexp1, \ldots, X\pexp m] \\
-   X\pexp i & \longmapsto X\pexp i \\
-   Y\pexp j & \longmapsto S^-(Q_{a_j}(X\pexp j), X\pexp m) \\
- \end{align*}
 Soit $F$ une forme multihomogène de degré $(\alpha_1, \ldots, \alpha_m,
-\beta_1, \ldots, \beta_{m-1})$. Son image par $\Psi_a$ est
-\begin{equation}
-  F(X\pexp1, \ldots, X\pexp m, S^-(Q^{a_1}(X\pexp 1), X\pexp m), \ldots,
-  S^-(Q^{a_{m-1}}(X\pexp{m-1}), X\pexp m) \pmm,
-\end{equation}
-de degré $(\alpha_1 + 9/4 \beta_1 a_1^2, \ldots, \alpha_{m-1} + 9/4
-\beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta)$, et dont on majore les normes
-locales comme suit :
+\beta_1, \ldots, \beta_{m-1})$. Le degré de son image par \( \wemba \) est
+donné par le lemme~\ref{l:deg-wemba}. De la même façon, on majore ses normes
+locales par :
 \begin{align*}
   \Onv{\Psi_a(F)}
   & \le \Onv F \prod_{j=1}^{m-1} \Onnv{S^-(Q^{a_j}, \truc)}^{\beta_j} \\
@@ -428,6 +415,16 @@ On a alors immédiatement le résultat suivant.
 \begin{proof}
   Il suffit d'appliquer le lemme~\ref{l:par-prod} à $\Psi_a(G)$.
 \end{proof}
+
+\clearpage
+
+\begin{prop}
+  Alors\worknote{C'est le but} \( F' \) a un indice supérieur à \( \eps_4
+    \delta \) en \( \excep \), avec
+  \begin{equation}
+    \eps_4 = \dots
+  \end{equation}
+\end{prop}
 
 \endinput
 

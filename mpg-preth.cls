@@ -441,10 +441,15 @@
   d'approximation}
 
 \newcommand \varapx { E }
-\noma{E} {\varapx} {Variété dont on étudie les apximations}
+\noma{E} {\varapx} {Variété dont on étudie les approximations}
 
 \newcommand \expapx { \eps }
 \nomg{eps} {\expapx} {L'exposant d'apximation}
+
+\nomg{alpha}{\alpha}{Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomg{beta} {\beta} {Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomg{gamma}{\gamma}{Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomg{delta}{\delta}{Un des paramètres de l'énoncé de Vojta et Mumford}
 
 % archimedian norms and measures [[2
 %
