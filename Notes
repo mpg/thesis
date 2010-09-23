@@ -1,3 +1,33 @@
+Objectifs de la semaine {{{1
+=======================
+
+Au moins : paramétisation.
+
+Paramétrisation {{{2
+
+1. Relire mes notes papiers là-dessus.
+2. Me décider sur l'ordre des lemmes et la forme des conclusions.
+3. Transformer la version actuelle, la version papier ou autre en vrais énoncés.
+        - La variable de déshomogénéisation est désormais le dernière.
+        - Ajouter le point (iv) aux couclusions.
+4. Taper le résultat.
+5. Appliquer des notations cohérentes en interne et avec le début du chapitre.
+
+Extrapolation {{{2
+
+1. Faire le lemme sur le choix de la coordonnée de déshomogénéisation.
+        Le taper.
+2. Faire le lemme sur la valeur absolue du dénominateur.
+        Le taper.
+3.      a. Dégrossir le lemme sur le développement aux places spéciales.
+        b. Le finir.
+        c. Le taper.
+        d. Faire la partie inutile aux places non spéciales.
+
+Autre {{{2
+
+Reprendre le plan du chapitre Vojta et le taper sous forme de squelette.
+
 Rédaction {{{1
 =========
 
@@ -32,6 +62,11 @@ Voire directement des constantes automatiques ?
 Notations {{{2
 ---------
 
+(A) Régler les problèmes de macros genre \coeff.
+
+(A) Faire une notation pour les indives de formes le long d'un diviseur ou en
+un point.
+
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
 
@@ -63,6 +98,13 @@ nomenclature.)
 Macros {{{2
 ------
 
+(A) faire une liste des constante numérotées avec leur nom pour moi et la
+page où elles sont définies
+
+(B) showkeys: sur pluieurs lignes dans la marge
+
+(B) Nomenclature : numéros de page.
+
 (B) \ph est un peu inutile, la remplacer par _ ?
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
@@ -70,10 +112,7 @@ Macros {{{2
 (C) normes et hauteurs : virer les vieilles version imprécises, indiquer
 systématiquement la norme ou mesure archimédienne utilisée
 
-(B) faire une liste des constante numérotées avec leur nom pour moi (et evtl la
-page où elles sont définies)
-
-(B) Reprendre le source de mumford
+(C) Reprendre le source de mumford
     - présentation du source
     - labels
 
