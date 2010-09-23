@@ -394,9 +394,14 @@
 % automatic constants [[2
 %
 \AtBeginDocument{\let\mpg@label\label}
+
+% print an automatic constant
 \newcounter{cst}
 \newcommand*\cst [1] {%
   \ensuremath{ c_{ \ref{cst@#1} \@nameuse{cst@@#1} } }}
+
+% define an automatic constant
+% Warning: puts a label e:cst-<name>, no other label allowed for this equation
 \newcommand*\newcst [2][\place] {%
   \begingroup
   \let\showkeyslabelformat\@gobble
@@ -406,10 +411,18 @@
   \@ifnotmtarg{#1}{%
     \protected@write\@auxout{}{\global\string\@namedef{cst@@#2}{, #1}}%
   }%
+  \ifinner\else \label{e:cst-#2}\noeqref{e:cst-#2}\fi
+  \addcontentsline{loc}{constant}{%
+    \protect\cst{#2} \ifinner\else définie par~\protect\refeq{e:cst-#2}\fi}%
   \cst{#2}}
 
-\noma{cvx}{c_{\PH, \PHi}}{Constante (en général intermédiaire) numéro \PH,
-  dépendant éventuellement de la place \PHi}
+\noma{cvx}{c_{\PH, \PHi}}{Constante numéro \PH, dépendant éventuellement de la
+  place \PHi --- voire liste des constantes ci-dessous}
+
+\tocbasicautomode
+\addtotoclist{loc}
+\newcommand*\l@constant {\l@figure}
+
 
 % thesis-specific math [[1
 % --------------------
