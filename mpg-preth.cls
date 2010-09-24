@@ -18,6 +18,7 @@
 
 % option declarations [[2
 %
+\DeclareOption {full}   {\let\includeonly\@gobble}
 \DeclareOption {pph}    {\@showbadfalse \@showmacfalse \@showkeysfalse}
 \DeclareOption {nobad}  {\@showbadfalse}
 \DeclareOption {showmac}{\@showmactrue}
@@ -112,8 +113,6 @@
     \@nameuse{cp@#1}%
   \fi
   \let\@auxout\@mainaux}
-
-\newcommand*\noincludeonly [1] {}
 
 % generic title information [[2
 %
