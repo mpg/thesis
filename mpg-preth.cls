@@ -331,11 +331,16 @@
 
 % delimiters [[2
 %
-\newcommand \orbrack {\mathopen\rbrack}
-\newcommand \clbrack {\mathopen\lbrack}
+\newcommand \orbrack {\mathopen \rbrack}
+\newcommand \clbrack {\mathclose\lbrack}
 
 \DeclarePairedDelimiter \abs  {\lvert} {\rvert}
 \DeclarePairedDelimiter \norm {\lVert} {\rVert}
+
+% I know these symbols are in stmaryrd, but it screws up most of my math
+% fonts, so let's fake them the good old way
+\newcommand \llbrack {\mathopen { \lbrack\mspace{-3.3mu}\lbrack }}
+\newcommand \rrbrack {\mathclose{ \rbrack\mspace{-3.3mu}\rbrack }}
 
 % no good delimiter for triple norm, booh
 \newcommand \nnorm      {\@ifstar {\nnorm@@@{\left}{\right}} {\nnorm@}}
@@ -763,6 +768,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \nomg{Delta}{\Delta}{Parfois un multidegré, élément de \( \N^\puiss \)}
 \noma{p}{p}{Parfois un entier ou un (multi)multiindice}
 \noma{q}{q}{Parfois un entier ou un (multi)multiindice}
+
+% Parametrisation [[2
+%
+\newcommand \param  {t}
+\newcommand \pden   {R} %FIXME
+\newcommand \forme  {F} %FIXME
 
 % unsorted math stuff [[1
 % -------------------

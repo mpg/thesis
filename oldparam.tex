@@ -1,0 +1,420 @@
+\section{Paramétrisations} \label{sec:vojta-param}
+
+\subsection{Paramétrisation des variétés projectives}
+
+Dans cette section, on considère une variété projective quelconque $Z$ de
+dimension $u$, et on souhaite en exhiber une paramétrisation au voisinage d'un
+point appartenant à un ouvert dense $U$. Par paramétrisation, on entend un
+morphisme $\big(\Aff^1_{\hat{0}}\big)^u \times U \to Z$, où $\Aff^1_{\hat{0}}$
+désigne le complété formel de la droite affine le long de l'origine. Un tel
+morphisme correspond à un morphisme (continu) d'anneaux $A(Z) \to A(U)[[t_1,
+\ldots, t_u]]$, où $A(\truc)$ désigne l'anneau des coordonnées. On va
+ci-dessous
+s'attacher à contrôler (degré, hauteur, dénominateur) l'image des formes
+homogènes par ce morphisme en fonction des paramètres diophantiens (degré,
+hauteur) de $Z$.
+
+On utilise assez largement les notations de \cite{remivds} sans toujours les
+rappeler.  On utilise par contre la norme $L_1$ aux places archimédiennes pour
+les polynômes. On note par ailleurs $\dv = 0$ si $v$ est finie et $1$ sinon.
+
+\begin{lem}
+  Soit $X = (X_1, \dots, X_u)$ une famille d'indéterminées, $L / \cdn(X)$ une
+  extension finie. On choisit $y$ un élément de $L$, on note $\chi : \cdn[X, Y]
+  \to L$ le $\cdn(X)$-morphisme donné par $Y \mapsto y$. On fixe $P$ de degré
+  $D$ dans son noyau, on pose $R = \frac{\partial P}{\partial Y}$. On considère
+  de plus les $\cdn$-dérivations de $\cdn(X)$ caractérisées par $\diff_i(X_j)
+  = \delta_i^j$ pour $1 \le i, j \le u$, et on notera de même leurs extensions
+  à $L$. Pour chaque $\kappa \in \N^u$, on note $\diff^\kappa =
+  \diff_1^{\kappa_1}\cdots \diff_u^{\kappa_u}$ et $\partial^\kappa =
+  \frac1{\kappa!}\diff^\kappa$. Pour chaque $\kappa \neq 0$ et $a \in \{0,
+    1\}$, il existe des polynômes $P_a^\kappa \in \cdn[X_1, \dots, X_u, Y]$,
+  tels que :
+  \begin{enumthm}
+    \item $\partial^\kappa y =
+      \frac{\chi(P_a^\kappa)}{\chi(R)^{2\lgr\kappa-1}}$, \label{i:repres}
+      pour tous $a$ et $\kappa$.
+    \item $\deg P_a^\kappa \le (D -1)(2 \lgr\kappa -1)$,
+      pour tous $a$ et $\kappa$.
+    \item $\Onv{P_\dv^{\kappa}} \le \Onv P ^{2\lgr\kappa - 1}
+      \cdot \left((4u)^{\lgr\kappa -1} D^{3\lgr\kappa -2} \right)^\dv$
+      pour tout $\kappa$ et toute place $v$ de $\cdn$.
+  \end{enumthm}
+  En particulier, l'image de $\cdn[X, y]$ par les différents $\partial^\kappa$
+  est contenue dans $\cdn[X, y, \chi(R)^{-1}]$.
+\end{lem}
+
+\begin{proof}
+  Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
+    autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
+    fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
+  utilisant aux places archimédiennes une généralisation de
+  \cite[relation~2.3.1, p.~63]{farhith}. On reprend toutes les notations de
+  \cite{remivds}. On va construire $P_0^\kappa$ et $P_1^\kappa$ par récurrence
+  sur la longueur de $\kappa$, en partant à chaque fois de $P_a^\kappa = -
+  d_{k_0}P$ quand $\kappa_{k_0} = 1$ et $\kappa_k = 0$ sinon (cas $\lgr\kappa
+  = 1$), car ce choix convient. Pour la suite, on fixe un $a$, un $\kappa$ de
+  longueur au moins $2$, et on suppose qu'on a choisi un $P_a^{\kappa'}$
+  convenable pour chaque $\kappa'$ de longueur strictement inférieure à celle
+  de $\kappa$.
+
+  On commence par le cas ultramétrique et on note donc provisoirement $P^\kappa
+  = P_0^\kappa$ pour alléger. Si de tels polynômes existent, ils doivent
+  satisfaire à la relation
+  \begin{equation}
+    P\left( X_1+t_1, \ldots, X_n+t_n, y + \sum_{\kappa \in \N^u\setminus\{0\}}
+    \frac{\chi(P^\kappa)}{\chi(R)^{2\lgr\kappa -1}}\right) = 0 \pmm.
+  \end{equation}
+  On écrit alors le développement de \bsc{Taylor} de $P$, il vient :
+  \begin{align*}
+    0
+    & = \sum_{\substack{\lambda\in\N^u \\ \mu \in \N}} \frac1{\lambda!\mu!}\,
+      \diff\pexp{\lambda, \mu}P(X_1,\ldots, X_n,y) \left(\sum_{\kappa \in
+      \N^u\setminus\{0\}} \frac{\chi(P^\kappa)}{\chi(R)^{2\lgr\kappa -1}}
+      \right)^u t^\lambda \\
+    & = \sum_{\substack{(\lambda,\mu)\in\N^{u+1}\setminus\{(0,0)\}\\
+      l\pexp{i} \in \N^u\setminus\{0\}}} \chi\left( \frac1{\lambda!\mu!}\,
+      \diff\pexp{\lambda,\mu}P \prod_{1\le i \le \mu}
+      \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}} \right)
+      t^{\sum l\pexp i + \lambda}
+  \end{align*}
+  où l'on a noté $(\lambda, \mu) = (\lambda_1, \ldots, \lambda_n, \mu)$. Chaque
+  terme de cette série est donc nul, c'est-à-dire que pour tout $\kappa \neq 0$
+  on a
+  \begin{equation}
+    \chi \Biggl( \frac{P^\kappa}{R^{2\lgr\kappa - 2}} +
+    \sum_{\substack{(\lambda,\mu)\in\N^{u+1}\setminus\{(0,0), (0,1)\}\\
+    l\pexp{i} \in \N^u\setminus\{0\} \\ \sum l\pexp i + \lambda = \kappa}}
+    \frac1{\lambda!\mu!}\,\diff\pexp{\lambda,\mu}P \prod_{1\le i \le \mu}
+    \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}} \Biggr) = 0
+  \end{equation}
+  Réciproquement, il suffit donc de définir $P\kappa$ par la relation de
+  récurrence
+  \begin{equation} - P^\kappa =
+    \sum_{\substack{(\lambda,\mu)\in\N^{u+1}\setminus\{(0,0), (0,1)\}\\
+    l\pexp{i} \in \N^u\setminus\{0\} \\ \sum l\pexp i + \lambda = \kappa}}
+    \frac1{\lambda!\mu!}\,\diff\pexp{\lambda,\mu}P
+    \cdot R^{2\lgr\kappa - 2}
+    \cdot \prod_{1\le i \le \mu} \frac{P^{l\pexp i}}{R^{2\lgr{l\pexp i} -1}}
+  \end{equation}
+  pour que \ref{i:repres} soit satisfait pour $a=0$
+
+  On majore alors le degré de $P^\kappa$ par récurrence :
+  \begin{align*}
+    \deg P^\kappa
+    & \le D - \lgr\lambda - \mu + (D-1) ( 2\lgr\kappa - 2) \\
+    & \le 1 - \lgr\lambda - \mu +(D-1)(2\lgr\kappa - 1) \\
+    & \le (D - 1)(2\lgr\kappa - 1) \pmm,
+  \end{align*}
+  car $\lambda$ et $\mu$ ne sont pas simultanément nuls.
+
+  La majoration de norme locale est par ailleurs immédiate vu les propriétés de
+  la norme aux places ultramétriques.
+
+  Traitons maintenant le cas archimédien (désormais $P^\kappa = P^\kappa_1$
+  pour alléger). On part de la relation de récurrence suivante (\bsc{Rémond},
+  avec $Q_\kappa = P^\kappa \cdot \kappa!$) où l'on rappelle que $\kappa'$ est
+  tel que $\kappa_{k_0} = \kappa'_{k_0} + 1$ est $\kappa_k = \kappa'_k$ sinon.
+  \begin{equation}
+    Q_\kappa = R^2 d_{k_0}Q_{\kappa'} - R d_{k_0}P d_Y Q_{\kappa'} + (2
+    \lgr{\kappa'} -1)Q_{\kappa'}(d_{k_0} P d_Y R - R d_{k_0}R) \pmm.
+  \end{equation}
+  On en déduit immédiatement l'estimation de degré suivante :
+  \begin{equation}
+    \deg P^\kappa \le 2(D -1) + \deg P^{\kappa'} \le (D
+    -1)(2\lgr\kappa -1) \pmm.
+  \end{equation}
+  Pour la norme, on prouve que $\Onv{Q_\kappa} \le \Onv P ^{2 \lgr\kappa - 1}
+  4^{\lgr\kappa -1} D^{3\lgr\kappa -2} (\lgr\kappa -1)!$ (ce qui implique le
+  résultat annoncé vu que $\binom{\lgr\kappa}{\kappa} \le u^{\lgr\kappa - 1}$)
+  en exploitant l'estimation obtenue sur le degré sous la forme $D^\kappa \le
+  2\lgr\kappa D$.
+  \begin{align*}
+    \Onv{Q_\kappa}
+    & \le 2 D^2 (\deg Q_{\kappa'})\Onv P ^2 \Onv{\smash{Q_{\kappa'}}} +
+      2(2\lgr{\kappa'} -1) D^3 \Onv {P}^2 \\
+    & \le \Onv P ^2 \Onv{ \smash{Q_{\kappa'}}} 4D^3 \lgr{\kappa'} \\
+    & \le \Onv P ^{2 \lgr\kappa - 1} 4^{\lgr\kappa -1} D^{3\lgr\kappa -2}
+      (\lgr\kappa -1)! \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{rem}
+  On peut obtenir des estimations similaires en fonction d'un majorant $D'$
+  quelconque de $\deg_X P$ et $\deg_Y P$. Il vient par exemple $\deg_X
+  P_a^\kappa \le D'\lgr\kappa$ et de même pour le degré en $Y$. On peut
+  également remplacer $D$ par $D'$ et $4$ par $2$ dans la majoration de
+  $\Onv{P_1^\kappa}$ ci-dessus.
+\end{rem}
+
+\begin{fact} \label{f:dep-int}
+  \worknote{À déplacer avec les autres trucs sur le plongement adapté ?}
+  Si le plongement $Z \hookrightarrow \Proj^n$ est \og adapté \fg{}, alors
+  dans $K(Z)$ les variables $w_1, \ldots, w_u$ sont algébriquement
+  indépendantes, et chaque $w_j$ est lié aux $w_1, \ldots, w_u$ par un
+  polynôme $\widetilde P _j$ (obtenu en déshomogénéisant par $W_0 = 1$ le
+  $P_j$ du lemme 4.2 de \cite{remivds}) de degré $D := \deg Z$, unitaire en la
+  dernière variable, et tel qu'en toute place, $\Onv{\smash{\widetilde P}_j}
+  \le \Onv{f_Z}$.
+\end{fact}
+
+\begin{proof}
+  C'est \cite[partie~4.1, p.~114]{remivds}. Seule l'assertion sur la
+  norme n'est pas énoncée sous cette forme par \bsc{Rémond}, mais elle vient
+  de même que la proposition~4.2 en remarquant que $P_j$ est une
+  spécialisation de $f_Z$ qui annule certaines variables et remplace les
+  autres par des monômes unitaires.
+\end{proof}
+
+On note désormais $f(\kappa) = \max(0, 2\lgr\kappa - 1)$ et $g(\kappa) =
+2(D-1)f(\kappa)$ si $\kappa \neq 0$, $g(\kappa) = 1$ sinon. On remarque de
+suite que pour tous $l\pexp i$ dont la somme est $\kappa$ on a $\sum f(l\pexp i)
+\le f(\kappa)$.
+
+\begin{lem}
+  Soit $Z \hookrightarrow \Proj^n$ une variété de degré $D$, plongée de façon
+  adaptée, et $\widetilde Z$ sa partie affine $W_0 \neq 0$. On note $\chi \colon
+  \cdn[X_1, \ldots X_n] \to K(Z)$ envoyant $X_i$ sur $w_i$.  Soit $\tilde\tau :
+  A(\widetilde Z) \to A(U)[[t_1, \ldots, t_n]]$ le morphisme qui envoie $f$ sur
+  $\sum\partial^\kappa f$, où $U$ est le complémentaire dans $\widetilde Z$ du
+  diviseur découpé par les $\widetilde R_j = \frac{\partial \widetilde P _j}
+  {\partial X_j}$. Il existe des polynômes $\widetilde P_{a, j}^\kappa \in
+  \cdn[X_1, \ldots, X_u, X_j]$ pour $u < j \le n$, $a \in \{0, 1\}$ et $\kappa
+  \in \N^u$, tels que :
+  \begin{enumthm}
+    \item $\tilde\tau(w_j) = \sum\limits_{\kappa\in\N^u}
+      \frac{\chi(\widetilde P_{a, j}^\kappa)}{\chi(\widetilde
+      R_j)^{f(\kappa)}} t^\kappa$ pour tous $a$ et $j$ ;
+    \item $\deg \widetilde P_{a, j}^\kappa \le g(\kappa)$ pour tous $a$, $j$ et
+      $\kappa$ ;
+    \item $\Onv{\widetilde P_{\dv, j}^\kappa} \le \bigl( \Onv{f_Z} (\sqrt{4u}
+      D^{3/2})^\dv \bigr)^{f(\kappa)}$ pour tous $j$ et $\kappa$.
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Vu la définition de $\tilde\tau$, il suffit avec d'appliquer le lemme
+  précédent, avec $L = K(Z)$, indépendamment à chaque $w_j$ en tenant compte de
+  l'information connue sur le degré et la norme des $P_j$.
+\end{proof}
+
+\begin{lem}
+  Dans les hypothèses et notations précédentes, il existe des polynômes
+  $\widetilde R$ et $\widetilde Q_{a, \gamma}^\kappa$ tels que, notant
+  $w^\gamma$ l'image d'un monôme quelconque de $\cdn[X_1, \ldots, X_n]$ dans
+  $K(Z)$, on ait
+  \begin{enumthm}
+    \item $\tilde\tau(w^\gamma) = \sum\limits_{\kappa\in\N^u}
+      \frac
+        {\chi(\widetilde Q_{a, \gamma}^\kappa)}
+        {\chi(\widetilde R)^{f(\kappa)}}
+      t^\kappa$ pour tous $a$ et $\gamma$ ;
+    \item $\deg \widetilde Q_{a, \gamma}^\kappa \le (D-1)(n-u)f(\kappa) +
+      \lgr\gamma$ pour tous $a$, $\gamma$ et $\kappa$ ;
+    \item $\Onv{\widetilde Q_{\dv, \gamma}^\kappa} \le 2^{\dv(\lgr\kappa +
+        n(\lgr\gamma -1))} \big( \Onv{f_Z} \cdot (\sqrt{4u} D^{3/2})^\dv
+      \big)^{(n-u)f(\kappa)}$ pour tous $v$, $\gamma$ et $\kappa$ ;
+    \item $\deg{\widetilde R} \le (D-1)(n-u)$ ;
+    \item $\Onv{\widetilde R} \le (D^\dv \Onv{f_Z})^{n-u}$.
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  On applique le lemme précédent, en remarquant de plus que pour $1\le j \le u$
+  on peut choisir $\widetilde Q_{a, j}^\kappa$ et $\widetilde R_j$ satisfaisant
+  à la condition \ref{i:repres} avec $\deg{\widetilde Q}_{a, j}^\kappa \le 0$,
+  $\Onv{\widetilde Q_{a, j}^\kappa} \le 1$ et $\widetilde R_j = 1$. Il vient
+  alors :
+  \begin{align*}
+    \tilde\tau(w^\gamma) &= \prod_{j=1}^n \tilde\tau(w_j)^\gamma_j \\
+    & = \prod_{j=1}^n \prod_{k_j=1}^{\gamma_j} \Bigg(
+      \sum_{l\pexp{j, k_j}} \frac
+        {\chi( \widetilde Q_{a, j}^{l^{(j, k_j)}})}
+        {\chi(\widetilde R_j)^{f(l\pexp{j, k_j})}} t^{l\pexp{j, k_j}}
+      \Bigg) \\
+    & = \sum_\kappa \Bigg( \sum_{\sum l\pexp{j, k_j} = \kappa} \prod_{j=1}^n
+      \prod_{k_j=1}^{\gamma_j} \frac
+        {\chi(\widetilde Q_{a, j}^{l\pexp{j, k_j}})}
+        {\chi(\widetilde R_j)^{f(l\pexp{j, k_j})}}
+      \Bigg) t^\kappa \\
+    & = \sum_\kappa \frac1{\chi(\widetilde R)^{f(\kappa)}}v
+      \cdot\chi\Biggl(\underbrace{
+        \sum_{\sum l\pexp{j, k_j} = \kappa} \prod_{j=1}^n
+        \Bigl(
+        \widetilde R_j^{f(\kappa) -
+        \smash{\sum\limits_{k_j=1}^{\gamma_j}}f(l\pexp{j, k_j})}
+        \prod_{k_j=1}^{\gamma_j} \widetilde Q_{a, j}^{l\pexp{j, k_j}} 
+        \Bigr)
+        }_{=: \widetilde Q_{a, \gamma}^\kappa}
+      \Biggl) t^\kappa
+      \pmm,
+  \end{align*}
+  en posant $\widetilde R = \prod \widetilde R_j$. Les estimations de degré et
+  de norme de $\widetilde R$ sont immédiates.  On remarque également que
+  $f(\kappa) - \sum_{k_j=1}^{\gamma_j}f(l\pexp{j, k_j})$ est positif, de sorte
+  que $\widetilde Q_{a, \gamma}^\kappa$ est en effet un polynôme. On évalue
+  alors son degré grâce au résultat précédent :
+  \begin{align*}
+    \deg \widetilde Q_{a, \gamma}^\kappa
+    & \le \sum_{j=u}^n \Big(\sum_{k_j = 1}^{\gamma_j} g(l\pexp{j, k_j}) +
+      2(D-1)(f(\kappa) - \smash{\sum\limits_{k_j=1}^{\gamma_j}}f(l^{(j,
+      k_j)})\Big) \\
+    & \le 2(D-1)(n-u)f(\kappa) + \sum_{l\pexp{j, k_j} =0} \!\!1 \\
+    & \le 2(D-1)(n-u)f(\kappa) + \lgr\gamma \pmm,
+  \end{align*}
+  où l'on a utilisé le fait que $g(l) - 2(D-1)f(l)$ vaut $1$ si $l$ est nul et
+  $0$ sinon.
+
+  On procède de même pour la norme. Aux places archimédiennes, on majore le
+  nombre de termes en remarquant que l'ensemble de sommation est le produit des
+  sous-ensembles de $\N^{\lgr\gamma}$ définis par $\sum_{j, k_j} l_i^ {(j, k_j)}
+  = \kappa_i$ pour $i \in \{1,\ldots,n\}$, qui sont chacun de cardinal
+  $\binom{\kappa_i + \lgr\gamma - 1}{\lgr\gamma - 1} \le 2^{\kappa_i +
+    \lgr\gamma - 1}$. On majore ensuite la norme de chaque terme (pour $a =
+  \dv$) par
+  \begin{align*}
+    & \prod_{j=u+1}^n \left( \Onv{\smash{\widetilde R_j}}^{f(\kappa) - \sum
+        f(l\pexp{j, k_j})} \smash{\prod_{\substack{j, k_j \\ j > u}}}
+      \Onv{P_{\dv, j}}^{l\pexp{j, k_j}} \right) \\
+    & \qquad\le \prod_{j=u+1}^n \big( (D^\dv \Onv{f_Z})^{f(\kappa)} \big)
+      \prod_{\substack{j, k_j \\ j > u}}  \big( (\sqrt{4u} D^{1/2})^\dv
+      \big)^{f(l\pexp{j, k_j})} \\
+    & \qquad\le \big( \Onv{f_Z} \cdot (\sqrt{4u}D^{3/2})^\dv
+      \big)^{(n-u)f(\kappa)} \pmm,
+  \end{align*}
+  d'où l'estimation annoncée et le lemme.
+\end{proof}
+
+\begin{lem} \label{l:param}
+  Soit $Z$ une variété projective de degré $D$ et de dimension $u$, définie
+  sur un corps de nombres $\cdn$, plongée de façon adaptée dans $\Proj^n$, dont
+  on note $f_Z$ une forme de \bsc{Chow}. On considère le monomorphisme de
+  paramétrisation $\tau \colon A(\widetilde Z) \to A(U)[[t]]$ (où $\widetilde Z
+  = Z \setminus (X_0)$ et $U$ est un certain ouvert de $Z$) qui applique chaque
+  fonction $f$ sur son développement en série $\sum \partial^\kappa \tilde F \,
+  t^\kappa$.  On note enfin $\chi \colon \cdn[X_0, \ldots, X_n] \to K(Z)$ le
+  morphisme appliquant $X_0$ sur $1$ et $X_i$ sur $w_i$.
+
+  Il existe une forme $R$ homogène de degré $(D-1)(n-u)$ et, pour tout entier
+  $d$, des applications linéaires \begin{equation} \nu_a^\kappa \colon \cdn[X_0, \ldots,
+  X_n]_d \to \cdn[X_0, \ldots, X_n]_{d + (D-1)(n-u)f(\kappa)} \end{equation} telles que,
+  pour toute forme homogène $F$ et toute place $v$ de $\cdn$ :
+  \begin{enumthm}
+    \item $\tau(\chi(F)) = \chi\left( \frac1{X_0^d} \sum\limits_{\kappa \in
+        \N^u} \frac {\nu_a^\kappa(F)} {R^{f(\kappa)}} \, t^\kappa \right)$  ;
+    \item $\Onv{\nu_\dv^\kappa(F)} \le \Onv F \cdot \big( \Onv{f_Z}
+      (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\kappa)} \cdot 2^{\dv (\lgr\kappa +
+        u(d-1))}$ ; \label{i:norme}
+    \item $\Onv R \le (D^\dv \Onv{F_Z})^{n-u}$.
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  On choisit pour $R$ l'homogénéisé de degré $(D-1)(n-u)$ de $\widetilde R$, et
+  on définit $\nu_a^\kappa$ sur les monômes en imposant que l'image de $X^\beta$
+  soit l'homogénéisé de degré adéquat de $Q_{a, \beta}^\kappa$. On applique
+  alors le lemme précédent, en utilisant pour \ref{i:norme} la sous-linéarité de
+  la norme.
+\end{proof}
+
+\subsection{Image par le plongement pondéré} \label{sub:param-wemb}
+
+On souhaite contrôler (degré, hauteur, dénominateurs) une paramétrisation de
+\( \wemb(\var) \) sur un ouvert contenant \( \wemb(\excep) \). On déduit tout
+d'abord du lemme~\ref{l:param} une paramétrisation de $\var$. On reprend les
+notations habituelles (section~\ref{sec:vojta-intro}) concernant \( \var \) et
+les coordonnées multiprojectives.
+
+De plus, on note $\vb_l$ le vecteur dont toutes les coordonnées sont nulles,
+sauf la $l$-ième égale à $1$, et $\vb$ celui dont toutes les coordonnées
+valent $1$. Enfin, quand on écrit un produit de vecteurs, il s'agit du produit
+composante par composante.
+
+\begin{lem} \label{l:par-prod}
+  Sous les hypothèses du lemme~\ref{l:param}, il existe une famille de polynômes
+  $U = (U_1, \ldots, U_m)$ homogènes de degrés respectifs $\deg U_l =
+  (D-1)(n-u_l)\vb_l$, et, pour tout $d \in N^m$, deux applications linéaires
+  \begin{equation}
+    \nu_{m, \dv}^\lambda \colon \cdn[X\pexp 0, \ldots, X\pexp m]_d \to
+    \cdn[X\pexp 0, \ldots, X\pexp m]_{d + (D-1)(n-u_\truc)f(\lambda\pexp\truc)}
+  \end{equation}
+  telles que, pour tout forme $F\in \cdn[X]_d$ et toute place $v$ de $\cdn$ :
+  \begin{enumthm}
+    \item \label{i:repr-prod} $\tau(\chi(F)) =
+      \chi\left( \frac1{X_0^d} \sum_{\lambda \in \cramped{\N^u}}
+      \frac {\nu_{m, \dv}^\lambda(F)} {U^{f(\lambda)}} s^\lambda \right)$ ;
+    \item \label{i:norm-prod} $\Onv{\smash{\nu_{m, \dv}^\lambda(F)}} \le \Onv F
+      \Onv{f_Z}^{2n\lgt\lambda} \bigl(
+      (16uD^3)^{n\lgt{\lambda}} \cdot 2^{u(\lgr d -1)} \bigr)^\dv$ ;
+      % \big(\Onv{f_Z}    (\sqrt{4u}D^{3/2})^\dv \big)^{(n-u)f(\lambda)}
+      % 2^{\dv(\lgt\lambda + u(\lgr d-1)}$ ;
+    \item $\Onv{U_l} \le (D^\dv \Onv{F_Z})^{n-u_l}$.
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  On pose $U_l = R(X\pexp l)$, où $R$ est le polynôme du lemme~\ref{l:param}.
+  On définit ensuite $\nu_{m, \dv}^\lambda$ sur les monômes par $\nu_{m,
+  \dv}^\lambda(\mathfrak m) = \prod_l \nu_\dv^{\lambda\pexp l}(\mathfrak m\pexp
+  l)$, où $\mathfrak m$ est le produit des monômes $\mathfrak m\pexp l$ en les
+  variables $X\pexp l$. On prolonge ensuite par linéarité, on applique alors le
+  lemme~\ref{l:param} qui donne \ref{i:repr-prod} immédiatement. On établit
+  d'abord~\ref{i:norm-prod} pour les monômes (en majorant au passage
+  $f(\lambda\pexp{l}$ par $\lgr{\lambda\pexp l}$), et on conclut par
+  sous-linéarité de la norme.
+\end{proof}
+
+On considère alors le morphisme $\tau \colon A(\widetilde Z) \to
+A(O)[[t\pexp1, \ldots, t\pexp{m}]]$ de paramétrisation de $O$, qui est \og
+représenté \fg{} au sens du lemme~\ref{l:par-prod} par des formes linéaires
+$\nu_{m, \dv}^\kappa = \prod_{i=1}^m \nu_\dv^\kappa$, pour $O$ un ouvert
+convenable. On souhaite contrôler de même le morphisme composé
+\begin{equation}
+  \Omega_a \colon A(\phi_a(Z)) \to A(Z) \to A(O)[[t\pexp1,
+  \ldots, t\pexp m]] \pmm,
+\end{equation}
+où le premier est le morphisme d'anneaux naturellement associé à $\phi_a$.
+
+Soit $F$ une forme multihomogène de degré $(\alpha_1, \ldots, \alpha_m,
+\beta_1, \ldots, \beta_{m-1})$. Le degré de son image par \( \wemba \) est
+donné par le lemme~\ref{l:deg-wemba}. De la même façon, on majore ses normes
+locales par :
+\begin{align*}
+  \Onv{\Psi_a(F)}
+  & \le \Onv F \prod_{j=1}^{m-1} \Onnv{S^-(Q^{a_j}, \truc)}^{\beta_j} \\
+  & \le \Onv F \prod_{j=1}^{m-1} \left( \Onnv{S^-} \Onnv{Q^{a_j}}^2
+    \right)^{\beta_j} \\
+  & \le ((4^g(n+1))^\dv \Onv\vai)^{\lgr\beta} \cdot (4^g(n+1))^{\dv\sum(a_j^2
+      -1)\beta_j} \Onv\vai^{2\sum(a_j^2-1)\beta_j} \\
+  & \le \Onv F \Onv\vai^{\lgr\beta + 2\sum(a_j^2-1)\beta_j} \cdot
+    (4^g(n+1))^{\dv(\lgr\beta + \sum(a_j^2-1)\beta_j)} \pmm.
+\end{align*}
+
+On a alors immédiatement le résultat suivant.
+
+\begin{lem} \label{l:par-img}
+  Dans les hypothèses et notations du lemme~\ref{l:par-prod}, considérons une
+  forme $G \in \cdn[X, Y]$ multihomogène de degré $(\alpha, \beta)$. On pose
+  \begin{equation} d = (\alpha_1 + 9/4 \beta_1 a_1^2, \ldots,
+  \alpha_{m-1} + 9/4 \beta_{m-1} a_{m-1}^2, \alpha_m +2\lgr\beta) \pmm. \end{equation}
+  Il existe alors des polynômes homogènes $V^\lambda_\dv(G)$ tels que :
+  \begin{enumthm}
+    \item $\deg_i(V_\dv^\lambda(G)) = d_i + (D-1)(n-u_i)f(\lambda\pexp i)$ ;
+    \item $\Onv{V_\dv^\lambda(G)} \le \Onv G \Onv\vai ^{\lgr\beta + 2\sum
+      (a_j^2-1)\beta_j} \Onv{f_Z}^{2n\lgt\lambda} \\ \null\qquad \cdot
+      \Big( \big(4^g 2^{9u/4}(n+1)\big)^{\lgr\beta + \sum(a_j^2-1)\beta_j}
+      \cdot (16uD^3)^{n\lgt\lambda} \cdot 2^{u(\lgr d -1)}
+      \Big)^\dv$ ;
+    \item $\Omega_a(\chi(G)) =\chi \left( \frac1{X_0^d} \sum_{\lambda \in \N^u}
+      \frac {V_\dv^\lambda(G)} {U^{f(\lambda)}} \right)$,
+  \end{enumthm}
+  où $U$ est la famille de polynômes du lemme~\ref{l:par-prod}.
+\end{lem}
+
+\begin{proof}
+  Il suffit d'appliquer le lemme~\ref{l:par-prod} à $\Psi_a(G)$.
+\end{proof}
+
+\endinput
+
+% vim: spell spelllang=fr
