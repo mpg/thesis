@@ -611,10 +611,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % helper macros [[
 \newc@star@deftwo@i \smp {\fct}{\ind} {\smp@{#1}{#2}{#3}}
 \newcommand*\smp@ [3] {%
-  \@ifmtarg{#2}{\underline}{}{%
-    \@ifmtarg{#3}{\boldsymbol}{}{
-      #1}}%
+  \@ifnotmtarg{#1}{%
+    \@ifmtarg{#2}{\underline}{}{%
+      \@ifmtarg{#3}{\boldsymbol}{}{
+        #1}}}%
   \pexp{#2}[#3]}
+\newcommand \mexp {\smp{}}
 % ]]
 
 \newc@ifstar\puiss    {m} {m-1}
@@ -625,12 +627,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \fctrange  {_{\fct =1}^\puiss}
 \noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
 
-\newcommand*\cmh  [1] {X\pexp{#1}}
-\newcommand \cmmh     {\boldsymbol X}
-
 \newcommand \pmp {x}
 \newcommand \cmp {\smp x}
 \newcommand \vmp {\smp X}
+
+\newcommand*\cmh  [1] {\vmp[#1]} % XXX
+\newcommand \cmmh     {\vmp\relax} % XXX
 
 \newcommand \imp {\smp \lambda}
 \nomg{lambda}{\lambda}{Un indice multiprojectif, dans
@@ -717,20 +719,18 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
-\newc@star@default \mexp    [2][2]{\fct }{\puiss } {\pexp{#1}[#2]}
-\newc@star@default \mexpi   [2][2]{\fcti}{\puiss*} {\pexp{#1}[#2]}
-
 % weighted embedding [[2
 %
+\newc@star@deftwo@i \smpi {\fcti}{\ind} {\smp@{#1}{#2}{#3}}
+\newcommand \mexpi {\smpi{}}
+
 \newcommand \fcti      {j}
 \newcommand \fctirange {_{\fcti=1}^\puiss*}
-\newc@star@deftwo@i \smpi {\fcti}{\ind} {\smp@{#1}{#2}{#3}}
 \noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
 
-\newcommand*\cmhi [1] {Y\pexp{#1}}
-\newcommand \cmmhi    {\boldsymbol Y}
-
 \newcommand \vmpi {\smpi Y}
+\newcommand*\cmhi [1] {\vmpi[#1]} % XXX
+\newcommand \cmmhi    {\vmpi\relax} % XXX
 
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
 \newcommand*\wemba [1][\wt] {\psi\ssub{#1}}

@@ -18,21 +18,21 @@ On considère $\puiss$ un entier positif, et $(\proj\dimp)^\puiss$ l'espace
 multiprojectif associé à l'anneau multigradué
 \begin{math}
   \cdn [
-    \cmh1[0], \dots, \cmh1[\dimp];
+    \vmp[1][0], \dots, \vmp[1][\dimp];
     \dots;
-    \cmh\puiss[0], \dots \cmh\puiss[\dimp]
+    \vmp[\puiss][0], \dots \vmp[\puiss][\dimp]
   ]
   =
-  \cdn [ \cmh1, \dots, \cmh\puiss ]
+  \cdn [ \vmp[1], \dots, \vmp[\puiss] ]
   =
-  \cdn [ \cmmh ]
+  \cdn [ \vmp ]
 \end{math}.
 On s'intéresse à une sous-variété produit de $\va^\puiss$ plongée dans
 $(\proj\dimp)^\puiss$, notée
 \begin{math}
   \var = \var[1] \times \dots \times \var[\puiss]
 \end{math}
-et dont aucun facteur n'est contenu dans un hyperplan d'équation $\cmh*0 = 0$.
+et dont aucun facteur n'est contenu dans un hyperplan d'équation $\vmp*0 = 0$.
 On notera en outre $\vdim* = \dim \var*$ et $\vdim = (\vdim*)_\fct$ puis
 $\vdeg* = \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On
 note enfin $\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux
@@ -112,7 +112,7 @@ désignera une famille d'entiers.
 
   On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
   dans son facteur $\proj\dimp$. Ceci implique que
-  $\varfc*(\cmh*0, \dots,\cmh*{\vdim*})$
+  $\varfc*(\vmp*0, \dots,\vmp*[\vdim*])$
   est non nul pour tout $\fct$ ; on normalisera donc notre choix de $\varfc*$
   (qui est unique à une constante multiplicative près) en imposant que cette
   quantité vaille $1$.
@@ -167,8 +167,8 @@ $\wt$, défini par
 \end{align}
 
 On munit l'espace d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées
-multihomogènes $\cmmh, \cmmhi = \cmh1, \dots, \cmh\puiss, \cmhi1,
-\cmhi{\puiss-1}$ ; dans ce contexte quand $i$ et $j$ sont deux indices non
+multihomogènes $\vmp, \vmpi = \vmp[1], \dots, \vmp[\puiss], \vmpi[1],
+\vmpi[\puiss*]$ ; dans ce contexte quand $i$ et $j$ sont deux indices non
 précisés, on supposera implicitement $1 \le i \le \puiss$ et $1 \le j \le
 \puiss-1$.
 
@@ -180,22 +180,22 @@ lequel il existe des polynômes représentant
 $\wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1}$.
 Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
 \begin{align}
-  \wemba \colon \cdn [\cmmh, \cmmhi] & \to \cdn[\cmmh] \\
-  \cmh{i} & \mapsto \cmh{i} \\
-  \cmhi{j} & \mapsto S^{-}(Q_{\wt[j]}(\cmh{j}, \cmh{\puiss}))
+  \wemba \colon \cdn [\vmp, \vmpi] & \to \cdn[\vmp] \\
+  \vmp* & \mapsto \vmp* \\
+  \vmpi* & \mapsto S^{-}(Q_{\wt[j]}(\vmp[\fcti], \vmp[\puiss]))
 \end{align}
 tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute :
 \begin{equation}
   \xymatrix{
-    \cdn [\cmmh, \cmmhi]
+    \cdn [\vmp, \vmpi]
     \ar[r] ^{\wemba}
     \ar[d]
-    & \cdn [\cmmh]
+    & \cdn [\vmp]
     \ar[d]
-    \\ \cdn [\cmmh, \cmmhi] / \ideal{\wemb(\var)}
+    \\ \cdn [\vmp, \vmpi] / \ideal{\wemb(\var)}
     \ar[r] ^{\wemb*}
-    & ( \cdn [\cmmh] / \varid )_\opdef
+    & ( \cdn [\vmp] / \varid )_\opdef
   }
 \end{equation}
 On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
@@ -208,7 +208,7 @@ immédiatement le résultat suivant.
 
 \begin{lem} \label{l:deg-wemba}
   Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
-  \Qbar[\cmmh, \cmmhi]$ une forme multihomogène de multidegré $(\alpha,
+  \Qbar[\vmp, \vmpi]$ une forme multihomogène de multidegré $(\alpha,
   \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
   \begin{equation}
     \deg \wemba(F)
