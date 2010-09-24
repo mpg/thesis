@@ -579,10 +579,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % projective indices and coordinates [[2
 %
-% helper macro [[
-\newcommandx \newc@hom [4][3=\ind, 4=\dimp] {%
-  \newc@star@default #1{#3}{\dimp} {%
-    \@ifmtarg{##1}{\boldsymbol}{}#2}}
+% helper macros [[
+\newc@star@default@i \gp {\ind}{\dimp} {\gp@{#1}{#2}}
+\newcommand*\gp@ [2] {%
+  \@ifmtarg{#2}{\boldsymbol}{}{#1}\ssub{#2}}
 % ]]
 
 \newcommand \ind      {k}
@@ -595,8 +595,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand*\ch   [1] {X\ssub{#1}}
 
 \newcommand*\pp {x}
-\newc@hom   \cp {x}
-\newc@hom   \vp {X}
+\newcommand \cp {\gp x}
+\newcommand \vp {\gp X}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \noms{n}{\lgr\PH}{Longueur du multiindice \PH}
@@ -609,14 +609,14 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % multiprojective indices and coordinates [[2
 %
 % helper macros [[
-\newc@star@deftwo@i \smp {\fct}{\ind} {\smp@{#1}{#2}{#3}}
-\newcommand*\smp@ [3] {%
+\newc@star@deftwo@i \gmp {\fct}{\ind} {\gmp@{#1}{#2}{#3}}
+\newcommand*\gmp@ [3] {%
   \@ifnotmtarg{#1}{%
     \@ifmtarg{#2}{\underline}{}{%
       \@ifmtarg{#3}{\boldsymbol}{}{
         #1}}}%
   \pexp{#2}[#3]}
-\newcommand \mexp {\smp{}}
+\newcommand \mexp {\gmp{}}
 % ]]
 
 \newc@ifstar\puiss    {m} {m-1}
@@ -628,13 +628,13 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
 
 \newcommand \pmp {x}
-\newcommand \cmp {\smp x}
-\newcommand \vmp {\smp X}
+\newcommand \cmp {\gmp x}
+\newcommand \vmp {\gmp X}
 
 \newcommand*\cmh  [1] {\vmp[#1]} % XXX
 \newcommand \cmmh     {\vmp\relax} % XXX
 
-\newcommand \imp {\smp \lambda}
+\newcommand \imp {\gmp \lambda}
 \nomg{lambda}{\lambda}{Un indice multiprojectif, dans
   \( \bigl( \N^{\dimp + 1} \bigr)^\puiss \)}
 
@@ -721,7 +721,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % weighted embedding [[2
 %
-\newc@star@deftwo@i \smpi {\fcti}{\ind} {\smp@{#1}{#2}{#3}}
+\newc@star@deftwo@i \smpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
 \newcommand \mexpi {\smpi{}}
 
 \newcommand \fcti      {j}
