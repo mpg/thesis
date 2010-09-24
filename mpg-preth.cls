@@ -237,13 +237,15 @@
 % helpers for math macros [[1
 % -----------------------
 
-% special optional arguments for indices: [[2
+% special optional arguments for indices [[2
 %
+
+% One special optional argument
 % - by default, empty
 % - normal []-notation available
 % - *-form yields a default non-empty value
 %
-% \newcs@start@default <name> <arg. nb.> [opt. arg. spec (using xargs]
+% \newcs@start@default <name> [arg. nb.] [opt. arg. spec (using xargs]
 %                             <2nd default> <3rd one> <repl. text>
 \newcommand*\newc@star@default[1]{%
   \expandafter\newc@star@default@
@@ -251,6 +253,21 @@
 \newcommandx*\newc@star@default@[7][3=1,4]{%
   \newcommandx*#1[#3][1,#4]{#7\egroup}%
   \newcommand*#2{\bgroup \@ifstar{\@ifstar{#1[#6]}{#1[#5]}}{#1}}}
+
+% Two special optional arguments
+% - by default, both empty
+% - normal []-notation available
+% - *-form yields a default non-empty value,
+%   for each arg if there is two stars
+%
+% \newcs@start@deftwo <name> [arg. nb.] [opt. arg. spec (using xargs]
+%                             <default #1> <default #2> <repl. text>
+\newcommand*\newc@star@deftwo[1]{%
+  \expandafter\newc@star@deftwo@
+  \csname \cmdstring#1 \endcsname#1}
+\newcommandx*\newc@star@deftwo@[7][3=2,4]{%
+  \newcommandx*#1[#3][1,2,#4]{#7\egroup}%
+  \newcommand*#2{\bgroup \@ifstar{\@ifstar{#1[#5][#6]}{#1[#5]}}{#1}}}
 
 % coma-seperated list with possibly empty elements [[2
 %
@@ -544,7 +561,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{b}     {\coi} {Vecteur dont les composantes sont les inverses de
   composantes de $\coa$ bien choisies}
 
-% (multi)projective indices and coordinates [[2
+% projective indices and coordinates [[2
 %
 \newc@ifstar\puiss    {m} {m-1}
 \newcommand \fct      {i}
@@ -583,6 +600,17 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand*\maxbin [1] {m(#1)}
 \noma{N}{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
 \noma{m}{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
+
+% multiprojective indices and coordinates [[2
+%
+\newcommandx \newc@multihom [4][3=\fct, 4=\ind] {%
+  \newc@star@deftwo #1{#3}{#4} {%
+    \@ifmtarg{##1}{\underline}{}{%
+      \@ifmtarg{##2}{\boldsymbol}{}%
+      #2}%
+    \pexp{##1}[##2]%
+  }%
+}%
 
 % points and coordinates [[2
 %
@@ -637,6 +665,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % Vojta-specific math [[1
 % -------------------
+
+% more multiprojective stuff [[2
+%
 
 % general situation [[2
 %
