@@ -240,19 +240,29 @@
 % special optional arguments for indices [[2
 %
 
-% One special optional argument
+% One special optional argument [[3
 % - by default, empty
 % - normal []-notation available
 % - *-form yields a default non-empty value
 %
 % \newcs@start@default <name> [arg. nb.] [opt. arg. spec (using xargs]
 %                             <2nd default> <3rd one> <repl. text>
+\newcommand*\star@default@parser[3]{%
+  \@ifstar{\@ifstar{#1[#3]}{#1[#2]}}{#1}}
+
+% special argument first
 \newcommand*\newc@star@default[1]{%
-  \expandafter\newc@star@default@
-  \csname \cmdstring#1 \endcsname#1}
+  \expandafter\newc@star@default@ \csname\cmdstring#1 \endcsname#1}
 \newcommandx*\newc@star@default@[7][3=1,4]{%
   \newcommandx*#1[#3][1,#4]{#7\egroup}%
-  \newcommand*#2{\bgroup \@ifstar{\@ifstar{#1[#6]}{#1[#5]}}{#1}}}
+  \newcommand*#2{\bgroup \star@default@parser{#1}{#5}{#6}}}
+
+% one mandatory argument first
+\newcommand*\newc@star@default@i[1]{%
+  \expandafter\newc@star@default@i@ \csname\cmdstring#1 \endcsname#1}
+\newcommandx*\newc@star@default@i@[7][3=2,4]{%
+  \newcommandx*#1[#3][2,#4]{#7\egroup}%
+  \newcommand*#2[1]{\bgroup \star@default@parser{#1{##1}}{#5}{#6}}}
 
 % Two special optional arguments
 % - by default, both empty
@@ -262,17 +272,22 @@
 %
 % \newcs@start@deftwo <name> [arg. nb.] [opt. arg. spec (using xargs]
 %                             <default #1> <default #2> <repl. text>
+\newcommand\star@deftwo@parser[3]{%
+  \@ifstar{\@ifstar{#1[#2][#3]}{#1[#2]}}{#1}}
+
+% optional arguments first
 \newcommand*\newc@star@deftwo[1]{%
-  \expandafter\newc@star@deftwo@
-  \csname \cmdstring#1 \endcsname#1}
+  \expandafter\newc@star@deftwo@ \csname\cmdstring#1 \endcsname#1}
 \newcommandx*\newc@star@deftwo@[7][3=2,4]{%
   \newcommandx*#1[#3][1,2,#4]{#7\egroup}%
-  \newcommand*#2{\bgroup \@ifstar{\@ifstar{#1[#5][#6]}{#1[#5]}}{#1}}}
+  \newcommand*#2{\bgroup \star@deftwo@parser{#1}{#5}{#6}}}
 
-% coma-seperated list with possibly empty elements [[2
-%
-\newcommand*\sfirst [1] {\@ifnomtarg{#1}{#1,}}
-\newcommand*\slast  [1] {\@ifnomtarg{#1}{,#1}}
+% one mandatory argument first
+\newcommand*\newc@star@deftwo@i[1]{%
+  \expandafter\newc@star@deftwo@i@ \csname\cmdstring#1 \endcsname#1}
+\newcommandx*\newc@star@deftwo@i@[7][3=3,4]{%
+  \newcommandx*#1[#3][2,3,#4]{#7\egroup}%
+  \newcommand*#2[1]{\bgroup \star@deftwo@parser{#1{##1}}{#5}{#6}}}
 
 % su{b,per}script-friendly starred macros [[2
 %
@@ -280,6 +295,11 @@
   \newcommand#1{\bgroup\@ifstar{#3\egroup} {#2\egroup}}}
 \newcommand*\newc@ifstar@two [4] {%
   \newcommand#1{\bgroup\@ifstar{\@ifstar{#4\egroup}{#3\egroup}} {#2\egroup}}}
+
+% coma-seperated list with possibly empty elements [[2
+%
+\newcommand*\sfirst [1] {\@ifnomtarg{#1}{#1,}}
+\newcommand*\slast  [1] {\@ifnomtarg{#1}{,#1}}
 
 % non thesis-specific math [[1
 % ------------------------
@@ -559,11 +579,24 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % projective indices and coordinates [[2
 %
+% helper macro [[
+\newcommandx \newc@hom [4][3=\ind, 4=\dimp] {%
+  \newc@star@default #1{#3}{\dimp} {%
+    \@ifmtarg{##1}{\boldsymbol}{}#2}}
+% ]]
+
 \newcommand \ind      {k}
+\newcommand \indi     {l}
 \newcommand \indrange  {_{\ind =0}^\dimp}
+\newcommand \indirange {_{\indi=0}^\dimp}
 \noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
+\noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
 \newcommand*\ch   [1] {X\ssub{#1}}
+
+\newcommand*\pp {x}
+\newc@hom   \cp {x}
+\newc@hom   \vp {X}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \noms{n}{\lgr\PH}{Longueur du multiindice \PH}
@@ -575,19 +608,18 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % multiprojective indices and coordinates [[2
 %
-% helper macro [[
-\newcommandx \newc@multihom [4][3=\fct, 4=\ind] {%
-  \newc@star@deftwo #1{#3}{#4} {%
-    \@ifmtarg{##1}{\underline}{}{%
-      \@ifmtarg{##2}{\boldsymbol}{}%
-      #2}%
-    \pexp{##1}[##2]%
-  }%
-}% ]]
+% helper macros [[
+\newc@star@deftwo@i \smp {\fct}{\ind} {\smp@{#1}{#2}{#3}}
+\newcommand*\smp@ [3] {%
+  \@ifmtarg{#2}{\underline}{}{%
+    \@ifmtarg{#3}{\boldsymbol}{}{
+      #1}}%
+  \pexp{#2}[#3]}
+% ]]
 
 \newc@ifstar\puiss    {m} {m-1}
 \noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
-  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
+  donc aussi la puissance de $\va$ dans laquelle on travaille.}
 
 \newcommand \fct      {i}
 \newcommand \fctrange  {_{\fct =1}^\puiss}
@@ -595,6 +627,14 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand*\cmh  [1] {X\pexp{#1}}
 \newcommand \cmmh     {\boldsymbol X}
+
+\newcommand \pmp {x}
+\newcommand \cmp {\smp x}
+\newcommand \vmp {\smp X}
+
+\newcommand \imp {\smp \lambda}
+\nomg{lambda}{\lambda}{Un indice multiprojectif, dans
+  \( \bigl( \N^{\dimp + 1} \bigr)^\puiss \)}
 
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
@@ -604,7 +644,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % points and coordinates [[2
 %
-\newcommand*\p [1] {{\boldsymbol{#1}}} % point % FIXME
+% FIXME:
+% - used inconsistently
+% - obsolete macros (use \pp, \cp; \pmp, \cmp instead)
+\newcommand*\p [1] {{\boldsymbol{#1}}}
 
 \newcommand \point   {x}
 \newcommand \pointi  {y}
@@ -657,22 +700,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % Vojta-specific math [[1
 % -------------------
 
-% more multiprojective stuff [[2
-%
-\newcommand \fcti     {j}
-\newcommand \indi     {l}
-\newcommand \fctirange {_{\fcti=1}^\puiss*}
-\newcommand \indirange {_{\indi=0}^\dimp}
-\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
-\noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
-
-\newcommand*\cmhi [1] {Y\pexp{#1}}
-\newcommand \cmmhi    {\boldsymbol Y}
-
 % general situation [[2
 %
 \newcommand \divi {E}
-\noma{E}{\divi}{Le diviseur dont on étudie les approximatons exceptionnelles}
+\noma{E}{\divi}{Le diviseur dont on étudie les approximations exceptionnelles}
 
 \newc@star@default \excep   {\fct }{\puiss } {e\ssub{#1}}
 \newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
@@ -682,19 +713,25 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
-% \wt isn't used consistently :/
+% FIXME: \wt isn't used consistently
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
 \newc@star@default \mexp    [2][2]{\fct }{\puiss } {\pexp{#1}[#2]}
 \newc@star@default \mexpi   [2][2]{\fcti}{\puiss*} {\pexp{#1}[#2]}
 
-\newcommand        \coeff {\lambda\mexp}
-\nomg{lambda}{\lambda}{Un multimultiindice, en général élément de
-  \( \bigl( \N^{\dimp + 1} \bigr)^\puiss \)}
-
 % weighted embedding [[2
 %
+\newcommand \fcti      {j}
+\newcommand \fctirange {_{\fcti=1}^\puiss*}
+\newc@star@deftwo@i \smpi {\fcti}{\ind} {\smp@{#1}{#2}{#3}}
+\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
+
+\newcommand*\cmhi [1] {Y\pexp{#1}}
+\newcommand \cmmhi    {\boldsymbol Y}
+
+\newcommand \vmpi {\smpi Y}
+
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
 \newcommand*\wemba [1][\wt] {\psi\ssub{#1}}
 
@@ -717,18 +754,19 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
 % various (degree) conditions for subsets in lemmas
-\newcommand \Di   { {\delta d} }
+\newcommand \Dz   { {\delta d} }
+\newcommand \Di   { {\delta d'} }
 \newcommand \Dii  { {\delta d'} }
-\newc@ifstar\Diii {\delta d'_\fct + r\fct} {\delta d' + r}
-\newcommand \Ci   { _\Dii  ^{C'}   }
+\newc@ifstar\Diii {\delta d'_\fct + r_\fct} {\delta d' + r}
+\newcommand \Ci   { _\Di   ^{C'}   }
 \newcommand \Cii  { _\Dii  ^{C''}  }
 \newcommand \Ciii { _\Diii ^{C'''} }
 
 % weight sum of \lamda in the definition of \stairs
 \newcommand \sumwtlambda {
-  \frac {\coeff[1][0]} {\wt[1]^2} + \dots
-  + \frac {\coeff[\puiss-1][0]} {\wt[\puiss-1]^2}
-  + \frac {\coeff[\puiss][0]} {\puiss-1} }
+  \frac {\imp[1][0]} {\wt[1]^2} + \dots
+  + \frac {\imp[\puiss-1][0]} {\wt[\puiss-1]^2}
+  + \frac {\imp[\puiss][0]} {\puiss-1} }
 
 % the product sub-variety considered and its attributes [[2
 %
@@ -752,10 +790,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % misc (ok) [[2
 %
-\newcommand \rdiv  {{ \rho_{\text{\normalfont div}} }}
-\newcommand \relim {{ \rho_{\text{\normalfont elim}} }}
+\newcommand \rdiv  { \rho_{\mathrm{div }} }
+\newcommand \relim { \rho_{\mathrm{elim}} }
 
-\nomg{rho}{\rdiv}{Morphimse de réduction par division dans la construction de
+\nomg{rho}{\rdiv}{Morphisme de réduction par division dans la construction de
   la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
 \nomg{rho}{\relim}{Morphisme de réduction par élimination de variables dans le
   construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
@@ -820,4 +858,4 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
   demi-arête \PH centré en l'origine}
 
 % [[1
-% vim: ft=tex fdm=marker fmr=[[,]] fdl=1
+% vim: ft=tex fdm=marker fmr=[[,]] fdl=1 spell spelllang=fr,en

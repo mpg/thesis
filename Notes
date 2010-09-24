@@ -80,6 +80,9 @@ Consistance interne et avec le reste : commencer par faire une liste ici.
 Noter ci-dessous les divergences observées, qui seront traitées une par une
 tranquillement.
 
+gras et souligné pour les trucs multihomogènes
+    l:hmat-wemba (avant, énoncé et preuve) : p, q (\fcti) et s pas bons
+
 Unifier les indices :
 - i et j en haut (de 1 à m ou m-1)
 - k et l en bas (de 0 à n)

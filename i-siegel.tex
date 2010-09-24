@@ -13,12 +13,12 @@ paramètres, voir~\ref{e:def-epsii}.
 On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
 \begin{equation}
   \stairs = \left\{
-    (\coeff[1], \dots, \coeff[\puiss]) \in \N^{m(n+1)}
+    (\imp[1], \dots, \imp[\puiss]) \in \N^{m(n+1)}
     \text{ tels que }
-    \frac {\coeff[1][0]} {\wts[1]}
+    \frac {\imp[1][0]} {\wts[1]}
     + \dots +
-    \frac {\coeff[\puiss-1][0]} {\wts[\puiss-1]}
-    \frac {\coeff[\puiss][0]} {\puiss-1}
+    \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
+    \frac {\imp[\puiss][0]} {\puiss-1}
     \le \epsi \delta
     \right\}
   \pmm,
@@ -151,7 +151,7 @@ et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
-    \Ideal_\Di
+    \Ideal_\Dz
     \ar[r] ^{\wemba}
     \ar[d] _{\sim}
     & \cdn [\cmmh]_\Dii
@@ -345,7 +345,7 @@ suivant :
   (\stairs)\Ciii
   & =
   \Biggl\{
-    ( \coeff[1], \dots \coeff[\puiss] )
+    ( \imp[1], \dots \imp[\puiss] )
     \in
     \prod\fctrange \bigl(
       \N^{\vdim* + 1}
@@ -356,7 +356,7 @@ suivant :
     \sumwtlambda
     \le \epsi \delta
     \\ & \quad \text{et }
-    \lgr{\coeff*}
+    \lgr{\imp*}
     = \delta d' + r \quad \forall \fct
   \Biggr\}
   \pmm,
@@ -385,11 +385,11 @@ dans \( (\stairs)\Ciii \).
 
 \begin{proof}
   Pour choisir un point dans \( (\stairs)\Ciii \), on peut commencer par
-  choisir \( \coeff*[\vdim*] \) entre \( 0 \) et \( \vdeg* \)
+  choisir \( \imp*[\vdim*] \) entre \( 0 \) et \( \vdeg* \)
   pour tout \( \fct \), ce qui représente \( \prod\fctrange \vdeg* \)
   possibilités.
 
-  On peut ensuite choisir \( \coeff[1][0], \dots \coeff[\puiss][0] \)
+  On peut ensuite choisir \( \imp[1][0], \dots \imp[\puiss][0] \)
   sujets à la seule condition
   \begin{equation}
     \sumwtlambda \le \epsi \delta \pmm.
@@ -405,19 +405,19 @@ dans \( (\stairs)\Ciii \).
   Il reste alors à choisir pour tout \( \fct \) un élément de l'ensemble
   \begin{equation}
     \left\{
-      (\coeff*[1],  \dots, \coeff*[\vdim*])
+      (\imp*[1],  \dots, \imp*[\vdim*])
       \in \N ^{\vdim*}
       \text{ tels que }
-      \sum_{j=1}^{\vdim*} \coeff*[j]
+      \sum_{j=1}^{\vdim*} \imp*[j]
       =
-      \delta d'_\fct + r_\fct - \coeff*[0] - \coeff*[\vdim*]
+      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*]
     \right\}
     \pmm,
   \end{equation}
   qui est de cardinal
   \begin{align}
     \binom {
-      \delta d'_\fct + r_\fct - \coeff*[0] - \coeff*[\vdim*] - 1
+      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*] - 1
       }{
       \vdim* - 1
       }
@@ -478,7 +478,7 @@ par le morphisme \( \wemba \) qui est déjà bien défini.
 On va en fait étudier le prolongement
 \begin{equation}
   \wemba \colon
-  \cdn [\cmmh, \cmmhi]_\Di
+  \cdn [\cmmh, \cmmhi]_\Dz
   \to
   \cdn [\cmmh]_\Dii
 \end{equation}
@@ -488,7 +488,7 @@ est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
   (p, q)
   \in \N^{\puiss(\dimp + 1)} \times \N^{(\puiss - 1) (\dimp - 1)}
   \text{ tel que }
-  \lgr{p\mexp*} = \Di* \lgr{q\mexpi*} = \Di[\puiss + \fcti]
+  \lgr{p\mexp*} = \Dz* \lgr{q\mexpi*} = \Dz[\puiss + \fcti]
   \pmm,
 \end{equation}
 où \( d \) est défini par~\refeq{e:def-d}.
@@ -497,7 +497,7 @@ où \( d \) est défini par~\refeq{e:def-d}.
   Avec les notations précédentes, l'application linéaire
   \begin{equation}
     \wemba \colon
-    \cdn [\cmmh, \cmmhi]_\Di
+    \cdn [\cmmh, \cmmhi]_\Dz
     \to
     \cdn [\cmmh]_\Dii
   \end{equation}
@@ -718,10 +718,10 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 
   De plus, on peut prendre
   \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
-  ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^\relim \) de la
+    ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^{\relim} \) de la
   matrice de \( \relim \) dans la base canonique satisfont alors
   \begin{equation}
-    \nv1{ c_q^\relim }
+    \nv1{ c_q^{\relim} }
     \le
     \prod\fctrange N_\fct^{\Delta_\fct}
   \end{equation}
@@ -849,22 +849,22 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   indexées par l'ensemble des multiindices
   \begin{equation}
     \left\{
-      \coeff \in \prod\fctrange \bigl(
+      \imp \in \prod\fctrange \bigl(
       \N^{\vdim* + 1}
       \times \{ 0, \dots, \vdeg* - 1 \}
       \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
       \middle\|
-      \sum\indrange \coeff*[\ind] = \Diii
+      \sum\indrange \imp** = \Diii
       \right\}
     \pmm.
   \end{equation}
   On extrait les lignes dont l'indice appartient à l'ensemble
   \( (\stairs)\Ciii \) définit par~\eqref{e:stairs-c3} pour former la matrice
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
-  multidegré \( \Di \) en \( (\cmmh, \cmmhi) \). On extrait alors de
+  multidegré \( \Dz \) en \( (\cmmh, \cmmhi) \). On extrait alors de
   \( M' \) les colonnes indexées par les monômes constituant la base choisie
-  de \( \Ideal_\Di \) pour former la matrice \( M \) à laquelle nous allons
+  de \( \Ideal_\Dz \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
 
   L'hypothèse faite sur \( \epsii \) et la relation~\eqref{e:good-codim}
