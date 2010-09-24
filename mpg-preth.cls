@@ -646,11 +646,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % points and coordinates [[2
 %
-% FIXME:
-% - used inconsistently
-% - obsolete macros (use \pp, \cp; \pmp, \cmp instead)
+% FIXME: used inconsistently
 \newcommand*\p [1] {{\boldsymbol{#1}}}
 
+% XXX use \pp, \cp; \pmp, \cmp instead
 \newcommand \point   {x}
 \newcommand \pointi  {y}
 \newcommand \pointii {z}
@@ -715,7 +714,6 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
-% FIXME: \wt isn't used consistently
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
@@ -843,9 +841,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % Parametrisation [[2
 %
-\newcommand \param  {t}
+\newcommand \param  {\gmp t}
 \newcommand \pden   {R} %FIXME
 \newcommand \forme  {F} %FIXME
+\newcommand \expo   {\gmp\kappa}
 
 % unsorted math stuff [[1
 % -------------------

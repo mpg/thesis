@@ -25,7 +25,7 @@ allons expliciter un morphisme \( \tilde\tau \) faisant commuter le diagramme
 \begin{equation}
   \xymatrix{%
     \cdn [\cmmh]
-    % <>(.42) adujsts the location of the label between nodes
+    % <>(.42) adjusts the location of the label between nodes
     \ar[r] ^<>(.42){\tau}
     \ar[d]
     & \cdn [\cmmh] [\pden^{-1}] \llbrack\param\rrbrack
@@ -35,29 +35,29 @@ allons expliciter un morphisme \( \tilde\tau \) faisant commuter le diagramme
     & \left( \cdn [\cmmh] / \varid \right) [\pden^{-1}] \llbrack\param\rrbrack
   }
 \end{equation}
-et, pour tout \( \kappa \in \N^{\puiss\dimp**} \), des applications linéaires
-\( \Delta^\kappa \) et \( \Gamma^\kappa \) de \( \cdn [\cmmh] \) dans lui-même
+et, pour tout \( \expo \in \N^{\puiss\dimp**} \), des applications linéaires
+\( \Delta^\expo \) et \( \Gamma^\expo \) de \( \cdn [\cmmh] \) dans lui-même
 telles que
 \begin{equation}
   \tilde\tau(\forme)
   =
-  \sum_{ \kappa \in \N^{\puiss\dimp**} }
-  \frac{ \Delta^\kappa(\forme) }{ \Gamma^\kappa(\forme) }
-  \param^\kappa
+  \sum_{ \expo \in \N^{\puiss\dimp**} }
+  \frac{ \Delta^\expo(\forme) }{ \Gamma^\expo(\forme) }
+  \param^\expo
   \pmm.
 \end{equation}
-Notons que \( \Delta^\kappa / \Gamma^\kappa \) est donc une dérivation d'ordre
-\( \kappa \).
+Notons que \( \Delta^\expo / \Gamma^\expo \) est donc une dérivation d'ordre
+\( \expo \).
 
 Concrètement, soit \( \forme \) une forme multihomogène sur \( \var \) et
 \( \tilde\forme \) la fonction rationnelle obtenue en la déshomogénéisant
-d'une façon que l'on précisera en même temps que \( \opdef \), et \( \point
-  \in \opdef \) de coordonnées homogènes \( \coord \). Alors
-\( \tilde\tau(\forme)(\coord) \), c'est-à-dire la série de terme général
-\( \Delta^\kappa(\forme)(\coord) / \Gamma^\kappa(\forme)(\coord) \),
+d'une façon que l'on précisera en même temps que \( \opdef \), et \( \pmp
+  \in \opdef \) de coordonnées homogènes \( \cmp \). Alors
+\( \tilde\tau(\forme)(\cmp) \), c'est-à-dire la série de terme général
+\( \Delta^\expo(\forme)(\cmp) / \Gamma^\expo(\forme)(\cmp) \),
 est bien définie (le terme général est une expression homogène de degré \( 0 \)
-en \( \coord \)) et est le développement en série de \( \tilde\forme \) au
-point \( \point \).
+en \( \cmp \)) et est le développement en série de \( \tilde\forme \) au
+point \( \pmp \).
 
 \endinput
 

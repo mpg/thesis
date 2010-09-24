@@ -101,8 +101,6 @@ nomenclature.)
 Macros {{{2
 ------
 
-(A) faire un truc général pour les machins multihomogènes
-
 (B) retrier les macros de Vojta
 
 (B) showkeys: sur plusieurs lignes dans la marge
@@ -125,6 +123,8 @@ systématiquement la norme ou mesure archimédienne utilisée
 
 (C) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
 -> \Haut\point).
+
+(C) Virer les macros de compatibilité (marquées par XXX)
 
 Vojta {{{2
 -----
