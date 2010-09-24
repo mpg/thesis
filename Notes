@@ -100,9 +100,7 @@ Macros {{{2
 
 (A) faire un truc général pour les machins multihomogènes
 
-(A) trier les macros : regrouper les trucs projectifs généraux entre eux,
-les trucs multiprojectifs généraux juste après, les trucs spécifiques à Vojta
-(genre \fcti, \cmhi) dans Vojta.
+(B) retrier les macros de Vojta
 
 (B) showkeys: sur plusieurs lignes dans la marge
 

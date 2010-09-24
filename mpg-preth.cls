@@ -563,38 +563,14 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % projective indices and coordinates [[2
 %
-\newc@ifstar\puiss    {m} {m-1}
-\newcommand \fct      {i}
-\newcommand \fcti     {j}
 \newcommand \ind      {k}
-\newcommand \indi     {l}
-
-\newcommand \fctrange  {_{\fct =1}^\puiss}
-\newcommand \fctirange {_{\fcti=1}^\puiss*}
 \newcommand \indrange  {_{\ind =0}^\dimp}
-\newcommand \indirange {_{\indi=0}^\dimp}
-
-\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
-  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
-\noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
-\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
 \noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
-\noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
 \newcommand*\ch   [1] {X\ssub{#1}}
-\newcommand*\cmh  [1] {X\pexp{#1}}
-\newcommand \cmmh     {\boldsymbol X}
-\newcommand*\cmhi [1] {Y\pexp{#1}}
-\newcommand \cmmhi    {\boldsymbol Y}
 
 \newcommand*\lgr [1] {\abs{#1}}
-\newcommand*\vlg [1] {\abs{#1}}
-
 \noms{n}{\lgr\PH}{Longueur du multiindice \PH}
-\noms{n}{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
-
-\newcommand*\lgt [1] {\lVert#1\rVert}
-\noms{N}{\lgt\PH}{Longueur totale du multimultiindice \PH}
 
 \newcommand*\ncoef  [1] {\mathcal N(#1)}
 \newcommand*\maxbin [1] {m(#1)}
@@ -603,6 +579,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % multiprojective indices and coordinates [[2
 %
+% helper macro [[
 \newcommandx \newc@multihom [4][3=\fct, 4=\ind] {%
   \newc@star@deftwo #1{#3}{#4} {%
     \@ifmtarg{##1}{\underline}{}{%
@@ -610,17 +587,35 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
       #2}%
     \pexp{##1}[##2]%
   }%
-}%
+}% ]]
+
+\newc@ifstar\puiss    {m} {m-1}
+\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
+  donc aussi la puissance de $\va$ dans laquelle ont travaille.}
+
+\newcommand \fct      {i}
+\newcommand \fctrange  {_{\fct =1}^\puiss}
+\noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
+
+\newcommand*\cmh  [1] {X\pexp{#1}}
+\newcommand \cmmh     {\boldsymbol X}
+
+\newcommand*\vlg [1] {\abs{#1}}
+\newcommand*\lgt [1] {\lVert#1\rVert}
+
+\noms{n}{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
+\noms{N}{\lgt\PH}{Longueur totale du multimultiindice \PH}
 
 % points and coordinates [[2
 %
-\newcommand*\p [1] {{\boldsymbol{#1}}} % point (par opposition à coordonnées)
+\newcommand*\p [1] {{\boldsymbol{#1}}} % point % FIXME
 
 \newcommand \point   {x}
 \newcommand \pointi  {y}
 \newcommand \pointii {z}
-\newcommand \coord   {{\mathrm{x}}}
-\newcommand \coordi  {{\mathrm{y}}}
+\newcommand \coord   {{\mathbf x}}
+\newcommand \coordi  {{\mathbf y}}
+\newcommand \coordii {{\mathbf z}}
 
 \noma{x}{\point  }{Un point non fixé de $\va$}
 \noma{y}{\pointi }{Un autre point non fixé de $\va$}
@@ -668,6 +663,15 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % more multiprojective stuff [[2
 %
+\newcommand \fcti     {j}
+\newcommand \indi     {l}
+\newcommand \fctirange {_{\fcti=1}^\puiss*}
+\newcommand \indirange {_{\indi=0}^\dimp}
+\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
+\noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
+
+\newcommand*\cmhi [1] {Y\pexp{#1}}
+\newcommand \cmmhi    {\boldsymbol Y}
 
 % general situation [[2
 %
