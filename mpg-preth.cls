@@ -83,7 +83,7 @@
 
 % inline include [[2
 %
-\newcommand*\inlineinclude [2] {%
+\newcommand \inlineinclude [2] {%
   % from latex.ltx's \@include
   \clearpage
   \if@filesw
@@ -416,13 +416,16 @@
   \@ifnotmtarg{#1}{%
     \protected@write\@auxout{}{\global\string\@namedef{cst@@#2}{, #1}}%
   }%
-  \ifinner\else \label{e:cst-#2}\noeqref{e:cst-#2}\fi
+  \if@display \label{e:cst-#2}\noeqref{e:cst-#2}\fi
   \addcontentsline{loc}{constant}{%
-    \protect\cst{#2} \ifinner\else définie par~\protect\refeq{e:cst-#2}\fi}%
+    \protect\printmacro{#2}%
+    \protect\cst{#2}
+    \if@display \space définie par~\protect\refeq{e:cst-#2}\fi
+  }%
   \cst{#2}}
 
 \noma{cvx}{c_{\PH, \PHi}}{Constante numéro \PH, dépendant éventuellement de la
-  place \PHi --- voire liste des constantes ci-dessous}
+  place \PHi --- voir~\ref{sec:index-cst}}
 
 \tocbasicautomode
 \addtotoclist{loc}

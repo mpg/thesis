@@ -98,12 +98,9 @@ nomenclature.)
 Macros {{{2
 ------
 
-(A) faire une liste des constante numérotées avec leur nom pour moi et la
-page où elles sont définies
-
 (A) faire un truc général pour les machins multihomogènes
 
-(B) showkeys: sur pluieurs lignes dans la marge
+(B) showkeys: sur plusieurs lignes dans la marge
 
 (B) numérotation des équations : par chapitre
 
@@ -112,6 +109,9 @@ page où elles sont définies
 (B) \ph est un peu inutile, la remplacer par _ ?
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
+
+(C) Liste des constantes : même style visuel que la nomenclature. Utiliser
+carrément \nomencl avec un nouveau groupe ?
 
 (C) normes et hauteurs : virer les vieilles version imprécises, indiquer
 systématiquement la norme ou mesure archimédienne utilisée

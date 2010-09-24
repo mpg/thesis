@@ -50,15 +50,17 @@
 
 \include{i-normes-mesures}
 
-\inlineinclude{notations}{%
-  \chapter{Liste des notations}
-  \printnomenclature}
-
 \inlineinclude{biblio}{%
   \chapter{Références bibliographiques}
-  \printbibliography[heading=bibempty]}
+  \printbibliography[heading=bibempty]
+}
 
-\chapter{Liste des constantes}
-\listoftoc*{loc}
+\inlineinclude{notations}{%
+  \chapter{Liste des notations}
+  \printnomenclature
+
+  \section{Liste des constantes} \label{sec:index-cst}
+  \listoftoc*{loc}
+}
 
 \end{document}
