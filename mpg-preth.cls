@@ -391,10 +391,6 @@
 \newcommand*\chow [1] {\Chow_{#1}}
 \noma{f}{\chow\PH}{Forme de \bsc{Chow} de la variété plongée \PH}
 
-\newcommand \ph {\ssub}
-\noms{}{\PH\ph\PHi}{Partie homogène de (multi)degré \PHi de l'algèbre
-  (multi)graduée ou idéal (multi)homogène \PH}
-
 \newcommand \md {\mathfrak{d}}
 \noma{d}{\md}{Le morphisme symétrisant utilisé dans la définition des
   distances projectives}
@@ -724,9 +720,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Di   { {\delta d} }
 \newcommand \Dii  { {\delta d'} }
 \newc@ifstar\Diii {\delta d'_\fct + r\fct} {\delta d' + r}
-\newcommand \Ci   { \ph\Dii  ^{C'}   }
-\newcommand \Cii  { \ph\Dii  ^{C''}  }
-\newcommand \Ciii { \ph\Diii ^{C'''} }
+\newcommand \Ci   { _\Dii  ^{C'}   }
+\newcommand \Cii  { _\Dii  ^{C''}  }
+\newcommand \Ciii { _\Diii ^{C'''} }
 
 % weight sum of \lamda in the definition of \stairs
 \newcommand \sumwtlambda {

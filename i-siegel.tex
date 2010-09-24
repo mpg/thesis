@@ -73,15 +73,15 @@ exactement $\delta d'$.
 On cherche ainsi une forme
 \begin{equation}
   F'
-  \in \cdn[\cmmh]\ph{\delta d'}
+  \in \cdn[\cmmh]_{\delta d'}
   \cap \vanish
-  \cap \wemba(\cdn[\cmmh, \cmmhi]\ph{\delta d})
+  \cap \wemba(\cdn[\cmmh, \cmmhi]_{\delta d})
 \end{equation}
 non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
 \wemb(F)$), on cherche une forme
 \begin{equation}
   F
-  \in \cdn[\cmmh, \cmmhi]\ph{\delta d}
+  \in \cdn[\cmmh, \cmmhi]_{\delta d}
   \cap \wemba^{-1}(\vanish)
 \end{equation}
 non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
@@ -96,13 +96,13 @@ $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
 Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\cmh]\ph{\delta d'}$ dans lequel $\vanish$
+un sous-espace de $\cdn[\cmh]_{\delta d'}$ dans lequel $\vanish$
 est de codimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
-Pour commencer, on choisit dans $\cdn[\cmmh, \cmmhi]\ph{\delta d}$ un
-supplémentaire de $(\ideal{\wemb(\var)})\ph{\delta d}$ engendré par des
-monômes, que l'on notera $\Ideal\ph{\delta d}$, et dans lequel on cherchera
+Pour commencer, on choisit dans $\cdn[\cmmh, \cmmhi]_{\delta d}$ un
+supplémentaire de $(\ideal{\wemb(\var)})_{\delta d}$ engendré par des
+monômes, que l'on notera $\Ideal_{\delta d}$, et dans lequel on cherchera
 $F$.
 
 On considérera des sous-espaces vectoriels de partie homogènes de
@@ -151,10 +151,10 @@ et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
-    \Ideal\ph\Di
+    \Ideal_\Di
     \ar[r] ^{\wemba}
     \ar[d] _{\sim}
-    & \cdn [\cmmh]\ph\Dii
+    & \cdn [\cmmh]_\Dii
     \ar[r] ^{\rdiv^\Dii}
     \ar[d]
     & \cdn [\cmmh]\Ci
@@ -189,7 +189,7 @@ assure que $R$ ne dépend en effet que de $\var$.
 
 Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
 notre objectif : il s'agira en fait de construire une forme $F \in
-\Ideal\ph{\delta d} \setminus \{0\}$ telle que
+\Ideal_{\delta d} \setminus \{0\}$ telle que
 \begin{equation}
   \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
   \in \vanish
@@ -206,14 +206,14 @@ ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 
 Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
 sera composé des équations définissant $\vanish$ dans
-\( \cdn[\cmmh]\ph{\delta d' + r'}^{C'''} \),
-tirées en arrière sur $\Ideal\ph{\delta d}$ par
+\( \cdn[\cmmh]_{\delta d' + r'}^{C'''} \),
+tirées en arrière sur $\Ideal_{\delta d}$ par
 \( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
-  \item calculer la codimension de $\Ideal\ph{\delta d}$ ;
+  \item calculer la codimension de $\Ideal_{\delta d}$ ;
   \item calculer la codimension de $\vanish$ dans
-    $\cdn[\cmmh]\ph{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
+    $\cdn[\cmmh]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
     petite que la dimension précédente ;
   \item expliciter les morphismes de la première ligne du diagramme et majorer
     la hauteur de leurs matrices dans les bases monômiales évidentes.
@@ -226,7 +226,7 @@ $\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
-La dimension de $\Ideal\ph{\delta d}$ est donnée par le théorème de
+La dimension de $\Ideal_{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
 $\wemb{\var}$. Il est \lat{a priori} difficile de tous les calculer, mais il
 comme suffit en fait de minorer la dimension, le lemme suivant nous donne tout
@@ -302,7 +302,7 @@ ce qu'on aura besoin de savoir sur le degré.
 \begin{lem}
   Avec les notations précédentes, on a
   \begin{align}
-    \dim \Ideal\ph{\delta d}
+    \dim \Ideal_{\delta d}
     \ge
     \frac{ \epsz^{\vdim[\puiss]}
       \prod\fctrange \vdeg* \, \wt* ^{2\vdim*}
@@ -318,7 +318,7 @@ ce qu'on aura besoin de savoir sur le degré.
   utilisant le lemme précédent, car une somme de nombre positifs est minorée
   par chacun de ses termes. Il vient
   \begin{align}
-    \dim \Ideal\ph{\delta d}
+    \dim \Ideal_{\delta d}
     & =
     \left(
     \sum_{\substack{ t \in \N^{2\puiss-1} \\ \lg t = \lg u }}
@@ -463,7 +463,7 @@ Au vu des lemmes précédents, on introduit la constante
 \end{equation}
 de sorte que
 \begin{equation} \label{e:good-codim}
-  \frac {\card (\stairs)\Ciii} {\dim \Ideal\ph{\delta d}}
+  \frac {\card (\stairs)\Ciii} {\dim \Ideal_{\delta d}}
   \le
   \epsii + o(1)
   \pmm.
@@ -478,9 +478,9 @@ par le morphisme \( \wemba \) qui est déjà bien défini.
 On va en fait étudier le prolongement
 \begin{equation}
   \wemba \colon
-  \cdn [\cmmh, \cmmhi]\ph\Di
+  \cdn [\cmmh, \cmmhi]_\Di
   \to
-  \cdn [\cmmh]\ph\Dii
+  \cdn [\cmmh]_\Dii
 \end{equation}
 donné par les mêmes formules. La base évidente de ce nouvel espace de départ
 est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
@@ -497,9 +497,9 @@ où \( d \) est défini par~\refeq{e:def-d}.
   Avec les notations précédentes, l'application linéaire
   \begin{equation}
     \wemba \colon
-    \cdn [\cmmh, \cmmhi]\ph\Di
+    \cdn [\cmmh, \cmmhi]_\Di
     \to
-    \cdn [\cmmh]\ph\Dii
+    \cdn [\cmmh]_\Dii
   \end{equation}
   est représentée dans les bases canoniques par une matrice de colonnes
   \(
@@ -602,7 +602,7 @@ de l'appliquer au cas qui nous intéresse.
   l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
   \( f \in N^\puiss \), il existe un (unique) application linéaire
   \begin{equation}
-    \rdiv^f \colon \cdn [\cmmh]\ph f \to \cdn [\cmmh]\ph f^{C'_\Delta}
+    \rdiv^f \colon \cdn [\cmmh]_ f \to \cdn [\cmmh]_ f^{C'_\Delta}
   \end{equation}
   qui est l'identité modulo \( \Ideal \) (voir~\ref{e:C-spaces}
   et~\ref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
@@ -616,8 +616,8 @@ de l'appliquer au cas qui nous intéresse.
     \bigr) ^{f_\fct}
   \end{equation}
   pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
-  l'image de \( \cdn [\cmmh]\ph f ^{C''_\Delta} \) par \( \rdiv^f \) est
-  contenue dans \( \cdn [\cmmh]\ph f ^{C'''_\Delta} \).
+  l'image de \( \cdn [\cmmh]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
+  contenue dans \( \cdn [\cmmh]_ f ^{C'''_\Delta} \).
 \end{lem}
 
 \begin{proof}
@@ -710,9 +710,9 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   application linéaire
   \begin{equation}
     \relim \colon
-    \cdn [\cmmh]\ph {f}^{C'_\Delta}
+    \cdn [\cmmh]_ {f}^{C'_\Delta}
     \to
-    \cdn [\cmmh]\ph {f+r}^{C'_\Delta}
+    \cdn [\cmmh]_ {f+r}^{C'_\Delta}
   \end{equation}
   qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
 
@@ -864,7 +864,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
   multidegré \( \Di \) en \( (\cmmh, \cmmhi) \). On extrait alors de
   \( M' \) les colonnes indexées par les monômes constituant la base choisie
-  de \( \Ideal\ph\Di \) pour former la matrice \( M \) à laquelle nous allons
+  de \( \Ideal_\Di \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
 
   L'hypothèse faite sur \( \epsii \) et la relation~\eqref{e:good-codim}

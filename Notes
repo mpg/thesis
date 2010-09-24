@@ -108,8 +108,6 @@ Macros {{{2
 
 (B) Nomenclature : numéros de page.
 
-(B) \ph est un peu inutile, la remplacer par _ ?
-
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
 
 (C) Liste des constantes : même style visuel que la nomenclature. Utiliser
