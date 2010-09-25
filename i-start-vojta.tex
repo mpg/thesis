@@ -49,21 +49,20 @@ Plonger une variété de façon adaptée dans un espace projectif revient à
 la mettre en position de \bsc{Noether}, ce qui fixe une base de transcendance
 de son corps des fonctions rationnelles, et à choisir de plus un élément
 primitif ce ce corps. Géométriquement, il s'agit de présenter la variété comme
-un revêtement ramifié d'un hypersurface, la surjection étant donnée par une
+un revêtement ramifié d'une hypersurface, la surjection étant donnée par une
 projection linéaire.
 
 \begin{tdef} \label{d:plong-adapt}
   Suivant \cite{remivg}, on dit qu'un plongement
-  \begin{math}
-    \iota\colon V \embedin \proj\dimp
-  \end{math}
-  d'une variété de dimension $t$ dans un espace projectif muni de coordonnées
-  homogènes $X_0, \dots, X_\dimp$ est \emph{adapté} si les deux conditions
-  suivantes sont satisfaites :
+  \(
+    \iota\colon \anyvar \embedin \proj\dimp
+  \)
   \begin{enumthm}
-    \item $V \cap \zeros{X_0, \dots, X_t} = \emptyset$ ;
-    \item $\korper{V}$ est engendré par
-      $\frac{X_1}{X_0}, \dots, \frac{X_{t+1}}{X_0}$.
+    \item \( \anyvar \cap \zeros{\anyvp[0], \dots, \anyvp[\anydim]}
+        = \emptyset \) ;
+    \item \( \korper{\anyvar} \) est engendré par
+      \( \frac{\anyvp[1]}{\anyvp[0]}, \dots,
+        \frac{\anyvp[\anydim+1]}{\anyvp[0]} \).
   \end{enumthm}
 \end{tdef}
 
@@ -71,7 +70,7 @@ On contrôle alors des relations de dépendance intégrale des dernières
 variables sur la base de transcendance choisie.
 
 \begin{fact} \label{f:plong-adapt-dep}
-  Si \( \anyvar \), de dimension \( \anydim \)  est plongée dans \( \projd \)
+  Si \( \anyvar \) de dimension \( \anydim \)  est plongée dans \( \projd \)
   de façon adaptée, alors les variables \( \anyvp[1], \dots, \anyvp[\anydim]
   \) sont algébriquement indépendantes et pour tout \( \indi > \anydim \), la
   variable \( \anyvp[\indi] \) est liée aux \( \anyvp[1], \dots,
@@ -92,39 +91,39 @@ Nous montrons maintenant qu'il est possible de rendre adapté un plongement
 donné à peu de frais.
 
 \begin{lem}
-  Soit $\iota \colon V \embedin \proj\dimp$ un sous-schéma fermé intègre de
-  degré $\Delta$, non contenu dans l'hyperplan d'équation $X_0 = 0$. Il existe
-  une matrice $M \in \GL_{n+1}(\Q)$, à coefficients entiers de valeur absolue
-  (archimédienne) majorée par $\max(\frac\Delta2, 1)$, telle que, si $e_M$ est
-  l'automorphisme linéaire de $\proj\dimp$ associé à $M$, alors $e_M \circ
-  \iota$ est un plongement adapté et que $X_0$ soit invariant par ce
-  changement de coordonnées.
+  Soit $\iota \colon \anyvar \embedin \projd$ un sous-schéma fermé intègre de
+  degré $\anydeg$, non contenu dans l'hyperplan d'équation $\anyvp[0] = 0$.
+  Il existe une matrice $M \in \GL_\dimp*(\Q)$, à coefficients entiers de
+  valeur absolue (archimédienne) majorée par $\max(\frac\anydeg2, 1)$, telle
+  que, si $e_M$ est l'automorphisme linéaire de $\proj\dimp$ associé à $M$,
+  alors $e_M \circ \iota$ est un plongement adapté et que $\anyvp[0]$ soit
+  invariant par ce changement de coordonnées.
 \end{lem}
 
 \begin{proof} \later
   On reprend la preuve de la proposition 2.2 de \cite{remivg} (p.~469). Au
-  moment de choisir des formes linéaires $W_0, \dots, W_n$ telles que
+  moment de choisir des formes linéaires $M_0, \dots, M_n$ telles que
   \begin{equation*}
-    \chow V (W_0, \dots, W_\dimp) \neq 0
+    \chow \anyvar (M_0, \dots, M_\dimp) \neq 0
     \pmm,
   \end{equation*}
-  on commence en fait par fixer $W_0 = \ch0$. Le polynôme $\varfc(W_0, \truc,
-  \dots, \truc)$ est multihomogène de degré $\Delta$ en chaque variable ; vu
-  l'hypothèse sur $V$, il est non nul grâce au théorème fondamental de
-  l'élimination. On peut donc choisir $W_1, \dots W_n$ comme dans
-  \cite{remivg} et continuer la preuve sans autre modification.
+  on commence en fait par fixer $M_0 = \anyvp[0]$. Le polynôme $\varfc(M_0,
+  \truc, \dots, \truc)$ est multihomogène de degré $\anydeg$ en chaque
+  variable ; vu l'hypothèse sur $\anyvar$, il est non nul grâce au théorème
+  fondamental de l'élimination. On peut donc choisir $M_1, \dots M_n$ comme
+  dans \cite{remivg} et continuer la preuve sans autre modification.
 \end{proof}
 
 \begin{lem}
-  Soit $V \colon \embedin \proj\dimp$ un sous-schéma fermé intègre, et $M \in
-  \GL_{\dimp+1}(\Qbar)$ à coefficients entiers dans l'intervalle $[-B, B]$, où
-  $B$ est un réel positif fixé, et $e_M$ l'automorphisme linéaire de
+  Soit $\anyvar \colon \embedin \proj\dimp$ un sous-schéma fermé intègre, et
+  $M \in \GL_\dimp*(\Qbar)$ à coefficients entiers dans l'intervalle $[-B,
+  B]$, où $B$ est un réel positif fixé, et $e_M$ l'automorphisme linéaire de
   $\proj\dimp$ associé à $M$. Alors
   \begin{equation}
-    \hautm[1]{e_M(V)}
+    \hautm[1]{e_M(\anyvar)}
     \le
-    \hautm[1]{V}
-    \cdot \bigl( (n+1)B \bigr)^{\Delta(n+1)}
+    \hautm[1]{\anyvar}
+    \cdot \bigl( \dimp** B \bigr)^{\anydeg\dimp**}
     \pmm.
   \end{equation}
 \end{lem}
@@ -134,10 +133,11 @@ donné à peu de frais.
 \end{proof}
 
 \begin{scho} \label{s:plong-adapt}
-  Vu les hypothèses sur $V$, on peut sans perte de généralité supposer de plus
-  que $V \embedin \proj\dimp$ est adapté, quitte à multiplier sa hauteur
-  ($L_1$) par
-  $\bigl ((\dimp + 1) \max (\frac\Delta2, 1) \bigr)^{\Delta(\dimp+1)}$.
+  Vu les hypothèses sur \( \var \) on peut sans perte de généralité supposer de plus
+  que chaque plongement $\var* \embedin \projd$ est adapté, quitte à
+  multiplier la hauteur de \( \var* \)
+  par
+  $\bigl (\dimp** \max (\frac\anydeg2, 1) \bigr)^{\anydeg\dimp**}$.
   \worknote[later]{Il faut aussi estimer le coût sur les formules de
     multiplication et soustraction.}
 
@@ -148,7 +148,7 @@ donné à peu de frais.
   (qui est unique à une constante multiplicative près) en imposant que cette
   quantité vaille $1$.
 
-  On notera par ailleurs \( \poldep\mexp*[\indi] \) une relation de dépendance
+  On notera par ailleurs \( \poldep** \) une relation de dépendance
   de \( \vmp*[\indi] \) sur \( \vmp*[1], \dots, \vmp*[\vdim*] \)
   telle que donnée par le fait~\ref{f:plong-adapt-dep}.
 \end{scho}
@@ -163,7 +163,7 @@ définira alors les poids $\wt*$ par
 \begin{equation}
   \wt* =
   \left\lfloor
-  \frac {\norm{\excep*}} {\norm{\excep1}}
+  \frac {\norm{\excep*}} {\norm{\excep[1]}}
   + \frac12
   \right\rfloor
   \pmm,

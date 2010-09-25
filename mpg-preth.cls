@@ -730,7 +730,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
-\newcommand \poldep {P}
+\newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
 \noma{P}{\poldep}{Relation de dépendance intégrale des dernières variables
   sur les premières dans un plongement adapté}
 % weighted embedding [[2
