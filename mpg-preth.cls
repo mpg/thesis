@@ -730,6 +730,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
+\newcommand \poldep {P}
+\noma{P}{\poldep}{Relation de dépendance intégrale des dernières variables
+  sur les premières dans un plongement adapté}
 % weighted embedding [[2
 %
 \newc@star@deftwo@i \smpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
@@ -856,7 +859,6 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 %
 \newcommand \psmp   {\gmp t}
 \newcommand \psp    {\gp  t}
-\newcommand \poldep {P}
 \newcommand \pden   {U}
 \newcommand \forme  {H}
 \newcommand \dermp  {\gmp\kappa}

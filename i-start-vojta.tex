@@ -45,6 +45,13 @@ désignera une famille d'entiers.
 
 \subsection{Plongements projectifs adaptés} \label{sub:plong-adapt}
 
+Plonger une variété de façon adaptée dans un espace projectif revient à
+la mettre en position de \bsc{Noether}, ce qui fixe une base de transcendance
+de son corps des fonctions rationnelles, et à choisir de plus un élément
+primitif ce ce corps. Géométriquement, il s'agit de présenter la variété comme
+un revêtement ramifié d'un hypersurface, la surjection étant donnée par une
+projection linéaire.
+
 \begin{tdef} \label{d:plong-adapt}
   Suivant \cite{remivg}, on dit qu'un plongement
   \begin{math}
@@ -59,6 +66,30 @@ désignera une famille d'entiers.
       $\frac{X_1}{X_0}, \dots, \frac{X_{t+1}}{X_0}$.
   \end{enumthm}
 \end{tdef}
+
+On contrôle alors des relations de dépendance intégrale des dernières
+variables sur la base de transcendance choisie.
+
+\begin{fact} \label{f:plong-adapt-dep}
+  Si \( \anyvar \), de dimension \( \anydim \)  est plongée dans \( \projd \)
+  de façon adaptée, alors les variables \( \anyvp[1], \dots, \anyvp[\anydim]
+  \) sont algébriquement indépendantes et pour tout \( \indi > \anydim \), la
+  variable \( \anyvp[\indi] \) est liée aux \( \anyvp[1], \dots,
+    \anyvp[\anydim] \) par un polynôme \( \poldep_\indi \) de même degré que
+  \( \anyvar \), unitaire en \( \anyvp[\indi] \) et tel qu'en toute place
+  \( \nv1{\poldep_\indi} \le \nv1{\chow\anyvar} \).
+\end{fact}
+
+\begin{proof} \later
+  C'est \cite[partie~4.1, p.~114]{remivds}. Seule l'assertion sur la norme
+  n'est pas énoncée sous cette forme par \bsc{Rémond}, mais elle vient de même
+  que sa proposition~4.2 en remarquant que \( \poldep_\indi \) est une
+  spécialisation de \( \varfc \) qui annule certaines variables et remplace
+  les autres par des monômes unitaires.
+\end{proof}
+
+Nous montrons maintenant qu'il est possible de rendre adapté un plongement
+donné à peu de frais.
 
 \begin{lem}
   Soit $\iota \colon V \embedin \proj\dimp$ un sous-schéma fermé intègre de
@@ -116,6 +147,10 @@ désignera une famille d'entiers.
   est non nul pour tout $\fct$ ; on normalisera donc notre choix de $\varfc*$
   (qui est unique à une constante multiplicative près) en imposant que cette
   quantité vaille $1$.
+
+  On notera par ailleurs \( \poldep\mexp*[\indi] \) une relation de dépendance
+  de \( \vmp*[\indi] \) sur \( \vmp*[1], \dots, \vmp*[\vdim*] \)
+  telle que donnée par le fait~\ref{f:plong-adapt-dep}.
 \end{scho}
 
 \subsection{Plongement abélien pondéré} \label{sub:wemb}
