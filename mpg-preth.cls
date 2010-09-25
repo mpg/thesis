@@ -368,16 +368,9 @@
 
 % delimiters [[2
 %
-\newcommand \orbrack {\mathopen \rbrack}
-\newcommand \clbrack {\mathclose\lbrack}
-
+% absolute value & norms [[3
 \DeclarePairedDelimiter \abs  {\lvert} {\rvert}
 \DeclarePairedDelimiter \norm {\lVert} {\rVert}
-
-% I know these symbols are in stmaryrd, but it screws up most of my math
-% fonts, so let's fake them the good old way
-\newcommand \llbrack {\mathopen { \lbrack\mspace{-3.3mu}\lbrack }}
-\newcommand \rrbrack {\mathclose{ \rbrack\mspace{-3.3mu}\rbrack }}
 
 % no good delimiter for triple norm, booh
 \newcommand \nnorm      {\@ifstar {\nnorm@@@{\left}{\right}} {\nnorm@}}
@@ -387,6 +380,20 @@
   #1\lvert\hspace{-1pt}#1\lvert\hspace{-1pt}#1\lvert
   #3
   #2\rvert\hspace{-1pt}#2\rvert\hspace{-1pt}#2\rvert}
+
+% brackets [[3
+\newcommand \orbrack {\mathopen \rbrack}
+\newcommand \clbrack {\mathclose\lbrack}
+
+% I know these symbols are in stmaryrd, but it screws up most of my math
+% fonts, so let's fake them the good old way
+\newcommand \llbrack {\mathopen { \lbrack\mspace{-3.3mu}\lbrack }}
+\newcommand \rrbrack {\mathclose{ \rbrack\mspace{-3.3mu}\rbrack }}
+\newcommand*\series [1] {\llbrack #1 \rrbrack}
+
+% sets (braces) [[3
+\DeclarePairedDelimiter \set {\lbrace} {\rbrace}
+\newcommand \minusset {\setminus \set}
 
 % general algebraic geometry [[2
 %
@@ -417,11 +424,11 @@
 
 % missing operators & general symbols [[2
 %
-\DeclareMathOperator \diff {d}
-\noma{d}{\diff\PH}{Différentielle par rapport à \PH}
+\DeclareMathOperator \Diff {d}
+\newcommand*\diff[1][] {\Diff\ssub{#1}}
 
-\newcommand*\der [1] {\partial_{#1}}
-\noma{d}{\der\PH}{Dérivée divisée par rapport à \PH}
+\newcommand*\der [1][] {\partial\ssub{#1}}
+\noma{d}{\der\PH}{Dérivée divisée d'ordre \PH}
 
 \DeclareMathOperator \card {Card}
 
@@ -602,7 +609,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \anyvar {V}
 \newcommand \anyvp  {\gp W}
 \newcommand \anydim {s}
-\newcommand \anydeg {p}
+\newcommand \anydeg {\Delta}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \noms{n}{\lgr\PH}{Longueur du multiindice \PH}
@@ -852,8 +859,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \poldep {P}
 \newcommand \pden   {U}
 \newcommand \forme  {H}
-\newcommand \expmp  {\gmp\kappa}
-\newcommand \expp   {\gp \kappa}
+\newcommand \dermp  {\gmp\kappa}
+\newcommand \derp   {\gp \kappa}
 
 \newc@ifstar \pmor  {\tau} {\tilde\tau}
 \newcommand  \pmnum {\Delta}

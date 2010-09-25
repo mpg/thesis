@@ -17,7 +17,7 @@ l'origine. Algébriquement, il s'agit d'un morphisme (continu) d'anneaux
   \colon
   \ring\var
   \to
-  \ring\opdef \llbrack \psmp \rrbrack
+  \ring\opdef \series\psmp
 \),
 où \( \ring\truc \) désigne l'anneau des coordonnées homogènes. Notre objectif
 est de représenter ce morphisme par des polynômes. Plus précisément, nous
@@ -28,33 +28,33 @@ allons expliciter un morphisme \( \pmor* \) faisant commuter le diagramme
     % <>(.42) adjusts the location of the label between nodes
     \ar[r] ^<>(.42){\pmor*}
     \ar[d]
-    & \cdn [\vmp] [\pden^{-1}] \llbrack\psmp\rrbrack
+    & \cdn [\vmp] [\pden^{-1}] \series\psmp
     \ar[d]
     \\ \cdn [\vmp] / \varid
     \ar[r] ^<>(.42){\pmor}
-    & \left( \cdn [\vmp] / \varid \right) [\pden^{-1}] \llbrack\psmp\rrbrack
+    & \left( \cdn [\vmp] / \varid \right) [\pden^{-1}] \series\psmp
   }
 \end{equation}
-et, pour tout \( \expmp \in \N^{\puiss\dimp**} \), des applications
-\( \pmnum^\expmp \) et \( \pmden^\expmp \) de \( \cdn [\vmp] \) dans lui-même,
+et, pour tout \( \dermp \in \N^{\puiss\dimp**} \), des applications
+\( \pmnum^\dermp \) et \( \pmden^\dermp \) de \( \cdn [\vmp] \) dans lui-même,
 telles que
 \begin{equation}
   \pmor*(\forme)
   =
-  \sum_{ \expmp \in \N^{\puiss\dimp**} }
-  \frac{ \pmnum^\expmp(\forme) }{ \pmden^\expmp(\forme) }
-  \psmp^\expmp
+  \sum_{ \dermp \in \N^{\puiss\dimp**} }
+  \frac{ \pmnum^\dermp(\forme) }{ \pmden^\dermp(\forme) }
+  \psmp^\dermp
   \pmm.
 \end{equation}
-Notons que \( \pmnum^\expmp / \pmden^\expmp \) est donc une dérivation d'ordre
-\( \expmp \).
+Notons que \( \pmnum^\dermp / \pmden^\dermp \) est donc une dérivation d'ordre
+\( \dermp \).
 
 Concrètement, soit \( \forme \) une forme multihomogène sur \( \var \) et
 \( \tilde\forme \) la fonction rationnelle obtenue en la déshomogénéisant
 d'une façon que l'on précisera en même temps que \( \opdef \), et \( \pmp
   \in \opdef \) de coordonnées homogènes \( \cmp \). Alors
 \( \pmor*(\forme)(\cmp) \), c'est-à-dire la série de terme général
-\( \pmnum^\expmp(\forme)(\cmp) / \pmden^\expmp(\forme)(\cmp) \),
+\( \pmnum^\dermp(\forme)(\cmp) / \pmden^\dermp(\forme)(\cmp) \),
 est bien définie (le terme général est une expression homogène de degré \( 0 \)
 en \( \cmp \)) et est le développement en série de \( \tilde\forme \) au
 point \( \pmp \).
@@ -62,8 +62,8 @@ point \( \pmp \).
 \medskip
 
 Plus précisément, comme nous ne savons pas construire des applications
-\( \pmnum^\expmp \) dont nous contrôlons les normes à toutes les places, nous
-construirons en fait deux familles d'applications \( \pmnum^\expmp_\dv \)
+\( \pmnum^\dermp \) dont nous contrôlons les normes à toutes les places, nous
+construirons en fait deux familles d'applications \( \pmnum^\dermp_\dv \)
 ayant les mêmes propriétés et dont nous contrôlerons les normes aux places
 ultramétriques et archimédiennes respectivement.
 
@@ -90,19 +90,19 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
 
   Alors on peut prendre choisir \( \pmnum \) et \( \pmden \) tels que
   \begin{enumthm}
-    \item \( \pmor(\anyvp*) = \anyvp* + \psp* \) pour tout
-      \( \ind \in \{1, \dots, \anydim \} \) ;
-    \item \( \deg \pmnum^\expp_\dv (\anyvp[\anydim+1])
-        \le (\anydeg - 1) (2\lgr\expp - 1) \)
-      pour tout \( \expp \) et toute place \( \place \) de \( \cdn \) ;
-    \item \( \nv1{ \pmnum^\expp_\dv (\anyvp[\anydim+1]) }
-        \le \nv1 \poldep ^{2\lgr\expp - 1}
+    \item \( \pmor*(\anyvp*) = \anyvp* + \psp* \) pour tout
+      \( \ind \in \set{1, \dots, \anydim} \) ;
+    \item \( \deg \pmnum^\derp_\dv (\anyvp[\anydim+1])
+        \le (\anydeg - 1) (2\lgr\derp - 1) \)
+      pour tout \( \derp \) et toute place \( \place \) de \( \cdn \) ;
+    \item \( \nv1{ \pmnum^\derp_\dv (\anyvp[\anydim+1]) }
+        \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
-          (4\anydim)^{\lgr\expp -1} \anydeg^{3\lgr\expp -2}
+          (4\anydim)^{\lgr\derp -1} \anydeg^{3\lgr\derp -2}
         \right)^\dv \)
-      pour tout \( \expp \) et tout \( \place \) ;
-    \item \( \pmden^\expp_\dv (\anyvp[\anydim+1]) = \pden^{2\lgr\expp - 1} \)
-      pour tout \( \expp \).
+      pour tout \( \derp \) et tout \( \place \) ;
+    \item \( \pmden^\derp_\dv (\anyvp[\anydim+1]) = \pden^{2\lgr\derp - 1} \)
+      pour tout \( \derp \).
   \end{enumthm}
 \end{lem}
 
@@ -115,26 +115,141 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
   \cite{remivds}.\worknote{Détailler les notations de \bsc{Rémond} qu'on
     reprend (il s'agit des dérivées, je crois).}
 
-  Jusqu'à la fin de la preuve, on note \( P_\dv^\expp = \pmnum^\expp_\dv
-    (\anyvp[\anydim+1]) \).  On va construire $P_0^\expp$ et $P_1^\expp$
+  Jusqu'à la fin de la preuve, on note \( P_\dv^\derp = \pmnum^\derp_\dv
+    (\anyvp[\anydim+1]) \).  On va construire $P_0^\derp$ et $P_1^\derp$
   indépendamment par récurrence
-  sur la longueur de $\expp$, en partant à chaque fois de $P_\dv^\expp = -
-  d_{\ind_0}P$ quand $\expp_{\ind_0} = 1$ et $\expp_\ind = 0$ sinon (cas
-  $\lgr\expp = 1$), car ce choix convient. Pour la suite, on fixe un $\dv$, un
-  $\expp$ de longueur au moins $2$, et on suppose qu'on a choisi un
-  $P_\dv^{\expp'}$ convenable pour chaque $\expp'$ de longueur strictement
-  inférieure à celle de $\expp$.
+  sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
+  \diff[\ind_0] \poldep$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
+  (cas $\lgr\derp = 1$), car ce choix convient. Pour la suite, on fixe un
+  $\dv$, un $\derp$ de longueur au moins $2$, et on suppose qu'on a choisi un
+  $P_\dv^{\derp'}$ convenable pour chaque $\derp'$ de longueur strictement
+  inférieure à celle de $\derp$.
 
-  On commence par le cas ultramétrique et on note donc provisoirement $P^\expp
-  = P_0^\expp$ pour alléger. Si de tels polynômes existent, ils doivent
+  On commence par le cas ultramétrique et on note donc provisoirement $P^\derp
+  = P_0^\derp$ pour alléger. Si de tels polynômes existent, ils doivent
   satisfaire à la relation
   \begin{equation}
-    P \left(
+    \poldep \left(
       \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
-      \anyvp[\anydim+1] + \sum_{\expp \in \N^\anydim \setminus \{0\}}
-      \frac {P^\expp} {\pden^{2\lgr\expp -1}} \psp^\ip
-    \right) = 0 \pmm.
+      \anyvp[\anydim+1] + \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {\pden^{2\lgr\derp -1}} \psp^\derp
+    \right)
+    = 0 \mod \ideal\anyvar
+    \pmm.
   \end{equation}
+  On remplace alors \( \poldep \) par son développement de \bsc{Taylor}, on a
+  les égalités suivantes modulo \( \ideal\anyvar \) :
+  \begin{align}
+    0
+    & =
+    \sum_{(\ip, \mu) \in \N^{\anydim+1}}
+    \der{\ip, \mu} \poldep
+    \cdot \psp^\ip
+    \cdot \left(
+      \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {\pden^{2\lgr\derp - 1}} \psp^\derp
+    \right)^\mu
+    \\
+    & =
+    \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
+    \left(
+      \der{\ip, \mu} \poldep
+      \cdot \prod_{\fct = 1}^\mu
+      \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \right)
+    \psp^{\sum_\fct \gmp\nu* + \ip}
+    \\
+    & =
+    \sum_{\derp \in \N^\anydim \minusset 0}
+    \Biggl(
+    \frac {P^\derp} {\pden^{2\lgr\derp - 2}}
+    + \sum_{\substack{
+        (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \sum_\fct \gmp\nu* + \ip = \derp }}
+    \der{\ip, \mu} \poldep
+    \cdot \prod_{\fct = 1}^\mu
+    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \Biggr)
+    \psp^\derp
+    \pmm,
+  \end{align}
+  où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \).
+  Réciproquement, pour que \( \pmor* \) représente bien \( \pmor \), il suffit
+  de définir \( P^\derp \) par la relation de récurrence
+  \begin{equation}
+    - P^\derp
+    =
+    \sum_{\substack{
+        (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \sum_\fct \gmp\nu* + \ip = \derp }}
+    \der{\ip, \mu} \poldep
+    \cdot \pden^{2\lgr\derp - 2}
+    \cdot \prod_{\fct = 1}^\mu
+    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+  \end{equation}
+
+  On majore alors le degré de \( P^\derp \) par récurrence :
+  \begin{align}
+    \deg P^\derp
+    & \le
+    \anydeg - \lgr\ip - \mu + (\anydeg - 1) (2\lgr\derp - 2)
+    \\ \le
+    1 - \lgr\ip - \mu + (\anydeg - 1) (2\lgr\derp - 1)
+    \\ \le
+    (\anydeg - 1) (2\lgr\derp - 1)
+    \pmm,
+  \end{align}
+  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.
+
+  La majoration de norme locale est par ailleurs immédiate vu les propriétés
+  de la norme aux places ultramétriques.
+
+  Traitons maintenant le cas archimédien (désormais \( P^\derp = P^\derp_1 \)
+  pour alléger). On utilise la relation de récurrence suivante, établie dans
+  la démonstration de \cite[lemme~6.1]{remivds}, avec \( Q_\derp =
+    P^\derp \cdot \derp! \) et où, rappelons-le, \( \derp' \) est tel que
+  \( \derp[\ind_0] = \derp[\ind_0]' + 1 \) et \( \derp* = \derp*' \) sinon :
+  \begin{equation}
+    Q_\derp
+    =
+    \pden^2 \, \diff[\ind_0] Q_{\derp'}
+    - \pden \, \diff[\ind_0] P \, \diff[\anydim+1] Q_{\derp'}
+    + (2\lgr{\derp'} - 1)
+    (\diff[\ind_0] P \, \diff[\anydim+1] R - R \diff[\ind_0] R)
+    Q_{\derp'}
+    \pmm.
+  \end{equation}
+  On en déduit immédiatemment l'estimation de degré suivante :
+  \begin{equation}
+    \deg P^\derp
+    \le 2 (\anydeg - 1) + \deg P^{\derp'}
+    \le (\anydeg - 1) (2\lgr\derp - 1)
+    \pmm.
+  \end{equation}
+  Pour la norme, on prouve que \(
+    \nv1{Q_\derp}
+    \le
+    \nv1\poldep^{2\lgr\derp-1} 4^{\lgr\derp-1} \anydeg^{3\lgr\derp-2}
+    (\lgr\derp - 1) !
+  \)
+  (ce qui implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
+    \le \anydim^{\lgr\derp-1} \) en exploitant la majoration de degré
+  sous la forme \( \deg P^\derp \le 2\lgr\derp \anydeg \).
+  \begin{align}
+    \nv1{ Q_\derp }
+    & \le
+    2\anydeg^2 \cdot \deg Q_{\derp'} \cdot \nv1\poldep^2 \nv1{ Q_{\derp'} }
+    + 2 (2\lgr{\derp'} - 1) \anydeg^3 \nv1\poldep^2
+    \\ & \le
+    \nv1\poldep^2 \nv1{ Q_{\derp'} } \cdot 4 \anydeg^{3\lgr{\derp'}}
+    \\ & \le
+    \nv1\poldep^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} \anydeg^{3\lgr\derp-2}
+    (\lgr\derp - 1) !
+    \qedhere
+  \end{align}
 \end{proof}
 
 \endinput
