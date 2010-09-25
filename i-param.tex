@@ -13,51 +13,129 @@ Géométriquement, une telle paramétrisation peut se voir comme un morphisme
 où \( \aff1_{\hat{0}} \) désigne le complété formel de la droite affine en
 l'origine. Algébriquement, il s'agit d'un morphisme (continu) d'anneaux
 \(
-  \tau
+  \pmor
   \colon
   \ring\var
   \to
-  \ring\opdef \llbrack \param \rrbrack
+  \ring\opdef \llbrack \psmp \rrbrack
 \),
 où \( \ring\truc \) désigne l'anneau des coordonnées homogènes. Notre objectif
 est de représenter ce morphisme par des polynômes. Plus précisément, nous
-allons expliciter un morphisme \( \tilde\tau \) faisant commuter le diagramme
+allons expliciter un morphisme \( \pmor* \) faisant commuter le diagramme
 \begin{equation}
   \xymatrix{%
-    \cdn [\cmmh]
+    \cdn [\vmp]
     % <>(.42) adjusts the location of the label between nodes
-    \ar[r] ^<>(.42){\tau}
+    \ar[r] ^<>(.42){\pmor*}
     \ar[d]
-    & \cdn [\cmmh] [\pden^{-1}] \llbrack\param\rrbrack
+    & \cdn [\vmp] [\pden^{-1}] \llbrack\psmp\rrbrack
     \ar[d]
-    \\ \cdn [\cmmh] / \varid
-    \ar[r] ^<>(.42){\tilde\tau}
-    & \left( \cdn [\cmmh] / \varid \right) [\pden^{-1}] \llbrack\param\rrbrack
+    \\ \cdn [\vmp] / \varid
+    \ar[r] ^<>(.42){\pmor}
+    & \left( \cdn [\vmp] / \varid \right) [\pden^{-1}] \llbrack\psmp\rrbrack
   }
 \end{equation}
-et, pour tout \( \expo \in \N^{\puiss\dimp**} \), des applications linéaires
-\( \Delta^\expo \) et \( \Gamma^\expo \) de \( \cdn [\cmmh] \) dans lui-même
+et, pour tout \( \expmp \in \N^{\puiss\dimp**} \), des applications
+\( \pmnum^\expmp \) et \( \pmden^\expmp \) de \( \cdn [\vmp] \) dans lui-même,
 telles que
 \begin{equation}
-  \tilde\tau(\forme)
+  \pmor*(\forme)
   =
-  \sum_{ \expo \in \N^{\puiss\dimp**} }
-  \frac{ \Delta^\expo(\forme) }{ \Gamma^\expo(\forme) }
-  \param^\expo
+  \sum_{ \expmp \in \N^{\puiss\dimp**} }
+  \frac{ \pmnum^\expmp(\forme) }{ \pmden^\expmp(\forme) }
+  \psmp^\expmp
   \pmm.
 \end{equation}
-Notons que \( \Delta^\expo / \Gamma^\expo \) est donc une dérivation d'ordre
-\( \expo \).
+Notons que \( \pmnum^\expmp / \pmden^\expmp \) est donc une dérivation d'ordre
+\( \expmp \).
 
 Concrètement, soit \( \forme \) une forme multihomogène sur \( \var \) et
 \( \tilde\forme \) la fonction rationnelle obtenue en la déshomogénéisant
 d'une façon que l'on précisera en même temps que \( \opdef \), et \( \pmp
   \in \opdef \) de coordonnées homogènes \( \cmp \). Alors
-\( \tilde\tau(\forme)(\cmp) \), c'est-à-dire la série de terme général
-\( \Delta^\expo(\forme)(\cmp) / \Gamma^\expo(\forme)(\cmp) \),
+\( \pmor*(\forme)(\cmp) \), c'est-à-dire la série de terme général
+\( \pmnum^\expmp(\forme)(\cmp) / \pmden^\expmp(\forme)(\cmp) \),
 est bien définie (le terme général est une expression homogène de degré \( 0 \)
 en \( \cmp \)) et est le développement en série de \( \tilde\forme \) au
 point \( \pmp \).
+
+\medskip
+
+Plus précisément, comme nous ne savons pas construire des applications
+\( \pmnum^\expmp \) dont nous contrôlons les normes à toutes les places, nous
+construirons en fait deux familles d'applications \( \pmnum^\expmp_\dv \)
+ayant les mêmes propriétés et dont nous contrôlerons les normes aux places
+ultramétriques et archimédiennes respectivement.
+
+Dans un premier temps, nous établissons une série de lemmes généraux
+sur la paramétrisation des variétés projectives et multiprojectives, puis nous
+appliquons ces résultats à notre variété \( \var \) et à la forme auxiliaire
+\( F \).
+
+\subsection{Lemmes généraux de paramétrisation} \label{sub:param-gene}
+
+Avant d'arriver au cas d'une variété multiprojective générale, nous
+établissons des paramétrisations dans des cas plus simples que nous
+complexifions peu à peu : hypersurface affine, variété projective plongée de
+façon adaptée (en calculant d'abord l'image de chaque variable, puis celle des
+monômes), et enfin variété multiprojective plongée de façon adaptée.
+
+\begin{lem}
+  Soit \( \anyvar \) une variété affine de dimension \( \anydim \), plongée
+  dans un espace affine \( \aff{\anydim+1} \) de sorte que les coordonnées \(
+    \anyvp[1], \dots, \anyvp[\anydim] \) sont indépendantes, et \( \poldep \in
+    \cdn[\anyvp] \) l'équation de \( \anyvar \), de degré \( \anydeg \).
+  Notons de plus \( \pden \) la dérivée de ce polynôme par rapport à la
+  dernière variable.
+
+  Alors on peut prendre choisir \( \pmnum \) et \( \pmden \) tels que
+  \begin{enumthm}
+    \item \( \pmor(\anyvp*) = \anyvp* + \psp* \) pour tout
+      \( \ind \in \{1, \dots, \anydim \} \) ;
+    \item \( \deg \pmnum^\expp_\dv (\anyvp[\anydim+1])
+        \le (\anydeg - 1) (2\lgr\expp - 1) \)
+      pour tout \( \expp \) et toute place \( \place \) de \( \cdn \) ;
+    \item \( \nv1{ \pmnum^\expp_\dv (\anyvp[\anydim+1]) }
+        \le \nv1 \poldep ^{2\lgr\expp - 1}
+        \cdot \left(
+          (4\anydim)^{\lgr\expp -1} \anydeg^{3\lgr\expp -2}
+        \right)^\dv \)
+      pour tout \( \expp \) et tout \( \place \) ;
+    \item \( \pmden^\expp_\dv (\anyvp[\anydim+1]) = \pden^{2\lgr\expp - 1} \)
+      pour tout \( \expp \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
+    autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
+    fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
+  utilisant aux places archimédiennes une généralisation de
+  \cite[relation~2.3.1, p.~63]{farhith}. On reprend toutes les notations de
+  \cite{remivds}.\worknote{Détailler les notations de \bsc{Rémond} qu'on
+    reprend (il s'agit des dérivées, je crois).}
+
+  Jusqu'à la fin de la preuve, on note \( P_\dv^\expp = \pmnum^\expp_\dv
+    (\anyvp[\anydim+1]) \).  On va construire $P_0^\expp$ et $P_1^\expp$
+  indépendamment par récurrence
+  sur la longueur de $\expp$, en partant à chaque fois de $P_\dv^\expp = -
+  d_{\ind_0}P$ quand $\expp_{\ind_0} = 1$ et $\expp_\ind = 0$ sinon (cas
+  $\lgr\expp = 1$), car ce choix convient. Pour la suite, on fixe un $\dv$, un
+  $\expp$ de longueur au moins $2$, et on suppose qu'on a choisi un
+  $P_\dv^{\expp'}$ convenable pour chaque $\expp'$ de longueur strictement
+  inférieure à celle de $\expp$.
+
+  On commence par le cas ultramétrique et on note donc provisoirement $P^\expp
+  = P_0^\expp$ pour alléger. Si de tels polynômes existent, ils doivent
+  satisfaire à la relation
+  \begin{equation}
+    P \left(
+      \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
+      \anyvp[\anydim+1] + \sum_{\expp \in \N^\anydim \setminus \{0\}}
+      \frac {P^\expp} {\pden^{2\lgr\expp -1}} \psp^\ip
+    \right) = 0 \pmm.
+  \end{equation}
+\end{proof}
 
 \endinput
 

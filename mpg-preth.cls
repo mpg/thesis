@@ -592,11 +592,17 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
 \noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
-\newcommand*\ch   [1] {X\ssub{#1}}
+\newcommand*\ch   [1] {\vp[#1]}
 
 \newcommand*\pp {x}
 \newcommand \cp {\gp x}
 \newcommand \vp {\gp X}
+\newcommand \ip {\gp \lambda}
+
+\newcommand \anyvar {V}
+\newcommand \anyvp  {\gp W}
+\newcommand \anydim {s}
+\newcommand \anydeg {p}
 
 \newcommand*\lgr [1] {\abs{#1}}
 \noms{n}{\lgr\PH}{Longueur du multiindice \PH}
@@ -821,7 +827,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
   l'image par le plongement éclatant}
 \noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire vue sur la
   variété}
-\nomg{delta}{\delta}{Un entier suffisament divisible et grand, gouvernant
+\nomg{delta}{\delta}{Un entier suffisamment divisible et grand, gouvernant
   l'ordre de grandeur du degré de la forme auxiliaire}
 \noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
   des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
@@ -841,10 +847,19 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % Parametrisation [[2
 %
-\newcommand \param  {\gmp t}
-\newcommand \pden   {R} %FIXME
-\newcommand \forme  {F} %FIXME
-\newcommand \expo   {\gmp\kappa}
+\newcommand \psmp   {\gmp t}
+\newcommand \psp    {\gp  t}
+\newcommand \poldep {P}
+\newcommand \pden   {U}
+\newcommand \forme  {H}
+\newcommand \expmp  {\gmp\kappa}
+\newcommand \expp   {\gp \kappa}
+
+\newc@ifstar \pmor  {\tau} {\tilde\tau}
+\newcommand  \pmnum {\Delta}
+\newcommand  \pmden {\Gamma}
+
+% \Delta
 
 % unsorted math stuff [[1
 % -------------------
