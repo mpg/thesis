@@ -57,7 +57,8 @@ d'une façon que l'on précisera en même temps que \( \opdef \), et \( \pmp
 \( \pmnum^\dermp(\forme)(\cmp) / \pmden^\dermp(\forme)(\cmp) \),
 est bien définie (le terme général est une expression homogène de degré \( 0 \)
 en \( \cmp \)) et est le développement en série de \( \tilde\forme \) au
-point \( \pmp \).
+point \( \pmp \). En particulier, le terme \og constant \fg de \(
+  \pmor(\forme) \) est \( \tilde\forme \).
 
 \medskip
 
@@ -80,7 +81,7 @@ complexifions peu à peu : hypersurface affine, variété projective plongée de
 façon adaptée (en calculant d'abord l'image de chaque variable, puis celle des
 monômes), et enfin variété multiprojective plongée de façon adaptée.
 
-\begin{lem}
+\begin{lem} \label{l:param-aff}
   Soit \( \anyvar \) une variété affine de dimension \( \anydim \), plongée
   dans un espace affine \( \aff{\anydim+1} \) de sorte que les coordonnées \(
     \anyvp[1], \dots, \anyvp[\anydim] \) sont indépendantes, et \( \poldep \in
@@ -88,22 +89,27 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
   Notons de plus \( \pden \) la dérivée de ce polynôme par rapport à la
   dernière variable.
 
-  Alors on peut prendre choisir \( \pmnum \) et \( \pmden \) tels que
+  Alors on peut prendre choisir \( \pmnum_0 \), \( \pmnum_1 \) et \( \pmden \)
+  tels que, pour tout \( \place \) :
   \begin{enumthm}
     \item \( \pmor*(\anyvp*) = \anyvp* + \psp* \) pour tout
       \( \ind \in \set{1, \dots, \anydim} \) ;
+    \item \( \pmnum^0_\dv (\anyvp[\anydim+1]) = \anyvp[\anydim+1] \) et
+      \( \pmden^0_\dv (\anyvp[\anydim+1]) = 1 \) ;
+    \item \( \pmden^\derp (\anyvp[\anydim+1]) = \pden^{2\lgr\derp - 1} \)
+      pour tout \( \derp \neq 0 \) ;
     \item \( \deg \pmnum^\derp_\dv (\anyvp[\anydim+1])
         \le (\anydeg - 1) (2\lgr\derp - 1) \)
-      pour tout \( \derp \) et toute place \( \place \) de \( \cdn \) ;
+      pour tout \( \derp \neq 0 \) ;
     \item \( \nv1{ \pmnum^\derp_\dv (\anyvp[\anydim+1]) }
         \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
           (4\anydim)^{\lgr\derp -1} \anydeg^{3\lgr\derp -2}
         \right)^\dv \)
-      pour tout \( \derp \) et tout \( \place \) ;
-    \item \( \pmden^\derp_\dv (\anyvp[\anydim+1]) = \pden^{2\lgr\derp - 1} \)
-      pour tout \( \derp \).
+      pour tout \( \derp \) ;
   \end{enumthm}
+  et \( \pmor* \) représente bien le morphisme de paramétrisation sur
+  \( \anyvar \setminus \zeros{\pden} \).
 \end{lem}
 
 \begin{proof}
@@ -252,8 +258,87 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
   \end{align}
 \end{proof}
 
-Nous passons maintenant au cas où \( \anyvar \) est une variété quelconque,
-plongée de façon adaptée dans un espace projectif.
+Notons désormais
+\begin{equation} \label{e:def-f-g}
+  f(\derp) =
+  \begin{cases*}
+    0                               & si \( \derp = 0 \), \\
+    2\lgr\derp - 1                  & sinon ;
+  \end{cases*}
+  \qquad
+  g(\derp) =
+  \begin{cases*}
+    1                               & si \( \derp = 0 \), \\
+    2 (\anydeg - 1) (\lgr\derp - 1) & sinon ;
+  \end{cases*}
+\end{equation}
+de sorte que pour tout \( \derp \) on a
+\( \pmden(\anyvp[\anydim+1]) = \pden^{f(\derp)} \) et
+\( \deg \pmnum(\anyvp[\anydim+1]) \le g(\derp) \) dans le lemme précédent.
+Remarquons également que \( f \) est sous-additive, propriété que nous
+utiliserons par la suite.
+
+Passons maintenant au cas où \( \anyvar \) est une variété quelconque, plongée
+de façon adaptée (voir section~\ref{sub:plong-adapt}) dans un espace
+projectif.
+
+\begin{lem}
+  Soit \( \anyvar \) une variété projective de dimension \( \anydim \),
+  plongée de façon adaptée dans \( \projd \), de degré \( \anydeg \). Notons
+  \( \poldep[][\indi] \) une relation de dépendance intégrale de \(
+    \anyvp[\indi] \) sur \( \anyvp[1], \dots, \anyvp[\anydim] \) telle que
+  donnée par le fait~\ref{f:plong-adapt-dep}, et \( \pden_\indi =
+    \diff[\indi] \poldep[][\indi] \).
+
+  Alors on peut prendre choisir \( \pmnum_0 \), \( \pmnum_1 \) et \( \pmden \)
+  tels que, pour tout \( \place \) :
+  \begin{enumthm}
+    \item \( \pmor*(\anyvp*) = \frac{ \anyvp* }{ \anyvp[\anydim] } + \psp* \)
+      pour tout \( \ind \in \set{0, \dots, \anydim-1} \), et
+      \( \pmor*(\anyvp[\anydim]) = 1 \) ;
+    \item \( \pmnum^0_\dv (\anyvp[\indi]) = \anyvp[\indi] \) et
+      \( \pmden^0 (\anyvp[\indi]) = \anyvp[\anydim] \) pour tout \( \indi
+        \in \set{\anydim + 1, \dots, \dimp} \) ;
+    \item \( \pmden^\derp (\anyvp[\indi]) = \pden_\indi^{f(\derp)} \) pour
+      tout \( \indi \in \set{\anydim + 1, \dots, \dimp} \) et \( \derp \neq 0
+      \) ;
+    \item \( \deg \pmnum^\derp_\dv (\anyvp[\indi]) = g(\derp) \) pour tout \(
+        \indi \in \set{\anydim + 1, \dots, \dimp} \) et tout \( \derp \) ;
+    \item \( \nv1{ \pmnum^\derp_\dv (\anyvp[\indi]) }
+        \le \left(
+          \nv1{ \chow\anyvar }
+          \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
+        \right)^{f(\derp)} \)
+      pour tout \( \indi \in \set{\anydim + 1, \dots, \dimp} \) et tout \( \derp
+      \) ;
+  \end{enumthm}
+  et \( \pmor* \) représente bien le morphisme de paramétrisation sur
+  \( \anyvar \setminus \zeros{ \anyvp[\anydim], \pden_{\anydim+1},
+      \dots, \pden_{\dimp} } \).
+\end{lem}
+
+\begin{proof}
+  On sait que les différents \( \poldep[][\indi] \) sont de degré \( \anydeg
+  \) et majorés en norme par \( \chow\anyvar \). On applique alors le
+  lemme précédent à chaque \( \anyvp[\indi] \) après avoir déshomogénéisé par
+  rapport à \( \anyvp[\anydim] \) et projeté sur  \( \aff{\anydim+1} \)
+  de façon convenable.
+\end{proof}
+
+\begin{lem}
+  Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
+  toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
+  \), on a :
+  \begin{enumthm}
+    \item \( \deg \pmnum^\derp (\anyvp^\ip) = \deg \pmden^\derp (\anyvp^\ip)
+        = \dots \) ;
+    \item \( \nv1{ \pmden^\derp (\anyvp^\ip) } \le \dots \) ;
+    \item \( \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) } \le \dots \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+\end{proof}
 
 \clearpage
 
@@ -267,8 +352,6 @@ plongée de façon adaptée dans un espace projectif.
 \begin{lem} \label{l:par-img}
   (Juste pour les références croisées.)
 \end{lem}
-
-
 
 \endinput
 
