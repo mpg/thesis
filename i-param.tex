@@ -284,11 +284,11 @@ projectif.
 
 \begin{lem}
   Soit \( \anyvar \) une variété projective de dimension \( \anydim \),
-  plongée de façon adaptée dans \( \projd \), de degré \( \anydeg \). Notons
-  \( \poldep[][\indi] \) une relation de dépendance intégrale de \(
-    \anyvp[\indi] \) sur \( \anyvp[1], \dots, \anyvp[\anydim] \) telle que
-  donnée par le fait~\ref{f:plong-adapt-dep}, et \( \pden_\indi =
-    \diff[\indi] \poldep[][\indi] \).
+  plongée de façon adaptée dans \( \projd \), de degré \( \anydeg \). Pour \(
+    \indi > \anydim \), notons \( \poldep[][\indi] \) une relation de
+  dépendance intégrale de \( \anyvp[\indi] \) sur \( \anyvp[1], \dots,
+    \anyvp[\anydim] \) telle que donnée par le fait~\ref{f:plong-adapt-dep},
+  et \( \pden_\indi = \diff[\indi] \poldep[][\indi] \).
 
   Alors on peut prendre choisir \( \pmnum_0 \), \( \pmnum_1 \) et \( \pmden \)
   tels que, pour tout \( \place \) :
@@ -329,15 +329,158 @@ projectif.
   Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
   toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
   \), on a :
+  \worknote{Le lemme précédent n'est pas une spécialisation de celui-ci. Il
+    faut donc le dire et changer de notations à un moment. Ou alors être plus
+    précis ici, mais y'a du boulot.}
   \begin{enumthm}
-    \item \( \deg \pmnum^\derp (\anyvp^\ip) = \deg \pmden^\derp (\anyvp^\ip)
-        = \dots \) ;
-    \item \( \nv1{ \pmden^\derp (\anyvp^\ip) } \le \dots \) ;
-    \item \( \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) } \le \dots \).
+    \item \(
+        \deg \pmnum^\derp_\dv (\anyvp^\ip)
+        = \deg \pmden^\derp (\anyvp^\ip)
+        = (\anydeg - 1) (\dimp - \anydim) f(\derp) + \lgr\ip \) ;
+    \item \(
+        \nv1{ \pmden^\derp     (\anyvp^\ip) }
+        \le
+        ( \nv1{ \chow\anyvar } \anydeg^\dv )^{(\dimp - \anydim) f(\derp)}
+      \) ;
+    \item \(
+        \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) }
+        \le
+        2^{ (\lgr\derp + \anydim (\lgr\ip - 2))\dv }
+        \left(
+          \nv1{ \chow\anyvar }
+          \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
+        \right)^{(\dimp - \anydim) f(\derp)}
+      \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
+  On utilise le résultat du lemme précédent et on se souvient que \( \pmor* \)
+  est un morphisme d'anneaux :
+  \newcommand \indl {{ \gmp\nu[\ind, \indi_\ind] }}
+  \begin{align}
+    \pmor*( \anyvp^\ip )
+    & =
+    \prod\indrange \pmor*( \anyvp* )^\ip*
+    =
+    \prod\indrange \left(
+      \sum_{\derp \in \N^\anydim}
+      \frac {
+        \pmnum^\derp_\dv( \anyvp* )
+      }{
+        \pmden^\derp    ( \anyvp* )
+      }
+      \psp^\derp
+    \right) ^\ip*
+    \\ & =
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \sum _{ \indl \in \N^\anydim }
+    \frac {
+      \pmnum^\indl_\dv( \anyvp* )
+    }{
+      \pmden^\indl    ( \anyvp* )
+    }
+    \psp^\indl
+    \\ & = \label{e:par-mono-dev}
+    \sum_{\derp \in \N^\anydim}
+    \left(
+      \sum_*
+      \prod\indrange
+      \prod_{ \indi_\ind = 1 }^{ \ip* }
+      \frac {
+        \pmnum^\indl_\dv( \anyvp* )
+      }{
+        \pmden^\indl    ( \anyvp* )
+      }
+    \right)
+    \psp^\derp
+    \pmm,
+  \end{align}
+  où la somme \( * \) est prise sur l'ensemble
+  \begin{equation}
+    \left\{
+      \gmp\nu \in (\N^\anydim)^{\lgr\ip}
+      \text{ tels que }
+      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*} \indl = \derp
+    \right\}
+    \pmm.
+  \end{equation}
+
+  On peut alors poser
+  \begin{align}
+    \pmden^\derp    ( \anyvp^\ip )
+    & =
+    \anyvp[\anydim]^{\lgr\ip}
+    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{f(\derp)}
+    \\
+    \pmnum^\derp_\dv( \anyvp^\ip )
+    & =
+    \sum_*
+    \Biggl(
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \pmnum^\indl_\dv( \anyvp* )
+    \cdot
+    \anyvp[\anydim]^{\lgr\ip - \star}
+    \cdot
+    \prod_{\ind = \anydim + 1}^{\dimp}
+    \pden_\ind^{ f(\derp)
+      - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
+    \Biggr)
+    \pmm,
+  \end{align}
+  où \( \star \) désigne le nombre de \( \indl \) nuls. On vérifie en effet
+  immédiatement que \( \pmnum^\derp_\dv( \anyvp^\ip ) \) est bien un polynôme
+  et que \( \pmnum^\derp_\dv( \anyvp^\ip ) / \pmden^\derp ( \anyvp^\ip ) \)
+  est bien le terme général de la série~\ref{e:par-mono-dev}.
+
+  Le calcul des degrés ainsi que l'estimation de norme du dénominateur sont
+  immédiats. Pour le numérateur, chaque terme de la somme est majoré en norme
+  par
+  \begin{align}
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    &
+    \nv1{ \pmnum^\indl_\dv( \anyvp* ) }
+    \cdot
+    \prod_{\ind = \anydim + 1}^{\dimp}
+    \nv1{ \pden_\ind }^{ f(\derp)
+      - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
+    \\ & \le
+    \prod_{\ind = \anydim + 1}^{\dimp}
+    \left(
+      \nv1{ \chow\anyvar }
+      \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
+    \right)^{ \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
+    \cdot \left(
+      \nv1{ \chow\anyvar } \anydeg^\dv
+    \right)^{ f(\derp)
+      - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
+    \\ & \le
+    \Biggl(
+    \nv1{ \chow\anyvar }
+    \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
+    \Biggr)^{(\dimp - \anydim) f(\derp)}
+  \end{align}
+  On remarque alors que l'ensemble de sommation s'écrit aussi
+  \begin{equation}
+    \prod_{p = 0}^{\anydim - 1} \left\{
+      \gmp\nu[][p] \in \N^{\lgr\ip}
+      \text{ tels que }
+      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*}
+      \gmp\nu[\ind, \indi_\ind][p]
+      = \derp[p]
+    \right\}
+    \pmm.
+  \end{equation}
+  Chacun des facteurs de ce produit est de cardinal
+  \(
+    \binom{ \derp[p] + \lgr\ip - 1 }{ \lgr\ip - 1 }
+    \le
+    2^{ \derp[p] + \lgr\ip - 2 }
+  \)
+  L'estimation annoncée suit en prenant le produit.
 \end{proof}
 
 \clearpage
