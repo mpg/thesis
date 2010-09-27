@@ -149,7 +149,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
     0
     & =
     \sum_{(\ip, \mu) \in \N^{\anydim+1}}
-    \der{\ip, \mu} \poldep
+    \der[\ip, \mu] \poldep
     \cdot \psp^\ip
     \cdot \left(
       \sum_{ \derp \in \N^\anydim \minusset 0 }
@@ -160,7 +160,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
     \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
     \left(
-      \der{\ip, \mu} \poldep
+      \der[\ip, \mu] \poldep
       \cdot \prod_{\fct = 1}^\mu
       \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
     \right)
@@ -174,7 +174,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
-    \der{\ip, \mu} \poldep
+    \der[\ip, \mu] \poldep
     \cdot \prod_{\fct = 1}^\mu
     \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
     \Biggr)
@@ -191,7 +191,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
-    \der{\ip, \mu} \poldep
+    \der[\ip, \mu] \poldep
     \cdot \pden^{2\lgr\derp - 2}
     \cdot \prod_{\fct = 1}^\mu
     \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
@@ -202,9 +202,9 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
     \deg P^\derp
     & \le
     \anydeg - \lgr\ip - \mu + (\anydeg - 1) (2\lgr\derp - 2)
-    \\ \le
+    \\ & \le
     1 - \lgr\ip - \mu + (\anydeg - 1) (2\lgr\derp - 1)
-    \\ \le
+    \\ & \le
     (\anydeg - 1) (2\lgr\derp - 1)
     \pmm,
   \end{align}
@@ -228,7 +228,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
     Q_{\derp'}
     \pmm.
   \end{equation}
-  On en déduit immédiatemment l'estimation de degré suivante :
+  On en déduit immédiatement l'estimation de degré suivante :
   \begin{equation}
     \deg P^\derp
     \le 2 (\anydeg - 1) + \deg P^{\derp'}
@@ -242,7 +242,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
     (\lgr\derp - 1) !
   \)
   (ce qui implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
-    \le \anydim^{\lgr\derp-1} \) en exploitant la majoration de degré
+    \le \anydim^{\lgr\derp-1} \)) en exploitant la majoration de degré
   sous la forme \( \deg P^\derp \le 2\lgr\derp \anydeg \).
   \begin{align}
     \nv1{ Q_\derp }
@@ -272,11 +272,11 @@ Notons désormais
     2 (\anydeg - 1) (\lgr\derp - 1) & sinon ;
   \end{cases*}
 \end{equation}
-de sorte que pour tout \( \derp \) on a
-\( \pmden(\anyvp[\anydim+1]) = \pden^{f(\derp)} \) et
-\( \deg \pmnum(\anyvp[\anydim+1]) \le g(\derp) \) dans le lemme précédent.
-Remarquons également que \( f \) est sous-additive, propriété que nous
-utiliserons par la suite.
+de sorte que pour tout \( \derp \) et \( \indi \ge \anydim + 1 \) on a
+\( \pmden(\anyvp[\indi]) = \pden^{f(\derp)} \) et
+\( \deg \pmnum(\anyvp[\indi]) \le g(\derp) \) dans le lemme précédent.
+Remarquons également que \( f \) est croissante en \( \lgr\derp \) et
+sous-additive en \( \derp \), propriétés que nous utiliserons par la suite.
 
 Passons maintenant au cas où \( \anyvar \) est une variété quelconque, plongée
 de façon adaptée (voir section~\ref{sub:plong-adapt}) dans un espace
