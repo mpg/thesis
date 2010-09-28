@@ -68,18 +68,23 @@ construirons en fait deux familles d'applications \( \pmnum^\dermp_\dv \)
 ayant les mêmes propriétés et dont nous contrôlerons les normes aux places
 ultramétriques et archimédiennes respectivement.
 
-Dans un premier temps, nous établissons une série de lemmes généraux
-sur la paramétrisation des variétés projectives et multiprojectives, puis nous
-appliquons ces résultats à notre variété \( \var \) et à la forme auxiliaire
-\( F \).
+Dans un premier temps, nous établissons un lemme général de paramétrisation
+des variétés projectives, puis nous appliquons ce résultats à notre variété
+\( \var \) et à la forme auxiliaire \( F \).
 
 \subsection{Lemmes généraux de paramétrisation} \label{sub:param-gene}
 
-Avant d'arriver au cas d'une variété multiprojective générale, nous
-établissons des paramétrisations dans des cas plus simples que nous
-complexifions peu à peu : hypersurface affine, variété projective plongée de
-façon adaptée (en calculant d'abord l'image de chaque variable, puis celle des
-monômes), et enfin variété multiprojective plongée de façon adaptée.
+Le but de cette section est de fournir une paramétrisation bien contrôlée
+d'une variété projective plongée de façon adaptée. Les applications
+\( \pmnum_\dv \) et \( \pmden \) étant linéaires, il nous suffit d'étudier leur
+comportement sur une base ; nous choisirons la base monomiale évidente.
+
+Dans un premier temps, nous construirons des applications partielles,
+restreintes à la partie homogène de degré \( 1 \) de l'espace de départ (dont
+une base est tout simplement l'ensemble des variables), que nous noterons
+\( \pmnum_{1, \dv} \) et \( \pmden_1 \).  De plus, avant de nous intéresser à
+une variété projective générale, nous étudions d'abord le cas plus simple
+d'une hypersurface affine.
 
 \begin{lem} \label{l:param-aff}
   Soit \( \anyvar \) une variété affine de dimension \( \anydim \), plongée
@@ -89,19 +94,19 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
   Notons de plus \( \pden \) la dérivée de ce polynôme par rapport à la
   dernière variable.
 
-  Alors on peut prendre choisir \( \pmnum_0 \), \( \pmnum_1 \) et \( \pmden \)
-  tels que, pour tout \( \place \) :
+  Alors on peut prendre choisir \( \pmnum_{1, 0} \), \( \pmnum_{1, 1} \) et \(
+    \pmden_1 \) tels que, pour tout \( \place \) :
   \begin{enumthm}
     \item \( \pmor*(\anyvp*) = \anyvp* + \psp* \) pour tout
       \( \ind \in \set{1, \dots, \anydim} \) ;
-    \item \( \pmnum^0_\dv (\anyvp[\anydim+1]) = \anyvp[\anydim+1] \) et
-      \( \pmden^0_\dv (\anyvp[\anydim+1]) = 1 \) ;
-    \item \( \pmden^\derp (\anyvp[\anydim+1]) = \pden^{2\lgr\derp - 1} \)
+    \item \( \pmnum^0_{1, \dv} (\anyvp[\anydim+1]) = \anyvp[\anydim+1] \) et
+      \( \pmden_1^0 (\anyvp[\anydim+1]) = 1 \) ;
+    \item \( \pmden_1^\derp (\anyvp[\anydim+1]) = \pden^{2\lgr\derp - 1} \)
       pour tout \( \derp \neq 0 \) ;
-    \item \( \deg \pmnum^\derp_\dv (\anyvp[\anydim+1])
+    \item \( \deg \pmnum^\derp_{1, \dv} (\anyvp[\anydim+1])
         \le (\anydeg - 1) (2\lgr\derp - 1) \)
       pour tout \( \derp \neq 0 \) ;
-    \item \( \nv1{ \pmnum^\derp_\dv (\anyvp[\anydim+1]) }
+    \item \( \nv1{ \pmnum^\derp_{1, \dv} (\anyvp[\anydim+1]) }
         \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
           (4\anydim)^{\lgr\derp -1} \anydeg^{3\lgr\derp -2}
@@ -121,7 +126,7 @@ monômes), et enfin variété multiprojective plongée de façon adaptée.
   \cite{remivds}.\worknote{Détailler les notations de \bsc{Rémond} qu'on
     reprend (il s'agit des dérivées, je crois).}
 
-  Jusqu'à la fin de la preuve, on note \( P_\dv^\derp = \pmnum^\derp_\dv
+  Jusqu'à la fin de la preuve, on note \( P_\dv^\derp = \pmnum^\derp_{1, \dv}
     (\anyvp[\anydim+1]) \).  On va construire $P_0^\derp$ et $P_1^\derp$
   indépendamment par récurrence
   sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
@@ -273,7 +278,7 @@ Notons désormais
   \end{cases*}
 \end{equation}
 de sorte que pour tout \( \derp \) et \( \indi \ge \anydim + 1 \) on a
-\( \pmden(\anyvp[\indi]) = \pden^{f(\derp)} \) et
+\( \pmden_1(\anyvp[\indi]) = \pden^{f(\derp)} \) et
 \( \deg \pmnum(\anyvp[\indi]) \le g(\derp) \) dans le lemme précédent.
 Remarquons également que \( f \) est croissante en \( \lgr\derp \) et
 sous-additive en \( \derp \), propriétés que nous utiliserons par la suite.
@@ -290,21 +295,21 @@ projectif.
     \anyvp[\anydim] \) telle que donnée par le fait~\ref{f:plong-adapt-dep},
   et \( \pden_\indi = \diff[\indi] \poldep[][\indi] \).
 
-  Alors on peut prendre choisir \( \pmnum_0 \), \( \pmnum_1 \) et \( \pmden \)
-  tels que, pour tout \( \place \) :
+  Alors on peut prendre choisir \( \pmnum_{1, 0} \), \( \pmnum_{1, 1} \) et \(
+    \pmden_1 \) tels que, pour tout \( \place \) :
   \begin{enumthm}
     \item \( \pmor*(\anyvp*) = \frac{ \anyvp* }{ \anyvp[\anydim] } + \psp* \)
       pour tout \( \ind \in \set{0, \dots, \anydim-1} \), et
       \( \pmor*(\anyvp[\anydim]) = 1 \) ;
-    \item \( \pmnum^0_\dv (\anyvp[\indi]) = \anyvp[\indi] \) et
-      \( \pmden^0 (\anyvp[\indi]) = \anyvp[\anydim] \) pour tout \( \indi
+    \item \( \pmnum^0_{1, \dv} (\anyvp[\indi]) = \anyvp[\indi] \) et
+      \( \pmden_1^0 (\anyvp[\indi]) = \anyvp[\anydim] \) pour tout \( \indi
         \in \set{\anydim + 1, \dots, \dimp} \) ;
-    \item \( \pmden^\derp (\anyvp[\indi]) = \pden_\indi^{f(\derp)} \) pour
+    \item \( \pmden_1^\derp (\anyvp[\indi]) = \pden_\indi^{f(\derp)} \) pour
       tout \( \indi \in \set{\anydim + 1, \dots, \dimp} \) et \( \derp \neq 0
       \) ;
-    \item \( \deg \pmnum^\derp_\dv (\anyvp[\indi]) = g(\derp) \) pour tout \(
+    \item \( \deg \pmnum^\derp_{1, \dv} (\anyvp[\indi]) = g(\derp) \) pour tout \(
         \indi \in \set{\anydim + 1, \dots, \dimp} \) et tout \( \derp \) ;
-    \item \( \nv1{ \pmnum^\derp_\dv (\anyvp[\indi]) }
+    \item \( \nv1{ \pmnum^\derp_{1, \dv} (\anyvp[\indi]) }
         \le \left(
           \nv1{ \chow\anyvar }
           \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
@@ -325,13 +330,18 @@ projectif.
   de façon convenable.
 \end{proof}
 
+Nous allons maintenant construire des applications \( \pmnum_\dv \) et \(
+  \pmden \) non restreintes aux formes linéaires. Pour simplifier leur
+expression et obtenir des dénominateurs uniformes, nous choisissons des
+applications qui ne prolongent pas celles construites en degré \( 1 \). La
+perte de précision sur le degré des images de monômes particuliers n'est pas
+importante en pratique, car ce sont surtout les images de formes de grand
+degré qui nous intéressent.
+
 \begin{lem}
   Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
   toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
   \), on a :
-  \worknote{Le lemme précédent n'est pas une spécialisation de celui-ci. Il
-    faut donc le dire et changer de notations à un moment. Ou alors être plus
-    précis ici, mais y'a du boulot.}
   \begin{enumthm}
     \item \(
         \deg \pmnum^\derp_\dv (\anyvp^\ip)
@@ -366,9 +376,9 @@ projectif.
     \prod\indrange \left(
       \sum_{\derp \in \N^\anydim}
       \frac {
-        \pmnum^\derp_\dv( \anyvp* )
+        \pmnum^\derp_{1, \dv}( \anyvp* )
       }{
-        \pmden^\derp    ( \anyvp* )
+        \pmden_1^\derp    ( \anyvp* )
       }
       \psp^\derp
     \right) ^\ip*
@@ -377,9 +387,9 @@ projectif.
     \prod_{ \indi_\ind = 1 }^{ \ip* }
     \sum _{ \indl \in \N^\anydim }
     \frac {
-      \pmnum^\indl_\dv( \anyvp* )
+      \pmnum^\indl_{1, \dv}( \anyvp* )
     }{
-      \pmden^\indl    ( \anyvp* )
+      \pmden_1^\indl    ( \anyvp* )
     }
     \psp^\indl
     \\ & = \label{e:par-mono-dev}
@@ -389,9 +399,9 @@ projectif.
       \prod\indrange
       \prod_{ \indi_\ind = 1 }^{ \ip* }
       \frac {
-        \pmnum^\indl_\dv( \anyvp* )
+        \pmnum^\indl_{1, \dv}( \anyvp* )
       }{
-        \pmden^\indl    ( \anyvp* )
+        \pmden_1^\indl    ( \anyvp* )
       }
     \right)
     \psp^\derp
@@ -420,7 +430,7 @@ projectif.
     \Biggl(
     \prod\indrange
     \prod_{ \indi_\ind = 1 }^{ \ip* }
-    \pmnum^\indl_\dv( \anyvp* )
+    \pmnum^\indl_{1, \dv}( \anyvp* )
     \cdot
     \anyvp[\anydim]^{\lgr\ip - \star}
     \cdot
