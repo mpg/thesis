@@ -60,7 +60,7 @@ Plus précisément, posons
   d' & = \bigl(
   \wt[1] (\frac94 + \epsz),
   \dots,
-  \wt[\puiss] (\frac94 + \epsz),
+  \wt[\puiss*] (\frac94 + \epsz),
   2\puiss + \epsz
   \bigr) \in \Q^\puiss
   \pmm.
@@ -606,7 +606,7 @@ de l'appliquer au cas qui nous intéresse.
   \end{enumthm}
   On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
   l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
-  \( f \in N^\puiss \), il existe un (unique) application linéaire
+  \( f \in \N^\puiss \), il existe une (unique) application linéaire
   \begin{equation}
     \rdiv^f \colon \cdn [\cmmh]_ f \to \cdn [\cmmh]_ f^{C'_\Delta}
   \end{equation}
@@ -860,13 +860,14 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
       \times \{ 0, \dots, \vdeg* - 1 \}
       \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
-      \middle\|
+      \text{ tel que }
       \sum\indrange \imp** = \Diii
+      \ \forall \fct
       \right\}
     \pmm.
   \end{equation}
   On extrait les lignes dont l'indice appartient à l'ensemble
-  \( (\stairs)\Ciii \) définit par~\eqref{e:stairs-c3} pour former la matrice
+  \( (\stairs)\Ciii \) défini par~\eqref{e:stairs-c3} pour former la matrice
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
   multidegré \( \Dz \) en \( (\cmmh, \cmmhi) \). On extrait alors de
   \( M' \) les colonnes indexées par les monômes constituant la base choisie
@@ -885,16 +886,16 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \end{equation}
   En remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
   forme \( F \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
-  par \( \hautl[\infty] + o(\delta) \) ; il reste donc à estimer cette
+  par \( \hautl[\infty] M + o(\delta) \) ; il reste donc à estimer cette
   hauteur.
 
   On utilise le fait élémentaire suivant : si \( A \) et \( B \) sont deux
   matrices telles que le produit \( A \cdot B \) est défini, alors
-  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \hautm[\infty] A \)
+  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \hautl[\infty] A \)
   et d'un majorant de \( \hautl[\infty] c \) où \( c \) parcourt les colonnes
   de \( B \).
 
-  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautm_\infty \) des
+  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautl_\infty \) des
   colonnes de la matrice de \( \wemba \) est majorée par
   \begin{equation}
     \bigl( \delta + o(\delta) \bigr)
@@ -935,10 +936,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   avec
   \begin{align}
     \cst{f-aux}
-    \le
-    & 2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
+    & \le
+    2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
     \\
-    & \null + 2(2\puiss + \epsz)
+    & \qquad + 2(2\puiss + \epsz)
     \max\fctrange \Bigl(
     \ln(\vdeg*) + \ln(2) + \ln(2) (\vdim* + 1) \vdeg*
     \Bigr)
