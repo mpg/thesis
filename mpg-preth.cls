@@ -228,8 +228,8 @@
 
 % numbering [[2
 %
-\numberwithin{equation}{section}
-\numberwithin{thm}{chapter}
+\numberwithin{equation}{chapter}
+\numberwithin{thm}{section}
 
 % shortcut macros [[2
 %
