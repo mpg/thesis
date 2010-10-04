@@ -1,33 +1,6 @@
 Objectifs de la semaine {{{1
 =======================
 
-Au moins : paramétisation.
-
-Paramétrisation {{{2
-
-1. Relire mes notes papiers là-dessus.
-2. Me décider sur l'ordre des lemmes et la forme des conclusions.
-3. Transformer la version actuelle, la version papier ou autre en vrais énoncés.
-        - La variable de déshomogénéisation est désormais le dernière.
-        - Ajouter le point (iv) aux couclusions.
-4. Taper le résultat.
-5. Appliquer des notations cohérentes en interne et avec le début du chapitre.
-
-Extrapolation {{{2
-
-1. Faire le lemme sur le choix de la coordonnée de déshomogénéisation.
-        Le taper.
-2. Faire le lemme sur la valeur absolue du dénominateur.
-        Le taper.
-3.      a. Dégrossir le lemme sur le développement aux places spéciales.
-        b. Le finir.
-        c. Le taper.
-        d. Faire la partie inutile aux places non spéciales.
-
-Autre {{{2
-
-Reprendre le plan du chapitre Vojta et le taper sous forme de squelette.
-
 Rédaction {{{1
 =========
 
@@ -62,10 +35,10 @@ Voire directement des constantes automatiques ?
 Notations {{{2
 ---------
 
-(A) Régler les problèmes de macros genre \coeff.
-
 (A) Faire une notation pour les indives de formes le long d'un diviseur ou en
 un point.
+
+(B) Noms des formules abéliennes.
 
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
@@ -83,6 +56,10 @@ tranquillement.
 gras et souligné pour les trucs multihomogènes
     l:hmat-wemba (avant, énoncé et preuve) : p, q (\fcti) et s pas bons
 
+Dans siegel: passer aux nouvelles macros multiprojectives
+- \lambda devient \imp
+- p, q et s dans les lemmes de la section « calculs de hauteur »
+
 Unifier les indices :
 - i et j en haut (de 1 à m ou m-1)
 - k et l en bas (de 0 à n)
@@ -90,13 +67,15 @@ Unifier les indices :
 Unifier les notations pour la ou les approximations exceptionnelles (x, y et z
 doivent rester des points quelconques, prendre e par exemple).
 
-La convention \boldsymbol -> le point, \mathit -> ses coordonnées est loin
+La convention \boldsymbol = le point, \mathit = ses coordonnées est loin
 d'être utilisée de façon consistante. On fait quoi ?
 
 Clarifier l'utilisation des (multi)variables X, Y : peut-on les réutiliser
 pour le cas d'un projectif simple (pas produit) ? Ou vaut-il mieux utiliser
 une autre lettre (W est sans doute libre) ? (Ensuite, le dire dans la
 nomenclature.)
+
+\vlg vs \lg vs \lgr...
 
 Macros {{{2
 ------
@@ -110,6 +89,8 @@ Macros {{{2
 (B) Nomenclature : numéros de page.
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
+
+(C) Normes v-adiques: comment ajuster la taille façon mathtools ?
 
 (C) Liste des constantes : même style visuel que la nomenclature. Utiliser
 carrément \nomencl avec un nouveau groupe ?
@@ -129,14 +110,7 @@ systématiquement la norme ou mesure archimédienne utilisée
 Vojta {{{2
 -----
 
-(A) Retaper la paramétrisation dès que les math sont prêtes.
-
-(B) Finir d'enregistrer dans la nomenclature les trucs sans macros
-(dénominateur, etc.)
-
-(C) La notation \vb est pourrie et entre plus ou moins en conflit avec celles
-des approximatiosn exceptionnelles. Un peu pareil pour \Mbase. Préciser aussi
-\monome et \mat.
+(C) Trouver une meilleur notation pour \Ideal_{\delta d}.
 
 Plongements et formulaires {{{2
 --------------------------
@@ -153,10 +127,34 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A1) Reprendre le plan général de Vojta, et traduire ça en une structure
+(A) Reprendre le plan général de Vojta, et traduire ça en une structure
 section, squelettes d'énoncés, etc.
 
-(A) Mettre au propre une bonne version de la paramétrisation.
+(A) Paramétrisation : corriger les normes des \poldep. (Cf le fait f:dep-int,
+à déplacer dans la section adéquate d'ailleurs.)
+
+(A) Paramétrisation : images par \wemba. Faire le lemme
+
+(A) Extrapolation : remanier le plan général avec squelette détaillé, énoncés
+modulo constantes mais avec ordres de grandeur attendus.
+
+(A) Remplacer la section « idéal d'annulation » par « indices d'annulation ».
+Définitions (et macros) adéquates pour les sommes pondérées de coefficients,
+l'indice le long d'un hyperplan et en un point, puis finalement idéaux
+d'annulation comme actuellement.
+
+(A) Extrapolation : partie places spéciales
+1. Faire le lemme sur le choix de la coordonnée de déshomogénéisation.
+        Le taper.
+2. Faire le lemme sur la valeur absolue du dénominateur.
+        Le taper.
+3.      a. Dégrossir le lemme sur le développement aux places spéciales.
+        b. Le finir.
+        c. Le taper.
+        d. Faire la partie inutile aux places non spéciales.
+
+(B) Commencer les énoncés de géométrie euclidienne (voir \todo dans la section
+correspondante, actuellement sub:wemb).
 
 (B) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
 faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
@@ -164,9 +162,13 @@ faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
     (B) Faire un squelette détaillé des réductions.
     (B) Remplir ce squelette avec des preuves.
 
-(B) Dans l:deg-wemba, remplacer le \le par un = en utilisant des parties
-entières supérieures de façon adéquate, ça coute pas cher et ça simplife la
-suite.
+(B) Plongement adapté : estimer le coût sur les formules de soustraction et
+multiplication.
+- Attendre d'avoir fait le lemme de choix de coordonnée non
+nulle avant, pour l'intégrer.
+- Ensuite, propager dans les estimations de hauteur faisant intervenir \wemba.
+
+(C) Détailler les preuves voire les énoncés concernant le plongement adapté.
 
 Mumford {{{2
 -------
@@ -180,6 +182,11 @@ Annexe normes et mesures {{{2
 
 Autres, divers {{{2
 --------------
+
+Question : le degré (multi)projectif se comporte-t-il bien par projection
+linéaire (dont le centre peut rencontrer la variété) ? Si oui, utiliser un
+plongement \wemba étendu avec addition-soustraction, se réprésentant
+globalement, pour calculer le degré de \wemb(\var) ?
 
 (C) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
 remplacer \C_v par k_v (voire k) ?

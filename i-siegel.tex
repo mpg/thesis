@@ -25,14 +25,15 @@ On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
 \end{equation}
 auquel on associe l'idéal d'annulation
 \begin{equation}
-  \vanish = \left\{
+  \vanish*
+  = \left\{
     \sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda
     \in \cdn [\cmmh]
     \text{ tels que }
     \lambda \in \stairs
     \implies
     f_\lambda = 0
-    \right\}
+  \right\}
   \pmm.
 \end{equation}
 On considère enfin $\vanish = \vanish* + \varid$. Par abus,
@@ -78,7 +79,7 @@ On cherche ainsi une forme
   \cap \wemba(\cdn[\cmmh, \cmmhi]_{\delta d})
 \end{equation}
 non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
-\wemb(F)$), on cherche une forme
+\wemba(F)$), on cherche une forme
 \begin{equation}
   F
   \in \cdn[\cmmh, \cmmhi]_{\delta d}
@@ -89,7 +90,7 @@ non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
 Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
 Cependant, il est difficile d'expliciter un système essentiellement minimal
 d'équations linéaires exprimant l'appartenance à $\vanish$. Il est en
-revanche immédiat d'expliciter un tel système pour $\vanish$, mais
+revanche immédiat d'expliciter un tel système pour $\vanish*$, mais
 il comporte beaucoup trop d'équations (géométriquement, il correspond à une
 condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
 $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
@@ -180,7 +181,7 @@ et où les flèches verticales sont les morphismes de réduction.
 Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
 représente une réduction par division euclidienne par certaines relations de
 dépendance intégrale, les second permet d'éliminer les variables en utilisant
-des relations linéaires dans $\korper(\var)$ et correspond modulo $\varid$ à
+des relations linéaires dans $\korper\var$ et correspond modulo $\varid$ à
 une multiplication par une certaine forme $R$ de degré $r$ ne dépendant que de
 $\var$, de façon à éliminer les dénominateurs apparaissant dans ces relations
 linéaires. Notons qu'il est essentiel d'effectuer $\rdiv$ avant $\relim$ pour
@@ -192,7 +193,7 @@ notre objectif : il s'agira en fait de construire une forme $F \in
 \Ideal_{\delta d} \setminus \{0\}$ telle que
 \begin{equation}
   \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
-  \in \vanish
+  \in \vanish*
   \pmm,
 \end{equation}
 ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
@@ -212,7 +213,7 @@ tirées en arrière sur $\Ideal_{\delta d}$ par
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
   \item calculer la codimension de $\Ideal_{\delta d}$ ;
-  \item calculer la codimension de $\vanish$ dans
+  \item calculer la codimension de $\vanish*$ dans
     $\cdn[\cmmh]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
     petite que la dimension précédente ;
   \item expliciter les morphismes de la première ligne du diagramme et majorer
@@ -228,7 +229,7 @@ $\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
 
 La dimension de $\Ideal_{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
-$\wemb{\var}$. Il est \lat{a priori} difficile de tous les calculer, mais il
+$\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais il
 comme suffit en fait de minorer la dimension, le lemme suivant nous donne tout
 ce qu'on aura besoin de savoir sur le degré.
 
@@ -276,7 +277,7 @@ ce qu'on aura besoin de savoir sur le degré.
   $\wemb[\wt*, p]''(\var*)$ pour $\fct$ variant de $1$ à $\puiss-1$ en
   notant
   \begin{align}
-    \wemb[\wt*, p]''(\var*)
+    \wemb[\wt*, p]''
     \colon
     \var*
     & \to
@@ -289,7 +290,7 @@ ce qu'on aura besoin de savoir sur le degré.
   Il suffit donc de calculer le degré de ces variétés. La translation par $p$
   n'ayant pas d'influence sur le degré, il suffit de regarder l'action de la
   multiplication par $\wt*$. Or, celle-ci pouvant être représentée
-  globalement par des formes de degré $\wts*$ en tirant en arrière par
+  globalement par des formes de degré $\wts*$, en tirant en arrière par
   $\wemb[\wt*, p]''(\var*)$ une famille de $\vdim*$ hyperplans
   génériques sur le second facteur, on obtient des hypersurfaces génériques de
   degré $\wts*$ qui coupent donc $\var*$ en $\vdeg*
@@ -320,10 +321,10 @@ ce qu'on aura besoin de savoir sur le degré.
   \begin{align}
     \dim \Ideal_{\delta d}
     & =
-    \left(
-    \sum_{\substack{ t \in \N^{2\puiss-1} \\ \lg t = \lg u }}
+    \Biggl(
+    \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
     \deg_t \wemb(\var) \frac{ d^t }{ t! }
-    \right)
+    \Biggr)
     \delta^{\vlg\vdim}
     + o( \delta^{\vlg\vdim} )
     \\
@@ -334,33 +335,36 @@ ce qu'on aura besoin de savoir sur le degré.
     \frac { \epsz^{\vdim[\puiss]} }{ \vdim ! }
     \delta^{\vlg\vdim}
     + o( \delta^{\vlg\vdim} )
+    \qedhere
   \end{align}
 \end{proof}
 
-Nous allons maintenant calculer la codimension de $\vanish$ dans
+Nous allons maintenant calculer la codimension de $\vanish*$ dans
 $\cdn[\cmmh]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
 suivant :
 
-\begin{align} \label{e:stairs-c3}
-  (\stairs)\Ciii
-  & =
-  \Biggl\{
-    ( \imp[1], \dots \imp[\puiss] )
-    \in
-    \prod\fctrange \bigl(
-      \N^{\vdim* + 1}
-      \times \{ 0, \dots, \vdeg* - 1 \}
-      \times \{ 0 \}^{\dimp - \vdim* - 1}
-    \bigr)
-    \\ & \quad \text{tel que }
-    \sumwtlambda
-    \le \epsi \delta
-    \\ & \quad \text{et }
-    \lgr{\imp*}
-    = \delta d' + r \quad \forall \fct
-  \Biggr\}
-  \pmm,
-\end{align}
+\begin{equation} \label{e:stairs-c3}
+  \begin{split}
+    (\stairs)\Ciii
+    & =
+    \Biggl\{
+      ( \imp[1], \dots \imp[\puiss] )
+      \in
+      \prod\fctrange \bigl(
+        \N^{\vdim* + 1}
+        \times \{ 0, \dots, \vdeg* - 1 \}
+        \times \{ 0 \}^{\dimp - \vdim* - 1}
+      \bigr)
+      \\ & \quad \text{tel que }
+      \sumwtlambda
+      \le \epsi \delta
+      \\ & \quad \text{et }
+      \lgr{\imp*}
+      = \delta d' + r \quad \forall \fct
+    \Biggr\}
+    \pmm,
+  \end{split}
+\end{equation}
 dont il s'agit de calculer le cardinal. En effet,
 \( \vanish* \cap \cdn [\cmmh]\Ciii \)
 est le sous-espace engendré par les monômes dont les exposants ne sont pas
@@ -488,7 +492,9 @@ est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
   (p, q)
   \in \N^{\puiss(\dimp + 1)} \times \N^{(\puiss - 1) (\dimp - 1)}
   \text{ tel que }
-  \lgr{p\mexp*} = \Dz* \lgr{q\mexpi*} = \Dz[\puiss + \fcti]
+  \lgr{p\mexp*} = \Dz*
+  \text{ et }
+  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
   \pmm,
 \end{equation}
 où \( d \) est défini par~\refeq{e:def-d}.
@@ -551,7 +557,7 @@ où \( d \) est défini par~\refeq{e:def-d}.
     \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-  \delta \) pour tout \( \fcti \).
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:def-dp}).
 \end{proof}
 
 Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
@@ -637,7 +643,7 @@ de l'appliquer au cas qui nous intéresse.
   \( \ind \in \{ 0, \dots, \dimp \} \) et tout
   \( p \in \N^{\puiss(\dimp+1)} \),
   \begin{equation}
-    \rho{\fct, \ind, p}
+    \rho_{\fct, \ind, p}
     =
     \begin{dcases*}
       ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]}
@@ -650,11 +656,11 @@ de l'appliquer au cas qui nous intéresse.
     \end{dcases*}
   \end{equation}
   où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}. En
-  particulier, \( \rho{\fct, \ind, p} \) est toujours congru à
+  particulier, \( \rho_{\fct, \ind, p} \) est toujours congru à
   \( ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
   l'estimation de norme
   \begin{equation}
-    \nv1{ \rho{\fct, \ind, p} }
+    \nv1{ \rho_{\fct, \ind, p} }
     \le
     \left(
     \nv1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
@@ -665,7 +671,7 @@ de l'appliquer au cas qui nous intéresse.
   \begin{equation}
     c_p
     = \rdiv^f(\cmmh^p)
-    = \prod\fctrange \prod\indrange \rho{\fct, \ind, p}
+    = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
   \end{equation}
   et en prolongeant par linéarité. L'estimation de norme annoncée découle
   directement de la majoration précédente en prenant le produit. Par ailleurs,
@@ -818,8 +824,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{prop} \label{p:build-aux}
   Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
   \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
-  [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), non nulle modulo
-  \( \ideal{\wemb(\var)} \), telle que \( R \cdot F \in \vanish \) et
+    [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), non nulle modulo
+  \( \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F) \in \vanish \) et
   \begin{equation}
     \hautl[\infty] F
     \le

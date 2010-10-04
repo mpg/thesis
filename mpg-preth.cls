@@ -186,8 +186,10 @@
 % marginal notes and todos [[2
 %
 \newcommand*\marginnote [1] {\marginpar[\raggedleft #1]{\raggedright #1}}
-\newcommand*\worknote   [2][todo] {\marginnote{%
-    \leavevmode\color{#1}\itshape #2}}
+\newcommandx*\worknote  [3][1=todo, 3] {%
+  \marginnote{\leavevmode\color{#1}\itshape #2}%
+  \@ifnotmtarg{#3}{\textcolor{#1}{#3}}%
+}
 
 \newcommand \todo  {\worknote{\textsc{todo}}}
 \newcommand \todom {\tag*{\color{todo}\textsc{todo}}}
@@ -435,6 +437,8 @@
 \newcommand*\expb {\mathrm e}
 
 \noma{e}{\expb}{Base des logarithmes népériens}
+
+\DeclareMathOperator \Aind {Ind}
 
 % automatic constants [[2
 %
@@ -701,10 +705,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % various "epsilons" [[2
 %
-\newcommand \epsz   {{\eps_0}}
-\newcommand \epsi   {{\eps_1}}
-\newcommand \epsii  {{\eps_2}}
-\newcommand \epsiii {{\eps_3}}
+% Note: no additional braces, or \expi^2 would be typeset incorrectly
+\newcommand \epsz   {\eps_0}
+\newcommand \epsi   {\eps_1}
+\newcommand \epsii  {\eps_2}
+\newcommand \epsiii {\eps_3}
 
 \nomg{eps0}{\epsz  }{Un epsilon}
 \nomg{eps1}{\epsi  }{Un autre epsilon}
@@ -768,10 +773,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
 % various (degree) conditions for subsets in lemmas
-\newcommand \Dz   { {\delta d} }
-\newcommand \Di   { {\delta d'} }
-\newcommand \Dii  { {\delta d'} }
-\newc@ifstar\Diii {\delta d'_\fct + r_\fct} {\delta d' + r}
+\newc@ifstar\Dz   { \delta d  }{ \delta d_\fct }
+\newcommand \Di   {{\delta d'}}
+\newcommand \Dii  {{\delta d'}}
+\newc@ifstar\Diii { \delta d' + r }{ \delta d'_\fct + r_\fct }
 \newcommand \Ci   { _\Di   ^{C'}   }
 \newcommand \Cii  { _\Dii  ^{C''}  }
 \newcommand \Ciii { _\Diii ^{C'''} }
@@ -842,8 +847,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
   des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
 
-\noma{F}{F}{La forme auxiliaire}
+\noma{F}{F}{La forme auxiliaire vue sur \( \wemb(\var) \)}
+\noma{F'}{F'}{La forme auxiliaire vue sur \( \var \)}
 \noma{R}{R}{Facteur parasitant la forme auxiliaire}
+\noma{G}{G}{La forme auxiliaire multipliée par \( R \) et réduite}
 \noma{r}{r}{Degré du facteur parasitant la forme auxiliaire}
 
 % Local notations without dedicated macro [[2

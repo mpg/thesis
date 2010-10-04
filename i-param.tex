@@ -74,13 +74,13 @@ des variétés projectives, puis nous appliquons ce résultats à notre variét�
 
 \subsection{Lemmes généraux de paramétrisation} \label{sub:param-gene}
 
-Le but de cette section est de fournir une paramétrisation bien contrôlée
+Pour fournir une paramétrisation bien contrôlée
 d'une variété projective plongée de façon adaptée. Les applications
 \( \pmnum_\dv \) et \( \pmden \) étant linéaires, il nous suffit d'étudier leur
 comportement sur une base ; nous choisirons la base monomiale évidente.
 
 Dans un premier temps, nous construirons des applications partielles,
-restreintes à la partie homogène de degré \( 1 \) de l'espace de départ (dont
+définies seulement sur la partie homogène de degré \( 1 \) de l'espace de départ (dont
 une base est tout simplement l'ensemble des variables), que nous noterons
 \( \pmnum_{1, \dv} \) et \( \pmden_1 \).  De plus, avant de nous intéresser à
 une variété projective générale, nous étudions d'abord le cas plus simple
@@ -122,9 +122,7 @@ d'une hypersurface affine.
     autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
     fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
   utilisant aux places archimédiennes une généralisation de
-  \cite[relation~2.3.1, p.~63]{farhith}. On reprend toutes les notations de
-  \cite{remivds}.\worknote{Détailler les notations de \bsc{Rémond} qu'on
-    reprend (il s'agit des dérivées, je crois).}
+  \cite[relation~2.3.1, p.~63]{farhith}.
 
   Jusqu'à la fin de la preuve, on note \( P_\dv^\derp = \pmnum^\derp_{1, \dv}
     (\anyvp[\anydim+1]) \).  On va construire $P_0^\derp$ et $P_1^\derp$
@@ -336,17 +334,19 @@ expression et obtenir des dénominateurs uniformes, nous choisissons des
 applications qui ne prolongent pas celles construites en degré \( 1 \). La
 perte de précision sur le degré des images de monômes particuliers n'est pas
 importante en pratique, car ce sont surtout les images de formes de grand
-degré qui nous intéressent.
+degré qui nous intéressent. Au final, le dénominateur obtenu ne dépend que du
+degré du monôme de départ.
 
 \begin{lem}
   Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
   toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
   \), on a :
   \begin{enumthm}
-    \item \(
-        \deg \pmnum^\derp_\dv (\anyvp^\ip)
-        = \deg \pmden^\derp (\anyvp^\ip)
+    \item \( \deg \pmden^\derp (\anyvp^\ip)
         = (\anydeg - 1) (\dimp - \anydim) f(\derp) + \lgr\ip \) ;
+    \item \( \deg \pmnum^\derp_\dv (\anyvp^\ip)
+        = (\anydeg - 1) (\dimp - \anydim) f(\derp) + \lgr\ip \) sauf quand
+      \( \pmnum^\derp_\dv (\anyvp^\ip) = 0 \) ;
     \item \(
         \nv1{ \pmden^\derp     (\anyvp^\ip) }
         \le
@@ -360,7 +360,9 @@ degré qui nous intéressent.
           \nv1{ \chow\anyvar }
           \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
         \right)^{(\dimp - \anydim) f(\derp)}
-      \).
+      \) ;
+    \item \( \Aind_{\anyvp[0]} \pmnum^\derp_\dv (\anyvp^\ip)
+        \ge \ip[0] - \derp[0] \).
   \end{enumthm}
 \end{lem}
 
@@ -452,7 +454,7 @@ degré qui nous intéressent.
     \prod\indrange
     \prod_{ \indi_\ind = 1 }^{ \ip* }
     &
-    \nv1{ \pmnum^\indl_\dv( \anyvp* ) }
+    \nv1{ \pmnum^\indl_{1, \dv}( \anyvp* ) }
     \cdot
     \prod_{\ind = \anydim + 1}^{\dimp}
     \nv1{ \pden_\ind }^{ f(\derp)
@@ -491,6 +493,20 @@ degré qui nous intéressent.
     2^{ \derp[p] + \lgr\ip - 2 }
   \)
   L'estimation annoncée suit en prenant le produit.
+
+  Enfin, on constate que chaque terme de la somme définissant
+  \( \pmnum^\derp_\dv ( \anyvp^\ip ) \) contient un facteur de la forme
+  \(
+    \prod_{\indi_0 = 1}^{\ip[0]}
+    \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \anyvp[0] )
+  \). On peut supposer que \( \gmp\nu[0, \indi_0] \in \N \times
+    \set{0}^{\anydim-1} \) car sinon ce facteur, donc le terme correspondant,
+  est nul. De plus, on a \( \sum_{\indi_0 = 1}^{\ip[0]} \gmp\nu[0, \indi_0][0]
+    \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
+  nuls dans cette somme, donc \( \anyvp[0]^{\!\!\ip[0] - \derp[0]} \) est en
+  facteur de chaque terme non nul de la somme définissant \( \pmnum^\derp_\dv
+    ( \anyvp^\ip ) \), ce qui prouve l'assertion sur l'indice.
+  % FIXME: \! above is a bad hack working around bad macros
 \end{proof}
 
 \clearpage

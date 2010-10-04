@@ -32,7 +32,7 @@ $(\proj\dimp)^\puiss$, notée
 \begin{math}
   \var = \var[1] \times \dots \times \var[\puiss]
 \end{math}
-et dont aucun facteur n'est contenu dans un hyperplan d'équation $\vmp*0 = 0$.
+et qui n'est contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$.
 On notera en outre $\vdim* = \dim \var*$ et $\vdim = (\vdim*)_\fct$ puis
 $\vdeg* = \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On
 note enfin $\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux
@@ -69,7 +69,8 @@ projection linéaire.
 On contrôle alors des relations de dépendance intégrale des dernières
 variables sur la base de transcendance choisie.
 
-\begin{fact} \label{f:plong-adapt-dep}
+\begin{fact} \label{f:plong-adapt-dep} \worknote{Reformuler pour avoir des
+    relations homogènes}
   Si \( \anyvar \) de dimension \( \anydim \)  est plongée dans \( \projd \)
   de façon adaptée, alors les variables \( \anyvp[1], \dots, \anyvp[\anydim]
   \) sont algébriquement indépendantes et pour tout \( \indi > \anydim \), la
@@ -143,13 +144,13 @@ donné à peu de frais.
 
   On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
   dans son facteur $\proj\dimp$. Ceci implique que
-  $\varfc*(\vmp*0, \dots,\vmp*[\vdim*])$
+  $\varfc*(\vmp*[0], \dots,\vmp*[\vdim*])$
   est non nul pour tout $\fct$ ; on normalisera donc notre choix de $\varfc*$
   (qui est unique à une constante multiplicative près) en imposant que cette
   quantité vaille $1$.
 
   On notera par ailleurs \( \poldep** \) une relation de dépendance
-  de \( \vmp*[\indi] \) sur \( \vmp*[1], \dots, \vmp*[\vdim*] \)
+  de \( \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \)
   telle que donnée par le fait~\ref{f:plong-adapt-dep}.
 \end{scho}
 
@@ -229,7 +230,7 @@ canoniques, commute :
     & \cdn [\vmp]
     \ar[d]
     \\ \cdn [\vmp, \vmpi] / \ideal{\wemb(\var)}
-    \ar[r] ^{\wemb*}
+    \ar[r] ^{\wemb^*}
     & ( \cdn [\vmp] / \varid )_\opdef
   }
 \end{equation}
@@ -241,13 +242,14 @@ voisinages de $x$.
 Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
 immédiatement le résultat suivant.
 
-\begin{lem} \label{l:deg-wemba}
+\begin{lem} \label{l:deg-wemba} \worknote[later] {Faire la hauteur aussi
+    pendant qu'un y est ? Voir \ref{l:hmat-wemba}.}
   Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
   \Qbar[\vmp, \vmpi]$ une forme multihomogène de multidegré $(\alpha,
   \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
   \begin{equation}
     \deg \wemba(F)
-    \le
+    =
     \bigr(
     \alpha_1 + \frac94 \beta_1 \wts[1],
     \dots,

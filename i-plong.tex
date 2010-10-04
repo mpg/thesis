@@ -37,16 +37,16 @@ de la proposition~3.6 de \cite{daphimhva2}.
   \begin{equation}
     S_{l, l'} (V, W)
     =
-    \coi{k(l)} \coi{k(l')}
-    \sum_{p, p', q, q'} \in E
+    \coi_{\xi(l)} \coi_{\xi(l')}
+    \sum_{p, p', q, q' \in E}
     \zeta_{p, p', q, q'} V_p V_{p'} W_q W_{q'}
     \pmm,
   \end{equation}
   où $E$ est un sous-ensemble à $4^\genre$ éléments de $\{0, \dots, \dimp\}$,
-  les $\zeta_{p, p', q, q'}$ sont des racines quatrièmes de l'unité, et $k$
+  les $\zeta_{p, p', q, q'}$ sont des racines quatrièmes de l'unité, et $\xi$
   est une certaine fonction $\{0, \dots, \dimp\} \to \{0, \dots, \dimp\}$
-  telle que pour tout $p$, $\coi^{-1}_{k(p)}$ est un coordonnée (non nulle) de
-  $\oa$.
+  telle que pour tout $p$, $\coi^{-1}_{\xi(p)}$ est une coordonnée (non nulle)
+  de $\oa$.
 
   En particulier, on peut estimer les normes locales :
   $\norm{S_{l, l'}}_{v, 1} \le 4^{\genre\dv} \norm{\coi}^2_{v, 1}$
@@ -67,7 +67,8 @@ de représentations locales. En remarquant de plus qu'on peut dans chacune de
 ces formes simplifier par $\coi_{k(l')}$ puisqu'on projette à $l'$ fixé, on a
 donc le résultat suivant.
 
-\begin{coro}\label{c:addsub-form}
+\begin{coro}\label{c:addsub-form} \worknote{L'ouvert dépend-il du signe ? Si
+    oui, reformuler.}
   Tout couple de points de $\va$ est contenu dans un ouvert $\opdef$ de
   $\va^2$ sur lequel il existe deux familles de formes biquadratiques
   $(S_l^{+})$ et $(S_l^{-})$ pour $0 \le l \le \dimp$ représentant sur
@@ -82,7 +83,8 @@ donc le résultat suivant.
   où $\bullet \in \{ +, - \}$.
 \end{coro}
 
-Par ailleurs, on sait que la multiplication par un entier $b$ peut être
+Par ailleurs, \worknote{Référence ?}[on sait que] la multiplication par un
+entier $b$ peut être
 représentée globalement par une famille de formes homogènes de degré $b^2$. On
 connaît même \cite[prop. 3.8]{daphimhva2} une telle famille de façon
 totalement explicite pour $b = 2$, donc à chaque fois que $b$ est une
@@ -128,7 +130,7 @@ combinant les formules locales d'addition et de multiplication par deux.
   faire en multipliant par $V_j$ sans changer l'ouvert sur lequel les
   formules sont valables, ni leur hauteur.
 
-  On a par ailleurs utilisé le norme $L_1$ aux places archimédiennes, ce qui
+  On a par ailleurs utilisé la norme $L_1$ aux places archimédiennes, ce qui
   réduit légèrement la partie archimédienne de la constante par rapport à
   celle de \bsc{Rémond}.
 \end{proof}
