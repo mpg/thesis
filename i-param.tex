@@ -81,8 +81,9 @@ d'étudier leur comportement sur une base ; nous choisirons la base monomiale
 évidente.
 
 Dans un premier temps, nous construirons des applications partielles,
-définies seulement sur la partie homogène de degré \( 1 \) de l'espace de départ (dont
-une base est tout simplement l'ensemble des variables), que nous noterons
+définies seulement sur la partie homogène de degré \( 1 \) de l'espace de
+départ (dont une base est tout simplement l'ensemble des variables), que nous
+noterons
 \( \pmnum_{1, \dv} \) et \( \pmden_1 \).  De plus, avant de nous intéresser à
 une variété projective générale, nous étudions d'abord le cas plus simple
 d'une hypersurface affine.
@@ -297,12 +298,12 @@ projectif.
   Alors on peut prendre choisir \( \pmnum_{1, 0} \), \( \pmnum_{1, 1} \) et \(
     \pmden_1 \) tels que, pour tout \( \place \) :
   \begin{enumthm}
+    \item \( \pmnum^0_{1, \dv} (\anyvp[\ind]) = \anyvp[\ind] \) et
+      \( \pmden_1^0 (\anyvp[\ind]) = \anyvp[\anydim] \) pour tout \( \ind
+        \in \set{1, \dots, \dimp} \) ;
     \item \( \pmor*(\anyvp*) = \frac{ \anyvp* }{ \anyvp[\anydim] } + \psp* \)
       pour tout \( \ind \in \set{0, \dots, \anydim-1} \), et
       \( \pmor*(\anyvp[\anydim]) = 1 \) ;
-    \item \( \pmnum^0_{1, \dv} (\anyvp[\indi]) = \anyvp[\indi] \) et
-      \( \pmden_1^0 (\anyvp[\indi]) = \anyvp[\anydim] \) pour tout \( \indi
-        \in \set{\anydim + 1, \dots, \dimp} \) ;
     \item \( \pmden_1^\derp (\anyvp[\indi]) = \pden_\indi^{f(\derp)} \) pour
       tout \( \indi \in \set{\anydim + 1, \dots, \dimp} \) et \( \derp \neq 0
       \) ;
@@ -338,21 +339,19 @@ importante en pratique, car ce sont surtout les images de formes de grand
 degré qui nous intéressent. Au final, le dénominateur obtenu ne dépend que du
 degré du monôme de départ.
 
-\begin{lem}
+\begin{lem} \label{l:par-anyvar-mono}
   Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
   toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
   \), on a :
   \begin{enumthm}
-    \item \( \deg \pmden^\derp (\anyvp^\ip)
-        = (\anydeg - 1) (\dimp - \anydim) f(\derp) + \lgr\ip \) ;
+    \item \( \pmden^\derp( \anyvp^\ip )
+        =
+        \anyvp[\anydim]^{\lgr\ip}
+        \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{f(\derp)}
+      \) ;
     \item \( \deg \pmnum^\derp_\dv (\anyvp^\ip)
         = (\anydeg - 1) (\dimp - \anydim) f(\derp) + \lgr\ip \) sauf quand
       \( \pmnum^\derp_\dv (\anyvp^\ip) = 0 \) ;
-    \item \(
-        \nv1{ \pmden^\derp     (\anyvp^\ip) }
-        \le
-        ( \nv1{ \chow\anyvar } \anydeg^\dv )^{(\dimp - \anydim) f(\derp)}
-      \) ;
     \item \(
         \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) }
         \le
@@ -395,7 +394,7 @@ degré du monôme de départ.
       \pmden_1^\indl    ( \anyvp* )
     }
     \psp^\indl
-    \\ & = \label{e:par-mono-dev}
+    \\ & =
     \sum_{\derp \in \N^\anydim}
     \left(
       \sum_*
@@ -409,6 +408,7 @@ degré du monôme de départ.
     \right)
     \psp^\derp
     \pmm,
+    \label{e:par-mono-dev}
   \end{align}
   où la somme \( * \) est prise sur l'ensemble
   \begin{equation}
@@ -510,18 +510,69 @@ degré du monôme de départ.
   % FIXME: \! above is a bad hack working around bad macros
 \end{proof}
 
-\clearpage
-
-\subsection{Paramétrisations de \( \protect\var \)
-  et de son image par \( \protect\wemb \)} \label{sub:param-var-img}
+\subsection{Paramétrisation de \( \protect\var \)
+  et image par \( \protect\wemb \)} \label{sub:param-var-img}
 
 \begin{lem} \label{l:par-var}
-  (Juste pour les références croisées.)
+  Soient \( \poldep** \) les polynômes donnés par le
+  fait~\ref{f:plong-adapt-dep} et \( \pden\mexp*[\indi] \) leurs dérivées par
+  rapport à \( \vmp*[\indi] \).  Il existe des applications \(
+    \pmnum^\dermp_\dv \) et \( \pmden^\dermp \) représentant le morphisme de
+  paramétrisation de \( \var \) sur l'ouvert défini par \( \pden\mexp*[\indi]
+    \neq 0 \) et \( \vmp*[\vdim*] \neq 0 \) pour \( \fct \in \set{1, \dots,
+      \puiss} \) et \( \indi \in \set{\vdim*+1, \dots, \dimp} \) tels que,
+  pour toute forme multihomogène \( H \) de multidegré \( \alpha = \alpha_1,
+    \dots, \alpha_\puiss \),
+  \begin{enumthm}
+    \item \(
+        \pmden^\dermp(H)
+        =
+        \prod\fctrange \Bigl(
+          (\vmp*[\vdim*])^{\alpha_\fct}
+          \prod_{\ind=\vdim*+1}^{\dimp} (\pden\mexp**)^{f(\dermp*)}
+        \Bigr)
+      \) ;
+    \item \(
+        \deg_\fct \pmnum^\dermp_\dv (H)
+        =
+        (\vdeg* - 1) (\dimp - \vdim*) f(\dermp*) + \alpha_\fct
+      \) sauf si \( \pmnum^\dermp_\dv (H) = 0 \) ;
+    \item \(
+        \nv1{ \pmnum^\dermp_\dv (H) }
+        \le
+        \nv1 H \cdot
+        \prod\fctrange
+        2^{ (\lgr{\dermp*} + \vdim* (\lgr{\imp*} - 2))\dv }
+        \left(
+          \nv1{ \varfc* }
+          \bigl( 2 \sqrt{\vdim* \vdeg*^{3}} \bigr)^\dv
+        \right)^{(\dimp - \vdim*) f(\dermp*)}
+      \) ;
+    \item \( \Aind_{\vmp*[0]} \pmnum^\dermp_\dv (H)
+        \ge \) \todo.
+  \end{enumthm}
 \end{lem}
 
-\begin{lem} \label{l:par-img}
-  (Juste pour les références croisées.)
-\end{lem}
+\begin{proof}
+  On défini les applications \( \pmnum^\dermp_\dv \) et \( \pmden^\dermp \)
+  par
+  \begin{align}
+    \pmnum^\dermp_\dv (\cmp)
+    & =
+    \prod\fctrange \pmnum^{\fct, \dermp*}_\dv (\cmp*)
+    &
+    \pmden^\dermp (\cmp)
+    & =
+    \prod\fctrange \pmden^{\fct, \dermp*} (\cmp*)
+  \end{align}
+  où les différentes applications \( \pmnum \) et \( \pmden \) des membres de
+  droite sont obtenues en appliquant le lemme~\ref{l:par-anyvar-mono} à
+  chacun des facteurs \( \var* \). On remarque alors que \( H \) est une
+  combinaison linéaire de monômes de même degrés.
+
+  Seul le point sur l'indice reste à vérifier.
+\end{proof}
+
 
 \endinput
 
