@@ -2,6 +2,32 @@
 
 \section{Extrapolation} \label{sec:vojta-extrap}
 
+Le but de cette section est de montrer que la forme auxiliaire construite
+précédemment s'annule avec un indice élevé en \( \excep \). Plus précisément,
+posons
+\begin{equation}
+  \wtsum( \dermp )
+  =
+  \frac {\lgr{\dermp[1]}} {\wts[1]} + \dots
+  + \frac {\lgr{\dermp[\puiss*]}} {\wts[\puiss*]}
+  + \frac {\lgr{\dermp[\puiss]}} {\puiss*}
+\end{equation}
+pour tout \( \dermp \in \N^\vdim \). On définit alors l'indice en \( \point \)
+d'une fonction \( \tilde H \in \korper\var \) par
+\begin{equation}
+  \inda[\point](\tilde H)
+  =
+  \max \set{
+    \alpha \in \R
+    \text{ tels que }
+    \wtsum*(\dermp) \le \alpha \implies \diff^\derp \tilde H(x) = 0
+  }
+  \pmm.
+\end{equation}
+Si \( H \) est une forme homogène, on définit son indice en
+\( \point \) comme celui de n'importe quel déshomogénéisé de \( H \) obtenu en
+divisant par une forme qui ne s'annule pas en \( \point \).
+
 On rappelle qu'on a construit un forme auxiliaire $F$ sur $\wemb(\var)$, ou
 encore $F'$ sur $\var$, de degré contrôlé par $\delta$ et pondéré par $\wt$,
 telle que $R \cdot F'$ s'annule le long de $\divi$ modulo l'idéal de
@@ -10,6 +36,12 @@ ne dépendant que de $\var$ plongée, donc pas de $\delta$. On introduit une
 forme $G$ congrue à $R \cdot F'$ modulo l'idéal de $\var$ et de degré
 comparable (on peut prendre l'image de $F'$ par les différents morphismes de
 réduction si on veut).
+
+On introduit alors un réel \( \epsiv > 0 \) soumis à des conditions qui seront
+explicitées ultérieurement, et on souhaite montrer que \( \inda**(G) \ge
+  \epsiv\delta \).
+
+\medskip
 
 \begin{lem}
   Soit \( \point \) un point de \( \var \) satisfaisant~\ref{e:HA} et de

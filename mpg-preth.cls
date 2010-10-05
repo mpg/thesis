@@ -710,11 +710,13 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \epsi   {\eps_1}
 \newcommand \epsii  {\eps_2}
 \newcommand \epsiii {\eps_3}
+\newcommand \epsiv  {\eps_4}
 
 \nomg{eps0}{\epsz  }{Un epsilon}
 \nomg{eps1}{\epsi  }{Un autre epsilon}
 \nomg{eps2}{\epsii }{Encore un autre epsilon}
 \nomg{eps3}{\epsiii}{Toujours un autre epsilon}
+\nomg{eps4}{\epsiv }{Toujours un autre epsilon}
 
 % Vojta-specific math [[1
 % -------------------
@@ -772,6 +774,14 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{q1}{\vanish*}{Idéal d'annulation associé à $\stairs$}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
+\newcommand \wtsum {\@ifstar{ S^\wt_0 }{ S^\wt }}
+\newc@star@default \inda {\divi}{\excep} {\Aind^\wt\ssub{#1}}
+
+\noma{S}{\wtsum}{Somme pondérée utilisée dans la définition de l'indice
+  d'annulation}
+\noma{Ind}{\inda[\PHi](\PH)}{Indice, pondéré par \( \wt \),  de \PH en (ou le
+  long de) \PHi}
+
 % various (degree) conditions for subsets in lemmas
 \newc@ifstar\Dz   { \delta d  }{ \delta d_\fct }
 \newcommand \Di   {{\delta d'}}
@@ -780,12 +790,6 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Ci   { _\Di   ^{C'}   }
 \newcommand \Cii  { _\Dii  ^{C''}  }
 \newcommand \Ciii { _\Diii ^{C'''} }
-
-% weight sum of \lamda in the definition of \stairs
-\newcommand \sumwtlambda {
-  \frac {\imp[1][0]} {\wt[1]^2} + \dots
-  + \frac {\imp[\puiss-1][0]} {\wt[\puiss-1]^2}
-  + \frac {\imp[\puiss][0]} {\puiss-1} }
 
 % the product sub-variety considered and its attributes [[2
 %

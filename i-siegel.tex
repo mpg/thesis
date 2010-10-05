@@ -2,43 +2,70 @@
 
 \section{Construction d'une forme auxiliaire} \label{sec:siegel}
 
+L'objectif de cette section est de construire une forme non nulle sur \( \var
+\), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de
+hauteur contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).
+
+Nous commençons par définir la notion d'indice utilisée, puis précisons la
+stratégie de construction de la forme recherchée. Nous établissons ensuite les
+estimations de dimension et de hauteur nécessaires avant de conclure en
+appliquant un lemme de \bsc{Siegel}.
+
 \subsection{Idéal d'annulation}
 
-Introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel que
-$\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
+Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
+\begin{equation}
+  \wtsum*( \imp )
+  =
+  \frac {\imp[1][0]} {\wts[1]} + \dots
+  + \frac {\imp[\puiss*][0]} {\wts[\puiss*]}
+  + \frac {\imp[\puiss][0]} {\puiss*}
+\end{equation}
+On définit alors
+\begin{equation}
+  \inda*(H)
+  =
+  \max \set{
+    \alpha \in \R
+    \text{ tels que }
+    \wtsum*(\imp) \le \alpha \implies h_\imp = 0
+  }
+\end{equation}
+l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp \vmp^\imp \).
+
+\medskip
+
+Pour continuer, introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel
+que $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
 l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$ d'être
 assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et d'autres
 paramètres, voir~\ref{e:def-epsii}.
 
-On introduit alors l'ensemble suivant (cylindre sur un dessous d'escalier) :
-\begin{equation}
-  \stairs = \left\{
-    (\imp[1], \dots, \imp[\puiss]) \in \N^{m(n+1)}
-    \text{ tels que }
-    \frac {\imp[1][0]} {\wts[1]}
-    + \dots +
-    \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
-    \frac {\imp[\puiss][0]} {\puiss-1}
-    \le \epsi \delta
-    \right\}
-  \pmm,
-\end{equation}
-auquel on associe l'idéal d'annulation
+On introduit alors les idéaux
 \begin{equation}
   \vanish*
   = \left\{
-    \sum_{\lambda \in \N^{\puiss(\dimp+1)}} f_\lambda
-    \in \cdn [\cmmh]
+    H \in \cdn [\cmmh]
     \text{ tels que }
-    \lambda \in \stairs
-    \implies
-    f_\lambda = 0
+    \inda*(H) \ge \epsi \delta
   \right\}
-  \pmm.
 \end{equation}
-On considère enfin $\vanish = \vanish* + \varid$. Par abus,
-on notera de même son image dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui
-est légitime puisqu'on a fait en sorte que $\varid \subset \vanish$.
+et $\vanish = \vanish* + \varid$. Par abus, on notera de même l'image de \(
+  \vanish \) dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui est légitime
+puisqu'on a fait en sorte que $\varid \subset \vanish$. On dira alors d'une
+forme qu'elle s'annule le long de \( \divi \) dans \( \var \) avec un indice
+au moins \( \epsi \delta \) si elle appartient à \( \vanish \).
+
+Par ailleurs, on notera également
+\begin{equation}
+  \stairs = \set{
+    \imp \in \N^{\puiss\dimp**}
+    \text{ tels que }
+    \wtsum*(\imp) \le \epsi \delta
+  }
+\end{equation}
+l'ensemble des indices correspondant aux coefficients qui doivent être nuls
+pour assurer l'appartenance à \( \vanish* \).
 
 \subsection{Stratégie de construction de la forme auxiliaire}
 
@@ -355,10 +382,10 @@ suivant :
         \times \{ 0, \dots, \vdeg* - 1 \}
         \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
-      \\ & \quad \text{tel que }
-      \sumwtlambda
-      \le \epsi \delta
-      \\ & \quad \text{et }
+      \\ & \quad
+      \text{tel que }
+      \wtsum*(\lambda) \le \epsi \delta
+      \text{ et }
       \lgr{\imp*}
       = \delta d' + r \quad \forall \fct
     \Biggr\}
@@ -396,7 +423,7 @@ dans \( (\stairs)\Ciii \).
   On peut ensuite choisir \( \imp[1][0], \dots \imp[\puiss][0] \)
   sujets à la seule condition
   \begin{equation}
-    \sumwtlambda \le \epsi \delta \pmm.
+    \wtsum*(\lambda) \le \epsi \delta \pmm.
   \end{equation}
   Le lemme~2.14.5 de \cite{farhith} donne le nombre de choix possibles, qui
   est
