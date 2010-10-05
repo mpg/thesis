@@ -439,6 +439,7 @@
 \noma{e}{\expb}{Base des logarithmes népériens}
 
 \DeclareMathOperator \Aind {Ind}
+\DeclareMathOperator \ord  {Ord}
 
 % automatic constants [[2
 %

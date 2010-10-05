@@ -361,7 +361,7 @@ degré du monôme de départ.
           \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
         \right)^{(\dimp - \anydim) f(\derp)}
       \) ;
-    \item \( \Aind_{\anyvp[0]} \pmnum^\derp_\dv (\anyvp^\ip)
+    \item \( \ord_{\anyvp[0]} \bigl( \pmnum^\derp_\dv (\anyvp^\ip) \bigr)
         \ge \ip[0] - \derp[0] \).
   \end{enumthm}
 \end{lem}
@@ -548,8 +548,8 @@ degré du monôme de départ.
           \bigl( 2 \sqrt{\vdim* \vdeg*^{3}} \bigr)^\dv
         \right)^{(\dimp - \vdim*) f(\dermp*)}
       \) ;
-    \item \( \Aind_{\vmp*[0]} \pmnum^\dermp_\dv (H)
-        \ge \) \todo.
+    \item \( \inda* \bigl( \pmnum^\dermp_\dv (H) \bigr)
+        \ge \inda*(H) - \wtsum*(\dermp) \).
   \end{enumthm}
 \end{lem}
 
@@ -570,7 +570,13 @@ degré du monôme de départ.
   chacun des facteurs \( \var* \). On remarque alors que \( H \) est une
   combinaison linéaire de monômes de même degrés.
 
-  Seul le point sur l'indice reste à vérifier.
+  Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
+    \vmp^\imp \) un monôme apparaissant dans l'écriture \( H \), puis \(
+    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( \pmnum^\dermp_\dv(
+    \vmp^\imp ) \). D'après le lemme~\ref{l:par-anyvar-mono}, on alors \(
+    \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \) d'où, en sommant, \(
+    \wtsum*(\gmp\vu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \) qui est équivalent
+  à l'estimation annoncée vu la définition de l'indice.
 \end{proof}
 
 
