@@ -179,30 +179,17 @@ et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
-    \Ideal_\Dz
-    \ar[r] ^{\wemba}
-    \ar[d] _{\sim}
-    & \cdn [\cmmh]_\Dii
-    \ar[r] ^{\rdiv^\Dii}
-    \ar[d]
-    & \cdn [\cmmh]\Ci
-    \ar[r] ^{\relim}
-    \ar[d]
-    & \cdn [\cmmh]\Cii
-    \ar[r] ^{\rdiv^\Diii}
-    \ar[d]
-    & \cdn [\cmmh]\Ciii
-    \ar[d]
-    \\ \ring{\wemb(\var)}
-    \ar[r] ^{\wemb^*}
+    \Ideal_\Dz            \ar [r] ^{\wemba}        \ar [d] _{\sim}
+    & \cdn [\cmmh]_\Dii   \ar [r] ^{\rdiv^\Dii}    \ar [d]
+    & \cdn [\cmmh]\Ci     \ar [r] ^{\relim}        \ar [d]
+    & \cdn [\cmmh]\Cii    \ar [r] ^{\rdiv^\Diii}   \ar [d]
+    & \cdn [\cmmh]\Ciii                            \ar [d]
+    \\ \ring{\wemb(\var)} \ar [r] ^{\wemb^*}
+    & \ring\opdef         \ar [r] ^{\I}
+    & \ring\opdef         \ar [r] ^{R \cdot \null}
+    & \ring\opdef         \ar [r] ^{\I}
     & \ring\opdef
-    \ar[r] ^{\I}
-    & \ring\opdef
-    \ar[r] ^{R \cdot \null}
-    & \ring\opdef
-    \ar[r] ^{\I}
-    & \ring\opdef
-    }
+  }
 \end{equation}
 
 Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
@@ -244,7 +231,7 @@ Pour pouvoir procéder, nous devons donc :
     $\cdn[\cmmh]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
     petite que la dimension précédente ;
   \item expliciter les morphismes de la première ligne du diagramme et majorer
-    la hauteur de leurs matrices dans les bases monômiales évidentes.
+    la hauteur de leurs matrices dans les bases monomiales évidentes.
 \end{enumerate}
 
 Dans tous ces calculs, $\delta$ sera moralement arbitrairement grand devant

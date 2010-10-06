@@ -168,7 +168,13 @@ multiplication.
 nulle avant, pour l'intégrer.
 - Ensuite, propager dans les estimations de hauteur faisant intervenir \wemba.
 
+(B) Bouger f:dep-int de siegel vers la section adéquate, de façon à remplacer
+f:plong-adapt-dep. Attention, c'est ce dernier qui a la bonne estimation de
+norme.
+    - Propager ensuite la norme plus petite dans le reste de Siegel.
+
 (C) Détailler les preuves voire les énoncés concernant le plongement adapté.
+(Notamment pour que la preuve de c:hmat-relim soit plus évidente.)
 
 Mumford {{{2
 -------
