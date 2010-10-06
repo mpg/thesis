@@ -216,21 +216,20 @@ lequel il existe des polynômes représentant
 $\wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1}$.
 Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
 \begin{align}
-  \wemba \colon \cdn [\vmp, \vmpi] & \to \cdn[\vmp] \\
-  \vmp* & \mapsto \vmp* \\
-  \vmpi* & \mapsto S^{-}(Q_{\wt[j]}(\vmp[\fcti], \vmp[\puiss]))
+     \wemba \colon \cdn [\vmp, \vmpi]
+  &  \to \cdn[\vmp]
+  \\ \vmp*
+  &  \mapsto \vmp*
+  \\ \vmpi*
+  &  \mapsto S^{-}(Q_{\wti*}(\vmp[\fcti]), \vmp[\puiss])
 \end{align}
 tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute :
 \begin{equation}
   \xymatrix{
-    \cdn [\vmp, \vmpi]
-    \ar[r] ^{\wemba}
-    \ar[d]
-    & \cdn [\vmp]
-    \ar[d]
-    \\ \cdn [\vmp, \vmpi] / \ideal{\wemb(\var)}
-    \ar[r] ^{\wemb^*}
+    \cdn [\vmp, \vmpi]                          \ar [r] ^{\wemba}   \ar [d]
+    & \cdn [\vmp]                                                   \ar [d]
+    \\ \cdn [\vmp, \vmpi] / \ideal{\wemb(\var)} \ar [r] ^{\wemb^*}
     & ( \cdn [\vmp] / \varid )_\opdef
   }
 \end{equation}

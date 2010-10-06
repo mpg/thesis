@@ -12,34 +12,37 @@ posons
   + \frac {\lgr{\dermp[\puiss*]}} {\wts[\puiss*]}
   + \frac {\lgr{\dermp[\puiss]}} {\puiss*}
 \end{equation}
-pour tout \( \dermp \in \N^\vdim \). On définit alors l'indice en \( \point \)
-d'une fonction \( \tilde H \in \korper\var \) par
+pour tout \( \dermp \in \N^{\lgr\vdim} \). On définit alors l'indice d'une
+série \( \xi = \sum_{\dermp \in \N^{\lgr\vdim}} \xi_\dermp \psmp^\dermp \) par
 \begin{equation}
-  \inda[\point](\tilde H)
+  \inda(\xi)
   =
   \max \set{
     \alpha \in \R
     \text{ tels que }
-    \wtsum*(\dermp) \le \alpha \implies \diff^\derp \tilde H(x) = 0
+    \wtsum*(\dermp) \le \alpha
+    \implies
+    \xi_\dermp = 0
   }
   \pmm.
 \end{equation}
-Si \( H \) est une forme homogène, on définit son indice en
-\( \point \) comme celui de n'importe quel déshomogénéisé de \( H \) obtenu en
-divisant par une forme qui ne s'annule pas en \( \point \).
+Si \( H \) est une forme multihomogène, on définit son indice en
+\( \point \), noté \( \inda[\point](H) \),  comme celui de la série \(
+  \tau(H)(\point) \), où \( \tau \) est un\footnote{On peut montrer que la
+  définition est indépendante de la paramétrisation choisie.} morphisme de
+paramétrisation comme à la section précédente, défini sur un ouvert contenant
+\( \point \).
 
-On rappelle qu'on a construit un forme auxiliaire $F$ sur $\wemb(\var)$, ou
-encore $F'$ sur $\var$, de degré contrôlé par $\delta$ et pondéré par $\wt$,
-telle que $R \cdot F'$ s'annule le long de $\divi$ modulo l'idéal de
-$\var$ avec un indice pondéré par $\wt$ d'ordre $\delta$, où $R$ est une forme
-ne dépendant que de $\var$ plongée, donc pas de $\delta$. On introduit une
-forme $G$ congrue à $R \cdot F'$ modulo l'idéal de $\var$ et de degré
-comparable (on peut prendre l'image de $F'$ par les différents morphismes de
-réduction si on veut).
+On rappelle qu'on a construit une forme auxiliaire \( F \) sur \( \wemb(\var)
+\), de degré \( \delta d \) où \( d \) est défini par~\ref{e:def-d}, ou encore
+\( F' = \wemba(F) \) sur $\var$, de degré \( \delta d' \)
+(voir~\ref{e:def-dp}) telle que \( \inda*(R \cdot F') \ge \epsi\delta \), où
+\( R \) est une forme ne dépendant que de \( \var \) plongée (et en
+particulier pas de \( \delta \)).
 
 On introduit alors un réel \( \epsiv > 0 \) soumis à des conditions qui seront
-explicitées ultérieurement, et on souhaite montrer que \( \inda**(G) \ge
-  \epsiv\delta \).
+explicitées ultérieurement, et on souhaite montrer que
+\( \inda**(R \cdot F') \ge \epsiv\delta \).
 
 \medskip
 

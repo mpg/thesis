@@ -21,7 +21,7 @@ Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
   + \frac {\imp[\puiss*][0]} {\wts[\puiss*]}
   + \frac {\imp[\puiss][0]} {\puiss*}
 \end{equation}
-On définit alors
+On définit ainsi l'indice
 \begin{equation}
   \inda*(H)
   =
@@ -31,50 +31,45 @@ On définit alors
     \wtsum*(\imp) \le \alpha \implies h_\imp = 0
   }
 \end{equation}
-l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp \vmp^\imp \).
+le long de \( \divi \) d'une forme \( H = \sum h_\imp \vmp^\imp \).
 
-\medskip
-
-Pour continuer, introduisons un rationnel $\epsz > 0$, un entier $\delta$ tel
-que $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées, dans
-l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$ d'être
-assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et d'autres
-paramètres, voir~\ref{e:def-epsii}.
-
-On introduit alors les idéaux
+On introduit alors, pour \( \beta > 0 \), les idéaux
 \begin{equation}
-  \vanish*
+  \vanish*[\beta]
   = \left\{
     H \in \cdn [\cmmh]
     \text{ tels que }
-    \inda*(H) \ge \epsi \delta
+    \inda*(H) \ge \beta
   \right\}
 \end{equation}
-et $\vanish = \vanish* + \varid$. Par abus, on notera de même l'image de \(
-  \vanish \) dans $\ring\var = \cdn [\cmmh] / \varid$, ce qui est légitime
-puisqu'on a fait en sorte que $\varid \subset \vanish$. On dira alors d'une
-forme qu'elle s'annule le long de \( \divi \) dans \( \var \) avec un indice
-au moins \( \epsi \delta \) si elle appartient à \( \vanish \).
-
-Par ailleurs, on notera également
+et $\vanish[\beta] = \vanish*[\beta] + \varid$. Par abus, on notera de même
+l'image de \( \vanish[\beta] \) dans $\ring\var = \cdn [\cmmh] / \varid$, ce
+qui est légitime puisqu'on a fait en sorte que $\varid \subset
+\vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
+  \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
+appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
 \begin{equation}
-  \stairs = \set{
+  \stairs[\beta] = \set{
     \imp \in \N^{\puiss\dimp**}
     \text{ tels que }
-    \wtsum*(\imp) \le \epsi \delta
+    \wtsum*(\imp) \le \beta
   }
 \end{equation}
 l'ensemble des indices correspondant aux coefficients qui doivent être nuls
-pour assurer l'appartenance à \( \vanish* \).
+pour assurer l'appartenance à \( \vanish*[\beta] \).
 
 \subsection{Stratégie de construction de la forme auxiliaire}
 
-Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de petite
-hauteur, provenant d'une forme sur $\wemb(\var)$, qui s'annule le long de
-$\divi$ avec un indice (pondéré par $\wt$) du même ordre de grandeur que
-son multidegré.
 
-Plus précisément, posons
+Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de degrés
+prescrits et de hauteur contrôlée, provenant d'une forme sur $\wemb(\var)$ et
+ayant indice élevé le long de \( \divi \) dans \( \var \).
+
+Plus précisément, introduisons un rationnel $\epsz > 0$, un entier $\delta$
+tel que $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées,
+dans l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$
+d'être assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et
+d'autres paramètres, voir~\ref{e:def-epsii}. Posons alors
 \begin{align}
   d & = \bigl(
   \epsz \wt[1],
@@ -98,7 +93,7 @@ $\delta/4$ entier, de sorte que si $F$ est une forme de multidegré $\delta d$
 dans $\cdn[\cmmh, \cmmhi]$, son image par $\wemba$ est de multidegré
 exactement $\delta d'$.
 
-On cherche ainsi une forme
+On cherche alors une forme
 \begin{equation}
   F'
   \in \cdn[\cmmh]_{\delta d'}
@@ -371,7 +366,7 @@ suivant :
       \bigr)
       \\ & \quad
       \text{tel que }
-      \wtsum*(\lambda) \le \epsi \delta
+      \wtsum*(\lambda) \le \delta \epsi
       \text{ et }
       \lgr{\imp*}
       = \delta d' + r \quad \forall \fct
@@ -410,12 +405,12 @@ dans \( (\stairs)\Ciii \).
   On peut ensuite choisir \( \imp[1][0], \dots \imp[\puiss][0] \)
   sujets à la seule condition
   \begin{equation}
-    \wtsum*(\lambda) \le \epsi \delta \pmm.
+    \wtsum*(\lambda) \le \delta \epsi \pmm.
   \end{equation}
   Le lemme~2.14.5 de \cite{farhith} donne le nombre de choix possibles, qui
   est
   \begin{equation}
-    \frac {\prodwt} {\puiss !} (\epsi \delta)^\puiss
+    \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
     + o(\delta^\puiss)
     \pmm.
   \end{equation}
@@ -454,8 +449,8 @@ dans \( (\stairs)\Ciii \).
   \begin{equation}
     \card (\stairs)\Ciii
     \le
-    \frac {\prodwt} {\puiss !} (\epsi \delta)^\puiss
-    (\epsi \delta)^\puiss
+    \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
+    (\delta\epsi)^\puiss
     \cdot \prod\fctrange
     \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!}
     \vdeg* \delta^{\vdim* - 1}

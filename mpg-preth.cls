@@ -766,7 +766,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Stairs { \mathcal E }
 \newcommand \Vanish {\@ifstar {\mathfrak{\tilde q}} {\mathfrak q}}
 
-\newcommand \wt@scale { _{\wt} ^\delta }
+\newcommand \wt@scale [1][\delta\epsi] { _{\wt} ^{#1} }
 \newcommand \stairs {\Stairs\wt@scale}
 \newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
 

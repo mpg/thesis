@@ -35,13 +35,13 @@ allons expliciter un morphisme \( \pmor* \) faisant commuter le diagramme
     & \left( \cdn [\vmp] / \varid \right) [\pden^{-1}] \series\psmp
   }
 \end{equation}
-et, pour tout \( \dermp \in \N^{\puiss\dimp**} \), des applications
+et, pour tout \( \dermp \in \N^{\lgr\vdim} \), des applications
 \( \pmnum^\dermp \) et \( \pmden^\dermp \) de \( \cdn [\vmp] \) dans lui-même,
 telles que
 \begin{equation}
   \pmor*(\forme)
   =
-  \sum_{ \dermp \in \N^{\puiss\dimp**} }
+  \sum_{ \dermp \in \N^{\lgr\vdim} }
   \frac{ \pmnum^\dermp(\forme) }{ \pmden^\dermp(\forme) }
   \psmp^\dermp
   \pmm.
@@ -397,7 +397,7 @@ degré du monôme de départ.
     \\ & =
     \sum_{\derp \in \N^\anydim}
     \left(
-      \sum_*
+      \sum_{\gmp\nu \in N}
       \prod\indrange
       \prod_{ \indi_\ind = 1 }^{ \ip* }
       \frac {
@@ -410,9 +410,9 @@ degré du monôme de départ.
     \pmm,
     \label{e:par-mono-dev}
   \end{align}
-  où la somme \( * \) est prise sur l'ensemble
+  où la somme est prise sur l'ensemble
   \begin{equation}
-    \left\{
+    N = \left\{
       \gmp\nu \in (\N^\anydim)^{\lgr\ip}
       \text{ tels que }
       \sum\indrange \sum_{\indi_\ind = 1}^{\ip*} \indl = \derp
@@ -429,7 +429,7 @@ degré du monôme de départ.
     \\
     \pmnum^\derp_\dv( \anyvp^\ip )
     & =
-    \sum_*
+    \sum_{\gmp\nu \in N}
     \Biggl(
     \prod\indrange
     \prod_{ \indi_\ind = 1 }^{ \ip* }
@@ -476,7 +476,7 @@ degré du monôme de départ.
     \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
     \Biggr)^{(\dimp - \anydim) f(\derp)}
   \end{align}
-  On remarque alors que l'ensemble de sommation s'écrit aussi
+  On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
   \begin{equation}
     \prod_{p = 0}^{\anydim - 1} \left\{
       \gmp\nu[][p] \in \N^{\lgr\ip}
@@ -492,7 +492,7 @@ degré du monôme de départ.
     \binom{ \derp[p] + \lgr\ip - 1 }{ \lgr\ip - 1 }
     \le
     2^{ \derp[p] + \lgr\ip - 2 }
-  \)
+  \).
   L'estimation annoncée suit en prenant le produit.
 
   Enfin, on constate que chaque terme de la somme définissant
@@ -575,7 +575,7 @@ degré du monôme de départ.
     \vmp^{\gmp\nu} \) un monôme apparaissant dans \( \pmnum^\dermp_\dv(
     \vmp^\imp ) \). D'après le lemme~\ref{l:par-anyvar-mono}, on alors \(
     \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \) d'où, en sommant, \(
-    \wtsum*(\gmp\vu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \) qui est équivalent
+    \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \) qui est équivalent
   à l'estimation annoncée vu la définition de l'indice.
 \end{proof}
 
