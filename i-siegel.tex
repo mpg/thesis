@@ -62,7 +62,6 @@ pour assurer l'appartenance à \( \vanish*[\beta] \).
 
 \subsection{Stratégie de construction de la forme auxiliaire}
 
-
 Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de degrés
 prescrits et de hauteur contrôlée, provenant d'une forme sur $\wemb(\var)$ et
 ayant indice élevé le long de \( \divi \) dans \( \var \).
@@ -574,37 +573,9 @@ où \( d \) est défini par~\refeq{e:def-d}.
 \end{proof}
 
 Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
-relations de dépendance intégrale. Commençons donc par expliciter ces
-relations.
-
-\begin{fact} \label{f:dep-int}
-  Dans les notations et hypothèses précédentes, il existe des formes homogènes
-  \( P\mexp*[\ind] \) pour \( 1 \le \fct \le \puiss \) et
-  \( \vdim* + 1 \le \ind \le \dimp \), telles que
-  \begin{enumthm}
-    \item \( P\mexp*[\ind]
-      \in
-      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*], \cmh\fct[\ind] ]
-      \cap \varid*
-      \) ; \label{i:rdiv1}
-    \item \( P\mexp*[\ind] \) est unitaire en \( \cmh\fct[\ind] \) ;
-    \item \( \deg P\mexp*[\ind] = \vdim* \) ; \label{i:rdiv3}
-    \item \( \nv1{ P\mexp*[\ind] }
-      \le \nv1{ \varfc* } \cdot 2^{ (\vdim*+1) \vdeg* \dv } \).
-  \end{enumthm}
-\end{fact}
-
-\begin{proof} \later
-  On ne fait que rappeler, en changeant un peu les notations, le lemme~4.1 de
-  \cite{remivds}, qui donne explicitement des formes
-  satisfaisant~\ref{i:rdiv1} à~\ref{i:rdiv3}. Le dernier point vient
-  immédiatement vu l'expression des formes dans cette référence et les
-  inégalités classiques sur la norme utilisée.
-\end{proof}
-
-On énonce maintenant sous une forme un peu générale un résultat de réduction
-de formes multihomogènes modulo des relations de dépendance intégrale, avant
-de l'appliquer au cas qui nous intéresse.
+relations de dépendance intégrale. On énonce pour commencer un résultat de
+réduction modulo de telles relations sous une forme un peu générale avant de
+l'appliquer au cas qui nous intéresse.
 
 \begin{lem}
   Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vdim* + 1,
@@ -640,10 +611,10 @@ de l'appliquer au cas qui nous intéresse.
 \end{lem}
 
 \begin{proof}
-  C'est essentiellement une variante du lemme~2.5 de~\cite{remivg}, le résultat
-  étant formulé différemment et dans un cadre d'apparence un peu moins
-  générale ; la preuve suivra en tout cas les mêmes lignes. On commence par
-  décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
+  C'est essentiellement une variante du lemme~2.5 de~\cite{remivg}, notre
+  résultat étant formulé différemment et dans un cadre d'apparence un peu
+  moins générale ; la preuve suivra en tout cas les mêmes lignes. On commence
+  par décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
   \begin{equation}
     P\mexp*[\ind]
     =
@@ -709,8 +680,8 @@ de l'appliquer au cas qui nous intéresse.
 
 \begin{proof}
   Découle directement du lemme précédent en utilisant les relations de
-  dépendance données par le fait~\ref{f:dep-int} et en remarquant que
-  \( 2\puiss \ge 9/4 \).
+  dépendance données fixées au dernier paragraphe du
+  scholie~\ref{s:plong-adapt} et en remarquant que \( 2\puiss \ge 9/4 \).
 \end{proof}
 
 Intéressons-nous maintenant au morphisme \( \relim \).

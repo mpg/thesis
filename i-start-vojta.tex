@@ -47,51 +47,75 @@ désignera une famille d'entiers.
 
 \subsection{Plongements projectifs adaptés} \label{sub:plong-adapt}
 
-Plonger une variété de façon adaptée dans un espace projectif revient à
-la mettre en position de \bsc{Noether}, ce qui fixe une base de transcendance
-de son corps des fonctions rationnelles, et à choisir de plus un élément
-primitif ce ce corps. Géométriquement, il s'agit de présenter la variété comme
-un revêtement ramifié d'une hypersurface, la surjection étant donnée par une
-projection linéaire.
-
 \begin{tdef} \label{d:plong-adapt}
   Suivant \cite{remivg}, on dit qu'un plongement
   \(
     \iota\colon \anyvar \embedin \proj\dimp
   \)
-  est adapté si
+  d'une variété de dimension \( \anydim \) est adapté si
   \begin{enumthm}
     \item \( \anyvar \cap \zeros{\anyvp[0], \dots, \anyvp[\anydim]}
         = \emptyset \) ;
     \item \( \korper{\anyvar} \) est engendré par
       \( \frac{\anyvp[1]}{\anyvp[0]}, \dots,
-        \frac{\anyvp[\anydim+1]}{\anyvp[0]} \).
+        \frac{\anyvp[\anydim+1]}{\anyvp[0]} \) ;
+    \item \( \frac{\anyvp[\anydim+1]}{\anyvp[0]} \neq 0 \) dans \(
+        \korper\anyvar \).
   \end{enumthm}
 \end{tdef}
 
-On contrôle alors des relations de dépendance intégrale des dernières
+Le fait suivant, qui ne fait que rappeler \cite[partie~4.1, p.~114]{remivds},
+explicite les principales propriétés d'une plongement adapté, qui est en fait
+une version plus précise de la mise en position de \bsc{Noether}.
+
+\begin{fact} \label{f:plong-adapt-gen}
+  Si \( \anyvar \) de dimension \( \anydim \)  est plongée dans \( \projd \)
+  de façon adaptée, alors les fonctions rationnelles
+  \( \frac{\anyvp[1]}{\anyvp[0]}, \dots, \frac{\anyvp[\anydim]}{\anyvp[0]} \)
+  forment une base de transcendance de \( \korper\anyvar \) sur \( \cdn \). De
+  plus, \( \frac{\anyvp[\anydim+1]}{\anyvp[0]} \) est un élément primitif de
+  \( \korper\anyvar \) sur \( \cdn( \frac{\anyvp[1]}{\anyvp[0]}, \dots,
+    \frac{\anyvp[\anydim]}{\anyvp[0]} ) \).
+
+  La projection linéaire \( \anyvar \to \proj\anydim \) obtenue en ne gardant
+  que les \( \anydim + 1 \) variables est un revêtement ramifié.
+\end{fact}
+
+On contrôle en fait des relations de dépendance intégrale des dernières
 variables sur la base de transcendance choisie.
 
 \begin{fact} \label{f:plong-adapt-dep}
-  Si \( \anyvar \) de dimension \( \anydim \)  est plongée dans \( \projd \)
-  de façon adaptée, alors les variables \( \anyvp[1], \dots, \anyvp[\anydim]
-  \) sont algébriquement indépendantes et pour tout \( \indi > \anydim \), la
-  variable \( \anyvp[\indi] \) est liée aux \( \anyvp[1], \dots,
-    \anyvp[\anydim] \) par un polynôme \( \poldep_\indi \) de même degré que
-  \( \anyvar \), unitaire en \( \anyvp[\indi] \) et tel qu'en toute place
-  \( \nv1{\poldep_\indi} \le \nv1{\chow\anyvar} \).
+  Si le plongement \( \anyvar \embedin \projd \) est adapté, il existe des
+  formes homogènes \( \poldep[][\ind] \) pour \( \ind \in \set{\anydim+1,
+      \dots, \dimp} \) telles que :
+  \begin{enumthm}
+    \item \(
+        \poldep[][\ind]
+        \in
+        \cdn [ \anyvp[0], \dots, \anyvp[\anydim], \anyvp[\ind] ]
+        \cap \ideal\anyvar \) ;
+    \item \( \poldep[][\ind] \) est unitaire de degré \( \anydeg \) en \(
+        \anyvp[\ind] \) ;
+    \item \( \deg \poldep[][\ind] = \anydeg \) ;
+    \item \( \nv1{ \poldep[][\ind] } \le \nv1{ \chow\anyvar } \) ;
+  \end{enumthm}
+  où \( \anydeg \) est le degré de \( \anyvar \) dans ce plongement.
 \end{fact}
 
-\begin{proof} \later
-  C'est \cite[partie~4.1, p.~114]{remivds}. Seule l'assertion sur la norme
-  n'est pas énoncée sous cette forme par \bsc{Rémond}, mais elle vient de même
-  que sa proposition~4.2 en remarquant que \( \poldep_\indi \) est une
-  spécialisation de \( \varfc \) qui annule certaines variables et remplace
-  les autres par des monômes unitaires.
+\begin{proof}
+  Le lemme~4.1 de \cite{remivds} donne explicitement des formes satisfaisant
+  les trois premières conditions.
+
+  Seule l'assertion sur la norme n'y est pas énoncée sous cette forme mais
+  elle vient en remarquant que \( \poldep_\indi \) est une spécialisation de
+  \( \varfc \) qui annule certaines variables et remplace les autres par des
+  monômes unitaires, argument qui est utilisé la proposition~4.2 de la
+  référence citée pour obtenir une estimation similaire dans un contexte
+  légèrement différent.
 \end{proof}
 
 Nous montrons maintenant qu'il est possible de rendre adapté un plongement
-donné à peu de frais.
+donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 
 \begin{lem}
   Soit $\iota \colon \anyvar \embedin \projd$ un sous-schéma fermé intègre de
@@ -136,11 +160,10 @@ donné à peu de frais.
 \end{proof}
 
 \begin{scho} \label{s:plong-adapt}
-  Vu les hypothèses sur \( \var \) on peut sans perte de généralité supposer de plus
-  que chaque plongement $\var* \embedin \projd$ est adapté, quitte à
-  multiplier la hauteur de \( \var* \)
-  par
-  $\bigl (\dimp** \max (\frac\anydeg2, 1) \bigr)^{\anydeg\dimp**}$.
+  Vu les hypothèses sur \( \var \) on peut sans perte de généralité supposer
+  de plus que chaque plongement $\var* \embedin \projd$ est adapté, quitte à
+  multiplier la hauteur de \( \var* \) par
+  \( \bigl (\dimp** \max (\frac{\vdeg*}2, 1) \bigr)^{\vdeg*\dimp**} \).
   \worknote[later]{Il faut aussi estimer le coût sur les formules de
     multiplication et soustraction.}
 
@@ -153,7 +176,8 @@ donné à peu de frais.
 
   On notera par ailleurs \( \poldep** \) une relation de dépendance
   de \( \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \)
-  telle que donnée par le fait~\ref{f:plong-adapt-dep}.
+  telle que donnée par l'application du fait~\ref{f:plong-adapt-dep} au
+  facteur \( \var* \).
 \end{scho}
 
 
