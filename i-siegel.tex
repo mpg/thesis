@@ -73,18 +73,18 @@ d'être assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et
 d'autres paramètres, voir~\ref{e:def-epsii}. Posons alors
 \begin{align}
   d & = \bigl(
-  \epsz \wt[1],
+  \epsz \wts[1],
   \dots,
-  \epsz \wt[\puiss],
+  \epsz \wts[\puiss],
   1, \dots, 1
   \bigr) \in \Q^{2\puiss-1}
   \label{e:def-d}
   \\
   d' & = \bigl(
-  \wt[1] (\frac94 + \epsz),
+  \wts[1] (\frac94 + \epsz),
   \dots,
-  \wt[\puiss*] (\frac94 + \epsz),
-  2\puiss + \epsz
+  \wts[\puiss*] (\frac94 + \epsz),
+  2\puiss - 2 + \epsz
   \bigr) \in \Q^\puiss
   \pmm.
   \label{e:def-dp}
@@ -346,8 +346,8 @@ ce qu'on aura besoin de savoir sur le degré.
     \frac { \epsz^{\vdim[\puiss]} }{ \vdim ! }
     \delta^{\vlg\vdim}
     + o( \delta^{\vlg\vdim} )
-    \qedhere
   \end{align}
+  par définition de \( d \), voir~\eqref{e:def-d}.
 \end{proof}
 
 Nous allons maintenant calculer la codimension de $\vanish*$ dans
@@ -491,7 +491,7 @@ Nous allons maintenant expliciter les différents morphismes intervenant dans
 l'écriture du système et contrôler la hauteur de leurs matrices, en commençant
 par le morphisme \( \wemba \) qui est déjà bien défini.
 
-On va en fait étudier le prolongement
+On étudie en fait le prolongement
 \begin{equation}
   \wemba \colon
   \cdn [\cmmh, \cmmhi]_\Dz
@@ -509,8 +509,10 @@ est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
   \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
   \pmm,
 \end{equation}
-où \( d \) est défini par~\refeq{e:def-d}.
+où \( d \) est défini par~\eqref{e:def-d}.
 
+% Note: on ne fait pas ce lemme dans sub:wemb
+% car on utilise la définition de d pour simplifier le résultat
 \begin{lem} \label{l:hmat-wemba}
   Avec les notations précédentes, l'application linéaire
   \begin{equation}
@@ -672,16 +674,15 @@ l'appliquer au cas qui nous intéresse.
   \begin{equation}
     \prod\fctrange \left(
     \nv1{ \varfc* }
-    \cdot ( \vdeg* 2^{(\vdim*+1)\vdeg* + 1} )^\dv
-    \right) ^{ \delta \wts* (2\puiss + \epsz) }
+    \cdot ( 2 \vdeg* )^\dv
+    \right) ^{ \delta d'_\fct }
     \cdot \expb^{ o(\delta) }
   \end{equation}
 \end{coro}
 
 \begin{proof}
   Découle directement du lemme précédent en utilisant les relations de
-  dépendance données fixées au dernier paragraphe du
-  scholie~\ref{s:plong-adapt} et en remarquant que \( 2\puiss \ge 9/4 \).
+  dépendance fixées au dernier paragraphe du scholie~\ref{s:plong-adapt}.
 \end{proof}
 
 Intéressons-nous maintenant au morphisme \( \relim \).
@@ -759,25 +760,25 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varid \) ;
   elle découle du fait qu'on a supposé le plongement adapté
   (scholie~\ref{s:plong-adapt}).
-
-  En effet, le deuxième point de la définition~\ref{d:plong-adapt} dit que
-  pour tous \( \fct \) et \( \ind \),
+  En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
+  \( \ind \), il existe des formes \( A\mexp*[\ind, \alpha] \) et \(
+    B\mexp*[\ind, \alpha] \) dans
+  \( \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) telles que
   \begin{equation}
-    \cmh\fct[\ind]
+    \frac{ \vmp** }{ \vmp*[0] }
     =
-    \sum_\alpha
+    \sum_{\alpha = 0}^{\vdeg* - 1}
     \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
-    \bigl( \cmh\fct[\ind] \bigr) ^\alpha
+    \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\alpha
     \mod \varid*
-    \pmm,
+    \pmm.
   \end{equation}
-  où \( A\mexp*[\ind, \alpha] \) et \( B\mexp*[\ind, \alpha] \) sont dans
-  \( \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*] ] \). On obtient alors les
-  familles \( S \) et \( T \) recherchées en réduisant au même dénominateur le
-  membre de droite de l'égalité précédente.
+  On obtient alors les familles \( S \) et \( T \) recherchées en multipliant
+  les deux membres de l'égalité précédent par \( \vmp*[0] \) puis en réduisant
+  au même dénominateur le membre de droite.
 \end{proof}
 
-Notons que pour construire la forme auxilaire, on n'a absolument pas besoin
+Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
 d'en savoir davantage sur \( R \) ni les \( N'_\fct \). On pourra néanmoins
 vouloir expliciter une valeur acceptable de \( R \) plus tard.
 
@@ -827,7 +828,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \le
     2 \hautl[\infty] \coi
     + 2 \ln (\dimp + 1)
-    + (2\puiss + \epsz) \max\fctrange (2\vdim* + 3) \vdeg*
+    + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
     \pmm.
   \end{equation}
 \end{prop}
@@ -877,10 +878,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   On utilise le fait élémentaire suivant : si \( A \) et \( B \) sont deux
   matrices telles que le produit \( A \cdot B \) est défini, alors
   \( \hautl[\infty]{AB} \) est majorée par la somme de \( \hautl[\infty] A \)
-  et d'un majorant de \( \hautl[\infty] c \) où \( c \) parcourt les colonnes
+  et d'un majorant de \( \hautl[1] c \) où \( c \) parcourt les colonnes
   de \( B \).
 
-  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautl_\infty \) des
+  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautl[1] \) des
   colonnes de la matrice de \( \wemba \) est majorée par
   \begin{equation}
     \bigl( \delta + o(\delta) \bigr)
@@ -891,15 +892,15 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \biggr)
     \pmm,
   \end{equation}
-  d'après le corollaire~\ref{c:hmat-rdiv}, celle des colonnes des matrices de
-  \( \rdiv^\Dii \) et \( \rdiv^\Diii \) par
+  d'après le corollaire~\ref{c:hmat-rdiv} (et en remarquant que \( d'_\fct \le
+    2\puiss + \epsz \) pour tout \( \fct \)), celle des colonnes des matrices
+  de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) par
   \begin{equation}
     \bigl( \delta + o(\delta) \bigr)
     (2\puiss + \epsz)
-    \sum\fctrange \biggl(
+    \sum\fctrange \wts* \biggl(
     \hautl[1]{\varfc*}
-    + \ln(\vdeg*)
-    + \ln(2) \cdot \bigl( (\vdim* + 1) \vdeg* + 1 \bigr)
+    + \ln(2\vdeg*)
     \biggr)
     \pmm,
   \end{equation}
@@ -924,15 +925,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     & \le
     2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
     \\
-    & \qquad + 2(2\puiss + \epsz)
-    \max\fctrange \Bigl(
-    \ln(\vdeg*) + \ln(2) + \ln(2) (\vdim* + 1) \vdeg*
-    \Bigr)
+    & \qquad + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
     \pmm.
   \end{align}
-  On remarque alors que \( 4^\genre \le \dimp + 1 \), puis on utilise les
-  estimations élémentaires \( \ln(N) + \ln(2) \le N \ln(2) \), valable pour
-  tout entier \( N \), et \( 2 \ln(2) \le 3/2 \) pour aboutir à la
+  On remarque alors que \( 4^\genre \le \dimp + 1 \) pour aboutir à la
   majoration annoncée.
 \end{proof}
 
