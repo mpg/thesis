@@ -810,8 +810,19 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{prop} \label{p:build-aux}
   Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
   \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
-    [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), non nulle modulo
-  \( \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F) \in \vanish \) et
+    [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), où l'on
+  rappelle que
+  \begin{equation}
+    d = \bigl(
+      \epsz \wts[1],
+      \dots,
+      \epsz \wts[\puiss],
+      1, \dots, 1
+    \bigr)
+    \pmm,
+  \end{equation}
+  non nulle modulo \( \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F)
+    \in \vanish \) et
   \begin{equation}
     \hautl[\infty] F
     \le
@@ -920,16 +931,81 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \pmm,
   \end{equation}
   avec
-  \begin{align}
+  \begin{equation}
     \cst{f-aux}
-    & \le
+    \le
     2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
-    \\
-    & \qquad + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
+    + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
     \pmm.
-  \end{align}
+  \end{equation}
   On remarque alors que \( 4^\genre \le \dimp + 1 \) pour aboutir à la
   majoration annoncée.
+\end{proof}
+
+\begin{scho}
+  On note désormais \( F \) une forme comme dans la conclusion de la
+  proposition précédente, \( F' = \wemba(F) \) et \( G =
+    \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F))) \). On a alors
+  \begin{enumthm}
+    \item \( G = RF' \mod \varid \) et \( G \in \vanish* \) ;
+    \item \( \deg G = \deg RF' = \deg F' + o(\delta) \) ;
+    \item \( \deg F' = \delta \bigl(
+          \wts[1] (\frac94 + \epsz), \dots,
+          \wts[\puiss*] (\frac94 + \epsz), 2\puiss - 2 + \epsz
+        \bigr) \) ;
+    \item \( \nv1{F'} \le \nv1 F \cdot \left(
+          \nv\infty\coi^2 \bigl( 4^\genre \dimp** \bigr)^\dv
+        \right)^{(1+\epsiii) \wts[1] \delta}
+      \) ;
+    \item \( \nv1{G} \le \nv1 F \cdot
+        \left(
+          \prod\fctirange
+          \nv1{\varfc*}^{(4\puiss + 2\epsz) \wtis*}
+          \cdot
+          \cst{f-aux-loc}^{(1+\epsiii) \wts[1]}
+        \right)^\delta
+        \cdot
+        2^{o(\delta)}
+      \), où
+      \begin{equation}
+        \newcst{f-aux-loc}
+        =
+        \nv\infty\coi^2 \bigl(
+          4^\genre \dimp** \cdot (2 \max_\fct \vdeg*)^{(4\puiss + 2\epsz)}
+        \bigr)^\dv
+      \end{equation}
+  \end{enumthm}
+\end{scho}
+
+\begin{proof}
+  Les trois premiers points sont donnés directement par la méthode utilisée
+  pour construire \( F \). Le suivant résulte du lemme~\ref{l:hmat-wemba} et
+  de la propriété~\ref{e:l1-subslin} de la norme utilisée en effectuant les
+  mêmes simplifications que dans la démonstration de la proposition
+  précédente.
+
+  Pour le dernier point, on reprend la matrice \( M \) de cette démonstration
+  et on en majore la norme locale de la même façon qu'on en a majoré la
+  hauteur :
+  \begin{align}
+    \nv\infty M
+    & \le
+    \prod\fctirange \left(
+      \nv1{\varfc*}^{(4\puiss + 2\epsz) \wtis*}
+    \right)^\delta
+    \\ & \qquad
+    \cdot \left(
+      \nv\infty\coi^2 \bigl(
+        4^\genre \dimp** \cdot (2 \max_\fct \vdeg*)^{(4\puiss + 2\epsz)}
+      \bigr)^\dv
+    \right)^{(1+\epsiii) \wts[1] \delta}
+    \cdot
+    2^{o(\delta)}
+  \end{align}
+  On en déduit l'estimation annoncée en remarquant que \( G \) est l'image de
+  \( F \) par l'application de matrice \( M \) et que \( \nv1{M F} \le
+    \nv\infty M \cdot \nv1 F \cdot 2^{\dv o(\delta)} \) par les propriétés
+  classiques des normes.
 \end{proof}
 
 \endinput
