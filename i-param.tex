@@ -356,11 +356,11 @@ degré du monôme de départ.
     \item \(
         \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) }
         \le
+        \nv1{ \chow\anyvar }^{(\dimp - \anydim) \lgr\derp}
         \left(
-          \nv1{ \chow\anyvar }
-          \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
-        \right)^{2 (\dimp - \anydim) \lgr\derp}
-        \cdot 2^{ (\lgr\derp + \anydim \lgr\ip)\dv }
+          \bigl( 8 \anydim \anydeg^{3} \bigr)^{(\dimp - \anydim) \lgr\derp}
+          \cdot 2^{ \anydim \lgr\ip }
+        \right)^\dv
       \) ;
     \item \( \ord_{\anyvp[0]} \bigl( \pmnum^\derp_\dv (\anyvp^\ip) \bigr)
         \ge \ip[0] - \derp[0] \).
@@ -460,7 +460,7 @@ degré du monôme de départ.
     \nv1{ \pmnum^\indl_{1, \dv}( \anyvp* ) }
     \cdot
     \prod_{\ind = \anydim + 1}^{\dimp}
-    \nv1{ \pden_\ind }^{ f(\derp)
+    \nv1{ \pden_\ind }^{ 2\lgr\derp
       - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
     \\ & \le
     \prod_{\ind = \anydim + 1}^{\dimp}
@@ -470,13 +470,13 @@ degré du monôme de départ.
     \right)^{ \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
     \cdot \left(
       \nv1{ \chow\anyvar } \anydeg^\dv
-    \right)^{ f(\derp)
+    \right)^{ 2\lgr\derp
       - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
     \\ & \le
-    \Biggl(
-    \nv1{ \chow\anyvar }
-    \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
-    \Biggr)^{(\dimp - \anydim) f(\derp)}
+    \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
+    \left(
+    \bigl( 4 \anydim \anydeg^{3} \bigr)^{(\dimp - \anydim) \lgr\derp}
+    \right)^\dv
   \end{align}
   On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
   \begin{equation}
@@ -495,7 +495,8 @@ degré du monôme de départ.
     \le
     2^{ \derp[p] + \lgr\ip - 2 }
   \).
-  L'estimation annoncée suit en prenant le produit.
+  L'estimation annoncée suit en prenant le produit en majorant assez largement
+  certains facteurs.
 
   Enfin, on constate que chaque terme de la somme définissant
   \( \pmnum^\derp_\dv ( \anyvp^\ip ) \) contient un facteur de la forme
@@ -571,12 +572,12 @@ degré du monôme de départ.
         \nv1{ \pmnum^\dermp_\dv (H) }
         \le
         \nv1 H
+        \prod\limits\fctrange
+        \nv1{ \varfc* }^{ 2 (\dimp - \vdim*) \lgr{\dermp*} }
         \left(
-          \nv1{ \varfc* }
-          \bigl( 2 \sqrt{\vdim* \vdeg*^{3}} \bigr)^\dv
-        \right)^{2 (\dimp - \vdim*) \lgr{\dermp*}}
-        \cdot \prod\limits\fctrange
-        2^{ (\lgr{\dermp*} + \vdim* \alpha_\fct)\dv }
+          \bigl( 8 \vdim* \vdeg*^3 \bigr)^{(\dimp - \vdim*) \lgr{\dermp*}}
+          \cdot 2^{ \vdim* \alpha_\fct }
+        \right)^\dv
       \) ;
     \item \( \inda* \bigl( \pmnum^\dermp_\dv (H) \bigr)
         \ge \inda*(H) - \wtsum*(\dermp) \).
