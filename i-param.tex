@@ -348,10 +348,10 @@ degré du monôme de départ.
     \item \( \pmden^\derp( \anyvp^\ip )
         =
         \anyvp[\anydim]^{\lgr\ip}
-        \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{f(\derp)}
+        \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{2\lgr\derp}
       \) ;
     \item \( \deg \pmnum^\derp_\dv (\anyvp^\ip)
-        = (\anydeg - 1) (\dimp - \anydim) f(\derp) + \lgr\ip \) sauf quand
+        = 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp + \lgr\ip \) sauf quand
       \( \pmnum^\derp_\dv (\anyvp^\ip) = 0 \) ;
     \item \(
         \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) }
@@ -360,7 +360,7 @@ degré du monôme de départ.
         \left(
           \nv1{ \chow\anyvar }
           \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
-        \right)^{(\dimp - \anydim) f(\derp)}
+        \right)^{2 (\dimp - \anydim) \lgr\derp}
       \) ;
     \item \( \ord_{\anyvp[0]} \bigl( \pmnum^\derp_\dv (\anyvp^\ip) \bigr)
         \ge \ip[0] - \derp[0] \).
@@ -426,7 +426,7 @@ degré du monôme de départ.
     \pmden^\derp    ( \anyvp^\ip )
     & =
     \anyvp[\anydim]^{\lgr\ip}
-    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{f(\derp)}
+    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{2\lgr\derp}
     \\
     \pmnum^\derp_\dv( \anyvp^\ip )
     & =
@@ -439,13 +439,14 @@ degré du monôme de départ.
     \anyvp[\anydim]^{\lgr\ip - \star}
     \cdot
     \prod_{\ind = \anydim + 1}^{\dimp}
-    \pden_\ind^{ f(\derp)
+    \pden_\ind^{ 2\lgr\derp
       - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
     \Biggr)
     \pmm,
   \end{align}
   où \( \star \) désigne le nombre de \( \indl \) nuls. On vérifie en effet
   immédiatement que \( \pmnum^\derp_\dv( \anyvp^\ip ) \) est bien un polynôme
+  (\( f \) est croissante et sous-additive et \( f(\derp) \le 2\lgr\derp \))
   et que \( \pmnum^\derp_\dv( \anyvp^\ip ) / \pmden^\derp ( \anyvp^\ip ) \)
   est bien le terme général de la série~\ref{e:par-mono-dev}.
 
@@ -508,7 +509,33 @@ degré du monôme de départ.
   nuls dans cette somme, donc \( \anyvp[0]^{\!\!\ip[0] - \derp[0]} \) est en
   facteur de chaque terme non nul de la somme définissant \( \pmnum^\derp_\dv
     ( \anyvp^\ip ) \), ce qui prouve l'assertion sur l'indice.
-  % FIXME: \! above is a bad hack working around bad macros
+  % FIXME: \!\! above is a bad hack working around bad macros
+\end{proof}
+
+\begin{rem}
+  Les applications \( \pmnum^\derp_\dv \) construites au lemme précédent
+  satisfont la formule de \bsc{Leibniz} simplifiée :
+  \begin{equation}
+    \pmnum^\derp_\dv (H J)
+    =
+    \sum_{\gp\nu \le \derp}
+    \pmnum^{\gp\nu}_\dv (H)
+    \cdot
+    \pmnum^{\derp - \gp\nu}_\dv (H J)
+    \pmm,
+  \end{equation}
+  où \( H \) et \( J \) sont des formes homogènes.
+\end{rem}
+
+\begin{proof}
+  Par construction, les applications \( \pmnum^\derp_\dv / \pmden^\derp \)
+  satisfont cette formule, ce qui est une autre façon de dire que \( \pmor* \)
+  est un morphisme d'anneaux. Le choix de dénominateurs effectué implique que
+  \(
+    \pmden^\derp(H J) =
+    \pmden^{\gp\nu} (H) \cdot \pmden^{\derp - \gp\nu}_\dv (H J)
+  \)
+  dès que \( H \) et \( J \) sont homogènes, ce qui donne le résultat annoncé.
 \end{proof}
 
 
@@ -531,24 +558,24 @@ degré du monôme de départ.
         =
         \prod\fctrange \Bigl(
           (\vmp*[\vdim*])^{\alpha_\fct}
-          \prod_{\ind=\vdim*+1}^{\dimp} (\pden\mexp**)^{f(\dermp*)}
+          \prod_{\ind=\vdim*+1}^{\dimp} (\pden\mexp**)^{2\lgr{\dermp*}}
         \Bigr)
       \) ;
     \item \(
         \deg_\fct \pmnum^\dermp_\dv (H)
         =
-        (\vdeg* - 1) (\dimp - \vdim*) f(\dermp*) + \alpha_\fct
+        2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} + \alpha_\fct
       \) sauf si \( \pmnum^\dermp_\dv (H) = 0 \) ;
     \item \(
         \nv1{ \pmnum^\dermp_\dv (H) }
         \le
         \nv1 H \cdot
-        \prod\fctrange
+        \prod\limits\fctrange
         2^{ (\lgr{\dermp*} + \vdim* (\lgr{\imp*} - 2))\dv }
         \left(
           \nv1{ \varfc* }
           \bigl( 2 \sqrt{\vdim* \vdeg*^{3}} \bigr)^\dv
-        \right)^{(\dimp - \vdim*) f(\dermp*)}
+        \right)^{2 (\dimp - \vdim*) \lgr{\dermp*}}
       \) ;
     \item \( \inda* \bigl( \pmnum^\dermp_\dv (H) \bigr)
         \ge \inda*(H) - \wtsum*(\dermp) \).
