@@ -351,16 +351,16 @@ degré du monôme de départ.
         \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{2\lgr\derp}
       \) ;
     \item \( \deg \pmnum^\derp_\dv (\anyvp^\ip)
-        = 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp + \lgr\ip \) sauf quand
+        = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) sauf quand
       \( \pmnum^\derp_\dv (\anyvp^\ip) = 0 \) ;
     \item \(
         \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) }
         \le
-        2^{ (\lgr\derp + \anydim (\lgr\ip - 2))\dv }
         \left(
           \nv1{ \chow\anyvar }
           \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
         \right)^{2 (\dimp - \anydim) \lgr\derp}
+        \cdot 2^{ (\lgr\derp + \anydim \lgr\ip)\dv }
       \) ;
     \item \( \ord_{\anyvp[0]} \bigl( \pmnum^\derp_\dv (\anyvp^\ip) \bigr)
         \ge \ip[0] - \derp[0] \).
@@ -564,18 +564,19 @@ degré du monôme de départ.
     \item \(
         \deg_\fct \pmnum^\dermp_\dv (H)
         =
-        2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} + \alpha_\fct
+        \alpha_\fct
+        + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
       \) sauf si \( \pmnum^\dermp_\dv (H) = 0 \) ;
     \item \(
         \nv1{ \pmnum^\dermp_\dv (H) }
         \le
-        \nv1 H \cdot
-        \prod\limits\fctrange
-        2^{ (\lgr{\dermp*} + \vdim* (\lgr{\imp*} - 2))\dv }
+        \nv1 H
         \left(
           \nv1{ \varfc* }
           \bigl( 2 \sqrt{\vdim* \vdeg*^{3}} \bigr)^\dv
         \right)^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \cdot \prod\limits\fctrange
+        2^{ (\lgr{\dermp*} + \vdim* \alpha_\fct)\dv }
       \) ;
     \item \( \inda* \bigl( \pmnum^\dermp_\dv (H) \bigr)
         \ge \inda*(H) - \wtsum*(\dermp) \).
