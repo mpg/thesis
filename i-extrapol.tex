@@ -38,16 +38,49 @@ introduit de plus un réel \( \epsiv > 0 \) soumis à des conditions qui seront
 explicitées ultérieurement, et on souhaite montrer que
 \( \inda**(R \cdot F') \ge \epsiv\delta \).
 
-\medskip
-
 \begin{lem}
   Soit \( \point \) un point de \( \var \) satisfaisant~\ref{e:HA} et de
-  grande hauteur ; on note \( \coord \) ses coordonnées multihomogènes.  Pour
-  chaque \( \fct \in \{ 1, \dots, \puiss \} \), il existe un indice \( \ind
-    \in \{ 1, \dots, \vdim* \} \) tel que
+  grande hauteur ; on note \( \cmp \) ses coordonnées multihomogènes.  Pour
+  chaque \( \fct \in \{ 1, \dots, \puiss \} \) et chaque place \( \place \) de
+  \( \cdn \), il existe un indice \( \ind_{\place, \fct} \in \{ 1, \dots,
+      \vdim* \} \) tel que
   \begin{equation}
-    \av{\coord\mexp*[\ind]}
+    \av{\cmp*[\ind_{\place, \fct}]}
     \le
+    \cst{ind-norm-dim-loc} \cdot \Onv{\cmp*}
+    \pmm,
+  \end{equation}
+  avec
+  \begin{equation}
+    \newcst{ind-norm-dim-loc} = \dots
+  \end{equation}
+\end{lem}
+
+\begin{ideas}
+  C'est une variante plus précise du lemme~\ref{ChoixI}. Les points sont :
+  \begin{enumthm}
+    \item pouvoir choisir \( \ind \) plus petit que \( \vdim* \). Pour ça, on
+      utilise que le point est sur \( \var \) pour écrire que les dernières
+      coordonnées sont intégralement dépendantes sur les premières
+      (fait~\ref{f:plong-adapt-dep} ou directement Rémond si besoin) avec des
+      relations connues, donc majorer la norme en fonction du maximum des
+      valeurs absolues des première coordonnées.
+    \item pouvoir choisir \( \ind \) différent de \( 0 \). Là on utilise le
+      fait que le point est proche de \( \divi \), donc par définition de la
+      distance, sa coordonnée d'indice \( 0 \) est petite devant sa norme,
+      donc ça ne peut pas être elle qu'on a choisi avant.
+  \end{enumthm}
+\end{ideas}
+
+\begin{lem}
+  Quitte à faire sur chaque facteur un changement de coordonnées linéaire
+  laissant invariantes les coordonnées \( \cmp*[0], \cmp*[\vdim*+1], \dots,
+    \cmp*[\dimp] \), on peut supposer que
+  \begin{equation}
+    \prod_{\place \in \placesapx}
+    \av{\vmp*[\vdim*]}
+    \le
+    \prod_{\place \in \placesapx}
     \cst{ind-norm-dim} \cdot \Onv{\coord\mexp*}
     \pmm,
   \end{equation}
@@ -55,41 +88,38 @@ explicitées ultérieurement, et on souhaite montrer que
   \begin{equation}
     \newcst{ind-norm-dim} = \dots
   \end{equation}
-  En particulier, \( \coord\mexp*[\ind] \) n'est pas nul.
+  De plus, on peut choisir la transformation linéaire donnée par une matrice
+  de hauteur \dots
 \end{lem}
 
-\begin{ideas}
-  C'est une variante plus précise du lemme~\ref{ChoixI}. Les points sont :
-  \begin{enumthm}
-  \item pouvoir choisir \( \ind \) plus petit que \( \vdim* \). Pour ça, on
-    utilise que le point est sur \( \var \) pour écrire que les dernières
-    coordonnées sont intégralement dépendantes sur les premières
-    (fait~\ref{f:dep-int} ou directement Rémond si besoin) avec des relations
-    connues, donc majorer la norme en fonction du maximum des valeurs absolues
-    des coordonnées.
-  \item pouvoir choisir \( \ind \) différent de \( 0 \). Là on utilise le fait
-    que le point est proche de \( \divi \), donc par définition de la
-    distance, sa coordonnée d'indice \( 0 \) est petite devant sa norme, donc
-    ça ne peut pas être elle qu'on a choisi avant.
-  \end{enumthm}
-\end{ideas}
-
-\begin{lem}
-  On peut supposer que les dénominateurs dans les développements en série ne
-  s'annullent pas en \( \excep \).
-\end{lem}
+\begin{scho}
+  On peut supposer que la partie en \( \pden \) des dénominateurs dans les
+  développements en série ne s'annulle pas en \( \excep \).
+\end{scho}
 
 \begin{ideas}
   En effet, ces dénominateurs sont de degré bornés en fonction uniquement de
   \( \var \) indépendamment de \( \delta \). Donc si l'un d'eux s'annulle en
-  \( \excep \), il fournit le forme par laquelle on veut couper \( \var \)
+  \( \excep \), il fournit la forme par laquelle on veut couper \( \var \)
   pour montrer qu'elle n'est pas minimale, donc on n'a pas besoin de toute la
   construction qui suit.
 \end{ideas}
 
 \begin{lem}
-  On peut dont majorer la valeur absolue de l'inverse de la valeur de ces
-  dénominateurs en \( \excep \) par une constante fois sa hauteur.
+  Pour tout \( \dermp \), on a
+  \worknote{On a un problème d'homogénéité là, non ?}
+  \begin{equation}
+    \prod\placerange
+    \Bigl( \prod\fctrange
+      \prod_{\ind=\vdim*+1}^{\dimp} (\pden\mexp**)^{2\lgr{\dermp*}}
+    \Bigr)^{-1}
+    \le
+    \cst{form-prod}
+    \prod\fctrange \bigl(
+      \hautm[1]{\varfc*} \hautm[1]{e_\fct}^{\vdeg* - 1}
+    \bigr)^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+    \pmm.
+  \end{equation}
 \end{lem}
 
 \begin{ideas}
@@ -97,23 +127,22 @@ explicitées ultérieurement, et on souhaite montrer que
 \end{ideas}
 
 \begin{lem} \label{l:par-var-spe}
-  Le développement de $G$ en $\excep$ s'écrit
-  $\tau(G)_\excep = \sum_\lambda \xi_\lambda t^\lambda$ avec :
-  \begin{enumthm}
-  \item \( \hautl{\xi_\lambda} \le c(\hautl\excep, \lgr\lambda, \dots ) \) ;
-  \item \( \av{ \xi_\lambda } \le c(\distv(\excep, \divi), \hautl\excep,
-      \sigma, \dots) \) dès que que \( \lambda \in \Stairs_\wt^{\delta/\sigma}
-    \) et pour \( \place \in \placesapx \).
-  \end{enumthm}
+  Le développement de $G$ en $\excep$ s'écrit $\tau(G)(\excep) = \sum_\dermp
+  \xi_\dermp \psmp^\dermp$ avec : \( \av{ \xi_\dermp } \le c(\eps,
+    \hautl\excep, \epsiv, \dots) \) dès que que \( \dermp \in
+    \stairs[\delta\epsiv] \) et pour \( \place \in \placesapx \).
 \end{lem}
 
 \begin{ideas}
-  On spécialise en \( \excep \) le résultat du lemme~\ref{l:par-var}, en tenant
-  compte des résultats des lemmes précédents.
-
-  Note : c'est pas vraiment sûr que l'estimation de hauteur soit intéressante
-  ici, mais j'aimerais quand même la faire pour me convaincre que celle qu'on
-  obtiendra après en passant par le plongement pondéré est meilleur.
+  On spécialise en \( \excep \) le résultat du lemme~\ref{l:par-var} appliqué
+  à \( G \), en tenant compte des résultats des lemmes précédents :
+  \begin{enumthm}
+    \item l'un contrôle la contribution du dénominateur ;
+    \item pour le numérateur, on utilise le fait qu'il a un indice élevé le
+      long de \( \divi \) pour faire sortir \( \av{\cex*[0]} /
+        \av{\cex*[\vdim*]} \), qui se compare à \( \distv\excep\divi \) ;
+    \item cette dernière se compare alors à \( \hautl\excep \).
+  \end{enumthm}
 \end{ideas}
 
 \begin{lem}
@@ -129,51 +158,49 @@ explicitées ultérieurement, et on souhaite montrer que
 \end{ideas}
 
 \begin{lem} \label{l:par-img-spe}
-  Le développement de $F$ en $\excep$ s'écrit
-  $\Omega_\wt(G)_{\wemb(\excep)} = \sum_\lambda \zeta_\lambda t^\lambda$ avec
-  \( \hautl{\zeta_\lambda} \le c(\hautl\excep, \lgr\lambda, \dots ) \).
+  Le développement de $RF'$ en $\excep$ s'écrit
+  \( \tau(G)(\excep) = \sum_\dermp \zeta_\dermp \psmp^\dermp \)
+  avec
+  \( \hautl{\zeta_\dermp} \le c(\hautl\excep, \lgr\dermp, \dots ) \).
 \end{lem}
 
 \begin{ideas}
-  On spécialise les formes données par le lemme (à décrire) en \(
-    \wemb(\excep) \), en tenant compte de l'estimation des hauteurs précédentes,
-  et en utilisant les lemmes du début de la partie pour gérer les
-  dénominateurs, qui sont les mêmes que pour le lemme~\ref{l:par-var-spe}.
+  On spécialise en \( \excep \) le résultat du lemme~\ref{l:par-var} appliqué
+  à \( RF' \), en tenant compte des points suivants :
+  \begin{enumthm}
+    \item la contribution du dénominateur est contrôlée précédemment ;
+    \item on utilise le lemme~\ref{l:der-wemba} appliqué à \( R F \) pour dire
+      que les dénominateurs proviennent de formes sur \( \wemb(\var) \), puis
+      l'estimation de hauteur de \( \wemb(\excep) \) précédente pour gagner
+      sur le dénominateur ;
+    \item au cours de cette estimation, on risque de sortir de facteurs
+      \( \nv1{\excep}^{\dots} / \nv1{Q(\excep)} \) où \( Q \) est une des
+      formes de multiplication-soustraction. On contrôle alors ces facteurs
+      par un lemme adéquat.
+  \end{enumthm}
+  Note : on a \( \wemba(R F) = R F' \), de sorte qu'on a bien le droit
+  d'appliquer le lemme à \( R F \) pour contrôler le développement de \( R F'
+  \).
 \end{ideas}
 
 \begin{lem}
-  La forme $R \cdot F'$ a un indice pondéré par \( \wt \) supérieur à \(
-    \delta/\sigma \) en \( \excep \) le long des \( \divi \).
+  On a \( \inda**(R \cdot F') \ge \epsiv\delta \), avec
+  \begin{equation}
+    \epsiv = \dots
+  \end{equation}
 \end{lem}
 
 \begin{ideas}
-  On veut montrer que les coefficients de son développement appartenant à \(
-    \Stairs_\wt^{\delta/\sigma} \) sont nuls. Or ce sont les mêmes que ceux du
-  développement de \( G \) car ces deux formes sont égales sur \( \var \).
-  \worknote{Pile les mêmes, où à constante près ?} On contrôle donc
-  précisément leur valeur absolue aux places de \( \placesapx \).
+  On commence par constater que les deux développements en série autour de \(
+    \excep \) étudiés précédemment sont égaux, car il s'agit du développement
+  de la même fonction dans \( \korper\var \), relativement aux mêmes
+  paramètres.
 
-  D'un autre côté, le développement de \( F' \) en \( \excep \) est le même
-  que celui de \( F \) en \( \wemb(\excep) \).\worknote{Le plongement ne
-    change rien pour les dérivées et tout ?} Donc on contrôle le hauteur des
-  coefficients. Or, à \( o(\delta) \), ça sera aussi la hauteur des
-  coefficients de \( R \cdot F' \), puis quel la hauteur de \( R \) est un \(
-    O(1) \).
-
-  Du coup, pour les coefficients de \( \Stairs_\wt^{\delta/\sigma} \), on
-  contrôle finement la valeur absolue en les places de \( \placesapx \), et on
-  contrôle aussi la hauteur. Si tout va bien, c'est assez précis pour
-  contredire la formule du produit, donc ça prouve qu'ils sont nuls.
+  Du coup, pour les coefficients de \( \stairs[\delta\epsiv] \), on contrôle
+  finement la valeur absolue en les places de \( \placesapx \), et on contrôle
+  aussi la hauteur. Si tout va bien, c'est assez précis pour contredire la
+  formule du produit, donc ça prouve qu'ils sont nuls.
 \end{ideas}
-
-\begin{rem} \worknote{D'accord ou pas ?}
-  On peut peut-être s'arrêter là, c'est-à-dire ne pas montrer que \( F' \)
-  tout seul a un indice élevé. En effet, on a déjà \( R \cdot F' \) qui a
-  cette propriété et qui les mêmes degrés et hauteurs que \( F' \) à \(
-    o(\delta) \) près. Le fait que \( F' \) provient de \( F \) n'est sans
-  doute pas intéressant pour la suite (c'est pour extrapoler qu'on en avait
-  besoin).
-\end{rem}
 
 \endinput
 

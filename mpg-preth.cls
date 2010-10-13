@@ -501,6 +501,7 @@
 \nomg{Theta} {\mmemb} {Plongement de \bsc{Mumford modifié}}
 
 \newcommand \placesapx { \mathcal S }
+\newcommand \placerange { _{\place \in \placesapx} }
 \newcommand \wtapx [1][\place] { \lambda\ssub{#1} }
 \noma{S} {\placesapx} {Ensemble fini de places de \( \cdn \) auxquelles on
   impose une condition d'approximation}
@@ -730,7 +731,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \divi {E}
 \noma{E}{\divi}{Le diviseur dont on étudie les approximations exceptionnelles}
 
-\newc@star@default \excep   {\fct }{\puiss } {e\ssub{#1}}
+\newcommand \Excep { e }
+\newcommand \cex   { \gmp\Excep }
+
+\newc@star@default \excep   {\fct }{\puiss } {\Excep\ssub{#1}}
 \newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
 \newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}^2}
 \newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
