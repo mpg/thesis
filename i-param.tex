@@ -343,8 +343,9 @@ degré du monôme de départ.
 \begin{lem} \label{l:par-anyvar-mono}
   Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
   toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
-  \), on a :
+  \), on peut choisir \( \pmnum_\dv^\derp \) et \( \pmden^\derp \) tels que :
   \begin{enumthm}
+    \item \( \pmnum_\dv^{\gp 0}( \anyvp^\ip ) = \anyvp^\ip \) ;
     \item \( \pmden^\derp( \anyvp^\ip )
         =
         \anyvp[\anydim]^{\lgr\ip}
@@ -450,9 +451,9 @@ degré du monôme de départ.
   et que \( \pmnum^\derp_\dv( \anyvp^\ip ) / \pmden^\derp ( \anyvp^\ip ) \)
   est bien le terme général de la série~\ref{e:par-mono-dev}.
 
-  Le calcul des degrés ainsi que l'estimation de norme du dénominateur sont
-  immédiats. Pour le numérateur, chaque terme de la somme est majoré en norme
-  par
+  Les deux premiers points annoncés découlent directement de ces définitions.
+  Pour le numérateur, le calcul du degré est direct et on ne détaille donc que
+  l'estimation de norme : chaque terme de la somme est majoré en norme par
   \begin{align}
     \prod\indrange
     \prod_{ \indi_\ind = 1 }^{ \ip* }
@@ -534,7 +535,7 @@ degré du monôme de départ.
   est un morphisme d'anneaux. Le choix de dénominateurs effectué implique que
   \(
     \pmden^\derp(H J) =
-    \pmden^{\gp\nu} (H) \cdot \pmden^{\derp - \gp\nu}_\dv (H J)
+    \pmden^{\gp\nu} (H) \cdot \pmden^{\derp - \gp\nu} (H J)
   \)
   dès que \( H \) et \( J \) sont homogènes, ce qui donne le résultat annoncé.
 \end{proof}
@@ -554,6 +555,7 @@ degré du monôme de départ.
   pour toute forme multihomogène \( H \) de multidegré \( \alpha = \alpha_1,
     \dots, \alpha_\puiss \),
   \begin{enumthm}
+    \item \( \pmnum^{\gmp 0}_\dv (H) = H \) ;
     \item \(
         \pmden^\dermp(H)
         =
@@ -586,20 +588,20 @@ degré du monôme de départ.
 
 \begin{proof}
   On défini les applications \( \pmnum^\dermp_\dv \) et \( \pmden^\dermp \)
-  par
+  sur les monômes par
   \begin{align}
-    \pmnum^\dermp_\dv (\cmp)
+    \pmnum^\dermp_\dv (\vmp^\imp)
     & =
-    \prod\fctrange \pmnum^{\fct, \dermp*}_\dv (\cmp*)
+    \prod\fctrange \pmnum^{\fct, \dermp*}_\dv \bigl( (\vmp*)^{\imp*} \bigr)
     &
-    \pmden^\dermp (\cmp)
+    \pmden^\dermp (\vmp^\imp)
     & =
-    \prod\fctrange \pmden^{\fct, \dermp*} (\cmp*)
+    \prod\fctrange \pmden^{\fct, \dermp*} \bigl( (\vmp*)^{\imp*} \bigr)
   \end{align}
   où les différentes applications \( \pmnum \) et \( \pmden \) des membres de
   droite sont obtenues en appliquant le lemme~\ref{l:par-anyvar-mono} à
   chacun des facteurs \( \var* \). On remarque alors que \( H \) est une
-  combinaison linéaire de monômes de même degrés.
+  combinaison linéaire de monômes de même degré.
 
   Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
     \vmp^\imp \) un monôme apparaissant dans l'écriture \( H \), puis \(
@@ -624,7 +626,7 @@ d'une forme sur \( \wemb(\var) \). Commençons par un lemme technique.
     \item \( \pmnum_\dv^\dermp(H^\gamma)
         =
         \tilde\pmnum_\dv(H, \dermp, \gamma)
-        \cdot \pmnum_\dv^{\gmp 0} (H)^{\gamma - \lgt\dermp}
+        \cdot H^{\gamma - \lgt\dermp}
       \) ; \label{i:der-pow-def}
     \item \( \deg_\fct \tilde\pmnum_\dv(H, \dermp, \gamma)
         =
