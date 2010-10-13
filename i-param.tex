@@ -513,7 +513,7 @@ degré du monôme de départ.
   % FIXME: \!\! above is a bad hack working around bad macros
 \end{proof}
 
-\begin{rem}
+\begin{rem} \label{r:leibniz}
   Les applications \( \pmnum^\derp_\dv \) construites au lemme précédent
   satisfont la formule de \bsc{Leibniz} simplifiée :
   \begin{equation}
@@ -608,6 +608,102 @@ degré du monôme de départ.
     \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \) d'où, en sommant, \(
     \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \) qui est équivalent
   à l'estimation annoncée vu la définition de l'indice.
+\end{proof}
+
+La forme que nous avons envie de développer en série à l'aide du lemme
+précédent est \( F' = \wemba(F) \) (voir scholie~\ref{s:aux-co}). Nous
+souhaitons, en dérivant cette forme, conserver l'information qu'elle provient
+d'une forme sur \( \wemb(\var) \). Commençons par un lemme technique.
+
+\begin{lem} \label{l:der-pow}
+  Soient \( H \) une forme multihomogène de degré \( (\Delta_1, \dots,
+    \Delta_\puiss ) \) et \( \gamma \) un entier naturel. Dans les notations
+  du lemme précédent, pour tout \( \dermp \) il existe une forme multihomogène
+  \( \tilde\pmnum_\dv(H, \dermp, \gamma) \) telle que
+  \begin{enumthm}
+    \item \( \pmnum_\dv^\dermp(H^\gamma)
+        =
+        \tilde\pmnum_\dv(H, \dermp, \gamma)
+        \cdot \pmnum_\dv^{\gmp 0} (H)^{\gamma - \lgt\dermp}
+      \) ; \label{i:der-pow-def}
+    \item \( \deg_\fct \tilde\pmnum_\dv(H, \dermp, \gamma)
+        =
+        \lgt\dermp \Delta_\fct
+        + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
+      \) ;
+    \item \( \nv1{ \tilde\pmnum_\dv(H, \dermp, \gamma) }
+        \le
+        \nv1 H ^{\lgt\dermp}
+        \prod\limits\fctrange
+        \nv1{ \varfc* }^{ 2 (\dimp - \vdim*) \lgr{\dermp*} }
+        \cdot
+        \cst{der-pow}^\dv
+      \), avec
+      \begin{equation}
+        \newcst[]{der-pow} =
+        \prod\limits\fctrange
+        \Bigl(
+          \bigl( 8 \vdim* \vdeg*^3 \bigr)^{(\dimp - \vdim*) \lgr{\dermp*}}
+          \cdot 2^{ \lgt\dermp \vdim* \alpha_\fct }
+        \Bigr)
+        2^{\lgt\dermp + \puiss \dimp** (\gamma - 2)}
+      \end{equation}
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  On utilise le fait que les applications \( \pmnum_\dv^\dermp \) satisfont la
+  formule de \bsc{Leibniz} simplifiée comme énoncée à la
+  remarque~\ref{r:leibniz}. On écrit ainsi
+  \begin{equation}
+    \pmnum_\dv^\dermp(H^\gamma)
+    =
+    \sum_{\gmmp\nu \in N_{\gamma, \derp}}
+    \prod_{\indi = 1}^{\gamma}
+    \pmnum_\dv^{ \gmp\nu\pexp\indi }(H)
+    \pmm,
+  \end{equation}
+  où la somme est prise sur l'ensemble
+  \begin{equation}
+    N_{\gamma, \dermp} = \left\{
+      \gmmp\nu \in \N^{\puiss\dimp**\gamma}
+      \text{ tel que }
+      \sum_{\indi = 1}^{\gamma} \gmp\nu\pexp\indi = \dermp
+    \right\}
+    \pmm.
+  \end{equation}
+  Dans la somme intervenant dans la définition de cet ensemble, il est clair
+  qu'au plus \( \lgt\dermp \) termes ne sont pas nuls, autrement dit au moins
+  \( \gamma - \lgt\dermp \) termes sont nuls. Pour chaque \( \gmmp\nu \), on
+  choisit un sous-ensemble à \( \lgt\dermp \) de \( \set{1, \dots, \gamma} \)
+  contenant tous les \( \indi \) tels que \( \gmp\nu\pexp\indi \neq \gmp 0 \),
+  que l'on note \( N_{\gamma, \dermp, \gmmp\nu} \). On pose alors
+  \begin{equation}
+    \tilde\pmnum_\dv(H, \dermp, \gamma)
+    =
+    \sum_{\gmmp\nu \in N_{\gamma, \derp}}
+    \prod_{\indi \in N_{\gamma, \dermp, \gmmp\nu}}
+    \pmnum_\dv^{ \gmp\nu\pexp\indi }(H)
+    \pmm,
+  \end{equation}
+  de sorte que le point~\ref{i:der-pow-def} est satisfait. L'estimation de
+  degré est immédiate. Pour la norme, l'estimation de chaque terme découle
+  directement du lemme donnant les \( \pmnum_\dv^\dermp \), et on remarque de
+  plus que l'ensemble de sommation s'écrit aussi
+  \begin{equation}
+    N_{\gamma, \dermp} =
+    \prod\fctrange \prod\indrange
+    \left\{
+      (\gmp\nu[1, \fct][\ind], \dots, \gmp\nu[\gamma, \fct][\ind])
+      \in \N^\gamma
+      \text{ tel que }
+      \sum_{\indi = 1}^{\gamma} \gmp\nu[\indi, \fct][\ind] = \dermp**
+    \right\}
+    \pmm,
+  \end{equation}
+  de sorte que le cardinal de chaque facteur est majoré par \( \binom{\dermp**
+      + \gamma - 1}{\gamma - 1} \le 2^{\dermp** + \gamma - 2} \). L'estimation
+  annoncée suit en prenant le produit.
 \end{proof}
 
 

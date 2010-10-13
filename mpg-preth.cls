@@ -636,6 +636,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
         #1}}}%
   \pexp{#2}[#3]}
 \newcommand \mexp {\gmp{}}
+\newcommand*\gmmp [1] {
+  \underline{\underline{\boldsymbol{#1}}}}
 % ]]
 
 \newc@ifstar\puiss    {m} {m-1}
