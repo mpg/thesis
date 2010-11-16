@@ -69,7 +69,7 @@ ayant les mêmes propriétés et dont nous contrôlerons les normes aux places
 ultramétriques et archimédiennes respectivement.
 
 Dans un premier temps, nous établissons un lemme général de paramétrisation
-des variétés projectives, puis nous appliquons ce résultats à notre variété
+des variétés projectives, puis nous appliquons ce résultat à notre variété
 \( \var \) et à la forme auxiliaire \( F \).
 
 
@@ -516,14 +516,14 @@ degré du monôme de départ.
 
 \begin{rem} \label{r:leibniz}
   Les applications \( \pmnum^\derp_\dv \) construites au lemme précédent
-  satisfont la formule de \bsc{Leibniz} simplifiée :
+  satisfont la formule de \bsc{Leibniz} pour les dérivées divisées :
   \begin{equation}
     \pmnum^\derp_\dv (H J)
     =
     \sum_{\gp\nu \le \derp}
     \pmnum^{\gp\nu}_\dv (H)
     \cdot
-    \pmnum^{\derp - \gp\nu}_\dv (H J)
+    \pmnum^{\derp - \gp\nu}_\dv (J)
     \pmm,
   \end{equation}
   où \( H \) et \( J \) sont des formes homogènes.
@@ -535,7 +535,7 @@ degré du monôme de départ.
   est un morphisme d'anneaux. Le choix de dénominateurs effectué implique que
   \(
     \pmden^\derp(H J) =
-    \pmden^{\gp\nu} (H) \cdot \pmden^{\derp - \gp\nu} (H J)
+    \pmden^{\gp\nu} (H) \cdot \pmden^{\derp - \gp\nu} (J)
   \)
   dès que \( H \) et \( J \) sont homogènes, ce qui donne le résultat annoncé.
 \end{proof}
@@ -620,7 +620,8 @@ d'une forme sur \( \wemb(\var) \). Commençons par un lemme technique.
 \begin{lem} \label{l:der-pow}
   Soient \( H \) une forme multihomogène de degré \( (\gamma_1, \dots,
     \gamma_\puiss ) \) et \( \beta \) un entier naturel. Dans les notations
-  du lemme précédent, pour tout \( \dermp \) il existe une forme multihomogène
+  du lemme précédent, pour tout \( \dermp \) de longueur au plus \( \beta \),
+  il existe une forme multihomogène
   \( \tilde\pmnum_\dv(H, \dermp, \beta) \) telle que
   \begin{enumthm}
     \item \( \pmnum_\dv^\dermp(H^\beta)
@@ -648,7 +649,7 @@ d'une forme sur \( \wemb(\var) \). Commençons par un lemme technique.
           \bigl( 8 \vdim* \vdeg*^3 \bigr)^{(\dimp - \vdim*) \lgr{\dermp*}}
           \cdot 2^{ \lgt\dermp \vdim* \gamma_\fct }
         \Bigr)
-        2^{\lgt\dermp + \puiss \dimp** (\beta - 2)}
+        2^{\lgr\vdim}
       \end{equation}
   \end{enumthm}
 \end{lem}
@@ -677,9 +678,10 @@ d'une forme sur \( \wemb(\var) \). Commençons par un lemme technique.
   Dans la somme intervenant dans la définition de cet ensemble, il est clair
   qu'au plus \( \lgt\dermp \) termes ne sont pas nuls, autrement dit au moins
   \( \beta - \lgt\dermp \) termes sont nuls. Pour chaque \( \gmmp\nu \), on
-  choisit un sous-ensemble à \( \lgt\dermp \) de \( \set{1, \dots, \beta} \)
-  contenant tous les \( \indi \) tels que \( \gmp\nu\pexp\indi \neq \gmp 0 \),
-  que l'on note \( N_{\beta, \dermp, \gmmp\nu} \). On pose alors
+  choisit un sous-ensemble à \( \lgt\dermp \) éléments de \( \set{1, \dots,
+      \beta} \) contenant tous les \( \indi \) tels que \( \gmp\nu\pexp\indi
+    \neq \gmp 0 \), que l'on note \( N_{\beta, \dermp, \gmmp\nu} \). On pose
+  alors
   \begin{equation}
     \tilde\pmnum_\dv(H, \dermp, \beta)
     =
@@ -694,7 +696,7 @@ d'une forme sur \( \wemb(\var) \). Commençons par un lemme technique.
   plus que l'ensemble de sommation s'écrit aussi
   \begin{equation}
     N_{\beta, \dermp} =
-    \prod\fctrange \prod\indrange
+    \prod_{ \dermp \in \N^{\lgr\vdim} }
     \left\{
       (\gmp\nu[1, \fct][\ind], \dots, \gmp\nu[\beta, \fct][\ind])
       \in \N^\beta
