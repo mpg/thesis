@@ -35,15 +35,12 @@ Voire directement des constantes automatiques ?
 Notations {{{2
 ---------
 
-(A) Faire une notation pour les indives de formes le long d'un diviseur ou en
-un point.
-
 (B) Noms des formules abéliennes.
 
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
 
-(C) Dabs Vojta, noter en gras ou souligné d et d' ?
+(C) Dans Vojta, noter en gras ou souligné d et d' ?
 
 Dans NMA {{{3
 
@@ -115,7 +112,7 @@ Vojta {{{2
 Plongements et formulaires {{{2
 --------------------------
 
-(A) Fusionner ce qui peut l'être de sec:form-ab et sec:form-ab2.
+(B) Fusionner ce qui peut l'être de sec:form-ab et sec:form-ab2.
         Ajuster les notations dans mumford et vojta là où ces
         sections sont référencées.
 
@@ -129,8 +126,6 @@ Vojta {{{2
 
 (A) Reprendre le plan général de Vojta, et traduire ça en une structure
 section, squelettes d'énoncés, etc.
-
-(A) Paramétrisation : images par \wemba. Faire le lemme.
 
 (A) Extrapolation : remanier le plan général avec squelette détaillé, énoncés
 modulo constantes mais avec ordres de grandeur attendus.
