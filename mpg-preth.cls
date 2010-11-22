@@ -428,9 +428,9 @@
 % missing operators & general symbols [[2
 %
 \DeclareMathOperator \Diff {d}
-\newcommand*\diff[1][] {\Diff\ssub{#1}}
+\newcommand*\diff[1][] {\Diff\ssup{#1}}
 
-\newcommand*\der [1][] {\partial\ssub{#1}}
+\newcommand*\der [1][] {\partial\ssup{#1}}
 \noma{d}{\der\PH}{Dérivée divisée d'ordre \PH}
 
 \DeclareMathOperator \card {Card}
@@ -635,7 +635,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
     \@ifmtarg{#2}{\underline}{}{%
       \@ifmtarg{#3}{\boldsymbol}{}{
         #1}}}%
-  \pexp{#2}[#3]}
+  \pexp{#2}[{#3}]}
 \newcommand \mexp {\gmp{}}
 \newcommand*\gmmp [1] {
   \underline{\underline{\boldsymbol{#1}}}}
