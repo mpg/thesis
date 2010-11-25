@@ -51,7 +51,7 @@ est un morphisme de \( \cdn \)-algèbres.
 
 Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
 faisant commuter le diagramme
-\begin{equation}
+\begin{equation} \label{pmor*}
   \xymatrix{
     \cdn[X]_{(\ideal\anyvar)}                 \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
     & \cdn[X]_{(\ideal\anyvar)} \series\psp   \ar[d]^\pi
@@ -261,111 +261,82 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
   \end{align}
 \end{proof}
 
-% XXX
-
-Notons désormais
-\begin{equation} \label{e:def-f-g}
-  f(\derp) =
-  \begin{cases*}
-    0                               & si \( \derp = 0 \), \\
-    2\lgr\derp - 1                  & sinon ;
-  \end{cases*}
-  \qquad
-  g(\derp) =
-  \begin{cases*}
-    1                               & si \( \derp = 0 \), \\
-    2 (\anydeg - 1) (\lgr\derp - 1) & sinon ;
-  \end{cases*}
-\end{equation}
-de sorte que pour tout \( \derp \) et \( \indi \ge \anydim + 1 \) on a
-\( \pmden_1(\anyvp[\indi]) = \pden^{f(\derp)} \) et
-\( \deg \pmnum(\anyvp[\indi]) \le g(\derp) \) dans le lemme précédent.
-Remarquons également que \( f \) est croissante en \( \lgr\derp \) et
-sous-additive en \( \derp \), propriétés que nous utiliserons par la suite.
-
-Passons maintenant au cas où \( \anyvar \) est une variété quelconque, plongée
-de façon adaptée (voir section~\ref{sub:plong-adapt}) dans un espace
-projectif.
+Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
 
 \begin{lem}
-  Soit \( \anyvar \) une variété projective de dimension \( \anydim \),
-  plongée de façon adaptée dans \( \projd \), de degré \( \anydeg \). Pour \(
-    \indi > \anydim \), notons \( \poldep[][\indi] \) une relation de
-  dépendance intégrale de \( \anyvp[\indi] \) sur \( \anyvp[1], \dots,
-    \anyvp[\anydim] \) telle que donnée par le fait~\ref{f:plong-adapt-dep},
-  et \( \pden_\indi = \diff[\indi] \poldep[][\indi] \).
-
-  Alors on peut prendre choisir \( \pmnum_{1, 0} \), \( \pmnum_{1, 1} \) et \(
-    \pmden_1 \) tels que, pour tout \( \place \) :
+  Dans les notations précédentes, on peut définir \( \pmor*_\dv \) faisant
+  commuter le diagramme~\ref{pmor*} par :
   \begin{enumthm}
-    \item \( \pmnum^0_{1, \dv} (\anyvp[\ind]) = \anyvp[\ind] \) et
-      \( \pmden_1^0 (\anyvp[\ind]) = \anyvp[\anydim] \) pour tout \( \ind
-        \in \set{1, \dots, \dimp} \) ;
-    \item \( \pmor*(\anyvp*) = \frac{ \anyvp* }{ \anyvp[\anydim] } + \psp* \)
-      pour tout \( \ind \in \set{0, \dots, \anydim-1} \), et
-      \( \pmor*(\anyvp[\anydim]) = 1 \) ;
-    \item \( \pmden_1^\derp (\anyvp[\indi]) = \pden_\indi^{f(\derp)} \) pour
-      tout \( \indi \in \set{\anydim + 1, \dots, \dimp} \) et \( \derp \neq 0
-      \) ;
-    \item \( \deg \pmnum^\derp_{1, \dv} (\anyvp[\indi]) = g(\derp) \) pour tout \(
-        \indi \in \set{\anydim + 1, \dots, \dimp} \) et tout \( \derp \) ;
+    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
+        = \frac{ \vp* }{ \vp[\anydim] } + \psp* \)
+      pour tout \( \ind \in \set{0, \dots, \anydim-1} \) ;
+    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
+        = \frac{ \vp* }{ \vp[\anydim] }
+        + \sum_{\derp \neq 0}
+        \frac{ P^\derp_{\ind, \dv} }{ U_\ind^{\lgr\derp - 1} }
+      \)
+  \end{enumthm}
+  où les polynômes \( P^\derp_{\ind, \dv} \) et \(  U_\ind^{\lgr\derp - 1} \)
+  satisfont
+  \begin{enumthm}
+    \item \( \deg U_\ind^{\lgr\derp - 1} = \anydeg - 1 \) ;
+    \item \( \nv1{ U_\ind^{\lgr\derp - 1} }
+        \le \nv1{ \chow\anyvar } \bigl( 2^{\anydeg-1} \bigr)^\dv
+      \)
+    \item \( \deg P^\derp_{\ind, \dv} = (\anydeg - 1) (2\lgr\derp - 1) \) ;
+    \item \( \nv1{ P^\derp_{\ind, \dv} }
+      \)
     \item \( \nv1{ \pmnum^\derp_{1, \dv} (\anyvp[\indi]) }
         \le \left(
           \nv1{ \chow\anyvar }
-          \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
-        \right)^{f(\derp)} \)
-      pour tout \( \indi \in \set{\anydim + 1, \dots, \dimp} \) et tout \( \derp
-      \) ;
+          \bigl( 2^\anydeg \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
+        \right)^{2\lgr\derp - 1} \).
   \end{enumthm}
-  et \( \pmor* \) représente bien le morphisme de paramétrisation sur
-  \( \anyvar \setminus \zeros{ \anyvp[\anydim], \pden_{\anydim+1},
-      \dots, \pden_{\dimp} } \).
 \end{lem}
 
 \begin{proof}
-  On sait que les différents \( \poldep[][\indi] \) sont de degré \( \anydeg
-  \) et majorés en norme par \( \chow\anyvar \). On applique alors le
-  lemme précédent à chaque \( \anyvp[\indi] \) après avoir déshomogénéisé par
-  rapport à \( \anyvp[\anydim] \) et projeté sur  \( \aff{\anydim+1} \)
-  de façon convenable.
+  On aimerait appliquer le lemme précédent à chaque \( \vp* / \vp[\anydim] \)
+  pour \( \ind \in \set{\anydim + 1, \dots, \dimp} \) avec les polynômes \(
+    P_\ind \) donnés par le fait~\ref{f:plong-adapt-dep}, mais il n'est
+  pas clair que ces polynômes satisfassent la dernière condition du lemme
+  précédent. Cependant, une de leur dérivées divisées successives par rapport
+  à la dernière variable convient nécessairement. On applique alors le lemme
+  précédent à cette dérivée, ce qui permet de définir \( \pmor*_\dv \) et
+  donne immédiatement les estimations de normes ci-dessus, mais ne donne
+  qu'une majoration pour les degrés. On multiplie alors les \( U_\ind \) et \(
+    P^\derp_{\ind, \dv} \) obtenus par une puissance convenable de \(
+    \vp[\anydim] \), ce qui permet d'obtenir les degrés exacts annoncés sans
+  modifier les normes.
 \end{proof}
 
-Nous allons maintenant construire des applications \( \pmnum_\dv \) et \(
-  \pmden \) non restreintes aux formes linéaires. Pour simplifier leur
-expression et obtenir des dénominateurs uniformes, nous choisissons des
-applications qui ne prolongent pas celles construites en degré \( 1 \). La
-perte de précision sur le degré des images de monômes particuliers n'est pas
-importante en pratique, car ce sont surtout les images de formes de grand
-degré qui nous intéressent. Au final, le dénominateur obtenu ne dépend que du
-degré du monôme de départ.
+Nous allons maintenant étudier les images de certaines fraction rationnelles.
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Dans les hypothèses et notations du lemme précédent, pour tout \( \derp \),
-  toute place \( \place \) de \( \cdn \) et tout exposant \( \ip \in \N^\dimp*
-  \), on peut choisir \( \pmnum_\dv^\derp \) et \( \pmden^\derp \) tels que :
+  Soit \( G \) une forme homogène de degré \( \alpha \). Posons \( \pden =
+    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
+  sont donnés par le lemme précédent. Alors :
   \begin{enumthm}
-    \item \( \pmnum_\dv^{\gp 0}( \anyvp^\ip ) = \anyvp^\ip \) ;
-    \item \( \pmden^\derp( \anyvp^\ip )
-        =
-        \anyvp[\anydim]^{\lgr\ip}
-        \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{2\lgr\derp}
-      \) ;
-    \item \( \deg \pmnum^\derp_\dv (\anyvp^\ip)
-        = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) sauf quand
-      \( \pmnum^\derp_\dv (\anyvp^\ip) = 0 \) ;
-    \item \(
-        \nv1{ \pmnum^\derp_\dv (\anyvp^\ip) }
+    \item \( P^\derp_{G, \dv}
+        = \pdiff^\derp(G / \vp[\anydim]^\alpha)
+        \cdot \vp[\anydim]^\alpha \pden^{2\lgr\kappa} \) est un polynôme ;
+    \item \( \deg P^\derp_{G, \dv}
+        = \alpha + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{G, \dv} }
         \le
+        \nv1{ G }
         \nv1{ \chow\anyvar }^{(\dimp - \anydim) \lgr\derp}
         \left(
-          \bigl( 8 \anydim \anydeg^{3} \bigr)^{(\dimp - \anydim) \lgr\derp}
-          \cdot 2^{ \anydim \lgr\ip }
+          \bigl( 8^\Delta \anydim \anydeg^{3} \bigr) ^{
+            (\dimp - \anydim) \lgr\derp }
+          \cdot 2^{ \anydim \alpha }
         \right)^\dv
       \) ;
-    \item \( \ord_{\anyvp[0]} \bigl( \pmnum^\derp_\dv (\anyvp^\ip) \bigr)
-        \ge \ip[0] - \derp[0] \).
   \end{enumthm}
+  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{G, \dv} \bigr)
+    \ge \ord_{\vp[0]} (G)  - \derp[0] \).
 \end{lem}
+
+% XXX
 
 \begin{proof}
   On utilise le résultat du lemme précédent et on se souvient que \( \pmor* \)
