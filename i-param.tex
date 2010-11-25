@@ -49,8 +49,8 @@ l'application
 \end{equation}
 est un morphisme de \( \cdn \)-algèbres.
 
-On aimerait alors pouvoir le représenter par un morphisme \( \pmor* \) faisant
-commuter le diagramme
+Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
+faisant commuter le diagramme
 \begin{equation}
   \xymatrix{
     \cdn[X]_{(\ideal\anyvar)}                 \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
@@ -59,50 +59,64 @@ commuter le diagramme
     & \cdn(\anyvar)\series\psp
   }
 \end{equation}
-où les flèches verticales sont les projections canoniques, mais il n'est pas
-clair que ceci soit possible. Nous allons en fait construire, pour chaque
-\( f = F/G \in \cdn[X]_{(\ideal\anyvar)} \), une série \( \xi_{F, G} = \sum
-  \xi_{F, G, \derp} \psp^\derp \) telle que \( \pi(\xi_{F, G}) = \pmor(\pi(f)) \), et dont
-nous contrôlerons, pour chaque coefficient, un dénominateur ainsi que le
-degré et la hauteur du numérateur correspondant. Cependant, ces
-représentations ne seront pas nécessairement indépendantes de la
-représentation \( f = F/G \) choisie, et on n'aura pas \( \xi_{FF',
-    GG'} = \xi_{F, G} \cdot \xi_{F', G'} \) sauf dans certains cas
-particuliers. De plus, on construira en fait deux séries : une dont on
-contrôlera les normes aux places archimédiennes, l'autre aux places
-ultramétriques.
+où les flèches verticales sont les projections canoniques. Posons
+\( \pmor* = \sum_\derp \pdiff*^\derp \psp^\derp \) où les \( \pdiff*^\derp \)
+sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
+la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
+rationnelle \( f = F/G \), nous exhiberons (au moins) un polynôme \( R_\derp
+\), dépendant éventuellement de la représentation \( F/G \) choisie, tel que
+\( R \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes locales
+contrôlées.
 
-% XXX
+En pratique, nous construirons en fait deux morphismes, \( \pmor*_0 \) et \(
+  \pmor*_1 \), et deux familles d'applications \( \pdiff^\derp \) telles que
+l'on contrôlera la norme \( \place \)-adique de \( R \cdot \pdiff^\derp \), où
+l'on rappelle que \( \dv \) vaut \( 1 \) si \( \place \) est archimédienne et
+\( 0 \) sinon.
+
+Pour définir \( \pmor*_\dv \), il suffit de définir les images des différents
+\( \vp* / \vp[\anydim] \). En effet, ceci donne un morphisme de \( \cdn[ \vp /
+  \vp[\anydim] ] \) dans \( \cdn[X]_{(\ideal\anyvar)} \series\psp \). Si l'on
+impose de plus que \( \pdiff^0 \) soit l'identité, on constate que l'image du
+complémentaire de \( \ideal\anyvar \) ne contient que des séries inversibles
+(car leur terme constant l'est), ce qui permet d'étendre le morphisme à \(
+  \cdn[X]_{(\ideal\anyvar)} \).
+
+Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
+  \pmor*_\dv(\vp*/\vp[\anydim]) = \vp*/\vp[\anydim] + \psp* \). Pour \( \ind >
+  \anydim \), nous utiliserons le lemme suivant.
 
 \begin{lem} \label{l:param-aff}
-  Soit \( \anyvar \) une variété affine de dimension \( \anydim \), plongée
-  dans un espace affine \( \aff{\anydim+1} \) de sorte que les coordonnées \(
-    \anyvp[1], \dots, \anyvp[\anydim] \) sont indépendantes, et \( \poldep \in
-    \cdn[\anyvp] \) l'équation de \( \anyvar \), de degré \( \anydeg \).
-  Notons de plus \( \pden \) la dérivée de ce polynôme par rapport à la
-  dernière variable.
+  Dans les notations précédentes, soient \( Y \) un élément de \( \cdn[ \vp /
+    \vp[\anydim] ] \) et \( P \in \cdn[ \anyvp[0], \dots, \anyvp[\anydim+1] ]
+  \) tel que \( P( \vp[0] / \vp[\anydim], \dots, \vp[\anydim-1] /
+    \vp[\anydim], Y ) \in \ker \pi \). On note \( \pden \) la dérivée de \( P \)
+  par rapport à la dernière variable et on suppose que \( \pden( \vp[0] /
+    \vp[\anydim], \dots, \vp[\anydim-1] / \vp[\anydim], Y ) \notin \ker \pi
+  \).
 
-  Alors on peut prendre choisir \( \pmnum_{1, 0} \), \( \pmnum_{1, 1} \) et \(
-    \pmden_1 \) tels que, pour tout \( \place \) :
+  Alors, il existe des polynômes \( P_\dv^\derp \),
+  pour \( \derp \in \N^{\anydim} \minusset0 \), tels que :
   \begin{enumthm}
-    \item \( \pmor*(\anyvp*) = \anyvp* + \psp* \) pour tout
-      \( \ind \in \set{1, \dots, \anydim} \) ;
-    \item \( \pmnum^0_{1, \dv} (\anyvp[\anydim+1]) = \anyvp[\anydim+1] \) et
-      \( \pmden_1^0 (\anyvp[\anydim+1]) = 1 \) ;
-    \item \( \pmden_1^\derp (\anyvp[\anydim+1]) = \pden^{2\lgr\derp - 1} \)
-      pour tout \( \derp \neq 0 \) ;
+    \item \( \pmor(Y) = \pi\left(
+          Y +
+          \sum_{\derp \neq 0} \frac{
+            P_\dv^\derp( \vp[0] / \vp[\anydim], \dots,
+            \vp[\anydim-1] / \vp[\anydim], Y )
+          }{
+            R( \vp[0] / \vp[\anydim], \dots,
+            \vp[\anydim-1] / \vp[\anydim], Y )^{2\lgr\derp - 1}
+          }
+        \right)
+      \) ;
     \item \( \deg \pmnum^\derp_{1, \dv} (\anyvp[\anydim+1])
-        \le (\anydeg - 1) (2\lgr\derp - 1) \)
-      pour tout \( \derp \neq 0 \) ;
+        \le (\anydeg - 1) (2\lgr\derp - 1) \) ;
     \item \( \nv1{ \pmnum^\derp_{1, \dv} (\anyvp[\anydim+1]) }
         \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
           (4\anydim)^{\lgr\derp -1} \anydeg^{3\lgr\derp -2}
         \right)^\dv \)
-      pour tout \( \derp \) ;
   \end{enumthm}
-  et \( \pmor* \) représente bien le morphisme de paramétrisation sur
-  \( \anyvar \setminus \zeros{\pden} \).
 \end{lem}
 
 \begin{proof}
@@ -112,9 +126,7 @@ ultramétriques.
   utilisant aux places archimédiennes une généralisation de
   \cite[relation~2.3.1, p.~63]{farhith}.
 
-  Jusqu'à la fin de la preuve, on note \( P_\dv^\derp = \pmnum^\derp_{1, \dv}
-    (\anyvp[\anydim+1]) \).  On va construire $P_0^\derp$ et $P_1^\derp$
-  indépendamment par récurrence
+  On va construire $P_0^\derp$ et $P_1^\derp$ indépendamment par récurrence
   sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
   \diff[\ind_0] \poldep$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
   (cas $\lgr\derp = 1$), car ce choix convient. Pour la suite, on fixe un
@@ -248,6 +260,8 @@ ultramétriques.
     \qedhere
   \end{align}
 \end{proof}
+
+% XXX
 
 Notons désormais
 \begin{equation} \label{e:def-f-g}

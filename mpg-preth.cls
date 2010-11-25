@@ -887,6 +887,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand  \pmnum {\Delta}
 \newcommand  \pmden {\Gamma}
 
+\newcommand \pdiff {\@ifstar{\Delta}{\Delta_\dv}}
+
 % \Delta
 
 % unsorted math stuff [[1
