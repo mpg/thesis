@@ -136,7 +136,7 @@ affine.
   \begin{equation}
     \Pi \left(
       \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
-      \anyvp[\anydim+1] + \sum_{ \derp \in \N^\anydim \minusset 0 }
+      Y + \sum_{ \derp \in \N^\anydim \minusset 0 }
       \frac {P^\derp} {\pden^{2\lgr\derp -1}} \psp^\derp
     \right)
     = 0 \mod (\Pi)
@@ -208,10 +208,9 @@ affine.
     (\deg\Pi - 1) (2\lgr\derp - 1)
     \pmm,
   \end{align}
-  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.
-
-  La majoration de norme locale est par ailleurs immédiate par analogie avec
-  le degré vu les propriétés de la norme aux places ultramétriques.
+  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.  La majoration de
+  norme locale est immédiate par analogie avec le degré vu les propriétés de
+  la norme aux places ultramétriques.
 
   Traitons maintenant le cas archimédien (désormais \( P^\derp = P^\derp_1 \)
   pour alléger). On utilise la relation de récurrence suivante, établie dans
@@ -260,7 +259,7 @@ affine.
 
 Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
 
-\begin{lem}
+\begin{lem} \label{l:def-pmor}
   Dans les notations précédentes, on peut définir \( \pmor*_\dv \) faisant
   commuter le diagramme~\ref{e:pmor} par :
   \begin{enumthm}
@@ -337,14 +336,14 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
 \).
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soit \( \ip \in \N^{\dimp*} \) et \( M = \prod\limits\indrange
+  Soit \( \ip \in \N^{\dimp*} \) et \( M_\ip = \prod\limits\indrange
     \bigl( \frac{\vp*}{\vp[\anydim]} \bigr)^{\ip*} \).  Posons \( \pden =
     \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
   sont donnés par le lemme précédent. Alors :
   \begin{enumthm}
     \item \( P^\derp_{\ip, \dv}
-        = \pdiff^\derp(M)
-        \cdot \vp[\anydim]^{\lgr\ip} \pden^{\lgr\kappa} \) est un polynôme ;
+        = \pdiff^\derp(M_\ip)
+        \cdot \vp[\anydim]^{\lgr\ip} \pden^{\lgr\derp} \) est un polynôme ;
     \item \( \deg P^\derp_{\ip, \dv}
         = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
     \item \( \nv1{ P^\derp_{\ip, \dv} }
@@ -355,7 +354,7 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
             (\dimp - \anydim) \lgr\derp }
           \cdot 2^{ \anydim \lgr\ip }
         \right)^\dv
-      \) ;
+      \).
   \end{enumthm}
   De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \dv} \bigr)
     \ge \ip[0]  - \derp[0] \).
@@ -365,7 +364,7 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
   \newcommand \indl {{ \gmp\nu[\ind, \indi_\ind] }}
   On utilise la règle de \bsc{Leibniz} :
   \begin{equation}
-    \pdiff^\derp(M) =
+    \pdiff^\derp(M_\ip) =
     \sum_{\gmp\nu \in N}
     \prod\indrange
     \prod_{ \indi_\ind = 1 }^{ \ip* }
@@ -411,7 +410,7 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
       \nv1{ \chow\anyvar }^2
       \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
     \right)^{\lgr\indl}
-    =
+    \le
     \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
     \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)
     ^{(\dimp - \anydim) \lgr\derp \dv}
@@ -447,7 +446,7 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
     \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
   nuls dans cette somme, donc \( \anyvp[0]^{\!\!\ip[0] - \derp[0]} \) est en
   facteur de chaque terme non nul de la somme définissant \( \pmnum^\derp_\dv
-    ( \anyvp^\ip ) \), ce qui prouve l'assertion sur l'indice.
+    ( \anyvp^\ip ) \), ce qui prouve l'assertion sur l'ordre.
   % FIXME: \!\! above is a bad hack working around bad macros
 \end{proof}
 
@@ -458,8 +457,7 @@ On souhaite maintenant étudier le développement en série des fonctions
 rationnelles sur notre variété produit \( \var \).  On étend les notations de
 la section précédente au cas multi-homogène de la façon évidente. En
 particulier, on a un morphisme \( \pmor \) de développement en série, qu'on
-cherche à représenter par des morphismes \( \pmor*_\dv \) faisant commuter le
-diagramme
+représente par des morphismes \( \pmor*_\dv \) faisant commuter le diagramme
 \begin{equation} \label{pmor*-prod}
   \xymatrix{
     \cdn[\vmp]_{(\varid)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
@@ -471,74 +469,70 @@ diagramme
 et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
   \cdot \pdiff^\dermp \).
 
-% XXX
+Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
+morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
+avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
+produit tensoriel de ces morphismes. On note par ailleurs \( \gmp\pden* =
+  \prod_{\ind=\vdim*+1}^{\dimp} \gmp\pden** \) où les \( \gmp\pden** \) sont
+donnés par le lemme cité.
+
+Nous allons maintenant contrôler l'image par \( \pmor* \) de fonctions
+particulières, en commençant par celles qui admettent un monôme en les \(
+  \vmp*[\vdim*] \) comme dénominateur.
 
 \begin{lem} \label{l:par-var}
-  Soient \( \poldep** \) les polynômes donnés par le
-  fait~\ref{f:plong-adapt-dep} et \( \pden\mexp*[\indi] \) leurs dérivées par
-  rapport à \( \vmp*[\indi] \).  Il existe des applications \(
-    \pmnum^\dermp_\dv \) et \( \pmden^\dermp \) représentant le morphisme de
-  paramétrisation de \( \var \) sur l'ouvert défini par \( \pden\mexp*[\indi]
-    \neq 0 \) et \( \vmp*[\vdim*] \neq 0 \) pour \( \fct \in \set{1, \dots,
-      \puiss} \) et \( \indi \in \set{\vdim*+1, \dots, \dimp} \) tels que,
-  pour toute forme multihomogène \( H \) de multidegré \( \alpha = \alpha_1,
-    \dots, \alpha_\puiss \),
+  Soit \( G \) une forme multi-homogène de multidegré \( \alpha = (\alpha_1,
+    \dots, \alpha_\puiss ) \) et \( g = G / \vmp[][\vdim]^{\alpha} \) où
+  l'on a noté \( \vmp[][\vdim]^{\alpha} = \prod\fctrange
+    (\vmp*[\vdim*])^{\alpha_\fct} \). Alors :
   \begin{enumthm}
-    \item \( \pmnum^{\gmp 0}_\dv (H) = H \) ;
-    \item \(
-        \pmden^\dermp(H)
-        =
-        \prod\fctrange \Bigl(
-          (\vmp*[\vdim*])^{\alpha_\fct}
-          \prod_{\ind=\vdim*+1}^{\dimp} (\pden\mexp**)^{2\lgr{\dermp*}}
-        \Bigr)
-      \) ;
-    \item \(
-        \deg_\fct \pmnum^\dermp_\dv (H)
-        =
-        \alpha_\fct
-        + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
-      \) sauf si \( \pmnum^\dermp_\dv (H) = 0 \) ;
-    \item \(
-        \nv1{ \pmnum^\dermp_\dv (H) }
+    \item \( P^\dermp_{G, \dv}
+        = \pdiff^\dermp(G)
+        \cdot \vmp[][\vdim]^{\alpha}
+        \prod\fctrange (\gmp\pden*)^{\lgr{\dermp*}}
+      \) est un polynôme ;
+    \item \( \deg_\fct P^\dermp_{G, \dv}
+        = \alpha_\fct + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} \) ;
+    \item \( \nv1{ P^\dermp_{G, \dv} }
         \le
-        \nv1 H
-        \prod\limits\fctrange
-        \nv1{ \varfc* }^{ 2 (\dimp - \vdim*) \lgr{\dermp*} }
+        \nv1{ G }
+        \prod\fctrange
+        \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
         \left(
-          \bigl( 8 \vdim* \vdeg*^3 \bigr)^{(\dimp - \vdim*) \lgr{\dermp*}}
+          \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+            (\dimp - \vdim*) \lgr{\dermp*} }
           \cdot 2^{ \vdim* \alpha_\fct }
         \right)^\dv
-      \) ;
-    \item \( \inda* \bigl( \pmnum^\dermp_\dv (H) \bigr)
-        \ge \inda*(H) - \wtsum*(\dermp) \).
+      \).
   \end{enumthm}
+  De plus, \( \inda* \bigl( P^\derp_{G, \dv} \bigr) \ge \inda*(G) -
+    \wtsum*(\dermp) \).
 \end{lem}
 
 \begin{proof}
-  On défini les applications \( \pmnum^\dermp_\dv \) et \( \pmden^\dermp \)
-  sur les monômes par
-  \begin{align}
-    \pmnum^\dermp_\dv (\vmp^\imp)
-    & =
-    \prod\fctrange \pmnum^{\fct, \dermp*}_\dv \bigl( (\vmp*)^{\imp*} \bigr)
-    &
-    \pmden^\dermp (\vmp^\imp)
-    & =
-    \prod\fctrange \pmden^{\fct, \dermp*} \bigl( (\vmp*)^{\imp*} \bigr)
-  \end{align}
-  où les différentes applications \( \pmnum \) et \( \pmden \) des membres de
-  droite sont obtenues en appliquant le lemme~\ref{l:par-anyvar-mono} à
-  chacun des facteurs \( \var* \). On remarque alors que \( H \) est une
-  combinaison linéaire de monômes de même degré.
+  Les trois premiers points s'obtiennent en remarquant que \( g \) est une
+  combinaison linéaire de monômes en \( \vmp / \vmp[][\vdim] \), que l'image
+  d'un tel monôme par \( \pdiff^\dermp \) est donnée par
+  \begin{equation}
+    \pdiff^\dermp \Biggl(
+      \prod\fctrange \prod\indrange
+      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \Biggr)
+    =
+    \prod\fctrange
+    \pdiff^{\fct, \dermp*} \Biggl(
+      \prod\indrange
+      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \Biggr)
+  \end{equation}
+  et en appliquant le lemme~\ref{l:par-anyvar-mono}.
 
   Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
-    \vmp^\imp \) un monôme apparaissant dans l'écriture \( H \), puis \(
-    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( \pmnum^\dermp_\dv(
-    \vmp^\imp ) \). D'après le lemme~\ref{l:par-anyvar-mono}, on alors \(
-    \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \) d'où, en sommant, \(
-    \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \) qui est équivalent
-  à l'estimation annoncée vu la définition de l'indice.
+    \vmp^\imp \) un monôme apparaissant dans l'écriture \( G \), puis \(
+    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \dv} \).
+  D'après le lemme cité, on alors \( \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \)
+  d'où, en sommant, \( \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \)
+  qui est équivalent à l'estimation annoncée vu la définition de l'indice.
 \end{proof}
 
 
