@@ -337,74 +337,41 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
 \).
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soit \( G \) une forme homogène de degré \( \alpha \). Posons \( \pden =
+  Soit \( \ip \in \N^{\dimp*} \) et \( M = \prod\limits\indrange
+    \bigl( \frac{\vp*}{\vp[\anydim]} \bigr)^{\ip*} \).  Posons \( \pden =
     \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
   sont donnés par le lemme précédent. Alors :
   \begin{enumthm}
-    \item \( P^\derp_{G, \dv}
-        = \pdiff^\derp(G / \vp[\anydim]^\alpha)
-        \cdot \vp[\anydim]^\alpha \pden^{2\lgr\kappa} \) est un polynôme ;
-    \item \( \deg P^\derp_{G, \dv}
-        = \alpha + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
-    \item \( \nv1{ P^\derp_{G, \dv} }
+    \item \( P^\derp_{\ip, \dv}
+        = \pdiff^\derp(M)
+        \cdot \vp[\anydim]^{\lgr\ip} \pden^{\lgr\kappa} \) est un polynôme ;
+    \item \( \deg P^\derp_{\ip, \dv}
+        = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\ip, \dv} }
         \le
-        \nv1{ G }
-        \nv1{ \chow\anyvar }^{(\dimp - \anydim) \lgr\derp}
+        \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
         \left(
-          \bigl( 8^\Delta \anydim \anydeg^{3} \bigr) ^{
+          \bigl( 4^{\anydeg+1} \anydim \anydeg^{3} \bigr) ^{
             (\dimp - \anydim) \lgr\derp }
-          \cdot 2^{ \anydim \alpha }
+          \cdot 2^{ \anydim \lgr\ip }
         \right)^\dv
       \) ;
   \end{enumthm}
-  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{G, \dv} \bigr)
-    \ge \ord_{\vp[0]} (G)  - \derp[0] \).
+  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \dv} \bigr)
+    \ge \ip[0]  - \derp[0] \).
 \end{lem}
 
 \begin{proof}
-  On utilise le résultat du lemme précédent et on se souvient que \( \pmor* \)
-  est un morphisme d'anneaux :
   \newcommand \indl {{ \gmp\nu[\ind, \indi_\ind] }}
-  \begin{align}
-    \pmor*( \anyvp^\ip )
-    & =
-    \prod\indrange \pmor*( \anyvp* )^\ip*
-    =
-    \prod\indrange \left(
-      \sum_{\derp \in \N^\anydim}
-      \frac {
-        \pmnum^\derp_{1, \dv}( \anyvp* )
-      }{
-        \pmden_1^\derp    ( \anyvp* )
-      }
-      \psp^\derp
-    \right) ^\ip*
-    \\ & =
+  On utilise la règle de \bsc{Leibniz} :
+  \begin{equation}
+    \pdiff^\derp(M) =
+    \sum_{\gmp\nu \in N}
     \prod\indrange
     \prod_{ \indi_\ind = 1 }^{ \ip* }
-    \sum _{ \indl \in \N^\anydim }
-    \frac {
-      \pmnum^\indl_{1, \dv}( \anyvp* )
-    }{
-      \pmden_1^\indl    ( \anyvp* )
-    }
-    \psp^\indl
-    \\ & =
-    \sum_{\derp \in \N^\anydim}
-    \left(
-      \sum_{\gmp\nu \in N}
-      \prod\indrange
-      \prod_{ \indi_\ind = 1 }^{ \ip* }
-      \frac {
-        \pmnum^\indl_{1, \dv}( \anyvp* )
-      }{
-        \pmden_1^\indl    ( \anyvp* )
-      }
-    \right)
-    \psp^\derp
+    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
     \pmm,
-    \label{e:par-mono-dev}
-  \end{align}
+  \end{equation}
   où la somme est prise sur l'ensemble
   \begin{equation}
     N = \left\{
@@ -415,62 +382,39 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
     \pmm.
   \end{equation}
 
-  On peut alors poser
-  \begin{align}
-    \pmden^\derp    ( \anyvp^\ip )
-    & =
-    \anyvp[\anydim]^{\lgr\ip}
-    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind^{2\lgr\derp}
-    \\
-    \pmnum^\derp_\dv( \anyvp^\ip )
-    & =
+  On vérifie alors que
+  \begin{equation}
+    P^\derp_{\ip, \dv}
+    =
     \sum_{\gmp\nu \in N}
     \Biggl(
-    \prod\indrange
-    \prod_{ \indi_\ind = 1 }^{ \ip* }
-    \pmnum^\indl_{1, \dv}( \anyvp* )
-    \cdot
-    \anyvp[\anydim]^{\lgr\ip - \star}
-    \cdot
-    \prod_{\ind = \anydim + 1}^{\dimp}
-    \pden_\ind^{ 2\lgr\derp
-      - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
+      \prod_{\ind = 0}^{\anydim - 1}
+      \prod_{ \indi_\ind = 1 }^{ \ip* }
+      \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+      \vp[\anydim]
+      \cdot
+      \prod_{\ind = \anydim + 1}^{\dimp}
+      \prod_{ \indi_\ind = 1 }^{ \ip* }
+      \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+      \pden_\ind^{\lgr\indl}
+      \vp[\anydim]
     \Biggr)
-    \pmm,
-  \end{align}
-  où \( \star \) désigne le nombre de \( \indl \) nuls. On vérifie en effet
-  immédiatement que \( \pmnum^\derp_\dv( \anyvp^\ip ) \) est bien un polynôme
-  (\( f \) est croissante et sous-additive et \( f(\derp) \le 2\lgr\derp \))
-  et que \( \pmnum^\derp_\dv( \anyvp^\ip ) / \pmden^\derp ( \anyvp^\ip ) \)
-  est bien le terme général de la série~\ref{e:par-mono-dev}.
-
-  Les deux premiers points annoncés découlent directement de ces définitions.
-  Pour le numérateur, le calcul du degré est direct et on ne détaille donc que
-  l'estimation de norme : chaque terme de la somme est majoré en norme par
+  \end{equation}
+  est bien un polynôme, car les facteurs dans chaque terme sont des polynômes
+  d'après le lemme précédent. Le calcul du degré est direct et on ne détaille
+  donc que l'estimation de norme : chaque terme de la somme est majoré en
+  norme par
   \begin{align}
-    \prod\indrange
+    \prod_{\ind = \anydim + 1}^{\dimp}
     \prod_{ \indi_\ind = 1 }^{ \ip* }
-    &
-    \nv1{ \pmnum^\indl_{1, \dv}( \anyvp* ) }
-    \cdot
-    \prod_{\ind = \anydim + 1}^{\dimp}
-    \nv1{ \pden_\ind }^{ 2\lgr\derp
-      - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
-    \\ & \le
-    \prod_{\ind = \anydim + 1}^{\dimp}
     \left(
-      \nv1{ \chow\anyvar }
-      \bigl( 2 \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
-    \right)^{ \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
-    \cdot \left(
-      \nv1{ \chow\anyvar } \anydeg^\dv
-    \right)^{ 2\lgr\derp
-      - \smash{ \sum\limits_{\indi_\ind = 1}^{\ip*} } f(\indl) }
-    \\ & \le
+      \nv1{ \chow\anyvar }^2
+      \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
+    \right)^{\lgr\indl}
+    =
     \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
-    \left(
-    \bigl( 4 \anydim \anydeg^{3} \bigr)^{(\dimp - \anydim) \lgr\derp}
-    \right)^\dv
+    \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)
+    ^{(\dimp - \anydim) \lgr\derp \dv}
   \end{align}
   On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
   \begin{equation}
