@@ -596,7 +596,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % helper macros [[
 \newc@star@default@i \gp {\ind}{\dimp} {\gp@{#1}{#2}}
 \newcommand*\gp@ [2] {%
-  \@ifmtarg{#2}{\boldsymbol}{}{#1}\ssub{#2}}
+  #1\ssub{#2}}
 % ]]
 
 \newcommand \ind      {k}
@@ -632,9 +632,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newc@star@deftwo@i \gmp {\fct}{\ind} {\gmp@{#1}{#2}{#3}}
 \newcommand*\gmp@ [3] {%
   \@ifnotmtarg{#1}{%
-    \@ifmtarg{#2}{\underline}{}{%
-      \@ifmtarg{#3}{\boldsymbol}{}{
-        #1}}}%
+    \@ifmtarg{#2}{\boldsymbol}{}{%
+      #1}}%
   \pexp{#2}[{#3}]}
 \newcommand \mexp {\gmp{}}
 \newcommand*\gmmp [1] {
