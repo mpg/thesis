@@ -84,39 +84,37 @@ complémentaire de \( \ideal\anyvar \) ne contient que des séries inversibles
 
 Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
   \pmor*_\dv(\vp*/\vp[\anydim]) = \vp*/\vp[\anydim] + \psp* \). Pour \( \ind >
-  \anydim \), nous utiliserons le lemme suivant.
+  \anydim \), nous utiliserons le lemme suivant, que l'on énonce dans un cadre
+affine.
 
 \begin{lem} \label{l:param-aff}
-  Dans les notations précédentes, soient \( Y \) un élément de \( \cdn[ \vp /
-    \vp[\anydim] ] \) et \( P \in \cdn[ \anyvp[0], \dots, \anyvp[\anydim+1] ]
-  \) tel que \( P( \vp[0] / \vp[\anydim], \dots, \vp[\anydim-1] /
-    \vp[\anydim], Y ) \in \ker \pi \). On note \( \pden \) la dérivée de \( P \)
-  par rapport à la dernière variable et on suppose que \( \pden( \vp[0] /
-    \vp[\anydim], \dots, \vp[\anydim-1] / \vp[\anydim], Y ) \notin \ker \pi
-  \).
+  Soient \( \anyvp[1], \dots, \anyvp[\anydim], Y \) des variables et \( L \)
+  une algébrique extension finie de \( \cdn(\anyvp[1], \dots, \anyvp[\anydim])
+  \). On fixe \( y \) un élément de \( L \) ; on note \( \pi \) le
+  morphisme de \( \cdn[\anyvp[1], \dots, \anyvp[\anydim], Y ] \) dans \( L \)
+  qui laisse stable les \( \anyvp* \) et envoie \( Y \) sur \( y \), et \( \Pi
+  \) un générateur de son noyau, c'est-à-dire un polynôme minimal de \( y \).
 
-  Alors, il existe des polynômes \( P_\dv^\derp \),
-  pour \( \derp \in \N^{\anydim} \minusset0 \), tels que :
+  On considère les dérivations standard \( \diff_\ind \) sur \( \cdn[
+    \anyvp[1], \dots, \anyvp[\anydim] ] \) ainsi que leurs extensions à \( L
+  \), et \( \der[\derp] = \frac1{\derp!} \prod_{\ind = 0}^\anydim
+    \diff_\ind^{\derp*} \).  Il existe des polynômes \( P_\dv^\derp \), pour
+  \( \derp \in \N^{\anydim} \minusset0 \), tels que :
   \begin{enumthm}
-    \item \( \pmor(Y) = \pi\left(
-          Y +
-          \sum_{\derp \neq 0} \frac{
-            P_\dv^\derp( \vp[0] / \vp[\anydim], \dots,
-            \vp[\anydim-1] / \vp[\anydim], Y )
-          }{
-            R( \vp[0] / \vp[\anydim], \dots,
-            \vp[\anydim-1] / \vp[\anydim], Y )^{2\lgr\derp - 1}
-          }
+    \item \( \der[\derp] y
+        = \pi\left(
+          \frac{ P_\dv^\derp }{ \pden^{2\lgr\kappa - 1} }
         \right)
       \) ;
-    \item \( \deg \pmnum^\derp_{1, \dv} (\anyvp[\anydim+1])
-        \le (\anydeg - 1) (2\lgr\derp - 1) \) ;
-    \item \( \nv1{ \pmnum^\derp_{1, \dv} (\anyvp[\anydim+1]) }
+    \item \( \deg P_\dv^\derp \le (\deg \Pi - 1) (2\lgr\derp - 1) \) ;
+    \item \( \nv1{ P_\dv^\derp }
         \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
-          (4\anydim)^{\lgr\derp -1} \anydeg^{3\lgr\derp -2}
-        \right)^\dv \)
+          (4\anydim)^{\lgr\derp -1} (\deg\Pi)^{3\lgr\derp -2}
+        \right)^\dv \) ;
   \end{enumthm}
+  où \( \pden = \diff_Y \Pi\) est la dérivée de \( \Pi \) par rapport à la
+  dernière variable.
 \end{lem}
 
 \begin{proof}
@@ -128,31 +126,31 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
 
   On va construire $P_0^\derp$ et $P_1^\derp$ indépendamment par récurrence
   sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
-  \diff[\ind_0] \poldep$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
+  \diff_{\ind_0} \Pi$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
   (cas $\lgr\derp = 1$), car ce choix convient. Pour la suite, on fixe un
   $\dv$, un $\derp$ de longueur au moins $2$, et on suppose qu'on a choisi un
   $P_\dv^{\derp'}$ convenable pour chaque $\derp'$ de longueur strictement
   inférieure à celle de $\derp$.
 
   On commence par le cas ultramétrique et on note donc provisoirement $P^\derp
-  = P_0^\derp$ pour alléger. Si de tels polynômes existent, ils doivent
-  satisfaire à la relation
+  = P_0^\derp$ pour alléger. Les polynômes recherchés sont caractérisés par la
+  relation
   \begin{equation}
-    \poldep \left(
+    \Pi \left(
       \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
       \anyvp[\anydim+1] + \sum_{ \derp \in \N^\anydim \minusset 0 }
       \frac {P^\derp} {\pden^{2\lgr\derp -1}} \psp^\derp
     \right)
-    = 0 \mod \ideal\anyvar
+    = 0 \mod (\Pi)
     \pmm.
   \end{equation}
-  On remplace alors \( \poldep \) par son développement de \bsc{Taylor}, on a
-  les égalités suivantes modulo \( \ideal\anyvar \) :
+  On remplace alors \( \Pi \) par son développement de \bsc{Taylor}, pour
+  obtenir les égalités suivantes modulo \( \Pi \) :
   \begin{align}
     0
     & =
     \sum_{(\ip, \mu) \in \N^{\anydim+1}}
-    \der[\ip, \mu] \poldep
+    \der[\ip, \mu] \Pi
     \cdot \psp^\ip
     \cdot \left(
       \sum_{ \derp \in \N^\anydim \minusset 0 }
@@ -163,7 +161,7 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
     \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
     \left(
-      \der[\ip, \mu] \poldep
+      \der[\ip, \mu] \Pi
       \cdot \prod_{\fct = 1}^\mu
       \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
     \right)
@@ -177,7 +175,7 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
-    \der[\ip, \mu] \poldep
+    \der[\ip, \mu] \Pi
     \cdot \prod_{\fct = 1}^\mu
     \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
     \Biggr)
@@ -185,8 +183,7 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
     \pmm,
   \end{align}
   où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \).
-  Réciproquement, pour que \( \pmor* \) représente bien \( \pmor \), il suffit
-  de définir \( P^\derp \) par la relation de récurrence
+  Il suffit donc de définir \( P^\derp \) par la relation de récurrence
   \begin{equation}
     - P^\derp
     =
@@ -194,27 +191,29 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
-    \der[\ip, \mu] \poldep
+    \der[\ip, \mu] \Pi
     \cdot \pden^{2\lgr\derp - 2}
     \cdot \prod_{\fct = 1}^\mu
     \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
   \end{equation}
+  qui consiste à imposer que chaque terme de la série précédente soit nul, ce
+  qui assure bien sa nullité modulo \( \Pi \).
 
   On majore alors le degré de \( P^\derp \) par récurrence :
   \begin{align}
     \deg P^\derp
     & \le
-    \anydeg - \lgr\ip - \mu + (\anydeg - 1) (2\lgr\derp - 2)
+    \deg\Pi - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 2)
     \\ & \le
-    1 - \lgr\ip - \mu + (\anydeg - 1) (2\lgr\derp - 1)
+    1 - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 1)
     \\ & \le
-    (\anydeg - 1) (2\lgr\derp - 1)
+    (\deg\Pi - 1) (2\lgr\derp - 1)
     \pmm,
   \end{align}
   car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.
 
-  La majoration de norme locale est par ailleurs immédiate vu les propriétés
-  de la norme aux places ultramétriques.
+  La majoration de norme locale est par ailleurs immédiate par analogie avec
+  le degré vu les propriétés de la norme aux places ultramétriques.
 
   Traitons maintenant le cas archimédien (désormais \( P^\derp = P^\derp_1 \)
   pour alléger). On utilise la relation de récurrence suivante, établie dans
@@ -224,38 +223,38 @@ Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
   \begin{equation}
     Q_\derp
     =
-    \pden^2 \, \diff[\ind_0] Q_{\derp'}
-    - \pden \, \diff[\ind_0] P \, \diff[\anydim+1] Q_{\derp'}
+    \pden^2 \, \diff_{\ind_0} Q_{\derp'}
+    - \pden \, \diff_{\ind_0} P \, \diff_{\anydim+1} Q_{\derp'}
     + (2\lgr{\derp'} - 1)
-    (\diff[\ind_0] P \, \diff[\anydim+1] R - R \diff[\ind_0] R)
+    (\diff_{\ind_0} P \, \diff_Y \pden - \pden \diff_{\ind_0} \pden)
     Q_{\derp'}
     \pmm.
   \end{equation}
   On en déduit immédiatement l'estimation de degré suivante :
   \begin{equation}
     \deg P^\derp
-    \le 2 (\anydeg - 1) + \deg P^{\derp'}
-    \le (\anydeg - 1) (2\lgr\derp - 1)
+    \le 2 (\deg\Pi - 1) + \deg P^{\derp'}
+    \le (\deg\Pi - 1) (2\lgr\derp - 1)
     \pmm.
   \end{equation}
   Pour la norme, on prouve que \(
     \nv1{Q_\derp}
     \le
-    \nv1\poldep^{2\lgr\derp-1} 4^{\lgr\derp-1} \anydeg^{3\lgr\derp-2}
+    \nv1\Pi^{2\lgr\derp-1} 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
     (\lgr\derp - 1) !
   \)
   (ce qui implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
     \le \anydim^{\lgr\derp-1} \)) en exploitant la majoration de degré
-  sous la forme \( \deg P^\derp \le 2\lgr\derp \anydeg \).
+  sous la forme \( \deg P^\derp \le 2\lgr\derp \deg\Pi \).
   \begin{align}
     \nv1{ Q_\derp }
     & \le
-    2\anydeg^2 \cdot \deg Q_{\derp'} \cdot \nv1\poldep^2 \nv1{ Q_{\derp'} }
-    + 2 (2\lgr{\derp'} - 1) \anydeg^3 \nv1\poldep^2
+    2(\deg\Pi)^2 \cdot \deg Q_{\derp'} \cdot \nv1\Pi^2 \nv1{ Q_{\derp'} }
+    + 2 (2\lgr{\derp'} - 1) (\deg\Pi)^3 \nv1\Pi^2
     \\ & \le
-    \nv1\poldep^2 \nv1{ Q_{\derp'} } \cdot 4 \anydeg^{3\lgr{\derp'}}
+    \nv1\Pi^2 \nv1{ Q_{\derp'} } \cdot 4 (\deg\Pi)^{3\lgr{\derp'}}
     \\ & \le
-    \nv1\poldep^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} \anydeg^{3\lgr\derp-2}
+    \nv1\Pi^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
     (\lgr\derp - 1) !
     \qedhere
   \end{align}
