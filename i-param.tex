@@ -103,7 +103,7 @@ affine.
   \begin{enumthm}
     \item \( \der[\derp] y
         = \pi\left(
-          \frac{ P_\dv^\derp }{ \pden^{2\lgr\kappa - 1} }
+          \frac{ P_\dv^\derp }{ \pden^{2\lgr\dermp - 1} }
         \right)
       \) ;
     \item \( \deg P_\dv^\derp \le (\deg \Pi - 1) (2\lgr\derp - 1) \) ;
@@ -544,7 +544,7 @@ particulières, en commençant par celles qui admettent un monôme en les \(
         = \pdiff^\dermp(g^{-1})
         \cdot
         (\vmp[][\vdim]^{\alpha})^{-1}
-        G^{\lgt\kappa+1}
+        G^{\lgt\dermp + 1}
         \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
       \) est un polynôme ;
     \item \( \deg_\fct Q^\dermp_{G, \dv}
@@ -553,12 +553,12 @@ particulières, en commençant par celles qui admettent un monôme en les \(
         \) ;
     \item \( \nv1{ Q^\dermp_{G, \dv} }
         \le
-        \nv1{ G }^{\lgt\dermp}
-        \cdot 2^{ (\vdim* \alpha_\fct + 1) \lgt\kappa \dv }
+        \nv1{ G }^{\lgt\dermp + 1}
         \prod\limits\fctrange
         \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
         \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
           (\dimp - \vdim*) \lgr{\dermp*} \dv }
+        2^{ (\vdim* \alpha_\fct + 1) \lgt\dermp \dv }
       \).
   \end{enumthm}
 \end{lem}
@@ -640,6 +640,64 @@ particulières, en commençant par celles qui admettent un monôme en les \(
   l'ensemble des partitions d'un ensemble à \( \dermp** \) éléments, pour
   conclure que son cardinal est \( 2^{\lgt\dermp} \).
 \end{proof}
+
+Nous sommes maintenant en mesure d'étudier les dérivées d'une fonction
+rationnelle tout à fait générale.
+
+\begin{lem}
+  Soient \( q \) un entier, \( G \) une forme de multidegré \( \alpha \) et \(
+    H \) une forme de degré \( q \alpha \), de sorte que \( f = H / G^q \) est
+  une fraction rationelle homogène de degré \( 0 \). Alors :
+  \begin{enumthm}
+    \item \( P^\dermp_{f, \dv}
+        = \pdiff^\dermp(f)
+        \cdot
+        G^{\lgt\dermp + q}
+        \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
+      \) est un polynôme ;
+    \item \( \deg_\fct P^\dermp_{f, \dv}
+        = \alpha_\fct (\lgt\dermp + q)
+        + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
+      \) ;
+    \item \( \nv1{ P^\dermp_{f, \dv} }
+        \le
+        \nv1{ G }^{\lgt\dermp + q}
+        \prod\limits\fctrange
+        \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+          (\dimp - \vdim*) \lgr{\dermp*} \dv }
+        2^{ (\vdim* \alpha_\fct + 2) \lgt\dermp \dv }
+      \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  En notant \( g = G / \vmp[][\vdim]^{\alpha} \) et \( h = H /
+    \vmp[][\vdim]^{q\alpha} \), on a toujours \( f = h / g^q \) par
+  homogénéité. On applique alors la formule de \bsc{Leibniz} :
+  \begin{equation}
+    \pdiff^\dermp(f)
+    =
+    \sum_{\gmp\mu, \gmp\nu \in L(\dermp)}
+    \pdiff^{\gmp\mu} (h)
+    \prod_{p=1}^q
+    \pdiff^{\gmp\nu_p} (g^{-1})
+    \pmm,
+  \end{equation}
+  où la somme est prise sur l'ensemble
+  \begin{equation}
+    L(\dermp)
+    =
+    \left\{
+      (\gmp\mu, \gmp\nu) \in (\N^{\lgr\vdim})^{1 + q}
+      \text{ tels que }
+      \gmp\mu + \sum_{p=1}^q \gmp\nu_p = \dermp
+    \right\}
+  \end{equation}
+  dont on majore le cardinal par \( 2^{\lgt\dermp} \).  Le résultat annoncé
+  découle alors des deux lemmes précédents.
+\end{proof}
+
 
 \endinput
 
