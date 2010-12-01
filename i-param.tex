@@ -472,7 +472,7 @@ et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
 Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
 morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
 avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
-produit tensoriel de ces morphismes. On note par ailleurs \( \gmp\pden* =
+produit tensoriel de ces morphismes. On note par ailleurs \( \pden_\fct =
   \prod_{\ind=\vdim*+1}^{\dimp} \gmp\pden** \) où les \( \gmp\pden** \) sont
 donnés par le lemme cité.
 
@@ -487,9 +487,9 @@ particulières, en commençant par celles qui admettent un monôme en les \(
     (\vmp*[\vdim*])^{\alpha_\fct} \). Alors :
   \begin{enumthm}
     \item \( P^\dermp_{G, \dv}
-        = \pdiff^\dermp(G)
+        = \pdiff^\dermp(g)
         \cdot \vmp[][\vdim]^{\alpha}
-        \prod\fctrange (\gmp\pden*)^{\lgr{\dermp*}}
+        \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
       \) est un polynôme ;
     \item \( \deg_\fct P^\dermp_{G, \dv}
         = \alpha_\fct + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} \) ;
@@ -535,6 +535,111 @@ particulières, en commençant par celles qui admettent un monôme en les \(
   qui est équivalent à l'estimation annoncée vu la définition de l'indice.
 \end{proof}
 
+Étudions maintenant le développement de l'inverse d'une telle fonction.
+
+\begin{lem} \label{l:par-inv}
+  Dans les notations du lemme précédent :
+  \begin{enumthm}
+    \item \( Q^\dermp_{G, \dv}
+        = \pdiff^\dermp(g^{-1})
+        \cdot
+        (\vmp[][\vdim]^{\alpha})^{-1}
+        G^{\lgt\kappa+1}
+        \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
+      \) est un polynôme ;
+    \item \( \deg_\fct Q^\dermp_{G, \dv}
+        = \alpha_\fct \lgt\dermp
+        + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
+        \) ;
+    \item \( \nv1{ Q^\dermp_{G, \dv} }
+        \le
+        \nv1{ G }^{\lgt\dermp}
+        \cdot 2^{ (\vdim* \alpha_\fct + 1) \lgt\kappa \dv }
+        \prod\limits\fctrange
+        \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+          (\dimp - \vdim*) \lgr{\dermp*} \dv }
+      \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  En utilisant le fait que \( \pmor* \) est un morphisme d'anneaux, ainsi que
+  la formule classique pour \( (1 + t)^{-1} \) dans un anneau de séries
+  formelles, il vient :
+  \begin{align}
+    \pmor*(g^{-1})
+    & =
+    \pmor*(g)^{-1}
+    =
+    \left(
+      g \biggl(
+        1 + \sum_{\dermp \neq 0} g^{-1} \pdiff^\dermp(g) \psmp^\dermp
+      \biggr)
+    \right)^{-1}
+    \\ & =
+    g^{-1} \left(
+      1 +
+      \sum_{q \in \N^*}
+      \biggl(
+        - \sum_{\dermp \neq 0} g^{-1} \pdiff^\dermp(g) \psmp^\dermp
+      \biggr)^q
+    \right)^{-1}
+    \\ & =
+    g^{-1} \left(
+      1 +
+      \sum_{\dermp \neq 0}
+      \biggl(
+        \sum_{(q, \gmp\nu) \in N(\dermp)}
+        (-1/g)^q
+        \prod_{p=1}^{q}
+        \pdiff^{\gmp\nu_p}(g)
+      \biggr) \psmp^\dermp
+    \right)
+  \end{align}
+  et finalement\footnote{Formule \og classique \fg pour les dérivées
+    successives de l'inverse d'une fonction, que le lecteur savant connaissait
+    peut-être.}
+  \begin{equation}
+    \pdiff^\dermp(g^{-1})
+    =
+    \sum_{(q, \gmp\nu) \in N(\dermp)}
+    \frac{ (-1)^q }{ g^{q+1} }
+    \prod_{p=1}^{q}
+    \pdiff^{\gmp\nu_p}(g)
+  \end{equation}
+  où la somme est prise sur l'ensemble
+  \begin{equation}
+    N(\dermp)
+    =
+    \left\{
+      (q, \gmp\nu)
+      \text{ avec }
+      q \in \set{1, \dots, \lgt\dermp}
+      \text{ et }
+      \gmp\nu \in (\N^{\lgr\vdim} \minusset0)^{q}
+      \text{ tels que }
+      \sum_{p=1}^q \gmp\nu_p = \dermp
+    \right\}
+    \pmm.
+  \end{equation}
+
+  Il est alors clair que
+  \begin{equation}
+    Q^\dermp_{G, \dv}
+    =
+    \sum_{(q, \gmp\nu) \in N(\dermp)}
+    (-1)^q
+    G^{\lgr\dermp - q}
+    \prod_{p=1}^{q}
+    P^\dermp_{G, \dv}
+  \end{equation}
+  est un polynôme du degré annoncé. L'estimation de norme est elle aussi
+  immédiate, sauf peut-être aux places archimédiennes. On remarque alors que
+  \( N(\dermp) \) est un produit dont chaque facteur est en bijection avec
+  l'ensemble des partitions d'un ensemble à \( \dermp** \) éléments, pour
+  conclure que son cardinal est \( 2^{\lgt\dermp} \).
+\end{proof}
 
 \endinput
 
