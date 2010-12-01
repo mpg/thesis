@@ -51,28 +51,28 @@ est un morphisme de \( \cdn \)-algèbres.
 
 Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
 faisant commuter le diagramme
-\begin{equation} \label{pmor*}
+\begin{equation} \label{e:pmor} % FIXME: tag not displayed
   \xymatrix{
-    \cdn[X]_{(\ideal\anyvar)}                 \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
-    & \cdn[X]_{(\ideal\anyvar)} \series\psp   \ar[d]^\pi
+    \cdn[\vp]_{(\ideal\anyvar)}                 \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
+    & \cdn[\vp]_{(\ideal\anyvar)} \series\psp   \ar[d]^\pi
     \\ \cdn(\anyvar)                                           \ar[r]^{\pmor}
     & \cdn(\anyvar)\series\psp
   }
 \end{equation}
 où les flèches verticales sont les projections canoniques. Posons
-\( \pmor* = \sum_\derp \pdiff*^\derp \psp^\derp \) où les \( \pdiff*^\derp \)
+\( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)
 sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
 la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
 rationnelle \( f = F/G \), nous exhiberons (au moins) un polynôme \( R_\derp
 \), dépendant éventuellement de la représentation \( F/G \) choisie, tel que
-\( R \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes locales
-contrôlées.
+\( R_\derp \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes
+locales contrôlées.
 
 En pratique, nous construirons en fait deux morphismes, \( \pmor*_0 \) et \(
   \pmor*_1 \), et deux familles d'applications \( \pdiff^\derp \) telles que
-l'on contrôlera la norme \( \place \)-adique de \( R \cdot \pdiff^\derp \), où
-l'on rappelle que \( \dv \) vaut \( 1 \) si \( \place \) est archimédienne et
-\( 0 \) sinon.
+l'on contrôlera la norme \( \place \)-adique de \( R_\derp \cdot \pdiff^\derp
+\), où l'on rappelle que \( \dv \) vaut \( 1 \) si \( \place \) est
+archimédienne et \( 0 \) sinon.
 
 Pour définir \( \pmor*_\dv \), il suffit de définir les images des différents
 \( \vp* / \vp[\anydim] \). En effet, ceci donne un morphisme de \( \cdn[ \vp /
@@ -262,7 +262,7 @@ Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
 
 \begin{lem}
   Dans les notations précédentes, on peut définir \( \pmor*_\dv \) faisant
-  commuter le diagramme~\ref{pmor*} par :
+  commuter le diagramme~\ref{e:pmor} par :
   \begin{enumthm}
     \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
         = \frac{ \vp* }{ \vp[\anydim] } + \psp* \)
@@ -451,35 +451,27 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
   % FIXME: \!\! above is a bad hack working around bad macros
 \end{proof}
 
-\begin{rem} \label{r:leibniz}
-  Les applications \( \pmnum^\derp_\dv \) construites au lemme précédent
-  satisfont la formule de \bsc{Leibniz} pour les dérivées divisées :
-  \begin{equation}
-    \pmnum^\derp_\dv (H J)
-    =
-    \sum_{\gp\nu \le \derp}
-    \pmnum^{\gp\nu}_\dv (H)
-    \cdot
-    \pmnum^{\derp - \gp\nu}_\dv (J)
-    \pmm,
-  \end{equation}
-  où \( H \) et \( J \) sont des formes homogènes.
-\end{rem}
-
-\begin{proof}
-  Par construction, les applications \( \pmnum^\derp_\dv / \pmden^\derp \)
-  satisfont cette formule, ce qui est une autre façon de dire que \( \pmor* \)
-  est un morphisme d'anneaux. Le choix de dénominateurs effectué implique que
-  \(
-    \pmden^\derp(H J) =
-    \pmden^{\gp\nu} (H) \cdot \pmden^{\derp - \gp\nu} (J)
-  \)
-  dès que \( H \) et \( J \) sont homogènes, ce qui donne le résultat annoncé.
-\end{proof}
-
 
-\subsection{Paramétrisation de \( \protect\var \)
-  et image par \( \protect\wemb \)} \label{sub:param-var-img}
+\subsection{Sur une variété produit} \label{sub:param-var-img}
+
+On souhaite maintenant étudier le développement en série des fonctions
+rationnelles sur notre variété produit \( \var \).  On étend les notations de
+la section précédente au cas multi-homogène de la façon évidente. En
+particulier, on a un morphisme \( \pmor \) de développement en série, qu'on
+cherche à représenter par des morphismes \( \pmor*_\dv \) faisant commuter le
+diagramme
+\begin{equation} \label{pmor*-prod}
+  \xymatrix{
+    \cdn[\vmp]_{(\varid)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
+    & \cdn[\vmp]_{(\varid)} \series\psmp  \ar[d]^\pi
+    \\ \cdn(\var)                                     \ar[r]^{\pmor}
+    & \cdn(\var)\series\psmp
+  }
+\end{equation}
+et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
+  \cdot \pdiff^\dermp \).
+
+% XXX
 
 \begin{lem} \label{l:par-var}
   Soient \( \poldep** \) les polynômes donnés par le
