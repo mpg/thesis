@@ -92,8 +92,8 @@ affine.
   une algébrique extension finie de \( \cdn(\anyvp[1], \dots, \anyvp[\anydim])
   \). On fixe \( y \) un élément de \( L \) ; on note \( \pi \) le
   morphisme de \( \cdn[\anyvp[1], \dots, \anyvp[\anydim], Y ] \) dans \( L \)
-  qui laisse stable les \( \anyvp* \) et envoie \( Y \) sur \( y \), et \( \Pi
-  \) un générateur de son noyau, c'est-à-dire un polynôme minimal de \( y \).
+  qui laisse stable les \( \anyvp* \) et envoie \( Y \) sur \( y \). Soit \(
+    \Pi \in \ker \pi \) tel que \( \pden = \diff_Y \Pi \notin \ker \pi \).
 
   On considère les dérivations standard \( \diff_\ind \) sur \( \cdn[
     \anyvp[1], \dots, \anyvp[\anydim] ] \) ainsi que leurs extensions à \( L
@@ -111,10 +111,8 @@ affine.
         \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
           (4\anydim)^{\lgr\derp -1} (\deg\Pi)^{3\lgr\derp -2}
-        \right)^\dv \) ;
+        \right)^\dv \).
   \end{enumthm}
-  où \( \pden = \diff_Y \Pi\) est la dérivée de \( \Pi \) par rapport à la
-  dernière variable.
 \end{lem}
 
 \begin{proof}
@@ -272,43 +270,71 @@ Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
     \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
         = \frac{ \vp* }{ \vp[\anydim] }
         + \sum_{\derp \neq 0}
-        \frac{ P^\derp_{\ind, \dv} }{ U_\ind^{\lgr\derp - 1} }
+        \frac{ P^\derp_{\ind, \dv} }{ U_\ind^{\lgr\derp} }
+        \psp^\derp
       \)
   \end{enumthm}
-  où les polynômes \( P^\derp_{\ind, \dv} \) et \(  U_\ind^{\lgr\derp - 1} \)
-  satisfont
+  où les polynômes \( P^\derp_{\ind, \dv} \) et \(  U_\ind \) satisfont
   \begin{enumthm}
-    \item \( \deg U_\ind^{\lgr\derp - 1} = \anydeg - 1 \) ;
-    \item \( \nv1{ U_\ind^{\lgr\derp - 1} }
-        \le \nv1{ \chow\anyvar } \bigl( 2^{\anydeg-1} \bigr)^\dv
-      \)
-    \item \( \deg P^\derp_{\ind, \dv} = (\anydeg - 1) (2\lgr\derp - 1) \) ;
-    \item \( \nv1{ P^\derp_{\ind, \dv} }
-      \)
-    \item \( \nv1{ \pmnum^\derp_{1, \dv} (\anyvp[\indi]) }
-        \le \left(
-          \nv1{ \chow\anyvar }
-          \bigl( 2^\anydeg \sqrt{\anydim \anydeg^{3}} \bigr)^\dv
-        \right)^{2\lgr\derp - 1} \).
+    \item \( \deg  U_\ind   =   2 (\anydeg - 1) \) ;
+    \item \( \nv1{ U_\ind } \le \nv1{ \chow\anyvar }^2 4^{(\anydeg-1)\dv} \) ;
+    \item \( \deg  P^\derp_{\ind, \dv}   =   2 (\anydeg - 1) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\ind, \dv} } \le \left(
+          \nv1{ \chow\anyvar }^2
+          \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
+        \right)^{\lgr\derp} \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
-  On aimerait appliquer le lemme précédent à chaque \( \vp* / \vp[\anydim] \)
-  pour \( \ind \in \set{\anydim + 1, \dots, \dimp} \) avec les polynômes \(
-    P_\ind \) donnés par le fait~\ref{f:plong-adapt-dep}, mais il n'est
-  pas clair que ces polynômes satisfassent la dernière condition du lemme
-  précédent. Cependant, une de leur dérivées divisées successives par rapport
-  à la dernière variable convient nécessairement. On applique alors le lemme
-  précédent à cette dérivée, ce qui permet de définir \( \pmor*_\dv \) et
-  donne immédiatement les estimations de normes ci-dessus, mais ne donne
-  qu'une majoration pour les degrés. On multiplie alors les \( U_\ind \) et \(
-    P^\derp_{\ind, \dv} \) obtenus par une puissance convenable de \(
-    \vp[\anydim] \), ce qui permet d'obtenir les degrés exacts annoncés sans
-  modifier les normes.
+  Fixons un \( \ind > \anydim \) et notons \( \tilde\Pi = P_\ind(\anyvp[1],
+    \dots, \anyvp[\anydim], 1, Y \), où \( P_\ind \) est donné par le
+  fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées successives de
+  \( \tilde\Pi \) par rapport à la dernière variable, telle que \( \diff_Y \Pi
+    \notin \ideal\anyvar \). On pose alors
+  \begin{equation}
+    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    =
+    \frac {
+      P_\dv^\derp ( \vp[0] / \vp[\anydim], \dots,
+      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+    }{
+      \pden ( \vp[0] / \vp[\anydim], \dots,
+      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+      ^{2\lgr\derp - 1}
+    }
+    \pmm,
+  \end{equation}
+  où les \( P_\dv^\derp \) sont donnés par le lemme précédent. Quitte à
+  multiplier par une puissance convenable de \( \vp[\anydim] \), on peut
+  supposer que le degré de \( \pden \) est exactement \( 2\anydeg - 1 \) et
+  que celui de \( P_\dv^\derp \) est exactement \( (2\anydeg - 1) (2\lgr\derp
+    - 1) \), de sorte que par homogénéité :
+  \begin{equation}
+    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    =
+    \frac {
+      P_\dv^\derp ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+    }{
+      \pden ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+      ^{2\lgr\derp - 1}
+    }
+    =
+    \frac {
+      P_\dv^\derp
+    }{
+      \pden
+      ^{2\lgr\derp - 1}
+    }
+  \end{equation}
+  On pose finalement\footnote{Ceci n'a pour but que de simplifier les calculs
+    ultérieurs en rendant le degré exactement linéaire en \( \lgr\derp \).} \(
+    P_{\ind, \dv}^\derp = \pden \cdot P_\dv^\derp \) et \( \pden_\ind =
+    \pden^2 \). Les estimations de norme annoncées sont alors immédiates.
 \end{proof}
 
-Nous allons maintenant étudier les images de certaines fraction rationnelles.
+Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
+\).
 
 \begin{lem} \label{l:par-anyvar-mono}
   Soit \( G \) une forme homogène de degré \( \alpha \). Posons \( \pden =
@@ -334,8 +360,6 @@ Nous allons maintenant étudier les images de certaines fraction rationnelles.
   De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{G, \dv} \bigr)
     \ge \ord_{\vp[0]} (G)  - \derp[0] \).
 \end{lem}
-
-% XXX
 
 \begin{proof}
   On utilise le résultat du lemme précédent et on se souvient que \( \pmor* \)
