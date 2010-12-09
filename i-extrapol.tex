@@ -2,7 +2,7 @@
 
 \section{Extrapolation} \label{sec:vojta-extrap}
 
-Le but de cette section est de montrer que la forme auxiliaire construite
+Nous allons maintenant montrer que la forme auxiliaire construite
 précédemment s'annule avec un indice élevé en \( \excep \). Plus précisément,
 posons
 \begin{equation}
@@ -12,31 +12,59 @@ posons
   + \frac {\lgr{\dermp[\puiss*]}} {\wts[\puiss*]}
   + \frac {\lgr{\dermp[\puiss]}} {\puiss*}
 \end{equation}
-pour tout \( \dermp \in \N^{\lgr\vdim} \). On définit alors l'indice d'une
-série \( \xi = \sum_{\dermp \in \N^{\lgr\vdim}} \xi_\dermp \psmp^\dermp \) par
-\begin{equation}
-  \inda(\xi)
-  =
-  \max \set{
-    \alpha \in \R
-    \text{ tels que }
-    \wtsum*(\dermp) \le \alpha
-    \implies
-    \xi_\dermp = 0
-  }
-  \pmm.
-\end{equation}
-Si \( H \) est une forme multihomogène, on définit son indice en
-\( \point \), noté \( \inda[\point](H) \),  comme celui de la série \(
-  \tau(H)(\point) \), où \( \tau \) est un\footnote{On peut montrer que la
-  définition est indépendante de la paramétrisation choisie.} morphisme de
-paramétrisation comme à la section précédente, défini sur un ouvert contenant
-\( \point \).
+pour tout \( \dermp \in \N^{\lgr\vdim} \).  Si \( h \) est une forme
+multihomogène et \( \point \) où elle est définie, on définit son indice en \(
+  \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
+  \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq 0
+\).
 
-On reprend les notations introduites par la scholie~\ref{s:aux-co}, on
-introduit de plus un réel \( \epsiv > 0 \) soumis à des conditions qui seront
-explicitées ultérieurement, et on souhaite montrer que
-\( \inda**(R \cdot F') \ge \epsiv\delta \).
+On reprend les notations introduites par la scholie~\ref{s:aux-co} et on pose
+\( f_1 = F' / \vmp[][\vdim]^\Di \). Le but de cette section est alors de montrer
+la proposition suivante.
+
+\begin{prop}
+  On a \( \inda**(f_2) \ge \epsiv\delta \), où \( \epsiv \) est un réel
+  strictement positif tel que \dots
+\end{prop}
+
+Commençons par un lemme facile sur l'indice.
+
+\begin{lem}
+  Soient \( h_1 \), \( h_2 \) et \( \alpha \) des fonctions rationnelles
+  telles que \( h_1 = \alpha h_2 \) et \( \point \) un point où elles sont
+  toutes les trois définies.
+  \begin{enumthm}
+    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] h_2(x) = 0 \) pour tout
+      \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim} \),
+      alors \( \der[\dermp] h_1(\point) = \alpha(\point) \, h_2(\point) \).
+    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(h_1) = \inda**(h_2)
+      \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Le premier point découle facilement de la formule de \bsc{Leibniz} :
+  \begin{equation}
+    \der[\dermp] h_1(\point)
+    =
+    \sum_{\gmp\nu \le \dermp}
+    \der[\dermp - \gmp\nu] \alpha(\point) \,
+    \der[\gmp\nu] h_2(\point)
+    \pmm.
+  \end{equation}
+  Or, par hypothèse, tous les termes de cette somme sont nuls sauf peut-être
+  celui où \( \gmp\nu = \dermp \).
+
+  Si \( \alpha(\point) \neq 0 \) alors \( \alpha^{-1} \) est également définie
+  en \( \point \) et les deux autres fonctions jouent donc un rôle symétrique.
+  Ainsi, si un indice \( \dermp \) est minimal pour la condition \(
+    \der[\dermp] h_1(\point) \neq 0 \), il l'est aussi pour la condition \(
+    \der[\dermp] h_2(\point) \neq 0 \) grâce au point précédent, ce qui prouve
+  que les deux fonctions ont le même indice en \( \point \).
+\end{proof}
+
+
+\clearpage
 
 \begin{lem}
   Soit \( \point \) un point de \( \var \) satisfaisant~\ref{e:HA} et de
