@@ -30,14 +30,14 @@ la proposition suivante.
 Commençons par un lemme facile sur l'indice.
 
 \begin{lem}
-  Soient \( h_1 \), \( h_2 \) et \( \alpha \) des fonctions rationnelles
-  telles que \( h_1 = \alpha h_2 \) et \( \point \) un point où elles sont
+  Soient \( g_1 \), \( g_2 \) et \( \alpha \) des fonctions rationnelles
+  telles que \( g_1 = \alpha g_2 \) et \( \point \) un point où elles sont
   toutes les trois définies.
   \begin{enumthm}
-    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] h_2(x) = 0 \) pour tout
+    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] g_2(x) = 0 \) dès que
       \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim} \),
-      alors \( \der[\dermp] h_1(\point) = \alpha(\point) \, h_2(\point) \).
-    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(h_1) = \inda**(h_2)
+      alors \( \der[\dermp] g_1(\point) = \alpha(\point) \, g_2(\point) \).
+    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(g_1) = \inda**(g_2)
       \).
   \end{enumthm}
 \end{lem}
@@ -45,11 +45,11 @@ Commençons par un lemme facile sur l'indice.
 \begin{proof}
   Le premier point découle facilement de la formule de \bsc{Leibniz} :
   \begin{equation}
-    \der[\dermp] h_1(\point)
+    \der[\dermp] g_1(\point)
     =
     \sum_{\gmp\nu \le \dermp}
     \der[\dermp - \gmp\nu] \alpha(\point) \,
-    \der[\gmp\nu] h_2(\point)
+    \der[\gmp\nu] g_2(\point)
     \pmm.
   \end{equation}
   Or, par hypothèse, tous les termes de cette somme sont nuls sauf peut-être
@@ -58,47 +58,35 @@ Commençons par un lemme facile sur l'indice.
   Si \( \alpha(\point) \neq 0 \) alors \( \alpha^{-1} \) est également définie
   en \( \point \) et les deux autres fonctions jouent donc un rôle symétrique.
   Ainsi, si un indice \( \dermp \) est minimal pour la condition \(
-    \der[\dermp] h_1(\point) \neq 0 \), il l'est aussi pour la condition \(
-    \der[\dermp] h_2(\point) \neq 0 \) grâce au point précédent, ce qui prouve
+    \der[\dermp] g_1(\point) \neq 0 \), il l'est aussi pour la condition \(
+    \der[\dermp] g_2(\point) \neq 0 \) grâce au point précédent, ce qui prouve
   que les deux fonctions ont le même indice en \( \point \).
 \end{proof}
 
+On note \( \cex \) un système de coordonnées multihomogènes du point \(
+  \Excep \) introduit à la section~\ref{s:wemb}. On peut supposer qu'aucune
+des formes \( \pden_\fct \) introduites avant le lemme~\ref{l:par-var} ne
+s'annulle ne \( \cex* \), car elles sont de degré borné. De même, on peut
+supposer que la forme \( R \) donnée par le corollaire~\ref{c:hmat-relim} ne
+s'annulle pas en \( \cex \), car c'est un produit de formes de degré bornés. 
 
-\clearpage
+On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
+    \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
+condition. De même, on choisit \( \indiv* \in \set{0, \dots, \dimp} \)
+maximisant \( \av{ \clab*[\indiv*] } \), ainsi que \( \indig* \in \set{0,
+    \dots, \dimp} \) tel que \( \clab*[\indig*] \neq 0 \). Notons que \(
+  \indig \) et \( \indiv \) ne dépendent pas du choix des formules \( \clab \)
+utilisées, et que \( \indig \) ne dépend pas de \( \place \).
 
 \begin{lem}
-  Soit \( \point \) un point de \( \var \) satisfaisant~\ref{e:HA} et de
-  grande hauteur ; on note \( \cmp \) ses coordonnées multihomogènes.  Pour
-  chaque \( \fct \in \{ 1, \dots, \puiss \} \) et chaque place \( \place \) de
-  \( \cdn \), il existe un indice \( \ind_{\place, \fct} \in \{ 1, \dots,
-      \vdim* \} \) tel que
+  Avec les notations précédentes, on a
   \begin{equation}
-    \av{\cmp*[\ind_{\place, \fct}]}
-    \le
-    \cst{ind-norm-dim-loc} \cdot \Onv{\cmp*}
-    \pmm,
-  \end{equation}
-  avec
-  \begin{equation}
-    \newcst{ind-norm-dim-loc} = \dots
+    \av{ \cex*[\indv*] }
+    \ge
+    \nv1{ \cex* } \cdot \nv1{ \varfc* }^{-1} (\dots)^{-\dv}
+    \pmm.
   \end{equation}
 \end{lem}
-
-\begin{ideas}
-  C'est une variante plus précise du lemme~\ref{ChoixI}. Les points sont :
-  \begin{enumthm}
-    \item pouvoir choisir \( \ind \) plus petit que \( \vdim* \). Pour ça, on
-      utilise que le point est sur \( \var \) pour écrire que les dernières
-      coordonnées sont intégralement dépendantes sur les premières
-      (fait~\ref{f:plong-adapt-dep} ou directement Rémond si besoin) avec des
-      relations connues, donc majorer la norme en fonction du maximum des
-      valeurs absolues des première coordonnées.
-    \item pouvoir choisir \( \ind \) différent de \( 0 \). Là on utilise le
-      fait que le point est proche de \( \divi \), donc par définition de la
-      distance, sa coordonnée d'indice \( 0 \) est petite devant sa norme,
-      donc ça ne peut pas être elle qu'on a choisi avant.
-  \end{enumthm}
-\end{ideas}
 
 \endinput
 

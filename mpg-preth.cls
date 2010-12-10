@@ -299,10 +299,10 @@
 \newcommand*\newc@ifstar@two [4] {%
   \newcommand#1{\bgroup\@ifstar{\@ifstar{#4\egroup}{#3\egroup}} {#2\egroup}}}
 
-% coma-seperated list with possibly empty elements [[2
+% coma-separated list with possibly empty elements [[2
 %
-\newcommand*\sfirst [1] {\@ifnomtarg{#1}{#1,}}
-\newcommand*\slast  [1] {\@ifnomtarg{#1}{,#1}}
+\newcommand*\sfirst [1] {\@ifnotmtarg{#1}{#1,}}
+\newcommand*\slast  [1] {\@ifnotmtarg{#1}{,#1}}
 
 % non thesis-specific math [[1
 % ------------------------
@@ -629,7 +629,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % multiprojective indices and coordinates [[2
 %
 % helper macros [[
-\newc@star@deftwo@i \gmp {\fct}{\ind} {\gmp@{#1}{#2}{#3}}
+\newc@star@deftwo@i \gmp  {\fct }{\ind} {\gmp@{#1}{#2}{#3}}
+\newc@star@deftwo@i \gmpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
 \newcommand*\gmp@ [3] {%
   \@ifnotmtarg{#1}{%
     \@ifmtarg{#2}{\boldsymbol}{}{%
@@ -767,6 +768,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \nomg{psi}{\wemba}{Morphisme d'algèbres graduées associé au plongement
   éclatant $\wemb$}
 
+\newcommand*\clab {\gmp S}
+\noma{S}{\clab}{Formules de combinaisons linéaires utilisées dans \( \wemb \)}
+
+
 % vanishing conditions [[2
 %
 \newcommand \Stairs { \mathcal E }
@@ -817,6 +822,13 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{f}{\varfc* }{La forme de \bsc{Chow} de $\var*$}
 \noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}
 \noma{I}{\varid* }{L'idéal multihomogène saturé de $\var*$}
+
+% local indices for extrapolation [[2
+%
+\newc@star@default \indv  {\fct }{\puiss} {\ind _{\place \slast{#1}}}
+\newc@star@default \indiv {\fcti}{\puiss} {\indi_{\place \slast{#1}}}
+\newc@star@default \indig {\fcti}{\puiss} {\indi_{{#1}}}
+
 
 % misc (ok) [[2
 %
