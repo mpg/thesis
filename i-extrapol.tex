@@ -64,11 +64,13 @@ Commençons par un lemme facile sur l'indice.
 \end{proof}
 
 On note \( \cex \) un système de coordonnées multihomogènes du point \(
-  \Excep \) introduit à la section~\ref{s:wemb}. On peut supposer qu'aucune
+  \Excep \) introduit à la section~\ref{sub:wemba}. On peut supposer qu'aucune
 des formes \( \pden_\fct \) introduites avant le lemme~\ref{l:par-var} ne
 s'annulle ne \( \cex* \), car elles sont de degré borné. De même, on peut
 supposer que la forme \( R \) donnée par le corollaire~\ref{c:hmat-relim} ne
-s'annulle pas en \( \cex \), car c'est un produit de formes de degré bornés. 
+s'annulle pas en \( \cex \), car c'est un produit de formes de degré bornés.
+Pour la même raison, on peut en fait supposer qu'aucune des \( \cex** \) n'est
+nul.
 
 On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
     \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
@@ -78,15 +80,60 @@ maximisant \( \av{ \clab*[\indiv*] } \), ainsi que \( \indig* \in \set{0,
   \indig \) et \( \indiv \) ne dépendent pas du choix des formules \( \clab \)
 utilisées, et que \( \indig \) ne dépend pas de \( \place \).
 
+Il est alors clair que \( \av{ \clab*[\indiv*] } \ge \av{ \clab[\indiv] }
+  \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue pour les \( \indv*
+\).
+
 \begin{lem}
   Avec les notations précédentes, on a
   \begin{equation}
     \av{ \cex*[\indv*] }
     \ge
-    \nv1{ \cex* } \cdot \nv1{ \varfc* }^{-1} (\dots)^{-\dv}
+    \nv1{ \cex* } \cdot \nv1{ \varfc* }^{-1} \dimp**^{-\dv}
     \pmm.
   \end{equation}
 \end{lem}
+
+\begin{proof}
+  Il suffit de montrer qu'on a \( \av{ \cex** } \le \nv1{ \varfc* } \av{
+      \cex*[\indv] } \) pour tout \( \ind \in \set{\vdim* + 1, \dots, \dimp}
+  \). Notons \( \poldep** \) la relation dépendance intégrale donnée par la
+  scholie~\ref{s:plong-adapt} ; en décomposant suivant les puissance de \(
+    \vmp** \) on a
+  \begin{equation}
+    (\vmp**) ^{ \vdeg* }
+    =
+    \sum_{ \alpha=1 }^{ \vdeg* }
+    (\vmp**) ^{ \vdeg* - \alpha }
+    \poldep*[\ind, \alpha]
+    \quad\text{où }
+    \left\{
+      \begin{aligned}
+        & \deg \poldep*[\ind, \alpha] = \alpha
+        \\ & \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
+        \le \nv1{ \varfc* }
+      \end{aligned}
+    \right.
+  \end{equation}
+  En passant aux valeurs absolues et en divisant, il vient
+  \begin{equation}
+    \av{ \cex** }
+    \le
+    \sum_{ \alpha=1 }^{ \vdeg* }
+    \poldep*[\ind, \alpha]
+    \left(
+      \frac{ \av{\cex*[\indv]} }{ \av{\cex**} }
+    \right) ^{ \vdeg* - \alpha }
+  \end{equation}
+  Si le quotient apparaissant dans le membre de droite est inférieur à \( 1
+  \), notre assertion initiale est vérifiée. Sinon, elle l'est aussi, car car
+  \( \varfc* \) est normalisé (scholie citée) de façon à ce qu'un de ses
+  coefficients soit \( 1 \) ce qui assure \( \nv1{ \varfc* } \ge 1 \) en toute
+  place.
+\end{proof}
+
+
+
 
 \endinput
 
