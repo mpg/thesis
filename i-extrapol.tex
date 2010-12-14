@@ -23,13 +23,13 @@ On reprend les notations introduites par la scholie~\ref{s:aux-co} et on pose
 la proposition suivante.
 
 \begin{prop}
-  On a \( \inda**(f_2) \ge \epsiv\delta \), où \( \epsiv \) est un réel
-  strictement positif tel que \dots
+  On a \( \inda**(f_2) \ge \delta / \sigma \), où \( \sigma \) est tel que
+  \dots
 \end{prop}
 
 Commençons par un lemme facile sur l'indice.
 
-\begin{lem}
+\begin{lem} \label{l:indice-inversible}
   Soient \( g_1 \), \( g_2 \) et \( \alpha \) des fonctions rationnelles
   telles que \( g_1 = \alpha g_2 \) et \( \point \) un point où elles sont
   toutes les trois définies.
@@ -70,19 +70,19 @@ s'annulle ne \( \cex* \), car elles sont de degré borné. De même, on peut
 supposer que la forme \( R \) donnée par le corollaire~\ref{c:hmat-relim} ne
 s'annulle pas en \( \cex \), car c'est un produit de formes de degré bornés.
 Pour la même raison, on peut en fait supposer qu'aucune des \( \cex** \) n'est
-nul.
+nul ; ci-dessous on utilisera le fait que \( \cex*[\vdim*] \neq 0 \).
 
 On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
     \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
 condition. De même, on choisit \( \indiv* \in \set{0, \dots, \dimp} \)
-maximisant \( \av{ \clab*[\indiv*] } \), ainsi que \( \indig* \in \set{0,
-    \dots, \dimp} \) tel que \( \clab*[\indig*] \neq 0 \). Notons que \(
-  \indig \) et \( \indiv \) ne dépendent pas du choix des formules \( \clab \)
-utilisées, et que \( \indig \) ne dépend pas de \( \place \).
+maximisant \( \av{ \clab*[\indiv*](\cex) } \), ainsi que \( \indig* \in
+  \set{0, \dots, \dimp} \) tel que \( \clab*[\indig*](\cex) \neq 0 \). Notons
+que \( \indig \) et \( \indiv \) ne dépendent pas du choix des formules \(
+  \clab \) utilisées, et que \( \indig \) ne dépend pas de \( \place \).
 
-Il est alors clair que \( \av{ \clab*[\indiv*] } \ge \av{ \clab[\indiv] }
-  \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue pour les \( \indv*
-\).
+Il est alors clair que \( \av{ \clab*[\indiv*](\cex) } \ge \nv1{ \clab*(\cex)
+  } \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue pour les \(
+  \indv* \).
 
 \begin{lem}
   Avec les notations précédentes, on a
@@ -132,8 +132,116 @@ Il est alors clair que \( \av{ \clab*[\indiv*] } \ge \av{ \clab[\indiv] }
   place.
 \end{proof}
 
+Introduisons maintenant une nouvelle fonction rationnelle définie par
+\begin{equation}
+  f_2 =
+  \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
+  \cdot
+  \frac{
+    F( \vmp, \clab(\vmp) )
+  }{
+    \vmp[][\vdim] ^{\epsz \wt \delta}
+    \cdot
+    \clab[][\indig](\vmp) ^{ \delta }
+  }
+  \pmm,
+\end{equation}
+où au dénominateur on a noté
+\begin{equation}
+  \clab[][\indig](\vmp) ^{ \delta }
+  =
+  \prod\fctirange \clab*[\indig](\vmp) ^{ \delta }
+  \pmm.
+\end{equation}
+D'après le lemme~\ref{l:indice-facteur}, \( f_1 \) et \( f_2 \) ont le même
+indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
+qui seront plus faciles à contrôler.
 
+\begin{align}
+  f_2
+  & =
+  \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
+  \cdot
+  \frac{
+    F( \vmp, \clab[\place](\vmp) )
+  }{
+    \vmp[][\vdim] ^{\epsz \wt \delta}
+    \cdot
+    \clab[\place][\indig](\vmp) ^{ \delta }
+  }
+  \\ & =
+  \frac{ R(\vmp) }{ \vmp[][\indv]^r }
+  \cdot
+  \frac{
+    F( \vmp, \clab[\place](\vmp) )
+  }{
+    \vmp[][\indv] ^{\epsz \wt \delta}
+    \cdot
+    \clab[\place][\indiv](\vmp) ^{ \delta }
+  }
+  \left(
+    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
+  \right) ^{ \epsz \wt \delta + r }
+  \left(
+    \frac{ \clab[\place][\indiv](\vmp) }{ \clab[\place][\indig](\vmp) }
+  \right) ^{ \delta }
+  \\ & =
+  \frac{
+    R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
+  }{
+    \vmp[][\indv] ^{ \Diii }
+  }
+  \left(
+    \prod\fctirange
+    \frac{
+      ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \clab[\place, \fcti][\indiv*]( \vmp )
+    }
+  \right)^\delta
+  \left(
+    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
+  \right) ^{ \epsz \wt \delta + r }
+  \left(
+    \frac{ \clab[\place][\indiv](\vmp) }{ \clab[\place][\indig](\vmp) }
+  \right) ^{ \delta }
+\end{align}
 
+Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
+  \der[\dermp] f_2 \neq 0 \). Comme les derniers facteurs de l'écriture
+précédente sont tous inversibles en \( \cex \), le
+lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
+
+\begin{equation}
+  \der[\dermp]
+    \frac{
+      R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
+    }{
+      \vmp[][\indv] ^{ \Diii }
+    }
+  ( \cex )
+  \cdot
+  \left(
+    \prod\fctirange
+    \frac{
+      ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \clab[\place, \fcti][\indiv*]( \cex )
+    }
+  \right)^\delta
+  \left(
+    \frac{ \cex[][\indv] }{ \cex[][\vdim] }
+  \right) ^{ \epsz \wt \delta + r }
+  \left(
+    \frac{ \clab[\place][\indiv](\cex) }{ \clab[\place][\indig](\cex) }
+  \right) ^{ \delta }
+\end{equation}
+Nous allons maintenant estimer la valeur absolue de chacun des facteurs, en
+distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
+facteur, et montrer que l'on contredit la formule du produit si \( \wtsum(
+  \dermp ) < \delta / \sigma \). Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \).
 
 \endinput
 

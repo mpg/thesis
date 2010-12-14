@@ -500,19 +500,22 @@
 \newcommand \mmemb { \Theta }
 \nomg{Theta} {\mmemb} {Plongement de \bsc{Mumford modifié}}
 
-\newcommand \placesapx { \mathcal S }
+\newcommand \placesapx  { \mathcal S }
 \newcommand \placerange { _{\place \in \placesapx} }
-\newcommand \wtapx [1][\place] { \lambda\ssub{#1} }
+
+\newcommand*\wtapx [1][\place] { \lambda\ssub{#1} }
+\newcommand*\degv  [1][\place] { \Delta \ssub{#1} }
+
 \noma{S} {\placesapx} {Ensemble fini de places de \( \cdn \) auxquelles on
   impose une condition d'approximation}
-\nomg{lambda}{\lambda}{Poids de la place \( \place \) dans la condition
+\nomg{lambda}{\wtapx}{Poids de la place \( \place \) dans la condition
   d'approximation}
 
 \newcommand \varapx { E }
 \noma{E} {\varapx} {Variété dont on étudie les approximations}
 
 \newcommand \expapx { \eps }
-\nomg{eps} {\expapx} {L'exposant d'apximation}
+\nomg{eps} {\expapx} {L'exposant d'approximation}
 
 \nomg{alpha}{\alpha}{Un des paramètres de l'énoncé de Vojta et Mumford}
 \nomg{beta} {\beta} {Un des paramètres de l'énoncé de Vojta et Mumford}
@@ -768,7 +771,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \nomg{psi}{\wemba}{Morphisme d'algèbres graduées associé au plongement
   éclatant $\wemb$}
 
-\newcommand*\clab {\gmp S}
+\newcommand*\clab {\gmpi S}
 \noma{S}{\clab}{Formules de combinaisons linéaires utilisées dans \( \wemb \)}
 
 
