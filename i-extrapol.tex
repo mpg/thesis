@@ -202,7 +202,7 @@ On commence par choisir pour chaque \( \place \) des formes \( \clab[\place,
     }
   \right)^\delta
   \left(
-    \frac{ \clab[\place][\indiv](\vmp) }{ \clab[\place][\indig](\vmp) }
+    \frac{ \clab[][\indiv](\vmp) }{ \clab[][\indig](\vmp) }
   \right) ^{ \delta }
   \left(
     \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
@@ -233,7 +233,7 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
     }
   \right)^\delta
   \left(
-    \frac{ \clab[\place][\indiv](\cex) }{ \clab[\place][\indig](\cex) }
+    \frac{ \clab[][\indiv](\cex) }{ \clab[][\indig](\cex) }
   \right) ^{ \delta }
   \left(
     \frac{ \cex[][\indv] }{ \cex[][\vdim] }
@@ -244,11 +244,72 @@ distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
 facteur, et montrer que l'on contredit la formule du produit si \( \wtsum(
   \dermp ) < \delta / \sigma \). Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \).
 
+Pour le facteur le plus à droite, on a facilement
+\begin{equation}
+  \prod_\place
+  \prod\fctrange
+  \left(
+    \frac{ \av{\cex[][\indv]} }{ \av{\cex[][\vdim]} }
+  \right) ^{ (\epsz \delta \wt* + r_\fct) \degv }
+  \le
+  \prod\fctrange
+  \hautm[\infty]{ \excep* }^{\epsz \delta \wt* + r_\fct}
+  \le
+  \hautm[1]{ \excep[1] }^{2\puiss \epsz \delta \wt[1]} \cdot o(\expb^\delta)
+\end{equation}
+De plus, en notant \( \excepi \) l'image de \( \excep \) par la deuxième
+partie du plongement éclatant, on a
+\begin{equation}
+  \prod_\place
+  \prod\fctirange
+  \left(
+    \frac{ \av{\clab[][\indiv](\cex)} }{ \av{\clab[][\indig](\cex)} }
+  \right) ^{ \delta \degv }
+  \le
+  \prod\fctirange
+  \hautm[1]{ \excepi* }^\delta
+  \le
+  \hautm[1]{ \excep[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
+\end{equation}
+Enfin, grâce au choix des formules \( \clab[\place] \), on a
+\begin{equation}
+  \prod_\place
+  \left(
+    \prod\fctirange
+    \frac{
+      \nv1{ \clab[\place, \fcti][\indiv*] }
+      ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \clab[\place, \fcti][\indiv*]( \cex )
+    }
+  \right)^{ \delta \degv }
+  \le
+  \hclab^{2\wts[1] \delta}
+\end{equation}
+
+Passons maintenant au premier facteur.
+
 % XXX
+
+\clearpage
 
 \subsection{Appendice}
 
-\begin{fact} \label{f:hclab}
+\begin{fact} \todo
+  On a
+  \begin{equation}
+  \prod\fctirange
+  \hautm[1]{ \excepi* }^\delta
+  \le
+  \hautm[1]{ \excep[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
+  \end{equation}
+  avec \( \newcst[]{exci} = \dots \)
+\end{fact}
+
+
+
+\begin{fact} \label{f:hclab} \todo
   Il existe une famille de constantes \( \hclab* \) ne dépendant que de \( \va
   \) telle que, pour tout point \( ( \pp, \ppi ) \in \va^2 \),  tout place
   \( \place \) de \( \cdn \), et tout couple \( ( \alpha, \beta ) \)i de

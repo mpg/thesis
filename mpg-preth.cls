@@ -741,6 +741,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \cex   { \gmp\Excep }
 
 \newc@star@default \excep   {\fct }{\puiss } {\Excep\ssub{#1}}
+\newc@star@default \excepi  {\fcti}{\puiss*} {\Excep'\ssub{#1}}
 \newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
 \newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}^2}
 \newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
