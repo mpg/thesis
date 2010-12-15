@@ -23,8 +23,8 @@ On reprend les notations introduites par la scholie~\ref{s:aux-co} et on pose
 la proposition suivante.
 
 \begin{prop}
-  On a \( \inda**(f_2) \ge \delta / \sigma \), où \( \sigma \) est tel que
-  \dots
+  On a \( \inda**(f_2) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
+  que \dots
 \end{prop}
 
 Commençons par un lemme facile sur l'indice.
@@ -84,7 +84,7 @@ Il est alors clair que \( \av{ \clab*[\indiv*](\cex) } \ge \nv1{ \clab*(\cex)
   } \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue pour les \(
   \indv* \).
 
-\begin{lem}
+\begin{lem} \label{l:coord-norm}
   Avec les notations précédentes, on a
   \begin{equation}
     \av{ \cex*[\indv*] }
@@ -242,7 +242,8 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
 Nous allons maintenant estimer la valeur absolue de chacun des facteurs, en
 distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
 facteur, et montrer que l'on contredit la formule du produit si \( \wtsum(
-  \dermp ) < \delta / \sigma \). Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \).
+  \dermp ) < \epsi \delta / \sigma \). Rappelons qu'on note \( \degv \) le
+degré local de \( \cdn \) en \( \place \).
 
 Pour le facteur le plus à droite, on a facilement
 \begin{equation}
@@ -258,7 +259,7 @@ Pour le facteur le plus à droite, on a facilement
   \hautm[1]{ \excep[1] }^{2\puiss \epsz \delta \wt[1]} \cdot o(\expb^\delta)
 \end{equation}
 De plus, en notant \( \excepi \) l'image de \( \excep \) par la deuxième
-partie du plongement éclatant, on a
+partie du plongement éclatant, on a\worknote{Farhi p. 96 en haut}
 \begin{equation}
   \prod_\place
   \prod\fctirange
@@ -269,7 +270,8 @@ partie du plongement éclatant, on a
   \prod\fctirange
   \hautm[1]{ \excepi* }^\delta
   \le
-  \hautm[1]{ \excep[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
+  \hautm[1]{ \excep[1] }^{2\puiss \epsiv \wts[1] \delta}
+  \cdot \cst{exci}^{\wts[1] \delta}
 \end{equation}
 Enfin, grâce au choix des formules \( \clab[\place] \), on a
 \begin{equation}
@@ -288,11 +290,145 @@ Enfin, grâce au choix des formules \( \clab[\place] \), on a
   \hclab^{2\wts[1] \delta}
 \end{equation}
 
-Passons maintenant au premier facteur.
+Passons maintenant au premier facteur. Remarquons pour commencer que
+\begin{equation}
+  \nv1{ R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) ) }
+  \le
+  \nv1{ F } \nv1{ \clab }^\delta \cdot o(\expb^\delta)
+\end{equation}
+et que le facteur en \( \nv1{ \clab } \) a déjà été intégré à l'estimation
+précédente. Appliquons maintenant le lemme~\ref{l:par-var} à cette forme :
+\worknote{À adapter pour remplacer \( \vdim \) par une autre coordonnée ?}
+\begin{equation}
+  \der[\dermp]
+    \frac{
+      R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
+    }{
+      \vmp[][\indv] ^{ \Diii }
+    }
+  ( \cex )
+  =
+  \frac{ P^\dermp_\dv(\cex) }{ \cex[][\indv]^\Diii \pden(\cex)^{\vlg\dermp} }
+  =
+  \frac{ P^\dermp_\dv(\cex) }{ \cex[][\indv]^{\deg P^\dermp_\dv } }
+  \cdot
+  \frac{
+    \cex[][\indv]^{\vlg\dermp \cdot \deg \pden}
+  }{
+    \pden(\cex)^{\vlg\dermp}
+  }
+  \pmm.
+\end{equation}
+On estime facilement le second facteur :
+\begin{equation}
+  \prod_\place
+  \prod\fctrange
+  \frac{
+    \av{ \cex*[\indv] }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} \degv }
+  }{
+    \av{ \pden_\fct(\cex*) }^{ \lgr{\dermp*} \degv }
+  }
+  =
+  \prod\fctrange
+  \hautm[\infty]{ \cex* }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} }
+  \le
+  \hautm[1]{ \cex[1] }^{ \newcst[]{degdim} \wts[1] \epsi\delta/\sigma }
+\end{equation}
+Le premier facteur est majoré en valeur absolue par \( \nv1{ P^\dermp_\dv }
+\), qui est à peu près \( \nv1{ F } \cdot \nv1{ \varfc }^{\wts[1] \epsi\delta
+    / \sigma } \). Cependant, aux places de \( \placesapx \), on peut obtenir
+une estimation plus fine.
 
-% XXX
+En effet, chaque monôme divisé intervenant dans le déshomogénéisé de \(
+  P^\dermp_\dv \) est composé d'un facteur des valeurs absolue inférieure à \(
+  1 \) et d'un facteur de la forme
+\begin{equation}
+  \prod\fctrange
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
+  \right)^{\imp*[0]}
+  \pmm,
+\end{equation}
+où \( \imp \) est tel que \( \wtsum*(\imp) \ge \epsi (1 - \frac1\sigma)
+  \delta \). Or, par le lemme~\ref{l:coord-norm} et l'hypothèse principale, on
+a
+\begin{equation}
+  \prod\placerange
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
+  \right)^{\degv}
+  \le
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \nv1{ \cex* } }
+    \nv1{ \varfc* } \dimp**^\dv
+  \right)^{\degv}
+  \le
+  \hautm[2]{ \excep* }^{-\eps}
+  \hautm[1]{ \varfc* } \dimp**^\dv
+\end{equation}
+Ainsi, \todo[en négligeant pour l'instant les partie archimédiennes des
+constantes], on a
+\begin{align}
+  \prod\placerange
+  \prod\fctrange
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
+  \right)^{\imp*[0] \degv}
+  & \le
+  \prod\fctrange
+  \left(
+    \hautm[2]{ \excep* }^{-\eps}
+    \hautm[1]{ \varfc* } \dimp**^\dv
+  \right)^{ \imp*[0] }
+  \\ & \le
+  \hautm[1]{ \excep[1] }^{ -\eps \epsi(1 - \frac1\sigma) \delta \wts[1] }
+  \hautm[1]{ \varfc }^{2 \wts[1] \delta }
+\end{align}
 
-\clearpage
+En appliquant la formule du produit d'un côté et en mettant bout à bout les
+estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
+\begin{align}
+  0
+  & \le
+  \delta \Bigl(
+    2\puiss \epsz \wts[1] \hautl{ \excep[1] }
+    +
+    2\puiss \epsiv \wts[1] \hautl{ \excep[1] } + \wts[1] \cst{exci}
+    +
+    2\wts[1] \log\hclab
+    +
+    \cst{degdim} \wts[1] \epsi \sigma^{-1} \hautl{ \excep[1] }
+    \\ & \qquad +
+    \wts[1] \epsi \sigma^{-1} (\hautl{ F } + \hautl{ \varfc })
+    +
+    2 \wts[1] \hautl{ \varfc }
+    -
+    \eps \epsi(1 - \sigma^{-1}) \wts[1] \hautl{ \excep[1] }
+  \Bigr)
+  + o(\delta)
+  \\ & \le
+  \delta \Bigl(
+    \wts[1] \hautl{ \excep[1] }
+    \bigl(
+      2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
+      -
+      \eps \epsi(1 - \sigma^{-1})
+    \bigr)
+    + o( \wts[1] \hautl{ \excep[1] } )
+  \Bigr)
+  + o(\delta)
+\end{align}
+ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \excep[1] }
+\) sont assez grands, pour peu que
+\begin{equation}
+  \frac{
+    2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
+  }{
+    \epsi(1 - \sigma^{-1})
+  }
+  \le
+  \eps
+\end{equation}
 
 \subsection{Appendice}
 
