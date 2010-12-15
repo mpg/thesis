@@ -611,9 +611,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand*\ch   [1] {\vp[#1]}
 
-\newcommand*\pp {x}
+\newcommand \pp {x}
+\newcommand \ppi{y}
 \newcommand \cp {\gp x}
+\newcommand \cpi{\gp y}
 \newcommand \vp {\gp X}
+\newcommand \vpi{\gp Y}
 \newcommand \ip {\gp \lambda}
 
 \newcommand \anyvar {V}
@@ -903,7 +906,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \pdiff {\@ifstar{\Delta}{\Delta_\dv}}
 
-% \Delta
+% misc [[2
+%
+\newcommand \hclab {\@ifstar{ c_{\va, \place} }{ c_{\va} }}
 
 % unsorted math stuff [[1
 % -------------------

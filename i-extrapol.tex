@@ -107,13 +107,10 @@ Il est alors clair que \( \av{ \clab*[\indiv*](\cex) } \ge \nv1{ \clab*(\cex)
     (\vmp**) ^{ \vdeg* - \alpha }
     \poldep*[\ind, \alpha]
     \quad\text{où }
-    \left\{
-      \begin{aligned}
-        & \deg \poldep*[\ind, \alpha] = \alpha
-        \\ & \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
-        \le \nv1{ \varfc* }
-      \end{aligned}
-    \right.
+    \deg \poldep*[\ind, \alpha] = \alpha
+    \text{ et }
+    \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
+    \le \nv1{ \varfc* }
   \end{equation}
   En passant aux valeurs absolues et en divisant, il vient
   \begin{equation}
@@ -157,6 +154,10 @@ D'après le lemme~\ref{l:indice-facteur}, \( f_1 \) et \( f_2 \) ont le même
 indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
 qui seront plus faciles à contrôler.
 
+On commence par choisir pour chaque \( \place \) des formes \( \clab[\place,
+    \fcti] \) en appliquant le fait~\ref{f:hclab} avec \( (\pp, \ppi) =
+  (\excep[\fcti], \excep[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
+\). On écrit alors
 \begin{align}
   f_2
   & =
@@ -180,11 +181,11 @@ qui seront plus faciles à contrôler.
     \clab[\place][\indiv](\vmp) ^{ \delta }
   }
   \left(
-    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
-  \right) ^{ \epsz \wt \delta + r }
-  \left(
     \frac{ \clab[\place][\indiv](\vmp) }{ \clab[\place][\indig](\vmp) }
   \right) ^{ \delta }
+  \left(
+    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
+  \right) ^{ \epsz \wt \delta + r }
   \\ & =
   \frac{
     R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
@@ -201,11 +202,11 @@ qui seront plus faciles à contrôler.
     }
   \right)^\delta
   \left(
-    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
-  \right) ^{ \epsz \wt \delta + r }
-  \left(
     \frac{ \clab[\place][\indiv](\vmp) }{ \clab[\place][\indig](\vmp) }
   \right) ^{ \delta }
+  \left(
+    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
+  \right) ^{ \epsz \wt \delta + r }
 \end{align}
 
 Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
@@ -232,16 +233,42 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
     }
   \right)^\delta
   \left(
-    \frac{ \cex[][\indv] }{ \cex[][\vdim] }
-  \right) ^{ \epsz \wt \delta + r }
-  \left(
     \frac{ \clab[\place][\indiv](\cex) }{ \clab[\place][\indig](\cex) }
   \right) ^{ \delta }
+  \left(
+    \frac{ \cex[][\indv] }{ \cex[][\vdim] }
+  \right) ^{ \epsz \wt \delta + r }
 \end{equation}
 Nous allons maintenant estimer la valeur absolue de chacun des facteurs, en
 distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
 facteur, et montrer que l'on contredit la formule du produit si \( \wtsum(
   \dermp ) < \delta / \sigma \). Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \).
+
+% XXX
+
+\subsection{Appendice}
+
+\begin{fact} \label{f:hclab}
+  Il existe une famille de constantes \( \hclab* \) ne dépendant que de \( \va
+  \) telle que, pour tout point \( ( \pp, \ppi ) \in \va^2 \),  tout place
+  \( \place \) de \( \cdn \), et tout couple \( ( \alpha, \beta ) \)i de
+  nombres n'admettant que \( 2 \) et \( 3 \) comme facteurs premiers, il
+  existe un choix de formules \( \clab \) représentant \( [ \alpha, \beta ] \)
+  au voisinage de \( ( \pp, \ppi ) \) et satisfaisant
+  \begin{equation}
+    \frac{
+      \nv1{ \clab }
+      \nv1{ \cp   }^{ 2 \alpha^2 }
+      \nv1{ \cpi  }^{ 2 \beta ^2 }
+    }{
+      \nv1{ \clab( \cp, \cpi ) }
+    }
+    \le \hclab*^{\alpha^2 \beta^2}
+    \pmm.
+  \end{equation}
+  De plus, \( \hclab* = 1 \) sauf pour un nombre fini de places ; ainsi \(
+    \hclab = \prod_\place \hclab*^{\degv} \) est bien défini.
+\end{fact}
 
 \endinput
 
