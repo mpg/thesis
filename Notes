@@ -1,5 +1,14 @@
-Objectifs de la semaine {{{1
-=======================
+Next actions
+============
+
+Les (A) de Maths/Vojta.
+
+Liste détaillée de ce qu'il reste à faire :
+- pour Vojta
+- après
+avec estimation de difficulté/temps et de besoin de pph, de façon à établir un
+calendrier pré-dépôt.
+
 
 Rédaction {{{1
 =========
@@ -29,6 +38,7 @@ flottante si j'hésite).
 peut-être qu'il y en a d'autres locaux à Mumford). Ça serait plus clair s'ils
 étaient globaux, non ? Utiliser un système comme les constantes automatiques ?
 Voire directement des constantes automatiques ?
+    Non, pas automatique : changement de version trop relous mentalement.
 
 (C) Ajouter des références biblio pour toute l'intro.
 
@@ -40,8 +50,6 @@ Notations {{{2
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
 
-(C) Dans Vojta, noter en gras ou souligné d et d' ?
-
 Dans NMA {{{3
 
 Au début : dire un corps *local* et ne pas le noter \cdn.
@@ -52,36 +60,43 @@ Consistance interne et avec le reste : commencer par faire une liste ici.
 Noter ci-dessous les divergences observées, qui seront traitées une par une
 tranquillement.
 
-gras et souligné pour les trucs multihomogènes
-    l:hmat-wemba (avant, énoncé et preuve) : p, q (\fcti) et s pas bons
-
 Dans siegel: passer aux nouvelles macros multiprojectives
 - \lambda devient \imp
 - p, q et s dans les lemmes de la section « calculs de hauteur »
+- l:hmat-wemba (avant, énoncé et preuve) : p, q (\fcti) et s pas bons
 
 Unifier les indices :
 - i et j en haut (de 1 à m ou m-1)
 - k et l en bas (de 0 à n)
+- en fait, le contraire paraît mieux (cohérence avec homogène simple)
 
 Unifier les notations pour la ou les approximations exceptionnelles (x, y et z
 doivent rester des points quelconques, prendre e par exemple).
 
 La convention \boldsymbol = le point, \mathit = ses coordonnées est loin
 d'être utilisée de façon consistante. On fait quoi ?
+    Laisser tomber... Préciser dans le texte si réelle ambiguité.
 
 Clarifier l'utilisation des (multi)variables X, Y : peut-on les réutiliser
 pour le cas d'un projectif simple (pas produit) ? Ou vaut-il mieux utiliser
 une autre lettre (W est sans doute libre) ? (Ensuite, le dire dans la
 nomenclature.)
+    Oui, on peut. Sinon trop relou W partout dans Mumford. Mais expliquer ça
+    dans l'intro, puis en début de partie multihomogène.
 
 \vlg vs \lg vs \lgr...
+    Les définitions paraissent OK, vérifier les usages au cas où.
 
 Macros {{{2
 ------
 
+(A) passer à mathstyle et laisser tomber les astuces de \bgroup
+    Usage à revoir dans tout Vojta
+
 (B) retrier les macros de Vojta
 
-(B) showkeys: sur plusieurs lignes dans la marge
+(B) showkeys: sur plusieurs lignes dans la marge,
+ou nettement plus petit sans cadre
 
 (B) Nomenclature : numéros de page.
 
@@ -125,23 +140,17 @@ Vojta {{{2
 -----
 
 (A) Reprendre le plan général de Vojta, et traduire ça en une structure
-section, squelettes d'énoncés, etc.
+section, squelettes d'énoncés, etc. Nouveau plan avec réductions au début,
+terminant donc sur le thm du produit.
 
-(A) Extrapolation : remanier le plan général avec squelette détaillé, énoncés
-modulo constantes mais avec ordres de grandeur attendus.
-
-(A) Extrapolation : partie places spéciales
-1. Faire le lemme sur le choix de la coordonnée de déshomogénéisation.
-        Le taper.
-2. Faire le lemme sur la valeur absolue du dénominateur.
-        Le taper.
-3.      a. Dégrossir le lemme sur le développement aux places spéciales.
-        b. Le finir.
-        c. Le taper.
-        d. Faire la partie inutile aux places non spéciales.
-
-(B) Commencer les énoncés de géométrie euclidienne (voir \todo dans la section
+(A) Commencer les énoncés de géométrie euclidienne (voir \todo dans la section
 correspondante, actuellement sub:wemb).
+
+(A) écrire les choix des \wt et les conséquences euclidiennes de base
+
+(A) Voir l'application du lemme du produit
+
+(A) boucler (au moins grossièrement) les constantes
 
 (B) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
 faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
@@ -170,16 +179,9 @@ Annexe normes et mesures {{{2
 Autres, divers {{{2
 --------------
 
-Question : le degré (multi)projectif se comporte-t-il bien par projection
-linéaire (dont le centre peut rencontrer la variété) ? Si oui, utiliser un
-plongement \wemba étendu avec addition-soustraction, se réprésentant
-globalement, pour calculer le degré de \wemb(\var) ?
-
 (C) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
 remplacer \C_v par k_v (voire k) ?
-
-(B) Faire les calculs euclidiens qui traduisent les conditions de notre énoncé
-de Vojta en trucs sur les `\wt` et les `\epsi*`.
+    Question plus importante : a-t-on besoin de savoir ça ??
 
 Lecture {{{1
 =======
