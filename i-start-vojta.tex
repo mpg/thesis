@@ -3,12 +3,67 @@
 \chapter{Inégalité de Vojta} \label{chap:vojta}
 
 
-\section{Notations additionnelles} \label{sec:vojta-intro}
+\section{Premières réductions}
 
-Le but de cette section et des suivantes est de prouver une inégalité de
-\bsc{Vojta} dans le cas particulier où \( \varapx \) est découpé par un
-hyperplan. Nous en déduirons ensuite le cas général à la
-section~\ref{sec:vojta-gene}.
+\begin{lem} \todo
+  Dans l'énoncé de Vojta, on peut supposer que \( \varapx \) est un diviseur
+  de \( \va \), découpé par une forme sur \( \projd \).
+\end{lem}
+
+\begin{ideas}
+  Il est clair que \( \varapx \) est une intersection de diviseurs découpés
+  par des formes sur \( \projd \), mettons qu'on les note \( \divi_\alpha \).
+  Alors l'ensemble des approximations exceptionnelles de \( \varapx \) est
+  inclus dans l'union des ensembles d'approximations exceptionnelles des
+  \( \divi_\alpha \). (Attention, je crois pas que ça marche avec
+  l'intersection.)
+
+  Donc on a qu'à appliquer Vojta-particulier à chacun de ses diviseurs, on
+  perd de la précision de décompte en passant au cas général. Pour que le
+  résultat reste intéressent, il s'agit donc de bien contrôler le famille
+  \( \divi_\alpha \) : nombre d'éléments, leur degré et leur hauteur par
+  rapport à celles de \( \varapx \). Il semble que \cite[prop.~6.1]{remdcl}
+  soit un bon point de départ pour ça.
+\end{ideas}
+
+\begin{lem} \todo
+  On peut supposer que le diviseur est découpé par \( \ch0 = 0 \).
+\end{lem}
+
+\begin{ideas}
+  On fait un Veronese pour se ramener au cas où le diviseur est de degré~$1$.
+  Trucs à surveiller :
+  \begin{enumthm}
+    \item Comment se comporte la distance sous un Veronese ? Éléments de
+      réponse : \cite{phidg} en haut de la page~89, ou probablement Jadot
+      (voir la définition des distances avec indices, les normalisations,
+      \dots).
+    \item On veut travailler dans un plongement de Mumford modifié associé
+      donc à un fibré totalement symétrique. Comment ça interagit avec la
+      manip ? Faut-il exiger des trucs sur les \( \divi_\alpha \) au lemme
+      précédent ?
+  \end{enumthm}
+\end{ideas}
+
+
+\section{Réductions supplémentaires et plan de la preuve}
+
+% TODO: introduire les \wt* et leurs propriétés
+
+% TODO: énoncer la prop avec la var produit
+
+% TODO: prouver qu'elle implique vojta
+
+% TODO: énoncer la prop avec la forme obstructrice
+
+% TODO: prouver qu'elle implique la prop prec
+
+% TODO: introduire le plongement éclatant, lemme de degré et stratégie Thue
+
+% TODO: plongements adaptés : def, prop, supposition et hauteur
+
+
+\section{Provisoire, à ventiler}
 
 On suppose que $\va$ n'est pas contenue dans l'hyperplan
 d'équation $\ch0 = 0$, et on considère le diviseur $\divi$ découpé par
@@ -268,8 +323,7 @@ voisinages de $x$.
 Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
 immédiatement le résultat suivant.
 
-\begin{lem} \label{l:deg-wemba} \worknote[later] {Faire la hauteur aussi
-    pendant qu'un y est ? Voir \ref{l:hmat-wemba}.}
+\begin{lem} \label{l:deg-wemba}
   Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
   \Qbar[\vmp, \vmpi]$ une forme multihomogène de multidegré $(\alpha,
   \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
@@ -285,7 +339,6 @@ immédiatement le résultat suivant.
     \pmm.
   \end{equation}
 \end{lem}
-
 
 
 \endinput
