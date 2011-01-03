@@ -616,12 +616,12 @@ nul ; ci-dessous on utilisera le fait que \( \cex*[\vdim*] \neq 0 \).
 On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
     \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
 condition. De même, on choisit \( \indiv* \in \set{0, \dots, \dimp} \)
-maximisant \( \av{ \clab*[\indiv*](\cex) } \), ainsi que \( \indig* \in
-  \set{0, \dots, \dimp} \) tel que \( \clab*[\indig*](\cex) \neq 0 \). Notons
+maximisant \( \av{ \wembcl*[\indiv*](\cex) } \), ainsi que \( \indig* \in
+  \set{0, \dots, \dimp} \) tel que \( \wembcl*[\indig*](\cex) \neq 0 \). Notons
 que \( \indig \) et \( \indiv \) ne dépendent pas du choix des formules \(
-  \clab \) utilisées, et que \( \indig \) ne dépend pas de \( \place \).
+  \wembcl \) utilisées, et que \( \indig \) ne dépend pas de \( \place \).
 
-Il est alors clair que \( \av{ \clab*[\indiv*](\cex) } \ge \nv1{ \clab*(\cex)
+Il est alors clair que \( \av{ \wembcl*[\indiv*](\cex) } \ge \nv1{ \wembcl*(\cex)
   } \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue pour les \(
   \indv* \).
 
@@ -676,26 +676,26 @@ Introduisons maintenant une nouvelle fonction rationnelle définie par
   \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
   \cdot
   \frac{
-    F( \vmp, \clab(\vmp) )
+    F( \vmp, \wembcl(\vmp) )
   }{
     \vmp[][\vdim] ^{\epsz \wt \delta}
     \cdot
-    \clab[][\indig](\vmp) ^{ \delta }
+    \wembcl[][\indig](\vmp) ^{ \delta }
   }
   \pmm,
 \end{equation}
 où au dénominateur on a noté
 \begin{equation}
-  \clab[][\indig](\vmp) ^{ \delta }
+  \wembcl[][\indig](\vmp) ^{ \delta }
   =
-  \prod\fctirange \clab*[\indig](\vmp) ^{ \delta }
+  \prod\fctirange \wembcl*[\indig](\vmp) ^{ \delta }
   \pmm.
 \end{equation}
 D'après le lemme~\ref{l:indice-inversible}, \( f_1 \) et \( f_2 \) ont le même
 indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
 qui seront plus faciles à contrôler.
 
-On commence par choisir pour chaque \( \place \) des formes \( \clab[\place,
+On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
     \fcti] \) en appliquant le fait~\ref{f:hclab} avec \( (\pp, \ppi) =
   (\excep[\fcti], \excep[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
 \). On écrit alors
@@ -705,31 +705,31 @@ On commence par choisir pour chaque \( \place \) des formes \( \clab[\place,
   \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
   \cdot
   \frac{
-    F( \vmp, \clab[\place](\vmp) )
+    F( \vmp, \wembcl[\place](\vmp) )
   }{
     \vmp[][\vdim] ^{\epsz \wt \delta}
     \cdot
-    \clab[\place][\indig](\vmp) ^{ \delta }
+    \wembcl[\place][\indig](\vmp) ^{ \delta }
   }
   \\ & =
   \frac{ R(\vmp) }{ \vmp[][\indv]^r }
   \cdot
   \frac{
-    F( \vmp, \clab[\place](\vmp) )
+    F( \vmp, \wembcl[\place](\vmp) )
   }{
     \vmp[][\indv] ^{\epsz \wt \delta}
     \cdot
-    \clab[\place][\indiv](\vmp) ^{ \delta }
+    \wembcl[\place][\indiv](\vmp) ^{ \delta }
   }
   \left(
-    \frac{ \clab[\place][\indiv](\vmp) }{ \clab[\place][\indig](\vmp) }
+    \frac{ \wembcl[\place][\indiv](\vmp) }{ \wembcl[\place][\indig](\vmp) }
   \right) ^{ \delta }
   \left(
     \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
   \right) ^{ \epsz \wt \delta + r }
   \\ & =
   \frac{
-    R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
+    R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
   }{
     \vmp[][\indv] ^{ \Diii }
   }
@@ -739,11 +739,11 @@ On commence par choisir pour chaque \( \place \) des formes \( \clab[\place,
       ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \clab[\place, \fcti][\indiv*]( \vmp )
+      \wembcl[\place, \fcti][\indiv*]( \vmp )
     }
   \right)^\delta
   \left(
-    \frac{ \clab[][\indiv](\vmp) }{ \clab[][\indig](\vmp) }
+    \frac{ \wembcl[][\indiv](\vmp) }{ \wembcl[][\indig](\vmp) }
   \right) ^{ \delta }
   \left(
     \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
@@ -758,7 +758,7 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
 \begin{equation}
   \der[\dermp]
     \frac{
-      R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
+      R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
     }{
       \vmp[][\indv] ^{ \Diii }
     }
@@ -770,11 +770,11 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
       ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \clab[\place, \fcti][\indiv*]( \cex )
+      \wembcl[\place, \fcti][\indiv*]( \cex )
     }
   \right)^\delta
   \left(
-    \frac{ \clab[][\indiv](\cex) }{ \clab[][\indig](\cex) }
+    \frac{ \wembcl[][\indiv](\cex) }{ \wembcl[][\indig](\cex) }
   \right) ^{ \delta }
   \left(
     \frac{ \cex[][\indv] }{ \cex[][\vdim] }
@@ -805,7 +805,7 @@ partie du plongement éclatant, on a\worknote{Farhi p. 96 en haut}
   \prod_\place
   \prod\fctirange
   \left(
-    \frac{ \av{\clab[][\indiv](\cex)} }{ \av{\clab[][\indig](\cex)} }
+    \frac{ \av{\wembcl[][\indiv](\cex)} }{ \av{\wembcl[][\indig](\cex)} }
   \right) ^{ \delta \degv }
   \le
   \prod\fctirange
@@ -814,17 +814,17 @@ partie du plongement éclatant, on a\worknote{Farhi p. 96 en haut}
   \hautm[1]{ \excep[1] }^{2\puiss \epsiv \wts[1] \delta}
   \cdot \cst{exci}^{\wts[1] \delta}
 \end{equation}
-Enfin, grâce au choix des formules \( \clab[\place] \), on a
+Enfin, grâce au choix des formules \( \wembcl[\place] \), on a
 \begin{equation}
   \prod_\place
   \left(
     \prod\fctirange
     \frac{
-      \nv1{ \clab[\place, \fcti][\indiv*] }
+      \nv1{ \wembcl[\place, \fcti][\indiv*] }
       ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \clab[\place, \fcti][\indiv*]( \cex )
+      \wembcl[\place, \fcti][\indiv*]( \cex )
     }
   \right)^{ \delta \degv }
   \le
@@ -833,17 +833,17 @@ Enfin, grâce au choix des formules \( \clab[\place] \), on a
 
 Passons maintenant au premier facteur. Remarquons pour commencer que
 \begin{equation}
-  \nv1{ R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) ) }
+  \nv1{ R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) }
   \le
-  \nv1{ F } \nv1{ \clab }^\delta \cdot o(\expb^\delta)
+  \nv1{ F } \nv1{ \wembcl }^\delta \cdot o(\expb^\delta)
 \end{equation}
-et que le facteur en \( \nv1{ \clab } \) a déjà été intégré à l'estimation
+et que le facteur en \( \nv1{ \wembcl } \) a déjà été intégré à l'estimation
 précédente. Appliquons maintenant le lemme~\ref{l:par-var} à cette forme :
 \worknote{À adapter pour remplacer \( \vdim \) par une autre coordonnée ?}
 \begin{equation}
   \der[\dermp]
     \frac{
-      R(\vmp) \cdot F( \vmp, \clab[\place](\vmp) )
+      R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
     }{
       \vmp[][\indv] ^{ \Diii }
     }
@@ -991,15 +991,15 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \excep[1] }
   \) telle que, pour tout point \( ( \pp, \ppi ) \in \va^2 \),  tout place
   \( \place \) de \( \cdn \), et tout couple \( ( \alpha, \beta ) \)i de
   nombres n'admettant que \( 2 \) et \( 3 \) comme facteurs premiers, il
-  existe un choix de formules \( \clab \) représentant \( [ \alpha, \beta ] \)
+  existe un choix de formules \( \wembcl \) représentant \( [ \alpha, \beta ] \)
   au voisinage de \( ( \pp, \ppi ) \) et satisfaisant
   \begin{equation}
     \frac{
-      \nv1{ \clab }
+      \nv1{ \wembcl }
       \nv1{ \cp   }^{ 2 \alpha^2 }
       \nv1{ \cpi  }^{ 2 \beta ^2 }
     }{
-      \nv1{ \clab( \cp, \cpi ) }
+      \nv1{ \wembcl( \cp, \cpi ) }
     }
     \le \hclab*^{\alpha^2 \beta^2}
     \pmm.

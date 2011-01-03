@@ -731,6 +731,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \nomg{eps3}{\epsiii}{Toujours un autre epsilon}
 \nomg{eps4}{\epsiv }{Toujours un autre epsilon}
 
+% abelian formulas [[2
+%
+
+
 % Vojta-specific math [[1
 % -------------------
 
@@ -783,8 +787,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \nomg{psi}{\wemba}{Morphisme d'algèbres graduées associé au plongement
   éclatant $\wemb$}
 
-\newcommand*\clab {\gmpi S}
-\noma{S}{\clab}{Formules de combinaisons linéaires utilisées dans \( \wemb \)}
+\newcommand*\wembcl {\gmpi S}
+\noma{S}{\wembcl}{Formules de combinaisons linéaires utilisées dans \( \wemb \)}
 
 
 % vanishing conditions [[2
