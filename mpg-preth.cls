@@ -236,6 +236,7 @@
 %
 \newcommand \NT  {\bsc{Néron}-\bsc{Tate}\xspace}
 \newcommand \MoW {\bsc{Mordell}-\bsc{Weil}\xspace}
+\newcommand \TS  {\bsc{Thue}-\bsc{Siegel}\xspace}
 
 % helpers for math macros [[1
 % -----------------------
@@ -508,8 +509,9 @@
 
 \noma{S} {\placesapx} {Ensemble fini de places de \( \cdn \) auxquelles on
   impose une condition d'approximation}
-\nomg{lambda}{\wtapx}{Poids de la place \( \place \) dans la condition
+\nomg{lambda}{\wtapx} {Poids de la place \( \place \) dans la condition
   d'approximation}
+\nomg{Delta} {\degv}  {Degré local de \( \cdn \) en \( \place \)}
 
 \newcommand \varapx { E }
 \noma{E} {\varapx} {Variété dont on étudie les approximations}
@@ -731,6 +733,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % Vojta-specific math [[1
 % -------------------
+
+% constants in the theorem itself [[2
+%
+\newcommand \Vbig { \alpha _{\mathrm{V}} }
+\newcommand \Vfar { \beta  _{\mathrm{V}} }
+\newcommand \Vcos { \gamma _{\mathrm{V}} }
 
 % general situation [[2
 %
