@@ -2,6 +2,547 @@
 
 \section{Extrapolation} \label{sec:vojta-extrap}
 
+Le but de cette section est de montrer que la fonction auxiliaire que nous
+venons de construire s'annulle avec un indice élevé en \( \excep \), pour une
+définition de l'indice que nous préciserons.
+
+Auparavant, nous aurons besoin de représenter les dérivées de certaines
+fonctions rationnelles sur \( \var \) par des fractions rationnelles de
+dénominateur explicite dont on contrôle le degré et la hauteur du numérateur.
+Pour commencer, nous effectuons ce travail sur une variété projective
+quelconque (plongée de façon adaptée) avant de passer à une variété produit.
+
+
+\subsection{Estimation de dérivées} \label{sec:vojta-param}
+
+Soit \( \anyvar \) une variété projective de dimension \( \anydim \), plongée
+de façon adaptée dans un espace projectif \( \projd \), de degré \( \anydeg \)
+dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie de
+\begin{equation}
+  \cdn\Big(
+    \frac{ \vp[0]           }{ \vp[\anydim] }, \dots,
+    \frac{ \vp[\anydim-1]   }{ \vp[\anydim] }
+  \Big)
+\end{equation}
+dont \( \frac{ \vp[\anydim+1] }{ \vp[\anydim] } \) est un élément primitif.
+Sur ce dernier corps, on dispose des dérivations standard définies par
+\(
+  \diff_\ind \frac{ \vp[\indi] }{ \vp[\anydim] } = \delta_\ind^\indi
+\)
+qui forment une base de l'espace des dérivations, et s'étendent de façon
+unique à \( \cdn(\anyvar) \) pour former une base de son espace de
+dérivations. Les propriétés classiques des dérivations montrent alors que
+l'application
+\begin{equation}
+  \begin{aligned}
+    \pmor \colon \cdn(Z)
+    & \to \cdn(Z)\series\psp
+    \\
+    f
+    & \mapsto
+    \sum_{\derp \in \N^\anydim} \der[\derp] \!f \, \psp^\derp
+  \end{aligned}
+  \qquad \text{où }
+  \der[\derp]
+  =
+  \frac1{\derp!}
+  \prod_{\ind = 0}^\anydim \diff_\ind^{\derp*}
+  \pmm.
+\end{equation}
+est un morphisme de \( \cdn \)-algèbres.
+
+Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
+faisant commuter le diagramme
+\begin{equation} \label{e:pmor} % FIXME: tag not displayed
+  \xymatrix{
+    \cdn[\vp]_{(\ideal\anyvar)}                 \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
+    & \cdn[\vp]_{(\ideal\anyvar)} \series\psp   \ar[d]^\pi
+    \\ \cdn(\anyvar)                                           \ar[r]^{\pmor}
+    & \cdn(\anyvar)\series\psp
+  }
+\end{equation}
+où les flèches verticales sont les projections canoniques. Posons
+\( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)
+sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
+la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
+rationnelle \( f = F/G \), nous exhiberons (au moins) un polynôme \( R_\derp
+\), dépendant éventuellement de la représentation \( F/G \) choisie, tel que
+\( R_\derp \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes
+locales contrôlées.
+
+En pratique, nous construirons en fait deux morphismes, \( \pmor*_0 \) et \(
+  \pmor*_1 \), et deux familles d'applications \( \pdiff^\derp \) telles que
+l'on contrôlera la norme \( \place \)-adique de \( R_\derp \cdot \pdiff^\derp
+\), où l'on rappelle que \( \dv \) vaut \( 1 \) si \( \place \) est
+archimédienne et \( 0 \) sinon.
+
+Pour définir \( \pmor*_\dv \), il suffit de définir les images des différents
+\( \vp* / \vp[\anydim] \). En effet, ceci donne un morphisme de \( \cdn[ \vp /
+  \vp[\anydim] ] \) dans \( \cdn[X]_{(\ideal\anyvar)} \series\psp \). Si l'on
+impose de plus que \( \pdiff^0 \) soit l'identité, on constate que l'image du
+complémentaire de \( \ideal\anyvar \) ne contient que des séries inversibles
+(car leur terme constant l'est), ce qui permet d'étendre le morphisme à \(
+  \cdn[X]_{(\ideal\anyvar)} \).
+
+Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
+  \pmor*_\dv(\vp*/\vp[\anydim]) = \vp*/\vp[\anydim] + \psp* \). Pour \( \ind >
+  \anydim \), nous utiliserons le lemme suivant, que l'on énonce dans un cadre
+affine.
+
+\begin{lem} \label{l:param-aff}
+  Soient \( \anyvp[1], \dots, \anyvp[\anydim], Y \) des variables et \( L \)
+  une algébrique extension finie de \( \cdn(\anyvp[1], \dots, \anyvp[\anydim])
+  \). On fixe \( y \) un élément de \( L \) ; on note \( \pi \) le
+  morphisme de \( \cdn[\anyvp[1], \dots, \anyvp[\anydim], Y ] \) dans \( L \)
+  qui laisse stable les \( \anyvp* \) et envoie \( Y \) sur \( y \). Soit \(
+    \Pi \in \ker \pi \) tel que \( \pden = \diff_Y \Pi \notin \ker \pi \).
+
+  On considère les dérivations standard \( \diff_\ind \) sur \( \cdn[
+    \anyvp[1], \dots, \anyvp[\anydim] ] \) ainsi que leurs extensions à \( L
+  \), et \( \der[\derp] = \frac1{\derp!} \prod_{\ind = 0}^\anydim
+    \diff_\ind^{\derp*} \).  Il existe des polynômes \( P_\dv^\derp \), pour
+  \( \derp \in \N^{\anydim} \minusset0 \), tels que :
+  \begin{enumthm}
+    \item \( \der[\derp] y
+        = \pi\left(
+          \frac{ P_\dv^\derp }{ \pden^{2\lgr\dermp - 1} }
+        \right)
+      \) ;
+    \item \( \deg P_\dv^\derp \le (\deg \Pi - 1) (2\lgr\derp - 1) \) ;
+    \item \( \nv1{ P_\dv^\derp }
+        \le \nv1 \poldep ^{2\lgr\derp - 1}
+        \cdot \left(
+          (4\anydim)^{\lgr\derp -1} (\deg\Pi)^{3\lgr\derp -2}
+        \right)^\dv \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
+    autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
+    fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
+  utilisant aux places archimédiennes une généralisation de
+  \cite[relation~2.3.1, p.~63]{farhith}.
+
+  On va construire $P_0^\derp$ et $P_1^\derp$ indépendamment par récurrence
+  sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
+  \diff_{\ind_0} \Pi$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
+  (cas $\lgr\derp = 1$), car ce choix convient. Pour la suite, on fixe un
+  $\dv$, un $\derp$ de longueur au moins $2$, et on suppose qu'on a choisi un
+  $P_\dv^{\derp'}$ convenable pour chaque $\derp'$ de longueur strictement
+  inférieure à celle de $\derp$.
+
+  On commence par le cas ultramétrique et on note donc provisoirement $P^\derp
+  = P_0^\derp$ pour alléger. Les polynômes recherchés sont caractérisés par la
+  relation
+  \begin{equation}
+    \Pi \left(
+      \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
+      Y + \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {\pden^{2\lgr\derp -1}} \psp^\derp
+    \right)
+    = 0 \mod (\Pi)
+    \pmm.
+  \end{equation}
+  On remplace alors \( \Pi \) par son développement de \bsc{Taylor}, pour
+  obtenir les égalités suivantes modulo \( \Pi \) :
+  \begin{align}
+    0
+    & =
+    \sum_{(\ip, \mu) \in \N^{\anydim+1}}
+    \der[\ip, \mu] \Pi
+    \cdot \psp^\ip
+    \cdot \left(
+      \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {\pden^{2\lgr\derp - 1}} \psp^\derp
+    \right)^\mu
+    \\
+    & =
+    \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
+    \left(
+      \der[\ip, \mu] \Pi
+      \cdot \prod_{\fct = 1}^\mu
+      \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \right)
+    \psp^{\sum_\fct \gmp\nu* + \ip}
+    \\
+    & =
+    \sum_{\derp \in \N^\anydim \minusset 0}
+    \Biggl(
+    \frac {P^\derp} {\pden^{2\lgr\derp - 2}}
+    + \sum_{\substack{
+        (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \sum_\fct \gmp\nu* + \ip = \derp }}
+    \der[\ip, \mu] \Pi
+    \cdot \prod_{\fct = 1}^\mu
+    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \Biggr)
+    \psp^\derp
+    \pmm,
+  \end{align}
+  où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \).
+  Il suffit donc de définir \( P^\derp \) par la relation de récurrence
+  \begin{equation}
+    - P^\derp
+    =
+    \sum_{\substack{
+        (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \sum_\fct \gmp\nu* + \ip = \derp }}
+    \der[\ip, \mu] \Pi
+    \cdot \pden^{2\lgr\derp - 2}
+    \cdot \prod_{\fct = 1}^\mu
+    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+  \end{equation}
+  qui consiste à imposer que chaque terme de la série précédente soit nul, ce
+  qui assure bien sa nullité modulo \( \Pi \).
+
+  On majore alors le degré de \( P^\derp \) par récurrence :
+  \begin{align}
+    \deg P^\derp
+    & \le
+    \deg\Pi - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 2)
+    \\ & \le
+    1 - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 1)
+    \\ & \le
+    (\deg\Pi - 1) (2\lgr\derp - 1)
+    \pmm,
+  \end{align}
+  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.  La majoration de
+  norme locale est immédiate par analogie avec le degré vu les propriétés de
+  la norme aux places ultramétriques.
+
+  Traitons maintenant le cas archimédien (désormais \( P^\derp = P^\derp_1 \)
+  pour alléger). On utilise la relation de récurrence suivante, établie dans
+  la démonstration de \cite[lemme~6.1]{remivds}, avec \( Q_\derp =
+    P^\derp \cdot \derp! \) et où, rappelons-le, \( \derp' \) est tel que
+  \( \derp[\ind_0] = \derp[\ind_0]' + 1 \) et \( \derp* = \derp*' \) sinon :
+  \begin{equation}
+    Q_\derp
+    =
+    \pden^2 \, \diff_{\ind_0} Q_{\derp'}
+    - \pden \, \diff_{\ind_0} P \, \diff_{\anydim+1} Q_{\derp'}
+    + (2\lgr{\derp'} - 1)
+    (\diff_{\ind_0} P \, \diff_Y \pden - \pden \diff_{\ind_0} \pden)
+    Q_{\derp'}
+    \pmm.
+  \end{equation}
+  On en déduit immédiatement l'estimation de degré suivante :
+  \begin{equation}
+    \deg P^\derp
+    \le 2 (\deg\Pi - 1) + \deg P^{\derp'}
+    \le (\deg\Pi - 1) (2\lgr\derp - 1)
+    \pmm.
+  \end{equation}
+  Pour la norme, on prouve que \(
+    \nv1{Q_\derp}
+    \le
+    \nv1\Pi^{2\lgr\derp-1} 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
+    (\lgr\derp - 1) !
+  \)
+  (ce qui implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
+    \le \anydim^{\lgr\derp-1} \)) en exploitant la majoration de degré
+  sous la forme \( \deg P^\derp \le 2\lgr\derp \deg\Pi \).
+  \begin{align}
+    \nv1{ Q_\derp }
+    & \le
+    2(\deg\Pi)^2 \cdot \deg Q_{\derp'} \cdot \nv1\Pi^2 \nv1{ Q_{\derp'} }
+    + 2 (2\lgr{\derp'} - 1) (\deg\Pi)^3 \nv1\Pi^2
+    \\ & \le
+    \nv1\Pi^2 \nv1{ Q_{\derp'} } \cdot 4 (\deg\Pi)^{3\lgr{\derp'}}
+    \\ & \le
+    \nv1\Pi^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
+    (\lgr\derp - 1) !
+    \qedhere
+  \end{align}
+\end{proof}
+
+Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
+
+\begin{lem} \label{l:def-pmor}
+  Dans les notations précédentes, on peut définir \( \pmor*_\dv \) faisant
+  commuter le diagramme~\ref{e:pmor} par :
+  \begin{enumthm}
+    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
+        = \frac{ \vp* }{ \vp[\anydim] } + \psp* \)
+      pour tout \( \ind \in \set{0, \dots, \anydim-1} \) ;
+    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
+        = \frac{ \vp* }{ \vp[\anydim] }
+        + \sum_{\derp \neq 0}
+        \frac{ P^\derp_{\ind, \dv} }{ U_\ind^{\lgr\derp} }
+        \psp^\derp
+      \)
+  \end{enumthm}
+  où les polynômes \( P^\derp_{\ind, \dv} \) et \(  U_\ind \) satisfont
+  \begin{enumthm}
+    \item \( \deg  U_\ind   =   2 (\anydeg - 1) \) ;
+    \item \( \nv1{ U_\ind } \le \nv1{ \chow\anyvar }^2 4^{(\anydeg-1)\dv} \) ;
+    \item \( \deg  P^\derp_{\ind, \dv}   =   2 (\anydeg - 1) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\ind, \dv} } \le \left(
+          \nv1{ \chow\anyvar }^2
+          \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
+        \right)^{\lgr\derp} \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Fixons un \( \ind > \anydim \) et notons \( \tilde\Pi = P_\ind(\anyvp[1],
+    \dots, \anyvp[\anydim], 1, Y \), où \( P_\ind \) est donné par le
+  fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées successives de
+  \( \tilde\Pi \) par rapport à la dernière variable, telle que \( \diff_Y \Pi
+    \notin \ideal\anyvar \). On pose alors
+  \begin{equation}
+    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    =
+    \frac {
+      P_\dv^\derp ( \vp[0] / \vp[\anydim], \dots,
+      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+    }{
+      \pden ( \vp[0] / \vp[\anydim], \dots,
+      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+      ^{2\lgr\derp - 1}
+    }
+    \pmm,
+  \end{equation}
+  où les \( P_\dv^\derp \) sont donnés par le lemme précédent. Quitte à
+  multiplier par une puissance convenable de \( \vp[\anydim] \), on peut
+  supposer que le degré de \( \pden \) est exactement \( 2\anydeg - 1 \) et
+  que celui de \( P_\dv^\derp \) est exactement \( (2\anydeg - 1) (2\lgr\derp
+    - 1) \), de sorte que par homogénéité :
+  \begin{equation}
+    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    =
+    \frac {
+      P_\dv^\derp ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+    }{
+      \pden ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+      ^{2\lgr\derp - 1}
+    }
+    =
+    \frac {
+      P_\dv^\derp
+    }{
+      \pden
+      ^{2\lgr\derp - 1}
+    }
+  \end{equation}
+  On pose finalement\footnote{Ceci n'a pour but que de simplifier les calculs
+    ultérieurs en rendant le degré exactement linéaire en \( \lgr\derp \).} \(
+    P_{\ind, \dv}^\derp = \pden \cdot P_\dv^\derp \) et \( \pden_\ind =
+    \pden^2 \). Les estimations de norme annoncées sont alors immédiates.
+\end{proof}
+
+Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
+\).
+
+\begin{lem} \label{l:par-anyvar-mono}
+  Soit \( \ip \in \N^{\dimp*} \) et \( M_\ip = \prod\limits\indrange
+    \bigl( \frac{\vp*}{\vp[\anydim]} \bigr)^{\ip*} \).  Posons \( \pden =
+    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
+  sont donnés par le lemme précédent. Alors :
+  \begin{enumthm}
+    \item \( P^\derp_{\ip, \dv}
+        = \pdiff^\derp(M_\ip)
+        \cdot \vp[\anydim]^{\lgr\ip} \pden^{\lgr\derp} \) est un polynôme ;
+    \item \( \deg P^\derp_{\ip, \dv}
+        = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\ip, \dv} }
+        \le
+        \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
+        \left(
+          \bigl( 4^{\anydeg+1} \anydim \anydeg^{3} \bigr) ^{
+            (\dimp - \anydim) \lgr\derp }
+          \cdot 2^{ \anydim \lgr\ip }
+        \right)^\dv
+      \).
+  \end{enumthm}
+  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \dv} \bigr)
+    \ge \ip[0]  - \derp[0] \).
+\end{lem}
+
+\begin{proof}
+  \newcommand \indl {{ \gmp\nu[\ind, \indi_\ind] }}
+  On utilise la règle de \bsc{Leibniz} :
+  \begin{equation}
+    \pdiff^\derp(M_\ip) =
+    \sum_{\gmp\nu \in N}
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+    \pmm,
+  \end{equation}
+  où la somme est prise sur l'ensemble
+  \begin{equation}
+    N = \left\{
+      \gmp\nu \in (\N^\anydim)^{\lgr\ip}
+      \text{ tels que }
+      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*} \indl = \derp
+    \right\}
+    \pmm.
+  \end{equation}
+
+  On vérifie alors que
+  \begin{equation}
+    P^\derp_{\ip, \dv}
+    =
+    \sum_{\gmp\nu \in N}
+    \Biggl(
+      \prod_{\ind = 0}^{\anydim - 1}
+      \prod_{ \indi_\ind = 1 }^{ \ip* }
+      \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+      \vp[\anydim]
+      \cdot
+      \prod_{\ind = \anydim + 1}^{\dimp}
+      \prod_{ \indi_\ind = 1 }^{ \ip* }
+      \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+      \pden_\ind^{\lgr\indl}
+      \vp[\anydim]
+    \Biggr)
+  \end{equation}
+  est bien un polynôme, car les facteurs dans chaque terme sont des polynômes
+  d'après le lemme précédent. Le calcul du degré est direct et on ne détaille
+  donc que l'estimation de norme : chaque terme de la somme est majoré en
+  norme par
+  \begin{align}
+    \prod_{\ind = \anydim + 1}^{\dimp}
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \left(
+      \nv1{ \chow\anyvar }^2
+      \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
+    \right)^{\lgr\indl}
+    \le
+    \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
+    \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)
+    ^{(\dimp - \anydim) \lgr\derp \dv}
+  \end{align}
+  On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
+  \begin{equation}
+    \prod_{p = 0}^{\anydim - 1} \left\{
+      \gmp\nu[][p] \in \N^{\lgr\ip}
+      \text{ tels que }
+      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*}
+      \gmp\nu[\ind, \indi_\ind][p]
+      = \derp[p]
+    \right\}
+    \pmm.
+  \end{equation}
+  Chacun des facteurs de ce produit est de cardinal
+  \(
+    \binom{ \derp[p] + \lgr\ip - 1 }{ \lgr\ip - 1 }
+    \le
+    2^{ \derp[p] + \lgr\ip - 2 }
+  \).
+  L'estimation annoncée suit en prenant le produit en majorant assez largement
+  certains facteurs.
+
+  Enfin, on constate que chaque terme de la somme définissant
+  \( \pmnum^\derp_\dv ( \anyvp^\ip ) \) contient un facteur de la forme
+  \(
+    \prod_{\indi_0 = 1}^{\ip[0]}
+    \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \anyvp[0] )
+  \). On peut supposer que \( \gmp\nu[0, \indi_0] \in \N \times
+    \set{0}^{\anydim-1} \) car sinon ce facteur, donc le terme correspondant,
+  est nul. De plus, on a \( \sum_{\indi_0 = 1}^{\ip[0]} \gmp\nu[0, \indi_0][0]
+    \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
+  nuls dans cette somme, donc \( \anyvp[0]^{\!\!\ip[0] - \derp[0]} \) est en
+  facteur de chaque terme non nul de la somme définissant \( \pmnum^\derp_\dv
+    ( \anyvp^\ip ) \), ce qui prouve l'assertion sur l'ordre.
+  % FIXME: \!\! above is a bad hack working around bad macros
+\end{proof}
+
+On souhaite maintenant étudier le développement en série des fonctions
+rationnelles sur notre variété produit \( \var \).  On étend les notations de
+précédentes au cas multi-homogène de la façon évidente. En particulier, on a
+un morphisme \( \pmor \) de développement en série, qu'on représente par des
+morphismes \( \pmor*_\dv \) faisant commuter le diagramme
+\begin{equation} \label{pmor*-prod}
+  \xymatrix{
+    \cdn[\vmp]_{(\varid)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
+    & \cdn[\vmp]_{(\varid)} \series\psmp  \ar[d]^\pi
+    \\ \cdn(\var)                                     \ar[r]^{\pmor}
+    & \cdn(\var)\series\psmp
+  }
+\end{equation}
+et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
+  \cdot \pdiff^\dermp \).
+
+Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
+morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
+avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
+produit tensoriel de ces morphismes. On note par ailleurs \( \pden_\fct =
+  \prod_{\ind=\vdim*+1}^{\dimp} \gmp\pden** \) où les \( \gmp\pden** \) sont
+donnés par le lemme cité.
+
+Nous allons maintenant contrôler l'image par \( \pmor* \) de fonctions
+particulières, en commençant par celles qui admettent un monôme en les \(
+  \vmp*[\vdim*] \) comme dénominateur.
+
+\begin{lem} \label{l:par-var}
+  Soit \( G \) une forme multi-homogène de multidegré \( \alpha = (\alpha_1,
+    \dots, \alpha_\puiss ) \) et \( g = G / \vmp[][\vdim]^{\alpha} \) où
+  l'on a noté \( \vmp[][\vdim]^{\alpha} = \prod\fctrange
+    (\vmp*[\vdim*])^{\alpha_\fct} \). Alors :
+  \begin{enumthm}
+    \item \( P^\dermp_{G, \dv}
+        = \pdiff^\dermp(g)
+        \cdot \vmp[][\vdim]^{\alpha}
+        \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
+      \) est un polynôme ;
+    \item \( \deg_\fct P^\dermp_{G, \dv}
+        = \alpha_\fct + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} \) ;
+    \item \( \nv1{ P^\dermp_{G, \dv} }
+        \le
+        \nv1{ G }
+        \prod\fctrange
+        \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \left(
+          \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+            (\dimp - \vdim*) \lgr{\dermp*} }
+          \cdot 2^{ \vdim* \alpha_\fct }
+        \right)^\dv
+      \).
+  \end{enumthm}
+  De plus, \( \inda* \bigl( P^\derp_{G, \dv} \bigr) \ge \inda*(G) -
+    \wtsum*(\dermp) \).
+\end{lem}
+
+\begin{proof}
+  Les trois premiers points s'obtiennent en remarquant que \( g \) est une
+  combinaison linéaire de monômes en \( \vmp / \vmp[][\vdim] \), que l'image
+  d'un tel monôme par \( \pdiff^\dermp \) est donnée par
+  \begin{equation}
+    \pdiff^\dermp \Biggl(
+      \prod\fctrange \prod\indrange
+      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \Biggr)
+    =
+    \prod\fctrange
+    \pdiff^{\fct, \dermp*} \Biggl(
+      \prod\indrange
+      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \Biggr)
+  \end{equation}
+  et en appliquant le lemme~\ref{l:par-anyvar-mono}.
+
+  Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
+    \vmp^\imp \) un monôme apparaissant dans l'écriture \( G \), puis \(
+    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \dv} \).
+  D'après le lemme cité, on alors \( \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \)
+  d'où, en sommant, \( \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \)
+  qui est équivalent à l'estimation annoncée vu la définition de l'indice.
+\end{proof}
+
+Notons que les estimations obtenues ne valent que pour des fonctions admettant
+un monôme en \( \vmp[][\vdim] \) comme dénominateur.  On pourrait aisément en
+déduire des estimations pour des fonctions rationelles de dénominateur
+quelconque en les écrivant comme un quotient de deux telles fonctions, mais
+ce n'est pas utile ici.
+
+
+\subsection{Minoration de l'indice}
+
 Nous allons maintenant montrer que la forme auxiliaire construite
 précédemment s'annule avec un indice élevé en \( \excep \). Plus précisément,
 posons
@@ -64,7 +605,7 @@ Commençons par un lemme facile sur l'indice.
 \end{proof}
 
 On note \( \cex \) un système de coordonnées multihomogènes du point \(
-  \Excep \) introduit à la section~\ref{sub:wemb}. On peut supposer qu'aucune
+  \Excep \) introduit à la section~\ref{sec:wemb}. On peut supposer qu'aucune
 des formes \( \pden_\fct \) introduites avant le lemme~\ref{l:par-var} ne
 s'annulle ne \( \cex* \), car elles sont de degré borné. De même, on peut
 supposer que la forme \( R \) donnée par le corollaire~\ref{c:hmat-relim} ne
@@ -430,7 +971,7 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \excep[1] }
   \eps
 \end{equation}
 
-\subsection{Appendice}
+\subsection{Appendice provisoire}
 
 \begin{fact} \todo
   On a
