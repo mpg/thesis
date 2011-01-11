@@ -193,7 +193,90 @@ par $2$) et satisfaisant à l'inégalité suivante :
 
 \section{Formulaire abélien alternatif} \label{sec:form-ab-alt}
 
+Le formulaire présenté dans cette section n'est valable que pour des
+coefficients de la forme \( 2^\alpha 3^\beta \) et ne permet pas un contrôle
+totalement explicite de la hauteur des formules, mais présente en revanche
+l'avantage que la multiplication est représentée globalement, ce qui permet
+d'établir des minorations de normes locales qui se révèlent essentielles pour
+notre preuve de l'inégalité de \bsc{Vojta}.
 
+\begin{fact}
+  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
+  réel \( c_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
+  dépendant que de ce plongement, et, pour tout \( \gamma = 2^\alpha 3^\beta
+  \), une famille \( F \) de polynômes à coefficients entiers dans \( \cdn \),
+  représentant globalement la multiplication par \( \gamma \) sur \( \va \),
+  de degré \( \gamma^2 \) et de hauteur multiplicative majorée par \( c_{2,
+      3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes place \(
+    \place \) de \( \cdn \), on a :
+  \begin{equation}
+    \av{r_{2, 3}}^{\gamma^2} c_{2, 3}^{-\dv \gamma^2}
+    \le
+    \frac{ \nv2{ F(x) } }{ \nnv2 F \nv2 x }
+    \le
+    c_{2, 3}^{\dv \gamma^2}
+    \pmm.
+  \end{equation}
+\end{fact}
+
+\begin{proof}
+  C'est le fait~3, page~276 de~\cite{phiha1}, restreint au cas particulier qui
+  nous intéresse. On a par ailleurs rajouté au dénominateur un facteur \(
+    \nnv2 F \), qui vaut \( 1 \) aux places finies, et qui n'invalide pas la
+  comparaison aux places infinies quitte à modifier un peu la constante \(
+    c_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
+\end{proof}
+
+\begin{lem}
+  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
+  réel \( c_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
+  ce plongement, et, pour tout couple de points \( (x, y) \in \va^2 \) et
+  toute place \( \place \) de \( \cdn \), une famille \( S \) de polynômes à
+  coefficients entiers dans \( \cdn \) représentant la soustraction sur un
+  voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de hauteur
+  multiplicative majorée par \( c_s \), telle que
+  \begin{equation}
+    \av{r_s} c_s^{-\dv}
+    \le
+    \frac{ \nv2{ S(x, y) } }{ \nnv2 S \nv2 x \nv2 y }
+    \le
+    c_s^{\dv}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{ideas}
+  La majoration de droite est triviale, à condition de ne pas prendre \( c_s
+  \) trop petit. Pour celle de gauche, on considère des familles représentant
+  la soustraction sur une carte de \( \va \), on invoque le théorème des zéros
+  multihomogène sur l'idéal engendré par l'idéal de \( \va \) et des familles.
+\end{ideas}
+
+\begin{lem} \label{l:hclab}
+  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe une
+  famille de réels \( \hclab* \) tels que \( \hclab = \prod_\place
+    \hclab*^{\degv} \) est bien défini, ne dépendant que de ce plongement et,
+  pour tout couple de points \( (x, y) \in \va^2 \), toute place \( \place \)
+  de \( \cdn \) et tous entiers \( \alpha \) et \( \beta \) n'ayant que \( 2
+  \) et \( 3 \) comme diviseurs premiers, une famille \( L^{(a, b)}_{x, y, v}
+  \) de polynômes à coefficients entiers dans \( \cdn \) représentant \( [
+    \alpha, \beta ] \) au voisinage de \( (x, y) \), de bidegré \( (2\alpha^2,
+    2\beta^2) \) et de hauteur multiplicative majorée par \(
+    \hclab^{\alpha+\beta} \), telle que
+  \begin{equation}
+    \hclab*^{-\dv}
+    \le
+    \frac{
+      \nv2{ L^{(a, b)}_{x, y, v}(x, y) }
+    }{
+      \nnv2{ L^{(a, b)}_{x, y, v} } \nv2 x \nv2 y
+    }
+    \le
+    \hclab*^{\dv}
+    \pmm.
+  \end{equation}
+\end{lem}
+  
 
 \endinput
 

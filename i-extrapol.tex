@@ -696,7 +696,7 @@ indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
 qui seront plus faciles à contrôler.
 
 On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
-    \fcti] \) en appliquant le fait~\ref{f:hclab} avec \( (\pp, \ppi) =
+    \fcti] \) en appliquant le lemme~\ref{l:hclab} avec \( (\pp, \ppi) =
   (\excep[\fcti], \excep[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
 \). On écrit alors
 \begin{align}
@@ -982,30 +982,6 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \excep[1] }
   \hautm[1]{ \excep[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
   \end{equation}
   avec \( \newcst[]{exci} = \dots \)
-\end{fact}
-
-
-
-\begin{fact} \label{f:hclab} \todo
-  Il existe une famille de constantes \( \hclab* \) ne dépendant que de \( \va
-  \) telle que, pour tout point \( ( \pp, \ppi ) \in \va^2 \),  tout place
-  \( \place \) de \( \cdn \), et tout couple \( ( \alpha, \beta ) \)i de
-  nombres n'admettant que \( 2 \) et \( 3 \) comme facteurs premiers, il
-  existe un choix de formules \( \wembcl \) représentant \( [ \alpha, \beta ] \)
-  au voisinage de \( ( \pp, \ppi ) \) et satisfaisant
-  \begin{equation}
-    \frac{
-      \nv1{ \wembcl }
-      \nv1{ \cp   }^{ 2 \alpha^2 }
-      \nv1{ \cpi  }^{ 2 \beta ^2 }
-    }{
-      \nv1{ \wembcl( \cp, \cpi ) }
-    }
-    \le \hclab*^{\alpha^2 \beta^2}
-    \pmm.
-  \end{equation}
-  De plus, \( \hclab* = 1 \) sauf pour un nombre fini de places ; ainsi \(
-    \hclab = \prod_\place \hclab*^{\degv} \) est bien défini.
 \end{fact}
 
 \endinput
