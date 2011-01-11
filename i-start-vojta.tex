@@ -2,6 +2,11 @@
 
 \chapter{Inégalité de Vojta} \label{chap:vojta}
 
+Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
+particulier où la variété à approcher est découpée par l'hyperplan d'équation
+\( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous verrons plus tard que
+ce cas particulier implique le cas général.
+
 Le but du chapitre est de prouver le théorème suivant.
 
 \begin{thm} \label{t:vojta}
@@ -10,7 +15,7 @@ Le but du chapitre est de prouver le théorème suivant.
   suivantes :
   \begin{enumthm}
     \item \(
-        0 < \prod\placerange \distv{\excep*}{V}^{\degv}
+        0 < \prod\placerange \distv{\excep*}{\divi}^{\degv}
         < \hautm{\excep*}^{-\expapx}
       \) ; \label{i:Vapx}
     \item \(
@@ -35,58 +40,12 @@ Le but du chapitre est de prouver le théorème suivant.
   \end{align}
 \end{thm}
 
-Nous commençons par nous ramener au cas où la variété \( V \) est en fait un
-diviseur découpé par un hyperplan. Nous réduisons ensuite l'inégalité de Vojta
-à un énoncé d'aspect technique se prêtant bien à une démonstration par la
-méthode de \TS, que nous appliquons alors.
+Nous commençons par réduire ce théorème à un énoncé d'aspect technique se
+prêtant bien à une démonstration par la méthode de \TS, que nous appliquons
+alors.
 
 
-\section{Premières réductions}
-
-\begin{lem} \todo
-  Dans l'énoncé de Vojta, on peut supposer que \( \varapx \) est un diviseur
-  de \( \va \), découpé par une forme sur \( \projd \).
-\end{lem}
-
-\begin{ideas}
-  Il est clair que \( \varapx \) est une intersection de diviseurs découpés
-  par des formes sur \( \projd \), mettons qu'on les note \(
-    \divi_k \).  Alors l'ensemble des approximations exceptionnelles de \(
-    \varapx \) est inclus dans l'union des ensembles d'approximations
-  exceptionnelles des
-  \( \divi_\alpha \). (Attention, je crois pas que ça marche avec
-  l'intersection.)
-
-  Donc on a qu'à appliquer Vojta-particulier à chacun de ses diviseurs, on
-  perd sur le \( \puiss \) en passant au cas général. Pour que le
-  résultat reste intéressant, il s'agit donc de bien contrôler la famille
-  \( \divi_k \) : nombre d'éléments, leur degré et leur hauteur par
-  rapport à celles de \( \varapx \). Il semble que \cite[prop.~6.1]{remdcl}
-  soit un bon point de départ pour ça.
-\end{ideas}
-
-\begin{lem} \todo
-  On peut supposer que le diviseur est découpé par \( \ch0 = 0 \).
-\end{lem}
-
-\begin{ideas}
-  On fait un Veronese pour se ramener au cas où le diviseur est de degré~$1$,
-  puis un changement de coordonnées pour avoir la bonne équation.
-  Trucs à surveiller :
-  \begin{enumthm}
-    \item Comment se comporte la distance sous un Veronese ? Éléments de
-      réponse : \cite{phidg} en haut de la page~89, ou probablement Jadot
-      (voir la définition des distances avec indices, les normalisations,
-      \dots).
-    \item On veut travailler dans un plongement de Mumford modifié associé
-      donc à un fibré totalement symétrique. Comment ça interagit avec la
-      manip ? Faut-il exiger des trucs sur les \( \divi_\alpha \) au lemme
-      précédent ?
-  \end{enumthm}
-\end{ideas}
-
-
-\section{Réductions supplémentaires et plan de la preuve}
+\section{Stratégie de la preuve}
 
 % TODO: introduire les \wt* et leurs propriétés
 
