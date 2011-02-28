@@ -287,7 +287,7 @@ Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
 
 \begin{proof}
   Fixons un \( \ind > \anydim \) et notons \( \tilde\Pi = P_\ind(\anyvp[1],
-    \dots, \anyvp[\anydim], 1, Y \), où \( P_\ind \) est donné par le
+    \dots, \anyvp[\anydim], 1, Y ) \), où \( P_\ind \) est donné par le
   fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées successives de
   \( \tilde\Pi \) par rapport à la dernière variable, telle que \( \diff_Y \Pi
     \notin \ideal\anyvar \). On pose alors
@@ -332,8 +332,11 @@ Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
     \pden^2 \). Les estimations de norme annoncées sont alors immédiates.
 \end{proof}
 
-Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
-\).
+Les morphismes \( \pmor*_\dv \) s'étendent à \( \cdn[X]_{(\ideal\anyvar)} \)
+comme expliqué au deuxième paragraphe précédant le lemme~\ref{l:param-aff}.
+Nous allons maintenant étudier (dénominateur, degré et hauteur des
+coefficients) les images de certaines fonctions, en commençant par celles des
+monômes en \( \vp / \vp[\anydim] \).
 
 \begin{lem} \label{l:par-anyvar-mono}
   Soit \( \ip \in \N^{\dimp*} \) et \( M_\ip = \prod\limits\indrange
@@ -386,23 +389,23 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
     P^\derp_{\ip, \dv}
     =
     \sum_{\gmp\nu \in N}
-    \Biggl(
-      \prod_{\ind = 0}^{\anydim - 1}
-      \prod_{ \indi_\ind = 1 }^{ \ip* }
-      \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
-      \vp[\anydim]
-      \cdot
-      \prod_{\ind = \anydim + 1}^{\dimp}
-      \prod_{ \indi_\ind = 1 }^{ \ip* }
-      \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
-      \pden_\ind^{\lgr\indl}
-      \vp[\anydim]
-    \Biggr)
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+    \pden_\ind^{\lgr\indl}
+    \vp[\anydim]
   \end{equation}
-  est bien un polynôme, car les facteurs dans chaque terme sont des polynômes
-  d'après le lemme précédent. Le calcul du degré est direct et on ne détaille
-  donc que l'estimation de norme : chaque terme de la somme est majoré en
-  norme par
+  est bien un polynôme : pour chaque facteur de chaque terme, si \( \indl = 0
+  \) alors \(
+    \pdiff^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \vp[\anydim]
+  \) est un polynôme, sinon \(
+    \pdiff^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \pden_\ind^{\lgr\indl}
+  \) en est un, d'après le lemme précédent.
+
+  Le calcul du degré est direct et on ne détaille donc que l'estimation de
+  norme : chaque terme de la somme est majoré en norme par
   \begin{align}
     \prod_{\ind = \anydim + 1}^{\dimp}
     \prod_{ \indi_\ind = 1 }^{ \ip* }
@@ -436,18 +439,18 @@ Nous allons maintenant étudier les images des monômes en \( \vp / \vp[\anydim]
   certains facteurs.
 
   Enfin, on constate que chaque terme de la somme définissant
-  \( \pmnum^\derp_\dv ( \anyvp^\ip ) \) contient un facteur de la forme
+  \( P^\derp_{\ip, \dv} \) contient un facteur de la forme
   \(
     \prod_{\indi_0 = 1}^{\ip[0]}
-    \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \anyvp[0] )
+    \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \frac{ \vp[0] }{ \vp[\anydim] } )
+    \vp[\anydim]
   \). On peut supposer que \( \gmp\nu[0, \indi_0] \in \N \times
     \set{0}^{\anydim-1} \) car sinon ce facteur, donc le terme correspondant,
   est nul. De plus, on a \( \sum_{\indi_0 = 1}^{\ip[0]} \gmp\nu[0, \indi_0][0]
     \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
-  nuls dans cette somme, donc \( \anyvp[0]^{\!\!\ip[0] - \derp[0]} \) est en
-  facteur de chaque terme non nul de la somme définissant \( \pmnum^\derp_\dv
-    ( \anyvp^\ip ) \), ce qui prouve l'assertion sur l'ordre.
-  % FIXME: \!\! above is a bad hack working around bad macros
+  nuls dans cette somme, donc \( \vp[0]^{\ip[0] - \derp[0]} \) est en
+  facteur de chaque terme non nul de la somme définissant \( P^\derp_{\ip,
+      \dv} \), ce qui prouve l'assertion sur l'ordre.
 \end{proof}
 
 
@@ -632,7 +635,7 @@ particulières, en commençant par celles qui admettent un monôme en les \(
     (-1)^q
     G^{\lgr\dermp - q}
     \prod_{p=1}^{q}
-    P^\dermp_{G, \dv}
+    P^{\gmp\nu_p}_{G, \dv}
   \end{equation}
   est un polynôme du degré annoncé. L'estimation de norme est elle aussi
   immédiate, sauf peut-être aux places archimédiennes. On remarque alors que
