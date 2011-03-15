@@ -93,8 +93,6 @@ Macros {{{2
 (A) passer à mathstyle et laisser tomber les astuces de \bgroup
     Usage à revoir dans tout Vojta
 
-(B) \bsc partout et substitution sc/b donne up/b
-
 (B) retrier les macros de Vojta
 
 (B) Nomenclature : numéros de page.

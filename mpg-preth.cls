@@ -34,6 +34,8 @@
 \usepackage[sc, osf]{mathpazo} \linespread{1.05}
 \usepackage{amssymb}
 \renewcommand\sfdefault{iwona}
+\rmfamily
+\DeclareFontShape{T1}{pplj}{bx}{sc}{<->ssub*pplj/bx/n}{}
 
 \usepackage{xcolor}
 \colorlet{mark}{black!50}
