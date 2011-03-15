@@ -63,6 +63,9 @@
 \if@showkeys
   \usepackage[notref, notcite, color]{showkeys}
   \colorlet{labelkey}{keys}
+  \renewcommand\showkeyslabelformat [1] {%
+    \normalfont\scriptsize\ttfamily #1%
+  }
 \fi
 
 % overfullrule (implement 'nobad' option) [[2
