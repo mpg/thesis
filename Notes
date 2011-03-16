@@ -101,9 +101,6 @@ Macros {{{2
 
 (C) Normes v-adiques: comment ajuster la taille façon mathtools ?
 
-(C) Liste des constantes : même style visuel que la nomenclature. Utiliser
-carrément \nomencl avec un nouveau groupe ?
-
 (C) normes et hauteurs : virer les vieilles version imprécises, indiquer
 systématiquement la norme ou mesure archimédienne utilisée
 

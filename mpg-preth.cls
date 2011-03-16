@@ -145,7 +145,7 @@
     \Substitute*{\the\ted@toks} {\string\PH}           {\PH{}}%
     \Substitute*{\the\ted@toks} {\string\PHi}          {\PHi{}}%
     \makebox[0pt][r]{%
-      \color{keys}\ttfamily \the\ted@toks \space}%
+      \color{keys}\ttfamily\footnotesize \the\ted@toks \space}%
   \fi}
 
 \newcommand*\nom@type [3] {%
@@ -161,6 +161,7 @@
 \nom@type \nomn B {Signes numériques}
 \nom@type \nomg C {Lettres grecques}
 \nom@type \noma D {Lettres latines}
+\nom@type \nomc E {Constantes automatiques}
 
 % placeholders for descriptions
 \newcommand*\nom@ph [2] {%
@@ -175,11 +176,17 @@
     \labelwidth\nom@tempdim
     \leftmargin\labelwidth
     \advance\leftmargin\labelsep
-  \itemsep\nomitemsep
+    \itemsep\nomitemsep
     \let\makelabel\nomlabel}%
   }{%
   \endlist
   \nompostamble}
+
+% use the same style as table of stuff for page numbers
+\renewcommand\pagedeclaration[1]{%
+  \begingroup \def\vskip##1\p@{}%
+  \@dottedtocline{-1}{0pt}{0pt}{}{#1}%
+  \endgroup}
 
 % frenchb settings [[2
 %
@@ -469,15 +476,11 @@
     \protected@write\@auxout{}{\global\string\@namedef{cst@@#2}{, #1}}%
   }%
   \if@display \label{e:cst-#2}\noeqref{e:cst-#2}\fi
-  \addcontentsline{loc}{constant}{%
-    \protect\printmacro{#2}%
-    \protect\cst{#2}
-    \if@display \space définie par~\protect\refeq{e:cst-#2}\fi
-  }%
+  \begingroup \edef\x{\endgroup
+    \noexpand\nomc{\alph{cst}}{\unexpanded{\cst{#2}}}{%
+      \if@display \unexpanded{définie par~\protect\refeq{e:cst-#2}}\fi}%
+  }\x
   \cst{#2}}
-
-\noma{cvx}{c_{\PH, \PHi}}{Constante numéro \PH, dépendant éventuellement de la
-  place \PHi --- voir~\ref{sec:index-cst}}
 
 \tocbasicautomode
 \addtotoclist{loc}
