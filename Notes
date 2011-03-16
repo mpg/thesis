@@ -90,16 +90,13 @@ nomenclature.)
 Macros {{{2
 ------
 
-(A) passer à mathstyle et laisser tomber les astuces de \bgroup
-    Usage à revoir dans tout Vojta
-
 (B) retrier les macros de Vojta
 
 (B) Nomenclature : numéros de page.
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
 
-(C) Normes v-adiques: comment ajuster la taille façon mathtools ?
+(C) Normes v-adiques : comment ajuster la taille façon mathtools ?
 
 (C) normes et hauteurs : virer les vieilles version imprécises, indiquer
 systématiquement la norme ou mesure archimédienne utilisée

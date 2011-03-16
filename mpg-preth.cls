@@ -46,15 +46,17 @@
 % load various usefull packages [[2
 %
 \usepackage{mathtools, amsthm}
-\usepackage[all]{xy}
-\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
-\usepackage{enumitem}
-\usepackage{git-info, eso-pic}
-\usepackage[noprefix, nocfg, french]{nomencl}
+\usepackage{git-info, ted, mparhack} % need to be loaded before mathstyle
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true,
   autopunct=true, babel=hyphen,
   hyperref=true, backref=false]{biblatex}
+\usepackage{mathstyle}
+\usepackage[all]{xy}
+\usepackage{ifmtarg, fixltx2e, xargs, xspace, cmdstring, trace}
+\usepackage{enumitem}
+\usepackage{eso-pic}
+\usepackage[noprefix, nocfg, french]{nomencl}
 \usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
@@ -270,15 +272,15 @@
 \newcommand*\newc@star@default[1]{%
   \expandafter\newc@star@default@ \csname\cmdstring#1 \endcsname#1}
 \newcommandx*\newc@star@default@[7][3=1,4]{%
-  \newcommandx*#1[#3][1,#4]{#7\egroup}%
-  \newcommand*#2{\bgroup \star@default@parser{#1}{#5}{#6}}}
+  \newcommandx*#1[#3][1,#4]{#7}%
+  \newcommand*#2{\star@default@parser{#1}{#5}{#6}}}
 
 % one mandatory argument first
 \newcommand*\newc@star@default@i[1]{%
   \expandafter\newc@star@default@i@ \csname\cmdstring#1 \endcsname#1}
 \newcommandx*\newc@star@default@i@[7][3=2,4]{%
-  \newcommandx*#1[#3][2,#4]{#7\egroup}%
-  \newcommand*#2[1]{\bgroup \star@default@parser{#1{##1}}{#5}{#6}}}
+  \newcommandx*#1[#3][2,#4]{#7}%
+  \newcommand*#2[1]{\star@default@parser{#1{##1}}{#5}{#6}}}
 
 % Two special optional arguments
 % - by default, both empty
@@ -295,22 +297,22 @@
 \newcommand*\newc@star@deftwo[1]{%
   \expandafter\newc@star@deftwo@ \csname\cmdstring#1 \endcsname#1}
 \newcommandx*\newc@star@deftwo@[7][3=2,4]{%
-  \newcommandx*#1[#3][1,2,#4]{#7\egroup}%
-  \newcommand*#2{\bgroup \star@deftwo@parser{#1}{#5}{#6}}}
+  \newcommandx*#1[#3][1,2,#4]{#7}%
+  \newcommand*#2{\star@deftwo@parser{#1}{#5}{#6}}}
 
 % one mandatory argument first
 \newcommand*\newc@star@deftwo@i[1]{%
   \expandafter\newc@star@deftwo@i@ \csname\cmdstring#1 \endcsname#1}
 \newcommandx*\newc@star@deftwo@i@[7][3=3,4]{%
-  \newcommandx*#1[#3][2,3,#4]{#7\egroup}%
-  \newcommand*#2[1]{\bgroup \star@deftwo@parser{#1{##1}}{#5}{#6}}}
+  \newcommandx*#1[#3][2,3,#4]{#7}%
+  \newcommand*#2[1]{\star@deftwo@parser{#1{##1}}{#5}{#6}}}
 
-% su{b,per}script-friendly starred macros [[2
+% (multi-)starred macros [[2
 %
 \newcommand*\newc@ifstar [3] {%
-  \newcommand#1{\bgroup\@ifstar{#3\egroup} {#2\egroup}}}
+  \newcommand#1{\@ifstar{#3} {#2}}}
 \newcommand*\newc@ifstar@two [4] {%
-  \newcommand#1{\bgroup\@ifstar{\@ifstar{#4\egroup}{#3\egroup}} {#2\egroup}}}
+  \newcommand#1{\@ifstar{\@ifstar{#4}{#3}} {#2}}}
 
 % coma-separated list with possibly empty elements [[2
 %
