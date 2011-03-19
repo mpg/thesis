@@ -43,20 +43,20 @@
 \colorlet{todo}{red}
 \colorlet{later}{blue}
 
-% load various usefull packages [[2
+% load various useful packages [[2
 %
 \usepackage{mathtools, amsthm}
-\usepackage{git-info, ted, mparhack} % need to be loaded before mathstyle
+\usepackage{mathstyle}
+\catcode`\^7 \catcode`\_8 % useful for mathstyle < 0.89
+\usepackage[all]{xy}
+\usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
+\usepackage{enumitem}
+\usepackage{git-info, eso-pic}
+\usepackage[noprefix, nocfg, french]{nomencl}
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true,
   autopunct=true, babel=hyphen,
   hyperref=true, backref=false]{biblatex}
-\usepackage{mathstyle}
-\usepackage[all]{xy}
-\usepackage{ifmtarg, fixltx2e, xargs, xspace, cmdstring, trace}
-\usepackage{enumitem}
-\usepackage{eso-pic}
-\usepackage[noprefix, nocfg, french]{nomencl}
 \usepackage[expansion=false, babel=true]{microtype}
 \usepackage[british, frenchb]{babel}
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
@@ -337,15 +337,15 @@
 
 % supscripts and subscripts [[2
 %
-\newcommand* \ssub [1] {\@ifnotmtarg{#1}{_{#1}}}
-\newcommand* \ssup [1] {\@ifnotmtarg{#1}{^{#1}}}
+\newcommand* \ssub [1] {\@ifnotmtarg{#1}{\sb{#1}}}
+\newcommand* \ssup [1] {\@ifnotmtarg{#1}{\sp{#1}}}
 
 % parenthesized superscript with optional subscript
 \newcommandx*\pexp [2][2] {%
   \@ifmtarg{#2}{%
-    \@ifnotmtarg{#1}{\cramped{^{(#1)}}}%
+    \@ifnotmtarg{#1}{\cramped{\sp{(#1)}}}%
     }{%
-    \@ifnotmtarg{#1}{^{(#1)}}_{#2}}}
+    \@ifnotmtarg{#1}{\sp{(#1)}}\sb{#2}}}
 
 % standard sets [[2
 %
@@ -361,7 +361,7 @@
 \newcommand     \GL     {\std{GL}}
 
 \newcommand* \proj [2][] {\Proj \ssup{#2}                 \ssub{#1}}
-\newcommand* \aff  [2][] {\Aff  \@ifnotmtarg{#2}{^{\!#2}} \ssub{#1}}
+\newcommand* \aff  [2][] {\Aff  \@ifnotmtarg{#2}{\sp{\!#2}} \ssub{#1}}
 
 \noma{P}{\proj\PH}{L'espace projectif standard de dimension \PH}
 \noma{A}{\aff \PH}{L'espace affine standard de dimension \PH}
@@ -416,11 +416,11 @@
 % general algebraic geometry [[2
 %
 \newcommand \Ideal {\mathcal I}
-\newcommand*\ideal [1] {\Ideal_{#1}}
+\newcommand*\ideal [1] {\Ideal\sb{#1}}
 \noma{I}{\ideal\PH}{Idéal (multi)homogène saturé de la variété plongée \PH}
 
 \newcommand \Ring {\mathcal R}
-\newcommand*\ring [1] {\Ring_{#1}}
+\newcommand*\ring [1] {\Ring\sb{#1}}
 \noma{R}{\ring\PH}{Anneau des coordonnées (multi)homogènes de la variété
   plongée \PH}
 
@@ -433,7 +433,7 @@
 \noma{Z}{\zeros\PH}{Lieu des zéros de la (famille de) forme(s) \PH}
 
 \newcommand \Chow {f}
-\newcommand*\chow [1] {\Chow_{#1}}
+\newcommand*\chow [1] {\Chow\sb{#1}}
 \noma{f}{\chow\PH}{Forme de \bsc{Chow} de la variété plongée \PH}
 
 \newcommand \md {\mathfrak{d}}
@@ -464,7 +464,7 @@
 % print an automatic constant
 \newcounter{cst}
 \newcommand*\cst [1] {%
-  \ensuremath{ c_{ \ref{cst@#1} \@nameuse{cst@@#1} } }}
+  \ensuremath{ c\sb{ \ref{cst@#1} \@nameuse{cst@@#1} } }}
 
 % define an automatic constant
 % Warning: puts a label e:cst-<name>, no other label allowed for this equation
@@ -504,7 +504,7 @@
 \nomn{0} {\oa}     {L'origine de $\va$}
 \noma{g} {\genre}  {La dimension de $\va$}
 
-\newcommand*\MW[2][\va]{MW_{\!#1}(#2)}
+\newcommand*\MW[2][\va]{MW\sb{\!#1}(#2)}
 \noma{MW}{\MW[\PHi]\PH}{Espace de \MoW de la variété abélienne \PHi sur le
   corps \PH}
 
@@ -512,7 +512,7 @@
 \nomg{Theta} {\mmemb} {Plongement de \bsc{Mumford modifié}}
 
 \newcommand \placesapx  { \mathcal S }
-\newcommand \placerange { _{\place \in \placesapx} }
+\newcommand \placerange { \sb{\place \in \placesapx} }
 
 \newcommand*\wtapx [1][\place] { \lambda\ssub{#1} }
 \newcommand*\degv  [1][\place] { \Delta \ssub{#1} }
@@ -536,10 +536,10 @@
 
 % archimedian norms and measures [[2
 %
-\newcommand*\normsup [1]   {\norm{#1}_\infty}
-\newcommand*\normlun [1]   {\norm{#1}_1}
-\newcommand*\normeuc [1]   {\norm{#1}_2}
-\newcommand*\normhom [1]   {\norm{#1}_{\mathrm h}}
+\newcommand*\normsup [1]   {\norm{#1}\sb\infty}
+\newcommand*\normlun [1]   {\norm{#1}\sb1}
+\newcommand*\normeuc [1]   {\norm{#1}\sb2}
+\newcommand*\normhom [1]   {\norm{#1}\sb{\mathrm h}}
 \newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 \newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 
@@ -554,8 +554,8 @@
 \newcommand* \av  [2][\place] {\abs   {#2}\ssub{#1}}
 \newcommand* \Onv [2][\place] {\norm  {#2}\ssub{#1}}
 \newcommand* \Onnv[2][\place] {\nnorm {#2}\ssub{#1}}
-\newcommand* \nv  [3][\place] {\norm  {#3}_{#1, #2}}
-\newcommand* \nnv [3][\place] {\nnorm {#3}_{#1, #2}}
+\newcommand* \nv  [3][\place] {\norm  {#3}\sb{#1, #2}}
+\newcommand* \nnv [3][\place] {\nnorm {#3}\sb{#1, #2}}
 \newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
 
@@ -570,8 +570,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{Mv}{\mvp\PH}{Mesure de \bsc{Philippon} de la forme \PH si
   $\place$ est archimédienne, norme du $\sup$ sinon}
 
-\newcommand \dv  {{\delta\smash{_\place}}}
-\newcommand \dpv {{\delta'_\place}}
+\newcommand \dv  {{\delta\smash{\sb\place}}}
+\newcommand \dpv {{\delta'\sb\place}}
 
 \noma{dv1}{\dv }{Vaut $1$ si $\place$ est archimédienne, est nul sinon}
 \noma{dv2}{\dpv}{Vaut $1$ si $\place$ est archimédienne ou divise $2$, est nul
@@ -584,7 +584,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{dist}{\distv\PH\PHi}{Distance $\place$-adique projective entre \PH et
   \PHi}
 
-\newcommand*\mv [2][\place] {M_{#1}(#2)}
+\newcommand*\mv [2][\place] {M\sb{#1}(#2)}
 \noma{M}{\mv\PH}{Mesure homogène locale en $\place$ de la
   forme \PH : c'est la norme du $\sup$ aux places finies et la mesure de
   \bsc{Philippon} aux places infinies}
@@ -616,8 +616,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \ind      {k}
 \newcommand \indi     {l}
-\newcommand \indrange  {_{\ind =0}^\dimp}
-\newcommand \indirange {_{\indi=0}^\dimp}
+\newcommand \indrange  {\sb{\ind =0}\sp\dimp}
+\newcommand \indirange {\sb{\indi=0}\sp\dimp}
 \noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
 \noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
@@ -664,7 +664,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
   donc aussi la puissance de $\va$ dans laquelle on travaille.}
 
 \newcommand \fct      {i}
-\newcommand \fctrange  {_{\fct =1}^\puiss}
+\newcommand \fctrange  {\sb{\fct =1}\sp\puiss}
 \noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
 
 \newcommand \pmp {x}
@@ -676,7 +676,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \imp {\gmp \lambda}
 \nomg{lambda}{\lambda}{Un indice multiprojectif, dans
-  \( \bigl( \N^{\dimp + 1} \bigr)^\puiss \)}
+  \( \bigl( \N\sp{\dimp + 1} \bigr)\sp\puiss \)}
 
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
@@ -728,12 +728,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % various "epsilons" [[2
 %
-% Note: no additional braces, or \expi^2 would be typeset incorrectly
-\newcommand \epsz   {\eps_0}
-\newcommand \epsi   {\eps_1}
-\newcommand \epsii  {\eps_2}
-\newcommand \epsiii {\eps_3}
-\newcommand \epsiv  {\eps_4}
+% Note: no additional braces, or \expi\sp2 would be typeset incorrectly
+\newcommand \epsz   {\eps\sb0}
+\newcommand \epsi   {\eps\sb1}
+\newcommand \epsii  {\eps\sb2}
+\newcommand \epsiii {\eps\sb3}
+\newcommand \epsiv  {\eps\sb4}
 
 \nomg{eps0}{\epsz  }{Un epsilon}
 \nomg{eps1}{\epsi  }{Un autre epsilon}
@@ -750,9 +750,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % constants in the theorem itself [[2
 %
-\newcommand \Vbig { \alpha _{\mathrm{V}} }
-\newcommand \Vfar { \beta  _{\mathrm{V}} }
-\newcommand \Vcos { \gamma _{\mathrm{V}} }
+\newcommand \Vbig { \alpha \sb{\mathrm{V}} }
+\newcommand \Vfar { \beta  \sb{\mathrm{V}} }
+\newcommand \Vcos { \gamma \sb{\mathrm{V}} }
 
 % general situation [[2
 %
@@ -765,9 +765,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newc@star@default \excep   {\fct }{\puiss } {\Excep\ssub{#1}}
 \newc@star@default \excepi  {\fcti}{\puiss*} {\Excep'\ssub{#1}}
 \newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
-\newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}^2}
+\newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}\sp2}
 \newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
-\newc@star@default \wtis    {\fcti}{\puiss*} {a\ssub{#1}^2}
+\newc@star@default \wtis    {\fcti}{\puiss*} {a\ssub{#1}\sp2}
 
 \noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
 \noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
@@ -783,7 +783,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \mexpi {\smpi{}}
 
 \newcommand \fcti      {j}
-\newcommand \fctirange {_{\fcti=1}^\puiss*}
+\newcommand \fctirange {\sb{\fcti=1}\sp\puiss*}
 \noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
 
 \newcommand \vmpi {\smpi Y}
@@ -806,7 +806,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Stairs { \mathcal E }
 \newcommand \Vanish {\@ifstar {\mathfrak{\tilde q}} {\mathfrak q}}
 
-\newcommand \wt@scale [1][\delta\epsi] { _{\wt} ^{#1} }
+\newcommand \wt@scale [1][\delta\epsi] { \sb{\wt} \sp{#1} }
 \newcommand \stairs {\Stairs\wt@scale}
 \newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
 
@@ -815,8 +815,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{q1}{\vanish*}{Idéal d'annulation associé à $\stairs$}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
-\newcommand \wtsum {\@ifstar{ S^\wt_0 }{ S^\wt }}
-\newc@star@default \inda {\divi}{\excep} {\Aind^\wt\ssub{#1}}
+\newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
+\newc@star@default \inda {\divi}{\excep} {\Aind\sp\wt\ssub{#1}}
 
 \noma{S}{\wtsum}{Somme pondérée utilisée dans la définition de l'indice
   d'annulation}
@@ -824,13 +824,13 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
   long de) \PHi}
 
 % various (degree) conditions for subsets in lemmas
-\newc@ifstar\Dz   { \delta d  }{ \delta d_\fct }
+\newc@ifstar\Dz   { \delta d  }{ \delta d\sb\fct }
 \newcommand \Di   {{\delta d'}}
 \newcommand \Dii  {{\delta d'}}
-\newc@ifstar\Diii { \delta d' + r }{ \delta d'_\fct + r_\fct }
-\newcommand \Ci   { _\Di   ^{C'}   }
-\newcommand \Cii  { _\Dii  ^{C''}  }
-\newcommand \Ciii { _\Diii ^{C'''} }
+\newc@ifstar\Diii { \delta d' + r }{ \delta d'\sb\fct + r\sb\fct }
+\newcommand \Ci   { \sb\Di   \sp{C'}   }
+\newcommand \Cii  { \sb\Dii  \sp{C''}  }
+\newcommand \Ciii { \sb\Diii \sp{C'''} }
 
 % the product sub-variety considered and its attributes [[2
 %
@@ -854,15 +854,15 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % local indices for extrapolation [[2
 %
-\newc@star@default \indv  {\fct }{\puiss} {\ind _{\place \slast{#1}}}
-\newc@star@default \indiv {\fcti}{\puiss} {\indi_{\place \slast{#1}}}
-\newc@star@default \indig {\fcti}{\puiss} {\indi_{{#1}}}
+\newc@star@default \indv  {\fct }{\puiss} {\ind \sb{\place \slast{#1}}}
+\newc@star@default \indiv {\fcti}{\puiss} {\indi\sb{\place \slast{#1}}}
+\newc@star@default \indig {\fcti}{\puiss} {\indi\sb{{#1}}}
 
 
 % misc (ok) [[2
 %
-\newcommand \rdiv  { \rho_{\mathrm{div }} }
-\newcommand \relim { \rho_{\mathrm{elim}} }
+\newcommand \rdiv  { \rho\sb{\mathrm{div }} }
+\newcommand \relim { \rho\sb{\mathrm{elim}} }
 
 \nomg{rho}{\rdiv}{Morphisme de réduction par division dans la construction de
   la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
@@ -909,8 +909,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 %
 \nomg{alpha}{\alpha}{Parfois utilisé localement comme indice ou (multi)degré}
 \nomg{beta} {\beta} {Parfois utilisé localement comme indice ou (multi)degré}
-\noma{f} {f} {Parfois un multiindice, élément de \( \N^\puiss \)}
-\nomg{Delta}{\Delta}{Parfois un multidegré, élément de \( \N^\puiss \)}
+\noma{f} {f} {Parfois un multiindice, élément de \( \N\sp\puiss \)}
+\nomg{Delta}{\Delta}{Parfois un multidegré, élément de \( \N\sp\puiss \)}
 \noma{p}{p}{Parfois un entier ou un (multi)multiindice}
 \noma{q}{q}{Parfois un entier ou un (multi)multiindice}
 
@@ -927,11 +927,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand  \pmnum {\Delta}
 \newcommand  \pmden {\Gamma}
 
-\newcommand \pdiff {\@ifstar{\Delta}{\Delta_\dv}}
+\newcommand \pdiff {\@ifstar{\Delta}{\Delta\sb\dv}}
 
 % misc [[2
 %
-\newcommand \hclab {\@ifstar{ c_{\va, \place} }{ c_{\va} }}
+\newcommand \hclab {\@ifstar{ c\sb{\va, \place} }{ c\sb{\va} }}
 
 % unsorted math stuff [[1
 % -------------------
