@@ -6,11 +6,10 @@
 \section{Stratégie de la preuve}
 
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
-particulier où la variété à approcher est la diviseur \( \divi \) découpé par
+particulier où la variété à approcher est le diviseur \( \divi \) découpé par
 l'hyperplan d'équation \( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous
 verrons plus tard que ce cas particulier implique le cas général.
-
-Le but du chapitre est de prouver le théorème suivant.
+Le but du chapitre est donc de prouver le théorème suivant.
 
 \begin{thm} \label{t:vojta-div}
   Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \ex[1],
@@ -44,38 +43,20 @@ Le but du chapitre est de prouver le théorème suivant.
   \end{align}
 \end{thm}
 
-Nous commençons par réduire ce théorème à un énoncé d'aspect technique se
-prêtant bien à une démonstration par la méthode de \TS, que nous appliquons
-alors.
-
 \noma*{e}{(\ex*)}{Points dont l'existence contredirait le
   théorème~\ref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
-famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Nous
-regarderons cette famille comme un point de \( \va^\puiss \) plongée dans
-l'espace multiprojectif \( (\proj\dimp)^\puiss \) associé à l'anneau
-multigradué
-\begin{math}
-  \cdn [
-    \vmp[1][0], \dots, \vmp[1][\dimp];
-    \dots;
-    \vmp[\puiss][0], \dots \vmp[\puiss][\dimp]
-  ]
-  =
-  \cdn [ \vmp[1], \dots, \vmp[\puiss] ]
-  =
-  \cdn [ \vmp ]
-\end{math}.
-La famille \( \ex \) est toujours supposée satisfaire aux
-conditions~\eqref{e:Vapx} à~\eqref{e:Vcos} ; toutefois par souci de clarté on
-rappellera dans la plupart des énoncés lesquelles de ces conditions sont
-utilisées.
+famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Bien que cette
+famille soit toujours supposée satisfaire aux conditions du théorème,
+nous préciserons la ou lesquelles nous utilisons dans les hypothèses
+de la plupart des énoncés, par souci de clarté.
 
-La preuve utilisera des combinaisons linéaires de \( \ex* \) de petit
-hauteur. Les lemmes suivants nous donneront des bons coefficients pour ces
-combinaisons ; nous les choisirons entiers et n'ayant que $2$ et $3$ pour
+Nous utiliserons des combinaisons linéaires des \( \ex* \) de petite hauteur.
+Les lemmes suivants permettent de choisir les coefficients pour ces
+combinaisons ; nous les prendrons entiers et n'ayant que $2$ et $3$ pour
 diviseurs premiers, de sorte à disposer de représentations polynomiales
-convenable, voir section~\ref{sec:form-ab-alt}.
+convenables des formes linéaires abéliennes associées, voir
+section~\ref{sec:form-ab-alt}.
 
 \begin{lem} \label{l:wt-choose-gen}
   Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
@@ -103,7 +84,7 @@ convenable, voir section~\ref{sec:form-ab-alt}.
   \end{equation}
   soit en prenant les logarithmes et en divisant par deux :
   \begin{equation}
-    \abs{
+    \abs*{
       b_{\fct2} \log 2 + b_{\fct3} \log 3
       - \frac12 \log \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
     }
@@ -187,6 +168,8 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
 \begin{scho} \label{s:wt-choose}
   \noma*{a}{(\wt*)}{Poids associés à \( (\ex*) \) et fixés par la
     scholie~\ref{s:wt-choose}}
+  \nomg*{zeta}{\zeta}{Constante proche de zéro fixée par la
+    scholie~\ref{s:wt-choose}}
   On choisit désormais une fois pour toute une famille \( (\wt*) \) donnée par
   l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta = \sqrt{2\Vcos}
   \) de sorte qu'on a
@@ -202,17 +185,75 @@ Cette dernière égalité découle directement de~\eqref{e:hautn-wt-diff-gen} en
 tenant compte du fait que \( 1 + \zeta \le 3/2 \) car \( \Vcos \le 1/4 \).
 \label{ct:Vcos<1/4}
 
+Étudions maintenant quelques propriétés de ces poids, en sus de celles déjà
+énoncées, en exploitant le fait que les \( \ex* \) satisfont à
+\eqref{e:Vbig}. Pour commencer, la suite \( \wts[1], \dots, \wts** \) décroît
+au moins comme une suite géométrique de raison inférieure à $1$. Plus
+précisément, on a
+\begin{equation} \label{e:wt-geom}
+  \frac1{1+\zeta} \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
+  \le
+  \wts*
+  \le
+  (1+\zeta) \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
+\end{equation}
+en appliquant directement la définition de \( \wt* \). En particulier, comme
+\( \wts** \) est un entier naturel non nul, on a
+\begin{equation} \label{e:wt-1-big}
+  \wts[1] \ge \frac{\Vfar^{\puiss*}}{1+\zeta}
+  \pmm.
+\end{equation}
+On peut ainsi majorer les sommes de \( \wts* \) essentiellement par \( \wts[1]
+\) ; par exemple, l'énoncé suivant qui nous sera utile par la suite.
+
+\begin{lem}
+  Il existe \( \epsiii \le 5/\Vfar \) tel que
+  \begin{equation} \label{e:def-epsiii}
+    \sum_{\fct=1}^\puiss (\wts* + \wts**) \le \wts[1] (1 + \epsiii)
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  En effet, on a
+  \begin{align}
+    \frac1{\wts[1]} \sum_{\fct=1}^\puiss (\wts* + \wts**)
+    & = 1
+    + \frac{\puiss \wts**}{\wts[1]}
+    + \sum_{\fct=2}^\puiss \frac{\wts*}{\wts[1]}
+    \\
+    & \le 1
+    + \frac{\puiss(1+\zeta)}{\Vfar^{\puiss*}}
+    + (1+\zeta) \sum_{\fct=2}^\puiss \Vfar^{-\fct+1}
+    \\
+    & \le 1 + (1+\zeta) \left(
+      \Bigl( \frac2\Vfar \Bigr)^{\puiss-1}
+      + \frac1\Vfar
+    \right)
+  \end{align}
+  Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \) et que \(
+    \zeta < 1/2 \).
+\end{proof}
+
+\subsection{Première réduction}
+
 % TODO: énoncer la prop avec la var produit
 
 % TODO: prouver qu'elle implique vojta
+
+\subsection{Seconde réduction}
 
 % TODO: énoncer la prop avec la forme obstructrice
 
 % TODO: prouver qu'elle implique la prop prec
 
-% TODO: introduire le plongement éclatant, lemme de degré et stratégie Thue
+\subsection{Plongements projectifs adaptés}
 
 % TODO: plongements adaptés : def, prop, supposition et hauteur
+
+\subsection{Plongement éclatant}
+
+% TODO: introduire le plongement éclatant, lemme de degré et stratégie Thue
 
 
 \section{Provisoire, à ventiler}
@@ -372,40 +413,8 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 
 \subsection{Plongement abélien pondéré} \label{sec:wemb}
 
-Par la suite, on se donnera un point
-$(\ex = \ex[1], \dots, \ex[\puiss])$
-de $\var(\Qbar)$, où les $\ex*$ sont de hauteur grandes et étagées entre
-elles, contenus dans un secteur de cône de l'espace de \bsc{Mordell-Weil}. On
-définira alors les poids $\wt*$ par
-\begin{equation}
-  \wt* =
-  \left\lfloor
-  \frac {\norm{\ex*}} {\norm{\ex[1]}}
-  + \frac12
-  \right\rfloor
-  \pmm,
-\end{equation}
-où $\norm\truc$ représente la norme associée à la hauteur normalisée dans
-l'espace de \bsc{Mordell-Weil} de $\va$ (on commet l'abus consistant à noter
-encore $\ex*$ l'image de $\ex*$ dans cet espace).
-
-On introduit un réel $\epsiii$ satisfaisant à
-\begin{equation} \label{e:def-epsiii}
-  \sum_{\fct=1}^\puiss (\wts* + 1) < \wts[1] (1 + \epsiii)
-  \pmm.
-\end{equation}
-\todo La définition de \( \wt \), les hypothèses faites sur \( \ex \) et la
-géométrie euclidienne montrent alors qu'on peut prendre \( \epsiii \) plutôt
-petit\dots
-
-La géométrie euclidienne montre\footnote{
-  Les détails sont présents dans la preuve de l'inégalité à la \bsc{Mumford}.
-  Cette information est en fait inutile ici ; on souhaite seulement justifier
-  vaguement le rôle du plongement éclatant.}
-aussi que $\wt* \ex* - \ex[\puiss]$ est de hauteur petite devant les
-hauteurs des différents $\ex*$. Pour nous aider à exploiter ultérieurement
-cette information, on introduit un plongement, dit \emph{éclatant}, associé à
-$\wt$, défini par
+Nous utiliserons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \)
+et défini par
 \begin{align} \label{e:def-wemb}
   \wemb \colon \var
   & \longto \va^\puiss \times \va^{\puiss-1}
@@ -414,9 +423,11 @@ $\wt$, défini par
   (x_1, \dots, x_\puiss)
   & \longmapsto
   (x_1, \dots, x_\puiss;
-  \wt[1] x_1 - x_\puiss, \wt[\puiss-1] x_{\puiss-1} - x_\puiss)
+  \wt[1] x_1 - \wt** x_\puiss, \wt[\puiss-1] x_{\puiss-1} - \wt** x_\puiss)
   \pmm.
 \end{align}
+% TODO macros ci-dessus pour x
+% TODO répercuter les \wt** manquants dans toute la suite
 
 On munit l'espace d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées
 multihomogènes $\vmp, \vmpi = \vmp[1], \dots, \vmp[\puiss], \vmpi[1],
