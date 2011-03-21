@@ -149,16 +149,32 @@
     \Substitute*{\the\ted@toks} {\string\PHi}          {\PHi{}}%
     \makebox[0pt][r]{%
       \color{keys}\ttfamily\footnotesize \the\ted@toks \space}%
-  \fi}
+  \fi
+  $#1$%
+}
 
-\newcommand*\nom@type [3] {%
-  \newcommand*#1[3]{%
-    \nomenclature[#2-##1--]{\printmacro{##2}$##2$}{##3}}%
-  \@namedef{nom@group@@#2}{#3}}
+\newcommand*\nom@type [1] {%
+  \expandafter\nom@type@\csname\cmdstring#1@\endcsname#1}
+\newcommand*\nom@type@ [4] {%
+  \newcommand #2 {\@ifstar{%
+      \begingroup \edef\next{\endgroup
+        \noexpand#1{\nom@local}%
+      }\next
+    }{%
+      #1{}%
+    }%
+  }%
+  \newcommand*#1 [4] {%
+    \nomenclature[#3-##2--]{\printmacro{##3}}{##1##4}}%
+  \@namedef{nom@group@@#3}{#4}}
+
+\begingroup \shorthandon{:} \expandafter\endgroup\@firstofone{%
+  \newcommand \nom@local {Chapitre \thechapter{} : \noexpand\MakeLowercase}
+}
 
 \renewcommand*\nomgroup [1] {%
   \item[\sffamily\bfseries \@nameuse{nom@group@@#1}]
-  }
+}
 
 \nom@type \noms A {Symboles}
 \nom@type \nomn B {Signes numériques}
