@@ -3,9 +3,9 @@
 \chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
 
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
-particulier où la variété à approcher est découpée par l'hyperplan d'équation
-\( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous verrons plus tard que
-ce cas particulier implique le cas général.
+particulier où la variété à approcher est la diviseur \( \divi \) découpé par
+l'hyperplan d'équation \( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous
+verrons plus tard que ce cas particulier implique le cas général.
 
 Le but du chapitre est de prouver le théorème suivant.
 
@@ -15,8 +15,8 @@ Le but du chapitre est de prouver le théorème suivant.
   suivantes :
   \begin{enumthm}
     \item \(
-        0 < \prod\placerange \distv{\excep*}{\divi}^{\degv}
-        < \hautm{\excep*}^{-\expapx}
+        0 < \distv{\excep*}{\divi}^{\degv}
+        < \hautm{\excep*}^{-\expapx} \quad \forall \place \in \placesapx
       \) ; \label{i:Vapx}
     \item \(
         \hautn{\excep[1]} > \Vbig
@@ -30,13 +30,11 @@ Le but du chapitre est de prouver le théorème suivant.
   \end{enumthm}
   avec
   \begin{align}
-    \puiss & = \dots
+    \Vbig & = \dots (\puiss)
     \\
-    \Vbig & = \dots
+    \Vfar & = \dots (\puiss)
     \\
-    \Vfar & = \dots
-    \\
-    \Vcos & = \dots
+    \Vcos & = \dots (\puiss)
   \end{align}
 \end{thm}
 
@@ -46,6 +44,23 @@ alors.
 
 
 \section{Stratégie de la preuve}
+
+La démonstration procède par l'absurde : si le théorème est faux, fixons une
+famille \( \excep[1], \dots, \excep[\puiss] \) qui le contredit. Nous
+regarderons cette famille comme un point de \( \va^\puiss \) plongée dans
+l'espace multiprojectif \( (\proj\dimp)^\puiss \) associé à l'anneau
+multigradué
+\begin{math}
+  \cdn [
+    \vmp[1][0], \dots, \vmp[1][\dimp];
+    \dots;
+    \vmp[\puiss][0], \dots \vmp[\puiss][\dimp]
+  ]
+  =
+  \cdn [ \vmp[1], \dots, \vmp[\puiss] ]
+  =
+  \cdn [ \vmp ]
+\end{math}.
 
 % TODO: introduire les \wt* et leurs propriétés
 
@@ -64,24 +79,6 @@ alors.
 
 \section{Provisoire, à ventiler}
 
-On suppose que $\va$ n'est pas contenue dans l'hyperplan
-d'équation $\ch0 = 0$, et on considère le diviseur $\divi$ découpé par
-$\ch0$ sur $\va$. On note enfin $\ideal\va$ l'idéal homogène saturé
-définissant $\va$ dans $\cdn [\ch0, \ldots, \ch\dimp]$.
-
-On considère $\puiss$ un entier positif, et $(\proj\dimp)^\puiss$ l'espace
-multiprojectif associé à l'anneau multigradué
-\begin{math}
-  \cdn [
-    \vmp[1][0], \dots, \vmp[1][\dimp];
-    \dots;
-    \vmp[\puiss][0], \dots \vmp[\puiss][\dimp]
-  ]
-  =
-  \cdn [ \vmp[1], \dots, \vmp[\puiss] ]
-  =
-  \cdn [ \vmp ]
-\end{math}.
 On s'intéresse à une sous-variété produit de $\va^\puiss$ plongée dans
 $(\proj\dimp)^\puiss$, notée
 \begin{math}
