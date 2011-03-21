@@ -704,19 +704,21 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 % height functions [[2
 %
-\newcommand \Hautm [1][] {\mathrm H \ssub{#1}}
-\newcommand \Hautl [1][] {\mathrm h \ssub{#1}}
-\newcommand \Hautn       {\smash{\hat\Hautl}}
+\newcommand*\Hautm [1][] {\mathrm H \ssub{#1}}
+\newcommand*\Hautl [1][] {\mathrm h \ssub{#1}}
+\newcommand \Hautn       {\hat\Hautl}
 
 \newcommand*\hautm [2][] {\Hautm[#1](#2)}
 \newcommand*\hautl [2][] {\Hautl[#1](#2)}
-\newcommand*\hautn [1]   {\Hautn   (#1)}
+\newcommand*\hautn [1]   {\Hautn    (#1)}
+\newcommand*\normn       {\abs}
 
 \noma{h}{\hautm[\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
                             utilisant la norme \PHi aux places archimédiennes}
 \noma{h}{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
                             utilisant la norme \PHi aux places archimédiennes}
-\noma{h}{\hautn      {\PH}}{Hauteur de \bsc{Néron}-\bsc{Tate} de \PH}
+\noma{h}{\hautn      {\PH}}{Hauteur de \NT de \PH}
+\noms{normn}{\normn\PH}{Norme de \NT de \PH}
 
 \newcommand* \scalaire [2] {\langle#1,#2\rangle}
 \newcommand* \angleabs [2] {\widehat{(#1,#2)}}

@@ -123,10 +123,7 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) Commencer les énoncés de géométrie euclidienne (voir \todo dans la section
-correspondante, actuellement sub:wemb).
-
-(A) écrire les choix des \wt et les conséquences euclidiennes de base
+(A) finir les réductions à rebours, cf les TODO dans i-start-vojta
 
 (A) Voir l'application du lemme du produit
 
@@ -221,6 +218,8 @@ l:  lem
 p:  prop
 s:  scho
 t:  thm
+
+ct: contrainte (provisoires ?)
 
 chap:   chapter
 sec:    section

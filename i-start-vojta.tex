@@ -2,6 +2,9 @@
 
 \chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
 
+
+\section{Stratégie de la preuve}
+
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est la diviseur \( \divi \) découpé par
 l'hyperplan d'équation \( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous
@@ -13,21 +16,21 @@ Le but du chapitre est de prouver le théorème suivant.
   Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \excep[1],
     \dots, \excep[\puiss] \) satisfaisant simultanément aux conditions
   suivantes :
-  \begin{enumthm}
-    \item \(
-        0 < \distv{\excep*}{\divi}^{\degv}
-        < \hautm{\excep*}^{-\expapx} \quad \forall \place \in \placesapx
-      \) ; \label{i:Vapx}
-    \item \(
-        \hautn{\excep[1]} > \Vbig
-      \) ; \label{i:Vbig}
-    \item \(
-        \hautn{\excep*} > \Vfar \hautn{\excep[\fct-1]}
-      \) ; \label{i:Vfar}
-    \item \(
-        \cos(\excep*, \excep[\fcti]) > 1 - \Vcos
-      \) ; \label{i:Vcos}
-  \end{enumthm}
+  \begin{align}
+    0 < \distv{\excep*}{\divi}
+    & < \hautm{\excep*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \label{e:Vapx}
+    \\
+    \hautn{\excep[1]} & > \Vbig
+    \label{e:Vbig}
+    \\
+    \hautn{\excep*} & > \Vfar \hautn{\excep[\fct-1]}
+    \label{e:Vfar}
+    \\
+    \cos(\excep*, \excep[\fcti]) & > 1 - \Vcos
+    \label{e:Vcos}
+  \end{align}
   avec
   \begin{align}
     \Vbig & = \dots (\puiss)
@@ -41,9 +44,6 @@ Le but du chapitre est de prouver le théorème suivant.
 Nous commençons par réduire ce théorème à un énoncé d'aspect technique se
 prêtant bien à une démonstration par la méthode de \TS, que nous appliquons
 alors.
-
-
-\section{Stratégie de la preuve}
 
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
 famille \( \excep[1], \dots, \excep[\puiss] \) qui le contredit. Nous
@@ -61,8 +61,139 @@ multigradué
   =
   \cdn [ \vmp ]
 \end{math}.
+La famille \( \excep \) est toujours supposée satisfaire aux
+conditions~\eqref{e:Vapx} à~\eqref{e:Vcos} ; toutefois par souci de clarté on
+rappellera dans la plupart des énoncés lesquelles de ces conditions sont
+utilisées.
 
-% TODO: introduire les \wt* et leurs propriétés
+La preuve utilisera des combinaisons linéaires de \( \excep* \) de petit
+hauteur. Les lemmes suivants nous donneront des bons coefficients pour ces
+combinaisons ; nous les choisirons entiers et n'ayant que $2$ et $3$ pour
+diviseurs premiers, de sorte à disposer de représentations polynomiales
+convenable, voir section~\ref{sec:form-ab-alt}.
+
+\begin{lem}
+  Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
+    3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, \puiss} \) :
+  \begin{equation} \label{e:wt-ratio}
+    \frac1{1 + \zeta}
+    \le
+    \frac{ \wts* \hautn{\excep*} }{ \wts[1] \hautn{\excep[1]} }
+    \le
+    1 + \zeta
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  On commence par choisir des rationnels \( b_\fct = 2^{b_{\fct2}}
+    3^{b_{\fct3}} \) tels que
+  \begin{equation}
+    \frac1{1 + \zeta}
+    \le
+    b_\fct^2 \frac{ \hautn{\excep*} }{ \hautn{\excep[1]} }
+    \le
+    1 + \zeta
+    \pmm,
+  \end{equation}
+  soit en prenant les logarithmes et en divisant par deux :
+  \begin{equation}
+    \abs{
+      b_{\fct2} \log 2 + b_{\fct3} \log 3
+      - \frac12 \log \frac{ \hautn{\excep*} }{ \hautn{\excep[1]} }
+    }
+    \le
+    \log (1 + \zeta)
+    \pmm.
+  \end{equation}
+  Comme \( \Z \log2 + \Z \log 3 \) est dense dans \( \R \), il est
+  certainement possible de choisir indépendamment pour chaque \( \fct \) deux
+  entiers \( b_{\fct2} \) et \( b_{\fct3} \) tels que cette dernière condition
+  soit satisfaite.
+
+  Il reste plus qu'à définir \( \wt[1] \) comme le plus petit dénominateur
+  commun des \( b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \(
+    \fct > 1 \).
+\end{proof}
+
+\begin{scho}
+  Pour tout famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
+  \begin{align} \label{wt-diff-hautn}
+    \abs[\big]{ \wts* \hautn{\excep*} - \wts[1] \hautn{\excep[1]} }
+    & \le \zeta \wts[1] \hautn{\excep[1]}
+    \\ \label{e:wt-diff-normn}
+    \abs[\big]{ \wt* \normn{\excep*} - \wt[1] \normn{\excep[1]} }
+    & \le \frac\zeta2 \wt[1] \normn{\excep[1]}
+  \end{align}
+\end{scho}
+
+Ces inégalités découlent immédiatement de l'encadrement donné en utilisant les
+comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
+  \zeta)^{1/2} \le 1 + \zeta/2 \) et le fait que \( \hautn\truc =
+  \normn\truc^2 \) par définition de la norme de \NT.
+
+\begin{lem}
+  Soit \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
+  à~\eqref{e:wt-ratio}. Si de plus la famille \( (\excep*) \) satisfait
+  à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, \puiss} \) on a
+  \begin{equation} \label{e:hautn-wt-diff-gen}
+    \hautn{\wt* \excep* - \wt** \excep**}
+    \le
+    \wt[1] \hautn{\excep[1]} \left(
+      \frac{\zeta^2}4 + \Vcos (1 + \zeta)
+    \right)
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  En développant le membre de gauche, il vient successivement
+  \begin{alignat}{2}
+    \normn{\wt* \excep* - \wt** \excep**}^2
+    & =
+    \normn{\wt* \excep*}^2 + \normn{\wt** \excep**}^2
+    - 2 \scalaire{\wt* \excep*}{\wt** \excep**}
+    \\
+    & = \wts* \normn{\excep*}^2 + \wts** \normn{\excep**}^2
+    - 2 \wt* \wt** \scalaire{\excep*}{\excep**}
+    \\
+    & = \left( \wt* \normn{\excep*} - \wt** \normn{\excep**} \right)^2
+    + 2 \wt* \wt** \left(
+      \normn{\excep*} \normn{\excep**} - \scalaire{\excep*}{\excep**}
+    \right)
+    \\
+    & \le \left( \wt* \normn{\excep*} - \wt** \normn{\excep**} \right)^2
+    + 2 \wt* \wt** \normn{\excep*} \normn{\excep**} \Vcos
+    && \text{d'après~\eqref{e:Vcos}}
+    \\
+    & \le \left( \frac\zeta2 \wt[1] \normn{\excep[1]} \right)^2
+    && \text{d'après~\eqref{e:wt-diff-normn}}
+    \\
+    & \qquad + \left( \wt[1] \normn{\excep[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
+    && \text{d'après~\eqref{e:wt-ratio}}
+    \\
+    & \le \wts[1] \normn{\excep[1]}^2 \left(
+      \frac{\zeta^2}4 + \Vcos (1 + \zeta)
+    \right)
+    \qedhere
+  \end{alignat}
+\end{proof}
+
+\begin{scho}
+  On choisit désormais une fois pour toute une famille \( (\wt*) \) donnée par
+  l'application du lemme~\ref{l:wt-choose} avec \( \zeta = \sqrt{2\Vcos} \) de
+  sorte qu'on a
+  \begin{equation} \label{e:hautn-wt-diff}
+    \hautn{\wt* \excep* - \wt** \excep**}
+    \le
+    \wt[1] \hautn{\excep[1]} 2 \Vcos
+    \pmm.
+  \end{equation}
+\end{scho}
+
+Cette dernière égalité découle directement de~\eqref{e:hautn-wt-diff-gen} en
+tenant compte du fait que \( 1 + \zeta \le 3/2 \) car \( \Vcos \le 1/4 \).
+\label{ct:Vcos<1/4}
 
 % TODO: énoncer la prop avec la var produit
 
