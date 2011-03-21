@@ -11,3 +11,5 @@
 *.nlo
 *.nls
 *.loc
+
+.*.swp
