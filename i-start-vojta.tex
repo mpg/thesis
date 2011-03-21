@@ -13,22 +13,22 @@ verrons plus tard que ce cas particulier implique le cas général.
 Le but du chapitre est de prouver le théorème suivant.
 
 \begin{thm} \label{t:vojta-div}
-  Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \excep[1],
-    \dots, \excep[\puiss] \) satisfaisant simultanément aux conditions
+  Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \ex[1],
+    \dots, \ex[\puiss] \) satisfaisant simultanément aux conditions
   suivantes :
   \begin{align}
-    0 < \distv{\excep*}{\divi}
-    & < \hautm{\excep*}^{-\wtapx \expapx}
+    0 < \distv{\ex*}{\divi}
+    & < \hautm{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \label{e:Vapx}
     \\
-    \hautn{\excep[1]} & > \Vbig
+    \hautn{\ex[1]} & > \Vbig
     \label{e:Vbig}
     \\
-    \hautn{\excep*} & > \Vfar \hautn{\excep[\fct-1]}
+    \hautn{\ex*} & > \Vfar \hautn{\ex[\fct-1]}
     \label{e:Vfar}
     \\
-    \cos(\excep*, \excep[\fcti]) & > 1 - \Vcos
+    \cos(\ex*, \ex[\fcti]) & > 1 - \Vcos
     \label{e:Vcos}
   \end{align}
   avec
@@ -48,10 +48,10 @@ Nous commençons par réduire ce théorème à un énoncé d'aspect technique se
 prêtant bien à une démonstration par la méthode de \TS, que nous appliquons
 alors.
 
-\noma*{e}{(\excep*)}{Une famille de points dont l'existence contredirait le
+\noma*{e}{(\ex*)}{Points dont l'existence contredirait le
   théorème~\ref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
-famille \( \excep[1], \dots, \excep[\puiss] \) qui le contredit. Nous
+famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Nous
 regarderons cette famille comme un point de \( \va^\puiss \) plongée dans
 l'espace multiprojectif \( (\proj\dimp)^\puiss \) associé à l'anneau
 multigradué
@@ -66,12 +66,12 @@ multigradué
   =
   \cdn [ \vmp ]
 \end{math}.
-La famille \( \excep \) est toujours supposée satisfaire aux
+La famille \( \ex \) est toujours supposée satisfaire aux
 conditions~\eqref{e:Vapx} à~\eqref{e:Vcos} ; toutefois par souci de clarté on
 rappellera dans la plupart des énoncés lesquelles de ces conditions sont
 utilisées.
 
-La preuve utilisera des combinaisons linéaires de \( \excep* \) de petit
+La preuve utilisera des combinaisons linéaires de \( \ex* \) de petit
 hauteur. Les lemmes suivants nous donneront des bons coefficients pour ces
 combinaisons ; nous les choisirons entiers et n'ayant que $2$ et $3$ pour
 diviseurs premiers, de sorte à disposer de représentations polynomiales
@@ -83,7 +83,7 @@ convenable, voir section~\ref{sec:form-ab-alt}.
   \begin{equation} \label{e:wt-ratio}
     \frac1{1 + \zeta}
     \le
-    \frac{ \wts* \hautn{\excep*} }{ \wts[1] \hautn{\excep[1]} }
+    \frac{ \wts* \hautn{\ex*} }{ \wts[1] \hautn{\ex[1]} }
     \le
     1 + \zeta
     \pmm.
@@ -96,7 +96,7 @@ convenable, voir section~\ref{sec:form-ab-alt}.
   \begin{equation}
     \frac1{1 + \zeta}
     \le
-    b_\fct^2 \frac{ \hautn{\excep*} }{ \hautn{\excep[1]} }
+    b_\fct^2 \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
     \le
     1 + \zeta
     \pmm,
@@ -105,7 +105,7 @@ convenable, voir section~\ref{sec:form-ab-alt}.
   \begin{equation}
     \abs{
       b_{\fct2} \log 2 + b_{\fct3} \log 3
-      - \frac12 \log \frac{ \hautn{\excep*} }{ \hautn{\excep[1]} }
+      - \frac12 \log \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
     }
     \le
     \log (1 + \zeta)
@@ -124,11 +124,11 @@ convenable, voir section~\ref{sec:form-ab-alt}.
 \begin{scho}
   Pour tout famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
   \begin{align} \label{wt-diff-hautn}
-    \abs[\big]{ \wts* \hautn{\excep*} - \wts[1] \hautn{\excep[1]} }
-    & \le \zeta \wts[1] \hautn{\excep[1]}
+    \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
+    & \le \zeta \wts[1] \hautn{\ex[1]}
     \\ \label{e:wt-diff-normn}
-    \abs[\big]{ \wt* \normn{\excep*} - \wt[1] \normn{\excep[1]} }
-    & \le \frac\zeta2 \wt[1] \normn{\excep[1]}
+    \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
+    & \le \frac\zeta2 \wt[1] \normn{\ex[1]}
   \end{align}
 \end{scho}
 
@@ -139,12 +139,12 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
 
 \begin{lem}
   Soit \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
-  à~\eqref{e:wt-ratio}. Si de plus la famille \( (\excep*) \) satisfait
+  à~\eqref{e:wt-ratio}. Si de plus la famille \( (\ex*) \) satisfait
   à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, \puiss} \) on a
   \begin{equation} \label{e:hautn-wt-diff-gen}
-    \hautn{\wt* \excep* - \wt** \excep**}
+    \hautn{\wt* \ex* - \wt** \ex**}
     \le
-    \wt[1] \hautn{\excep[1]} \left(
+    \wt[1] \hautn{\ex[1]} \left(
       \frac{\zeta^2}4 + \Vcos (1 + \zeta)
     \right)
     \pmm.
@@ -154,30 +154,30 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
 \begin{proof}
   En développant le membre de gauche, il vient successivement
   \begin{alignat}{2}
-    \normn{\wt* \excep* - \wt** \excep**}^2
+    \normn{\wt* \ex* - \wt** \ex**}^2
     & =
-    \normn{\wt* \excep*}^2 + \normn{\wt** \excep**}^2
-    - 2 \scalaire{\wt* \excep*}{\wt** \excep**}
+    \normn{\wt* \ex*}^2 + \normn{\wt** \ex**}^2
+    - 2 \scalaire{\wt* \ex*}{\wt** \ex**}
     \\
-    & = \wts* \normn{\excep*}^2 + \wts** \normn{\excep**}^2
-    - 2 \wt* \wt** \scalaire{\excep*}{\excep**}
+    & = \wts* \normn{\ex*}^2 + \wts** \normn{\ex**}^2
+    - 2 \wt* \wt** \scalaire{\ex*}{\ex**}
     \\
-    & = \left( \wt* \normn{\excep*} - \wt** \normn{\excep**} \right)^2
+    & = \left( \wt* \normn{\ex*} - \wt** \normn{\ex**} \right)^2
     + 2 \wt* \wt** \left(
-      \normn{\excep*} \normn{\excep**} - \scalaire{\excep*}{\excep**}
+      \normn{\ex*} \normn{\ex**} - \scalaire{\ex*}{\ex**}
     \right)
     \\
-    & \le \left( \wt* \normn{\excep*} - \wt** \normn{\excep**} \right)^2
-    + 2 \wt* \wt** \normn{\excep*} \normn{\excep**} \Vcos
+    & \le \left( \wt* \normn{\ex*} - \wt** \normn{\ex**} \right)^2
+    + 2 \wt* \wt** \normn{\ex*} \normn{\ex**} \Vcos
     && \text{d'après~\eqref{e:Vcos}}
     \\
-    & \le \left( \frac\zeta2 \wt[1] \normn{\excep[1]} \right)^2
+    & \le \left( \frac\zeta2 \wt[1] \normn{\ex[1]} \right)^2
     && \text{d'après~\eqref{e:wt-diff-normn}}
     \\
-    & \qquad + \left( \wt[1] \normn{\excep[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
+    & \qquad + \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
     && \text{d'après~\eqref{e:wt-ratio}}
     \\
-    & \le \wts[1] \normn{\excep[1]}^2 \left(
+    & \le \wts[1] \normn{\ex[1]}^2 \left(
       \frac{\zeta^2}4 + \Vcos (1 + \zeta)
     \right)
     && \qedhere
@@ -185,15 +185,15 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
 \end{proof}
 
 \begin{scho} \label{s:wt-choose}
-  \noma*{a}{(\wt*)}{Poids associés à \( \excep \) et fixés par la
+  \noma*{a}{(\wt*)}{Poids associés à \( (\ex*) \) et fixés par la
     scholie~\ref{s:wt-choose}}
   On choisit désormais une fois pour toute une famille \( (\wt*) \) donnée par
   l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta = \sqrt{2\Vcos}
   \) de sorte qu'on a
   \begin{equation} \label{e:hautn-wt-diff}
-    \hautn{\wt* \excep* - \wt** \excep**}
+    \hautn{\wt* \ex* - \wt** \ex**}
     \le
-    \wt[1] \hautn{\excep[1]} 2 \Vcos
+    \wt[1] \hautn{\ex[1]} 2 \Vcos
     \pmm.
   \end{equation}
 \end{scho}
@@ -373,28 +373,28 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 \subsection{Plongement abélien pondéré} \label{sec:wemb}
 
 Par la suite, on se donnera un point
-$(\excep = \excep[1], \dots, \excep[\puiss])$
-de $\var(\Qbar)$, où les $\excep*$ sont de hauteur grandes et étagées entre
+$(\ex = \ex[1], \dots, \ex[\puiss])$
+de $\var(\Qbar)$, où les $\ex*$ sont de hauteur grandes et étagées entre
 elles, contenus dans un secteur de cône de l'espace de \bsc{Mordell-Weil}. On
 définira alors les poids $\wt*$ par
 \begin{equation}
   \wt* =
   \left\lfloor
-  \frac {\norm{\excep*}} {\norm{\excep[1]}}
+  \frac {\norm{\ex*}} {\norm{\ex[1]}}
   + \frac12
   \right\rfloor
   \pmm,
 \end{equation}
 où $\norm\truc$ représente la norme associée à la hauteur normalisée dans
 l'espace de \bsc{Mordell-Weil} de $\va$ (on commet l'abus consistant à noter
-encore $\excep*$ l'image de $\excep*$ dans cet espace).
+encore $\ex*$ l'image de $\ex*$ dans cet espace).
 
 On introduit un réel $\epsiii$ satisfaisant à
 \begin{equation} \label{e:def-epsiii}
   \sum_{\fct=1}^\puiss (\wts* + 1) < \wts[1] (1 + \epsiii)
   \pmm.
 \end{equation}
-\todo La définition de \( \wt \), les hypothèses faites sur \( \excep \) et la
+\todo La définition de \( \wt \), les hypothèses faites sur \( \ex \) et la
 géométrie euclidienne montrent alors qu'on peut prendre \( \epsiii \) plutôt
 petit\dots
 
@@ -402,8 +402,8 @@ La géométrie euclidienne montre\footnote{
   Les détails sont présents dans la preuve de l'inégalité à la \bsc{Mumford}.
   Cette information est en fait inutile ici ; on souhaite seulement justifier
   vaguement le rôle du plongement éclatant.}
-aussi que $\wt* \excep* - \excep[\puiss]$ est de hauteur petite devant les
-hauteurs des différents $\excep*$. Pour nous aider à exploiter ultérieurement
+aussi que $\wt* \ex* - \ex[\puiss]$ est de hauteur petite devant les
+hauteurs des différents $\ex*$. Pour nous aider à exploiter ultérieurement
 cette information, on introduit un plongement, dit \emph{éclatant}, associé à
 $\wt$, défini par
 \begin{align} \label{e:def-wemb}

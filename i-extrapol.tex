@@ -3,7 +3,7 @@
 \section{Extrapolation} \label{sec:vojta-extrap}
 
 Le but de cette section est de montrer que la fonction auxiliaire que nous
-venons de construire s'annulle avec un indice élevé en \( \excep \), pour une
+venons de construire s'annulle avec un indice élevé en \( \ex \), pour une
 définition de l'indice que nous préciserons.
 
 Auparavant, nous aurons besoin de représenter les dérivées de certaines
@@ -547,7 +547,7 @@ ce n'est pas utile ici.
 \subsection{Minoration de l'indice}
 
 Nous allons maintenant montrer que la forme auxiliaire construite
-précédemment s'annule avec un indice élevé en \( \excep \). Plus précisément,
+précédemment s'annule avec un indice élevé en \( \ex \). Plus précisément,
 posons
 \begin{equation}
   \wtsum( \dermp )
@@ -700,7 +700,7 @@ qui seront plus faciles à contrôler.
 
 On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
     \fcti] \) en appliquant le lemme~\ref{l:hclab} avec \( (\pp, \ppi) =
-  (\excep[\fcti], \excep[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
+  (\ex[\fcti], \ex[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
 \). On écrit alors
 \begin{align}
   f_2
@@ -798,11 +798,11 @@ Pour le facteur le plus à droite, on a facilement
   \right) ^{ (\epsz \delta \wt* + r_\fct) \degv }
   \le
   \prod\fctrange
-  \hautm[\infty]{ \excep* }^{\epsz \delta \wt* + r_\fct}
+  \hautm[\infty]{ \ex* }^{\epsz \delta \wt* + r_\fct}
   \le
-  \hautm[1]{ \excep[1] }^{2\puiss \epsz \delta \wt[1]} \cdot o(\expb^\delta)
+  \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wt[1]} \cdot o(\expb^\delta)
 \end{equation}
-De plus, en notant \( \excepi \) l'image de \( \excep \) par la deuxième
+De plus, en notant \( \exi \) l'image de \( \ex \) par la deuxième
 partie du plongement éclatant, on a\worknote{\bsc{Farhi} p. 96 en haut}
 \begin{equation}
   \prod_\place
@@ -812,9 +812,9 @@ partie du plongement éclatant, on a\worknote{\bsc{Farhi} p. 96 en haut}
   \right) ^{ \delta \degv }
   \le
   \prod\fctirange
-  \hautm[1]{ \excepi* }^\delta
+  \hautm[1]{ \exi* }^\delta
   \le
-  \hautm[1]{ \excep[1] }^{2\puiss \epsiv \wts[1] \delta}
+  \hautm[1]{ \ex[1] }^{2\puiss \epsiv \wts[1] \delta}
   \cdot \cst{exci}^{\wts[1] \delta}
 \end{equation}
 Enfin, grâce au choix des formules \( \wembcl[\place] \), on a
@@ -907,7 +907,7 @@ a
     \nv1{ \varfc* } \dimp**^\dv
   \right)^{\degv}
   \le
-  \hautm[2]{ \excep* }^{-\eps}
+  \hautm[2]{ \ex* }^{-\eps}
   \hautm[1]{ \varfc* } \dimp**^\dv
 \end{equation}
 Ainsi, \todo[en négligeant pour l'instant les partie archimédiennes des
@@ -921,11 +921,11 @@ constantes], on a
   & \le
   \prod\fctrange
   \left(
-    \hautm[2]{ \excep* }^{-\eps}
+    \hautm[2]{ \ex* }^{-\eps}
     \hautm[1]{ \varfc* } \dimp**^\dv
   \right)^{ \imp*[0] }
   \\ & \le
-  \hautm[1]{ \excep[1] }^{ -\eps \epsi(1 - \frac1\sigma) \delta \wts[1] }
+  \hautm[1]{ \ex[1] }^{ -\eps \epsi(1 - \frac1\sigma) \delta \wts[1] }
   \hautm[1]{ \varfc }^{2 \wts[1] \delta }
 \end{align}
 
@@ -935,34 +935,34 @@ estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
   0
   & \le
   \delta \Bigl(
-    2\puiss \epsz \wts[1] \hautl{ \excep[1] }
+    2\puiss \epsz \wts[1] \hautl{ \ex[1] }
     +
-    2\puiss \epsiv \wts[1] \hautl{ \excep[1] } + \wts[1] \cst{exci}
+    2\puiss \epsiv \wts[1] \hautl{ \ex[1] } + \wts[1] \cst{exci}
     +
     2\wts[1] \log\hclab
     +
-    \cst{degdim} \wts[1] \epsi \sigma^{-1} \hautl{ \excep[1] }
+    \cst{degdim} \wts[1] \epsi \sigma^{-1} \hautl{ \ex[1] }
     \\ & \qquad +
     \wts[1] \epsi \sigma^{-1} (\hautl{ F } + \hautl{ \varfc })
     +
     2 \wts[1] \hautl{ \varfc }
     -
-    \eps \epsi(1 - \sigma^{-1}) \wts[1] \hautl{ \excep[1] }
+    \eps \epsi(1 - \sigma^{-1}) \wts[1] \hautl{ \ex[1] }
   \Bigr)
   + o(\delta)
   \\ & \le
   \delta \Bigl(
-    \wts[1] \hautl{ \excep[1] }
+    \wts[1] \hautl{ \ex[1] }
     \bigl(
       2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
       -
       \eps \epsi(1 - \sigma^{-1})
     \bigr)
-    + o( \wts[1] \hautl{ \excep[1] } )
+    + o( \wts[1] \hautl{ \ex[1] } )
   \Bigr)
   + o(\delta)
 \end{align}
-ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \excep[1] }
+ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \ex[1] }
 \) sont assez grands, pour peu que
 \begin{equation}
   \frac{
@@ -980,9 +980,9 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \excep[1] }
   On a
   \begin{equation}
   \prod\fctirange
-  \hautm[1]{ \excepi* }^\delta
+  \hautm[1]{ \exi* }^\delta
   \le
-  \hautm[1]{ \excep[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
+  \hautm[1]{ \ex[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
   \end{equation}
   avec \( \newcst[]{exci} = \dots \)
 \end{fact}

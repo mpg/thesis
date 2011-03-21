@@ -781,8 +781,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Excep { e }
 \newcommand \cex   { \gmp\Excep }
 
-\newc@star@default \excep   {\fct }{\puiss } {\Excep\ssub{#1}}
-\newc@star@default \excepi  {\fcti}{\puiss*} {\Excep'\ssub{#1}}
+\newc@star@default \ex      {\fct }{\puiss } {\Excep\ssub{#1}}
+\newc@star@default \exi     {\fcti}{\puiss*} {\Excep'\ssub{#1}}
 \newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
 \newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}\sp2}
 \newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
@@ -832,7 +832,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
 
 \newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
-\newc@star@default \inda {\divi}{\excep} {\Aind\sp\wt\ssub{#1}}
+\newc@star@default \inda {\divi}{\ex} {\Aind\sp\wt\ssub{#1}}
 
 \noma{S}{\wtsum}{Somme pondérée utilisée dans la définition de l'indice
   d'annulation}
