@@ -5,8 +5,5 @@ sub makenlo2nls {
 }
 push @generated_exts, 'nlo', 'nls';
 
-# list of constants
-push @generated_exts, 'loc';
-
 # more biblatex cleanup
 push @generated_exts, '%-blx.bib';

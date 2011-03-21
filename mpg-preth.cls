@@ -53,7 +53,7 @@
 \usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic}
-\usepackage[noprefix, nocfg, french]{nomencl}
+\usepackage[noprefix, nocfg, refpage, french]{nomencl}
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true,
   autopunct=true, babel=hyphen,
@@ -771,9 +771,6 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}\sp2}
 \newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
 \newc@star@default \wtis    {\fcti}{\puiss*} {a\ssub{#1}\sp2}
-
-\noma{e}{\excep}{La famille d'approximations exceptionnelles considérée}
-\noma{a}{\wt}{Le vecteur de poids associé à $\excep$}
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 

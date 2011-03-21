@@ -12,7 +12,7 @@ verrons plus tard que ce cas particulier implique le cas général.
 
 Le but du chapitre est de prouver le théorème suivant.
 
-\begin{thm} \label{t:vojta}
+\begin{thm} \label{t:vojta-div}
   Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \excep[1],
     \dots, \excep[\puiss] \) satisfaisant simultanément aux conditions
   suivantes :
@@ -32,6 +32,9 @@ Le but du chapitre est de prouver le théorème suivant.
     \label{e:Vcos}
   \end{align}
   avec
+  \nomg{alpha}{\Vbig}{Une constante du théorème~\ref{t:vojta-div}}
+  \nomg{beta} {\Vfar}{Une constante du théorème~\ref{t:vojta-div}}
+  \nomg{gamma}{\Vcos}{Une constante du théorème~\ref{t:vojta-div}}
   \begin{align}
     \Vbig & = \dots (\puiss)
     \\
@@ -45,6 +48,8 @@ Nous commençons par réduire ce théorème à un énoncé d'aspect technique se
 prêtant bien à une démonstration par la méthode de \TS, que nous appliquons
 alors.
 
+\noma{e}{(\excep*)}{Une famille de points dont l'existence contredirait le
+  théorème~\ref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
 famille \( \excep[1], \dots, \excep[\puiss] \) qui le contredit. Nous
 regarderons cette famille comme un point de \( \va^\puiss \) plongée dans
@@ -72,7 +77,7 @@ combinaisons ; nous les choisirons entiers et n'ayant que $2$ et $3$ pour
 diviseurs premiers, de sorte à disposer de représentations polynomiales
 convenable, voir section~\ref{sec:form-ab-alt}.
 
-\begin{lem} \label{l:wt-choose}
+\begin{lem} \label{l:wt-choose-gen}
   Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
     3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, \puiss} \) :
   \begin{equation} \label{e:wt-ratio}
@@ -179,10 +184,12 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
   \end{alignat}
 \end{proof}
 
-\begin{scho}
+\begin{scho} \label{s:wt-choose}
+  \noma{a}{(\wt*)}{Poids associés à \( \excep \) et fixés par la
+    scholie~\ref{s:wt-choose}}
   On choisit désormais une fois pour toute une famille \( (\wt*) \) donnée par
-  l'application du lemme~\ref{l:wt-choose} avec \( \zeta = \sqrt{2\Vcos} \) de
-  sorte qu'on a
+  l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta = \sqrt{2\Vcos}
+  \) de sorte qu'on a
   \begin{equation} \label{e:hautn-wt-diff}
     \hautn{\wt* \excep* - \wt** \excep**}
     \le
