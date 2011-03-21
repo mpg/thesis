@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "===> devrait être \\eqref <==="
+grep '\\ref{e:' *.tex
