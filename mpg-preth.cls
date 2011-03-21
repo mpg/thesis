@@ -736,10 +736,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \noma{h}{\hautn      {\PH}}{Hauteur de \NT de \PH}
 \noms{normn}{\normn\PH}{Norme de \NT de \PH}
 
-\newcommand* \scalaire [2] {\langle#1,#2\rangle}
-\newcommand* \angleabs [2] {\widehat{(#1,#2)}}
+\newcommand* \scalarn [2] {\langle#1,#2\rangle}
+\newcommand* \angleabs [2] {\widehat{(#1,#2)}} % XXX laid, à enlever
 
-\noms{angle}{\scalaire\PH\PHi}{Produit scalaire, relativement à la forme
+\noms{angle}{\scalarn\PH\PHi}{Produit scalaire, relativement à la forme
   quadratique de \NT, des points \PH et \PHi de $\va$ ou de son espace de \MoW}
 \noms{hat}{\angleabs\PH\PHi}{Angle non orienté, relativement à la forme
   quadratique de \NT, entre les points \PH et \PHi de $\va$ ou de son espace
