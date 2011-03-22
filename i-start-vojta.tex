@@ -47,16 +47,16 @@ Le but du chapitre est donc de prouver le théorème suivant.
   théorème~\ref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
 famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Bien que cette
-famille soit toujours supposée satisfaire aux conditions du théorème,
-nous préciserons la ou lesquelles nous utilisons dans les hypothèses
-de la plupart des énoncés, par souci de clarté.
+famille soit toujours supposée satisfaire à toutes les conditions du théorème,
+nous préciserons dans les hypothèses de la plupart des énoncés la ou
+lesquelles de ces conditions nous utilisons, par souci de clarté.
 
 Nous utiliserons des combinaisons linéaires des \( \ex* \) de petite hauteur.
 Les lemmes suivants permettent de choisir les coefficients pour ces
 combinaisons ; nous les prendrons entiers et n'ayant que $2$ et $3$ pour
 diviseurs premiers, de sorte à disposer de représentations polynomiales
-convenables des formes linéaires abéliennes associées, voir
-section~\ref{sec:form-ab-alt}.
+convenables des formes linéaires abéliennes associées données par
+l'annexe~\ref{sec:form-ab-alt}.
 
 \begin{lem} \label{l:wt-choose-gen}
   Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
@@ -89,7 +89,7 @@ section~\ref{sec:form-ab-alt}.
       - \frac12 \log \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
     }
     \le
-    \log (1 + \zeta)
+    \frac12 \log (1 + \zeta)
     \pmm.
   \end{equation}
   Comme \( \Z \log2 + \Z \log 3 \) est dense dans \( \R \), il est
@@ -103,8 +103,8 @@ section~\ref{sec:form-ab-alt}.
 \end{proof}
 
 \begin{scho}
-  Pour tout famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
-  \begin{align} \label{wt-diff-hautn}
+  Pour toute famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
+  \begin{align} \label{e:wt-diff-hautn}
     \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
     & \le \zeta \wts[1] \hautn{\ex[1]}
     \\ \label{e:wt-diff-normn}
@@ -170,9 +170,9 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     scholie~\ref{s:wt-choose}}
   \nomg*{zeta}{\zeta}{Constante proche de zéro fixée par la
     scholie~\ref{s:wt-choose}}
-  On choisit désormais une fois pour toute une famille \( (\wt*) \) donnée par
-  l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta = \sqrt{2\Vcos}
-  \) de sorte qu'on a
+  On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
+  donnée par l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta =
+    \sqrt{2\Vcos} \) de sorte qu'on a
   \begin{equation} \label{e:hautn-wt-diff}
     \hautn{\wt* \ex* - \wt** \ex**}
     \le
@@ -197,14 +197,9 @@ précisément, on a
   \le
   (1+\zeta) \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
 \end{equation}
-en appliquant directement la définition de \( \wt* \). En particulier, comme
-\( \wts** \) est un entier naturel non nul, on a
-\begin{equation} \label{e:wt-1-big}
-  \wts[1] \ge \frac{\Vfar^{\puiss*}}{1+\zeta}
-  \pmm.
-\end{equation}
-On peut ainsi majorer les sommes de \( \wts* \) essentiellement par \( \wts[1]
-\) ; par exemple, l'énoncé suivant qui nous sera utile par la suite.
+en appliquant directement la définition de \( \wt* \). On peut ainsi majorer
+des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
+\) ; par exemple, l'énoncé suivant nous sera utile par la suite.
 
 \begin{lem}
   Il existe \( \epsiii \le 5/\Vfar \) tel que
@@ -230,6 +225,7 @@ On peut ainsi majorer les sommes de \( \wts* \) essentiellement par \( \wts[1]
       \Bigl( \frac2\Vfar \Bigr)^{\puiss-1}
       + \frac1\Vfar
     \right)
+    \pmm.
   \end{align}
   Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \) et que \(
     \zeta < 1/2 \).\label{ct:Vfar>2}
