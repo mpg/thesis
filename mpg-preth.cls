@@ -794,6 +794,10 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
 \noma{P}{\poldep}{Relation de dépendance intégrale des dernières variables
   sur les premières dans un plongement adapté}
+
+\newcommand \varset {\mathcal V}
+\noma{V}{\varset}{Ensemble des variétés obstructrices}
+
 % weighted embedding [[2
 %
 \newc@star@deftwo@i \smpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
@@ -852,7 +856,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % the product sub-variety considered and its attributes [[2
 %
 \newcommand \Var {Z}
-\newc@star@default \var     {\fct}{\puiss} {\Var\pexp{#1}}
+\newc@star@default \var     {\fct}{\puiss} {\Var\ssub{#1}}
 \newc@star@default \vdim    {\fct}{\puiss} {{u\ssub{#1}}}
 \newc@star@default \vdeg    {\fct}{\puiss} {{D\ssub{#1}}}
 \newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}

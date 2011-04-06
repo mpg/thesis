@@ -233,15 +233,108 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
 
 \subsection{Première réduction}
 
-% TODO: énoncer la prop avec la var produit
+Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
+dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset \) des
+sous-variétés produit \( \var \) de \( \va^\puiss \) qui contiennent \( \ex \)
+et satisfont aux majorations suivantes :
+\begin{align}
+  \label{e:varset-deg}
+  \vdeg* & \le \Lambda^{f_1(u)} \quad \forall \fct
+  \\ \label{e:varset-deg-prod}
+  \prod\fctrange \vdeg* & \le (?) \Lambda^{f_1(u)}
+  \\ \label{e:varset-ht}
+  \sum\fctrange \wts* \hautl{\var*}
+  & \le (\dots) \Lambda^{f_2(u)} \wts[1]
+  \pmm,
+\end{align}
+où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
+\begin{align}
+  \Lambda & = \text{ne dépend que des degrés et dimensions ambiantes}
+  \\
+  f_1 & = \text{est une fonction décroissante}
+  \\
+  f_2 & = \text{est une fonction décroissante}
+\end{align}
 
-% TODO: prouver qu'elle implique vojta
+Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
+variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
+dans le cas contraire, on aurait \( \var* = \ex* \) pour un certain \( \fct \)
+dont on déduirait successivement
+positifs,
+\begin{alignat}{2}
+  \wts* \hautl{\ex*}
+  & \le (\dots) \Lambda^{f_2(u)} \wts[1]
+  &\quad& \text{par \eqref{e:varset-ht},}
+  \\
+  \wt[1] \hautl{\ex[1]}
+  & \le (1+\zeta) (\dots) \Lambda^{f_2(u)} \wts[1]
+  && \text{par \eqref{e:wt-ratio},}
+\end{alignat}
+qui contredirait précisément \eqref{e:Vbig}.
 
-\subsection{Seconde réduction}
+Or cet ensemble \( \varset \) n'est certainement pas vide, puisqu'il contient
+au moins \( \va^\puiss \) ; il possède donc au moins un élément minimal. La
+proposition suivante implique que cet élément a au moins un facteur réduit à
+un point, ce qui, nous venons de le voir, fournit la contradiction prouvant le
+théorème \ref{t:vojta-div}.
 
-% TODO: énoncer la prop avec la forme obstructrice
+\begin{prop} \label{p:varset-notmin}
+  Soit \( \var \in \varset \) n'ayant aucun facteur de dimension nulle. Alors
+  il existe un \( \fct \) et une forme \( T \) ne dépendant que de \( \vmp*
+  \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \), telle que
+  \begin{align}
+    \deg T
+    & \le \Lambda^{f_1(u)}
+    \\
+    \wts* \hautl(T)
+    & \le (\dots) \Lambda{f_3(u)} \wts[1]
+    \pmm.
+  \end{align}
+\end{prop}
 
-% TODO: prouver qu'elle implique la prop prec
+En effet, on note alors \( \var' \) la variété égale à \( \var \) sur tous les
+facteurs sauf le \( \fct \)-ème où on choisit une composante irréductible de
+\( \var* \cap \zeros T \) qui contient \( \ex* \), de sorte que \( \var' \)
+est une variété strictement contenue dans \( \var \) et contenant \( \ex \).
+Le théorème de \bsc{Bézout} donne alors
+\begin{equation}
+  \deg \var*' \le \vdeg* \deg T
+\end{equation}
+et sa version arithmétique indique que
+\begin{equation}
+  \hautl{\var*'} \le \vdeg* \hautl{T} + \hautl{\var*} \deg T
+  \pmm,
+\end{equation}
+ce qui montre que \( \var' \in \varset \) (au vu des constantes qui seront
+déterminées par ce point) et que \( \var \) n'était pas minimale.
+
+\medskip
+
+Il suffit donc d'établir la proposition \ref{p:varset-notmin} pour prouver le
+théorème \ref{t:vojta-div} ; la démonstration de cette proposition nous
+occupera le reste du chapitre. L'intérêt de l'énoncer immédiatement plutôt
+qu'au moment où nous serons en mesure de l'établir et de pouvoir écarter
+d'emblée quelques cas particuliers pour lesquels la méthode qui suit ne
+s'applique pas (mais qui sont heureusement immédiats). Auparavant nous
+introduirons quelques hypothèses commodes sur les coordonnées projectives
+utilisées.
+
+Désormais et jusqu'à la fin du chapitre, nous fixons une variété
+\begin{math}
+  \var = \var[1] \times \dots \times \var[\puiss]
+\end{math}
+satisfaisant aux hypothèses de la proposition ; en particulier elle n'est
+contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$ puisqu'elle contient
+\( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans.  On
+notera en outre $\vdim* = \dim \var*$ et $\vdim = (\vdim*)_\fct$ puis $\vdeg*
+= \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On note enfin
+$\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux de ses
+facteurs.
+
+De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
+homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on
+utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
+désignera une famille d'entiers.
 
 \subsection{Plongements projectifs adaptés}
 
@@ -250,25 +343,6 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
 \subsection{Plongement éclatant}
 
 % TODO: introduire le plongement éclatant, lemme de degré et stratégie Thue
-
-
-\section{Provisoire, à ventiler}
-
-On s'intéresse à une sous-variété produit de $\va^\puiss$ plongée dans
-$(\proj\dimp)^\puiss$, notée
-\begin{math}
-  \var = \var[1] \times \dots \times \var[\puiss]
-\end{math}
-et qui n'est contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$.
-On notera en outre $\vdim* = \dim \var*$ et $\vdim = (\vdim*)_\fct$ puis
-$\vdeg* = \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On
-note enfin $\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux
-de ses facteurs.
-
-De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
-homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on
-utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
-désignera une famille d'entiers.
 
 
 \subsection{Plongements projectifs adaptés} \label{sec:plong-adapt}
