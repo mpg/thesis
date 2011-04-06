@@ -336,14 +336,6 @@ homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; o
 utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
 désignera une famille d'entiers.
 
-\subsection{Plongements projectifs adaptés}
-
-% TODO: plongements adaptés : def, prop, supposition et hauteur
-
-\subsection{Plongement éclatant}
-
-% TODO: introduire le plongement éclatant, lemme de degré et stratégie Thue
-
 
 \subsection{Plongements projectifs adaptés} \label{sec:plong-adapt}
 
@@ -480,8 +472,21 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   facteur \( \var* \).
 \end{scho}
 
+Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
+démonstration de la proposition~\ref{p:varset-notmin}.
+
+\begin{scho} \label{s:part-cases}
+  On peut supposer que :
+  \begin{enumthm}
+    \item \( \cex** \neq 0 \) pour tous \( \fct \) et \( \ind \) ;
+    \item \( \pden_\fct(\cex*) \neq 0 \) pour tout \( \fct \).
+  \end{enumthm}
+\end{scho}
+
+En effet, dans ces cas la conclusion de la proposition est immédiate.
+
 
-\subsection{Plongement abélien pondéré} \label{sec:wemb}
+\subsection{Plongement abélien pondéré et stratégie} \label{sec:wemb}
 
 Nous utiliserons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \)
 et défini par
