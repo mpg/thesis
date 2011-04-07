@@ -297,6 +297,7 @@ facteurs sauf le \( \fct \)-ème où on choisit une composante irréductible de
 \( \var* \cap \zeros T \) qui contient \( \ex* \), de sorte que \( \var' \)
 est une variété strictement contenue dans \( \var \) et contenant \( \ex \).
 Le théorème de \bsc{Bézout} donne alors
+\worknote{LNM7, thm 3.4, coro 3.6 ou LNM6 thm, lemme 4.1}
 \begin{equation}
   \deg \var*' \le \vdeg* \deg T
 \end{equation}
@@ -495,38 +496,38 @@ et défini par
   & \longto \va^\puiss \times \va^{\puiss-1}
   = \va^{2\puiss-1} \subset (\projd)^{2\puiss-1}
   \\
-  (x_1, \dots, x_\puiss)
+  (\pmp_1, \dots, \pmp_\puiss)
   & \longmapsto
-  (x_1, \dots, x_\puiss;
-  \wt[1] x_1 - \wt** x_\puiss, \wt[\puiss-1] x_{\puiss-1} - \wt** x_\puiss)
+  (\pmp_1, \dots, \pmp_\puiss;
+  \wt[1] \pmp_1 - \wt** \pmp_\puiss, \dots,
+  \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
   \pmm.
 \end{align}
-% TODO macros ci-dessus pour x
-% TODO répercuter les \wt** manquants dans toute la suite
+La stratégie pour prouver la proposition~\ref{p:vatset-notmin} utilise la
+méthode de \TS : on va construire une forme sur \( \wemb(\var) \) dont le tiré
+en arrière sur \( \var \) s'annulle à un ordre élevé le long de \( \divi \).
+Puis, profitant du fait que \( \ex \) est proche de ce diviseur et que la
+hauteur des dernières composantes de \( \wemb(\ex) \) est relativement petite,
+nous en déduirons que cette forme s'annulle aussi en \( \ex \) avec un indice
+convenable pour appliquer une forme du théorème du produit, qui nous donnera
+la forme \( T \) souhaitée.
 
-On munit l'espace d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées
-multihomogènes $\vmp, \vmpi = \vmp[1], \dots, \vmp[\puiss], \vmpi[1],
-\vmpi[\puiss*]$ ; dans ce contexte quand $i$ et $j$ sont deux indices non
-précisés, on supposera implicitement $1 \le i \le \puiss$ et $1 \le j \le
-\puiss-1$.
+\medskip
 
-On va maintenant s'attacher à représenter localement ce morphisme par une
-famille de formes multihomogènes. En appliquant ce formulaire de la
-section~\ref{sec:form-ab} à notre plongement éclatant, on voit que tout
-point $x \in \var(\Qbar)$ est contenu dans un ouvert $\opdef \subset \var$ sur
-lequel il existe des polynômes représentant
-$\wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1}$.
-Plus précisément, il existe un morphisme d'algèbres, dépendant de $\opdef$,
-\begin{align}
-     \wemba \colon \cdn [\vmp, \vmpi]
-  &  \to \cdn[\vmp]
-  \\ \vmp*
-  &  \mapsto \vmp*
-  \\ \vmpi*
-  &  \mapsto S^{-}(Q_{\wti*}(\vmp[\fcti]), \vmp[\puiss])
-\end{align}
-tel que le diagramme suivant, dont les flèches verticales sont les projections
-canoniques, commute :
+Avant de mettre ce plan à exécution, introduisons quelques notations et
+résultats basiques concernant le plongement éclatant.  On munit l'espace
+d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées multihomogènes $\vmp, \vmpi =
+\vmp[1], \dots, \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss*]$ ; dans ce
+contexte quand $\fct$ et $\fcti$ sont deux indices non précisés, on supposera
+implicitement $1 \le \fct \le \puiss$ et $1 \le \fcti \le \puiss-1$.
+
+On va maintenant attacher à représenter localement ce morphisme par une
+famille de formes multihomogènes au voisinage de \( \ex \), c'est-à-dire
+trouver un ouvert \( \ex \in \opdef \subset \var \) tel que \(
+  \wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1} \) est représenté
+par des polynômes, dans le sens où il existe un morphisme d'algèbres \( \wemba
+\) tel que le diagramme suivant, dont les flèches verticales sont les
+projections canoniques, commute :
 \begin{equation}
   \xymatrix{
     \cdn [\vmp, \vmpi]                          \ar [r] ^{\wemba}   \ar [d]
@@ -535,13 +536,21 @@ canoniques, commute :
     & ( \cdn [\vmp] / \varid )_\opdef
   }
 \end{equation}
-On a choisi $S^{-}$ et $Q_{\wt[j]}$ parmi les familles de formes données
-respectivement part le corollaire~\ref{c:addsub-form} et le
-fait~\ref{f:mult-form} de sorte que les formules obtenues soient valables au
-voisinages de $x$.
-
-Les informations connues sur les degrés de $S^{-}$ et des $Q_{\wt[j]}$ donnent
-immédiatement le résultat suivant.
+On peut en fait choisir
+\begin{align}
+     \wemba \colon \cdn [\vmp, \vmpi]
+  &  \to \cdn[\vmp]
+  \\ \vmp*
+  &  \mapsto \vmp*
+  \\ \vmpi*
+  &  \mapsto L\pexp{\wt[\fcti], \wt[\puiss]}(\vmp[\fcti], \vmp[\puiss])
+\end{align}
+où les \( L\pexp{\wt[\fcti], \wt[\puiss]} \) sont choisies parmi les familles
+de formes données par le lemme~\ref{l:hclab} de sorte que leur ouvert de
+définition \( \opdef \) contienne \( \ex \). Le choix de ces familles pourra
+être précisé ultérieurement ; pour l'instant on utilisera seulement les
+estimations de degré et hauteurs qui sont uniformément valables. Par exemple,
+on a toujours le lemme suivant, qui est immédiat.
 
 \begin{lem} \label{l:deg-wemba}
   Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
@@ -551,10 +560,10 @@ immédiatement le résultat suivant.
     \deg \wemba(F)
     =
     \bigr(
-    \alpha_1 + \frac94 \beta_1 \wts[1],
+    \alpha_1 + 2 \beta_1 \wts[1],
     \dots,
-    \alpha_{\puiss-1} + \frac94 \beta_{\puiss-1} \wts[\puiss-1],
-    \alpha_\puiss + 2 \lgr\beta
+    \alpha_{\puiss-1} + 2 \beta_{\puiss-1} \wts[\puiss-1],
+    \alpha_\puiss + 2 \lgr\beta \wts[\puiss]
     \bigl)
     \pmm.
   \end{equation}
