@@ -126,8 +126,6 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) finir les réductions à rebours, cf les TODO dans i-start-vojta
-
 (A) Voir l'application du lemme du produit
 
 (A) boucler les constantes, au moins modulo la partie archimédienne et sans
@@ -137,19 +135,18 @@ tenir compte du fait qu'il y en a plein de fausses avant
 vraies constantes
     - l'annexe formulaire
     - plongement adapté, cf ci-dessous
-    - le plongement pondéré avec \wt** \neq 1
+    - le plongement pondéré avec \wt** \neq 1, cf ci-dessous
 
 (A) extrapolation : la vraie condition d'approx n'est pas avec un produit
 
-(B) plongemgement pondéré :
-    - choix des formules utilisées pour sa représentation
-    - \wt** \neq 1 !
+(B) plongemgement pondéré : propager \wt** \neq 1 partout (Siegel etc)
 
 (B) Plongement adapté : estimer le coût sur les formules de soustraction et
 multiplication.
-- Attendre d'avoir fait le lemme de choix de coordonnée non
-nulle avant, pour l'intégrer.
+- Attendre d'avoir fait le lemme de choix de coordonnée non nulle avant, pour
+  l'intégrer. Gnééé ? Elles sont pas toutes non nulles ?
 - Ensuite, propager dans les estimations de hauteur faisant intervenir \wemba.
+- Voir si on ne peut pas s'en passer en relisant Rémond.
 
 (B) Détailler les preuves concernant le plongement adapté au moins au point
 d'être sûr que les constantes sont justes et les notations fixées.
