@@ -154,6 +154,39 @@
   $#1$%
 }
 
+% for notations without macro & internal use:
+% \nomdirect{<group code>}{<sort string>}{<displayed>}[<scope>]{<description>}
+\newcommandx*\nomdirect [5][4] {%
+  \@ifmtarg{#4}{%
+    \nom@direct{#1}{#2}{#3}{#4}%
+  }{%
+    \begingroup \edef\next{\endgroup
+      \unexpanded{\nom@direct{#1}{#2}{#3}}{\nom@local\unexpanded{#5}}%
+    }\next
+  }%
+}
+\newcommand*\nom@direct [4] {%
+  \nomenclature[#1-#2]{\printmacro{#3}}{#4}%
+}
+
+% scopes (currently chapter hardcoded)
+\begingroup \shorthandon{:} \expandafter\endgroup\@firstofone{%
+  \newcommand \nom@local {Chapitre \thechapter{} : \noexpand\MakeLowercase}
+}
+
+% possibly disable next nomenclature command, usage:
+% \nomprv\nomdirect...
+\newcommand \nomprv {}
+\if@showmac \else
+  \let \nom@direct@real \nomdirect
+  \renewcommand \nomprv {%
+    \let \nom@direct \nom@direct@skip
+  }
+  \newcommand \nom@direct@skip [4] {%
+    \let \nom@direct \nom@direct@real
+  }
+\fi
+
 \newcommand*\nom@type [1] {%
   \expandafter\nom@type@\csname\cmdstring#1@\endcsname#1}
 \newcommand*\nom@type@ [4] {%
@@ -166,11 +199,9 @@
     }%
   }%
   \newcommand*#1 [4] {%
-    \nomenclature[#3-##2--]{\printmacro{##3}}{##1##4}}%
-  \@namedef{nom@group@@#3}{#4}}
-
-\begingroup \shorthandon{:} \expandafter\endgroup\@firstofone{%
-  \newcommand \nom@local {Chapitre \thechapter{} : \noexpand\MakeLowercase}
+    \nomdirect{#3}{##2}{##3}{##1##4}%
+  }
+  \@namedef{nom@group@@#3}{#4}%
 }
 
 \renewcommand*\nomgroup [1] {%
