@@ -249,7 +249,7 @@
 \newtheorem {lem}  [thm] {Lemme}
 \newtheorem {coro} [thm] {Corollaire}
 \newtheorem {fact} [thm] {Fait}
-\newtheorem {scho} [thm] {Scholie}
+\newtheorem {scho} [thm] {Scolie}
 
 \theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
