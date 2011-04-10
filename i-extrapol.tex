@@ -580,7 +580,8 @@ Commençons par un lemme facile sur l'indice.
   \begin{enumthm}
     \item Si \( \dermp \) est tel que \( \der[\gmp\nu] g_2(x) = 0 \) dès que
       \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim} \),
-      alors \( \der[\dermp] g_1(\point) = \alpha(\point) \, g_2(\point) \).
+      alors \( \der[\dermp] g_1(\point) = \alpha(\point) \, \der[\dermp]
+        g_2(\point) \).
     \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(g_1) = \inda**(g_2)
       \).
   \end{enumthm}
@@ -613,8 +614,8 @@ supposer, d'après le scholie~\ref{s:part-cases}, qu'aucune des formes \(
   \pden_\fct \) s'annulle en \( \cex* \) et qu'aucun des \( \cex** \) n'est
 nul ; ci-dessous on utilisera le fait que \( \cex*[\vdim*] \neq 0 \).  De
 même, on peut supposer que la forme \( R \) donnée par le
-corollaire~\ref{c:hmat-relim} ne s'annulle pas en \( \cex \).  \todo{Vérifier
-  que c'est bien le cas.}
+corollaire~\ref{c:hmat-relim} ne s'annulle pas en \( \cex \).  \todo[Vérifier
+  que c'est bien le cas.]
 
 On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
     \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
@@ -623,6 +624,8 @@ maximisant \( \av{ \wembcl*[\indiv*](\cex) } \), ainsi que \( \indig* \in
   \set{0, \dots, \dimp} \) tel que \( \wembcl*[\indig*](\cex) \neq 0 \). Notons
 que \( \indig \) et \( \indiv \) ne dépendent pas du choix des formules \(
   \wembcl \) utilisées, et que \( \indig \) ne dépend pas de \( \place \).
+\todo[Introduire la notation \( \wembcl \) et d'ailleurs choisir une autre
+  lettre.]
 
 Il est alors clair que \( \av{ \wembcl*[\indiv*](\cex) } \ge \nv1{
     \wembcl*(\cex) } \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue
@@ -667,7 +670,7 @@ pour les \( \indv* \).
     \right) ^{ \vdeg* - \alpha }
   \end{equation}
   Si le quotient apparaissant dans le membre de droite est inférieur à \( 1
-  \), notre assertion initiale est vérifiée. Sinon, elle l'est aussi, car car
+  \), notre assertion initiale est vérifiée. Sinon, elle l'est aussi, car
   \( \varfc* \) est normalisé (scholie citée) de façon à ce qu'un de ses
   coefficients soit \( 1 \) ce qui assure \( \nv1{ \varfc* } \ge 1 \) en toute
   place.
@@ -681,7 +684,7 @@ Introduisons maintenant une nouvelle fonction rationnelle définie par
   \frac{
     F( \vmp, \wembcl(\vmp) )
   }{
-    \vmp[][\vdim] ^{\epsz \wt \delta}
+    \vmp[][\vdim] ^{\epsz \wts \delta}
     \cdot
     \wembcl[][\indig](\vmp) ^{ \delta }
   }
@@ -710,7 +713,7 @@ On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
   \frac{
     F( \vmp, \wembcl[\place](\vmp) )
   }{
-    \vmp[][\vdim] ^{\epsz \wt \delta}
+    \vmp[][\vdim] ^{\epsz \wts \delta}
     \cdot
     \wembcl[\place][\indig](\vmp) ^{ \delta }
   }
@@ -720,7 +723,7 @@ On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
   \frac{
     F( \vmp, \wembcl[\place](\vmp) )
   }{
-    \vmp[][\indv] ^{\epsz \wt \delta}
+    \vmp[][\indv] ^{\epsz \wts \delta}
     \cdot
     \wembcl[\place][\indiv](\vmp) ^{ \delta }
   }
@@ -729,7 +732,7 @@ On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
   \right) ^{ \delta }
   \left(
     \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
-  \right) ^{ \epsz \wt \delta + r }
+  \right) ^{ \epsz \wts \delta + r }
   \\ & =
   \frac{
     R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
@@ -750,7 +753,7 @@ On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
   \right) ^{ \delta }
   \left(
     \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
-  \right) ^{ \epsz \wt \delta + r }
+  \right) ^{ \epsz \wts \delta + r }
 \end{align}
 
 Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
@@ -781,7 +784,7 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
   \right) ^{ \delta }
   \left(
     \frac{ \cex[][\indv] }{ \cex[][\vdim] }
-  \right) ^{ \epsz \wt \delta + r }
+  \right) ^{ \epsz \wts \delta + r }
 \end{equation}
 Nous allons maintenant estimer la valeur absolue de chacun des facteurs, en
 distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
@@ -795,12 +798,12 @@ Pour le facteur le plus à droite, on a facilement
   \prod\fctrange
   \left(
     \frac{ \av{\cex[][\indv]} }{ \av{\cex[][\vdim]} }
-  \right) ^{ (\epsz \delta \wt* + r_\fct) \degv }
+  \right) ^{ (\epsz \delta \wts* + r_\fct) \degv }
   \le
   \prod\fctrange
-  \hautm[\infty]{ \ex* }^{\epsz \delta \wt* + r_\fct}
+  \hautm[\infty]{ \ex* }^{\epsz \delta \wts* + r_\fct}
   \le
-  \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wt[1]} \cdot o(\expb^\delta)
+  \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wts[1]} \cdot o(\expb^\delta)
 \end{equation}
 De plus, en notant \( \exi \) l'image de \( \ex \) par la deuxième
 partie du plongement éclatant, on a\worknote{\bsc{Farhi} p. 96 en haut}
@@ -895,7 +898,7 @@ En effet, chaque monôme divisé intervenant dans le déshomogénéisé de \(
 \end{equation}
 où \( \imp \) est tel que \( \wtsum*(\imp) \ge \epsi (1 - \frac1\sigma)
   \delta \). Or, par le lemme~\ref{l:coord-norm} et l'hypothèse principale, on
-a
+a \todo[Ne pas prendre le produit sur \( \place \) si tôt.]
 \begin{equation}
   \prod\placerange
   \left(
@@ -910,8 +913,8 @@ a
   \hautm[2]{ \ex* }^{-\eps}
   \hautm[1]{ \varfc* } \dimp**^\dv
 \end{equation}
-Ainsi, \todo[en négligeant pour l'instant les partie archimédiennes des
-constantes], on a
+Ainsi, \todo en négligeant pour l'instant les partie archimédiennes des
+constantes, on a
 \begin{align}
   \prod\placerange
   \prod\fctrange

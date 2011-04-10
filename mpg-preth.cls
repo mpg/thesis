@@ -223,9 +223,9 @@
   \@ifnotmtarg{#3}{\textcolor{#1}{#3}}%
 }
 
-\newcommand \todo  {\worknote{\textsc{todo}}}
-\newcommand \todom {\tag*{\color{todo}\textsc{todo}}}
-\newcommand \later {\worknote[later]{(à détailler ultérieurement)}}
+\newcommand*\todo [1][] {\worknote{\textsc{todo} #1}}
+\newcommand \todom      {\tag*{\color{todo}\textsc{todo}}}
+\newcommand \later      {\worknote[later]{(à détailler ultérieurement)}}
 
 % languages and special text items [[2
 %
@@ -804,7 +804,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \mexpi {\smpi{}}
 
 \newcommand \fcti      {j}
-\newcommand \fctirange {\sb{\fcti=1}\sp\puiss*}
+\newcommand \fctirange {\sb{\fcti=1}\sp{\puiss*}}
 \noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
 
 \newcommand \vmpi {\smpi Y}
