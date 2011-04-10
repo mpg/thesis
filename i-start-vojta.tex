@@ -125,8 +125,8 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
   \begin{equation} \label{e:hautn-wt-diff-gen}
     \hautn{\wt* \ex* - \wt** \ex**}
     \le
-    \wt[1] \hautn{\ex[1]} \left(
-      \frac{\zeta^2}4 + \Vcos (1 + \zeta)
+    \wts[1] \hautn{\ex[1]} \left(
+      \frac{\zeta^2}4 + 2 \Vcos (1 + \zeta)
     \right)
     \pmm.
   \end{equation}
@@ -155,11 +155,11 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     & \le \left( \frac\zeta2 \wt[1] \normn{\ex[1]} \right)^2
     && \text{d'après~\eqref{e:wt-diff-normn}}
     \\
-    & \qquad + \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
+    & \qquad + 2 \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
     && \text{d'après~\eqref{e:wt-ratio}}
     \\
     & \le \wts[1] \normn{\ex[1]}^2 \left(
-      \frac{\zeta^2}4 + \Vcos (1 + \zeta)
+      \frac{\zeta^2}4 + 2 \Vcos (1 + \zeta)
     \right)
     && \qedhere
   \end{alignat}
@@ -172,18 +172,18 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     scholie~\ref{s:wt-choose}}
   On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
   donnée par l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta =
-    \sqrt{2\Vcos} \) de sorte qu'on a
+    \sqrt{\Vcos} \) de sorte qu'on a
   \begin{equation} \label{e:hautn-wt-diff}
     \hautn{\wt* \ex* - \wt** \ex**}
     \le
-    \wt[1] \hautn{\ex[1]} 2 \Vcos
+    3 \Vcos \wts[1] \hautn{\ex[1]}
     \pmm.
   \end{equation}
 \end{scho}
 
 Cette dernière égalité découle directement de~\eqref{e:hautn-wt-diff-gen} en
-tenant compte du fait que \( 1 + \zeta \le 3/2 \) car \( \Vcos \le 1/4 \).
-\label{ct:Vcos<1/4}
+tenant compte du fait que \( 1 + \zeta \le 5/4 \) car \( \Vcos \le 1/16 \).
+\label{ct:Vcos<1/16}
 
 Étudions maintenant quelques propriétés de ces poids, en sus de celles déjà
 énoncées, en exploitant le fait que les \( \ex* \) satisfont à
@@ -191,8 +191,6 @@ tenant compte du fait que \( 1 + \zeta \le 3/2 \) car \( \Vcos \le 1/4 \).
 au moins comme une suite géométrique de raison inférieure à $1$. Plus
 précisément, on a
 \begin{equation} \label{e:wt-geom}
-  \frac1{1+\zeta} \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
-  \le
   \wts*
   \le
   (1+\zeta) \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
@@ -202,9 +200,11 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
 \) ; par exemple, l'énoncé suivant nous sera utile par la suite.
 
 \begin{lem}
-  Il existe \( \epsiii \le 5/\Vfar \) tel que
-  \begin{equation} \label{e:def-epsiii}
+  On a \(
     \sum_{\fct=1}^\puiss (\wts* + \wts**) \le \wts[1] (1 + \epsiii)
+  \) avec
+  \begin{equation} \label{e:def-epsiii}
+    \epsiii = \frac{ 3 (1+\zeta) }{ \Vfar - 1 }
     \pmm.
   \end{equation}
 \end{lem}
@@ -223,20 +223,24 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
     \\
     & \le 1 + (1+\zeta) \left(
       \Bigl( \frac2\Vfar \Bigr)^{\puiss-1}
-      + \frac1\Vfar
+      + \frac1{\Vfar-1}
     \right)
     \pmm.
   \end{align}
-  Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \) et que \(
-    \zeta < 1/2 \).\label{ct:Vfar>2}
+  Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \).
+  \label{ct:Vfar>2}
 \end{proof}
 
-\subsection{Première réduction}
+Pour la suite du chapitre, on notera \( \epsiii \) le réel défini
+par~\eqref{e:def-epsiii}.
+
+\subsection{Réduction à l'existence d'une forme obstructrice}
 
 Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
 dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset \) des
-sous-variétés produit \( \var \) de \( \va^\puiss \) qui contiennent \( \ex \)
-et satisfont aux majorations suivantes :
+sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
+  \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
+suivantes :
 \begin{align}
   \label{e:varset-deg}
   \vdeg* & \le \Lambda^{f_1(u)} \quad \forall \fct
@@ -255,6 +259,8 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \\
   f_2 & = \text{est une fonction décroissante}
 \end{align}
+qui ne dépendent pas du choix de \( \ex \), de sorte que l'ensemble \( \varset
+\) ne dépend de ce choix que \lat{via} la condition \( \ex \in \var \).
 
 Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
 variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
@@ -266,7 +272,7 @@ positifs,
   & \le (\dots) \Lambda^{f_2(u)} \wts[1]
   &\quad& \text{par \eqref{e:varset-ht},}
   \\
-  \wt[1] \hautl{\ex[1]}
+  \wts[1] \hautl{\ex[1]}
   & \le (1+\zeta) (\dots) \Lambda^{f_2(u)} \wts[1]
   && \text{par \eqref{e:wt-ratio},}
 \end{alignat}
@@ -286,8 +292,8 @@ théorème \ref{t:vojta-div}.
     \deg T
     & \le \Lambda^{f_1(u)}
     \\
-    \wts* \hautl(T)
-    & \le (\dots) \Lambda{f_3(u)} \wts[1]
+    \wts* \hautl T
+    & \le (\dots) \Lambda^{f_3(u)} \wts[1]
     \pmm.
   \end{align}
 \end{prop}
@@ -304,6 +310,7 @@ Le théorème de \bsc{Bézout} donne alors
 et sa version arithmétique indique que
 \begin{equation}
   \hautl{\var*'} \le \vdeg* \hautl{T} + \hautl{\var*} \deg T
+  + \text{cte(dimension)} \vdeg* \deg T
   \pmm,
 \end{equation}
 ce qui montre que \( \var' \in \varset \) (au vu des constantes qui seront
