@@ -87,8 +87,6 @@ Macros {{{2
 
 (B) Nomenclature : numéros de page.
     - fait petit à petit avec les relectures
-    - défaut de la méthode actuelle : le premier argument de \nomX dépend de
-      la définition mais est situé loin de celle-ci
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
 

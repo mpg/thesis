@@ -211,6 +211,26 @@
 \nom@newgroup a D {Lettres latines}
 \nom@newgroup c E {Constantes automatiques}
 
+% normal usage is indirect (as opposed to \nomdirect}):
+% preamble: \nomdef<csname>{<group id>}{<sort string>}
+% document: \nomuse[<csname>]{<code>}{<desc>}
+% the first token of <code> will be used as <csname> by default
+\newcommand*\nomdef [3] {%
+  \@namedef{nom@csname@@\cmdstring#1}{{#2}{#3}}%
+}
+\newcommand*\nomuse [2][] {%
+  \@ifmtarg{#1}{%
+    \expandafter\nom@use\@car#2\@nil{#2}%
+  }{%
+    \nom@use{#1}{#2}%
+  }%
+}
+\newcommand \nom@use [2] {%
+  \begingroup \edef\next{\endgroup
+    \noexpand\nomdirect\@nameuse{nom@csname@@\cmdstring#1}%
+  }\next{#2}%
+}
+
 % possibly disable next nomenclature command, usage:
 % \nomprv\nomdirect...
 \newcommand \nomprv {}
@@ -224,12 +244,12 @@
   }
 \fi
 
-% temporary, compat
-\newcommand*\noms {\nomdirect{s}}
-\newcommand*\nomn {\nomdirect{n}}
-\newcommand*\nomg {\nomdirect{g}}
-\newcommand*\noma {\nomdirect{a}}
-\newcommand*\nomc {\nomdirect{c}}
+% XXX: dummy transitional macros
+\newcommand*\noms [3] {}
+\newcommand*\nomn [3] {}
+\newcommand*\nomg [3] {}
+\newcommand*\noma [3] {}
+\newcommand*\nomc [3] {}
 
 % remove \chapter and \preamble from original definition
 \renewenvironment{thenomenclature}{%
@@ -814,6 +834,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \Vbig { \alpha \sb{\mathrm{V}} }
 \newcommand \Vfar { \beta  \sb{\mathrm{V}} }
 \newcommand \Vcos { \gamma \sb{\mathrm{V}} }
+\nomdef \Vbig g {alpha}
+\nomdef \Vfar g {beta}
+\nomdef \Vcos g {gamma}
 
 % general situation [[2
 %
@@ -825,10 +848,14 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newc@star@default \ex      {\fct }{\puiss } {\Excep\ssub{#1}}
 \newc@star@default \exi     {\fcti}{\puiss*} {\Excep'\ssub{#1}}
+
 \newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
 \newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}\sp2}
 \newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
 \newc@star@default \wtis    {\fcti}{\puiss*} {a\ssub{#1}\sp2}
+
+\nomdef \ex a {e}
+\nomdef \wt a {a}
 
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
