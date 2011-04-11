@@ -379,9 +379,12 @@ dans \( (\stairs)\Ciii \).
 
 \begin{lem}
   Avec les notations précédentes,
-  \begin{equation}
+  \begin{align}
     \card (\stairs)\Ciii
-    \le
+    & \le
+    \bigl(\delta^{\lgr\vdim} + o(\delta^{\lgr\vdim})\bigr)
+    \prod\fctrange \vdeg* \wt*^{2\vdim*}
+    \\ & \qquad \cdot
     \frac {
       \epsi^\puiss (\puiss-1)
       (2\puiss + \epsz) ^{\vdim[\puiss]-1}
@@ -389,9 +392,7 @@ dans \( (\stairs)\Ciii \).
       }{
       \puiss! \prod\fctrange (\vdim* - 1)!
       }
-    \prod\fctrange \vdeg* \wt*^{2\vdim*} \delta^{\lgr\vdim}
-    + o(\delta^{\lgr\vdim})
-  \end{equation}
+  \end{align}
 \end{lem}
 
 \begin{proof}
@@ -858,7 +859,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
       \right\}
     \pmm.
   \end{equation}
-  On extrait les lignes dont l'indice appartient à l'ensemble
+  On ne garde de \( M \) que les lignes dont l'indice appartient à l'ensemble
   \( (\stairs)\Ciii \) défini par~\eqref{e:stairs-c3} pour former la matrice
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
   multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
