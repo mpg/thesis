@@ -57,14 +57,14 @@ x_m$ de points satisfaisant simultanément à la condition (C) et aux trois
 conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha$ ; \label{i:grand}
-  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i:proche}
+  \item $\cos(x_i, x_j) > 1 - \beta$ pour tous $i$ et $j$ ; \label{i:proche}
   \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$ ;
 \end{enumthm}
 où l'angle est relatif à la structure euclidienne de l'espace. Nous
 appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
 conditions \ref{i:grand} et \ref{i:proche}. Il est clair que l'espace privé
 d'une boule de rayon $\sqrt{\alpha}$ peut être recouvert par un nombre fini de
-tels cônes tronqués dès qu'il est de dimension finie (ce qui est la cas si on
+tels cônes tronqués dès qu'il est de dimension finie (ce qui est le cas si on
 se place sur un corps de nombres). L'inégalité de \bsc{Vojta} assure qu'il
 n'y a qu'un nombre fini de points sous la condition (C) dans chaque cône,
 et permet donc de conclure à la finitude de l'ensemble des points satisfaisant
@@ -75,7 +75,7 @@ qu'il n'existe pas de suite $x_1, \dots, x_m$ de points satisfaisant
 simultanément à la condition (C) et aux trois conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha'$ ;
-  \item $\angleabs{x_i}{x_j} < \beta'$ pour tous $i$ et $j$ ;
+  \item $\cos(x_i, x_j) > 1 - \beta'$ pour tous $i$ et $j$ ;
   \item $\abs{ \hautn{y} - \hautn{x} } < \delta$.
 \end{enumthm}
 Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
@@ -330,7 +330,7 @@ suite d'approximations $x_1, \ldots, x_m$ satisfaisant simultanément à
 \eqref{e:has} et aux trois conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha$ ; \label{i:vs-grand}
-  \item $\angleabs{x_i}{x_j} < \beta$ pour tous $i$ et $j$ ; \label{i:vs-angle}
+  \item $\cos(x_i, x_j) > 1 - \beta$ pour tous $i$ et $j$ ; \label{i:vs-angle}
   \item $\hautn{x_i} > \gamma \hautn{x_{i-1}}$ pour $i > 1$. \label{i:vs-ecart}
 \end{enumthm}
 On regarde alors cette suite comme un point de $\va^m$, et on cherche à

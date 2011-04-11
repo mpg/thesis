@@ -807,12 +807,12 @@
 \newcommand*\p [1] {{\boldsymbol{#1}}}
 
 % XXX use \pp, \cp; \pmp, \cmp instead
+% replacement: check each case for 'p' vs 'mp'
 \newcommand \point   {x}
 \newcommand \pointi  {y}
 \newcommand \pointii {z}
 \newcommand \coord   {{\mathbf x}}
 \newcommand \coordi  {{\mathbf y}}
-\newcommand \coordii {{\mathbf z}}
 
 \nomdef \point   a {x} \@gobbletwo{\point  }{Un point non fixé de $\va$}
 \nomdef \pointi  a {y} \@gobbletwo{\pointi }{Un autre point non fixé de $\va$}
@@ -838,14 +838,10 @@
 \nomdef \normn s {n1} \@gobbletwo{\normn\PH}{Norme de \NT de \PH}
 
 \newcommand* \scalarn [2] {\langle#1,#2\rangle}
-\newcommand* \angleabs [2] {\widehat{(#1,#2)}} % XXX laid, à enlever
 
 \nomdef \scalarn s {angle} \@gobbletwo{\scalarn\PH\PHi}{Produit scalaire,
   relativement à la forme quadratique de \NT, des points \PH et \PHi de $\va$
   ou de son espace de \MoW}
-\nomdef \angleabs s {hat} \@gobbletwo{\angleabs\PH\PHi}{Angle non orienté,
-  relativement à la forme quadratique de \NT, entre les points \PH et \PHi de
-  $\va$ ou de son espace de \MoW}
 
 % various "epsilons" [[2
 %
