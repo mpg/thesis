@@ -141,6 +141,13 @@
   \makenomenclature
 \fi
 
+% placeholders for descriptions
+\newcommand*\nom@ph [2] {%
+  \newcommand#1{\ensuremath{\text{$#2$}}\xspace}}
+\nom@ph \PH   \star
+\nom@ph \PHi  \bullet
+
+% print a macro and its result with placeholders substitution
 \newcommand*\printmacro [1] {%
   \if@showmac
     \ted@toks{\relax#1\@nil}%
@@ -155,13 +162,15 @@
 }
 
 % for notations without macro & internal use:
+%
 % \nomdirect{<group code>}{<sort string>}{<displayed>}[<scope>]{<description>}
 \newcommandx*\nomdirect [5][4] {%
   \@ifmtarg{#4}{%
-    \nom@direct{#1}{#2}{#3}{#4}%
+    \nom@direct{\@nameuse{nom@groupsort@@#1}}{#2}{#3}{#5}%
   }{%
     \begingroup \edef\next{\endgroup
-      \unexpanded{\nom@direct{#1}{#2}{#3}}{\nom@local\unexpanded{#5}}%
+      \unexpanded{\nom@direct{\@nameuse{nom@groupsort@@#1}}{#2}{#3}}%
+      {\nom@local{#4}\unexpanded{#5}}%
     }\next
   }%
 }
@@ -169,10 +178,38 @@
   \nomenclature[#1-#2]{\printmacro{#3}}{#4}%
 }
 
-% scopes (currently chapter hardcoded)
-\begingroup \shorthandon{:} \expandafter\endgroup\@firstofone{%
-  \newcommand \nom@local {Chapitre \thechapter{} : \noexpand\MakeLowercase}
+% scopes
+%
+% \nom@newscope{<id>}{<code>}
+\newcommand \nom@newscope [2] {%
+  \@namedef{nom@scope@@#1}{#2}%
 }
+% using a declared scope
+\newcommand \nom@local [1] {%
+  \@nameuse{nom@scope@@#1} : \noexpand\MakeLowercase
+}
+% scopes used
+\nom@newscope {chap} {Chapitre \thechapter}
+\nom@newscope {sec}  {Section \thesection}
+\nom@newscope {sub}  {Sous-section \thesubsection}
+
+% groups
+%
+% \nom@newgroup{<id>}{<sort key>}{<name>}
+\newcommand*\nom@newgroup [3] {%
+  \@namedef{nom@groupsort@@#1}{#2}%
+  \@namedef{nom@groupname@@#2}{#3}%
+}
+% typesetting group name in the actual nomenclature (#1 = sort key)
+\renewcommand*\nomgroup [1] {%
+  \item[\sffamily\bfseries \@nameuse{nom@groupname@@#1}]
+}
+% group list
+\nom@newgroup s A {Symboles}
+\nom@newgroup n B {Signes numériques}
+\nom@newgroup g C {Lettres grecques}
+\nom@newgroup a D {Lettres latines}
+\nom@newgroup c E {Constantes automatiques}
 
 % possibly disable next nomenclature command, usage:
 % \nomprv\nomdirect...
@@ -187,39 +224,12 @@
   }
 \fi
 
-\newcommand*\nom@type [1] {%
-  \expandafter\nom@type@\csname\cmdstring#1@\endcsname#1}
-\newcommand*\nom@type@ [4] {%
-  \newcommand #2 {\@ifstar{%
-      \begingroup \edef\next{\endgroup
-        \noexpand#1{\nom@local}%
-      }\next
-    }{%
-      #1{}%
-    }%
-  }%
-  \newcommand*#1 [4] {%
-    \nomdirect{#3}{##2}{##3}{##1##4}%
-  }
-  \@namedef{nom@group@@#3}{#4}%
-}
-
-\renewcommand*\nomgroup [1] {%
-  \item[\sffamily\bfseries \@nameuse{nom@group@@#1}]
-}
-
-\nom@type \noms A {Symboles}
-\nom@type \nomn B {Signes numériques}
-\nom@type \nomg C {Lettres grecques}
-\nom@type \noma D {Lettres latines}
-\nom@type \nomc E {Constantes automatiques}
-
-% placeholders for descriptions
-\newcommand*\nom@ph [2] {%
-  \newcommand#1{\ensuremath{\text{$#2$}}\xspace}}
-
-\nom@ph \PH   \star
-\nom@ph \PHi  \bullet
+% temporary, compat
+\newcommand*\noms {\nomdirect{s}}
+\newcommand*\nomn {\nomdirect{n}}
+\newcommand*\nomg {\nomdirect{g}}
+\newcommand*\noma {\nomdirect{a}}
+\newcommand*\nomc {\nomdirect{c}}
 
 % remove \chapter and \preamble from original definition
 \renewenvironment{thenomenclature}{%
