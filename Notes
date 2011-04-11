@@ -248,6 +248,11 @@ chi     : z2
 psi     : z3
 omega   : z4
 
+Normes pour la nomenclature :
+\vert : n1
+\Vert : n2
+triple : n3
+
 Math {{{2
 ----
 

@@ -214,6 +214,7 @@
 % the first token of <code> will be used as <csname> by default
 \newcommand*\nomdef [3] {%
   \@namedef{nom@csname@@\cmdstring#1}{{#2}{#3}}%
+  % \nomuse{#1\PH\PHi}{test} % debugging only
 }
 \newcommand*\nomuse [2][] {%
   \@ifmtarg{#1}{%
@@ -663,12 +664,12 @@
 \newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
 
-\nomdef \av  s {nv1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un
+\nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un
   nombre}
-\nomdef \nv  s {nv2} \@gobbletwo{\nv\PHi\PH }{Norme $\place$-adique d'un
+\nomdef \nv  s {n2} \@gobbletwo{\nv\PHi\PH }{Norme $\place$-adique d'un
   vecteur ou d'une forme, en utilisant norme ou mesure \PHi si $\place$ est
   archimédienne}
-\nomdef \nnv s {nv3} \@gobbletwo{\nnv\PHi\PH}{Norme $\place$-adique d'un
+\nomdef \nnv s {n3} \@gobbletwo{\nnv\PHi\PH}{Norme $\place$-adique d'un
   multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
   si $\place$ est archimédienne}
 \nomdef \mvm a {Mv} \@gobbletwo{\mvm\PH}{Mesure de \bsc{Mahler} de la forme
@@ -748,7 +749,7 @@
 \newcommand \anydeg {\Delta}
 
 \newcommand*\lgr [1] {\abs{#1}}
-\nomdef \lgr s {n} \@gobbletwo{\lgr\PH}{Longueur du multiindice \PH}
+\nomdef \lgr s {n1} \@gobbletwo{\lgr\PH}{Longueur du multiindice \PH}
 
 \newcommand*\ncoef  [1] {\mathcal N(#1)}
 \newcommand*\maxbin [1] {m(#1)}
@@ -796,9 +797,9 @@
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
 
-\nomdef \vlg s {n} \@gobbletwo{\vlg\PH}{Vecteur des longueurs du
+\nomdef \vlg s {n1} \@gobbletwo{\vlg\PH}{Vecteur des longueurs du
   multimultiindice \PH}
-\nomdef \lgt s {N} \@gobbletwo{\lgt\PH}{Longueur totale du multimultiindice
+\nomdef \lgt s {n2} \@gobbletwo{\lgt\PH}{Longueur totale du multimultiindice
   \PH}
 
 % points and coordinates [[2
@@ -835,7 +836,7 @@
 \nomdef \hautl a {h} \@gobbletwo{\hautl[\PHi]{\PH}}{Hauteur projective
   logarithmique de \PH en utilisant la norme \PHi aux places archimédiennes}
 \nomdef \hautn a {h} \@gobbletwo{\hautn      {\PH}}{Hauteur de \NT de \PH}
-\nomdef \normn s {normn} \@gobbletwo{\normn\PH}{Norme de \NT de \PH}
+\nomdef \normn s {n1} \@gobbletwo{\normn\PH}{Norme de \NT de \PH}
 
 \newcommand* \scalarn [2] {\langle#1,#2\rangle}
 \newcommand* \angleabs [2] {\widehat{(#1,#2)}} % XXX laid, à enlever
