@@ -10,17 +10,14 @@
 
 % booleans for options, default values [[2
 %
+\newif\if@private       \@privatetrue
 \newif\if@showbad       \@showbadtrue
 \newif\if@domark        \@domarktrue
-\newif\if@showmac       \@showmactrue
-\newif\if@showkeys      \@showkeystrue
 
 % option declarations [[2
 %
 \DeclareOption {full}   {\let\includeonly\@gobble}
-\DeclareOption {pph}    {\@showbadfalse \@showmacfalse \@showkeysfalse}
-\DeclareOption {nobad}  {\@showbadfalse}
-\DeclareOption {showmac}{\@showmactrue}
+\DeclareOption {pph}    {\@privatefalse}
 \DeclareOption {nomark} {\@domarkfalse}
 \ProcessOptions \relax
 
@@ -62,9 +59,9 @@
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
 \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
 
-% showkeys pseudo-option [[2
+% showkeys [[2
 %
-\if@showkeys
+\if@private
   \usepackage[notref, notcite, color]{showkeys}
   \colorlet{labelkey}{keys}
   \renewcommand\showkeyslabelformat [1] {%
@@ -145,7 +142,7 @@
 
 % print a macro and its result with placeholders substitution
 \newcommand*\printmacro [1] {%
-  \if@showmac
+  \if@private
     \ted@toks{\relax#1\@nil}%
     \Substitute*{\the\ted@toks} {}                     {\string}%
     \Substitute*{\the\ted@toks} {\string\@nil\string}  {}%
@@ -230,7 +227,7 @@
 % possibly disable next nomenclature command, usage:
 % \nomprv\nomdirect...
 \newcommand \nomprv {}
-\if@showmac \else
+\if@private \else
   \let \nom@direct@real \nomdirect
   \renewcommand \nomprv {%
     \let \nom@direct \nom@direct@skip
