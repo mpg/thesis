@@ -789,9 +789,6 @@
 \newcommand \cmp {\gmp x}
 \newcommand \vmp {\gmp X}
 
-\newcommand*\cmh  [1] {\vmp[#1]} % XXX
-\newcommand \cmmh     {\vmp\relax} % XXX
-
 \newcommand \imp {\gmp \lambda}
 \nomdef \lambda g {l} \@gobbletwo{\lambda}{Un indice multiprojectif, dans
   \( \bigl( \N\sp{\dimp + 1} \bigr)\sp\puiss \)}
@@ -921,8 +918,6 @@
   entre $1$ et $\puiss*$}
 
 \newcommand \vmpi {\smpi Y}
-\newcommand*\cmhi [1] {\vmpi[#1]} % XXX
-\newcommand \cmmhi    {\vmpi\relax} % XXX
 
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
 \newcommand*\wemba [1][\wt] {\psi\ssub{#1}}

@@ -38,13 +38,13 @@ On introduit alors, pour \( \beta > 0 \), les idéaux
 \begin{equation}
   \vanish*[\beta]
   = \left\{
-    H \in \cdn [\cmmh]
+    H \in \cdn [\vmp]
     \text{ tels que }
     \inda*(H) \ge \beta
   \right\}
 \end{equation}
 et $\vanish[\beta] = \vanish*[\beta] + \varid$. Par abus, on notera de même
-l'image de \( \vanish[\beta] \) dans $\ring\var = \cdn [\cmmh] / \varid$, ce
+l'image de \( \vanish[\beta] \) dans $\ring\var = \cdn [\vmp] / \varid$, ce
 qui est légitime puisqu'on a fait en sorte que $\varid \subset
 \vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
   \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
@@ -88,20 +88,20 @@ d'autres paramètres, voir~\eqref{e:def-epsii}. Posons alors
   \bigr) \in \Q^\puiss
   \label{e:def-dp}
 \end{align}
-de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\cmmh,
-\cmmhi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$.  On
+de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\vmp,
+\vmpi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$.  On
 cherche alors une forme
 \begin{equation}
   F'
-  \in \cdn[\cmmh]_{\delta d'}
+  \in \cdn[\vmp]_{\delta d'}
   \cap \vanish
-  \cap \wemba(\cdn[\cmmh, \cmmhi]_{\delta d})
+  \cap \wemba(\cdn[\vmp, \vmpi]_{\delta d})
 \end{equation}
 non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
 \wemba(F)$), on cherche une forme
 \begin{equation}
   F
-  \in \cdn[\cmmh, \cmmhi]_{\delta d}
+  \in \cdn[\vmp, \vmpi]_{\delta d}
   \cap \wemba^{-1}(\vanish)
 \end{equation}
 non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
@@ -116,25 +116,25 @@ $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
 Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\cmh]_{\delta d'}$ dans lequel $\vanish$
+un sous-espace de $\cdn[\vmp]_{\delta d'}$ dans lequel $\vanish$
 est de codimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
-Pour commencer, on choisit dans $\cdn[\cmmh, \cmmhi]_{\delta d}$ un
+Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_{\delta d}$ un
 supplémentaire de $(\ideal{\wemb(\var)})_{\delta d}$ engendré par des
 monômes, que l'on notera $\Ideal_{\delta d}$, et dans lequel on cherchera
 $F$.
 
 On considérera des sous-espaces vectoriels de partie homogènes de
-$\cdn[\cmmh]$ définis par des restrictions de degré ; introduisons à cet effet
+$\cdn[\vmp]$ définis par des restrictions de degré ; introduisons à cet effet
 quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
   \})^{\puiss(\dimp+1)}$, on notera
 \begin{equation} \label{e:C-spaces}
-  \cdn[\cmmh]^C
+  \cdn[\vmp]^C
   = \{
-    F \in \cdn[\cmmh]
+    F \in \cdn[\vmp]
     \text{ tels que }
-    \deg_{\cmh{\fct}[k]} F \le C\pexp{\fct}[k]
+    \deg_{\vmp*[k]} F \le C\pexp{\fct}[k]
     \quad \forall i, k
     \}
   \pmm.
@@ -164,18 +164,18 @@ dans la définition précédente.
 
 Le plan général de l'écriture du système se résume alors par le diagramme
 commutatif suivant, où l'on note
-\( \ring{\wemb(\var)} = \cdn[\cmmh, \cmmhi] / \ideal{\wemb(\var)} \)
+\( \ring{\wemb(\var)} = \cdn[\vmp, \vmpi] / \ideal{\wemb(\var)} \)
 et
-\( \ring{\opdef} = (\cdn[\cmmh])_\opdef \)
+\( \ring{\opdef} = (\cdn[\vmp])_\opdef \)
 et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
     \Ideal_\Dz            \ar [r] ^{\wemba}        \ar [d] _{\sim}
-    & \cdn [\cmmh]_\Dii   \ar [r] ^{\rdiv^\Dii}    \ar [d]
-    & \cdn [\cmmh]\Ci     \ar [r] ^{\relim}        \ar [d]
-    & \cdn [\cmmh]\Cii    \ar [r] ^{\rdiv^\Diii}   \ar [d]
-    & \cdn [\cmmh]\Ciii                            \ar [d]
+    & \cdn [\vmp]_\Dii   \ar [r] ^{\rdiv^\Dii}    \ar [d]
+    & \cdn [\vmp]\Ci     \ar [r] ^{\relim}        \ar [d]
+    & \cdn [\vmp]\Cii    \ar [r] ^{\rdiv^\Diii}   \ar [d]
+    & \cdn [\vmp]\Ciii                            \ar [d]
     \\ \ring{\wemb(\var)} \ar [r] ^{\wemb^*}
     & \ring\opdef         \ar [r] ^{\I}
     & \ring\opdef         \ar [r] ^{R \cdot \null}
@@ -213,14 +213,14 @@ ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 
 Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
 sera composé des équations définissant $\vanish$ dans
-\( \cdn[\cmmh]_{\delta d' + r'}^{C'''} \),
+\( \cdn[\vmp]_{\delta d' + r'}^{C'''} \),
 tirées en arrière sur $\Ideal_{\delta d}$ par
 \( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
   \item calculer la codimension de $\Ideal_{\delta d}$ ;
   \item calculer la codimension de $\vanish*$ dans
-    $\cdn[\cmmh]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
+    $\cdn[\vmp]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
     petite que la dimension précédente ;
   \item expliciter les morphismes de la première ligne du diagramme et majorer
     la hauteur de leurs matrices dans les bases monomiales évidentes.
@@ -265,7 +265,7 @@ ce qu'on aura besoin de savoir sur le degré.
   cardinal $\vdeg[\puiss]$.
 
   Fixons maintenant un point $p$ dans cet ensemble. On constate que
-  $\wemb(\var) \cap \zeros{\cmh\puiss = p}$ coïncide avec l'image de
+  $\wemb(\var) \cap \zeros{\vmp** = p}$ coïncide avec l'image de
   \begin{align}
     \wemb[\wt, p]'
     \colon
@@ -347,7 +347,7 @@ ce qu'on aura besoin de savoir sur le degré.
 \end{proof}
 
 Nous allons maintenant calculer la codimension de $\vanish*$ dans
-$\cdn[\cmmh]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
+$\cdn[\vmp]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
 suivant :
 
 \begin{equation} \label{e:stairs-c3}
@@ -373,7 +373,7 @@ suivant :
   \end{split}
 \end{equation}
 dont il s'agit de calculer le cardinal. En effet,
-\( \vanish* \cap \cdn [\cmmh]\Ciii \)
+\( \vanish* \cap \cdn [\vmp]\Ciii \)
 est le sous-espace engendré par les monômes dont les exposants ne sont pas
 dans \( (\stairs)\Ciii \).
 
@@ -489,12 +489,12 @@ par le morphisme \( \wemba \) qui est déjà bien défini.
 On étudie en fait le prolongement
 \begin{equation}
   \wemba \colon
-  \cdn [\cmmh, \cmmhi]_\Dz
+  \cdn [\vmp, \vmpi]_\Dz
   \to
-  \cdn [\cmmh]_\Dii
+  \cdn [\vmp]_\Dii
 \end{equation}
 donné par les mêmes formules. La base évidente de ce nouvel espace de départ
-est formée par les monômes \( \cmmh^p \cmmhi^q \) pour
+est formée par les monômes \( \vmp^p \vmpi^q \) pour
 \begin{equation}
   (p, q)
   \in \N^{\puiss(\dimp + 1)} \times \N^{(\puiss - 1) (\dimp - 1)}
@@ -512,14 +512,14 @@ où \( d \) est défini par~\eqref{e:def-d}.
   Avec les notations précédentes, l'application linéaire
   \begin{equation}
     \wemba \colon
-    \cdn [\cmmh, \cmmhi]_\Dz
+    \cdn [\vmp, \vmpi]_\Dz
     \to
-    \cdn [\cmmh]_\Dii
+    \cdn [\vmp]_\Dii
   \end{equation}
   est représentée dans les bases canoniques par une matrice de colonnes
   \(
-  c_{p, q} = \wemba(\cmmh^p\cmmhi^q)
-  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \cmmh^{s+p}
+  c_{p, q} = \wemba(\vmp^p\vmpi^q)
+  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \vmp^{s+p}
   \)
   satisfaisant
   \begin{equation}
@@ -538,14 +538,14 @@ où \( d \) est défini par~\eqref{e:def-d}.
 
 \begin{proof}
   La définition de \( \wemba \) montre que \(
-  \wemba( \cmmh^p \cmmhi^q ) = \cmmh^p \wemba(\cmmhi^q) \), on a donc \(
-  \nv1 {c_{p, q}} = \nv1 {\wemba(\cmmhi^q)} \). Ainsi, avec le
+  \wemba( \vmp^p \vmpi^q ) = \vmp^p \wemba(\vmpi^q) \), on a donc \(
+  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, avec le
   corollaire~\ref{c:addsub-form} et le fait~\ref{f:mult-form}, on a
   \begin{align}
     \nv1 {c_{p, q}}
     & \le
     \prod\fctirange \prod\indrange
-    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\cmh\fcti), \cmh\puiss \bigr) }
+    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\vmp[\fcti]), \vmp** \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \prod\indrange \left(
@@ -581,15 +581,15 @@ l'appliquer au cas qui nous intéresse.
     \item \( \Delta\mexp* \in \N^* \) ;
     \item \( P\mexp*[\ind]
       \in
-      \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*], \cmh\fct[\ind] ] \)
-      homogène de degré \( \Delta\mexp* \) et unitaire en \( \cmh\fct[\ind]
+      \cdn [ \vmp*[0], \dots, \vmp*[\vdim*], \vmp*[\ind] ] \)
+      homogène de degré \( \Delta\mexp* \) et unitaire en \( \vmp*[\ind]
       \).
   \end{enumthm}
   On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
   l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
   \( f \in \N^\puiss \), il existe une (unique) application linéaire
   \begin{equation}
-    \rdiv^f \colon \cdn [\cmmh]_ f \to \cdn [\cmmh]_ f^{C'_\Delta}
+    \rdiv^f \colon \cdn [\vmp]_ f \to \cdn [\vmp]_ f^{C'_\Delta}
   \end{equation}
   qui est l'identité modulo \( \Ideal \) (voir~\eqref{e:C-spaces}
   et~\eqref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
@@ -603,8 +603,8 @@ l'appliquer au cas qui nous intéresse.
     \bigr) ^{f_\fct}
   \end{equation}
   pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
-  l'image de \( \cdn [\cmmh]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
-  contenue dans \( \cdn [\cmmh]_ f ^{C'''_\Delta} \).
+  l'image de \( \cdn [\vmp]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
+  contenue dans \( \cdn [\vmp]_ f ^{C'''_\Delta} \).
 \end{lem}
 
 \begin{proof}
@@ -616,10 +616,10 @@ l'appliquer au cas qui nous intéresse.
     P\mexp*[\ind]
     =
     \sum _{\alpha=1}^{\Delta\mexp*}
-    P\mexp*[\ind, \alpha] \cdot (\cmh\fct[\ind])^{\Delta\mexp* - \alpha}
+    P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta\mexp* - \alpha}
     \pmm,
   \end{equation}
-  où \( P\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*] ] \).
+  où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
   On pose ensuite, pour tout \( \fct \), tout
   \( \ind \in \{ 0, \dots, \dimp \} \) et tout
   \( p \in \N^{\puiss(\dimp+1)} \),
@@ -627,7 +627,7 @@ l'appliquer au cas qui nous intéresse.
     \rho_{\fct, \ind, p}
     =
     \begin{dcases*}
-      ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]}
+      ( \vmp*[\ind] ) ^{p\mexp*[\ind]}
       & si \( \fct \le \vdim* \) ;
       \\
       \sum _{\alpha=1}^{\Delta\mexp*}
@@ -638,7 +638,7 @@ l'appliquer au cas qui nous intéresse.
   \end{equation}
   où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}. En
   particulier, \( \rho_{\fct, \ind, p} \) est toujours congru à
-  \( ( \cmh\fct[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
+  \( ( \vmp*[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
   l'estimation de norme
   \begin{equation}
     \nv1{ \rho_{\fct, \ind, p} }
@@ -651,13 +651,13 @@ l'appliquer au cas qui nous intéresse.
   On définit alors \( \rdiv^f \) par son action sur les monômes, en posant
   \begin{equation}
     c_p
-    = \rdiv^f(\cmmh^p)
+    = \rdiv^f(\vmp^p)
     = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
   \end{equation}
   et en prolongeant par linéarité. L'estimation de norme annoncée découle
   directement de la majoration précédente en prenant le produit. Par ailleurs,
   il est clair que si une forme ne fait intervenir que les variables \(
-  \cmh\fct[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de même de son
+  \vmp*[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de même de son
   image.
 \end{proof}
 
@@ -685,20 +685,20 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \begin{lem}
   Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
   \{ \vdim* + 1, \dots \dimp \} \), des formes
-  \( S\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*] ] \) et
-  \( T\mexp*[\ind] \in \cdn [ \cmh\fct[0], \dots, \cmh\fct[\vdim*+1] ] \)
+  \( S\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) et
+  \( T\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*+1] ] \)
   telles que \( \deg S\mexp*[\ind] + 1 = T\mexp*[\ind] \) et des entiers
   \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
-  \( S\mexp*[\ind] \cmh\fct[\ind] - T\mexp*[\ind] \).
+  \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
 
   Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
   \Delta \), de degré noté \( r \), et, pour tout \( f \in \N^\puiss \), une
   application linéaire
   \begin{equation}
     \relim \colon
-    \cdn [\cmmh]_ {f}^{C'_\Delta}
+    \cdn [\vmp]_ {f}^{C'_\Delta}
     \to
-    \cdn [\cmmh]_ {f+r}^{C'_\Delta}
+    \cdn [\vmp]_ {f+r}^{C'_\Delta}
   \end{equation}
   qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
 
@@ -717,27 +717,27 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \end{lem}
 
 \begin{proof}
-  Soit \( R \) défini comme dans l'énoncé, et \( \cmmh^q \) un monôme de
+  Soit \( R \) défini comme dans l'énoncé, et \( \vmp^q \) un monôme de
   l'espace de départ. Par hypothèse, \( q\mexp*[\ind] \le \Delta_\fct \) pour
   tout \( \fct \) et \( \ind \le \vdim* + 1 \), de sorte que l'on peut poser
   \begin{equation}
-    \relim( \cmmh^q )
+    \relim( \vmp^q )
     =
     \prod\fctrange \left(
     \prod_{\ind=1}^{\vdim*}
-    (\cmh\fct[\ind])^{q\mexp*[\ind]}
+    (\vmp*[\ind])^{q\mexp*[\ind]}
     \prod_{\ind=\vdim*+1}^\dimp
     (T\mexp*[\ind])^{q\mexp*[\ind]}
     (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
     \right)
   \end{equation}
-  et prolonger par linéarité. On vérifie immédiatement que \( \relim(\cmmh^q)
-  \) est congru à \( R \cdot \cmmh^q \) modulo \( \Ideal_{S, T} \), de même
+  et prolonger par linéarité. On vérifie immédiatement que \( \relim(\vmp^q)
+  \) est congru à \( R \cdot \vmp^q \) modulo \( \Ideal_{S, T} \), de même
   que l'estimation de norme annoncée.
 \end{proof}
 
 \begin{coro} \label{c:hmat-relim}
-  Il existe une forme \( R \in \cdn [\cmmh]^{C''} \) ne dépendant que de \(
+  Il existe une forme \( R \in \cdn [\vmp]^{C''} \) ne dépendant que de \(
   \var \) et un morphisme \( \relim \) tels que le
   diagramme~\eqref{e:diag-f-aux} commute. De plus, les colonnes de la matrice
   de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
@@ -805,7 +805,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{prop} \label{p:build-aux}
   Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
   \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
-    [\cmmh, \cmmhi] \), multihomogène de degré \( \delta d \), où l'on
+    [\vmp, \vmpi] \), multihomogène de degré \( \delta d \), où l'on
   rappelle que
   \begin{equation}
     d = \bigl(
@@ -861,7 +861,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   On extrait les lignes dont l'indice appartient à l'ensemble
   \( (\stairs)\Ciii \) défini par~\eqref{e:stairs-c3} pour former la matrice
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
-  multidegré \( \Dz \) en \( (\cmmh, \cmmhi) \). On extrait alors de
+  multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
   \( M' \) les colonnes indexées par les monômes constituant la base choisie
   de \( \Ideal_\Dz \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
