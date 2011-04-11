@@ -53,13 +53,15 @@ est un morphisme de \( \cdn \)-algèbres.
 
 Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
 faisant commuter le diagramme
-\begin{equation} \label{e:pmor} % FIXME: tag not displayed
-  \xymatrix{
-    \cdn[\vp]_{(\ideal\anyvar)}                 \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
-    & \cdn[\vp]_{(\ideal\anyvar)} \series\psp   \ar[d]^\pi
-    \\ \cdn(\anyvar)                                           \ar[r]^{\pmor}
-    & \cdn(\anyvar)\series\psp
-  }
+\begin{equation} \label{e:pmor}
+  \begin{aligned}[c]
+    \xymatrix{
+      \cdn[\vp]_{(\ideal\anyvar)}               \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
+      & \cdn[\vp]_{(\ideal\anyvar)} \series\psp \ar[d]^\pi
+      \\ \cdn(\anyvar)                                     \ar[r]^{\pmor}
+      & \cdn(\anyvar)\series\psp
+    }
+  \end{aligned}
 \end{equation}
 où les flèches verticales sont les projections canoniques. Posons
 \( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)

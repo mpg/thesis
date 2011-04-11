@@ -257,9 +257,6 @@
   }
 \fi
 
-% XXX: dummy transitional macros
-%\providecommand \@gobbletwo [2] {}
-
 % remove \chapter and \preamble from original definition
 \renewenvironment{thenomenclature}{%
   \list{}{%
@@ -803,7 +800,7 @@
 
 % points and coordinates [[2
 %
-% FIXME: used inconsistently
+% XXX: used inconsistently
 \newcommand*\p [1] {{\boldsymbol{#1}}}
 
 % XXX use \pp, \cp; \pmp, \cmp instead
