@@ -235,6 +235,19 @@ chap:   chapter
 sec:    section
 sub:    subsection
 
+Alphabet grec pour la nomenclature :
+gamma   : c
+eps     : e0
+zeta    : e1
+eta     : e2
+theta   : e3
+nu      : n0
+xi      : n1
+phi     : z1
+chi     : z2
+psi     : z3
+omega   : z4
+
 Math {{{2
 ----
 

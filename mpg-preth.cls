@@ -603,7 +603,7 @@
   abélienne \PHi sur le corps \PH}
 
 \newcommand \mmemb { \Theta }
-\nomdef \mmemb g {Theta} \@gobbletwo{\mmemb}{Plongement de \bsc{Mumford
+\nomdef \mmemb g {E3} \@gobbletwo{\mmemb}{Plongement de \bsc{Mumford
     modifié}}
 
 \newcommand \placesapx  { \mathcal S }
@@ -614,9 +614,9 @@
 
 \nomdef \placesapx a {S} \@gobbletwo{\placesapx}{Ensemble fini de places de \(
     \cdn \) auxquelles on impose une condition d'approximation}
-\nomdef \wtapx g {lambda} \@gobbletwo{\wtapx}{Poids de la place \( \place \)
+\nomdef \wtapx g {l} \@gobbletwo{\wtapx}{Poids de la place \( \place \)
   dans la condition d'approximation}
-\nomdef \degv g {Delta} \@gobbletwo{\degv}{Degré local de \( \cdn \) en \(
+\nomdef \degv g {D} \@gobbletwo{\degv}{Degré local de \( \cdn \) en \(
     \place \)}
 
 \newcommand \varapx { E }
@@ -624,14 +624,15 @@
   approximations}
 
 \newcommand \expapx { \eps }
-\nomdef \expapx g {eps} \@gobbletwo{\expapx}{L'exposant d'approximation}
+\nomdef \expapx g {e0} \@gobbletwo{\expapx}{L'exposant d'approximation}
 
-\nomdef \alpha g {alpha} \@gobbletwo{\alpha}{Un des paramètres de l'énoncé de
-  Vojta et Mumford} \nomdef \beta g {beta} \@gobbletwo{\beta}{Un des
-  paramètres de l'énoncé de Vojta et Mumford}
-\nomdef \gamma g {gamma} \@gobbletwo{\gamma}{Un des paramètres de l'énoncé de
+\nomdef \alpha g {a} \@gobbletwo{\alpha}{Un des paramètres de l'énoncé de
   Vojta et Mumford}
-\nomdef \delta g {delta} \@gobbletwo{\delta}{Un des paramètres de l'énoncé de
+\nomdef \beta g {b} \@gobbletwo{\beta}{Un des
+  paramètres de l'énoncé de Vojta et Mumford}
+\nomdef \gamma g {c} \@gobbletwo{\gamma}{Un des paramètres de l'énoncé de
+  Vojta et Mumford}
+\nomdef \delta g {d} \@gobbletwo{\delta}{Un des paramètres de l'énoncé de
   Vojta et Mumford}
 
 % archimedian norms and measures [[2
@@ -709,7 +710,7 @@
 \newcommand \coa {\theta}
 \newcommand \coi  {{\mathfrak b}}
 
-\nomdef \coa g {theta} \@gobbletwo{\coa}{Les coordonnées de l'origine de $\va$
+\nomdef \coa g {e3} \@gobbletwo{\coa}{Les coordonnées de l'origine de $\va$
   dans un plongement de \bsc{Mumford} modifié fixé}
 \nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les
   inverses de composantes de $\coa$ bien choisies}
@@ -789,7 +790,7 @@
 \newcommand \cmmh     {\vmp\relax} % XXX
 
 \newcommand \imp {\gmp \lambda}
-\nomdef \lambda g {lambda} \@gobbletwo{\lambda}{Un indice multiprojectif, dans
+\nomdef \lambda g {l} \@gobbletwo{\lambda}{Un indice multiprojectif, dans
   \( \bigl( \N\sp{\dimp + 1} \bigr)\sp\puiss \)}
 
 \newcommand*\vlg [1] {\abs{#1}}
@@ -855,11 +856,11 @@
 \newcommand \epsiii {\eps\sb3}
 \newcommand \epsiv  {\eps\sb4}
 
-\nomdef \epsz   g {eps0} \@gobbletwo{\epsz  }{Un epsilon}
-\nomdef \epsi   g {eps1} \@gobbletwo{\epsi  }{Un autre epsilon}
-\nomdef \epsii  g {eps2} \@gobbletwo{\epsii }{Encore un autre epsilon}
-\nomdef \epsiii g {eps3} \@gobbletwo{\epsiii}{Toujours un autre epsilon}
-\nomdef \epsiv  g {eps4} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
+\nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
+\nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
+\nomdef \epsii  g {e02} \@gobbletwo{\epsii }{Encore un autre epsilon}
+\nomdef \epsiii g {e03} \@gobbletwo{\epsiii}{Toujours un autre epsilon}
+\nomdef \epsiv  g {e04} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
 
 % abelian formulas [[2
 %
@@ -873,9 +874,9 @@
 \newcommand \Vbig { \alpha \sb{\mathrm{V}} }
 \newcommand \Vfar { \beta  \sb{\mathrm{V}} }
 \newcommand \Vcos { \gamma \sb{\mathrm{V}} }
-\nomdef \Vbig g {alpha}
-\nomdef \Vfar g {beta}
-\nomdef \Vcos g {gamma}
+\nomdef \Vbig g {a}
+\nomdef \Vfar g {b}
+\nomdef \Vcos g {c}
 
 % general situation [[2
 %
@@ -924,9 +925,9 @@
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
 \newcommand*\wemba [1][\wt] {\psi\ssub{#1}}
 
-\nomdef \wemb  g {phi} \@gobbletwo{\wemb }{Plongement éclatant associé au
+\nomdef \wemb  g {z1} \@gobbletwo{\wemb }{Plongement éclatant associé au
   vecteur de poids $\wt$}
-\nomdef \wemba g {psi} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées
+\nomdef \wemba g {z3} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées
   associé au plongement éclatant $\wemb$}
 
 \newcommand*\wembcl {\gmpi S}
@@ -997,9 +998,9 @@
 \newcommand \rdiv  { \rho\sb{\mathrm{div }} }
 \newcommand \relim { \rho\sb{\mathrm{elim}} }
 
-\nomdef \rdiv g {rho} \@gobbletwo{\rdiv}{Morphisme de réduction par division
+\nomdef \rdiv g {r} \@gobbletwo{\rdiv}{Morphisme de réduction par division
   dans la construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
-\nomdef \relim g {rho} \@gobbletwo{\relim}{Morphisme de réduction par
+\nomdef \relim g {r} \@gobbletwo{\relim}{Morphisme de réduction par
   élimination de variables dans le construction de la forme auxiliaire pour
   l'inégalité de \bsc{Vojta}}
 
@@ -1027,7 +1028,7 @@
 %
 \nomdef d a {d} \@gobbletwo{d}{Le degré, divisé par $\delta$, de la forme
   auxiliaire vue sur l'image par le plongement éclatant}
-\nomdef \delta g {delta} \@gobbletwo{\delta}{Un entier suffisamment divisible
+\nomdef \delta g {d} \@gobbletwo{\delta}{Un entier suffisamment divisible
   et grand, gouvernant l'ordre de grandeur du degré de la forme auxiliaire}
 
 \nomdef F a {F} \@gobbletwo{F}{La forme auxiliaire vue sur \( \wemb(\var) \)}
@@ -1039,13 +1040,13 @@
 
 % Local notations without dedicated macro [[2
 %
-\nomdef \alpha g {alpha} \@gobbletwo{\alpha}{Parfois utilisé localement comme
+\nomdef \alpha g {a} \@gobbletwo{\alpha}{Parfois utilisé localement comme
   indice ou (multi)degré}
-\nomdef \beta g {beta} \@gobbletwo{\beta}{Parfois utilisé localement comme
+\nomdef \beta g {b} \@gobbletwo{\beta}{Parfois utilisé localement comme
   indice ou (multi)degré}
 \nomdef f a {f} \@gobbletwo{f}{Parfois un multiindice, élément de \(
     \N\sp\puiss \)}
-\nomdef \Delta g {Delta} \@gobbletwo{\Delta}{Parfois un multidegré, élément de
+\nomdef \Delta g {D} \@gobbletwo{\Delta}{Parfois un multidegré, élément de
   \( \N\sp\puiss \)}
 \nomdef p a {p} \@gobbletwo{p}{Parfois un entier ou un (multi)multiindice}
 \nomdef q a {q} \@gobbletwo{q}{Parfois un entier ou un (multi)multiindice}
