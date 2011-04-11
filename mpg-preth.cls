@@ -244,13 +244,6 @@
   }
 \fi
 
-% XXX: dummy transitional macros
-\newcommand*\noms [3] {}
-\newcommand*\nomn [3] {}
-\newcommand*\nomg [3] {}
-\newcommand*\noma [3] {}
-\newcommand*\nomc [3] {}
-
 % remove \chapter and \preamble from original definition
 \renewenvironment{thenomenclature}{%
   \list{}{%
@@ -442,16 +435,16 @@
 \newcommand* \proj [2][] {\Proj \ssup{#2}                 \ssub{#1}}
 \newcommand* \aff  [2][] {\Aff  \@ifnotmtarg{#2}{\sp{\!#2}} \ssub{#1}}
 
-\noma{P}{\proj\PH}{L'espace projectif standard de dimension \PH}
-\noma{A}{\aff \PH}{L'espace affine standard de dimension \PH}
+\nomdef \proj a {P} \@gobbletwo{\proj\PH}{L'espace projectif standard de dimension \PH}
+\nomdef \aff  a {A} \@gobbletwo{\aff \PH}{L'espace affine standard de dimension \PH}
 
 % standard functions [[2
 %
 \newcommand*\I     [1][] {\std{Id}\ssub{#1}}
 \newcommand*\indic [1]   {\std{1}\ssub{#1}}
 
-\noma{Id} {\I\PH}     {Fonction identité sur l'ensemble \PH}
-\nomn{1}  {\indic\PH} {Fonction indicatrice de l'ensemble \PH}
+\nomdef \I     a {Id} \@gobbletwo{\I\PH}{Fonction identité sur l'ensemble \PH}
+\nomdef \indic n {1} \@gobbletwo{\indic\PH}{Fonction indicatrice de l'ensemble \PH}
 
 % less standard but still usefull sets [[2
 %
@@ -459,9 +452,9 @@
 \newcommand \cdn {{\boldsymbol k}}
 \newcommand \Cdn {{\boldsymbol K}}
 
-\noma{Q}{\Qbar}{Une clôture algébrique fixée de $\Q$}
-\noma{k}{\cdn}{Un corps de nombres}
-\noma{K}{\Cdn}{Une extension finie de $\cdn$}
+\nomdef \Qbar a {Q} \@gobbletwo{\Qbar}{Une clôture algébrique fixée de $\Q$}
+\nomdef \cdn a {k} \@gobbletwo{\cdn}{Un corps de nombres}
+\nomdef \Cdn a {K} \@gobbletwo{\Cdn}{Une extension finie de $\cdn$}
 
 % delimiters [[2
 %
@@ -496,27 +489,27 @@
 %
 \newcommand \Ideal {\mathcal I}
 \newcommand*\ideal [1] {\Ideal\sb{#1}}
-\noma{I}{\ideal\PH}{Idéal (multi)homogène saturé de la variété plongée \PH}
+\nomdef \ideal a {I} \@gobbletwo{\ideal\PH}{Idéal (multi)homogène saturé de la variété plongée \PH}
 
 \newcommand \Ring {\mathcal R}
 \newcommand*\ring [1] {\Ring\sb{#1}}
-\noma{R}{\ring\PH}{Anneau des coordonnées (multi)homogènes de la variété
+\nomdef \ring a {R} \@gobbletwo{\ring\PH}{Anneau des coordonnées (multi)homogènes de la variété
   plongée \PH}
 
 \newcommand \Korper {\mathcal K}
 \newcommand*\korper [1] {\Korper(#1)}
-\noma{K}{\korper\PH}{Corps des fonctions rationnelles de la variété \PH}
+\nomdef \korper a {K} \@gobbletwo{\korper\PH}{Corps des fonctions rationnelles de la variété \PH}
 
 \newcommand \Zeros {\mathcal Z}
 \newcommand*\zeros [1] {\Zeros(#1)}
-\noma{Z}{\zeros\PH}{Lieu des zéros de la (famille de) forme(s) \PH}
+\nomdef \zeros a {Z} \@gobbletwo{\zeros\PH}{Lieu des zéros de la (famille de) forme(s) \PH}
 
 \newcommand \Chow {f}
 \newcommand*\chow [1] {\Chow\sb{#1}}
-\noma{f}{\chow\PH}{Forme de \bsc{Chow} de la variété plongée \PH}
+\nomdef \chow a {f} \@gobbletwo{\chow\PH}{Forme de \bsc{Chow} de la variété plongée \PH}
 
 \newcommand \md {\mathfrak{d}}
-\noma{d}{\md}{Le morphisme symétrisant utilisé dans la définition des
+\nomdef \md a {d} \@gobbletwo{\md}{Le morphisme symétrisant utilisé dans la définition des
   distances projectives}
 
 % missing operators & general symbols [[2
@@ -525,13 +518,13 @@
 \newcommand*\diff[1][] {\Diff\ssup{#1}}
 
 \newcommand*\der [1][] {\partial\ssup{#1}}
-\noma{d}{\der\PH}{Dérivée divisée d'ordre \PH}
+\nomdef \der a {d} \@gobbletwo{\der\PH}{Dérivée divisée d'ordre \PH}
 
 \DeclareMathOperator \card {Card}
 
 \newcommand*\expb {\mathrm e}
 
-\noma{e}{\expb}{Base des logarithmes népériens}
+\nomdef \expb a {e} \@gobbletwo{\expb}{Base des logarithmes népériens}
 
 \DeclareMathOperator \Aind {Ind}
 \DeclareMathOperator \ord  {Ord}
@@ -558,7 +551,7 @@
   }%
   \if@display \label{e:cst-#2}\noeqref{e:cst-#2}\fi
   \begingroup \edef\x{\endgroup
-    \noexpand\nomc{\alph{cst}}{\unexpanded{\cst{#2}}}{%
+    \noexpand\nomdirect{c}{\alph{cst}}{\unexpanded{\cst{#2}}}{%
       \if@display \unexpanded{définie par~\protect\refeq{e:cst-#2}}\fi}%
   }\x
   \cst{#2}}
@@ -578,17 +571,17 @@
 \newcommand \oa    {\p{0}}
 \newcommand \genre {g}
 
-\noma{A} {\va}     {La variété abélienne ambiante}
-\noma{B} {\vai}    {Une sous-variété abélienne fixée de $\va$}
-\nomn{0} {\oa}     {L'origine de $\va$}
-\noma{g} {\genre}  {La dimension de $\va$}
+\nomdef \va a {A} \@gobbletwo{\va}{La variété abélienne ambiante}
+\nomdef \vai a {B} \@gobbletwo{\vai}{Une sous-variété abélienne fixée de $\va$}
+\nomdef \oa n {0} \@gobbletwo{\oa}{L'origine de $\va$}
+\nomdef \genre a {g} \@gobbletwo{\genre}{La dimension de $\va$}
 
 \newcommand*\MW[2][\va]{MW\sb{\!#1}(#2)}
-\noma{MW}{\MW[\PHi]\PH}{Espace de \MoW de la variété abélienne \PHi sur le
+\nomdef \MW a {MW} \@gobbletwo{\MW[\PHi]\PH}{Espace de \MoW de la variété abélienne \PHi sur le
   corps \PH}
 
 \newcommand \mmemb { \Theta }
-\nomg{Theta} {\mmemb} {Plongement de \bsc{Mumford modifié}}
+\nomdef \mmemb g {Theta} \@gobbletwo{\mmemb}{Plongement de \bsc{Mumford modifié}}
 
 \newcommand \placesapx  { \mathcal S }
 \newcommand \placerange { \sb{\place \in \placesapx} }
@@ -596,22 +589,22 @@
 \newcommand*\wtapx [1][\place] { \lambda\ssub{#1} }
 \newcommand*\degv  [1][\place] { \Delta \ssub{#1} }
 
-\noma{S} {\placesapx} {Ensemble fini de places de \( \cdn \) auxquelles on
+\nomdef \placesapx a {S} \@gobbletwo{\placesapx}{Ensemble fini de places de \( \cdn \) auxquelles on
   impose une condition d'approximation}
-\nomg{lambda}{\wtapx} {Poids de la place \( \place \) dans la condition
+\nomdef \wtapx g {lambda} \@gobbletwo{\wtapx}{Poids de la place \( \place \) dans la condition
   d'approximation}
-\nomg{Delta} {\degv}  {Degré local de \( \cdn \) en \( \place \)}
+\nomdef \degv g {Delta} \@gobbletwo{\degv}{Degré local de \( \cdn \) en \( \place \)}
 
 \newcommand \varapx { E }
-\noma{E} {\varapx} {Variété dont on étudie les approximations}
+\nomdef \varapx a {E} \@gobbletwo{\varapx}{Variété dont on étudie les approximations}
 
 \newcommand \expapx { \eps }
-\nomg{eps} {\expapx} {L'exposant d'approximation}
+\nomdef \expapx g {eps} \@gobbletwo{\expapx}{L'exposant d'approximation}
 
-\nomg{alpha}{\alpha}{Un des paramètres de l'énoncé de Vojta et Mumford}
-\nomg{beta} {\beta} {Un des paramètres de l'énoncé de Vojta et Mumford}
-\nomg{gamma}{\gamma}{Un des paramètres de l'énoncé de Vojta et Mumford}
-\nomg{delta}{\delta}{Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomdef \alpha g {alpha} \@gobbletwo{\alpha}{Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomdef \beta g {beta} \@gobbletwo{\beta}{Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomdef \gamma g {gamma} \@gobbletwo{\gamma}{Un des paramètres de l'énoncé de Vojta et Mumford}
+\nomdef \delta g {delta} \@gobbletwo{\delta}{Un des paramètres de l'énoncé de Vojta et Mumford}
 
 % archimedian norms and measures [[2
 %
@@ -622,13 +615,13 @@
 \newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 \newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 
-\noma{M} {\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
-\noma{M} {\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
+\nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de la forme \PH}
+\nomdef \mahler a {M} \@gobbletwo{\mahler\PH}{Mesure de \bsc{Mahler} de la forme \PH}
 
 % local absolute values, norms, distances, ... [[2
 %
 \newcommand \place {v}
-\noma{v}{\place}{Une place, en général non fixée, de $\cdn$}
+\nomdef \place a {v} \@gobbletwo{\place}{Une place, en général non fixée, de $\cdn$}
 
 \newcommand* \av  [2][\place] {\abs   {#2}\ssub{#1}}
 \newcommand* \Onv [2][\place] {\norm  {#2}\ssub{#1}}
@@ -638,33 +631,33 @@
 \newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
 
-\noms{nv1}{\av\PH }{Valeur absolue $\place$-adique d'un nombre}
-\noms{nv2}{\nv\PHi\PH }{Norme $\place$-adique d'un vecteur ou d'une forme, en
+\nomdef \av  s {nv1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un nombre}
+\nomdef \nv  s {nv2} \@gobbletwo{\nv\PHi\PH }{Norme $\place$-adique d'un vecteur ou d'une forme, en
 utilisant norme ou mesure \PHi si $\place$ est archimédienne}
-\noms{nv3}{\nnv\PHi\PH}{Norme $\place$-adique d'un multivecteur ou d'une forme
+\nomdef \nnv s {nv3} \@gobbletwo{\nnv\PHi\PH}{Norme $\place$-adique d'un multivecteur ou d'une forme
   multihomogène, en utilisant norme ou mesure \PHi si $\place$ est
   archimédienne}
-\noma{Mv}{\mvm\PH}{Mesure de \bsc{Mahler} de la forme \PH si
+\nomdef \mvm a {Mv} \@gobbletwo{\mvm\PH}{Mesure de \bsc{Mahler} de la forme \PH si
   $\place$ est archimédienne, norme du $\sup$ sinon}
-\noma{Mv}{\mvp\PH}{Mesure de \bsc{Philippon} de la forme \PH si
+\nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme \PH si
   $\place$ est archimédienne, norme du $\sup$ sinon}
 
 \newcommand \dv  {{\delta\smash{\sb\place}}}
 \newcommand \dpv {{\delta'\sb\place}}
 
-\noma{dv1}{\dv }{Vaut $1$ si $\place$ est archimédienne, est nul sinon}
-\noma{dv2}{\dpv}{Vaut $1$ si $\place$ est archimédienne ou divise $2$, est nul
+\nomdef \dv  a {dv1} \@gobbletwo{\dv }{Vaut $1$ si $\place$ est archimédienne, est nul sinon}
+\nomdef \dpv a {dv2} \@gobbletwo{\dpv}{Vaut $1$ si $\place$ est archimédienne ou divise $2$, est nul
   sinon}
 
 \DeclareMathOperator \Dist {dist}
 \newcommand*\Distv [1][\place] {\Dist\ssub{\place}}
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
 
-\noma{dist}{\distv\PH\PHi}{Distance $\place$-adique projective entre \PH et
+\nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique projective entre \PH et
   \PHi}
 
 \newcommand*\mv [2][\place] {M\sb{#1}(#2)}
-\noma{M}{\mv\PH}{Mesure homogène locale en $\place$ de la
+\nomdef \mv a {M} \@gobbletwo{\mv\PH}{Mesure homogène locale en $\place$ de la
   forme \PH : c'est la norme du $\sup$ aux places finies et la mesure de
   \bsc{Philippon} aux places infinies}
 
@@ -674,15 +667,15 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand*\projd [1][] {\proj[#1]\dimp}
 \newcommand \fibre {\mathcal L}
 
-\noma{n}{\dimp}{Dimension de l'espace projectif ambiant}
-\noma{L}{\fibre}{Le fibré donnant « le » plongement projectif}
+\nomdef \dimp a {n} \@gobbletwo{\dimp}{Dimension de l'espace projectif ambiant}
+\nomdef \fibre a {L} \@gobbletwo{\fibre}{Le fibré donnant « le » plongement projectif}
 
 \newcommand \coa {\theta}
 \newcommand \coi  {{\mathfrak b}}
 
-\nomg{theta} {\coa} {Les coordonnées de l'origine de $\va$ dans un plongement
+\nomdef \coa g {theta} \@gobbletwo{\coa}{Les coordonnées de l'origine de $\va$ dans un plongement
   de \bsc{Mumford} modifié fixé}
-\noma{b}     {\coi} {Vecteur dont les composantes sont les inverses de
+\nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les inverses de
   composantes de $\coa$ bien choisies}
 
 % projective indices and coordinates [[2
@@ -697,8 +690,8 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \indi     {l}
 \newcommand \indrange  {\sb{\ind =0}\sp\dimp}
 \newcommand \indirange {\sb{\indi=0}\sp\dimp}
-\noma{k}{\ind} {Un indice entier, variant en général entre $0$ et $\dimp$}
-\noma{l}{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
+\nomdef \ind a {k} \@gobbletwo{\ind}{Un indice entier, variant en général entre $0$ et $\dimp$}
+\nomdef \indi a {l} \@gobbletwo{\indi}{Un indice entier, variant en général entre $0$ et $\dimp$}
 
 \newcommand*\ch   [1] {\vp[#1]}
 
@@ -716,12 +709,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \anydeg {\Delta}
 
 \newcommand*\lgr [1] {\abs{#1}}
-\noms{n}{\lgr\PH}{Longueur du multiindice \PH}
+\nomdef \lgr s {n} \@gobbletwo{\lgr\PH}{Longueur du multiindice \PH}
 
 \newcommand*\ncoef  [1] {\mathcal N(#1)}
 \newcommand*\maxbin [1] {m(#1)}
-\noma{N}{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
-\noma{m}{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
+\nomdef \ncoef a {N} \@gobbletwo{\ncoef\PH}{Nombre de coefficients du polynôme \PH}
+\nomdef \maxbin a {m} \@gobbletwo{\maxbin\PH}{Maximum des coefficients binomiaux $\binom\PH{i}$}
 
 % multiprojective indices and coordinates [[2
 %
@@ -739,12 +732,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % ]]
 
 \newc@ifstar\puiss    {m} {m-1}
-\noma{m}{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
+\nomdef \puiss a {m} \@gobbletwo{\puiss}{Le nombre d'approximations exceptionnelles étudiées,
   donc aussi la puissance de $\va$ dans laquelle on travaille.}
 
 \newcommand \fct      {i}
 \newcommand \fctrange  {\sb{\fct =1}\sp\puiss}
-\noma{i}{\fct} {Un indice entier, variant en général entre $1$ et $\puiss$}
+\nomdef \fct a {i} \@gobbletwo{\fct}{Un indice entier, variant en général entre $1$ et $\puiss$}
 
 \newcommand \pmp {x}
 \newcommand \cmp {\gmp x}
@@ -754,14 +747,14 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \cmmh     {\vmp\relax} % XXX
 
 \newcommand \imp {\gmp \lambda}
-\nomg{lambda}{\lambda}{Un indice multiprojectif, dans
+\nomdef \lambda g {lambda} \@gobbletwo{\lambda}{Un indice multiprojectif, dans
   \( \bigl( \N\sp{\dimp + 1} \bigr)\sp\puiss \)}
 
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
 
-\noms{n}{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
-\noms{N}{\lgt\PH}{Longueur totale du multimultiindice \PH}
+\nomdef \vlg s {n} \@gobbletwo{\vlg\PH}{Vecteur des longueurs du multimultiindice \PH}
+\nomdef \lgt s {N} \@gobbletwo{\lgt\PH}{Longueur totale du multimultiindice \PH}
 
 % points and coordinates [[2
 %
@@ -776,9 +769,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \coordi  {{\mathbf y}}
 \newcommand \coordii {{\mathbf z}}
 
-\noma{x}{\point  }{Un point non fixé de $\va$}
-\noma{y}{\pointi }{Un autre point non fixé de $\va$}
-\noma{z}{\pointii}{Encore un autre point non fixé de $\va$}
+\nomdef \point   a {x} \@gobbletwo{\point  }{Un point non fixé de $\va$}
+\nomdef \pointi  a {y} \@gobbletwo{\pointi }{Un autre point non fixé de $\va$}
+\nomdef \pointii a {z} \@gobbletwo{\pointii}{Encore un autre point non fixé de $\va$}
 
 % height functions [[2
 %
@@ -791,19 +784,19 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand*\hautn [1]   {\Hautn    (#1)}
 \newcommand*\normn       {\abs}
 
-\noma{h}{\hautm[\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
+\nomdef \hautm a {h} \@gobbletwo{\hautm[\PHi]{\PH}}{Hauteur projective multiplicative de \PH en
                             utilisant la norme \PHi aux places archimédiennes}
-\noma{h}{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
+\nomdef \hautl a {h} \@gobbletwo{\hautl[\PHi]{\PH}}{Hauteur projective logarithmique de \PH en
                             utilisant la norme \PHi aux places archimédiennes}
-\noma{h}{\hautn      {\PH}}{Hauteur de \NT de \PH}
-\noms{normn}{\normn\PH}{Norme de \NT de \PH}
+\nomdef \hautn a {h} \@gobbletwo{\hautn      {\PH}}{Hauteur de \NT de \PH}
+\nomdef \normn s {normn} \@gobbletwo{\normn\PH}{Norme de \NT de \PH}
 
 \newcommand* \scalarn [2] {\langle#1,#2\rangle}
 \newcommand* \angleabs [2] {\widehat{(#1,#2)}} % XXX laid, à enlever
 
-\noms{angle}{\scalarn\PH\PHi}{Produit scalaire, relativement à la forme
+\nomdef \scalarn s {angle} \@gobbletwo{\scalarn\PH\PHi}{Produit scalaire, relativement à la forme
   quadratique de \NT, des points \PH et \PHi de $\va$ ou de son espace de \MoW}
-\noms{hat}{\angleabs\PH\PHi}{Angle non orienté, relativement à la forme
+\nomdef \angleabs s {hat} \@gobbletwo{\angleabs\PH\PHi}{Angle non orienté, relativement à la forme
   quadratique de \NT, entre les points \PH et \PHi de $\va$ ou de son espace
   de \MoW}
 
@@ -816,11 +809,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \epsiii {\eps\sb3}
 \newcommand \epsiv  {\eps\sb4}
 
-\nomg{eps0}{\epsz  }{Un epsilon}
-\nomg{eps1}{\epsi  }{Un autre epsilon}
-\nomg{eps2}{\epsii }{Encore un autre epsilon}
-\nomg{eps3}{\epsiii}{Toujours un autre epsilon}
-\nomg{eps4}{\epsiv }{Toujours un autre epsilon}
+\nomdef \epsz   g {eps0} \@gobbletwo{\epsz  }{Un epsilon}
+\nomdef \epsi   g {eps1} \@gobbletwo{\epsi  }{Un autre epsilon}
+\nomdef \epsii  g {eps2} \@gobbletwo{\epsii }{Encore un autre epsilon}
+\nomdef \epsiii g {eps3} \@gobbletwo{\epsiii}{Toujours un autre epsilon}
+\nomdef \epsiv  g {eps4} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
 
 % abelian formulas [[2
 %
@@ -841,7 +834,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 % general situation [[2
 %
 \newcommand \divi {E}
-\noma{E}{\divi}{Le diviseur dont on étudie les approximations exceptionnelles}
+\nomdef \divi a {E} \@gobbletwo{\divi}{Le diviseur dont on étudie les approximations exceptionnelles}
 
 \newcommand \Excep { e }
 \newcommand \cex   { \gmp\Excep }
@@ -860,11 +853,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
-\noma{P}{\poldep}{Relation de dépendance intégrale des dernières variables
+\nomdef \poldep a {P} \@gobbletwo{\poldep}{Relation de dépendance intégrale des dernières variables
   sur les premières dans un plongement adapté}
 
 \newcommand \varset {\mathcal V}
-\noma{V}{\varset}{Ensemble des variétés obstructrices}
+\nomdef \varset a {V} \@gobbletwo{\varset}{Ensemble des variétés obstructrices}
 
 % weighted embedding [[2
 %
@@ -873,7 +866,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 
 \newcommand \fcti      {j}
 \newcommand \fctirange {\sb{\fcti=1}\sp{\puiss*}}
-\noma{j}{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
+\nomdef \fcti a {j} \@gobbletwo{\fcti}{Un indice entier, variant en général entre $1$ et $\puiss*$}
 
 \newcommand \vmpi {\smpi Y}
 \newcommand*\cmhi [1] {\vmpi[#1]} % XXX
@@ -882,12 +875,12 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
 \newcommand*\wemba [1][\wt] {\psi\ssub{#1}}
 
-\nomg{phi}{\wemb }{Plongement éclatant associé au vecteur de poids $\wt$}
-\nomg{psi}{\wemba}{Morphisme d'algèbres graduées associé au plongement
+\nomdef \wemb  g {phi} \@gobbletwo{\wemb }{Plongement éclatant associé au vecteur de poids $\wt$}
+\nomdef \wemba g {psi} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées associé au plongement
   éclatant $\wemb$}
 
 \newcommand*\wembcl {\gmpi S}
-\noma{S}{\wembcl}{Formules de combinaisons linéaires utilisées dans \( \wemb \)}
+\nomdef \wembcl a {S} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires utilisées dans \( \wemb \)}
 
 
 % vanishing conditions [[2
@@ -899,17 +892,16 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \stairs {\Stairs\wt@scale}
 \newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
 
-\noma{E} {\stairs} {Cylindre sur le dessus de multi-escalier défini par les
+\nomdef \stairs a {E} \@gobbletwo{\stairs}{Cylindre sur le dessus de multi-escalier défini par les
   poids $\wt$ et le facteur d'échelle $\epsi\delta$}
-\noma{q1}{\vanish*}{Idéal d'annulation associé à $\stairs$}
-\noma{q2}{\vanish} {Idéal d'annulation $\vanish + \varid$}
+\nomdef \vanish a {q} \@gobbletwo{\vanish}{Idéal d'annulation $\vanish + \varid$}
 
 \newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
 \newc@star@default \inda {\divi}{\ex} {\Aind\sp\wt\ssub{#1}}
 
-\noma{S}{\wtsum}{Somme pondérée utilisée dans la définition de l'indice
+\nomdef \wtsum a {S} \@gobbletwo{\wtsum}{Somme pondérée utilisée dans la définition de l'indice
   d'annulation}
-\noma{Ind}{\inda[\PHi](\PH)}{Indice, pondéré par \( \wt \),  de \PH en (ou le
+\nomdef \inda a {Ind} \@gobbletwo{\inda[\PHi](\PH)}{Indice, pondéré par \( \wt \),  de \PH en (ou le
   long de) \PHi}
 
 % various (degree) conditions for subsets in lemmas
@@ -930,16 +922,11 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
 
-\noma{Z}{\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
-\noma{Z}{\var*   }{Le $\fct$-ième facteur de $\var$}
-\noma{u}{\vdim   }{Le vecteur des dimensions des facteurs de $\var$}
-\noma{u}{\vdim*  }{La dimension de $\var*$}
-\noma{D}{\vdeg   }{Le vecteur des degrés de facteurs de $\var$}
-\noma{D}{\vdeg*  }{Le degré de $\var*$}
-\noma{f}{\varfc  }{La forme de \bsc{Chow} de $\var$}
-\noma{f}{\varfc* }{La forme de \bsc{Chow} de $\var*$}
-\noma{I}{\varid  }{L'idéal multihomogène saturé de $\var$}
-\noma{I}{\varid* }{L'idéal multihomogène saturé de $\var*$}
+\nomdef \var     a {Z} \@gobbletwo{\var    }{La variété produit utilisée dans la preuve de \bsc{Vojta}}
+\nomdef \vdim    a {u} \@gobbletwo{\vdim   }{Le vecteur des dimensions des facteurs de $\var$}
+\nomdef \vdeg    a {D} \@gobbletwo{\vdeg   }{Le vecteur des degrés de facteurs de $\var$}
+\nomdef \varfc   a {f} \@gobbletwo{\varfc  }{La forme de \bsc{Chow} de $\var$}
+\nomdef \varid   a {I} \@gobbletwo{\varid  }{L'idéal multihomogène saturé de $\var$}
 
 % local indices for extrapolation [[2
 %
@@ -953,9 +940,9 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \rdiv  { \rho\sb{\mathrm{div }} }
 \newcommand \relim { \rho\sb{\mathrm{elim}} }
 
-\nomg{rho}{\rdiv}{Morphisme de réduction par division dans la construction de
+\nomdef \rdiv g {rho} \@gobbletwo{\rdiv}{Morphisme de réduction par division dans la construction de
   la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
-\nomg{rho}{\relim}{Morphisme de réduction par élimination de variables dans le
+\nomdef \relim g {rho} \@gobbletwo{\relim}{Morphisme de réduction par élimination de variables dans le
   construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
 
 % misc (???)  [[2
@@ -963,45 +950,40 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand \vb {{\mathbf e}}
 \newcommand \Mbase {{\mathcal M}}
 
-\noma{e}{\vb}{Vecteur (de base ?)}
-\noma{M}{\Mbase}{Matrice d'une application dans une base donnée}
+\nomdef \vb a {e} \@gobbletwo{\vb}{Vecteur (de base ?)}
+\nomdef \Mbase a {M} \@gobbletwo{\Mbase}{Matrice d'une application dans une base donnée}
 
 \newcommand \monome {{\mathfrak m}}
-\noma{m}{\monome}{Un monome}
+\nomdef \monome a {m} \@gobbletwo{\monome}{Un monome}
 
 \newcommand\mat{M} % matrice
-\noma{M}{\mat}{Une matrice}
+\nomdef \mat a {M} \@gobbletwo{\mat}{Une matrice}
 
 \newcommand\opdef{{\mathcal U}}
-\noma{U}{\opdef}{Ouvert de définition d'une certaine famille de formes,
+\nomdef \opdef a {U} \@gobbletwo{\opdef}{Ouvert de définition d'une certaine famille de formes,
   précisé localement}
 
 % Vojta-wide notations without a dedicated macro [[2
 % (btw, isn't this evil?)
 %
-\noma{d}{d}{Le degré, divisé par $\delta$, de la forme auxiliaire vue sur
+\nomdef d a {d} \@gobbletwo{d}{Le degré, divisé par $\delta$, de la forme auxiliaire vue sur
   l'image par le plongement éclatant}
-\noma{d}{d'}{Le degré, divisé par $\delta$, de la forme auxiliaire vue sur la
-  variété}
-\nomg{delta}{\delta}{Un entier suffisamment divisible et grand, gouvernant
+\nomdef \delta g {delta} \@gobbletwo{\delta}{Un entier suffisamment divisible et grand, gouvernant
   l'ordre de grandeur du degré de la forme auxiliaire}
-\noma{C}{C', C'', C'''}{Conditions variées sur les degrés, servant à définir
-  des sous-espaces vectoriels de partie homogènes d'algèbres de polynômes}
 
-\noma{F}{F}{La forme auxiliaire vue sur \( \wemb(\var) \)}
-\noma{F'}{F'}{La forme auxiliaire vue sur \( \var \)}
-\noma{R}{R}{Facteur parasitant la forme auxiliaire}
-\noma{G}{G}{La forme auxiliaire multipliée par \( R \) et réduite}
-\noma{r}{r}{Degré du facteur parasitant la forme auxiliaire}
+\nomdef F a {F} \@gobbletwo{F}{La forme auxiliaire vue sur \( \wemb(\var) \)}
+\nomdef R a {R} \@gobbletwo{R}{Facteur parasitant la forme auxiliaire}
+\nomdef G a {G} \@gobbletwo{G}{La forme auxiliaire multipliée par \( R \) et réduite}
+\nomdef r a {r} \@gobbletwo{r}{Degré du facteur parasitant la forme auxiliaire}
 
 % Local notations without dedicated macro [[2
 %
-\nomg{alpha}{\alpha}{Parfois utilisé localement comme indice ou (multi)degré}
-\nomg{beta} {\beta} {Parfois utilisé localement comme indice ou (multi)degré}
-\noma{f} {f} {Parfois un multiindice, élément de \( \N\sp\puiss \)}
-\nomg{Delta}{\Delta}{Parfois un multidegré, élément de \( \N\sp\puiss \)}
-\noma{p}{p}{Parfois un entier ou un (multi)multiindice}
-\noma{q}{q}{Parfois un entier ou un (multi)multiindice}
+\nomdef \alpha g {alpha} \@gobbletwo{\alpha}{Parfois utilisé localement comme indice ou (multi)degré}
+\nomdef \beta g {beta} \@gobbletwo{\beta}{Parfois utilisé localement comme indice ou (multi)degré}
+\nomdef f a {f} \@gobbletwo{f}{Parfois un multiindice, élément de \( \N\sp\puiss \)}
+\nomdef \Delta g {Delta} \@gobbletwo{\Delta}{Parfois un multidegré, élément de \( \N\sp\puiss \)}
+\nomdef p a {p} \@gobbletwo{p}{Parfois un entier ou un (multi)multiindice}
+\nomdef q a {q} \@gobbletwo{q}{Parfois un entier ou un (multi)multiindice}
 
 % Parametrisation [[2
 %
@@ -1029,7 +1011,7 @@ utilisant norme ou mesure \PHi si $\place$ est archimédienne}
 \newcommand*\hatys {\smash{\hat y}}
 
 \newcommand*\cube [1] {\mathcal C(#1)}
-\noma{C}{\cube\PH}{L'ensemble des points à coordonnées entières du cube de
+\nomdef \cube a {C} \@gobbletwo{\cube\PH}{L'ensemble des points à coordonnées entières du cube de
   demi-arête \PH centré en l'origine}
 
 % [[1
