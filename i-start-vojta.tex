@@ -9,6 +9,8 @@ Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est le diviseur \( \divi \) découpé par
 l'hyperplan d'équation \( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous
 verrons plus tard que ce cas particulier implique le cas général.
+\nomuse \divi [chap] {Le diviseur découpé par \( \vp[0] = 0 \), dont on étudie
+  les approximations}
 Le but du chapitre est donc de prouver le théorème suivant.
 
 \begin{thm} \label{t:vojta-div}
@@ -31,9 +33,14 @@ Le but du chapitre est donc de prouver le théorème suivant.
     \label{e:Vcos}
   \end{align}
   avec
-  \nomuse{\Vbig}{Une constante du théorème~\ref{t:vojta-div}}
-  \nomuse{\Vfar}{Une constante du théorème~\ref{t:vojta-div}}
-  \nomuse{\Vcos}{Une constante du théorème~\ref{t:vojta-div}}
+  \nomuse \Vbig {Dans le théorème~\ref{t:vojta-div}, minore la hauteur du plus
+  petit point}
+  \nomuse \Vfar {Dans le théorème~\ref{t:vojta-div}, minore l'écart
+    multiplicatif entre les points}
+  \nomuse \Vcos {Dans le théorème~\ref{t:vojta-div}, contrôle l'angle les
+    points}
+  \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
+    considérée}
   \begin{align}
     \Vbig & = \dots (\puiss)
     \\
@@ -43,8 +50,8 @@ Le but du chapitre est donc de prouver le théorème suivant.
   \end{align}
 \end{thm}
 
-\nomuse[\ex]{(\ex*)}[chap]{Points dont l'existence contredirait le
-  théorème~\ref{t:vojta-div}}
+\nomuse[\ex]{(\ex*)}[chap]{Famille d'approximations de \( \divi \) dont
+  l'existence contredirait le théorème~\ref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
 famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Bien que cette
 famille soit toujours supposée satisfaire à toutes les conditions du théorème,
@@ -53,8 +60,8 @@ lesquelles de ces conditions nous utilisons, par souci de clarté.
 
 Nous utiliserons des combinaisons linéaires des \( \ex* \) de petite hauteur.
 Les lemmes suivants permettent de choisir les coefficients pour ces
-combinaisons ; nous les prendrons entiers et n'ayant que $2$ et $3$ pour
-diviseurs premiers, de sorte à disposer de représentations polynomiales
+combinaisons ; nous les prendrons entiers et n'ayant que \( 2 \) et \( 3 \)
+pour diviseurs premiers, de sorte à disposer de représentations polynomiales
 convenables des formes linéaires abéliennes associées données par
 l'annexe~\ref{sec:form-ab-alt}.
 
@@ -189,7 +196,7 @@ tenant compte du fait que \( 1 + \zeta \le 5/4 \) car \( \Vcos \le 1/16 \).
 énoncées, en exploitant le fait que les \( \ex* \) satisfont à
 \eqref{e:Vbig}. Pour commencer, la suite \( \wts[1], \dots, \wts** \) décroît
 au moins comme une suite géométrique de raison inférieure à $1$. Plus
-précisément, on a
+précisément, dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
 \begin{equation} \label{e:wt-geom}
   \wts*
   \le
@@ -203,6 +210,8 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
   On a \(
     \sum_{\fct=1}^\puiss (\wts* + \wts**) \le \wts[1] (1 + \epsiii)
   \) avec
+  \nomuse \epsiii [chap] {Un petit réel positif, défini
+    par~\eqref{e:def-epsiii}}
   \begin{equation} \label{e:def-epsiii}
     \epsiii = \frac{ 3 (1+\zeta) }{ \Vfar - 1 }
     \pmm.
@@ -237,10 +246,12 @@ par~\eqref{e:def-epsiii}.
 \subsection{Réduction à l'existence d'une forme obstructrice}
 
 Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
-dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset \) des
+dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
 sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
   \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
 suivantes :
+\nomuse{\varset(\ex)}{Ensemble des variétés produit contenant \( \ex \) et
+  satisfaisant aux conditions~\eqref{e:varset-deg} à~\eqref{e:varset-ht}}
 \begin{align}
   \label{e:varset-deg}
   \vdeg* & \le \Lambda^{f_1(u)} \quad \forall \fct
@@ -259,14 +270,14 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \\
   f_2 & = \text{est une fonction décroissante}
 \end{align}
-qui ne dépendent pas du choix de \( \ex \), de sorte que l'ensemble \( \varset
-\) ne dépend de ce choix que \lat{via} la condition \( \ex \in \var \).
+qui ne dépendent pas du choix de \( \ex \), de sorte que l'ensemble \(
+  \varset(\ex) \) ne dépend de \( \ex \) que \lat{via} la condition \( \ex \in
+  \var \).
 
 Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
 variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
-dans le cas contraire, on aurait \( \var* = \ex* \) pour un certain \( \fct \)
-dont on déduirait successivement
-positifs,
+dans le cas contraire, on aurait \( \var* = \ex* \) pour un certain \( \fct
+\), ce dont on déduirait successivement
 \begin{alignat}{2}
   \wts* \hautl{\ex*}
   & \le (\dots) \Lambda^{f_2(u)} \wts[1]
@@ -278,16 +289,17 @@ positifs,
 \end{alignat}
 qui contredirait précisément \eqref{e:Vbig}.
 
-Or cet ensemble \( \varset \) n'est certainement pas vide, puisqu'il contient
-au moins \( \va^\puiss \) ; il possède donc au moins un élément minimal. La
-proposition suivante implique que cet élément a au moins un facteur réduit à
-un point, ce qui, nous venons de le voir, fournit la contradiction prouvant le
-théorème \ref{t:vojta-div}.
+Or cet ensemble \( \varset(\ex) \) n'est certainement pas vide, puisqu'il
+contient au moins \( \va^\puiss \) ; il possède donc au moins un élément
+minimal. La proposition suivante implique que cet élément a au moins un
+facteur réduit à un point, ce qui, nous venons de le voir, fournit la
+contradiction prouvant le théorème \ref{t:vojta-div}.
 
 \begin{prop} \label{p:varset-notmin}
-  Soit \( \var \in \varset \) n'ayant aucun facteur de dimension nulle. Alors
-  il existe un \( \fct \) et une forme \( T \) ne dépendant que de \( \vmp*
-  \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \), telle que
+  Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
+  Alors il existe un \( \fct \) et une forme \( T \) ne dépendant que de \(
+    \vmp* \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \),
+  telle que
   \begin{align}
     \deg T
     & \le \Lambda^{f_1(u)}
@@ -313,8 +325,8 @@ et sa version arithmétique indique que
   + \text{cte(dimension)} \vdeg* \deg T
   \pmm,
 \end{equation}
-ce qui montre que \( \var' \in \varset \) (au vu des constantes qui seront
-déterminées par ce point) et que \( \var \) n'était pas minimale.
+ce qui montre que \( \var' \in \varset(\ex) \) (au vu des constantes qui
+seront déterminées par ce point) et que \( \var \) n'était pas minimale.
 
 \medskip
 
@@ -328,16 +340,22 @@ introduirons quelques hypothèses commodes sur les coordonnées projectives
 utilisées.
 
 Désormais et jusqu'à la fin du chapitre, nous fixons une variété
-\begin{math}
-  \var = \var[1] \times \dots \times \var[\puiss]
-\end{math}
+\nomuse \var [chap]{Une variété \( \var[1] \times \dots \times \var[\puiss] \)
+  appartenant à \( \varset(\ex) \), dont aucun facteur n'est de dimension
+  nulle} \( \var = \var[1] \times \dots \times \var[\puiss] \)
 satisfaisant aux hypothèses de la proposition ; en particulier elle n'est
 contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$ puisqu'elle contient
 \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans.  On
-notera en outre $\vdim* = \dim \var*$ et $\vdim = (\vdim*)_\fct$ puis $\vdeg*
+notera en outre $\vdim* = \dim \var*$ et $\vdim = \dim \var$ puis $\vdeg*
 = \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On note enfin
 $\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux de ses
 facteurs.
+\nomuse{\vdeg*}[chap]{Le degré de \( \var* \)}
+\nomuse{\vdim*}[chap]{La dimension de \( \var* \)}
+\nomuse{\vdim }[chap]{La dimension de \( \var \)}
+\nomuse{\varfc*}[chap]{La forme de \bsc{Chow} de \( \var* \) normalisée par le
+  scolie~\ref{s:plong-adapt}}
+\nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \)}
 
 De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
 homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on

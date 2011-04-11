@@ -158,6 +158,7 @@
 %
 % \nomdirect{<group code>}{<sort string>}{<displayed>}[<scope>]{<description>}
 \newcommandx*\nomdirect [5][4] {%
+  \@bsphack
   \@ifmtarg{#4}{%
     \nom@direct{#1}{#2}{#3}{#5}%
   }{%
@@ -173,6 +174,7 @@
     {\nom@color\unexpanded{#4}}%
   }\next
   \nom@color@reset
+  \@esphack
 }
 
 % scopes
@@ -860,7 +862,7 @@
 \nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
 \nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
 \nomdef \epsii  g {e02} \@gobbletwo{\epsii }{Encore un autre epsilon}
-\nomdef \epsiii g {e03} \@gobbletwo{\epsiii}{Toujours un autre epsilon}
+\nomdef \epsiii g {e03}
 \nomdef \epsiv  g {e04} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
 
 % abelian formulas [[2
@@ -906,8 +908,7 @@
   des dernières variables sur les premières dans un plongement adapté}
 
 \newcommand \varset {\mathcal V}
-\nomdef \varset a {V} \@gobbletwo{\varset}{Ensemble des variétés
-  obstructrices}
+\nomdef \varset a {V}
 
 % weighted embedding [[2
 %
@@ -977,15 +978,11 @@
 \newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
 
-\nomdef \var     a {Z} \@gobbletwo{\var    }{La variété produit utilisée dans
-  la preuve de \bsc{Vojta}}
-\nomdef \vdim    a {u} \@gobbletwo{\vdim   }{Le vecteur des dimensions des
-  facteurs de $\var$}
-\nomdef \vdeg    a {D} \@gobbletwo{\vdeg   }{Le vecteur des degrés de facteurs
-  de $\var$}
-\nomdef \varfc   a {f} \@gobbletwo{\varfc  }{La forme de \bsc{Chow} de $\var$}
-\nomdef \varid   a {I} \@gobbletwo{\varid  }{L'idéal multihomogène saturé de
-  $\var$}
+\nomdef \var     a {Z}
+\nomdef \vdim    a {u}
+\nomdef \vdeg    a {D}
+\nomdef \varfc   a {f}
+\nomdef \varid   a {I}
 
 % local indices for extrapolation [[2
 %
