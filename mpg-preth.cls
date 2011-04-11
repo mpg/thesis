@@ -141,9 +141,9 @@
 \nom@ph \PHi  \bullet
 
 % print a macro and its result with placeholders substitution
-\newcommand*\printmacro [1] {%
+\newcommand*\printmacro [2] {%
   \if@private
-    \ted@toks{\relax#1\@nil}%
+    \ted@toks{\relax#2\@nil}%
     \Substitute*{\the\ted@toks} {}                     {\string}%
     \Substitute*{\the\ted@toks} {\string\@nil\string}  {}%
     \Substitute*{\the\ted@toks} {\string\PH}           {\PH{}}%
@@ -151,7 +151,7 @@
     \makebox[0pt][r]{%
       \color{keys}\ttfamily\footnotesize \the\ted@toks \space}%
   \fi
-  $#1$%
+  $#1#2$%
 }
 
 % for notations without macro & internal use:
@@ -159,16 +159,20 @@
 % \nomdirect{<group code>}{<sort string>}{<displayed>}[<scope>]{<description>}
 \newcommandx*\nomdirect [5][4] {%
   \@ifmtarg{#4}{%
-    \nom@direct{\@nameuse{nom@groupsort@@#1}}{#2}{#3}{#5}%
+    \nom@direct{#1}{#2}{#3}{#5}%
   }{%
     \begingroup \edef\next{\endgroup
-      \unexpanded{\nom@direct{\@nameuse{nom@groupsort@@#1}}{#2}{#3}}%
-      {\nom@local{#4}\unexpanded{#5}}%
+      \unexpanded{\nom@direct{#1}{#2}{#3}}{\nom@local{#4}\unexpanded{#5}}%
     }\next
   }%
 }
 \newcommand*\nom@direct [4] {%
-  \nomenclature[#1-#2]{\printmacro{#3}}{#4}%
+  \begingroup \edef\next{\endgroup
+    \noexpand\nomenclature[\@nameuse{nom@groupsort@@#1}-\unexpanded{#2}]%
+    {\noexpand\printmacro{\nom@color}\unexpanded{{#3}}}%
+    {\nom@color\unexpanded{#4}}%
+  }\next
+  \nom@color@reset
 }
 
 % scopes
@@ -227,8 +231,21 @@
 % possibly disable next nomenclature command, usage:
 % \nomprv\nomdirect...
 \newcommand \nomprv {}
-\if@private \else
-  \let \nom@direct@real \nomdirect
+\newcommand \nom@color {}
+\newcommand \nom@color@reset {}
+\if@private
+  \let \nom@color@normal \nom@color
+  \renewcommand \nomprv {%
+    \let \nom@color \nom@color@prv
+  }
+  \newcommand \nom@color@prv {%
+    \noexpand\color{keys}%
+  }
+  \renewcommand \nom@color@reset {%
+    \let \nom@color \nom@color@normal
+  }
+\else
+  \let \nom@direct@real \nom@direct
   \renewcommand \nomprv {%
     \let \nom@direct \nom@direct@skip
   }
