@@ -269,7 +269,8 @@
 %
 \frenchbsetup{og=«,fg=»,
   AutoSpacePunctuation=false,
-%   SuppressWarning=true,
+  ThinColonSpace=true,
+  SuppressWarning=true,
   }
 
 % marginal notes and todos [[2
