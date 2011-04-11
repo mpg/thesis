@@ -12,7 +12,6 @@
 %
 \newif\if@showbad       \@showbadtrue
 \newif\if@domark        \@domarktrue
-\newif\if@nomencl       \@nomencltrue
 \newif\if@showmac       \@showmactrue
 \newif\if@showkeys      \@showkeystrue
 
@@ -23,7 +22,6 @@
 \DeclareOption {nobad}  {\@showbadfalse}
 \DeclareOption {showmac}{\@showmactrue}
 \DeclareOption {nomark} {\@domarkfalse}
-\DeclareOption {mencl}  {\@nomenclfalse}
 \ProcessOptions \relax
 
 % use Koma with custom encoding and fonts [[2
@@ -137,9 +135,7 @@
 
 % nomenclature [[2
 %
-\if@nomencl
-  \makenomenclature
-\fi
+\makenomenclature
 
 % placeholders for descriptions
 \newcommand*\nom@ph [2] {%
