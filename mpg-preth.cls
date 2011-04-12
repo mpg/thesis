@@ -393,6 +393,29 @@
   \newcommandx*#1[#3][2,3,#4]{#7}%
   \newcommand*#2[1]{\star@deftwo@parser{#1{##1}}{#5}{#6}}}
 
+% auxiliary macros for \DeclarePairedDelimiters [[2
+%
+% the parser
+\newcommand*\parse@delim [1] {%
+  \@ifstar {#1{*}} {\parse@delim@#1}%
+}
+\newcommandx*\parse@delim@ [2][2] {%
+  \@ifmtarg{#2} {#1{}} {#1{[#2]}}%
+}
+% define commands using this parser to get their first magical argument
+% to be used with a macro defined by \DeclarePairedDelimiter
+% additional arguments may be defined using xargs syntax
+\newcommand \newdelimcommandx {%
+  \@ifstar{\new@delim@commandx}{\new@delim@commandx}%
+}
+\newcommand*\new@delim@commandx [1] {%
+  \expandafter\new@delim@commandx@\csname\string#1\endcsname#1%
+}
+\newcommand*\new@delim@commandx@ [2] {%
+  \newcommand #2{\parse@delim#1}%
+  \newcommandx*#1%
+}
+
 % (multi-)starred macros [[2
 %
 \newcommand*\newc@ifstar [3] {%
@@ -655,13 +678,9 @@
 \nomdef \place a {v} \@gobbletwo{\place}{Une place, en général non fixée, de
   $\cdn$}
 
-\newcommand* \av  [2][\place] {\abs   {#2}\ssub{#1}}
-\newcommand* \Onv [2][\place] {\norm  {#2}\ssub{#1}}
-\newcommand* \Onnv[2][\place] {\nnorm {#2}\ssub{#1}}
-\newcommand* \nv  [3][\place] {\norm  {#3}\sb{#1, #2}}
-\newcommand* \nnv [3][\place] {\nnorm {#3}\sb{#1, #2}}
-\newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
-\newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
+\newdelimcommandx \av  [3][3=\place] {\abs#1   {#2}\ssub{#3}}
+\newdelimcommandx \nv  [4][4=\place] {\norm#1  {#3}\sb{#2, #4}}
+\newdelimcommandx \nnv [4][4=\place] {\nnorm#1 {#3}\sb{#2, #4}}
 
 \nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un
   nombre}
@@ -671,6 +690,13 @@
 \nomdef \nnv s {n3} \@gobbletwo{\nnv\PHi\PH}{Norme $\place$-adique d'un
   multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
   si $\place$ est archimédienne}
+
+\newcommand* \Onv [2][\place] {\norm  {#2}\ssub{#1}} % XXX needs checking
+\newcommand* \Onnv[2][\place] {\nnorm {#2}\ssub{#1}} % XXX needs checking
+
+\newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
+\newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
+
 \nomdef \mvm a {Mv} \@gobbletwo{\mvm\PH}{Mesure de \bsc{Mahler} de la forme
   \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
 \nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme
@@ -691,7 +717,7 @@
 \nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique
   projective entre \PH et \PHi}
 
-\newcommand*\mv [2][\place] {M\sb{#1}(#2)}
+\newcommand*\mv [2][\place] {M\sb{#1}(#2)} % XXX duplicates \mvp?
 \nomdef \mv a {M} \@gobbletwo{\mv\PH}{Mesure homogène locale en $\place$ de la
   forme \PH : c'est la norme du $\sup$ aux places finies et la mesure de
   \bsc{Philippon} aux places infinies}
