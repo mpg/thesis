@@ -818,8 +818,8 @@
 
 % height functions [[2
 %
-\newcommand*\Hautm [1][] {\mathrm H \ssub{#1}}
-\newcommand*\Hautl [1][] {\mathrm h \ssub{#1}}
+\newcommand*\Hautm [1][] {H \ssub{#1}}
+\newcommand*\Hautl [1][] {h \ssub{#1}}
 \newcommand \Hautn       {\hat\Hautl}
 
 \newcommand*\hautm [2][] {\Hautm[#1](#2)}
