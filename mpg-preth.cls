@@ -80,9 +80,11 @@
     \AtPageLowerLeft{%
       \parbox[b]{\paperwidth}{%
         \centering \itshape \color{mark}%
-        head: \gitinfo{@head}{dt}%
+        \gitinfo{@head}{dt}%
         \par \kern2cm
-        }}}
+      }%
+    }%
+  }
 \fi
 
 % inline include [[2
