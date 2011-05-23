@@ -15,6 +15,8 @@ appliquant un lemme de \bsc{Siegel}.
 \subsection{Idéal d'annulation}
 
 Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
+\nomuse {\wtsum*} {Somme pondérée servant à définir l'indice d'annulation le
+  long de \( \divi \)}
 \begin{equation}
   \wtsum*( \imp )
   =
@@ -22,7 +24,9 @@ Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
   + \frac {\imp[\puiss*][0]} {\wts[\puiss*]}
   + \frac {\imp[\puiss][0]} {\puiss*}
 \end{equation}
-On définit ainsi l'indice
+On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
+  \vmp^\imp \) par :
+\nomuse {\inda*} {Indice d'annulation le long de \( \divi \)}
 \begin{equation}
   \inda*(H)
   =
@@ -31,9 +35,8 @@ On définit ainsi l'indice
     \text{ tels que }
     \wtsum*(\imp) \le \alpha \implies h_\imp = 0
   }
+  \pmm.
 \end{equation}
-le long de \( \divi \) d'une forme \( H = \sum h_\imp \vmp^\imp \).
-
 On introduit alors, pour \( \beta > 0 \), les idéaux
 \begin{equation}
   \vanish*[\beta]

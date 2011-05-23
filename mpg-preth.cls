@@ -971,10 +971,8 @@
 \newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
 \newc@star@default \inda {\divi}{\ex} {\Aind\sp\wt\ssub{#1}}
 
-\nomdef \wtsum a {S} \@gobbletwo{\wtsum}{Somme pondérée utilisée dans la
-  définition de l'indice d'annulation}
-\nomdef \inda a {Ind} \@gobbletwo{\inda[\PHi](\PH)}{Indice, pondéré par \( \wt
-  \),  de \PH en (ou le long de) \PHi}
+\nomdef \wtsum a {S}
+\nomdef \inda a {Ind}
 
 % various (degree) conditions for subsets in lemmas
 \newc@ifstar\Dz   { \delta d  }{ \delta d\sb\fct }
