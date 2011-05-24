@@ -6,4 +6,4 @@ sub makenlo2nls {
 push @generated_exts, 'nlo', 'nls';
 
 # more biblatex cleanup
-push @generated_exts, '%-blx.bib';
+push @generated_exts, '%-blx.bib', 'run.xml';
