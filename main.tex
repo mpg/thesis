@@ -1,24 +1,26 @@
 \documentclass[
 % full,
+% pph,
+% nomark,
 ] {mpg-preth}
 
 \includeonly {%
   % title+toc,
   %
-  % i-idee,
+  % c-intro,
   %
-  % i-mumford-groupes,
+  % c-mumford,
   %
   i-start-vojta,
   i-siegel,
   i-extrapol,
   i-vojta-ctd,
   %
-  % i-rp,
+  % c-union,
   %
-  i-plong,
-  % i-distv,
-  % i-normes-mesures,
+  a-plong,
+  % a-distv,
+  % a-normes-mesures,
   %
   biblio,
   notations,
@@ -32,24 +34,24 @@
   \maketitle
   \listoftoc*{toc}}
 
-\include{i-idee}
+\include{c-intro}
 
-\include{i-mumford-groupes}
+\include{c-mumford}
 
 \include{i-start-vojta}
 \include{i-siegel}
 \include{i-extrapol}
 \include{i-vojta-ctd}
 
-\include{i-rp}
+\include{c-union}
 
 \appendix
 
-\include{i-plong}
+\include{a-plong}
 
-\include{i-distv}
+\include{a-distv}
 
-\include{i-normes-mesures}
+\include{a-normes-mesures}
 
 \inlineinclude{biblio}{%
   \chapter{Références bibliographiques}
