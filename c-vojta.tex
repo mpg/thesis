@@ -1,0 +1,2617 @@
+% !TEX root = main.tex
+
+\chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
+
+
+\section{Stratégie de la preuve}
+
+Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
+particulier où la variété à approcher est le diviseur \( \divi \) découpé par
+l'hyperplan d'équation \( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous
+verrons plus tard que ce cas particulier implique le cas général.
+\nomuse \divi [chap] {Le diviseur découpé par \( \vp[0] = 0 \), dont on étudie
+  les approximations}
+Le but du chapitre est donc de prouver le théorème suivant.
+
+\begin{thm} \label{t:vojta-div}
+  Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \ex[1],
+    \dots, \ex[\puiss] \) satisfaisant simultanément aux conditions
+  suivantes :
+  \begin{align}
+    0 < \distv{\ex*}{\divi}
+    & < \hautm{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \label{e:Vapx}
+    \\
+    \hautn{\ex[1]} & > \Vbig
+    \label{e:Vbig}
+    \\
+    \hautn{\ex*} & > \Vfar \hautn{\ex[\fct-1]}
+    \label{e:Vfar}
+    \\
+    \cos(\ex*, \ex[\fcti]) & > 1 - \Vcos
+    \label{e:Vcos}
+  \end{align}
+  avec
+  \nomuse \Vbig {Dans le théorème~\ref{t:vojta-div}, minore la hauteur du plus
+  petit point}
+  \nomuse \Vfar {Dans le théorème~\ref{t:vojta-div}, minore l'écart
+    multiplicatif entre les points}
+  \nomuse \Vcos {Dans le théorème~\ref{t:vojta-div}, contrôle l'angle entre
+    les points}
+  \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
+    considérée}
+  \begin{align}
+    \Vbig & = \dots (\puiss)
+    \\
+    \Vfar & = \dots (\puiss)
+    \\
+    \Vcos & = \dots (\puiss)
+  \end{align}
+\end{thm}
+
+\nomuse[\ex]{(\ex*)}[chap]{Famille d'approximations de \( \divi \) dont
+  l'existence contredirait le théorème~\ref{t:vojta-div}}
+La démonstration procède par l'absurde : si le théorème est faux, fixons une
+famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Bien que cette
+famille soit toujours supposée satisfaire à toutes les conditions du théorème,
+nous préciserons dans les hypothèses de la plupart des énoncés la ou
+lesquelles de ces conditions nous utilisons, par souci de clarté.
+
+Nous utiliserons des combinaisons linéaires des \( \ex* \) de petite hauteur.
+Les lemmes suivants permettent de choisir les coefficients pour ces
+combinaisons ; nous les prendrons entiers et n'ayant que \( 2 \) et \( 3 \)
+pour diviseurs premiers, de sorte à disposer de représentations polynomiales
+convenables des formes linéaires abéliennes associées données par
+l'annexe~\ref{sec:form-ab-alt}.
+
+\begin{lem} \label{l:wt-choose-gen}
+  Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
+    3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, \puiss} \) :
+  \begin{equation} \label{e:wt-ratio}
+    \frac1{1 + \zeta}
+    \le
+    \frac{ \wts* \hautn{\ex*} }{ \wts[1] \hautn{\ex[1]} }
+    \le
+    1 + \zeta
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  On commence par choisir des rationnels \( b_\fct = 2^{b_{\fct2}}
+    3^{b_{\fct3}} \) tels que
+  \begin{equation}
+    \frac1{1 + \zeta}
+    \le
+    b_\fct^2 \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
+    \le
+    1 + \zeta
+    \pmm,
+  \end{equation}
+  soit en prenant les logarithmes et en divisant par deux :
+  \begin{equation}
+    \abs*{
+      b_{\fct2} \log 2 + b_{\fct3} \log 3
+      - \frac12 \log \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
+    }
+    \le
+    \frac12 \log (1 + \zeta)
+    \pmm.
+  \end{equation}
+  Comme \( \Z \log2 + \Z \log 3 \) est dense dans \( \R \), il est
+  certainement possible de choisir indépendamment pour chaque \( \fct \) deux
+  entiers \( b_{\fct2} \) et \( b_{\fct3} \) tels que cette dernière condition
+  soit satisfaite.
+
+  Il reste plus qu'à définir \( \wt[1] \) comme le plus petit dénominateur
+  commun des \( b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \(
+    \fct > 1 \).
+\end{proof}
+
+\begin{scho}
+  Pour toute famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
+  \begin{align} \label{e:wt-diff-hautn}
+    \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
+    & \le \zeta \wts[1] \hautn{\ex[1]}
+    \\ \label{e:wt-diff-normn}
+    \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
+    & \le \frac\zeta2 \wt[1] \normn{\ex[1]}
+  \end{align}
+\end{scho}
+
+Ces inégalités découlent immédiatement de l'encadrement donné en utilisant les
+comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
+  \zeta)^{1/2} \le 1 + \zeta/2 \) et le fait que \( \hautn\truc =
+  \normn\truc^2 \) par définition de la norme de \NT.
+
+\begin{lem}
+  Soit \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
+  à~\eqref{e:wt-ratio}. Si de plus la famille \( (\ex*) \) satisfait
+  à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, \puiss} \) on a
+  \begin{equation} \label{e:hautn-wt-diff-gen}
+    \hautn{\wt* \ex* - \wt** \ex**}
+    \le
+    \wts[1] \hautn{\ex[1]} \left(
+      \frac{\zeta^2}4 + 2 \Vcos (1 + \zeta)
+    \right)
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  En développant le membre de gauche, il vient successivement
+  \begin{alignat}{2}
+    \normn{\wt* \ex* - \wt** \ex**}^2
+    & =
+    \normn{\wt* \ex*}^2 + \normn{\wt** \ex**}^2
+    - 2 \scalarn{\wt* \ex*}{\wt** \ex**}
+    \\
+    & = \wts* \normn{\ex*}^2 + \wts** \normn{\ex**}^2
+    - 2 \wt* \wt** \scalarn{\ex*}{\ex**}
+    \\
+    & = \left( \wt* \normn{\ex*} - \wt** \normn{\ex**} \right)^2
+    + 2 \wt* \wt** \left(
+      \normn{\ex*} \normn{\ex**} - \scalarn{\ex*}{\ex**}
+    \right)
+    \\
+    & \le \left( \wt* \normn{\ex*} - \wt** \normn{\ex**} \right)^2
+    + 2 \wt* \wt** \normn{\ex*} \normn{\ex**} \Vcos
+    && \text{d'après~\eqref{e:Vcos}}
+    \\
+    & \le \left( \frac\zeta2 \wt[1] \normn{\ex[1]} \right)^2
+    && \text{d'après~\eqref{e:wt-diff-normn}}
+    \\
+    & \qquad + 2 \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
+    && \text{d'après~\eqref{e:wt-ratio}}
+  \end{alignat}
+  qui donne le résultat annoncé en factorisant.
+\end{proof}
+
+\begin{scho} \label{s:wt-choose}
+  \nomuse[\wt]{(\wt*)}[chap]{Poids associés à \( (\ex*) \) et fixés par le
+    scolie~\ref{s:wt-choose}}
+  \nomdirect{g}{zeta}{\zeta}[chap]{Constante proche de zéro fixée par le
+    scolie~\ref{s:wt-choose}}
+  On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
+  donnée par l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta =
+    \sqrt{\Vcos} \) de sorte qu'on a
+  \begin{equation} \label{e:hautn-wt-diff}
+    \hautn{\wt* \ex* - \wt** \ex**}
+    \le
+    3 \Vcos \wts[1] \hautn{\ex[1]}
+    \pmm.
+  \end{equation}
+\end{scho}
+
+Cette dernière égalité découle directement de~\eqref{e:hautn-wt-diff-gen} en
+tenant compte du fait que \( 1 + \zeta \le 5/4 \) car \( \Vcos \le 1/16 \).
+\label{ct:Vcos<1/16}
+
+Étudions maintenant quelques propriétés de ces poids, en sus de celles déjà
+énoncées, en exploitant le fait que les \( \ex* \) satisfont à
+\eqref{e:Vbig}. Pour commencer, la suite \( \wts[1], \dots, \wts** \) décroît
+au moins comme une suite géométrique de raison inférieure à $1$. Plus
+précisément, dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
+\begin{equation} \label{e:wt-geom}
+  \wts*
+  \le
+  (1+\zeta) \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
+\end{equation}
+en appliquant directement la définition de \( \wt* \). On peut ainsi majorer
+des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
+\) ; par exemple, l'énoncé suivant nous sera utile par la suite.
+
+\begin{lem}
+  On a \(
+    \sum_{\fct=1}^\puiss (\wts* + \wts**) \le \wts[1] (1 + \epsiii)
+  \) avec
+  \nomuse \epsiii [chap] {Un petit réel positif, défini
+    par~\eqref{e:def-epsiii}}
+  \begin{equation} \label{e:def-epsiii}
+    \epsiii = \frac{ 3 (1+\zeta) }{ \Vfar - 1 }
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  En effet, on a
+  \begin{align}
+    \frac1{\wts[1]} \sum_{\fct=1}^\puiss (\wts* + \wts**)
+    & = 1
+    + \frac{\puiss \wts**}{\wts[1]}
+    + \sum_{\fct=2}^\puiss \frac{\wts*}{\wts[1]}
+    \\
+    & \le 1
+    + \frac{\puiss(1+\zeta)}{\Vfar^{\puiss*}}
+    + (1+\zeta) \sum_{\fct=2}^\puiss \Vfar^{-\fct+1}
+    \\
+    & \le 1 + (1+\zeta) \left(
+      \Bigl( \frac2\Vfar \Bigr)^{\puiss-1}
+      + \frac1{\Vfar-1}
+    \right)
+    \pmm.
+  \end{align}
+  Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \).
+  \label{ct:Vfar>2}
+\end{proof}
+
+Pour la suite du chapitre, on notera \( \epsiii \) le réel défini
+par~\eqref{e:def-epsiii}.
+
+\subsection{Réduction à l'existence d'une forme obstructrice}
+
+Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
+dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
+sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
+  \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
+suivantes :
+\nomuse{\varset(\ex)}{Ensemble des variétés produit contenant \( \ex \) et
+  satisfaisant aux conditions~\eqref{e:varset-deg} à~\eqref{e:varset-ht}}
+\begin{align}
+  \label{e:varset-deg}
+  \vdeg* & \le \Lambda^{f_1(u)} \quad \forall \fct
+  \\ \label{e:varset-deg-prod}
+  \prod\fctrange \vdeg* & \le (?) \Lambda^{f_1(u)}
+  \\ \label{e:varset-ht}
+  \sum\fctrange \wts* \hautl{\var*}
+  & \le (\dots) \Lambda^{f_2(u)} \wts[1]
+  \pmm,
+\end{align}
+où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
+\begin{align}
+  \Lambda & = \text{ne dépend que des degrés et dimensions ambiantes}
+  \\
+  f_1 & = \text{est une fonction décroissante}
+  \\
+  f_2 & = \text{est une fonction décroissante}
+\end{align}
+qui ne dépendent pas du choix de \( \ex \), de sorte que l'ensemble \(
+  \varset(\ex) \) ne dépend de \( \ex \) que \lat{via} la condition \( \ex \in
+  \var \).
+
+Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
+variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
+dans le cas contraire, on aurait \( \var* = \ex* \) pour un certain \( \fct
+\), ce dont on déduirait successivement
+\begin{alignat}{2}
+  \wts* \hautl{\ex*}
+  & \le (\dots) \Lambda^{f_2(u)} \wts[1]
+  &\quad& \text{par \eqref{e:varset-ht},}
+  \\
+  \wts[1] \hautl{\ex[1]}
+  & \le (1+\zeta) (\dots) \Lambda^{f_2(u)} \wts[1]
+  && \text{par \eqref{e:wt-ratio},}
+\end{alignat}
+qui contredirait précisément \eqref{e:Vbig}.
+
+Or cet ensemble \( \varset(\ex) \) n'est certainement pas vide, puisqu'il
+contient au moins \( \va^\puiss \) ; il possède donc au moins un élément
+minimal. La proposition suivante implique que cet élément a au moins un
+facteur réduit à un point, ce qui, nous venons de le voir, fournit la
+contradiction prouvant le théorème \ref{t:vojta-div}.
+
+\begin{prop} \label{p:varset-notmin}
+  Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
+  Alors il existe un \( \fct \) et une forme \( T \) ne dépendant que de \(
+    \vmp* \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \),
+  telle que
+  \begin{align}
+    \deg T
+    & \le \Lambda^{f_1(u)}
+    \\
+    \wts* \hautl T
+    & \le (\dots) \Lambda^{f_3(u)} \wts[1]
+    \pmm.
+  \end{align}
+\end{prop}
+
+En effet, on note alors \( \var' \) la variété égale à \( \var \) sur tous les
+facteurs sauf le \( \fct \)-ème où on choisit une composante irréductible de
+\( \var* \cap \zeros T \) qui contient \( \ex* \), de sorte que \( \var' \)
+est une variété strictement contenue dans \( \var \) et contenant \( \ex \).
+Le théorème de \bsc{Bézout} donne alors
+\worknote{LNM7, thm 3.4, coro 3.6 ou LNM6 thm, lemme 4.1}
+\begin{equation}
+  \deg \var*' \le \vdeg* \deg T
+\end{equation}
+et sa version arithmétique indique que
+\begin{equation}
+  \hautl{\var*'} \le \vdeg* \hautl{T} + \hautl{\var*} \deg T
+  + \text{cte(dimension)} \vdeg* \deg T
+  \pmm,
+\end{equation}
+ce qui montre que \( \var' \in \varset(\ex) \) (au vu des constantes qui
+seront déterminées par ce point) et que \( \var \) n'était pas minimale.
+
+\medskip
+
+Il suffit donc d'établir la proposition \ref{p:varset-notmin} pour prouver le
+théorème \ref{t:vojta-div} ; la démonstration de cette proposition nous
+occupera le reste du chapitre. L'intérêt de l'énoncer immédiatement plutôt
+qu'au moment où nous serons en mesure de l'établir et de pouvoir écarter
+d'emblée quelques cas particuliers pour lesquels la méthode qui suit ne
+s'applique pas (mais qui sont heureusement immédiats). Auparavant nous
+introduirons quelques hypothèses commodes sur les coordonnées projectives
+utilisées.
+
+Désormais et jusqu'à la fin du chapitre, nous fixons une variété
+\nomuse \var [chap]{Une variété \( \var[1] \times \dots \times \var[\puiss] \)
+  appartenant à \( \varset(\ex) \), dont aucun facteur n'est de dimension
+  nulle} \( \var = \var[1] \times \dots \times \var[\puiss] \)
+satisfaisant aux hypothèses de la proposition ; en particulier elle n'est
+contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$ puisqu'elle contient
+\( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans.  On
+notera en outre $\vdim* = \dim \var*$ et $\vdim = \dim \var$ puis $\vdeg*
+= \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On note enfin
+$\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux de ses
+facteurs.
+\nomuse{\vdeg*}[chap]{Le degré de \( \var* \)}
+\nomuse{\vdim*}[chap]{La dimension de \( \var* \)}
+\nomuse{\vdim }[chap]{La dimension de \( \var \)}
+\nomuse{\varfc*}[chap]{La forme de \bsc{Chow} de \( \var* \) normalisée par le
+  scolie~\ref{s:plong-adapt}}
+\nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \)}
+
+De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
+homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on
+utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
+désignera une famille d'entiers.
+
+
+\subsection{Plongements projectifs adaptés} \label{sec:plong-adapt}
+
+\begin{tdef} \label{d:plong-adapt}
+  Suivant \cite{remivg}, on dit qu'un plongement
+  \(
+    \iota\colon \anyvar \embedin \proj\dimp
+  \)
+  d'une variété de dimension \( \anydim \) est adapté si
+  \begin{enumthm}
+    \item \( \anyvar \cap \zeros{\anyvp[0], \dots, \anyvp[\anydim]}
+        = \emptyset \) ;
+    \item \( \korper{\anyvar} \) est engendré par
+      \( \frac{\anyvp[1]}{\anyvp[0]}, \dots,
+        \frac{\anyvp[\anydim+1]}{\anyvp[0]} \) ;
+    \item \( \frac{\anyvp[\anydim+1]}{\anyvp[0]} \neq 0 \) dans \(
+        \korper\anyvar \).
+  \end{enumthm}
+\end{tdef}
+
+Le fait suivant, qui ne fait que rappeler \cite[partie~4.1, p.~114]{remivds},
+explicite les principales propriétés d'une plongement adapté, qui est en fait
+une version plus précise de la mise en position de \bsc{Noether}.
+
+\begin{fact} \label{f:plong-adapt-gen}
+  Si \( \anyvar \) de dimension \( \anydim \)  est plongée dans \( \projd \)
+  de façon adaptée, alors les fonctions rationnelles
+  \( \frac{\anyvp[1]}{\anyvp[0]}, \dots, \frac{\anyvp[\anydim]}{\anyvp[0]} \)
+  forment une base de transcendance de \( \korper\anyvar \) sur \( \cdn \). De
+  plus, \( \frac{\anyvp[\anydim+1]}{\anyvp[0]} \) est un élément primitif de
+  \( \korper\anyvar \) sur \( \cdn( \frac{\anyvp[1]}{\anyvp[0]}, \dots,
+    \frac{\anyvp[\anydim]}{\anyvp[0]} ) \).
+
+  La projection linéaire \( \anyvar \to \proj\anydim \) obtenue en ne gardant
+  que les \( \anydim + 1 \) variables est un revêtement ramifié.
+\end{fact}
+
+On contrôle en fait des relations de dépendance intégrale des dernières
+variables sur la base de transcendance choisie.
+
+\begin{fact} \label{f:plong-adapt-dep}
+  Si le plongement \( \anyvar \embedin \projd \) est adapté, il existe des
+  formes homogènes \( \poldep[][\ind] \) pour \( \ind \in \set{\anydim+1,
+      \dots, \dimp} \) telles que :
+  \begin{enumthm}
+    \item \(
+        \poldep[][\ind]
+        \in
+        \cdn [ \anyvp[0], \dots, \anyvp[\anydim], \anyvp[\ind] ]
+        \cap \ideal\anyvar \) ;
+    \item \( \poldep[][\ind] \) est unitaire de degré \( \anydeg \) en \(
+        \anyvp[\ind] \) ;
+    \item \( \deg \poldep[][\ind] = \anydeg \) ;
+    \item \( \nv1{ \poldep[][\ind] } \le \nv1{ \chow\anyvar } \) ;
+  \end{enumthm}
+  où \( \anydeg \) est le degré de \( \anyvar \) dans ce plongement.
+\end{fact}
+
+\begin{proof}
+  Le lemme~4.1 de \cite{remivds} donne explicitement des formes satisfaisant
+  les trois premières conditions.
+
+  Seule l'assertion sur la norme n'y est pas énoncée sous cette forme mais
+  elle vient en remarquant que \( \poldep_\indi \) est une spécialisation de
+  \( \varfc \) qui annule certaines variables et remplace les autres par des
+  monômes unitaires, argument qui est utilisé la proposition~4.2 de la
+  référence citée pour obtenir une estimation similaire dans un contexte
+  légèrement différent.
+\end{proof}
+
+Nous montrons maintenant qu'il est possible de rendre adapté un plongement
+donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
+
+\begin{lem}
+  Soit $\iota \colon \anyvar \embedin \projd$ un sous-schéma fermé intègre de
+  degré $\anydeg$, non contenu dans l'hyperplan d'équation $\anyvp[0] = 0$.
+  Il existe une matrice $M \in \GL_{\dimp*}(\Q)$, à coefficients entiers de
+  valeur absolue (archimédienne) majorée par $\max(\frac\anydeg2, 1)$, telle
+  que, si $e_M$ est l'automorphisme linéaire de $\proj\dimp$ associé à $M$,
+  alors $e_M \circ \iota$ est un plongement adapté et que $\anyvp[0]$ soit
+  invariant par ce changement de coordonnées.
+\end{lem}
+
+\begin{proof} \later
+  On reprend la preuve de la proposition 2.2 de \cite{remivg} (p.~469). Au
+  moment de choisir des formes linéaires $M_0, \dots, M_n$ telles que
+  \begin{equation*}
+    \chow \anyvar (M_0, \dots, M_\dimp) \neq 0
+    \pmm,
+  \end{equation*}
+  on commence en fait par fixer $M_0 = \anyvp[0]$. Le polynôme $\varfc(M_0,
+  \truc, \dots, \truc)$ est multihomogène de degré $\anydeg$ en chaque
+  variable ; vu l'hypothèse sur $\anyvar$, il est non nul grâce au théorème
+  fondamental de l'élimination. On peut donc choisir $M_1, \dots M_n$ comme
+  dans \cite{remivg} et continuer la preuve sans autre modification.
+\end{proof}
+
+\begin{lem}
+  Soit $\anyvar \colon \embedin \proj\dimp$ un sous-schéma fermé intègre, et
+  $M \in \GL_{\dimp*}(\Qbar)$ à coefficients entiers dans l'intervalle $[-B,
+  B]$, où $B$ est un réel positif fixé, et $e_M$ l'automorphisme linéaire de
+  $\proj\dimp$ associé à $M$. Alors
+  \begin{equation}
+    \hautm[1]{e_M(\anyvar)}
+    \le
+    \hautm[1]{\anyvar}
+    \cdot \bigl( \dimp** B \bigr)^{\anydeg\dimp**}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof} \later
+  Inégalité classique sur la norme $L_1$ et la spécialisation des polynômes.
+\end{proof}
+
+\begin{scho} \label{s:plong-adapt}
+  Vu les hypothèses sur \( \var \) on peut sans perte de généralité supposer
+  de plus que chaque plongement $\var* \embedin \projd$ est adapté, quitte à
+  multiplier la hauteur de \( \var* \) par
+  \( \bigl (\dimp** \max (\frac{\vdeg*}2, 1) \bigr)^{\vdeg*\dimp**} \).
+  \worknote[later]{Il faut aussi estimer le coût sur les formules de
+    multiplication et soustraction.}
+
+  On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
+  dans son facteur $\proj\dimp$. Ceci implique que
+  $\varfc*(\vmp*[0], \dots,\vmp*[\vdim*])$
+  est non nul pour tout $\fct$ ; on normalisera donc notre choix de $\varfc*$
+  (qui est unique à une constante multiplicative près) en imposant que cette
+  quantité vaille $1$.
+
+  On notera par ailleurs \( \poldep** \) une relation de dépendance
+  de \( \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \)
+  telle que donnée par l'application du fait~\ref{f:plong-adapt-dep} au
+  facteur \( \var* \).
+\end{scho}
+
+Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
+démonstration de la proposition~\ref{p:varset-notmin}.
+
+\begin{scho} \label{s:part-cases}
+  On peut supposer que :
+  \begin{enumthm}
+    \item \( \cex** \neq 0 \) pour tous \( \fct \) et \( \ind \) ;
+    \item \( \pden_\fct(\cex*) \neq 0 \) pour tout \( \fct \).
+  \end{enumthm}
+\end{scho}
+
+En effet, dans ces cas la conclusion de la proposition est immédiate.
+
+
+\subsection{Plongement abélien pondéré et stratégie} \label{sec:wemb}
+
+Nous utiliserons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \)
+et défini par
+\nomuse \wemb [chap] {Plongement éclatant introduit à la
+  section~\ref{sec:wemb}}
+\begin{align} \label{e:def-wemb}
+  \wemb \colon \var
+  & \longto \va^\puiss \times \va^{\puiss-1}
+  = \va^{2\puiss-1} \subset (\projd)^{2\puiss-1}
+  \\
+  (\pmp_1, \dots, \pmp_\puiss)
+  & \longmapsto
+  (\pmp_1, \dots, \pmp_\puiss;
+  \wt[1] \pmp_1 - \wt** \pmp_\puiss, \dots,
+  \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
+  \pmm.
+\end{align}
+La stratégie pour prouver la proposition~\ref{p:varset-notmin} utilise la
+méthode de \TS : on va construire une forme sur \( \wemb(\var) \) dont le tiré
+en arrière sur \( \var \) s'annulle à un ordre élevé le long de \( \divi \).
+Puis, profitant du fait que \( \ex \) est proche de ce diviseur et que la
+hauteur des dernières composantes de \( \wemb(\ex) \) est relativement petite,
+nous en déduirons que cette forme s'annulle aussi en \( \ex \) avec un indice
+convenable pour appliquer une forme du théorème du produit, qui nous donnera
+la forme \( T \) souhaitée.
+
+\medskip
+
+Avant de mettre ce plan à exécution, introduisons quelques notations et
+résultats basiques concernant le plongement éclatant.  On munit l'espace
+d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées multihomogènes $\vmp, \vmpi =
+\vmp[1], \dots, \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss*]$ ; dans ce
+contexte quand $\fct$ et $\fcti$ sont deux indices non précisés, on supposera
+implicitement $1 \le \fct \le \puiss$ et $1 \le \fcti \le \puiss-1$.
+
+\nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant}
+On va maintenant représenter localement ce morphisme par une
+famille de formes multihomogènes au voisinage de \( \ex \), c'est-à-dire
+trouver un ouvert \( \ex \in \opdef \subset \var \) tel que \(
+  \wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1} \) est représenté
+par des polynômes, dans le sens où il existe un morphisme d'algèbres \( \wemba
+\) tel que le diagramme suivant, dont les flèches verticales sont les
+projections canoniques, commute :
+\begin{equation}
+  \xymatrix{
+    \cdn [\vmp, \vmpi]                          \ar [r] ^{\wemba}   \ar [d]
+    & \cdn [\vmp]                                                   \ar [d]
+    \\ \cdn [\vmp, \vmpi] / \ideal{\wemb(\var)} \ar [r] ^{\wemb^*}
+    & ( \cdn [\vmp] / \varid )_\opdef
+  }
+\end{equation}
+On peut en fait choisir
+\begin{align}
+     \wemba \colon \cdn [\vmp, \vmpi]
+  &  \to \cdn[\vmp]
+  \\ \vmp*
+  &  \mapsto \vmp*
+  \\ \vmpi*
+  &  \mapsto L\pexp{\wt[\fcti], \wt[\puiss]}(\vmp[\fcti], \vmp[\puiss])
+\end{align}
+où les \( L\pexp{\wt[\fcti], \wt[\puiss]} \) sont prises parmi les familles
+de formes données par le lemme~\ref{l:hclab} de sorte que leur ouvert de
+définition \( \opdef \) contienne \( \ex \). Le choix de ces familles pourra
+être précisé ultérieurement ; pour l'instant on utilisera seulement les
+estimations de degré et hauteurs qui sont uniformément valables. Par exemple,
+on a toujours le lemme suivant, qui est immédiat.
+
+\begin{lem} \label{l:deg-wemba}
+  Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
+  \Qbar[\vmp, \vmpi]$ une forme multihomogène de multidegré $(\alpha,
+  \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
+  \begin{equation}
+    \deg \wemba(F)
+    =
+    \bigr(
+    \alpha_1 + 2 \beta_1 \wts[1],
+    \dots,
+    \alpha_{\puiss-1} + 2 \beta_{\puiss-1} \wts[\puiss-1],
+    \alpha_\puiss + 2 \lgr\beta \wts[\puiss]
+    \bigl)
+    \pmm.
+  \end{equation}
+\end{lem}
+
+
+
+\section{Construction d'une forme auxiliaire} \label{sec:siegel}
+
+L'objectif de cette section est de construire une forme non nulle sur \( \var
+\), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de
+hauteur contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).
+
+Nous commençons par définir la notion d'indice utilisée, puis précisons la
+stratégie de construction de la forme recherchée. Nous établissons ensuite les
+estimations de dimension et de hauteur nécessaires avant de conclure en
+appliquant un lemme de \bsc{Siegel}.
+
+
+\subsection{Idéal d'annulation}
+
+Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
+\nomuse {\wtsum*} {Somme pondérée servant à définir l'indice d'annulation le
+  long de \( \divi \)}
+\begin{equation}
+  \wtsum*( \imp )
+  =
+  \frac {\imp[1][0]} {\wts[1]} + \dots
+  + \frac {\imp[\puiss*][0]} {\wts[\puiss*]}
+  + \frac {\imp[\puiss][0]} {\puiss*}
+\end{equation}
+On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
+  \vmp^\imp \) par :
+\nomuse {\inda*} {Indice d'annulation le long de \( \divi \)}
+\begin{equation}
+  \inda*(H)
+  =
+  \max \set{
+    \alpha \in \R
+    \text{ tels que }
+    \wtsum*(\imp) \le \alpha \implies h_\imp = 0
+  }
+  \pmm.
+\end{equation}
+On introduit alors, pour \( \beta > 0 \), les idéaux
+\begin{equation}
+  \vanish*[\beta]
+  = \left\{
+    H \in \cdn [\vmp]
+    \text{ tels que }
+    \inda*(H) \ge \beta
+  \right\}
+\end{equation}
+et $\vanish[\beta] = \vanish*[\beta] + \varid$. Par abus, on notera de même
+l'image de \( \vanish[\beta] \) dans $\ring\var = \cdn [\vmp] / \varid$, ce
+qui est légitime puisqu'on a fait en sorte que $\varid \subset
+\vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
+  \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
+appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
+\begin{equation}
+  \stairs[\beta] = \set{
+    \imp \in \N^{\puiss\dimp**}
+    \text{ tels que }
+    \wtsum*(\imp) \le \beta
+  }
+\end{equation}
+l'ensemble des indices correspondant aux coefficients qui doivent être nuls
+pour assurer l'appartenance à \( \vanish*[\beta] \).
+
+
+\subsection{Stratégie de construction de la forme auxiliaire}
+
+Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de degrés
+prescrits et de hauteur contrôlée, provenant d'une forme sur $\wemb(\var)$ et
+ayant indice élevé le long de \( \divi \) dans \( \var \).
+
+Plus précisément, introduisons un rationnel $\epsz > 0$, un entier $\delta$
+tel que $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées,
+dans l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$
+d'être assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et
+d'autres paramètres, voir~\eqref{e:def-epsii}. Posons alors
+\begin{align}
+  d & = \bigl(
+  \epsz \wts[1],
+  \dots,
+  \epsz \wts[\puiss],
+  1, \dots, 1
+  \bigr) \in \Q^{2\puiss-1}
+  \label{e:def-d}
+  \\
+  d' & = \bigl(
+  \wts[1] (2 + \epsz),
+  \dots,
+  \wts[\puiss*] (2 + \epsz),
+  \wts[\puiss] (2\puiss - 2 + \epsz)
+  \bigr) \in \Q^\puiss
+  \label{e:def-dp}
+\end{align}
+de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\vmp,
+\vmpi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$.  On
+cherche alors une forme
+\begin{equation}
+  F'
+  \in \cdn[\vmp]_{\delta d'}
+  \cap \vanish
+  \cap \wemba(\cdn[\vmp, \vmpi]_{\delta d})
+\end{equation}
+non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
+\wemba(F)$), on cherche une forme
+\begin{equation}
+  F
+  \in \cdn[\vmp, \vmpi]_{\delta d}
+  \cap \wemba^{-1}(\vanish)
+\end{equation}
+non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
+
+Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
+Cependant, il est difficile d'expliciter un système essentiellement minimal
+d'équations linéaires exprimant l'appartenance à $\vanish$. Il est en
+revanche immédiat d'expliciter un tel système pour $\vanish*$, mais
+il comporte beaucoup trop d'équations (géométriquement, il correspond à une
+condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
+$\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
+
+Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
+système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
+un sous-espace de $\cdn[\vmp]_{\delta d'}$ dans lequel $\vanish$
+est de codimension suffisamment petite pour pouvoir demander que l'image de
+$F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
+
+Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_{\delta d}$ un
+supplémentaire de $(\ideal{\wemb(\var)})_{\delta d}$ engendré par des
+monômes, que l'on notera $\Ideal_{\delta d}$, et dans lequel on cherchera
+$F$.
+
+On considérera des sous-espaces vectoriels de partie homogènes de
+$\cdn[\vmp]$ définis par des restrictions de degré ; introduisons à cet effet
+quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
+  \})^{\puiss(\dimp+1)}$, on notera
+\begin{equation} \label{e:C-spaces}
+  \cdn[\vmp]^C
+  = \{
+    F \in \cdn[\vmp]
+    \text{ tels que }
+    \deg_{\vmp*[k]} F \le C\pexp{\fct}[k]
+    \quad \forall i, k
+    \}
+  \pmm.
+\end{equation}
+On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
+par
+\begin{gather} \label{e:C-i-iii}
+  (C')\pexp\fct[k] =
+  \begin{cases}
+    +\infty & \text{si $k \le \vdim*$} \\
+    \vdeg* - 1 & \text{sinon}
+  \end{cases}
+  \qquad
+  (C'')\pexp\fct[k] =
+  \begin{cases}
+    +\infty & \text{si $k \le \vdim* + 1$} \\
+    0 & \text{sinon}
+  \end{cases}
+  \\
+  C''' = \min(C', C'')
+  \pmm,
+\end{gather}
+pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$, et avec l'ordre produit
+évident pour la dernière définition. Par ailleurs, on notera $C'_\Delta$ et
+$C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un certain $\Delta$
+dans la définition précédente.
+
+Le plan général de l'écriture du système se résume alors par le diagramme
+commutatif suivant, où l'on note
+\( \ring{\wemb(\var)} = \cdn[\vmp, \vmpi] / \ideal{\wemb(\var)} \)
+et
+\( \ring{\opdef} = (\cdn[\vmp])_\opdef \)
+et où les flèches verticales sont les morphismes de réduction.
+
+\begin{equation} \label{e:diag-f-aux}
+  \xymatrix{
+    \Ideal_\Dz            \ar [r] ^{\wemba}        \ar [d] _{\sim}
+    & \cdn [\vmp]_\Dii   \ar [r] ^{\rdiv^\Dii}    \ar [d]
+    & \cdn [\vmp]\Ci     \ar [r] ^{\relim}        \ar [d]
+    & \cdn [\vmp]\Cii    \ar [r] ^{\rdiv^\Diii}   \ar [d]
+    & \cdn [\vmp]\Ciii                            \ar [d]
+    \\ \ring{\wemb(\var)} \ar [r] ^{\wemb^*}
+    & \ring\opdef         \ar [r] ^{\I}
+    & \ring\opdef         \ar [r] ^{R \cdot \null}
+    & \ring\opdef         \ar [r] ^{\I}
+    & \ring\opdef
+  }
+\end{equation}
+
+Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
+représente une réduction par division euclidienne par certaines relations de
+dépendance intégrale, les second permet d'éliminer les variables en utilisant
+des relations linéaires dans $\korper\var$ et correspond modulo $\varid$ à
+une multiplication par une certaine forme $R$ de degré $r$ ne dépendant que de
+$\var$, de façon à éliminer les dénominateurs apparaissant dans ces relations
+linéaires. Notons qu'il est essentiel d'effectuer $\rdiv$ avant $\relim$ pour
+que le degré en les variables à éliminer ne dépende pas de $\delta$, ce qui
+assure que $R$ ne dépend en effet que de $\var$.
+
+Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
+notre objectif : il s'agira en fait de construire une forme $F \in
+\Ideal_{\delta d} \setminus \{0\}$ telle que
+\begin{equation}
+  \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
+  \in \vanish*
+  \pmm,
+\end{equation}
+ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
+\begin{equation}
+  R \cdot \wemba(F)
+  - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
+  \in \varid
+  \subset \vanish
+  \pmm.
+\end{equation}
+
+Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
+sera composé des équations définissant $\vanish$ dans
+\( \cdn[\vmp]_{\delta d' + r'}^{C'''} \),
+tirées en arrière sur $\Ideal_{\delta d}$ par
+\( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
+Pour pouvoir procéder, nous devons donc :
+\begin{enumerate}
+  \item calculer la codimension de $\Ideal_{\delta d}$ ;
+  \item calculer la codimension de $\vanish*$ dans
+    $\cdn[\vmp]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
+    petite que la dimension précédente ;
+  \item expliciter les morphismes de la première ligne du diagramme et majorer
+    la hauteur de leurs matrices dans les bases monomiales évidentes.
+\end{enumerate}
+
+Dans tous ces calculs, $\delta$ sera moralement arbitrairement grand devant
+les autres termes, on n'explicitera donc à chaque fois que le terme de plus
+haut degré en $\delta$ ; ainsi lorsqu'on utilisera la notation $o(\truc)$ ou
+$\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
+
+
+\subsection{Deux calculs de dimension} \label{sec:comp-dim}
+
+La dimension de $\Ideal_{\delta d}$ est donnée par le théorème de
+\bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
+$\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais il
+comme suffit en fait de minorer la dimension, le lemme suivant nous donne tout
+ce qu'on aura besoin de savoir sur le degré.
+
+\begin{lem}
+  Avec les notations précédentes, on a
+  \begin{equation}
+    \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
+    \bigl( \wemb(\var) \bigr)
+    =
+    \prod\fctrange
+    \vdeg* \wt ^{2\vdim*}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  Ce degré est donné par le cardinal de l'intersection de $\wemb(\var)$ avec
+  des hyperplans génériques choisis de la façon suivante : $\vdim[\puiss]$
+  provenant du $\puiss$-ième facteur $\projd$, et $\vdim*$ hyperplans
+  provenant du facteur $\puiss + \fct$ pour $\fct \in \{1, \dots, \puiss-1\}$.
+
+  On commence par choisir les hyperplans sur le facteur $\puiss$ : on remarque
+  qu'ils se remontent par $\wemb$ en des hyperplans sur le dernier facteur de
+  l'espace de départ $(\projd)^\puiss$. Ainsi, couper $\wemb(\var)$ par ces
+  hyperplans revient à imposer à $\point_\puiss$ de parcourir un ensemble de
+  cardinal $\vdeg[\puiss]$.
+
+  Fixons maintenant un point $p$ dans cet ensemble. On constate que
+  $\wemb(\var) \cap \zeros{\vmp** = p}$ coïncide avec l'image de
+  \begin{align}
+    \wemb[\wt, p]'
+    \colon
+    \var[1] \times \dots \times \var[\puiss]
+    & \to
+    \va^{2\puiss-1}
+    \\
+    (\point_1, \dots, \point_{\puiss-1})
+    & \mapsto
+    (\point_1, \dots, \point_{\puiss-1}, p;
+    \wt[1] \point_1 - p,
+    \dots,
+    \wt[\puiss-1] \point_{\puiss-1} - p)
+  \end{align}
+  qui est le produit d'un point par des variétés de la forme
+  $\wemb[\wt*, p]''(\var*)$ pour $\fct$ variant de $1$ à $\puiss-1$ en
+  notant
+  \begin{align}
+    \wemb[\wt*, p]''
+    \colon
+    \var*
+    & \to
+    \va^2
+    \\
+    \point
+    & \mapsto
+    (\point, \wt* \point - p)
+  \end{align}
+  Il suffit donc de calculer le degré de ces variétés. La translation par $p$
+  n'ayant pas d'influence sur le degré, il suffit de regarder l'action de la
+  multiplication par $\wt*$. Or, celle-ci pouvant être représentée
+  globalement par des formes de degré $\wts*$, en tirant en arrière par
+  $\wemb[\wt*, p]''(\var*)$ une famille de $\vdim*$ hyperplans
+  génériques sur le second facteur, on obtient des hypersurfaces génériques de
+  degré $\wts*$ qui coupent donc $\var*$ en $\vdeg*
+  \wt*^{2\vdim*}$ points.
+
+  Le résultat suit en prenant le produit et en se rappelant que
+  $\wt[\puiss] = 1$.
+\end{proof}
+
+\begin{lem}
+  Avec les notations précédentes, on a
+  \begin{align}
+    \dim \Ideal_{\delta d}
+    \ge
+    \frac{ \epsz^{\vdim[\puiss]}
+      \prod\fctrange \vdeg* \, \wt* ^{2\vdim*}
+      }{ \vdim ! }
+    \delta^{\vlg\vdim}
+    + o( \delta^{\vlg\vdim} )
+    \pmm.
+  \end{align}
+\end{lem}
+
+\begin{proof}
+  Il suffit d'appliquer le théorème de \bsc{Hilbert} multihomogène en
+  utilisant le lemme précédent, car une somme de nombre positifs est minorée
+  par chacun de ses termes. Il vient
+  \begin{align}
+    \dim \Ideal_{\delta d}
+    & =
+    \Biggl(
+    \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
+    \deg_t \wemb(\var) \frac{ d^t }{ t! }
+    \Biggr)
+    \delta^{\vlg\vdim}
+    + o( \delta^{\vlg\vdim} )
+    \\
+    & \ge
+    \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
+    \bigl( \wemb(\var) \bigr)
+    \cdot
+    \frac { \epsz^{\vdim[\puiss]} }{ \vdim ! }
+    \delta^{\vlg\vdim}
+    + o( \delta^{\vlg\vdim} )
+  \end{align}
+  par définition de \( d \), voir~\eqref{e:def-d}.
+\end{proof}
+
+Nous allons maintenant calculer la codimension de $\vanish*$ dans
+$\cdn[\vmp]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
+suivant :
+
+\begin{equation} \label{e:stairs-c3}
+  \begin{split}
+    (\stairs)\Ciii
+    & =
+    \Biggl\{
+      ( \imp[1], \dots \imp[\puiss] )
+      \in
+      \prod\fctrange \bigl(
+        \N^{\vdim* + 1}
+        \times \{ 0, \dots, \vdeg* - 1 \}
+        \times \{ 0 \}^{\dimp - \vdim* - 1}
+      \bigr)
+      \\ & \quad
+      \text{tel que }
+      \wtsum*(\lambda) \le \delta \epsi
+      \text{ et }
+      \lgr{\imp*}
+      = \delta d' + r \quad \forall \fct
+    \Biggr\}
+    \pmm,
+  \end{split}
+\end{equation}
+dont il s'agit de calculer le cardinal. En effet,
+\( \vanish* \cap \cdn [\vmp]\Ciii \)
+est le sous-espace engendré par les monômes dont les exposants ne sont pas
+dans \( (\stairs)\Ciii \).
+
+\begin{lem}
+  Avec les notations précédentes,
+  \begin{align}
+    \card (\stairs)\Ciii
+    & \le
+    \bigl(\delta^{\lgr\vdim} + o(\delta^{\lgr\vdim})\bigr)
+    \prod\fctrange \vdeg* \wt*^{2\vdim*}
+    \\ & \qquad \cdot
+    \frac {
+      \epsi^\puiss (\puiss-1)
+      (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+      (\frac94 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+      }{
+      \puiss! \prod\fctrange (\vdim* - 1)!
+      }
+  \end{align}
+\end{lem}
+
+\begin{proof}
+  Pour choisir un point dans \( (\stairs)\Ciii \), on peut commencer par
+  choisir \( \imp*[\vdim*] \) entre \( 0 \) et \( \vdeg* \)
+  pour tout \( \fct \), ce qui représente \( \prod\fctrange \vdeg* \)
+  possibilités.
+
+  On peut ensuite choisir \( \imp[1][0], \dots \imp[\puiss][0] \)
+  sujets à la seule condition
+  \begin{equation}
+    \wtsum*(\lambda) \le \delta \epsi \pmm.
+  \end{equation}
+  Le lemme~2.14.5 de \cite{farhith} donne le nombre de choix possibles, qui
+  est
+  \begin{equation}
+    \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
+    + o(\delta^\puiss)
+    \pmm.
+  \end{equation}
+
+  Il reste alors à choisir pour tout \( \fct \) un élément de l'ensemble
+  \begin{equation}
+    \left\{
+      (\imp*[1],  \dots, \imp*[\vdim*])
+      \in \N ^{\vdim*}
+      \text{ tels que }
+      \sum_{j=1}^{\vdim*} \imp*[j]
+      =
+      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*]
+    \right\}
+    \pmm,
+  \end{equation}
+  qui est de cardinal
+  \begin{align}
+    \binom {
+      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*] - 1
+      }{
+      \vdim* - 1
+      }
+    & \le
+    \binom {
+      \delta d'_\fct + r_\fct - 1
+      }{
+      \vdim* - 1
+      }
+    \\
+    & \le
+    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!} \delta^{\vdim* - 1}
+    + o( \delta^{\vdim* - 1} )
+  \end{align}
+  On prend alors le produit :
+  \begin{equation}
+    \card (\stairs)\Ciii
+    \le
+    \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
+    \cdot \prod\fctrange
+    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!}
+    \vdeg* \delta^{\vdim* - 1}
+    + o( \delta^{\lgr\vdim} )
+  \end{equation}
+  et le résultat suit en remplaçant \( d'_\fct \) par sa valeur : \( 2\puiss +
+  \epsz \) si \( \fct = \puiss \) et \( \wts* (\frac94 + \epsz) \) sinon.
+\end{proof}
+
+Au vu des lemmes précédents, on introduit la constante
+\begin{equation} \label{e:def-epsii}
+  \epsii
+  =
+  \frac {
+    \epsi^\puiss (\puiss-1)
+    (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+    (\frac94 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+    \prod\fctrange \vdim*
+    }{
+    \puiss! \epsz^{\vdim[\puiss]}
+    }
+  \pmm,
+\end{equation}
+de sorte que
+\begin{equation} \label{e:good-codim}
+  \frac {\card (\stairs)\Ciii} {\dim \Ideal_{\delta d}}
+  \le
+  \epsii + o(1)
+  \pmm.
+\end{equation}
+
+
+\subsection{Trois lemmes de hauteurs}
+
+Nous allons maintenant expliciter les différents morphismes intervenant dans
+l'écriture du système et contrôler la hauteur de leurs matrices, en commençant
+par le morphisme \( \wemba \) qui est déjà bien défini.
+
+On étudie en fait le prolongement
+\begin{equation}
+  \wemba \colon
+  \cdn [\vmp, \vmpi]_\Dz
+  \to
+  \cdn [\vmp]_\Dii
+\end{equation}
+donné par les mêmes formules. La base évidente de ce nouvel espace de départ
+est formée par les monômes \( \vmp^p \vmpi^q \) pour
+\begin{equation}
+  (p, q)
+  \in \N^{\puiss(\dimp + 1)} \times \N^{(\puiss - 1) (\dimp - 1)}
+  \text{ tel que }
+  \lgr{p\mexp*} = \Dz*
+  \text{ et }
+  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
+  \pmm,
+\end{equation}
+où \( d \) est défini par~\eqref{e:def-d}.
+
+% Note: on ne fait pas ce lemme dans sub:wemb
+% car on utilise la définition de d pour simplifier le résultat
+\begin{lem} \label{l:hmat-wemba}
+  Avec les notations précédentes, l'application linéaire
+  \begin{equation}
+    \wemba \colon
+    \cdn [\vmp, \vmpi]_\Dz
+    \to
+    \cdn [\vmp]_\Dii
+  \end{equation}
+  est représentée dans les bases canoniques par une matrice de colonnes
+  \(
+  c_{p, q} = \wemba(\vmp^p\vmpi^q)
+  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \vmp^{s+p}
+  \)
+  satisfaisant
+  \begin{equation}
+    \nv1{c_{p, q}}
+    \le
+    \left(
+    \prod\fctirange
+    \nv\infty \coi ^{2\wtis* - 1}
+    \bigl(
+    4^{g\wtis*} (\dimp + 1)^{\wtis* - 1}
+    \bigr) ^\dv
+    \right) ^\delta
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  La définition de \( \wemba \) montre que \(
+  \wemba( \vmp^p \vmpi^q ) = \vmp^p \wemba(\vmpi^q) \), on a donc \(
+  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, avec le
+  corollaire~\ref{c:addsub-form} et le fait~\ref{f:mult-form}, on a
+  \begin{align}
+    \nv1 {c_{p, q}}
+    & \le
+    \prod\fctirange \prod\indrange
+    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\vmp[\fcti]), \vmp** \bigr) }
+    ^{q\pexp\fcti[\ind]}
+    \\ & \le
+    \prod\fctirange \prod\indrange \left(
+    \nv1{ S^{-}_\ind } \max\indirange \nv1{ Q_{\wti*, \indi} }^2
+    \right) ^{q\pexp\fcti[\ind]}
+    \\ & \le
+    \prod\fctirange \left(
+    \nv\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
+    \nv\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
+    \Bigr) ^{q\pexp\fcti[\ind]}
+    \right)
+    \\ & \le
+    \left(
+    \prod\fctirange
+    \nv\infty \coi ^{2\wtis*-1} \bigl(
+    4^{\genre\wtis*} (\dimp+1)^{\wtis*-1}
+    \bigr) ^\dv
+    \right) ^\delta
+  \end{align}
+  en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:def-dp}).
+\end{proof}
+
+Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
+relations de dépendance intégrale. On énonce pour commencer un résultat de
+réduction modulo de telles relations sous une forme un peu générale avant de
+l'appliquer au cas qui nous intéresse.
+
+\begin{lem}
+  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vdim* + 1,
+  \dots \dimp \} \), on se donne :
+  \begin{enumthm}
+    \item \( \Delta\mexp* \in \N^* \) ;
+    \item \( P\mexp*[\ind]
+      \in
+      \cdn [ \vmp*[0], \dots, \vmp*[\vdim*], \vmp*[\ind] ] \)
+      homogène de degré \( \Delta\mexp* \) et unitaire en \( \vmp*[\ind]
+      \).
+  \end{enumthm}
+  On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
+  l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
+  \( f \in \N^\puiss \), il existe une (unique) application linéaire
+  \begin{equation}
+    \rdiv^f \colon \cdn [\vmp]_ f \to \cdn [\vmp]_ f^{C'_\Delta}
+  \end{equation}
+  qui est l'identité modulo \( \Ideal \) (voir~\eqref{e:C-spaces}
+  et~\eqref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
+  colonnes \( c_p \) de la matrice de cette application satisfont la majoration
+  de norme
+  \begin{equation}
+    \nv1{c_p}
+    \le
+    \prod\fctrange \bigl(
+    N_\fct \cdot (2 \Delta\mexp*)^\dv
+    \bigr) ^{f_\fct}
+  \end{equation}
+  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
+  l'image de \( \cdn [\vmp]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
+  contenue dans \( \cdn [\vmp]_ f ^{C'''_\Delta} \).
+\end{lem}
+
+\begin{proof}
+  C'est essentiellement une variante du lemme~2.5 de~\cite{remivg}, notre
+  résultat étant formulé différemment et dans un cadre d'apparence un peu
+  moins générale ; la preuve suivra en tout cas les mêmes lignes. On commence
+  par décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
+  \begin{equation}
+    P\mexp*[\ind]
+    =
+    \sum _{\alpha=1}^{\Delta\mexp*}
+    P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta\mexp* - \alpha}
+    \pmm,
+  \end{equation}
+  où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
+  On pose ensuite, pour tout \( \fct \), tout
+  \( \ind \in \{ 0, \dots, \dimp \} \) et tout
+  \( p \in \N^{\puiss(\dimp+1)} \),
+  \begin{equation}
+    \rho_{\fct, \ind, p}
+    =
+    \begin{dcases*}
+      ( \vmp*[\ind] ) ^{p\mexp*[\ind]}
+      & si \( \fct \le \vdim* \) ;
+      \\
+      \sum _{\alpha=1}^{\Delta\mexp*}
+      U_{p, \alpha, \Delta\mexp*}
+      ( P\mexp*[\ind, 1], \dots, P\mexp*[\ind, \Delta\mexp*] )
+      & sinon,
+    \end{dcases*}
+  \end{equation}
+  où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}. En
+  particulier, \( \rho_{\fct, \ind, p} \) est toujours congru à
+  \( ( \vmp*[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
+  l'estimation de norme
+  \begin{equation}
+    \nv1{ \rho_{\fct, \ind, p} }
+    \le
+    \left(
+    \nv1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
+    \right) ^{p\mexp*[\ind]}
+    \pmm.
+  \end{equation}
+  On définit alors \( \rdiv^f \) par son action sur les monômes, en posant
+  \begin{equation}
+    c_p
+    = \rdiv^f(\vmp^p)
+    = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
+  \end{equation}
+  et en prolongeant par linéarité. L'estimation de norme annoncée découle
+  directement de la majoration précédente en prenant le produit. Par ailleurs,
+  il est clair que si une forme ne fait intervenir que les variables \(
+  \vmp*[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de même de son
+  image.
+\end{proof}
+
+\begin{coro} \label{c:hmat-rdiv}
+  Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^\Diii \)
+  faisant commuter le diagramme~\eqref{e:diag-f-aux}, dont les matrices dans
+  les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
+  majorées par
+  \begin{equation}
+    \prod\fctrange \left(
+    \nv1{ \varfc* }
+    \cdot ( 2 \vdeg* )^\dv
+    \right) ^{ \delta d'_\fct }
+    \cdot \expb^{ o(\delta) }
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Découle directement du lemme précédent en utilisant les relations de
+  dépendance fixées au dernier paragraphe du scolie~\ref{s:plong-adapt}.
+\end{proof}
+
+Intéressons-nous maintenant au morphisme \( \relim \).
+
+\begin{lem}
+  Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
+  \{ \vdim* + 1, \dots \dimp \} \), des formes
+  \( S\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) et
+  \( T\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*+1] ] \)
+  telles que \( \deg S\mexp*[\ind] + 1 = T\mexp*[\ind] \) et des entiers
+  \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
+  \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
+
+  Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
+  \Delta \), de degré noté \( r \), et, pour tout \( f \in \N^\puiss \), une
+  application linéaire
+  \begin{equation}
+    \relim \colon
+    \cdn [\vmp]_ {f}^{C'_\Delta}
+    \to
+    \cdn [\vmp]_ {f+r}^{C'_\Delta}
+  \end{equation}
+  qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
+
+  De plus, on peut prendre
+  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
+    ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^{\relim} \) de la
+  matrice de \( \relim \) dans la base canonique satisfont alors
+  \begin{equation}
+    \nv1{ c_q^{\relim} }
+    \le
+    \prod\fctrange N_\fct^{\Delta_\fct}
+  \end{equation}
+  pour tout \( q \) de multilongueur \( f \), où \( N_\fct \) majore
+  \( \nv1{ S\mexp*[\ind] } \) et \( \nv1{ T\mexp*[\ind] } \) pour tout
+  \( \ind \).
+\end{lem}
+
+\begin{proof}
+  Soit \( R \) défini comme dans l'énoncé, et \( \vmp^q \) un monôme de
+  l'espace de départ. Par hypothèse, \( q\mexp*[\ind] \le \Delta_\fct \) pour
+  tout \( \fct \) et \( \ind \le \vdim* + 1 \), de sorte que l'on peut poser
+  \begin{equation}
+    \relim( \vmp^q )
+    =
+    \prod\fctrange \left(
+    \prod_{\ind=1}^{\vdim*}
+    (\vmp*[\ind])^{q\mexp*[\ind]}
+    \prod_{\ind=\vdim*+1}^\dimp
+    (T\mexp*[\ind])^{q\mexp*[\ind]}
+    (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
+    \right)
+  \end{equation}
+  et prolonger par linéarité. On vérifie immédiatement que \( \relim(\vmp^q)
+  \) est congru à \( R \cdot \vmp^q \) modulo \( \Ideal_{S, T} \), de même
+  que l'estimation de norme annoncée.
+\end{proof}
+
+\begin{coro} \label{c:hmat-relim}
+  Il existe une forme \( R \in \cdn [\vmp]^{C''} \) ne dépendant que de \(
+  \var \) et un morphisme \( \relim \) tels que le
+  diagramme~\eqref{e:diag-f-aux} commute. De plus, les colonnes de la matrice
+  de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
+  majorée par
+  \begin{equation}
+    \prod\fctrange
+    \nv1{ N'_\fct }^{\vdeg*}
+    \pmm,
+  \end{equation}
+  où \( N'_\fct \) est une constante ne dépendant que de \( \var* \).
+\end{coro}
+
+\begin{proof}
+  Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
+  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varid \) ;
+  elle découle du fait qu'on a supposé le plongement adapté
+  (scolie~\ref{s:plong-adapt}).
+  En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
+  \( \ind \), il existe des formes \( A\mexp*[\ind, \alpha] \) et \(
+    B\mexp*[\ind, \alpha] \) dans
+  \( \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) telles que
+  \begin{equation}
+    \frac{ \vmp** }{ \vmp*[0] }
+    =
+    \sum_{\alpha = 0}^{\vdeg* - 1}
+    \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
+    \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\alpha
+    \mod \varid*
+    \pmm.
+  \end{equation}
+  On obtient alors les familles \( S \) et \( T \) recherchées en multipliant
+  les deux membres de l'égalité précédent par \( \vmp*[0] \) puis en réduisant
+  au même dénominateur le membre de droite.
+\end{proof}
+
+Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
+d'en savoir davantage sur \( R \) ni les \( N'_\fct \). On pourra néanmoins
+vouloir expliciter une valeur acceptable de \( R \) plus tard.
+
+
+\subsection{Construction finale de la forme auxiliaire}
+
+Commençons par rappeler la version que nous utiliserons du classique lemme de
+\bsc{Siegel}.
+
+\begin{fact} \label{f:siegel}
+  Pour toute matrice \( M \) de dimensions \( p \times q \) à coefficients
+  dans un corps de nombres \( \cdn \) avec \( p < q \), il existe un vecteur
+  \( x \in \cdn^q \) non nul tel que \( M x = 0 \) et satisfaisant
+  \begin{equation}
+    \hautl[\infty] x
+    \le
+    \frac q{p-q} \bigl( \hautl[\infty] M + \ln q \bigr) + c_\cdn
+    \pmm,
+  \end{equation}
+  où \( c_\cdn \) est une constante ne dépendant que de \( \cdn \).
+\end{fact}
+
+\begin{proof} \later
+  C'est le lemme de \bsc{Siegel} de \bsc{Bombieri} et \bsc{Vaaler}.
+\end{proof}
+
+Nous sommes maintenant en mesure de construire la forme auxiliaire.
+
+\begin{prop} \label{p:build-aux}
+  Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
+  \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
+    [\vmp, \vmpi] \), multihomogène de degré \( \delta d \), où l'on
+  rappelle que
+  \begin{equation}
+    d = \bigl(
+      \epsz \wts[1],
+      \dots,
+      \epsz \wts[\puiss],
+      1, \dots, 1
+    \bigr)
+    \pmm,
+  \end{equation}
+  non nulle modulo \( \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F)
+    \in \vanish \) et
+  \begin{equation}
+    \hautl[\infty] F
+    \le
+    \delta \Bigr(
+    (4\puiss + 2\epsz) \sum\fctrange \wts* \hautl[1]{\varfc*}
+    + (1 + \epsiii)\wts[1] \cdot \cst{f-aux}
+    \Bigr)
+    + o(\delta)
+    \pmm,
+  \end{equation}
+  où
+  \begin{equation}
+    \newcst[]{f-aux}
+    \le
+    2 \hautl[\infty] \coi
+    + 2 \ln (\dimp + 1)
+    + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
+    \pmm.
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  On reprend le diagramme~\eqref{e:diag-f-aux}, dont la première ligne est
+  maintenant bien définie. On considère le produit \( M'' \) des matrices des
+  applications \( \wemba \), \( \rdiv^\Dii \), \( \relim \) et \(
+  \rdiv^\Diii \) composées dans cet ordre. Ses lignes sont naturellement
+  indexées par l'ensemble des multiindices
+  \begin{equation}
+    \left\{
+      \imp \in \prod\fctrange \bigl(
+      \N^{\vdim* + 1}
+      \times \{ 0, \dots, \vdeg* - 1 \}
+      \times \{ 0 \}^{\dimp - \vdim* - 1}
+      \bigr)
+      \text{ tel que }
+      \sum\indrange \imp** = \Diii
+      \ \forall \fct
+      \right\}
+    \pmm.
+  \end{equation}
+  On ne garde de \( M \) que les lignes dont l'indice appartient à l'ensemble
+  \( (\stairs)\Ciii \) défini par~\eqref{e:stairs-c3} pour former la matrice
+  \( M' \), dont les colonnes sont naturellement indexées par les monômes de
+  multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
+  \( M' \) les colonnes indexées par les monômes constituant la base choisie
+  de \( \Ideal_\Dz \) pour former la matrice \( M \) à laquelle nous allons
+  appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
+
+  L'hypothèse faite sur \( \epsii \) et la relation~\eqref{e:good-codim}
+  impliquent directement que \( p < q \) et que
+  \begin{equation}
+    \frac q {p-q}
+    \le
+    \frac 1 {\frac1\epsii - 1} + o(1)
+    \le
+    1 + o(1)
+    \pmm.
+  \end{equation}
+  En remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
+  forme \( F \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
+  par \( \hautl[\infty] M + o(\delta) \) ; il reste donc à estimer cette
+  hauteur.
+
+  On utilise le fait élémentaire suivant : si \( A \) et \( B \) sont deux
+  matrices telles que le produit \( A \cdot B \) est défini, alors
+  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \hautl[\infty] A \)
+  et d'un majorant de \( \hautl[1] c \) où \( c \) parcourt les colonnes
+  de \( B \).
+
+  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautl[1] \) des
+  colonnes de la matrice de \( \wemba \) est majorée par
+  \begin{equation}
+    \bigl( \delta + o(\delta) \bigr)
+    \sum\fctirange \biggl(
+    2\wtis* \hautl[\infty] \coi
+    + \genre \wtis* \ln(4)
+    + \wtis* \ln(\dimp + 1)
+    \biggr)
+    \pmm,
+  \end{equation}
+  d'après le corollaire~\ref{c:hmat-rdiv} (et en remarquant que \( d'_\fct \le
+    2\puiss + \epsz \) pour tout \( \fct \)), celle des colonnes des matrices
+  de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) par
+  \begin{equation}
+    \bigl( \delta + o(\delta) \bigr)
+    (2\puiss + \epsz)
+    \sum\fctrange \wts* \biggl(
+    \hautl[1]{\varfc*}
+    + \ln(2\vdeg*)
+    \biggr)
+    \pmm,
+  \end{equation}
+  et d'après le corollaire~\ref{c:hmat-relim} celle des colonnes de la matrice
+  de \( \relim \) est un \( o(\delta) \). En sommant (en comptant bien deux
+  fois le majorant commun des hauteurs des deux \( \rdiv \)) et en tenant
+  compte du fait que \( \puiss - 1 + \sum\fctirange \wtis* \le (1 + \epsiii)
+  \wts[1] \), il vient
+  \begin{equation}
+    \hautl[\infty] M
+    \le
+    \delta \Bigr(
+    (4\puiss + 2\epsz) \sum\fctrange \wts* \hautl[1]{\varfc*}
+    + (1 + \epsiii)\wts[1] \cdot \cst{f-aux}
+    \Bigr)
+    + o(\delta)
+    \pmm,
+  \end{equation}
+  avec
+  \begin{equation}
+    \cst{f-aux}
+    \le
+    2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
+    + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
+    \pmm.
+  \end{equation}
+  On remarque alors que \( 4^\genre \le \dimp + 1 \) pour aboutir à la
+  majoration annoncée.
+\end{proof}
+
+\begin{scho} \label{s:aux-co}
+  On note désormais \( F \) une forme comme dans la conclusion de la
+  proposition précédente, \( F' = \wemba(F) \) et \( F'' =
+    \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F))) \). On a alors
+  \begin{enumthm}
+    \item \( F'' = RF' \mod \varid \) et \( F'' \in \vanish* \) ;
+    \item \( \deg F'' = \deg RF' = \deg F' + o(\delta) \) ;
+    \item \( \deg F' = \delta \bigl(
+          \wts[1] (\frac94 + \epsz), \dots,
+          \wts[\puiss*] (\frac94 + \epsz), 2\puiss - 2 + \epsz
+        \bigr) \) ;
+    \item \( \nv1{F'} \le \nv1 F \cdot \left(
+          \nv\infty\coi^2 \bigl( 4^\genre \dimp** \bigr)^\dv
+        \right)^{(1+\epsiii) \wts[1] \delta}
+      \) ;
+    \item \( \nv1{F''} \le \nv1 F \cdot
+        \left(
+          \prod\fctirange
+          \nv1{\varfc*}^{(4\puiss + 2\epsz) \wtis*}
+          \cdot
+          \cst{f-aux-loc}^{(1+\epsiii) \wts[1]}
+        \right)^\delta
+        \cdot
+        2^{o(\delta)}
+      \), où
+      \begin{equation}
+        \newcst{f-aux-loc}
+        =
+        \nv\infty\coi^2 \bigl(
+          4^\genre \dimp** \cdot (2 \max_\fct \vdeg*)^{(4\puiss + 2\epsz)}
+        \bigr)^\dv
+      \end{equation}
+  \end{enumthm}
+\end{scho}
+
+\begin{proof}
+  Les trois premiers points sont donnés directement par la méthode utilisée
+  pour construire \( F \). Le suivant résulte du lemme~\ref{l:hmat-wemba} et
+  de la propriété~\eqref{e:l1-subslin} de la norme utilisée en effectuant les
+  mêmes simplifications que dans la démonstration de la proposition
+  précédente.
+
+  Pour le dernier point, on reprend la matrice \( M \) de cette démonstration
+  et on en majore les normes locales de la même façon qu'on en a majoré la
+  hauteur :
+  \begin{align}
+    \nv\infty M
+    & \le
+    \prod\fctirange \left(
+      \nv1{\varfc*}^{(4\puiss + 2\epsz) \wtis*}
+    \right)^\delta
+    \\ & \qquad
+    \cdot \left(
+      \nv\infty\coi^2 \bigl(
+        4^\genre \dimp** \cdot (2 \max_\fct \vdeg*)^{(4\puiss + 2\epsz)}
+      \bigr)^\dv
+    \right)^{(1+\epsiii) \wts[1] \delta}
+    \cdot
+    2^{o(\delta)}
+  \end{align}
+  On en déduit l'estimation annoncée en remarquant que \( F'' \) est l'image de
+  \( F \) par l'application de matrice \( M \) et que \( \nv1{M F} \le
+    \nv\infty M \cdot \nv1 F \cdot 2^{\dv o(\delta)} \) par les propriétés
+  classiques des normes.
+\end{proof}
+
+
+
+\section{Extrapolation} \label{sec:vojta-extrap}
+
+Le but de cette section est de montrer que la fonction auxiliaire que nous
+venons de construire s'annulle avec un indice élevé en \( \ex \), pour une
+définition de l'indice que nous préciserons.
+
+Auparavant, nous aurons besoin de représenter les dérivées de certaines
+fonctions rationnelles sur \( \var \) par des fractions rationnelles de
+dénominateur explicite dont on contrôle le degré et la hauteur du numérateur.
+Pour commencer, nous effectuons ce travail sur une variété projective
+quelconque (plongée de façon adaptée) avant de passer à une variété produit.
+
+
+\subsection{Estimation de dérivées} \label{sec:vojta-param}
+
+Soit \( \anyvar \) une variété projective de dimension \( \anydim \), plongée
+de façon adaptée dans un espace projectif \( \projd \), de degré \( \anydeg \)
+dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie de
+\begin{equation}
+  \cdn\Big(
+    \frac{ \vp[0]           }{ \vp[\anydim] }, \dots,
+    \frac{ \vp[\anydim-1]   }{ \vp[\anydim] }
+  \Big)
+\end{equation}
+dont \( \frac{ \vp[\anydim+1] }{ \vp[\anydim] } \) est un élément primitif.
+Sur ce dernier corps, on dispose des dérivations standard définies par
+\(
+  \diff_\ind \frac{ \vp[\indi] }{ \vp[\anydim] } = \delta_\ind^\indi
+\)
+qui forment une base de l'espace des dérivations, et s'étendent de façon
+unique à \( \cdn(\anyvar) \) pour former une base de son espace de
+dérivations. Les propriétés classiques des dérivations montrent alors que
+l'application
+\begin{equation}
+  \begin{aligned}
+    \pmor \colon \cdn(Z)
+    & \to \cdn(Z)\series\psp
+    \\
+    f
+    & \mapsto
+    \sum_{\derp \in \N^\anydim} \der[\derp] \!f \, \psp^\derp
+  \end{aligned}
+  \qquad \text{où }
+  \der[\derp]
+  =
+  \frac1{\derp!}
+  \prod_{\ind = 0}^\anydim \diff_\ind^{\derp*}
+  \pmm.
+\end{equation}
+est un morphisme de \( \cdn \)-algèbres.
+
+Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
+faisant commuter le diagramme
+\begin{equation} \label{e:pmor}
+  \begin{aligned}[c]
+    \xymatrix{
+      \cdn[\vp]_{(\ideal\anyvar)}               \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
+      & \cdn[\vp]_{(\ideal\anyvar)} \series\psp \ar[d]^\pi
+      \\ \cdn(\anyvar)                                     \ar[r]^{\pmor}
+      & \cdn(\anyvar)\series\psp
+    }
+  \end{aligned}
+\end{equation}
+où les flèches verticales sont les projections canoniques. Posons
+\( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)
+sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
+la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
+rationnelle \( f = F/G \), nous exhiberons (au moins) un polynôme \( R_\derp
+\), dépendant éventuellement de la représentation \( F/G \) choisie, tel que
+\( R_\derp \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes
+locales contrôlées.
+
+En pratique, nous construirons en fait deux morphismes, \( \pmor*_0 \) et \(
+  \pmor*_1 \), et deux familles d'applications \( \pdiff^\derp \) telles que
+l'on contrôlera la norme \( \place \)-adique de \( R_\derp \cdot \pdiff^\derp
+\), où l'on rappelle que \( \dv \) vaut \( 1 \) si \( \place \) est
+archimédienne et \( 0 \) sinon.
+
+Pour définir \( \pmor*_\dv \), il suffit de définir les images des différents
+\( \vp* / \vp[\anydim] \). En effet, ceci donne un morphisme de \( \cdn[ \vp /
+  \vp[\anydim] ] \) dans \( \cdn[X]_{(\ideal\anyvar)} \series\psp \). Si l'on
+impose de plus que \( \pdiff^0 \) soit l'identité, on constate que l'image du
+complémentaire de \( \ideal\anyvar \) ne contient que des séries inversibles
+(car leur terme constant l'est), ce qui permet d'étendre le morphisme à \(
+  \cdn[X]_{(\ideal\anyvar)} \).
+
+Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
+  \pmor*_\dv(\vp*/\vp[\anydim]) = \vp*/\vp[\anydim] + \psp* \). Pour \( \ind >
+  \anydim \), nous utiliserons le lemme suivant, que l'on énonce dans un cadre
+affine avant de l'appliquer à notre situation projective.
+
+\begin{lem} \label{l:param-aff}
+  Soient \( \anyvp[1], \dots, \anyvp[\anydim], Y \) des variables et \( L \)
+  une algébrique extension finie de \( \cdn(\anyvp[1], \dots, \anyvp[\anydim])
+  \). On fixe \( y \) un élément de \( L \) ; on note \( \pi \) le
+  morphisme de \( \cdn[\anyvp[1], \dots, \anyvp[\anydim], Y ] \) dans \( L \)
+  qui laisse stable les \( \anyvp* \) et envoie \( Y \) sur \( y \). Soit \(
+    \Pi \in \ker \pi \) tel que \( \pden = \diff_Y \Pi \notin \ker \pi \).
+
+  On considère les dérivations standard \( \diff_\ind \) sur \( \cdn[
+    \anyvp[1], \dots, \anyvp[\anydim] ] \) ainsi que leurs extensions à \( L
+  \), et on note \( \der[\derp] = \frac1{\derp!} \prod_{\ind = 0}^\anydim
+    \diff_\ind^{\derp*} \) les dérivations réduites.  Il existe des polynômes
+  \( P_\dv^\derp \), pour
+  \( \derp \in \N^{\anydim} \minusset0 \), tels que :
+  \begin{enumthm}
+    \item \( \der[\derp] y
+        = \pi\left(
+          \frac{ P_\dv^\derp }{ \pden^{2\lgr\dermp - 1} }
+        \right)
+      \) ;
+    \item \( \deg P_\dv^\derp \le (\deg \Pi - 1) (2\lgr\derp - 1) \) ;
+    \item \( \nv1{ P_\dv^\derp }
+        \le \nv1 \poldep ^{2\lgr\derp - 1}
+        \cdot \left(
+          (4\anydim)^{\lgr\derp -1} (\deg\Pi)^{3\lgr\derp -2}
+        \right)^\dv \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
+    autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
+    fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
+  utilisant aux places archimédiennes une généralisation de
+  \cite[relation~2.3.1, p.~63]{farhith}.
+
+  On va construire $P_0^\derp$ et $P_1^\derp$ indépendamment par récurrence
+  sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
+  \diff_{\ind_0} \Pi$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
+  (cas $\lgr\derp = 1$), car ce choix convient. Pour la suite, on fixe un
+  $\dv$, un $\derp$ de longueur au moins $2$, et on suppose qu'on a choisi un
+  $P_\dv^{\derp'}$ convenable pour chaque $\derp'$ de longueur strictement
+  inférieure à celle de $\derp$.
+
+  On commence par le cas ultramétrique et on note donc provisoirement $P^\derp
+  = P_0^\derp$ pour alléger. Les polynômes recherchés sont caractérisés par la
+  relation
+  \begin{equation}
+    \Pi \left(
+      \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
+      Y + \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {\pden^{2\lgr\derp -1}} \psp^\derp
+    \right)
+    = 0 \mod (\Pi)
+    \pmm.
+  \end{equation}
+  On remplace alors \( \Pi \) par son développement de \bsc{Taylor}, pour
+  obtenir les égalités suivantes modulo \( \Pi \) :
+  \begin{align}
+    0
+    & =
+    \sum_{(\ip, \mu) \in \N^{\anydim+1}}
+    \der[\ip, \mu] \Pi
+    \cdot \psp^\ip
+    \cdot \left(
+      \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {\pden^{2\lgr\derp - 1}} \psp^\derp
+    \right)^\mu
+    \\
+    & =
+    \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
+    \left(
+      \der[\ip, \mu] \Pi
+      \cdot \prod_{\fct = 1}^\mu
+      \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \right)
+    \psp^{\sum_\fct \gmp\nu* + \ip}
+    \\
+    & =
+    \sum_{\derp \in \N^\anydim \minusset 0}
+    \Biggl(
+    \frac {P^\derp} {\pden^{2\lgr\derp - 2}}
+    + \sum_{\substack{
+        (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \sum_\fct \gmp\nu* + \ip = \derp }}
+    \der[\ip, \mu] \Pi
+    \cdot \prod_{\fct = 1}^\mu
+    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \Biggr)
+    \psp^\derp
+    \pmm,
+  \end{align}
+  où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \).
+  Il suffit donc de définir \( P^\derp \) par la relation de récurrence
+  \begin{equation}
+    - P^\derp
+    =
+    \sum_{\substack{
+        (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
+        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \sum_\fct \gmp\nu* + \ip = \derp }}
+    \der[\ip, \mu] \Pi
+    \cdot \pden^{2\lgr\derp - 2}
+    \cdot \prod_{\fct = 1}^\mu
+    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+  \end{equation}
+  qui consiste à imposer que chaque terme de la série précédente soit nul, ce
+  qui assure bien sa nullité modulo \( \Pi \).
+
+  On majore alors le degré de \( P^\derp \) par récurrence :
+  \begin{align}
+    \deg P^\derp
+    & \le
+    \deg\Pi - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 2)
+    \\ & \le
+    1 - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 1)
+    \\ & \le
+    (\deg\Pi - 1) (2\lgr\derp - 1)
+    \pmm,
+  \end{align}
+  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.  La majoration de
+  norme locale est immédiate par analogie avec le degré vu les propriétés de
+  la norme aux places ultramétriques.
+
+  Considérons maintenant le cas archimédien (désormais \( P^\derp = P^\derp_1
+  \) pour alléger). On utilise la relation de récurrence suivante, établie
+  dans la démonstration de \cite[lemme~6.1]{remivds}, avec \( Q_\derp =
+    P^\derp \cdot \derp! \) et où, rappelons-le, \( \derp' \) est tel que
+  \( \derp[\ind_0] = \derp[\ind_0]' + 1 \) et \( \derp* = \derp*' \) sinon :
+  \begin{equation}
+    Q_\derp
+    =
+    \pden^2 \, \diff_{\ind_0} Q_{\derp'}
+    - \pden \, \diff_{\ind_0} P \, \diff_{\anydim+1} Q_{\derp'}
+    + (2\lgr{\derp'} - 1)
+    (\diff_{\ind_0} P \, \diff_Y \pden - \pden \diff_{\ind_0} \pden)
+    Q_{\derp'}
+    \pmm.
+  \end{equation}
+  On en déduit immédiatement l'estimation de degré suivante :
+  \begin{equation}
+    \deg P^\derp
+    \le 2 (\deg\Pi - 1) + \deg P^{\derp'}
+    \le (\deg\Pi - 1) (2\lgr\derp - 1)
+    \pmm.
+  \end{equation}
+  Pour la norme, on prouve que \(
+    \nv1{Q_\derp}
+    \le
+    \nv1\Pi^{2\lgr\derp-1} 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
+    (\lgr\derp - 1) !
+  \)
+  (ce qui implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
+    \le \anydim^{\lgr\derp-1} \)) en exploitant la majoration de degré
+  sous la forme \( \deg P^\derp \le 2\lgr\derp \deg\Pi \).
+  \begin{align}
+    \nv1{ Q_\derp }
+    & \le
+    2(\deg\Pi)^2 \cdot \deg Q_{\derp'} \cdot \nv1\Pi^2 \nv1{ Q_{\derp'} }
+    + 2 (2\lgr{\derp'} - 1) (\deg\Pi)^3 \nv1\Pi^2
+    \\ & \le
+    \nv1\Pi^2 \nv1{ Q_{\derp'} } \cdot 4 (\deg\Pi)^{3\lgr{\derp'}}
+    \\ & \le
+    \nv1\Pi^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
+    (\lgr\derp - 1) !
+    \qedhere
+  \end{align}
+\end{proof}
+
+Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
+
+\begin{lem} \label{l:def-pmor}
+  Dans les notations précédentes, on peut définir \( \pmor*_\dv \) faisant
+  commuter le diagramme~\eqref{e:pmor} par :
+  \begin{enumthm}
+    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
+        = \frac{ \vp* }{ \vp[\anydim] } + \psp* \)
+      pour tout \( \ind \in \set{0, \dots, \anydim-1} \) ;
+    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
+        = \frac{ \vp* }{ \vp[\anydim] }
+        + \sum_{\derp \neq 0}
+        \frac{ P^\derp_{\ind, \dv} }{ U_\ind^{\lgr\derp} }
+        \psp^\derp
+      \)
+  \end{enumthm}
+  où les polynômes \( P^\derp_{\ind, \dv} \) et \(  U_\ind \) satisfont
+  \begin{enumthm}
+    \item \( \deg  U_\ind   =   2 (\anydeg - 1) \) ;
+    \item \( \nv1{ U_\ind } \le \nv1{ \chow\anyvar }^2 4^{(\anydeg-1)\dv} \) ;
+    \item \( \deg  P^\derp_{\ind, \dv}   =   2 (\anydeg - 1) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\ind, \dv} } \le \left(
+          \nv1{ \chow\anyvar }^2
+          \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
+        \right)^{\lgr\derp} \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Fixons un \( \ind > \anydim \) et notons \( \tilde\Pi = P_\ind(\anyvp[1],
+    \dots, \anyvp[\anydim], 1, Y ) \), où \( P_\ind \) est donné par le
+  fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées successives de
+  \( \tilde\Pi \) par rapport à la dernière variable, telle que \( \diff_Y \Pi
+    \notin \ideal\anyvar \). On pose alors
+  \begin{equation}
+    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    =
+    \frac {
+      P_\dv^\derp ( \vp[0] / \vp[\anydim], \dots,
+      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+    }{
+      \pden ( \vp[0] / \vp[\anydim], \dots,
+      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+      ^{2\lgr\derp - 1}
+    }
+    \pmm,
+  \end{equation}
+  où les \( P_\dv^\derp \) sont donnés par le lemme précédent. Quitte à
+  multiplier par une puissance convenable de \( \vp[\anydim] \), on peut
+  supposer que le degré de \( \pden \) est exactement \( 2\anydeg - 1 \) et
+  que celui de \( P_\dv^\derp \) est exactement \( (2\anydeg - 1) (2\lgr\derp
+    - 1) \), de sorte que par homogénéité :
+  \begin{equation}
+    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    =
+    \frac {
+      P_\dv^\derp ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+    }{
+      \pden ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+      ^{2\lgr\derp - 1}
+    }
+    =
+    \frac {
+      P_\dv^\derp
+    }{
+      \pden
+      ^{2\lgr\derp - 1}
+    }
+  \end{equation}
+  On pose finalement\footnote{Ceci n'a pour but que de simplifier les calculs
+    ultérieurs en rendant le degré exactement linéaire en \( \lgr\derp \).} \(
+    P_{\ind, \dv}^\derp = \pden \cdot P_\dv^\derp \) et \( \pden_\ind =
+    \pden^2 \). Les estimations de norme annoncées sont alors immédiates.
+\end{proof}
+
+Les morphismes \( \pmor*_\dv \) s'étendent à \( \cdn[X]_{(\ideal\anyvar)} \)
+comme expliqué au deuxième paragraphe précédant le lemme~\ref{l:param-aff}.
+Nous allons maintenant étudier (dénominateur, degré et hauteur des
+coefficients) les images de certaines fonctions, en commençant par celles des
+monômes en \( \vp / \vp[\anydim] \).
+
+\begin{lem} \label{l:par-anyvar-mono}
+  Soit \( \ip \in \N^{\dimp*} \) et \( M_\ip = \prod\limits\indrange
+    \bigl( \frac{\vp*}{\vp[\anydim]} \bigr)^{\ip*} \).  Posons \( \pden =
+    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
+  sont donnés par le lemme précédent. Alors :
+  \begin{enumthm}
+    \item \( P^\derp_{\ip, \dv}
+        = \pdiff^\derp(M_\ip)
+        \cdot \vp[\anydim]^{\lgr\ip} \pden^{\lgr\derp} \) est un polynôme ;
+    \item \( \deg P^\derp_{\ip, \dv}
+        = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\ip, \dv} }
+        \le
+        \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
+        \left(
+          \bigl( 4^{\anydeg+1} \anydim \anydeg^{3} \bigr) ^{
+            (\dimp - \anydim) \lgr\derp }
+          \cdot 2^{ \anydim \lgr\ip }
+        \right)^\dv
+      \).
+  \end{enumthm}
+  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \dv} \bigr)
+    \ge \ip[0]  - \derp[0] \).
+\end{lem}
+
+\begin{proof}
+  \newcommand \indl {{ \gmp\nu[\ind, \indi_\ind] }}
+  On utilise la règle de \bsc{Leibniz} :
+  \begin{equation}
+    \pdiff^\derp(M_\ip) =
+    \sum_{\gmp\nu \in N}
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+    \pmm,
+  \end{equation}
+  où la somme est prise sur l'ensemble
+  \begin{equation}
+    N = \left\{
+      \gmp\nu \in (\N^\anydim)^{\lgr\ip}
+      \text{ tels que }
+      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*} \indl = \derp
+    \right\}
+    \pmm.
+  \end{equation}
+
+  On vérifie alors que
+  \begin{equation}
+    P^\derp_{\ip, \dv}
+    =
+    \sum_{\gmp\nu \in N}
+    \prod\indrange
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+    \pden_\ind^{\lgr\indl}
+    \vp[\anydim]
+  \end{equation}
+  est bien un polynôme : pour chaque facteur de chaque terme, si \( \indl = 0
+  \) alors \(
+    \pdiff^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \vp[\anydim]
+  \) est un polynôme, sinon \(
+    \pdiff^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \pden_\ind^{\lgr\indl}
+  \) en est un, d'après le lemme précédent.
+
+  Le calcul du degré est direct et on ne détaille donc que l'estimation de
+  norme : chaque terme de la somme est majoré en norme par
+  \begin{align}
+    \prod_{\ind = \anydim + 1}^{\dimp}
+    \prod_{ \indi_\ind = 1 }^{ \ip* }
+    \left(
+      \nv1{ \chow\anyvar }^2
+      \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
+    \right)^{\lgr\indl}
+    \le
+    \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
+    \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)
+    ^{(\dimp - \anydim) \lgr\derp \dv}
+  \end{align}
+  On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
+  \begin{equation}
+    \prod_{p = 0}^{\anydim - 1} \left\{
+      \gmp\nu[][p] \in \N^{\lgr\ip}
+      \text{ tels que }
+      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*}
+      \gmp\nu[\ind, \indi_\ind][p]
+      = \derp[p]
+    \right\}
+    \pmm.
+  \end{equation}
+  Chacun des facteurs de ce produit est de cardinal
+  \(
+    \binom{ \derp[p] + \lgr\ip - 1 }{ \lgr\ip - 1 }
+    \le
+    2^{ \derp[p] + \lgr\ip - 2 }
+  \).
+  L'estimation annoncée suit en prenant le produit en majorant assez largement
+  certains facteurs.
+
+  Enfin, on constate que chaque terme de la somme définissant
+  \( P^\derp_{\ip, \dv} \) contient un facteur de la forme
+  \(
+    \prod_{\indi_0 = 1}^{\ip[0]}
+    \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \frac{ \vp[0] }{ \vp[\anydim] } )
+    \vp[\anydim]
+  \). On peut supposer que \( \gmp\nu[0, \indi_0] \in \N \times
+    \set{0}^{\anydim-1} \) car sinon ce facteur, donc le terme correspondant,
+  est nul. De plus, on a \( \sum_{\indi_0 = 1}^{\ip[0]} \gmp\nu[0, \indi_0][0]
+    \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
+  nuls dans cette somme, donc \( \vp[0]^{\ip[0] - \derp[0]} \) est en
+  facteur de chaque terme non nul de la somme définissant \( P^\derp_{\ip,
+      \dv} \), ce qui prouve l'assertion sur l'ordre.
+\end{proof}
+
+On souhaite maintenant étudier le développement en série des fonctions
+rationnelles sur notre variété produit \( \var \).  On étend les notations de
+précédentes au cas multi-homogène de la façon évidente. En particulier, on a
+un morphisme \( \pmor \) de développement en série, qu'on représente par des
+morphismes \( \pmor*_\dv \) faisant commuter le diagramme
+\begin{equation} \label{pmor*-prod}
+  \xymatrix{
+    \cdn[\vmp]_{(\varid)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
+    & \cdn[\vmp]_{(\varid)} \series\psmp  \ar[d]^\pi
+    \\ \cdn(\var)                                     \ar[r]^{\pmor}
+    & \cdn(\var)\series\psmp
+  }
+\end{equation}
+et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
+  \cdot \pdiff^\dermp \).
+
+Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
+morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
+avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
+produit tensoriel de ces morphismes. On note par ailleurs \( \pden_\fct =
+  \prod_{\ind=\vdim*+1}^{\dimp} \gmp\pden** \) où les \( \gmp\pden** \) sont
+donnés par le lemme cité.
+
+Nous allons maintenant contrôler l'image par \( \pmor* \) de fonctions
+particulières, en commençant par celles qui admettent un monôme en les \(
+  \vmp*[\vdim*] \) comme dénominateur.
+
+\begin{lem} \label{l:par-var}
+  Soit \( G \) une forme multi-homogène de multidegré \( \alpha = (\alpha_1,
+    \dots, \alpha_\puiss ) \) et \( g = G / \vmp[][\vdim]^{\alpha} \) où
+  l'on a noté \( \vmp[][\vdim]^{\alpha} = \prod\fctrange
+    (\vmp*[\vdim*])^{\alpha_\fct} \). Alors :
+  \begin{enumthm}
+    \item \( P^\dermp_{G, \dv}
+        = \pdiff^\dermp(g)
+        \cdot \vmp[][\vdim]^{\alpha}
+        \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
+      \) est un polynôme ;
+    \item \( \deg_\fct P^\dermp_{G, \dv}
+        = \alpha_\fct + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} \) ;
+    \item \( \nv1{ P^\dermp_{G, \dv} }
+        \le
+        \nv1{ G }
+        \prod\fctrange
+        \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \left(
+          \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+            (\dimp - \vdim*) \lgr{\dermp*} }
+          \cdot 2^{ \vdim* \alpha_\fct }
+        \right)^\dv
+      \).
+  \end{enumthm}
+  De plus, \( \inda* \bigl( P^\derp_{G, \dv} \bigr) \ge \inda*(G) -
+    \wtsum*(\dermp) \).
+\end{lem}
+
+\begin{proof}
+  Les trois premiers points s'obtiennent en remarquant que \( g \) est une
+  combinaison linéaire de monômes en \( \vmp / \vmp[][\vdim] \), que l'image
+  d'un tel monôme par \( \pdiff^\dermp \) est donnée par
+  \begin{equation}
+    \pdiff^\dermp \Biggl(
+      \prod\fctrange \prod\indrange
+      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \Biggr)
+    =
+    \prod\fctrange
+    \pdiff^{\fct, \dermp*} \Biggl(
+      \prod\indrange
+      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \Biggr)
+  \end{equation}
+  et en appliquant le lemme~\ref{l:par-anyvar-mono}.
+
+  Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
+    \vmp^\imp \) un monôme apparaissant dans l'écriture \( G \), puis \(
+    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \dv} \).
+  D'après le lemme cité, on alors \( \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \)
+  d'où, en sommant, \( \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \)
+  qui est équivalent à l'estimation annoncée vu la définition de l'indice.
+\end{proof}
+
+Notons que les estimations obtenues ne valent que pour des fonctions admettant
+un monôme en \( \vmp[][\vdim] \) comme dénominateur.  On pourrait aisément en
+déduire des estimations pour des fonctions rationelles de dénominateur
+quelconque en les écrivant comme un quotient de deux telles fonctions, mais
+ce n'est pas utile ici.
+
+
+\subsection{Minoration de l'indice}
+
+Nous allons maintenant montrer que la forme auxiliaire construite
+précédemment s'annule avec un indice élevé en \( \ex \). Plus précisément,
+posons
+\begin{equation}
+  \wtsum( \dermp )
+  =
+  \frac {\lgr{\dermp[1]}} {\wts[1]} + \dots
+  + \frac {\lgr{\dermp[\puiss*]}} {\wts[\puiss*]}
+  + \frac {\lgr{\dermp[\puiss]}} {\puiss*}
+\end{equation}
+pour tout \( \dermp \in \N^{\lgr\vdim} \).  Si \( h \) est une forme
+multihomogène et \( \point \) où elle est définie, on définit son indice en \(
+  \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
+  \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq 0
+\).
+
+On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
+\( f_1 = F' / \vmp[][\vdim]^\Di \). Le but de cette section est alors de montrer
+la proposition suivante.
+
+\begin{prop}
+  On a \( \inda**(f_2) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
+  que \dots
+\end{prop}
+
+Commençons par un lemme facile sur l'indice.
+
+\begin{lem} \label{l:indice-inversible}
+  Soient \( g_1 \), \( g_2 \) et \( \alpha \) des fonctions rationnelles
+  telles que \( g_1 = \alpha g_2 \) et \( \point \) un point où elles sont
+  toutes les trois définies.
+  \begin{enumthm}
+    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] g_2(x) = 0 \) dès que
+      \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim} \),
+      alors \( \der[\dermp] g_1(\point) = \alpha(\point) \, \der[\dermp]
+        g_2(\point) \).
+    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(g_1) = \inda**(g_2)
+      \).
+  \end{enumthm}
+\end{lem}
+
+\begin{proof}
+  Le premier point découle facilement de la formule de \bsc{Leibniz} :
+  \begin{equation}
+    \der[\dermp] g_1(\point)
+    =
+    \sum_{\gmp\nu \le \dermp}
+    \der[\dermp - \gmp\nu] \alpha(\point) \,
+    \der[\gmp\nu] g_2(\point)
+    \pmm.
+  \end{equation}
+  Or, par hypothèse, tous les termes de cette somme sont nuls sauf peut-être
+  celui où \( \gmp\nu = \dermp \).
+
+  Si \( \alpha(\point) \neq 0 \) alors \( \alpha^{-1} \) est également définie
+  en \( \point \) et les deux autres fonctions jouent donc un rôle symétrique.
+  Ainsi, si un indice \( \dermp \) est minimal pour la condition \(
+    \der[\dermp] g_1(\point) \neq 0 \), il l'est aussi pour la condition \(
+    \der[\dermp] g_2(\point) \neq 0 \) grâce au point précédent, ce qui prouve
+  que les deux fonctions ont le même indice en \( \point \).
+\end{proof}
+
+On rappelle que \( \cex \) désigne un système de coordonnées multihomogènes du
+point \( \ex \) supposé contredire le théorème~\ref{t:vojta-div}. On peut
+supposer, d'après le scolie~\ref{s:part-cases}, qu'aucune des formes \(
+  \pden_\fct \) s'annulle en \( \cex* \) et qu'aucun des \( \cex** \) n'est
+nul ; ci-dessous on utilisera le fait que \( \cex*[\vdim*] \neq 0 \).  De
+même, on peut supposer que la forme \( R \) donnée par le
+corollaire~\ref{c:hmat-relim} ne s'annulle pas en \( \cex \).  \todo[Vérifier
+  que c'est bien le cas.]
+
+On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
+    \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
+condition. De même, on choisit \( \indiv* \in \set{0, \dots, \dimp} \)
+maximisant \( \av{ \wembcl*[\indiv*](\cex) } \), ainsi que \( \indig* \in
+  \set{0, \dots, \dimp} \) tel que \( \wembcl*[\indig*](\cex) \neq 0 \). Notons
+que \( \indig \) et \( \indiv \) ne dépendent pas du choix des formules \(
+  \wembcl \) utilisées, et que \( \indig \) ne dépend pas de \( \place \).
+\todo[Introduire la notation \( \wembcl \) et d'ailleurs choisir une autre
+  lettre.]
+
+Il est alors clair que \( \av{ \wembcl*[\indiv*](\cex) } \ge \nv1{
+    \wembcl*(\cex) } \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue
+pour les \( \indv* \).
+
+\begin{lem} \label{l:coord-norm}
+  Avec les notations précédentes, on a
+  \begin{equation}
+    \av{ \cex*[\indv*] }
+    \ge
+    \nv1{ \cex* } \cdot \nv1{ \varfc* }^{-1} \dimp**^{-\dv}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  Il suffit de montrer qu'on a \( \av{ \cex** } \le \nv1{ \varfc* } \av{
+      \cex*[\indv] } \) pour tout \( \ind \in \set{\vdim* + 1, \dots, \dimp}
+  \). Notons \( \poldep** \) la relation dépendance intégrale donnée par le
+  scolie~\ref{s:plong-adapt} ; en décomposant suivant les puissance de \(
+    \vmp** \) on a
+  \begin{equation}
+    (\vmp**) ^{ \vdeg* }
+    =
+    \sum_{ \alpha=1 }^{ \vdeg* }
+    (\vmp**) ^{ \vdeg* - \alpha }
+    \poldep*[\ind, \alpha]
+    \quad\text{où }
+    \deg \poldep*[\ind, \alpha] = \alpha
+    \text{ et }
+    \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
+    \le \nv1{ \varfc* }
+  \end{equation}
+  En passant aux valeurs absolues et en divisant, il vient
+  \begin{equation}
+    \av{ \cex** }
+    \le
+    \sum_{ \alpha=1 }^{ \vdeg* }
+    \poldep*[\ind, \alpha]
+    \left(
+      \frac{ \av{\cex*[\indv]} }{ \av{\cex**} }
+    \right) ^{ \vdeg* - \alpha }
+  \end{equation}
+  Si le quotient apparaissant dans le membre de droite est inférieur à \( 1
+  \), notre assertion initiale est vérifiée. Sinon, elle l'est aussi, car
+  \( \varfc* \) est normalisé (scolie cité) de façon à ce qu'un de ses
+  coefficients soit \( 1 \) ce qui assure \( \nv1{ \varfc* } \ge 1 \) en toute
+  place.
+\end{proof}
+
+Introduisons maintenant une nouvelle fonction rationnelle définie par
+\begin{equation}
+  f_2 =
+  \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
+  \cdot
+  \frac{
+    F( \vmp, \wembcl(\vmp) )
+  }{
+    \vmp[][\vdim] ^{\epsz \wts \delta}
+    \cdot
+    \wembcl[][\indig](\vmp) ^{ \delta }
+  }
+  \pmm,
+\end{equation}
+où au dénominateur on a noté
+\begin{equation}
+  \wembcl[][\indig](\vmp) ^{ \delta }
+  =
+  \prod\fctirange \wembcl*[\indig](\vmp) ^{ \delta }
+  \pmm.
+\end{equation}
+D'après le lemme~\ref{l:indice-inversible}, \( f_1 \) et \( f_2 \) ont le même
+indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
+qui seront plus faciles à contrôler.
+
+On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
+    \fcti] \) en appliquant le lemme~\ref{l:hclab} avec \( (\pp, \ppi) =
+  (\ex[\fcti], \ex[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
+\). On écrit alors
+\begin{align}
+  f_2
+  & =
+  \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
+  \cdot
+  \frac{
+    F( \vmp, \wembcl[\place](\vmp) )
+  }{
+    \vmp[][\vdim] ^{\epsz \wts \delta}
+    \cdot
+    \wembcl[\place][\indig](\vmp) ^{ \delta }
+  }
+  \\ & =
+  \frac{ R(\vmp) }{ \vmp[][\indv]^r }
+  \cdot
+  \frac{
+    F( \vmp, \wembcl[\place](\vmp) )
+  }{
+    \vmp[][\indv] ^{\epsz \wts \delta}
+    \cdot
+    \wembcl[\place][\indiv](\vmp) ^{ \delta }
+  }
+  \left(
+    \frac{ \wembcl[\place][\indiv](\vmp) }{ \wembcl[\place][\indig](\vmp) }
+  \right) ^{ \delta }
+  \left(
+    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
+  \right) ^{ \epsz \wts \delta + r }
+  \\ & =
+  \frac{
+    R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
+  }{
+    \vmp[][\indv] ^{ \Diii }
+  }
+  \left(
+    \prod\fctirange
+    \frac{
+      ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \wembcl[\place, \fcti][\indiv*]( \vmp )
+    }
+  \right)^\delta
+  \left(
+    \frac{ \wembcl[][\indiv](\vmp) }{ \wembcl[][\indig](\vmp) }
+  \right) ^{ \delta }
+  \left(
+    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
+  \right) ^{ \epsz \wts \delta + r }
+\end{align}
+
+Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
+  \der[\dermp] f_2 \neq 0 \). Comme les derniers facteurs de l'écriture
+précédente sont tous inversibles en \( \cex \), le
+lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
+
+\begin{equation}
+  \der[\dermp]
+    \frac{
+      R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
+    }{
+      \vmp[][\indv] ^{ \Diii }
+    }
+  ( \cex )
+  \cdot
+  \left(
+    \prod\fctirange
+    \frac{
+      ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \wembcl[\place, \fcti][\indiv*]( \cex )
+    }
+  \right)^\delta
+  \left(
+    \frac{ \wembcl[][\indiv](\cex) }{ \wembcl[][\indig](\cex) }
+  \right) ^{ \delta }
+  \left(
+    \frac{ \cex[][\indv] }{ \cex[][\vdim] }
+  \right) ^{ \epsz \wts \delta + r }
+\end{equation}
+Nous allons maintenant estimer la valeur absolue de chacun des facteurs, en
+distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
+facteur, et montrer que l'on contredit la formule du produit si \( \wtsum(
+  \dermp ) < \epsi \delta / \sigma \). Rappelons qu'on note \( \degv \) le
+degré local de \( \cdn \) en \( \place \).
+
+Pour le facteur le plus à droite, on a facilement
+\begin{equation}
+  \prod_\place
+  \prod\fctrange
+  \left(
+    \frac{ \av{\cex[][\indv]} }{ \av{\cex[][\vdim]} }
+  \right) ^{ (\epsz \delta \wts* + r_\fct) \degv }
+  \le
+  \prod\fctrange
+  \hautm[\infty]{ \ex* }^{\epsz \delta \wts* + r_\fct}
+  \le
+  \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wts[1]} \cdot o(\expb^\delta)
+\end{equation}
+De plus, en notant \( \exi \) l'image de \( \ex \) par la deuxième
+partie du plongement éclatant, on a\worknote{\bsc{Farhi} p. 96 en haut}
+\begin{equation}
+  \prod_\place
+  \prod\fctirange
+  \left(
+    \frac{ \av{\wembcl[][\indiv](\cex)} }{ \av{\wembcl[][\indig](\cex)} }
+  \right) ^{ \delta \degv }
+  \le
+  \prod\fctirange
+  \hautm[1]{ \exi* }^\delta
+  \le
+  \hautm[1]{ \ex[1] }^{2\puiss \epsiv \wts[1] \delta}
+  \cdot \cst{exci}^{\wts[1] \delta}
+\end{equation}
+Enfin, grâce au choix des formules \( \wembcl[\place] \), on a
+\begin{equation}
+  \prod_\place
+  \left(
+    \prod\fctirange
+    \frac{
+      \nv1{ \wembcl[\place, \fcti][\indiv*] }
+      ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \wembcl[\place, \fcti][\indiv*]( \cex )
+    }
+  \right)^{ \delta \degv }
+  \le
+  \hclab^{2\wts[1] \delta}
+\end{equation}
+
+Passons maintenant au premier facteur. Remarquons pour commencer que
+\begin{equation}
+  \nv1{ R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) }
+  \le
+  \nv1{ F } \nv1{ \wembcl }^\delta \cdot o(\expb^\delta)
+\end{equation}
+et que le facteur en \( \nv1{ \wembcl } \) a déjà été intégré à l'estimation
+précédente. Appliquons maintenant le lemme~\ref{l:par-var} à cette forme :
+\worknote{À adapter pour remplacer \( \vdim \) par une autre coordonnée ?}
+\begin{equation}
+  \der[\dermp]
+    \frac{
+      R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
+    }{
+      \vmp[][\indv] ^{ \Diii }
+    }
+  ( \cex )
+  =
+  \frac{ P^\dermp_\dv(\cex) }{ \cex[][\indv]^\Diii \pden(\cex)^{\vlg\dermp} }
+  =
+  \frac{ P^\dermp_\dv(\cex) }{ \cex[][\indv]^{\deg P^\dermp_\dv } }
+  \cdot
+  \frac{
+    \cex[][\indv]^{\vlg\dermp \cdot \deg \pden}
+  }{
+    \pden(\cex)^{\vlg\dermp}
+  }
+  \pmm.
+\end{equation}
+On estime facilement le second facteur :
+\begin{equation}
+  \prod_\place
+  \prod\fctrange
+  \frac{
+    \av{ \cex*[\indv] }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} \degv }
+  }{
+    \av{ \pden_\fct(\cex*) }^{ \lgr{\dermp*} \degv }
+  }
+  =
+  \prod\fctrange
+  \hautm[\infty]{ \cex* }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} }
+  \le
+  \hautm[1]{ \cex[1] }^{ \newcst[]{degdim} \wts[1] \epsi\delta/\sigma }
+\end{equation}
+Le premier facteur est majoré en valeur absolue par \( \nv1{ P^\dermp_\dv }
+\), qui est à peu près \( \nv1{ F } \cdot \nv1{ \varfc }^{\wts[1] \epsi\delta
+    / \sigma } \). Cependant, aux places de \( \placesapx \), on peut obtenir
+une estimation plus fine.
+
+En effet, chaque monôme divisé intervenant dans le déshomogénéisé de \(
+  P^\dermp_\dv \) est composé d'un facteur des valeurs absolue inférieure à \(
+  1 \) et d'un facteur de la forme
+\begin{equation}
+  \prod\fctrange
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
+  \right)^{\imp*[0]}
+  \pmm,
+\end{equation}
+où \( \imp \) est tel que \( \wtsum*(\imp) \ge \epsi (1 - \frac1\sigma)
+  \delta \). Or, par le lemme~\ref{l:coord-norm} et l'hypothèse principale, on
+a \todo[Ne pas prendre le produit sur \( \place \) si tôt.]
+\begin{equation}
+  \prod\placerange
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
+  \right)^{\degv}
+  \le
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \nv1{ \cex* } }
+    \nv1{ \varfc* } \dimp**^\dv
+  \right)^{\degv}
+  \le
+  \hautm[2]{ \ex* }^{-\eps}
+  \hautm[1]{ \varfc* } \dimp**^\dv
+\end{equation}
+Ainsi, \todo en négligeant pour l'instant les partie archimédiennes des
+constantes, on a
+\begin{align}
+  \prod\placerange
+  \prod\fctrange
+  \left(
+    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
+  \right)^{\imp*[0] \degv}
+  & \le
+  \prod\fctrange
+  \left(
+    \hautm[2]{ \ex* }^{-\eps}
+    \hautm[1]{ \varfc* } \dimp**^\dv
+  \right)^{ \imp*[0] }
+  \\ & \le
+  \hautm[1]{ \ex[1] }^{ -\eps \epsi(1 - \frac1\sigma) \delta \wts[1] }
+  \hautm[1]{ \varfc }^{2 \wts[1] \delta }
+\end{align}
+
+En appliquant la formule du produit d'un côté et en mettant bout à bout les
+estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
+\begin{align}
+  0
+  & \le
+  \delta \Bigl(
+    2\puiss \epsz \wts[1] \hautl{ \ex[1] }
+    +
+    2\puiss \epsiv \wts[1] \hautl{ \ex[1] } + \wts[1] \cst{exci}
+    +
+    2\wts[1] \log\hclab
+    +
+    \cst{degdim} \wts[1] \epsi \sigma^{-1} \hautl{ \ex[1] }
+    \\ & \qquad +
+    \wts[1] \epsi \sigma^{-1} (\hautl{ F } + \hautl{ \varfc })
+    +
+    2 \wts[1] \hautl{ \varfc }
+    -
+    \eps \epsi(1 - \sigma^{-1}) \wts[1] \hautl{ \ex[1] }
+  \Bigr)
+  + o(\delta)
+  \\ & \le
+  \delta \Bigl(
+    \wts[1] \hautl{ \ex[1] }
+    \bigl(
+      2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
+      -
+      \eps \epsi(1 - \sigma^{-1})
+    \bigr)
+    + o( \wts[1] \hautl{ \ex[1] } )
+  \Bigr)
+  + o(\delta)
+\end{align}
+ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \ex[1] }
+\) sont assez grands, pour peu que
+\begin{equation}
+  \frac{
+    2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
+  }{
+    \epsi(1 - \sigma^{-1})
+  }
+  \le
+  \eps
+\end{equation}
+
+\subsection{Appendice provisoire}
+
+\begin{fact} \todo
+  On a
+  \begin{equation}
+  \prod\fctirange
+  \hautm[1]{ \exi* }^\delta
+  \le
+  \hautm[1]{ \ex[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
+  \end{equation}
+  avec \( \newcst[]{exci} = \dots \)
+\end{fact}
+
+
+
+\section{Application du théorème du produit et conclusion}
+
+\section{Contraintes sur les paramètres}
+
+\begin{enumerate}
+  \item Page~\pageref{ct:Vcos<1/16} : \( \Vcos \le 1/16 \) pour
+    avoir~\eqref{e:hautn-wt-diff}.
+  \item Page~\pageref{ct:Vfar>2} : \( \Vfar \ge 2 \) pour la preuve
+    du lemme sur \( \epsiii \).
+  \item Page~\pageref{e:def-epsiii} : \( \epsiii \) défini
+    par~\eqref{e:def-epsiii}.
+\end{enumerate}
+
+\endinput
+
+% vim: spell spelllang=fr
