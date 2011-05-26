@@ -868,21 +868,6 @@
   relativement à la forme quadratique de \NT, des points \PH et \PHi de $\va$
   ou de son espace de \MoW}
 
-% various "epsilons" [[2
-%
-% Note: no additional braces, or \expi\sp2 would be typeset incorrectly
-\newcommand \epsz   {\eps\sb0}
-\newcommand \epsi   {\eps\sb1}
-\newcommand \epsii  {\eps\sb2}
-\newcommand \epsiii {\eps\sb3}
-\newcommand \epsiv  {\eps\sb4}
-
-\nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
-\nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
-\nomdef \epsii  g {e02} \@gobbletwo{\epsii }{Encore un autre epsilon}
-\nomdef \epsiii g {e03}
-\nomdef \epsiv  g {e04} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
-
 % abelian formulas [[2
 %
 
@@ -997,6 +982,21 @@
 \nomdef \vdeg    a {D}
 \nomdef \varfc   a {f}
 \nomdef \varid   a {I}
+
+% various "epsilons" [[2
+%
+% Note: no additional braces, or \expi\sp2 would be typeset incorrectly
+\newcommand \epsz   {\eps\sb0}
+\newcommand \epsi   {\eps\sb1}
+\newcommand \epsii  {\eps\sb2}
+\newcommand \epsiii {\eps\sb3}
+\newcommand \epsiv  {\eps\sb4}
+
+\nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
+\nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
+\nomdef \epsii  g {e02} \@gobbletwo{\epsii }{Encore un autre epsilon}
+\nomdef \epsiii g {e03}
+\nomdef \epsiv  g {e04} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
 
 % local indices for extrapolation [[2
 %

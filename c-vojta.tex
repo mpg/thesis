@@ -246,8 +246,9 @@ dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
 sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
   \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
 suivantes :
-\nomuse{\varset(\ex)}{Ensemble des variétés produit contenant \( \ex \) et
-  satisfaisant aux conditions~\eqref{e:varset-deg} à~\eqref{e:varset-ht}}
+\nomuse {\varset(\ex)} [chap] {Ensemble des variétés produit contenant \( \ex
+  \) et satisfaisant aux conditions~\eqref{e:varset-deg}
+  à~\eqref{e:varset-ht}}
 \begin{align}
   \label{e:varset-deg}
   \vdeg* & \le \Lambda^{f_1(u)} \quad \forall \fct
@@ -610,8 +611,8 @@ appliquant un lemme de \bsc{Siegel}.
 \subsection{Idéal d'annulation}
 
 Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
-\nomuse {\wtsum*} {Somme pondérée servant à définir l'indice d'annulation le
-  long de \( \divi \)}
+\nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
+  d'annulation le long de \( \divi \)}
 \begin{equation}
   \wtsum*( \imp )
   =
@@ -621,8 +622,9 @@ Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
 \end{equation}
 On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
   \vmp^\imp \) par :
-\nomuse {\inda*} {Indice d'annulation le long de \( \divi \)}
-\begin{equation}
+\nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
+  par~\ref{e:inda-def}}
+\begin{equation} \label{e:inda-def}
   \inda*(H)
   =
   \max \set{
@@ -633,7 +635,12 @@ On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
   \pmm.
 \end{equation}
 On introduit alors, pour \( \beta > 0 \), les idéaux
-\begin{equation}
+\nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
+    \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
+  défini par~\ref{e:vanish-def}}
+\nomuse {\vanish*[\beta]} [chap] {Idéal d'annulation définir par \(
+    \vanish*[\beta] + \varid \)}
+\begin{equation} \label{e:vanish-def}
   \vanish*[\beta]
   = \left\{
     H \in \cdn [\vmp]
@@ -647,7 +654,9 @@ qui est légitime puisqu'on a fait en sorte que $\varid \subset
 \vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
   \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
 appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
-\begin{equation}
+\nomuse {\stairs[\beta]} [chap] {Ensembles des multiindices tels que \(
+    \wtsum*(\imp) \le \beta \), défini par~\ref{e:stairs-def}}
+\begin{equation} \label{e:stairs-def}
   \stairs[\beta] = \set{
     \imp \in \N^{\puiss\dimp**}
     \text{ tels que }
