@@ -109,7 +109,7 @@ l'annexe~\ref{sec:form-ab-alt}.
     \fct > 1 \).
 \end{proof}
 
-\begin{scho}
+\begin{scho} \label{s:wt-diff-small}
   Pour toute famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
   \begin{align} \label{e:wt-diff-hautn}
     \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
@@ -509,7 +509,8 @@ démonstration de la proposition~\ref{p:varset-notmin}.
 En effet, dans ces cas la conclusion de la proposition est immédiate.
 
 
-\subsection{Plongement abélien pondéré et stratégie} \label{sec:wemb}
+\subsection{Plongement abélien pondéré, notations et stratégie}
+\label{sec:wemb}
 
 Nous utiliserons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \)
 et défini par
@@ -527,32 +528,22 @@ et défini par
   \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
   \pmm.
 \end{align}
-La stratégie pour prouver la proposition~\ref{p:varset-notmin} utilise la
-méthode de \TS : on va construire une forme sur \( \wemb(\var) \) dont le tiré
-en arrière sur \( \var \) s'annulle à un ordre élevé le long de \( \divi \).
-Puis, profitant du fait que \( \ex \) est proche de ce diviseur et que la
-hauteur des dernières composantes de \( \wemb(\ex) \) est relativement petite,
-nous en déduirons que cette forme s'annulle aussi en \( \ex \) avec un indice
-convenable pour appliquer une forme du théorème du produit, qui nous donnera
-la forme \( T \) souhaitée.
+qui nous permettra d'exploiter le scolie~\ref{s:wt-diff-small}. Il nous faudra
+représenter ce morphisme par des familles de polynômes dans les plongements
+utilisés.
 
-\medskip
-
-Avant de mettre ce plan à exécution, introduisons quelques notations et
-résultats basiques concernant le plongement éclatant.  On munit l'espace
-d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées multihomogènes $\vmp, \vmpi =
-\vmp[1], \dots, \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss*]$ ; dans ce
-contexte quand $\fct$ et $\fcti$ sont deux indices non précisés, on supposera
-implicitement $1 \le \fct \le \puiss$ et $1 \le \fcti \le \puiss-1$.
+On munit l'espace d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées
+multihomogènes $\vmp, \vmpi = \vmp[1], \dots, \vmp[\puiss], \vmpi[1], \dots,
+\vmpi[\puiss*]$ ; dans ce contexte quand $\fct$ et $\fcti$ sont deux indices
+non précisés, on supposera implicitement $1 \le \fct \le \puiss$ et $1 \le
+\fcti \le \puiss-1$.
 
 \nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant}
-On va maintenant représenter localement ce morphisme par une
-famille de formes multihomogènes au voisinage de \( \ex \), c'est-à-dire
-trouver un ouvert \( \ex \in \opdef \subset \var \) tel que \(
-  \wemb\vert_\opdef \colon \opdef \to (\projd)^{2\puiss-1} \) est représenté
-par des polynômes, dans le sens où il existe un morphisme d'algèbres \( \wemba
-\) tel que le diagramme suivant, dont les flèches verticales sont les
-projections canoniques, commute :
+Un représentation locale de \( \wemb \) au voisinage de \( \ex \), est
+constituée d'un ouvert \( \ex \in \opdef \subset \var \) et d'une famille de
+formes multihomogènes définissant un morphisme \( \wemba \) tel que le
+diagramme suivant, dont les flèches verticales sont les projections
+canoniques, commute :
 \begin{equation}
   \xymatrix{
     \cdn [\vmp, \vmpi]                          \ar [r] ^{\wemba}   \ar [d]
@@ -561,7 +552,8 @@ projections canoniques, commute :
     & ( \cdn [\vmp] / \varid )_\opdef
   }
 \end{equation}
-On peut en fait choisir
+et en particulier, que \( \pi \circ \wemba \) soit bien défini. On peut en
+fait choisir
 \begin{align}
      \wemba \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
@@ -593,6 +585,51 @@ on a toujours le lemme suivant, qui est immédiat.
     \pmm.
   \end{equation}
 \end{lem}
+
+\medskip
+
+Avant de passer aux estimations de hauteur, il est utile d'introduire quelques
+paramètres qui seront utilisés tout au long de ce chapitre et qui contrôlent
+notamment le degré en lequel nous établirons ces estimations.
+
+Introduisons deux réels \( \epsz, \epsi \) strictement positifs tels que :
+\begin{gather} \label{e:epsz-epsi-siegel}
+  \frac {
+    \epsi^\puiss (\puiss-1)
+    (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+    (\frac94 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+    \prod\fctrange \vdim*
+  }{
+    \puiss! \epsz^{\vdim[\puiss]}
+  }
+  \le
+  \frac12
+  \\ \label{e:epsz-epsi-extra}
+  \epsz \le \frac {\eps \epsi} {8\puiss}
+\end{gather}
+On choisira en fait \( \epsz \) rationnel, et on introduit un entier \( \delta
+\) (destiné à tendre vers l'infini) tel que \( \epsz \delta \) soit également
+entier. On pose alors
+\begin{equation} \label{e:d-dp-def}
+  \begin{aligned}
+    d & = \bigl(
+      \epsz \wts[1],
+      \dots,
+      \epsz \wts[\puiss],
+      1, \dots, 1
+    \bigr) \in \Q^{2\puiss-1}
+    \\
+    d' & = \bigl(
+      \wts[1] (2 + \epsz),
+      \dots,
+      \wts[\puiss*] (2 + \epsz),
+      \wts[\puiss] (2\puiss - 2 + \epsz)
+    \bigr) \in \Q^\puiss
+  \end{aligned}
+\end{equation}
+de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\vmp,
+\vmpi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$
+d'après le lemme précédent.
 
 
 
@@ -671,33 +708,9 @@ pour assurer l'appartenance à \( \vanish*[\beta] \).
 
 Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de degrés
 prescrits et de hauteur contrôlée, provenant d'une forme sur $\wemb(\var)$ et
-ayant indice élevé le long de \( \divi \) dans \( \var \).
-
-Plus précisément, introduisons un rationnel $\epsz > 0$, un entier $\delta$
-tel que $\epsz\delta \in \N$, et un réel $\epsi > 0$. Pour fixer les idées,
-dans l'énoncé de la proposition~\ref{p:build-aux}, on demandera à $\delta$
-d'être assez grand, et à $\epsi$ d'être majoré en fonction de \( \epsz \) et
-d'autres paramètres, voir~\eqref{e:def-epsii}. Posons alors
-\begin{align}
-  d & = \bigl(
-  \epsz \wts[1],
-  \dots,
-  \epsz \wts[\puiss],
-  1, \dots, 1
-  \bigr) \in \Q^{2\puiss-1}
-  \label{e:def-d}
-  \\
-  d' & = \bigl(
-  \wts[1] (2 + \epsz),
-  \dots,
-  \wts[\puiss*] (2 + \epsz),
-  \wts[\puiss] (2\puiss - 2 + \epsz)
-  \bigr) \in \Q^\puiss
-  \label{e:def-dp}
-\end{align}
-de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\vmp,
-\vmpi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$.  On
-cherche alors une forme
+ayant indice élevé le long de \( \divi \) dans \( \var \).  Plus précisément,
+en conservant les notations du paragraphe précédent et
+notamment~\ref{e:d-dp-def}, on cherche une forme
 \begin{equation}
   F'
   \in \cdn[\vmp]_{\delta d'}
@@ -950,7 +963,7 @@ ce qu'on aura besoin de savoir sur le degré.
     \delta^{\vlg\vdim}
     + o( \delta^{\vlg\vdim} )
   \end{align}
-  par définition de \( d \), voir~\eqref{e:def-d}.
+  par définition de \( d \), voir~\eqref{e:d-dp-def}.
 \end{proof}
 
 Nous allons maintenant calculer la codimension de $\vanish*$ dans
@@ -1065,25 +1078,11 @@ dans \( (\stairs)\Ciii \).
   \epsz \) si \( \fct = \puiss \) et \( \wts* (\frac94 + \epsz) \) sinon.
 \end{proof}
 
-Au vu des lemmes précédents, on introduit la constante
-\begin{equation} \label{e:def-epsii}
-  \epsii
-  =
-  \frac {
-    \epsi^\puiss (\puiss-1)
-    (2\puiss + \epsz) ^{\vdim[\puiss]-1}
-    (\frac94 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
-    \prod\fctrange \vdim*
-    }{
-    \puiss! \epsz^{\vdim[\puiss]}
-    }
-  \pmm,
-\end{equation}
-de sorte que
+Au vu des deux lemmes précédents et de~\ref{e:epsz-epsi-siegel}, on a
 \begin{equation} \label{e:good-codim}
   \frac {\card (\stairs)\Ciii} {\dim \Ideal_{\delta d}}
   \le
-  \epsii + o(1)
+  \frac12 + o(1)
   \pmm.
 \end{equation}
 
@@ -1112,7 +1111,7 @@ est formée par les monômes \( \vmp^p \vmpi^q \) pour
   \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
   \pmm,
 \end{equation}
-où \( d \) est défini par~\eqref{e:def-d}.
+où \( d \) est défini par~\eqref{e:d-dp-def}.
 
 % Note: on ne fait pas ce lemme dans sub:wemb
 % car on utilise la définition de d pour simplifier le résultat
@@ -1174,7 +1173,7 @@ où \( d \) est défini par~\eqref{e:def-d}.
     \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-    \delta \) pour tout \( \fcti \) (voir \eqref{e:def-dp}).
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}).
 \end{proof}
 
 Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
@@ -1411,21 +1410,11 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
 Nous sommes maintenant en mesure de construire la forme auxiliaire.
 
 \begin{prop} \label{p:build-aux}
-  Sous les hypothèses et notations précédentes, si \( \epsii \le 1/2 \) et si
-  \( \delta \) est suffisamment grand, il existe une forme \( F \in \cdn
-    [\vmp, \vmpi] \), multihomogène de degré \( \delta d \), où l'on
-  rappelle que
-  \begin{equation}
-    d = \bigl(
-      \epsz \wts[1],
-      \dots,
-      \epsz \wts[\puiss],
-      1, \dots, 1
-    \bigr)
-    \pmm,
-  \end{equation}
-  non nulle modulo \( \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F)
-    \in \vanish \) et
+  Sous les hypothèses et notations précédentes et si
+  \( \delta \) est assez grand, il existe une forme \( F \in \cdn [\vmp,
+    \vmpi] \), multihomogène de degré \( \delta d \) (où l'on rappelle que \(
+    d \) est défini par~\eqref{e:d-dp-def}), non nulle modulo \(
+    \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F) \in \vanish \) et
   \begin{equation}
     \hautl[\infty] F
     \le
