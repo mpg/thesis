@@ -1397,7 +1397,8 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
   \begin{equation}
     \hautl[\infty] x
     \le
-    \frac q{p-q} \bigl( \hautl[\infty] M + \ln q \bigr) + c_\cdn
+    \frac p{q-p} \bigl( \hautl[\infty] M + \ln q \bigr)
+    + \frac q{q-p} c_\cdn
     \pmm,
   \end{equation}
   où \( c_\cdn \) est une constante ne dépendant que de \( \cdn \).
@@ -1463,17 +1464,20 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   de \( \Ideal_\Dz \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
 
-  L'hypothèse faite sur \( \epsii \) et la relation~\eqref{e:good-codim}
-  impliquent directement que \( p < q \) et que
+  La relation~\eqref{e:good-codim} se lit alors \( \frac pq \le \frac12 + o(1)
+  \), ce qui implique directement que \( p < q \) et que
   \begin{equation}
-    \frac q {p-q}
+    \frac p {q-p}
     \le
-    \frac 1 {\frac1\epsii - 1} + o(1)
+    \frac 1 {\frac qp - 1}
+    \le
+    \frac 1 {1 - o(1)}
     \le
     1 + o(1)
     \pmm.
   \end{equation}
-  En remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
+  De même, \( \frac q {q-p} c_\cdn = o(\delta) \) ;
+  en remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
   forme \( F \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
   par \( \hautl[\infty] M + o(\delta) \) ; il reste donc à estimer cette
   hauteur.
