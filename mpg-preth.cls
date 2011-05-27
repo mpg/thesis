@@ -228,6 +228,9 @@
   }%
 }
 \newcommand \nom@use [2] {%
+  \ifcsname nom@csname@@\cmdstring#1\endcsname \else
+    \errmessage{\string\nomuse\space without matching \string\nomdef!}%
+  \fi
   \begingroup \edef\next{\endgroup
     \noexpand\nomdirect\@nameuse{nom@csname@@\cmdstring#1}%
   }\next{#2}%
