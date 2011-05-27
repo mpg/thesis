@@ -299,6 +299,7 @@
 \newcommand*\todo [1][] {\worknote{\textsc{todo} #1}}
 \newcommand \todom      {\tag*{\color{todo}\textsc{todo}}}
 \newcommand \later      {\worknote[later]{(à détailler ultérieurement)}}
+\newcommand \todots [1][] {{\color{todo}\cdots}} % #1 for use in the source
 
 % languages and special text items [[2
 %
@@ -990,12 +991,10 @@
 \newcommand \epsz   {\eps\sb0}
 \newcommand \epsi   {\eps\sb1}
 \newcommand \epsiii {\eta}
-\newcommand \epsiv  {\eps\sb4}
 
 \nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
 \nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
 \nomdef \epsiii g {e2}
-\nomdef \epsiv  g {e04} \@gobbletwo{\epsiv }{Toujours un autre epsilon}
 
 % local indices for extrapolation [[2
 %

@@ -2413,7 +2413,7 @@ Pour le facteur le plus à droite, on a facilement
   \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wts[1]} \cdot o(\expb^\delta)
 \end{equation}
 De plus, en notant \( \exi \) l'image de \( \ex \) par la deuxième
-partie du plongement éclatant, on a\worknote{\bsc{Farhi} p. 96 en haut}
+partie du plongement éclatant, on a
 \begin{equation}
   \prod_\place
   \prod\fctirange
@@ -2424,9 +2424,27 @@ partie du plongement éclatant, on a\worknote{\bsc{Farhi} p. 96 en haut}
   \prod\fctirange
   \hautm[1]{ \exi* }^\delta
   \le
-  \hautm[1]{ \ex[1] }^{2\puiss \epsiv \wts[1] \delta}
-  \cdot \cst{exci}^{\wts[1] \delta}
+  \hautm[1]{ \ex[1] }^{\todots[epsiv] \delta}
+  \cdot \cst{exci}^{\todots[epsiv] \delta}
 \end{equation}
+où la dernière comparaison utilise le lemme suivant.
+
+\begin{lem}
+  On a \(
+    \prod\fctirange
+    \hautm[1]{ \exi* }
+    \le
+    \hautm[1]{ \ex[1] }^{\todots[epsiv]}
+    \cdot \cst{exci}^{\todots[epsiv]}
+  \) avec
+  \begin{equation}
+    \newcst[]{exci} = \todots[epsiv]
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+\end{proof}
+
 Enfin, grâce au choix des formules \( \wembcl[\place] \), on a
 \begin{equation}
   \prod_\place
@@ -2547,7 +2565,8 @@ estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
   \delta \Bigl(
     2\puiss \epsz \wts[1] \hautl{ \ex[1] }
     +
-    2\puiss \epsiv \wts[1] \hautl{ \ex[1] } + \wts[1] \cst{exci}
+    2\puiss \todots[epsiv] \wts[1] \hautl{ \ex[1] }
+    + \wts[1] \todots[epsiv] \cst{exci}
     +
     2\wts[1] \log\hclab
     +
@@ -2564,7 +2583,7 @@ estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
   \delta \Bigl(
     \wts[1] \hautl{ \ex[1] }
     \bigl(
-      2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
+      2\puiss \epsz + 2\puiss \todots[epsiv] + \cst{degdim} \epsi \sigma^{-1}
       -
       \eps \epsi(1 - \sigma^{-1})
     \bigr)
@@ -2576,26 +2595,13 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \ex[1] }
 \) sont assez grands, pour peu que
 \begin{equation}
   \frac{
-    2\puiss \epsz + 2\puiss \epsiv + \cst{degdim} \epsi \sigma^{-1}
+    2\puiss \epsz + 2\puiss \todots[epsiv] + \cst{degdim} \epsi \sigma^{-1}
   }{
     \epsi(1 - \sigma^{-1})
   }
   \le
   \eps
 \end{equation}
-
-\subsection{Appendice provisoire}
-
-\begin{fact} \todo
-  On a
-  \begin{equation}
-  \prod\fctirange
-  \hautm[1]{ \exi* }^\delta
-  \le
-  \hautm[1]{ \ex[1] }^{2\puiss \epsiv \delta} \cdot \cst{exci}^{\delta}
-  \end{equation}
-  avec \( \newcst[]{exci} = \dots \)
-\end{fact}
 
 
 
