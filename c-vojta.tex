@@ -629,7 +629,91 @@ entier. On pose alors
 \end{equation}
 de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\vmp,
 \vmpi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$
-d'après le lemme précédent.
+d'après le lemme~\ref{l:deg-wemba}.
+
+\medskip
+
+Revenons donc au calcul de l'action de \( \wemba \) sur la hauteur. Ce
+morphisme étant homogène, il induit d'après la remarque ci-dessus une
+application linéaire
+\begin{equation}
+  \wemba \colon
+  \cdn [\vmp, \vmpi]_\Dz
+  \to
+  \cdn [\vmp]_\Dii
+\end{equation}
+La base évidente de l'espace de départ est formée par les monômes \( \vmp^p
+  \vmpi^q \) pour
+\begin{equation}
+  (p, q)
+  \in \N^{\puiss (\dimp*)} \times \N^{(\puiss*) (\dimp*)}
+  \text{ tel que }
+  \lgr{p\mexp*} = \Dz*
+  \text{ et }
+  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
+  \pmm.
+\end{equation}
+
+\begin{lem} \label{l:hmat-wemba}
+  Avec les notations précédentes, l'application linéaire
+  \begin{equation}
+    \wemba \colon
+    \cdn [\vmp, \vmpi]_\Dz
+    \to
+    \cdn [\vmp]_\Dii
+  \end{equation}
+  est représentée dans les bases canoniques par une matrice de colonnes
+  \(
+  c_{p, q} = \wemba(\vmp^p\vmpi^q)
+  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \vmp^{s+p}
+  \)
+  satisfaisant
+  \begin{equation}
+    \nv1{c_{p, q}}
+    \le
+    \left(
+      \prod\fctirange
+      \nv\infty \coi ^{2\wtis* - 1}
+      \bigl(
+        4^{g\wtis*} (\dimp + 1)^{\wtis* - 1}
+      \bigr) ^\dv
+    \right) ^\delta
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  La définition de \( \wemba \) montre que \(
+  \wemba( \vmp^p \vmpi^q ) = \vmp^p \wemba(\vmpi^q) \), on a donc \(
+  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, avec le
+  corollaire~\ref{c:addsub-form} et le fait~\ref{f:mult-form}, on a
+  \begin{align}
+    \nv1 {c_{p, q}}
+    & \le
+    \prod\fctirange \prod\indrange
+    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\vmp[\fcti]), \vmp** \bigr) }
+    ^{q\pexp\fcti[\ind]}
+    \\ & \le
+    \prod\fctirange \prod\indrange \left(
+    \nv1{ S^{-}_\ind } \max\indirange \nv1{ Q_{\wti*, \indi} }^2
+    \right) ^{q\pexp\fcti[\ind]}
+    \\ & \le
+    \prod\fctirange \left(
+    \nv\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
+    \nv\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
+    \Bigr) ^{q\pexp\fcti[\ind]}
+    \right)
+    \\ & \le
+    \left(
+    \prod\fctirange
+    \nv\infty \coi ^{2\wtis*-1} \bigl(
+    4^{\genre\wtis*} (\dimp+1)^{\wtis*-1}
+    \bigr) ^\dv
+    \right) ^\delta
+  \end{align}
+  en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}).
+\end{proof}
 
 
 
@@ -1087,96 +1171,13 @@ Au vu des deux lemmes précédents et de~\eqref{e:epsz-epsi-siegel}, on a
 \end{equation}
 
 
-\subsection{Trois lemmes de hauteurs}
+\subsection{Deux lemmes de hauteurs}
 
-Nous allons maintenant expliciter les différents morphismes intervenant dans
-l'écriture du système et contrôler la hauteur de leurs matrices, en commençant
-par le morphisme \( \wemba \) qui est déjà bien défini.
+Nous allons maintenant expliciter les différents morphismes de réduction
+intervenant dans l'écriture du système et contrôler la hauteur de leurs
+matrices.
 
-On étudie en fait le prolongement
-\begin{equation}
-  \wemba \colon
-  \cdn [\vmp, \vmpi]_\Dz
-  \to
-  \cdn [\vmp]_\Dii
-\end{equation}
-donné par les mêmes formules. La base évidente de ce nouvel espace de départ
-est formée par les monômes \( \vmp^p \vmpi^q \) pour
-\begin{equation}
-  (p, q)
-  \in \N^{\puiss(\dimp + 1)} \times \N^{(\puiss - 1) (\dimp - 1)}
-  \text{ tel que }
-  \lgr{p\mexp*} = \Dz*
-  \text{ et }
-  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
-  \pmm,
-\end{equation}
-où \( d \) est défini par~\eqref{e:d-dp-def}.
-
-% Note: on ne fait pas ce lemme dans sub:wemb
-% car on utilise la définition de d pour simplifier le résultat
-\begin{lem} \label{l:hmat-wemba}
-  Avec les notations précédentes, l'application linéaire
-  \begin{equation}
-    \wemba \colon
-    \cdn [\vmp, \vmpi]_\Dz
-    \to
-    \cdn [\vmp]_\Dii
-  \end{equation}
-  est représentée dans les bases canoniques par une matrice de colonnes
-  \(
-  c_{p, q} = \wemba(\vmp^p\vmpi^q)
-  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \vmp^{s+p}
-  \)
-  satisfaisant
-  \begin{equation}
-    \nv1{c_{p, q}}
-    \le
-    \left(
-    \prod\fctirange
-    \nv\infty \coi ^{2\wtis* - 1}
-    \bigl(
-    4^{g\wtis*} (\dimp + 1)^{\wtis* - 1}
-    \bigr) ^\dv
-    \right) ^\delta
-    \pmm.
-  \end{equation}
-\end{lem}
-
-\begin{proof}
-  La définition de \( \wemba \) montre que \(
-  \wemba( \vmp^p \vmpi^q ) = \vmp^p \wemba(\vmpi^q) \), on a donc \(
-  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, avec le
-  corollaire~\ref{c:addsub-form} et le fait~\ref{f:mult-form}, on a
-  \begin{align}
-    \nv1 {c_{p, q}}
-    & \le
-    \prod\fctirange \prod\indrange
-    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\vmp[\fcti]), \vmp** \bigr) }
-    ^{q\pexp\fcti[\ind]}
-    \\ & \le
-    \prod\fctirange \prod\indrange \left(
-    \nv1{ S^{-}_\ind } \max\indirange \nv1{ Q_{\wti*, \indi} }^2
-    \right) ^{q\pexp\fcti[\ind]}
-    \\ & \le
-    \prod\fctirange \left(
-    \nv\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
-    \nv\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
-    \Bigr) ^{q\pexp\fcti[\ind]}
-    \right)
-    \\ & \le
-    \left(
-    \prod\fctirange
-    \nv\infty \coi ^{2\wtis*-1} \bigl(
-    4^{\genre\wtis*} (\dimp+1)^{\wtis*-1}
-    \bigr) ^\dv
-    \right) ^\delta
-  \end{align}
-  en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}).
-\end{proof}
-
-Comme on l'a annoncé, le morphisme \( \rdiv \) revient à diviser par des
+Comme on l'a annoncé, le morphisme \( \rdiv \) consiste à diviser par des
 relations de dépendance intégrale. On énonce pour commencer un résultat de
 réduction modulo de telles relations sous une forme un peu générale avant de
 l'appliquer au cas qui nous intéresse.

@@ -800,10 +800,8 @@
   \underline{\underline{\boldsymbol{#1}}}}
 % ]]
 
-\newc@ifstar\puiss    {m} {m-1}
-\nomdef \puiss a {m} \@gobbletwo{\puiss}{Le nombre d'approximations
-  exceptionnelles étudiées, donc aussi la puissance de $\va$ dans laquelle on
-  travaille.}
+\newc@ifstar@two \puiss {m} {m-1} {(m-1)}
+\nomdef \puiss a {m}
 
 \newcommand \fct      {i}
 \newcommand \fctrange  {\sb{\fct =1}\sp\puiss}
