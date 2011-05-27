@@ -44,9 +44,9 @@ Le but du chapitre est donc de prouver le théorème suivant.
   \begin{align}
     \Vbig & = \dots (\puiss)
     \\
-    \Vfar & = \dots (\puiss)
+    \Vfar & = \dots (\puiss) \text{$>2$ pour \ref{l:epsiii-def}}
     \\
-    \Vcos & = \dots (\puiss)
+    \Vcos & = \dots (\puiss) \text{$<1/16$ pour \eqref{e:hautn-wt-diff}}
   \end{align}
 \end{thm}
 
@@ -186,7 +186,6 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
 
 Cette dernière égalité découle directement de~\eqref{e:hautn-wt-diff-gen} en
 tenant compte du fait que \( 1 + \zeta \le 5/4 \) car \( \Vcos \le 1/16 \).
-\label{ct:Vcos<1/16}
 
 Étudions maintenant quelques propriétés de ces poids, en sus de celles déjà
 énoncées, en exploitant le fait que les \( \ex* \) satisfont à
@@ -233,7 +232,6 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
     \pmm.
   \end{align}
   Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \).
-  \label{ct:Vfar>2}
 \end{proof}
 
 \subsection{Réduction à l'existence d'une forme obstructrice}
@@ -2602,15 +2600,6 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \ex[1] }
 
 
 \section{Application du théorème du produit et conclusion}
-
-\section{Contraintes sur les paramètres}
-
-\begin{enumerate}
-  \item Page~\pageref{ct:Vcos<1/16} : \( \Vcos \le 1/16 \) pour
-    avoir~\eqref{e:hautn-wt-diff}.
-  \item Page~\pageref{ct:Vfar>2} : \( \Vfar \ge 2 \) pour la preuve
-    du lemme~\ref{l:epsiii-def}.
-\end{enumerate}
 
 \endinput
 
