@@ -4,6 +4,11 @@
 
 \section{Rappel du plongement et notations} \label{sec:plong-mm-def}
 
+Sauf précision contraire, on supposera toujours implicitement que \( \va \)
+est plongée dans un espace projectif par un plongement \( \theta \) modifié
+tel que décrit dans \cite{daphimhva2}, associé à un fibré très ample et
+totalement symétrique \( \fibre \).
+
 \later Pour l'instant, on utilise sans les rappeler les définitions de
 \cite{daphimhva2}, ainsi que les notations, sauf sur les points suivants : on
 omettra systématiquement les indices se rapportant à la puissance de
@@ -14,6 +19,25 @@ que les coordonnées soient naturellement indexées (\lat{ibid.} p. 651) par
 $\mathcal{Z}_2 \times \widehat{K_2(4)}$, on les indexera souvent par $\{0,
   \dots, \dimp\}$ pour alléger l'écriture  ; ainsi on écrira $\coa = (\coa_0,
 \dots \coa_n)$ des coordonnées de l'origine.
+
+Ce plongement est intéressant par deux aspects : on connaît une constante de
+comparaison explicite entre les hauteurs projective et normalisée des points
+(et même des variétés), et on dispose de formules explicites pour l'addition
+et la soustraction. Le fait suivant est une reformulation de la
+proposition~3.9 de \emph{loc. cit} et de la remarque subséquente.
+
+\begin{fact} \label{f:comp-h-hn}
+  Pour tout point \( \pp \in \va(\Qbar) \), on a
+  \begin{equation}
+    \abs{\hautn\pp - \hautl\pp}
+    \le
+    (4^\genre - 1) \hautl\va + 3\genre \ln2
+    \pmm.
+  \end{equation}
+\end{fact}
+
+La section suivante rappelle les formules d'addition-soustraction et en
+établit plus généralement pour les combinaisons linéaires.
 
 
 \section{Formules pour les opérations abéliennes} \label{sec:form-ab}

@@ -852,10 +852,10 @@
 \newcommand*\Hautl [1][] {h \ssub{#1}}
 \newcommand \Hautn       {\hat\Hautl}
 
-\newcommand*\hautm [2][] {\Hautm[#1](#2)}
-\newcommand*\hautl [2][] {\Hautl[#1](#2)}
-\newcommand*\hautn [1]   {\Hautn    (#1)}
-\newcommand*\normn       {\abs}
+\newcommand*\hautm [2][?] {\Hautm[#1](#2)}
+\newcommand*\hautl [2][?] {\Hautl[#1](#2)}
+\newcommand*\hautn [1]    {\Hautn    (#1)}
+\newcommand*\normn        {\abs}
 
 \nomdef \hautm a {h} \@gobbletwo{\hautm[\PHi]{\PH}}{Hauteur projective
   multiplicative de \PH en utilisant la norme \PHi aux places archimédiennes}
