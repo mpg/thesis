@@ -743,8 +743,7 @@
 \newcommand \coi  {{\mathfrak b}}
 \newcommand \vaht {\Hautl_\va}
 
-\nomdef \coa g {e3} \@gobbletwo{\coa}{Les coordonnées de l'origine de $\va$
-  dans un plongement de \bsc{Mumford} modifié fixé}
+\nomdef \coa g {e3}
 \nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les
   inverses de composantes de $\coa$ bien choisies}
 \nomdef \vaht a {h}

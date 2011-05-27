@@ -5,7 +5,7 @@
 \section{Rappel du plongement et notations} \label{sec:plong-mm-def}
 
 Sauf précision contraire, on supposera toujours implicitement que \( \va \)
-est plongée dans un espace projectif par un plongement \( \theta \) modifié
+est plongée dans un espace projectif par un plongement \( \Theta \) modifié
 tel que décrit dans \cite{daphimhva2}, associé à la puissance quatrième d'un
 fibré très ample et totalement symétrique \( \fibre \).
 
@@ -19,10 +19,13 @@ On écrira ainsi $\coa_{(a, l)} = \Delta_{a, l}(\coa)  = \Delta_{(a,
 les coordonnées soient naturellement indexées (\lat{ibid.} p. 651) par
 $\mathcal{Z}_2 \times \widehat{K_2(4)}$, on les indexera souvent par $\{0,
   \dots, \dimp\}$ pour alléger l'écriture  ; ainsi on écrira $\coa = (\coa_0,
-\dots \coa_n)$ des coordonnées de l'origine.
-
-On note enfin \( \vaht = \norm2\coa \) la quantité désignée par \(
-  h(\va) \) dans le texte cite (notation~3.2).
+\dots \coa_n)$ des coordonnées de l'origine.  On note enfin \( \vaht =
+  \norm2\coa \) la quantité désignée par \( h(\va) \) dans le texte cite
+(notation~3.2).
+\nomuse \coa {Coordonnées de l'origine de \( \va \) dans le plongement par
+  défaut}
+\nomuse \vaht {Hauteur de l'origine de \( \va \) dans le plongement par
+  défaut}
 
 Un premier avantage du plongement utilisé est qu'on y connaît une constante de
 comparaison explicite entre hauteurs normalisée et projective.  Plus
@@ -63,15 +66,15 @@ notre preuve de l'inégalité de \bsc{Vojta}.
   Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
   réel \( c_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
   dépendant que de ce plongement, et, pour tout \( \gamma = 2^\alpha 3^\beta
-  \), une famille \( F \) de polynômes à coefficients entiers dans \( \cdn \),
-  représentant globalement la multiplication par \( \gamma \) sur \( \va \),
-  de degré \( \gamma^2 \) et de hauteur multiplicative majorée par \( c_{2,
-      3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes place \(
-    \place \) de \( \cdn \), on a :
+  \), une famille \( F_\gamma \) de polynômes à coefficients entiers dans \(
+    \cdn \), représentant globalement la multiplication par \( \gamma \) sur
+  \( \va \), de degré \( \gamma^2 \) et de hauteur multiplicative majorée par
+  \( c_{2, 3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes
+  place \( \place \) de \( \cdn \), on a :
   \begin{equation}
     \av{r_{2, 3}}^{\gamma^2} c_{2, 3}^{-\dv \gamma^2}
     \le
-    \frac{ \nv2{ F(x) } }{ \nnv2 F \nv2 x }
+    \frac{ \nv2{ F_\gamma(x) } }{ \nnv2 {F_\gamma} \nv2 x ^{\gamma^2} }
     \le
     c_{2, 3}^{\dv \gamma^2}
     \pmm.
@@ -81,23 +84,27 @@ notre preuve de l'inégalité de \bsc{Vojta}.
 \begin{proof}
   C'est le fait~3, page~276 de~\cite{phiha1}, restreint au cas particulier qui
   nous intéresse. On a par ailleurs rajouté au dénominateur un facteur \(
-    \nnv2 F \), qui vaut \( 1 \) aux places finies, et qui n'invalide pas la
-  comparaison aux places infinies quitte à modifier un peu la constante \(
-    c_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
+    \nnv2 {F_\gamma} \), qui vaut \( 1 \) aux places finies, et qui n'invalide
+  pas la comparaison aux places infinies quitte à modifier un peu la constante
+  \( c_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
 \end{proof}
 
 \begin{lem}
   Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
   réel \( c_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
   ce plongement, et, pour tout couple de points \( (x, y) \in \va^2 \) et
-  toute place \( \place \) de \( \cdn \), une famille \( S \) de polynômes à
-  coefficients entiers dans \( \cdn \) représentant la soustraction sur un
-  voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de hauteur
-  multiplicative majorée par \( c_s \), telle que
+  toute place \( \place \) de \( \cdn \), une famille \( S_{x, y, \place} \)
+  de polynômes à coefficients entiers dans \( \cdn \) représentant la
+  soustraction sur un voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de
+  hauteur multiplicative majorée par \( c_s \), telle que
   \begin{equation}
     \av{r_s} c_s^{-\dv}
     \le
-    \frac{ \nv2{ S(x, y) } }{ \nnv2 S \nv2 x \nv2 y }
+    \frac{
+      \nv2{ S_{x, y, \place}(x, y) }
+    }{
+      \nnv2 {S_{x, y, \place}} \nv2 x ^2 \nv2 y ^2
+    }
     \le
     c_s^{\dv}
     \pmm.
@@ -126,9 +133,10 @@ notre preuve de l'inégalité de \bsc{Vojta}.
     \hclab*^{-\dv}
     \le
     \frac{
-      \nv2{ L^{(a, b)}_{x, y, v}(x, y) }
+      \nv2{ L^{(\alpha, \beta)}_{x, y, v}(x, y) }
     }{
-      \nnv2{ L^{(a, b)}_{x, y, v} } \nv2 x \nv2 y
+      \nnv2{ L^{(\alpha, \beta)}_{x, y, v} }
+      \nv2 x ^{2\alpha^2} \nv2 y ^{2\beta^2}
     }
     \le
     \hclab*^{\dv}
