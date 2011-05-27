@@ -234,8 +234,7 @@ t:  thm
 ct: contrainte (provisoires ?)
 
 chap:   chapter
-sec:    section
-sub:    subsection
+sec:    section, (sub)*section
 
 Alphabet grec pour la nomenclature :
 gamma   : c

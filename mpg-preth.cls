@@ -739,13 +739,15 @@
 \nomdef \fibre a {L} \@gobbletwo{\fibre}{Le fibré donnant « le » plongement
   projectif}
 
-\newcommand \coa {\theta}
+\newcommand \coa  {\theta}
 \newcommand \coi  {{\mathfrak b}}
+\newcommand \vaht {\Hautl_\va}
 
 \nomdef \coa g {e3} \@gobbletwo{\coa}{Les coordonnées de l'origine de $\va$
   dans un plongement de \bsc{Mumford} modifié fixé}
 \nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les
   inverses de composantes de $\coa$ bien choisies}
+\nomdef \vaht a {h}
 
 % projective indices and coordinates [[2
 %
