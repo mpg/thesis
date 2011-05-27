@@ -202,16 +202,16 @@ en appliquant directement la définition de \( \wt* \). On peut ainsi majorer
 des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
 \) ; par exemple, l'énoncé suivant nous sera utile par la suite.
 
-\begin{lem}
+\begin{lem} \label{l:epsiii-def}
   On a \(
     \sum_{\fct=1}^\puiss (\wts* + \wts**) \le \wts[1] (1 + \epsiii)
   \) avec
-  \nomuse \epsiii [chap] {Un petit réel positif, défini
-    par~\eqref{e:def-epsiii}}
-  \begin{equation} \label{e:def-epsiii}
+  \(
     \epsiii = \frac{ 3 (1+\zeta) }{ \Vfar - 1 }
-    \pmm.
-  \end{equation}
+  \)
+  .
+  \nomuse \epsiii [chap] {Petit réel positif défini
+    dans le lemme~\ref{l:epsiii-def}}
 \end{lem}
 
 \begin{proof}
@@ -235,9 +235,6 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
   Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \).
   \label{ct:Vfar>2}
 \end{proof}
-
-Pour la suite du chapitre, on notera \( \epsiii \) le réel défini
-par~\eqref{e:def-epsiii}.
 
 \subsection{Réduction à l'existence d'une forme obstructrice}
 
@@ -1518,8 +1515,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   et d'après le corollaire~\ref{c:hmat-relim} celle des colonnes de la matrice
   de \( \relim \) est un \( o(\delta) \). En sommant (en comptant bien deux
   fois le majorant commun des hauteurs des deux \( \rdiv \)) et en tenant
-  compte du fait que \( \puiss - 1 + \sum\fctirange \wtis* \le (1 + \epsiii)
-  \wts[1] \), il vient
+  compte de~\ref{l:epsiii-def}, il vient
   \begin{equation}
     \hautl[\infty] M
     \le
@@ -2613,9 +2609,7 @@ ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \ex[1] }
   \item Page~\pageref{ct:Vcos<1/16} : \( \Vcos \le 1/16 \) pour
     avoir~\eqref{e:hautn-wt-diff}.
   \item Page~\pageref{ct:Vfar>2} : \( \Vfar \ge 2 \) pour la preuve
-    du lemme sur \( \epsiii \).
-  \item Page~\pageref{e:def-epsiii} : \( \epsiii \) défini
-    par~\eqref{e:def-epsiii}.
+    du lemme~\ref{l:epsiii-def}.
 \end{enumerate}
 
 \endinput
