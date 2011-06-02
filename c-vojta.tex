@@ -358,11 +358,10 @@ désignera une famille d'entiers.
 \subsection{Plongements projectifs adaptés} \label{sec:plong-adapt}
 
 \begin{tdef} \label{d:plong-adapt}
-  Suivant \cite{remivg}, on dit qu'un plongement
-  \(
-    \iota\colon \anyvar \embedin \proj\dimp
-  \)
-  d'une variété de dimension \( \anydim \) est adapté si
+  Suivant \cite{remivg}, si \( \anyvar \) est une variété de dimension
+  \( \anydim \) est \( \projd \) un espace projectif muni de coordonnées
+  homogènes \( \anyvp[0], \dots, \anyvp** \), on dit qu'un plongement
+  \( \iota\colon \anyvar \embedin \proj\dimp \) est adapté si
   \begin{enumthm}
     \item \( \anyvar \cap \zeros{\anyvp[0], \dots, \anyvp[\anydim]}
         = \emptyset \) ;
@@ -375,7 +374,7 @@ désignera une famille d'entiers.
 \end{tdef}
 
 Le fait suivant, qui ne fait que rappeler \cite[partie~4.1, p.~114]{remivds},
-explicite les principales propriétés d'une plongement adapté, qui est en fait
+explicite les principales propriétés d'un plongement adapté, qui est en fait
 une version plus précise de la mise en position de \bsc{Noether}.
 
 \begin{fact} \label{f:plong-adapt-gen}
@@ -417,47 +416,46 @@ variables sur la base de transcendance choisie.
   les trois premières conditions.
 
   Seule l'assertion sur la norme n'y est pas énoncée sous cette forme mais
-  elle vient en remarquant que \( \poldep_\indi \) est une spécialisation de
+  elle vient en remarquant que \( \poldep_\ind \) est une spécialisation de
   \( \varfc \) qui annule certaines variables et remplace les autres par des
-  monômes unitaires, argument qui est utilisé la proposition~4.2 de la
-  référence citée pour obtenir une estimation similaire dans un contexte
-  légèrement différent.
+  monômes unitaires (un argument similaire est d'ailleurs utilisé dans la
+  preuve du lemme~4.2 de la référence citée).
 \end{proof}
 
-Nous montrons maintenant qu'il est possible de rendre adapté un plongement
+Nous établissons maintenant une variante de la proposition~4.1, de
+\cite{remivds} qui montre qu'il est possible de rendre adapté un plongement
 donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 
 \begin{lem}
   Soit $\iota \colon \anyvar \embedin \projd$ un sous-schéma fermé intègre de
   degré $\anydeg$, non contenu dans l'hyperplan d'équation $\anyvp[0] = 0$.
-  Il existe une matrice $M \in \GL_{\dimp*}(\Q)$, à coefficients entiers de
+  Il existe une transformation linéaire $\chi \in \GL_{\dimp*}(\Q)$,
+  représentable par une matrice à coefficients entiers de
   valeur absolue (archimédienne) majorée par $\max(\frac\anydeg2, 1)$, telle
-  que, si $e_M$ est l'automorphisme linéaire de $\proj\dimp$ associé à $M$,
-  alors $e_M \circ \iota$ est un plongement adapté et que $\anyvp[0]$ soit
+  que $\chi \circ \iota$ est un plongement adapté et que $\anyvp[0]$ soit
   invariant par ce changement de coordonnées.
 \end{lem}
 
-\begin{proof} \later
-  On reprend la preuve de la proposition 2.2 de \cite{remivg} (p.~469). Au
-  moment de choisir des formes linéaires $M_0, \dots, M_n$ telles que
+\begin{proof}
+  On reprend la preuve de la proposition citée (p.~116) ; au moment de choisir
+  des formes linéaires $L_0, \dots, L_n$ telles que
   \begin{equation*}
-    \chow \anyvar (M_0, \dots, M_\dimp) \neq 0
+    \chow \anyvar (L_0, \dots, L_\dimp) \neq 0
     \pmm,
   \end{equation*}
-  on commence en fait par fixer $M_0 = \anyvp[0]$. Le polynôme $\varfc(M_0,
+  on commence en fait par fixer $L_0 = \anyvp[0]$. Le polynôme $\varfc(L_0,
   \truc, \dots, \truc)$ est multihomogène de degré $\anydeg$ en chaque
   variable ; vu l'hypothèse sur $\anyvar$, il est non nul grâce au théorème
-  fondamental de l'élimination. On peut donc choisir $M_1, \dots M_n$ comme
-  dans \cite{remivg} et continuer la preuve sans autre modification.
+  fondamental de l'élimination. On peut donc choisir $L_1, \dots L_\anydim$
+  comme dans \cite{remivg} puis continuer la preuve sans autre modification.
 \end{proof}
 
 \begin{lem}
   Soit $\anyvar \colon \embedin \proj\dimp$ un sous-schéma fermé intègre, et
-  $M \in \GL_{\dimp*}(\Qbar)$ à coefficients entiers dans l'intervalle $[-B,
-  B]$, où $B$ est un réel positif fixé, et $e_M$ l'automorphisme linéaire de
-  $\proj\dimp$ associé à $M$. Alors
+  $\chi \in \GL_{\dimp*}(\Qbar)$ donné par une matrice à coefficients entiers
+  dans l'intervalle $[-B, B]$, où $B$ est un réel positif fixé, alors
   \begin{equation}
-    \hautm[1]{e_M(\anyvar)}
+    \hautm[1]{\chi(\anyvar)}
     \le
     \hautm[1]{\anyvar}
     \cdot \bigl( \dimp** B \bigr)^{\anydeg\dimp**}
@@ -474,8 +472,6 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   de plus que chaque plongement $\var* \embedin \projd$ est adapté, quitte à
   multiplier la hauteur de \( \var* \) par
   \( \bigl (\dimp** \max (\frac{\vdeg*}2, 1) \bigr)^{\vdeg*\dimp**} \).
-  \worknote[later]{Il faut aussi estimer le coût sur les formules de
-    multiplication et soustraction.}
 
   On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
   dans son facteur $\proj\dimp$. Ceci implique que
@@ -487,7 +483,9 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   On notera par ailleurs \( \poldep** \) une relation de dépendance
   de \( \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \)
   telle que donnée par l'application du fait~\ref{f:plong-adapt-dep} au
-  facteur \( \var* \).
+  facteur \( \var* \). On notera enfin \( \pden** \) la dérivée de \(
+    \poldep** \) par rapport à la dernière variable et \( \pden* =
+    \prod_{\indi=\vdim+1}^\dimp \pden** \).
 \end{scho}
 
 Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
@@ -497,7 +495,7 @@ démonstration de la proposition~\ref{p:varset-notmin}.
   On peut supposer que :
   \begin{enumthm}
     \item \( \cex** \neq 0 \) pour tous \( \fct \) et \( \ind \) ;
-    \item \( \pden_\fct(\cex*) \neq 0 \) pour tout \( \fct \).
+    \item \( \pden*(\cex*) \neq 0 \) pour tout \( \fct \).
   \end{enumthm}
 \end{scho}
 

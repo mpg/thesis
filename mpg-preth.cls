@@ -910,6 +910,7 @@
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
+\newc@star@deftwo \pden   {\fct}{\indi} {U\pexp{#1}[#2]}
 \nomdef \poldep a {P} \@gobbletwo{\poldep}{Relation de dépendance intégrale
   des dernières variables sur les premières dans un plongement adapté}
 
@@ -1066,7 +1067,6 @@
 %
 \newcommand \psmp   {\gmp t}
 \newcommand \psp    {\gp  t}
-\newcommand \pden   {U}
 \newcommand \forme  {H}
 \newcommand \dermp  {\gmp\kappa}
 \newcommand \derp   {\gp \kappa}
