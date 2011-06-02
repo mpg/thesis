@@ -450,6 +450,30 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   comme dans \cite{remivg} puis continuer la preuve sans autre modification.
 \end{proof}
 
+Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
+établit un résultat général élémentaire sur l'inversion de matrices.
+
+\begin{lem} \label{l:cramer}
+  Soit \( R \) une matrice \( r \times r \) inversible à coefficients entiers,
+  de valeur absolue inférieure ou égale à \( C \), et \( v \) une place de \(
+    \Q \). Alors \( \nnv2{R^{-1}} \le r! \cdot C^{r-\dv} \) et \( \hautm[2]{R}
+    \le r! \cdot C^{r-1} \).
+\end{lem}
+
+\begin{proof}
+  On utilise les formules de \bsc{Cramer}. À la place archimédienne, on minore
+  \( \det R \) par \( 1 \) et on majore par \( (r-1)! C^{r-1} \) la norme de
+  chaque cofacteur. La norme euclidienne de la comatrice et donc de l'inverse
+  est ainsi majorée par \( r(r-1)! C^{r-1} \). Aux places finies, la comatrice
+  est à coefficients entiers, et on majore \( \av{\det R}^{-1} \) par \(
+    \av{\det R}[\infty] \le r! C^r \) par la formule du produit.
+
+  L'assertion sur la hauteur vient en remarquant que la contribution du
+  déterminant est nulle dès qu'on prend le produit sur toutes les places, et
+  que la hauteur de la comatrice est donnée par sa valeur absolue
+  archimédienne.
+\end{proof}
+
 \begin{lem}
   Soit $\anyvar \colon \embedin \proj\dimp$ un sous-schéma fermé intègre, et
   $\chi \in \GL_{\dimp*}(\Qbar)$ donné par une matrice à coefficients entiers

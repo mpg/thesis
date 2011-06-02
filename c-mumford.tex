@@ -352,11 +352,13 @@ homogènes de degré $ld$ en $m$.
   des coefficients sinon.
 \end{lem}
 
-\begin{proof}
+\begin{proof} \worknote{Dupliqué par le lemme \ref{l:cramer} qui
+    donne aussi une estimation de hauteur, qui serait d'ailleurs peut-être
+    utile ici.}
   On utilise les formules de \bsc{Cramer}. À la place archimédienne, on minore
-  $\det R$ par $1$ et par $(r-1)! C^{r-1}$ la norme de chaque cofacteur. La
-  norme de la comatrice et donc de l'inverse est ainsi majorée par
-  $(r-1)(r-1)! C^{r-1} \le r! C^r$. Aux places finies, la comatrice est à
+  $\det R$ par $1$ et on majore par $(r-1)! C^{r-1}$ la norme de chaque
+  cofacteur. La norme de la comatrice et donc de l'inverse est ainsi majorée
+  par $(r-1)(r-1)! C^{r-1} \le r! C^r$. Aux places finies, la comatrice est à
   coefficients entiers, et on majore $\av{\det R}^{-1}$ par $\av{\det
     R}[\infty] \le r! C^r$ par la formule du produit.
 \end{proof}
