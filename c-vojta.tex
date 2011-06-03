@@ -11,7 +11,9 @@ l'hyperplan d'équation \( X_0 = 0 \), supposé ne pas contenir \( \va \). Nous
 verrons plus tard que ce cas particulier implique le cas général.
 \nomuse \divi [chap] {Le diviseur découpé par \( \vp[0] = 0 \), dont on étudie
   les approximations}
-Le but du chapitre est donc de prouver le théorème suivant.
+Le but du chapitre est donc de prouver le théorème suivant, où les notions de
+distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
+  \embedin \projd \) fixé.
 
 \begin{thm} \label{t:vojta-div}
   Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \ex[1],
@@ -395,9 +397,9 @@ On contrôle en fait des relations de dépendance intégrale des dernières
 variables sur la base de transcendance choisie.
 
 \begin{fact} \label{f:plong-adapt-dep}
-  Si le plongement \( \anyvar \embedin \projd \) est adapté, il existe des
-  formes homogènes \( \poldep[][\ind] \) pour \( \ind \in \set{\anydim+1,
-      \dots, \dimp} \) telles que :
+  Si le plongement \( \iota \colon \anyvar \embedin \projd \) est adapté, il
+  existe des formes homogènes \( \poldep[][\ind] \) pour \( \ind \in
+    \set{\anydim+1, \dots, \dimp} \) telles que :
   \begin{enumthm}
     \item \(
         \poldep[][\ind]
@@ -419,8 +421,7 @@ variables sur la base de transcendance choisie.
   Seule l'assertion sur la norme n'y est pas énoncée sous cette forme mais
   elle vient en remarquant que \( \poldep_\ind \) est une spécialisation de
   \( \varfc \) qui annule certaines variables et remplace les autres par des
-  monômes unitaires (un argument similaire est d'ailleurs utilisé dans la
-  preuve du lemme~4.2 de la référence citée).
+  monômes unitaires.
 \end{proof}
 
 Nous établissons maintenant une variante de la proposition~4.1, de
@@ -497,53 +498,42 @@ telle que
   & \le
   (\dimp*)! \cdot (\vdegp*)^{\dimp}
 \end{align}
+On note par ailleurs \( \varfca* \) une forme de \bsc{Chow} de \( \var* \)
+dans le plongement \( \vadapt* \circ \Theta \). Le théorème de l'élimination
+montre qu'une telle forme s'obtient en composant \( \varfc* \) avec \(
+  \vadapt* \) sur chacun des \( \vdim* + 1 \) groupe de variables ; il est
+alors clair que
+\begin{equation}
+  \nv1{\varfca*} \le \nv1{\varfc*}
+  \cdot \bigl( \dimp** \vdegp* \bigr)^{\vdeg* (\vdim* + 1)}
+\end{equation}
 
-\begin{lem}
-  Soit $\anyvar \embedin \proj\dimp$ un sous-schéma fermé intègre, et $\chi
-  \in \GL_{\dimp*}(\Qbar)$ donné par une matrice à coefficients entiers dans
-  l'intervalle $[-B, B]$, où $B$ est un réel positif fixé, alors
-  \begin{equation}
-    \hautm[1]{\chi(\anyvar)}
-    \le
-    \hautm[1]{\anyvar}
-    \cdot \bigl( \dimp** B \bigr)^{\anydeg\dimp**}
-    \pmm.
-  \end{equation}
-\end{lem}
+On notera par ailleurs \( \poldep** \) une relation de dépendance de \(
+  \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée
+par l'application du fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans
+le plongement. On remarque qu'il est possible d'améliorer l'estimation de
+norme en
+\begin{equation}
+  \nv1{\poldep**} \le \nv1{\varfc*}
+  \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)}
+\end{equation}
+en utilisant le début de la démonstration du lemme~4.2 de~\cite{remivds} (la
+suite de la démonstration étant moins pertinente compte tenu des différences
+de normes utilisées).
 
-\begin{proof} \later
-  Inégalité classique sur la norme $L_1$ et la spécialisation des polynômes.
-\end{proof}
-
-\begin{scho} \label{s:plong-adapt}
-  Vu les hypothèses sur \( \var \) on peut sans perte de généralité supposer
-  de plus que chaque plongement $\var* \embedin \projd$ est adapté, quitte à
-  multiplier la hauteur de \( \var* \) par
-  \( \bigl (\dimp** \max (\frac{\vdeg*}2, 1) \bigr)^{\vdeg*\dimp**} \).
-
-  On supposera donc désormais que chaque $\var*$ est plongé de façon adaptée
-  dans son facteur $\proj\dimp$. Ceci implique que
-  $\varfc*(\vmp*[0], \dots,\vmp*[\vdim*])$
-  est non nul pour tout $\fct$ ; on normalisera donc notre choix de $\varfc*$
-  (qui est unique à une constante multiplicative près) en imposant que cette
-  quantité vaille $1$.
-
-  On notera par ailleurs \( \poldep** \) une relation de dépendance
-  de \( \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \)
-  telle que donnée par l'application du fait~\ref{f:plong-adapt-dep} au
-  facteur \( \var* \). On notera enfin \( \pden** \) la dérivée de \(
-    \poldep** \) par rapport à la dernière variable et \( \pden* =
-    \prod_{\indi=\vdim+1}^\dimp \pden** \).
-\end{scho}
-
-Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
-démonstration de la proposition~\ref{p:varset-notmin}.
+On introduit ensuite \( \pden** \) la dérivée de \( \poldep** \) par rapport à
+la dernière variable et \( \pden* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
+Enfin, on notera \( \traceon (\cex**)_\ind \) un système de coordonnées
+multihomogène de \( \ex* \) dans le plongement \( \Theta \) et \( \traceon
+  (\cexa**)_\ind \) son image par \( \vadapt* \).  Nous pouvons maintenant
+énoncer les cas particuliers à exclure dans la démonstration de la
+proposition~\ref{p:varset-notmin}.
 
 \begin{scho} \label{s:part-cases}
   On peut supposer que :
   \begin{enumthm}
-    \item \( \cex** \neq 0 \) pour tous \( \fct \) et \( \ind \) ;
-    \item \( \pden*(\cex*) \neq 0 \) pour tout \( \fct \).
+    \item \( \cexa** \neq 0 \) pour tous \( \fct \) et \( \ind \) ;
+    \item \( \pden*(\cexa*) \neq 0 \) pour tout \( \fct \).
   \end{enumthm}
 \end{scho}
 

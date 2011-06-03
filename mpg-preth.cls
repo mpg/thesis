@@ -896,6 +896,7 @@
 
 \newcommand \Excep { e }
 \newcommand \cex   { \gmp\Excep }
+\newcommand \cexa  { \gmp{\tilde\Excep}} % no space here!
 
 \newc@star@default \ex      {\fct }{\puiss } {\Excep\ssub{#1}}
 \newc@star@default \exi     {\fcti}{\puiss*} {\Excep'\ssub{#1}}
@@ -983,11 +984,13 @@
 \newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
 \newc@star@default \vadapt  {\fct}{\puiss} {\chi\ssub{#1}}
+\newc@star@default \varfca  {\fct}{\puiss} {\tilde\Chow\pexp{#1}[\Var]}
 
 \nomdef \var     a {Z}
 \nomdef \vdim    a {u}
 \nomdef \vdeg    a {D}
 \nomdef \vdegp   a {D'}
+\nomdef \varfc   a {f}
 \nomdef \varfc   a {f}
 \nomdef \varid   a {I}
 \nomdef \vadapt  g {z2}
