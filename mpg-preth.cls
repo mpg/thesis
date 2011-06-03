@@ -474,6 +474,7 @@
 \newcommand     \Proj   {\std P}
 \newcommand     \Aff    {\std A}
 \newcommand     \GL     {\std{GL}}
+\newcommand     \M      {\std{M}}
 
 \newcommand* \proj [2][] {\Proj \ssup{#2}                 \ssub{#1}}
 \newcommand* \aff  [2][] {\Aff  \@ifnotmtarg{#2}{\sp{\!#2}} \ssub{#1}}
@@ -978,14 +979,18 @@
 \newc@star@default \var     {\fct}{\puiss} {\Var\ssub{#1}}
 \newc@star@default \vdim    {\fct}{\puiss} {{u\ssub{#1}}}
 \newc@star@default \vdeg    {\fct}{\puiss} {{D\ssub{#1}}}
+\newc@star@default \vdegp   {\fct}{\puiss} {{D'\ssub{#1}}}
 \newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
+\newc@star@default \vadapt  {\fct}{\puiss} {\chi\ssub{#1}}
 
 \nomdef \var     a {Z}
 \nomdef \vdim    a {u}
 \nomdef \vdeg    a {D}
+\nomdef \vdegp   a {D'}
 \nomdef \varfc   a {f}
 \nomdef \varid   a {I}
+\nomdef \vadapt  g {z2}
 
 % various "epsilons" [[2
 %
