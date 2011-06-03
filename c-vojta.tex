@@ -498,8 +498,9 @@ telle que
   & \le
   (\dimp*)! \cdot (\vdegp*)^{\dimp}
 \end{align}
-On note par ailleurs \( \varfca* \) une forme de \bsc{Chow} de \( \var* \)
-dans le plongement \( \vadapt* \circ \Theta \). Le théorème de l'élimination
+On note \( \varida* \) l'idéal homogène saturé de \( \var* \) dans le
+plongement \( \vadapt* \circ \Theta \) et \( \varfca* \) une forme de
+\bsc{Chow} de \( \var* \) dans ces coordonnées. Le théorème de l'élimination
 montre qu'une telle forme s'obtient en composant \( \varfc* \) avec \(
   \vadapt* \) sur chacun des \( \vdim* + 1 \) groupe de variables ; il est
 alors clair que
@@ -550,7 +551,7 @@ et défini par
 \begin{align} \label{e:def-wemb}
   \wemb \colon \var
   & \longto \va^\puiss \times \va^{\puiss-1}
-  = \va^{2\puiss-1} \subset (\projd)^{2\puiss-1}
+  = \va^{2\puiss-1}
   \\
   (\pmp_1, \dots, \pmp_\puiss)
   & \longmapsto
@@ -559,32 +560,40 @@ et défini par
   \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
   \pmm.
 \end{align}
-qui nous permettra d'exploiter le scolie~\ref{s:wt-diff-small}. Il nous faudra
-représenter ce morphisme par des familles de polynômes dans les plongements
-utilisés.
+qui nous permettra d'exploiter le scolie~\ref{s:wt-diff-small}.
 
-On munit l'espace d'arrivée $(\projd)^{2\puiss-1}$ des coordonnées
-multihomogènes $\vmp, \vmpi = \vmp[1], \dots, \vmp[\puiss], \vmpi[1], \dots,
-\vmpi[\puiss*]$ ; dans ce contexte quand $\fct$ et $\fcti$ sont deux indices
-non précisés, on supposera implicitement $1 \le \fct \le \puiss$ et $1 \le
-\fcti \le \puiss-1$.
+Il nous faudra représenter ce morphisme par des familles de polynômes. Pour
+cela, commençons par préciser les plongements utilisés : au départ, chaque
+facteur \( \var* \) est plongé par \( \vadapt* \circ \Theta \) ; on utilise
+ces mêmes plongements pour les \( \puiss \) premiers facteurs \( \va \) de
+l'espace d'arrivée on garde le plongement \( \Theta \) pour les \( \puiss* \)
+facteurs \( \va \) restants.
+
+On munit l'espace \( (\projd)^{2\puiss-1} \) (dans lequel est plongé l'espace
+d'arrivée) des coordonnées multihomogènes \( \vmp, \vmpi = \vmp[1], \dots,
+  \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss*] \) ; dans ce contexte quand \(
+  \fct \) et \( \fcti \) sont deux indices non précisés, on supposera
+implicitement \( 1 \le \fct \le \puiss \) et \( 1 \le \fcti \le \puiss-1 \).
 
 \nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant}
-Un représentation locale de \( \wemb \) au voisinage de \( \ex \), est
-constituée d'un ouvert \( \ex \in \opdef \subset \var \) et d'une famille de
-formes multihomogènes définissant un morphisme \( \wemba \) tel que le
-diagramme suivant, dont les flèches verticales sont les projections
+Une représentation locale de \( \wemb \) dans ces plongements au voisinage de
+\( \ex \), est constituée d'un ouvert \( \ex \in \opdef \subset \var \) et
+d'une famille de formes multihomogènes définissant un morphisme \( \wemba \)
+tel que le diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute :
 \begin{equation}
   \xymatrix{
-    \cdn [\vmp, \vmpi]                          \ar [r] ^{\wemba}   \ar [d]
-    & \cdn [\vmp]                                                   \ar [d]
-    \\ \cdn [\vmp, \vmpi] / \ideal{\wemb(\var)} \ar [r] ^{\wemb^*}
+    \cdn [\vmp, \vmpi]                      \ar [r] ^{\wemba}   \ar [d]
+    & \cdn [\vmp]                                               \ar [d] ^\pi
+    \\ \cdn [\vmp, \vmpi] / \ideala{\wemb(\var)} \ar [r] ^{\wemb^*}
     & ( \cdn [\vmp] / \varid )_\opdef
   }
 \end{equation}
-et en particulier, que \( \pi \circ \wemba \) soit bien défini. On peut en
-fait choisir
+et en particulier, que \( \pi \circ \wemba \) soit bien défini. En bas, \(
+  \ideala{\wemb(\var)} \) désigne l'idéal de l'image dans les coordonnées
+indiquées.
+
+On peut en fait choisir
 \begin{align}
      \wemba \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
