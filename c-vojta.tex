@@ -481,7 +481,7 @@ appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \) et on note \(
   \vdegp* = \max(\vdeg*/2, 1) \). On peut donc supposer que \( \vadapt* \) est
 représenté par une matrice (que l'on notera également \( \vadapt* \) par abus)
 telle que
-\begin{align}
+\begin{align} \label{e:vadapt-ht}
   \nnv\infty{\vadapt*}
   & \le
   (\vdegp*)^\dv
@@ -489,7 +489,7 @@ telle que
   \hautm[\infty]{\vadapt*}
   & \le
   \vdegp*
-  \\
+  \\ \label{e:vadapt-inv-ht}
   \nnv2{\vadapt*^{-1}}
   & \le
   (\dimp*)! \cdot (\vdegp*)^{\dimp + 1 - \dv}
@@ -713,14 +713,13 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
   \)
   satisfaisant
   \begin{equation}
-    \nv1{c_{p, q}}
+    \hautm[1]{c_{p, q}}
     \le
     \left(
-      \prod\fctirange
-      \nv\infty \coi ^{2\wtis* - 1}
-      \bigl(
-        4^{g\wtis*} (\dimp + 1)^{\wtis* - 1}
-      \bigr) ^\dv
+      \hclab^{\wts[1] (1 + \epsiii)} \,
+      \Bigr( \prod\fctirange (\vdegp[\fcti])^{2\dimp\wtis*} \Bigl) \,
+      (\vdegp**)^{2\dimp(\puiss*)\wts**} \,
+      (\dimp**!)^\puiss
     \right) ^\delta
     \pmm.
   \end{equation}
@@ -729,34 +728,32 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
 \begin{proof}
   La définition de \( \wemba \) montre que \(
   \wemba( \vmp^p \vmpi^q ) = \vmp^p \wemba(\vmpi^q) \), on a donc \(
-  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, avec le
-  corollaire~\ref{c:addsub-form} et le fait~\ref{f:mult-form}, on a
+  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, on a
   \begin{align}
     \nv1 {c_{p, q}}
     & \le
     \prod\fctirange \prod\indrange
-    \nv1{ S^{-}_\ind\bigl( Q_{\wti*}(\vmp[\fcti]), \vmp** \bigr) }
+    \nv1{ \wembcl* \bigl(
+        \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp**)
+      \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \prod\indrange \left(
-    \nv1{ S^{-}_\ind } \max\indirange \nv1{ Q_{\wti*, \indi} }^2
+      \nv1{ \wembcl* } \,
+      \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
+      \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \left(
-    \nv\infty \coi \cdot 4^{\genre \dv} \cdot \Bigl(
-    \nv\infty \coi ^{\wtis*-1} (2^\genre \sqrt{\dimp+1})^{\dv \wtis*-1}
-    \Bigr) ^{q\pexp\fcti[\ind]}
-    \right)
-    \\ & \le
-    \left(
-    \prod\fctirange
-    \nv\infty \coi ^{2\wtis*-1} \bigl(
-    4^{\genre\wtis*} (\dimp+1)^{\wtis*-1}
-    \bigr) ^\dv
+      \hclab*^{\wtis* + \wts**} \,
+      \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
+      \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}).
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}). Le résultat
+  annoncé suit en prenant le produit sur toutes les places, en invoquant le
+  lemme~\ref{l:epsiii-def} et en utilisant~\eqref{e:vadapt-inv-ht}.
 \end{proof}
 
 
