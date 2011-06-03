@@ -118,16 +118,22 @@ notre preuve de l'inégalité de \bsc{Vojta}.
   multihomogène sur l'idéal engendré par l'idéal de \( \va \) et des familles.
 \end{ideas}
 
+On note désormais \( [ \alpha, \beta ] \) le morphisme envoyant \( (x, y) \)
+sur \( \alpha x - \beta y \) et on s'intéresse à sa représentation par des
+formes bihomogènes.
+
 \begin{lem} \label{l:hclab}
-  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe une
-  famille de réels \( \hclab* \) tels que \( \hclab = \prod_\place
-    \hclab*^{\degv} \) est bien défini, ne dépendant que de ce plongement et,
-  pour tout couple de points \( (x, y) \in \va^2 \), toute place \( \place \)
-  de \( \cdn \) et tous entiers \( \alpha \) et \( \beta \) n'ayant que \( 2
-  \) et \( 3 \) comme diviseurs premiers, une famille \( L^{(a, b)}_{x, y, v}
-  \) de polynômes à coefficients entiers dans \( \cdn \) représentant \( [
-    \alpha, \beta ] \) au voisinage de \( (x, y) \), de bidegré \( (2\alpha^2,
-    2\beta^2) \) et de hauteur multiplicative majorée par \(
+  \renewcommand\Theta{\iota}% cradobeurk mais la flemme
+  Pour tout plongement \( \iota \colon \va \embedin \projd \), il existe une
+  famille (ne dépendant que de \( \va \) et de ce plongement) de réels \(
+    \hclab* \) presque tous égaux à \( 1 \) (de sorte que \( \hclab =
+    \prod_\place \hclab*^{\degv} \) est bien défini) et, pour tout couple de
+  points \( (x, y) \in \va^2 \), toute place \( \place \) de \( \cdn \) et
+  tous entiers \( \alpha \) et \( \beta \) n'ayant que \( 2 \) et \( 3 \)
+  comme diviseurs premiers, une famille \( L^{(\alpha, \beta)}_{x, y, v} \) de
+  polynômes bihomogènes à coefficients entiers dans \( \cdn \) représentant \(
+    [ \alpha, \beta ] \) au voisinage de \( (x, y) \), de bidegré \(
+    (2\alpha^2, 2\beta^2) \) et de hauteur multiplicative majorée par \(
     \hclab^{\alpha+\beta} \), telle que
   \begin{equation}
     \hclab*^{-(\alpha^2 + \beta^2)}

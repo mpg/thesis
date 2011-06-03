@@ -939,8 +939,8 @@
 \nomdef \wemba g {z3} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées
   associé au plongement éclatant $\wemb$}
 
-\newcommand*\wembcl {\gmpi S}
-\nomdef \wembcl a {S} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires
+\newcommand*\wembcl {\gmpi L}
+\nomdef \wembcl a {L} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires
   utilisées dans \( \wemb \)}
 
 
@@ -1090,7 +1090,7 @@
 
 % misc [[2
 %
-\newcommand \hclab {\@ifstar{ c\sb{\va, \place} }{ c\sb{\va} }}
+\newcommand \hclab {\@ifstar{ c\sb{\Theta, \place} }{ c\sb{\Theta} }}
 
 % unsorted math stuff [[1
 % -------------------

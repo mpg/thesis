@@ -524,8 +524,8 @@ de normes utilisées).
 
 On introduit ensuite \( \pden** \) la dérivée de \( \poldep** \) par rapport à
 la dernière variable et \( \pden* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
-Enfin, on notera \( \traceon (\cex**)_\ind \) un système de coordonnées
-multihomogène de \( \ex* \) dans le plongement \( \Theta \) et \( \traceon
+Enfin, on notera \( (\cex**)_\ind \) un système de coordonnées
+multihomogène de \( \ex* \) dans le plongement \( \Theta \) et \(
   (\cexa**)_\ind \) son image par \( \vadapt* \).  Nous pouvons maintenant
 énoncer les cas particuliers à exclure dans la démonstration de la
 proposition~\ref{p:varset-notmin}.
@@ -544,8 +544,8 @@ En effet, dans ces cas la conclusion de la proposition est immédiate.
 \subsection{Plongement abélien pondéré, notations et stratégie}
 \label{sec:wemb}
 
-Nous utiliserons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \)
-et défini par
+Introduisons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \),
+défini par
 \nomuse \wemb [chap] {Plongement éclatant introduit à la
   section~\ref{sec:wemb}}
 \begin{align} \label{e:def-wemb}
@@ -593,26 +593,38 @@ et en particulier, que \( \pi \circ \wemba \) soit bien défini. En bas, \(
   \ideala{\wemb(\var)} \) désigne l'idéal de l'image dans les coordonnées
 indiquées.
 
-On peut en fait choisir
+Notons
+\(
+  \wembcl*
+  = L\pexp{\wti*, \wti**}[{\vadapt[\fcti](\ex*), \vadapt**(\ex**), \place}]
+\)
+une famille de formes bihomogènes donnée par l'application du
+lemme~\ref{l:hclab} au plongement \( \Theta \). Pour l'instant, la place
+place \( \place \) est fixée arbitrairement, mais à la
+section~\ref{sec:vojta-extrap-core} nous serons amenés à considérer
+différentes familles pour les différentes places ; notons
+que les estimations de degré et de hauteur ci-dessous sont uniformément vraies
+quand \( \place \) varie.
+Il est alors clair que le morphisme donné par
 \begin{align}
      \wemba \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
   \\ \vmp*
   &  \mapsto \vmp*
   \\ \vmpi*
-  &  \mapsto L\pexp{\wt[\fcti], \wt[\puiss]}(\vmp[\fcti], \vmp[\puiss])
+  &  \mapsto \wembcl* \bigl(
+    \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp**)
+  \bigr)
 \end{align}
-où les \( L\pexp{\wt[\fcti], \wt[\puiss]} \) sont prises parmi les familles
-de formes données par le lemme~\ref{l:hclab} de sorte que leur ouvert de
-définition \( \opdef \) contienne \( \ex \). Le choix de ces familles pourra
-être précisé ultérieurement ; pour l'instant on utilisera seulement les
-estimations de degré et hauteurs qui sont uniformément valables. Par exemple,
-on a toujours le lemme suivant, qui est immédiat.
+est une représentation locale de \( \wemb \) au voisinage de \( \ex \) au
+sens précédent. Nous utiliserons désormais cette représentation ; commençons
+par étudier son action sur le degré et la hauteur. Le lemme suivant est
+une conséquence immédiate de la définition.
 
 \begin{lem} \label{l:deg-wemba}
-  Soient $\wemba$ un morphisme d'algèbre comme ci-dessus et $F \in
-  \Qbar[\vmp, \vmpi]$ une forme multihomogène de multidegré $(\alpha,
-  \beta)$ où $\alpha \in \N^\puiss$ et $\beta \in \N^{\puiss-1}$. On a alors
+  Soit \( F \in \Qbar[\vmp, \vmpi] \) une forme multihomogène de multidegré \(
+    (\alpha, \beta) \) où \( \alpha \in \N^\puiss \) et \( \beta \in
+    \N^{\puiss-1} \). On a alors
   \begin{equation}
     \deg \wemba(F)
     =
@@ -625,8 +637,6 @@ on a toujours le lemme suivant, qui est immédiat.
     \pmm.
   \end{equation}
 \end{lem}
-
-\medskip
 
 Avant de passer aux estimations de hauteur, il est utile d'introduire quelques
 paramètres qui seront utilisés tout au long de ce chapitre et qui contrôlent
@@ -667,23 +677,17 @@ entier. On pose alors
     \bigr) \in \Q^\puiss
   \end{aligned}
 \end{equation}
-de sorte que, si $F$ est une forme de multidegré $\delta d$ dans $\cdn[\vmp,
-\vmpi]$, son image par $\wemba$ est de multidegré exactement $\delta d'$
-d'après le lemme~\ref{l:deg-wemba}.
+de sorte que, si \( F \) est une forme de multidegré \( \delta d \) dans \(
+  \cdn[\vmp, \vmpi] \), son image par \( \wemba \) est de multidegré
+exactement \( \delta d' \) d'après le lemme~\ref{l:deg-wemba}.
 
 \medskip
 
 Revenons donc au calcul de l'action de \( \wemba \) sur la hauteur. Ce
 morphisme étant homogène, il induit d'après la remarque ci-dessus une
-application linéaire
-\begin{equation}
-  \wemba \colon
-  \cdn [\vmp, \vmpi]_\Dz
-  \to
-  \cdn [\vmp]_\Dii
-\end{equation}
-La base évidente de l'espace de départ est formée par les monômes \( \vmp^p
-  \vmpi^q \) pour
+application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
+\).  La base évidente de l'espace de départ est formée par les monômes \(
+  \vmp^p \vmpi^q \) pour
 \begin{equation}
   (p, q)
   \in \N^{\puiss (\dimp*)} \times \N^{(\puiss*) (\dimp*)}
@@ -2196,7 +2200,7 @@ quelconque en les écrivant comme un quotient de deux telles fonctions, mais
 ce n'est pas utile ici.
 
 
-\subsection{Minoration de l'indice}
+\subsection{Minoration de l'indice} \label{sec:vojta-extrap-core}
 
 Nous allons maintenant montrer que la forme auxiliaire construite
 précédemment s'annule avec un indice élevé en \( \ex \). Plus précisément,
