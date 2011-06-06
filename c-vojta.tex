@@ -12,8 +12,7 @@ Le but du chapitre est donc de prouver le théorème suivant, où les notions de
 distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   \embedin \projd \) fixé, et \( \divi \) est l'hyperplan défini par \( \vp[0]
   = 0 \) dans ce plongement.
-\nomuse \divi [chap] {Le diviseur défini par \( \vp[0] = 0 \), dont on étudie
-  les approximations}
+\nomuse \divi [chap] {L'hyperplan à approché,  défini par \( \vp[0] = 0 \)}
 
 \begin{thm} \label{t:vojta-div}
   Pour tout réel \( 0 < \eps < 1 \), dans \( \va(\Qbar) \), il n'existe pas de
@@ -354,8 +353,7 @@ facteurs.
 \nomuse{\vdeg*}[chap]{Le degré de \( \var* \)}
 \nomuse{\vdim*}[chap]{La dimension de \( \var* \)}
 \nomuse{\vdim }[chap]{La dimension de \( \var \)}
-\nomuse{\varfc*}[chap]{La forme de \bsc{Chow} de \( \var* \) normalisée par le
-  scolie~\ref{s:plong-adapt}}
+\nomuse{\varfc*}[chap]{Une forme de \bsc{Chow} de \( \var* \)}
 \nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \)}
 
 De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
@@ -1434,8 +1432,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \begin{proof}
   Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
   l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \) ;
-  elle découle du fait qu'on a supposé le plongement adapté
-  (scolie~\ref{s:plong-adapt}).
+  elle découle du fait qu'on a utilise un plongement adapté.
   En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
   \( \ind \), il existe des formes \( A\mexp*[\ind, \alpha] \) et \(
     B\mexp*[\ind, \alpha] \) dans
@@ -2312,12 +2309,11 @@ pour les \( \indv* \).
   \end{equation}
 \end{lem}
 
-\begin{proof}
+\begin{proof} \todo[Mettre à jour, cf plongement et~\eqref{e:nv-poldep}]
   Il suffit de montrer qu'on a \( \av{ \cex** } \le \nv1{ \varfc* } \av{
       \cex*[\indv] } \) pour tout \( \ind \in \set{\vdim* + 1, \dots, \dimp}
-  \). Notons \( \poldep** \) la relation dépendance intégrale donnée par le
-  scolie~\ref{s:plong-adapt} ; en décomposant suivant les puissance de \(
-    \vmp** \) on a
+  \).  En décomposant \( \poldep** \) suivant les puissance de \( \vmp** \),
+  on a
   \begin{equation}
     (\vmp**) ^{ \vdeg* }
     =
