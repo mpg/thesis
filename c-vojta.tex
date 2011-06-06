@@ -267,7 +267,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \Lambda & = \stuffout{(6m)^{2m^2}} \\
   f(u) & = \stuffout{\prod_{i=u+1}^{mg} (3i + 1) \le m^{3m^2 - u}} \\
   \newcst[]{vs-deg-prod} & = \stuffout{(32m)^{m+3}} \\
-  \newcst[]{vs-ht} & = \stuffout{n^{m^2} \hautl[]\va}
+  \newcst[\va]{vs-ht} & = \stuffout{n^{m^2} \vaht}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \).
@@ -659,7 +659,7 @@ Introduisons deux réels \( \epsz, \epsi \) strictement positifs tels que :
   \le
   \frac12
   \\ \label{e:epsz-epsi-extra}
-  \epsz \le \frac {\eps \epsi} {8\puiss}
+  \epsz \le \frac {\eps \epsi} {8\puiss} \quad \epsz \le 2
 \end{gather}
 On choisira en fait \( \epsz \) rationnel, et on introduit un entier \( \delta
 \) (destiné à tendre vers l'infini) tel que \( \epsz \delta \) soit également
@@ -1492,20 +1492,15 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \begin{equation}
     \hautl[\infty] F
     \le
-    \delta \Bigr(
-    (4\puiss + 2\epsz) \sum\fctrange \wts* \hautl[1]{\varfc*}
-    + (1 + \epsiii)\wts[1] \cdot \cst{f-aux}
+    \delta \wts[1] \Bigl(
+      \bigl(
+        4\puiss \cst{vs-ht}
+        + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
+      \bigr)
+      \Lambda^{2\,f(u)}
+      + 2 \ln \hclab + 4(\dimp*)^2
     \Bigr)
     + o(\delta)
-    \pmm,
-  \end{equation}
-  où
-  \begin{equation}
-    \newcst[]{f-aux}
-    \le
-    2 \hautl[\infty] \coi
-    + 2 \ln (\dimp + 1)
-    + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
     \pmm.
   \end{equation}
 \end{prop}
@@ -1575,108 +1570,97 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \pmm,
   \end{equation}
   d'après le corollaire~\ref{c:hmat-rdiv} (et en remarquant que \( d'_\fct \le
-    (2\puiss - 2 + \epsz) \wts* \) pour tout \( \fct \)), celle des colonnes
-  des matrices de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) par
+    2\puiss \wts* \) pour tout \( \fct \)), celle des colonnes
+  des matrices de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) est majorée par
   \begin{equation}
     \delta
-    (2\puiss -2 + \epsz)
-    \sum\fctrange \wts* \biggl(
+    2\puiss \sum\fctrange \wts* \Bigl(
       \hautl[1]{\varfc*}
       + (\vdeg* (\vdim* + 1) + 1) \ln(4\vdegp*)
-    \biggr)
+    \Bigr)
     + o(\delta)
     \pmm,
   \end{equation}
   et d'après le corollaire~\ref{c:hmat-relim} celle des colonnes de la matrice
   de \( \relim \) est un \( o(\delta) \). En sommant (en comptant bien deux
-  fois le majorant commun des hauteurs des deux \( \rdiv \)) et en tenant
-  compte de~\ref{l:epsiii-def}, il vient
+  fois le majorant commun des hauteurs des deux \( \rdiv \)) et en majorant
+  certains \( \wt* \) par \( \wt[1] \), il vient
+  \begin{align}
+    \frac1\delta \hautl[\infty] M - o(1)
+    & \le
+    4\puiss \sum\fctrange \wts* \hautl[1]{\varfc*}
+    + \wts[1] \Bigl(
+      (1 + \epsiii) \bigl( \ln \hclab + 2(\dimp*) \ln(\dimp*) \bigr)
+      \\ & \qquad
+      + \sum\fctrange \bigl(
+        2 \dimp (\puiss*) \ln \vdegp*
+        + 2 \ln(4\vdegp*) (\vdeg* (\vdim* + 1) + 1)
+      \bigr)
+    \Bigr)
+    \\ & \le
+    \wts[1] \Bigl(
+      4\puiss \cst{vs-ht} \Lambda^{2\,f(u)}
+      + 2 \ln \hclab + 4(\dimp*)^2
+      \\ & \qquad
+      + 2 \dimp \puiss (\puiss*) \ln B
+      + 2 \ln(4B) (2B (\vdim + \puiss) + \puiss)
+    \Bigr)
+  \end{align}
+  \worknote{Majoration « grossière » à revoir une fois \( \Lambda \) connu.}
+  où l'on a noté \( B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \) un
+  majorant uniforme des \( \vdegp* \). On majore alors grossièrement la
+  dernière ligne par \( 4 (\dimp\puiss + \vdim) B^2 \) pour aboutir à
   \begin{equation}
     \hautl[\infty] M
     \le
-    \delta \Bigr(
-    (4\puiss + 2\epsz) \sum\fctrange \wts* \hautl[1]{\varfc*}
-    + (1 + \epsiii)\wts[1] \cdot \cst{f-aux}
+    \delta \wts[1] \Bigl(
+      \bigl(
+        4\puiss \cst{vs-ht}
+        + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
+      \bigr)
+      \Lambda^{2\,f(u)}
+      + 2 \ln \hclab + 4(\dimp*)^2
     \Bigr)
     + o(\delta)
-    \pmm,
   \end{equation}
-  avec
-  \begin{equation}
-    \cst{f-aux}
-    \le
-    2 \hautl[\infty] \coi + \genre \ln(4) + \ln(\dimp + 1)
-    + (4\puiss + 2\epsz) \max\fctrange \ln(2\vdeg*)
-    \pmm.
-  \end{equation}
-  On remarque alors que \( 4^\genre \le \dimp + 1 \) pour aboutir à la
-  majoration annoncée.
+  ce qui équivaut au résultat annoncé.
 \end{proof}
 
 \begin{scho} \label{s:aux-co}
   On note désormais \( F \) une forme comme dans la conclusion de la
   proposition précédente, \( F' = \wemba(F) \) et \( F'' =
-    \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F))) \). On a alors
+    \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F'))) \). On a alors
   \begin{enumthm}
     \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish* \) ;
     \item \( \deg F'' = \deg RF' = \deg F' + o(\delta) \) ;
-    \item \( \deg F' = \delta \bigl(
-          \wts[1] (\frac94 + \epsz), \dots,
-          \wts[\puiss*] (\frac94 + \epsz), 2\puiss - 2 + \epsz
-        \bigr) \) ;
-    \item \( \nv1{F'} \le \nv1 F \cdot \left(
-          \nv\infty\coi^2 \bigl( 4^\genre \dimp** \bigr)^\dv
-        \right)^{(1+\epsiii) \wts[1] \delta}
-      \) ;
-    \item \( \nv1{F''} \le \nv1 F \cdot
-        \left(
-          \prod\fctirange
-          \nv1{\varfc*}^{(4\puiss + 2\epsz) \wtis*}
-          \cdot
-          \cst{f-aux-loc}^{(1+\epsiii) \wts[1]}
-        \right)^\delta
-        \cdot
-        2^{o(\delta)}
-      \), où
-      \begin{equation}
-        \newcst{f-aux-loc}
-        =
-        \nv\infty\coi^2 \bigl(
-          4^\genre \dimp** \cdot (2 \max_\fct \vdeg*)^{(4\puiss + 2\epsz)}
-        \bigr)^\dv
-      \end{equation}
+    \item \( \deg F' = \delta d' \) et \( \deg F'' = \delta d \) où l'on
+      rappelle que 
+      \begin{align}
+        d & = \bigl(
+          \epsz \wts[1],
+          \dots,
+          \epsz \wts[\puiss],
+          1, \dots, 1
+        \bigr) \in \Q^{2\puiss-1}
+        \\
+        d' & = \bigl(
+          \wts[1] (2 + \epsz),
+          \dots,
+          \wts[\puiss*] (2 + \epsz),
+          \wts[\puiss] (2\puiss - 2 + \epsz)
+        \bigr) \in \Q^\puiss
+      \end{align}
+    \item On peut majorer \( \hautl[\infty]{F''} \) par le double de la
+      majoration annoncée pour \( F \).
   \end{enumthm}
 \end{scho}
 
 \begin{proof}
-  Les trois premiers points sont donnés directement par la méthode utilisée
-  pour construire \( F \). Le suivant résulte du lemme~\ref{l:hmat-wemba} et
-  de la propriété~\eqref{e:l1-subslin} de la norme utilisée en effectuant les
-  mêmes simplifications que dans la démonstration de la proposition
-  précédente.
-
-  Pour le dernier point, on reprend la matrice \( M \) de cette démonstration
-  et on en majore les normes locales de la même façon qu'on en a majoré la
-  hauteur :
-  \begin{align}
-    \nv\infty M
-    & \le
-    \prod\fctirange \left(
-      \nv1{\varfc*}^{(4\puiss + 2\epsz) \wtis*}
-    \right)^\delta
-    \\ & \qquad
-    \cdot \left(
-      \nv\infty\coi^2 \bigl(
-        4^\genre \dimp** \cdot (2 \max_\fct \vdeg*)^{(4\puiss + 2\epsz)}
-      \bigr)^\dv
-    \right)^{(1+\epsiii) \wts[1] \delta}
-    \cdot
-    2^{o(\delta)}
-  \end{align}
-  On en déduit l'estimation annoncée en remarquant que \( F'' \) est l'image de
-  \( F \) par l'application de matrice \( M \) et que \( \nv1{M F} \le
-    \nv\infty M \cdot \nv1 F \cdot 2^{\dv o(\delta)} \) par les propriétés
-  classiques des normes.
+  Les trois premiers points ne sont qu'un rappel de la construction.
+  Pour le dernier point, on constate que \( F'' \) est l'image de \( F \) par
+  l'application linéaire dont la matrice, notée \( M \) dans la démonstration
+  de la proposition, et dont la hauteur détermine un majorant de la hauteur de
+  \( F \).
 \end{proof}
 
 
