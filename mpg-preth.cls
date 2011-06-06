@@ -24,7 +24,7 @@
 % use Koma with custom encoding and fonts [[2
 %
 \RequirePackage{pdf14} % be maximally portable
-\LoadClass[a4paper, twoside, BCOR=1cm, 11pt, titlepage=false]{scrreprt}
+\LoadClass[a4paper, twoside, BCOR=1cm, 11pt, titlepage=false]{scrbook}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[sc, osf]{mathpazo} \linespread{1.05}
