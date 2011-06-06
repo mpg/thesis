@@ -301,6 +301,21 @@
 \newcommand \later      {\worknote[later]{(à détailler ultérieurement)}}
 \newcommand \todots [1][] {{\color{todo}\cdots}} % #1 for use in the source
 
+% temporary or outdated stuff [[2
+%
+\colorlet{out}{gray}
+\newcommand \startout [1][] {%
+  \worknote[later]{(ne pas relire pour l'instant) #1}
+  \let\normal@default@color\default@color
+  \expandafter\let\expandafter\default@color\csname\string\color@out\endcsname
+  \normalcolor}
+\newcommand \stopout {%
+  \let\default@color\normal@default@color
+  \normalcolor}
+\newcommand \stuffout [1] {%
+  {\color{out}#1}}
+
+
 % languages and special text items [[2
 %
 \newcommand*\lat [1] {\emph{#1}}
