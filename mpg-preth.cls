@@ -984,10 +984,12 @@
 \newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
 \newc@star@default \varid   {\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
 \newc@star@default \varida  {\fct}{\puiss} {\tilde\Ideal\pexp{#1}[\Var]}
+\newc@star@default \vringa  {\fct}{\puiss} {\tilde\Ring\pexp{#1}[\Var]}
 \newc@star@default \vadapt  {\fct}{\puiss} {\chi\ssub{#1}}
 \newc@star@default \varfca  {\fct}{\puiss} {\tilde\Chow\pexp{#1}[\Var]}
 
 \newcommand \ideala [1] {\tilde\Ideal\ssub{#1}}
+\newcommand \ringa  [1] {\tilde\Ring\ssub{#1}}
 
 \nomdef \var     a {Z}
 \nomdef \vdim    a {u}

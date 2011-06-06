@@ -785,8 +785,12 @@ Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
   =
   \frac {\imp[1][0]} {\wts[1]} + \dots
   + \frac {\imp[\puiss*][0]} {\wts[\puiss*]}
-  + \frac {\imp[\puiss][0]} {\puiss*}
+  + \frac {\imp[\puiss][0]} {\wts**(\puiss*)}
+  \pmm.
 \end{equation}
+Les poids dans cette somme sont essentiellement proportionnels à \( d \), ce
+qui sera essentiel par la suite.\worknote{Pour appliquer le théorème de
+  produit.}
 On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
   \vmp^\imp \) par :
 \nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
@@ -806,7 +810,7 @@ On introduit alors, pour \( \beta > 0 \), les idéaux
     \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
   défini par~\eqref{e:vanish-def}}
 \nomuse {\vanish*[\beta]} [chap] {Idéal d'annulation définir par \(
-    \vanish*[\beta] + \varid \)}
+    \vanish*[\beta] + \varida \)}
 \begin{equation} \label{e:vanish-def}
   \vanish*[\beta]
   = \left\{
@@ -815,9 +819,9 @@ On introduit alors, pour \( \beta > 0 \), les idéaux
     \inda*(H) \ge \beta
   \right\}
 \end{equation}
-et $\vanish[\beta] = \vanish*[\beta] + \varid$. Par abus, on notera de même
-l'image de \( \vanish[\beta] \) dans $\ring\var = \cdn [\vmp] / \varid$, ce
-qui est légitime puisqu'on a fait en sorte que $\varid \subset
+et $\vanish[\beta] = \vanish*[\beta] + \varida$. Par abus, on notera de même
+l'image de \( \vanish[\beta] \) dans $\vringa = \cdn [\vmp] / \varida$, ce
+qui est légitime puisqu'on a fait en sorte que $\varida \subset
 \vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
   \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
 appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
@@ -836,25 +840,22 @@ pour assurer l'appartenance à \( \vanish*[\beta] \).
 
 \subsection{Stratégie de construction de la forme auxiliaire}
 
-Il s'agit de trouver une forme multihomogène non nulle sur $\var$, de degrés
-prescrits et de hauteur contrôlée, provenant d'une forme sur $\wemb(\var)$ et
-ayant indice élevé le long de \( \divi \) dans \( \var \).  Plus précisément,
-en conservant les notations du paragraphe précédent et
-notamment~\eqref{e:d-dp-def}, on cherche une forme
+En conservant les notations précédentes et notamment~\eqref{e:d-dp-def}, on
+cherche une forme
 \begin{equation}
   F'
   \in \cdn[\vmp]_{\delta d'}
   \cap \vanish
   \cap \wemba(\cdn[\vmp, \vmpi]_{\delta d})
 \end{equation}
-non nulle modulo l'idéal de $\wemb(\var)$, ou de façon équivalente (avec $F' =
+non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
 \wemba(F)$), on cherche une forme
 \begin{equation}
   F
   \in \cdn[\vmp, \vmpi]_{\delta d}
   \cap \wemba^{-1}(\vanish)
 \end{equation}
-non nulle modulo l'idéal de $\var$, de hauteur relativement petite.
+non nulle modulo l'idéal de $\wemb(\var)$, de hauteur relativement petite.
 
 Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
 Cependant, il est difficile d'expliciter un système essentiellement minimal
@@ -871,8 +872,8 @@ est de codimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
 Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_{\delta d}$ un
-supplémentaire de $(\ideal{\wemb(\var)})_{\delta d}$ engendré par des
-monômes, que l'on notera $\Ideal_{\delta d}$, et dans lequel on cherchera
+supplémentaire de $(\ideala{\wemb(\var)})_{\delta d}$ engendré par des
+monômes, que l'on notera $\ideala{\delta d}$, et dans lequel on cherchera
 $F$.
 
 On considérera des sous-espaces vectoriels de partie homogènes de
@@ -914,30 +915,30 @@ dans la définition précédente.
 
 Le plan général de l'écriture du système se résume alors par le diagramme
 commutatif suivant, où l'on note
-\( \ring{\wemb(\var)} = \cdn[\vmp, \vmpi] / \ideal{\wemb(\var)} \)
+\( \ringa{\wemb(\var)} = \cdn[\vmp, \vmpi] / \ideala{\wemb(\var)} \)
 et
-\( \ring{\opdef} = (\cdn[\vmp])_\opdef \)
+\( \ringa{\opdef} = (\cdn[\vmp])_\opdef \)
 et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
-    \Ideal_\Dz            \ar [r] ^{\wemba}        \ar [d] _{\sim}
+    \ideala\Dz            \ar [r] ^{\wemba}        \ar [d] _{\sim}
     & \cdn [\vmp]_\Dii   \ar [r] ^{\rdiv^\Dii}    \ar [d]
     & \cdn [\vmp]\Ci     \ar [r] ^{\relim}        \ar [d]
     & \cdn [\vmp]\Cii    \ar [r] ^{\rdiv^\Diii}   \ar [d]
     & \cdn [\vmp]\Ciii                            \ar [d]
-    \\ \ring{\wemb(\var)} \ar [r] ^{\wemb^*}
-    & \ring\opdef         \ar [r] ^{\I}
-    & \ring\opdef         \ar [r] ^{R \cdot \null}
-    & \ring\opdef         \ar [r] ^{\I}
-    & \ring\opdef
+    \\ \ringa{\wemb(\var)} \ar [r] ^{\wemb^*}
+    & \ringa\opdef         \ar [r] ^{\I}
+    & \ringa\opdef         \ar [r] ^{R \cdot \null}
+    & \ringa\opdef         \ar [r] ^{\I}
+    & \ringa\opdef
   }
 \end{equation}
 
 Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
 représente une réduction par division euclidienne par certaines relations de
 dépendance intégrale, les second permet d'éliminer les variables en utilisant
-des relations linéaires dans $\korper\var$ et correspond modulo $\varid$ à
+des relations linéaires dans $\korper\var$ et correspond modulo $\varida$ à
 une multiplication par une certaine forme $R$ de degré $r$ ne dépendant que de
 $\var$, de façon à éliminer les dénominateurs apparaissant dans ces relations
 linéaires. Notons qu'il est essentiel d'effectuer $\rdiv$ avant $\relim$ pour
@@ -946,7 +947,7 @@ assure que $R$ ne dépend en effet que de $\var$.
 
 Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
 notre objectif : il s'agira en fait de construire une forme $F \in
-\Ideal_{\delta d} \setminus \{0\}$ telle que
+\ideala{\delta d} \setminus \{0\}$ telle que
 \begin{equation}
   \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
   \in \vanish*
@@ -956,7 +957,7 @@ ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 \begin{equation}
   R \cdot \wemba(F)
   - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
-  \in \varid
+  \in \varida
   \subset \vanish
   \pmm.
 \end{equation}
@@ -964,27 +965,27 @@ ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
 sera composé des équations définissant $\vanish$ dans
 \( \cdn[\vmp]_{\delta d' + r'}^{C'''} \),
-tirées en arrière sur $\Ideal_{\delta d}$ par
+tirées en arrière sur $\ideala{\delta d}$ par
 \( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
-  \item calculer la codimension de $\Ideal_{\delta d}$ ;
-  \item calculer la codimension de $\vanish*$ dans
-    $\cdn[\vmp]_{\delta d' + r}^{C'''}$ et s'assurer qu'elle est plus
-    petite que la dimension précédente ;
-  \item expliciter les morphismes de la première ligne du diagramme et majorer
-    la hauteur de leurs matrices dans les bases monomiales évidentes.
+  \item Calculer la dimension de $\ideala{\delta d}$ et la codimension de
+    $\vanish*$ dans $\cdn[\vmp]_{\delta d' + r}^{C'''}$, et s'assurer que la
+    deuxième est plus petite que la première ;
+  \item Expliciter les morphismes \( \rdiv \) et \( \relim \) de la première
+    ligne du diagramme et majorer la hauteur de leurs matrices dans les bases
+    monomiales évidentes.
 \end{enumerate}
-
-Dans tous ces calculs, $\delta$ sera moralement arbitrairement grand devant
-les autres termes, on n'explicitera donc à chaque fois que le terme de plus
-haut degré en $\delta$ ; ainsi lorsqu'on utilisera la notation $o(\truc)$ ou
-$\sim$, il s'agira d'équivalents quand $\delta$ tend vers l'infini.
+Ces calculs font l'objet des deux sous-section suivantes.  Comme $\delta$ est
+arbitrairement grand devant les autres paramètres, on n'explicitera à chaque
+fois que le terme de plus haut degré en $\delta$ ; ainsi lorsqu'on utilisera
+la notation $o(\truc)$ ou $\sim$, il s'agira d'équivalents quand $\delta$ tend
+vers l'infini.
 
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
-La dimension de $\Ideal_{\delta d}$ est donnée par le théorème de
+La dimension de $\ideala{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
 $\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais il
 comme suffit en fait de minorer la dimension, le lemme suivant nous donne tout
@@ -997,7 +998,9 @@ ce qu'on aura besoin de savoir sur le degré.
     \bigl( \wemb(\var) \bigr)
     =
     \prod\fctrange
-    \vdeg* \wt ^{2\vdim*}
+    \vdeg*
+    \prod_{\fct=1}^{\puiss*}
+    \wt ^{2\vdim*}
     \pmm.
   \end{equation}
 \end{lem}
@@ -1014,8 +1017,9 @@ ce qu'on aura besoin de savoir sur le degré.
   hyperplans revient à imposer à $\point_\puiss$ de parcourir un ensemble de
   cardinal $\vdeg[\puiss]$.
 
-  Fixons maintenant un point $p$ dans cet ensemble. On constate que
-  $\wemb(\var) \cap \zeros{\vmp** = p}$ coïncide avec l'image de
+  Fixons maintenant un point $p'$ dans cet ensemble et notons $p = \wt** p'$.
+  On constate que $\wemb(\var) \cap \zeros{\vmp** = p}$ coïncide avec l'image
+  de
   \begin{align}
     \wemb[\wt, p]'
     \colon
@@ -1053,14 +1057,16 @@ ce qu'on aura besoin de savoir sur le degré.
   degré $\wts*$ qui coupent donc $\var*$ en $\vdeg*
   \wt*^{2\vdim*}$ points.
 
-  Le résultat suit en prenant le produit et en se rappelant que
-  $\wt[\puiss] = 1$.
+  Le résultat suit en prenant le produit.
 \end{proof}
 
 \begin{lem}
   Avec les notations précédentes, on a
+  \worknote{Ça ne marche plus avec \( \wt** \neq 1 \). Lemme précédent à
+    améliorer, idées à prendre chez \bsc{Farhi}. Pour l'instant on fait comme
+  si.}
   \begin{align}
-    \dim \Ideal_{\delta d}
+    \dim \ideala{\delta d}
     \ge
     \frac{ \epsz^{\vdim[\puiss]}
       \prod\fctrange \vdeg* \, \wt* ^{2\vdim*}
@@ -1076,7 +1082,7 @@ ce qu'on aura besoin de savoir sur le degré.
   utilisant le lemme précédent, car une somme de nombre positifs est minorée
   par chacun de ses termes. Il vient
   \begin{align}
-    \dim \Ideal_{\delta d}
+    \dim \ideala{\delta d}
     & =
     \Biggl(
     \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
@@ -1210,7 +1216,7 @@ dans \( (\stairs)\Ciii \).
 
 Au vu des deux lemmes précédents et de~\eqref{e:epsz-epsi-siegel}, on a
 \begin{equation} \label{e:good-codim}
-  \frac {\card (\stairs)\Ciii} {\dim \Ideal_{\delta d}}
+  \frac {\card (\stairs)\Ciii} {\dim \ideala{\delta d}}
   \le
   \frac12 + o(1)
   \pmm.
@@ -1406,7 +1412,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 
 \begin{proof}
   Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
-  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varid \) ;
+  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \) ;
   elle découle du fait qu'on a supposé le plongement adapté
   (scolie~\ref{s:plong-adapt}).
   En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
@@ -1419,7 +1425,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
     \sum_{\alpha = 0}^{\vdeg* - 1}
     \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
     \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\alpha
-    \mod \varid*
+    \mod \varida*
     \pmm.
   \end{equation}
   On obtient alors les familles \( S \) et \( T \) recherchées en multipliant
@@ -1428,8 +1434,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \end{proof}
 
 Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
-d'en savoir davantage sur \( R \) ni les \( N'_\fct \). On pourra néanmoins
-vouloir expliciter une valeur acceptable de \( R \) plus tard.
+d'en savoir davantage sur \( R \) ni les \( N'_\fct \).
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -1465,7 +1470,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \( \delta \) est assez grand, il existe une forme \( F \in \cdn [\vmp,
     \vmpi] \), multihomogène de degré \( \delta d \) (où l'on rappelle que \(
     d \) est défini par~\eqref{e:d-dp-def}), non nulle modulo \(
-    \ideal{\wemb(\var)} \), telle que \( R \cdot \wemba(F) \in \vanish \) et
+    \ideala{\wemb(\var)} \), telle que \( R \cdot \wemba(F) \in \vanish \) et
   \begin{equation}
     \hautl[\infty] F
     \le
@@ -1511,7 +1516,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
   multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
   \( M' \) les colonnes indexées par les monômes constituant la base choisie
-  de \( \Ideal_\Dz \) pour former la matrice \( M \) à laquelle nous allons
+  de \( \ideala\Dz \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
 
   La relation~\eqref{e:good-codim} se lit alors \( \frac pq \le \frac12 + o(1)
@@ -1592,7 +1597,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   proposition précédente, \( F' = \wemba(F) \) et \( F'' =
     \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F))) \). On a alors
   \begin{enumthm}
-    \item \( F'' = RF' \mod \varid \) et \( F'' \in \vanish* \) ;
+    \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish* \) ;
     \item \( \deg F'' = \deg RF' = \deg F' + o(\delta) \) ;
     \item \( \deg F' = \delta \bigl(
           \wts[1] (\frac94 + \epsz), \dots,
@@ -2120,8 +2125,8 @@ un morphisme \( \pmor \) de développement en série, qu'on représente par des
 morphismes \( \pmor*_\dv \) faisant commuter le diagramme
 \begin{equation} \label{pmor*-prod}
   \xymatrix{
-    \cdn[\vmp]_{(\varid)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
-    & \cdn[\vmp]_{(\varid)} \series\psmp  \ar[d]^\pi
+    \cdn[\vmp]_{(\varida)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
+    & \cdn[\vmp]_{(\varida)} \series\psmp  \ar[d]^\pi
     \\ \cdn(\var)                                     \ar[r]^{\pmor}
     & \cdn(\var)\series\psmp
   }
