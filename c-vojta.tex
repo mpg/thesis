@@ -1565,24 +1565,27 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautl[1] \) des
   colonnes de la matrice de \( \wemba \) est majorée par
   \begin{equation}
-    \bigl( \delta + o(\delta) \bigr)
-    \sum\fctirange \biggl(
-    2\wtis* \hautl[\infty] \coi
-    + \genre \wtis* \ln(4)
-    + \wtis* \ln(\dimp + 1)
-    \biggr)
+    \delta \wts[1]
+    \Bigl(
+      (1 + \epsiii) \bigl(
+        \ln \hclab + 2(\dimp*) \ln(\dimp*)
+      \bigr)
+      +
+      2 \dimp (\puiss*) \sum\fctrange \ln \vdegp*
+    \Bigr)
     \pmm,
   \end{equation}
   d'après le corollaire~\ref{c:hmat-rdiv} (et en remarquant que \( d'_\fct \le
-    2\puiss + \epsz \) pour tout \( \fct \)), celle des colonnes des matrices
-  de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) par
+    (2\puiss - 2 + \epsz) \wts* \) pour tout \( \fct \)), celle des colonnes
+  des matrices de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) par
   \begin{equation}
-    \bigl( \delta + o(\delta) \bigr)
-    (2\puiss + \epsz)
+    \delta
+    (2\puiss -2 + \epsz)
     \sum\fctrange \wts* \biggl(
-    \hautl[1]{\varfc*}
-    + \ln(2\vdeg*)
+      \hautl[1]{\varfc*}
+      + (\vdeg* (\vdim* + 1) + 1) \ln(4\vdegp*)
     \biggr)
+    + o(\delta)
     \pmm,
   \end{equation}
   et d'après le corollaire~\ref{c:hmat-relim} celle des colonnes de la matrice
