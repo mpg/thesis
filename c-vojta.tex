@@ -253,37 +253,36 @@ suivantes :
   à~\eqref{e:varset-ht}}
 \begin{align}
   \label{e:varset-deg}
-  \vdeg* & \le \Lambda^{f_1(u)} \quad \forall \fct
+  \vdeg* & \le \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \quad \forall \fct
   \\ \label{e:varset-deg-prod}
-  \prod\fctrange \vdeg* & \le (?) \Lambda^{f_1(u)}
+  \prod\fctrange \vdeg* & \le \Lambda^{f(u)}
   \\ \label{e:varset-ht}
-  \sum\fctrange \wts* \hautl{\var*}
-  & \le (\dots) \Lambda^{f_2(u)} \wts[1]
+  \sum\fctrange \wts* \hautl[1]{\var*}
+  & \le \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
+\worknote{Rémond p. 106 et 112}
 \begin{align}
-  \Lambda & = \text{ne dépend que des degrés et dimensions ambiantes}
-  \\
-  f_1 & = \text{est une fonction décroissante}
-  \\
-  f_2 & = \text{est une fonction décroissante}
+  \Lambda & = \stuffout{(6m)^{2m^2}} \\
+  f(u) & = \stuffout{\prod_{i=u+1}^{mg} (3i + 1) \le m^{3m^2 - u}} \\
+  \newcst[]{vs-deg-prod} & = \stuffout{(32m)^{m+3}} \\
+  \newcst[]{vs-ht} & = \stuffout{n^{m^2} \hautl[]\va}
 \end{align}
-qui ne dépendent pas du choix de \( \ex \), de sorte que l'ensemble \(
-  \varset(\ex) \) ne dépend de \( \ex \) que \lat{via} la condition \( \ex \in
-  \var \).
+de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
+par la condition \( \ex \in \var \).
 
 Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
 variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
 dans le cas contraire, on aurait \( \var* = \ex* \) pour un certain \( \fct
 \), ce dont on déduirait successivement
 \begin{alignat}{2}
-  \wts* \hautl{\ex*}
-  & \le (\dots) \Lambda^{f_2(u)} \wts[1]
-  &\quad& \text{par \eqref{e:varset-ht},}
+  \wts* \hautn{\ex*}
+  & \le 2\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+  &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
   \\
-  \wts[1] \hautl{\ex[1]}
-  & \le (1+\zeta) (\dots) \Lambda^{f_2(u)} \wts[1]
+  \wts[1] \hautn{\ex[1]}
+  & \le 3\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   && \text{par \eqref{e:wt-ratio},}
 \end{alignat}
 qui contredirait précisément \eqref{e:Vbig}.
