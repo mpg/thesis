@@ -517,9 +517,9 @@ On notera par ailleurs \( \poldep** \) une relation de dépendance de \(
 par l'application du fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans
 le plongement. L'estimation précédent et le fait cité donnent une majoration
 des normes locales de ces polynômes, qu'on peut en fait améliorer en
-\begin{equation}
+\begin{equation} \label{e:nv-poldep}
   \nv1{\poldep**} \le \nv1{\varfc*}
-  \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)}
+  \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
 \end{equation}
 en utilisant le début de la démonstration du lemme~4.2 de~\cite{remivds} (la
 suite de la démonstration étant moins pertinente compte tenu des différences
@@ -699,7 +699,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
   \text{ tel que }
   \lgr{p\mexp*} = \Dz*
   \text{ et }
-  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti}
+  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti} = \delta
   \pmm.
 \end{equation}
 
@@ -721,11 +721,9 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \hautm[1]{c_{p, q}}
     \le
     \left(
-      \hclab^{\wts[1] (1 + \epsiii)} \,
-      \Bigr( \prod\fctirange (\vdegp[\fcti])^{2\dimp\wtis*} \Bigl) \,
-      (\vdegp**)^{2\dimp(\puiss*)\wts**} \,
-      (\dimp**!)^\puiss
-    \right) ^\delta
+      \bigl( \hclab (\dimp*)!^2 \bigr)^{(1 + \epsiii)} \,
+      \prod\fctrange (\vdegp*) ^{2\dimp(\puiss*)}
+    \right) ^{\delta \wts[1]}
     \pmm.
   \end{equation}
 \end{lem}
@@ -756,9 +754,24 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}). Le résultat
-  annoncé suit en prenant le produit sur toutes les places, en invoquant le
-  lemme~\ref{l:epsiii-def} et en utilisant~\eqref{e:vadapt-inv-ht}.
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}). En prenant le
+  produit sur toutes les places (et en prenant la racine \( \delta \)-ième
+  pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-inv-ht}
+  \begin{align}
+    \hautm[1]{c_{p, q}}^{1/\delta}
+    & \le
+    \prod\fctirange
+    \hclab^{\wtis* + \wts**} \,
+    \bigr( (\dimp*)! (\vdegp[\fcti])^\dimp) \bigl)^{2 \wts[\fcti]} \,
+    \bigr( (\dimp*)! (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
+    \\ & \le
+    \prod\fctirange
+    \bigr( \hclab (\dimp*)!^2 \bigr)^{\wtis* + \wts**} \,
+    \bigr( \vdegp[\fcti] \bigl)^{2 \dimp \wts[\fcti]} \,
+    \bigr( \vdegp[\puiss] \bigl)^{2 \dimp \wts[\puiss]}
+  \end{align}
+  Le résultat annoncé suit en invoquant le lemme~\ref{l:epsiii-def} et en
+  majorant largement \( \wt* \) par \( \wt** \) et \( 1 \) par \( \puiss* \).
 \end{proof}
 
 
@@ -1329,15 +1342,21 @@ l'appliquer au cas qui nous intéresse.
   \begin{equation}
     \prod\fctrange \left(
     \nv1{ \varfc* }
-    \cdot ( 2 \vdeg* )^\dv
+    ( 4 \vdegp* )^{(\vdeg* (\vdim* + 1) + 1) \dv}
     \right) ^{ \delta d'_\fct }
     \cdot \expb^{ o(\delta) }
   \end{equation}
 \end{coro}
 
 \begin{proof}
-  Découle directement du lemme précédent en utilisant les relations de
-  dépendance fixées au dernier paragraphe du scolie~\ref{s:plong-adapt}.
+  Découle directement du lemme précédent en utilisant~\eqref{e:nv-poldep} et
+  en remarquant que
+  \begin{equation}
+    ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)} \cdot 2 \vdeg*
+    \le
+    ( 4 \vdegp* )^{\vdeg* (\vdim* + 1) + 1}
+  \end{equation}
+  car \( \vdeg* \le 2 \vdegp* \) par définition.
 \end{proof}
 
 Intéressons-nous maintenant au morphisme \( \relim \).
