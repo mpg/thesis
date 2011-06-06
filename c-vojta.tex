@@ -16,9 +16,9 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   les approximations}
 
 \begin{thm} \label{t:vojta-div}
-  Dans \( \va(\Qbar) \), il n'existe pas de famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) satisfaisant simultanément aux conditions
-  suivantes :
+  Pour tout réel \( 0 < \eps < 1 \), dans \( \va(\Qbar) \), il n'existe pas de
+  famille de points \( \ex[1], \dots, \ex[\puiss] \) satisfaisant
+  simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & < \hautm{\ex*}^{-\wtapx \expapx}
@@ -44,11 +44,14 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
     considérée}
   \begin{align}
-    \Vbig & = \dots (\puiss)
+    \Vbig & = \stuffout{\text{grand}}
     \\
-    \Vfar & = \dots (\puiss) \text{$>2$ pour \ref{l:epsiii-def}}
+    \Vfar & = \stuffout{\dots
+      \text{$>2$ pour \ref{l:epsiii-def} et \( \epsiii < 1 \)}}
     \\
-    \Vcos & = \dots (\puiss) \text{$<1/16$ pour \eqref{e:hautn-wt-diff}}
+    \Vcos & = \stuffout{\dots \text{$<1/16$ pour \eqref{e:hautn-wt-diff}}}
+    \\
+    \puiss & \ge \stuffout{g}
   \end{align}
 \end{thm}
 
