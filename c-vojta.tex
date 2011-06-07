@@ -2283,7 +2283,7 @@ Commençons par un lemme facile sur l'indice.
 \end{proof}
 
 On rappelle que \( \cexa \) désigne un système de coordonnées multihomogènes
-dans le plongement adapté du point \( \ex \) supposé contredire le
+(dans le plongement adapté) du point \( \ex \) supposé contredire le
 théorème~\ref{t:vojta-div} et qu'on peut tirer parti du
 scolie~\ref{s:part-cases}.  On choisit, pour tout \( \fct \), un indice \(
   \indv* \in \set{0, \dots, \vdim*} \) de sorte que \( \av{ \cexa*[\indv*] } \)
@@ -2314,7 +2314,7 @@ absolue représente à peu de chose près la norme de \( \cexa* \).
   pour tout \( \ind \in \set{\vdim* + 1, \dots, \dimp} \). On utilise le fait
   qu'on connaît des relations \( \poldep** \) liant chacune des dernières
   coordonnées aux premières et de norme contrôlée par~\eqref{e:nv-poldep}.  On
-  décomposant \( \poldep** \) suivant les puissance de \( \vmp** \) :
+  décomposant \( \poldep** \) suivant les puissances de \( \vmp** \) :
   \begin{equation}
     (\vmp**) ^{ \vdeg* }
     =
@@ -2347,10 +2347,11 @@ absolue représente à peu de chose près la norme de \( \cexa* \).
 On introduit ensuite le point \( \exi \in \va^{\puiss*} \) tel que \(
   \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi \) un système de coordonnées
 multihomogènes de ce point dans le plongement \( \Theta^{\puiss*} \).  On
-choisit alors \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \( \av{
-    \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
-tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
-    \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv} \).
+choisit alors pour tout \( \fcti \) un indice \( \indiv* \in \set{0, \dots,
+    \dimp} \) maximisant \( \av{ \cexi*[\indiv*] } \), ainsi que \( \indig*
+  \in \set{0, \dots, \dimp} \) tel que \( \cexi*[\indig*] \neq 0 \). Il est
+alors clair que \( \av{ \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv}
+\).
 
 \medskip
 
@@ -2364,7 +2365,7 @@ Introduisons maintenant une nouvelle fonction rationnelle définie par
   }{
     \vmp[][\vdim] ^{\epsz \wts \delta}
     \cdot
-    \wembcl[][\indig](\vmp) ^{ \delta }
+    \wembcl[][\indig*](\vmp) ^{ \delta }
   }
   \pmm,
 \end{equation}
@@ -2373,11 +2374,22 @@ où au dénominateur on a noté
   \wembcl[][\indig](\vmp) ^{ \delta }
   =
   \prod\fctirange \wembcl*[\indig](\vmp) ^{ \delta }
+  \qquad\text{et}\quad
+  \vmp[][\vdim] ^{\epsz \wts \delta}
+  =
+  \prod\fctrange ( \vmp*[\vdim*] )^{\epsz \wts* \delta}
   \pmm.
 \end{equation}
-D'après le lemme~\ref{l:indice-inversible}, \( f_1 \) et \( f_2 \) ont le même
-indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
-qui seront plus faciles à contrôler.
+(Par la suite, on utilisera ce genre de notations compactes sans toujours
+préciser leur sens, qu'on espère suffisamment évident.) La définition de \(
+  f_1 \) au début de cette section, celle de \( F'' \) au
+scolie~\ref{s:aux-co}, le choix des \( l_j \) et le scolie~\ref{s:part-cases}
+montrent que \( f_1 / f_2 \) est défini et inversible sur un voisinage de \(
+  \cex \) dans \( \var \).  Le lemme~\ref{l:indice-inversible} s'applique
+donc, montrant que \( f_1 \) et \( f_2 \) ont le même indice en \( \cex \).
+Il suffit dont d'estimer l'indice de \( f_2 \) ; nous allons commencer par
+décomposer cette fonctions en des facteurs sur lesquels nous aurons un bon
+contrôle.
 
 On commence par choisir pour chaque place \( \place \) une famille de formes
 \(
@@ -2441,10 +2453,11 @@ restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
 \end{align}
 
 Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
-  \der[\dermp] f_2 \neq 0 \). Comme les derniers facteurs de l'écriture
-précédente sont tous inversibles en \( \cex \), le
-lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
-
+  \der[\dermp] f_2(\ex) \neq 0 \). Comme les derniers facteurs de l'écriture
+précédente sont tous définis et inversibles en \( \cex \) grâces aux
+différents choix d'indice et au scolie~\ref{s:part-cases}, une nouvelle
+application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
+  f_2(\ex) \) est égal à
 \begin{equation}
   \der[\dermp]
     \frac{
@@ -2452,31 +2465,36 @@ lemme~\ref{l:indice-inversible} montre que \( \der[\dermp] f_2 \) est égal à
     }{
       \vmp[][\indv] ^{ \Diii }
     }
-  ( \cex )
+  ( \cexa )
   \cdot
   \left(
     \prod\fctirange
     \frac{
-      ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
-      ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+      ( \cexa[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \cexa[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \wembcl[\place, \fcti][\indiv*]( \cex )
+      \wembcl[\place, \fcti][\indiv*]( \cexa )
     }
   \right)^\delta
   \left(
-    \frac{ \wembcl[][\indiv](\cex) }{ \wembcl[][\indig](\cex) }
+    \frac{ \wembcl[][\indiv](\cexa) }{ \wembcl[][\indig](\cexa) }
   \right) ^{ \delta }
   \left(
-    \frac{ \cex[][\indv] }{ \cex[][\vdim] }
+    \frac{ \cexa[][\indv] }{ \cexa[][\vdim] }
   \right) ^{ \epsz \wts \delta + r }
 \end{equation}
-Nous allons maintenant estimer la valeur absolue de chacun des facteurs, en
-distinguant selon que \( \place \in \placesapx \) ou pas pour le premier
-facteur, et montrer que l'on contredit la formule du produit si \( \wtsum(
-  \dermp ) < \epsi \delta / \sigma \). Rappelons qu'on note \( \degv \) le
-degré local de \( \cdn \) en \( \place \).
+Pour démontrer la proposition, procédons par l'absurde et supposons que
+\( \wtsum( \dermp ) < \epsi \delta / \sigma \).  En estimer les valeurs
+absolues \( \place \)-adiques de chacun des facteurs, en distinguant selon que
+\( \place \in \placesapx \) ou pas pour le premier, nous allons montrer que
+l'on contredit la formule du produit sous cette hypothèse.
 
-Pour le facteur le plus à droite, on a facilement
+\newpage
+% XXX: à partir d'ici les valeurs sont approximatives voire fausses
+% XXX voir aussi \cexa vs \cex et le lien avec l'estimation pour \wembcl
+Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \)
+et traitons les facteurs un par un de droite à gauche. Pour le premier, on a
+facilement
 \begin{equation}
   \prod_\place
   \prod\fctrange
@@ -2489,8 +2507,7 @@ Pour le facteur le plus à droite, on a facilement
   \le
   \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wts[1]} \cdot o(\expb^\delta)
 \end{equation}
-De plus, en notant \( \exi \) l'image de \( \ex \) par la deuxième
-partie du plongement éclatant, on a
+Pour le second, il vient
 \begin{equation}
   \prod_\place
   \prod\fctirange
