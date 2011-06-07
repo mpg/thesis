@@ -277,51 +277,7 @@ Dans les grandes lignes, la preuve consistera donc à établir une inégalité �
 la \bsc{Mumford}, explicite, et à rendre explicites les constantes dans
 l'inégalité à la \bsc{Vojta} obtenue par \bsc{Faltings}.
 
-\subsection{Inégalité de \bsc{Mumford}}
-
-On montre une version de cette inégalité dans le cas particulier où la
-sous-variété à approcher est une variété abélienne.  L'énoncé obtenu est le
-suivant.
-
-\begin{thm} \label{t:mumford}
-  Soient $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
-  deux points de $\va(\Qbar)$ satisfaisant à la condition d'approximation
-  \eqref{e:has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
-  telles que si
-  \begin{enumthm}
-    \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
-    \item $\hautn{\point} \le \hautn{\pointi} \le (1+\rho) \hautn{\pointi}$ ;
-    \item $\hautn{\point} > B$ ;
-  \end{enumthm}
-  alors $\point - \pointi \in \vai(\Qbar)$.
-\end{thm}
-
-Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalement explicitées
-en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
-\eqref{e:has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
-du plongement ambiant.
-
-L'approche adoptée la suivante : étant donné deux points satisfaisant aux
-trois conditions du théorème, on considère leur différence $\pointii$. La
-géométrie euclidienne élémentaire montre qu'il est de petite hauteur
-normalisée, donc de petite hauteur projective. Une constante de comparaison
-explicite entre ces deux hauteurs est fournie par \cite{daphimhva2}.
-
-Il s'agit ensuite de montrer que cette différence reste une bonne
-approximation de $\vai$ : c'est ici qu'on utilise que $\vai$ est un groupe.
-Pour cela, on utilise la comparaison entre distance ponctuelle et distance
-algébrique établie dans \cite[p. 103]{phidg}, qu'on complète par une inégalité
-dans l'autre sens.  On se ramène ainsi à montrer que si des points sont
-proches, alors leur somme l'est aussi. Ce résultat est en lui-même trivial (la
-loi de groupe, algébrique, est lipschitzienne en toute place), mais expliciter
-une constante de \bsc{Lipschitz} nécessite d'utiliser assez soigneusement les
-formules d'addition de \cite{daphimhva2}.
-
-Une fois ceci établi, on constate que $\pointii$ est une très bonne
-approximation de $\vai$, de petite hauteur, suffisamment pour contredire
-l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
-$\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
-
+
 \subsection {Inégalité de \bsc{Vojta}}
 
 Le schéma général de cette partie de la preuve est commun à celui adopté dans
@@ -445,6 +401,52 @@ Si tout s'est bien passé, c'est fini : il ne reste plus (!) qu'à remonter les
 explications que j'ai données essentiellement dans l'ordre inverse de leur
 dépendance logique, et à vérifier que les constantes s'ajustent bien entre
 elles en raccordant les différentes étapes, et notamment la récurrence\dots
+
+
+\subsection{Inégalité de \bsc{Mumford}}
+
+On montre une version de cette inégalité dans le cas particulier où la
+sous-variété à approcher est une variété abélienne.  L'énoncé obtenu est le
+suivant.
+
+\begin{thm} \label{t:mumford}
+  Soient $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
+  deux points de $\va(\Qbar)$ satisfaisant à la condition d'approximation
+  \eqref{e:has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
+  telles que si
+  \begin{enumthm}
+    \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
+    \item $\hautn{\point} \le \hautn{\pointi} \le (1+\rho) \hautn{\pointi}$ ;
+    \item $\hautn{\point} > B$ ;
+  \end{enumthm}
+  alors $\point - \pointi \in \vai(\Qbar)$.
+\end{thm}
+
+Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalement explicitées
+en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
+\eqref{e:has}, de la dimension et de a hauteur de $\va$, ainsi que la dimension
+du plongement ambiant.
+
+L'approche adoptée la suivante : étant donné deux points satisfaisant aux
+trois conditions du théorème, on considère leur différence $\pointii$. La
+géométrie euclidienne élémentaire montre qu'il est de petite hauteur
+normalisée, donc de petite hauteur projective. Une constante de comparaison
+explicite entre ces deux hauteurs est fournie par \cite{daphimhva2}.
+
+Il s'agit ensuite de montrer que cette différence reste une bonne
+approximation de $\vai$ : c'est ici qu'on utilise que $\vai$ est un groupe.
+Pour cela, on utilise la comparaison entre distance ponctuelle et distance
+algébrique établie dans \cite[p. 103]{phidg}, qu'on complète par une inégalité
+dans l'autre sens.  On se ramène ainsi à montrer que si des points sont
+proches, alors leur somme l'est aussi. Ce résultat est en lui-même trivial (la
+loi de groupe, algébrique, est lipschitzienne en toute place), mais expliciter
+une constante de \bsc{Lipschitz} nécessite d'utiliser assez soigneusement les
+formules d'addition de \cite{daphimhva2}.
+
+Une fois ceci établi, on constate que $\pointii$ est une très bonne
+approximation de $\vai$, de petite hauteur, suffisamment pour contredire
+l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
+$\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 
 \section{Définitions et notations}

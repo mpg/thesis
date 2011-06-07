@@ -8,16 +8,16 @@
   % title+toc,
   %
   % c-intro,
-  % c-mumford,
   c-vojta,
+  % c-mumford,
   % c-union,
   %
-  a-plong,
+  % a-plong,
   % a-distv,
   % a-normes-mesures,
   %
-  biblio,
-  notations,
+  % biblio,
+  % notations,
 }
 
 \title{Approximation diophantienne \\ sur les variétés abéliennes}
@@ -26,12 +26,13 @@
 
 \inlineinclude{title+toc}{%
   \maketitle
+  \setcounter{tocdepth}{2}
   \listoftoc*{toc}
 }
 
 \include{c-intro}
-\include{c-mumford}
 \include{c-vojta}
+\include{c-mumford}
 \include{c-union}
 
 \appendix
