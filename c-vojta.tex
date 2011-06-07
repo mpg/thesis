@@ -2370,7 +2370,7 @@ où au dénominateur on a noté
 \begin{equation}
   \wembcl[][\indig](\vmp) ^{ \delta }
   =
-  \prod\fctirange \wembcl*[\indig](\vmp) ^{ \delta }
+  \prod\fctirange \wembcl*[\indig](\vmp[\fcti], \vmp[\puiss]) ^{ \delta }
   \qquad\text{et}\quad
   \vmp[][\vdim] ^{\epsz \wts \delta}
   =
@@ -2505,39 +2505,38 @@ toutes les places et que le numérateur est évidemment majoré par \(
   \nv\infty{\cexa[][\indv]} \), puis en appliquant le lemme~\ref{l:epsiii-def}
 et en majorant généreusement \( \epsiii \) par \( 1 \) dans son résultat.
 
-Pour le second, on écrit
+Pour le second, on commence avec les mêmes arguments pour écrire
 \begin{equation}
   \prod_\place
   \prod\fctirange
   \left(
-    \frac{ \av{\wembcl[][\indiv](\cex)} }{ \av{\wembcl[][\indig](\cex)} }
+    \frac{
+      \av{\wembcl[][\indiv](\cexa[\fcti], \cexa[\puiss])} }{
+      \av{\wembcl[][\indig](\cexa[\fcti], \cexa[\puiss])} }
   \right) ^{ \delta \degv }
   \le
   \prod\fctirange
-  \hautm[1]{ \exi* }^\delta
-  \le
-  \hautm[1]{ \ex[1] }^{\todots[epsiv] \delta}
-  \cdot \cst{exci}^{\todots[epsiv] \delta}
+  \hautm[\infty]{ \exi* }^\delta
 \end{equation}
-où la dernière comparaison utilise le lemme suivant.
-
-\begin{lem}
-  On a \(
-    \prod\fctirange
-    \hautm[1]{ \exi* }
-    \le
-    \hautm[1]{ \ex[1] }^{\todots[epsiv]}
-    \cdot \cst{exci}^{\todots[epsiv]}
-  \) avec
-  \begin{equation}
-    \newcst[]{exci} = \todots[epsiv]
-  \end{equation}
-\end{lem}
-
-\begin{proof}
-\end{proof}
-
-Enfin, grâce au choix des formules \( \wembcl[\place] \), on a
+puis on majore le logarithme de cette quantité comme suit
+\begin{align}
+  \delta \sum\fctirange \hautl[\infty]{ \exi* }
+  & \le
+  \delta \sum\fctirange \Bigl(
+    \hautl[\infty]{ \exi* }
+    + (4^\genre - 1) \vaht + 3\genre \ln2
+  \Bigr)
+  && \text{par le fait~\ref{f:comp-h-hn}}
+  \\ & \le
+  \delta (\puiss*) \bigl(
+    3 \Vcos \wts[1] \hautn{\ex[1]}
+    + 4^\genre \, \vaht + 3\genre
+  \bigr)
+  && \text{par~\eqref{e:hautn-wt-diff}}
+\end{align}
+% XXX
+Pour le facteur suivant, grâce au choix des formules \( \wembcl[\place] \), on
+a immédiatement
 \begin{equation}
   \prod_\place
   \left(
@@ -2554,7 +2553,7 @@ Enfin, grâce au choix des formules \( \wembcl[\place] \), on a
   \hclab^{2\wts[1] \delta}
 \end{equation}
 
-Passons maintenant au premier facteur. Remarquons pour commencer que
+Passons maintenant au dernier facteur. Remarquons pour commencer que
 \begin{equation}
   \nv1{ R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) }
   \le
