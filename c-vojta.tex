@@ -1688,7 +1688,14 @@ quelconque (plongée de façon adaptée) avant de passer à une variété produi
 
 Soit \( \anyvar \) une variété projective de dimension \( \anydim \), plongée
 de façon adaptée dans un espace projectif \( \projd \), de degré \( \anydeg \)
-dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie de
+dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie
+de\footnote{\label{fn:coord-deshom}Dans toute cette section on prendra \(
+    \vp[\anydim] \) (puis \( \vmp*[\vdim*] \) en multiprojectif) comme
+  variable de déshomogénéisation pour simplifier les notations, mais il est
+  clair qu'on pourrait utiliser n'importe quel indice entre \( 0 \) (puis \( 1
+  \) à partir du lemme~\ref{l:par-anyvar-mono}) et \( \anydim \) (et \( \vdim*
+  \) en multiprojectif).  Les morphismes et formes obtenus dépendront bien sûr
+  de ce choix, mais pas leurs propriétés.}
 \begin{equation}
   \cdn\Big(
     \frac{ \vp[0]           }{ \vp[\anydim] }, \dots,
@@ -2399,7 +2406,8 @@ donnée par l'application du lemme~\ref{l:hclab} au plongement \( \Theta \)
 comme à la section~\ref{sec:wemb}, mais en choissisant cette fois une famille
 par place. Indépendamment de \( \place \), les estimations de la section citée
 restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
-  \cexa[\puiss]) \) est proportionnel à \( \cexi* \). On écrit alors
+  \cexa[\puiss]) \) est proportionnel à \( \cexi* \). On écrit alors, pour
+tout \( \place \) :
 \begin{align}
   f_2
   & =
@@ -2456,7 +2464,7 @@ Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
 précédente sont tous définis et inversibles en \( \cex \) grâce aux
 différents choix d'indices et au scolie~\ref{s:part-cases}, une nouvelle
 application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
-  f_2(\ex) \) est égal à
+  f_2(\ex) \) est égal, pour tout \( \place \), à
 \begin{equation}
   \der[\dermp]
     \frac{
@@ -2483,8 +2491,9 @@ application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
   \right) ^{ \epsz \wts \delta + r }
 \end{equation}
 Pour démontrer la proposition, procédons par l'absurde et supposons que
-\( \wtsum( \dermp ) < \epsi \delta / \sigma \).  En estimer les valeurs
-absolues \( \place \)-adiques de chacun des facteurs, en distinguant selon que
+\( \wtsum( \dermp ) < \epsi \delta / \sigma \).  En estimant pour chaque \(
+  \place \) la valeur absolue \( \place \)-adiques de chacun des facteurs de
+l'expression ci-dessus, en distinguant selon que
 \( \place \in \placesapx \) ou pas pour le premier, nous allons montrer que
 l'on contredit la formule du produit sous cette hypothèse.
 
@@ -2586,10 +2595,15 @@ Passons maintenant au dernier facteur. Remarquons pour commencer que
   \cdot \expb^{o(\delta)}
 \end{equation}
 et que les facteurs \( \prod\fctirange \nv1{ \wembcl[\place, \fcti] }^\delta
-\) se simplifieront avec ceux de l'estimation précédente. Appliquons
-maintenant le lemme~\ref{l:par-var} à cette forme :
-% XXX
-\worknote{À adapter pour remplacer \( \vdim \) par une autre coordonnée ?}
+\) se simplifieront avec ceux de l'estimation précédente.
+
+\worknote{Voir que \( \indv \neq 0 \).}
+Le lemme~\ref{l:par-var} appliqué\footnote{En utilisant les \( \vmp*[\indv]
+  \) comme variables de déshomogénéisation, ce qui est loisible vu la
+  note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom} et le choix de \(
+    \indv \).} à \( R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) \) nous
+donne pour chaque \( \place \) une forme multihomogène \( P^\dermp_\place \)
+telle que
 \begin{equation}
   \der[\dermp]
     \frac{
@@ -2597,34 +2611,53 @@ maintenant le lemme~\ref{l:par-var} à cette forme :
     }{
       \vmp[][\indv] ^{ \Diii }
     }
-  ( \cex )
+  ( \cexa )
   =
-  \frac{ P^\dermp_\dv(\cex) }{ \cex[][\indv]^\Diii \pden(\cex)^{\vlg\dermp} }
+  \frac{ P^\dermp_\place(\cexa) }{
+    \cexa[][\indv]^\Diii \pden(\cexa)^{\vlg\dermp} }
   =
-  \frac{ P^\dermp_\dv(\cex) }{ \cex[][\indv]^{\deg P^\dermp_\dv } }
+  \frac{ P^\dermp_\place(\cexa) }{
+    \cexa[][\indv]^{\deg P^\dermp_\place } }
   \cdot
   \frac{
-    \cex[][\indv]^{\vlg\dermp \cdot \deg \pden}
+    \cexa[][\indv]^{\vlg\dermp \cdot \deg \pden}
   }{
-    \pden(\cex)^{\vlg\dermp}
+    \pden(\cexa)^{\vlg\dermp}
   }
   \pmm.
 \end{equation}
-On estime facilement le second facteur :
+On estime la hauteur du second facteur ainsi :
 \begin{equation}
   \prod_\place
   \prod\fctrange
   \frac{
-    \av{ \cex*[\indv] }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} \degv }
+    \av{ \cexa*[\indv] }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} \degv }
   }{
-    \av{ \pden_\fct(\cex*) }^{ \lgr{\dermp*} \degv }
+    \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
   }
-  =
-  \prod\fctrange
-  \hautm[\infty]{ \cex* }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} }
   \le
-  \hautm[1]{ \cex[1] }^{ \newcst[]{degdim} \wts[1] \epsi\delta/\sigma }
+  \prod\fctrange
+  \hautm[\infty]{ \cexa* }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} }
 \end{equation}
+puis, en passant au logarithme :
+\begin{align}
+  2 \dimp \sum\fctrange
+  \hautl[\infty]{ \cexa* } \vdeg* \lgr{\dermp*}
+  & \le
+  2 \dimp \puiss \sum\fctrange
+  \bigl( \hautn{ \ex* } + 4^\genre \vaht + 3\genre + \ln \vdegp* \bigr)
+  \wts* \vdeg* \frac{ \lgr{\dermp*} }{ \wts* (\puiss*) }
+  \\ & \le
+  \delta \wts[1] \cdot 2 \dimp \puiss B \, \frac{\epsi}{\sigma} \bigl(
+    \hautn{ \ex[1] } + 4^\genre \vaht + 3\genre + \ln B
+  \bigr)
+\end{align}
+où l'on a utilisé le fait~\ref{f:comp-h-hn} et~\eqref{e:vadapt-ht}
+puis~\eqref{e:wt-diff-hautn} et l'hypothèse sur \( \dermp \).
+
+
+
+
 Le premier facteur est majoré en valeur absolue par \( \nv1{ P^\dermp_\dv }
 \), qui est à peu près \( \nv1{ F } \cdot \nv1{ \varfc }^{\wts[1] \epsi\delta
     / \sigma } \). Cependant, aux places de \( \placesapx \), on peut obtenir
