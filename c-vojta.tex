@@ -2129,7 +2129,7 @@ monômes en \( \vp / \vp[\anydim] \).
 \end{proof}
 
 On souhaite maintenant étudier le développement en série des fonctions
-rationnelles sur notre variété produit \( \var \).  On étend les notations de
+rationnelles sur notre variété produit \( \var \).  On étend les notations
 précédentes au cas multi-homogène de la façon évidente. En particulier, on a
 un morphisme \( \pmor \) de développement en série, qu'on représente par des
 morphismes \( \pmor*_\dv \) faisant commuter le diagramme
@@ -2147,13 +2147,10 @@ et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
 Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
 morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
 avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
-produit tensoriel de ces morphismes. On note par ailleurs \( \pden_\fct =
-  \prod_{\ind=\vdim*+1}^{\dimp} \gmp\pden** \) où les \( \gmp\pden** \) sont
-donnés par le lemme cité.
-
-Nous allons maintenant contrôler l'image par \( \pmor* \) de fonctions
-particulières, en commençant par celles qui admettent un monôme en les \(
-  \vmp*[\vdim*] \) comme dénominateur.
+produit tensoriel de ces morphismes. On remarque que formes \( \gmp\pden** \)
+données par ces applications du lemme cité sont en fait celles définies au
+parapgraphe précédent le scolie~\ref{s:part-cases}.  Nous étudions maintenant
+l'image par \( \pmor* \) de certaines fonctions rationnelles.
 
 \begin{lem} \label{l:par-var}
   Soit \( G \) une forme multi-homogène de multidegré \( \alpha = (\alpha_1,
@@ -2172,7 +2169,7 @@ particulières, en commençant par celles qui admettent un monôme en les \(
         \le
         \nv1{ G }
         \prod\fctrange
-        \nv1{ \varfc* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
         \left(
           \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
             (\dimp - \vdim*) \lgr{\dermp*} }
