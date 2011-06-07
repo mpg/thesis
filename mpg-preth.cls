@@ -911,7 +911,7 @@
 
 \newcommand \Excep { e }
 \newcommand \cex   { \gmp\Excep }
-\newcommand \cexi  { \gmp{\Excep'}} % no space here!
+\newcommand \cexi  { \gmpi{\Excep'}} % no space here!
 \newcommand \cexa  { \gmp{\tilde\Excep}} % no space here!
 
 \newc@star@default \ex      {\fct }{\puiss } {\Excep\ssub{#1}}

@@ -348,7 +348,7 @@ contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$ puisqu'elle contient
 \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans.  On
 notera en outre $\vdim* = \dim \var*$ et $\vdim = \dim \var$ puis $\vdeg*
 = \deg \var*$, et $\varfc*$ une\footnote{\label{fn:varfc}Cette forme est
-  unique à multiplication par un scalaire près ; au besoin ou la supposera
+  unique à multiplication par un scalaire près ; au besoin on la supposera
   normalisée de sorte que toutes ses normes locales soient au moins \( 1 \).}
 forme de \bsc{Chow} de $\var*$. On note enfin $\varid$ l'idéal multihomogène
 saturé de $\var$ et $\varid*$ ceux de ses facteurs.
@@ -2234,11 +2234,11 @@ indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
 \).
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
-\( f_1 = F' / \vmp[][\vdim]^\Di \). Le but de cette section est alors de montrer
-la proposition suivante.
+\( f_1 = F'' / \vmp[][\vdim]^\Dii \). Le but de cette section est alors de
+montrer la proposition suivante.
 
 \begin{prop}
-  On a \( \inda**(f_2) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
+  On a \( \inda**(f_1) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
   que \dots
 \end{prop}
 
@@ -2376,10 +2376,16 @@ D'après le lemme~\ref{l:indice-inversible}, \( f_1 \) et \( f_2 \) ont le même
 indice en \( \cex \). Nous allons maintenant décomposer \( f_2 \) en facteurs
 qui seront plus faciles à contrôler.
 
-On commence par choisir pour chaque \( \place \) des formes \( \wembcl[\place,
-    \fcti] \) en appliquant le lemme~\ref{l:hclab} avec \( (\pp, \ppi) =
-  (\ex[\fcti], \ex[\puiss]) \) et \( (\alpha, \beta) = (\wti*, \wt**)
-\). On écrit alors
+On commence par choisir pour chaque place \( \place \) une famille de formes
+\(
+  \wembcl[\place, \fcti]
+  = L\pexp{\wti*, \wti**}[{\vadapt[\fcti](\ex*), \vadapt**(\ex**), \place}]
+\)
+donnée par l'application du lemme~\ref{l:hclab} au plongement \( \Theta \)
+comme à la section~\ref{sec:wemb}, mais en choissisant cette fois une famille
+par place. Indépendamment de \( \place \), les estimations de la section citée
+restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
+  \cexa[\puiss]) \) est proportionnel à \( \cexi* \). On écrit alors
 \begin{align}
   f_2
   & =
