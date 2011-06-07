@@ -347,9 +347,11 @@ satisfaisant aux hypothèses de la proposition ; en particulier elle n'est
 contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$ puisqu'elle contient
 \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans.  On
 notera en outre $\vdim* = \dim \var*$ et $\vdim = \dim \var$ puis $\vdeg*
-= \deg \var*$, et $\varfc*$ une forme de \bsc{Chow} de $\var*$. On note enfin
-$\varid$ l'idéal multihomogène saturé de $\var$ et $\varid*$ ceux de ses
-facteurs.
+= \deg \var*$, et $\varfc*$ une\footnote{\label{fn:varfc}Cette forme est
+  unique à multiplication par un scalaire près ; au besoin ou la supposera
+  normalisée de sorte que toutes ses normes locales soient au moins \( 1 \).}
+forme de \bsc{Chow} de $\var*$. On note enfin $\varid$ l'idéal multihomogène
+saturé de $\var$ et $\varid*$ ceux de ses facteurs.
 \nomuse{\vdeg*}[chap]{Le degré de \( \var* \)}
 \nomuse{\vdim*}[chap]{La dimension de \( \var* \)}
 \nomuse{\vdim }[chap]{La dimension de \( \var \)}
@@ -2283,23 +2285,33 @@ théorème~\ref{t:vojta-div} et qu'on peut tirer parti du
 scolie~\ref{s:part-cases}.  On choisit, pour tout \( \fct \), un indice \(
   \indv* \in \set{0, \dots, \vdim*} \) de sorte que \( \av{ \cexa*[\indv*] } \)
 soit maximal sous cette condition. Le lemme suivant montre que cette valeur
-absolue représente moralement la forme de \( \cexa* \).
+absolue représente à peu de chose près la norme de \( \cexa* \).
 
 \begin{lem} \label{l:coord-norm}
   Avec les notations précédentes, on a
   \begin{equation}
-    \av{ \cex*[\indv*] }
+    \av{ \cexa*[\indv*] }
     \ge
-    \nv1{ \cex* } \cdot \nv1{ \varfc* }^{-1} \dimp**^{-\dv}
+    \nv1{ \cexa }
+    \cdot \nv1{ \varfc* }^{-1}
+    \cdot ( 2 \vdegp* \dimp** )^{- \vdeg* (\vdim* + 1) \dv}
     \pmm.
   \end{equation}
 \end{lem}
 
-\begin{proof} \todo[Mettre à jour, cf plongement et~\eqref{e:nv-poldep}]
-  Il suffit de montrer qu'on a \( \av{ \cex** } \le \nv1{ \varfc* } \av{
-      \cex*[\indv] } \) pour tout \( \ind \in \set{\vdim* + 1, \dots, \dimp}
-  \).  En décomposant \( \poldep** \) suivant les puissance de \( \vmp** \),
-  on a
+\begin{proof}
+  Il suffit de montrer qu'on a
+  \begin{equation}
+    \av{ \cexa** }
+    \le
+    \av{ \cexa*[\indv] }
+    \cdot \nv1{ \varfc* }
+    \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
+  \end{equation}
+  pour tout \( \ind \in \set{\vdim* + 1, \dots, \dimp} \). On utilise le fait
+  qu'on connaît des relations \( \poldep** \) liant chacune des dernières
+  coordonnées aux premières et de norme contrôlée par~\eqref{e:nv-poldep}.  On
+  décomposant \( \poldep** \) suivant les puissance de \( \vmp** \) :
   \begin{equation}
     (\vmp**) ^{ \vdeg* }
     =
@@ -2310,23 +2322,23 @@ absolue représente moralement la forme de \( \cexa* \).
     \deg \poldep*[\ind, \alpha] = \alpha
     \text{ et }
     \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
-    \le \nv1{ \varfc* }
+    \le \nv1{ \poldep** }
   \end{equation}
-  En passant aux valeurs absolues et en divisant, il vient
+  On spécialise alors en \( \cexa \) et on prend les valeurs absolues :
   \begin{equation}
-    \av{ \cex** }
+    \av{ \cexa** }
     \le
     \sum_{ \alpha=1 }^{ \vdeg* }
     \poldep*[\ind, \alpha]
     \left(
-      \frac{ \av{\cex*[\indv]} }{ \av{\cex**} }
+      \frac{ \av{\cexa*[\indv]} }{ \av{\cexa**} }
     \right) ^{ \vdeg* - \alpha }
   \end{equation}
   Si le quotient apparaissant dans le membre de droite est inférieur à \( 1
-  \), notre assertion initiale est vérifiée. Sinon, elle l'est aussi, car
-  \( \varfc* \) est normalisé (scolie cité) de façon à ce qu'un de ses
-  coefficients soit \( 1 \) ce qui assure \( \nv1{ \varfc* } \ge 1 \) en toute
-  place.
+  \), notre assertion initiale est vérifiée compte tenu
+  de~\eqref{e:nv-poldep}.  Sinon, elle l'est aussi, car
+  \( \varfc* \) est normalisée (note~\ref{fn:varfc} page~\pageref{fn:varfc})
+  de façon à avoir \( \nv1{ \varfc* } \ge 1 \) en toute place.
 \end{proof}
 
 On introduit ensuite le point \( \exi \in \va^{\puiss*} \) tel que \(
