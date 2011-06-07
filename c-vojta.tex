@@ -2486,25 +2486,26 @@ absolues \( \place \)-adiques de chacun des facteurs, en distinguant selon que
 \( \place \in \placesapx \) ou pas pour le premier, nous allons montrer que
 l'on contredit la formule du produit sous cette hypothèse.
 
-\newpage
-% XXX: à partir d'ici les valeurs sont approximatives voire fausses
-% XXX voir aussi \cexa vs \cex et le lien avec l'estimation pour \wembcl
 Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \)
 et traitons les facteurs un par un de droite à gauche. Pour le premier, on a
-facilement
 \begin{equation}
   \prod_\place
   \prod\fctrange
   \left(
-    \frac{ \av{\cex[][\indv]} }{ \av{\cex[][\vdim]} }
+    \frac{ \av{\cexa[][\indv]} }{ \av{\cexa[][\vdim]} }
   \right) ^{ (\epsz \delta \wts* + r_\fct) \degv }
   \le
   \prod\fctrange
-  \hautm[\infty]{ \ex* }^{\epsz \delta \wts* + r_\fct}
+  \hautm[\infty]{ \cexa* }^{\epsz \delta \wts* + r_\fct}
   \le
-  \hautm[1]{ \ex[1] }^{2\puiss \epsz \delta \wts[1]} \cdot o(\expb^\delta)
+  \hautm[\infty]{ \ex[1] }^{2\epsz \delta \wts[1]} \cdot \expb^{o(\delta)}
 \end{equation}
-Pour le second, il vient
+en remarquant d'abord que le dénominateur disparaît en prenant le produit sur
+toutes les places et que le numérateur est évidemment majoré par \(
+  \nv\infty{\cexa[][\indv]} \), puis en appliquant le lemme~\ref{l:epsiii-def}
+et en majorant généreusement \( \epsiii \) par \( 1 \) dans son résultat.
+
+Pour le second, on écrit
 \begin{equation}
   \prod_\place
   \prod\fctirange
