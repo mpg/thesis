@@ -299,13 +299,14 @@ contradiction prouvant le théorème \ref{t:vojta-div}.
   Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
   Alors il existe un \( \fct \) et une forme \( T \) ne dépendant que de \(
     \vmp* \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \),
-  telle que
+  telle que \worknote{Rémond prop. 4.2 p. 118}
   \begin{align}
     \deg T
-    & \le \Lambda^{f_1(u)}
+    & \le \stuffout{\Lambda^{3u f(u)}}
     \\
-    \wts* \hautl T
-    & \le (\dots) \Lambda^{f_3(u)} \wts[1]
+    \wts* \hautl[1] T
+    & \le \stuffout{\newcst[]{vs-div-ht} \cst{vs-ht}
+      \Lambda^{(3u + 1/m) f(u)} \wts[1]}
     \pmm.
   \end{align}
 \end{prop}
@@ -321,8 +322,10 @@ Le théorème de \bsc{Bézout} donne alors
 \end{equation}
 et sa version arithmétique indique que
 \begin{equation}
-  \hautl{\var*'} \le \vdeg* \hautl{T} + \hautl{\var*} \deg T
-  + \text{cte(dimension)} \vdeg* \deg T
+  \stuffout{
+    \hautl{\var*'} \le \vdeg* \hautl{T} + \hautl{\var*} \deg T
+    + \text{cte(dimension)} \vdeg* \deg T
+  }
   \pmm,
 \end{equation}
 ce qui montre que \( \var' \in \varset(\ex) \) (au vu des constantes qui
