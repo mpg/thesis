@@ -606,7 +606,8 @@ annule simultanément) et contenant \( \ex \).
 Notons
 \(
   \wembcl*
-  = L\pexp{\wti*, \wti**}[{\vadapt[\fcti](\ex*), \vadapt**(\ex**), \place}]
+  = L\pexp{\wti*, \wti**}
+  [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
 \)
 une famille de formes bihomogènes donnée par l'application du
 lemme~\ref{l:hclab} au plongement \( \Theta \). Pour l'instant, la place
@@ -2391,7 +2392,8 @@ contrôle.
 On commence par choisir pour chaque place \( \place \) une famille de formes
 \(
   \wembcl[\place, \fcti]
-  = L\pexp{\wti*, \wti**}[{\vadapt[\fcti](\ex*), \vadapt**(\ex**), \place}]
+  = L\pexp{\wti*, \wti**}
+  [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
 \)
 donnée par l'application du lemme~\ref{l:hclab} au plongement \( \Theta \)
 comme à la section~\ref{sec:wemb}, mais en choissisant cette fois une famille
@@ -2438,7 +2440,7 @@ restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
       ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \wembcl[\place, \fcti][\indiv*]( \vmp )
+      \wembcl[\place, \fcti][\indiv*](\vmp[\fcti], \vmp[\puiss])
     }
   \right)^\delta
   \left(
@@ -2451,8 +2453,8 @@ restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
 
 Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
   \der[\dermp] f_2(\ex) \neq 0 \). Comme les derniers facteurs de l'écriture
-précédente sont tous définis et inversibles en \( \cex \) grâces aux
-différents choix d'indice et au scolie~\ref{s:part-cases}, une nouvelle
+précédente sont tous définis et inversibles en \( \cex \) grâce aux
+différents choix d'indices et au scolie~\ref{s:part-cases}, une nouvelle
 application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
   f_2(\ex) \) est égal à
 \begin{equation}
@@ -2470,7 +2472,7 @@ application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
       ( \cexa[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \cexa[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \wembcl[\place, \fcti][\indiv*]( \cexa )
+      \wembcl[\place, \fcti][\indiv*](\cexa[\fcti], \cexa[\puiss])
     }
   \right)^\delta
   \left(
@@ -2534,33 +2536,59 @@ puis on majore le logarithme de cette quantité comme suit
   \bigr)
   && \text{par~\eqref{e:hautn-wt-diff}}
 \end{align}
-% XXX
-Pour le facteur suivant, grâce au choix des formules \( \wembcl[\place] \), on
-a immédiatement
-\begin{equation}
-  \prod_\place
-  \left(
-    \prod\fctirange
-    \frac{
-      \nv1{ \wembcl[\place, \fcti][\indiv*] }
-      ( \cex[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
-      ( \cex[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
-    }{
-      \wembcl[\place, \fcti][\indiv*]( \cex )
+Pour le facteur suivant, les définitions de \( \wembcl[\place, \fcti] \) et de
+\( \indiv* \) ainsi que des majorations évidentes donnent
+\begin{align}
+  \frac{
+    \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
+    \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
+  }{
+    \av{ \wembcl[\place, \fcti][\indiv*](\cexa[\fcti], \cexa[\puiss]) }
+  }
+  & \le
+  \frac{
+    \nv1{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
+    \nv1{ \cexa[\puiss] }^{ 2\wts[\puiss] }
+  }{
+    \nv1{
+      L\pexp{\wti*, \wti**}
+      [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
+      (\cexa[\fcti], \cexa[\puiss])
     }
-  \right)^{ \delta \degv }
-  \le
-  \hclab^{2\wts[1] \delta}
-\end{equation}
+  }
+  (\dimp*)^\dv
+\end{align}
+En prenant le produit sur \( \fcti \) et \( \place \) et en élevant à la
+puissance \( \delta \), puis en applicant le résultat du lemme~\ref{l:hclab}
+on majore la contribution de ce facteur par
+\begin{align}
+  \prod\fctirange \Bigl(
+    \hclab^{\wtis* + \wts**}
+    \dimp**
+    \prod_\place
+    \nv1{ \wembcl[\place, \fcti] }^\degv
+  \Bigr)^\delta
+  & \le
+  \Bigl(
+    \hclab^{2\wts[1]}
+    \dimp**^{\puiss*}
+    \prod_\place \prod\fctirange
+    \nv1{ \wembcl[\place, \fcti] }^{-\degv}
+  \Bigr)^\delta
+\end{align}
 
 Passons maintenant au dernier facteur. Remarquons pour commencer que
 \begin{equation}
   \nv1{ R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) }
   \le
-  \nv1{ F } \nv1{ \wembcl }^\delta \cdot o(\expb^\delta)
+  \nv1{ F }
+  \prod\fctirange \nv1{ \wembcl[\place, \fcti] }^\delta
+  \cdot \expb^{o(\delta)}
 \end{equation}
-et que le facteur en \( \nv1{ \wembcl } \) a déjà été intégré à l'estimation
-précédente. Appliquons maintenant le lemme~\ref{l:par-var} à cette forme :
+et que les facteurs \( \prod\fctirange \nv1{ \wembcl[\place, \fcti] }^\delta
+\) se simplifieront avec ceux de l'estimation précédente. Appliquons
+maintenant le lemme~\ref{l:par-var} à cette forme :
+% XXX
 \worknote{À adapter pour remplacer \( \vdim \) par une autre coordonnée ?}
 \begin{equation}
   \der[\dermp]
