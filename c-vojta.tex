@@ -12,7 +12,7 @@ Le but du chapitre est donc de prouver le théorème suivant, où les notions de
 distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   \embedin \projd \) fixé, et \( \divi \) est l'hyperplan défini par \( \vp[0]
   = 0 \) dans ce plongement.
-\nomuse \divi [chap] {L'hyperplan à approché,  défini par \( \vp[0] = 0 \)}
+\nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
 
 \begin{thm} \label{t:vojta-div}
   Pour tout réel \( 0 < \eps < 1 \), dans \( \va(\Qbar) \), il n'existe pas de
@@ -2222,12 +2222,13 @@ posons
   =
   \frac {\lgr{\dermp[1]}} {\wts[1]} + \dots
   + \frac {\lgr{\dermp[\puiss*]}} {\wts[\puiss*]}
-  + \frac {\lgr{\dermp[\puiss]}} {\puiss*}
+  + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss*)}
 \end{equation}
 pour tout \( \dermp \in \N^{\lgr\vdim} \).  Si \( h \) est une forme
-multihomogène et \( \point \) où elle est définie, on définit son indice en \(
-  \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
-  \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq 0
+multihomogène et \( \point \) un point où elle est définie, on définit son
+indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
+  \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq
+  0
 \).
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
@@ -2276,28 +2277,13 @@ Commençons par un lemme facile sur l'indice.
   que les deux fonctions ont le même indice en \( \point \).
 \end{proof}
 
-On rappelle que \( \cex \) désigne un système de coordonnées multihomogènes du
-point \( \ex \) supposé contredire le théorème~\ref{t:vojta-div}. On peut
-supposer, d'après le scolie~\ref{s:part-cases}, qu'aucune des formes \(
-  \pden_\fct \) s'annulle en \( \cex* \) et qu'aucun des \( \cex** \) n'est
-nul ; ci-dessous on utilisera le fait que \( \cex*[\vdim*] \neq 0 \).  De
-même, on peut supposer que la forme \( R \) donnée par le
-corollaire~\ref{c:hmat-relim} ne s'annulle pas en \( \cex \).  \todo[Vérifier
-  que c'est bien le cas.]
-
-On choisit, pour tout \( \fct \), un indice \( \indv* \in \set{0, \dots,
-    \vdim*} \) de sorte que \( \av{ \cex*[\indv*] } \) soit maximal sous cette
-condition. De même, on choisit \( \indiv* \in \set{0, \dots, \dimp} \)
-maximisant \( \av{ \wembcl*[\indiv*](\cex) } \), ainsi que \( \indig* \in
-  \set{0, \dots, \dimp} \) tel que \( \wembcl*[\indig*](\cex) \neq 0 \). Notons
-que \( \indig \) et \( \indiv \) ne dépendent pas du choix des formules \(
-  \wembcl \) utilisées, et que \( \indig \) ne dépend pas de \( \place \).
-\todo[Introduire la notation \( \wembcl \) et d'ailleurs choisir une autre
-  lettre.]
-
-Il est alors clair que \( \av{ \wembcl*[\indiv*](\cex) } \ge \nv1{
-    \wembcl*(\cex) } \dimp**^{-\dv} \).  Le lemme suivant fournit un analogue
-pour les \( \indv* \).
+On rappelle que \( \cexa \) désigne un système de coordonnées multihomogènes
+dans le plongement adapté du point \( \ex \) supposé contredire le
+théorème~\ref{t:vojta-div} et qu'on peut tirer parti du
+scolie~\ref{s:part-cases}.  On choisit, pour tout \( \fct \), un indice \(
+  \indv* \in \set{0, \dots, \vdim*} \) de sorte que \( \av{ \cexa*[\indv*] } \)
+soit maximal sous cette condition. Le lemme suivant montre que cette valeur
+absolue représente moralement la forme de \( \cexa* \).
 
 \begin{lem} \label{l:coord-norm}
   Avec les notations précédentes, on a
@@ -2342,6 +2328,16 @@ pour les \( \indv* \).
   coefficients soit \( 1 \) ce qui assure \( \nv1{ \varfc* } \ge 1 \) en toute
   place.
 \end{proof}
+
+On introduit ensuite le point \( \exi \in \va^{\puiss*} \) tel que \(
+  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi \) un système de coordonnées
+multihomogènes de ce point dans le plongement \( \Theta^{\puiss*} \).  On
+choisit alors \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \( \av{
+    \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
+tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
+    \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv} \).
+
+\medskip
 
 Introduisons maintenant une nouvelle fonction rationnelle définie par
 \begin{equation}
