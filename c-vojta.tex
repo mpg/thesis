@@ -2534,14 +2534,12 @@ puis on majore le logarithme de cette quantité comme suit
   \delta \sum\fctirange \hautl[\infty]{ \exi* }
   & \le
   \delta \sum\fctirange \Bigl(
-    \hautl[\infty]{ \exi* }
-    + (4^\genre - 1) \vaht + 3\genre \ln2
+    \hautl[\infty]{ \exi* } + \htcmp
   \Bigr)
   && \text{par le fait~\ref{f:comp-h-hn}}
   \\ & \le
   \delta (\puiss*) \bigl(
-    3 \Vcos \wts[1] \hautn{\ex[1]}
-    + 4^\genre \, \vaht + 3\genre
+    3 \Vcos \wts[1] \hautn{\ex[1]} + \htcmp
   \bigr)
   && \text{par~\eqref{e:hautn-wt-diff}}
 \end{align}
@@ -2644,15 +2642,16 @@ puis, en passant au logarithme :
   \hautl[\infty]{ \cexa* } \vdeg* \lgr{\dermp*}
   & \le
   2 \dimp \puiss \sum\fctrange
-  \bigl( \hautn{ \ex* } + 4^\genre \vaht + 3\genre + \ln \vdegp* \bigr)
+  \bigl( \hautn{ \ex* } + \htcmp + \ln \vdegp* \bigr)
   \wts* \vdeg* \frac{ \lgr{\dermp*} }{ \wts* (\puiss*) }
   \\ & \le
   \delta \wts[1] \cdot 2 \dimp \puiss B \, \frac{\epsi}{\sigma} \bigl(
-    \hautn{ \ex[1] } + 4^\genre \vaht + 3\genre + \ln B
+    \hautn{ \ex[1] } + \htcmp + \ln B
   \bigr)
 \end{align}
 où l'on a utilisé le fait~\ref{f:comp-h-hn} et~\eqref{e:vadapt-ht}
-puis~\eqref{e:wt-diff-hautn} et l'hypothèse sur \( \dermp \).
+puis~\eqref{e:wt-diff-hautn} et l'hypothèse sur \( \dermp \), et noté \( B \)
+un majorant des \( \vdeg* \).
 
 Pour l'autre partie, on écrit
 \begin{equation}
@@ -2709,7 +2708,7 @@ On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
   \gmp\nu*[0] \hautn{\ex*}
   + \sum\fctrange \deg_\fcti P^\dermp_\place \left(
     \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
-    + \wtapx\expapx (4^\genre \vaht + 3\genre)
+    + \wtapx\expapx \htcmp
   \right)
 \end{align}
 et on majore enfin le premier terme de cette somme par
