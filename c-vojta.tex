@@ -2499,7 +2499,7 @@ l'on contredit la formule du produit sous cette hypothèse.
 
 Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \)
 et traitons les facteurs un par un de droite à gauche. Pour le premier, on a
-\begin{equation}
+\begin{equation} \label{e:der1}
   \prod_\place
   \prod\fctrange
   \left(
@@ -2537,7 +2537,7 @@ puis on majore le logarithme de cette quantité comme suit
     \hautl[\infty]{ \exi* } + \htcmp
   \Bigr)
   && \text{par le fait~\ref{f:comp-h-hn}}
-  \\ & \le
+  \\ & \le \label{e:der2}
   \delta (\puiss*) \bigl(
     3 \Vcos \wts[1] \hautn{\ex[1]} + \htcmp
   \bigr)
@@ -2575,7 +2575,7 @@ on majore la contribution de ce facteur par
     \prod_\place
     \nv1{ \wembcl[\place, \fcti] }^\degv
   \Bigr)^\delta
-  & \le
+  & \le \label{e:der3}
   \Bigl(
     \hclab^{2\wts[1]}
     \dimp**^{\puiss*}
@@ -2644,7 +2644,7 @@ puis, en passant au logarithme :
   2 \dimp \puiss \sum\fctrange
   \bigl( \hautn{ \ex* } + \htcmp + \ln \vdegp* \bigr)
   \wts* \vdeg* \frac{ \lgr{\dermp*} }{ \wts* (\puiss*) }
-  \\ & \le
+  \\ & \le \label{e:der4a}
   \delta \wts[1] \cdot 2 \dimp \puiss B \, \frac{\epsi}{\sigma} \bigl(
     \hautn{ \ex[1] } + \htcmp + \ln B
   \bigr)
@@ -2684,7 +2684,7 @@ la majoration ci-dessus et d'un autre de la forme
   \pmm,
 \end{equation}
 où \( \gmp\nu \) est tel que \( \wtsum*(\gmp\nu) \ge \delta \epsi (1 -
-  \frac1\sigma) \) d'après la fin du lemme~\ref{l:par-var} et l'hypothèse sur
+  \sigma^{-1}) \) d'après la fin du lemme~\ref{l:par-var} et l'hypothèse sur
 \( \dermp \). Or, en utilisant la construction de \( \vadapt* \) et
 l'hypothèse principale~\eqref{e:Vapx}, on a
 \begin{align}
@@ -2714,63 +2714,74 @@ On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 et on majore enfin le premier terme de cette somme par
 \begin{equation}
   - \delta \wts[1] \hautn{\ex[1]}
-  \wtapx\expapx \epsi (1 - \frac1\sigma) (1 - \sqrt{\Vcos})
+  \wtapx\expapx \epsi (1 - \sigma^{-1}) (1 - \sqrt{\Vcos})
+  \le
+  - \delta \wts[1] \hautn{\ex[1]}
+  \wtapx\expapx \epsi /2
   \pmm.
 \end{equation}
 
-En regroupant tout les termes qui constituent
-\( \frac{ P^\dermp_\place(\cexa) }{ \cexa[][\indv]^{\deg P^\dermp_\place } } \)
+En regroupant tous les termes qui constituent
+\( \frac{ P^\dermp_\place(\cexa) }{ \cexa[][\indv]^{\deg P^\dermp_\place} } \)
 puis en sommant sur \( \place \), on majore la hauteur logarithmique de ce
-terme par la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place
+facteur par la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place
   \notin \placesapx \) :
-
-
+\begin{multline}
+  \sum_\place \degv \Biggl(
+    - \delta \wts[1] \hautn{\ex[1]}
+    \wtapx\expapx \epsi /2
+    + \sum\fctrange \deg_\fcti P^\dermp_\place
+    \biggl(
+      \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
+      \\
+      + \wtapx\expapx \htcmp
+      + \ln \nv1{ \varfc* }
+      + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* \dimp** )
+    \biggl)
+    + \ln \nv1{P^\dermp_\place}
+  \Biggr)
+\end{multline}
 % XXX
+puis, en utilisant notamment le lemme~\ref{l:par-var} :
+\begin{align}
+  - \expapx \epsi /2
+  + \sum\fctrange \todots
+  \label{e:der4b}
+\end{align}
+
+\medskip
+
 En appliquant la formule du produit d'un côté et en mettant bout à bout les
-estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
+estimations \eqref{e:der1}, \eqref{e:der2}, \eqref{e:der3}, \eqref{e:der4a} et
+\eqref{e:der4b}, il vient
 \begin{align}
   0
   & \le
-  \delta \Bigl(
-    2\puiss \epsz \wts[1] \hautl{ \ex[1] }
-    +
-    2\puiss \todots[epsiv] \wts[1] \hautl{ \ex[1] }
-    + \wts[1] \todots[epsiv] \cst{exci}
-    +
-    2\wts[1] \log\hclab
-    +
-    \cst{degdim} \wts[1] \epsi \sigma^{-1} \hautl{ \ex[1] }
-    \\ & \qquad +
-    \wts[1] \epsi \sigma^{-1} (\hautl{ F } + \hautl{ \varfc })
-    +
-    2 \wts[1] \hautl{ \varfc }
-    -
-    \eps \epsi(1 - \sigma^{-1}) \wts[1] \hautl{ \ex[1] }
-  \Bigr)
-  + o(\delta)
-  \\ & \le
-  \delta \Bigl(
-    \wts[1] \hautl{ \ex[1] }
-    \bigl(
-      2\puiss \epsz + 2\puiss \todots[epsiv] + \cst{degdim} \epsi \sigma^{-1}
-      -
-      \eps \epsi(1 - \sigma^{-1})
-    \bigr)
-    + o( \wts[1] \hautl{ \ex[1] } )
-  \Bigr)
-  + o(\delta)
+  \delta \biggl(
+    \wts[1] \Bigl(
+      \hautn{\ex[1]} \bigl(
+        - \expapx \epsi /2
+        + \todots
+      \bigr) + o(\hautn{\ex[1]})
+    \Bigr) + o(\wts[1])
+  \biggr) + o(\delta)
 \end{align}
-ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautl{ \ex[1] }
-\) sont assez grands, pour peu que
+ce qui devient absurde dès que \( \delta \) et \( \wts[1] \hautn{\ex[1]} \)
+sont assez grands, pour peu que
 \begin{equation}
   \frac{
-    2\puiss \epsz + 2\puiss \todots[epsiv] + \cst{degdim} \epsi \sigma^{-1}
+    2 \todots
   }{
-    \epsi(1 - \sigma^{-1})
+    \epsi
   }
   \le
   \eps
 \end{equation}
+ce qui est précisément l'hypothèse fait en~\eqref{e:epsz-epsi-extra}. Il ne
+reste plus qu'à (!) expliciter les termes \( o(\hautn{\ex[1]}) \) et \(
+  o(\wts[1]) \) pour connaître les contraintes que doivent satisfaire
+\( \hautn{\ex[1]} \) (donc au fond \( \Vbig \)) et \( \wts[1] \) (soit au fond
+\( \Vfar \)). Yapuka.
 
 
 
