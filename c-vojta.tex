@@ -20,7 +20,7 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
-    & < \hautm{\ex*}^{-\wtapx \expapx}
+    & < \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \label{e:Vapx}
     \\
@@ -2300,7 +2300,7 @@ absolue représente à peu de chose près la norme de \( \cexa* \).
   \begin{equation}
     \av{ \cexa*[\indv*] }
     \ge
-    \nv1{ \cexa }
+    \nv\infty{ \cexa }
     \cdot \nv1{ \varfc* }^{-1}
     \cdot ( 2 \vdegp* \dimp** )^{- \vdeg* (\vdim* + 1) \dv}
     \pmm.
@@ -2585,8 +2585,7 @@ on majore la contribution de ce facteur par
     \nv1{ \wembcl[\place, \fcti] }^{-\degv}
   \Bigr)^\delta
 \end{align}
-
-Passons maintenant au dernier facteur. Remarquons pour commencer que
+Avant de passer au dernier facteur, remarquons de suite que
 \begin{equation}
   \nv1{ R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) }
   \le
@@ -2595,7 +2594,7 @@ Passons maintenant au dernier facteur. Remarquons pour commencer que
   \cdot \expb^{o(\delta)}
 \end{equation}
 et que les facteurs \( \prod\fctirange \nv1{ \wembcl[\place, \fcti] }^\delta
-\) se simplifieront avec ceux de l'estimation précédente.
+\) qui apparaîtront se simplifieront avec ceux de l'estimation précédente.
 
 \worknote{Voir que \( \indv \neq 0 \).}
 Le lemme~\ref{l:par-var} appliqué\footnote{En utilisant les \( \vmp*[\indv]
@@ -2655,60 +2654,79 @@ puis, en passant au logarithme :
 où l'on a utilisé le fait~\ref{f:comp-h-hn} et~\eqref{e:vadapt-ht}
 puis~\eqref{e:wt-diff-hautn} et l'hypothèse sur \( \dermp \).
 
-
-
-
-Le premier facteur est majoré en valeur absolue par \( \nv1{ P^\dermp_\dv }
-\), qui est à peu près \( \nv1{ F } \cdot \nv1{ \varfc }^{\wts[1] \epsi\delta
-    / \sigma } \). Cependant, aux places de \( \placesapx \), on peut obtenir
-une estimation plus fine.
-
-En effet, chaque monôme divisé intervenant dans le déshomogénéisé de \(
-  P^\dermp_\dv \) est composé d'un facteur des valeurs absolue inférieure à \(
-  1 \) et d'un facteur de la forme
+Pour l'autre partie, on écrit
+\begin{equation}
+  \frac{ P^\dermp_\place(\cexa) }{
+    \cexa[][\indv]^{\deg P^\dermp_\place } }
+  =
+  P^\dermp_\place \Biggl(
+    \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
+    \frac{ \cexa[\puiss] } { \cexa[\puiss][{\indv[\puiss]}] }
+  \Biggr)
+\end{equation}
+Il s'agit donc d'une combinaison linéaire (dont les coefficients sont ceux de
+\( P^\dermp_\place \)) monômes chacun majorés en valeur absolue par
 \begin{equation}
   \prod\fctrange
-  \left(
-    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
-  \right)^{\imp*[0]}
+  \Bigl(
+    \nv1{ \varfc* }
+    ( 2 \vdegp* \dimp** )^{\vdeg* (\vdim* + 1) \dv}
+  \Bigr)^{\deg_\fct P^\dermp_\place}
+\end{equation}
+d'après le lemme~\ref{l:coord-norm}.
+
+En fait, aux places de \( \placesapx \), on peut obtenir une estimation plus
+fine en remarquant que chaque monôme est composé d'un facteur satisfaisant à
+la majoration ci-dessus et d'un autre de la forme
+\begin{equation} \label{e:apx-temp}
+  \prod\fctrange \left(
+    \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
+  \right)^{\gmp\nu*[0]}
   \pmm,
 \end{equation}
-où \( \imp \) est tel que \( \wtsum*(\imp) \ge \epsi (1 - \frac1\sigma)
-  \delta \). Or, par le lemme~\ref{l:coord-norm} et l'hypothèse principale, on
-a \todo[Ne pas prendre le produit sur \( \place \) si tôt.]
-\begin{equation}
-  \prod\placerange
-  \left(
-    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
-  \right)^{\degv}
-  \le
-  \left(
-    \frac{ \av{ \cex*[0] } }{ \nv1{ \cex* } }
-    \nv1{ \varfc* } \dimp**^\dv
-  \right)^{\degv}
-  \le
-  \hautm[2]{ \ex* }^{-\eps}
-  \hautm[1]{ \varfc* } \dimp**^\dv
-\end{equation}
-Ainsi, \todo en négligeant pour l'instant les partie archimédiennes des
-constantes, on a
+où \( \gmp\nu \) est tel que \( \wtsum*(\gmp\nu) \ge \delta \epsi (1 -
+  \frac1\sigma) \) d'après la fin du lemme~\ref{l:par-var} et l'hypothèse sur
+\( \dermp \). Or, en utilisant la construction de \( \vadapt* \) et
+l'hypothèse principale~\eqref{e:Vapx}, on a
 \begin{align}
-  \prod\placerange
-  \prod\fctrange
-  \left(
-    \frac{ \av{ \cex*[0] } }{ \av{ \cex*[\indv*] } }
-  \right)^{\imp*[0] \degv}
+  \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
-  \prod\fctrange
-  \left(
-    \hautm[2]{ \ex* }^{-\eps}
-    \hautm[1]{ \varfc* } \dimp**^\dv
-  \right)^{ \imp*[0] }
+  \frac{ \av{ \cex*[0] } }{ \nv2{ \cex* } }
+  \sqrt{\dimp*}^\dv \nv\infty{\vadapt^{-1}}
   \\ & \le
-  \hautm[1]{ \ex[1] }^{ -\eps \epsi(1 - \frac1\sigma) \delta \wts[1] }
-  \hautm[1]{ \varfc }^{2 \wts[1] \delta }
+  \hautm[2]{\ex*}^{-\wtapx \expapx}
+  \sqrt{\dimp*}^\dv \nv\infty{\vadapt^{-1}}
 \end{align}
+On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
+\begin{align}
+  & -\wtapx\expapx \sum\fctrange
+  \gmp\nu*[0] \hautl[2]{\ex*}
+  + \sum\fctrange \gmp\nu*[0] \left(
+    \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
+  \right)
+  \\ & \le
+  -\wtapx\expapx \sum\fctrange
+  \gmp\nu*[0] \hautn{\ex*}
+  + \sum\fctrange \deg_\fcti P^\dermp_\place \left(
+    \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
+    + \wtapx\expapx (4^\genre \vaht + 3\genre)
+  \right)
+\end{align}
+et on majore enfin le premier terme de cette somme par
+\begin{equation}
+  - \delta \wts[1] \hautn{\ex[1]}
+  \wtapx\expapx \epsi (1 - \frac1\sigma) (1 - \sqrt{\Vcos})
+  \pmm.
+\end{equation}
 
+En regroupant tout les termes qui constituent
+\( \frac{ P^\dermp_\place(\cexa) }{ \cexa[][\indv]^{\deg P^\dermp_\place } } \)
+puis en sommant sur \( \place \), on majore la hauteur logarithmique de ce
+terme par la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place
+  \notin \placesapx \) :
+
+
+% XXX
 En appliquant la formule du produit d'un côté et en mettant bout à bout les
 estimations ci-dessus de l'autre, il vient, après avoir pris les logarithmes :
 \begin{align}
