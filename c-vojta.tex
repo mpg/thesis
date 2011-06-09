@@ -118,7 +118,7 @@ l'annexe~\ref{sec:form-ab-alt}.
   \begin{align}
     \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
     & \le \zeta \wts[1] \hautn{\ex[1]}
-    \\
+    \\ \label{e:wt-diff-normn-gen}
     \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
     & \le \frac\zeta2 \wt[1] \normn{\ex[1]}
   \end{align}
@@ -164,7 +164,7 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     && \text{d'après~\eqref{e:Vcos}}
     \\
     & \le \left( \frac\zeta2 \wt[1] \normn{\ex[1]} \right)^2
-    && \text{d'après~\eqref{e:wt-diff-normn}}
+    && \text{d'après~\eqref{e:wt-diff-normn-gen}}
     \\
     & \qquad + 2 \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
     && \text{d'après~\eqref{e:wt-ratio}}
@@ -187,9 +187,6 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     \\ \label{e:wt-diff-hautn}
     \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
     & \le \sqrt\Vcos \wts[1] \hautn{\ex[1]}
-    \\ \label{e:wt-diff-normn}
-    \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
-    & \le \frac{\sqrt\Vcos}2 \wt[1] \normn{\ex[1]}
   \end{align}
   d'après le lemme et le scolie précédents, en remarquant pour la première
   majoration que \( 1 + \zeta \le 5/4 \) car \( \Vcos \le 1/16 \).
