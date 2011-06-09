@@ -600,34 +600,32 @@ désigne la localisation de l'anneau des coordonnées au départ en un ouvert \(
 (c'est-à-dire qu'aucun des groupes de formes définissant le morphisme ne s'y
 annule simultanément) et contenant \( \ex \).
 
-Notons
-\(
-  \wembcl*
-  = L\pexp{\wti*, \wti**}
-  [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
-\)
-une famille de formes bihomogènes donnée par l'application du
-lemme~\ref{l:hclab} au plongement \( \Theta \). Pour l'instant, la place
-place \( \place \) est fixée arbitrairement, mais à la
-section~\ref{sec:vojta-extrap-core} nous serons amenés à considérer
-différentes familles pour les différentes places ; notons
-que les estimations de degré et de hauteur ci-dessous sont uniformément vraies
-quand \( \place \) varie.
-Il est alors clair que le morphisme donné par
+Introduisons des formes
+\begin{equation} \label{e:def-wembclv}
+  \wembclv*
+  = L\pexp{\wti*, \wti**}[{\ex[\fcti], \ex**, \place}]
+  \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp**) \bigr)
+\end{equation}
+où \( L\pexp{\wti*, \wti**}[{\ex[\fcti], \ex**, \place}] \) est une famille
+de formes bihomogènes donnée par l'application du lemme~\ref{l:hclab} au
+plongement \( \Theta \).
+
+Nous n'utiliserons les propriétés locales de ces familles qu'à la
+section~\ref{sec:vojta-extrap-core}. Pour les prochaines étapes de la
+démonstration nous avons néanmoins besoin de fixer une représentation ; pour
+tout \( \fcti \), posons donc \( \wembcl* = \def\place{v_0}\wembclv* \) pour
+une place \( v_0 \) fixée arbitrairement. Nous utiliserons désormais
 \begin{align}
      \wemba \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
   \\ \vmp*
   &  \mapsto \vmp*
   \\ \vmpi*
-  &  \mapsto \wembcl* \bigl(
-    \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp**)
-  \bigr)
+  &  \mapsto \wembcl*
 \end{align}
-est une représentation locale de \( \wemb \) au voisinage de \( \ex \) au
-sens précédent. Nous utiliserons désormais cette représentation ; commençons
-par étudier son action sur le degré et la hauteur. Le lemme suivant est
-une conséquence immédiate de la définition.
+comme une représentation locale de \( \wemb \) au voisinage de \( \ex \) au
+sens précédent. Étudions sans attendre son action sur le degré et la hauteur.
+Le lemme suivant est une conséquence immédiate de la définition.
 
 \begin{lem} \label{l:deg-wemba}
   Soit \( F \in \Qbar[\vmp, \vmpi] \) une forme multihomogène de multidegré \(
