@@ -812,14 +812,19 @@
 % helper macros [[
 \newc@star@deftwo@i \gmp  {\fct }{\ind} {\gmp@{#1}{#2}{#3}}
 \newc@star@deftwo@i \gmpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
-\newcommand*\gmp@ [3] {%
+\newc@star@deftwo@i \gmpiv{\fcti}{\indiv}{\gmp@{#1}[\place]{#2}{#3}}
+% generic multiprojective symbol:
+% #1 = factor number, #2 = optional prefix for this, see \gmpiv for \wembclv
+% #3 = coordinate in this factor,
+% #4 = symbol
+\newcommandx*\gmp@ [4][2] {%
   \@ifnotmtarg{#1}{%
-    \@ifmtarg{#2}{\boldsymbol}{}{%
+    \@ifmtarg{#3}{\boldsymbol}{}{%
       #1}}%
-  \pexp{#2}[{#3}]}
-\newcommand \mexp {\gmp{}}
-\newcommand*\gmmp [1] {
-  \underline{\underline{\boldsymbol{#1}}}}
+  % cannot say \pexp{\sfirst{#2}#3}[{#4}] cause it checks if #1 is empty
+  \@ifmtarg{#2}{\pexp{#3}[{#4}]}{\pexp{#2\slast{#3}}[{#4}]}
+}
+\newcommand \mexp {\gmp{}} % FIXME: p\mexp usage is stupid, use \gmp p
 % ]]
 
 \newc@ifstar@two \puiss {m} {m-1} {(m-1)}
@@ -956,7 +961,8 @@
 \nomdef \wemba g {z3} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées
   associé au plongement éclatant $\wemb$}
 
-\newcommand*\wembcl {\gmpi L}
+\newcommand*\wembcl  {\gmpi  L}
+\newcommand*\wembclv {\gmpiv L}
 \nomdef \wembcl a {L} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires
   utilisées dans \( \wemb \)}
 
