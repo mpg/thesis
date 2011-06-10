@@ -249,7 +249,8 @@ Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
 dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
 sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
   \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
-suivantes :
+suivantes, où les notions de degré et de hauteurs s'entendent dans le
+plongement \( \Theta^\puiss \) :
 \nomuse {\varset(\ex)} [chap] {Ensemble des variétés produit contenant \( \ex
   \) et satisfaisant aux conditions~\eqref{e:varset-deg}
   à~\eqref{e:varset-ht}}
@@ -266,13 +267,13 @@ suivantes :
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 \worknote{Rémond p. 106 et 112}
 \begin{align}
-  \Lambda & = \stuffout{(6m)^{2m^2}} \\
+  \Lambda & = \stuffout{(6m)^{2m^2}, \eps^{-1}} \\
   f(u) & = \stuffout{\prod_{i=u+1}^{mg} (3i + 1) \le m^{3m^2 - u}} \\
   \newcst[]{vs-deg-prod} & = \stuffout{(32m)^{m+3}} \\
   \newcst[\va]{vs-ht} & = \stuffout{n^{m^2} \vaht}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
-par la condition \( \ex \in \var \).
+par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
 
 Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
 variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
@@ -296,6 +297,7 @@ facteur réduit à un point, ce qui, nous venons de le voir, fournit la
 contradiction prouvant le théorème \ref{t:vojta-div}.
 
 \begin{prop} \label{p:varset-notmin}
+  \worknote{Où utilise-t-on l'hypothèse sur la dimension ?}
   Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
   Alors il existe un \( \fct \) et une forme \( T \) ne dépendant que de \(
     \vmp* \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \),
@@ -336,30 +338,39 @@ seront déterminées par ce point) et que \( \var \) n'était pas minimale.
 Il suffit donc d'établir la proposition \ref{p:varset-notmin} pour prouver le
 théorème \ref{t:vojta-div} ; la démonstration de cette proposition nous
 occupera le reste du chapitre. L'intérêt de l'énoncer immédiatement plutôt
-qu'au moment où nous serons en mesure de l'établir et de pouvoir écarter
-d'emblée quelques cas particuliers pour lesquels la méthode qui suit ne
-s'applique pas (mais qui sont heureusement immédiats). Auparavant nous
-introduirons quelques hypothèses commodes sur les coordonnées projectives
-utilisées.
+qu'au moment où nous serons en mesure de l'établir est de pouvoir écarter
+rapidement quelques cas particuliers pour lesquels la méthode qui suit ne
+s'applique pas (mais qui sont heureusement immédiats). Nous énoncerons ces cas
+à la fin de la section suivante après avoir introduit le système de
+coordonnées dans lequel ils s'expriment naturellement.
 
-Désormais et jusqu'à la fin du chapitre, nous fixons une variété
-\nomuse \var [chap]{Une variété \( \var[1] \times \dots \times \var[\puiss] \)
-  appartenant à \( \varset(\ex) \), dont aucun facteur n'est de dimension
-  nulle} \( \var = \var[1] \times \dots \times \var[\puiss] \)
-satisfaisant aux hypothèses de la proposition ; en particulier elle n'est
-contenue dans aucun hyperplan d'équation $\vmp*[0] = 0$ puisqu'elle contient
-\( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans.  On
-notera en outre $\vdim* = \dim \var*$ et $\vdim = \dim \var$ puis $\vdeg*
-= \deg \var*$, et $\varfc*$ une\footnote{\label{fn:varfc}Cette forme est
-  unique à multiplication par un scalaire près ; au besoin on la supposera
-  normalisée de sorte que toutes ses normes locales soient au moins \( 1 \).}
-forme de \bsc{Chow} de $\var*$. On note enfin $\varid$ l'idéal multihomogène
-saturé de $\var$ et $\varid*$ ceux de ses facteurs.
-\nomuse{\vdeg*}[chap]{Le degré de \( \var* \)}
-\nomuse{\vdim*}[chap]{La dimension de \( \var* \)}
-\nomuse{\vdim }[chap]{La dimension de \( \var \)}
-\nomuse{\varfc*}[chap]{Une forme de \bsc{Chow} de \( \var* \)}
-\nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \)}
+\begin{tdef} \label{d:var&co}
+  \nomuse \var [chap]{Une variété de \( \varset(\ex) \),
+    définition~\ref{d:var&co}}
+  \nomuse{\vdeg*}[chap]{Le degré de \( \var* \), définition~\ref{d:var&co}}
+  \nomuse{\vdim*}[chap]{La dimension de \( \var* \),
+    définition~\ref{d:var&co}}
+  \nomuse{\vdim }[chap]{La dimension de \( \var \), définition~\ref{d:var&co}}
+  \nomuse{\varfc*}[chap]{Une forme de \bsc{Chow} de \( \var* \),
+    définition~\ref{d:var&co}}
+  \nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \),
+    définition~\ref{d:var&co}}
+  Désormais et jusqu'à la fin du chapitre, nous fixons une variété
+  \( \var = \var[1] \times \dots \times \var[\puiss] \) satisfaisant aux
+  hypothèses de la proposition ; en particulier elle n'est contenue dans aucun
+  hyperplan d'équation \( \vmp*[0] = 0 \) puisqu'elle contient
+  \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans, et
+  aucun de ces facteurs n'est réduit à un point.
+
+  On notera en outre \( \vdim* = \dim \var* \) et \( \vdim = \dim \var \) puis
+  \( \vdeg* = \deg \var* \), et \( \varfc* \) une
+  \footnote{\label{fn:varfc}Cette forme est unique à multiplication par un
+    scalaire près ; au besoin on la supposera normalisée de sorte que toutes
+    ses normes locales soient au moins \( 1 \), par exemple en faisant en
+    sorte qu'un de ses coefficients soit \( 1 \).}
+  forme de \bsc{Chow} de \( \var* \). On note enfin \( \varid \) l'idéal
+  multihomogène saturé de $\var$ et $\varid*$ ceux de ses facteurs.
+\end{tdef}
 
 De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
 homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on
@@ -371,7 +382,7 @@ désignera une famille d'entiers.
 
 \begin{tdef} \label{d:plong-adapt}
   Suivant \cite{remivg}, si \( \anyvar \) est une variété de dimension
-  \( \anydim \) est \( \projd \) un espace projectif muni de coordonnées
+  \( \anydim \) et \( \projd \) un espace projectif muni de coordonnées
   homogènes \( \anyvp[0], \dots, \anyvp** \), on dit qu'un plongement
   \( \iota\colon \anyvar \embedin \proj\dimp \) est adapté si
   \begin{enumthm}
@@ -443,8 +454,8 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   Il existe une transformation linéaire $\chi \in \GL_{\dimp*}(\Q)$,
   représentable par une matrice à coefficients entiers de
   valeur absolue (archimédienne) majorée par $\max(\frac\anydeg2, 1)$, telle
-  que $\chi \circ \iota$ est un plongement adapté et que $\anyvp[0]$ soit
-  invariant par ce changement de coordonnées.
+  que $\chi \circ \iota$ est un plongement adapté à \( \anyvar \) et que
+  $\anyvp[0]$ soit invariant par ce changement de coordonnées.
 \end{lem}
 
 \begin{proof}
@@ -484,28 +495,23 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
   archimédienne.
 \end{proof}
 
+\begin{tdef}
 On fixe désormais des transformations linéaires \( \vadapt* \) obtenues en
-appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \) et on note \(
-  \vdegp* = \max(\vdeg*/2, 1) \). On peut donc supposer que \( \vadapt* \) est
-représenté par une matrice (que l'on notera également \( \vadapt* \) par abus)
-telle que
-\begin{align} \label{e:vadapt-ht}
-  \nnv\infty{\vadapt*}
-  & \le
-  (\vdegp*)^\dv
-  &
+appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \), de sorte que
+\( \vadapt* \circ \Theta \) est adapté à \( \var* \) et on note \(
+  \vdegp* = \max(\vdeg*/2, 1) \).
+\end{tdef}
+
+La construction et le lemme précédent montrent alors que
+\begin{equation} \label{e:vadapt-ht}
   \hautm[\infty]{\vadapt*}
-  & \le
+  \le
   \vdegp*
-  \\ \label{e:vadapt-inv-ht}
-  \nnv\infty{\vadapt*^{-1}}
-  & \le
-  (\dimp + 1 - \dv)! \cdot (\vdegp*)^{\dimp + 1 - \dv}
-  &
+  \qquad\text{et}\qquad
   \hautm[\infty]{\vadapt*^{-1}}
-  & \le
+  \le
   \dimp! \cdot (\vdegp*)^{\dimp}
-\end{align}
+\end{equation}
 On note \( \varida* \) l'idéal homogène saturé de \( \var* \) dans le
 plongement \( \vadapt* \circ \Theta \) et \( \varfca* \) une forme de
 \bsc{Chow} de \( \var* \) dans ces coordonnées. Le théorème de l'élimination
@@ -520,7 +526,7 @@ alors clair que
 On notera par ailleurs \( \poldep** \) une relation de dépendance de \(
   \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée
 par l'application du fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans
-le plongement. L'estimation précédent et le fait cité donnent une majoration
+le plongement. L'estimation précédente et le fait cité donnent une majoration
 des normes locales de ces polynômes, qu'on peut en fait améliorer en
 \begin{equation} \label{e:nv-poldep}
   \nv1{\poldep**} \le \nv1{\varfc*}
@@ -528,14 +534,16 @@ des normes locales de ces polynômes, qu'on peut en fait améliorer en
 \end{equation}
 en utilisant le début de la démonstration du lemme~4.2 de~\cite{remivds} (la
 suite de la démonstration étant moins pertinente compte tenu des différences
-de normes utilisées).
+de normes utilisées). Cependant, nous utiliserons souvent la majoration plus
+évidente \( \nv1{\poldep**} \le \nv1{\varfca*} \) dans les estimations où
+cette quantité apparaît déjà par ailleurs.
 
 On introduit ensuite \( \pden** \) la dérivée de \( \poldep** \) par rapport à
 la dernière variable et \( \pden* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
 Enfin, on notera \( (\cex**)_\ind \) un système de coordonnées
 multihomogène de \( \ex* \) dans le plongement \( \Theta \) et \(
-  (\cexa**)_\ind \) son image par \( \vadapt* \).  Nous pouvons maintenant
-énoncer les cas particuliers à exclure dans la démonstration de la
+  (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).  Nous pouvons
+maintenant énoncer les cas particuliers à exclure dans la démonstration de la
 proposition~\ref{p:varset-notmin}.
 
 \begin{scho} \label{s:part-cases}
@@ -760,7 +768,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
     \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}). En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
-  pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-inv-ht}
+  pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht}
   \begin{align}
     \hautm[1]{c_{p, q}}^{1/\delta}
     & \le
@@ -2668,7 +2676,7 @@ puis, en passant au logarithme :
   \bigr)
 \end{align}
 où l'on a utilisé le fait~\ref{f:comp-h-hn} et~\eqref{e:vadapt-ht}
-puis~\eqref{e:wt-diff-hautn} et l'hypothèse sur \( \dermp \), et noté \( B \)
+puis~\eqref{e:wt-ratio} et l'hypothèse sur \( \dermp \), et noté \( B \)
 un majorant des \( \vdeg* \).
 
 Pour l'autre partie, on écrit
