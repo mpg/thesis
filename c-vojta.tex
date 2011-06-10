@@ -46,9 +46,9 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     \Vbig & = \stuffout{\text{grand}}
     \\
     \Vfar & = \stuffout{\dots
-      \text{$>4$ pour \ref{l:epsiii-def}}}
+      \text{$>4$ pour \ref{l:sum-wt*}}}
     \\
-    \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:epsiiidef}}}
+    \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:sum-wt*}}}
     \\
     \puiss & \ge \stuffout{g}
   \end{align}
@@ -211,10 +211,10 @@ précisément, dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
   (1+\zeta) \cdot \frac{\wts[1]}{\Vfar^{\fct-1}}
 \end{equation}
 en appliquant directement la définition de \( \wt* \). On peut ainsi majorer
-des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
-\) ; par exemple, l'énoncé suivant nous sera utile par la suite.
+des sommes faisant intervenir les \( \wts* \) en fonction de \( \wts[1] \) ;
+par exemple, l'énoncé suivant nous sera utile par la suite.
 
-\begin{lem} \label{l:epsiii-def}
+\begin{lem} \label{l:sum-wt*}
   On a \(
     \sum_{\fct=1}^\puiss (\wts* + \wts**) \le 2 \wts[1]
   \).
@@ -725,7 +725,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \hautm[1]{c_{p, q}}
     \le
     \left(
-      \bigl( \hclab (\dimp*)!^2 \bigr)^{(1 + \epsiii)} \,
+      \bigl( \hclab (\dimp*)!^2 \bigr)^2 \,
       \prod\fctrange (\vdegp*) ^{2\dimp(\puiss*)}
     \right) ^{\delta \wts[1]}
     \pmm.
@@ -774,7 +774,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \bigr( \vdegp[\fcti] \bigl)^{2 \dimp \wts[\fcti]} \,
     \bigr( \vdegp[\puiss] \bigl)^{2 \dimp \wts[\puiss]}
   \end{align}
-  Le résultat annoncé suit en invoquant le lemme~\ref{l:epsiii-def} et en
+  Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wt*} et en
   majorant largement \( \wt* \) par \( \wt** \) et \( 1 \) par \( \puiss* \).
 \end{proof}
 
@@ -1562,7 +1562,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \begin{equation}
     \delta \wts[1]
     \Bigl(
-      (1 + \epsiii) \bigl(
+      2 \bigl(
         \ln \hclab + 2(\dimp*) \ln(\dimp*)
       \bigr)
       +
@@ -1591,7 +1591,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     & \le
     4\puiss \sum\fctrange \wts* \hautl[1]{\varfc*}
     + \wts[1] \Bigl(
-      (1 + \epsiii) \bigl( \ln \hclab + 2(\dimp*) \ln(\dimp*) \bigr)
+      2 \bigl( \ln \hclab + 2(\dimp*) \ln(\dimp*) \bigr)
       \\ & \qquad
       + \sum\fctrange \bigl(
         2 \dimp (\puiss*) \ln \vdegp*
@@ -2531,8 +2531,8 @@ et traitons les facteurs un par un de droite à gauche. Pour le premier, on a
 \end{equation}
 en remarquant d'abord que le dénominateur disparaît en prenant le produit sur
 toutes les places et que le numérateur est évidemment majoré par \(
-  \nv\infty{\cexa[][\indv]} \), puis en appliquant le lemme~\ref{l:epsiii-def}
-et en majorant généreusement \( \epsiii \) par \( 1 \) dans son résultat.
+  \nv\infty{\cexa[][\indv]} \), puis en appliquant le
+lemme~\ref{l:sum-wt*}.
 
 Pour le second, on commence avec les mêmes arguments pour écrire
 \begin{equation}

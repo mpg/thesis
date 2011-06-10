@@ -1028,11 +1028,9 @@
 % Note: no additional braces, or \expi\sp2 would be typeset incorrectly
 \newcommand \epsz   {\eps\sb0}
 \newcommand \epsi   {\eps\sb1}
-\newcommand \epsiii {\eta}
 
 \nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
 \nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
-\nomdef \epsiii g {e2}
 
 % local indices for extrapolation [[2
 %
