@@ -3,7 +3,7 @@
 \chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
 
 
-\section{Stratégie de la preuve}
+\section{Stratégie de la preuve et préliminaires}
 
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est un hyperplan (ne contenant pas \(
@@ -46,9 +46,9 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     \Vbig & = \stuffout{\text{grand}}
     \\
     \Vfar & = \stuffout{\dots
-      \text{$>2$ pour \ref{l:epsiii-def} et \( \epsiii < 1 \)}}
+      \text{$>4$ pour \ref{l:epsiii-def}}}
     \\
-    \Vcos & = \stuffout{\dots \text{$<1/16$ pour \eqref{e:hautn-wt-diff}}}
+    \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:epsiiidef}}}
     \\
     \puiss & \ge \stuffout{g}
   \end{align}
@@ -72,7 +72,7 @@ l'annexe~\ref{sec:form-ab-alt}.
 \begin{lem} \label{l:wt-choose-gen}
   Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
     3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, \puiss} \) :
-  \begin{equation} \label{e:wt-ratio}
+  \begin{equation} \label{e:wt-ratio-gen}
     \frac1{1 + \zeta}
     \le
     \frac{ \wts* \hautn{\ex*} }{ \wts[1] \hautn{\ex[1]} }
@@ -108,26 +108,27 @@ l'annexe~\ref{sec:form-ab-alt}.
   entiers \( b_{\fct2} \) et \( b_{\fct3} \) tels que cette dernière condition
   soit satisfaite.
 
-  Il reste plus qu'à définir \( \wt[1] \) comme le plus petit dénominateur
-  commun des \( b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \(
-    \fct > 1 \).
+  Il reste plus qu'à définir \( \wt[1] \) comme une dénominateur commun des \(
+    b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \( \fct > 1
+  \). Notons que ceci nous permet de choisir les \( \wt* \) arbitrairement
+  grands, car seuls leurs rapports compte.
 \end{proof}
 
-\begin{scho} \label{s:wt-diff-small}
-  Pour toute famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
-  \begin{align}
-    \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
-    & \le \zeta \wts[1] \hautn{\ex[1]}
-    \\ \label{e:wt-diff-normn-gen}
-    \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
-    & \le \frac\zeta2 \wt[1] \normn{\ex[1]}
-  \end{align}
-\end{scho}
-
-Ces inégalités découlent immédiatement de l'encadrement donné en utilisant les
-comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
-  \zeta)^{1/2} \le 1 + \zeta/2 \) et le fait que \( \hautn\truc =
-  \normn\truc^2 \) par définition de la norme de \NT.
+En utilisant les inégalités élémentaires \( (1 + \zeta)^{-1} \ge 1 - \zeta \)
+et \( (1 + \zeta)^{1/2} \le 1 + \zeta/2 \), on en déduit facilement que pour
+toute famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio}, on a
+\begin{equation} \label{e:wt-diff-normn-gen}
+  \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
+  \le
+  \frac\zeta2 \wt[1] \normn{\ex[1]}
+  \quad\text{et}\quad
+  \abs[\big]{ \wt* \normn{\ex*} - \wt[\fcti] \normn{\ex[\fcti]} }
+  \le
+  \zeta \wt[1] \normn{\ex[1]}
+\end{equation}
+pour tous \( \fct \) et \( \fcti \), où \( \hautn\truc = \normn\truc^2 \)
+désigne la norme de \NT. Cette inégalité nous sera utile pour démontrer le
+lemme suivant.
 
 \begin{lem}
   Soit \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
@@ -137,7 +138,7 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     \hautn{\wt* \ex* - \wt** \ex**}
     \le
     \wts[1] \hautn{\ex[1]} \left(
-      \frac{\zeta^2}4 + 2 \Vcos (1 + \zeta)
+      \zeta^2 + 2 \Vcos (1 + \zeta)
     \right)
     \pmm.
   \end{equation}
@@ -163,7 +164,7 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
     + 2 \wt* \wt** \normn{\ex*} \normn{\ex**} \Vcos
     && \text{d'après~\eqref{e:Vcos}}
     \\
-    & \le \left( \frac\zeta2 \wt[1] \normn{\ex[1]} \right)^2
+    & \le \left( \zeta \wt[1] \normn{\ex[1]} \right)^2
     && \text{d'après~\eqref{e:wt-diff-normn-gen}}
     \\
     & \qquad + 2 \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
@@ -172,29 +173,36 @@ comparaisons classiques \( (1 + \zeta)^{-1} \ge 1 - \zeta \) et \( (1 +
   qui donne le résultat annoncé en factorisant.
 \end{proof}
 
-\begin{scho} \label{s:wt-choose}
+\begin{tdef} \label{d:wt-choose}
   \nomuse[\wt]{(\wt*)}[chap]{Poids associés à \( (\ex*) \) et fixés par le
-    scolie~\ref{s:wt-choose}}
+    scolie~\ref{d:wt-choose}}
   \nomdirect{g}{zeta}{\zeta}[chap]{Constante proche de zéro fixée par le
-    scolie~\ref{s:wt-choose}}
+    scolie~\ref{d:wt-choose}}
   On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
   donnée par l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta =
-    \sqrt{\Vcos} \) de sorte qu'on a
-  \begin{align} \label{e:hautn-wt-diff}
-    \hautn{\wt* \ex* - \wt** \ex**}
-    & \le
-    3 \Vcos \wts[1] \hautn{\ex[1]}
-    \\ \label{e:wt-diff-hautn}
-    \abs[\big]{ \wts* \hautn{\ex*} - \wts[1] \hautn{\ex[1]} }
-    & \le \sqrt\Vcos \wts[1] \hautn{\ex[1]}
-  \end{align}
-  d'après le lemme et le scolie précédents, en remarquant pour la première
-  majoration que \( 1 + \zeta \le 5/4 \) car \( \Vcos \le 1/16 \).
-\end{scho}
+    \sqrt{\Vcos} / 2 \).
+\end{tdef}
 
-Étudions maintenant quelques propriétés de ces poids, en sus de celles déjà
-énoncées, en exploitant le fait que les \( \ex* \) satisfont à
-\eqref{e:Vbig}. Pour commencer, la suite \( \wts[1], \dots, \wts** \) décroît
+En remarquant que \( \Vcos < 1 \), le lemme précédent et la
+relation~\eqref{e:wt-ratio-gen} donnent immédiatement les relations :
+\begin{gather} \label{e:hautn-wt-diff}
+  \hautn{\wt* \ex* - \wt** \ex**}
+  \le
+  3 \Vcos \wts[1] \hautn{\ex[1]}
+  \\ \label{e:wt-ratio}
+  \frac12
+  \le
+  \frac{ \wts* \hautn{\ex*} }{ \wts[1] \hautn{\ex[1]} }
+  \le
+  2
+  \pmm.
+\end{gather}
+Les estimations de la deuxième ligne sont un peu larges mais suffiront
+amplement en pratique.
+
+Jusqu'à présent nous n'avons exploité que l'hypothèse~\eqref{e:Vcos},
+pour~\eqref{e:hautn-wt-diff}. En tenant compte de l'hypothèse~\ref{e:Vfar}, on
+voit de plus que la suite \( \wts[1], \dots, \wts** \) décroît
 au moins comme une suite géométrique de raison inférieure à $1$. Plus
 précisément, dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
 \begin{equation} \label{e:wt-geom}
@@ -208,18 +216,12 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
 
 \begin{lem} \label{l:epsiii-def}
   On a \(
-    \sum_{\fct=1}^\puiss (\wts* + \wts**) \le \wts[1] (1 + \epsiii)
-  \) avec
-  \(
-    \epsiii = \frac{ 3 (1+\zeta) }{ \Vfar - 1 }
-  \)
-  .
-  \nomuse \epsiii [chap] {Petit réel positif défini
-    dans le lemme~\ref{l:epsiii-def}}
+    \sum_{\fct=1}^\puiss (\wts* + \wts**) \le 2 \wts[1]
+  \).
 \end{lem}
 
 \begin{proof}
-  En effet, on a
+  En effet, on écrit
   \begin{align}
     \frac1{\wts[1]} \sum_{\fct=1}^\puiss (\wts* + \wts**)
     & = 1
@@ -236,7 +238,8 @@ des sommes faisant intervenir les \( \wts* \) essentiellement par \( \wts[1]
     \right)
     \pmm.
   \end{align}
-  Pour conclure, il suffit d'observer que \( \frac2\Vfar < 1 \).
+  Pour conclure, il suffit d'observer que \( \Vfar > 4 \) et que \( \Vcos <
+    1/9 \).
 \end{proof}
 
 
@@ -565,7 +568,7 @@ défini par
   \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
   \pmm.
 \end{align}
-qui nous permettra d'exploiter le scolie~\ref{s:wt-diff-small}.
+qui nous permettra d'exploiter la relation~\eqref{e:hautn-wt-diff}.
 
 Nous allons représenter ce morphisme par des familles de polynômes. Pour
 cela, commençons par préciser les plongements utilisés : au départ, chaque
