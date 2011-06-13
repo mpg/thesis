@@ -2444,7 +2444,6 @@ valable et pour chaque \( \fcti \) les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux pour tout \( \place \) et
 proportionnels à \( \cexi* = \wembcl* (\cexa[\fcti], \cexa[\puiss]) \). On
 a alors, pour tout \( \place \) :
-\newpage
 \begin{align}
   \ratf2
   & =
@@ -2548,24 +2547,63 @@ Supposons alors que \( \wtsum( \dermp ) < \epsi \delta / \sigma \)
 contrairement à la conclusion de la proposition, et montrons qu'on contredit
 alors l'égalité ci-dessus.  Pour cela, on majore séparément chacun des termes,
 en procédant de droite à gauche (par ordre plus ou moins croissant de
-difficulté).
+difficulté). Dans ces estimations, nous noterons \( B \) le majorant commun
+des \( \vdeg* \) donné par \eqref{e:varset-deg} afin d'alléger l'écriture.
 
-% XXX
-\begin{equation} \label{e:der1}
+Pour \( \ratfv4 \) on commence par remarquer que le dénominateur n'intervient
+pas dans le calcule de la hauteur, puis au numérateur que la hauteur d'une
+coordonnée est majorée par la norme du vecteur :
+\begin{equation}
   \prod_\place
   \prod\fctrange
   \left(
-    \frac{ \av{\cexa[][\indv]} }{ \av{\cexa[][\vdim]} }
+    \frac{ \av{\cexa*[\indv*]} }{ \av{\cexa*[\vdim*]} }
   \right) ^{ (\epsz \delta \wts* + r_\fct) \degv }
   \le
   \prod\fctrange
   \hautm[\infty]{ \cexa* }^{\epsz \delta \wts* + r_\fct}
-  \le
-  \hautm[\infty]{ \ex[1] }^{2\epsz \delta \wts[1]} \cdot \expb^{o(\delta)}
 \end{equation}
-en remarquant d'abord que le dénominateur disparaît en prenant le produit sur
-toutes les places et que le numérateur est évidemment majoré par \(
-  \nv\infty{\cexa*} \), puis en appliquant le lemme~\ref{l:sum-wt*}.
+puis on passe au logarithme et on utilise le fait que \( \cexa*
+  = \vadapt*(\cex*) \) 
+\begin{align}
+  \ratfh4
+  & \le
+  \epsz \delta \Bigl(
+    \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
+  \Bigr) + o(\delta)
+  \\ & \le
+  \epsz \delta \Bigl(
+    \sum\fctrange \wts* \bigl(
+      \hautl[\infty]{ \cex* } + \hautl[1]{\vadapt*}
+    \bigr)
+  \Bigr) + o(\delta)
+  \intertext{puis, par le fait~\ref{f:comp-h-hn} :}
+  & \le
+  \epsz \delta \Bigl(
+    \sum\fctrange \wts* \bigl(
+      \hautn{ \ex* } + \htcmp + \hautl[1]{\vadapt*}
+    \bigr)
+  \Bigr) + o(\delta)
+  \intertext{et en utilisant~\eqref{e:vadapt-ht} et la notation \( B \)
+    ci-dessus puis en regroupant les termes :}
+  & \le
+  \epsz \delta \Bigl(
+    \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
+    + \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
+  \Bigr) + o(\delta)
+  \intertext{et enfin, en invoquant~\eqref{e:wt-ratio} et le
+    lemme~\ref{l:sum-wt*} :}
+  \label{e:ratfh4}
+  \ratfh4
+  & \le
+  \epsz \delta \Bigl(
+    2 \puiss \wts[1] \hautn{ \ex[1] }
+    + 2 \wts[1] \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr)
+  \Bigr) + o(\delta)
+  \pmm.
+\end{align}
+
+\newpage % XXX
 
 Pour le second, on commence avec les mêmes arguments pour écrire
 \begin{equation}
