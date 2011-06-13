@@ -2384,13 +2384,13 @@ représente à peu de chose près la norme de \( \cexa* \).
 \end{proof}
 
 On introduit ensuite le point \( \exi \in \va^{\puiss*} \) tel que \(
-  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi \) un système de coordonnées
-multihomogènes de ce point dans le plongement \( \Theta^{\puiss*} \).  On
-choisit alors pour tout \( \fcti \) un indice \( \indiv* \in \set{0, \dots,
-    \dimp} \) maximisant \( \av{ \cexi*[\indiv*] } \), ainsi que \( \indig*
-  \in \set{0, \dots, \dimp} \) tel que \( \cexi*[\indig*] \neq 0 \). Il est
-alors clair que \( \av{ \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv}
-\).
+  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl* (\cexa[\fcti],
+  \cexa[\puiss]) \) un système de coordonnées multihomogènes de \( \exi \)
+dans le plongement \( \Theta^{\puiss*} \).  On choisit alors pour tout \(
+  \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
+  \av{ \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
+tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
+    \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv} \).
 
 \medskip
 
@@ -2431,18 +2431,14 @@ Il suffit dont d'estimer l'indice de \( \ratf2 \) ; nous allons commencer par
 décomposer cette fonctions en des facteurs sur lesquels nous aurons un bon
 contrôle.
 
-On commence par choisir pour chaque place \( \place \) une famille de formes
-\(
-  \wembclv*
-  = L\pexp{\wti*, \wti**}
-  [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
-\)
-donnée par l'application du lemme~\ref{l:hclab} au plongement \( \Theta \)
-comme à la section~\ref{sec:wemb}, mais en choisissant cette fois une famille
-par place. Indépendamment de \( \place \), les estimations de la section citée
-restent valables et bien sûr \( \wembclv* (\cexa[\fcti],
-  \cexa[\puiss]) \) est proportionnel à \( \cexi* \). On écrit alors, pour
-tout \( \place \) :
+On a jusqu'ici utilisé une seule famille de formes pour représenter les
+combinaisaions linéaires de points dans les plongements utilisés ; il est
+temps d'utiliser les familles spécialiées pour chaque place, définies
+par~\eqref{e:def-wembclv}. Le calcul de degré du lemme~\ref{l:deg-wemba} reste
+valable et pour chaque \( \fcti \) les vecteurs \( \wembclv* (\cexa[\fcti],
+  \cexa[\puiss]) \) sont proportionnels entre eux pour tout \( \place \) et
+proportionnels à \( \cexi* = \wembcl* (\cexa[\fcti], \cexa[\puiss]) \). On
+écrit alors, pour tout \( \place \) :
 \begin{align}
   \ratf2
   & =
