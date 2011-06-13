@@ -2499,17 +2499,17 @@ a alors, pour tout \( \place \) :
         \wembclv**(\vmp[\fcti], \vmp[\puiss])
       }
     \right)^\delta
-  }_{\ratfv3}
+  }_{\ratfv2}
   \cdot \underbrace{
     \prod\fctirange \left(
       \frac{ \wembcl*[\indiv*](\vmp) }{ \wembcl*[\indig*](\vmp) }
     \right) ^{ \delta }
-  }_{\ratfv4}
+  }_{\ratfv3}
   \cdot \underbrace{
     \prod\fctrange \left(
       \frac{ \vmp[\indv*] }{ \vmp[\vdim*] }
     \right) ^{ \epsz \wts* \delta + r_\fct }
-  }_{\ratfv5}
+  }_{\ratfv4}
   \pmm.
 \end{align}
 
@@ -2522,33 +2522,35 @@ tout \( \place \) :
 \begin{equation}
   \der[\dermp] \ratf2(\ex)
   =
-  \der[\dermp]
-  \frac{
-    R(\vmp) \,
-    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
-  }{
-    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-  }
-  ( \cexa )
+  \underbrace{
+    \der[\dermp]
+    \frac{
+      R(\vmp) \,
+      F( \vmp; \wembclv(\vmp) )
+    }{
+      \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+    }
+    ( \cexa )
+  }_{\ratfv1(\cexa)} \null
+  \cdot \ratfv2(\cexa)
   \cdot \ratfv3(\cexa)
   \cdot \ratfv4(\cexa)
-  \cdot \ratfv5(\cexa)
 \end{equation}
 Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
-mais pas leur produit. Rappelons qu'on note \( \degv \) le degré local en \(
-  \place \) et posons \( \hautl{\ratf{p}(\cexa)} = \sum_\place \degv
-  \av{\ratfv{p}(\cexa)} \) ; il est alors clair que \( \hautl{ \der[\dermp]
-    \ratf2(\ex) } = \sum_{p=3}^5 \hautl{\ratf{p}(\cexa)} \).% XXX
+mais pas leur produit.
+Rappelons qu'on note \( \degv \) le degré local en \(
+  \place \) et posons \( \ratfh{p} = \sum_\place \degv
+  \ln \av{\ratfv{p}(\cexa)} \) ; la formule du produit donne alors
+\begin{equation} \label{e:prod-lem}
+  0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
+\end{equation}
+Supposons alors que \( \wtsum( \dermp ) < \epsi \delta / \sigma \)
+contrairement à la conclusion de la proposition, et montrons qu'on contredit
+alors l'égalité ci-dessus.  Pour cela, on majore séparément chacun des termes,
+en procédant de droite à gauche (par ordre plus ou moins croissant de
+difficulté).
 
-Pour démontrer la proposition, procédons par l'absurde et supposons que
-\( \wtsum( \dermp ) < \epsi \delta / \sigma \).  En estimant pour chaque \(
-  \place \) la valeur absolue \( \place \)-adiques de chacun des facteurs de
-l'expression ci-dessus, en distinguant selon que
-\( \place \in \placesapx \) ou pas pour le premier, nous allons montrer que
-l'on contredit la formule du produit sous cette hypothèse.
-
-Rappelons qu'on note \( \degv \) le degré local de \( \cdn \) en \( \place \)
-et traitons les facteurs un par un de droite à gauche. Pour le premier, on a
+% XXX
 \begin{equation} \label{e:der1}
   \prod_\place
   \prod\fctrange
