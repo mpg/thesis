@@ -2603,9 +2603,7 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
   \pmm.
 \end{align}
 
-\newpage % XXX
-
-Pour le second, on commence avec les mêmes arguments pour écrire
+Pour \( \ratfh3 \) on commence avec les mêmes arguments pour écrire
 \begin{equation}
   \prod_\place
   \prod\fctirange
@@ -2618,20 +2616,24 @@ Pour le second, on commence avec les mêmes arguments pour écrire
   \prod\fctirange
   \hautm[\infty]{ \exi* }^\delta
 \end{equation}
-puis on majore le logarithme de cette quantité comme suit
+puis on passe au logarithme et on utilise encore le fait~\ref{f:comp-h-hn} :
 \begin{align}
-  \delta \sum\fctirange \hautl[\infty]{ \exi* }
+  \ratfh3
   & \le
   \delta \sum\fctirange \Bigl(
     \hautn{ \exi* } + \htcmp
   \Bigr)
-  && \text{par le fait~\ref{f:comp-h-hn}}
-  \\ & \le \label{e:der2}
-  \delta (\puiss*) \bigl(
-    3 \Vcos \wts[1] \hautn{\ex[1]} + \htcmp
+  \intertext{mais on conclut cette fois en invoquant~\eqref{e:hautn-wt-diff} :}
+  \ratfh3 \label{e:ratfh3}
+  & \le
+  \delta \bigl(
+    3 \wts[1] (\puiss-1) \Vcos \hautn{\ex[1]} + o(\wts[1])
   \bigr)
-  && \text{par~\eqref{e:hautn-wt-diff}}
+  \pmm.
 \end{align}
+
+\newpage % XXX
+
 Pour le facteur suivant, les définitions de \( \wembclv* \) et de
 \( \indiv* \) ainsi que des majorations évidentes donnent
 \begin{align}
@@ -2842,8 +2844,8 @@ puis, en utilisant notamment le lemme~\ref{l:par-var} :
 \medskip
 
 En appliquant la formule du produit d'un côté et en mettant bout à bout les
-estimations \eqref{e:der1}, \eqref{e:der2}, \eqref{e:der3}, \eqref{e:der4a} et
-\eqref{e:der4b}, il vient
+estimations \eqref{e:ratfh4}, \eqref{e:ratfh3}, \eqref{e:ratfh2},
+\eqref{e:ratfh1b} et \eqref{e:ratfh1a}, il vient
 \begin{align}
   0
   & \le
