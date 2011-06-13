@@ -989,13 +989,12 @@
 \nomdef \inda a {Ind}
 
 % various (degree) conditions for subsets in lemmas
-\newc@ifstar\Dz   { \delta d  }{ \delta d\sb\fct }
-\newcommand \Di   {{\delta d'}}
-\newcommand \Dii  {{\delta d'}}
-\newc@ifstar\Diii { \delta d' + r }{ \delta d'\sb\fct + r\sb\fct }
+\newc@ifstar\Dz   { \delta d      }{ \delta d \sb\fct }
+\newc@ifstar\Di   { \delta d'     }{ \delta d'\sb\fct }
+\newc@ifstar\Dir  { \delta d' + r }{ \delta d'\sb\fct + r\sb\fct }
 \newcommand \Ci   { \sb\Di   \sp{C'}   }
-\newcommand \Cii  { \sb\Dii  \sp{C''}  }
-\newcommand \Ciii { \sb\Diii \sp{C'''} }
+\newcommand \Cii  { \sb\Di   \sp{C''}  }
+\newcommand \Ciii { \sb\Dir  \sp{C'''} }
 
 % the product sub-variety considered and its attributes [[2
 %

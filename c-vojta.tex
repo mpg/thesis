@@ -702,7 +702,7 @@ exactement \( \delta d' \) d'après le lemme~\ref{l:deg-wemba}.
 
 Revenons donc au calcul de l'action de \( \wemba \) sur la hauteur. Ce
 morphisme étant homogène, il induit d'après la remarque ci-dessus une
-application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
+application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 \).  La base évidente de l'espace de départ est formée par les monômes \(
   \vmp^p \vmpi^q \) pour
 \begin{equation}
@@ -721,12 +721,12 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \wemba \colon
     \cdn [\vmp, \vmpi]_\Dz
     \to
-    \cdn [\vmp]_\Dii
+    \cdn [\vmp]_\Di
   \end{equation}
   est représentée dans les bases canoniques par une matrice de colonnes
   \(
   c_{p, q} = \wemba(\vmp^p\vmpi^q)
-  = \sum_{\lgr s = \Dii - \lgr p} c_{p, q; s} \vmp^{s+p}
+  = \sum_{\lgr s = \Di - \lgr p} c_{p, q; s} \vmp^{s+p}
   \)
   satisfaisant
   \begin{equation}
@@ -957,10 +957,10 @@ et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
-    \ideala\Dz            \ar [r] ^{\wemba}        \ar [d] _{\sim}
-    & \cdn [\vmp]_\Dii   \ar [r] ^{\rdiv^\Dii}    \ar [d]
+    \ideala\Dz           \ar [r] ^{\wemba}        \ar [d] _{\sim}
+    & \cdn [\vmp]_\Di    \ar [r] ^{\rdiv^\Di}    \ar [d]
     & \cdn [\vmp]\Ci     \ar [r] ^{\relim}        \ar [d]
-    & \cdn [\vmp]\Cii    \ar [r] ^{\rdiv^\Diii}   \ar [d]
+    & \cdn [\vmp]\Cii    \ar [r] ^{\rdiv^\Dir}   \ar [d]
     & \cdn [\vmp]\Ciii                            \ar [d]
     \\ \ringa{\wemb(\var)} \ar [r] ^{\wemb^*}
     & \ringa\opdef         \ar [r] ^{\I}
@@ -1354,7 +1354,7 @@ l'appliquer au cas qui nous intéresse.
 \end{proof}
 
 \begin{coro} \label{c:hmat-rdiv}
-  Il existe des applications linéaires \( \rdiv^\Dii \) et \( \rdiv^\Diii \)
+  Il existe des applications linéaires \( \rdiv^\Di \) et \( \rdiv^\Dir \)
   faisant commuter le diagramme~\eqref{e:diag-f-aux}, dont les matrices dans
   les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
   majorées par
@@ -1527,8 +1527,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{proof}
   On reprend le diagramme~\eqref{e:diag-f-aux}, dont la première ligne est
   maintenant bien définie. On considère le produit \( M'' \) des matrices des
-  applications \( \wemba \), \( \rdiv^\Dii \), \( \relim \) et \(
-  \rdiv^\Diii \) composées dans cet ordre. Ses lignes sont naturellement
+  applications \( \wemba \), \( \rdiv^\Di \), \( \relim \) et \(
+  \rdiv^\Dir \) composées dans cet ordre. Ses lignes sont naturellement
   indexées par l'ensemble des multiindices
   \begin{equation}
     \left\{
@@ -1538,7 +1538,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
       \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
       \text{ tel que }
-      \sum\indrange \imp** = \Diii
+      \sum\indrange \imp** = \Dir
       \ \forall \fct
       \right\}
     \pmm.
@@ -1590,7 +1590,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \end{equation}
   d'après le corollaire~\ref{c:hmat-rdiv} (et en remarquant que \( d'_\fct \le
     2\puiss \wts* \) pour tout \( \fct \)), celle des colonnes
-  des matrices de \( \rdiv^\Dii \) et \( \rdiv^\Diii \) est majorée par
+  des matrices de \( \rdiv^\Di \) et \( \rdiv^\Dir \) est majorée par
   \begin{equation}
     \delta
     2\puiss \sum\fctrange \wts* \Bigl(
@@ -1651,9 +1651,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F'))) \). On a alors
   \begin{enumthm}
     \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish* \) ;
-    \item \( \deg F'' = \deg RF' = \deg F' + o(\delta) \) ;
-    \item \( \deg F' = \delta d' \) et \( \deg F'' = \delta d \) où l'on
-      rappelle que 
+    \item \( \deg F'' = \deg RF' = \deg F' + r_\fct = \Di + o(\delta) \),
+    où l'on rappelle que
       \begin{align}
         d & = \bigl(
           \epsz \wts[1],
@@ -1669,6 +1668,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
           \wts[\puiss] (2\puiss - 2 + \epsz)
         \bigr) \in \Q^\puiss
       \end{align}
+      et \( \deg F = \Dz \).
     \item On peut majorer \( \hautl[\infty]{F''} \) par le double de la
       majoration annoncée pour \( F \).
   \end{enumthm}
@@ -1677,8 +1677,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{proof}
   Les trois premiers points ne sont qu'un rappel de la construction.
   Pour le dernier point, on constate que \( F'' \) est l'image de \( F \) par
-  l'application linéaire dont la matrice, notée \( M \) dans la démonstration
-  de la proposition, et dont la hauteur détermine un majorant de la hauteur de
+  l'application linéaire de matrice notée \( M \) dans la démonstration de la
+  proposition, et dont la hauteur détermine un majorant de la hauteur de
   \( F \).
 \end{proof}
 
@@ -2251,11 +2251,10 @@ pour tout \( \dermp \in \N^{\lgr\vdim} \).  Si \( h \) est une forme
 multihomogène et \( \point \) un point où elle est définie, on définit son
 indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
   \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq
-  0
-\).
+  0 \).
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
-\( \ratf1 = F'' / \vmp[][\vdim]^\Dii \). Le but de cette section est alors de
+\( \ratf1 = F'' / \vmp[][\vdim]^\Di \). Le but de cette section est alors de
 montrer la proposition suivante.
 
 \begin{prop}
@@ -2473,7 +2472,7 @@ proportionnels à \( \cexi* = \wembcl* (\cexa[\fcti], \cexa[\puiss]) \). On
   \frac{
     R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
   }{
-    \vmp[][\indv] ^{ \Diii }
+    \vmp[][\indv] ^{ \Dir }
   }
   \left(
     \prod\fctirange
@@ -2503,7 +2502,7 @@ application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
     \frac{
       R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
     }{
-      \vmp[][\indv] ^{ \Diii }
+      \vmp[][\indv] ^{ \Dir }
     }
   ( \cexa )
   \cdot
@@ -2639,12 +2638,12 @@ telle que
     \frac{
       R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
     }{
-      \vmp[][\indv] ^{ \Diii }
+      \vmp[][\indv] ^{ \Dir }
     }
   ( \cexa )
   =
   \frac{ P^\dermp_\place(\cexa) }{
-    \cexa[][\indv]^\Diii \pden(\cexa)^{\vlg\dermp} }
+    \cexa[][\indv]^\Dir \pden(\cexa)^{\vlg\dermp} }
   =
   \frac{ P^\dermp_\place(\cexa) }{
     \cexa[][\indv]^{\deg P^\dermp_\place } }
