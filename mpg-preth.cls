@@ -1000,25 +1000,26 @@
 % the product sub-variety considered and its attributes [[2
 %
 \newcommand \Var {Z}
-\newc@star@default \var     {\fct}{\puiss} {\Var\ssub{#1}}
-\newc@star@default \vdim    {\fct}{\puiss} {{u\ssub{#1}}}
-\newc@star@default \vdeg    {\fct}{\puiss} {{D\ssub{#1}}}
-\newc@star@default \vdegp   {\fct}{\puiss} {{D'\ssub{#1}}}
-\newc@star@default \varfc   {\fct}{\puiss} {\Chow\pexp{#1}[\Var]}
-\newc@star@default \varid   {\fct}{\puiss} {\Ideal\pexp{#1}[\Var]}
-\newc@star@default \varida  {\fct}{\puiss} {\tilde\Ideal\pexp{#1}[\Var]}
-\newc@star@default \vringa  {\fct}{\puiss} {\tilde\Ring\pexp{#1}[\Var]}
-\newc@star@default \vadapt  {\fct}{\puiss} {\chi\ssub{#1}}
-\newc@star@default \varfca  {\fct}{\puiss} {\tilde\Chow\pexp{#1}[\Var]}
+\newc@star@default \var     {\fct}{\puiss} {\Var  \ssub{#1}}
+\newc@star@default \vdim    {\fct}{\puiss} {{u    \ssub{#1}}}
+\newc@star@default \vdeg    {\fct}{\puiss} {{D    \ssub{#1}}}
+\newc@star@default \vdegp   {\fct}{\puiss} {{D'   \ssub{#1}}}
+\newc@star@default \varfc   {\fct}{\puiss} {\chow {\var[#1]}}
+\newc@star@default \varid   {\fct}{\puiss} {\ideal{\var[#1]}}
 
-\newcommand \ideala [1] {\tilde\Ideal\ssub{#1}}
-\newcommand \ringa  [1] {\tilde\Ring\ssub{#1}}
+\newc@star@default \vadapt  {\fct}{\puiss} {\chi   \ssub{#1}}
+\newc@star@default \varfca  {\fct}{\puiss} {\chowa {\var[#1]}}
+\newc@star@default \varida  {\fct}{\puiss} {\ideala{\var[#1]}}
+\newc@star@default \vringa  {\fct}{\puiss} {\ringa {\var[#1]}}
+
+\newcommand \ideala [1] {\tilde\Ideal \sb{#1}}
+\newcommand \ringa  [1] {\tilde\Ring  \sb{#1}}
+\newcommand \chowa  [1] {\tilde\Chow  \sb{#1}}
 
 \nomdef \var     a {Z}
 \nomdef \vdim    a {u}
 \nomdef \vdeg    a {D}
 \nomdef \vdegp   a {D'}
-\nomdef \varfc   a {f}
 \nomdef \varfc   a {f}
 \nomdef \varid   a {I}
 \nomdef \vadapt  g {z2}
