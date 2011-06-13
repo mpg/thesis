@@ -1084,8 +1084,6 @@
 
 \nomdef F a {F} \@gobbletwo{F}{La forme auxiliaire vue sur \( \wemb(\var) \)}
 \nomdef R a {R} \@gobbletwo{R}{Facteur parasitant la forme auxiliaire}
-\nomdef G a {G} \@gobbletwo{G}{La forme auxiliaire multipliée par \( R \) et
-  réduite}
 \nomdef r a {r} \@gobbletwo{r}{Degré du facteur parasitant la forme
   auxiliaire}
 

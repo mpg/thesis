@@ -2254,7 +2254,11 @@ indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
   0 \).
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
-\( \ratf1 = F'' / \vmp[][\vdim]^\Di \). Le but de cette section est alors de
+\begin{equation} \label{e:def-f1}
+  \ratf1 = \frac{ F''(\vmp) }{ \prod\fctrange (\vmp*[\vdim*])^{\Dir*} }
+  \pmm,
+\end{equation}
+qui est bien homogène de degré \( 0 \).  Le but de cette section est alors de
 montrer la proposition suivante.
 
 \begin{prop}
@@ -2398,43 +2402,43 @@ tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
 Introduisons maintenant une nouvelle fonction rationnelle définie par
 \begin{equation}
   \ratf2 =
-  \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
+  \frac{ R(\vmp) }{ \prod\fctrange (\vmp*[\vdim*])^{r_\fct} }
   \cdot
   \frac{
-    F( \vmp, \wembcl(\vmp) )
+    F( \vmp; \wembcl[1](\vmp), \dots, \wembcl[\puiss-1](\vmp) )
   }{
-    \vmp[][\vdim] ^{\epsz \wts \delta}
+    \prod\fctrange
+    (\vmp*[\vdim*])^{\epsz \wts* \delta}
     \cdot
-    \wembcl[][\indig*](\vmp) ^{ \delta }
+    \prod\fctirange
+    \wembcl*[\indig*](\vmp) ^{ \delta }
   }
-  \pmm,
-\end{equation}
-où au dénominateur on a noté
-\begin{equation}
-  \wembcl[][\indig](\vmp) ^{ \delta }
-  =
-  \prod\fctirange \wembcl*[\indig](\vmp[\fcti], \vmp[\puiss]) ^{ \delta }
-  \qquad\text{et}\quad
-  \vmp[][\vdim] ^{\epsz \wts \delta}
-  =
-  \prod\fctrange ( \vmp*[\vdim*] )^{\epsz \wts* \delta}
   \pmm.
 \end{equation}
-(Par la suite, on utilisera ce genre de notations compactes sans toujours
-préciser leur sens, qu'on espère suffisamment évident.) La définition de \(
-  \ratf1 \) au début de cette section, celle de \( F'' \) au
-scolie~\ref{s:aux-co}, le choix des \( l_j \) et le scolie~\ref{s:part-cases}
+La définition de \( \ratf1 \) au début de cette section et celle de \( F'' \)
+au scolie~\ref{s:aux-co} montrent alors que dans \( \korper\var \) on a
+\begin{equation}
+  \ratf2 = \ratf1 \cdot \left(
+    \prod\fctirange
+    \frac{
+      ( \vmp[\fcti ][{\vdim[\fcti ]}] )^{ 2\wts[\fcti ] }
+      ( \vmp[\puiss][{\vdim[\puiss]}] )^{ 2\wts[\puiss] }
+    }{
+      \wembcl*[\indig*](\vmp[\fcti], \vmp[\puiss])
+    }
+  \right)^\delta
+\end{equation}
+Le choix des \( l_j \) et le premier point du scolie~\ref{s:part-cases}
 montrent que \( \ratf1 / \ratf2 \) est défini et inversible sur un voisinage
-de \( \cex \) dans \( \var \).  Le lemme~\ref{l:indice-inversible} s'applique
+de \( \cex \) dans \( \var \) ; le lemme~\ref{l:indice-inversible} s'applique
 donc, montrant que \( \ratf1 \) et \( \ratf2 \) ont le même indice en \( \cex
-\).
-Il suffit dont d'estimer l'indice de \( \ratf2 \) ; nous allons commencer par
-décomposer cette fonctions en des facteurs sur lesquels nous aurons un bon
-contrôle.
+\).  Il suffit dont d'estimer l'indice de \( \ratf2 \) ; nous allons commencer
+par décomposer cette fonctions en des facteurs dont nous aurons un bon
+contrôle en chaque place.
 
 On a jusqu'ici utilisé une seule famille de formes pour représenter les
-combinaisaions linéaires de points dans les plongements utilisés ; il est
-temps d'utiliser les familles spécialiées pour chaque place, définies
+combinaisons linéaires de points dans les plongements utilisés ; il est
+temps d'utiliser les familles spécialisées pour chaque place, définies
 par~\eqref{e:def-wembclv}. Le calcul de degré du lemme~\ref{l:deg-wemba} reste
 valable et pour chaque \( \fcti \) les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux pour tout \( \place \) et
