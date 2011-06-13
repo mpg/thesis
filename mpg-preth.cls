@@ -1119,7 +1119,10 @@
 
 % misc [[2
 %
-\newcommand \hclab {\@ifstar{ c\sb{\Theta, \place} }{ c\sb{\Theta} }}
+\newcommand \hmclab [1][\Theta] {%
+  \@ifstar{ C\sb{#1, \place} }{ C\sb{#1} }}
+\newcommand \hlclab [1][\Theta] {%
+  \@ifstar{ c\sb{#1, \place} }{ c\sb{#1} }}
 
 % unsorted math stuff [[1
 % -------------------

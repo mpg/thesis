@@ -733,11 +733,13 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \hautm[1]{c_{p, q}}
     \le
     \left(
-      \bigl( \hclab (\dimp*)!^2 \bigr)^2 \,
+      \bigl( \hmclab (\dimp*)!^2 \bigr)^2 \,
       \prod\fctrange (\vdegp*) ^{2\dimp(\puiss*)}
     \right) ^{\delta \wts[1]}
-    \pmm.
+    \pmm,
   \end{equation}
+  où l'on rappelle que \( \hmclab \) est donné par la
+  définition~\ref{d:hclab}.
 \end{lem}
 
 \begin{proof}
@@ -760,7 +762,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \right) ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \left(
-      \hclab*^{\wtis* + \wts**} \,
+      \hmclab*^{\wtis* + \wts**} \,
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
       \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^\delta
@@ -773,12 +775,12 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
     \hautm[1]{c_{p, q}}^{1/\delta}
     & \le
     \prod\fctirange
-    \hclab^{\wtis* + \wts**} \,
+    \hmclab^{\wtis* + \wts**} \,
     \bigr( (\dimp*)! (\vdegp[\fcti])^\dimp) \bigl)^{2 \wts[\fcti]} \,
     \bigr( (\dimp*)! (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hclab (\dimp*)!^2 \bigr)^{\wtis* + \wts**} \,
+    \bigr( \hmclab (\dimp*)!^2 \bigr)^{\wtis* + \wts**} \,
     \bigr( \vdegp[\fcti] \bigl)^{2 \dimp \wts[\fcti]} \,
     \bigr( \vdegp[\puiss] \bigl)^{2 \dimp \wts[\puiss]}
   \end{align}
@@ -786,7 +788,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Dii
   majorant largement \( \wt* \) par \( \wt[1] \) et \( 1 \) par \( \puiss* \).
 \end{proof}
 
-Nous sommes maitenant prêts à commencer la preuve proprement dite de la
+Nous sommes maintenant prêts à commencer la preuve proprement dite de la
 proposition~\ref{p:varset-notmin} ; rappelons que l'on peut exclure les cas
 traités par le scolie~\ref{s:part-cases}. La preuve suit alors la méthode de
 \TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
@@ -1515,7 +1517,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
         + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
       \bigr)
       \Lambda^{2\,f(u)}
-      + 2 \ln \hclab + 4(\dimp*)^2
+      + 2 \hlclab + 4(\dimp*)^2
     \Bigr)
     + o(\delta)
     \pmm.
@@ -1579,7 +1581,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \delta \wts[1]
     \Bigl(
       2 \bigl(
-        \ln \hclab + 2(\dimp*) \ln(\dimp*)
+        \hlclab + 2(\dimp*) \ln(\dimp*)
       \bigr)
       +
       2 \dimp (\puiss*) \sum\fctrange \ln \vdegp*
@@ -1607,7 +1609,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     & \le
     4\puiss \sum\fctrange \wts* \hautl[1]{\varfc*}
     + \wts[1] \Bigl(
-      2 \bigl( \ln \hclab + 2(\dimp*) \ln(\dimp*) \bigr)
+      2 \bigl( \hlclab + 2(\dimp*) \ln(\dimp*) \bigr)
       \\ & \qquad
       + \sum\fctrange \bigl(
         2 \dimp (\puiss*) \ln \vdegp*
@@ -1617,7 +1619,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \\ & \le
     \wts[1] \Bigl(
       4\puiss \cst{vs-ht} \Lambda^{2\,f(u)}
-      + 2 \ln \hclab + 4(\dimp*)^2
+      + 2 \hlclab + 4(\dimp*)^2
       \\ & \qquad
       + 2 \dimp \puiss (\puiss*) \ln B
       + 2 \ln(4B) (2B (\vdim + \puiss) + \puiss)
@@ -1636,7 +1638,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
         + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
       \bigr)
       \Lambda^{2\,f(u)}
-      + 2 \ln \hclab + 4(\dimp*)^2
+      + 2 \hlclab + 4(\dimp*)^2
     \Bigr)
     + o(\delta)
   \end{equation}
@@ -2601,14 +2603,14 @@ puissance \( \delta \), puis en appliquant le résultat du lemme~\ref{l:hclab}
 on majore la contribution de ce facteur par
 \begin{align}
   \prod\fctirange \Bigl(
-    \hclab^{\wtis* + \wts**}
+    \hmclab^{\wtis* + \wts**}
     \dimp**
     \prod_\place
     \nv1{ \wembclv* }^{-\degv}
   \Bigr)^\delta
   & \le \label{e:der3}
   \Bigl(
-    \hclab^{2\wts[1]}
+    \hmclab^{2\wts[1]}
     \dimp**^{\puiss*}
     \prod_\place \prod\fctirange
     \nv1{ \wembclv* }^{-\degv}

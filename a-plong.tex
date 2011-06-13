@@ -63,55 +63,57 @@ notre preuve de l'inégalité de \bsc{Vojta}.
 
 \begin{fact}
   Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
-  réel \( c_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
+  réel \( C_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
   dépendant que de ce plongement, et, pour tout \( \gamma = 2^\alpha 3^\beta
   \), une famille \( F_\gamma \) de polynômes à coefficients entiers dans \(
     \cdn \), représentant globalement la multiplication par \( \gamma \) sur
   \( \va \), de degré \( \gamma^2 \) et de hauteur multiplicative majorée par
-  \( c_{2, 3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes
+  \( C_{2, 3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes
   place \( \place \) de \( \cdn \), on a :
   \begin{equation}
-    \av{r_{2, 3}}^{\gamma^2} c_{2, 3}^{-\dv \gamma^2}
+    \av{r_{2, 3}}^{\gamma^2} C_{2, 3}^{-\dv \gamma^2}
     \le
-    \frac{ \nv2{ F_\gamma(x) } }{ \nnv2 {F_\gamma} \nv2 x ^{\gamma^2} }
+    \frac{ \nv1{ F_\gamma(x) } }{ \nnv1 {F_\gamma} \nv1 x ^{\gamma^2} }
     \le
-    c_{2, 3}^{\dv \gamma^2}
+    C_{2, 3}^{\dv \gamma^2}
     \pmm.
   \end{equation}
 \end{fact}
 
 \begin{proof}
+  \worknote{Argument insuffisant, il faut préciser la dépendance de \(
+      \nnv1{F_\gamma} \) en \( \gamma \).}
   C'est le fait~3, page~276 de~\cite{phiha1}, restreint au cas particulier qui
   nous intéresse. On a par ailleurs rajouté au dénominateur un facteur \(
-    \nnv2 {F_\gamma} \), qui vaut \( 1 \) aux places finies, et qui n'invalide
+    \nnv1 {F_\gamma} \), qui vaut \( 1 \) aux places finies, et qui n'invalide
   pas la comparaison aux places infinies quitte à modifier un peu la constante
-  \( c_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
+  \( C_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
 \end{proof}
 
 \begin{lem}
   Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
-  réel \( c_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
+  réel \( C_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
   ce plongement, et, pour tout couple de points \( (x, y) \in \va^2 \) et
   toute place \( \place \) de \( \cdn \), une famille \( S_{x, y, \place} \)
   de polynômes à coefficients entiers dans \( \cdn \) représentant la
   soustraction sur un voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de
-  hauteur multiplicative majorée par \( c_s \), telle que
+  hauteur multiplicative majorée par \( C_s \), telle que
   \begin{equation}
-    \av{r_s} c_s^{-\dv}
+    \av{r_s} C_s^{-\dv}
     \le
     \frac{
-      \nv2{ S_{x, y, \place}(x, y) }
+      \nv1{ S_{x, y, \place}(x, y) }
     }{
-      \nnv2 {S_{x, y, \place}} \nv2 x ^2 \nv2 y ^2
+      \nnv1 {S_{x, y, \place}} \nv1 x ^2 \nv1 y ^2
     }
     \le
-    c_s^{\dv}
+    C_s^{\dv}
     \pmm.
   \end{equation}
 \end{lem}
 
 \begin{ideas}
-  La majoration de droite est triviale, à condition de ne pas prendre \( c_s
+  La majoration de droite est triviale, à condition de ne pas prendre \( C_s
   \) trop petit. Pour celle de gauche, on considère des familles représentant
   la soustraction sur une carte de \( \va \), on invoque le théorème des zéros
   multihomogène sur l'idéal engendré par l'idéal de \( \va \) et des familles.
@@ -122,37 +124,45 @@ sur \( \alpha x - \beta y \) et on s'intéresse à sa représentation par des
 formes bihomogènes.
 
 \begin{lem} \label{l:hclab}
-  \renewcommand\Theta{\iota}% cradobeurk mais la flemme
   Pour tout plongement \( \iota \colon \va \embedin \projd \), il existe une
   famille (ne dépendant que de \( \va \) et de ce plongement) de réels \(
-    \hclab* \) presque tous égaux à \( 1 \) (de sorte que \( \hclab =
-    \prod_\place \hclab*^{\degv} \) est bien défini) et, pour tout couple de
-  points \( (x, y) \in \va^2 \), toute place \( \place \) de \( \cdn \) et
-  tous entiers \( \alpha \) et \( \beta \) n'ayant que \( 2 \) et \( 3 \)
-  comme diviseurs premiers, une famille \( L^{(\alpha, \beta)}_{x, y, v} \) de
-  polynômes bihomogènes à coefficients entiers dans \( \cdn \) représentant \(
-    [ \alpha, \beta ] \) au voisinage de \( (x, y) \), de bidegré \(
-    (2\alpha^2, 2\beta^2) \) et de hauteur multiplicative majorée par \(
-    \hclab^{\alpha^2+\beta^2} \), telle que
+    \hmclab[\iota]* \) presque tous égaux à \( 1 \) (de sorte que \(
+    \hmclab[\iota] = \prod_\place \hmclab[\iota]*^{\degv} \) est bien défini)
+  et, pour tout couple de points \( (x, y) \in \va^2 \), toute place \( \place
+  \) de \( \cdn \) et tous entiers \( \alpha \) et \( \beta \) n'ayant que \(
+    2 \) et \( 3 \) comme diviseurs premiers, une famille \( L^{(\alpha,
+      \beta)}_{x, y, v} \) de polynômes bihomogènes à coefficients entiers
+  dans \( \cdn \) représentant \( [ \alpha, \beta ] \) au voisinage de \( (x,
+    y) \), de bidegré \( (2\alpha^2, 2\beta^2) \) et de hauteur multiplicative
+  majorée par \( \hmclab[\iota]^{\alpha^2+\beta^2} \), telle que
   \begin{equation}
-    \hclab*^{-(\alpha^2 + \beta^2)}
+    \hmclab[\iota]*^{-(\alpha^2 + \beta^2)}
     \le
     \frac{
-      \nv2{ L^{(\alpha, \beta)}_{x, y, v}(x, y) }
+      \nv1{ L^{(\alpha, \beta)}_{x, y, v}(x, y) }
     }{
-      \nnv2{ L^{(\alpha, \beta)}_{x, y, v} }
-      \nv2 x ^{2\alpha^2} \nv2 y ^{2\beta^2}
+      \nnv1{ L^{(\alpha, \beta)}_{x, y, v} }
+      \nv1 x ^{2\alpha^2} \nv1 y ^{2\beta^2}
     }
     \le
-    \hclab*^{\alpha^2 + \beta^2}
+    \hmclab[\iota]*^{\alpha^2 + \beta^2}
     \pmm.
   \end{equation}
 \end{lem}
 
+\begin{tdef} \label{d:hclab}
+  On note désormais \( \hmclab* \) et \( \hmclab \) les constantes données par
+  l'application du lemme précédent au plongement \( \Theta \), et \( \hlclab =
+    \ln \hmclab \).
+\end{tdef}
+
+Il serait intéressant de savoir expliciter \( \hlclab \), par exemple en le
+reliant à \( \htcmp \) qui est totalement explicite (fait~\ref{f:comp-h-hn}).
+
 
 \section{Formulaire abélien explicite} \label{sec:form-ab}
 \startout[Section non utilisée dans \bsc{Vojta}, probablement pour
-  \bsc{Mumford} mais notations à revoir.]
+  \bsc{Mumford} mais à revoir.]
 
 Le résultat fondamental est le fait suivant, qui est une simple reformulation
 de la proposition~3.6 de \cite{daphimhva2}.
