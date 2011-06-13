@@ -2548,8 +2548,7 @@ et traitons les facteurs un par un de droite à gauche. Pour le premier, on a
 \end{equation}
 en remarquant d'abord que le dénominateur disparaît en prenant le produit sur
 toutes les places et que le numérateur est évidemment majoré par \(
-  \nv\infty{\cexa[][\indv]} \), puis en appliquant le
-lemme~\ref{l:sum-wt*}.
+  \nv\infty{\cexa*} \), puis en appliquant le lemme~\ref{l:sum-wt*}.
 
 Pour le second, on commence avec les mêmes arguments pour écrire
 \begin{equation}
@@ -2569,7 +2568,7 @@ puis on majore le logarithme de cette quantité comme suit
   \delta \sum\fctirange \hautl[\infty]{ \exi* }
   & \le
   \delta \sum\fctirange \Bigl(
-    \hautl[\infty]{ \exi* } + \htcmp
+    \hautn{ \exi* } + \htcmp
   \Bigr)
   && \text{par le fait~\ref{f:comp-h-hn}}
   \\ & \le \label{e:der2}
@@ -2599,16 +2598,17 @@ Pour le facteur suivant, les définitions de \( \wembclv* \) et de
     }
   }
   (\dimp*)^\dv
+  \pmm.
 \end{align}
 En prenant le produit sur \( \fcti \) et \( \place \) et en élevant à la
-puissance \( \delta \), puis en applicant le résultat du lemme~\ref{l:hclab}
+puissance \( \delta \), puis en appliquant le résultat du lemme~\ref{l:hclab}
 on majore la contribution de ce facteur par
 \begin{align}
   \prod\fctirange \Bigl(
     \hclab^{\wtis* + \wts**}
     \dimp**
     \prod_\place
-    \nv1{ \wembclv* }^\degv
+    \nv1{ \wembclv* }^{-\degv}
   \Bigr)^\delta
   & \le \label{e:der3}
   \Bigl(
@@ -2741,7 +2741,7 @@ On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
   \\ & \le
   -\wtapx\expapx \sum\fctrange
   \gmp\nu*[0] \hautn{\ex*}
-  + \sum\fctrange \deg_\fcti P^\dermp_\place \left(
+  + \sum\fctrange \deg_\fct P^\dermp_\place \left(
     \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
     + \wtapx\expapx \htcmp
   \right)
