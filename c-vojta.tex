@@ -2443,89 +2443,103 @@ par~\eqref{e:def-wembclv}. Le calcul de degré du lemme~\ref{l:deg-wemba} reste
 valable et pour chaque \( \fcti \) les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux pour tout \( \place \) et
 proportionnels à \( \cexi* = \wembcl* (\cexa[\fcti], \cexa[\puiss]) \). On
-écrit alors, pour tout \( \place \) :
+a alors, pour tout \( \place \) :
+\newpage
 \begin{align}
   \ratf2
   & =
-  \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
-  \cdot
   \frac{
-    F( \vmp, \wembclv[](\vmp) )
+    R(\vmp) \,
+    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
   }{
-    \vmp[][\vdim] ^{\epsz \wts \delta}
+    \prod\fctrange
+    (\vmp*[\vdim*])^{\epsz \wts* \delta + r_\fct}
     \cdot
-    \wembclv[][\indig](\vmp) ^{ \delta }
-  }
-  \\ & =
-  \frac{ R(\vmp) }{ \vmp[][\indv]^r }
-  \cdot
-  \frac{
-    F( \vmp, \wembclv[](\vmp) )
-  }{
-    \vmp[][\indv] ^{\epsz \wts \delta}
-    \cdot
-    \wembclv[][\indiv](\vmp) ^{ \delta }
-  }
-  \left(
-    \frac{ \wembclv[][\indiv](\vmp) }{ \wembclv[][\indig](\vmp) }
-  \right) ^{ \delta }
-  \left(
-    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
-  \right) ^{ \epsz \wts \delta + r }
-  \\ & =
-  \frac{
-    R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
-  }{
-    \vmp[][\indv] ^{ \Dir }
-  }
-  \left(
     \prod\fctirange
-    \frac{
-      ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
-      ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
-    }{
-      \wembclv**(\vmp[\fcti], \vmp[\puiss])
-    }
-  \right)^\delta
+    \wembclv*[\indig](\vmp) ^{ \delta }
+  }
+  \intertext{par homogénéité de \( F \). On introduit alors nos indices locaux
+    \( \indv \) et \( \indiv \) :}
+   & =
+  \frac{
+    R(\vmp) \,
+    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+  }{
+    \prod\fctrange
+    (\vmp*[\indv*])^{\epsz \wts* \delta + r_\fct}
+    \cdot
+    \prod\fctirange
+    \wembclv*[\indiv](\vmp) ^{ \delta }
+  }
+  \cdot \prod\fctirange
   \left(
-    \frac{ \wembcl[][\indiv](\vmp) }{ \wembcl[][\indig](\vmp) }
+    \frac{ \wembclv**(\vmp) }{ \wembclv*[\indig*](\vmp) }
   \right) ^{ \delta }
+  \!\!\! \cdot \prod\fctrange
   \left(
-    \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
-  \right) ^{ \epsz \wts \delta + r }
+    \frac{ \vmp[\indv*] }{ \vmp[\vdim*] }
+  \right) ^{ \epsz \wts* \delta + r_\fct }
+  \intertext{puis on utilise la définition de \( \Dir \) en scindant le
+    premier facteur et de nouveau la remarque sur les \( \wembclv* \) pour
+    simplifier le second :}
+  & =
+  \frac{
+    R(\vmp) \,
+    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+  }{
+    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+  }
+  \\ & \qquad
+  \cdot \underbrace{
+    \prod\fctirange \left(
+      \frac{
+        ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
+        ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+      }{
+        \wembclv**(\vmp[\fcti], \vmp[\puiss])
+      }
+    \right)^\delta
+  }_{\ratfv3}
+  \cdot \underbrace{
+    \prod\fctirange \left(
+      \frac{ \wembcl*[\indiv*](\vmp) }{ \wembcl*[\indig*](\vmp) }
+    \right) ^{ \delta }
+  }_{\ratfv4}
+  \cdot \underbrace{
+    \prod\fctrange \left(
+      \frac{ \vmp[\indv*] }{ \vmp[\vdim*] }
+    \right) ^{ \epsz \wts* \delta + r_\fct }
+  }_{\ratfv5}
+  \pmm.
 \end{align}
 
 Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
-  \der[\dermp] \ratf2(\ex) \neq 0 \). Comme les derniers facteurs de l'écriture
-précédente sont tous définis et inversibles en \( \cex \) grâce aux
-différents choix d'indices et au scolie~\ref{s:part-cases}, une nouvelle
-application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
-  \ratf2(\ex) \) est égal, pour tout \( \place \), à
+  \der[\dermp] \ratf2(\ex) \neq 0 \). Comme les derniers facteurs de
+l'écriture précédente sont tous définis et inversibles en \( \cex \) grâce aux
+différents choix d'indices et au premier point du scolie~\ref{s:part-cases},
+une nouvelle application du lemme~\ref{l:indice-inversible} montre que, pour
+tout \( \place \) :
 \begin{equation}
+  \der[\dermp] \ratf2(\ex)
+  =
   \der[\dermp]
-    \frac{
-      R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
-    }{
-      \vmp[][\indv] ^{ \Dir }
-    }
+  \frac{
+    R(\vmp) \,
+    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+  }{
+    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+  }
   ( \cexa )
-  \cdot
-  \left(
-    \prod\fctirange
-    \frac{
-      ( \cexa[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
-      ( \cexa[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
-    }{
-      \wembclv**(\cexa[\fcti], \cexa[\puiss])
-    }
-  \right)^\delta
-  \left(
-    \frac{ \wembcl[][\indiv](\cexa) }{ \wembcl[][\indig](\cexa) }
-  \right) ^{ \delta }
-  \left(
-    \frac{ \cexa[][\indv] }{ \cexa[][\vdim] }
-  \right) ^{ \epsz \wts \delta + r }
+  \cdot \ratfv3(\cexa)
+  \cdot \ratfv4(\cexa)
+  \cdot \ratfv5(\cexa)
 \end{equation}
+Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
+mais pas leur produit. Rappelons qu'on note \( \degv \) le degré local en \(
+  \place \) et posons \( \hautl{\ratf{p}(\cexa)} = \sum_\place \degv
+  \av{\ratfv{p}(\cexa)} \) ; il est alors clair que \( \hautl{ \der[\dermp]
+    \ratf2(\ex) } = \sum_{p=3}^5 \hautl{\ratf{p}(\cexa)} \).% XXX
+
 Pour démontrer la proposition, procédons par l'absurde et supposons que
 \( \wtsum( \dermp ) < \epsi \delta / \sigma \).  En estimant pour chaque \(
   \place \) la valeur absolue \( \place \)-adiques de chacun des facteurs de
