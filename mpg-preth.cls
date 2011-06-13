@@ -1033,12 +1033,17 @@
 \nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
 \nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
 
-% local indices for extrapolation [[2
+% for extrapolation [[2
 %
+% local indices
 \newc@star@default \indv  {\fct }{\puiss} {\ind \sb{\place \slast{#1}}}
 \newc@star@default \indiv {\fcti}{\puiss} {\indi\sb{\place \slast{#1}}}
 \newc@star@default \indig {\fcti}{\puiss} {\indi\sb{{#1}}}
 
+% rational functions
+\newcommand*\ratf  [1] {\xi  \sb{#1}}
+\newcommand*\ratfv [1] {\xi  \sb{#1, \place}}
+\newcommand*\ratfi [1] {\zeta\sb{#1}}
 
 % misc (ok) [[2
 %

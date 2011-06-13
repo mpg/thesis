@@ -2253,38 +2253,38 @@ indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
 \).
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
-\( f_1 = F'' / \vmp[][\vdim]^\Dii \). Le but de cette section est alors de
+\( \ratf1 = F'' / \vmp[][\vdim]^\Dii \). Le but de cette section est alors de
 montrer la proposition suivante.
 
 \begin{prop}
-  On a \( \inda**(f_1) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
+  On a \( \inda**(\ratf1) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
   que \dots
 \end{prop}
 
 Commençons par un lemme facile sur l'indice.
 
 \begin{lem} \label{l:indice-inversible}
-  Soient \( g_1 \), \( g_2 \) et \( \alpha \) des fonctions rationnelles
-  telles que \( g_1 = \alpha g_2 \) et \( \point \) un point où elles sont
-  toutes les trois définies.
+  Soient \( \ratfi1 \), \( \ratfi2 \) et \( \alpha \) des fonctions
+  rationnelles telles que \( \ratfi1 = \alpha \ratfi2 \) et \( \point \) un
+  point où elles sont toutes les trois définies.
   \begin{enumthm}
-    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] g_2(x) = 0 \) dès que
-      \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim} \),
-      alors \( \der[\dermp] g_1(\point) = \alpha(\point) \, \der[\dermp]
-        g_2(\point) \).
-    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(g_1) = \inda**(g_2)
-      \).
+    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] \ratfi2(x) = 0 \) dès
+      que \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim}
+      \), alors \( \der[\dermp] \ratfi1(\point) = \alpha(\point) \,
+        \der[\dermp] \ratfi2(\point) \).
+    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(\ratfi1) =
+        \inda**(\ratfi2) \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
   Le premier point découle facilement de la formule de \bsc{Leibniz} :
   \begin{equation}
-    \der[\dermp] g_1(\point)
+    \der[\dermp] \ratfi1(\point)
     =
     \sum_{\gmp\nu \le \dermp}
     \der[\dermp - \gmp\nu] \alpha(\point) \,
-    \der[\gmp\nu] g_2(\point)
+    \der[\gmp\nu] \ratfi2(\point)
     \pmm.
   \end{equation}
   Or, par hypothèse, tous les termes de cette somme sont nuls sauf peut-être
@@ -2293,9 +2293,9 @@ Commençons par un lemme facile sur l'indice.
   Si \( \alpha(\point) \neq 0 \) alors \( \alpha^{-1} \) est également définie
   en \( \point \) et les deux autres fonctions jouent donc un rôle symétrique.
   Ainsi, si un indice \( \dermp \) est minimal pour la condition \(
-    \der[\dermp] g_1(\point) \neq 0 \), il l'est aussi pour la condition \(
-    \der[\dermp] g_2(\point) \neq 0 \) grâce au point précédent, ce qui prouve
-  que les deux fonctions ont le même indice en \( \point \).
+    \der[\dermp] \ratfi1(\point) \neq 0 \), il l'est aussi pour la condition \(
+    \der[\dermp] \ratfi2(\point) \neq 0 \) grâce au point précédent, ce qui
+  prouve que les deux fonctions ont le même indice en \( \point \).
 \end{proof}
 
 On rappelle que \( \cexa \) désigne un système de coordonnées multihomogènes
@@ -2396,7 +2396,7 @@ alors clair que \( \av{ \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv}
 
 Introduisons maintenant une nouvelle fonction rationnelle définie par
 \begin{equation}
-  f_2 =
+  \ratf2 =
   \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
   \cdot
   \frac{
@@ -2421,12 +2421,13 @@ où au dénominateur on a noté
 \end{equation}
 (Par la suite, on utilisera ce genre de notations compactes sans toujours
 préciser leur sens, qu'on espère suffisamment évident.) La définition de \(
-  f_1 \) au début de cette section, celle de \( F'' \) au
+  \ratf1 \) au début de cette section, celle de \( F'' \) au
 scolie~\ref{s:aux-co}, le choix des \( l_j \) et le scolie~\ref{s:part-cases}
-montrent que \( f_1 / f_2 \) est défini et inversible sur un voisinage de \(
-  \cex \) dans \( \var \).  Le lemme~\ref{l:indice-inversible} s'applique
-donc, montrant que \( f_1 \) et \( f_2 \) ont le même indice en \( \cex \).
-Il suffit dont d'estimer l'indice de \( f_2 \) ; nous allons commencer par
+montrent que \( \ratf1 / \ratf2 \) est défini et inversible sur un voisinage
+de \( \cex \) dans \( \var \).  Le lemme~\ref{l:indice-inversible} s'applique
+donc, montrant que \( \ratf1 \) et \( \ratf2 \) ont le même indice en \( \cex
+\).
+Il suffit dont d'estimer l'indice de \( \ratf2 \) ; nous allons commencer par
 décomposer cette fonctions en des facteurs sur lesquels nous aurons un bon
 contrôle.
 
@@ -2437,13 +2438,13 @@ On commence par choisir pour chaque place \( \place \) une famille de formes
   [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
 \)
 donnée par l'application du lemme~\ref{l:hclab} au plongement \( \Theta \)
-comme à la section~\ref{sec:wemb}, mais en choissisant cette fois une famille
+comme à la section~\ref{sec:wemb}, mais en choisissant cette fois une famille
 par place. Indépendamment de \( \place \), les estimations de la section citée
 restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
   \cexa[\puiss]) \) est proportionnel à \( \cexi* \). On écrit alors, pour
 tout \( \place \) :
 \begin{align}
-  f_2
+  \ratf2
   & =
   \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
   \cdot
@@ -2494,11 +2495,11 @@ tout \( \place \) :
 \end{align}
 
 Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
-  \der[\dermp] f_2(\ex) \neq 0 \). Comme les derniers facteurs de l'écriture
+  \der[\dermp] \ratf2(\ex) \neq 0 \). Comme les derniers facteurs de l'écriture
 précédente sont tous définis et inversibles en \( \cex \) grâce aux
 différents choix d'indices et au scolie~\ref{s:part-cases}, une nouvelle
 application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
-  f_2(\ex) \) est égal, pour tout \( \place \), à
+  \ratf2(\ex) \) est égal, pour tout \( \place \), à
 \begin{equation}
   \der[\dermp]
     \frac{
