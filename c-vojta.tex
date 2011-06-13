@@ -2632,10 +2632,9 @@ puis on passe au logarithme et on utilise encore le fait~\ref{f:comp-h-hn} :
   \pmm.
 \end{align}
 
-\newpage % XXX
-
-Pour le facteur suivant, les définitions de \( \wembclv* \) et de
-\( \indiv* \) ainsi que des majorations évidentes donnent
+Pour \( \ratfv2 \), on commence par minorer le dénominateur grâce à la
+définition de \( \indiv* \) puis on utilise la majoration évidente \(
+  \nv\infty{\cexa*} \le \nv\infty{\vadapt*} \, \nv1{\cex*} \) :
 \begin{align}
   \frac{
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
@@ -2645,46 +2644,50 @@ Pour le facteur suivant, les définitions de \( \wembclv* \) et de
   }
   & \le
   \frac{
-    \nv1{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
-    \nv1{ \cexa[\puiss] }^{ 2\wts[\puiss] }
+    \nv\infty{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
+    \nv\infty{ \cexa[\puiss] }^{ 2\wts[\puiss] }
   }{
-    \nv1{
-      L\pexp{\wti*, \wti**}
-      [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
-      (\cexa[\fcti], \cexa[\puiss])
-    }
+    \nv1{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
   }
-  (\dimp*)^\dv
-  \pmm.
+  (\dimp*)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
+  \\ & \le
+  \frac{
+    \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
+    \nv1{ \cex[\puiss] }^{ 2\wts[\puiss] }
+  }{
+    \nv1{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
+  }
+  ((\dimp*) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
+  \\ & \le
+  \frac{
+    \bigl( \hmclab* ((\dimp*) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
+  }{
+    \nnv1{ \wembclv* }
+  }
 \end{align}
-En prenant le produit sur \( \fcti \) et \( \place \) et en élevant à la
-puissance \( \delta \), puis en appliquant le résultat du lemme~\ref{l:hclab}
-on majore la contribution de ce facteur par
-\begin{align}
-  \prod\fctirange \Bigl(
-    \hmclab^{\wtis* + \wts**}
-    \dimp**
-    \prod_\place
-    \nv1{ \wembclv* }^{-\degv}
-  \Bigr)^\delta
-  & \le \label{e:der3}
-  \Bigl(
-    \hmclab^{2\wts[1]}
-    \dimp**^{\puiss*}
-    \prod_\place \prod\fctirange
-    \nv1{ \wembclv* }^{-\degv}
-  \Bigr)^\delta
-\end{align}
-Avant de passer au dernier facteur, remarquons de suite que
-\begin{equation}
-  \nv1{ R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) ) }
-  \le
-  \nv1{ F }
-  \prod\fctirange \nv1{ \wembclv* }^\delta
-  \cdot \expb^{o(\delta)}
+où la dernière ligne n'est autre que la conclusion du lemme~\ref{l:hclab}
+compte tenu de la définition~\eqref{e:def-wembclv} de \( \wembclv* \).  On
+note désormais
+\begin{equation} \label{e:c-wembcl}
+  C_\wembcl = \prod_\place \prod\fctirange \nnv1{ \wembclv* }^{\degv}
+  \pmm,
 \end{equation}
-et que les facteurs \( \prod\fctirange \nv1{ \wembclv* }^\delta
-\) qui apparaîtront se simplifieront avec ceux de l'estimation précédente.
+de sorte qu'en prenant le logarithme dans l'estimation précédente, puis en
+sommant sur \( \place \) et sur \( \fcti \), compte tenu du
+lemme~\ref{l:sum-wt*}, on a facilement
+\begin{equation} \label{e:ratfh2}
+  \ratfh2 \le
+  \delta \Bigl(
+    - \ln C_\wembcl
+    + 2 \wts[1] \bigl( \hlclab + \ln(\dimp + 1) + \ln B \bigr)
+  \Bigr)
+  \pmm.
+\end{equation}
+Remarquons avant de continuer que le premier terme, qui semble négatif, va se
+simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
+de sorte qu'il ne contribue pas à faire diminuer la hauteur finale.
+
+\newpage % XXX
 
 \worknote{Voir que \( \indv \neq 0 \).}
 Le lemme~\ref{l:par-var} appliqué\footnote{En utilisant les \( \vmp*[\indv]
@@ -2833,7 +2836,6 @@ facteur par la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place
     + \ln \nv1{P^\dermp_\place}
   \Biggr)
 \end{multline}
-% XXX
 puis, en utilisant notamment le lemme~\ref{l:par-var} :
 \begin{align}
   - \expapx \epsi /2
