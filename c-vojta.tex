@@ -2433,14 +2433,14 @@ contrôle.
 
 On commence par choisir pour chaque place \( \place \) une famille de formes
 \(
-  \wembcl[\place, \fcti]
+  \wembclv*
   = L\pexp{\wti*, \wti**}
   [{\vadapt[\fcti](\ex[\fcti]), \vadapt**(\ex**), \place}]
 \)
 donnée par l'application du lemme~\ref{l:hclab} au plongement \( \Theta \)
 comme à la section~\ref{sec:wemb}, mais en choisissant cette fois une famille
 par place. Indépendamment de \( \place \), les estimations de la section citée
-restent valables et bien sûr \( \wembcl[\place, \fcti] (\cexa[\fcti],
+restent valables et bien sûr \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) est proportionnel à \( \cexi* \). On écrit alors, pour
 tout \( \place \) :
 \begin{align}
@@ -2449,31 +2449,31 @@ tout \( \place \) :
   \frac{ R(\vmp) }{ \vmp[][\vdim]^r }
   \cdot
   \frac{
-    F( \vmp, \wembcl[\place](\vmp) )
+    F( \vmp, \wembclv[](\vmp) )
   }{
     \vmp[][\vdim] ^{\epsz \wts \delta}
     \cdot
-    \wembcl[\place][\indig](\vmp) ^{ \delta }
+    \wembclv[][\indig](\vmp) ^{ \delta }
   }
   \\ & =
   \frac{ R(\vmp) }{ \vmp[][\indv]^r }
   \cdot
   \frac{
-    F( \vmp, \wembcl[\place](\vmp) )
+    F( \vmp, \wembclv[](\vmp) )
   }{
     \vmp[][\indv] ^{\epsz \wts \delta}
     \cdot
-    \wembcl[\place][\indiv](\vmp) ^{ \delta }
+    \wembclv[][\indiv](\vmp) ^{ \delta }
   }
   \left(
-    \frac{ \wembcl[\place][\indiv](\vmp) }{ \wembcl[\place][\indig](\vmp) }
+    \frac{ \wembclv[][\indiv](\vmp) }{ \wembclv[][\indig](\vmp) }
   \right) ^{ \delta }
   \left(
     \frac{ \vmp[][\indv] }{ \vmp[][\vdim] }
   \right) ^{ \epsz \wts \delta + r }
   \\ & =
   \frac{
-    R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
+    R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
   }{
     \vmp[][\indv] ^{ \Diii }
   }
@@ -2483,7 +2483,7 @@ tout \( \place \) :
       ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \wembcl[\place, \fcti][\indiv*](\vmp[\fcti], \vmp[\puiss])
+      \wembclv**(\vmp[\fcti], \vmp[\puiss])
     }
   \right)^\delta
   \left(
@@ -2503,7 +2503,7 @@ application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
 \begin{equation}
   \der[\dermp]
     \frac{
-      R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
+      R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
     }{
       \vmp[][\indv] ^{ \Diii }
     }
@@ -2515,7 +2515,7 @@ application du lemme~\ref{l:indice-inversible} montre que \( \der[\dermp]
       ( \cexa[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
       ( \cexa[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
     }{
-      \wembcl[\place, \fcti][\indiv*](\cexa[\fcti], \cexa[\puiss])
+      \wembclv**(\cexa[\fcti], \cexa[\puiss])
     }
   \right)^\delta
   \left(
@@ -2578,14 +2578,14 @@ puis on majore le logarithme de cette quantité comme suit
   \bigr)
   && \text{par~\eqref{e:hautn-wt-diff}}
 \end{align}
-Pour le facteur suivant, les définitions de \( \wembcl[\place, \fcti] \) et de
+Pour le facteur suivant, les définitions de \( \wembclv* \) et de
 \( \indiv* \) ainsi que des majorations évidentes donnent
 \begin{align}
   \frac{
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
     \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
   }{
-    \av{ \wembcl[\place, \fcti][\indiv*](\cexa[\fcti], \cexa[\puiss]) }
+    \av{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
   }
   & \le
   \frac{
@@ -2608,38 +2608,38 @@ on majore la contribution de ce facteur par
     \hclab^{\wtis* + \wts**}
     \dimp**
     \prod_\place
-    \nv1{ \wembcl[\place, \fcti] }^\degv
+    \nv1{ \wembclv* }^\degv
   \Bigr)^\delta
   & \le \label{e:der3}
   \Bigl(
     \hclab^{2\wts[1]}
     \dimp**^{\puiss*}
     \prod_\place \prod\fctirange
-    \nv1{ \wembcl[\place, \fcti] }^{-\degv}
+    \nv1{ \wembclv* }^{-\degv}
   \Bigr)^\delta
 \end{align}
 Avant de passer au dernier facteur, remarquons de suite que
 \begin{equation}
-  \nv1{ R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) }
+  \nv1{ R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) ) }
   \le
   \nv1{ F }
-  \prod\fctirange \nv1{ \wembcl[\place, \fcti] }^\delta
+  \prod\fctirange \nv1{ \wembclv* }^\delta
   \cdot \expb^{o(\delta)}
 \end{equation}
-et que les facteurs \( \prod\fctirange \nv1{ \wembcl[\place, \fcti] }^\delta
+et que les facteurs \( \prod\fctirange \nv1{ \wembclv* }^\delta
 \) qui apparaîtront se simplifieront avec ceux de l'estimation précédente.
 
 \worknote{Voir que \( \indv \neq 0 \).}
 Le lemme~\ref{l:par-var} appliqué\footnote{En utilisant les \( \vmp*[\indv]
   \) comme variables de déshomogénéisation, ce qui est loisible vu la
   note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom} et le choix de \(
-    \indv \).} à \( R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) ) \) nous
+    \indv \).} à \( R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) ) \) nous
 donne pour chaque \( \place \) une forme multihomogène \( P^\dermp_\place \)
 telle que
 \begin{equation}
   \der[\dermp]
     \frac{
-      R(\vmp) \cdot F( \vmp, \wembcl[\place](\vmp) )
+      R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
     }{
       \vmp[][\indv] ^{ \Diii }
     }

@@ -812,7 +812,7 @@
 % helper macros [[
 \newc@star@deftwo@i \gmp  {\fct }{\ind} {\gmp@{#1}{#2}{#3}}
 \newc@star@deftwo@i \gmpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
-\newc@star@deftwo@i \gmpiv{\fcti}{\indiv}{\gmp@{#1}[\place]{#2}{#3}}
+\newc@star@deftwo@i \gmpiv{\fcti}{\indiv*}{\gmp@{#1}[\place]{#2}{#3}}
 % generic multiprojective symbol:
 % #1 = factor number, #2 = optional prefix for this, see \gmpiv for \wembclv
 % #3 = coordinate in this factor,
