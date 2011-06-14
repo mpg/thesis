@@ -2697,14 +2697,48 @@ Remarquons avant de continuer que le premier terme, qui semble négatif, va se
 simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
 de sorte qu'il ne contribue pas à faire diminuer la hauteur finale.
 
-Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} à chacune
-des formes \( R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) ) \).  Comme l'indique la
+\begin{parnote}
+  Pour \( \ratfv1 \), on aimerait se ramener à
+  \begin{equation}
+    \der[\dermp]
+    \frac{
+      R(\vmp) \,
+      F( \vmp; \wembcl(\vmp) )
+    }{
+      \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+    }
+  \end{equation}
+  pour pouvoir dire que le dénominateur c'est \( F'' \) modulo l'idéal de \(
+    \var \).  Le souci, c'est le \( \wembcl \) dans la définition de \(
+    \ratfv1 \) : pour se ramener à ce qu'on veut, on est obligés me
+  semble-t-il de sortir un facteur
+  \begin{equation}
+    \prod\fctirange \left(
+      \frac{ \wembclv*[\indig](\vmp) }{ \wembcl*[\indig](\vmp) }
+    \right)^\delta
+  \end{equation}
+  et si le dénominateur a le bon goût de ne pas contribuer à la hauteur, le
+  numérateur en revanche me semble difficilement contrôlable dans les ordres
+  de grandeur voulus.
+
+  Soit j'ai manqué un truc évident, soit il faut modifier l'argument. J'ai
+  l'impression que la solution consiste à prévoir le problème dès la
+  construction de la fonction auxiliaire : en fait on veut construire
+  simultanément une fonction et des représentations de cette fonction qui se
+  prêtent bien à l'extrapolation. À suivre\dots
+
+  En attendant, on fait comme si la facteur en question n'existait pas et
+  que \( \ratfv1 \) était égal à la fonction ci-dessus.
+\end{parnote}
+
+
+Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} à la
+forme \( F'' \).  Comme l'indique la
 note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom}, il est loisible
 d'utiliser sur chaque facteur \( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \)
 comme variable de déhomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ;
-les polynômes fournis par le lemme dépendent de ce choix, qui n'est pas gênant
-car la forme à la quelle on applique le lemme dépend déjà de \( \place \).
-Par ailleurs, chaque application du lemme founit
+simplement, les polynômes fournis par le lemme dépendent de ce choix, donc en
+définitive de \( \place \).  Par ailleurs, chaque application du lemme founit
 deux familles de polynômes, satisfaisant respectivement des majorations de
 normes aux places finies ou infines ; on ne garde que celui correspondant à
 l'indice \( \dermp \) fixé ci-dessus et la nature archimédienne ou non de la

@@ -295,6 +295,7 @@
   \marginnote{\leavevmode\color{#1}\itshape #2}%
   \@ifnotmtarg{#3}{\textcolor{#1}{#3}}%
 }
+\newenvironment{parnote}{\quotation\color{later}}{\endquotation}
 
 \newcommand*\todo [1][] {\worknote{\textsc{todo} #1}}
 \newcommand \todom      {\tag*{\color{todo}\textsc{todo}}}
