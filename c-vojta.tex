@@ -2539,8 +2539,8 @@ tout \( \place \) :
     }{
       \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     }
-    ( \cexa )
-  }_{\ratfv1(\cexa)} \null
+  }_{\ratfv1} \null
+  ( \cexa )
   \cdot \ratfv2(\cexa)
   \cdot \ratfv3(\cexa)
   \cdot \ratfv4(\cexa)
@@ -2697,77 +2697,79 @@ Remarquons avant de continuer que le premier terme, qui semble négatif, va se
 simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
 de sorte qu'il ne contribue pas à faire diminuer la hauteur finale.
 
-Avant de passer à \( \ratfv1 \) nous établissons un petit lemme qui nous
-permettra pour commencer de vérifier que \( \indv* \neq 0 \) et sera plus tard
-crucial dans le calcul de la hauteur en permettant d'exploiter l'hypothèse
-principale.
-
-\begin{lem}
-  Pour tout \( \fct \) on a
-  \begin{equation}
-    \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
-    \le
-    \todots
-  \end{equation}
-\end{lem}
-
-\begin{proof}
-  On commence par utiliser le fait que \( \cex* = \vadapt*^{-1}( \cexa* ) \)
-  pour minorer le dénominateur, puis une comparaison classique de normes donne
-  \begin{equation}
-    \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
-    \le
-    \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
-    \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
-    \pmm.
-  \end{equation}
-  Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
-    \cexa*[0] = \cex*[0] \) et on remarque alors que le premier facteur dans
-  l'écriture ci-dessus n'est autre que \( \distv{\ex*}{\divi} \), ce qui nous
-  permet d'exploiter~\eqref{e:Vapx} :
-  \begin{align}
-    \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
-    & \le
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
-    \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
-    \\ & \le
-    \hautn{\ex*}^{-\wtapx \expapx}
-    \cdot \expb^{\wtapx \expapx \htcmp}
-    \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
-  \end{align}
-  où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
-\end{proof}
-
-\newpage % XXX
-
-Le lemme~\ref{l:par-var} appliqué\footnote{En utilisant les \( \vmp*[\indv]
-  \) comme variables de déshomogénéisation, ce qui est loisible vu la
-  note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom} et le choix de \(
-    \indv \).} à \( R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) ) \) nous
-donne pour chaque \( \place \) une forme multihomogène \( P^\dermp_\place \)
-telle que
+Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} à chacune
+des formes \( R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) ) \).  Comme l'indique la
+note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom}, il est loisible
+d'utiliser sur chaque facteur \( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \)
+comme variable de déhomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ;
+les polynômes fournis par le lemme dépendent de ce choix, qui n'est pas gênant
+car la forme à la quelle on applique le lemme dépend déjà de \( \place \).
+Par ailleurs, chaque application du lemme founit
+deux familles de polynômes, satisfaisant respectivement des majorations de
+normes aux places finies ou infines ; on ne garde que celui correspondant à
+l'indice \( \dermp \) fixé ci-dessus et la nature archimédienne ou non de la
+place considérée, de façon à obtenir une famille indexée par \( \place \) de
+polynômes \( P_\place \) tels que
 \begin{equation}
+  \ratfv1
+  =
   \der[\dermp]
-    \frac{
-      R(\vmp) \cdot F( \vmp, \wembclv[](\vmp) )
-    }{
-      \vmp[][\indv] ^{ \Dir }
-    }
-  ( \cexa )
-  =
-  \frac{ P^\dermp_\place(\cexa) }{
-    \cexa[][\indv]^\Dir \pden(\cexa)^{\vlg\dermp} }
-  =
-  \frac{ P^\dermp_\place(\cexa) }{
-    \cexa[][\indv]^{\deg P^\dermp_\place } }
-  \cdot
   \frac{
-    \cexa[][\indv]^{\vlg\dermp \cdot \deg \pden}
+    R(\vmp) \,
+    F( \vmp; \wembclv(\vmp) )
   }{
-    \pden(\cexa)^{\vlg\dermp}
+    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+  }
+  =
+  \frac{ P_\place(\vmp) }{
+    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* } \, \pden*(\vmp*)^{\lgr{\dermp*}}
   }
   \pmm.
 \end{equation}
+
+\newpage % XXX
+
+
+% pour définir \ratfv{1a} et 1b
+%  \frac{ P_\place(\vmp) }{
+%    \vmp[][\indv]^\Dir \pden(\vmp)^{\vlg\dermp} }
+%  =
+%  \frac{ P_\place(\vmp) }{
+%    \vmp[][\indv]^{\deg P_\place } }
+%  \cdot
+%  \frac{
+%    \vmp[][\indv]^{\vlg\dermp \cdot \deg \pden}
+%  }{
+%    \pden(\vmp)^{\vlg\dermp}
+%  }
+
+% \begin{proof}
+%   On commence par utiliser le fait que \( \cex* = \vadapt*^{-1}( \cexa* ) \)
+%   pour minorer le dénominateur, puis une comparaison classique de normes donne
+%   \begin{equation}
+%     \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
+%     \le
+%     \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
+%     \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+%     \pmm.
+%   \end{equation}
+%   Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
+%     \cexa*[0] = \cex*[0] \) et on remarque alors que le premier facteur dans
+%   l'écriture ci-dessus n'est autre que \( \distv{\ex*}{\divi} \), ce qui nous
+%   permet d'exploiter~\eqref{e:Vapx} :
+%   \begin{align}
+%     \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
+%     & \le
+%     \hautm[2]{\ex*}^{-\wtapx \expapx}
+%     \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+%     \\ & \le
+%     \hautn{\ex*}^{-\wtapx \expapx}
+%     \cdot \expb^{\wtapx \expapx \htcmp}
+%     \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+%   \end{align}
+%   où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
+% \end{proof}
+
 On estime la hauteur du second facteur ainsi :
 \begin{equation}
   \prod_\place
