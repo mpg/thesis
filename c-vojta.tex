@@ -2809,10 +2809,85 @@ fonction en deux facteurs :
     }
   }_{\textstyle \ratfv{1b}}
 \end{equation}
-
+Pour le second facteur, on commence par remarquer que le dénominateur n'est
+pas nul d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
+\begin{equation}
+  \prod_\place
+  \frac{
+    \av{ \cexa*[\indv] }^{ \deg \pden* \lgr{\dermp*} \degv }
+  }{
+    \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
+  }
+  \le
+  \hautm[\infty]{ \cexa* }^{ \deg \pden* \lgr{\dermp*} }
+  \pmm.
+\end{equation}
+On note alors que par définition, \( \deg \pden* = 2 (\vdeg*-1) (\dimp-\vdim*)
+  \le 2B\dimp \), puis en utilisant des comparaisons de hauteurs désormais
+habituelles, on a :
+\begin{align}
+  \ratfh{1b}
+  & \le
+  2B\dimp \sum\fctrange
+  \hautl[\infty]{ \cexa* } \lgr{\dermp*}
+  \\ & \le
+  2B\dimp \sum\fctrange
+  \bigl( \hautn{ \ex* } + \htcmp + \ln B + \ln(\dimp+1) \bigr)
+  \lgr{\dermp*}
+  \pmm.
+\end{align}
+On se souvient ensuite que \( \wts[1] \ge \wts* \) et même \( \wts[1] \ge
+  (\puiss-1) \wts[\puiss] \) (par exemple d'après le lemme~\ref{l:sum-wt*})
+pour écrire
+\begin{equation}
+  \sum\fctrange \lgr{\dermp*}
+  \le
+  \wts[1] \, \wtsum(\dermp)
+  \le
+  \wts[1] \, \epsi \delta / \sigma
+  \pmm.
+\end{equation}
+Par ailleurs, en utilisant~\ref{e:wt-ratio}, on a
+\begin{equation}
+  \sum\fctrange \hautn{ \ex* } \lgr{\dermp*}
+  \le
+  (\puiss-1) \sum\fctrange
+  \wts* \hautn{ \ex* } \, \frac{ \lgr{\dermp*} }{ \wts* }
+  \le
+  2 (\puiss-1) \wts[1] \hautn{ \ex[1] } \, \epsi \delta / \sigma
+\end{equation}
+et au final :
+\begin{equation}
+  \ratfh{1b} \le
+  \frac{ \delta \wts[1] \epsi }{ \sigma } \Bigl(
+    2 (\puiss-1) \hautn{ \ex[1] }
+    + \htcmp + \ln B + \ln(\dimp+1)
+  \Bigr)
+  \pmm.
+\end{equation}
 
 \newpage % XXX
 
+Pour l'autre partie, on écrit
+\begin{equation}
+  \frac{ P^\dermp_\place(\cexa) }{
+    \cexa[][\indv]^{\deg P^\dermp_\place } }
+  =
+  P^\dermp_\place \Biggl(
+    \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
+    \frac{ \cexa[\puiss] } { \cexa[\puiss][{\indv[\puiss]}] }
+  \Biggr)
+\end{equation}
+Il s'agit donc d'une combinaison linéaire (dont les coefficients sont ceux de
+\( P^\dermp_\place \)) monômes chacun majorés en valeur absolue par
+\begin{equation}
+  \prod\fctrange
+  \Bigl(
+    \nv1{ \varfc* }
+    ( 2 \vdegp* \dimp** )^{\vdeg* (\vdim* + 1) \dv}
+  \Bigr)^{\deg_\fct P^\dermp_\place}
+\end{equation}
+d'après le lemme~\ref{l:coord-norm}.
 
 % \begin{proof}
 %   On commence par utiliser le fait que \( \cex* = \vadapt*^{-1}( \cexa* ) \)
@@ -2840,57 +2915,6 @@ fonction en deux facteurs :
 %   \end{align}
 %   où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
 % \end{proof}
-
-On estime la hauteur du second facteur ainsi :
-\begin{equation}
-  \prod_\place
-  \prod\fctrange
-  \frac{
-    \av{ \cexa*[\indv] }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} \degv }
-  }{
-    \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
-  }
-  \le
-  \prod\fctrange
-  \hautm[\infty]{ \cexa* }^{ 2 (\vdeg*-1) (\dimp-\vdim*) \lgr{\dermp*} }
-\end{equation}
-puis, en passant au logarithme :
-\begin{align}
-  2 \dimp \sum\fctrange
-  \hautl[\infty]{ \cexa* } \vdeg* \lgr{\dermp*}
-  & \le
-  2 \dimp \puiss \sum\fctrange
-  \bigl( \hautn{ \ex* } + \htcmp + \ln \vdegp* \bigr)
-  \wts* \vdeg* \frac{ \lgr{\dermp*} }{ \wts* (\puiss*) }
-  \\ & \le \label{e:der4a}
-  \delta \wts[1] \cdot 2 \dimp \puiss B \, \frac{\epsi}{\sigma} \bigl(
-    \hautn{ \ex[1] } + \htcmp + \ln B
-  \bigr)
-\end{align}
-où l'on a utilisé le fait~\ref{f:comp-h-hn} et~\eqref{e:vadapt-ht}
-puis~\eqref{e:wt-ratio} et l'hypothèse sur \( \dermp \), et noté \( B \)
-un majorant des \( \vdeg* \).
-
-Pour l'autre partie, on écrit
-\begin{equation}
-  \frac{ P^\dermp_\place(\cexa) }{
-    \cexa[][\indv]^{\deg P^\dermp_\place } }
-  =
-  P^\dermp_\place \Biggl(
-    \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
-    \frac{ \cexa[\puiss] } { \cexa[\puiss][{\indv[\puiss]}] }
-  \Biggr)
-\end{equation}
-Il s'agit donc d'une combinaison linéaire (dont les coefficients sont ceux de
-\( P^\dermp_\place \)) monômes chacun majorés en valeur absolue par
-\begin{equation}
-  \prod\fctrange
-  \Bigl(
-    \nv1{ \varfc* }
-    ( 2 \vdegp* \dimp** )^{\vdeg* (\vdim* + 1) \dv}
-  \Bigr)^{\deg_\fct P^\dermp_\place}
-\end{equation}
-d'après le lemme~\ref{l:coord-norm}.
 
 En fait, aux places de \( \placesapx \), on peut obtenir une estimation plus
 fine en remarquant que chaque monôme est composé d'un facteur satisfaisant à
