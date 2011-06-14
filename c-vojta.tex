@@ -1699,16 +1699,17 @@ quelconque (plongée de façon adaptée) avant de passer à une variété produi
 
 \subsection{Estimation de dérivées} \label{sec:vojta-param}
 
+\worknote{Tout réécrire en remplaçant \( \anydim \) par \( 0 \) et, dans les
+  trucs d'ordre ou indice, \( 0 \) par un indice quelconque. Pfiou\dots}
 Soit \( \anyvar \) une variété projective de dimension \( \anydim \), plongée
 de façon adaptée dans un espace projectif \( \projd \), de degré \( \anydeg \)
 dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie
 de\footnote{\label{fn:coord-deshom}Dans toute cette section on prendra \(
     \vp[\anydim] \) (puis \( \vmp*[\vdim*] \) en multiprojectif) comme
   variable de déshomogénéisation pour simplifier les notations, mais il est
-  clair qu'on pourrait utiliser n'importe quel indice entre \( 0 \) (puis \( 1
-  \) à partir du lemme~\ref{l:par-anyvar-mono}) et \( \anydim \) (et \( \vdim*
-  \) en multiprojectif).  Les morphismes et formes obtenus dépendront bien sûr
-  de ce choix, mais pas leurs propriétés.}
+  clair qu'on pourrait utiliser n'importe quel indice entre \( 0 \)  et \(
+    \anydim \) (et \( \vdim* \) en multiprojectif).  Les morphismes et formes
+  obtenus dépendront bien sûr de ce choix, mais pas leurs propriétés.}
 \begin{equation}
   \cdn\Big(
     \frac{ \vp[0]           }{ \vp[\anydim] }, \dots,
@@ -2148,6 +2149,15 @@ monômes en \( \vp / \vp[\anydim] \).
   facteur de chaque terme non nul de la somme définissant \( P^\derp_{\ip,
       \dv} \), ce qui prouve l'assertion sur l'ordre.
 \end{proof}
+
+\begin{rem}
+  L'assertion sur l'ordre vaut aussi si la variable de déshomogénéisation
+  (voir note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom}) est
+  \( \vp[0] \), même si elle paraît \lat{a priori} avoir moins de sens dans ce
+  cas. En effet, on remarque que le dernier paragraphe de la démonstration
+  utilise seulement le fait que \( \pdiff^0 \) est l'idendité ; tout le reste
+  en découle formellement.
+\end{rem}
 
 On souhaite maintenant étudier le développement en série des fonctions
 rationnelles sur notre variété produit \( \var \).  On étend les notations
