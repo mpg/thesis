@@ -2784,7 +2784,11 @@ polynômes \( P_\place \) et jouissant des propriétés suivantes :
 Rappelons que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta / \sigma
 \) ; en remarquant que \( \inda*(F'') \ge \epsi \delta \) par construction et
 que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition, le dernier point
-dit que \( \inda*( P_\place ) \ge \epsi \delta (1 - \sigma^{-1}) \).
+dit que
+\begin{equation} \label{e:ind-Pv}
+  \inda*( P_\place ) \ge \epsi \delta (1 - \sigma^{-1})
+  \pmm.
+\end{equation}
 
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
 fonction en deux facteurs :
@@ -2866,102 +2870,103 @@ et au final :
   \pmm.
 \end{equation}
 
-\newpage % XXX
-
 Pour l'autre partie, on écrit
-\begin{equation}
-  \frac{ P^\dermp_\place(\cexa) }{
-    \cexa[][\indv]^{\deg P^\dermp_\place } }
-  =
-  P^\dermp_\place \Biggl(
+\begin{align}
+  \ratfv{1b}(\cexa)
+  & =
+  P_\place \Biggl(
     \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
     \frac{ \cexa[\puiss] } { \cexa[\puiss][{\indv[\puiss]}] }
   \Biggr)
-\end{equation}
-Il s'agit donc d'une combinaison linéaire (dont les coefficients sont ceux de
-\( P^\dermp_\place \)) monômes chacun majorés en valeur absolue par
-\begin{equation}
-  \prod\fctrange
-  \Bigl(
+  \\ & =
+  \sum_{\imp} p_{\place, \imp} \Biggl(
+    \frac{ \cexa } { \cexa[][\indv] }
+  \Biggr)^{\imp}
+\end{align}
+où la dernière somme est prise sur les multiindices \( \imp \) tels que \(
+  \lgr{\imp*} = \deg_\fct P_\place \). Étudions de plus près les valeurs
+absolues des monômes intervenant dans cette écriture ; d'après le
+lemme~\ref{l:coord-norm} on a :
+\begin{align}
+  \prod\fctrange \prod\indrange
+  \Biggl(
+    \frac{ \av{\cexa**} } { \av{\cexa*[\indv*]} }
+  \Biggr)^{\imp**}
+  & \le
+  \prod\fctrange \prod\indrange
+  \Biggl(
+    \frac{ \av{\cexa**} } { \nv\infty{\cexa*} }
+  \Biggr)^{\imp**}
+  \cdot
+  \prod\fctrange \Bigl(
     \nv1{ \varfc* }
-    ( 2 \vdegp* \dimp** )^{\vdeg* (\vdim* + 1) \dv}
-  \Bigr)^{\deg_\fct P^\dermp_\place}
-\end{equation}
-d'après le lemme~\ref{l:coord-norm}.
-
-% \begin{proof}
-%   On commence par utiliser le fait que \( \cex* = \vadapt*^{-1}( \cexa* ) \)
-%   pour minorer le dénominateur, puis une comparaison classique de normes donne
-%   \begin{equation}
-%     \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
-%     \le
-%     \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
-%     \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
-%     \pmm.
-%   \end{equation}
-%   Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
-%     \cexa*[0] = \cex*[0] \) et on remarque alors que le premier facteur dans
-%   l'écriture ci-dessus n'est autre que \( \distv{\ex*}{\divi} \), ce qui nous
-%   permet d'exploiter~\eqref{e:Vapx} :
-%   \begin{align}
-%     \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
-%     & \le
-%     \hautm[2]{\ex*}^{-\wtapx \expapx}
-%     \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
-%     \\ & \le
-%     \hautn{\ex*}^{-\wtapx \expapx}
-%     \cdot \expb^{\wtapx \expapx \htcmp}
-%     \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
-%   \end{align}
-%   où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
-% \end{proof}
-
-En fait, aux places de \( \placesapx \), on peut obtenir une estimation plus
-fine en remarquant que chaque monôme est composé d'un facteur satisfaisant à
-la majoration ci-dessus et d'un autre de la forme
+    \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
+  \Bigr)^{\deg_\fct P_\place}
+  \pmm.
+\end{align}
+Il est clair que le premier facteur est inférieur à \( 1 \) pour tout \(
+  \place \). Cependant, si \( \place \in \placesapx \) on peut dire mieux en se
+concentrant sur la partie
 \begin{equation} \label{e:apx-temp}
-  \prod\fctrange \left(
+  \prod\fctrange
+  \Biggl(
     \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
-  \right)^{\gmp\nu*[0]}
-  \pmm,
+  \Biggr)^{\imp*[0]}
 \end{equation}
-où \( \gmp\nu \) est tel que \( \wtsum*(\gmp\nu) \ge \delta \epsi (1 -
-  \sigma^{-1}) \) d'après la fin du lemme~\ref{l:par-var} et l'hypothèse sur
-\( \dermp \). Or, en utilisant la construction de \( \vadapt* \) et
-l'hypothèse principale~\eqref{e:Vapx}, on a
+et en exploitant l'hypothèse principale.
+On commence par utiliser le fait que \( \cex* = \vadapt*^{-1}( \cexa* ) \)
+pour minorer le dénominateur, puis une comparaison classique de normes donne
+\begin{equation}
+  \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
+  \le
+  \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
+  \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+  \pmm.
+\end{equation}
+Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
+  \cexa*[0] = \cex*[0] \) et on remarque alors que le premier facteur dans
+l'écriture ci-dessus n'est autre que \( \distv{\ex*}{\divi} \), ce qui nous
+permet d'exploiter~\eqref{e:Vapx} :
 \begin{align}
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
-  \frac{ \av{ \cex*[0] } }{ \nv2{ \cex* } }
-  \sqrt{\dimp*}^\dv \nv\infty{\vadapt^{-1}}
-  \\ & \le
   \hautm[2]{\ex*}^{-\wtapx \expapx}
-  \sqrt{\dimp*}^\dv \nv\infty{\vadapt^{-1}}
+  \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+  \\ & \le
+  \expb^{ -\wtapx \expapx \hautn{\ex*} }
+  \cdot \expb^{\wtapx \expapx \htcmp}
+  \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
 \end{align}
+où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
+
 On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
-  & -\wtapx\expapx \sum\fctrange
-  \gmp\nu*[0] \hautl[2]{\ex*}
-  + \sum\fctrange \gmp\nu*[0] \left(
-    \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
-  \right)
-  \\ & \le
-  -\wtapx\expapx \sum\fctrange
-  \gmp\nu*[0] \hautn{\ex*}
+  -\wtapx\expapx \sum\fctrange \gmp\nu*[0] \hautn{\ex*}
   + \sum\fctrange \deg_\fct P^\dermp_\place \left(
     \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
     + \wtapx\expapx \htcmp
   \right)
 \end{align}
-et on majore enfin le premier terme de cette somme par
+et pour majorer le premier terme de cette somme on écrit en utilisant
+encore~\ref{e:wt-ratio}
 \begin{equation}
-  - \delta \wts[1] \hautn{\ex[1]}
-  \wtapx\expapx \epsi (1 - \sigma^{-1}) (1 - \sqrt{\Vcos})
-  \le
-  - \delta \wts[1] \hautn{\ex[1]}
-  \wtapx\expapx \epsi /2
-  \pmm.
+  \sum\fctrange
+  \imp*[0] \hautn{ \ex* }
+  \ge
+  \sum\fctrange
+  \frac{ \imp*[0] }{ \wts* } \, \wts* \hautn{ \ex* }
+  \ge
+  \frac12 \wts[1] \hautn{ \ex[1] }
+  \sum\fctrange
+  \frac{ \imp*[0] }{ \wts* }
+  \ge
+  \frac12 \wts[1] \hautn{ \ex[1] }
+  \, \delta \eps1 (1 - \sigma^{-1})
 \end{equation}
+où le dernier point découle de~\eqref{e:ind-Pv} et de la définition de
+l'indice.
+
+\newpage % XXX
 
 En regroupant tous les termes qui constituent
 \( \frac{ P^\dermp_\place(\cexa) }{ \cexa[][\indv]^{\deg P^\dermp_\place} } \)
