@@ -2508,17 +2508,17 @@ a alors, pour tout \( \place \) :
         \wembclv**(\vmp[\fcti], \vmp[\puiss])
       }
     \right)^\delta
-  }_{\ratfv2}
+  }_{\textstyle \ratfv2}
   \cdot \underbrace{
     \prod\fctirange \left(
       \frac{ \wembcl*[\indiv*](\vmp) }{ \wembcl*[\indig*](\vmp) }
     \right) ^{ \delta }
-  }_{\ratfv3}
+  }_{\textstyle \ratfv3}
   \cdot \underbrace{
     \prod\fctrange \left(
       \frac{ \vmp[\indv*] }{ \vmp[\vdim*] }
     \right) ^{ \epsz \wts* \delta + r_\fct }
-  }_{\ratfv4}
+  }_{\textstyle \ratfv4}
   \pmm.
 \end{align}
 
@@ -2539,7 +2539,7 @@ tout \( \place \) :
     }{
       \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     }
-  }_{\ratfv1} \null
+  }_{\textstyle \ratfv1} \null
   ( \cexa )
   \cdot \ratfv2(\cexa)
   \cdot \ratfv3(\cexa)
@@ -2709,7 +2709,7 @@ de sorte qu'il ne contribue pas à faire diminuer la hauteur finale.
     }
   \end{equation}
   pour pouvoir dire que le dénominateur c'est \( F'' \) modulo l'idéal de \(
-    \var \).  Le souci, c'est le \( \wembcl \) dans la définition de \(
+    \var \).  Le souci, c'est le \( \wembclv \) dans la définition de \(
     \ratfv1 \) : pour se ramener à ce qu'on veut, on est obligés me
   semble-t-il de sortir un facteur
   \begin{equation}
@@ -2743,39 +2743,76 @@ deux familles de polynômes, satisfaisant respectivement des majorations de
 normes aux places finies ou infines ; on ne garde que celui correspondant à
 l'indice \( \dermp \) fixé ci-dessus et la nature archimédienne ou non de la
 place considérée, de façon à obtenir une famille indexée par \( \place \) de
-polynômes \( P_\place \) tels que
+polynômes \( P_\place \) et jouissant des propriétés suivantes :
+\begin{enumthm}
+  \item \( \displaystyle
+      \der[\dermp]
+      \frac{
+        F''(\vmp)
+      }{
+        \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+      }
+      =
+      \frac{ P_\place(\vmp) }{
+        \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+        \, \pden*(\vmp*)^{\lgr{\dermp*}}
+      }
+    \) ;
+  \item \(
+      \deg_\fct P_\place
+      =
+      \Dir* + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
+    \) ;
+  \item \(
+      \nv1{ P_\place }
+      \le
+      \nv1{ F'' }
+      \prod\fctrange
+      \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+      \left(
+        \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+          (\dimp - \vdim*) \lgr{\dermp*} }
+        \cdot 2^{ \vdim* (\Dir*) }
+      \right)^\dv
+    \) ;
+  \item \(
+      \inda* \bigl( P_\place \bigr)
+      \ge
+      \inda*(F'') - \wtsum*(\dermp)
+    \).
+\end{enumthm}
+Rappelons que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta / \sigma
+\) ; en remarquant que \( \inda*(F'') \ge \epsi \delta \) par construction et
+que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition, le dernier point
+dit que \( \inda*( P_\place ) \ge \epsi \delta (1 - \sigma^{-1}) \).
+
+Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
+fonction en deux facteurs :
 \begin{equation}
-  \ratfv1
-  =
-  \der[\dermp]
-  \frac{
-    R(\vmp) \,
-    F( \vmp; \wembclv(\vmp) )
-  }{
-    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-  }
-  =
   \frac{ P_\place(\vmp) }{
-    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* } \, \pden*(\vmp*)^{\lgr{\dermp*}}
+    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+    \, \pden*(\vmp*)^{\lgr{\dermp*}}
   }
-  \pmm.
+  =
+  \underbrace{
+    \frac{ P_\place(\vmp) }{
+      \prod\fctrange (\vmp*[\indv*])^{\deg_\fct P_\place }
+    }
+  }_{\textstyle \ratfv{1a}}
+  \cdot
+  \underbrace{
+    \prod\fctrange
+    \frac{
+      (\vmp*[\indv*])^{\lgr{\dermp*} \cdot \deg \pden*}
+    }{
+      \pden*(\vmp*)^{\lgr{\dermp*}}
+    }
+  }_{\textstyle \ratfv{1b}}
 \end{equation}
+
 
 \newpage % XXX
 
-
-% pour définir \ratfv{1a} et 1b
-%  \frac{ P_\place(\vmp) }{
-%    \vmp[][\indv]^\Dir \pden(\vmp)^{\vlg\dermp} }
-%  =
-%  \frac{ P_\place(\vmp) }{
-%    \vmp[][\indv]^{\deg P_\place } }
-%  \cdot
-%  \frac{
-%    \vmp[][\indv]^{\vlg\dermp \cdot \deg \pden}
-%  }{
-%    \pden(\vmp)^{\vlg\dermp}
-%  }
 
 % \begin{proof}
 %   On commence par utiliser le fait que \( \cex* = \vadapt*^{-1}( \cexa* ) \)
