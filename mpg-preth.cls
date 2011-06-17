@@ -747,7 +747,7 @@
 
 % embeding-dependant values [[2
 %
-\newc@ifstar@two \dimp {n} {n+1} {(n+1)}
+\newcommand \dimp {n}
 \newcommand*\projd [1][] {\proj[#1]\dimp}
 \newcommand \fibre {\mathcal L}
 
@@ -828,7 +828,7 @@
 \newcommand \mexp {\gmp{}} % FIXME: p\mexp usage is stupid, use \gmp p
 % ]]
 
-\newc@ifstar@two \puiss {m} {m-1} {(m-1)}
+\newcommand \puiss {m}
 \nomdef \puiss a {m}
 
 \newcommand \fct      {i}

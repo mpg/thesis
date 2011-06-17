@@ -46,9 +46,9 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     \Vbig & = \stuffout{\cst{vs-ht} \Lambda^{2\,f(u)}}
     \\
     \Vfar & = \stuffout{\dots
-      \text{$>4$ pour \ref{l:sum-wt*}}}
+      \text{$>4$ pour \ref{l:sum-wts}}}
     \\
-    \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:sum-wt*}}}
+    \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:sum-wts}}}
     \\
     \puiss & \ge \stuffout{g+1}
   \end{align}
@@ -215,7 +215,7 @@ en appliquant directement la définition de \( \wt* \). On peut ainsi majorer
 des sommes faisant intervenir les \( \wts* \) en fonction de \( \wts[1] \) ;
 par exemple, l'énoncé suivant nous sera utile par la suite.
 
-\begin{lem} \label{l:sum-wt*}
+\begin{lem} \label{l:sum-wts}
   On a \(
     \sum_{\fct=1}^\puiss (\wts* + \wts**) \le 2 \wts[1]
   \).
@@ -230,7 +230,7 @@ par exemple, l'énoncé suivant nous sera utile par la suite.
     + \sum_{\fct=2}^\puiss \frac{\wts*}{\wts[1]}
     \\
     & \le 1
-    + \frac{\puiss(1+\zeta)}{\Vfar^{\puiss*}}
+    + \frac{\puiss(1+\zeta)}{\Vfar^{\puiss-1}}
     + (1+\zeta) \sum_{\fct=2}^\puiss \Vfar^{-\fct+1}
     \\
     & \le 1 + (1+\zeta) \left(
@@ -454,7 +454,7 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 \begin{lem} \label{l:adapt-gen}
   Soit $\iota \colon \anyvar \embedin \projd$ un sous-schéma fermé intègre de
   degré $\anydeg$, non contenu dans l'hyperplan d'équation $\anyvp[0] = 0$.
-  Il existe une transformation linéaire $\chi \in \GL_{\dimp*}(\Q)$,
+  Il existe une transformation linéaire $\chi \in \GL_{\dimp+1}(\Q)$,
   représentable par une matrice à coefficients entiers de
   valeur absolue (archimédienne) majorée par $\max(\frac\anydeg2, 1)$, telle
   que $\chi \circ \iota$ est un plongement adapté à \( \anyvar \) et que
@@ -518,7 +518,7 @@ transposée de \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
 variables ; il est alors clair que
 \begin{equation}
   \nv1{\varfca*} \le \nv1{\varfc*}
-  \cdot \bigl( \dimp** \vdegp* \bigr)^{\vdeg* (\vdim* + 1)}
+  \cdot \bigl( (\dimp+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1)}
 \end{equation}
 
 Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
@@ -597,12 +597,12 @@ Nous allons représenter ce morphisme par des familles de polynômes. Pour
 cela, commençons par préciser les plongements utilisés : au départ, chaque
 facteur \( \var* \) est plongé par \( \vadapt* \circ \Theta \) ; on utilise
 ces mêmes plongements pour les \( \puiss \) premiers facteurs \( \va \) de
-l'espace d'arrivée et on garde le plongement \( \Theta \) pour les \( \puiss* \)
+l'espace d'arrivée et on garde le plongement \( \Theta \) pour les \( \puiss-1 \)
 facteurs \( \va \) restants.
 
 On munit l'espace \( (\projd)^{2\puiss-1} \) (dans lequel est plongé l'espace
 d'arrivée) des coordonnées multihomogènes \( \vmp, \vmpi = \vmp[1], \dots,
-  \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss*] \) ; dans ce contexte quand \(
+  \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss-1] \) ; dans ce contexte quand \(
   \fct \) et \( \fcti \) sont deux indices non précisés, on supposera
 implicitement \( 1 \le \fct \le \puiss \) et \( 1 \le \fcti \le \puiss-1 \).
 
@@ -704,7 +704,7 @@ entier. On pose alors
     d' & = \bigl(
       \wts[1] (2 + \epsz),
       \dots,
-      \wts[\puiss*] (2 + \epsz),
+      \wts[\puiss-1] (2 + \epsz),
       \wts[\puiss] (2\puiss - 2 + \epsz)
     \bigr) \in \Q^\puiss
   \end{aligned}
@@ -722,7 +722,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \vmp^p \vmpi^q \) pour
 \begin{equation}
   (p, q)
-  \in \N^{\puiss (\dimp*)} \times \N^{(\puiss*) (\dimp*)}
+  \in \N^{\puiss (\dimp+1)} \times \N^{(\puiss-1) (\dimp+1)}
   \text{ tel que }
   \lgr{p\mexp*} = \Dz*
   \text{ et }
@@ -748,8 +748,8 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \hautm[1]{c_{p, q}}
     \le
     \left(
-      \bigl( \hmclab (\dimp*)!^2 \bigr)^2 \,
-      \prod\fctrange (\vdegp*) ^{2\dimp(\puiss*)}
+      \bigl( \hmclab (\dimp+1)!^2 \bigr)^2 \,
+      \prod\fctrange (\vdegp*) ^{2\dimp(\puiss-1)}
     \right) ^{\delta \wts[1]}
     \pmm,
   \end{equation}
@@ -791,16 +791,16 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     & \le
     \prod\fctirange
     \hmclab^{\wtis* + \wts**} \,
-    \bigr( (\dimp*)! (\vdegp[\fcti])^\dimp) \bigl)^{2 \wts[\fcti]} \,
-    \bigr( (\dimp*)! (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
+    \bigr( (\dimp+1)! (\vdegp[\fcti])^\dimp) \bigl)^{2 \wts[\fcti]} \,
+    \bigr( (\dimp+1)! (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hmclab (\dimp*)!^2 \bigr)^{\wtis* + \wts**} \,
+    \bigr( \hmclab (\dimp+1)!^2 \bigr)^{\wtis* + \wts**} \,
     \bigr( \vdegp[\fcti] \bigl)^{2 \dimp \wts[\fcti]} \,
     \bigr( \vdegp[\puiss] \bigl)^{2 \dimp \wts[\puiss]}
   \end{align}
-  Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wt*} et en
-  majorant largement \( \wt* \) par \( \wt[1] \) et \( 1 \) par \( \puiss* \).
+  Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts} et en
+  majorant largement \( \wt* \) par \( \wt[1] \) et \( 1 \) par \( \puiss-1 \).
 \end{proof}
 
 Nous sommes maintenant prêts à commencer la preuve proprement dite de la
@@ -827,15 +827,15 @@ appliquant un lemme de \TS.
 
 \subsection{Idéal d'annulation}
 
-Pour tout \( \imp \in \N^{\puiss\dimp**} \), notons
+Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
 \nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
   d'annulation le long de \( \divi \)}
 \begin{equation}
   \wtsum*( \imp )
   =
   \frac {\imp[1][0]} {\wts[1]} + \dots
-  + \frac {\imp[\puiss*][0]} {\wts[\puiss*]}
-  + \frac {\imp[\puiss][0]} {\wts**(\puiss*)}
+  + \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
+  + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
   \pmm.
 \end{equation}
 Les poids dans cette somme sont essentiellement proportionnels à \( d \), ce
@@ -879,7 +879,7 @@ appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
     \wtsum*(\imp) \le \beta \), défini par~\eqref{e:stairs-def}}
 \begin{equation} \label{e:stairs-def}
   \stairs[\beta] = \set{
-    \imp \in \N^{\puiss\dimp**}
+    \imp \in \N^{\puiss(\dimp+1)}
     \text{ tel que }
     \wtsum*(\imp) \le \beta
   }
@@ -1534,7 +1534,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
         + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
       \bigr)
       \Lambda^{2\,f(u)}
-      + 2 \hlclab + 4(\dimp*)^2
+      + 2 \hlclab + 4(\dimp+1)^2
     \Bigr)
     + o(\delta)
     \pmm.
@@ -1598,10 +1598,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \delta \wts[1]
     \Bigl(
       2 \bigl(
-        \hlclab + 2(\dimp*) \ln(\dimp*)
+        \hlclab + 2(\dimp+1) \ln(\dimp+1)
       \bigr)
       +
-      2 \dimp (\puiss*) \sum\fctrange \ln \vdegp*
+      2 \dimp (\puiss-1) \sum\fctrange \ln \vdegp*
     \Bigr)
     \pmm,
   \end{equation}
@@ -1626,19 +1626,19 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     & \le
     4\puiss \sum\fctrange \wts* \hautl[1]{\varfc*}
     + \wts[1] \Bigl(
-      2 \bigl( \hlclab + 2(\dimp*) \ln(\dimp*) \bigr)
+      2 \bigl( \hlclab + 2(\dimp+1) \ln(\dimp+1) \bigr)
       \\ & \qquad
       + \sum\fctrange \bigl(
-        2 \dimp (\puiss*) \ln \vdegp*
+        2 \dimp (\puiss-1) \ln \vdegp*
         + 2 \ln(4\vdegp*) (\vdeg* (\vdim* + 1) + 1)
       \bigr)
     \Bigr)
     \\ & \le
     \wts[1] \Bigl(
       4\puiss \cst{vs-ht} \Lambda^{2\,f(u)}
-      + 2 \hlclab + 4(\dimp*)^2
+      + 2 \hlclab + 4(\dimp+1)^2
       \\ & \qquad
-      + 2 \dimp \puiss (\puiss*) \ln B
+      + 2 \dimp \puiss (\puiss-1) \ln B
       + 2 \ln(4B) (2B (\vdim + \puiss) + \puiss)
     \Bigr)
   \end{align}
@@ -1656,7 +1656,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
         + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
       \bigr)
       \Lambda^{2\,f(u)}
-      + 2 \hlclab + 4(\dimp*)^2
+      + 2 \hlclab + 4(\dimp+1)^2
     \Bigr)
     + o(\delta)
   \end{equation}
@@ -1682,7 +1682,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
         d' & = \bigl(
           \wts[1] (2 + \epsz),
           \dots,
-          \wts[\puiss*] (2 + \epsz),
+          \wts[\puiss-1] (2 + \epsz),
           \wts[\puiss] (2\puiss - 2 + \epsz)
         \bigr) \in \Q^\puiss
       \end{align}
@@ -2054,7 +2054,7 @@ coefficients) les images de certaines fonctions, en commençant par celles des
 monômes en \( \vp / \vp[\anydim] \).
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soit \( \ip \in \N^{\dimp*} \) et \( M_\ip = \prod\limits\indrange
+  Soit \( \ip \in \N^{\dimp+1} \) et \( M_\ip = \prod\limits\indrange
     \bigl( \frac{\vp*}{\vp[\anydim]} \bigr)^{\ip*} \).  Posons \( \pden =
     \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
   sont donnés par le lemme précédent. Alors :
@@ -2182,7 +2182,7 @@ rationnelles sur notre variété produit \( \var \).  On étend les notations
 précédentes au cas multi-homogène de la façon évidente. En particulier, on a
 un morphisme \( \pmor \) de développement en série, qu'on représente par des
 morphismes \( \pmor*_\dv \) faisant commuter le diagramme
-\begin{equation} \label{pmor*-prod}
+\begin{equation}
   \xymatrix{
     \cdn[\vmp]_{(\varida)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
     & \cdn[\vmp]_{(\varida)} \series\psmp  \ar[d]^\pi
@@ -2272,8 +2272,8 @@ posons
   \wtsum( \dermp )
   =
   \frac {\lgr{\dermp[1]}} {\wts[1]} + \dots
-  + \frac {\lgr{\dermp[\puiss*]}} {\wts[\puiss*]}
-  + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss*)}
+  + \frac {\lgr{\dermp[\puiss-1]}} {\wts[\puiss-1]}
+  + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss-1)}
 \end{equation}
 pour tout \( \dermp \in \N^{\lgr\vdim} \).  Si \( h \) est une forme
 multihomogène et \( \point \) un point où elle est définie, on définit son
@@ -2416,14 +2416,14 @@ représente à peu de chose près la norme de \( \cexa* \).
   Le résultat désiré est alors donné exactement par~\eqref{e:nv-poldep}.
 \end{proof}
 
-On introduit ensuite le point \( \exi \in \va^{\puiss*} \) tel que \(
+On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
   \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl* (\cexa[\fcti],
   \cexa[\puiss]) \) un système de coordonnées multihomogènes de \( \exi \)
-dans le plongement \( \Theta^{\puiss*} \).  On choisit alors pour tout \(
+dans le plongement \( \Theta^{\puiss-1} \).  On choisit alors pour tout \(
   \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
   \av{ \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
 tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
-    \cexi*[\indiv*] } \ge \nv1{ \cexi* } \dimp**^{-\dv} \).
+    \cexi*[\indiv*] } \ge \nv1{ \cexi* } (\dimp+1)^{-\dv} \).
 
 \medskip
 
@@ -2620,7 +2620,7 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
     + \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
   \Bigr) + o(\delta)
   \intertext{et enfin, en invoquant~\eqref{e:wt-ratio} et le
-    lemme~\ref{l:sum-wt*} :}
+    lemme~\ref{l:sum-wts} :}
   \label{e:ratfh4}
   \ratfh4
   & \le
@@ -2677,7 +2677,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }{
     \nv1{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
   }
-  (\dimp*)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
+  (\dimp+1)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
   \frac{
     \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
@@ -2685,10 +2685,10 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }{
     \nv1{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
   }
-  ((\dimp*) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
+  ((\dimp+1) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
   \frac{
-    \bigl( \hmclab* ((\dimp*) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
+    \bigl( \hmclab* ((\dimp+1) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
   }{
     \nnv1{ \wembclv* }
   }
@@ -2702,7 +2702,7 @@ note désormais
 \end{equation}
 de sorte qu'en prenant le logarithme dans l'estimation précédente, puis en
 sommant sur \( \place \) et sur \( \fcti \), compte tenu du
-lemme~\ref{l:sum-wt*}, on a facilement
+lemme~\ref{l:sum-wts}, on a facilement
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
   \delta \Bigl(
@@ -2859,7 +2859,7 @@ habituelles, on a :
   \pmm.
 \end{align}
 On se souvient ensuite que \( \wts[1] \ge \wts* \) et même \( \wts[1] \ge
-  (\puiss-1) \wts[\puiss] \) (par exemple d'après le lemme~\ref{l:sum-wt*})
+  (\puiss-1) \wts[\puiss] \) (par exemple d'après le lemme~\ref{l:sum-wts})
 pour écrire
 \begin{equation}
   \sum\fctrange \lgr{\dermp*}
@@ -2938,7 +2938,7 @@ pour minorer le dénominateur, puis une comparaison classique de normes donne
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   \le
   \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
-  \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+  \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
   \pmm.
 \end{equation}
 Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
@@ -2949,11 +2949,11 @@ permet d'exploiter~\eqref{e:Vapx} :
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
   \hautm[2]{\ex*}^{-\wtapx \expapx}
-  \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+  \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
   \\ & \le
   \expb^{ -\wtapx \expapx \hautn{\ex*} }
   \cdot \expb^{\wtapx \expapx \htcmp}
-  \cdot \sqrt{\dimp*}^\dv \, \nv1{\vadapt^{-1}}
+  \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
 \end{align}
 où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
 
@@ -2961,7 +2961,7 @@ On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
   -\wtapx\expapx \sum\fctrange \gmp\nu*[0] \hautn{\ex*}
   + \sum\fctrange \deg_\fct P^\dermp_\place \left(
-    \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
+    \frac\dv2 \ln(\dimp+1) + \ln \nv\infty{\vadapt^{-1}}
     + \wtapx\expapx \htcmp
   \right)
 \end{align}
@@ -2997,11 +2997,11 @@ facteur par la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place
     \wtapx\expapx \epsi /2
     + \sum\fctrange \deg_\fcti P^\dermp_\place
     \biggl(
-      \frac\dv2 \ln(\dimp*) + \ln \nv\infty{\vadapt^{-1}}
+      \frac\dv2 \ln(\dimp+1) + \ln \nv\infty{\vadapt^{-1}}
       \\
       + \wtapx\expapx \htcmp
       + \ln \nv1{ \varfc* }
-      + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* \dimp** )
+      + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* (\dimp+1) )
     \biggl)
     + \ln \nv1{P^\dermp_\place}
   \Biggr)
