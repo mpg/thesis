@@ -539,7 +539,7 @@ de normes utilisées). Cependant, nous utiliserons souvent la majoration plus
 cette quantité apparaît déjà par ailleurs.
 
 On introduit ensuite \( \pden** \) la dérivée de \( \poldep** \) par rapport à
-la dernière variable et \( \pden* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
+la dernière variable et \( \pdenp* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
 Enfin, on notera \( (\cex**)_\ind \) un système de coordonnées
 multihomogène de \( \ex* \) dans le plongement \( \Theta \) et \(
   (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).  Nous pouvons
@@ -552,7 +552,7 @@ proposition~\ref{p:varset-notmin}.
   \begin{enumthm}
     \item \( \cexa** \neq 0 \) pour tous \( \fct \) et \( \ind \in \set{1,
           \dots, \vdim*} \) ;
-    \item \( \pden*(\cexa*) \neq 0 \) pour tout \( \fct \).
+    \item \( \pdenp*(\cexa*) \neq 0 \) pour tout \( \fct \).
   \end{enumthm}
   Remarquons qu'on a déjà \( \cexa*[0] \neq 0 \) d'après
   l'hypothèse~\eqref{e:Vapx}.
@@ -615,11 +615,11 @@ verticales sont les projections canoniques, commute :
   \xymatrix{
     \cdn [\vmp, \vmpi]                      \ar [r] ^{\wemba}   \ar [d]
     & \cdn [\vmp]                                               \ar [d] ^\pi
-    \\ \cdn [\vmp, \vmpi] / \ideala{\wemb(\var)} \ar [r] ^{\wemb^*}
+    \\ \cdn [\vmp, \vmpi] / \idealim \ar [r] ^{\wemb^*}
     & ( \cdn [\vmp] / \varida )_\opdef
   }
 \end{equation}
-En bas, \( \ideala{\wemb(\var)} \) désigne l'idéal multihomogène de l'image
+En bas, \( \idealim \) désigne l'idéal multihomogène de l'image
 dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\opdef \)
 désigne la localisation de l'anneau des coordonnées au départ en un ouvert \(
   \opdef \), choisi de façon à ce que \( \pi \circ \wemba \) soit bien défini
@@ -709,9 +709,9 @@ entier. On pose alors
     \bigr) \in \Q^\puiss
   \end{aligned}
 \end{equation}
-de sorte que, si \( F \) est une forme de multidegré \( \delta d \) dans \(
+de sorte que, si \( F \) est une forme de multidegré \( \Dz \) dans \(
   \cdn[\vmp, \vmpi] \), son image par \( \wemba \) est de multidegré
-exactement \( \delta d' \) d'après le lemme~\ref{l:deg-wemba}.
+exactement \( \Di \) d'après le lemme~\ref{l:deg-wemba}.
 
 \medskip
 
@@ -894,15 +894,15 @@ En conservant les notations précédentes et notamment~\eqref{e:d-dp-def}, on
 cherche une forme
 \begin{equation}
   F'
-  \in \cdn[\vmp]_{\delta d'}
+  \in \cdn[\vmp]_\Di
   \cap \vanish
-  \cap \wemba(\cdn[\vmp, \vmpi]_{\delta d})
+  \cap \wemba(\cdn[\vmp, \vmpi]_\Dz)
 \end{equation}
 non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
 \wemba(F)$), on cherche une forme
 \begin{equation}
   F
-  \in \cdn[\vmp, \vmpi]_{\delta d}
+  \in \cdn[\vmp, \vmpi]_\Dz
   \cap \wemba^{-1}(\vanish)
 \end{equation}
 non nulle modulo l'idéal de $\wemb(\var)$, de hauteur relativement petite.
@@ -917,19 +917,18 @@ $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
 Nous allons donc devoir procéder à quelques réductions pour récrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\vmp]_{\delta d'}$ dans lequel $\vanish$
+un sous-espace de $\cdn[\vmp]_\Di$ dans lequel $\vanish$
 est de codimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
-Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_{\delta d}$ un
-supplémentaire de $(\ideala{\wemb(\var)})_{\delta d}$ engendré par des
-monômes, que l'on notera $\ideala{\delta d}$, et dans lequel on cherchera
-$F$.
+Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_\Dz$ un
+supplémentaire de $(\idealim)_\Dz$ engendré par des
+monômes, que l'on notera $\fspace$ et dans lequel on cherchera $F$.
 
 On considérera des sous-espaces vectoriels de partie homogènes de
 $\cdn[\vmp]$ définis par des restrictions de degré ; introduisons à cet effet
-quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
-  \})^{\puiss(\dimp+1)}$, on notera
+quelques notations. Pour chaque $C \in (\N \cup \set{ +\infty })
+^{\puiss(\dimp+1)}$, on notera
 \begin{equation} \label{e:C-spaces}
   \cdn[\vmp]^C
   = \{
@@ -966,23 +965,23 @@ certain $\Delta$ dans la définition précédente.
 
 Le plan général de l'écriture du système se résume alors par le diagramme
 commutatif suivant, où l'on note
-\( \ringa{\wemb(\var)} = \cdn[\vmp, \vmpi] / \ideala{\wemb(\var)} \)
+\( \ringa{\wemb(\var)} = \cdn[\vmp, \vmpi] / \idealim \)
 et
-\( \ringa{\opdef} = (\cdn[\vmp])_\opdef \)
+\( (\vringa)_\opdef = (\cdn[\vmp] / \varida)_\opdef \)
 et où les flèches verticales sont les morphismes de réduction.
 
 \begin{equation} \label{e:diag-f-aux}
   \xymatrix{
-    \ideala\Dz           \ar [r] ^{\wemba}        \ar [d] _{\sim}
-    & \cdn [\vmp]_\Di    \ar [r] ^{\rdiv^\Di}    \ar [d]
-    & \cdn [\vmp]\Ci     \ar [r] ^{\relim}        \ar [d]
-    & \cdn [\vmp]\Cii    \ar [r] ^{\rdiv^\Dir}   \ar [d]
-    & \cdn [\vmp]\Ciii                            \ar [d]
+    \fspace                \ar [r] ^{\wemba}        \ar [d] _{\sim}
+    & \cdn [\vmp]_\Di      \ar [r] ^{\rdiv^\Di}     \ar [d]
+    & \cdn [\vmp]\Ci       \ar [r] ^{\relim}        \ar [d]
+    & \cdn [\vmp]\Cii      \ar [r] ^{\rdiv^\Dir}    \ar [d]
+    & \cdn [\vmp]\Ciii                              \ar [d]
     \\ \ringa{\wemb(\var)} \ar [r] ^{\wemb^*}
-    & \ringa\opdef         \ar [r] ^{\I}
-    & \ringa\opdef         \ar [r] ^{R \cdot \null}
-    & \ringa\opdef         \ar [r] ^{\I}
-    & \ringa\opdef
+    & (\vringa)_\opdef     \ar [r] ^{\I}
+    & (\vringa)_\opdef     \ar [r] ^{R \cdot \null}
+    & (\vringa)_\opdef     \ar [r] ^{\I}
+    & (\vringa)_\opdef
   }
 \end{equation}
 
@@ -998,16 +997,16 @@ assure que $R$ ne dépend en effet que de $\var$.
 
 Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
 notre objectif : il s'agira en fait de construire une forme $F \in
-\ideala{\delta d} \setminus \{0\}$ telle que
+\fspace \setminus \{0\}$ telle que
 \begin{equation}
-  \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
+  \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
   \in \vanish*
   \pmm,
 \end{equation}
 ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 \begin{equation}
   R \cdot \wemba(F)
-  - \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(\wemba(F))))
+  - \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
   \in \varida
   \subset \vanish
   \pmm.
@@ -1015,13 +1014,13 @@ ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
 
 Au final, le système d'équations auquel on appliquera le lemme de \TS
 sera composé des équations définissant $\vanish$ dans
-\( \cdn[\vmp]_{\delta d' + r'}^{C'''} \),
-tirées en arrière sur $\ideala{\delta d}$ par
-\( \rdiv^{\delta d'} \circ \relim \circ \rdiv^{\delta d' + r} \circ \wemba \).
+\( \cdn[\vmp]_{\Dir'}^{C'''} \),
+tirées en arrière sur $\fspace$ par
+\( \rdiv^\Di \circ \relim \circ \rdiv^\Dir \circ \wemba \).
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
-  \item Calculer la dimension de $\ideala{\delta d}$ et la codimension de
-    $\vanish*$ dans $\cdn[\vmp]_{\delta d' + r}^{C'''}$, et s'assurer que la
+  \item Calculer la dimension de $\fspace$ et la codimension de
+    $\vanish*$ dans $\cdn[\vmp]_\Dir^{C'''}$, et s'assurer que la
     deuxième est plus petite que la première ;
   \item Expliciter les morphismes \( \rdiv \) et \( \relim \) de la première
     ligne du diagramme et majorer la hauteur de leurs matrices dans les bases
@@ -1036,7 +1035,7 @@ vers l'infini.
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
-La dimension de $\ideala{\delta d}$ est donnée par le théorème de
+La dimension de $\fspace$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
 $\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais
 comme il suffit en fait de minorer la dimension, le lemme suivant nous donne
@@ -1114,13 +1113,13 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \begin{lem}
   Avec les notations précédentes, on a
   \begin{align}
-    \dim \ideala{\delta d}
+    \dim \fspace
     \ge
     \frac{ \epsz^{\vdim[\puiss]}
       \prod\fctrange \vdeg* \, \wt* ^{2\vdim*}
-      }{ \vdim ! }
-    \delta^{\vlg\vdim}
-    + o( \delta^{\vlg\vdim} )
+      }{ \prod\fctrange \vdim* ! }
+    \delta^\vdim
+    + o( \delta^\vdim )
     \pmm.
   \end{align}
 \end{lem}
@@ -1130,22 +1129,22 @@ tout ce qu'on aura besoin de savoir sur le degré.
   utilisant le lemme précédent, car une somme de nombre positifs est minorée
   par chacun de ses termes. Il vient
   \begin{align}
-    \dim \ideala{\delta d}
+    \dim \fspace = \dim \ringa{\wemb(\var)}
     & =
     \Biggl(
     \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
     \deg_t \wemb(\var) \frac{ d^t }{ t! }
     \Biggr)
-    \delta^{\vlg\vdim}
-    + o( \delta^{\vlg\vdim} )
+    \delta^\vdim
+    + o( \delta^\vdim )
     \\
     & \ge
     \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
     \bigl( \wemb(\var) \bigr)
     \cdot
-    \frac { (\epsz \wts**)^{\vdim[\puiss]} }{ \vdim ! }
-    \delta^{\vlg\vdim}
-    + o( \delta^{\vlg\vdim} )
+    \frac { (\epsz \wts**)^{\vdim[\puiss]} }{ \prod\fctrange \vdim* ! }
+    \, \delta^\vdim
+    + o( \delta^\vdim )
   \end{align}
   par définition de \( d \), voir~\eqref{e:d-dp-def}. On achève la preuve en
   combinant avec le résultat du lemme précédent.
@@ -1167,7 +1166,7 @@ suivant :
         \times \{ 0, \dots, \vdeg* - 1 \}
         \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
-      \\ & \quad
+      \\ & \qquad
       \text{tel que }
       \wtsum*(\lambda) \le \delta \epsi
       \text{ et }
@@ -1227,20 +1226,20 @@ dans \( (\stairs)\Ciii \).
       \text{ tel que }
       \sum_{j=1}^{\vdim*} \imp*[j]
       =
-      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*]
+      \Dir* - \imp*[0] - \imp*[\vdim*]
     \right\}
     \pmm,
   \end{equation}
   qui est de cardinal
   \begin{align}
     \binom {
-      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*] + \vdim* - 1
+      \Dir* - \imp*[0] - \imp*[\vdim*] + \vdim* - 1
       }{
       \vdim* - 1
       }
     & \le
     \binom {
-      \delta d'_\fct + r_\fct + \vdim* - 1
+      \Dir* + \vdim* - 1
       }{
       \vdim* - 1
       }
@@ -1266,7 +1265,7 @@ dans \( (\stairs)\Ciii \).
 
 Au vu des deux lemmes précédents et de~\eqref{e:epsz-epsi-siegel}, on a
 \begin{equation} \label{e:good-codim}
-  \frac {\card (\stairs)\Ciii} {\dim \ideala{\delta d}}
+  \frac {\card (\stairs)\Ciii} {\dim \fspace}
   \le
   \frac12 + o(1)
   \pmm.
@@ -1380,7 +1379,7 @@ l'appliquer au cas qui nous intéresse.
     \prod\fctrange \left(
     \nv1{ \varfc* }
     ( 4 \vdegp* )^{(\vdeg* (\vdim* + 1) + 1) \dv}
-    \right) ^{ \delta d'_\fct }
+    \right) ^{ \Di* }
     \cdot \expb^{ o(\delta) }
   \end{equation}
 \end{coro}
@@ -1523,9 +1522,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{prop} \label{p:build-aux}
   Sous les hypothèses et notations précédentes et si
   \( \delta \) est assez grand, il existe une forme \( F \in \cdn [\vmp,
-    \vmpi] \), multihomogène de degré \( \delta d \) (où l'on rappelle que \(
+    \vmpi] \), multihomogène de degré \( \Dz \) (où l'on rappelle que \(
     d \) est défini par~\eqref{e:d-dp-def}), non nulle modulo \(
-    \ideala{\wemb(\var)} \), telle que \( R \cdot \wemba(F) \in \vanish \) et
+    \idealim \), telle que \( R \cdot \wemba(F) \in \vanish \) et
   \begin{equation}
     \hautl[\infty] F
     \le
@@ -1566,7 +1565,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
   multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
   \( M' \) les colonnes indexées par des monômes constituant une base
-  de \( \ideala\Dz \) pour former la matrice \( M \) à laquelle nous allons
+  de \( \fspace \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
 
   La relation~\eqref{e:good-codim} se lit alors \( \frac pq \le \frac12 + o(1)
@@ -1667,7 +1666,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{scho} \label{s:aux-co}
   On note désormais \( F \) une forme comme dans la conclusion de la
   proposition précédente, \( F' = \wemba(F) \) et \( F'' =
-    \rdiv^{\delta d' + r}(\relim(\rdiv^{\delta d'}(F'))) \). On a alors
+    \rdiv^\Dir(\relim(\rdiv^\Di(F'))) \). On a alors
   \begin{enumthm}
     \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish* \) ;
     \item \( \deg F'' = \deg RF' = \deg F' + r_\fct = \Di + o(\delta) \),
@@ -2197,7 +2196,7 @@ et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
 Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
 morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
 avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
-produit tensoriel de ces morphismes. On remarque que formes \( \gmp\pden** \)
+produit tensoriel de ces morphismes. On remarque que les formes \( \pden** \)
 données par ces applications du lemme cité sont en fait celles définies au
 parapgraphe précédent le scolie~\ref{s:part-cases}.  Nous étudions maintenant
 l'image par \( \pmor* \) de certaines fonctions rationnelles.
@@ -2774,7 +2773,7 @@ polynômes \( P_\place \) et jouissant des propriétés suivantes :
       =
       \frac{ P_\place(\vmp) }{
         \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-        \, \pden*(\vmp*)^{\lgr{\dermp*}}
+        \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
       }
     \) ;
   \item \(
@@ -2814,7 +2813,7 @@ fonction en deux facteurs :
 \begin{equation}
   \frac{ P_\place(\vmp) }{
     \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-    \, \pden*(\vmp*)^{\lgr{\dermp*}}
+    \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
   }
   =
   \underbrace{
@@ -2826,9 +2825,9 @@ fonction en deux facteurs :
   \underbrace{
     \prod\fctrange
     \frac{
-      (\vmp*[\indv*])^{\lgr{\dermp*} \cdot \deg \pden*}
+      (\vmp*[\indv*])^{\lgr{\dermp*} \cdot \deg \pdenp*}
     }{
-      \pden*(\vmp*)^{\lgr{\dermp*}}
+      \pdenp*(\vmp*)^{\lgr{\dermp*}}
     }
   }_{\textstyle \ratfv{1b}}
 \end{equation}
@@ -2837,15 +2836,15 @@ pas nul d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
 \begin{equation}
   \prod_\place
   \frac{
-    \av{ \cexa*[\indv] }^{ \deg \pden* \lgr{\dermp*} \degv }
+    \av{ \cexa*[\indv] }^{ \deg \pdenp* \lgr{\dermp*} \degv }
   }{
     \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
   }
   \le
-  \hautm[\infty]{ \cexa* }^{ \deg \pden* \lgr{\dermp*} }
+  \hautm[\infty]{ \cexa* }^{ \deg \pdenp* \lgr{\dermp*} }
   \pmm.
 \end{equation}
-On note alors que par définition, \( \deg \pden* = 2 (\vdeg*-1) (\dimp-\vdim*)
+On note alors que par définition, \( \deg \pdenp* = 2 (\vdeg*-1) (\dimp-\vdim*)
   \le 2B\dimp \), puis en utilisant des comparaisons de hauteurs désormais
 habituelles, on a :
 \begin{align}

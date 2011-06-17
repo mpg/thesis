@@ -935,7 +935,8 @@
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
-\newc@star@deftwo \pden   {\fct}{\indi} {U\pexp{#1}[#2]}
+\newc@star@deftwo \pden   {\fct}{\indi} {Q\pexp{#1}[#2]}
+\newc@star@default \pdenp {\fct}{}      {Q\ssub{#1}}
 \nomdef \poldep a {P} \@gobbletwo{\poldep}{Relation de dépendance intégrale
   des dernières variables sur les premières dans un plongement adapté}
 
@@ -967,6 +968,7 @@
 \nomdef \wembcl a {L} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires
   utilisées dans \( \wemb \)}
 
+\newcommand \idealim { \ideala{\wemb(\var)} }
 
 % vanishing conditions [[2
 %
@@ -996,6 +998,9 @@
 \newcommand \Ci   { \sb\Di   \sp{C'}   }
 \newcommand \Cii  { \sb\Di   \sp{C''}  }
 \newcommand \Ciii { \sb\Dir  \sp{C'''} }
+
+% the space were the auxiliary form is to be found
+\newcommand \fspace { \mathcal{\tilde F}_{\Dz} }
 
 % the product sub-variety considered and its attributes [[2
 %
