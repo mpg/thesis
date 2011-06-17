@@ -43,14 +43,14 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
     considérée}
   \begin{align}
-    \Vbig & = \stuffout{\text{grand}}
+    \Vbig & = \stuffout{\cst{vs-ht} \Lambda^{2\,f(u)}}
     \\
     \Vfar & = \stuffout{\dots
       \text{$>4$ pour \ref{l:sum-wt*}}}
     \\
     \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:sum-wt*}}}
     \\
-    \puiss & \ge \stuffout{g}
+    \puiss & \ge \stuffout{g+1}
   \end{align}
 \end{thm}
 
@@ -108,8 +108,8 @@ l'annexe~\ref{sec:form-ab-alt}.
   entiers \( b_{\fct2} \) et \( b_{\fct3} \) tels que cette dernière condition
   soit satisfaite.
 
-  Il reste plus qu'à définir \( \wt[1] \) comme une dénominateur commun des \(
-    b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \( \fct > 1
+  Il ne reste plus qu'à définir \( \wt[1] \) comme une dénominateur commun des
+  \( b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \( \fct > 1
   \). Notons que ceci nous permet de choisir les \( \wt* \) arbitrairement
   grands, car seuls leurs rapports compte.
 \end{proof}
@@ -170,7 +170,8 @@ lemme suivant.
     & \qquad + 2 \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
     && \text{d'après~\eqref{e:wt-ratio}}
   \end{alignat}
-  qui donne le résultat annoncé en factorisant.
+  qui donne le résultat annoncé en factorisant \( (\wt[1] \normn{\ex[1]})^2 =
+      \wts[1] \hautn{\ex[1]} \).
 \end{proof}
 
 \begin{tdef} \label{d:wt-choose}
@@ -267,10 +268,10 @@ plongement \( \Theta^\puiss \) :
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 \worknote{Rémond p. 106 et 112}
 \begin{align}
-  \Lambda & = \stuffout{(6m)^{2m^2}, \eps^{-1}} \\
+  \Lambda & = \stuffout{(6m\eps^{-1})^{2m^2}} \\
   f(u) & = \stuffout{\prod_{i=u+1}^{mg} (3i + 1) \le m^{3m^2 - u}} \\
   \newcst[]{vs-deg-prod} & = \stuffout{(32m)^{m+3}} \\
-  \newcst[\va]{vs-ht} & = \stuffout{n^{m^2} \vaht}
+  \newcst[\va]{vs-ht} & = \stuffout{n^{m^2} c(\vaht, \hlclab)}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
@@ -325,8 +326,10 @@ Le théorème de \bsc{Bézout} donne alors
 et sa version arithmétique indique que
 \begin{equation}
   \stuffout{
-    \hautl{\var*'} \le \vdeg* \hautl{T} + \hautl{\var*} \deg T
-    + \text{cte(dimension)} \vdeg* \deg T
+    \hautl[\mathrm{proj}]{\var*'}
+    \le
+    \vdeg* \hautl[1]{T}
+    + \hautl[\mathrm{proj}]{\var*} \deg T
   }
   \pmm,
 \end{equation}
@@ -397,7 +400,7 @@ désignera une famille d'entiers.
 \end{tdef}
 
 Le fait suivant, qui ne fait que rappeler \cite[partie~4.1, p.~114]{remivds},
-explicite les principales propriétés d'un plongement adapté, qui est en fait
+explicite les principales propriétés d'un plongement adapté, qui est
 une version plus précise de la mise en position de \bsc{Noether}.
 
 \begin{fact} \label{f:plong-adapt-gen}
@@ -410,7 +413,7 @@ une version plus précise de la mise en position de \bsc{Noether}.
     \frac{\anyvp[\anydim]}{\anyvp[0]} ) \).
 
   La projection linéaire \( \anyvar \to \proj\anydim \) obtenue en ne gardant
-  que les \( \anydim + 1 \) variables est un revêtement ramifié.
+  que les \( \anydim + 1 \) premières variables est un revêtement ramifié.
 \end{fact}
 
 On contrôle en fait des relations de dépendance intégrale des dernières
@@ -476,23 +479,18 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
 établit un résultat général élémentaire sur l'inversion de matrices.
 
 \begin{lem} \label{l:cramer}
-  Soit \( R \) une matrice \( r \times r \) inversible à coefficients entiers,
-  de valeur absolue inférieure ou égale à \( C \), et \( v \) une place de \(
-    \Q \). Alors \( \nnv\infty{R^{-1}} \le (r-\dv)! \cdot C^{r-\dv} \) et \(
-    \hautm[\infty]{R^{-1}} \le (r-1)! \cdot C^{r-1} \).
+  Soit \( M \) une matrice \( p \times p \) inversible à coefficients entiers
+  de valeur absolue inférieure ou égale à \( C \).  On a alors \(
+    \hautm[\infty]{M^{-1}} \le (p-1)! \cdot C^{p-1} \).
 \end{lem}
 
 \begin{proof}
-  On utilise les formules de \bsc{Cramer}. À la place archimédienne, on minore
-  \( \det R \) par \( 1 \) et on majore par \( (r-1)! C^{r-1} \) la norme de
-  chaque cofacteur. Aux places finies, on remarque que la comatrice est à
-  coefficients entiers et on utilise la formule du produit pour majorer
-  \( \av{\det R}^{-1} \) par \( \av{\det R}[\infty] \le r! C^r \).
-
-  L'assertion sur la hauteur vient en remarquant que la contribution du
-  déterminant est nulle dès qu'on prend le produit sur toutes les places, et
-  que la hauteur de la comatrice est majorée par sa valeur absolue
-  archimédienne.
+  On utilise les formules de \bsc{Cramer}. On constante d'abord que la
+  contribution de l'inverse du déterminant s'élimine en prenant le produit sur
+  toutes les places, de sorte qu'il s'agit d'estimer la hauteur de la
+  comatrice. Cette dernière est à coefficients entiers, donc de norme
+  inférieur à \( 1 \) aux places finies, et la valeur absolue archimédienne
+  des coefficients est majorée par \( (p-1)! \, C^{p-1} \).
 \end{proof}
 
 \begin{tdef}
@@ -515,19 +513,21 @@ La construction et le lemme précédent montrent alors que
 On note \( \varida* \) l'idéal homogène saturé de \( \var* \) dans le
 plongement \( \vadapt* \circ \Theta \) et \( \varfca* \) une forme de
 \bsc{Chow} de \( \var* \) dans ces coordonnées. Le théorème de l'élimination
-montre qu'une telle forme s'obtient en composant \( \varfc* \) avec \(
-  \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de variables ; il est
-alors clair que
+montre qu'une telle forme s'obtient en composant \( \varfc* \) avec la
+transposée de \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
+variables ; il est alors clair que
 \begin{equation}
   \nv1{\varfca*} \le \nv1{\varfc*}
   \cdot \bigl( \dimp** \vdegp* \bigr)^{\vdeg* (\vdim* + 1)}
 \end{equation}
 
-On notera par ailleurs \( \poldep** \) une relation de dépendance de \(
-  \vmp*[\indi] \) sur \( \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée
-par l'application du fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans
-le plongement. L'estimation précédente et le fait cité donnent une majoration
-des normes locales de ces polynômes, qu'on peut en fait améliorer en
+Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
+  \poldep** \) une relation de dépendance de \( \vmp*[\indi] \) sur \(
+  \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée par l'application du
+fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans le plongement \(
+  \vadapt* \circ \Theta \). L'estimation précédente et le fait cité donnent
+une majoration des normes locales de ces polynômes, qu'on peut en fait
+améliorer en
 \begin{equation} \label{e:nv-poldep}
   \nv1{\poldep**} \le \nv1{\varfc*}
   \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
@@ -547,14 +547,29 @@ maintenant énoncer les cas particuliers à exclure dans la démonstration de la
 proposition~\ref{p:varset-notmin}.
 
 \begin{scho} \label{s:part-cases}
-  On peut supposer que :
+  Dans la démonstration de la proposition~\ref{p:varset-notmin}, on peut
+  supposer que :
   \begin{enumthm}
-    \item \( \cexa** \neq 0 \) pour tous \( \fct \) et \( \ind \) ;
+    \item \( \cexa** \neq 0 \) pour tous \( \fct \) et \( \ind \in \set{1,
+          \dots, \vdim*} \) ;
     \item \( \pden*(\cexa*) \neq 0 \) pour tout \( \fct \).
   \end{enumthm}
+  Remarquons qu'on a déjà \( \cexa*[0] \neq 0 \) d'après
+  l'hypothèse~\eqref{e:Vapx}.
 \end{scho}
 
-En effet, dans ces cas la conclusion de la proposition est immédiate.
+\begin{proof}
+  Si le premier point n'est pas satisfait, pour un certain \( (\fct, \ind) \),
+  on peut prendre \( T = \vmp** \) dans la conclusion de la
+  proposition ; en effet cette forme ne s'annulle en \( \ex \) mais pas
+  identiquement sur \( \var \) (car le plongement est adapté) et les
+  conditions de degré et de hauteur sont largement satisfaites.
+
+  \later
+  Si le deuxième point est faux, on a aussi la conclusion de la proposition en
+  procédant comme au lemme~4.3 de \cite{remivds}.
+\end{proof}
+
 
 
 \subsection{Plongement abélien pondéré, notations et stratégie}
@@ -564,25 +579,25 @@ Introduisons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \),
 défini par
 \nomuse \wemb [chap] {Plongement éclatant introduit à la
   section~\ref{sec:wemb}}
-\begin{align} \label{e:def-wemb}
-  \wemb \colon \var
+\begin{alignat}{2} \label{e:def-wemb}
+  \wemb \colon && \var
   & \longto \va^\puiss \times \va^{\puiss-1}
   = \va^{2\puiss-1}
-  \\
+  \\ &&
   (\pmp_1, \dots, \pmp_\puiss)
   & \longmapsto
   (\pmp_1, \dots, \pmp_\puiss;
   \wt[1] \pmp_1 - \wt** \pmp_\puiss, \dots,
   \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
   \pmm.
-\end{align}
+\end{alignat}
 qui nous permettra d'exploiter la relation~\eqref{e:hautn-wt-diff}.
 
 Nous allons représenter ce morphisme par des familles de polynômes. Pour
 cela, commençons par préciser les plongements utilisés : au départ, chaque
 facteur \( \var* \) est plongé par \( \vadapt* \circ \Theta \) ; on utilise
 ces mêmes plongements pour les \( \puiss \) premiers facteurs \( \va \) de
-l'espace d'arrivée on garde le plongement \( \Theta \) pour les \( \puiss* \)
+l'espace d'arrivée et on garde le plongement \( \Theta \) pour les \( \puiss* \)
 facteurs \( \va \) restants.
 
 On munit l'espace \( (\projd)^{2\puiss-1} \) (dans lequel est plongé l'espace
@@ -615,7 +630,7 @@ Introduisons des formes
 \begin{equation} \label{e:def-wembclv}
   \wembclv*
   = L\pexp{\wti*, \wti**}[{\ex[\fcti], \ex**, \place}]
-  \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp**) \bigr)
+  \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
 où \( L\pexp{\wti*, \wti**}[{\ex[\fcti], \ex**, \place}] \) est une famille
 de formes bihomogènes donnée par l'application du lemme~\ref{l:hclab} au
@@ -663,7 +678,7 @@ Introduisons deux réels \( \epsz, \epsi \) strictement positifs tels que :
 \begin{gather} \label{e:epsz-epsi-siegel}
   \frac {
     \epsi^\puiss (\puiss-1)
-    (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+    (2\puiss -2 + \epsz) ^{\vdim[\puiss]-1}
     (2 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
     \prod\fctrange \vdim*
   }{
@@ -750,13 +765,13 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \nv1 {c_{p, q}}
     & \le
     \prod\fctirange \prod\indrange
-    \nv1{ \wembcl* \bigl(
-        \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp**)
+    \nv1{ \wembcl** \bigl(
+        \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss])
       \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \prod\indrange \left(
-      \nv1{ \wembcl* } \,
+      \nv1{ \wembcl** } \,
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
       \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^{q\pexp\fcti[\ind]}
@@ -794,8 +809,8 @@ traités par le scolie~\ref{s:part-cases}. La preuve suit alors la méthode de
 \TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
 de \( \divi \), puis on montre qu'elle s'annule en \( \ex \) avec un indice
 plus faible mais toujours élevé par rapport à son degré et on conclu en
-applicant une variante du théorème du produit pour obtenir la conclusion de la
-proposition.
+appliquant une variante du théorème du produit pour obtenir la conclusion de
+la proposition.
 
 
 \section{Construction d'une forme auxiliaire} \label{sec:siegel}
@@ -807,7 +822,7 @@ hauteur contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).
 Nous commençons par définir la notion d'indice utilisée, puis précisons la
 stratégie de construction de la forme recherchée. Nous établissons ensuite les
 estimations de dimension et de hauteur nécessaires avant de conclure en
-appliquant un lemme de \bsc{Siegel}.
+appliquant un lemme de \TS.
 
 
 \subsection{Idéal d'annulation}
@@ -835,7 +850,7 @@ On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
   =
   \max \set{
     \alpha \in \R
-    \text{ tels que }
+    \text{ tel que }
     \wtsum*(\imp) \le \alpha \implies h_\imp = 0
   }
   \pmm.
@@ -850,7 +865,7 @@ On introduit alors, pour \( \beta > 0 \), les idéaux
   \vanish*[\beta]
   = \left\{
     H \in \cdn [\vmp]
-    \text{ tels que }
+    \text{ tel que }
     \inda*(H) \ge \beta
   \right\}
 \end{equation}
@@ -865,7 +880,7 @@ appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
 \begin{equation} \label{e:stairs-def}
   \stairs[\beta] = \set{
     \imp \in \N^{\puiss\dimp**}
-    \text{ tels que }
+    \text{ tel que }
     \wtsum*(\imp) \le \beta
   }
 \end{equation}
@@ -900,7 +915,7 @@ il comporte beaucoup trop d'équations (géométriquement, il correspond à une
 condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
 $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
-Nous allons donc devoir procéder à quelques réductions pour pouvoir écrire le
+Nous allons donc devoir procéder à quelques réductions pour récrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
 un sous-espace de $\cdn[\vmp]_{\delta d'}$ dans lequel $\vanish$
 est de codimension suffisamment petite pour pouvoir demander que l'image de
@@ -919,7 +934,7 @@ quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
   \cdn[\vmp]^C
   = \{
     F \in \cdn[\vmp]
-    \text{ tels que }
+    \text{ tel que }
     \deg_{\vmp*[k]} F \le C\pexp{\fct}[k]
     \quad \forall i, k
     \}
@@ -928,25 +943,26 @@ quelques notations. Pour chaque $C \in (\N \cup \{ +\infty
 On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
 par
 \begin{gather} \label{e:C-i-iii}
-  (C')\pexp\fct[k] =
+  (C')\pexp\fct[\ind] =
   \begin{cases}
-    +\infty & \text{si $k \le \vdim*$} \\
+    +\infty & \text{si $\ind \le \vdim*$} \\
     \vdeg* - 1 & \text{sinon}
   \end{cases}
   \qquad
-  (C'')\pexp\fct[k] =
+  (C'')\pexp\fct[\ind] =
   \begin{cases}
-    +\infty & \text{si $k \le \vdim* + 1$} \\
+    +\infty & \text{si $\ind \le \vdim* + 1$} \\
     0 & \text{sinon}
   \end{cases}
   \\
-  C''' = \min(C', C'')
+  (C''')\pexp\fct[\ind] = \min\bigl(
+    (C')\pexp\fct[\ind], (C'')\pexp\fct[\ind]
+  \bigr)
   \pmm,
 \end{gather}
-pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$, et avec l'ordre produit
-évident pour la dernière définition. Par ailleurs, on notera $C'_\Delta$ et
-$C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un certain $\Delta$
-dans la définition précédente.
+pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$.  Par ailleurs, on notera
+$C'_\Delta$ et $C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un
+certain $\Delta$ dans la définition précédente.
 
 Le plan général de l'écriture du système se résume alors par le diagramme
 commutatif suivant, où l'on note
@@ -997,7 +1013,7 @@ ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
   \pmm.
 \end{equation}
 
-Au final, le système d'équations auquel on appliquera le lemme de \bsc{Siegel}
+Au final, le système d'équations auquel on appliquera le lemme de \TS
 sera composé des équations définissant $\vanish$ dans
 \( \cdn[\vmp]_{\delta d' + r'}^{C'''} \),
 tirées en arrière sur $\ideala{\delta d}$ par
@@ -1207,7 +1223,7 @@ dans \( (\stairs)\Ciii \).
     \left\{
       (\imp*[1],  \dots, \imp*[\vdim*])
       \in \N ^{\vdim*}
-      \text{ tels que }
+      \text{ tel que }
       \sum_{j=1}^{\vdim*} \imp*[j]
       =
       \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*]
@@ -1477,7 +1493,7 @@ d'en savoir davantage sur \( R \) ni les \( N'_\fct \).
 \subsection{Construction finale de la forme auxiliaire}
 
 Commençons par rappeler la version que nous utiliserons du classique lemme de
-\bsc{Siegel}.
+\TS.
 
 \begin{fact} \label{f:siegel}
   Pour toute matrice \( M \) de dimensions \( p \times q \) à coefficients
@@ -1494,7 +1510,7 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
 \end{fact}
 
 \begin{proof}
-  C'est le lemme de \bsc{Siegel} de \bsc{Bombieri} et \bsc{Vaaler} tel
+  C'est le lemme de \TS de \bsc{Bombieri} et \bsc{Vaaler} tel
   qu'énoncé dans~\cite{bogf}. Notons que des versions plus précises
   existent, mais les améliorations ne concernent que des termes qui sont
   négligeables dans notre situation et n'ont donc pas d'intérêt ici.
@@ -2075,7 +2091,7 @@ monômes en \( \vp / \vp[\anydim] \).
   \begin{equation}
     N = \left\{
       \gmp\nu \in (\N^\anydim)^{\lgr\ip}
-      \text{ tels que }
+      \text{ tel que }
       \sum\indrange \sum_{\indi_\ind = 1}^{\ip*} \indl = \derp
     \right\}
     \pmm.
@@ -2119,7 +2135,7 @@ monômes en \( \vp / \vp[\anydim] \).
   \begin{equation}
     \prod_{p = 0}^{\anydim - 1} \left\{
       \gmp\nu[][p] \in \N^{\lgr\ip}
-      \text{ tels que }
+      \text{ tel que }
       \sum\indrange \sum_{\indi_\ind = 1}^{\ip*}
       \gmp\nu[\ind, \indi_\ind][p]
       = \derp[p]
