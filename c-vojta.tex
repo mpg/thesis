@@ -1038,9 +1038,9 @@ vers l'infini.
 
 La dimension de $\ideala{\delta d}$ est donnée par le théorème de
 \bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
-$\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais il
-comme suffit en fait de minorer la dimension, le lemme suivant nous donne tout
-ce qu'on aura besoin de savoir sur le degré.
+$\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais
+comme il suffit en fait de minorer la dimension, le lemme suivant nous donne
+tout ce qu'on aura besoin de savoir sur le degré.
 
 \begin{lem}
   Avec les notations précédentes, on a
@@ -1048,10 +1048,9 @@ ce qu'on aura besoin de savoir sur le degré.
     \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
     \bigl( \wemb(\var) \bigr)
     =
-    \prod\fctrange
-    \vdeg*
-    \prod_{\fct=1}^{\puiss*}
-    \wt ^{2\vdim*}
+    \vdeg[\puiss]
+    \prod_{\fct=1}^{\puiss-1}
+    \vdeg[\fcti] \wts[\fcti]
     \pmm.
   \end{equation}
 \end{lem}
@@ -1060,7 +1059,8 @@ ce qu'on aura besoin de savoir sur le degré.
   Ce degré est donné par le cardinal de l'intersection de $\wemb(\var)$ avec
   des hyperplans génériques choisis de la façon suivante : $\vdim[\puiss]$
   provenant du $\puiss$-ième facteur $\projd$, et $\vdim*$ hyperplans
-  provenant du facteur $\puiss + \fct$ pour $\fct \in \{1, \dots, \puiss-1\}$.
+  provenant du facteur $\puiss + \fct$ pour $\fct \in \set{1, \dots,
+    \puiss-1}$.
 
   On commence par choisir les hyperplans sur le facteur $\puiss$ : on remarque
   qu'ils se remontent par $\wemb$ en des hyperplans sur le dernier facteur de
@@ -1069,18 +1069,18 @@ ce qu'on aura besoin de savoir sur le degré.
   cardinal $\vdeg[\puiss]$.
 
   Fixons maintenant un point $p'$ dans cet ensemble et notons $p = \wt** p'$.
-  On constate que $\wemb(\var) \cap \zeros{\vmp** = p}$ coïncide avec l'image
-  de
+  On constate que $\wemb(\var) \cap \zeros{\vmp[\puiss] = p'}$ coïncide avec
+  l'image de
   \begin{align}
-    \wemb[\wt, p]'
+    \wemb[\wt, p']'
     \colon
-    \var[1] \times \dots \times \var[\puiss]
+    \var[1] \times \dots \times \var[\puiss-1] \times \set{p'}
     & \to
     \va^{2\puiss-1}
     \\
-    (\point_1, \dots, \point_{\puiss-1})
+    (\point_1, \dots, \point_{\puiss-1}, p')
     & \mapsto
-    (\point_1, \dots, \point_{\puiss-1}, p;
+    (\point_1, \dots, \point_{\puiss-1}, p';
     \wt[1] \point_1 - p,
     \dots,
     \wt[\puiss-1] \point_{\puiss-1} - p)
@@ -1147,7 +1147,8 @@ ce qu'on aura besoin de savoir sur le degré.
     \delta^{\vlg\vdim}
     + o( \delta^{\vlg\vdim} )
   \end{align}
-  par définition de \( d \), voir~\eqref{e:d-dp-def}.
+  par définition de \( d \), voir~\eqref{e:d-dp-def}. On achève la preuve en
+  combinant avec le résultat du lemme précédent.
 \end{proof}
 
 Nous allons maintenant calculer la codimension de $\vanish*$ dans
@@ -1159,7 +1160,7 @@ suivant :
     (\stairs)\Ciii
     & =
     \Biggl\{
-      ( \imp[1], \dots \imp[\puiss] )
+      ( \imp[1], \dots, \imp[\puiss] )
       \in
       \prod\fctrange \bigl(
         \N^{\vdim* + 1}
@@ -1171,7 +1172,7 @@ suivant :
       \wtsum*(\lambda) \le \delta \epsi
       \text{ et }
       \lgr{\imp*}
-      = \delta d' + r \quad \forall \fct
+      = \Dir* \quad \forall \fct
     \Biggr\}
     \pmm,
   \end{split}
@@ -1191,7 +1192,7 @@ dans \( (\stairs)\Ciii \).
     \\ & \qquad \cdot
     \frac {
       \epsi^\puiss (\puiss-1)
-      (2\puiss + \epsz) ^{\vdim[\puiss]-1}
+      (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
       (2 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
       }{
       \puiss! \prod\fctrange (\vdim* - 1)!
@@ -1233,19 +1234,19 @@ dans \( (\stairs)\Ciii \).
   qui est de cardinal
   \begin{align}
     \binom {
-      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*] - 1
+      \delta d'_\fct + r_\fct - \imp*[0] - \imp*[\vdim*] + \vdim* - 1
       }{
       \vdim* - 1
       }
     & \le
     \binom {
-      \delta d'_\fct + r_\fct - 1
+      \delta d'_\fct + r_\fct + \vdim* - 1
       }{
       \vdim* - 1
       }
     \\
     & \le
-    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!} \delta^{\vdim* - 1}
+    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - 1)!} \delta^{\vdim* - 1}
     + o( \delta^{\vdim* - 1} )
   \end{align}
   On prend alors le produit :
@@ -1254,12 +1255,13 @@ dans \( (\stairs)\Ciii \).
     \le
     \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
     \cdot \prod\fctrange
-    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - )!}
+    \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - 1)!}
     \vdeg* \delta^{\vdim* - 1}
     + o( \delta^{\lgr\vdim} )
   \end{equation}
-  et le résultat suit en remplaçant \( d'_\fct \) par sa valeur : \( 2\puiss +
-  \epsz \) si \( \fct = \puiss \) et \( \wts* (2 + \epsz) \) sinon.
+  et le résultat suit en remplaçant \( d'_\fct \) par sa valeur : \(
+    \wts[\puiss] (2\puiss - 2 + \epsz) \) si \( \fct = \puiss \) et \( \wts*
+    (2 + \epsz) \) sinon.
 \end{proof}
 
 Au vu des deux lemmes précédents et de~\eqref{e:epsz-epsi-siegel}, on a
@@ -1482,12 +1484,12 @@ Intéressons-nous maintenant au morphisme \( \relim \).
     \pmm.
   \end{equation}
   On obtient alors les familles \( S \) et \( T \) recherchées en multipliant
-  les deux membres de l'égalité précédent par \( \vmp*[0] \) puis en réduisant
-  au même dénominateur le membre de droite.
+  les deux membres de l'égalité précédente par \( \vmp*[0] \) puis en
+  réduisant au même dénominateur le membre de droite.
 \end{proof}
 
 Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
-d'en savoir davantage sur \( R \) ni les \( N'_\fct \).
+d'en savoir davantage sur \( R \), ni sur les \( N'_\fct \).
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -1510,7 +1512,7 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
 \end{fact}
 
 \begin{proof}
-  C'est le lemme de \TS de \bsc{Bombieri} et \bsc{Vaaler} tel
+  C'est le lemme de \bsc{Siegel} de \bsc{Bombieri} et \bsc{Vaaler} tel
   qu'énoncé dans~\cite{bogf}. Notons que des versions plus précises
   existent, mais les améliorations ne concernent que des termes qui sont
   négligeables dans notre situation et n'ont donc pas d'intérêt ici.
@@ -1554,16 +1556,16 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
       \times \{ 0 \}^{\dimp - \vdim* - 1}
       \bigr)
       \text{ tel que }
-      \sum\indrange \imp** = \Dir
+      \lgr{\imp*} = \Dir*
       \ \forall \fct
       \right\}
     \pmm.
   \end{equation}
-  On ne garde de \( M \) que les lignes dont l'indice appartient à l'ensemble
+  On ne garde de \( M'' \) que les lignes dont l'indice appartient à l'ensemble
   \( (\stairs)\Ciii \) défini par~\eqref{e:stairs-c3} pour former la matrice
   \( M' \), dont les colonnes sont naturellement indexées par les monômes de
   multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
-  \( M' \) les colonnes indexées par les monômes constituant la base choisie
+  \( M' \) les colonnes indexées par des monômes constituant une base
   de \( \ideala\Dz \) pour former la matrice \( M \) à laquelle nous allons
   appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
 
@@ -1643,8 +1645,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \end{align}
   \worknote{Majoration « grossière » à revoir une fois \( \Lambda \) connu.}
   où l'on a noté \( B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \) un
-  majorant uniforme des \( \vdegp* \). On majore alors grossièrement la
-  dernière ligne par \( 4 (\dimp\puiss + \vdim) B^2 \) pour aboutir à
+  majorant uniforme des \( \vdegp* \) pour la seconde inégalité. On majore
+  alors grossièrement la dernière ligne par \( 4 (\dimp\puiss + \vdim) B^2 \)
+  pour aboutir à
   \begin{equation}
     \hautl[\infty] M
     \le
@@ -1693,9 +1696,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \begin{proof}
   Les trois premiers points ne sont qu'un rappel de la construction.
   Pour le dernier point, on constate que \( F'' \) est l'image de \( F \) par
-  l'application linéaire de matrice notée \( M \) dans la démonstration de la
-  proposition, et dont la hauteur détermine un majorant de la hauteur de
-  \( F \).
+  l'application linéaire dont la matrice est notée \( M \) dans la
+  démonstration de la proposition et dont la hauteur détermine un majorant de
+  la hauteur de \( F \).
 \end{proof}
 
 
