@@ -680,24 +680,23 @@ Avant de passer aux estimations de hauteur, il est utile d'introduire quelques
 paramètres qui seront utilisés tout au long de ce chapitre et qui contrôlent
 notamment le degré en lequel nous établirons ces estimations.
 
-Introduisons deux réels \( \epsz, \epsi \) strictement positifs tels que :
-\begin{gather} \label{e:epsz-epsi-siegel}
-  \frac {
-    \epsi^\puiss (\puiss-1)
-    (2\puiss -2 + \epsz) ^{\vdim[\puiss]-1}
-    (2 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
-    \prod\fctrange \vdim*
-  }{
-    \puiss! \epsz^{\vdim[\puiss]}
-  }
-  \le
-  \frac12
-  \\ \label{e:epsz-epsi-extra}
-  \epsz \le \frac {\eps \epsi} {8\puiss} \quad \epsz \le 2
-\end{gather}
-On choisira en fait \( \epsz \) rationnel, et on introduit un entier \( \delta
-\) (destiné à tendre vers l'infini) tel que \( \epsz \delta \) soit également
-entier. On pose alors
+Introduisons un réel \( \epsi \) défini par :
+\begin{equation} \label{e:def-epsi}
+  \epsi =
+  \eps^{\frac{\genre}{\puiss-\genre}}
+  \cdot \Bigl(
+    \puiss^{2\puiss} 3^{\genre (\puiss+2)}
+  \Bigr)^{\frac{-1}{\puiss-\genre}}
+\end{equation}
+et un rationnel \( \epsz \) tel que :
+\begin{equation} \label{e:def-epsz}
+  \frac{\eps \eps}{9\puiss}
+  \le \epsz \le
+  \frac{\eps \eps}{8\puiss}
+  \pmm,
+\end{equation}
+et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
+  \epsz \delta \) soit également entier. On pose alors
 \begin{equation} \label{e:d-dp-def}
   \begin{aligned}
     d & = \bigl(
@@ -1269,13 +1268,82 @@ dans \( (\stairs)\Ciii \).
     (2 + \epsz) \) sinon.
 \end{proof}
 
-Au vu des deux lemmes précédents et de~\eqref{e:epsz-epsi-siegel}, on a
+Au vu des deux lemmes précédents, en remarquant que \( \epsz < 1 \) et \(
+  \vdim* \le \genre \), on a
+\begin{align}
+  \frac {\card (\stairs)\Ciii} {\dim \fspace}
+  & \le
+  \frac {
+    \epsi^\puiss (\puiss-1)
+    (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
+    (2 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+    \prod\fctrange \vdim*
+  }{
+    \epsz^{\vdim[\puiss]} \puiss!
+  }
+  + o(1)
+  \\ & \le
+  \frac {
+    \epsi^\puiss (\puiss-1)
+    \, \puiss ^{\vdim[\puiss]-1}
+    \, 2 ^{\vdim[\puiss]-1}
+    (2 + \epsz) ^{\puiss\genre - \puiss - \vdim[\puiss] + 1}
+    \genre^\puiss
+  }{
+    \epsz^\genre \puiss!
+  }
+  + o(1)
+  \\ & \le
+  \frac {
+    \epsi^\puiss
+    \puiss ^{\genre}
+    3 ^{\puiss (\genre-1)}
+    \genre^\puiss
+  }{
+    \epsz^\genre \puiss!
+  }
+  + o(1)
+  \pmm.
+\end{align}
+On utilise alors la définition \eqref{e:def-epsz} de \( \epsz \), le fait que
+\( \puiss \ge \genre + 1 \) et la minoration classique \( \puiss! \ge
+  \puiss^\puiss \expb^{-\puiss} \) pour écrire
+\begin{align}
+  \frac {\card (\stairs)\Ciii} {\dim \fspace}
+  & \le
+  \frac {
+    \epsi^{\puiss-\genre}
+    \puiss ^{\genre}
+    3 ^{\puiss (\genre-1)}
+    \genre^\puiss
+    (9\puiss)^\genre
+    \expb^\puiss
+  }{
+    \eps^\genre \puiss^\puiss
+  }
+  + o(1)
+  \\ & \le
+  \frac {
+    \epsi^{\puiss-\genre}
+    3 ^{\puiss \genre}
+    \genre^\puiss
+    (9\puiss)^\genre
+  }{
+    \eps^\genre \puiss
+  }
+  + o(1)
+\end{align}
+puis on remarque que la définition \eqref{e:def-epsi} de \( \epsi \) entraîne
+facilement, en utilisant à nouveau le fait que \( \puiss \ge \genre + 1 \ge 2
+\), que
 \begin{equation} \label{e:good-codim}
   \frac {\card (\stairs)\Ciii} {\dim \fspace}
   \le
-  \frac12 + o(1)
+  \frac12
+  + o(1)
   \pmm.
 \end{equation}
+
 
 
 \subsection{Deux lemmes de hauteurs}
@@ -3047,7 +3115,8 @@ sont assez grands, pour peu que
   \le
   \eps
 \end{equation}
-ce qui est précisément l'hypothèse fait en~\eqref{e:epsz-epsi-extra}. Il ne
+ce qui découle des hypothèses faites sur les différents paramètres, par
+exemple~\eqref{e:def-epsz}. Il ne
 reste plus qu'à (!) expliciter les termes \( o(\hautn{\ex[1]}) \) et \(
   o(\wts[1]) \) pour connaître les contraintes que doivent satisfaire
 \( \hautn{\ex[1]} \) (donc au fond \( \Vbig \)) et \( \wts[1] \) (soit au fond
