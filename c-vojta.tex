@@ -1191,13 +1191,13 @@ dans \( (\stairs)\Ciii \).
   \begin{align}
     \card (\stairs)\Ciii
     & \le
-    \bigl(\delta^{\lgr\vdim} + o(\delta^{\lgr\vdim})\bigr)
+    \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
     \prod\fctrange \vdeg* \wt*^{2\vdim*}
     \\ & \qquad \cdot
     \frac {
       \epsi^\puiss (\puiss-1)
       (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
-      (2 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+      (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
       }{
       \puiss! \prod\fctrange (\vdim* - 1)!
       }
@@ -1261,7 +1261,7 @@ dans \( (\stairs)\Ciii \).
     \cdot \prod\fctrange
     \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - 1)!}
     \vdeg* \delta^{\vdim* - 1}
-    + o( \delta^{\lgr\vdim} )
+    + o( \delta^\vdim )
   \end{equation}
   et le résultat suit en remplaçant \( d'_\fct \) par sa valeur : \(
     \wts[\puiss] (2\puiss - 2 + \epsz) \) si \( \fct = \puiss \) et \( \wts*
@@ -1276,7 +1276,7 @@ Au vu des deux lemmes précédents, en remarquant que \( \epsz < 1 \) et \(
   \frac {
     \epsi^\puiss (\puiss-1)
     (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
-    (2 + \epsz) ^{\lgr\vdim - \puiss - \vdim[\puiss] + 1}
+    (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
     \prod\fctrange \vdim*
   }{
     \epsz^{\vdim[\puiss]} \puiss!
@@ -2349,7 +2349,7 @@ posons
   + \frac {\lgr{\dermp[\puiss-1]}} {\wts[\puiss-1]}
   + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss-1)}
 \end{equation}
-pour tout \( \dermp \in \N^{\lgr\vdim} \).  Si \( h \) est une forme
+pour tout \( \dermp \in \N^\vdim \).  Si \( h \) est une forme
 multihomogène et \( \point \) un point où elle est définie, on définit son
 indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
   \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq
@@ -2376,7 +2376,7 @@ Commençons par un lemme facile sur l'indice.
   point où elles sont toutes les trois définies.
   \begin{enumthm}
     \item Si \( \dermp \) est tel que \( \der[\gmp\nu] \ratfi2(x) = 0 \) dès
-      que \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^{\lgr\vdim}
+      que \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^\vdim
       \), alors \( \der[\dermp] \ratfi1(\point) = \alpha(\point) \,
         \der[\dermp] \ratfi2(\point) \).
     \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(\ratfi1) =
@@ -2614,7 +2614,7 @@ a alors, pour tout \( \place \) :
   \pmm.
 \end{align}
 
-Soit maintenant \( \dermp \in \N^{\lgr\vdim} \) un indice minimal tel que \(
+Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
   \der[\dermp] \ratf2(\ex) \neq 0 \). Comme les derniers facteurs de
 l'écriture précédente sont tous définis et inversibles en \( \cex \) grâce aux
 différents choix d'indices et au premier point du scolie~\ref{s:part-cases},
