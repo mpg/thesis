@@ -921,13 +921,13 @@
 \newcommand \cexi  { \gmpi{\Excep'}} % no space here!
 \newcommand \cexa  { \gmp{\tilde\Excep}} % no space here!
 
-\newc@star@default \ex      {\fct }{\puiss } {\Excep\ssub{#1}}
-\newc@star@default \exi     {\fcti}{\puiss*} {\Excep'\ssub{#1}}
+\newc@star@default \ex      {\fct }{\puiss  } {\Excep\ssub{#1}}
+\newc@star@default \exi     {\fcti}{\puiss-1} {\Excep'\ssub{#1}}
 
-\newc@star@default \wt      {\fct }{\puiss } {a\ssub{#1}}
-\newc@star@default \wts     {\fct }{\puiss } {a\ssub{#1}\sp2}
-\newc@star@default \wti     {\fcti}{\puiss*} {a\ssub{#1}}
-\newc@star@default \wtis    {\fcti}{\puiss*} {a\ssub{#1}\sp2}
+\newc@star@default \wt      {\fct }{\puiss  } {a\ssub{#1}}
+\newc@star@default \wts     {\fct }{\puiss  } {a\ssub{#1}\sp2}
+\newc@star@default \wti     {\fcti}{\puiss-1} {a\ssub{#1}}
+\newc@star@default \wtis    {\fcti}{\puiss-1} {a\ssub{#1}\sp2}
 
 \nomdef \ex a {e}
 \nomdef \wt a {a}
@@ -949,9 +949,9 @@
 \newcommand \mexpi {\smpi{}}
 
 \newcommand \fcti      {j}
-\newcommand \fctirange {\sb{\fcti=1}\sp{\puiss*}}
+\newcommand \fctirange {\sb{\fcti=1}\sp{\puiss-1}}
 \nomdef \fcti a {j} \@gobbletwo{\fcti}{Un indice entier, variant en général
-  entre $1$ et $\puiss*$}
+  entre $1$ et $\puiss-1$}
 
 \newcommand \vmpi {\smpi Y}
 
