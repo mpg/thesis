@@ -263,7 +263,7 @@ plongement \( \Theta^\puiss \) :
   à~\eqref{e:varset-ht}}
 \begin{align}
   \label{e:varset-deg}
-  \vdeg* & \le \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \quad \forall \fct
+  \vdeg* & \le B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \quad \forall \fct
   \\ \label{e:varset-deg-prod}
   \prod\fctrange \vdeg* & \le \Lambda^{f(u)}
   \\ \label{e:varset-ht}
@@ -752,10 +752,9 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \begin{equation}
     \hautm[1]{c_{p, q}}
     \le
-    \left(
-      \bigl( \hmclab (\dimp+1)!^2 \bigr)^2 \,
-      \prod\fctrange (\vdegp*) ^{2\dimp(\puiss-1)}
-    \right) ^{\delta \wts[1]}
+    \bigl((
+      \hmclab (\dimp+1)!^2 \, B^{2\dimp}
+    \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{equation}
   où l'on rappelle que \( \hmclab \) est donné par la
@@ -788,9 +787,11 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}). En prenant le
+    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}), puis en
+  utilisant le lemme~\ref{l:hclab}. En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
-  pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht}
+  pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
+  de~\eqref{e:varset-deg}
   \begin{align}
     \hautm[1]{c_{p, q}}^{1/\delta}
     & \le
@@ -800,12 +801,9 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \bigr( (\dimp+1)! (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hmclab (\dimp+1)!^2 \bigr)^{\wtis* + \wts**} \,
-    \bigr( \vdegp[\fcti] \bigl)^{2 \dimp \wts[\fcti]} \,
-    \bigr( \vdegp[\puiss] \bigl)^{2 \dimp \wts[\puiss]}
+    \bigr( \hmclab (\dimp+1)!^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
   \end{align}
-  Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts} et en
-  majorant largement \( \wt* \) par \( \wt[1] \) et \( 1 \) par \( \puiss-1 \).
+  Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
 \end{proof}
 
 Nous sommes maintenant prêts à commencer la preuve proprement dite de la
@@ -1671,11 +1669,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \begin{equation}
     \delta \wts[1]
     \Bigl(
-      2 \bigl(
-        \hlclab + 2(\dimp+1) \ln(\dimp+1)
-      \bigr)
-      +
-      2 \dimp (\puiss-1) \sum\fctrange \ln \vdegp*
+      2 \hlclab + 4(\dimp+1) \ln(\dimp+1) + 4 \dimp \ln B
     \Bigr)
     \pmm,
   \end{equation}
@@ -1702,9 +1696,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     + \wts[1] \Bigl(
       2 \bigl( \hlclab + 2(\dimp+1) \ln(\dimp+1) \bigr)
       \\ & \qquad
+      + 4 \dimp \ln B
       + \sum\fctrange \bigl(
-        2 \dimp (\puiss-1) \ln \vdegp*
-        + 2 \ln(4\vdegp*) (\vdeg* (\vdim* + 1) + 1)
+        2 \ln(4\vdegp*) (\vdeg* (\vdim* + 1) + 1)
       \bigr)
     \Bigr)
     \\ & \le
@@ -1712,14 +1706,14 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
       4\puiss \cst{vs-ht} \Lambda^{2\,f(u)}
       + 2 \hlclab + 4(\dimp+1)^2
       \\ & \qquad
-      + 2 \dimp \puiss (\puiss-1) \ln B
-      + 2 \ln(4B) (2B (\vdim + \puiss) + \puiss)
+      + 4 \dimp \ln B
+      + 2 \ln(2B) (B (\vdim + \puiss) + \puiss)
     \Bigr)
   \end{align}
-  \worknote{Majoration « grossière » à revoir une fois \( \Lambda \) connu.}
-  où l'on a noté \( B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \) un
-  majorant uniforme des \( \vdegp* \) pour la seconde inégalité. On majore
-  alors grossièrement la dernière ligne par \( 4 (\dimp\puiss + \vdim) B^2 \)
+  \worknote{Majoration « grossière » à revoir une fois \( \Lambda \) connu.}%
+  où l'on rappelle que \( B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \) est un
+  majorant uniforme des \( \vdeg* \) pour la seconde inégalité. On majore
+  alors grossièrement la dernière ligne par \( 2 (\dimp + \puiss + \vdim) B^2 \)
   pour aboutir à
   \begin{equation}
     \hautl[\infty] M
@@ -1727,7 +1721,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \delta \wts[1] \Bigl(
       \bigl(
         4\puiss \cst{vs-ht}
-        + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
+        + 2 (\dimp + \puiss + \vdim) \cst{vs-deg-prod}^{-2}
       \bigr)
       \Lambda^{2\,f(u)}
       + 2 \hlclab + 4(\dimp+1)^2
