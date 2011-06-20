@@ -277,7 +277,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \Lambda & = \stuffout{(6m\eps^{-1})^{2m^2}} \\
   f(u) & = \stuffout{\prod_{i=u+1}^{mg} (3i + 1) \le m^{3m^2 - u}} \\
   \newcst[]{vs-deg-prod} & = \stuffout{(32m)^{m+3}} \\
-  \newcst[\va]{vs-ht} & = \stuffout{n^{m^2} c(\vaht, \hlclab)}
+  \newcst[\va]{vs-ht} & = \stuffout{\max(n^{m^2}, \vaht, \hlclab)}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
@@ -1600,14 +1600,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \begin{equation}
     \hautl[\infty] F
     \le
-    \delta \wts[1] \Bigl(
-      \bigl(
-        4\puiss \cst{vs-ht}
-        + 4 (\dimp\puiss + \vdim) \cst{vs-deg-prod}^{-2}
-      \bigr)
-      \Lambda^{2\,f(u)}
-      + 2 \hlclab + 4(\dimp+1)^2
-    \Bigr)
+    \delta \wts[1] \Lambda^{2\,f(u)} \bigl(
+      5\puiss \cst{vs-ht}
+      + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
+    \bigr)
     + o(\delta)
     \pmm.
   \end{equation}
@@ -1713,22 +1709,20 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \worknote{Majoration « grossière » à revoir une fois \( \Lambda \) connu.}%
   où l'on rappelle que \( B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \) est un
   majorant uniforme des \( \vdeg* \) pour la seconde inégalité. On majore
-  alors grossièrement la dernière ligne par \( 2 (\dimp + \puiss + \vdim) B^2 \)
-  pour aboutir à
+  alors grossièrement la dernière ligne par \( 2 (\dimp + \puiss + \vdim) B^2
+  \) puis \( \puiss + \vdim \) par \( \puiss^2 \) et on absorbe (toujours
+  grossièrement) les termes en \( \hlclab \) et \( \dimp \) dans celui en \(
+    \cst{vs-ht} \) pour aboutir à
   \begin{equation}
     \hautl[\infty] M
     \le
-    \delta \wts[1] \Bigl(
-      \bigl(
-        4\puiss \cst{vs-ht}
-        + 2 (\dimp + \puiss + \vdim) \cst{vs-deg-prod}^{-2}
-      \bigr)
-      \Lambda^{2\,f(u)}
-      + 2 \hlclab + 4(\dimp+1)^2
-    \Bigr)
+    \delta \wts[1] \Lambda^{2\,f(u)} \bigl(
+      5\puiss \cst{vs-ht}
+      + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
+    \bigr)
     + o(\delta)
   \end{equation}
-  ce qui équivaut au résultat annoncé.
+  qui équivaut au résultat annoncé.
 \end{proof}
 
 \begin{scho} \label{s:aux-co}
