@@ -267,7 +267,7 @@ plongement \( \Theta^\puiss \) :
   \\ \label{e:varset-deg-prod}
   \prod\fctrange \vdeg* & \le \Lambda^{f(u)}
   \\ \label{e:varset-ht}
-  \sum\fctrange \wts* \hautl[1]{\var*}
+  \sum\fctrange \wts* (\puiss-1^{\delta_\fct^\puiss} \hautl[1]{\var*}
   & \le \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   \pmm,
 \end{align}
@@ -2660,7 +2660,7 @@ coordonnée est majorée par la norme du vecteur :
   \hautm[\infty]{ \cexa* }^{\epsz \delta \wts* + r_\fct}
 \end{equation}
 puis on passe au logarithme et on utilise le fait que \( \cexa*
-  = \vadapt*(\cex*) \) 
+  = \vadapt*(\cex*) \)
 \begin{align}
   \ratfh4
   & \le
@@ -2848,7 +2848,7 @@ polynômes \( P_\place \) et jouissant des propriétés suivantes :
       \deg_\fct P_\place
       =
       \Dir* + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
-    \) ;
+    \) ; \label{i:deg-p-der}
   \item \(
       \nv1{ P_\place }
       \le
@@ -2860,7 +2860,7 @@ polynômes \( P_\place \) et jouissant des propriétés suivantes :
           (\dimp - \vdim*) \lgr{\dermp*} }
         \cdot 2^{ \vdim* (\Dir*) }
       \right)^\dv
-    \) ;
+    \) ; \label{i:norm-p-der}
   \item \(
       \inda* \bigl( P_\place \bigr)
       \ge
@@ -2947,7 +2947,7 @@ Par ailleurs, en utilisant~\eqref{e:wt-ratio}, on a
   2 (\puiss-1) \wts[1] \hautn{ \ex[1] } \, \epsi \delta / \sigma
 \end{equation}
 et au final :
-\begin{equation}
+\begin{equation} \label{e:ratfh1b}
   \ratfh{1b} \le
   \frac{ \delta \wts[1] \epsi }{ \sigma } \Bigl(
     2 (\puiss-1) \hautn{ \ex[1] }
@@ -2958,7 +2958,7 @@ et au final :
 
 Pour l'autre partie, on écrit
 \begin{align}
-  \ratfv{1b}(\cexa)
+  \ratfv{1a}(\cexa)
   & =
   P_\place \Biggl(
     \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
@@ -3029,7 +3029,7 @@ On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
   -\wtapx\expapx \sum\fctrange \gmp\nu*[0] \hautn{\ex*}
   + \sum\fctrange \deg_\fct P^\dermp_\place \left(
-    \frac\dv2 \ln(\dimp+1) + \ln \nv\infty{\vadapt^{-1}}
+    \frac{3\dv}2 \ln(\dimp+1) + \ln \nv\infty{\vadapt^{-1}}
     + \wtapx\expapx \htcmp
   \right)
 \end{align}
@@ -3047,41 +3047,105 @@ encore~\eqref{e:wt-ratio}
   \frac{ \imp*[0] }{ \wts* }
   \ge
   \frac12 \wts[1] \hautn{ \ex[1] }
-  \, \delta \eps1 (1 - \sigma^{-1})
+  \, \delta \epsi (1 - \sigma^{-1})
 \end{equation}
 où le dernier point découle de~\eqref{e:ind-Pv} et de la définition de
 l'indice.
 
-\newpage % XXX
-
-En regroupant tous les termes qui constituent
-\( \frac{ P^\dermp_\place(\cexa) }{ \cexa[][\indv]^{\deg P^\dermp_\place} } \)
-puis en sommant sur \( \place \), on majore la hauteur logarithmique de ce
-facteur par la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place
-  \notin \placesapx \) :
+En regroupant tous les termes qui constituent \( \ratfv{1a}( \cex ) \) puis en
+sommant sur \( \place \), on majore la hauteur logarithmique de ce facteur par
+la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
+  \placesapx \) :
 \begin{multline}
   \sum_\place \degv \Biggl(
     - \delta \wts[1] \hautn{\ex[1]}
-    \wtapx\expapx \epsi /2
-    + \sum\fctrange \deg_\fcti P^\dermp_\place
+    \wtapx\expapx \epsi (1 - \sigma^{-1}) /2
+    + \ln \nv1{P_\place}
+    + \sum\fctrange \deg_\fct P_\place
     \biggl(
-      \frac\dv2 \ln(\dimp+1) + \ln \nv\infty{\vadapt^{-1}}
+      \frac{3\dv}2 \ln(\dimp+1)
       \\
+      + \ln \nv\infty{\vadapt^{-1}}
       + \wtapx\expapx \htcmp
       + \ln \nv1{ \varfc* }
       + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* (\dimp+1) )
     \biggl)
-    + \ln \nv1{P^\dermp_\place}
   \Biggr)
 \end{multline}
-puis, en utilisant notamment le lemme~\ref{l:par-var} :
+puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et que \( \sigma >
+  4 \), en utilisant~\eqref{e:vadapt-ht} et en notant encore \( B \) un
+majorant commun des \( \vdeg* \) :
+\begin{equation}
+  - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
+  + \hautl[1]{P}
+  + \sum\fctrange \deg_\fct P \cdot C_\fct
+\end{equation}
+où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) et
 \begin{align}
-  - \expapx \epsi /2
-  + \sum\fctrange \todots
-  \label{e:der4b}
+  C_\fct
+  & \le
+  \frac{3}2 \ln(\dimp+1)
+  + \dimp \ln B + \dimp \ln \dimp
+  + \expapx \htcmp
+  + \hautl[1]{ \varfc* }
+  + B (\genre + 1)  \bigl( \ln B + \ln (\dimp+1) \bigr)
+  \\ & \le
+  \hautl[1]{ \varfc* }
+  + \htcmp
+  + \dimp^2
+  + (\dimp + 2) (\genre + 2) B^2
+\end{align}
+en majorant assez largement sur la dernière ligne. Explicitions maintenant un
+majorant du degré commun des \( P_\place \), donné par le
+point~\ref{i:deg-p-der} page~\pageref{i:deg-p-der}, d'abord pour \( \fct <
+  \puiss \) :
+\begin{align}
+  \deg_\fct P
+  & \le
+  \delta (2 + \epsz) \wts* + 2B\dimp \frac{\epsi \delta}{\sigma} \wts*
+  + o(\delta)
+  \\ & \le
+  \delta \wts* \left( 3 + \frac{B\dimp}{2} \right)
+  + o(\delta)
+  \le
+  \delta \wts* B\dimp
+  + o(\delta)
+\end{align}
+où l'on a utilisé la définition~\eqref{e:d-dp-def} de \( d' \), puis le fait
+que \( \wtsum(\dermp) \le \epsi\delta / \sigma \) et les majorations larges \(
+  \epsi < 1 \) et \( \sigma^{-1} \le 1/4 \). Pour \( \fct = \puiss \) on
+obtient de même
+\begin{equation}
+  \deg_\puiss P
+  \le
+  \delta \wts[\puiss] B\dimp (\puiss - 1)
+  \pmm.
+\end{equation}
+On utilise alors~\eqref{e:varset-ht} d'une part et le lemme~\ref{l:sum-wts}
+d'autre part pour obtenir
+\begin{align}
+  \sum\fctrange \deg_\fct P \cdot C_\fct
+  & \le
+  \delta \wts[1] B\dimp
+  \left(
+    \cst{vs-ht} \Lambda^{2\,f(u)}
+    + 2 \bigl(
+      \htcmp + \dimp^2 + (\dimp + 2) (\genre + 2) B^2
+    \bigr)
+  \right)
+  \\ & \le
+  \delta \wts[1] \left(
+    \Lambda^{3f(\vdim)} \bigl(
+      \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
+      + 2(\dimp + 2)(\genre + 2) \cst{vs-deg-prod}^{-2}
+    \bigr)
+    + 2 \Lambda^{f(u)} (\htcmp + \dimp^2)
+  \right)
 \end{align}
 
-\medskip
+
+
+\newpage % XXX
 
 En appliquant la formule du produit d'un côté et en mettant bout à bout les
 estimations \eqref{e:ratfh4}, \eqref{e:ratfh3}, \eqref{e:ratfh2},
