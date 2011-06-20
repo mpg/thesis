@@ -1762,6 +1762,24 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   la hauteur de \( F \).
 \end{proof}
 
+\begin{scho} \label{s:h1-aux}
+  On a \( \hautl[1] F \le \hautl[\infty] F + o(\delta) \).
+\end{scho}
+
+\begin{proof}
+  La différence entre ces deux hauteurs est majorée par le logarithme du
+  nombre de coefficients de \( F \), qui se majore ainsi
+  \begin{equation}
+    \prod_{\fct=1}^{2\puiss-1}
+    \binom{\delta d_\fct + \dimp}{\dimp}
+    \le
+    \prod_{\fct=1}^{2\puiss-1}
+    \frac{ (\delta d_\fct + \dimp)^\dimp }{\dimp!}
+  \end{equation}
+  par un polynôme en \( \delta \), dont le logarithme est négligeable devant
+  ce dernier.
+\end{proof}
+
 
 
 \section{Extrapolation} \label{sec:vojta-extrap}
@@ -2929,18 +2947,18 @@ et au final :
 \end{equation}
 
 Pour l'autre partie, on écrit
-\begin{align}
+\begin{equation}
   \ratfv{1a}(\cexa)
-  & =
+  =
   P_\place \Biggl(
     \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
     \frac{ \cexa[\puiss] } { \cexa[\puiss][{\indv[\puiss]}] }
   \Biggr)
-  \\ & =
+  =
   \sum_{\imp} p_{\place, \imp} \Biggl(
     \frac{ \cexa } { \cexa[][\indv] }
   \Biggr)^{\imp}
-\end{align}
+\end{equation}
 où la dernière somme est prise sur les multiindices \( \imp \) tels que \(
   \lgr{\imp*} = \deg_\fct P_\place \). Étudions de plus près les valeurs
 absolues des monômes intervenant dans cette écriture ; d'après le
