@@ -2651,7 +2651,7 @@ Rappelons qu'on note \( \degv \) le degré local en \(
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
 \end{equation}
-Supposons alors que \( \wtsum( \dermp ) < \epsi \delta / \sigma \)
+Supposons maintenant que \( \wtsum( \dermp ) < \epsi \delta / \sigma \)
 contrairement à la conclusion de la proposition, et montrons qu'on contredit
 alors l'égalité ci-dessus.  Pour cela, on majore séparément chacun des termes,
 en procédant de droite à gauche (par ordre plus ou moins croissant de
@@ -2699,14 +2699,14 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
     \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
     + \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
   \Bigr) + o(\delta)
-  \intertext{et enfin, en invoquant~\eqref{e:wt-ratio} et le
-    lemme~\ref{l:sum-wts} :}
+  \intertext{et enfin, en invoquant~\eqref{e:wt-ratio}, le
+    lemme~\ref{l:sum-wts} et la définition de \( \cst{vs-ht} \) :}
   \label{e:ratfh4}
   \ratfh4
   & \le
   \epsz \delta \Bigl(
     2 \puiss \wts[1] \hautn{ \ex[1] }
-    + 2 \wts[1] \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr)
+    + 2 \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
   \Bigr) + o(\delta)
   \pmm.
 \end{align}
@@ -2787,7 +2787,7 @@ lemme~\ref{l:sum-wts}, on a facilement
   \ratfh2 \le
   \delta \Bigl(
     - \ln C_\wembcl
-    + 2 \wts[1] \bigl( \hlclab + \ln(\dimp + 1) + \ln B \bigr)
+    + 2 \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
   \Bigr)
   \pmm.
 \end{equation}
@@ -2912,7 +2912,7 @@ habituelles, on a :
   \hautl[\infty]{ \cexa* } \lgr{\dermp*}
   \\ & \le
   2B\dimp \sum\fctrange
-  \bigl( \hautn{ \ex* } + \htcmp + \ln B + \ln(\dimp+1) \bigr)
+  \bigl( \hautn{ \ex* } + \cst{vs-ht} + \ln B \bigr)
   \lgr{\dermp*}
   \pmm.
 \end{align}
@@ -2941,7 +2941,7 @@ et au final :
   \ratfh{1b} \le
   \frac{ \delta \wts[1] \epsi }{ \sigma } \Bigl(
     2 (\puiss-1) \hautn{ \ex[1] }
-    + \htcmp + \ln B + \ln(\dimp+1)
+    + \cst{vs-ht} + \ln B
   \Bigr)
   \pmm.
 \end{equation}
@@ -3081,8 +3081,7 @@ où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) et
   + B (\genre + 1)  \bigl( \ln B + \ln (\dimp+1) \bigr)
   \\ & \le
   \hautl[1]{ \varfc* }
-  + \htcmp
-  + \dimp^2
+  + \cst{vs-ht}
   + (\dimp + 2) (\genre + 2) B^2
 \end{align}
 en majorant assez largement sur la dernière ligne. Explicitions maintenant un
@@ -3120,16 +3119,15 @@ d'autre part pour obtenir
   \left(
     \cst{vs-ht} \Lambda^{2\,f(u)}
     + 2 \bigl(
-      \htcmp + \dimp^2 + (\dimp + 2) (\genre + 2) B^2
+      \cst{vs-ht} + (\dimp + 2) (\genre + 2) B^2
     \bigr)
   \right)
   \\ & \le
   \delta \wts[1] \left(
     \Lambda^{3f(\vdim)} \bigl(
-      \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
+      3 \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
       + 2(\dimp + 2)(\genre + 2) \cst{vs-deg-prod}^{-2}
     \bigr)
-    + 2 \Lambda^{f(u)} (\htcmp + \dimp^2)
   \right)
   \pmm.
 \end{align}
