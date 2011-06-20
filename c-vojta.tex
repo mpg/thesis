@@ -2783,58 +2783,36 @@ Remarquons avant de continuer que le premier terme, qui semble négatif, va se
 simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
 de sorte qu'il ne contribue pas à faire diminuer la hauteur finale.
 
-\begin{parnote}
-  Pour \( \ratfv1 \), on aimerait se ramener à
-  \begin{equation}
-    \der[\dermp]
-    \frac{
-      R(\vmp) \,
-      F( \vmp; \wembcl(\vmp) )
-    }{
-      \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-    }
-  \end{equation}
-  pour pouvoir dire que le dénominateur c'est \( F'' \) modulo l'idéal de \(
-    \var \).  Le souci, c'est le \( \wembclv \) dans la définition de \(
-    \ratfv1 \) : pour se ramener à ce qu'on veut, on est obligés me
-  semble-t-il de sortir un facteur
-  \begin{equation}
-    \prod\fctirange \left(
-      \frac{ \wembclv*[\indig](\vmp) }{ \wembcl*[\indig](\vmp) }
-    \right)^\delta
-  \end{equation}
-  et si le dénominateur a le bon goût de ne pas contribuer à la hauteur, le
-  numérateur en revanche me semble difficilement contrôlable dans les ordres
-  de grandeur voulus.
+\begin{lem}
+  Pour chaque \( F''_\place = R(\vmp) \, F( \vmp; \wembcl(\vmp) ) \) on a \(
+    \inda(F''_\place) \ge \epsi \delta \).
+\end{lem}
 
-  Soit j'ai manqué un truc évident, soit il faut modifier l'argument. J'ai
-  l'impression que la solution consiste à prévoir le problème dès la
-  construction de la fonction auxiliaire : en fait on veut construire
-  simultanément une fonction et des représentations de cette fonction qui se
-  prêtent bien à l'extrapolation. À suivre\dots
+\begin{ideas}
+  L'idée générale est que c'est vrai pour \( F'' \) est que modulo l'idéal de
+  \( \var \) c'est presque pareil que \( F''_\place \), il y a juste un
+  facteur qui dérange. Il faudrait une meilleure notion d'indice le long de \(
+    \divi \cap \var \) pour faire marcher ça. À suivre.
+\end{ideas}
 
-  En attendant, on fait comme si la facteur en question n'existait pas et
-  que \( \ratfv1 \) était égal à la fonction ci-dessus.
-\end{parnote}
-
-
-Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} à la
-forme \( F'' \).  Comme l'indique la
-note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom}, il est loisible
-d'utiliser sur chaque facteur \( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \)
-comme variable de déhomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ;
-simplement, les polynômes fournis par le lemme dépendent de ce choix, donc en
-définitive de \( \place \).  Par ailleurs, chaque application du lemme founit
-deux familles de polynômes, satisfaisant respectivement des majorations de
-normes aux places finies ou infines ; on ne garde que celui correspondant à
-l'indice \( \dermp \) fixé ci-dessus et la nature archimédienne ou non de la
-place considérée, de façon à obtenir une famille indexée par \( \place \) de
-polynômes \( P_\place \) et jouissant des propriétés suivantes :
+Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} aux
+formes \( F''_\place \).  Comme l'indique la note~\ref{fn:coord-deshom}
+page~\pageref{fn:coord-deshom}, il est loisible d'utiliser sur chaque facteur
+\( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \) comme variable de
+déhomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ; simplement, les
+polynômes fournis par le lemme dépendent de ce choix, donc en définitive de \(
+  \place \), ce qui est déjà le cas.  Par ailleurs, chaque application du
+lemme founit deux familles de polynômes, satisfaisant respectivement des
+majorations de normes aux places finies ou infines ; on ne garde que celui
+correspondant à l'indice \( \dermp \) fixé ci-dessus et la nature
+archimédienne ou non de la place considérée, de façon à obtenir une famille
+indexée par \( \place \) de polynômes \( P_\place \) et jouissant des
+propriétés suivantes :
 \begin{enumthm}
   \item \( \displaystyle
       \der[\dermp]
       \frac{
-        F''(\vmp)
+        F''_\place(\vmp)
       }{
         \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
       }
@@ -2852,7 +2830,7 @@ polynômes \( P_\place \) et jouissant des propriétés suivantes :
   \item \(
       \nv1{ P_\place }
       \le
-      \nv1{ F'' }
+      \nv1{ F''_\place }
       \prod\fctrange
       \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
       \left(
@@ -2864,13 +2842,13 @@ polynômes \( P_\place \) et jouissant des propriétés suivantes :
   \item \(
       \inda* \bigl( P_\place \bigr)
       \ge
-      \inda*(F'') - \wtsum*(\dermp)
+      \inda*(F''_\place) - \wtsum*(\dermp)
     \).
 \end{enumthm}
 Rappelons que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta / \sigma
-\) ; en remarquant que \( \inda*(F'') \ge \epsi \delta \) par construction et
-que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition, le dernier point
-dit que
+\) ; en remarquant que \( \inda*(F''_\place) \ge \epsi \delta \) par le lemme
+précédent  et que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition, le
+dernier point donne
 \begin{equation} \label{e:ind-Pv}
   \inda*( P_\place ) \ge \epsi \delta (1 - \sigma^{-1})
   \pmm.
@@ -3141,9 +3119,8 @@ d'autre part pour obtenir
     \bigr)
     + 2 \Lambda^{f(u)} (\htcmp + \dimp^2)
   \right)
+  \pmm.
 \end{align}
-
-
 
 \newpage % XXX
 
