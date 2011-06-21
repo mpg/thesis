@@ -522,7 +522,7 @@ plongement \( \vadapt* \circ \Theta \) et \( \varfca* \) une forme de
 montre qu'une telle forme s'obtient en composant \( \varfc* \) avec la
 transposée de \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
 variables ; il est alors clair que
-\begin{equation}
+\begin{equation} \label{e:nv-varfca}
   \nv1{\varfca*} \le \nv1{\varfc*}
   \cdot \bigl( (\dimp+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1)}
 \end{equation}
@@ -3131,6 +3131,59 @@ d'autre part pour obtenir
   \right)
   \pmm.
 \end{align}
+
+Intéressons-nous maintenant à hauteur de la famille \( (P_\place)_\place \),
+dont les normes locales sont données par le point~\ref{i:norm-p-der}
+page~\pageref{i:norm-p-der}. Compte tenu de \eqref{e:nv-varfca}, on a
+\begin{align}
+  \hautl[1]{ (P_\place)_\place }
+  & \le
+  \hautl[1]{ (F''_\place)_\place }
+  + \sum\fctrange
+  \bigl( 2 (\dimp - \vdim*) \lgr{\dermp*} \bigr) \Bigl(
+    \hautl[1]{ \varfc* }
+    + \vdeg* (\vdim* + 1) \ln( \vdegp* (\dimp+1) )
+    \\ & \quad \qquad + 2(\vdeg*+1) \ln 2 + \ln \vdim* + 3 \ln \vdeg*
+  \Bigr)
+  + \vdim* (\Dir*) \ln 2
+  \\ & \le
+  \hautl[1] F + \delta C_\wembcl
+  + \sum\fctrange
+  2 \dimp \frac{\epsi \delta}{\sigma} \wts* (\puiss-1)^{\delta^\fct_\puiss}
+  \Bigl(
+    \hautl[1]{ \varfc* }
+    + B (\genre + 1) \ln( B (\dimp+1) )
+    \\ & \quad \qquad + 2 (B + 1) \ln 2 + 3 \ln B + \ln \genre
+  \Bigr)
+  + 3 \delta \wts* (\puiss-1)^{\delta^\fct_\puiss} \genre \ln 2
+  + o(\delta)
+\end{align}
+en utilisant l'hypothèse \( \wtsum(\dermp) \le \epsi\delta / \sigma \) et la
+définition~\eqref{e:d-dp-def} de \( d' \), ainsi que \( \epsz < 1 \) et \(
+  \vdim* \le \genre \). On utilise alors d'une part le scolie~\ref{s:h1-aux}
+et la proposition~\ref{p:build-aux}, d'autre part
+l'hypothèse~\eqref{e:varset-ht} et par ailleurs le lemme~\ref{l:sum-wts} pour
+écrire
+\begin{align}
+  \frac{ \hautl[1]{ (P_\place)_\place } }{\delta + o(\delta)}
+  & \le
+  \wts[1] \Lambda^{2\,f(u)} \bigl(
+    5\puiss \cst{vs-ht}
+    + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
+  \bigr)
+  + C_\wembcl
+  + 2 \dimp \frac{\epsi}{\sigma} \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+  + 2 \wts[1] \dimp B^2
+  \\ & \le
+  \wts[1] \Lambda^{2\,f(u)} \bigl(
+    (5\puiss + 2\dimp \epsi / \sigma) \cst{vs-ht}
+    + 2 (2\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
+  \bigr)
+  + C_\wembcl
+\end{align}
+
+
+
 
 \newpage % XXX
 
