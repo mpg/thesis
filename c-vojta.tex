@@ -3062,12 +3062,11 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
     \biggl)
   \Biggr)
 \end{multline}
-puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et que \( \sigma >
-  4 \), en utilisant~\eqref{e:vadapt-ht} et en notant encore \( B \) un
-majorant commun des \( \vdeg* \) :
-\begin{equation}
+puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et \( \sigma >
+  4 \) et en utilisant~\eqref{e:vadapt-ht} :
+\begin{equation} \label{e:apx-1a-split}
   - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
-  + \hautl[1]{P}
+  + \hautl[1]{(P_\place)_\place}
   + \sum\fctrange \deg_\fct P \cdot C_\fct
 \end{equation}
 où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) et
@@ -3082,7 +3081,7 @@ où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) et
   \\ & \le
   \hautl[1]{ \varfc* }
   + \cst{vs-ht}
-  + (\dimp + 2) (\genre + 2) B^2
+  + \dimp B^2
 \end{align}
 en majorant assez largement sur la dernière ligne. Explicitions maintenant un
 majorant du degré commun des \( P_\place \), donné par le
@@ -3119,14 +3118,14 @@ d'autre part pour obtenir
   \left(
     \cst{vs-ht} \Lambda^{2\,f(u)}
     + 2 \bigl(
-      \cst{vs-ht} + (\dimp + 2) (\genre + 2) B^2
+      \cst{vs-ht} + \dimp B^2
     \bigr)
   \right)
-  \\ & \le
+  \\ & \le \label{e:apx-1a-sum}
   \delta \wts[1] \left(
     \Lambda^{3f(\vdim)} \bigl(
       3 \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
-      + 2(\dimp + 2)(\genre + 2) \cst{vs-deg-prod}^{-2}
+      + 2\dimp^2 \cst{vs-deg-prod}^{-2}
     \bigr)
   \right)
   \pmm.
@@ -3174,14 +3173,42 @@ l'hypothèse~\eqref{e:varset-ht} et par ailleurs le lemme~\ref{l:sum-wts} pour
   + C_\wembcl
   + 2 \dimp \frac{\epsi}{\sigma} \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   + 2 \wts[1] \dimp B^2
-  \\ & \le
+  \\ & \le \label{e:apx-1a-ht}
   \wts[1] \Lambda^{2\,f(u)} \bigl(
     (5\puiss + 2\dimp \epsi / \sigma) \cst{vs-ht}
     + 2 (2\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
   \bigr)
   + C_\wembcl
+  \pmm.
 \end{align}
-
+Il ne reste alors plus qu'à substituer~\eqref{e:apx-1a-ht}
+et~\eqref{e:apx-1a-sum} dans~\eqref{e:apx-1a-split} pour obtenir
+\begin{align}
+  \frac{ \ratfh{1a} }{ \delta+o(\delta) }
+  & \le
+  \wts[1] \Bigl(
+    - \frac38 \hautn{\ex[1]} \expapx \epsi
+    + \Lambda^{2\,f(u)} \bigl(
+      (5\puiss + 2\dimp \epsi / \sigma) \cst{vs-ht}
+      + 2 (2\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
+    \bigr)
+    \\ & \qquad
+    + \Lambda^{3f(\vdim)} \bigl(
+      3 \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
+      + 2\dimp^2 \cst{vs-deg-prod}^{-2}
+    \bigr)
+  \Bigr)
+  + C_\wembcl
+  \\ & \le
+  \wts[1] \Bigl(
+    - \frac38 \hautn{\ex[1]} \expapx \epsi
+    + \Lambda^{3f(\vdim)} \bigl(
+      ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp \epsi / \sigma ) \cst{vs-ht}
+      + 3\dimp^2 \cst{vs-deg-prod}^{-2}
+    \bigr)
+  \Bigr)
+  + C_\wembcl
+\end{align}
 
 
 
