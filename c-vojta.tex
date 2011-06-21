@@ -43,12 +43,24 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
     considérée}
   \begin{align}
-    \Vbig & = \stuffout{\cst{vs-ht} \Lambda^{2\,f(u)}}
+    \label{e:def-Vbig}
+    \Vbig & \ge \stuffout{\cst{vs-ht} \Lambda^{2\,f(\puiss-1)}}
+    \text{ pour la conclusion de la construction}
+    \\ & \ge \stuffout{
+      \frac{16}{3\expapx \epsi}
+      \Lambda^{3f(\puiss)} \bigl(
+        ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp ) \cst{vs-ht}
+        + 4\dimp^2 \cst{vs-deg-prod}^{-2}
+      \bigr)
+    } \text{ pour \eqref{e:Vbig-ct-extra}}
     \\
+    \label{e:def-Vfar}
     \Vfar & = \stuffout{\dots
       \text{$>4$ pour \ref{l:sum-wts}}}
     \\
-    \Vcos & = \stuffout{\dots \text{$<1/9$ pour \ref{l:sum-wts}}}
+    \label{e:def-Vcos}
+    \Vcos & = \stuffout{\frac{\eps\epsi}{48(\puiss-1)}}
+    \text{ pour \eqref{e:Vcos-ct-extra}}
     \\
     \puiss & \ge \stuffout{g+1}
   \end{align}
@@ -681,6 +693,7 @@ paramètres qui seront utilisés tout au long de ce chapitre et qui contrôlent
 notamment le degré en lequel nous établirons ces estimations.
 
 Introduisons un réel \( \epsi \) défini par :
+\todo[corriger pour conserver \eqref{e:good-codim} avec le nouveau \( \epsz \)]
 \begin{equation} \label{e:def-epsi}
   \epsi =
   \eps^{\frac{\genre}{\puiss-\genre}}
@@ -689,6 +702,7 @@ Introduisons un réel \( \epsi \) défini par :
   \Bigr)^{\frac{-1}{\puiss-\genre}}
 \end{equation}
 et un rationnel \( \epsz \) tel que :
+\todo[corriger pour avoir \eqref{e:epsz-ct-extra}]
 \begin{equation} \label{e:def-epsz}
   \frac{\eps \eps}{9\puiss}
   \le \epsz \le
@@ -2369,9 +2383,9 @@ On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
 qui est bien homogène de degré \( 0 \).  Le but de cette section est alors de
 montrer la proposition suivante.
 
-\begin{prop}
-  On a \( \inda**(\ratf1) \ge \epsi \delta / \sigma \), où \( \sigma \) est tel
-  que \dots
+\begin{prop} \label{p:extra}
+  On a \( \inda**(\ratf1) \ge \frac{ \epsi \delta }{ \sigma } \) avec \(
+    \sigma = \frac{16 (\puiss-1)}{\eps} \).
 \end{prop}
 
 Commençons par un lemme facile sur l'indice.
@@ -3240,8 +3254,42 @@ avec, plus précisément :
     ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp ) \cst{vs-ht}
     + 4\dimp^2 \cst{vs-deg-prod}^{-2}
   \bigr)
+  \pmm.
 \end{align}
 
+Montrons que le terme dominant dans~\ref{e:prod-lem-final} est négatif et même
+inférieur à \( - \frac{3\expapx \epsi}{16} \). La définition~\eqref{e:def-epsz}
+de \( \epsz \) assure que
+\begin{equation} \label{e:epsz-ct-extra}
+  2 \puiss \epsz
+  \le \frac{\expapx \epsi}{16}
+  \pmm,
+\end{equation}
+tandis que la définition~\eqref{e:def-Vcos} de \( \Vcos \) assure que
+\begin{equation} \label{e:Vcos-ct-extra}
+  3 (\puiss-1) \Vcos
+  \le \frac{\expapx \epsi}{16}
+  \pmm.
+\end{equation}
+Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\ref{p:extra}
+assure que
+\begin{equation}
+  \frac{2 (\puiss - 1) \epsi}{\sigma}
+  \le \frac{\expapx \epsi}{16}
+  \pmm.
+\end{equation}
+Par ailleurs, en remarquant que \( \vdim > \puiss \), la
+définition~\eqref{e:def-Vbig} de \( \Vbig \) montre que
+\begin{equation} \label{e:Vbig-ct-extra}
+  \frac{3\expapx \epsi}{16} \hautn{\ex[1]}
+  \ge
+  \Lambda^{3f(\vdim)} \bigl(
+    ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp ) \cst{vs-ht}
+    + 4\dimp^2 \cst{vs-deg-prod}^{-2}
+  \bigr)
+\end{equation}
+et que le membre de droite de~\eqref{e:prod-lem-final}, contradiction qui
+achève la preuve de la proposition~\ref{p:extra}.
 
 
 
