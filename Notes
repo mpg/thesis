@@ -105,8 +105,6 @@ systématiquement la norme ou mesure archimédienne utilisée
 Vojta {{{2
 -----
 
-(C) Trouver une meilleur notation pour \Ideal_{\delta d}.
-
 Plongements et formulaires {{{2
 --------------------------
 
@@ -122,32 +120,15 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) Voir l'application du lemme du produit
+(A) Finir premier jet :
+    - lemmes sur l'indice
+    - application thm du produit
+    - premier bouclage grossier des constantes
 
-(A) boucler les constantes, au moins modulo la partie archimédienne et sans
-tenir compte du fait qu'il y en a plein de fausses avant
-
-(A) relire le tout et dresser ici la liste des trucs à fignoler pour avoir les
-vraies constantes
-    - l'annexe formulaire
-    - plongement adapté, cf ci-dessous
-    - le plongement pondéré avec \wt** \neq 1, cf ci-dessous
-
-(A) extrapolation : la vraie condition d'approx n'est pas avec un produit
-
-(B) plongemgement pondéré : propager \wt** \neq 1 partout (Siegel etc)
-
-(B) Plongement adapté : estimer le coût sur les formules de soustraction et
-multiplication. (Nul vu le choix actuel ?!)
-- Attendre d'avoir fait le lemme de choix de coordonnée non nulle avant, pour
-  l'intégrer. Gnééé ? Elles sont pas toutes non nulles ?
-- Ensuite, propager dans les estimations de hauteur faisant intervenir \wemba.
-- Voir si on ne peut pas s'en passer en relisant Rémond.
-
-(B) Détailler les preuves concernant le plongement adapté au moins au point
-d'être sûr que les constantes sont justes et les notations fixées.
-
-(B) boucler les vraies constantes, relire, relire, relire
+(B) Reprendre notations dans la partie dérivées :
+    - Q en conflit avec \pden dans la démo du premier lemme
+    - prendre X_0 pour déshomogénéiser partout, et indice par rapport à une
+      variable quelconque
 
 (C) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
 faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
