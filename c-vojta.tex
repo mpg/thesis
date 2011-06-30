@@ -851,13 +851,135 @@ On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
 \begin{equation} \label{e:inda-def}
   \inda*(H)
   =
-  \max \set{
+  \sup \set{
     \alpha \in \R
     \text{ tel que }
-    \wtsum*(\imp) \le \alpha \implies h_\imp = 0
+    \wtsum*(\imp) < \alpha \implies h_\imp = 0
   }
   \pmm.
 \end{equation}
+
+On peut donner une présentation équivalente de cette définition, qui sera plus
+facile à adapter par la suite, en remarquant que toute forme s'écrit de façon
+unique comme \( H = \sum_{\im} \vmp[][0]^\im H_\im \) avec \( \im \in
+  \N^\puiss \) et \( H_\im \) ne dépendant pas de \( \vmp[][0] =
+  (\vmp*[0])_\fct \). Si l'on veut, on peut voir cette écriture comme un
+développement de \bsc{Taylor} et remarquer que
+\begin{equation}
+  H_\im
+  =
+  \frac1{\im!} \, \frac{\partial^\im H}{\partial \vmp[][0]^\im} \bigl(
+    0, \vmp[1][1], \dots, \vmp[1][\dimp]; \dots;
+    0, \vmp[\puiss][1], \dots, \vmp[\puiss][\dimp]
+  \bigr)
+  \pmm.
+\end{equation}
+L'indice de \( H \) le long de \( \divi \) est alors donné par
+\begin{equation}
+  \inda*(H)
+  =
+  \sup \set{
+    \alpha \in \R
+    \text{ tel que }
+    \wtsum*(\im) < \alpha \implies H_\im = 0
+  }
+\end{equation}
+où l'on a adapté la notation \( \wtsum* \) de la façon évidente pour \( \im
+  \in \N^\puiss \).
+
+Donnons encore une dernière formulation de cette définition en introduisant
+un ordre monomial sur les monômes en \( \vmp[][0] \) (ou, de façon équivalente,
+sur les \( \im \in \N^\puiss \)) donné par
+\begin{equation}
+  \im < \im'
+  \Longleftrightarrow
+  \begin{cases}
+    \wtsum*(\im) < \wtsum*(\im') & \text{ou} \\
+    \wtsum*(\im) = \wtsum*(\im') & \text{et \( \im < \im' \) pour l'ordre
+      lexicographique.}
+  \end{cases}
+\end{equation}
+Il existe pour chaque \( H \neq 0 \) un indice \( \im_\imin \) minimal (pour
+l'ordre ci-dessus) tel que \( H_{\im_\imin} \neq 0 \) et l'indice est alors
+donné par \( \inda*(H) = \wtsum*(\im_\imin) \). Nous ne répéterons plus par la
+suite que tous les considérations de minimalité d'indices sont relatives à
+l'ordre fixé ci-dessus.
+
+\medskip
+
+La notion d'indice définie jusqu'à présent est bien adapté à des formes
+définies sur l'espace multiprojectif ambiant ; cependant, nous allons
+travailler avec des formes sur \( \var \) pour lesquelles il convient
+d'utiliser une notion d'indice tenant compte de \( \var \). Les deux dernières
+définitions données s'adaptent immédiatement :
+\begin{align}
+  \indav H
+  & =
+  \sup \set{
+    \alpha \in \R
+    \text{ tel que }
+    \wtsum*(\im) < \alpha \implies H_\im \in \varida
+  }
+  \\ & =
+  \wtsum*(\im_\imin)
+  \text{
+    où \( \im_\imin \) est minimal tel que \( H_{\im_\imin} \notin \varida \),
+    si \( H \neq 0 \).
+  }
+\end{align}
+Notons que dans cette définition, \( \divi \) et \( \var \) jouent des rôles
+très différents : \( \var \) est moralement la variété ambiante et c'est le
+long de \( \divi \) que la multiplicité est comptée.  Cette notion d'indice
+restreint à \( \var \) conserve les propriétés usuelles de l'indice, résumées
+par le lemme suivant.
+
+\begin{lem}
+  Pour toute paire de formes multihomogènes \( G \) et \( H \) on a
+  \begin{align}
+    \indav G = \infty & \Leftrightarrow G = 0
+    \\
+    \indav G + H & \ge \min (\indav G, \indav H)
+    \\
+    \indav GH & = \indav G + \indav H
+  \end{align}
+  Autrement dit, \( \indav \) est une valuation sur \( \cdn[ \vmp ] \).
+\end{lem}
+
+\begin{proof}
+  La première assertion découle immédiatement de la définition. La deuxième
+  est également évidente en remarquant que \( (G + H)_\im = G_\im + H_\im \)
+  et que \( \varida \) est un sous-groupe de \( \cdn[ \vmp ] \).
+  Pour la dernière, on note \( \im_\imin \) et \( \imi_\imin \) des indices
+  minimaux tels que \( G_{\im_\imin} \notin \varida \) et \( H_{\imi_\imin}
+    \notin \varida \), puis \( \imii_\imin = \im_\imin + \imi_\imin \). On
+  constate également que
+  \begin{equation}
+    (GH)_\imii
+    =
+    \sum_{\im + \imi = \imii} G_\im H_\imi
+    \pmm.
+  \end{equation}
+  Si \( \imii < \imii_\imin \) alors dans chaque terme de cette somme (au
+  moins) l'une des inégalités \( \imi < \imi_\imin \) ou \( \imii <
+    \imii_\imin \) est vraie, donc le terme correspondant appartient à \(
+    \varida \) et la somme aussi. Ceci prouve que \( \indav GH \ge \indav G +
+    \indav H \). Notons que pour l'instant nous avons seulement utilisé le
+  fait que \( \varida \) est un idéal ; pour établir l'inégalité inverse nous
+  utilisons le fait qu'il est premier. En effet, dans la somme ci-dessus pour
+  \( \imii = \imii_\imin \), l'argument ci-dessus est valable pour chaque
+  terme sauf un : \( G_{\im_\imin} H_{\im_\imin} \). Par hypothèse, aucun des
+  facteurs n'est dans \( \varida \), donc le produit non plus ; tous les
+  autres termes étant dans \( \varida \), la somme n'y est donc pas, ce qui
+  conclut la preuve.
+\end{proof}
+
+\newpage % XXX
+
+\begin{comment}
+On peut d'ailleurs donner une autre présentation de la même notion.
+Introduisons, pour tout réel positif \( \beta \), l'idéal \( \vanish*[\beta]
+\) des formes \( H \) telles que \( \inda* H \ge \beta \).
+
 On introduit alors, pour \( \beta > 0 \), les idéaux
 \nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
     \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
@@ -889,6 +1011,7 @@ appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
 \end{equation}
 l'ensemble des indices correspondant aux coefficients qui doivent être nuls
 pour assurer l'appartenance à \( \vanish*[\beta] \).
+\end{comment}
 
 
 
