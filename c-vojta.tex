@@ -3,7 +3,7 @@
 \chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
 
 
-\section{Stratégie de la preuve et préliminaires}
+\section{Réduction et autres préliminaires}
 
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est un hyperplan (ne contenant pas \(
@@ -588,9 +588,8 @@ proposition~\ref{p:varset-notmin}.
   procédant comme au lemme~4.3 de \cite{remivds}.
 \end{proof}
 
-
 
-\subsection{Plongement abélien pondéré, notations et stratégie}
+\subsection{Plongement abélien pondéré}
 \label{sec:wemb}
 
 Introduisons un plongement, dit \emph{éclatant} ou pondéré par \( \wt \),
@@ -820,29 +819,17 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
 \end{proof}
 
-Nous sommes maintenant prêts à commencer la preuve proprement dite de la
+Nous sommes bientôt prêts à commencer la preuve proprement dite de la
 proposition~\ref{p:varset-notmin} ; rappelons que l'on peut exclure les cas
 traités par le scolie~\ref{s:part-cases}. La preuve suit alors la méthode de
 \TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
 de \( \divi \), puis on montre qu'elle s'annule en \( \ex \) avec un indice
-plus faible mais toujours élevé par rapport à son degré et on conclu en
+plus faible mais toujours élevé par rapport à son degré et on conclut en
 appliquant une variante du théorème du produit pour obtenir la conclusion de
-la proposition.
+la proposition.  Auparavant, précisons les notions d'indice utilisées.
 
 
-\section{Construction d'une forme auxiliaire} \label{sec:siegel}
-
-L'objectif de cette section est de construire une forme non nulle sur \( \var
-\), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de
-hauteur contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).
-
-Nous commençons par définir la notion d'indice utilisée, puis précisons la
-stratégie de construction de la forme recherchée. Nous établissons ensuite les
-estimations de dimension et de hauteur nécessaires avant de conclure en
-appliquant un lemme de \TS.
-
-
-\subsection{Idéal d'annulation}
+\subsection{Indice et sous-variétés}
 
 Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
 \nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
@@ -855,9 +842,8 @@ Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
   + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
   \pmm.
 \end{equation}
-Les poids dans cette somme sont essentiellement proportionnels à \( d \), ce
-qui sera essentiel par la suite.\worknote{Pour appliquer le théorème de
-  produit.}
+Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
+qui sera crucial pour la section~\ref{sec:thm-prod}.
 On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
   \vmp^\imp \) par :
 \nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
@@ -903,6 +889,17 @@ appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
 \end{equation}
 l'ensemble des indices correspondant aux coefficients qui doivent être nuls
 pour assurer l'appartenance à \( \vanish*[\beta] \).
+
+
+
+\section{Construction d'une forme auxiliaire} \label{sec:siegel}
+
+L'objectif de cette section est de construire une forme non nulle sur \( \var
+\), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de hauteur
+contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).  Nous
+commencerons par préciser les propriétés voulues et la stratégie de
+construction, puis nous établirons les estimations de dimension et de hauteur
+nécessaires avant de conclure en appliquant un lemme de \TS.
 
 
 \subsection{Stratégie de construction de la forme auxiliaire}
@@ -1356,7 +1353,6 @@ facilement, en utilisant à nouveau le fait que \( \puiss \ge \genre + 1 \ge 2
   \pmm.
 \end{equation}
 
-
 
 \subsection{Deux lemmes de hauteurs}
 
@@ -1738,6 +1734,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \end{equation}
   qui équivaut au résultat annoncé.
 \end{proof}
+
+
+\subsection{Récapitulatif, corollaires et formes associées}
+\label{sec:siegel-recap}
 
 \begin{scho} \label{s:aux-co}
   On note désormais \( F \) une forme comme dans la conclusion de la
@@ -3295,6 +3295,7 @@ achève la preuve de la proposition~\ref{p:extra}.
 
 
 \section{Application du théorème du produit et conclusion}
+\label{sec:thm-prod}
 
 \endinput
 
