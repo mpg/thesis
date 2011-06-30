@@ -942,7 +942,8 @@ par le lemme suivant.
     \\
     \indav GH & = \indav G + \indav H
   \end{align}
-  Autrement dit, \( \indav \) est une valuation sur \( \cdn[ \vmp ] \).
+  Autrement dit, \( \indav \) est une valuation sur \( \cdn[ \vmp ] \), à
+  valeurs dans \( \R_+ \cup \set\infty \).
 \end{lem}
 
 \begin{proof}
@@ -972,6 +973,27 @@ par le lemme suivant.
   autres termes étant dans \( \varida \), la somme n'y est donc pas, ce qui
   conclut la preuve.
 \end{proof}
+
+Une conséquence immédiate du lemme précédent est que l'ensemble
+\begin{equation} \label{e:vanish-def}
+  \vanish[\beta]
+  = \left\{
+    H \in \cdn [\vmp]
+    \text{ tel que }
+    \indav H  \ge \beta
+  \right\}
+\end{equation}
+est en fait un idéal de \( \cdn[ \vmp ] \), de même que l'ensemble
+\begin{equation} \label{e:vanish*-def}
+  \vanish*[\beta]
+  = \left\{
+    H \in \cdn [\vmp]
+    \text{ tel que }
+    \inda* H  \ge \beta
+  \right\}
+\end{equation}
+défini en utilisant l'indice plus usuel, qui est aussi évidemment une
+valuation.
 
 \newpage % XXX
 
