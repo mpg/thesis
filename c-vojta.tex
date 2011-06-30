@@ -976,7 +976,7 @@ par le lemme suivant.
 
 Une conséquence immédiate du lemme précédent est que l'ensemble
 \begin{equation} \label{e:vanish-def}
-  \vanish[\beta]
+  \vanishv[\beta]
   = \left\{
     H \in \cdn [\vmp]
     \text{ tel que }
@@ -985,29 +985,31 @@ Une conséquence immédiate du lemme précédent est que l'ensemble
 \end{equation}
 est en fait un idéal de \( \cdn[ \vmp ] \), de même que l'ensemble
 \begin{equation} \label{e:vanish*-def}
-  \vanish*[\beta]
+  \vanish[\beta]
   = \left\{
     H \in \cdn [\vmp]
     \text{ tel que }
     \inda* H  \ge \beta
   \right\}
 \end{equation}
-défini en utilisant l'indice plus usuel, qui est aussi évidemment une
+défini en utilisant l'indice plus usuel, qui est évidemment aussi une
 valuation. Si une forme \( H = \sum_\im \vmp[][0]^\im H_\im \) appartient à \(
-  \vanish[\beta] \), alors dans la somme précédente les termes correspondant
+  \vanishv[\beta] \), alors dans la somme précédente les termes correspondant
 aux \( \im \) tels que \( \wtsum*(\im) < \beta \) sont dans \( \varida \), et
-les autres sont dans \( \vanish*[\beta] \) par définition. Il est donc clair
+les autres sont dans \( \vanish[\beta] \) par définition. Il est donc clair
 que
 \begin{equation}
-  \vanish \subset \vanish* + \varida
+  \vanishv[\beta] \subset \vanish[\beta] + \varida
+  \quad \forall \beta
   \pmm.
 \end{equation}
 Par contre, la réciproque est fausse en général : prenons \( \puiss = 1 \) et
 \( \wt[1] = 1 \), et supposons que \( \varida = (\vmp[1][0] + \vmp[1][\dimp])
 \) de sorte que le plongement est bien adapté. Alors \( \vmp[1][\dimp] \in
-  \vanish*[1] + \varid \) mais \( \indav \vmp[1][\dimp] = 0 \). Néanmoins,
-nous établirons plus tard une version asymptotique de cette réciproque en
-utilisant un morphisme de réduction qui sera présenté à la section suivante.
+  \vanish[1] + \varid \) mais \( \indav \vmp[1][\dimp] = 0 \). Néanmoins,
+nous établirons plus tard une version asymptotique (quand \( \beta \) tend
+vers l'infini) de cette réciproque en utilisant un morphisme de réduction qui
+sera présenté à la section suivante.
 
 
 
@@ -1028,7 +1030,7 @@ cherche une forme
 \begin{equation}
   F'
   \in \cdn[\vmp]_\Di
-  \cap \vanish
+  \cap (\vanish + \varida)
   \cap \wemba(\cdn[\vmp, \vmpi]_\Dz)
 \end{equation}
 non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
@@ -1036,21 +1038,21 @@ non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
 \begin{equation}
   F
   \in \cdn[\vmp, \vmpi]_\Dz
-  \cap \wemba^{-1}(\vanish)
+  \cap \wemba^{-1}(\vanish + \varida)
 \end{equation}
 non nulle modulo l'idéal de $\wemb(\var)$, de hauteur relativement petite.
 
 Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
 Cependant, il est difficile d'expliciter un système essentiellement minimal
-d'équations linéaires exprimant l'appartenance à $\vanish$. Il est en
-revanche immédiat d'expliciter un tel système pour $\vanish*$, mais
+d'équations linéaires exprimant l'appartenance à $\vanish + \varida$. Il est en
+revanche immédiat d'expliciter un tel système pour $\vanish$, mais
 il comporte beaucoup trop d'équations (géométriquement, il correspond à une
 condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
 $\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
 
 Nous allons donc devoir procéder à quelques réductions pour récrire le
 système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\vmp]_\Di$ dans lequel $\vanish$
+un sous-espace de $\cdn[\vmp]_\Di$ dans lequel $\vanish + \varida$
 est de codimension suffisamment petite pour pouvoir demander que l'image de
 $F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
 
@@ -1133,15 +1135,15 @@ notre objectif : il s'agira en fait de construire une forme $F \in
 \fspace \setminus \{0\}$ telle que
 \begin{equation}
   \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
-  \in \vanish*
+  \in \vanish
   \pmm,
 \end{equation}
-ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
+ce qui implique que $R \cdot \wemba(F) \in \vanish + \varida$ car
 \begin{equation}
   R \cdot \wemba(F)
   - \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
   \in \varida
-  \subset \vanish
+  \subset \vanish + \varida
   \pmm.
 \end{equation}
 
@@ -1153,7 +1155,7 @@ tirées en arrière sur $\fspace$ par
 Pour pouvoir procéder, nous devons donc :
 \begin{enumerate}
   \item Calculer la dimension de $\fspace$ et la codimension de
-    $\vanish*$ dans $\cdn[\vmp]_\Dir^{C'''}$, et s'assurer que la
+    $\vanish$ dans $\cdn[\vmp]_\Dir^{C'''}$, et s'assurer que la
     deuxième est plus petite que la première ;
   \item Expliciter les morphismes \( \rdiv \) et \( \relim \) de la première
     ligne du diagramme et majorer la hauteur de leurs matrices dans les bases
@@ -1283,7 +1285,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   combinant avec le résultat du lemme précédent.
 \end{proof}
 
-Nous allons maintenant calculer la codimension de $\vanish*$ dans
+Nous allons maintenant calculer la codimension de $\vanish$ dans
 $\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
 \begin{equation} \label{e:stairs-c3}
   \begin{split}
@@ -1308,7 +1310,7 @@ $\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
   \end{split}
 \end{equation}
 dont il s'agit de calculer le cardinal. En effet,
-\( \vanish* \cap \cdn [\vmp]\Ciii \)
+\( \vanish \cap \cdn [\vmp]\Ciii \)
 est le sous-espace engendré par les monômes dont les exposants ne sont pas
 dans \( (\stairs)\Ciii \).
 
@@ -1723,7 +1725,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \( \delta \) est assez grand, il existe une forme \( F \in \cdn [\vmp,
     \vmpi] \), multihomogène de degré \( \Dz \) (où l'on rappelle que \(
     d \) est défini par~\eqref{e:d-dp-def}), non nulle modulo \(
-    \idealim \), telle que \( R \cdot \wemba(F) \in \vanish \) et
+    \idealim \), telle que \( R \cdot \wemba(F) \in \vanish + \varida \) et
   \begin{equation}
     \hautl[\infty] F
     \le
@@ -1861,7 +1863,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   proposition précédente, \( F' = \wemba(F) \) et \( F'' =
     \rdiv^\Dir(\relim(\rdiv^\Di(F'))) \). On a alors
   \begin{enumthm}
-    \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish* \) ;
+    \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish \) ;
     \item \( \deg F'' = \deg RF' = \deg F' + r_\fct = \Di + o(\delta) \),
     où l'on rappelle que
       \begin{align}

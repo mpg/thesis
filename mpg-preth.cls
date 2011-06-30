@@ -977,17 +977,15 @@
 % vanishing conditions [[2
 %
 \newcommand \Stairs { \mathcal E }
-\newcommand \Vanish {\@ifstar {\mathfrak{\tilde q}} {\mathfrak q}}
+\newcommand \Vanish { \mathfrak q }
 
-\newcommand \wt@scale [1][\delta\epsi] { \sb{\wt} \sp{#1} }
-\newcommand \stairs {\Stairs\wt@scale}
-\newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
+\newcommandx*\wt@scale [2][2=\delta\epsi] { \sb{\wt\slast{#1}} \sp{#2} }
+\newcommand \stairs {\Stairs\wt@scale{}}
+\newcommand \vanish {\Vanish\wt@scale{\divi}}
+\newcommand \vanishv{\Vanish\wt@scale{\divi, \var}}
 
-\nomdef \stairs a {E} \@gobbletwo{\stairs}{Cylindre sur le dessus de
-  multi-escalier défini par les poids $\wt$ et le facteur d'échelle
-  $\epsi\delta$}
-\nomdef \vanish a {q} \@gobbletwo{\vanish}{Idéal d'annulation $\vanish +
-  \varid$}
+\nomdef \stairs a {E}
+\nomdef \vanish a {q}
 
 \newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
 \newc@star@default \inda {\divi}{\ex} {\Aind\sp\wt\ssub{#1}}
