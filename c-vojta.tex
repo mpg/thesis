@@ -589,6 +589,291 @@ proposition~\ref{p:varset-notmin}.
 \end{proof}
 
 
+\subsection{Application de réduction modulo l'idéal d'une variété}
+
+On considérera des sous-espaces vectoriels de partie homogènes de
+$\cdn[\vmp]$ définis par des restrictions de degré ; introduisons à cet effet
+quelques notations. Pour chaque $C \in (\N \cup \set{ +\infty })
+^{\puiss(\dimp+1)}$, on notera
+\begin{equation} \label{e:C-spaces}
+  \cdn[\vmp]^C
+  = \{
+    F \in \cdn[\vmp]
+    \text{ tel que }
+    \deg_{\vmp*[k]} F \le C\pexp{\fct}[k]
+    \quad \forall i, k
+    \}
+  \pmm.
+\end{equation}
+On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
+par
+\begin{gather} \label{e:C-i-iii}
+  (C')\pexp\fct[\ind] =
+  \begin{cases}
+    +\infty & \text{si $\ind \le \vdim*$} \\
+    \vdeg* - 1 & \text{sinon}
+  \end{cases}
+  \qquad
+  (C'')\pexp\fct[\ind] =
+  \begin{cases}
+    +\infty & \text{si $\ind \le \vdim* + 1$} \\
+    0 & \text{sinon}
+  \end{cases}
+  \\
+  (C''')\pexp\fct[\ind] = \min\bigl(
+    (C')\pexp\fct[\ind], (C'')\pexp\fct[\ind]
+  \bigr)
+  \pmm,
+\end{gather}
+pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$.  Par ailleurs, on notera
+$C'_\Delta$ et $C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un
+certain $\Delta$ dans la définition précédente.
+
+L'intérêt de \( \cdn[ \vmp ]^{C'''} \) est que, le plongement étant
+adapté, son intersection avec \( \varida \) est réduite à \( 0 \) : en effet,
+\( \vmp*[\vdim*] \) est de degré \( \vdeg* \) sur les autres variables, il
+n'est donc pas possible qu'un polynôme de degré inférieur en \( \vmp*[\vdim*]
+\) soit dans \( \varida \) sans être nul. Nous allons maintenant expliciter
+des applications linéaires \( \rfull^\beta \) définies sur chaque partie
+homogène \( \cdn[ \vmp ]_\beta \) pour \( \beta \in \N^\puiss \) et à valeurs
+dans \( \cdn[ \vmp ]^{C'''} \), qui sera en particulier utile pour déterminer
+l'appartenance à \( \varida \) d'une forme homogène.
+
+L'idée générale est la suivante : on peut exploiter les
+dépendance des dernières variables sur les premières données par le
+fait~\ref{f:plong-adapt-dep} pour réduire le degré en les dernières variables,
+et le deuxième point de la définition~\ref{d:plong-adapt} permet même
+d'éliminer totalement les variables d'indice strictement supérieur à \( \vdim*
+  + 1 \), à condition de multiplier par un certain dénominateur intervenant
+dans ces relations de dépendance rationnelles.
+
+Il sera essentiel par la suite que ce dénominateur puisse être choisi
+indépendamment du degré considéré ; pour cela l'application \( \rfull \)
+sera la composée des trois étapes suivantes : une application \( \rdiv \)
+arrivant dans \( \cdn[ \vmp ]^{C'} \), c'est-à-dire faisant chuter le degré ne
+les dernières variables par division euclidienne, une application \( \rdiv \)
+arrivant dans \( \cdn[ \vmp ]^{C''} \), c'est-à-dire éliminant
+les toutes dernières variables en faisant éventuellement croître le degré en
+\( \vmp*[\vdim*] \), et une dernière application \( \relim \) pour limiter à
+nouveau ce degré et arriver dans \( \cdn[ \vmp ]^{C'''} \).
+
+Avant de procéder à la construction des applications évoquées, soulignons
+qu'il s'agit d'applications linéaires définies sur chaque partie homogène de
+\( \cdn[ \vmp ] \) mais en aucun cas de morphismes d'algèbres, les espaces
+d'arrivée n'étant eux-mêmes pas des algèbres.
+
+Pour construire l'application \( \rdiv \) on commence par énoncer un résultat
+de réduction modulo des relations de dépendance intégrale sous une forme un
+peu générale avant de l'appliquer au cas qui nous intéresse.
+
+\begin{lem}
+  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vdim* + 1,
+  \dots \dimp \} \), on se donne :
+  \begin{enumthm}
+    \item \( \Delta\mexp* \in \N^* \) ;
+    \item \( P\mexp*[\ind]
+      \in
+      \cdn [ \vmp*[0], \dots, \vmp*[\vdim*], \vmp*[\ind] ] \)
+      homogène de degré \( \Delta\mexp* \) et unitaire en \( \vmp*[\ind]
+      \).
+  \end{enumthm}
+  On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
+  l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
+  \( f \in \N^\puiss \), il existe une (unique) application linéaire
+  \begin{equation}
+    \rdiv^f \colon \cdn [\vmp]_ f \to \cdn [\vmp]_ f^{C'_\Delta}
+  \end{equation}
+  qui est l'identité modulo \( \Ideal \) (voir~\eqref{e:C-spaces}
+  et~\eqref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
+  colonnes \( c_p \) de la matrice de cette application satisfont la majoration
+  de norme
+  \begin{equation}
+    \nv1{c_p}
+    \le
+    \prod\fctrange \bigl(
+    N_\fct \cdot (2 \Delta\mexp*)^\dv
+    \bigr) ^{f_\fct}
+  \end{equation}
+  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
+  l'image de \( \cdn [\vmp]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
+  contenue dans \( \cdn [\vmp]_ f ^{C'''_\Delta} \).
+\end{lem}
+
+\begin{proof}
+  C'est essentiellement une variante du lemme~2.5 de~\cite{remivg}, notre
+  résultat étant formulé différemment et dans un cadre d'apparence un peu
+  moins générale ; la preuve suivra en tout cas les mêmes lignes. On commence
+  par décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
+  \begin{equation}
+    P\mexp*[\ind]
+    =
+    \sum _{\alpha=1}^{\Delta\mexp*}
+    P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta\mexp* - \alpha}
+    \pmm,
+  \end{equation}
+  où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
+  On pose ensuite, pour tout \( \fct \), tout
+  \( \ind \in \{ 0, \dots, \dimp \} \) et tout
+  \( p \in \N^{\puiss(\dimp+1)} \),
+  \begin{equation}
+    \rho_{\fct, \ind, p}
+    =
+    \begin{dcases*}
+      ( \vmp*[\ind] ) ^{p\mexp*[\ind]}
+      & si \( \fct \le \vdim* \) ;
+      \\
+      \sum _{\alpha=1}^{\Delta\mexp*}
+      U_{p, \alpha, \Delta\mexp*}
+      ( P\mexp*[\ind, 1], \dots, P\mexp*[\ind, \Delta\mexp*] )
+      & sinon,
+    \end{dcases*}
+  \end{equation}
+  où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}. En
+  particulier, \( \rho_{\fct, \ind, p} \) est toujours congru à
+  \( ( \vmp*[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
+  l'estimation de norme
+  \begin{equation}
+    \nv1{ \rho_{\fct, \ind, p} }
+    \le
+    \left(
+    \nv1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
+    \right) ^{p\mexp*[\ind]}
+    \pmm.
+  \end{equation}
+  On définit alors \( \rdiv^f \) par son action sur les monômes, en posant
+  \begin{equation}
+    c_p
+    = \rdiv^f(\vmp^p)
+    = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
+  \end{equation}
+  et en prolongeant par linéarité. L'estimation de norme annoncée découle
+  directement de la majoration précédente en prenant le produit. Par ailleurs,
+  il est clair que si une forme ne fait intervenir que les variables \(
+  \vmp*[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de même de son
+  image.
+\end{proof}
+
+\begin{coro} \label{c:hmat-rdiv}
+  Il existe des applications linéaires \( \rdiv^\Di \) et \( \rdiv^\Dir \)
+  faisant commuter le diagramme~\eqref{e:diag-f-aux}, dont les matrices dans
+  les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
+  majorées par
+  \begin{equation}
+    \prod\fctrange \left(
+    \nv1{ \varfc* }
+    ( 4 \vdegp* )^{(\vdeg* (\vdim* + 1) + 1) \dv}
+    \right) ^{ \Di* }
+    \cdot \expb^{ o(\delta) }
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Découle directement du lemme précédent en utilisant~\eqref{e:nv-poldep} et
+  en remarquant que
+  \begin{equation}
+    ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)} \cdot 2 \vdeg*
+    \le
+    ( 4 \vdegp* )^{\vdeg* (\vdim* + 1) + 1}
+  \end{equation}
+  car \( \vdeg* \le 2 \vdegp* \) par définition.
+\end{proof}
+
+Intéressons-nous maintenant au morphisme \( \relim \).
+
+\begin{lem}
+  Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
+  \{ \vdim* + 1, \dots \dimp \} \), des formes
+  \( S\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) et
+  \( T\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*+1] ] \)
+  telles que \( \deg S\mexp*[\ind] + 1 = T\mexp*[\ind] \) et des entiers
+  \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
+  \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
+
+  Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
+  \Delta \), de degré noté \( r \), et, pour tout \( f \in \N^\puiss \), une
+  application linéaire
+  \begin{equation}
+    \relim \colon
+    \cdn [\vmp]_ {f}^{C'_\Delta}
+    \to
+    \cdn [\vmp]_ {f+r}^{C'_\Delta}
+  \end{equation}
+  qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
+
+  De plus, on peut prendre
+  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
+    ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^{\relim} \) de la
+  matrice de \( \relim \) dans la base canonique satisfont alors
+  \begin{equation}
+    \nv1{ c_q^{\relim} }
+    \le
+    \prod\fctrange N_\fct^{\Delta_\fct}
+  \end{equation}
+  pour tout \( q \) de multilongueur \( f \), où \( N_\fct \) majore
+  \( \nv1{ S\mexp*[\ind] } \) et \( \nv1{ T\mexp*[\ind] } \) pour tout
+  \( \ind \).
+\end{lem}
+
+\begin{proof}
+  Soit \( R \) défini comme dans l'énoncé, et \( \vmp^q \) un monôme de
+  l'espace de départ. Par hypothèse, \( q\mexp*[\ind] \le \Delta_\fct \) pour
+  tout \( \fct \) et \( \ind \le \vdim* + 1 \), de sorte que l'on peut poser
+  \begin{equation}
+    \relim( \vmp^q )
+    =
+    \prod\fctrange \left(
+    \prod_{\ind=1}^{\vdim*}
+    (\vmp*[\ind])^{q\mexp*[\ind]}
+    \prod_{\ind=\vdim*+1}^\dimp
+    (T\mexp*[\ind])^{q\mexp*[\ind]}
+    (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
+    \right)
+  \end{equation}
+  et prolonger par linéarité. On vérifie immédiatement que \( \relim(\vmp^q)
+  \) est congru à \( R \cdot \vmp^q \) modulo \( \Ideal_{S, T} \), de même
+  que l'estimation de norme annoncée.
+\end{proof}
+
+\begin{coro} \label{c:hmat-relim}
+  Il existe une forme \( R \in \cdn [\vmp]^{C''} \) ne dépendant que de \(
+  \var \) et un morphisme \( \relim \) tels que le
+  diagramme~\eqref{e:diag-f-aux} commute. De plus, les colonnes de la matrice
+  de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
+  majorée par
+  \begin{equation}
+    \prod\fctrange
+    \nv1{ N'_\fct }^{\vdeg*}
+    \pmm,
+  \end{equation}
+  où \( N'_\fct \) est une constante ne dépendant que de \( \var* \).
+\end{coro}
+
+\begin{proof}
+  Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
+  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \) ;
+  elle découle du fait qu'on a utilise un plongement adapté.
+  En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
+  \( \ind \), il existe des formes \( A\mexp*[\ind, \alpha] \) et \(
+    B\mexp*[\ind, \alpha] \) dans
+  \( \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) telles que
+  \begin{equation}
+    \frac{ \vmp** }{ \vmp*[0] }
+    =
+    \sum_{\alpha = 0}^{\vdeg* - 1}
+    \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
+    \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\alpha
+    \mod \varida*
+    \pmm.
+  \end{equation}
+  On obtient alors les familles \( S \) et \( T \) recherchées en multipliant
+  les deux membres de l'égalité précédente par \( \vmp*[0] \) puis en
+  réduisant au même dénominateur le membre de droite.
+\end{proof}
+
+Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
+d'en savoir davantage sur \( R \), ni sur les \( N'_\fct \).
+
+
 \subsection{Plongement abélien pondéré}
 \label{sec:wemb}
 
@@ -1060,44 +1345,6 @@ Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_\Dz$ un
 supplémentaire de $(\idealim)_\Dz$ engendré par des
 monômes, que l'on notera $\fspace$ et dans lequel on cherchera $F$.
 
-On considérera des sous-espaces vectoriels de partie homogènes de
-$\cdn[\vmp]$ définis par des restrictions de degré ; introduisons à cet effet
-quelques notations. Pour chaque $C \in (\N \cup \set{ +\infty })
-^{\puiss(\dimp+1)}$, on notera
-\begin{equation} \label{e:C-spaces}
-  \cdn[\vmp]^C
-  = \{
-    F \in \cdn[\vmp]
-    \text{ tel que }
-    \deg_{\vmp*[k]} F \le C\pexp{\fct}[k]
-    \quad \forall i, k
-    \}
-  \pmm.
-\end{equation}
-On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
-par
-\begin{gather} \label{e:C-i-iii}
-  (C')\pexp\fct[\ind] =
-  \begin{cases}
-    +\infty & \text{si $\ind \le \vdim*$} \\
-    \vdeg* - 1 & \text{sinon}
-  \end{cases}
-  \qquad
-  (C'')\pexp\fct[\ind] =
-  \begin{cases}
-    +\infty & \text{si $\ind \le \vdim* + 1$} \\
-    0 & \text{sinon}
-  \end{cases}
-  \\
-  (C''')\pexp\fct[\ind] = \min\bigl(
-    (C')\pexp\fct[\ind], (C'')\pexp\fct[\ind]
-  \bigr)
-  \pmm,
-\end{gather}
-pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$.  Par ailleurs, on notera
-$C'_\Delta$ et $C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un
-certain $\Delta$ dans la définition précédente.
-
 Le plan général de l'écriture du système se résume alors par le diagramme
 commutatif suivant, où l'on note
 \( \ringa{\wemb(\var)} = \cdn[\vmp, \vmpi] / \idealim \)
@@ -1471,225 +1718,6 @@ facilement, en utilisant à nouveau le fait que \( \puiss \ge \genre + 1 \ge 2
   + o(1)
   \pmm.
 \end{equation}
-
-
-\subsection{Deux lemmes de hauteurs}
-
-Nous allons maintenant expliciter les différents morphismes de réduction
-intervenant dans l'écriture du système et contrôler la hauteur de leurs
-matrices.
-
-Comme on l'a annoncé, le morphisme \( \rdiv \) consiste à diviser par des
-relations de dépendance intégrale. On énonce pour commencer un résultat de
-réduction modulo de telles relations sous une forme un peu générale avant de
-l'appliquer au cas qui nous intéresse.
-
-\begin{lem}
-  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vdim* + 1,
-  \dots \dimp \} \), on se donne :
-  \begin{enumthm}
-    \item \( \Delta\mexp* \in \N^* \) ;
-    \item \( P\mexp*[\ind]
-      \in
-      \cdn [ \vmp*[0], \dots, \vmp*[\vdim*], \vmp*[\ind] ] \)
-      homogène de degré \( \Delta\mexp* \) et unitaire en \( \vmp*[\ind]
-      \).
-  \end{enumthm}
-  On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
-  l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
-  \( f \in \N^\puiss \), il existe une (unique) application linéaire
-  \begin{equation}
-    \rdiv^f \colon \cdn [\vmp]_ f \to \cdn [\vmp]_ f^{C'_\Delta}
-  \end{equation}
-  qui est l'identité modulo \( \Ideal \) (voir~\eqref{e:C-spaces}
-  et~\eqref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
-  colonnes \( c_p \) de la matrice de cette application satisfont la majoration
-  de norme
-  \begin{equation}
-    \nv1{c_p}
-    \le
-    \prod\fctrange \bigl(
-    N_\fct \cdot (2 \Delta\mexp*)^\dv
-    \bigr) ^{f_\fct}
-  \end{equation}
-  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
-  l'image de \( \cdn [\vmp]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
-  contenue dans \( \cdn [\vmp]_ f ^{C'''_\Delta} \).
-\end{lem}
-
-\begin{proof}
-  C'est essentiellement une variante du lemme~2.5 de~\cite{remivg}, notre
-  résultat étant formulé différemment et dans un cadre d'apparence un peu
-  moins générale ; la preuve suivra en tout cas les mêmes lignes. On commence
-  par décomposer chaque \( P\mexp*[\ind] \) de la façon suivante :
-  \begin{equation}
-    P\mexp*[\ind]
-    =
-    \sum _{\alpha=1}^{\Delta\mexp*}
-    P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta\mexp* - \alpha}
-    \pmm,
-  \end{equation}
-  où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
-  On pose ensuite, pour tout \( \fct \), tout
-  \( \ind \in \{ 0, \dots, \dimp \} \) et tout
-  \( p \in \N^{\puiss(\dimp+1)} \),
-  \begin{equation}
-    \rho_{\fct, \ind, p}
-    =
-    \begin{dcases*}
-      ( \vmp*[\ind] ) ^{p\mexp*[\ind]}
-      & si \( \fct \le \vdim* \) ;
-      \\
-      \sum _{\alpha=1}^{\Delta\mexp*}
-      U_{p, \alpha, \Delta\mexp*}
-      ( P\mexp*[\ind, 1], \dots, P\mexp*[\ind, \Delta\mexp*] )
-      & sinon,
-    \end{dcases*}
-  \end{equation}
-  où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}. En
-  particulier, \( \rho_{\fct, \ind, p} \) est toujours congru à
-  \( ( \vmp*[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et on a
-  l'estimation de norme
-  \begin{equation}
-    \nv1{ \rho_{\fct, \ind, p} }
-    \le
-    \left(
-    \nv1{ P\mexp*[\ind] } (2\Delta\mexp*)^\dv
-    \right) ^{p\mexp*[\ind]}
-    \pmm.
-  \end{equation}
-  On définit alors \( \rdiv^f \) par son action sur les monômes, en posant
-  \begin{equation}
-    c_p
-    = \rdiv^f(\vmp^p)
-    = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
-  \end{equation}
-  et en prolongeant par linéarité. L'estimation de norme annoncée découle
-  directement de la majoration précédente en prenant le produit. Par ailleurs,
-  il est clair que si une forme ne fait intervenir que les variables \(
-  \vmp*[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de même de son
-  image.
-\end{proof}
-
-\begin{coro} \label{c:hmat-rdiv}
-  Il existe des applications linéaires \( \rdiv^\Di \) et \( \rdiv^\Dir \)
-  faisant commuter le diagramme~\eqref{e:diag-f-aux}, dont les matrices dans
-  les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
-  majorées par
-  \begin{equation}
-    \prod\fctrange \left(
-    \nv1{ \varfc* }
-    ( 4 \vdegp* )^{(\vdeg* (\vdim* + 1) + 1) \dv}
-    \right) ^{ \Di* }
-    \cdot \expb^{ o(\delta) }
-  \end{equation}
-\end{coro}
-
-\begin{proof}
-  Découle directement du lemme précédent en utilisant~\eqref{e:nv-poldep} et
-  en remarquant que
-  \begin{equation}
-    ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)} \cdot 2 \vdeg*
-    \le
-    ( 4 \vdegp* )^{\vdeg* (\vdim* + 1) + 1}
-  \end{equation}
-  car \( \vdeg* \le 2 \vdegp* \) par définition.
-\end{proof}
-
-Intéressons-nous maintenant au morphisme \( \relim \).
-
-\begin{lem}
-  Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
-  \{ \vdim* + 1, \dots \dimp \} \), des formes
-  \( S\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) et
-  \( T\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*+1] ] \)
-  telles que \( \deg S\mexp*[\ind] + 1 = T\mexp*[\ind] \) et des entiers
-  \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
-  \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
-
-  Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
-  \Delta \), de degré noté \( r \), et, pour tout \( f \in \N^\puiss \), une
-  application linéaire
-  \begin{equation}
-    \relim \colon
-    \cdn [\vmp]_ {f}^{C'_\Delta}
-    \to
-    \cdn [\vmp]_ {f+r}^{C'_\Delta}
-  \end{equation}
-  qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
-
-  De plus, on peut prendre
-  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
-    ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^{\relim} \) de la
-  matrice de \( \relim \) dans la base canonique satisfont alors
-  \begin{equation}
-    \nv1{ c_q^{\relim} }
-    \le
-    \prod\fctrange N_\fct^{\Delta_\fct}
-  \end{equation}
-  pour tout \( q \) de multilongueur \( f \), où \( N_\fct \) majore
-  \( \nv1{ S\mexp*[\ind] } \) et \( \nv1{ T\mexp*[\ind] } \) pour tout
-  \( \ind \).
-\end{lem}
-
-\begin{proof}
-  Soit \( R \) défini comme dans l'énoncé, et \( \vmp^q \) un monôme de
-  l'espace de départ. Par hypothèse, \( q\mexp*[\ind] \le \Delta_\fct \) pour
-  tout \( \fct \) et \( \ind \le \vdim* + 1 \), de sorte que l'on peut poser
-  \begin{equation}
-    \relim( \vmp^q )
-    =
-    \prod\fctrange \left(
-    \prod_{\ind=1}^{\vdim*}
-    (\vmp*[\ind])^{q\mexp*[\ind]}
-    \prod_{\ind=\vdim*+1}^\dimp
-    (T\mexp*[\ind])^{q\mexp*[\ind]}
-    (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
-    \right)
-  \end{equation}
-  et prolonger par linéarité. On vérifie immédiatement que \( \relim(\vmp^q)
-  \) est congru à \( R \cdot \vmp^q \) modulo \( \Ideal_{S, T} \), de même
-  que l'estimation de norme annoncée.
-\end{proof}
-
-\begin{coro} \label{c:hmat-relim}
-  Il existe une forme \( R \in \cdn [\vmp]^{C''} \) ne dépendant que de \(
-  \var \) et un morphisme \( \relim \) tels que le
-  diagramme~\eqref{e:diag-f-aux} commute. De plus, les colonnes de la matrice
-  de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
-  majorée par
-  \begin{equation}
-    \prod\fctrange
-    \nv1{ N'_\fct }^{\vdeg*}
-    \pmm,
-  \end{equation}
-  où \( N'_\fct \) est une constante ne dépendant que de \( \var* \).
-\end{coro}
-
-\begin{proof}
-  Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
-  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \) ;
-  elle découle du fait qu'on a utilise un plongement adapté.
-  En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
-  \( \ind \), il existe des formes \( A\mexp*[\ind, \alpha] \) et \(
-    B\mexp*[\ind, \alpha] \) dans
-  \( \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) telles que
-  \begin{equation}
-    \frac{ \vmp** }{ \vmp*[0] }
-    =
-    \sum_{\alpha = 0}^{\vdeg* - 1}
-    \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
-    \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\alpha
-    \mod \varida*
-    \pmm.
-  \end{equation}
-  On obtient alors les familles \( S \) et \( T \) recherchées en multipliant
-  les deux membres de l'égalité précédente par \( \vmp*[0] \) puis en
-  réduisant au même dénominateur le membre de droite.
-\end{proof}
-
-Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
-d'en savoir davantage sur \( R \), ni sur les \( N'_\fct \).
 
 
 \subsection{Construction finale de la forme auxiliaire}

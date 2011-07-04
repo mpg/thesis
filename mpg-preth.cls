@@ -1058,6 +1058,7 @@
 %
 \newcommand \rdiv  { \rho\sb{\mathrm{div }} }
 \newcommand \relim { \rho\sb{\mathrm{elim}} }
+\newcommand \rfull { \rho }
 
 \nomdef \rdiv g {r} \@gobbletwo{\rdiv}{Morphisme de réduction par division
   dans la construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
