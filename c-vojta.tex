@@ -679,9 +679,9 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
   \end{enumthm}
   On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
   l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
-  \( f \in \N^\puiss \), il existe une (unique) application linéaire
+  \( \alpha \in \N^\puiss \), il existe une (unique) application linéaire
   \begin{equation}
-    \rdiv^f \colon \cdn [\vmp]_ f \to \cdn [\vmp]_ f^{C'_\Delta}
+    \rdiv^\alpha \colon \cdn [\vmp]_ \alpha \to \cdn [\vmp]_ \alpha^{C'_\Delta}
   \end{equation}
   qui est l'identité modulo \( \Ideal \) (voir~\eqref{e:C-spaces}
   et~\eqref{e:C-i-iii} pour la définition de l'espace d'arrivée). De plus les
@@ -692,11 +692,11 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \le
     \prod\fctrange \bigl(
     N_\fct \cdot (2 \Delta\mexp*)^\dv
-    \bigr) ^{f_\fct}
+    \bigr) ^{\alpha_\fct}
   \end{equation}
-  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( f \), et
-  l'image de \( \cdn [\vmp]_ f ^{C''_\Delta} \) par \( \rdiv^f \) est
-  contenue dans \( \cdn [\vmp]_ f ^{C'''_\Delta} \).
+  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( \alpha \), et
+  l'image de \( \cdn [\vmp]_ \alpha ^{C''_\Delta} \) par \( \rdiv^\alpha \) est
+  contenue dans \( \cdn [\vmp]_ \alpha ^{C'''_\Delta} \).
 \end{lem}
 
 \begin{proof}
@@ -740,10 +740,10 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \right) ^{p\mexp*[\ind]}
     \pmm.
   \end{equation}
-  On définit alors \( \rdiv^f \) par son action sur les monômes, en posant
+  On définit alors \( \rdiv^\alpha \) par son action sur les monômes, en posant
   \begin{equation}
     c_p
-    = \rdiv^f(\vmp^p)
+    = \rdiv^\alpha(\vmp^p)
     = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
   \end{equation}
   et en prolongeant par linéarité. L'estimation de norme annoncée découle
@@ -754,16 +754,15 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
 \end{proof}
 
 \begin{coro} \label{c:hmat-rdiv}
-  Il existe des applications linéaires \( \rdiv^\Di \) et \( \rdiv^\Dir \)
-  faisant commuter le diagramme~\eqref{e:diag-f-aux}, dont les matrices dans
-  les bases monomiales canoniques ont des colonnes de normes \( \nv1\truc \)
+  Pour tout \( \alpha \in \N^\puiss \), il existe une application linéaire \(
+    \rdiv^\alpha \) égale à l'identité modulo \( \varida \), dont la matrice
+  dans la base monomiale canonique a des colonnes de normes \( \nv1\truc \)
   majorées par
   \begin{equation}
     \prod\fctrange \left(
     \nv1{ \varfc* }
-    ( 4 \vdegp* )^{(\vdeg* (\vdim* + 1) + 1) \dv}
-    \right) ^{ \Di* }
-    \cdot \expb^{ o(\delta) }
+    2 B^{(B(\genre+1) + 1)\dv}
+  \right) ^{ \alpha_\fct }
   \end{equation}
 \end{coro}
 
@@ -773,9 +772,10 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
   \begin{equation}
     ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)} \cdot 2 \vdeg*
     \le
-    ( 4 \vdegp* )^{\vdeg* (\vdim* + 1) + 1}
+    2 B^{(B(\genre+1) + 1)}
   \end{equation}
-  car \( \vdeg* \le 2 \vdegp* \) par définition.
+  car par définition \( B \) est un majorant commun des \( \vdeg* \) et donc
+  de \( 2\vdegp* \), et pour tout \( \fct \) on a \( \vdim* \le \genre \).
 \end{proof}
 
 Intéressons-nous maintenant au morphisme \( \relim \).
