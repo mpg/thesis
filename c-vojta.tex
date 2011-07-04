@@ -763,6 +763,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \nv1{ \varfc* }
     2 B^{(B(\genre+1) + 1)\dv}
   \right) ^{ \alpha_\fct }
+  \pmm.
   \end{equation}
 \end{coro}
 
@@ -840,13 +841,13 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   une application linéaire
   \begin{equation}
     \relim^\alpha \colon
-    \cdn [\vmp]_ {\alpha}^{C'_\Delta}
+    \cdn [\vmp]_ {\alpha}^{C'}
     \to
-    \cdn [\vmp]_ {\alpha+r}^{C'_\Delta}
+    \cdn [\vmp]_ {\alpha+r}^{C'}
   \end{equation}
   qui est la multiplication par \( R \) modulo \( \varida \).  De plus, les
-  colonnes de la matrice de \( \relim \) dans les bases monomiales canoniques
-  ont leur norme \( \nv1\truc \) majorée par
+  colonnes de la matrice de \( \relim^\alpha \) dans les bases monomiales
+  canoniques ont leur norme \( \nv1\truc \) majorée par
   \begin{equation}
     \prod\fctrange
     \nv1{ N'_\fct }^{\vdeg*}
@@ -878,8 +879,60 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   réduisant au même dénominateur le membre de droite.
 \end{proof}
 
-Notons que pour construire la forme auxiliaire, on n'a absolument pas besoin
-d'en savoir davantage sur \( R \), ni sur les \( N'_\fct \).
+On note désormais \( R \) la forme donnée par le lemme précédent et \( r \in
+  \N^\puiss \) son multidegré. Notons qu'on a pas besoin d'en savoir plus sur
+cette forme, à part le fait qu'elle n'appartient pas à \( \varida \) et ne
+dépend que de \( \var \) mais pas du degré \( \alpha \) considéré. En effet,
+en pratique on fera tendre ce dernier vers l'infini ; c'est en ce sens qu'il
+faut comprendre la notation \( o \) dans le lemme suivant, qui résume la
+construction de \( \rfull^\alpha \) à partir des briques précédentes.
+
+\begin{lem}
+  Pour tout multidegré \( \alpha \in \N^\puiss \) il existe une application
+  linéaire
+  \begin{equation}
+    \rfull^\alpha \colon
+    \cdn [\vmp]_ {\alpha}
+    \to
+    \cdn [\vmp]_ {\alpha+r}^{C'''}
+  \end{equation}
+  qui est égale à la multiplication par \( R \) modulo \( \varida \). De plus,
+  les colonnes de sa matrice dans les bases monomiales canoniques sont de
+  norme \( \nv\infty\truc \) majorée par
+  \begin{equation}
+    \prod\fctrange \left(
+    \nv1{ \varfc* }
+    2 B^{(B(\genre+1) + 1)\dv}
+  \right) ^{ 2\alpha_\fct }
+  \cdot \expb^{o(\alpha)}
+  \pmm.
+  \end{equation}
+  En particulier, on a \( \ker \rfull^\alpha = \cdn[ \vmp ]_\alpha \cap
+    \varida \).
+\end{lem}
+
+\begin{proof}
+  Il suffit d'utiliser les résultats des lemmes précédents et de poser
+  \begin{equation}
+    \rfull^\alpha
+    =
+    \rdiv^{\alpha+r} \circ \relim^{\alpha} \circ \rdiv^\alpha
+    \pmm.
+  \end{equation}
+  L'assertion sur la norme est immédiate en remarquant que, si \( M_1 \) et \(
+    M_2 \) sont deux matrices, la norme \( \nv\infty\truc \) de leur produit
+  est majorée par \( \nv\infty{M_1} \max(\nv1{c}) \) où \( c \) parcourt les
+  colonnes de \( M_2 \). On absorbe par ailleurs les constantes ne dépendant
+  pas de \( \alpha \), à savoir le \( r \) et la norme de \( \rdiv \), dans le
+  \( o(\alpha) \).
+
+  Pour le noyau, considérons une forme \( H \) de multidegré \( \alpha \). On
+  constate d'une part que si \( \rfull^\alpha(H) = 0 \), alors \( R H \in
+    \varida \) donc \( H \in \varida \) car ce n'est pas le cas de \( R \) et
+  que \( \varida \) est premier. Réciproquement, si \( H \in \varida \), alors
+  \( RH \in \varida \) et \( \rfull^\alpha(H) \in \varida \cap \cdn[ \vmp
+    ]^{C'''} = \set0 \).
+\end{proof}
 
 
 \subsection{Plongement abélien pondéré}
