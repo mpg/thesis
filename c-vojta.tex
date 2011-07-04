@@ -790,13 +790,13 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
 
   Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
-  \Delta \), de degré noté \( r \), et, pour tout \( f \in \N^\puiss \), une
-  application linéaire
+    \Delta \), de degré noté \( r \), et, pour tout \( \alpha \in \N^\puiss \),
+  une application linéaire
   \begin{equation}
-    \relim \colon
-    \cdn [\vmp]_ {f}^{C'_\Delta}
+    \relim^\alpha \colon
+    \cdn [\vmp]_ {\alpha}^{C'_\Delta}
     \to
-    \cdn [\vmp]_ {f+r}^{C'_\Delta}
+    \cdn [\vmp]_ {\alpha+r}^{C'_\Delta}
   \end{equation}
   qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
 
@@ -809,7 +809,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
     \le
     \prod\fctrange N_\fct^{\Delta_\fct}
   \end{equation}
-  pour tout \( q \) de multilongueur \( f \), où \( N_\fct \) majore
+  pour tout \( q \) de multilongueur \( \alpha \), où \( N_\fct \) majore
   \( \nv1{ S\mexp*[\ind] } \) et \( \nv1{ T\mexp*[\ind] } \) pour tout
   \( \ind \).
 \end{lem}
@@ -836,10 +836,17 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 
 \begin{coro} \label{c:hmat-relim}
   Il existe une forme \( R \in \cdn [\vmp]^{C''} \) ne dépendant que de \(
-  \var \) et un morphisme \( \relim \) tels que le
-  diagramme~\eqref{e:diag-f-aux} commute. De plus, les colonnes de la matrice
-  de \( \relim \) dans les bases canoniques ont leur norme \( \nv1\truc \)
-  majorée par
+    \var \) et n'appartenant pas à \( \varida \), et
+  une application linéaire
+  \begin{equation}
+    \relim^\alpha \colon
+    \cdn [\vmp]_ {\alpha}^{C'_\Delta}
+    \to
+    \cdn [\vmp]_ {\alpha+r}^{C'_\Delta}
+  \end{equation}
+  qui est la multiplication par \( R \) modulo \( \varida \).  De plus, les
+  colonnes de la matrice de \( \relim \) dans les bases monomiales canoniques
+  ont leur norme \( \nv1\truc \) majorée par
   \begin{equation}
     \prod\fctrange
     \nv1{ N'_\fct }^{\vdeg*}
@@ -850,18 +857,19 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 
 \begin{proof}
   Il suffit d'établir l'existence de familles \( S \) et \( T \) comme dans
-  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \) ;
+  l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \)
+  et \( S \notin \varida \) ;
   elle découle du fait qu'on a utilise un plongement adapté.
   En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
-  \( \ind \), il existe des formes \( A\mexp*[\ind, \alpha] \) et \(
-    B\mexp*[\ind, \alpha] \) dans
+  \( \ind \), il existe des formes \( A\mexp*[\ind, \beta] \) et \(
+    B\mexp*[\ind, \beta] \) dans
   \( \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) telles que
   \begin{equation}
     \frac{ \vmp** }{ \vmp*[0] }
     =
-    \sum_{\alpha = 0}^{\vdeg* - 1}
-    \frac {A\mexp*[\ind, \alpha]} {B\mexp*[\ind, \alpha]}
-    \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\alpha
+    \sum_{\beta = 0}^{\vdeg* - 1}
+    \frac {A\mexp*[\ind, \beta]} {B\mexp*[\ind, \beta]}
+    \left( \frac{ \vmp*[\vdim* + 1] }{ \vmp*[0] } \right) ^\beta
     \mod \varida*
     \pmm.
   \end{equation}
