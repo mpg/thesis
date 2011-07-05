@@ -935,6 +935,17 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
     ]^{C'''} = \set0 \).
 \end{proof}
 
+\begin{scho} \label{s:def-rfull}
+  Comme \( \cdn[ \vmp ] \) est la somme directe de ses parties homogènes, les
+  applications précédentes donnent lieu à une application linéaire \( \rfull
+  \) de \( \cdn[ \vmp ] \) dans \( \cdn[ \vmp ]^{C'''} \) telle \( \rfull(H)
+    \equiv RH \mod \varida \) et en particuler \( \ker \rfull = \varida \).
+
+  De même, les familles d'applications \( \rdiv^\alpha \) et \( \relim^\alpha
+  \) donnent lieu à des applications \( \rdiv \) et \( \relim \) définies sur
+  tout \( \cdn[ \vmp ] \).
+\end{scho}
+
 
 \subsection{Plongement abélien pondéré}
 \label{sec:wemb}
@@ -1364,7 +1375,34 @@ par le lemme suivant.
   qu'à titre de curiosité.
 \end{rem}
 
+Explicitons maintenant le lien entre l'indice et l'application de réduction
+du scolie~\ref{s:def-rfull}.
 
+\begin{lem}
+  Pour tout forme multhomogène \( H \), on a \( \inda* \rfull(H) \ge \indav H
+  \).
+\end{lem}
+
+\begin{proof}
+  On se souvient que les applications \( \rdiv \) et \( \relim \), donc en
+  définive \( \rfull \), sont définies par leur action sur les monômes en
+  effectuant des substitutions sur les dernières variables et en gardant les
+  premières, en particulier les \( \vmp*[0] \) inchangées. Cette observation
+  et la linéarité de \( \rfull \) montre immédiatement que \( \rfull(H) =
+    \sum_{\im \in \N^\puiss} \vmp[][0]^\im \, \rfull(H_\im) \), où \( H_\im \)
+  est définit comme précédemment. Cette écriture de \( \rfull(H) \) n'est pas
+  canonique dans le sens où chaque \( \rfull(H_\im) \) peut dépendre de \(
+    \vmp[][0] \), mais elle est suffisante pour minorer l'indice. On observe
+  alors que \( \rfull(H_\im) = 0 \) dès que \( H_\im \in \varida \) pour
+  aboutir au résultat annoncé.
+\end{proof}
+
+Remarquons que la réciproque est fausse, même modulo une constante additive ne
+dépendant pas du degré de \( H \). En effet, si \( \varida \) est engendré par
+des relations de la forme \( (\vmp**)^\indi - (\vmp*[0])^\indi \) pour \( \ind
+  > \vdim* \), il est clair que \( \rdiv \) et donc \( \rfull \) feront
+croître l'indice de façon proportionnelle au degré de \( H \) en les dernières
+variables.
 
 
 
