@@ -1332,7 +1332,7 @@ par le lemme suivant.
   conclut la preuve.
 \end{proof}
 
-\begin{rem}
+\begin{scho}
   Une conséquence immédiate du lemme précédent est que l'ensemble
   \begin{equation} \label{e:vanish-def}
     \vanishv[\beta]
@@ -1352,7 +1352,11 @@ par le lemme suivant.
     \right\}
   \end{equation}
   défini en utilisant l'indice plus usuel, qui est évidemment aussi une
-  valuation. Si une forme \( H = \sum_\im \vmp[][0]^\im H_\im \) appartient à \(
+  valuation.
+\end{scho}
+
+\begin{rem}
+  Si une forme \( H = \sum_\im \vmp[][0]^\im H_\im \) appartient à \(
     \vanishv[\beta] \), alors dans la somme précédente les termes correspondant
   aux \( \im \) tels que \( \wtsum*(\im) < \beta \) sont dans \( \varida \), et
   les autres sont dans \( \vanish[\beta] \) par définition. Il est donc clair
@@ -1408,22 +1412,18 @@ variables.
 
 \section{Construction d'une forme auxiliaire} \label{sec:siegel}
 
+
+\subsection{Stratégie de construction}
+
 L'objectif de cette section est de construire une forme non nulle sur \( \var
 \), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de hauteur
-contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).  Nous
-commencerons par préciser les propriétés voulues et la stratégie de
-construction, puis nous établirons les estimations de dimension et de hauteur
-nécessaires avant de conclure en appliquant un lemme de \TS.
-
-
-\subsection{Stratégie de construction de la forme auxiliaire}
-
-En conservant les notations précédentes et notamment~\eqref{e:d-dp-def}, on
-cherche une forme
+contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \). Plus
+précisément, en conservant les notations précédentes et
+notamment~\eqref{e:d-dp-def}, on cherche une forme
 \begin{equation}
   F'
   \in \cdn[\vmp]_\Di
-  \cap (\vanish + \varida)
+  \cap \vanishv
   \cap \wemba(\cdn[\vmp, \vmpi]_\Dz)
 \end{equation}
 non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
@@ -1431,105 +1431,91 @@ non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
 \begin{equation}
   F
   \in \cdn[\vmp, \vmpi]_\Dz
-  \cap \wemba^{-1}(\vanish + \varida)
+  \cap \wemba^{-1}(\vanishv)
 \end{equation}
-non nulle modulo l'idéal de $\wemb(\var)$, de hauteur relativement petite.
+non nulle modulo l'idéal \( \idealim \) de \( \wemb(\var) \), de hauteur
+relativement petite.
 
-Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
-Cependant, il est difficile d'expliciter un système essentiellement minimal
-d'équations linéaires exprimant l'appartenance à $\vanish + \varida$. Il est en
-revanche immédiat d'expliciter un tel système pour $\vanish$, mais
-il comporte beaucoup trop d'équations (géométriquement, il correspond à une
-condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
-$\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
+Ce problème est un cas classique d'application du lemme de \TS. Pour l'espace
+de départ, on fixe dans \( \cdn[\vmp, \vmpi]_\Dz \) un sous-espace vectoriel
+supplémentaire de \( (\idealim)_\Dz \) engendré par des monômes, que l'on
+notera \( \fspace \) et dans lequel on cherchera \( F \). La condition
+précédente devient donc simplement \( F \neq 0 \).
 
-Nous allons donc devoir procéder à quelques réductions pour récrire le
-système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\vmp]_\Di$ dans lequel $\vanish + \varida$
-est de codimension suffisamment petite pour pouvoir demander que l'image de
-$F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
-
-Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_\Dz$ un
-supplémentaire de $(\idealim)_\Dz$ engendré par des
-monômes, que l'on notera $\fspace$ et dans lequel on cherchera $F$.
-
-Le plan général de l'écriture du système se résume alors par le diagramme
-commutatif suivant, où l'on note
-\( \ringa{\wemb(\var)} = \cdn[\vmp, \vmpi] / \idealim \)
-et
-\( (\vringa)_\opdef = (\cdn[\vmp] / \varida)_\opdef \)
-et où les flèches verticales sont les morphismes de réduction.
-
-\begin{equation} \label{e:diag-f-aux}
-  \xymatrix{
-    \fspace                \ar [r] ^{\wemba}        \ar [d] _{\sim}
-    & \cdn [\vmp]_\Di      \ar [r] ^{\rdiv^\Di}     \ar [d]
-    & \cdn [\vmp]\Ci       \ar [r] ^{\relim}        \ar [d]
-    & \cdn [\vmp]\Cii      \ar [r] ^{\rdiv^\Dir}    \ar [d]
-    & \cdn [\vmp]\Ciii                              \ar [d]
-    \\ \ringa{\wemb(\var)} \ar [r] ^{\wemb^*}
-    & (\vringa)_\opdef     \ar [r] ^{\I}
-    & (\vringa)_\opdef     \ar [r] ^{R \cdot \null}
-    & (\vringa)_\opdef     \ar [r] ^{\I}
-    & (\vringa)_\opdef
+Il est commode, pour appliquer le lemme de \TS, de présenter les conditions
+sur \( F \) comme l'appartenance au noyau d'une certaine application linéaire.
+Pour cela, on introduit, pour chaque \( \im \in \N^\puiss \), l'application
+\begin{align}
+  \partial_divi^\im \colon \cdn[\vmp] & \to \cdn[\vmp]
+  \\
+  H & \mapsto
+  H_\im
+  =
+  \frac1{\im!} \, \frac{\partial^\im H}{\partial \vmp[][0]^\im} \bigl(
+    0, \vmp[1][1], \dots, \vmp[1][\dimp]; \dots;
+    0, \vmp[\puiss][1], \dots, \vmp[\puiss][\dimp]
+  \bigr)
+  \pmm.
+\end{align}
+On note ensuite
+\begin{equation}
+  \stairs = \set{
+    \im \in \N^\puiss
+    \text{ tel que }
+    \wtsum(\im) < \epsi \delta
   }
 \end{equation}
-
-Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
-représente une réduction par division euclidienne par certaines relations de
-dépendance intégrale, les second permet d'éliminer les variables en utilisant
-des relations linéaires dans $\korper\var$ et correspond modulo $\varida$ à
-une multiplication par une certaine forme $R$ de degré $r$ ne dépendant que de
-$\var$, de façon à éliminer les dénominateurs apparaissant dans ces relations
-linéaires. Notons qu'il est essentiel d'effectuer $\rdiv$ avant $\relim$ pour
-que le degré en les variables à éliminer ne dépende pas de $\delta$, ce qui
-assure que $R$ ne dépend en effet que de $\var$.
-
-Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
-notre objectif : il s'agira en fait de construire une forme $F \in
-\fspace \setminus \{0\}$ telle que
-\begin{equation}
-  \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
-  \in \vanish
-  \pmm,
-\end{equation}
-ce qui implique que $R \cdot \wemba(F) \in \vanish + \varida$ car
-\begin{equation}
-  R \cdot \wemba(F)
-  - \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
-  \in \varida
-  \subset \vanish + \varida
+et l'on considère l'application
+\begin{align}
+  \partial_E^\stairs \colon \cdn[\vmp]
+  & \to \bigoplus_{\im \in \stairs} \cdn[\vmp]
+  \\
+  H & \mapsto
+  (\partial_\divi^\im H)_{\im \in \stairs}
   \pmm.
-\end{equation}
+\end{align}
+Par définition, il est clair que \( \vanishv = (\partial_\divi^\stairs)^{-1}
+  (\bigoplus_{\im \in \stairs} \varida) \). Or, d'après le
+scolie~\ref{s:def-rfull}, on a \( \varida = \ker \rfull \), donc \( \vanishv =
+  \ker \sigma \) avec
+\begin{align}
+  \sigma \colon \cdn[\vmp]
+  & \to \bigoplus_{\im \in \stairs} \cdn[\vmp]^{C'''}
+  \\
+  H & \mapsto
+  (\rfull \circ \partial_\divi^\im H)_{\im \in \stairs}
+  \pmm.
+\end{align}
+Plus précisément, compte tenu des conditions de degré on utilisera le fait que
+\( \vanishv \cap \cdn[\vmp]_\Di = \ker \sigma_\Di \) où \( \sigma_\Di \) est
+une restriction de \( \sigma \) dont l'espace d'arrivée est \( \bigoplus_{\im
+    \in \stairs} \cdn[\vmp]^{C'''}_{\Dir - \im} \).
 
-Au final, le système d'équations auquel on appliquera le lemme de \TS
-sera composé des équations définissant $\vanish$ dans
-\( \cdn[\vmp]_{\Dir'}^{C'''} \),
-tirées en arrière sur $\fspace$ par
-\( \rdiv^\Di \circ \relim \circ \rdiv^\Dir \circ \wemba \).
-Pour pouvoir procéder, nous devons donc :
+Au final, on appliquera le lemme de \TS à la matrice, dans les bases
+monomiales canoniques, de l'application
+\( \sigma_\Di \circ \wemba \) restreinte à \( \fspace \).  Pour pouvoir
+procéder, nous devons donc :
 \begin{enumerate}
-  \item Calculer la dimension de $\fspace$ et la codimension de
-    $\vanish$ dans $\cdn[\vmp]_\Dir^{C'''}$, et s'assurer que la
-    deuxième est plus petite que la première ;
-  \item Expliciter les morphismes \( \rdiv \) et \( \relim \) de la première
-    ligne du diagramme et majorer la hauteur de leurs matrices dans les bases
-    monomiales évidentes.
+  \item Calculer les dimensions de \( \fspace \) et de l'espace d'arrivée de \(
+      \sigma_\Di \) en s'assurant que la seconde est plus petite que la
+    première.
+  \item Majorer la hauteur de la matrice considérée.
 \end{enumerate}
-Ces calculs font l'objet des deux sous-section suivantes.  Comme $\delta$ est
-arbitrairement grand devant les autres paramètres, on n'explicitera à chaque
-fois que le terme de plus haut degré en $\delta$ ; ainsi lorsqu'on utilisera
-la notation $o(\truc)$ ou $\sim$, il s'agira d'équivalents quand $\delta$ tend
-vers l'infini.
+Ces calculs font l'objet des deux sous-sections suivantes.  Comme \( \delta \)
+est arbitrairement grand devant les autres paramètres, on n'explicitera à
+chaque fois que le terme de plus haut degré en \( \delta \) ; ainsi lorsqu'on
+utilisera la notation \( o(\truc) \) ou \( \sim \), il s'agira d'équivalents
+quand \( \delta \) tend vers l'infini.
 
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
-La dimension de $\fspace$ est donnée par le théorème de
-\bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
-$\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais
-comme il suffit en fait de minorer la dimension, le lemme suivant nous donne
-tout ce qu'on aura besoin de savoir sur le degré.
+La dimension de \( \fspace \), c'est-à-dire celle de \( \cdn[\vmp, \vmpi] /
+  \idealim \),  est donnée par le théorème de \bsc{Hilbert} multihomogène dès
+qu'on connaît les différents multidegrés de \( \wemb(\var) \). Il est \lat{a
+  priori} difficile de tous les calculer, mais comme il suffit en fait de
+minorer la dimension, le lemme suivant nous donne tout ce qu'on aura besoin de
+savoir sur le degré.
 
 \begin{lem}
   Avec les notations précédentes, on a
@@ -1619,7 +1605,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   utilisant le lemme précédent, car une somme de nombre positifs est minorée
   par chacun de ses termes. Il vient
   \begin{align}
-    \dim \fspace = \dim \ringa{\wemb(\var)}
+    \dim \cdn[\vmp, \vmpi] / \idealim
     & =
     \Biggl(
     \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
