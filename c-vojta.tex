@@ -591,10 +591,11 @@ proposition~\ref{p:varset-notmin}.
 
 \subsection{Application de réduction modulo l'idéal d'une variété}
 
-On considérera des sous-espaces vectoriels de partie homogènes de
-$\cdn[\vmp]$ définis par des restrictions de degré ; introduisons à cet effet
-quelques notations. Pour chaque $C \in (\N \cup \set{ +\infty })
-^{\puiss(\dimp+1)}$, on notera
+Les propriétés des plongements adaptés permettent d'associer à chaque forme
+homogène, à peu de chose près, une représentation canonique modulo \( \varida
+\), définie par des restrictions de degrés en certains variables.
+Introduisons pour cela quelques notations : pour chaque $C \in (\N \cup \set{
+  +\infty }) ^{\puiss(\dimp+1)}$, on notera
 \begin{equation} \label{e:C-spaces}
   \cdn[\vmp]^C
   = \{
@@ -1320,42 +1321,50 @@ par le lemme suivant.
   conclut la preuve.
 \end{proof}
 
-Une conséquence immédiate du lemme précédent est que l'ensemble
-\begin{equation} \label{e:vanish-def}
-  \vanishv[\beta]
-  = \left\{
-    H \in \cdn [\vmp]
-    \text{ tel que }
-    \indav H  \ge \beta
-  \right\}
-\end{equation}
-est en fait un idéal de \( \cdn[ \vmp ] \), de même que l'ensemble
-\begin{equation} \label{e:vanish*-def}
-  \vanish[\beta]
-  = \left\{
-    H \in \cdn [\vmp]
-    \text{ tel que }
-    \inda* H  \ge \beta
-  \right\}
-\end{equation}
-défini en utilisant l'indice plus usuel, qui est évidemment aussi une
-valuation. Si une forme \( H = \sum_\im \vmp[][0]^\im H_\im \) appartient à \(
-  \vanishv[\beta] \), alors dans la somme précédente les termes correspondant
-aux \( \im \) tels que \( \wtsum*(\im) < \beta \) sont dans \( \varida \), et
-les autres sont dans \( \vanish[\beta] \) par définition. Il est donc clair
-que
-\begin{equation}
-  \vanishv[\beta] \subset \vanish[\beta] + \varida
-  \quad \forall \beta
-  \pmm.
-\end{equation}
-Par contre, la réciproque est fausse en général : prenons \( \puiss = 1 \) et
-\( \wt[1] = 1 \), et supposons que \( \varida = (\vmp[1][0] + \vmp[1][\dimp])
-\) de sorte que le plongement est bien adapté. Alors \( \vmp[1][\dimp] \in
-  \vanish[1] + \varid \) mais \( \indav \vmp[1][\dimp] = 0 \). Néanmoins,
-nous établirons plus tard une version asymptotique (quand \( \beta \) tend
-vers l'infini) de cette réciproque en utilisant un morphisme de réduction qui
-sera présenté à la section suivante.
+\begin{rem}
+  Une conséquence immédiate du lemme précédent est que l'ensemble
+  \begin{equation} \label{e:vanish-def}
+    \vanishv[\beta]
+    = \left\{
+      H \in \cdn [\vmp]
+      \text{ tel que }
+      \indav H  \ge \beta
+    \right\}
+  \end{equation}
+  est en fait un idéal de \( \cdn[ \vmp ] \), de même que l'ensemble
+  \begin{equation} \label{e:vanish*-def}
+    \vanish[\beta]
+    = \left\{
+      H \in \cdn [\vmp]
+      \text{ tel que }
+      \inda* H  \ge \beta
+    \right\}
+  \end{equation}
+  défini en utilisant l'indice plus usuel, qui est évidemment aussi une
+  valuation. Si une forme \( H = \sum_\im \vmp[][0]^\im H_\im \) appartient à \(
+    \vanishv[\beta] \), alors dans la somme précédente les termes correspondant
+  aux \( \im \) tels que \( \wtsum*(\im) < \beta \) sont dans \( \varida \), et
+  les autres sont dans \( \vanish[\beta] \) par définition. Il est donc clair
+  que
+  \begin{equation}
+    \vanishv[\beta] \subset \vanish[\beta] + \varida
+    \quad \forall \beta
+    \pmm.
+  \end{equation}
+  Par contre, la réciproque est fausse en général : prenons \( \puiss = 1 \) et
+  \( \wt[1] = 1 \), et supposons que \( \varida = (\vmp[1][0] + \vmp[1][\dimp])
+  \) de sorte que le plongement est bien adapté. Alors \( \vmp[1][\dimp] \in
+    \vanish[1] + \varid \) mais \( \indav \vmp[1][\dimp] = 0 \).
+
+  On pourrait être tenté d'utiliser l'appartenance à \( \vanish[\beta] + \varida
+  \) pour définir une notion d'indice, mais il n'est pas clair que cette notion
+  jouirait des propriétés précédentes, ni qu'elle se comparerait de façon
+  agréable avec la notion définie précédemment. Nous n'explorerons donc pas plus
+  avant cette seconde notion d'indice, dont nous n'avons mentionné l'existence
+  qu'à titre de curiosité.
+\end{rem}
+
+
 
 
 
