@@ -404,6 +404,21 @@ homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; o
 utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
 désignera une famille d'entiers.
 
+\medskip
+
+La preuve de la proposition~\ref{p:varset-notmin} suit la méthode de
+\TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
+de \( \divi \), puis on montre qu'elle s'annule en \( \ex \) avec un indice
+plus faible mais toujours élevé par rapport à son degré et on conclut en
+appliquant une variante du théorème du produit pour obtenir la conclusion de
+la proposition.
+
+Auparavant, nous aurons besoin de préciser un système de coordonnées adapté à
+\( \var \) et nous présenterons une écriture réduite des formes sur \( \var \)
+dans ce système de coordonnées. Nous préciserons ensuite les notions d'indice
+utilisées, puis présenterons un morphisme associé aux poids \( \wt* \) qui
+permettra par la suite d'exploiter~\eqref{e:hautn-wt-diff}.
+
 
 \subsection{Plongements projectifs adaptés}
 \label{sec:plong-adapt}
@@ -944,8 +959,13 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
 \end{proof}
 
 
-\subsection{Indice et sous-variétés}
+\subsection{Indice le long d'un hyperplan}
 \label{sec:inda}
+
+Nous définissons ici une notion d'indice d'annulation le long de l'hyperplan
+\( \divi \). Une autre notion d'indice, en un point cette fois-ci, sera
+définie de façon similaire au début de la
+sous-section~\ref{sec:vojta-extrap-core}.
 
 Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
 \nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
@@ -967,13 +987,15 @@ On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
 \begin{equation} \label{e:inda-def}
   \inda*(H)
   =
-  \max \set{
-    \alpha \in \R
-    \text{ tel que }
-    \wtsum*(\imp) \le \alpha \implies h_\imp = 0
+  \inf \set{
+    \wtsum*(\imp)
+    \text{ pour }
+    \imp \text{ tel que } h_\imp \neq 0
   }
-  \pmm.
+  \pmm,
 \end{equation}
+où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
+l'indice est infini.
 On introduit alors, pour \( \beta > 0 \), les idéaux
 \nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
     \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
@@ -1236,15 +1258,6 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \end{align}
   Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
 \end{proof}
-
-Nous sommes bientôt prêts à commencer la preuve proprement dite de la
-proposition~\ref{p:varset-notmin} ; rappelons que l'on peut exclure les cas
-traités par le scolie~\ref{s:part-cases}. La preuve suit alors la méthode de
-\TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
-de \( \divi \), puis on montre qu'elle s'annule en \( \ex \) avec un indice
-plus faible mais toujours élevé par rapport à son degré et on conclut en
-appliquant une variante du théorème du produit pour obtenir la conclusion de
-la proposition.  Auparavant, précisons les notions d'indice utilisées.
 
 
 
@@ -2451,16 +2464,18 @@ l'image par \( \pmor* \) de certaines fonctions rationnelles.
 
 Notons que les estimations obtenues ne valent que pour des fonctions admettant
 un monôme en \( \vmp[][\vdim] \) comme dénominateur.  On pourrait aisément en
-déduire des estimations pour des fonctions rationelles de dénominateur
+déduire des estimations pour des fonctions rationnelles de dénominateur
 quelconque en les écrivant comme un quotient de deux telles fonctions, mais
 ce n'est pas utile ici.
 
 
-\subsection{Minoration de l'indice} \label{sec:vojta-extrap-core}
+\subsection{Minoration de l'indice}
+\label{sec:vojta-extrap-core}
 
 Nous allons maintenant montrer que la forme auxiliaire construite
-précédemment s'annule avec un indice élevé en \( \ex \). Plus précisément,
-posons
+précédemment s'annule avec un indice élevé en \( \ex \). Commençons par
+préciser la notion d'indice utilisée, similaire à celle définie à la
+sous-section~\ref{sec:inda}, mais cette fois en un point. Posons
 \begin{equation}
   \wtsum( \dermp )
   =
@@ -2468,11 +2483,21 @@ posons
   + \frac {\lgr{\dermp[\puiss-1]}} {\wts[\puiss-1]}
   + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss-1)}
 \end{equation}
-pour tout \( \dermp \in \N^\vdim \).  Si \( h \) est une forme
-multihomogène et \( \point \) un point où elle est définie, on définit son
-indice en \( \point \), noté \( \inda[\point](h) \),  comme le minimum des \(
-  \wtsum*(\dermp) \) pour \( \dermp \) tel que \( \der[\dermp] h(\point) \neq
-  0 \).
+pour tout \( \dermp \in \N^\vdim \).  Si \( h \) est une fraction rationnelle
+et \( \point \) un point où elle est définie, on définit son
+indice en \( \point \) comme
+\begin{equation}
+  \inda[\point](h)
+  =
+  \inf \set{
+    \wtsum*(\imp)
+    \text{ pour }
+    \imp \text{ tel que } h_\imp \neq 0
+  }
+  \pmm,
+\end{equation}
+où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
+l'indice est infini.
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
 \begin{equation} \label{e:def-f1}
