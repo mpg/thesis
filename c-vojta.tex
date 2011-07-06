@@ -415,9 +415,9 @@ la proposition.
 
 Auparavant, nous aurons besoin de préciser un système de coordonnées adapté à
 \( \var \) et nous présenterons une écriture réduite des formes sur \( \var \)
-dans ce système de coordonnées. Nous préciserons ensuite les notions d'indice
-utilisées, puis présenterons un morphisme associé aux poids \( \wt* \) qui
-permettra par la suite d'exploiter~\eqref{e:hautn-wt-diff}.
+dans ce système de coordonnées. Nous présenterons ensuite un plongement
+éclatant associé aux poids \( \wt* \) qui permettra par la suite
+d'exploiter~\eqref{e:hautn-wt-diff}.
 
 
 \subsection{Plongements projectifs adaptés}
@@ -959,76 +959,6 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
 \end{proof}
 
 
-\subsection{Indice le long d'un hyperplan}
-\label{sec:inda}
-
-Nous définissons ici une notion d'indice d'annulation le long de l'hyperplan
-\( \divi \). Une autre notion d'indice, en un point cette fois-ci, sera
-définie de façon similaire au début de la
-sous-section~\ref{sec:vojta-extrap-core}.
-
-Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
-\nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
-  d'annulation le long de \( \divi \)}
-\begin{equation}
-  \wtsum*( \imp )
-  =
-  \frac {\imp[1][0]} {\wts[1]} + \dots
-  + \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
-  + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
-  \pmm.
-\end{equation}
-Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
-qui sera crucial pour la section~\ref{sec:thm-prod}.
-On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
-  \vmp^\imp \) par :
-\nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
-  par~\eqref{e:inda-def}}
-\begin{equation} \label{e:inda-def}
-  \inda*(H)
-  =
-  \inf \set{
-    \wtsum*(\imp)
-    \text{ pour }
-    \imp \text{ tel que } h_\imp \neq 0
-  }
-  \pmm,
-\end{equation}
-où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
-l'indice est infini.
-On introduit alors, pour \( \beta > 0 \), les idéaux
-\nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
-    \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
-  défini par~\eqref{e:vanish-def}}
-\nomuse {\vanish*[\beta]} [chap] {Idéal d'annulation définir par \(
-    \vanish*[\beta] + \varida \)}
-\begin{equation} \label{e:vanish-def}
-  \vanish*[\beta]
-  = \left\{
-    H \in \cdn [\vmp]
-    \text{ tel que }
-    \inda*(H) \ge \beta
-  \right\}
-\end{equation}
-et $\vanish[\beta] = \vanish*[\beta] + \varida$. Par abus, on notera de même
-l'image de \( \vanish[\beta] \) dans $\vringa = \cdn [\vmp] / \varida$, ce
-qui est légitime puisqu'on a fait en sorte que $\varida \subset
-\vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
-  \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
-appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
-\nomuse {\stairs[\beta]} [chap] {Ensembles des multiindices tels que \(
-    \wtsum*(\imp) \le \beta \), défini par~\eqref{e:stairs-def}}
-\begin{equation} \label{e:stairs-def}
-  \stairs[\beta] = \set{
-    \imp \in \N^{\puiss(\dimp+1)}
-    \text{ tel que }
-    \wtsum*(\imp) \le \beta
-  }
-\end{equation}
-l'ensemble des indices correspondant aux coefficients qui doivent être nuls
-pour assurer l'appartenance à \( \vanish*[\beta] \).
-
-
 \subsection{Plongement abélien pondéré}
 \label{sec:wemb}
 
@@ -1266,12 +1196,50 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 L'objectif de cette section est de construire une forme non nulle sur \( \var
 \), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de hauteur
 contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).  Nous
-commencerons par préciser les propriétés voulues et la stratégie de
-construction, puis nous établirons les estimations de dimension et de hauteur
-nécessaires avant de conclure en appliquant un lemme de \TS.
+commencerons par définir la notion d'indice utiliser et préciser les
+propriétés voulues et la stratégie de construction, puis nous établirons les
+estimations de dimension et de hauteur nécessaires avant de conclure en
+appliquant un lemme de \TS.
 
 
 \subsection{Stratégie de construction de la forme auxiliaire}
+\label{sec:siegel-plan}
+
+Commençons par définir l'indice d'annulation d'une forme la long de
+\( \divi \). (Une autre notion d'indice, en un point cette fois-ci, sera
+définie de façon similaire au début de la
+sous-section~\ref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
+  \N^{\puiss(\dimp+1)} \), notons
+\nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
+  d'annulation le long de \( \divi \)}
+\begin{equation}
+  \wtsum*( \imp )
+  =
+  \frac {\imp[1][0]} {\wts[1]} + \dots
+  + \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
+  + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
+  \pmm.
+\end{equation}
+Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
+qui sera crucial pour la section~\ref{sec:thm-prod}.
+On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
+  \vmp^\imp \) par :
+\nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
+  par~\eqref{e:inda-def}}
+\begin{equation} \label{e:inda-def}
+  \inda*(H)
+  =
+  \inf \set{
+    \wtsum*(\imp)
+    \text{ pour }
+    \imp \text{ tel que } h_\imp \neq 0
+  }
+  \pmm,
+\end{equation}
+où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
+l'indice est infini.
+
+% XXX
 
 En conservant les notations précédentes et notamment~\eqref{e:d-dp-def}, on
 cherche une forme
@@ -1496,9 +1464,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \end{proof}
 
 Nous allons maintenant calculer la codimension de $\vanish*$ dans
-$\cdn[\vmp]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
-suivant :
-
+$\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
 \begin{equation} \label{e:stairs-c3}
   \begin{split}
     (\stairs)\Ciii
@@ -2472,10 +2438,10 @@ ce n'est pas utile ici.
 \subsection{Minoration de l'indice}
 \label{sec:vojta-extrap-core}
 
-Nous allons maintenant montrer que la forme auxiliaire construite
-précédemment s'annule avec un indice élevé en \( \ex \). Commençons par
-préciser la notion d'indice utilisée, similaire à celle définie à la
-sous-section~\ref{sec:inda}, mais cette fois en un point. Posons
+Nous allons maintenant montrer que la forme auxiliaire construite précédemment
+s'annule avec un indice élevé en \( \ex \). Commençons par préciser la notion
+d'indice utilisée, similaire à celle définie au début de la
+sous-section~\ref{sec:siegel-plan}, mais cette fois en un point. Posons
 \begin{equation}
   \wtsum( \dermp )
   =
