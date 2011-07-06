@@ -2,9 +2,6 @@
 
 \chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
 
-
-\section{Réduction et autres préliminaires}
-
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est un hyperplan (ne contenant pas \(
   \va \)) ; nous verrons plus tard que ce cas implique le cas général.
@@ -66,11 +63,19 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
   \end{align}
 \end{thm}
 
+
+\section{Réduction et autres préliminaires}
+\label{sec:vojta-reduc}
+
 Notons pour commencer qu'on peut supposer \( \eps < 1 \), car sinon
 l'inégalité de \bsc{Liouville} (qui dans ce cas déroule directement de la
 formule du produit vu la définition de la distance à un hyperplan) montre
 qu'il n'existe aucun point satisfaisant~\eqref{e:Vapx}, sans même utiliser les
 autres conditions.
+
+
+\subsection{Poids associés à une famille d'approximations}
+\label{sec:wt}
 
 \nomuse[\ex]{(\ex*)}[chap]{Famille d'approximations de \( \divi \) dont
   l'existence contredirait le théorème~\ref{t:vojta-div}}
@@ -263,6 +268,7 @@ par exemple, l'énoncé suivant nous sera utile par la suite.
 
 
 \subsection{Réduction à l'existence d'une forme obstructrice}
+\label{sec:vojta-prop}
 
 Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
 dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
@@ -399,7 +405,8 @@ utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
 désignera une famille d'entiers.
 
 
-\subsection{Plongements projectifs adaptés} \label{sec:plong-adapt}
+\subsection{Plongements projectifs adaptés}
+\label{sec:plong-adapt}
 
 \begin{tdef} \label{d:plong-adapt}
   Suivant \cite{remivg}, si \( \anyvar \) est une variété de dimension
@@ -589,7 +596,8 @@ proposition~\ref{p:varset-notmin}.
 \end{proof}
 
 
-\subsection{Application de réduction modulo l'idéal d'une variété}
+\subsection{Réduction de formes sur une variété plongée de façon adaptée}
+\label{sec:rfull}
 
 Les propriétés des plongements adaptés permettent d'associer à chaque forme
 homogène, à peu de chose près, une représentation canonique modulo \( \varida
@@ -936,6 +944,69 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
 \end{proof}
 
 
+\subsection{Indice et sous-variétés}
+\label{sec:inda}
+
+Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
+\nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
+  d'annulation le long de \( \divi \)}
+\begin{equation}
+  \wtsum*( \imp )
+  =
+  \frac {\imp[1][0]} {\wts[1]} + \dots
+  + \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
+  + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
+  \pmm.
+\end{equation}
+Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
+qui sera crucial pour la section~\ref{sec:thm-prod}.
+On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
+  \vmp^\imp \) par :
+\nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
+  par~\eqref{e:inda-def}}
+\begin{equation} \label{e:inda-def}
+  \inda*(H)
+  =
+  \max \set{
+    \alpha \in \R
+    \text{ tel que }
+    \wtsum*(\imp) \le \alpha \implies h_\imp = 0
+  }
+  \pmm.
+\end{equation}
+On introduit alors, pour \( \beta > 0 \), les idéaux
+\nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
+    \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
+  défini par~\eqref{e:vanish-def}}
+\nomuse {\vanish*[\beta]} [chap] {Idéal d'annulation définir par \(
+    \vanish*[\beta] + \varida \)}
+\begin{equation} \label{e:vanish-def}
+  \vanish*[\beta]
+  = \left\{
+    H \in \cdn [\vmp]
+    \text{ tel que }
+    \inda*(H) \ge \beta
+  \right\}
+\end{equation}
+et $\vanish[\beta] = \vanish*[\beta] + \varida$. Par abus, on notera de même
+l'image de \( \vanish[\beta] \) dans $\vringa = \cdn [\vmp] / \varida$, ce
+qui est légitime puisqu'on a fait en sorte que $\varida \subset
+\vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
+  \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
+appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
+\nomuse {\stairs[\beta]} [chap] {Ensembles des multiindices tels que \(
+    \wtsum*(\imp) \le \beta \), défini par~\eqref{e:stairs-def}}
+\begin{equation} \label{e:stairs-def}
+  \stairs[\beta] = \set{
+    \imp \in \N^{\puiss(\dimp+1)}
+    \text{ tel que }
+    \wtsum*(\imp) \le \beta
+  }
+\end{equation}
+l'ensemble des indices correspondant aux coefficients qui doivent être nuls
+pour assurer l'appartenance à \( \vanish*[\beta] \).
+
+
 \subsection{Plongement abélien pondéré}
 \label{sec:wemb}
 
@@ -1174,68 +1245,6 @@ de \( \divi \), puis on montre qu'elle s'annule en \( \ex \) avec un indice
 plus faible mais toujours élevé par rapport à son degré et on conclut en
 appliquant une variante du théorème du produit pour obtenir la conclusion de
 la proposition.  Auparavant, précisons les notions d'indice utilisées.
-
-
-\subsection{Indice et sous-variétés}
-
-Pour tout \( \imp \in \N^{\puiss(\dimp+1)} \), notons
-\nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
-  d'annulation le long de \( \divi \)}
-\begin{equation}
-  \wtsum*( \imp )
-  =
-  \frac {\imp[1][0]} {\wts[1]} + \dots
-  + \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
-  + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
-  \pmm.
-\end{equation}
-Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
-qui sera crucial pour la section~\ref{sec:thm-prod}.
-On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
-  \vmp^\imp \) par :
-\nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
-  par~\eqref{e:inda-def}}
-\begin{equation} \label{e:inda-def}
-  \inda*(H)
-  =
-  \max \set{
-    \alpha \in \R
-    \text{ tel que }
-    \wtsum*(\imp) \le \alpha \implies h_\imp = 0
-  }
-  \pmm.
-\end{equation}
-On introduit alors, pour \( \beta > 0 \), les idéaux
-\nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
-    \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
-  défini par~\eqref{e:vanish-def}}
-\nomuse {\vanish*[\beta]} [chap] {Idéal d'annulation définir par \(
-    \vanish*[\beta] + \varida \)}
-\begin{equation} \label{e:vanish-def}
-  \vanish*[\beta]
-  = \left\{
-    H \in \cdn [\vmp]
-    \text{ tel que }
-    \inda*(H) \ge \beta
-  \right\}
-\end{equation}
-et $\vanish[\beta] = \vanish*[\beta] + \varida$. Par abus, on notera de même
-l'image de \( \vanish[\beta] \) dans $\vringa = \cdn [\vmp] / \varida$, ce
-qui est légitime puisqu'on a fait en sorte que $\varida \subset
-\vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
-  \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
-appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
-\nomuse {\stairs[\beta]} [chap] {Ensembles des multiindices tels que \(
-    \wtsum*(\imp) \le \beta \), défini par~\eqref{e:stairs-def}}
-\begin{equation} \label{e:stairs-def}
-  \stairs[\beta] = \set{
-    \imp \in \N^{\puiss(\dimp+1)}
-    \text{ tel que }
-    \wtsum*(\imp) \le \beta
-  }
-\end{equation}
-l'ensemble des indices correspondant aux coefficients qui doivent être nuls
-pour assurer l'appartenance à \( \vanish*[\beta] \).
 
 
 
