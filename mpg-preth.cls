@@ -47,7 +47,7 @@
 \usepackage[all]{xy}
 \catcode`\^7\catcode`\_8\relax % make other packages happy
 \usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
-\usepackage{enumitem, comment}
+\usepackage{enumitem}
 \usepackage{git-info, eso-pic}
 \usepackage[noprefix, nocfg, refpage, french]{nomencl}
 \usepackage{csquotes}
@@ -843,10 +843,6 @@
 \newcommand \imp {\gmp \lambda}
 \nomdef \lambda g {l} \@gobbletwo{\lambda}{Un indice multiprojectif, dans
   \( \bigl( \N\sp{\dimp + 1} \bigr)\sp\puiss \)}
-\newcommand \im   {\lambda} % indice sur les facteurs
-\newcommand \imi  {\mu} % indice sur les facteurs
-\newcommand \imii {\nu} % indice sur les facteurs
-\newcommand \imin {\mathrm{m}} % pour désigner l'indice minimal
 
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
@@ -991,7 +987,6 @@
 
 \newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
 \newc@star@default \inda {\divi}{\ex} {\Aind\sp\wt\ssub{#1}}
-\newcommand \indav {\inda[\divi, \var]}
 
 \nomdef \wtsum a {S}
 \nomdef \inda a {Ind}
