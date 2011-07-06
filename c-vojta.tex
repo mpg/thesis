@@ -1496,9 +1496,9 @@ monomiales canoniques, de l'application
 \( \sigma_\Di \circ \wemba \) restreinte à \( \fspace \).  Pour pouvoir
 procéder, nous devons donc :
 \begin{enumerate}
-  \item Minorer la dimension de \( \fspace \) et majorer celle de l'espace
-    d'arrivée de \( \sigma_\Di \) en s'assurant que la seconde est plus petite
-    que la première.
+  \item Calculer les dimensions de \( \fspace \) et de l'espace d'arrivée de \(
+      \sigma_\Di \) en s'assurant que la seconde est plus petite que la
+    première.
   \item Majorer la hauteur de la matrice considérée.
 \end{enumerate}
 Ces calculs font l'objet des deux sous-sections suivantes.  Comme \( \delta \)
@@ -1625,87 +1625,6 @@ savoir sur le degré.
   par définition de \( d \), voir~\eqref{e:d-dp-def}. On achève la preuve en
   combinant avec le résultat du lemme précédent.
 \end{proof}
-
-Calculons maintenant la dimension de \( \bigoplus_{\im \in \stairs}
-  \cdn[\vmp]^{C'''}_{\Dir - \im} \), l'espace d'arrivée de \( \sigma_\Di \).
-Pour cela, on commence par calculer la dimension de chacun des facteurs.
-
-\begin{lem}
-  Pour tout \( \alpha \in \N^\puiss \) on a
-  \( \dim \cdn[\vmp]^{C'''}_\alpha
-    =
-    \prod\fctrange \vdeg*
-    \frac{\alpha_\fct^{\vdim*}}{\vdim*!}
-    + o(\prod\fctrange \alpha_\fct^{\vdim*})
-  \).
-\end{lem}
-
-\begin{proof}
-  La base monomiale évidente de cet espace est en bijection avec l'ensemble
-  d'indices suivant :
-  \begin{equation}
-    \Biggl\{
-      ( \imp[1], \dots, \imp[\puiss] )
-      \in
-      \prod\fctrange \bigl(
-        \N^{\vdim* + 1}
-        \times \{ 0, \dots, \vdeg* - 1 \}
-      \bigr)
-      \text{ tel que }
-      \lgr{\imp*}
-      = \alpha_\fct \quad \forall \fct
-    \Biggr\}
-    \pmm.
-  \end{equation}
-  Il est clair que les choix des différents \( \imp* \) sont indépendants
-  entre eux. Il suffit donc de calculer le cardinal de chaque ensemble
-  \begin{equation}
-    \Biggl\{
-      \imp* = (\imp*[0], \dots, \imp*[\vdim*+1])
-      \in
-      \N^{\vdim* + 1}
-      \times \{ 0, \dots, \vdeg* - 1 \}
-      \text{ tel que }
-      \lgr{\imp*}
-      = \alpha_\fct
-    \Biggr\}
-    \pmm.
-  \end{equation}
-  Il est clair que pour choisir un élément dans cet ensemble, il suffit de
-  choisir une valeur de \( \imp*[\vdim+1] \) entre \( 0 \) et \( \vdeg* - 1
-  \), puis de choisir les autre composantes de sorte que leur somme soit \(
-    \alpha_\fct - \imp*[\vdim+1] \). Le cardinal de l'ensemble précédent est
-  donc
-  \begin{align}
-    \sum_{\imp*[\vdim*+1] = 0}^{\vdeg*-1}
-    \binom{ \alpha_\fct - \imp*[\vdim*+1] + \vdim* }{ \vdim* }
-    & =
-    \sum_{\imp*[\vdim*+1] = 0}^{\vdeg*-1}
-    \frac{
-      (\alpha_\fct - \imp*[\vdim*+1] + \vdim*)
-      \cdots
-      (\alpha_\fct - \imp*[\vdim*+1] + 1)
-    }{
-      \vdim*!
-    }
-    \\ & =
-    \vdeg* \,
-    \frac{ \alpha_\fct^{\vdim*} }{ \vdim*! } + o(\alpha_\fct^{\vdim*})
-    \pmm.
-  \end{align}
-  Le résultat annoncé suit en prenant le produit sur \( \fct \).
-\end{proof}
-
-\begin{lem}
-  On a
-  \begin{equation}
-    \dim \bigoplus_{\im \in \stairs} \cdn[\vmp]^{C'''}_{\Dir - \im}
-    \le
-    \pmm.
-  \end{equation}
-\end{lem}
-
-\newpage % XXX
 
 Nous allons maintenant calculer la codimension de $\vanish$ dans
 $\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
