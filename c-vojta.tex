@@ -1339,21 +1339,47 @@ est en fait un idéal de \( \cdn[ \vmp ] \), de même que l'ensemble
   \right\}
 \end{equation}
 défini en utilisant l'indice plus usuel, qui est aussi évidemment une
-valuation. Si une forme \( H = \sum_\im \vmp[][0]^\im H_\im \) appartient à \(
-  \vanish[\beta] \), alors dans la somme précédente les termes correspondant
-aux \( \im \) tels que \( \wtsum*(\im) < \beta \) sont dans \( \varida \), et
-les autres sont dans \( \vanish*[\beta] \) par définition. Il est donc clair
-que
-\begin{equation}
-  \vanish \subset \vanish* + \varida
-  \pmm.
+valuation.
+
+\newpage % XXX
+
+\begin{comment}
+On peut d'ailleurs donner une autre présentation de la même notion.
+Introduisons, pour tout réel positif \( \beta \), l'idéal \( \vanish*[\beta]
+\) des formes \( H \) telles que \( \inda* H \ge \beta \).
+
+On introduit alors, pour \( \beta > 0 \), les idéaux
+\nomuse {\vanish[\beta]} [chap] {Idéal des formes s'annulant le long de \(
+    \divi \) avec un indice (pondéré par \( \wt \)) supérieur à \( \beta \),
+  défini par~\eqref{e:vanish-def}}
+\nomuse {\vanish*[\beta]} [chap] {Idéal d'annulation définir par \(
+    \vanish*[\beta] + \varida \)}
+\begin{equation} \label{e:vanish-def}
+  \vanish*[\beta]
+  = \left\{
+    H \in \cdn [\vmp]
+    \text{ tel que }
+    \inda*(H) \ge \beta
+  \right\}
 \end{equation}
-Par contre, la réciproque est fausse en général : prenons \( \puiss = 1 \) et
-\( \wt[1] = 1 \), et supposons que \( \varida = (\vmp[1][0] + \vmp[1][\dimp])
-\) de sorte que le plongement est bien adapté. Alors \( \vmp[1][\dimp] \in
-  \vanish*[1] + \varid \) mais \( \indav \vmp[1][\dimp] = 0 \). Néanmoins,
-nous établirons plus tard une version asymptotique de cette réciproque en
-utilisant un morphisme de réduction qui sera présenté à la section suivante.
+et $\vanish[\beta] = \vanish*[\beta] + \varida$. Par abus, on notera de même
+l'image de \( \vanish[\beta] \) dans $\vringa = \cdn [\vmp] / \varida$, ce
+qui est légitime puisqu'on a fait en sorte que $\varida \subset
+\vanish[\beta]$. On dira alors d'une forme qu'elle s'annule le long de \(
+  \divi \) dans \( \var \) avec un indice au moins \( \beta \) si elle
+appartient à \( \vanish[\beta] \).  Par ailleurs, on notera également
+\nomuse {\stairs[\beta]} [chap] {Ensembles des multiindices tels que \(
+    \wtsum*(\imp) \le \beta \), défini par~\eqref{e:stairs-def}}
+\begin{equation} \label{e:stairs-def}
+  \stairs[\beta] = \set{
+    \imp \in \N^{\puiss(\dimp+1)}
+    \text{ tel que }
+    \wtsum*(\imp) \le \beta
+  }
+\end{equation}
+l'ensemble des indices correspondant aux coefficients qui doivent être nuls
+pour assurer l'appartenance à \( \vanish*[\beta] \).
+\end{comment}
 
 
 
@@ -1592,7 +1618,9 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \end{proof}
 
 Nous allons maintenant calculer la codimension de $\vanish*$ dans
-$\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
+$\cdn[\vmp]\Ciii$. On introduit à cet effet le sous-ensemble de $\stairs$
+suivant :
+
 \begin{equation} \label{e:stairs-c3}
   \begin{split}
     (\stairs)\Ciii
