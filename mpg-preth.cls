@@ -980,7 +980,7 @@
 \newcommand \Vanish { \mathfrak q }
 
 \newcommandx*\wt@scale [2][2=\delta\epsi] { \sb{\wt\slast{#1}} \sp{#2} }
-\newcommand \stairs {\Stairs}
+\newcommand \stairs {\Stairs\wt@scale{}}
 \newcommand \vanish {\Vanish\wt@scale{\divi}}
 \newcommand \vanishv{\Vanish\wt@scale{\divi, \var}}
 
@@ -1018,8 +1018,10 @@
 \newc@star@default \vadapt  {\fct}{\puiss} {\chi   \ssub{#1}}
 \newc@star@default \varfca  {\fct}{\puiss} {\chowa {\var[#1]}}
 \newc@star@default \varida  {\fct}{\puiss} {\ideala{\var[#1]}}
+\newc@star@default \vringa  {\fct}{\puiss} {\ringa {\var[#1]}}
 
 \newcommand \ideala [1] {\tilde\Ideal \sb{#1}}
+\newcommand \ringa  [1] {\tilde\Ring  \sb{#1}}
 \newcommand \chowa  [1] {\tilde\Chow  \sb{#1}}
 
 \nomdef \var     a {Z}
