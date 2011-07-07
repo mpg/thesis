@@ -1,6 +1,6 @@
 % !TEX root = main
 
-\chapter{Plongement projectif et formulaire}
+\chapter{Plongement et formulaires abéliens}
 \label{chap:plong-mm}
 
 
@@ -89,117 +89,12 @@ explicites mais possédant les propriétés métriques voulues.
 
 
 
-\section{Formulaire abélien alternatif}
-\label{sec:form-ab-alt}
-
-Le formulaire présenté dans cette section n'est valable que pour des
-coefficients de la forme \( 2^\alpha 3^\beta \) et ne permet pas un contrôle
-totalement explicite de la hauteur des formules, mais présente en revanche
-l'avantage que la multiplication est représentée globalement, ce qui permet
-d'établir des minorations de normes locales qui se révèlent essentielles pour
-notre preuve de l'inégalité de \bsc{Vojta}.
-
-\begin{fact}
-  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
-  réel \( C_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
-  dépendant que de ce plongement, et, pour tout \( \gamma = 2^\alpha 3^\beta
-  \), une famille \( F_\gamma \) de polynômes à coefficients entiers dans \(
-    \cdn \), représentant globalement la multiplication par \( \gamma \) sur
-  \( \va \), de degré \( \gamma^2 \) et de hauteur multiplicative majorée par
-  \( C_{2, 3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes
-  place \( \place \) de \( \cdn \), on a :
-  \begin{equation}
-    \av{r_{2, 3}}^{\gamma^2} C_{2, 3}^{-\dv \gamma^2}
-    \le
-    \frac{ \nv1{ F_\gamma(x) } }{ \nnv1 {F_\gamma} \nv1 x ^{\gamma^2} }
-    \le
-    C_{2, 3}^{\dv \gamma^2}
-    \pmm.
-  \end{equation}
-\end{fact}
-
-\begin{proof}
-  \worknote{Argument insuffisant, il faut préciser la dépendance de \(
-      \nnv1{F_\gamma} \) en \( \gamma \).}
-  C'est le fait~3, page~276 de~\cite{phiha1}, restreint au cas particulier qui
-  nous intéresse. On a par ailleurs rajouté au dénominateur un facteur \(
-    \nnv1 {F_\gamma} \), qui vaut \( 1 \) aux places finies, et qui n'invalide
-  pas la comparaison aux places infinies quitte à modifier un peu la constante
-  \( C_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
-\end{proof}
-
-\begin{lem}
-  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
-  réel \( C_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
-  ce plongement, et, pour tout couple de points \( (x, y) \in \va^2 \) et
-  toute place \( \place \) de \( \cdn \), une famille \( S_{x, y, \place} \)
-  de polynômes à coefficients entiers dans \( \cdn \) représentant la
-  soustraction sur un voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de
-  hauteur multiplicative majorée par \( C_s \), telle que
-  \begin{equation}
-    \av{r_s} C_s^{-\dv}
-    \le
-    \frac{
-      \nv1{ S_{x, y, \place}(x, y) }
-    }{
-      \nnv1 {S_{x, y, \place}} \nv1 x ^2 \nv1 y ^2
-    }
-    \le
-    C_s^{\dv}
-    \pmm.
-  \end{equation}
-\end{lem}
-
-\begin{ideas}
-  La majoration de droite est triviale, à condition de ne pas prendre \( C_s
-  \) trop petit. Pour celle de gauche, on considère des familles représentant
-  la soustraction sur une carte de \( \va \), on invoque le théorème des zéros
-  multihomogène sur l'idéal engendré par l'idéal de \( \va \) et des familles.
-\end{ideas}
-
-On note désormais \( [ \alpha, \beta ] \) le morphisme envoyant \( (x, y) \)
-sur \( \alpha x - \beta y \) et on s'intéresse à sa représentation par des
-formes bihomogènes.
-
-\begin{lem} \label{l:hclab}
-  Pour tout plongement \( \iota \colon \va \embedin \projd \), il existe une
-  famille (ne dépendant que de \( \va \) et de ce plongement) de réels \(
-    \hmclab[\iota]* \) presque tous égaux à \( 1 \) (de sorte que \(
-    \hmclab[\iota] = \prod_\place \hmclab[\iota]*^{\degv} \) est bien défini)
-  et, pour tout couple de points \( (x, y) \in \va^2 \), toute place \( \place
-  \) de \( \cdn \) et tous entiers \( \alpha \) et \( \beta \) n'ayant que \(
-    2 \) et \( 3 \) comme diviseurs premiers, une famille \( L^{(\alpha,
-      \beta)}_{x, y, v} \) de polynômes bihomogènes à coefficients entiers
-  dans \( \cdn \) représentant \( [ \alpha, \beta ] \) au voisinage de \( (x,
-    y) \), de bidegré \( (2\alpha^2, 2\beta^2) \) et de hauteur multiplicative
-  majorée par \( \hmclab[\iota]^{\alpha^2+\beta^2} \), telle que
-  \begin{equation}
-    \hmclab[\iota]*^{-(\alpha^2 + \beta^2)}
-    \le
-    \frac{
-      \nv1{ L^{(\alpha, \beta)}_{x, y, v}(x, y) }
-    }{
-      \nnv1{ L^{(\alpha, \beta)}_{x, y, v} }
-      \nv1 x ^{2\alpha^2} \nv1 y ^{2\beta^2}
-    }
-    \le
-    \hmclab[\iota]*^{\alpha^2 + \beta^2}
-    \pmm.
-  \end{equation}
-\end{lem}
-
-\begin{tdef} \label{d:hclab}
-  On note désormais \( \hmclab* \) et \( \hmclab \) les constantes données par
-  l'application du lemme précédent au plongement \( \Theta \), et \( \hlclab =
-    \ln \hmclab \).
-\end{tdef}
-
-Il serait intéressant de savoir expliciter \( \hlclab \), par exemple en le
-reliant à \( \htcmp \) qui est totalement explicite (fait~\ref{f:comp-h-hn}).
-
-
-\section{Formulaire abélien explicite}
+\section{Formulaire explicite}
 \label{sec:form-ab}
+
+\subsection{Combinaisons linéaires générales}
+\label{sec:form-ab-cl}
+
 
 Le résultat fondamental est le fait suivant, qui est une simple reformulation
 de la proposition~3.6 de \cite{daphimhva2}.
@@ -323,9 +218,11 @@ combinant les formules locales d'addition et de multiplication par deux.
 \end{proof}
 
 
-\section{Compléments au formulaire abélien explicite} \label{sec:form-ab2}
+\subsection{Multiplication par deux}
+\label{sec:form-ab2}
+
 \startout[Section utilisée seulement dans \bsc{Mumford} et assez mal extraite
-de ce dernier. À revoir et peut-être intégrer dans la section précédente.]
+de ce dernier. À revoir.]
 
 Il convient de commencer par rappeler quelques faits concernant les
 plongements utilisés. On a dit que les coordonnées étaient naturellement
@@ -379,6 +276,113 @@ multiplication par $2$) et satisfaisant à l'inégalité suivante :
 \end{equation}
 
 \stopout
+
+
+
+\section{Formulaire abélien alternatif}
+\label{sec:form-ab-alt}
+
+Le formulaire présenté dans cette section n'est valable que pour des
+coefficients de la forme \( 2^\alpha 3^\beta \) et ne permet pas un contrôle
+totalement explicite de la hauteur des formules, mais présente en revanche
+l'avantage que la multiplication est représentée globalement, ce qui permet
+d'établir des minorations de normes locales qui se révèlent essentielles pour
+notre preuve de l'inégalité de \bsc{Vojta}.
+
+\begin{fact}
+  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
+  réel \( C_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
+  dépendant que de ce plongement, et, pour tout \( \gamma = 2^\alpha 3^\beta
+  \), une famille \( F_\gamma \) de polynômes à coefficients entiers dans \(
+    \cdn \), représentant globalement la multiplication par \( \gamma \) sur
+  \( \va \), de degré \( \gamma^2 \) et de hauteur multiplicative majorée par
+  \( C_{2, 3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes
+  place \( \place \) de \( \cdn \), on a :
+  \begin{equation}
+    \av{r_{2, 3}}^{\gamma^2} C_{2, 3}^{-\dv \gamma^2}
+    \le
+    \frac{ \nv1{ F_\gamma(x) } }{ \nnv1 {F_\gamma} \nv1 x ^{\gamma^2} }
+    \le
+    C_{2, 3}^{\dv \gamma^2}
+    \pmm.
+  \end{equation}
+\end{fact}
+
+\begin{proof}
+  \worknote{Argument insuffisant, il faut préciser la dépendance de \(
+      \nnv1{F_\gamma} \) en \( \gamma \).}
+  C'est le fait~3, page~276 de~\cite{phiha1}, restreint au cas particulier qui
+  nous intéresse. On a par ailleurs rajouté au dénominateur un facteur \(
+    \nnv1 {F_\gamma} \), qui vaut \( 1 \) aux places finies, et qui n'invalide
+  pas la comparaison aux places infinies quitte à modifier un peu la constante
+  \( C_{2, 3} \) choisie, qui n'est de toute façon pas explicite.
+\end{proof}
+
+\begin{lem}
+  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
+  réel \( C_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
+  ce plongement, et, pour tout couple de points \( (x, y) \in \va^2 \) et
+  toute place \( \place \) de \( \cdn \), une famille \( S_{x, y, \place} \)
+  de polynômes à coefficients entiers dans \( \cdn \) représentant la
+  soustraction sur un voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de
+  hauteur multiplicative majorée par \( C_s \), telle que
+  \begin{equation}
+    \av{r_s} C_s^{-\dv}
+    \le
+    \frac{
+      \nv1{ S_{x, y, \place}(x, y) }
+    }{
+      \nnv1 {S_{x, y, \place}} \nv1 x ^2 \nv1 y ^2
+    }
+    \le
+    C_s^{\dv}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{ideas}
+  La majoration de droite est triviale, à condition de ne pas prendre \( C_s
+  \) trop petit. Pour celle de gauche, on considère des familles représentant
+  la soustraction sur une carte de \( \va \), on invoque le théorème des zéros
+  multihomogène sur l'idéal engendré par l'idéal de \( \va \) et des familles.
+\end{ideas}
+
+On note désormais \( [ \alpha, \beta ] \) le morphisme envoyant \( (x, y) \)
+sur \( \alpha x - \beta y \) et on s'intéresse à sa représentation par des
+formes bihomogènes.
+
+\begin{lem} \label{l:hclab}
+  Pour tout plongement \( \iota \colon \va \embedin \projd \), il existe une
+  famille (ne dépendant que de \( \va \) et de ce plongement) de réels \(
+    \hmclab[\iota]* \) presque tous égaux à \( 1 \) (de sorte que \(
+    \hmclab[\iota] = \prod_\place \hmclab[\iota]*^{\degv} \) est bien défini)
+  et, pour tout couple de points \( (x, y) \in \va^2 \), toute place \( \place
+  \) de \( \cdn \) et tous entiers \( \alpha \) et \( \beta \) n'ayant que \(
+    2 \) et \( 3 \) comme diviseurs premiers, une famille \( L^{(\alpha,
+      \beta)}_{x, y, v} \) de polynômes bihomogènes à coefficients entiers
+  dans \( \cdn \) représentant \( [ \alpha, \beta ] \) au voisinage de \( (x,
+    y) \), de bidegré \( (2\alpha^2, 2\beta^2) \) et de hauteur multiplicative
+  majorée par \( \hmclab[\iota]^{\alpha^2+\beta^2} \), telle que
+  \begin{equation}
+    \hmclab[\iota]*^{-(\alpha^2 + \beta^2)}
+    \le
+    \frac{
+      \nv1{ L^{(\alpha, \beta)}_{x, y, v}(x, y) }
+    }{
+      \nnv1{ L^{(\alpha, \beta)}_{x, y, v} }
+      \nv1 x ^{2\alpha^2} \nv1 y ^{2\beta^2}
+    }
+    \le
+    \hmclab[\iota]*^{\alpha^2 + \beta^2}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{tdef} \label{d:hclab}
+  On note désormais \( \hmclab* \) et \( \hmclab \) les constantes données par
+  l'application du lemme précédent au plongement \( \Theta \), et \( \hlclab =
+    \ln \hmclab \).
+\end{tdef}
 
 \endinput
 
