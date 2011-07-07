@@ -1,16 +1,18 @@
 % !TEX root = main
 
-\chapter{Plongement projectif et formulaire} \label{chap:plong-mm}
+\chapter{Plongement projectif et formulaire}
+\label{chap:plong-mm}
 
-\section{Rappel du plongement et notations} \label{sec:plong-mm-def}
+
+\section{Rappel du plongement et problématique}
+\label{sec:plong-mm-def}
 
-Sauf précision contraire, on supposera toujours implicitement que \( \va \)
-est plongée dans un espace projectif par un plongement \( \Theta \) modifié
-tel que décrit dans \cite{daphimhva2}, associé à la puissance quatrième d'un
-fibré très ample et totalement symétrique \( \fibre \).
+Dans toute cette annexe, on supposera que \( \va \) est plongée dans un espace
+projectif par un plongement \( \Theta \) modifié tel que décrit dans
+\cite{daphimhva2}, associé à la puissance quatrième d'un fibré très ample et
+totalement symétrique \( \fibre \).
 
-\later
-Pour l'instant, on utilise sans les rappeler les définitions et notations de
+On utilisera sans trop les rappeler les définitions et notations de
 \cite{daphimhva2} (section~3.1.1) sauf sur les points suivants : on omettra
 systématiquement les indices se rapportant à la puissance de
 \( \fibre \) utilisée et on notera plus volontiers en indice les coordonnées.
@@ -41,18 +43,54 @@ précisément, le fait suivant est une reformulation de la proposition~3.9 de
   \end{equation}
 \end{fact}
 
-Un second avantage est qu'on dispose de formules explicites pour
-l'addition-soustraction, ainsi que de formules explicites globales pour la
-multiplication par deux. On peut en déduire des formules explicites locales
-représentant des combinaisons linéaires, cependant si les coefficients ne sont
-pas des puissances de $2$, on ne disposera pas des minorations de normes
-locales qui nous seraient utiles. On peut au contraire montrer l'existence de
-formules donnant ces minorations, mais dont on ne contrôle pas explicitement
-la hauteur. Les deux sections suivantes établissent respectivement des
-formulaires de ces deux types.
+Un second avantage est qu'on dispose de formules explicites représentant
+globalement le morphisme d'addition-soustraction, dont on peut déduire des
+formules explicites représentant respectivement l'addition, la soustraction, la
+multiplication par un entier arbitraire et finalement des combinaisons
+linéaires arbitraires. Ces représentations ne sont plus globales, mais les
+systèmes de cartes recouvrant \( \va \) ou \( \va \times \va \) sur lesquelles
+les différentes formules sont valables sont eux aussi explicites.
+
+Par ailleurs, \worknote{Référence ?}[on sait que] la multiplication par un
+entier \( b \) peut être représentée globalement par une famille de formes
+homogènes de degré \( b^2 \). Il serait intéressant de savoir expliciter une
+telle famille dans un plongement adéquat. Dans le cas des courbes elliptiques
+plongées à la \bsc{Weierstrass}, le théorème~2.13.2, page~128 de \cite{farhith}
+donne des formules de multiplication globales totalement explicites ;
+malheureusement, aucun résultat analogue n'existe à ce jour pour les variétés
+abéliennes générales.
+
+Dans le cas particulier de la multiplication par \( 2 \) (et par voie de
+conséquence, par une puissance de \( 2 \)), la proposition~3.8 de
+\cite{daphimhva2} donne une représentation globale explicite, qui est en fait
+à la base de la comparaison entre hauteurs projective et normalisée rappelée
+ci-dessus.
+
+Cependant, dans certaines applications
+(sous-section~\ref{sec:vojta-extrap-core}) on aura besoin non seulement de
+savoir que chaque point appartient à une carte où des formules représentant
+les combinaisons linéaires existent, mais de préciser ceci par des minoration
+de valeur absolues en différentes places. On ne peut expliciter cette
+minoration par rapport aux coefficients de la combinaison linéaire que si l'on
+dispose de représentation globales de la multiplication pour (les facteurs
+premiers de) ces coefficients. En pratique, on ne peut se contenter de prendre
+des puissances de \( 2 \) comme coefficients. Ceci nous amènera à considérer
+un formulaire non explicite dans lequel on peut établir de telles minorations
+de valeurs absolues relativement à une constante non explicite mais ne
+dépendant que de \( \va \) plongée.
+
+Il serait évidemment souhaitable de pouvoir contrôler cette constante de façon
+explicite. Pour l'application considérée, il suffirait de contrôler des
+formules globales de multiplication par un entier autre qu'une puissance de \(
+  2 \), ce qui n'est pas le cas actuellement. La suite de cette annexe se
+divise donc en deux sections : la première rappelle les formules explicites
+connues dans le plongement \( \Theta \), la seconde présente des formules non
+explicites mais possédant les propriétés métriques voulues.
+
 
 
-\section{Formulaire abélien alternatif} \label{sec:form-ab-alt}
+\section{Formulaire abélien alternatif}
+\label{sec:form-ab-alt}
 
 Le formulaire présenté dans cette section n'est valable que pour des
 coefficients de la forme \( 2^\alpha 3^\beta \) et ne permet pas un contrôle
@@ -160,9 +198,8 @@ Il serait intéressant de savoir expliciter \( \hlclab \), par exemple en le
 reliant à \( \htcmp \) qui est totalement explicite (fait~\ref{f:comp-h-hn}).
 
 
-\section{Formulaire abélien explicite} \label{sec:form-ab}
-\startout[Section non utilisée dans \bsc{Vojta}, probablement pour
-  \bsc{Mumford} mais à revoir.]
+\section{Formulaire abélien explicite}
+\label{sec:form-ab}
 
 Le résultat fondamental est le fait suivant, qui est une simple reformulation
 de la proposition~3.6 de \cite{daphimhva2}.
@@ -284,8 +321,6 @@ combinant les formules locales d'addition et de multiplication par deux.
   réduit légèrement la partie archimédienne de la constante par rapport à
   celle de \bsc{Rémond}.
 \end{proof}
-
-\stopout
 
 
 \section{Compléments au formulaire abélien explicite} \label{sec:form-ab2}
