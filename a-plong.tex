@@ -95,13 +95,24 @@ explicites mais possédant les propriétés métriques voulues.
 \subsection{Combinaisons linéaires générales}
 \label{sec:form-ab-cl}
 
+On regarde \( \va \times \va \) plongée dans \( \projd \times \projd \) par \(
+  \Theta^2 \) et on note \( V_0, \dots, V_\dimp \) les coordonnées sur le
+premier facteur \( \projd \) et \( W_0, \dots, W_\dimp \) celles sur le
+second. On peut ensuite plonger \( (\projd)^2 \) dans \( \proj\dimpi \) par un
+plongement de \bsc{Segre}, c'est-à-dire qu'un système de coordonnées sur cet
+espace est donné par la famille \( V_l W_{l'} \) où \( (l, l') \) parcourt \(
+  \set{0, \dots, \dimp}^2 \).
 
 Le résultat fondamental est le fait suivant, qui est une simple reformulation
-de la proposition~3.6 de \cite{daphimhva2}.
+de la proposition~3.6 de \cite{daphimhva2} en utilisant les notations
+ci-dessus pour simplifier l'énoncé et le rendre plus accessible indépendamment
+du reste de l'article cité.
 
 \begin{fact} \label{f:addsub}
-  Il existe une famille $S_{l, l'}$ de formes bihomogènes de bidegré $(2,
-  2)$ représentant globalement de morphisme d'addition-soustraction
+  Il existe une famille \( S_{l, l'} \) de formes bihomogènes de degré \( 2 \)
+  en chacun des groupes de variables \( V \) et \( W \), c'est-à-dire
+  homogènes de degré \( 2 \) en \( (V_l W_{l'})_{l, l'} \), représentant
+  globalement le morphisme d'addition-soustraction
   \begin{align}
     \va \times \va
     & \to
@@ -111,8 +122,8 @@ de la proposition~3.6 de \cite{daphimhva2}.
     & \mapsto
     (x + y, x - y)
   \end{align}
-  dans le plongement de \bsc{Mumford} modifié suivi d'un plongement de
-  \bsc{Segre}. On peut les prendre de la forme
+  dans le plongement \( \Theta^2 \) suivi d'un plongement de \bsc{Segre}. On
+  peut les prendre de la forme
   \begin{equation}
     S_{l, l'} (V, W)
     =
@@ -121,33 +132,51 @@ de la proposition~3.6 de \cite{daphimhva2}.
     \zeta_{p, p', q, q'} V_p V_{p'} W_q W_{q'}
     \pmm,
   \end{equation}
-  où $E$ est un sous-ensemble à $4^\genre$ éléments de $\{0, \dots, \dimp\}$,
-  les $\zeta_{p, p', q, q'}$ sont des racines quatrièmes de l'unité, et $\xi$
-  est une certaine fonction $\{0, \dots, \dimp\} \to \{0, \dots, \dimp\}$
-  telle que pour tout $p$, $\coi^{-1}_{\xi(p)}$ est une coordonnée (non nulle)
-  de $\oa$.
+  où \( E \) est un sous-ensemble à \( 4^\genre \) éléments de \( \{0, \dots,
+      \dimp\} \), les \( \zeta_{p, p', q, q'} \) sont des racines quatrièmes
+  de l'unité, et \( \xi \) est une certaine fonction \( \{0, \dots, \dimp\}
+    \to \{0, \dots, \dimp\} \) telle que pour tout \( p \), \(
+    \coi^{-1}_{\xi(p)} \) est une coordonnée (non nulle) de \( \oa \) (voir le
+  paragraphe précédent cette sous-section).
 
   En particulier, on peut estimer les normes locales :
-  $\norm{S_{l, l'}}_{v, 1} \le 4^{\genre\dv} \norm{\coi}^2_{v, 1}$
-  pour tout $(l, l')$ et
-  $\nnorm{S}_{v, 1} \le
-  \bigl( 4^\genre (\dimp+1)^2 \bigr)^\dv \norm{\coi}^2_{v, 1}$
+  \( \nv1{S_{l, l'}} \le 4^{\genre\dv} \nv1{\coi}^2 \)
+  pour tout \( (l, l') \) et
+  \(
+    \nnv1{S}
+    \le
+    \bigl( 4^\genre (\dimp+1)^2 \bigr)^\dv \nv1{\coi}^2
+  \)
   pour la famille.
 \end{fact}
 
-Cette représentation suppose $\va^2$ plongée dans un espace projectif
-$\proj{\dimp^2 + 2\dimp}$. Si l'on veut en déduire simplement, par projection
-sur un facteur, des représentations de l'addition et de la soustraction, on
-doit d'abord « redescendre » $\va^2$ dans $(\projd)^2$ : ceci se fait
-simplement par des projections linéaires. Or celles-ci ont un centre en lequel
-elles ne sont pas définies, et qui rencontre $\va$. On n'obtient donc pas une
-représentation globale de l'addition et de la soustraction, mais une famille
-de représentations locales. En remarquant de plus qu'on peut dans chacune de
-ces formes simplifier par $\coi_{k(l')}$ puisqu'on projette à $l'$ fixé, on a
-donc le résultat suivant.
+Cette représentation suppose \( \va^2 \) plongée dans un espace projectif
+\( \proj{\dimp^2 + 2\dimp} \). Si l'on veut en déduire simplement, par
+projection sur un facteur, des représentations de l'addition et de la
+soustraction, on doit d'abord « redescendre » \( \va^2 \) dans \( (\projd)^2
+\) : ceci se fait simplement par des projections linéaires. Or celles-ci ont
+un centre en lequel elles ne sont pas définies, et qui rencontre \( \va \). On
+n'obtient donc pas une représentation globale de l'addition et de la
+soustraction, mais une famille de représentations locales.
 
-\begin{coro}\label{c:addsub-form} \worknote{L'ouvert dépend-il du signe ? Si
-    oui, reformuler.}
+Plus précisément, pour chaque couple de points \( x, y \) de \( \va \) (dont
+on note également \( x \) et \( y \) des coordonnées homogènes) , la famille
+\( (S_{l, l'}(x, y))_{l} \) est un système de coordonnées homogènes de \( x +
+  y \) à condition qu'elle ne soit pas identiquement nulle et \( (S_{l, l'}(x,
+  y))_{l'} \) est un système de coordonnées homogènes de \( x - y \) à la même
+condition. Autrement dit, si l'on note \( \opdefi_{l} \) (resp. \(
+  \opdefi'_{l'} \)) l'ouvert \( V_{l} \neq 0 \) (resp. \( W_{l'} \neq 0 \)) et,
+que par abus, on note de même leurs images dans \( \proj\dimpi \), on voit que
+la famille \( (S_{l, l'})_l \) fournit des formules d'addition valables sur \(
+  [1, 1]_{-}^{-1}(\opdefi'_{l'}) \), et de même pour la soustraction.
+
+En remarquant de plus qu'on peut dans chacune de ces familles simplifier par
+\( \coi_{\xi(l')} \) puisqu'on travaille à \( l' \) fixé, on a donc le résultat
+suivant.
+
+% XXX
+\begin{coro} \label{c:addsub-form}
+  \worknote{L'ouvert dépend-il du signe ? Si oui, reformuler.}
   Tout couple de points de $\va$ est contenu dans un ouvert $\opdef$ de
   $\va^2$ sur lequel il existe deux familles de formes biquadratiques
   $(S_l^{+})$ et $(S_l^{-})$ pour $0 \le l \le \dimp$ représentant sur

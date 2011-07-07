@@ -748,6 +748,7 @@
 % embeding-dependant values [[2
 %
 \newcommand \dimp {n}
+\newcommand \dimpi {\dimp^2 + 2\dimp} % pour les Segre
 \newcommand*\projd [1][] {\proj[#1]\dimp}
 \newcommand \fibre {\mathcal L}
 
@@ -1081,6 +1082,8 @@
 \newcommand\opdef{{\mathcal U}}
 \nomdef \opdef a {U} \@gobbletwo{\opdef}{Ouvert de définition d'une certaine
   famille de formes, précisé localement}
+
+\newcommand \opdefi {\mathcal D}
 
 % Vojta-wide notations without a dedicated macro [[2
 % (btw, isn't this evil?)
