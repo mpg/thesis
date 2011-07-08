@@ -43,6 +43,8 @@ Notations {{{2
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
 
+(C) c_v(\va) -> H_{v,\va} avec macro dédiée.
+
 Dans NMA {{{3
 
 Au début : dire un corps *local* et ne pas le noter \cdn.

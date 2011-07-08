@@ -4,7 +4,7 @@
 \label{chap:plong-mm}
 
 
-\section{Rappel du plongement et problématique}
+\section{Notations et problématique}
 \label{sec:plong-mm-def}
 
 Dans toute cette annexe, on supposera que \( \va \) est plongée dans un espace
@@ -21,13 +21,28 @@ On écrira ainsi $\coa_{(a, l)} = \Delta_{a, l}(\coa)  = \Delta_{(a,
 les coordonnées soient naturellement indexées (\lat{ibid.} p. 651) par
 $\mathcal{Z}_2 \times \widehat{K_2(4)}$, on les indexera souvent par $\{0,
   \dots, \dimp\}$ pour alléger l'écriture  ; ainsi on écrira $\coa = (\coa_0,
-\dots \coa_n)$ des coordonnées de l'origine.  On note enfin \( \vaht =
-  \norm2\coa \) la quantité désignée par \( h(\va) \) dans le texte cite
-(notation~3.2).
+\dots \coa_n)$ des coordonnées de l'origine.
 \nomuse \coa {Coordonnées de l'origine de \( \va \) dans le plongement par
   défaut}
+
 \nomuse \vaht {Hauteur de l'origine de \( \va \) dans le plongement par
   défaut}
+On note par ailleurs \( \vaht = \hautl[2]{\coa} \) la quantité désignée par \(
+  h(\va) \) dans le texte cité (notation~3.2 page~652), qui représente la
+hauteur de la variété. Plus précisément, le corollaire~6.9 page~698 du même
+article donne une comparaison explicite entre \( \vaht \) et la hauteur de
+\bsc{Faltings} de \( \va \).
+
+Par ailleurs, le lemme~3.5 de l'article en question garantit qu'il existe dans
+chaque classe de \( K_2 \times \widehat{K_2(4)} \mod 2K_2 \times
+  \widehat{K_2(4)}^2 \) au moins un indice \( (a, l) \) tel que \(
+  \coa_{(a,l)} \neq 0 \).  On note \( \mathcal{Z}_\coi \) un système complet
+de représentants vérifiant cette condition, et on pose \( \coi = (\coa_{(a,
+    l)}^{-1})_{(a, l) \in \mathcal{Z}_\coi} \). La constante \( c_v(\va) =
+  \nv2{\coa} \nv2{\coi} \ge 1 \) est alors bien définie (c'est-à-dire homogène
+de degré \( 0 \) en \( \coa \)) ; c'est l'équivalent local de \( h(\coa) \).
+
+\medskip
 
 Un premier avantage du plongement utilisé est qu'on y connaît une constante de
 comparaison explicite entre hauteurs normalisée et projective.  Plus
@@ -43,13 +58,14 @@ précisément, le fait suivant est une reformulation de la proposition~3.9 de
   \end{equation}
 \end{fact}
 
-Un second avantage est qu'on dispose de formules explicites représentant
-globalement le morphisme d'addition-soustraction, dont on peut déduire des
-formules explicites représentant respectivement l'addition, la soustraction, la
-multiplication par un entier arbitraire et finalement des combinaisons
-linéaires arbitraires. Ces représentations ne sont plus globales, mais les
-systèmes de cartes recouvrant \( \va \) ou \( \va \times \va \) sur lesquelles
-les différentes formules sont valables sont eux aussi explicites.
+Un second avantage de ce plongement \( \Theta \) est qu'on dispose de formules
+explicites représentant globalement le morphisme d'addition-soustraction, dont
+on peut déduire des formules explicites représentant respectivement
+l'addition, la soustraction, la multiplication par un entier arbitraire et
+finalement des combinaisons linéaires arbitraires. Ces représentations ne sont
+plus globales, mais les systèmes de cartes recouvrant \( \va \) ou \( \va
+  \times \va \) sur lesquelles les différentes formules sont valables sont eux
+aussi explicites.
 
 Par ailleurs, \worknote{Référence ?}[on sait que] la multiplication par un
 entier \( b \) peut être représentée globalement par une famille de formes
@@ -65,6 +81,8 @@ conséquence, par une puissance de \( 2 \)), la proposition~3.8 de
 \cite{daphimhva2} donne une représentation globale explicite, qui est en fait
 à la base de la comparaison entre hauteurs projective et normalisée rappelée
 ci-dessus.
+
+\medskip
 
 Cependant, dans certaines applications
 (sous-section~\ref{sec:vojta-extrap-core}) on aura besoin non seulement de
@@ -87,6 +105,7 @@ divise donc en deux sections : la première rappelle les formules explicites
 connues dans le plongement \( \Theta \), la seconde présente des formules non
 explicites mais possédant les propriétés métriques voulues.
 
+Auparavant, introduisons quelques notations communes aux deux sections.
 
 
 \section{Formulaire explicite}
