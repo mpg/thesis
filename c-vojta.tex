@@ -2753,7 +2753,9 @@ Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
 mais pas leur produit.
 Rappelons qu'on note \( \degv \) le degré local en \(
   \place \) et posons \( \ratfh{p} = \sum_\place \degv
-  \ln \av{\ratfv{p}(\cexa)} \) ; la formule du produit donne alors
+  \ln \av{\ratfv{p}(\cexa)} \) ; cette somme converge car \( \ratfv p \)
+parcourt en fait un ensemble fini lorsque \( \place \) parcourt l'ensemble des
+places de \( \cdn \).  La formule du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
 \end{equation}
@@ -2861,7 +2863,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
     \nv\infty{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
     \nv\infty{ \cexa[\puiss] }^{ 2\wts[\puiss] }
   }{
-    \nv1{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
+    \nv1{ \wembclv*(\cexa[\fcti], \cexa[\puiss]) }
   }
   (\dimp+1)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
@@ -2869,7 +2871,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
     \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
     \nv1{ \cex[\puiss] }^{ 2\wts[\puiss] }
   }{
-    \nv1{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
+    \nv1{ \wembclv*(\cexa[\fcti], \cexa[\puiss]) }
   }
   ((\dimp+1) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
@@ -2886,9 +2888,10 @@ note désormais
   C_\wembcl = \prod_\place \prod\fctirange \nnv1{ \wembclv* }^{\degv}
   \pmm,
 \end{equation}
-de sorte qu'en prenant le logarithme dans l'estimation précédente, puis en
-sommant sur \( \place \) et sur \( \fcti \), compte tenu du
-lemme~\ref{l:sum-wts}, on a facilement
+(somme qui converge bien car \( \wembclv \) parcourt en fait un ensemble fini
+quand \( \place \) varie) de sorte qu'en prenant le logarithme dans
+l'estimation précédente, puis en sommant sur \( \place \) et sur \( \fcti \),
+compte tenu du lemme~\ref{l:sum-wts}, on a facilement
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
   \delta \Bigl(
@@ -2899,7 +2902,8 @@ lemme~\ref{l:sum-wts}, on a facilement
 \end{equation}
 Remarquons avant de continuer que le premier terme, qui semble négatif, va se
 simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
-de sorte qu'il ne contribue pas à faire diminuer la hauteur finale.
+de sorte qu'il ne contribue pas à faire diminuer la hauteur finale et qu'on a
+pas besoin de l'expliciter davantage.
 
 \begin{lem}
   Pour chaque \( F''_\place = R(\vmp) \, F( \vmp; \wembcl(\vmp) ) \) on a \(
@@ -2963,10 +2967,15 @@ propriétés suivantes :
       \inda*(F''_\place) - \wtsum*(\dermp)
     \).
 \end{enumthm}
-Rappelons que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta / \sigma
-\) ; en remarquant que \( \inda*(F''_\place) \ge \epsi \delta \) par le lemme
-précédent  et que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition, le
-dernier point donne
+Remarquons de suite que tous les \( P_\place \) sont de même degré, qu'on
+notera parfois \( \deg P \) par abus, et que \( P_\place \) parcourt un
+ensemble fini quand \( \place \) varie, car c'est déjà le cas de \( F''_\place
+\) et de \( \wembclv \).
+
+Rappelons également que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta
+  / \sigma \) ; en remarquant que \( \inda*(F''_\place) \ge \epsi \delta \)
+par le lemme précédent  et que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par
+définition, le dernier point donne
 \begin{equation} \label{e:ind-Pv}
   \inda*( P_\place ) \ge \epsi \delta (1 - \sigma^{-1})
   \pmm.
@@ -2975,6 +2984,7 @@ dernier point donne
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
 fonction en deux facteurs :
 \begin{equation}
+  \ratfv1 =
   \frac{ P_\place(\vmp) }{
     \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
@@ -2984,7 +2994,7 @@ fonction en deux facteurs :
     \frac{ P_\place(\vmp) }{
       \prod\fctrange (\vmp*[\indv*])^{\deg_\fct P_\place }
     }
-  }_{\textstyle \ratfv{1a}}
+  }_{\textstyle \ratfv{1'}}
   \cdot
   \underbrace{
     \prod\fctrange
@@ -2993,7 +3003,7 @@ fonction en deux facteurs :
     }{
       \pdenp*(\vmp*)^{\lgr{\dermp*}}
     }
-  }_{\textstyle \ratfv{1b}}
+  }_{\textstyle \ratfv{1''}}
 \end{equation}
 Pour le second facteur, on commence par remarquer que le dénominateur n'est
 pas nul d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
@@ -3012,7 +3022,7 @@ On note alors que par définition, \( \deg \pdenp* = 2 (\vdeg*-1) (\dimp-\vdim*)
   \le 2B\dimp \), puis en utilisant des comparaisons de hauteurs désormais
 habituelles, on a :
 \begin{align}
-  \ratfh{1b}
+  \ratfh{1''}
   & \le
   2B\dimp \sum\fctrange
   \hautl[\infty]{ \cexa* } \lgr{\dermp*}
@@ -3044,7 +3054,7 @@ Par ailleurs, en utilisant~\eqref{e:wt-ratio}, on a
 \end{equation}
 et au final :
 \begin{equation} \label{e:ratfh1b}
-  \ratfh{1b} \le
+  \ratfh{1''} \le
   \frac{ \delta \wts[1] \epsi }{ \sigma } \Bigl(
     2 (\puiss-1) \hautn{ \ex[1] }
     + \cst{vs-ht} + \ln B
@@ -3054,7 +3064,7 @@ et au final :
 
 Pour l'autre partie, on écrit
 \begin{equation}
-  \ratfv{1a}(\cexa)
+  \ratfv{1'}(\cexa)
   =
   P_\place \Biggl(
     \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
@@ -3148,7 +3158,7 @@ encore~\eqref{e:wt-ratio}
 où le dernier point découle de~\eqref{e:ind-Pv} et de la définition de
 l'indice.
 
-En regroupant tous les termes qui constituent \( \ratfv{1a}( \cex ) \) puis en
+En regroupant tous les termes qui constituent \( \ratfv{1'}( \cex ) \) puis en
 sommant sur \( \place \), on majore la hauteur logarithmique de ce facteur par
 la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
   \placesapx \) :
@@ -3205,6 +3215,8 @@ point~\ref{i:deg-p-der} page~\pageref{i:deg-p-der}, d'abord pour \( \fct <
   \delta \wts* B\dimp
   + o(\delta)
 \end{align}
+\worknote{Si \( \epsi B\dimp > 1 \) on peut conserver le \( \epsi \) en
+  facteur, ça serait intéressant.}
 où l'on a utilisé la définition~\eqref{e:d-dp-def} de \( d' \), puis le fait
 que \( \wtsum(\dermp) \le \epsi\delta / \sigma \) et les majorations larges \(
   \epsi < 1 \) et \( \sigma^{-1} \le 1/4 \). Pour \( \fct = \puiss \) on
@@ -3290,7 +3302,7 @@ l'hypothèse~\eqref{e:varset-ht} et par ailleurs le lemme~\ref{l:sum-wts} pour
 Il ne reste alors plus qu'à substituer~\eqref{e:apx-1a-ht}
 et~\eqref{e:apx-1a-sum} dans~\eqref{e:apx-1a-split} pour obtenir
 \begin{align}
-  \frac{ \ratfh{1a} }{ \delta+o(\delta) }
+  \frac{ \ratfh{1'} }{ \delta+o(\delta) }
   & \le
   \wts[1] \Bigl(
     - \frac38 \hautn{\ex[1]} \expapx \epsi
