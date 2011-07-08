@@ -341,7 +341,8 @@ d'établir des minorations de normes locales qui se révèlent essentielles pour
 notre preuve de l'inégalité de \bsc{Vojta}.
 
 \begin{fact}
-  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
+  Supposons fixé \worknote{Quelles propriétés pour ce plongement ?}[un
+  plongement] de \( \va \) dans \( \projd \) ; il existe un
   réel \( C_{2, 3} \ge 1\) et un entier \( r_{2, 3} \in \cdn^* \), ne
   dépendant que de ce plongement, et, pour tout \( \gamma = 2^\alpha 3^\beta
   \), une famille \( F_\gamma \) de polynômes à coefficients entiers dans \(
@@ -370,20 +371,21 @@ notre preuve de l'inégalité de \bsc{Vojta}.
 \end{proof}
 
 \begin{lem}
-  Supposons fixé un plongement de \( \va \) dans \( \projd \) ; il existe un
+  Supposons fixé un plongement de \( \va \) dans \( \projd \) et un ensemble
+  \( \clmap \) d'ouverts recouvrant \( \va^2 \) ainsi que pour tout \( \clmap
+    \in \clmaps \) un système de formes \( (S\pexp{\clmap}[l])_l \)
+  biquadratiques représentant la soustraction sur \( \clmap \).  Il existe un
   réel \( C_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
-  ce plongement, et, pour tout couple de points \( (x, y) \in \va^2 \) et
-  toute place \( \place \) de \( \cdn \), une famille \( S_{x, y, \place} \)
-  de polynômes à coefficients entiers dans \( \cdn \) représentant la
-  soustraction sur un voisinage de \( (x, y) \), de bidegré \( (2, 2) \) et de
-  hauteur multiplicative majorée par \( C_s \), telle que
+  ces données ce plongement, et, pour tout couple de points \( (x, y) \in
+    \va^2 \) et toute place \( \place \) de \( \cdn \), un ouvert \(
+    \clmap_{x, y, \place} \in \clmaps \) tel que
   \begin{equation}
     \av{r_s} C_s^{-\dv}
     \le
     \frac{
-      \nv1{ S_{x, y, \place}(x, y) }
+      \nv1{ S\pexp{\clmap_{x, y, \place}}(x, y) }
     }{
-      \nnv1 {S_{x, y, \place}} \nv1 x ^2 \nv1 y ^2
+      \nnv1{ S\pexp{\clmap_{x, y, \place}} } \nv1 x ^2 \nv1 y ^2
     }
     \le
     C_s^{\dv}
@@ -393,46 +395,51 @@ notre preuve de l'inégalité de \bsc{Vojta}.
 
 \begin{ideas}
   La majoration de droite est triviale, à condition de ne pas prendre \( C_s
-  \) trop petit. Pour celle de gauche, on considère des familles représentant
-  la soustraction sur une carte de \( \va \), on invoque le théorème des zéros
-  multihomogène sur l'idéal engendré par l'idéal de \( \va \) et des familles.
+  \) trop petit. Pour celle de gauche, on considère la famille \(
+    S\pexp{\clmap}_l \) quand \( \clmap \) et \( l \) varient et on invoque le
+  théorème des zéros multihomogène sur l'idéal engendré cette famille et
+  l'idéal de \( \va \). Il reste à comparer un peu les normes.
 \end{ideas}
 
-On note désormais \( [ \alpha, \beta ] \) le morphisme envoyant \( (x, y) \)
-sur \( \alpha x - \beta y \) et on s'intéresse à sa représentation par des
-formes bihomogènes.
-
 \begin{lem} \label{l:hclab}
-  Pour tout plongement \( \iota \colon \va \embedin \projd \), il existe une
-  famille (ne dépendant que de \( \va \) et de ce plongement) de réels \(
-    \hmclab[\iota]* \) presque tous égaux à \( 1 \) (de sorte que \(
-    \hmclab[\iota] = \prod_\place \hmclab[\iota]*^{\degv} \) est bien défini)
-  et, pour tout couple de points \( (x, y) \in \va^2 \), toute place \( \place
-  \) de \( \cdn \) et tous entiers \( \alpha \) et \( \beta \) n'ayant que \(
-    2 \) et \( 3 \) comme diviseurs premiers, une famille \( L^{(\alpha,
-      \beta)}_{x, y, v} \) de polynômes bihomogènes à coefficients entiers
-  dans \( \cdn \) représentant \( [ \alpha, \beta ] \) au voisinage de \( (x,
-    y) \), de bidegré \( (2\alpha^2, 2\beta^2) \) et de hauteur multiplicative
-  majorée par \( \hmclab[\iota]^{\alpha^2+\beta^2} \), telle que
+  Il existe une famille (ne dépendant que de \( \va \) et \( \Theta \)) de
+  réels \( \hmclab* \) presque tous égaux à \( 1 \) (de sorte que \(
+    \hmclab = \prod_\place \hmclab*^{\degv} \) est bien défini) possédant la
+  propriété suivante.
+
+  Dans le plongement \( \Theta \), il existe un ensemble \( \clmaps \) de \(
+    \dimp+1 \) ouverts recouvrant \( \va^2 \) et, pour tout \( \clmap \in
+    \clmaps \) et tout couple d'entiers \( a, b \) n'admettant que \( 2 \) et
+  \( 3 \) comme diviseurs premiers, une famille \( (L\pexp{\clmap, a, b}[l])_l
+  \) de formes bihomogènes de degré \( (2a^2, 2b^2) \) et de hauteur majorée
+  par \( \hmclab^{a^2 + b^2} \), représentant \(
+    \clab[-] ab \) sur \( \clmap \). De plus, pour
+  tout couple de points \( (x, y) \in \va^2 \), toute place \( \place
+  \) de \( \cdn \) et tous entiers \( a \) et \( b \) comme ci-dessus, il
+  existe une carte \( \clmap_{a, b, x, y, \place} \in \clmaps \) telle que
   \begin{equation}
-    \hmclab[\iota]*^{-(\alpha^2 + \beta^2)}
+    \hmclab*^{-(\alpha^2 + \beta^2)}
     \le
     \frac{
-      \nv1{ L^{(\alpha, \beta)}_{x, y, v}(x, y) }
+      \nv1{ L\pexp{ \clmap_{a, b, x, y, \place} }(x, y) }
     }{
-      \nnv1{ L^{(\alpha, \beta)}_{x, y, v} }
+      \nnv1{ L\pexp{ \clmap_{a, b, x, y, \place} } }
       \nv1 x ^{2\alpha^2} \nv1 y ^{2\beta^2}
     }
     \le
-    \hmclab[\iota]*^{\alpha^2 + \beta^2}
+    \hmclab*^{\alpha^2 + \beta^2}
     \pmm.
   \end{equation}
 \end{lem}
 
+\begin{proof} \later
+  On combine les résultats des deux lemmes précédents ainsi que du
+  corollaire~\ref{c:addsub-form}.
+\end{proof}
+
 \begin{tdef} \label{d:hclab}
   On note désormais \( \hmclab* \) et \( \hmclab \) les constantes données par
-  l'application du lemme précédent au plongement \( \Theta \), et \( \hlclab =
-    \ln \hmclab \).
+  l'application du lemme précédent et \( \hlclab = \ln \hmclab \).
 \end{tdef}
 
 \endinput
