@@ -905,6 +905,9 @@
 \newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
 \newcommand*\multab [1] { [#1] }
 
+\newcommand \clmaps { \Gamma }
+\newcommand \clmap  { \gamma }
+
 % Vojta-specific math [[1
 % -------------------
 
