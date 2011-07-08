@@ -897,7 +897,13 @@
 
 % abelian formulas [[2
 %
+\newcommand \hmclab [1][\Theta] {%
+  \@ifstar{ C\sb{#1, \place} }{ C\sb{#1} }}
+\newcommand \hlclab [1][\Theta] {%
+  \@ifstar{ c\sb{#1, \place} }{ c\sb{#1} }}
 
+\newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
+\newcommand*\multab [1] { [#1] }
 
 % Vojta-specific math [[1
 % -------------------
@@ -1125,12 +1131,6 @@
 
 \newcommand \pdiff {\@ifstar{\Delta}{\Delta\sb\dv}}
 
-% misc [[2
-%
-\newcommand \hmclab [1][\Theta] {%
-  \@ifstar{ C\sb{#1, \place} }{ C\sb{#1} }}
-\newcommand \hlclab [1][\Theta] {%
-  \@ifstar{ c\sb{#1, \place} }{ c\sb{#1} }}
 
 % unsorted math stuff [[1
 % -------------------

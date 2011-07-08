@@ -105,7 +105,17 @@ divise donc en deux sections : la première rappelle les formules explicites
 connues dans le plongement \( \Theta \), la seconde présente des formules non
 explicites mais possédant les propriétés métriques voulues.
 
-Auparavant, introduisons quelques notations communes aux deux sections.
+Auparavant, introduisons quelques notations communes aux deux sections
+suivantes. Nous noterons \( \multab b \) le morphisme de multiplication par un
+entier \( b \) et
+\begin{align}
+  \clab ab \colon \va \times \va & \to \va \times \va \\
+  (x, y) & \mapsto (ax + by, ax - by)
+\end{align}
+puis \( \clab[+] ab \) (resp. \( \clab[-] ab \)) la composition du morphisme
+précédent avec la projection sur le premier (resp. le deuxième) facteur.
+Par exemple, \( \clab[+] 11 \) est le morphisme d'addition.
+
 
 
 \section{Formulaire explicite}
@@ -131,18 +141,9 @@ du reste de l'article cité.
   Il existe une famille \( S_{l, l'} \) de formes bihomogènes de degré \( 2 \)
   en chacun des groupes de variables \( V \) et \( W \), c'est-à-dire
   homogènes de degré \( 2 \) en \( (V_l W_{l'})_{l, l'} \), représentant
-  globalement le morphisme d'addition-soustraction
-  \begin{align}
-    \va \times \va
-    & \to
-    \va \times \va
-    \\
-    (x, y)
-    & \mapsto
-    (x + y, x - y)
-  \end{align}
-  dans le plongement \( \Theta^2 \) suivi d'un plongement de \bsc{Segre}. On
-  peut les prendre de la forme
+  globalement le morphisme d'addition-soustraction \( \clab 11 \) dans le
+  plongement \( \Theta^2 \) suivi d'un plongement de \bsc{Segre}. De plus
+  cette famille peut être choisie de la façon suivante :
   \begin{equation}
     S_{l, l'} (V, W)
     =
@@ -187,7 +188,7 @@ condition. Autrement dit, si l'on note \( \opdefi_{l} \) (resp. \(
   \opdefi'_{l'} \)) l'ouvert \( V_{l} \neq 0 \) (resp. \( W_{l'} \neq 0 \)) et,
 que par abus, on note de même leurs images dans \( \proj\dimpi \), on voit que
 la famille \( (S_{l, l'})_l \) fournit des formules d'addition valables sur \(
-  [1, 1]_{-}^{-1}(\opdefi'_{l'}) \), et de même pour la soustraction.
+  \clab[-]11^{-1}(\opdefi'_{l'}) \), et de même pour la soustraction.
 
 En remarquant de plus qu'on peut dans chacune de ces familles simplifier par
 \( \coi_{\xi(l')} \) puisqu'on travaille à \( l' \) fixé, on a donc le résultat
