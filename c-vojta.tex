@@ -1198,7 +1198,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 L'objectif de cette section est de construire une forme non nulle sur \( \var
 \), provenant d'une forme sur \( \wemb(\var) \), de degré prescrit, de hauteur
 contrôlée, et d'indice élevé le long de \( \divi \) dans \( \var \).  Nous
-commencerons par définir la notion d'indice utiliser et préciser les
+commencerons par définir la notion d'indice utilisée et préciser les
 propriétés voulues et la stratégie de construction, puis nous établirons les
 estimations de dimension et de hauteur nécessaires avant de conclure en
 appliquant un lemme de \TS.
@@ -1224,128 +1224,90 @@ sous-section~\ref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
 \end{equation}
 Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
 qui sera crucial pour la section~\ref{sec:thm-prod}.
-On définit l'indice le long de \( \divi \) d'une forme \( H = \sum h_\imp
-  \vmp^\imp \) par :
+Pour toute forme \( H = \sum h_\imp \vmp^\imp \), on pose
+\begin{equation} 
+  \pi_\beta (H)
+  =
+  \sum_{\wtsum*( \imp ) < \beta}
+  h_\imp \vmp^\imp
+\end{equation}
+et on défini l'indice par
 \nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
   par~\eqref{e:inda-def}}
 \begin{equation} \label{e:inda-def}
-  \inda*(H)
+  \inda* H
   =
   \inf \set{
-    \wtsum*(\imp)
-    \text{ pour }
-    \imp \text{ tel que } h_\imp \neq 0
+    \beta \text{ tel que } \pi_\beta (H) \neq 0
   }
   \pmm,
 \end{equation}
 où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
 l'indice est infini.
 
-% XXX
+\medskip
 
-En conservant les notations précédentes et notamment~\eqref{e:d-dp-def}, on
-cherche une forme
-\begin{equation}
-  F'
-  \in \cdn[\vmp]_\Di
-  \cap \vanish
-  \cap \wemba(\cdn[\vmp, \vmpi]_\Dz)
-\end{equation}
-non nulle modulo l'idéal de $\var$, ou de façon équivalente (avec $F' =
-\wemba(F)$), on cherche une forme
-\begin{equation}
+Au début de cette section, nous avons dit vouloir construire une forme sur \(
+  \var \) provenant d'une forme sur \( \wemb(\var) \) ; plus précisément nous
+allons construire une forme \( F \) sur \( \wemb(\var) \) et la tirer
+localement en arrière sur \( \var \) en une famille de formes \( F'_\clmap \)
+grâce aux différents morphismes \( \wemba^\clmap \) introduits à la
+sous-section~\ref{sec:wemb}.
+
+Revenons maintenant aux \( F'_\clmap \) : on ne peut brutalement exiger que
+leur indice, tel que défini précédemment, soit élevé, car le nombre de
+conditions serait trop élevé (géométriquement, il s'agirait d'exiger une
+annulation le long de \( \divi \) dans \( \projd \) alors que les degrés de
+libertés sont donnés par \( \var \) qui est de dimension plus petite). Nous
+allons donc utiliser le morphisme \( \rfull \) introduit à la
+sous-section~\ref{sec:rfull} et exiger que \( F''_\clmap = \rfull(F'_\clmap)
+\) ait un indice élevé, ce qui est loisible car le nombre de d'équations
+définissant un indicé élevé dans \( \cdn[\vmp]^{C'''} \) est convenable (le
+nombre de variables libre dans cet espace correspondant à la dimension de \(
+  \var \)) comme le montrera la prochaine sous-section.
+
+Concernant le degré, on reprend les multidegrés définis par~\eqref{e:d-dp-def}
+et on rappelle que \( \delta \) désigne un grand entier tel que \( \delta
+  \eps_0 \) soit aussi entier. On impose alors à \( F \) d'être
+de degré \( \Dz \), de sorte que les \( F'_\clmap \) seront de degré \( \Di \)
+et les \( F''_\clmap \) de degré \( \Dir = \Di + o(\delta) \). Par ailleurs,
+l'indice exigé sera \( \epsi \delta \), où \( \epsi \) est défini
+par~\eqref{e:def-epsi} et la relation entre \( \epsz \) et \( \epsi \)
+permettra d'ajuster l'exposant de \bsc{Dirichlet} du système auquel on
+appliquera le lemme de \TS.
+
+Choisissons alors dans \( \cdn[\vmp, \vmpi]_\Dz \) un supplémentaire de \(
+  (\idealim)_\Dz \) engendré par des monômes, que l'on notera \( \fspace \) et
+dans lequel on cherchera \( F \).  L'entier \( \delta \) sera choisi assez
+grand pour que la dimension de \( \fspace \) coïncide avec la valeur du
+polynôme de \bsc{Hilbert} de \( \idealim \) en \( \Dz \).
+
+Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
+\begin{align}
+  \sigma \colon \fspace
+  & \to
+  \bigoplus_{\clmap \in \clmaps} \bigl(
+    \cdn[\vmp]^{C'''}_\Dir
+    \cap \vect( (\vmp^\imp)_{\wtsum*(\imp) < \epsi\delta} )
+  \bigr)
+  \\
   F
-  \in \cdn[\vmp, \vmpi]_\Dz
-  \cap \wemba^{-1}(\vanish)
-\end{equation}
-non nulle modulo l'idéal de $\wemb(\var)$, de hauteur relativement petite.
-
-Ce problème est un cas classique d'application du lemme de \bsc{Siegel}.
-Cependant, il est difficile d'expliciter un système essentiellement minimal
-d'équations linéaires exprimant l'appartenance à $\vanish$. Il est en
-revanche immédiat d'expliciter un tel système pour $\vanish*$, mais
-il comporte beaucoup trop d'équations (géométriquement, il correspond à une
-condition d'annulation beaucoup trop forte : avoir un indice élevé le long de
-$\divi$ dans $\projd$, alors qu'on travaille avec des formes sur $\var$).
-
-Nous allons donc devoir procéder à quelques réductions pour récrire le
-système d'équations. L'idée fondamentale est la suivante : ramener $F'$ dans
-un sous-espace de $\cdn[\vmp]_\Di$ dans lequel $\vanish$
-est de codimension suffisamment petite pour pouvoir demander que l'image de
-$F$ par ces réductions soit dedans, sans pour autant avoir trop d'équations.
-
-Pour commencer, on choisit dans $\cdn[\vmp, \vmpi]_\Dz$ un
-supplémentaire de $(\idealim)_\Dz$ engendré par des
-monômes, que l'on notera $\fspace$ et dans lequel on cherchera $F$.
-
-Le plan général de l'écriture du système se résume alors par le diagramme
-commutatif suivant, où l'on note
-\( \ringa{\wemb(\var)} = \cdn[\vmp, \vmpi] / \idealim \)
-et
-\( (\vringa)_\opdef = (\cdn[\vmp] / \varida)_\opdef \)
-et où les flèches verticales sont les morphismes de réduction.
-
-\begin{equation} \label{e:diag-f-aux}
-  \xymatrix{
-    \fspace                \ar [r] ^{\wemba}        \ar [d] _{\sim}
-    & \cdn [\vmp]_\Di      \ar [r] ^{\rdiv^\Di}     \ar [d]
-    & \cdn [\vmp]\Ci       \ar [r] ^{\relim}        \ar [d]
-    & \cdn [\vmp]\Cii      \ar [r] ^{\rdiv^\Dir}    \ar [d]
-    & \cdn [\vmp]\Ciii                              \ar [d]
-    \\ \ringa{\wemb(\var)} \ar [r] ^{\wemb^*}
-    & (\vringa)_\opdef     \ar [r] ^{\I}
-    & (\vringa)_\opdef     \ar [r] ^{R \cdot \null}
-    & (\vringa)_\opdef     \ar [r] ^{\I}
-    & (\vringa)_\opdef
-  }
-\end{equation}
-
-Les morphismes $\rdiv$ et $\relim$ seront précisés ultérieurement ; le premier
-représente une réduction par division euclidienne par certaines relations de
-dépendance intégrale, les second permet d'éliminer les variables en utilisant
-des relations linéaires dans $\korper\var$ et correspond modulo $\varida$ à
-une multiplication par une certaine forme $R$ de degré $r$ ne dépendant que de
-$\var$, de façon à éliminer les dénominateurs apparaissant dans ces relations
-linéaires. Notons qu'il est essentiel d'effectuer $\rdiv$ avant $\relim$ pour
-que le degré en les variables à éliminer ne dépende pas de $\delta$, ce qui
-assure que $R$ ne dépend en effet que de $\var$.
-
-Compte tenu de la présence de ce dénominateur $R$, révisons une dernière fois
-notre objectif : il s'agira en fait de construire une forme $F \in
-\fspace \setminus \{0\}$ telle que
-\begin{equation}
-  \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
-  \in \vanish*
-  \pmm,
-\end{equation}
-ce qui implique que $R \cdot \wemba(F) \in \vanish$ car
-\begin{equation}
-  R \cdot \wemba(F)
-  - \rdiv^\Dir(\relim(\rdiv^\Di(\wemba(F))))
-  \in \varida
-  \subset \vanish
-  \pmm.
-\end{equation}
-
-Au final, le système d'équations auquel on appliquera le lemme de \TS
-sera composé des équations définissant $\vanish$ dans
-\( \cdn[\vmp]_{\Dir'}^{C'''} \),
-tirées en arrière sur $\fspace$ par
-\( \rdiv^\Di \circ \relim \circ \rdiv^\Dir \circ \wemba \).
-Pour pouvoir procéder, nous devons donc :
+  & \mapsto
+  \bigl( \pi_{\epsi\delta} \circ \rfull \circ \wemba^\clmap(F) \bigr)_\clmap
+\end{align}
+de sorte qu'il s'agit en fait de trouver une forme non nulle dans le noyau de
+\( \sigma \). Pour procéder nous devons donc :
 \begin{enumerate}
-  \item Calculer la dimension de $\fspace$ et la codimension de
-    $\vanish*$ dans $\cdn[\vmp]_\Dir^{C'''}$, et s'assurer que la
-    deuxième est plus petite que la première ;
-  \item Expliciter les morphismes \( \rdiv \) et \( \relim \) de la première
-    ligne du diagramme et majorer la hauteur de leurs matrices dans les bases
+  \item Estimer les dimensions des espaces de départ et d'arrivée de \( \sigma
+    \) et s'assurer que la seconde est plus petite que la première ;
+  \item Estimer la hauteur de la matrice de \( \sigma \) dans les bases
     monomiales évidentes.
 \end{enumerate}
-Ces calculs font l'objet des deux sous-section suivantes.  Comme $\delta$ est
-arbitrairement grand devant les autres paramètres, on n'explicitera à chaque
-fois que le terme de plus haut degré en $\delta$ ; ainsi lorsqu'on utilisera
-la notation $o(\truc)$ ou $\sim$, il s'agira d'équivalents quand $\delta$ tend
-vers l'infini.
+Ces estimations font l'objet des deux sous-sections suivantes.  Comme \(
+  \delta \) est arbitrairement grand devant les autres paramètres, on
+n'explicitera à chaque fois que le terme de plus haut degré en \( \delta \) ;
+ainsi lorsqu'on utilisera la notation \( o(\truc) \) ou \( \sim \), il s'agira
+d'équivalents quand \( \delta \) tend vers l'infini.
 
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}

@@ -588,6 +588,7 @@
 \nomdef \der a {d} \@gobbletwo{\der\PH}{Dérivée divisée d'ordre \PH}
 
 \DeclareMathOperator \card {Card}
+\DeclareMathOperator \vect {Vect}
 
 \newcommand*\expb {\mathrm e}
 
