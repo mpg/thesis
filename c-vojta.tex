@@ -1762,46 +1762,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
 \end{proof}
 
-
-\subsection{Récapitulatif, corollaires et formes associées}
-\label{sec:siegel-recap}
-
-\begin{scho} \label{s:aux-co}
-  On note désormais \( F \) une forme comme dans la conclusion de la
-  proposition précédente, \( F' = \wemba(F) \) et \( F'' =
-    \rdiv^\Dir(\relim(\rdiv^\Di(F'))) \). On a alors
-  \begin{enumthm}
-    \item \( F'' = RF' \mod \varida \) et \( F'' \in \vanish* \) ;
-    \item \( \deg F'' = \deg RF' = \deg F' + r_\fct = \Di + o(\delta) \),
-    où l'on rappelle que
-      \begin{align}
-        d & = \bigl(
-          \epsz \wts[1],
-          \dots,
-          \epsz \wts[\puiss],
-          1, \dots, 1
-        \bigr) \in \Q^{2\puiss-1}
-        \\
-        d' & = \bigl(
-          \wts[1] (2 + \epsz),
-          \dots,
-          \wts[\puiss-1] (2 + \epsz),
-          \wts[\puiss] (2\puiss - 2 + \epsz)
-        \bigr) \in \Q^\puiss
-      \end{align}
-      et \( \deg F = \Dz \).
-    \item On peut majorer \( \hautl[\infty]{F''} \) par le double de la
-      majoration annoncée pour \( F \).
-  \end{enumthm}
-\end{scho}
-
-\begin{proof}
-  Les trois premiers points ne sont qu'un rappel de la construction.
-  Pour le dernier point, on constate que \( F'' \) est l'image de \( F \) par
-  l'application linéaire dont la matrice est notée \( M \) dans la
-  démonstration de la proposition et dont la hauteur détermine un majorant de
-  la hauteur de \( F \).
-\end{proof}
+Nous énonçons maintenant quelques conséquences faciles de la proposition
+précédente.
 
 \begin{scho} \label{s:h1-aux}
   On a \( \hautl[1] F \le \hautl[\infty] F + o(\delta) \).
@@ -1809,16 +1771,53 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 
 \begin{proof}
   La différence entre ces deux hauteurs est majorée par le logarithme du
-  nombre de coefficients de \( F \), qui se majore ainsi
+  nombre de coefficients de \( F \), qui est au plus
   \begin{equation}
     \prod_{\fct=1}^{2\puiss-1}
     \binom{\delta d_\fct + \dimp}{\dimp}
     \le
     \prod_{\fct=1}^{2\puiss-1}
     \frac{ (\delta d_\fct + \dimp)^\dimp }{\dimp!}
+    \pmm.
   \end{equation}
-  par un polynôme en \( \delta \), dont le logarithme est négligeable devant
-  ce dernier.
+  Cette quantité est un polynôme en \( \delta \), son logarithme est donc
+  négligeable devant ce dernier.
+\end{proof}
+
+\begin{scho} \label{s:aux-co}
+  On rappelle qu'on note \( F''_\clmap = \rfull \circ \wemba^\clmap(F) \) pour
+  toute carte \( \clmap \in \clmaps \). Ces formes satisfont alors
+  \begin{enumthm}
+    \item \( \inda* F''_\clmap \ge \epsi \delta \) ;
+    \item \( \deg F''_\clmap = \Dir \) avec
+      \(
+        d' = \bigl(
+          \wts[1] (2 + \epsz),
+          \dots,
+          \wts[\puiss-1] (2 + \epsz),
+          \wts[\puiss] (2\puiss - 2 + \epsz)
+        \bigr)
+      \) ;
+    \item \(
+        \hautl[1]{F''_\clmap}
+        \le
+        4 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
+          4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
+        \right) + o(\delta)
+      \).
+  \end{enumthm}
+\end{scho}
+
+\begin{proof}
+  Les deux premiers points ne sont qu'un rappel de la construction.
+  Pour le dernier point, on utilise la définition de \( F''_\clmap \) et la
+  fait que la majoration donnée par~\eqref{e:hmat-sigma} pour la hauteur de la
+  matrice de \( \sigma \) est valable (par construction) pour celle de la
+  matrice de \( \rfull \circ \wemba^\clmap \). Comme c'est cette quantité qui
+  détermine la hauteur de \( F \), il est clair qu'on peut majorer celle de \(
+    F''_\clmap \) par le double de la majoration annoncé pour cette dernière,
+  en utilisant si on veut la hauteur \( \Hautl[1] \) par un argument similaire
+  à celui du scolie précédent.
 \end{proof}
 
 
