@@ -1016,7 +1016,7 @@ désigne la localisation de l'anneau des coordonnées au départ correspondant �
 l'ouvert ouvert \( \clmap \).
 
 Introduisons des formes
-\begin{equation} \label{e:def-wembclv}
+\begin{equation} \label{e:def-wembclm}
   \wembcl*_\clmap
   = L\pexp{\wti*, \wti**, \clmap}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
@@ -2414,11 +2414,12 @@ l'indice est infini.
 
 On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
 \begin{equation} \label{e:def-f1}
-  \ratf1 = \frac{ F''(\vmp) }{ \prod\fctrange (\vmp*[\vdim*])^{\Dir*} }
-  \pmm,
+  \ratf1
+  = \frac{ F''_{\clmap_\ex}(\vmp) }{ \prod\fctrange (\vmp*[\vdim*])^{\Dir*} }
 \end{equation}
-qui est bien homogène de degré \( 0 \).  Le but de cette section est alors de
-montrer la proposition suivante.
+où \( \clmap_\ex \in \clmaps^{\puiss-1} \) est une carte contenant \( \ex \).
+Cette expression est bien homogène de degré \( 0 \) et définie en \( \cexa \).
+Le but de cette section est alors de montrer la proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda**(\ratf1) \ge \frac{ \epsi \delta }{ \sigma } \) avec \(
@@ -2548,9 +2549,11 @@ représente à peu de chose près la norme de \( \cexa* \).
 \end{proof}
 
 On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
-  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl* (\cexa[\fcti],
-  \cexa[\puiss]) \) un système de coordonnées multihomogènes de \( \exi \)
-dans le plongement \( \Theta^{\puiss-1} \).  On choisit alors pour tout \(
+  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl*_{\clmap_\ex}
+  (\cexa[\fcti], \cexa[\puiss]) \) un système de coordonnées multihomogènes de
+\( \exi \) dans le plongement \( \Theta^{\puiss-1} \). (Ci-dessous on notera
+\( \wembcl* = \wembcl*_{\clmap_\ex} \) pour alléger.
+On choisit alors pour tout \(
   \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
   \av{ \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
 tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
@@ -2595,14 +2598,13 @@ donc, montrant que \( \ratf1 \) et \( \ratf2 \) ont le même indice en \( \cex
 par décomposer cette fonctions en des facteurs dont nous aurons un bon
 contrôle en chaque place.
 
-On a jusqu'ici utilisé une seule famille de formes pour représenter les
-combinaisons linéaires de points dans les plongements utilisés ; il est
-temps d'utiliser les familles spécialisées pour chaque place, définies
-par~\eqref{e:def-wembclv}. Le calcul de degré du lemme~\ref{l:deg-wemba} reste
-valable et pour chaque \( \fcti \) les vecteurs \( \wembclv* (\cexa[\fcti],
-  \cexa[\puiss]) \) sont proportionnels entre eux pour tout \( \place \) et
-proportionnels à \( \cexi* = \wembcl* (\cexa[\fcti], \cexa[\puiss]) \). On
-a alors, pour tout \( \place \) :
+Pour tout place \( \place \) on note désormais \( \wembclv* =
+  \wembcl*_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \) où \( \wembcl* \)
+est défini par~\eqref{e:def-wembclm} et \( \clmap_{\wts*, \wts**, \ex*, \ex**,
+    \place} \) donné par le lemme~\ref{l:hclab}.  Ainsi, pour chaque \( \fcti
+\) les vecteurs \( \wembclv* (\cexa[\fcti], \cexa[\puiss]) \) sont
+proportionnels entre eux quand \( \place \) varie et proportionnels à \(
+  \cexi* \). On a alors, pour tout \( \place \) :
 \begin{align}
   \ratf2
   & =
@@ -2827,8 +2829,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }
 \end{align}
 où la dernière ligne n'est autre que la conclusion du lemme~\ref{l:hclab}
-compte tenu de la définition~\eqref{e:def-wembclv} de \( \wembclv* \).  On
-note désormais
+compte tenu de la définition de \( \wembclv* \) ci-dessus. On note désormais
 \begin{equation} \label{e:c-wembcl}
   C_\wembcl = \prod_\place \prod\fctirange \nnv1{ \wembclv* }^{\degv}
   \pmm,
@@ -2850,27 +2851,17 @@ simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
 de sorte qu'il ne contribue pas à faire diminuer la hauteur finale et qu'on a
 pas besoin de l'expliciter davantage.
 
-\begin{lem}
-  Pour chaque \( F''_\place = R(\vmp) \, F( \vmp; \wembcl(\vmp) ) \) on a \(
-    \inda(F''_\place) \ge \epsi \delta \).
-\end{lem}
-
-\begin{ideas}
-  L'idée générale est que c'est vrai pour \( F'' \) est que modulo l'idéal de
-  \( \var \) c'est presque pareil que \( F''_\place \), il y a juste un
-  facteur qui dérange. Il faudrait une meilleure notion d'indice le long de \(
-    \divi \cap \var \) pour faire marcher ça. À suivre.
-\end{ideas}
+\medskip
 
 Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} aux
 formes \( F''_\place \).  Comme l'indique la note~\ref{fn:coord-deshom}
 page~\pageref{fn:coord-deshom}, il est loisible d'utiliser sur chaque facteur
 \( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \) comme variable de
-déhomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ; simplement, les
+déshomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ; simplement, les
 polynômes fournis par le lemme dépendent de ce choix, donc en définitive de \(
   \place \), ce qui est déjà le cas.  Par ailleurs, chaque application du
-lemme founit deux familles de polynômes, satisfaisant respectivement des
-majorations de normes aux places finies ou infines ; on ne garde que celui
+lemme fournit deux familles de polynômes, satisfaisant respectivement des
+majorations de normes aux places finies ou infinies ; on ne garde que celui
 correspondant à l'indice \( \dermp \) fixé ci-dessus et la nature
 archimédienne ou non de la place considérée, de façon à obtenir une famille
 indexée par \( \place \) de polynômes \( P_\place \) et jouissant des
