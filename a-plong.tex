@@ -410,7 +410,7 @@ notre preuve de l'inégalité de \bsc{Vojta}.
   Dans le plongement \( \Theta \), il existe un ensemble \( \clmaps \) de \(
     \dimp+1 \) ouverts recouvrant \( \va^2 \) et, pour tout \( \clmap \in
     \clmaps \) et tout couple d'entiers \( a, b \) n'admettant que \( 2 \) et
-  \( 3 \) comme diviseurs premiers, une famille \( (L\pexp{\clmap, a, b}[l])_l
+  \( 3 \) comme diviseurs premiers, une famille \( (L\pexp{a, b, \clmap}[l])_l
   \) de formes bihomogènes de degré \( (2a^2, 2b^2) \) et de hauteur majorée
   par \( \hmclab^{a^2 + b^2} \), représentant \(
     \clab[-] ab \) sur \( \clmap \). De plus, pour
@@ -418,16 +418,16 @@ notre preuve de l'inégalité de \bsc{Vojta}.
   \) de \( \cdn \) et tous entiers \( a \) et \( b \) comme ci-dessus, il
   existe une carte \( \clmap_{a, b, x, y, \place} \in \clmaps \) telle que
   \begin{equation}
-    \hmclab*^{-(\alpha^2 + \beta^2)}
+    \hmclab*^{-(a^2 + b^2)}
     \le
     \frac{
-      \nv1{ L\pexp{ \clmap_{a, b, x, y, \place} }(x, y) }
+      \nv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} }(x, y) }
     }{
-      \nnv1{ L\pexp{ \clmap_{a, b, x, y, \place} } }
-      \nv1 x ^{2\alpha^2} \nv1 y ^{2\beta^2}
+      \nnv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} } }
+      \nv1 x ^{2a^2} \nv1 y ^{2b^2}
     }
     \le
-    \hmclab*^{\alpha^2 + \beta^2}
+    \hmclab*^{a^2 + b^2}
     \pmm.
   \end{equation}
 \end{lem}

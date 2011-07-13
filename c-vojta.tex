@@ -999,7 +999,7 @@ d'arrivée) des coordonnées multihomogènes \( \vmp, \vmpi = \vmp[1], \dots,
 implicitement \( 1 \le \fct \le \puiss \) et \( 1 \le \fcti \le \puiss-1 \).
 
 \nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant} Une
-représentation locale, définie sur un ouvert \( \opdef \),  de \( \wemb \)
+représentation locale, définie sur un ouvert \( \clmap \),  de \( \wemb \)
 dans ces plongements, est un morphisme \( \wemba \) tel que le diagramme
 suivant, dont les flèches verticales sont les projections canoniques, commute :
 \begin{equation}
@@ -1007,40 +1007,39 @@ suivant, dont les flèches verticales sont les projections canoniques, commute :
     \cdn [\vmp, \vmpi]                      \ar [r] ^{\wemba}   \ar [d]
     & \cdn [\vmp]                                               \ar [d] ^\pi
     \\ \cdn [\vmp, \vmpi] / \idealim \ar [r] ^{\wemb^*}
-    & ( \cdn [\vmp] / \varida )_\opdef
+    & ( \cdn [\vmp] / \varida )_\clmap
   }
 \end{equation}
 En bas, \( \idealim \) désigne l'idéal multihomogène de l'image
-dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\opdef \)
+dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\clmap \)
 désigne la localisation de l'anneau des coordonnées au départ correspondant à
-l'ouvert ouvert \( \opdef \).
+l'ouvert ouvert \( \clmap \).
 
 Introduisons des formes
 \begin{equation} \label{e:def-wembclv}
-  \wembclv*
-  = L\pexp{\wti*, \wti**}[{\ex[\fcti], \ex**, \place}]
+  \wembcl*_\clmap
+  = L\pexp{\wti*, \wti**, \clmap}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
-où \( L\pexp{\wti*, \wti**}[{\ex[\fcti], \ex**, \place}] \) est une famille
-de formes bihomogènes donnée par l'application du lemme~\ref{l:hclab} au
-plongement \( \Theta \).
-
-Nous n'utiliserons les propriétés locales de ces familles qu'à la
-section~\ref{sec:vojta-extrap-core}. Pour les prochaines étapes de la
-démonstration nous avons néanmoins besoin de fixer une représentation ; pour
-tout \( \fcti \), posons donc \( \wembcl* = \def\place{v_0}\wembclv* \) pour
-une place \( v_0 \) fixée arbitrairement. Nous utiliserons désormais
+où \( L\pexp{\wti*, \wti**, \clmap} \) est une famille de formes bihomogènes
+donnée par le lemme~\ref{l:hclab}, de sorte que \( \wembcl*_\clmap \)
+représente \( \clab[-]{\wti*}{\wti**} \) dans les plongements utilisés. Il est
+alors clair que chacune des applications
 \begin{align}
-     \wemba \colon \cdn [\vmp, \vmpi]
+     \wemba^\clmap \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
   \\ \vmp*
   &  \mapsto \vmp*
   \\ \vmpi*
-  &  \mapsto \wembcl*
+  &  \mapsto \wembcl*_{\clmap_\fcti}
 \end{align}
-comme une représentation locale de \( \wemb \) au voisinage de \( \ex \) au
-sens précédent. Étudions sans attendre son action sur le degré et la hauteur.
-Le lemme suivant est une conséquence immédiate de la définition.
+est une représentation locale de \( \wemb \) au voisinage de \( \ex \) au
+sens précédent, où \( \clmap \in \clmaps^{\puiss-1} \). Dans la suite de cette
+section, la carte \( \clmap \) choisie n'a pas d'importance, on notera donc
+simplement \( \wemba \) l'un des \( \wemba^\clmap \) pour alléger.
+
+Étudions maintenant l'action de \( \wemba \) sur le degré et la hauteur.  Le
+lemme suivant est une conséquence immédiate de la définition.
 
 \begin{lem} \label{l:deg-wemba}
   Soit \( F \in \Qbar[\vmp, \vmpi] \) une forme multihomogène de multidegré \(
@@ -1287,7 +1286,7 @@ Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
   \sigma \colon \fspace
   & \to
   \ftarget =
-  \bigoplus_{\clmap \in \clmaps} \bigl(
+  \bigoplus_{\clmap \in \clmaps^{\puiss-1}} \bigl(
     \cdn[\vmp]^{C'''}_\Dir
     \cap \vect( (\vmp^\imp)_{\wtsum*(\imp) < \epsi\delta} )
   \bigr)
@@ -1556,8 +1555,8 @@ et \( \ftarget \) est somme directe de tels espaces.
 \end{proof}
 
 Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du fait
-que \( \card \clmaps = \dimp + 1 \) d'après le lemme~\ref{l:hclab}, on a
-immédiatement
+que \( \card \clmaps = (\dimp + 1)^{\puiss-1} \) d'après le
+lemme~\ref{l:hclab}, on a immédiatement
 \begin{equation}
   \dim \ftarget
   \le
@@ -1566,7 +1565,7 @@ immédiatement
   \cdot
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)
+    \, (\dimp + 1)^{\puiss-1}
     \, \puiss^{\vdim[\puiss]}
     \, 3^{\vdim - \puiss}
   }{
@@ -1582,7 +1581,7 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
   & \le
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)
+    \, (\dimp + 1)^{\puiss-1}
     \, \puiss^{\vdim[\puiss]}
     \, 3^{\vdim - \puiss}
     \, \prod\fctrange \vdim*
@@ -1594,7 +1593,7 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
   \\ & \le
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)
+    \, (\dimp + 1)^{\puiss-1}
     \, \puiss ^{\genre}
     \, 3 ^{\puiss (\genre-1)}
     \, \genre^\puiss
