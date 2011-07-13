@@ -987,7 +987,7 @@
 \newcommand \Vanish {\@ifstar {\mathfrak{\tilde q}} {\mathfrak q}}
 
 \newcommand \wt@scale [1][\delta\epsi] { \sb{\wt} \sp{#1} }
-\newcommand \stairs {\Stairs\wt@scale}
+\newcommand \stairs {\Stairs}
 \newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
 
 \nomdef \stairs a {E} \@gobbletwo{\stairs}{Cylindre sur le dessus de
@@ -1012,6 +1012,8 @@
 
 % the space were the auxiliary form is to be found
 \newcommand \fspace { \mathcal{\tilde F}_{\Dz} }
+% the target of \sigma, where the aux form's image is to be null
+\newcommand \ftarget { \mathcal{G}_{\Dir} }
 
 % the product sub-variety considered and its attributes [[2
 %

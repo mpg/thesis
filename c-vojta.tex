@@ -1283,9 +1283,10 @@ grand pour que la dimension de \( \fspace \) coïncide avec la valeur du
 polynôme de \bsc{Hilbert} de \( \idealim \) en \( \Dz \).
 
 Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
-\begin{align}
+\begin{align} \label{e:def-ftarget}
   \sigma \colon \fspace
   & \to
+  \ftarget =
   \bigoplus_{\clmap \in \clmaps} \bigl(
     \cdn[\vmp]^{C'''}_\Dir
     \cap \vect( (\vmp^\imp)_{\wtsum*(\imp) < \epsi\delta} )
@@ -1387,7 +1388,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   Le résultat suit en prenant le produit.
 \end{proof}
 
-\begin{lem}
+\begin{lem} \label{l:dim-fspace}
   Avec les notations précédentes, on a
   \begin{align}
     \dim \fspace
@@ -1427,11 +1428,11 @@ tout ce qu'on aura besoin de savoir sur le degré.
   combinant avec le résultat du lemme précédent.
 \end{proof}
 
-Nous allons maintenant calculer la codimension de $\vanish*$ dans
-$\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
+Il reste à majorer la dimension de \( \ftarget \).  On introduit à cet effet
+l'ensemble suivant :
 \begin{equation} \label{e:stairs-c3}
   \begin{split}
-    (\stairs)\Ciii
+    \stairs
     & =
     \Biggl\{
       ( \imp[1], \dots, \imp[\puiss] )
@@ -1443,7 +1444,7 @@ $\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
       \bigr)
       \\ & \qquad
       \text{tel que }
-      \wtsum*(\lambda) \le \delta \epsi
+      \wtsum*(\lambda) < \delta \epsi
       \text{ et }
       \lgr{\imp*}
       = \Dir* \quad \forall \fct
@@ -1451,34 +1452,37 @@ $\cdn[\vmp]\Ciii$. On introduit à cet effet l'ensemble suivant :
     \pmm,
   \end{split}
 \end{equation}
-dont il s'agit de calculer le cardinal. En effet,
-\( \vanish* \cap \cdn [\vmp]\Ciii \)
-est le sous-espace engendré par les monômes dont les exposants ne sont pas
-dans \( (\stairs)\Ciii \).
+dont il s'agit de calculer le cardinal. En effet, la famille \(
+  (\vmp^\imp)_{\imp \in \stairs} \) forme une base de
+\(
+  \cdn[\vmp]^{C'''}_\Dir
+  \cap \vect( (\vmp^\imp)_{\wtsum*(\imp) < \epsi\delta} )
+\)
+et \( \ftarget \) est somme directe de tels espaces.
 
 \begin{lem}
   Avec les notations précédentes,
   \begin{align}
-    \card (\stairs)\Ciii
+    \card \stairs
     & \le
     \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
     \prod\fctrange \vdeg* \wt*^{2\vdim*}
-    \\ & \qquad \cdot
+    \cdot
     \frac {
-      \epsi^\puiss (\puiss-1)
-      (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
-      (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
+      \epsi^\puiss
+      \, \puiss^{\vdim[\puiss]}
+      \, 3^{\vdim - \puiss}
       }{
-      \puiss! \prod\fctrange (\vdim* - 1)!
+      \puiss!
+      \, \prod\fctrange (\vdim* - 1)!
       }
   \end{align}
 \end{lem}
 
 \begin{proof}
-  Pour choisir un point dans \( (\stairs)\Ciii \), on peut commencer par
-  choisir \( \imp*[\vdim*] \) entre \( 0 \) et \( \vdeg* \)
-  pour tout \( \fct \), ce qui représente \( \prod\fctrange \vdeg* \)
-  possibilités.
+  Pour choisir un indice \( \imp \) dans \( \stairs \), on peut commencer par
+  choisir \( \imp*[\vdim*] \) entre \( 0 \) et \( \vdeg* \) pour tout \( \fct
+  \), ce qui représente \( \prod\fctrange \vdeg* \) possibilités.
 
   On peut ensuite choisir \( \imp[1][0], \dots \imp[\puiss][0] \)
   sujets à la seule condition
@@ -1524,62 +1528,87 @@ dans \( (\stairs)\Ciii \).
     + o( \delta^{\vdim* - 1} )
   \end{align}
   On prend alors le produit :
-  \begin{equation}
-    \card (\stairs)\Ciii
-    \le
+  \begin{align}
+    \card \stairs
+    & \le
     \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
     \cdot \prod\fctrange
     \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - 1)!}
     \vdeg* \delta^{\vdim* - 1}
     + o( \delta^\vdim )
-  \end{equation}
-  et le résultat suit en remplaçant \( d'_\fct \) par sa valeur : \(
-    \wts[\puiss] (2\puiss - 2 + \epsz) \) si \( \fct = \puiss \) et \( \wts*
-    (2 + \epsz) \) sinon.
+    \\ & \le
+    \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
+    \prod\fctrange \vdeg* \wt*^{2\vdim*}
+    \cdot
+    \frac {
+      \epsi^\puiss (\puiss-1)
+      (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
+      (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
+      }{
+      \puiss! \prod\fctrange (\vdim* - 1)!
+      }
+  \end{align}
+  d'après la définition~\eqref{e:d-dp-def} de \( d' \). Le résultat annoncé
+  suit en remarquant que \( 2 + \epsz \le 3 \) et \( 2\puiss - 2 + \epsz \le
+    3\puiss \).
 \end{proof}
 
-Au vu des deux lemmes précédents, en remarquant que \( \epsz < 1 \) et \(
-  \vdim* \le \genre \), on a
+Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du fait
+que \( \card \clmaps = \dimp + 1 \) d'après le lemme~\ref{l:hclab}, on a
+immédiatement
+\begin{equation}
+  \dim \ftarget
+  \le
+  \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
+  \prod\fctrange \vdeg* \wt*^{2\vdim*}
+  \cdot
+  \frac {
+    \epsi^\puiss
+    \, (\dimp + 1)
+    \, \puiss^{\vdim[\puiss]}
+    \, 3^{\vdim - \puiss}
+  }{
+    \puiss!
+    \, \prod\fctrange (\vdim* - 1)!
+  }
+  \pmm.
+\end{equation}
+En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
+\( \vdim* \le \genre \), on a
 \begin{align}
-  \frac {\card (\stairs)\Ciii} {\dim \fspace}
+  \frac {\dim \ftarget} {\dim \fspace}
   & \le
   \frac {
-    \epsi^\puiss (\puiss-1)
-    (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
-    (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
-    \prod\fctrange \vdim*
+    \epsi^\puiss
+    \, (\dimp + 1)
+    \, \puiss^{\vdim[\puiss]}
+    \, 3^{\vdim - \puiss}
+    \, \prod\fctrange \vdim*
   }{
-    \epsz^{\vdim[\puiss]} \puiss!
-  }
-  + o(1)
-  \\ & \le
-  \frac {
-    \epsi^\puiss (\puiss-1)
-    \, \puiss ^{\vdim[\puiss]-1}
-    \, 2 ^{\vdim[\puiss]-1}
-    (2 + \epsz) ^{\puiss\genre - \puiss - \vdim[\puiss] + 1}
-    \genre^\puiss
-  }{
-    \epsz^\genre \puiss!
+    \epsz^{\vdim[\puiss]}
+    \, \puiss!
   }
   + o(1)
   \\ & \le
   \frac {
     \epsi^\puiss
-    \puiss ^{\genre}
-    3 ^{\puiss (\genre-1)}
-    \genre^\puiss
+    \, (\dimp + 1)
+    \, \puiss ^{\genre}
+    \, 3 ^{\puiss (\genre-1)}
+    \, \genre^\puiss
   }{
-    \epsz^\genre \puiss!
+    \epsz^{\vdim[\puiss]}
+    \, \puiss!
   }
   + o(1)
   \pmm.
 \end{align}
+\todo[reprendre avec les bonnes valeurs des \( \eps \)]%
 On utilise alors la définition \eqref{e:def-epsz} de \( \epsz \), le fait que
 \( \puiss \ge \genre + 1 \) et la minoration classique \( \puiss! \ge
   \puiss^\puiss \expb^{-\puiss} \) pour écrire
 \begin{align}
-  \frac {\card (\stairs)\Ciii} {\dim \fspace}
+  \frac {\dim \ftarget} {\dim \fspace}
   & \le
   \frac {
     \epsi^{\puiss-\genre}
@@ -1607,7 +1636,7 @@ puis on remarque que la définition \eqref{e:def-epsi} de \( \epsi \) entraîne
 facilement, en utilisant à nouveau le fait que \( \puiss \ge \genre + 1 \ge 2
 \), que
 \begin{equation} \label{e:good-codim}
-  \frac {\card (\stairs)\Ciii} {\dim \fspace}
+  \frac {\dim \ftarget} {\dim \fspace}
   \le
   \frac12
   + o(1)
