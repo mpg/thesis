@@ -1685,12 +1685,12 @@ majore ensuite \( 2\dimp \ln B + 12 (B(\genre+1) + 1) \ln(2B) \) assez
 largement par \( 12 \dimp B^2 = 12 \dimp \cst{vs-deg-prod}^{-2}
   \Lambda^{2f(\vdim)} \). Enfin, on utilise~\eqref{e:varset-ht} pour conclure
 que
-\begin{equation} \label{e:nv-mat-sigma}
+\begin{equation} \label{e:hmat-sigma}
   \hautl[\infty]{M_\sigma}
   \le
-  2 \delta \Lambda^{2f(\vdim)} \left(
+  2 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
     4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
-  \right)
+  \right) + o(\delta)
   \pmm.
 \end{equation}
 
@@ -1732,44 +1732,19 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \begin{equation}
     \hautl[\infty] F
     \le
-    \delta \wts[1] \Lambda^{2\,f(u)} \bigl(
-      5\puiss \cst{vs-ht}
-      + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
-    \bigr)
-    + o(\delta)
+    2 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
+      4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
+    \right) + o(\delta)
     \pmm.
   \end{equation}
 \end{prop}
 
 \begin{proof}
-  On reprend le diagramme~\eqref{e:diag-f-aux}, dont la première ligne est
-  maintenant bien définie. On considère le produit \( M'' \) des matrices des
-  applications \( \wemba \), \( \rdiv^\Di \), \( \relim \) et \(
-  \rdiv^\Dir \) composées dans cet ordre. Ses lignes sont naturellement
-  indexées par l'ensemble des multiindices
-  \begin{equation}
-    \left\{
-      \imp \in \prod\fctrange \bigl(
-      \N^{\vdim* + 1}
-      \times \{ 0, \dots, \vdeg* - 1 \}
-      \times \{ 0 \}^{\dimp - \vdim* - 1}
-      \bigr)
-      \text{ tel que }
-      \lgr{\imp*} = \Dir*
-      \ \forall \fct
-      \right\}
-    \pmm.
-  \end{equation}
-  On ne garde de \( M'' \) que les lignes dont l'indice appartient à l'ensemble
-  \( (\stairs)\Ciii \) défini par~\eqref{e:stairs-c3} pour former la matrice
-  \( M' \), dont les colonnes sont naturellement indexées par les monômes de
-  multidegré \( \Dz \) en \( (\vmp, \vmpi) \). On extrait alors de
-  \( M' \) les colonnes indexées par des monômes constituant une base
-  de \( \fspace \) pour former la matrice \( M \) à laquelle nous allons
-  appliquer le fait~\ref{f:siegel}, et dont on note \( p, q \) les dimensions.
-
-  La relation~\eqref{e:good-codim} se lit alors \( \frac pq \le \frac12 + o(1)
-  \), ce qui implique directement que \( p < q \) et que
+  On applique le fait~\ref{f:siegel} à la matrice \( M_\sigma \) introduite à
+  la sous-section précédente, de dimensions \( p = \dim \ftarget \) et \( q =
+    \dim \fspace \) estimées précédemment.  La relation~\eqref{e:good-codim}
+  se lit alors \( \frac pq \le \frac12 + o(1) \), ce qui implique directement
+  que \( p < q \) et que
   \begin{equation}
     \frac p {q-p}
     \le
@@ -1783,78 +1758,8 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   De même, \( \frac q {q-p} c_\cdn = o(\delta) \) ;
   en remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
   forme \( F \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
-  par \( \hautl[\infty] M + o(\delta) \) ; il reste donc à estimer cette
-  hauteur.
-
-  On utilise le fait élémentaire suivant : si \( A \) et \( B \) sont deux
-  matrices telles que le produit \( A \cdot B \) est défini, alors
-  \( \hautl[\infty]{AB} \) est majorée par la somme de \( \hautl[\infty] A \)
-  et d'un majorant de \( \hautl[1] c \) où \( c \) parcourt les colonnes
-  de \( B \).
-
-  Or, d'après le lemme~\ref{l:hmat-wemba}, la hauteur \( \Hautl[1] \) des
-  colonnes de la matrice de \( \wemba \) est majorée par
-  \begin{equation}
-    \delta \wts[1]
-    \Bigl(
-      2 \hlclab + 4(\dimp+1) \ln(\dimp+1) + 4 \dimp \ln B
-    \Bigr)
-    \pmm,
-  \end{equation}
-  d'après le corollaire~\ref{c:hmat-rdiv} (et en remarquant que \( d'_\fct \le
-    2\puiss \wts* \) pour tout \( \fct \)), celle des colonnes
-  des matrices de \( \rdiv^\Di \) et \( \rdiv^\Dir \) est majorée par
-  \begin{equation}
-    \delta
-    2\puiss \sum\fctrange \wts* \Bigl(
-      \hautl[1]{\varfc*}
-      + (\vdeg* (\vdim* + 1) + 1) \ln(4\vdegp*)
-    \Bigr)
-    + o(\delta)
-    \pmm,
-  \end{equation}
-  et d'après le corollaire~\ref{c:hmat-relim} celle des colonnes de la matrice
-  de \( \relim \) est un \( o(\delta) \). En sommant (en comptant bien deux
-  fois le majorant commun des hauteurs des deux \( \rdiv \)) et en majorant
-  certains \( \wt* \) par \( \wt[1] \), il vient
-  \begin{align}
-    \frac1\delta \hautl[\infty] M - o(1)
-    & \le
-    4\puiss \sum\fctrange \wts* \hautl[1]{\varfc*}
-    + \wts[1] \Bigl(
-      2 \bigl( \hlclab + 2(\dimp+1) \ln(\dimp+1) \bigr)
-      \\ & \qquad
-      + 4 \dimp \ln B
-      + \sum\fctrange \bigl(
-        2 \ln(4\vdegp*) (\vdeg* (\vdim* + 1) + 1)
-      \bigr)
-    \Bigr)
-    \\ & \le
-    \wts[1] \Bigl(
-      4\puiss \cst{vs-ht} \Lambda^{2\,f(u)}
-      + 2 \hlclab + 4(\dimp+1)^2
-      \\ & \qquad
-      + 4 \dimp \ln B
-      + 2 \ln(2B) (B (\vdim + \puiss) + \puiss)
-    \Bigr)
-  \end{align}
-  \worknote{Majoration « grossière » à revoir une fois \( \Lambda \) connu.}%
-  où l'on rappelle que \( B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \) est un
-  majorant uniforme des \( \vdeg* \) pour la seconde inégalité. On majore
-  alors grossièrement la dernière ligne par \( 2 (\dimp + \puiss + \vdim) B^2
-  \) puis \( \puiss + \vdim \) par \( \puiss^2 \) et on absorbe (toujours
-  grossièrement) les termes en \( \hlclab \) et \( \dimp \) dans celui en \(
-    \cst{vs-ht} \) pour aboutir à
-  \begin{equation}
-    \hautl[\infty] M
-    \le
-    \delta \wts[1] \Lambda^{2\,f(u)} \bigl(
-      5\puiss \cst{vs-ht}
-      + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
-    \bigr)
-    + o(\delta)
-  \end{equation}
-  qui équivaut au résultat annoncé.
+  par \( \hautl[\infty]{M_\sigma} + o(\delta) \).  Il ne reste plus qu'à
+  invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
 \end{proof}
 
 
