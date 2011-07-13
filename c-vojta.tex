@@ -916,7 +916,7 @@ en pratique on fera tendre ce dernier vers l'infini ; c'est en ce sens qu'il
 faut comprendre la notation \( o \) dans le lemme suivant, qui résume la
 construction de \( \rfull^\alpha \) à partir des briques précédentes.
 
-\begin{lem}
+\begin{lem} \label{l:rfull}
   Pour tout multidegré \( \alpha \in \N^\puiss \) il existe une application
   linéaire
   \begin{equation}
@@ -930,11 +930,11 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
   norme \( \nv\infty\truc \) majorée par
   \begin{equation}
     \prod\fctrange \left(
-    \nv1{ \varfc* }
-    2 B^{(B(\genre+1) + 1)\dv}
-  \right) ^{ 2\alpha_\fct }
-  \cdot \expb^{o(\alpha)}
-  \pmm.
+      \nv1{ \varfc* }
+      2 B^{(B(\genre+1) + 1)\dv}
+    \right) ^{ 2\alpha_\fct }
+    \cdot \expb^{o(\alpha)}
+    \pmm.
   \end{equation}
   En particulier, on a \( \ker \rfull^\alpha = \cdn[ \vmp ]_\alpha \cap
     \varida \).
@@ -952,7 +952,7 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
     M_2 \) sont deux matrices, la norme \( \nv\infty\truc \) de leur produit
   est majorée par \( \nv\infty{M_1} \max(\nv1{c}) \) où \( c \) parcourt les
   colonnes de \( M_2 \). On absorbe par ailleurs les constantes ne dépendant
-  pas de \( \alpha \), à savoir le \( r \) et la norme de \( \rdiv \), dans le
+  pas de \( \alpha \), à savoir le \( r \) et la norme de \( \relim \), dans le
   \( o(\alpha) \).
 
   Pour le noyau, considérons une forme \( H \) de multidegré \( \alpha \). On
@@ -1137,7 +1137,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \begin{equation}
     \hautm[1]{c_{p, q}}
     \le
-    \bigl((
+    \bigl(
       \hmclab (\dimp+1)!^2 \, B^{2\dimp}
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
@@ -1225,7 +1225,7 @@ sous-section~\ref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
 Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
 qui sera crucial pour la section~\ref{sec:thm-prod}.
 Pour toute forme \( H = \sum h_\imp \vmp^\imp \), on pose
-\begin{equation} 
+\begin{equation} \label{e:def-pi-beta}
   \pi_\beta (H)
   =
   \sum_{\wtsum*( \imp ) < \beta}
@@ -1294,7 +1294,9 @@ Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
   \\
   F
   & \mapsto
-  \bigl( \pi_{\epsi\delta} \circ \rfull \circ \wemba^\clmap(F) \bigr)_\clmap
+  \bigl(
+    \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba^\clmap(F)
+  \bigr)_\clmap
 \end{align}
 de sorte qu'il s'agit en fait de trouver une forme non nulle dans le noyau de
 \( \sigma \). Pour procéder nous devons donc :
@@ -1640,6 +1642,55 @@ facilement, en utilisant à nouveau le fait que \( \puiss \ge \genre + 1 \ge 2
   \le
   \frac12
   + o(1)
+  \pmm.
+\end{equation}
+
+
+\subsection{Hauteur du système}
+
+Il s'agit d'estimer la hauteur de la matrice (dans les bases monomiales
+canoniques) \( M_\sigma \) de l'application \( \sigma \) définie
+par~\eqref{e:def-ftarget}. Nous utiliserons ici la norme \( \nv\infty\truc \)
+en chaque place, de sorte que la norme de la matrice de \( \sigma \) sera
+majorée par tout majorant commun des normes des matrices des applications
+\( \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba^\clmap(F) \).
+
+D'après la définition~\eqref{e:def-pi-beta} de \( \pi_{\epsi\delta} \) il est
+clair que cette application ne peut que faire décroître la norme. Par
+ailleurs, on se souvient que, si \( M_1 \) et \( M_2 \) sont deux matrices, la
+hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
+  \hautl[\infty]{M_1} + \max(\hautl[1]{c}) \) où \( c \) parcourt les colonnes
+de \( M_2 \). Il ne reste plus qu'à combiner les estimations des
+lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
+\begin{align}
+  \hautl[\infty]{M_\sigma}
+  & \le
+  2 \delta \wts[1]
+  \bigl(
+    \hlclab + 2\ln((\dimp+1)!) + 2\dimp \ln B
+  \bigr)
+  \\ & \qquad +
+  \sum\fctrange 2\Di* \left(
+    \hautl[1]{ \varfc* }
+    + (B(\genre+1) + 1) \ln(2B)
+  \right)
+  + o(\delta)
+  \pmm.
+\end{align}
+On majore alors \( \hlclab + 2\ln((\dimp+1)!) \) par \( 3\cst{vs-ht} \)
+d'après~\eqref{e:cst-vs-ht} ; on observe ensuite que \( \sum\fctrange 2\Di*
+  \le 12 \wts[1] \) d'après le lemme~\ref{l:sum-wts}, la
+définition~\eqref{e:d-dp-def} de \( d' \) et le fait que \( \epsz \le 1 \). On
+majore ensuite \( 2\dimp \ln B + 12 (B(\genre+1) + 1) \ln(2B) \) assez
+largement par \( 12 \dimp B^2 = 12 \dimp \cst{vs-deg-prod}^{-2}
+  \Lambda^{2f(\vdim)} \). Enfin, on utilise~\eqref{e:varset-ht} pour conclure
+que
+\begin{equation} \label{e:nv-mat-sigma}
+  \hautl[\infty]{M_\sigma}
+  \le
+  2 \delta \Lambda^{2f(\vdim)} \left(
+    4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
+  \right)
   \pmm.
 \end{equation}
 
