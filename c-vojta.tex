@@ -1078,20 +1078,21 @@ paramètres qui seront utilisés tout au long de ce chapitre et qui contrôlent
 notamment le degré en lequel nous établirons ces estimations.
 
 Introduisons un réel \( \epsi \) défini par :
-\todo[corriger pour conserver \eqref{e:good-codim} avec le nouveau \( \epsz \)]
 \begin{equation} \label{e:def-epsi}
   \epsi =
   \eps^{\frac{\genre}{\puiss-\genre}}
   \cdot \Bigl(
-    \puiss^{2\puiss} 3^{\genre (\puiss+2)}
+    (\dimp + 1)^{\puiss-1}
+    \, 3 ^{\puiss \genre}
+    \, \genre^\puiss
+    \, (33\puiss)^\genre
   \Bigr)^{\frac{-1}{\puiss-\genre}}
 \end{equation}
 et un rationnel \( \epsz \) tel que :
-\todo[corriger pour avoir \eqref{e:epsz-ct-extra}]
 \begin{equation} \label{e:def-epsz}
-  \frac{\eps \eps}{9\puiss}
+  \frac{\eps \eps}{33\puiss}
   \le \epsz \le
-  \frac{\eps \eps}{8\puiss}
+  \frac{\eps \eps}{32\puiss}
   \pmm,
 \end{equation}
 et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
@@ -1570,7 +1571,7 @@ et \( \ftarget \) est somme directe de tels espaces.
 \end{proof}
 
 Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du fait
-que \( \card \clmaps = (\dimp + 1)^{\puiss-1} \) d'après le
+que \( \card \clmaps^{\puiss-1} = (\dimp + 1)^{\puiss-1} \) d'après le
 lemme~\ref{l:hclab}, on a immédiatement
 \begin{equation}
   \dim \ftarget
@@ -1613,44 +1614,48 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
     \, 3 ^{\puiss (\genre-1)}
     \, \genre^\puiss
   }{
-    \epsz^{\vdim[\puiss]}
+    \epsz^\genre
     \, \puiss!
   }
   + o(1)
   \pmm.
 \end{align}
-\todo[reprendre avec les bonnes valeurs des \( \eps \)]%
-On utilise alors la définition \eqref{e:def-epsz} de \( \epsz \), le fait que
-\( \puiss \ge \genre + 1 \) et la minoration classique \( \puiss! \ge
-  \puiss^\puiss \expb^{-\puiss} \) pour écrire
+On utilise alors la définition \eqref{e:def-epsz} de \( \epsz \) et la
+minoration classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour
+écrire
 \begin{align}
   \frac {\dim \ftarget} {\dim \fspace}
   & \le
   \frac {
     \epsi^{\puiss-\genre}
-    \puiss ^{\genre}
-    3 ^{\puiss (\genre-1)}
-    \genre^\puiss
-    (9\puiss)^\genre
-    \expb^\puiss
+    \, (\dimp + 1)^{\puiss-1}
+    \, \puiss ^{\genre}
+    \, 3 ^{\puiss (\genre-1)}
+    \, \genre^\puiss
+    \, (33\puiss)^\genre
+    \, \expb^\puiss
   }{
-    \eps^\genre \puiss^\puiss
+    \eps^\genre
+    \, \puiss^\puiss
   }
   + o(1)
   \\ & \le
+  \frac 1 { \puiss^{\puiss-\genre} }
+  \cdot
   \frac {
     \epsi^{\puiss-\genre}
-    3 ^{\puiss \genre}
-    \genre^\puiss
-    (9\puiss)^\genre
+    \, (\dimp + 1)^{\puiss-1}
+    \, 3 ^{\puiss \genre}
+    \, \genre^\puiss
+    \, (33\puiss)^\genre
   }{
-    \eps^\genre \puiss
+    \eps^\genre
   }
   + o(1)
 \end{align}
-puis on remarque que la définition \eqref{e:def-epsi} de \( \epsi \) entraîne
-facilement, en utilisant à nouveau le fait que \( \puiss \ge \genre + 1 \ge 2
-\), que
+puis on remarque que la définition \eqref{e:def-epsi} de \( \epsi \) signifie
+précisément que le premier facteur vaut \( 1 \) ; en utilisant alors le fait
+que \( \puiss \ge \genre + 1 \ge 2 \), il vient enfin
 \begin{equation} \label{e:good-codim}
   \frac {\dim \ftarget} {\dim \fspace}
   \le
