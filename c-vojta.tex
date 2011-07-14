@@ -1034,7 +1034,7 @@ encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
   \fcti \) et \( \fcti + 1 \). On introduit alors pour chaque \( \fcti \) la
 forme
 \begin{equation} \label{e:def-wembclm}
-  \wembcl*_{\clmap_\fcti}
+  \wembcl*_\clmap
   = L\pexp{\wti*, \wti**, \clmap_\fcti}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
@@ -1802,6 +1802,8 @@ précédente.
   On rappelle qu'on note \( F''_\clmap = \rfull \circ \wemba^\clmap(F) \) pour
   toute carte \( \clmap \in \clmaps^{\puiss-1} \). Ces formes satisfont alors
   \begin{enumthm}
+    \item \( F''_\clmap = R \cdot F(\vmp, \wembcl_\clmap(\vmp)) \mod \varida
+      \) ;
     \item \( \inda* F''_\clmap \ge \epsi \delta \) ;
     \item \( \deg F''_\clmap = \Dir \) avec
       \(
@@ -1813,25 +1815,25 @@ précédente.
         \bigr)
       \) ;
     \item \(
-        \hautl[1]{F''_\clmap}
+        \nv1{F''_\clmap}
         \le
-        4 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
-          4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
-        \right) + o(\delta)
+        \nv1{F}
+        \prod\fctrange \left(
+          \nv1{ \varfc* }
+          2 B^{(B(\genre+1) + 1)\dv}
+        \right) ^{ 2\Di* }
+        \prod\fctirange
+        \nv1{ \wembcl*_\clmap }^\delta
+        \cdot \expb^{o(\delta)}
       \).
   \end{enumthm}
 \end{scho}
 
 \begin{proof}
-  Les deux premiers points ne sont qu'un rappel de la construction.
-  Pour le dernier point, on utilise la définition de \( F''_\clmap \) et la
-  fait que la majoration donnée par~\eqref{e:hmat-sigma} pour la hauteur de la
-  matrice de \( \sigma \) est valable (par construction) pour celle de la
-  matrice de \( \rfull \circ \wemba^\clmap \). Comme c'est cette quantité qui
-  détermine la hauteur de \( F \), il est clair qu'on peut majorer celle de \(
-    F''_\clmap \) par le double de la majoration annoncé pour cette dernière,
-  en utilisant si on veut la hauteur \( \Hautl[1] \) par un argument similaire
-  à celui du scolie précédent.
+  Les trois premiers points ne sont qu'un rappel de la construction, en se
+  souvenant du lemme~\ref{l:rfull}, de la définition de \( \wemba^\clmap \) et
+  de ses propriétés (sous-section~\ref{sec:wemb}). Le dernier point découle
+  des propriétés classiques de la norme ainsi que du lemme~\ref{l:rfull}.
 \end{proof}
 
 
@@ -3207,7 +3209,9 @@ d'autre part pour obtenir
 
 Intéressons-nous maintenant à hauteur de la famille \( (P_\place)_\place \),
 dont les normes locales sont données par le point~\ref{i:norm-p-der}
-page~\pageref{i:norm-p-der}. Compte tenu de \eqref{e:nv-varfca}, on a
+page~\pageref{i:norm-p-der}. Compte tenu de \eqref{e:nv-varfca} et du dernier
+point du scolie~\ref{s:aux-co}, il vient
+\todo[un terme oublié en reportant le résultat du scolie]
 \begin{align}
   \hautl[1]{ (P_\place)_\place }
   & \le
