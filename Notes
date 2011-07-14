@@ -1,7 +1,7 @@
 Next actions
 ============
 
-Les (A) de Maths/Vojta.
+Les (A) de Maths/Vojta, puis les (B) et Maths/Vojta et Rédaction/Vojta
 
 Rédaction {{{1
 =========
@@ -107,6 +107,22 @@ systématiquement la norme ou mesure archimédienne utilisée
 Vojta {{{2
 -----
 
+(B) Reprendre notations dans la partie dérivées :
+    - Q en conflit avec \pden dans la démo du premier lemme
+    - prendre X_0 pour déshomogénéiser partout, et indice par rapport à une
+      variable quelconque
+
+(B) pour \rfull etc : mettre le degré en bas (plus cohérent avec les parties
+homogènes)
+
+(B) Macros pour F, F', F'' et _\clmap. F' peut disparaître et F'' peut être
+noté F'
+
+(B) Macro pour \wemclm, \wemba^\clmap etc.
+
+(B) Récrire l'estimation (représentation ?) de dérivées en remplaçant s par 0
+comme l'indique la note
+
 Plongements et formulaires {{{2
 --------------------------
 
@@ -123,14 +139,19 @@ Vojta {{{2
 -----
 
 (A) Finir premier jet :
-    - lemmes sur l'indice
     - application thm du produit
     - premier bouclage grossier des constantes
 
-(B) Reprendre notations dans la partie dérivées :
-    - Q en conflit avec \pden dans la démo du premier lemme
-    - prendre X_0 pour déshomogénéiser partout, et indice par rapport à une
-      variable quelconque
+(B) Écrire la preuve du deuxième point de s:part-cases
+
+(B) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
+fine pour le deuxième \rdiv
+
+(B) Pour l'extrapolation, introduire directement \ratf2 et laisser béton la
+première, et du coupe le lemme d'égalité des indices.
+
+(C) Dans la représentation des dérivées, on pourrait se limiter aux formes
+dans k[X]^{C'''}, est-ce utile ?
 
 (C) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
 faire exclusivement pour Vojta (par opposition à l'énoncé final) ??

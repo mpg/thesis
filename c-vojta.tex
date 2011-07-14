@@ -663,12 +663,13 @@ vérifier que les dimensions de \( \cdn[ \vmp ]^{C'''}_{\delta} \) et \(
 vers l'infini, de sorte que le morphisme de réduction, qui est injectif, n'est
 pas très loin d'être un isomorphisme en degré assez grand.
 
-Nous allons maintenant expliciter des applications linéaires \( \rfull^\beta
-\) définies sur chaque partie homogène \( \cdn[ \vmp ]_\beta \) pour \( \beta
-  \in \N^\puiss \) et à valeurs dans \( \cdn[ \vmp ]^{C'''} \), qui permet par
-exemple de déterminer l'appartenance à \( \varida \) d'une forme homogène.
+Nous allons maintenant expliciter, en chaque multidegré \( \beta \in \N^\puiss
+\), une application linéaire \( \rfull^\beta \) définie sur la partie homogène
+\( \cdn[ \vmp ]_\beta \) et à valeurs dans \( \cdn[ \vmp ]^{C'''} \), qui
+permet par exemple de déterminer l'appartenance à \( \varida \) d'une forme
+homogène.
 
-L'idée générale est la suivante : on peut exploiter les
+L'idée générale est la suivante : on peut exploiter les relations de
 dépendance des dernières variables sur les premières données par le
 fait~\ref{f:plong-adapt-dep} pour réduire le degré en les dernières variables,
 et le deuxième point de la définition~\ref{d:plong-adapt} permet même
@@ -963,6 +964,10 @@ construction de \( \rfull^\alpha \) à partir des briques précédentes.
     ]^{C'''} = \set0 \).
 \end{proof}
 
+Notons qu'en prenant la somme, on peut définir une application linéaire \(
+  \rfull \) sur \( \cdn[\vmp] \) entier ; on utilisera cette notation quand il
+ne sera pas utile de préciser le degré.
+
 
 \subsection{Plongement abélien pondéré}
 \label{sec:wemb}
@@ -998,10 +1003,11 @@ d'arrivée) des coordonnées multihomogènes \( \vmp, \vmpi = \vmp[1], \dots,
   \fct \) et \( \fcti \) sont deux indices non précisés, on supposera
 implicitement \( 1 \le \fct \le \puiss \) et \( 1 \le \fcti \le \puiss-1 \).
 
-\nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant} Une
-représentation locale, définie sur un ouvert \( \clmap \),  de \( \wemb \)
-dans ces plongements, est un morphisme \( \wemba \) tel que le diagramme
-suivant, dont les flèches verticales sont les projections canoniques, commute :
+\nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant}
+Une représentation de \( \wemb \) dans ces plongements, définie sur un ouvert
+\( \clmap \) de \( \va^\puiss \), est un morphisme \( \wemba \) tel que le
+diagramme suivant, dont les flèches verticales sont les projections
+canoniques, commute.
 \begin{equation}
   \xymatrix{
     \cdn [\vmp, \vmpi]                      \ar [r] ^{\wemba}   \ar [d]
@@ -1013,18 +1019,27 @@ suivant, dont les flèches verticales sont les projections canoniques, commute :
 En bas, \( \idealim \) désigne l'idéal multihomogène de l'image
 dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\clmap \)
 désigne la localisation de l'anneau des coordonnées au départ correspondant à
-l'ouvert ouvert \( \clmap \).
+l'ouvert \( \clmap \).
 
-Introduisons des formes
+Le lemme~\ref{l:hclab} fournit un atlas \( \clmaps \) de \( \va^2 \) avec
+sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x -
+  \beta y \) dans le plongement \( \Theta \). Voyons comment en déduire un
+atlas de \( \va^\puiss \) et des représentations locales de \( \wemb \) dans
+les plongements considérés.
+
+Soit \( \clmap = (\clmap_1, \dots, \clmap_{\puiss-1}) \in \clmaps^{\puiss-1}
+\). On lui associe un ouvert de \( \va^\puiss \), que par abus on notera
+encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
+  \clmap_\fcti ) \) où \( p_\fcti \) désigne la projection sur les facteurs \(
+  \fcti \) et \( \fcti + 1 \). On introduit alors pour chaque \( \fcti \) la
+forme
 \begin{equation} \label{e:def-wembclm}
-  \wembcl*_\clmap
-  = L\pexp{\wti*, \wti**, \clmap}
+  \wembcl*_{\clmap_\fcti}
+  = L\pexp{\wti*, \wti**, \clmap_\fcti}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
-où \( L\pexp{\wti*, \wti**, \clmap} \) est une famille de formes bihomogènes
-donnée par le lemme~\ref{l:hclab}, de sorte que \( \wembcl*_\clmap \)
-représente \( \clab[-]{\wti*}{\wti**} \) dans les plongements utilisés. Il est
-alors clair que chacune des applications
+où \( L\pexp{\wti*, \wti**, \clmap_\fcti} \) est donnée par le
+lemme~\ref{l:hclab}, de sorte que chacune des applications
 \begin{align}
      \wemba^\clmap \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
@@ -1033,10 +1048,10 @@ alors clair que chacune des applications
   \\ \vmpi*
   &  \mapsto \wembcl*_{\clmap_\fcti}
 \end{align}
-est une représentation locale de \( \wemb \) au voisinage de \( \ex \) au
-sens précédent, où \( \clmap \in \clmaps^{\puiss-1} \). Dans la suite de cette
-section, la carte \( \clmap \) choisie n'a pas d'importance, on notera donc
-simplement \( \wemba \) l'un des \( \wemba^\clmap \) pour alléger.
+est une représentation locale de \( \wemb \) valable sur l'ouvert \( \clmap
+\).  Dans la suite de cette section, la carte \( \clmap \) choisie n'a pas
+d'importance, on notera donc simplement \( \wemba \) l'un des \( \wemba^\clmap
+\) pour alléger.
 
 Étudions maintenant l'action de \( \wemba \) sur le degré et la hauteur.  Le
 lemme suivant est une conséquence immédiate de la définition.
@@ -1785,7 +1800,7 @@ précédente.
 
 \begin{scho} \label{s:aux-co}
   On rappelle qu'on note \( F''_\clmap = \rfull \circ \wemba^\clmap(F) \) pour
-  toute carte \( \clmap \in \clmaps \). Ces formes satisfont alors
+  toute carte \( \clmap \in \clmaps^{\puiss-1} \). Ces formes satisfont alors
   \begin{enumthm}
     \item \( \inda* F''_\clmap \ge \epsi \delta \) ;
     \item \( \deg F''_\clmap = \Dir \) avec
@@ -2552,7 +2567,7 @@ On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
   \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl*_{\clmap_\ex}
   (\cexa[\fcti], \cexa[\puiss]) \) un système de coordonnées multihomogènes de
 \( \exi \) dans le plongement \( \Theta^{\puiss-1} \). (Ci-dessous on notera
-\( \wembcl* = \wembcl*_{\clmap_\ex} \) pour alléger.
+\( \wembcl* = \wembcl*_{\clmap_\ex} \) pour alléger.)
 On choisit alors pour tout \(
   \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
   \av{ \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
@@ -2577,8 +2592,9 @@ Introduisons maintenant une nouvelle fonction rationnelle définie par
   }
   \pmm.
 \end{equation}
-La définition de \( \ratf1 \) au début de cette section et celle de \( F'' \)
-au scolie~\ref{s:aux-co} montrent alors que dans \( \korper\var \) on a
+La définition de \( \ratf1 \) au début de cette section et celle de \(
+  F''_{\clmap_\ex} \) au scolie~\ref{s:aux-co} montrent alors que dans \(
+  \korper\var \) on a
 \begin{equation}
   \ratf2 = \ratf1 \cdot \left(
     \prod\fctirange
@@ -2601,10 +2617,12 @@ contrôle en chaque place.
 Pour tout place \( \place \) on note désormais \( \wembclv* =
   \wembcl*_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \) où \( \wembcl* \)
 est défini par~\eqref{e:def-wembclm} et \( \clmap_{\wts*, \wts**, \ex*, \ex**,
-    \place} \) donné par le lemme~\ref{l:hclab}.  Ainsi, pour chaque \( \fcti
-\) les vecteurs \( \wembclv* (\cexa[\fcti], \cexa[\puiss]) \) sont
-proportionnels entre eux quand \( \place \) varie et proportionnels à \(
-  \cexi* \). On a alors, pour tout \( \place \) :
+    \place} \) donné par le lemme~\ref{l:hclab}. De même, on note \(
+  F''_\place = F''_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \).
+
+En remarquant que, pour chaque \( \fcti \), les vecteurs \( \wembclv*
+  (\cexa[\fcti], \cexa[\puiss]) \) sont proportionnels entre eux quand \(
+  \place \) varie, on a, pour tout \( \place \) :
 \begin{align}
   \ratf2
   & =
@@ -2672,6 +2690,8 @@ proportionnels entre eux quand \( \place \) varie et proportionnels à \(
   }_{\textstyle \ratfv4}
   \pmm.
 \end{align}
+On remarque que le dénominateur du premier facteur est égale à \( F''_\place
+\) modulo \( \varida \).
 
 Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
   \der[\dermp] \ratf2(\ex) \neq 0 \). Comme les derniers facteurs de
@@ -2685,8 +2705,7 @@ tout \( \place \) :
   \underbrace{
     \der[\dermp]
     \frac{
-      R(\vmp) \,
-      F( \vmp; \wembclv(\vmp) )
+      F''_\place( \vmp )
     }{
       \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     }
@@ -2701,7 +2720,8 @@ mais pas leur produit.
 Rappelons qu'on note \( \degv \) le degré local en \(
   \place \) et posons \( \ratfh{p} = \sum_\place \degv
   \ln \av{\ratfv{p}(\cexa)} \) ; cette somme converge car \( \ratfv p \)
-parcourt en fait un ensemble fini lorsque \( \place \) parcourt l'ensemble des
+parcourt en fait un ensemble fini (en bijection avec l'atlas choisi en
+sous-section~\ref{sec:wemb}) lorsque \( \place \) parcourt l'ensemble des
 places de \( \cdn \).  La formule du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
