@@ -147,9 +147,6 @@ Vojta {{{2
 (B) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
 fine pour le deuxième \rdiv
 
-(B) Pour l'extrapolation, introduire directement \ratf2 et laisser béton la
-première, et du coupe le lemme d'égalité des indices.
-
 (C) Dans la représentation des dérivées, on pourrait se limiter aux formes
 dans k[X]^{C'''}, est-ce utile ?
 

@@ -2428,60 +2428,44 @@ sous-section~\ref{sec:siegel-plan}, mais cette fois en un point. Posons
   + \frac {\lgr{\dermp[\puiss-1]}} {\wts[\puiss-1]}
   + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss-1)}
 \end{equation}
-pour tout \( \dermp \in \N^\vdim \).  Si \( h \) est une fraction rationnelle
-et \( \point \) un point où elle est définie, on définit son
+pour tout \( \dermp \in \N^\vdim \).  Si \( \ratfi \) est une fraction
+rationnelle et \( \point \) un point où elle est définie, on définit son
 indice en \( \point \) comme
 \begin{equation}
-  \inda[\point](h)
+  \inda[\point] \ratfi
   =
   \inf \set{
     \wtsum*(\imp)
     \text{ pour }
-    \imp \text{ tel que } h_\imp \neq 0
+    \imp \text{ tel que } \ratfi_\imp \neq 0
   }
   \pmm,
 \end{equation}
-où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
-l'indice est infini.
-
-On reprend les notations introduites par le scolie~\ref{s:aux-co} et on pose
-\begin{equation} \label{e:def-f1}
-  \ratf1
-  = \frac{ F''_{\clmap_\ex}(\vmp) }{ \prod\fctrange (\vmp*[\vdim*])^{\Dir*} }
-\end{equation}
-où \( \clmap_\ex \in \clmaps^{\puiss-1} \) est une carte contenant \( \ex \).
-Cette expression est bien homogène de degré \( 0 \) et définie en \( \cexa \).
-Le but de cette section est alors de montrer la proposition suivante.
-
-\begin{prop} \label{p:extra}
-  On a \( \inda**(\ratf1) \ge \frac{ \epsi \delta }{ \sigma } \) avec \(
-    \sigma = \frac{16 (\puiss-1)}{\eps} \).
-\end{prop}
-
-Commençons par un lemme facile sur l'indice.
+où la borne inférieure est en fait un minimum, sauf si \( \ratfi = 0 \), cas
+où l'indice est infini.
 
 \begin{lem} \label{l:indice-inversible}
-  Soient \( \ratfi1 \), \( \ratfi2 \) et \( \alpha \) des fonctions
-  rationnelles telles que \( \ratfi1 = \alpha \ratfi2 \) et \( \point \) un
+  Soient \( \ratfi_1 \), \( \ratfi_2 \) et \( \alpha \) des fonctions
+  rationnelles telles que \( \ratfi_1 = \alpha \ratfi_2 \) et \( \point \) un
   point où elles sont toutes les trois définies.
   \begin{enumthm}
-    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] \ratfi2(x) = 0 \) dès
+    \item Si \( \dermp \) est tel que \( \der[\gmp\nu] \ratfi_2(x) = 0 \) dès
       que \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^\vdim
-      \), alors \( \der[\dermp] \ratfi1(\point) = \alpha(\point) \,
-        \der[\dermp] \ratfi2(\point) \).
-    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda**(\ratfi1) =
-        \inda**(\ratfi2) \).
+      \), alors \( \der[\dermp] \ratfi_1(\point) = \alpha(\point) \,
+        \der[\dermp] \ratfi_2(\point) \).
+    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda[\point](\ratfi_1) =
+        \inda[\point](\ratfi_2) \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
   Le premier point découle facilement de la formule de \bsc{Leibniz} :
   \begin{equation}
-    \der[\dermp] \ratfi1(\point)
+    \der[\dermp] \ratfi_1(\point)
     =
     \sum_{\gmp\nu \le \dermp}
     \der[\dermp - \gmp\nu] \alpha(\point) \,
-    \der[\gmp\nu] \ratfi2(\point)
+    \der[\gmp\nu] \ratfi_2(\point)
     \pmm.
   \end{equation}
   Or, par hypothèse, tous les termes de cette somme sont nuls sauf peut-être
@@ -2490,15 +2474,39 @@ Commençons par un lemme facile sur l'indice.
   Si \( \alpha(\point) \neq 0 \) alors \( \alpha^{-1} \) est également définie
   en \( \point \) et les deux autres fonctions jouent donc un rôle symétrique.
   Ainsi, si un indice \( \dermp \) est minimal pour la condition \(
-    \der[\dermp] \ratfi1(\point) \neq 0 \), il l'est aussi pour la condition \(
-    \der[\dermp] \ratfi2(\point) \neq 0 \) grâce au point précédent, ce qui
+    \der[\dermp] \ratfi_1(\point) \neq 0 \), il l'est aussi pour la condition \(
+    \der[\dermp] \ratfi_2(\point) \neq 0 \) grâce au point précédent, ce qui
   prouve que les deux fonctions ont le même indice en \( \point \).
 \end{proof}
 
+Si \( G \) est une forme multihomogène, on défini \( \inda[\point] G =
+  \inda[\point] G/H \) où \( H \) est n'importe quelle forme multihomogène de
+même degré ne s'annulant pas en \( \point \). Le deuxième point du lemme
+précédent montre que cette définition a bien un sens.
+
+\medskip
+
+On choisit dans l'atlas \( \clmaps^{\puiss-1} \) présenté en
+sous-section~\ref{sec:wemb} une carte \( \clmap_\ex \) contenant \( \ex \), et
+on considère la forme multihomogène \( F''_{\clmap_\ex} \) donnée par le
+scolie~\ref{s:aux-co}. Le but de cette section est alors de montrer la
+proposition suivante.
+
+\begin{prop} \label{p:extra}
+  On a \( \inda** F''_{\clmap_\ex} \ge \frac{ \epsi \delta }{ \sigma } \) avec
+  \( \sigma = \frac{16 (\puiss-1)}{\eps} \).
+\end{prop}
+
+La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
+  \ex \) des dérivées successives de cette forme et à montrer qu'elles sont
+suffisamment petites, tant que l'ordre de dérivation n'est pas trop élevé,
+pour contredire la formule du produit à moins que la dérive ne s'annulle.
+Avant de procéder, commençons par introduire quelques choix d'indices
+adaptés à chaque place.
+
 On rappelle que \( \cexa \) désigne un système de coordonnées multihomogènes
 (dans le plongement adapté) du point \( \ex \) supposé contredire le
-théorème~\ref{t:vojta-div} ; d'après le scolie~\ref{s:part-cases}, en
-particulier, aucune de ces coordonnées n'est nulle.  On choisit, pour tout \(
+théorème~\ref{t:vojta-div}.  On choisit, pour tout \(
   \fct \), un indice \( \indv* \in \set{0, \dots, \vdim*} \) de sorte que \(
   \av{ \cexa*[\indv*] } \) soit maximal parmi \( \av{\cexa*[0]}, \dots,
   \av{\cexa*[\vdim*]} \).  Le lemme suivant montre que cette valeur absolue
@@ -2593,55 +2601,38 @@ tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
 
 \medskip
 
-Introduisons maintenant une nouvelle fonction rationnelle définie par
+Introduisons maintenant une fonction rationnelle définie par
 \begin{equation}
-  \ratf2 =
-  \frac{ R(\vmp) }{ \prod\fctrange (\vmp*[\vdim*])^{r_\fct} }
-  \cdot
+  \ratf =
   \frac{
-    F( \vmp; \wembcl[1](\vmp), \dots, \wembcl[\puiss-1](\vmp) )
+    F''_{\clmap_\ex}( \vmp )
   }{
     \prod\fctrange
-    (\vmp*[\vdim*])^{\epsz \wts* \delta}
-    \cdot
+    (\vmp*[\vdim*])^{\epsz \wts* \delta, + r_\fct}
+    \,
     \prod\fctirange
     \wembcl*[\indig*](\vmp) ^{ \delta }
   }
   \pmm.
 \end{equation}
-La définition de \( \ratf1 \) au début de cette section et celle de \(
-  F''_{\clmap_\ex} \) au scolie~\ref{s:aux-co} montrent alors que dans \(
-  \korper\var \) on a
-\begin{equation}
-  \ratf2 = \ratf1 \cdot \left(
-    \prod\fctirange
-    \frac{
-      ( \vmp[\fcti ][{\vdim[\fcti ]}] )^{ 2\wts[\fcti ] }
-      ( \vmp[\puiss][{\vdim[\puiss]}] )^{ 2\wts[\puiss] }
-    }{
-      \wembcl*[\indig*](\vmp[\fcti], \vmp[\puiss])
-    }
-  \right)^\delta
-\end{equation}
-Le choix des \( l_j \) et le premier point du scolie~\ref{s:part-cases}
-montrent que \( \ratf1 / \ratf2 \) est défini et inversible sur un voisinage
-de \( \cex \) dans \( \var \) ; le lemme~\ref{l:indice-inversible} s'applique
-donc, montrant que \( \ratf1 \) et \( \ratf2 \) ont le même indice en \( \cex
-\).  Il suffit dont d'estimer l'indice de \( \ratf2 \) ; nous allons commencer
-par décomposer cette fonctions en des facteurs dont nous aurons un bon
-contrôle en chaque place.
+D'après le scolie~\ref{s:part-cases}, on a \( \cexa*[\vdim*] \neq 0 \) ; par
+ailleurs le choix de \( \indig* \) assure que \( \wembcl*[\indig*]( \cexa )
+  \neq 0 \), de sorte que le dénominateur ne s'annule pas en \( \cexa \) et
+que par définition on a \( \inda** F''_{\clmap_\ex} = \inda** \ratf \).
+Pour minorer cet indice, nous allons commencer par décomposer cette fonction
+en des facteurs dont nous aurons un bon contrôle en chaque place.
 
 Pour tout place \( \place \) on note désormais \( \wembclv* =
   \wembcl*_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \) où \( \wembcl* \)
 est défini par~\eqref{e:def-wembclm} et \( \clmap_{\wts*, \wts**, \ex*, \ex**,
     \place} \) donné par le lemme~\ref{l:hclab}. De même, on note \(
   F''_\place = F''_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \).
-
-En remarquant que, pour chaque \( \fcti \), les vecteurs \( \wembclv*
-  (\cexa[\fcti], \cexa[\puiss]) \) sont proportionnels entre eux quand \(
-  \place \) varie, on a, pour tout \( \place \) :
+En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant que,
+pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
+  \cexa[\puiss]) \) sont proportionnels entre eux quand \( \place \) varie, on
+a, pour tout \( \place \) :
 \begin{align}
-  \ratf2
+  \ratf
   & =
   \frac{
     R(\vmp) \,
@@ -2711,13 +2702,13 @@ On remarque que le dénominateur du premier facteur est égale à \( F''_\place
 \) modulo \( \varida \).
 
 Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
-  \der[\dermp] \ratf2(\ex) \neq 0 \). Comme les derniers facteurs de
+  \der[\dermp] \ratf(\ex) \neq 0 \). Comme les derniers facteurs de
 l'écriture précédente sont tous définis et inversibles en \( \cex \) grâce aux
 différents choix d'indices et au premier point du scolie~\ref{s:part-cases},
 une nouvelle application du lemme~\ref{l:indice-inversible} montre que, pour
 tout \( \place \) :
 \begin{equation}
-  \der[\dermp] \ratf2(\ex)
+  \der[\dermp] \ratf(\ex)
   =
   \underbrace{
     \der[\dermp]

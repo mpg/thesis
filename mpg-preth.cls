@@ -1059,8 +1059,8 @@
 \newc@star@default \indig {\fcti}{\puiss} {\indi\sb{{#1}}}
 
 % rational functions
-\newcommand*\ratf  [1] {\xi  \sb{#1}}
-\newcommand*\ratfi [1] {\zeta\sb{#1}}
+\newcommand*\ratf      {\xi}
+\newcommand*\ratfi     {\zeta}
 \newcommand*\ratfv [1] {\alpha\sb{#1, \place}}
 \newcommand*\ratfh [1] {\hautl[]{\alpha\sb{#1}(\cexa)}}
 
