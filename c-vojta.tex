@@ -1082,17 +1082,15 @@ Introduisons un réel \( \epsi \) défini par :
   \epsi =
   \eps^{\frac{\genre}{\puiss-\genre}}
   \cdot \Bigl(
-    (\dimp + 1)^{\puiss-1}
-    \, 3 ^{\puiss \genre}
-    \, \genre^\puiss
+    (\dimp + 1)^{\puiss+1}
     \, (33\puiss)^\genre
   \Bigr)^{\frac{-1}{\puiss-\genre}}
 \end{equation}
 et un rationnel \( \epsz \) tel que :
 \begin{equation} \label{e:def-epsz}
-  \frac{\eps \eps}{33\puiss}
+  \frac{\eps \epsi}{33\puiss}
   \le \epsz \le
-  \frac{\eps \eps}{32\puiss}
+  \frac{\eps \epsi}{32\puiss}
   \pmm,
 \end{equation}
 et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
@@ -1652,10 +1650,22 @@ minoration classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour
     \eps^\genre
   }
   + o(1)
+  \\ & \le
+  \frac 1 { \puiss^{\puiss-\genre} }
+  \cdot
+  \frac {
+    \epsi^{\puiss-\genre}
+    \, (\dimp + 1)^{\puiss+1}
+    \, (33\puiss)^\genre
+  }{
+    \eps^\genre
+  }
+  + o(1)
 \end{align}
-puis on remarque que la définition \eqref{e:def-epsi} de \( \epsi \) signifie
-précisément que le premier facteur vaut \( 1 \) ; en utilisant alors le fait
-que \( \puiss \ge \genre + 1 \ge 2 \), il vient enfin
+om l'on a utilisé le fait que \( \dimp + 1 \ge 4^\genre \).  On remarque que
+la définition \eqref{e:def-epsi} de \( \epsi \) signifie précisément que le
+deuxième facteur vaut \( 1 \) ; en utilisant alors le fait que \( \puiss \ge
+  \genre + 1 \ge 2 \), il vient enfin
 \begin{equation} \label{e:good-codim}
   \frac {\dim \ftarget} {\dim \fspace}
   \le
