@@ -622,9 +622,9 @@ Introduisons pour cela quelques notations : pour chaque $C \in (\N \cup \set{
 \begin{equation} \label{e:C-spaces}
   \cdn[\vmp]^C
   = \{
-    F \in \cdn[\vmp]
+    H \in \cdn[\vmp]
     \text{ tel que }
-    \deg_{\vmp*[k]} F \le C\pexp{\fct}[k]
+    \deg_{\vmp*[k]} H \le C\pexp{\fct}[k]
     \quad \forall i, k
     \}
   \pmm.
@@ -1034,14 +1034,14 @@ encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
   \fcti \) et \( \fcti + 1 \). On introduit alors pour chaque \( \fcti \) la
 forme
 \begin{equation} \label{e:def-wembclm}
-  \wembcl*_\clmap
+  \wembclm*
   = L\pexp{\wti*, \wti**, \clmap_\fcti}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
 où \( L\pexp{\wti*, \wti**, \clmap_\fcti} \) est donnée par le
 lemme~\ref{l:hclab}, de sorte que chacune des applications
-\begin{align}
-     \wemba^\clmap \colon \cdn [\vmp, \vmpi]
+\begin{align} \label{e:def-wemba}
+     \wemba* \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
   \\ \vmp*
   &  \mapsto \vmp*
@@ -1050,18 +1050,18 @@ lemme~\ref{l:hclab}, de sorte que chacune des applications
 \end{align}
 est une représentation locale de \( \wemb \) valable sur l'ouvert \( \clmap
 \).  Dans la suite de cette section, la carte \( \clmap \) choisie n'a pas
-d'importance, on notera donc simplement \( \wemba \) l'un des \( \wemba^\clmap
+d'importance, on notera donc simplement \( \wemba \) l'un des \( \wemba*
 \) pour alléger.
 
 Étudions maintenant l'action de \( \wemba \) sur le degré et la hauteur.  Le
 lemme suivant est une conséquence immédiate de la définition.
 
 \begin{lem} \label{l:deg-wemba}
-  Soit \( F \in \Qbar[\vmp, \vmpi] \) une forme multihomogène de multidegré \(
+  Soit \( H \in \Qbar[\vmp, \vmpi] \) une forme multihomogène de multidegré \(
     (\alpha, \beta) \) où \( \alpha \in \N^\puiss \) et \( \beta \in
     \N^{\puiss-1} \). On a alors
   \begin{equation}
-    \deg \wemba(F)
+    \deg \wemba(H)
     =
     \bigr(
     \alpha_1 + 2 \beta_1 \wts[1],
@@ -1112,7 +1112,7 @@ et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
     \bigr) \in \Q^\puiss
   \end{aligned}
 \end{equation}
-de sorte que, si \( F \) est une forme de multidegré \( \Dz \) dans \(
+de sorte que, si \( H \) est une forme de multidegré \( \Dz \) dans \(
   \cdn[\vmp, \vmpi] \), son image par \( \wemba \) est de multidegré
 exactement \( \Di \) d'après le lemme~\ref{l:deg-wemba}.
 
@@ -1262,18 +1262,18 @@ l'indice est infini.
 
 Au début de cette section, nous avons dit vouloir construire une forme sur \(
   \var \) provenant d'une forme sur \( \wemb(\var) \) ; plus précisément nous
-allons construire une forme \( F \) sur \( \wemb(\var) \) et la tirer
-localement en arrière sur \( \var \) en une famille de formes \( F'_\clmap \)
-grâce aux différents morphismes \( \wemba^\clmap \) introduits à la
+allons construire une forme \( \faux \) sur \( \wemb(\var) \) et la tirer
+localement en arrière sur \( \var \) en une famille de formes \( \faux'_\clmap \)
+grâce aux différents morphismes \( \wemba* \) introduits à la
 sous-section~\ref{sec:wemb}.
 
-Revenons maintenant aux \( F'_\clmap \) : on ne peut brutalement exiger que
+Revenons maintenant aux \( \faux'_\clmap \) : on ne peut brutalement exiger que
 leur indice, tel que défini précédemment, soit élevé, car le nombre de
 conditions serait trop élevé (géométriquement, il s'agirait d'exiger une
 annulation le long de \( \divi \) dans \( \projd \) alors que les degrés de
 libertés sont donnés par \( \var \) qui est de dimension plus petite). Nous
 allons donc utiliser le morphisme \( \rfull \) introduit à la
-sous-section~\ref{sec:rfull} et exiger que \( F''_\clmap = \rfull(F'_\clmap)
+sous-section~\ref{sec:rfull} et exiger que \( \faux* = \rfull(\faux'_\clmap)
 \) ait un indice élevé, ce qui est loisible car le nombre de d'équations
 définissant un indicé élevé dans \( \cdn[\vmp]^{C'''} \) est convenable (le
 nombre de variables libre dans cet espace correspondant à la dimension de \(
@@ -1281,9 +1281,9 @@ nombre de variables libre dans cet espace correspondant à la dimension de \(
 
 Concernant le degré, on reprend les multidegrés définis par~\eqref{e:d-dp-def}
 et on rappelle que \( \delta \) désigne un grand entier tel que \( \delta
-  \eps_0 \) soit aussi entier. On impose alors à \( F \) d'être
-de degré \( \Dz \), de sorte que les \( F'_\clmap \) seront de degré \( \Di \)
-et les \( F''_\clmap \) de degré \( \Dir = \Di + o(\delta) \). Par ailleurs,
+  \eps_0 \) soit aussi entier. On impose alors à \( \faux \) d'être
+de degré \( \Dz \), de sorte que les \( \faux'_\clmap \) seront de degré \( \Di \)
+et les \( \faux* \) de degré \( \Dir = \Di + o(\delta) \). Par ailleurs,
 l'indice exigé sera \( \epsi \delta \), où \( \epsi \) est défini
 par~\eqref{e:def-epsi} et la relation entre \( \epsz \) et \( \epsi \)
 permettra d'ajuster l'exposant de \bsc{Dirichlet} du système auquel on
@@ -1291,7 +1291,7 @@ appliquera le lemme de \TS.
 
 Choisissons alors dans \( \cdn[\vmp, \vmpi]_\Dz \) un supplémentaire de \(
   (\idealim)_\Dz \) engendré par des monômes, que l'on notera \( \fspace \) et
-dans lequel on cherchera \( F \).  L'entier \( \delta \) sera choisi assez
+dans lequel on cherchera \( \faux \).  L'entier \( \delta \) sera choisi assez
 grand pour que la dimension de \( \fspace \) coïncide avec la valeur du
 polynôme de \bsc{Hilbert} de \( \idealim \) en \( \Dz \).
 
@@ -1305,10 +1305,10 @@ Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
     \cap \vect( (\vmp^\imp)_{\wtsum*(\imp) < \epsi\delta} )
   \bigr)
   \\
-  F
+  \faux
   & \mapsto
   \bigl(
-    \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba^\clmap(F)
+    \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba*(\faux)
   \bigr)_\clmap
 \end{align}
 de sorte qu'il s'agit en fait de trouver une forme non nulle dans le noyau de
@@ -1682,7 +1682,7 @@ canoniques) \( M_\sigma \) de l'application \( \sigma \) définie
 par~\eqref{e:def-ftarget}. Nous utiliserons ici la norme \( \nv\infty\truc \)
 en chaque place, de sorte que la norme de la matrice de \( \sigma \) sera
 majorée par tout majorant commun des normes des matrices des applications
-\( \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba^\clmap(F) \).
+\( \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba* \).
 
 D'après la définition~\eqref{e:def-pi-beta} de \( \pi_{\epsi\delta} \) il est
 clair que cette application ne peut que faire décroître la norme. Par
@@ -1754,18 +1754,25 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 
 \begin{prop} \label{p:build-aux}
   Sous les hypothèses et notations précédentes et si
-  \( \delta \) est assez grand, il existe une forme \( F \in \cdn [\vmp,
-    \vmpi] \), multihomogène de degré \( \Dz \) (où l'on rappelle que \(
-    d \) est défini par~\eqref{e:d-dp-def}), non nulle modulo \(
-    \idealim \), telle que \( R \cdot \wemba(F) \in \vanish \) et
-  \begin{equation}
-    \hautl[\infty] F
-    \le
+  \( \delta \) est assez grand, il existe une forme non nulle \( \faux \in
+    \ker \sigma \) telle que
+  \begin{align}
+    \deg \faux
+    & = \Dz
+    = \bigl(
+      \epsz \wts[1] \delta,
+      \dots,
+      \epsz \wts[\puiss] \delta,
+      \delta, \dots, \delta
+    \bigr)
+    \\
+    \hautl[\infty] \faux
+    & \le
     2 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
       4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
     \right) + o(\delta)
     \pmm.
-  \end{equation}
+  \end{align}
 \end{prop}
 
 \begin{proof}
@@ -1786,21 +1793,21 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \end{equation}
   De même, \( \frac q {q-p} c_\cdn = o(\delta) \) ;
   en remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
-  forme \( F \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
+  forme \( \faux \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
   par \( \hautl[\infty]{M_\sigma} + o(\delta) \).  Il ne reste plus qu'à
   invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
 \end{proof}
 
-Nous énonçons maintenant quelques conséquences faciles de la proposition
-précédente.
+Remarquons que dans la majoration de hauteur on peut en fait choisir la
+hauteur utilisée, comme le montre le scolie suivant.
 
 \begin{scho} \label{s:h1-aux}
-  On a \( \hautl[1] F \le \hautl[\infty] F + o(\delta) \).
+  On a \( \hautl[1] \faux \le \hautl[\infty] \faux + o(\delta) \).
 \end{scho}
 
 \begin{proof}
   La différence entre ces deux hauteurs est majorée par le logarithme du
-  nombre de coefficients de \( F \), qui est au plus
+  nombre de coefficients de \( \faux \), qui est au plus
   \begin{equation}
     \prod_{\fct=1}^{2\puiss-1}
     \binom{\delta d_\fct + \dimp}{\dimp}
@@ -1813,14 +1820,17 @@ précédente.
   négligeable devant ce dernier.
 \end{proof}
 
+En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
+  \wemba*(\faux) \), résumons donc ici leurs principales propriétés.
+
 \begin{scho} \label{s:aux-co}
-  On rappelle qu'on note \( F''_\clmap = \rfull \circ \wemba^\clmap(F) \) pour
-  toute carte \( \clmap \in \clmaps^{\puiss-1} \). Ces formes satisfont alors
+  Pour toute carte \( \clmap \in \clmaps^{\puiss-1} \), la forme \( \faux* \)
+  satisfait :
   \begin{enumthm}
-    \item \( F''_\clmap = R \cdot F(\vmp, \wembcl_\clmap(\vmp)) \mod \varida
+    \item \( \faux* = R \cdot \faux(\vmp, \wembclm(\vmp)) \mod \varida
       \) ;
-    \item \( \inda* F''_\clmap \ge \epsi \delta \) ;
-    \item \( \deg F''_\clmap = \Dir \) avec
+    \item \( \inda* \faux* \ge \epsi \delta \) ;
+    \item \( \deg \faux* = \Dir \) avec
       \(
         d' = \bigl(
           \wts[1] (2 + \epsz),
@@ -1830,25 +1840,28 @@ précédente.
         \bigr)
       \) ;
     \item \(
-        \nv1{F''_\clmap}
+        \nv1{\faux*}
         \le
-        \nv1{F}
+        \nv1{\faux}
         \prod\fctrange \left(
           \nv1{ \varfc* }
           2 B^{(B(\genre+1) + 1)\dv}
         \right) ^{ 2\Di* }
         \prod\fctirange
-        \nv1{ \wembcl*_\clmap }^\delta
+        \nv1{ \wembclm* }^\delta
         \cdot \expb^{o(\delta)}
       \).
   \end{enumthm}
 \end{scho}
 
 \begin{proof}
-  Les trois premiers points ne sont qu'un rappel de la construction, en se
-  souvenant du lemme~\ref{l:rfull}, de la définition de \( \wemba^\clmap \) et
-  de ses propriétés (sous-section~\ref{sec:wemb}). Le dernier point découle
-  des propriétés classiques de la norme ainsi que du lemme~\ref{l:rfull}.
+  Le premier point est une conséquence directe de la définition de \( \faux*
+  \), du lemme~\ref{l:rfull} et de la définition~\ref{e:def-wemba} de \(
+    \wemba* \) ; le deuxième est donné par la construction et
+  le troisième découle du lemme~\ref{l:deg-wemba} et des
+  définitions~\ref{e:d-dp-def} de \( d \) et \( d' \).  Pour le quatrième
+  point, on utilise le lemme~\ref{l:rfull} ainsi que des propriétés classiques
+  de la norme.
 \end{proof}
 
 
@@ -1928,8 +1941,8 @@ où les flèches verticales sont les projections canoniques. Posons
 \( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)
 sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
 la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
-rationnelle \( f = F/G \), nous exhiberons (au moins) un polynôme \( R_\derp
-\), dépendant éventuellement de la représentation \( F/G \) choisie, tel que
+rationnelle \( f = G/H \), nous exhiberons (au moins) un polynôme \( R_\derp
+\), dépendant éventuellement de la représentation \( G/H \) choisie, tel que
 \( R_\derp \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes
 locales contrôlées.
 
@@ -2488,12 +2501,12 @@ précédent montre que cette définition a bien un sens.
 
 On choisit dans l'atlas \( \clmaps^{\puiss-1} \) présenté en
 sous-section~\ref{sec:wemb} une carte \( \clmap_\ex \) contenant \( \ex \), et
-on considère la forme multihomogène \( F''_{\clmap_\ex} \) donnée par le
+on considère la forme multihomogène \( \faux** \) donnée par le
 scolie~\ref{s:aux-co}. Le but de cette section est alors de montrer la
 proposition suivante.
 
 \begin{prop} \label{p:extra}
-  On a \( \inda** F''_{\clmap_\ex} \ge \frac{ \epsi \delta }{ \sigma } \) avec
+  On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
   \( \sigma = \frac{16 (\puiss-1)}{\eps} \).
 \end{prop}
 
@@ -2589,7 +2602,8 @@ représente à peu de chose près la norme de \( \cexa* \).
 \end{proof}
 
 On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
-  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl*_{\clmap_\ex}
+  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl[\clmap_\ex,
+  \fcti]
   (\cexa[\fcti], \cexa[\puiss]) \) un système de coordonnées multihomogènes de
 \( \exi \) dans le plongement \( \Theta^{\puiss-1} \). (Ci-dessous on notera
 \( \wembcl* = \wembcl*_{\clmap_\ex} \) pour alléger.)
@@ -2605,7 +2619,7 @@ Introduisons maintenant une fonction rationnelle définie par
 \begin{equation}
   \ratf =
   \frac{
-    F''_{\clmap_\ex}( \vmp )
+    \faux**( \vmp )
   }{
     \prod\fctrange
     (\vmp*[\vdim*])^{\epsz \wts* \delta, + r_\fct}
@@ -2618,15 +2632,16 @@ Introduisons maintenant une fonction rationnelle définie par
 D'après le scolie~\ref{s:part-cases}, on a \( \cexa*[\vdim*] \neq 0 \) ; par
 ailleurs le choix de \( \indig* \) assure que \( \wembcl*[\indig*]( \cexa )
   \neq 0 \), de sorte que le dénominateur ne s'annule pas en \( \cexa \) et
-que par définition on a \( \inda** F''_{\clmap_\ex} = \inda** \ratf \).
+que par définition on a \( \inda** \faux** = \inda** \ratf \).
 Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
 Pour tout place \( \place \) on note désormais \( \wembclv* =
-  \wembcl*_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \) où \( \wembcl* \)
+  \wembcl[\clmap_{\wts*, \wts**, \ex*, \ex**, \place}, \fcti] \) où \(
+  \wembclm* \)
 est défini par~\eqref{e:def-wembclm} et \( \clmap_{\wts*, \wts**, \ex*, \ex**,
     \place} \) donné par le lemme~\ref{l:hclab}. De même, on note \(
-  F''_\place = F''_{\clmap_{\wts*, \wts**, \ex*, \ex**, \place}} \).
+  \fauxv = \faux[\clmap_{\wts*, \wts**, \ex*, \ex**, \place}] \).
 En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant que,
 pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux quand \( \place \) varie, on
@@ -2636,7 +2651,7 @@ a, pour tout \( \place \) :
   & =
   \frac{
     R(\vmp) \,
-    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
   }{
     \prod\fctrange
     (\vmp*[\vdim*])^{\epsz \wts* \delta + r_\fct}
@@ -2644,12 +2659,12 @@ a, pour tout \( \place \) :
     \prod\fctirange
     \wembclv*[\indig](\vmp) ^{ \delta }
   }
-  \intertext{par homogénéité de \( F \). On introduit alors nos indices locaux
+  \intertext{par homogénéité de \( \faux \). On introduit alors nos indices locaux
     \( \indv \) et \( \indiv \) :}
    & =
   \frac{
     R(\vmp) \,
-    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
   }{
     \prod\fctrange
     (\vmp*[\indv*])^{\epsz \wts* \delta + r_\fct}
@@ -2671,7 +2686,7 @@ a, pour tout \( \place \) :
   & =
   \frac{
     R(\vmp) \,
-    F( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
   }{
     \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
   }
@@ -2698,7 +2713,7 @@ a, pour tout \( \place \) :
   }_{\textstyle \ratfv4}
   \pmm.
 \end{align}
-On remarque que le dénominateur du premier facteur est égale à \( F''_\place
+On remarque que le dénominateur du premier facteur est égale à \( \fauxv
 \) modulo \( \varida \).
 
 Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
@@ -2713,7 +2728,7 @@ tout \( \place \) :
   \underbrace{
     \der[\dermp]
     \frac{
-      F''_\place( \vmp )
+      \fauxv( \vmp )
     }{
       \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     }
@@ -2882,7 +2897,7 @@ pas besoin de l'expliciter davantage.
 \medskip
 
 Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} aux
-formes \( F''_\place \).  Comme l'indique la note~\ref{fn:coord-deshom}
+formes \( \fauxv \).  Comme l'indique la note~\ref{fn:coord-deshom}
 page~\pageref{fn:coord-deshom}, il est loisible d'utiliser sur chaque facteur
 \( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \) comme variable de
 déshomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ; simplement, les
@@ -2898,7 +2913,7 @@ propriétés suivantes :
   \item \( \displaystyle
       \der[\dermp]
       \frac{
-        F''_\place(\vmp)
+        \fauxv(\vmp)
       }{
         \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
       }
@@ -2916,7 +2931,7 @@ propriétés suivantes :
   \item \(
       \nv1{ P_\place }
       \le
-      \nv1{ F''_\place }
+      \nv1{ \fauxv }
       \prod\fctrange
       \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
       \left(
@@ -2928,16 +2943,16 @@ propriétés suivantes :
   \item \(
       \inda* \bigl( P_\place \bigr)
       \ge
-      \inda*(F''_\place) - \wtsum*(\dermp)
+      \inda*(\fauxv) - \wtsum*(\dermp)
     \).
 \end{enumthm}
 Remarquons de suite que tous les \( P_\place \) sont de même degré, qu'on
 notera parfois \( \deg P \) par abus, et que \( P_\place \) parcourt un
-ensemble fini quand \( \place \) varie, car c'est déjà le cas de \( F''_\place
+ensemble fini quand \( \place \) varie, car c'est déjà le cas de \( \fauxv
 \) et de \( \wembclv \).
 
 Rappelons également que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta
-  / \sigma \) ; en remarquant que \( \inda*(F''_\place) \ge \epsi \delta \)
+  / \sigma \) ; en remarquant que \( \inda*(\fauxv) \ge \epsi \delta \)
 par construction (scolie~\ref{s:aux-co})  et que \( \wtsum*(\dermp) \le
   \wtsum(\dermp) \) par définition, le dernier point donne
 \begin{equation} \label{e:ind-Pv}
@@ -3221,7 +3236,7 @@ point du scolie~\ref{s:aux-co}, il vient
 \begin{align}
   \hautl[1]{ (P_\place)_\place }
   & \le
-  \hautl[1]{ (F''_\place)_\place }
+  \hautl[1]{ (\fauxv)_\place }
   + \sum\fctrange
   \bigl( 2 (\dimp - \vdim*) \lgr{\dermp*} \bigr) \Bigl(
     \hautl[1]{ \varfc* }
@@ -3230,7 +3245,7 @@ point du scolie~\ref{s:aux-co}, il vient
   \Bigr)
   + \vdim* (\Dir*) \ln 2
   \\ & \le
-  \hautl[1] F + \delta C_\wembcl
+  \hautl[1] \faux + \delta C_\wembcl
   + \sum\fctrange
   2 \dimp \frac{\epsi \delta}{\sigma} \wts* (\puiss-1)^{\delta^\fct_\puiss}
   \Bigl(
@@ -3369,7 +3384,7 @@ contradiction qui achève la preuve de la proposition~\ref{p:extra}.
 \section{Application du théorème du produit et conclusion}
 \label{sec:thm-prod}
 
-La section précédente a montré que \( F''_{\clmap_\ex} \) était d'indice
+La section précédente a montré que \( \faux** \) était d'indice
 élevé en \( \ex \). Nous allons maintenant en déduire l'existence d'une forme
 \( T \) comme dans la conclusion de la proposition~\ref{p:varset-notmin}, en
 utilisant le fait suivant (théorème~7.1 page~149 de \cite{remivds}),
@@ -3426,7 +3441,7 @@ conséquence du théorème du produit .
   \end{enumthm}
 \end{fact}
 
-Pour appliquer ce fait, nous devons fabriquer à partir de \( \fauxf**
+Pour appliquer ce fait, nous devons fabriquer à partir de \( \faux**
 \) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) ;
 pour cela il suffit de considérer la norme de cette forme. Le fait suivant
 résume le résultat de la page~148 de~\cite{remivds}.
@@ -3437,12 +3452,12 @@ résume le résultat de la page~148 de~\cite{remivds}.
     \vmp[\puiss][0], \dots, \vmp[\puiss][\vdim*]
     ] \) telle que
   \begin{enumthm}
-    \item \( \inda** G \ge \inda** \fauxf** \) ;
-    \item \( \deg G = (\prod\fctrange \vdeg*) \deg \fauxf** \) ;
+    \item \( \inda** G \ge \inda** \faux** \) ;
+    \item \( \deg G = (\prod\fctrange \vdeg*) \deg \faux** \) ;
     \item \(
         \hautl[\infty] G
         \le
-        (\prod\fctrange \vdeg*) \hautl[\infty]{ \fauxf** } + o(\delta)
+        (\prod\fctrange \vdeg*) \hautl[\infty]{ \faux** } + o(\delta)
       \).
   \end{enumthm}
 \end{fact}

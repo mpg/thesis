@@ -816,6 +816,7 @@
 \newc@star@deftwo@i \gmp  {\fct }{\ind} {\gmp@{#1}{#2}{#3}}
 \newc@star@deftwo@i \gmpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
 \newc@star@deftwo@i \gmpiv{\fcti}{\indiv*}{\gmp@{#1}[\place]{#2}{#3}}
+\newc@star@deftwo@i \gmpim{\fcti}{\ind} {\gmp@{#1}[\clmap]{#2}{#3}}
 % generic multiprojective symbol:
 % #1 = factor number, #2 = optional prefix for this, see \gmpiv for \wembclv
 % #3 = coordinate in this factor,
@@ -909,7 +910,7 @@
 \newcommand*\multab [1] { [#1] }
 
 \newcommand \clmaps { \Gamma }
-\newcommand \clmap  { \gamma }
+\newc@star@default \clmap {\ex}{} { \gamma\ssub{#1} }
 
 % Vojta-specific math [[1
 % -------------------
@@ -969,7 +970,7 @@
 \newcommand \vmpi {\smpi Y}
 
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
-\newcommand*\wemba [1][\wt] {\psi\ssub{#1}}
+\newc@star@default \wemba {\clmap}{} {\psi\ssub{\wt\slast{#1}}}
 
 \nomdef \wemb  g {z1} \@gobbletwo{\wemb }{Plongement éclatant associé au
   vecteur de poids $\wt$}
@@ -978,6 +979,7 @@
 
 \newcommand*\wembcl  {\gmpi  L}
 \newcommand*\wembclv {\gmpiv L}
+\newcommand*\wembclm {\gmpim L}
 \nomdef \wembcl a {L} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires
   utilisées dans \( \wemb \)}
 
@@ -1057,8 +1059,10 @@
 
 % auxiliary form & co [[2
 %
-\newcommand \faux { F }
-\newc@star@default \fauxf {\clmap}{\clmap\sb\ex} { F''\ssub{#1} }
+\newc@star@default \faux {\clmap}{\clmap\sb\ex} {
+  F\@ifnotmtarg{#1}{'\sb{#1}}
+}
+\newcommand \fauxv { \faux[\place] }
 
 % for extrapolation [[2
 %

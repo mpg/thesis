@@ -115,14 +115,6 @@ Vojta {{{2
 (B) pour \rfull etc : mettre le degré en bas (plus cohérent avec les parties
 homogènes)
 
-(B) Macros pour F, F', F'' et _\clmap. F' peut disparaître et F'' peut être
-noté F'
-
-(B) Macro pour \wemclm, \wemba^\clmap etc.
-
-(B) Récrire l'estimation (représentation ?) de dérivées en remplaçant s par 0
-comme l'indique la note
-
 Plongements et formulaires {{{2
 --------------------------
 
