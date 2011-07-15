@@ -1055,6 +1055,11 @@
 \nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
 \nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
 
+% auxiliary form & co [[2
+%
+\newcommand \faux { F }
+\newc@star@default \fauxf {\clmap}{\clmap\sb\ex} { F''\ssub{#1} }
+
 % for extrapolation [[2
 %
 % local indices

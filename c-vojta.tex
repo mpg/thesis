@@ -3426,7 +3426,26 @@ conséquence du théorème du produit .
   \end{enumthm}
 \end{fact}
 
+Pour appliquer ce fait, nous devons fabriquer à partir de \( \fauxf**
+\) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) ;
+pour cela il suffit de considérer la norme de cette forme. Le fait suivant
+résume le résultat de la page~148 de~\cite{remivds}.
 
+\begin{fact}
+  Il existe une forme \( G \in \cdn[
+    \vmp[1][0], \dots, \vmp[1][\vdim*]; \dots;
+    \vmp[\puiss][0], \dots, \vmp[\puiss][\vdim*]
+    ] \) telle que
+  \begin{enumthm}
+    \item \( \inda** G \ge \inda** \fauxf** \) ;
+    \item \( \deg G = (\prod\fctrange \vdeg*) \deg \fauxf** \) ;
+    \item \(
+        \hautl[\infty] G
+        \le
+        (\prod\fctrange \vdeg*) \hautl[\infty]{ \fauxf** } + o(\delta)
+      \).
+  \end{enumthm}
+\end{fact}
 
 \endinput
 
