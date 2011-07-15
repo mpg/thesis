@@ -3369,6 +3369,65 @@ contradiction qui achève la preuve de la proposition~\ref{p:extra}.
 \section{Application du théorème du produit et conclusion}
 \label{sec:thm-prod}
 
+La section précédente a montré que \( F''_{\clmap_\ex} \) était d'indice
+élevé en \( \ex \). Nous allons maintenant en déduire l'existence d'une forme
+\( T \) comme dans la conclusion de la proposition~\ref{p:varset-notmin}, en
+utilisant le fait suivant (théorème~7.1 page~149 de \cite{remivds}),
+conséquence du théorème du produit .
+
+\begin{fact}
+  Soient \( x_1, \dots, x_\puiss \) un point rationnel de \( \proj{\vdim_1}
+    \times \dots \times \proj{\vdim**} \) et \( \vdim = \vdim_1 + \dots +
+    \vdim** \). On considère une forme \( G \) de degré \( b \in (\N
+    \minusset 0)^\puiss \) et on suppose que
+  \begin{enumthm}
+    \item \( G \) s'annulle en \( x \) avec un indice supérieur à \( \alpha \)
+      par rapport à son degré \( b \) ;
+    \item \(
+        \frac{b_\fcti}{b_{\fcti+1}}
+        \ge
+        \left( \frac\puiss\alpha \right)^\vdim
+      \)
+      pour tout \( \fcti \in \set{1, \dots, \puiss-1} \) ;
+    \item \(
+        \frac\alpha\puiss < \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
+      \).
+  \end{enumthm}
+  Il existe alors un \( \fct \in \set{1, \dots, \puiss} \) et une forme
+  \( T \in \cdn[ \vmp*[0], \dots, \vmp*[\vdim*] ] \) non nulle, telle que
+  \begin{enumthm}
+    \item \( x \in \zeros T  \) ;
+    \item \( \deg T
+        \le
+        \left( \frac\puiss\alpha \right)^\vdim
+      \) ;
+    \item la hauteur de \( T \) satisfait à
+      \begin{align}
+        b_\fct \, \hautl[\infty] T
+        & \le
+        \vdim*
+        \left( \frac\puiss\alpha \right)^\vdim
+        \left(
+          \hautl[\infty] G
+          + \sum_{\fcti=1}^\puiss \bigl(
+            b_\fcti (\stoll{\vdim[\fcti]} + \ln 2) + \sqrt{\vdim[\fcti]}
+          \bigr)
+          + \frac{\vdim-1}2 \ln \lgr b
+        \right)
+        \\ & \qquad
+        + b_\fct
+        \left( \frac\puiss\alpha \right)^\vdim (\vdim* + 1)
+        \ln \left( \left( \frac\puiss\alpha \right)^\vdim (\vdim* + 1) \right)
+        + b_\fct \ln \binom{\deg T + \vdim*}{\vdim*}
+      \end{align}
+      où l'on a noté \( \stoll{\vdim[\fcti]} = \frac12
+        \sum_{\ind=1}^{\vdim[\fcti]} \sum_{\indi=1}^{\ind} \frac1\indi \) le
+      nombre de \bsc{Stoll}.
+  \end{enumthm}
+\end{fact}
+
+
+
 \endinput
 
 % vim: spell spelllang=fr

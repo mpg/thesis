@@ -896,6 +896,8 @@
   relativement à la forme quadratique de \NT, des points \PH et \PHi de $\va$
   ou de son espace de \MoW}
 
+\newcommand \stoll [1] {\mathrm{St}\sb{#1}}
+
 % abelian formulas [[2
 %
 \newcommand \hmclab [1][\Theta] {%
@@ -997,7 +999,9 @@
   \varid$}
 
 \newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
-\newc@star@default \inda {\divi}{\ex} {\Aind\sp\wt\ssub{#1}}
+
+\newcommand \indg [2] {\Aind\ssup{#1}\ssub{#2}}
+\newc@star@default \inda {\divi}{\ex} {\indg\wt{#1}}
 
 \nomdef \wtsum a {S}
 \nomdef \inda a {Ind}
