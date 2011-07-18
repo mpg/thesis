@@ -240,8 +240,11 @@ par exemple, l'énoncé suivant nous sera utile par la suite.
 
 \begin{lem} \label{l:sum-wts}
   On a \(
-    \sum_{\fct=1}^\puiss (\wts* + \wts**) \le 2 \wts[1]
-  \).
+    \sum\fctrange (\wts* + \wts**)
+    = \sum\fctrange \wtw* \wts*
+    \le 2 \wts[1]
+  \), où l'on a noté \( \wtw* = 1 \) si \( \fct < \puiss \) et \( \wtw** =
+    \puiss - 1 \).
 \end{lem}
 
 \begin{proof}
@@ -275,7 +278,8 @@ dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
 sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
   \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
 suivantes, où les notions de degré et de hauteurs s'entendent dans le
-plongement \( \Theta^\puiss \) :
+plongement \( \Theta^\puiss \) et où l'on rappelle la notation \( \wtw* = 1 \)
+si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
 \nomuse {\varset(\ex)} [chap] {Ensemble des variétés produit contenant \( \ex
   \) et satisfaisant aux conditions~\eqref{e:varset-deg}
   à~\eqref{e:varset-ht}}
@@ -285,7 +289,7 @@ plongement \( \Theta^\puiss \) :
   \\ \label{e:varset-deg-prod}
   \prod\fctrange \vdeg* & \le \Lambda^{f(u)}
   \\ \label{e:varset-ht}
-  \sum\fctrange \wts* (\puiss-1^{\delta_\fct^\puiss} \hautl[1]{\var*}
+  \sum\fctrange \wtw \wts* \hautl[1]{\var*}
   & \le \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   \pmm,
 \end{align}
@@ -1114,7 +1118,10 @@ et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
 \end{equation}
 de sorte que, si \( H \) est une forme de multidegré \( \Dz \) dans \(
   \cdn[\vmp, \vmpi] \), son image par \( \wemba \) est de multidegré
-exactement \( \Di \) d'après le lemme~\ref{l:deg-wemba}.
+exactement \( \Di \) d'après le lemme~\ref{l:deg-wemba}. Pour alléger les
+notations par la suite, on introduit le vecteur \( \wtw = (1, \dots, 1, \puiss
+  - 1) \in \N^\puiss \), de sorte qu'on a \( d'_\fct = \wts* (2 \wtw* + \epsz)
+\) pour tout \( \fct \).
 
 \medskip
 
@@ -1127,7 +1134,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   (p, q)
   \in \N^{\puiss (\dimp+1)} \times \N^{(\puiss-1) (\dimp+1)}
   \text{ tel que }
-  \lgr{p\mexp*} = \Dz*
+  \lgr{p\mexp*} = \Dz* = \delta \epsz \wts*
   \text{ et }
   \lgr{q\mexpi*} = \Dz_{\puiss + \fcti} = \delta
   \pmm.
@@ -1185,7 +1192,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \right) ^\delta
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
-    \delta \) pour tout \( \fcti \) (voir \eqref{e:d-dp-def}), puis en
+    \delta \) pour tout \( \fcti \), puis en
   utilisant le lemme~\ref{l:hclab}. En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
   pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
@@ -2433,13 +2440,16 @@ ce n'est pas utile ici.
 Nous allons maintenant montrer que la forme auxiliaire construite précédemment
 s'annule avec un indice élevé en \( \ex \). Commençons par préciser la notion
 d'indice utilisée, similaire à celle définie au début de la
-sous-section~\ref{sec:siegel-plan}, mais cette fois en un point. Posons
+sous-section~\ref{sec:siegel-plan}, mais cette fois en un point. Par ailleurs
+on introduit d'abord la notion d'indice pondéré par un vecteur \( b \in
+  \N^\puiss \) quelconque avant de spécialiser au vecteur de poids qui nous
+intéresse, ce qui n'était pas utile précédemment mais le sera cette fois pour
+énoncer la variante du théorème du produit que nous utiliserons. Posons
 \begin{equation}
-  \wtsum( \dermp )
+  \wtsum[b]( \dermp )
   =
-  \frac {\lgr{\dermp[1]}} {\wts[1]} + \dots
-  + \frac {\lgr{\dermp[\puiss-1]}} {\wts[\puiss-1]}
-  + \frac {\lgr{\dermp[\puiss]}} {\wts** (\puiss-1)}
+  \frac {\lgr{\dermp[1]}} {b_1} + \dots
+  + \frac {\lgr{\dermp[\puiss]}} {b_\puiss}
 \end{equation}
 pour tout \( \dermp \in \N^\vdim \).  Si \( \ratfi \) est une fraction
 rationnelle et \( \point \) un point où elle est définie, on définit son
@@ -2448,9 +2458,9 @@ indice en \( \point \) comme
   \inda[\point] \ratfi
   =
   \inf \set{
-    \wtsum*(\imp)
+    \wtsum[b](\imp)
     \text{ pour }
-    \imp \text{ tel que } \ratfi_\imp \neq 0
+    \imp \text{ tel que } \der[\imp] \ratfi(\point) \neq 0
   }
   \pmm,
 \end{equation}
@@ -2466,8 +2476,8 @@ où l'indice est infini.
       que \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^\vdim
       \), alors \( \der[\dermp] \ratfi_1(\point) = \alpha(\point) \,
         \der[\dermp] \ratfi_2(\point) \).
-    \item Si \( \alpha(\point) \neq 0 \) on a \( \inda[\point](\ratfi_1) =
-        \inda[\point](\ratfi_2) \).
+    \item Si \( \alpha(\point) \neq 0 \) on a \( \indg b[\point](\ratfi_1) =
+        \indg b[\point](\ratfi_2) \).
   \end{enumthm}
 \end{lem}
 
@@ -2492,10 +2502,12 @@ où l'indice est infini.
   prouve que les deux fonctions ont le même indice en \( \point \).
 \end{proof}
 
-Si \( G \) est une forme multihomogène, on défini \( \inda[\point] G =
-  \inda[\point] G/H \) où \( H \) est n'importe quelle forme multihomogène de
+Si \( G \) est une forme multihomogène, on défini \( \indg b[\point] G =
+  \indg b[\point] G/H \) où \( H \) est n'importe quelle forme multihomogène de
 même degré ne s'annulant pas en \( \point \). Le deuxième point du lemme
-précédent montre que cette définition a bien un sens.
+précédent montre que cette définition a bien un sens. On s'intéressera
+désormais à l'indice pondéré par \( \wtw \wts = (\wts[1], \dots,
+  \wts[\puiss-1], (\puiss-1) \wts**) \).
 
 \medskip
 
@@ -3396,8 +3408,7 @@ conséquence du théorème du produit .
     \vdim** \). On considère une forme \( G \) de degré \( b \in (\N
     \minusset 0)^\puiss \) et on suppose que
   \begin{enumthm}
-    \item \( G \) s'annulle en \( x \) avec un indice supérieur à \( \alpha \)
-      par rapport à son degré \( b \) ;
+    \item \( \indg b** G \ge \alpha \) ;
     \item \(
         \frac{b_\fcti}{b_{\fcti+1}}
         \ge

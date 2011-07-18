@@ -942,6 +942,7 @@
 \newc@star@default \wts     {\fct }{\puiss  } {a\ssub{#1}\sp2}
 \newc@star@default \wti     {\fcti}{\puiss-1} {a\ssub{#1}}
 \newc@star@default \wtis    {\fcti}{\puiss-1} {a\ssub{#1}\sp2}
+\newc@star@default \wtw     {\fct }{\puiss  } {\eta\ssub{#1}}
 
 \nomdef \ex a {e}
 \nomdef \wt a {a}
@@ -1000,10 +1001,11 @@
 \nomdef \vanish a {q} \@gobbletwo{\vanish}{Idéal d'annulation $\vanish +
   \varid$}
 
-\newcommand \wtsum {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
+%\newcommand  \wtsum         {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
+\newcommand* \wtsum [1][\wtw\wts] {\@ifstar{ S\ssup{#1}\sb0 }{ S\ssup{#1} }}
 
-\newcommand \indg [2] {\Aind\ssup{#1}\ssub{#2}}
-\newc@star@default \inda {\divi}{\ex} {\indg\wt{#1}}
+\newc@star@default@i \indg {\divi}{\ex} {\Aind\ssup{#1}\ssub{#2}}
+\newc@star@default   \inda {\divi}{\ex} {\indg{\wtw\wts}[#1]}
 
 \nomdef \wtsum a {S}
 \nomdef \inda a {Ind}
