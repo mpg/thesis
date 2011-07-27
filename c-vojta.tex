@@ -285,9 +285,12 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   à~\eqref{e:varset-ht}}
 \begin{align}
   \label{e:varset-deg}
-  \vdeg* & \le B = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \quad \forall \fct
+  \vdeg*
+  & \le B
+  = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \quad \forall \fct
   \\ \label{e:varset-deg-prod}
-  \prod\fctrange \vdeg* & \le \Lambda^{f(u)}
+  \prod\fctrange \vdeg*
+  & \le \Lambda^{f(u)}
   \\ \label{e:varset-ht}
   \sum\fctrange \wtw \wts* \hautl[1]{\var*}
   & \le \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
@@ -295,10 +298,22 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 \worknote{Rémond p. 106 et 112}
+\worknote{\( \epsi \) défini plus tard, à remplacer ici après avoir vérifié si
+  ça vaut la peine de supprimer la dépendance en \( \dimp \)}
 \begin{align}
-  \Lambda & = \stuffout{(6m\eps^{-1})^{2m^2}} \\
-  f(u) & = \stuffout{\prod_{i=u+1}^{mg} (3i + 1) \le m^{3m^2 - u}} \\
-  \newcst[]{vs-deg-prod} & = \stuffout{(32m)^{m+3}} \\
+  \label{e:def-Lambda}
+  \Lambda
+  & = \max \bigl(
+    (\deg \va)^\puiss,
+    \frac{ 96\puiss^2 }{ \eps \epsi } \, \deg \va,
+    (\sqrt2 \puiss \genre)^{\puiss\genre}
+  \bigr)
+  \\
+  f(u) & = \prod_{i=u+1}^{mg} (2i + 1) \le m^{2m^2 - u}
+  \\
+  \newcst[]{vs-deg-prod}
+  & = \frac{ 96\puiss^2 }{ \eps \epsi }
+  \\
   \newcst[\va]{vs-ht} & = \stuffout{\max(n^{m^2}, \vaht, \hlclab)}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
@@ -326,14 +341,13 @@ facteur réduit à un point, ce qui, nous venons de le voir, fournit la
 contradiction prouvant le théorème \ref{t:vojta-div}.
 
 \begin{prop} \label{p:varset-notmin}
-  \worknote{Où utilise-t-on l'hypothèse sur la dimension ?}
   Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
   Alors il existe un \( \fct \) et une forme \( T \) ne dépendant que de \(
     \vmp* \), s'annulant en \( \ex \) mais pas identiquement sur \( \var \),
   telle que \worknote{Rémond prop. 4.2 p. 118}
   \begin{align}
     \deg T
-    & \le \stuffout{\Lambda^{3u f(u)}}
+    & \le \stuffout{\Lambda^{2u f(u)}}
     \\
     \wts* \hautl[1] T
     & \le \stuffout{\newcst[]{vs-div-ht} \cst{vs-ht}
@@ -2518,6 +2532,8 @@ scolie~\ref{s:aux-co}. Le but de cette section est alors de montrer la
 proposition suivante.
 
 \begin{prop} \label{p:extra}
+  \worknote{Corriger, et éventuellement fixer la définition de \(
+      \cst{vs-deg-prod} \)}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
   \( \sigma = \frac{16 (\puiss-1)}{\eps} \).
 \end{prop}
@@ -3402,7 +3418,7 @@ La section précédente a montré que \( \faux** \) était d'indice
 utilisant le fait suivant (théorème~7.1 page~149 de \cite{remivds}),
 conséquence du théorème du produit .
 
-\begin{fact}
+\begin{fact} \label{f:thm-prod}
   Soient \( x_1, \dots, x_\puiss \) un point rationnel de \( \proj{\vdim_1}
     \times \dots \times \proj{\vdim**} \) et \( \vdim = \vdim_1 + \dots +
     \vdim** \). On considère une forme \( G \) de degré \( b \in (\N
@@ -3472,6 +3488,32 @@ résume le résultat de la page~148 de~\cite{remivds}.
       \).
   \end{enumthm}
 \end{fact}
+
+On note désormais \( \vdeg = \prod\fctrange \vdeg* \).  On applique alors le
+fait~\ref{f:thm-prod} à la forme \( G \) ainsi obtenue, avec \( \alpha =
+  \Lambda^{-2f(u)} \) et \( b = \deg G = \bigl( D \delta \wts* (2\wtw* + \epsz)
+  \bigr)_\fct \). Vérifions que les hypothèses sont bien satisfaites.
+Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
+\begin{align}
+  \sum\fctrange \frac{ \lgr{\imp*} }{ b_\fct }
+  & \ge
+  \frac1{ 3 \delta \vdeg }
+  \sum\fctrange
+  \frac{ \lgr{\imp*} }{ \wtw* \wts* }
+\end{align}
+par définition de \( b \) et en observant que \( \epsz < 1 \), de sorte qu'en
+utilisant successivement la proposition~\ref{p:extra} et les
+hypothèses~\ref{e:varset-deg} et~\ref{e:varset-deg-prod} il vient :
+\begin{equation}
+  \indg b** G
+  \ge
+  \frac1{ 3 \delta \vdeg } \inda** G
+  \ge
+  \frac{ \eps \epsi }{ 96 (\puiss-1) B D }
+  \ge
+  \alpha
+\end{equation}
+qui est justement la première hypothèse à satisfaire.
 
 \endinput
 
