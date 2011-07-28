@@ -298,7 +298,6 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
-\worknote{Rémond p. 106 et 112}
 \worknote{\( \epsi \) défini plus tard, à remplacer ici après avoir vérifié si
   ça vaut la peine de supprimer la dépendance en \( \dimp \)}
 \begin{align}
@@ -3425,7 +3424,7 @@ conséquence du théorème du produit .
     \vdim** \). On considère une forme \( G \) de degré \( b \in (\N
     \minusset 0)^\puiss \) et on suppose que
   \begin{enumthm}
-    \item \( \indg b** G \ge \alpha \) ;
+    \item \( \indg b[x] G \ge \alpha \) ;
     \item \(
         \frac{b_\fcti}{b_{\fcti+1}}
         \ge
@@ -3470,32 +3469,43 @@ conséquence du théorème du produit .
 \end{fact}
 
 Pour appliquer ce fait, nous devons fabriquer à partir de \( \faux**
-\) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) ;
-pour cela il suffit de considérer la norme de cette forme. Le fait suivant
-résume le résultat de la page~148 de~\cite{remivds}.
+\) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \).
+On considère à cet effet la projection linéaire \( \pi \) obtenue en
+conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur dans
+le plongement \( \vadapt* \circ \Theta \). Ce plongement étant adapté, cette
+projection fait apparaître \( \var \) comme un revêtement ramifié du produit
+d'espaces projectif considéré. Algébriquement, ceci signifie que l'anneau des
+coordonnées homogènes de \( \var \) est une extension de type fini de \( \cdn[
+  \vmp[1][0], \dots, \vmp[1][\vdim*]; \dots; \vmp[\puiss][0], \dots,
+  \vmp[\puiss][\vdim*]
+  ]
+\). Le fait suivant, qui résume le résultat de la page~148 de~\cite{remivds},
+montre que la norme de \( \faux** \) dans cette extension est un choix
+raisonnable.
 
 \begin{fact}
-  Il existe une forme \( G \in \cdn[
+  La forme \( N(\faux**) \in \cdn[
     \vmp[1][0], \dots, \vmp[1][\vdim*]; \dots;
     \vmp[\puiss][0], \dots, \vmp[\puiss][\vdim*]
-    ] \) telle que
+    ] \) possède les propriétés suivantes :
   \begin{enumthm}
-    \item \( \inda** G \ge \inda** \faux** \) ;
-    \item \( \deg G = (\prod\fctrange \vdeg*) \deg \faux** \) ;
+    \item \( \inda[\pi(\ex)] N(\faux**) \ge \inda** \faux** \) ;
+    \item \( \deg N(\faux**) = (\prod\fctrange \vdeg*) \deg \faux** \) ;
     \item \(
-        \hautl[\infty] G
+        \hautl[\infty] N(\faux**)
         \le
         (\prod\fctrange \vdeg*) \hautl[\infty]{ \faux** } + o(\delta)
       \).
   \end{enumthm}
 \end{fact}
 
-On note désormais \( \vdeg = \prod\fctrange \vdeg* \).  On applique alors le
-fait~\ref{f:thm-prod} à la forme \( G \) ainsi obtenue, avec \( \alpha =
-  \puiss \Lambda^{-2f(u)} \) et \( b = \deg G = \bigl( D \delta \wts* (2\wtw*
-    + \epsz) \bigr)_\fct \). Vérifions que les hypothèses sont bien
-satisfaites.  Commençons avec l'indice : pour tout \( \imp \in
-  (\N^{\dimp+1})^\puiss \) on a
+On note désormais \( G = N(\faux**) \) puis \( \vdeg = \prod\fctrange \vdeg*
+\) et \( b = \bigl( D \delta \wts* (2\wtw* + \epsz) \bigr)_\fct \).
+On souhaite alors appliquer le fait~\ref{f:thm-prod} à \( G \) avec \( \alpha
+  = \puiss \Lambda^{-2f(u)} \) et \( x = \pi(\ex) \). Il s'agit tout d'abord
+de vérifier que les hypothèses sont bien satisfaites.
+
+Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
 \begin{align}
   \sum\fctrange \frac{ \lgr{\imp*} }{ b_\fct }
   & \ge
@@ -3507,9 +3517,9 @@ par définition de \( b \) et en observant que \( \epsz < 1 \), de sorte qu'en
 utilisant successivement la proposition~\ref{p:extra} puis les
 hypothèses~\ref{e:varset-deg} et~\ref{e:varset-deg-prod} il vient :
 \begin{equation}
-  \indg b** G
+  \indg b[x] G
   \ge
-  \frac1{ 3 \delta \vdeg } \inda** G
+  \frac1{ 3 \delta \vdeg } \inda[x] G
   \ge
   \frac{ \eps \epsi }{ 96 (\puiss-1) B D }
   \ge
@@ -3559,8 +3569,6 @@ Pour la troisième, on observe que pour tout entier \( \vdim \ge \puiss\genre
 d'après la définition~\eqref{e:def-Lambda} de \( \Lambda \) (troisième
 argument du maximum). Comme \( f(\vdim) \ge 1 \) pour tout \( \vdim \), la
 troisième hypothèse est également satisfaite.
-
-
 
 
 
