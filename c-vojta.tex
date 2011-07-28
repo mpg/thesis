@@ -319,26 +319,16 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
 
-Si \( \ex \) satisfait \eqref{e:Vbig}, cet ensemble ne contient que des
-variétés dont tous les facteurs sont de dimension au moins \( 1 \). En effet,
-dans le cas contraire, on aurait \( \var* = \ex* \) pour un certain \( \fct
-\), ce dont on déduirait successivement
-\begin{alignat}{2}
-  \wts* \hautn{\ex*}
-  & \le 2\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
-  &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
-  \\
-  \wts[1] \hautn{\ex[1]}
-  & \le 3\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
-  && \text{par \eqref{e:wt-ratio},}
-\end{alignat}
-qui contredirait précisément \eqref{e:Vbig}.
+Pour commencer, remarquons que cet ensemble n'est pas vide puisqu'il contient
+\( \va^\puiss \). En effet, la définition de \( \Lambda \) (deux premiers
+arguments du maximum) assure que~\eqref{e:varset-deg}
+et~\eqref{e:varset-deg-prod} sont satisfait ; le fait que \( \cst{vs-ht} \ge
+  \vaht \), que \( \Lambda > 2 \) et le lemme~\ref{l:sum-wts} garantissent que
+la condition~\eqref{e:varset-ht} l'est aussi.
 
-Or cet ensemble \( \varset(\ex) \) n'est certainement pas vide, puisqu'il
-contient au moins \( \va^\puiss \) ; il possède donc au moins un élément
-minimal. La proposition suivante implique que cet élément a au moins un
-facteur réduit à un point, ce qui, nous venons de le voir, fournit la
-contradiction prouvant le théorème \ref{t:vojta-div}.
+Nous allons maintenant qu'à partir d'une variété dans \( \varset(\ex) \) on
+peut en fabriquer une plus petite, pour peu que la variété initiale n'ait
+aucun facteur réduit à un point. Pour cela, on utilise la propriété suivante.
 
 \begin{prop} \label{p:varset-notmin}
   Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
@@ -356,27 +346,56 @@ contradiction prouvant le théorème \ref{t:vojta-div}.
   \end{align}
 \end{prop}
 
+Supposons un instant cet énoncé acquis et voyons comment on l'utilise pour
+fabriquer une variété \( \var' \in \varset(\ex) \) plus petite que \( \var \),
+puis comment on en déduit le théorème~\ref{t:vojta-div}.
+
 En effet, on note alors \( \var' \) la variété égale à \( \var \) sur tous les
 facteurs sauf le \( \fct \)-ème où on choisit une composante irréductible de
 \( \var* \cap \zeros T \) qui contient \( \ex* \), de sorte que \( \var' \)
 est une variété strictement contenue dans \( \var \) et contenant \( \ex \).
-Le théorème de \bsc{Bézout} donne alors
+Restent donc à vérifier les conditions~\eqref{e:varset-deg}
+à~\eqref{e:varset-ht} ; pour les deux première, le
+théorème de \bsc{Bézout} donne
 \begin{equation}
   \deg \var*' \le \vdeg* \deg T
 \end{equation}
-et sa version arithmétique indique que
-\worknote{LNM7, thm 3.4, coro 3.6 ou LNM6 thm, lemme 4.1}
-\begin{equation}
-  \stuffout{
-    \hautl[\mathrm{proj}]{\var*'}
-    \le
-    \vdeg* \hautl[1]{T}
-    + \hautl[\mathrm{proj}]{\var*} \deg T
-  }
-  \pmm,
+ce qui montre que les quantités apparaissant dans les
+conditions~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} sur les degrés
+sont au plus multipliées par \( \deg T = \Lambda^{2\vdim f(\vdim)} \) en
+passant de \( \var \) à \( \var' \). Or, par définition de \( f \) on a
+\begin{equation} \label{e:ct-f}
+  f(\vdim-1) = 2\vdim f(\vdim) + f(\vdim)
 \end{equation}
-ce qui montre que \( \var' \in \varset(\ex) \) (au vu des constantes qui
-seront déterminées par ce point) et que \( \var \) n'était pas minimale.
+donc ces conditions sont à nouveau satisfaites par \( \var' \).
+
+Pour la condition sur la hauteur, on utilise la formule suivante :
+\begin{equation}
+  \hautl{ \var*' }
+  \le
+  \vdeg* \hautl[\mathrm{m}] T + \deg T \hautl{ \var* }
+\end{equation}
+où \( \hautl[\mathrm{m}] \) est la hauteur désignée par \( h_1 \) dans la
+référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
+par ailleurs que \( \hautl[\mathrm{m}] T \le \hautl[\infty] T + \sqrt\dimp \).
+
+On calcule un peu et on trouve que ça passe\dots \todo
+
+On peut ainsi, en partant de \( \va^\puiss \), construire une chaîne
+décroissante d'éléments de \( \varset(\ex) \), jusqu'au moment où l'un des
+facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex* \) pour un
+certain \( \fct \). On en déduit alors
+\begin{alignat}{2}
+  \wts* \hautn{\ex*}
+  & \le 2\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+  &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
+  \\
+  \wts[1] \hautn{\ex[1]}
+  & \le 3\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+  && \text{par \eqref{e:wt-ratio},}
+\end{alignat}
+qui contredit directement~\eqref{e:Vbig} et cette contradiction achève la
+preuve par l'absurde du théorème~\ref{t:vojta-div}.
 
 \medskip
 
@@ -386,7 +405,7 @@ occupera le reste du chapitre. L'intérêt de l'énoncer immédiatement plutôt
 qu'au moment où nous serons en mesure de l'établir est de pouvoir écarter
 rapidement quelques cas particuliers pour lesquels la méthode qui suit ne
 s'applique pas (mais qui sont heureusement immédiats). Nous énoncerons ces cas
-à la fin de la section suivante après avoir introduit le système de
+à la fin de la sous-section suivante après avoir introduit le système de
 coordonnées dans lequel ils s'expriment naturellement.
 
 \begin{tdef} \label{d:var&co}
@@ -405,7 +424,7 @@ coordonnées dans lequel ils s'expriment naturellement.
   hypothèses de la proposition ; en particulier elle n'est contenue dans aucun
   hyperplan d'équation \( \vmp*[0] = 0 \) puisqu'elle contient
   \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans, et
-  aucun de ces facteurs n'est réduit à un point.
+  aucun de ses facteurs n'est réduit à un point.
 
   On notera en outre \( \vdim* = \dim \var* \) et \( \vdim = \dim \var \) puis
   \( \vdeg* = \deg \var* \), et \( \varfc* \) une
@@ -416,13 +435,6 @@ coordonnées dans lequel ils s'expriment naturellement.
   forme de \bsc{Chow} de \( \var* \). On note enfin \( \varid \) l'idéal
   multihomogène saturé de $\var$ et $\varid*$ ceux de ses facteurs.
 \end{tdef}
-
-De façon générale, si $A$ est une algèbre graduée et $\Ideal$ un idéal
-homogène, on notera $A_d$ et $\Ideal_d$ leur partie homogène de degré $d$ ; on
-utilisera la même notation pour les algèbres et idéaux multigradués, où $d$
-désignera une famille d'entiers.
-
-\medskip
 
 La preuve de la proposition~\ref{p:varset-notmin} suit la méthode de
 \TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
