@@ -3491,9 +3491,10 @@ résume le résultat de la page~148 de~\cite{remivds}.
 
 On note désormais \( \vdeg = \prod\fctrange \vdeg* \).  On applique alors le
 fait~\ref{f:thm-prod} à la forme \( G \) ainsi obtenue, avec \( \alpha =
-  \Lambda^{-2f(u)} \) et \( b = \deg G = \bigl( D \delta \wts* (2\wtw* + \epsz)
-  \bigr)_\fct \). Vérifions que les hypothèses sont bien satisfaites.
-Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
+  \puiss \Lambda^{-2f(u)} \) et \( b = \deg G = \bigl( D \delta \wts* (2\wtw*
+    + \epsz) \bigr)_\fct \). Vérifions que les hypothèses sont bien
+satisfaites.  Commençons avec l'indice : pour tout \( \imp \in
+  (\N^{\dimp+1})^\puiss \) on a
 \begin{align}
   \sum\fctrange \frac{ \lgr{\imp*} }{ b_\fct }
   & \ge
@@ -3502,7 +3503,7 @@ Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
   \frac{ \lgr{\imp*} }{ \wtw* \wts* }
 \end{align}
 par définition de \( b \) et en observant que \( \epsz < 1 \), de sorte qu'en
-utilisant successivement la proposition~\ref{p:extra} et les
+utilisant successivement la proposition~\ref{p:extra} puis les
 hypothèses~\ref{e:varset-deg} et~\ref{e:varset-deg-prod} il vient :
 \begin{equation}
   \indg b** G
@@ -3514,6 +3515,39 @@ hypothèses~\ref{e:varset-deg} et~\ref{e:varset-deg-prod} il vient :
   \alpha
 \end{equation}
 qui est justement la première hypothèse à satisfaire.
+
+Pour la deuxième, en utilisant la définition de \( \wtw \) et le fait que \(
+  \epsz < 1 \), puis deux fois~\eqref{e:wt-ratio} et enfin
+l'hypothèse~\eqref{e:Vfar}, on écrit
+\begin{equation}
+  \frac{ b_\fct }{ b_{\fct+1} }
+  =
+  \frac{
+    (2\wtw* + \epsz) \wts*
+  }{
+    (2\wtw[\fct+1] + \epsz) \wts[\fct+1]
+  }
+  \ge
+  \frac1\puiss \,
+  \frac{ \wts* }{ \wts[\fct+1] }
+  \ge
+  \frac1{4\puiss} \,
+  \frac{ \hautn{ \ex[\fct+1] } }{ \hautn{ \ex* } }
+  \ge
+  \frac{ \Vfar }{ 4\puiss }
+  \pmm.
+\end{equation}
+Par ailleurs, \( \bigl( \frac\puiss\alpha \bigr)^\vdim = \Lambda^{2\vdim
+    f(\vdim)} \) d'après le choix de \( \alpha \). Pour \( \vdim \) compris
+entre \( \puiss \) et \( \puiss\genre \), cette quantité est majorée par \(
+  \Lambda^{2\puiss f(\puiss)} \) vu la définition de \( f \). La
+définition~\eqref{e:def-Vfar} de \( \Vfar \) implique alors directement que la
+deuxième condition est satisfaite.
+
+
+
+
+
 
 \endinput
 
