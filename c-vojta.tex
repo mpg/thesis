@@ -52,8 +52,9 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     } \text{ pour \eqref{e:Vbig-ct-extra}}
     \\
     \label{e:def-Vfar}
-    \Vfar & = \stuffout{\dots
-      \text{$>4$ pour \ref{l:sum-wts}}}
+    \Vfar
+    & = 2 \puiss \Lambda^{2\puiss f(\puiss)}
+    \text{ pour la section~\ref{sec:thm-prod}}
     \\
     \label{e:def-Vcos}
     \Vcos & = \stuffout{\frac{\eps\epsi}{48(\puiss-1)}}
@@ -3542,7 +3543,22 @@ Par ailleurs, \( \bigl( \frac\puiss\alpha \bigr)^\vdim = \Lambda^{2\vdim
 entre \( \puiss \) et \( \puiss\genre \), cette quantité est majorée par \(
   \Lambda^{2\puiss f(\puiss)} \) vu la définition de \( f \). La
 définition~\eqref{e:def-Vfar} de \( \Vfar \) implique alors directement que la
-deuxième condition est satisfaite.
+deuxième hypothèse est satisfaite.
+
+Pour la troisième, on observe que pour tout entier \( \vdim \ge \puiss\genre
+\) on a
+\begin{equation}
+  \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
+  \ge
+  \left( \frac{\ln(\puiss\genre + 1)}{2(\puiss\genre)^2}\right)^{\puiss\genre}
+  \ge
+  (\sqrt2 \puiss\genre)^{-2\puiss\genre}
+  \ge
+  \Lambda^{-2}
+\end{equation}
+d'après la définition~\eqref{e:def-Lambda} de \( \Lambda \) (troisième
+argument du maximum). Comme \( f(\vdim) \ge 1 \) pour tout \( \vdim \), la
+troisième hypothèse est également satisfaite.
 
 
 
