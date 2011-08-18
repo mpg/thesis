@@ -751,7 +751,8 @@
 \newcommand \dimp {n}
 \newcommand \dimpi {\dimp^2 + 2\dimp} % pour les Segre
 \newcommand*\projd [1][] {\proj[#1]\dimp}
-\newcommand \fibre {\mathcal L}
+\newcommand \fibre  {\mathcal L}
+\newcommand \fibrei {\mathcal M}
 
 \nomdef \dimp a {n} \@gobbletwo{\dimp}{Dimension de l'espace projectif
   ambiant}
