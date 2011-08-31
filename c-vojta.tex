@@ -296,7 +296,7 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   \prod\fctrange \vdeg*
   & \le \Lambda^{f(u)}
   \\ \label{e:varset-ht}
-  \sum\fctrange \wtw \wts* \hautl[1]{\var*}
+  \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
   & \le \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   \pmm,
 \end{align}
@@ -1747,17 +1747,24 @@ d'après~\eqref{e:cst-vs-ht} ; on observe ensuite que \( \sum\fctrange 2\Di*
   \le 12 \wts[1] \) d'après le lemme~\ref{l:sum-wts}, la
 définition~\eqref{e:d-dp-def} de \( d' \) et le fait que \( \epsz \le 1 \). On
 majore ensuite \( 2\dimp \ln B + 12 (B(\genre+1) + 1) \ln(2B) \) assez
-largement par \( 12 \dimp B^2 = 12 \dimp \cst{vs-deg-prod}^{-2}
-  \Lambda^{2f(\vdim)} \). Enfin, on utilise~\eqref{e:varset-ht} pour conclure
-que
+largement par \( 12 \dimp B^2 \). Il vient ainsi
 \begin{equation} \label{e:hmat-sigma}
   \hautl[\infty]{M_\sigma}
   \le
-  2 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
-    4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
-  \right) + o(\delta)
+  6 \delta \Bigl(
+    \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
+    + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+  \Bigr) + o(\delta)
   \pmm.
 \end{equation}
+
+Remarquons que l'on pourrait immédiatement utiliser les
+hypothèses~\eqref{e:varset-deg} et~\eqref{e:varset-ht} pour simplifier cette
+dernière expression ; on constaterait alors que les deux termes principaux
+sont du même ordre de grandeur : \( \cst{vs-ht} \wts[1] \Lambda^{2f(\vdim)} \)
+essentiellement. Il nous paraît cependant plus utile de conserver
+explicitement la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+\) aussi longtemps que possible.
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -1804,9 +1811,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \\
     \hautl[\infty] \faux
     & \le
-    2 \delta \wts[1] \Lambda^{2f(\vdim)} \left(
-      4 \cst{vs-ht} + 12 \dimp \cst{vs-deg-prod}^{-2}
-    \right) + o(\delta)
+    6 \delta \Bigl(
+      \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
+      + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    \Bigr) + o(\delta)
     \pmm.
   \end{align}
 \end{prop}
@@ -1875,6 +1883,12 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
           \wts[\puiss] (2\puiss - 2 + \epsz)
         \bigr)
       \) ;
+    \item \(
+        6 \delta \Bigl(
+          \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
+          + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+        \Bigr) + o(\delta)
+      \) ; \label{i:aux-co-ht}
     \item \(
         \nv1{\faux*}
         \le
@@ -3694,6 +3708,9 @@ ci-dessus il vient
 \end{align}
 comme estimation finale de la hauteur de \( T \) en fonction de celle de \(
   \faux** \).
+
+
+
 
 
 
