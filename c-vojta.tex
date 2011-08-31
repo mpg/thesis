@@ -329,9 +329,9 @@ et~\eqref{e:varset-deg-prod} sont satisfait ; le fait que \( \cst{vs-ht} \ge
   \vaht \), que \( \Lambda > 2 \) et le lemme~\ref{l:sum-wts} garantissent que
 la condition~\eqref{e:varset-ht} l'est aussi.
 
-Nous allons maintenant qu'à partir d'une variété dans \( \varset(\ex) \) on
-peut en fabriquer une plus petite, pour peu que la variété initiale n'ait
-aucun facteur réduit à un point. Pour cela, on utilise la propriété suivante.
+Nous allons voir qu'à partir d'une variété dans \( \varset(\ex) \) on peut en
+fabriquer une plus petite, pour peu que la variété initiale n'ait aucun
+facteur réduit à un point. Pour cela, on utilise la proposition suivante.
 
 \begin{prop} \label{p:varset-notmin}
   Soit \( \var \in \varset(\ex) \) n'ayant aucun facteur de dimension nulle.
@@ -3732,9 +3732,27 @@ exemple le facteur \( 2 \) dans le membre de gauche ; on obtient ainsi
 \end{align}
 en utilisant~\eqref{e:varset-deg} et en trichant un peu pour l'instant.\todo
 
-
-
-
+Passons maintenant à \( T' \). Par construction et vu les propriétés
+classiques de la hauteur, on a
+\begin{align}
+  \hautl[\infty]{ T' }
+  & \le
+  \hautl[\infty]{ T }
+  + \deg T \cdot \hautl[\infty]{ \vadapt* }
+  + \ln \binom{ \deg T + \dimp + 1 }{ \dimp + 1 }
+  \\ & \le
+  \hautl[\infty]{ T }
+  + \Lambda^{2\vdim f(\vdim)} \ln \Lambda^{f(\vdim)}
+  + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+  \\ & \le
+  \vdim* \Lambda^{2\vdim f(\vdim)}
+  \Biggl(
+    \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)}
+  \Biggr)
+\end{align}
+en observant \todo que \( 2\vdim (\dimp + 1) \le \Lambda^2 \). Ceci achève la
+preuve de la proposition~\ref{p:varset-notmin}.
 
 
 \section{Ajustement des paramètres}
