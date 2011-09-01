@@ -342,65 +342,131 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     \deg T
     & \le \Lambda^{2\vdim f(\vdim)}
     \\
-    \wts* \hautl[1] T
-    & \le \stuffout{\newcst[]{vs-div-ht} \cst{vs-ht}
-      \Lambda^{(3\vdim + 1/\puiss) f(\vdim)} \wts[1]}
+    \wts* \hautl[\infty] T
+    & \le
+    \vdim* \Lambda^{2\vdim f(\vdim)}
+    \Biggl(
+      \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+      + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+    \Biggr)
     \pmm.
   \end{align}
 \end{prop}
 
-Supposons un instant cet énoncé acquis et voyons comment on l'utilise pour
-fabriquer une variété \( \var' \in \varset(\ex) \) plus petite que \( \var \),
-puis comment on en déduit le théorème~\ref{t:vojta-div}.
+Supposons un instant cet énoncé acquis et voyons comment on en déduit le
+théorème~\ref{t:vojta-div}.
 
-En effet, on note alors \( \var' \) la variété égale à \( \var \) sur tous les
-facteurs sauf le \( \fct \)-ème où on choisit une composante irréductible de
-\( \var* \cap \zeros T \) qui contient \( \ex* \), de sorte que \( \var' \)
-est une variété strictement contenue dans \( \var \) et contenant \( \ex \).
-Restent donc à vérifier les conditions~\eqref{e:varset-deg}
-à~\eqref{e:varset-ht} ; pour les deux première, le
-théorème de \bsc{Bézout} donne
-\begin{equation}
-  \deg \var*' \le \vdeg* \deg T
-\end{equation}
-ce qui montre que les quantités apparaissant dans les
-conditions~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} sur les degrés
-sont au plus multipliées par \( \deg T = \Lambda^{2\vdim f(\vdim)} \) en
-passant de \( \var \) à \( \var' \). Or, par définition de \( f \) on a
-\begin{equation} \label{e:ct-f}
-  f(\vdim-1) = 2\vdim f(\vdim) + f(\vdim)
-\end{equation}
-donc ces conditions sont à nouveau satisfaites par \( \var' \).
+\begin{proof}[\proofname\ du théorème~\ref{t:vojta-div}]
+  Voyons comment, en partant d'une variété \( \var \) satisfaisant aux
+  hypothèses de la proposition, on peut fabriquer un variété \( \var' \) plus
+  petite et appartenant toujours à \( \varset(\ex) \) : on utilise la forme
+  \( T \) fournie par la proposition et on note
+  \( \var' \) la variété égale à \( \var \) sur tous les facteurs sauf le \(
+    \fct \)-ème où on choisit une composante irréductible de
+  \( \var* \cap \zeros T \) qui contient \( \ex* \), de sorte que \( \var' \)
+  est une variété strictement contenue dans \( \var \) et qui contient \( \ex
+  \).
 
-Pour la condition sur la hauteur, on utilise la formule suivante :
-\begin{equation}
-  \hautl{ \var*' }
-  \le
-  \vdeg* \hautl[\mathrm{m}] T + \deg T \hautl{ \var* }
-\end{equation}
-où \( \hautl[\mathrm{m}] \) est la hauteur désignée par \( h_1 \) dans la
-référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
-par ailleurs que \( \hautl[\mathrm{m}] T \le \hautl[\infty] T + \sqrt\dimp \).
+  Restent donc à vérifier les conditions~\eqref{e:varset-deg}
+  à~\eqref{e:varset-ht} ; pour les deux premières (degrés), le théorème de
+  \bsc{Bézout} donne
+  \begin{equation}
+    \deg \var*' \le \vdeg* \deg T
+  \end{equation}
+  ce qui montre que les quantités apparaissant dans les
+  conditions~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} sur les degrés
+  sont au plus multipliées par \( \deg T = \Lambda^{2\vdim f(\vdim)} \) en
+  passant de \( \var \) à \( \var' \). Or, par définition de \( f \) on a
+  \begin{equation} \label{e:ct-f}
+    f(\vdim-1) = 2\vdim f(\vdim) + f(\vdim)
+  \end{equation}
+  donc ces conditions sont à nouveau satisfaites par \( \var' \).
 
-On calcule un peu et on trouve que ça passe\dots \todo
+  Pour la condition sur la hauteur, on utilise la formule suivante
+  (\emph{arithmetic Bézout theorem}, \cite[p. 87]{phidg}) :
+  \begin{equation}
+    \hautl{ \var*' }
+    \le
+    \vdeg* \hautl[\mathrm{m}] T + \deg T \cdot \hautl{ \var* }
+  \end{equation}
+  où \( \Hautl[\mathrm{m}] \) est la hauteur désignée par \( h_1 \) dans la
+  référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
+  par ailleurs que \( \hautl[\mathrm{m}] T \le \hautl[\infty] T + \sqrt\dimp
+  \), de sorte qu'on a immédiatement
+  \begin{equation}
+    \wtw* \wts* \hautl[\mathrm{m}] T
+    \le
+    \vdim* \Lambda^{2\vdim f(\vdim)}
+    \Biggl(
+      \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+      + 18 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+    \Biggr)
+  \end{equation}
+  car \( \Lambda > \dimp \) (ou \( \cst{vs-ht} > \dimp \) aussi si l'on veut)
+  et \( \wts[1] \ge \wtw* \wts* \).
 
-On peut ainsi, en partant de \( \va^\puiss \), construire une chaîne
-décroissante d'éléments de \( \varset(\ex) \), jusqu'au moment où l'un des
-facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex* \) pour un
-certain \( \fct \). On en déduit alors
-\begin{alignat}{2}
-  \wts* \hautn{\ex*}
-  & \le 2\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
-  &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
-  \\
-  \wts[1] \hautn{\ex[1]}
-  & \le 3\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
-  && \text{par \eqref{e:wt-ratio},}
-\end{alignat}
-qui contredit directement~\eqref{e:Vbig} et cette contradiction achève la
-preuve par l'absurde du théorème~\ref{t:vojta-div}.
+  Appliquons le théorème de \bsc{Bézout} arithmétique qu'on vient
+  de rappeler :
+  \begin{align}
+    \sum_{\fcti\in\set{1, \dots, \puiss}}
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
+    & \le
+    \sum_{\fcti\in\set{1, \dots, \puiss} \minusset{\fct}}
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    +
+    \wtw* \wts* \bigl(
+      \vdeg* \hautl[\mathrm{m}] T + \deg T \cdot \hautl{ \var* }
+    \bigr)
+    \\ & \le
+    \Lambda^{2\vdim f(\vdim)} \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    \\ & \qquad
+    + \vdeg* \vdim* \Lambda^{2\vdim f(\vdim)}
+    \Biggl(
+      \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+      + 18 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+    \Biggr)
+    \\ & \le
+    ( \vdeg* \vdim* + 1 )
+    \Lambda^{2\vdim f(\vdim)} \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    + 18 \vdeg* \vdim*
+    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 3) f(\vdim)}
+    \pmm.
+  \end{align}
+  Il ne reste plus qu'à appliquer l'hypothèse sur \( \var \) (découlant de son
+  appartenance à \( \varset(\ex) \)), plus précisément~\eqref{e:varset-ht}
+  puis~\eqref{e:varset-deg}, pour obtenir :
+  \begin{align}
+    \sum_{\fcti\in\set{1, \dots, \puiss}}
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
+    & \le
+    ( 19 \vdeg* \vdim* + 1 )
+    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 3) f(\vdim)}
+    \\ & \le
+    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 4) f(\vdim)}
+  \end{align}
+  en utilisant le fait que \( \vdim* \le \genre \le \puiss \). On remarque
+  pour finir que \( 2\vdim + 4 \le 2 (2\vdim + 1) \) car \( \vdim \ge \puiss
+  \) vu que tous les facteurs de \( \var \) sont supposés être de dimension au
+  moins \( 1 \) et \( \puiss \ge 2 \). Ceci achève de montrer que \( \var' \)
+  appartient encore à \( \varset(\ex) \).
 
-\medskip
+  On peut ainsi, en partant de \( \va^\puiss \), construire une chaîne
+  décroissante d'éléments de \( \varset(\ex) \), jusqu'au moment où l'un des
+  facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex* \) pour un
+  certain \( \fct \). On en déduit alors
+  \begin{alignat}{2}
+    \wts* \hautn{\ex*}
+    & \le 2\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+    &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
+    \\
+    \wts[1] \hautn{\ex[1]}
+    & \le 3\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+    && \text{par \eqref{e:wt-ratio},}
+  \end{alignat}
+  qui contredit directement~\eqref{e:Vbig}. Cette contradiction prouve qu'il
+  est absurde de supposer l'existence d'une famille satisfaisant simultanément
+  toutes les conditions du théorème~\ref{t:vojta-div}.
+\end{proof}
 
 Il suffit donc d'établir la proposition \ref{p:varset-notmin} pour prouver le
 théorème \ref{t:vojta-div} ; la démonstration de cette proposition nous
