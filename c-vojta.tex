@@ -342,12 +342,12 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     \deg T
     & \le \Lambda^{2\vdim f(\vdim)}
     \\
-    \wts* \hautl[\infty] T
+    \wtw* \wts* \hautl[\infty]{ T }
     & \le
     \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-      + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+    \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)}
     \Biggr)
     \pmm.
   \end{align}
@@ -3566,19 +3566,22 @@ conséquence du théorème du produit .
 \end{fact}
 
 Pour appliquer ce fait, nous devons fabriquer à partir de \( \faux**
-\) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \).
-On considère à cet effet la projection linéaire \( \pi \) obtenue en
-conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur dans
-le plongement \( \vadapt* \circ \Theta \). Ce plongement étant adapté, cette
-projection fait apparaître \( \var \) comme un revêtement ramifié du produit
-d'espaces projectif considéré. Algébriquement, ceci signifie que l'anneau des
-coordonnées homogènes de \( \var \) est une extension de type fini de \( \cdn[
+\) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) qui
+conserve un indice comparable et dont on contrôlera degré et hauteur.
+On considère à cet effet la projection linéaire \( \pi \) de \(
+  (\projd)^\puiss \) sur cet espace obtenue en
+conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur.
+Cette projection fait apparaître \( \var \), ou plus précisément son image par
+\( \vadapt* \circ \Theta \), comme un revêtement ramifié de l'espace
+d'arrivée, car ce plongement est adapté.  Algébriquement, ceci signifie que
+l'anneau des coordonnées homogènes de \( \var \) est une extension de type
+fini de \( \cdn[
   \vmp[1][0], \dots, \vmp[1][\vdim*]; \dots; \vmp[\puiss][0], \dots,
   \vmp[\puiss][\vdim*]
   ]
 \). Le fait suivant, qui résume le résultat de la page~148 de~\cite{remivds},
-montre que la norme de \( \faux** \) dans cette extension est un choix
-raisonnable.
+montre que la norme de \( \faux** \) dans cette extension est une forme
+possédant les propriétés voulues.
 
 \begin{fact} \label{f:nfaux}
   La forme \( N(\faux**) \in \cdn[
@@ -3616,7 +3619,9 @@ hypothèses~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} il vient :
 \begin{equation}
   \indg b[x] G
   \ge
-  \frac1{ 3 \delta \vdeg } \inda[x] G
+  \frac1{ 3 \delta \vdeg } \inda[\pi(\ex)] G
+  \ge
+  \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
   \frac{ \eps \epsi }{ 96 (\puiss-1) B D }
   \ge
@@ -3652,7 +3657,7 @@ entre \( \puiss \) et \( \puiss\genre \), cette quantité est majorée par \(
 définition~\eqref{e:def-Vfar} de \( \Vfar \) implique alors directement que la
 deuxième hypothèse est satisfaite.
 
-Pour la troisième, on observe que pour tout entier \( \vdim \ge \puiss\genre
+Pour la troisième, on observe que pour tout entier \( \vdim \le \puiss\genre
 \) on a
 \begin{equation}
   \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
@@ -3683,8 +3688,9 @@ qui est bien la majoration annoncée.
 
 Concernant la hauteur, on commence par majorer \( \hautl[\infty] T \) en
 fonction de \( \hautl[\infty]{ \faux** } \) ; le fait~\ref{f:thm-prod} donne
-immédiatement, compte tenu du fait~\ref{f:nfaux} et du choix de \( \alpha \)
-:
+immédiatement la majoration suivante, compte tenu du fait~\ref{f:nfaux} et du
+choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
+  \sqrt{\vdim*} \) sont négligeables devant \( \delta \) :
 \begin{align}
   D \delta \wts* (2\wtw* + \epsz) \hautl[\infty] T
   & \le
@@ -3717,11 +3723,11 @@ On utilise alors l'estimation élémentaire
   \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
 \end{equation}
-et le fait que \( 2 \le 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
+et le fait que \( 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
 \( \delta D \) et on met \( \vdim* \Lambda^{2\vdim f(\vdim)} \) en facteur (en
 majorant \( \vdim* + 1 \) par \( 2\vdim* \) le cas échéant) pour obtenir
 \begin{align}
-  2 \wts* \hautl[\infty] T
+  \wtw* \wts* \hautl[\infty] T
   & \le
   \vdim*
   \Lambda^{2\vdim f(\vdim)}
@@ -3763,7 +3769,7 @@ où l'on utilise le fait que \( \puiss \ge 2 \) pour la dernière minoration.
 Comme de plus \( \vdim \ge \puiss \), en substituant dans les majorations
 ci-dessus il vient
 \begin{align}
-  2 \wts* \hautl[\infty] T
+  \wtw* \wts* \hautl[\infty] T
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
@@ -3776,49 +3782,69 @@ comme estimation finale de la hauteur de \( T \) en fonction de celle de \(
   \faux** \).
 
 Utilisons maintenant le scolie~\ref{s:aux-co} pour exprimer cette hauteur en
-fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \). Pour \( \delta
-\) assez grand, on peut, lorsqu'on remplace dans l'estimation ci-dessus,
-supprimer les termes \( o(\delta) \) dans le membre de droite en perdant par
-exemple le facteur \( 2 \) dans le membre de gauche ; on obtient ainsi
+fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \).
 \begin{align}
-  \wts* \hautl[\infty] T
+  \wtw* \wts* \hautl[\infty] T
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
     + \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
     + 12 \wts[1] \vdim \puiss \ln \Lambda^{f(\vdim)}
   \Biggr)
+  + o(\delta)
+  \notag
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
     + 16 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)}
   \Biggr)
+  \label{e:ht-T-var}
 \end{align}
-en utilisant~\eqref{e:varset-deg} et en trichant un peu pour l'instant.\todo
+en utilisant~\eqref{e:varset-deg} et en trichant un peu pour l'instant. \todo
+Remarquons qu'on peut supprimer le terme \( o(\delta) \) pour \( \delta \)
+assez grand, car la majoration utilisée en regroupant les termes est stricte
+et la différence ne dépend pas de \( \delta \).
 
-Passons maintenant à \( T' \). Par construction et vu les propriétés
-classiques de la hauteur, on a
-\begin{align}
-  \hautl[\infty]{ T' }
+Passons maintenant à \( T' \). Par construction, en utilisant les propriétés
+classiques de la hauteur et le fait que \( \wtw* \wts* \le \wts[1] \) pour
+tout \( \fct \), on a
+\begin{align*}
+  \wtw* \wts* \hautl[\infty]{ T' }
   & \le
-  \hautl[\infty]{ T }
-  + \deg T \cdot \hautl[\infty]{ \vadapt* }
-  + \ln \binom{ \deg T + \dimp + 1 }{ \dimp + 1 }
+  \wtw* \wts* \hautl[\infty]{ T }
+  + \wts[1] \left(
+    \deg T \Bigl( \hautl[\infty]{ \vadapt* } + \ln(\dimp + 1) \Bigr)
+    + \ln \binom{ \deg T + \dimp + 1 }{ \dimp + 1 }
+  \right)
   \\ & \le
-  \hautl[\infty]{ T }
-  + \Lambda^{2\vdim f(\vdim)} \ln \Lambda^{f(\vdim)}
-  + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
-  \\ & \le
+  \wtw* \wts* \hautl[\infty]{ T }
+  + \wts[1] \left(
+    \Lambda^{2\vdim f(\vdim)} \Bigl(
+      \ln \Lambda^{f(\vdim)} + \cst{vs-ht}
+    \Bigr)
+    + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+  \right)
+  \pmm.
+\end{align*}
+On observe alors pour commencer que \( 2\vdim (\dimp + 1) \le \Lambda^{2\vdim
+    f(\vdim)} \), ce qui permet de mettre ce facteur en évidence du deuxième
+terme ci-dessus, puis que \( 2 \ln \Lambda^{f(\vdim)} + \cst{vs-ht} \le
+  \cst{vs-ht} \Lambda^{2 f(\vdim)} \). En substituant dans~\eqref{e:ht-T-var}
+il vient
+\begin{align*}
+  \wtw* \wts* \hautl[\infty]{ T' }
+  & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-    + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+    \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)}
   \Biggr)
-\end{align}
-en observant \todo que \( 2\vdim (\dimp + 1) \le \Lambda^2 \). Ceci achève la
-preuve de la proposition~\ref{p:varset-notmin}.
+  \pmm,
+\end{align*}
+ce qui achève la preuve de la proposition~\ref{p:varset-notmin}.
+
 
 
 \section{Ajustement des paramètres}
