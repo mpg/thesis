@@ -135,10 +135,10 @@ l'annexe~\ref{sec:form-ab-alt}.
   entiers \( b_{\fct2} \) et \( b_{\fct3} \) tels que cette dernière condition
   soit satisfaite.
 
-  Il ne reste plus qu'à définir \( \wt[1] \) comme une dénominateur commun des
+  Il ne reste plus qu'à définir \( \wt[1] \) comme un dénominateur commun des
   \( b_\fct \) puis à poser \( \wt* = \wt[1] b_\fct \) pour tout \( \fct > 1
   \). Notons que ceci nous permet de choisir les \( \wt* \) arbitrairement
-  grands, car seuls leurs rapports compte.
+  grands, car seuls leurs rapports comptent.
 \end{proof}
 
 En utilisant les inégalités élémentaires \( (1 + \zeta)^{-1} \ge 1 - \zeta \)
@@ -289,15 +289,15 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   à~\eqref{e:varset-ht}}
 \begin{align}
   \label{e:varset-deg}
-  \vdeg*
+  \max_\fct \vdeg*
   & \le B
-  = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(u)} \quad \forall \fct
+  = \cst{vs-deg-prod}^{-1} \, \Lambda^{f(\vdim)}
   \\ \label{e:varset-deg-prod}
   \prod\fctrange \vdeg*
-  & \le \Lambda^{f(u)}
+  & \le \Lambda^{f(\vdim)}
   \\ \label{e:varset-ht}
   \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-  & \le \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+  & \le \cst{vs-ht} \Lambda^{2\,f(\vdim)} \wts[1]
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
@@ -313,12 +313,12 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
     (\sqrt2 \puiss \genre)^{\puiss\genre}
   \bigr)
   \\
-  f(u) & = \prod_{i=u+1}^{mg} (2i + 1) \le m^{2m^2 - u}
+  f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
   \\
   \newcst[]{vs-deg-prod}
   & = \frac{ 192\puiss^2 }{ \eps \epsi }
   \\
-  \newcst[\va]{vs-ht} & = \stuffout{\max(n^{m^2}, \vaht, \hlclab)}
+  \newcst[\va]{vs-ht} & = \stuffout{\max(\dimp^{\puiss^2}, \vaht, \hlclab)}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
@@ -906,8 +906,9 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \le
     2 B^{(B(\genre+1) + 1)}
   \end{equation}
-  car par définition \( B \) est un majorant commun des \( \vdeg* \) et donc
-  de \( 2\vdegp* \), et pour tout \( \fct \) on a \( \vdim* \le \genre \).
+  car d'après~\eqref{e:varset-deg}, \( B \) est un majorant commun des \(
+    \vdeg* \) et donc de \( 2\vdegp* \), et pour tout \( \fct \) on a \(
+    \vdim* \le \genre \).
 \end{proof}
 
 Intéressons-nous maintenant au morphisme \( \relim \).
@@ -1766,7 +1767,7 @@ minoration classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour
   }
   + o(1)
 \end{align}
-om l'on a utilisé le fait que \( \dimp + 1 \ge 4^\genre \).  On remarque que
+où l'on a utilisé le fait que \( \dimp + 1 \ge 4^\genre \).  On remarque que
 la définition \eqref{e:def-epsi} de \( \epsi \) signifie précisément que le
 deuxième facteur vaut \( 1 \) ; en utilisant alors le fait que \( \puiss \ge
   \genre + 1 \ge 2 \), il vient enfin
@@ -1816,6 +1817,7 @@ d'après~\eqref{e:cst-vs-ht} ; on observe ensuite que \( \sum\fctrange 2\Di*
 définition~\eqref{e:d-dp-def} de \( d' \) et le fait que \( \epsz \le 1 \). On
 majore ensuite \( 2\dimp \ln B + 12 (B(\genre+1) + 1) \ln(2B) \) assez
 largement par \( 12 \dimp B^2 \). Il vient ainsi
+\todo[revoir cette majoration]
 \begin{equation} \label{e:hmat-sigma}
   \hautl[\infty]{M_\sigma}
   \le
@@ -1952,12 +1954,14 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
         \bigr)
       \) ;
     \item \(
+        \hautl[1]{\faux*}
+        \le
         6 \delta \Bigl(
           \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
           + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
         \Bigr) + o(\delta)
       \) ; \label{i:aux-co-ht}
-    \item \(
+    \item \todo[voir de quoi on a vraiment besoin] \(
         \nv1{\faux*}
         \le
         \nv1{\faux}
@@ -1972,14 +1976,13 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
   \end{enumthm}
 \end{scho}
 
-\begin{proof}
+\begin{proof} \todo[vérifier]
   Le premier point est une conséquence directe de la définition de \( \faux*
   \), du lemme~\ref{l:rfull} et de la définition~\eqref{e:def-wemba} de \(
-    \wemba* \) ; le deuxième est donné par la construction et
-  le troisième découle du lemme~\ref{l:deg-wemba} et des
-  définitions~\eqref{e:d-dp-def} de \( d \) et \( d' \).  Pour le quatrième
-  point, on utilise le lemme~\ref{l:rfull} ainsi que des propriétés classiques
-  de la norme.
+    \wemba* \) ; le deuxième est donné par la construction et le troisième
+  découle du lemme~\ref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
+  \( d \) et \( d' \).  Pour le quatrième point, on utilise le
+  lemme~\ref{l:rfull} ainsi que des propriétés classiques de la norme.
 \end{proof}
 
 
