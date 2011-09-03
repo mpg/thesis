@@ -318,7 +318,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \newcst[]{vs-deg-prod}
   & = \frac{ 192\puiss^2 }{ \eps \epsi }
   \\
-  \newcst[\va]{vs-ht} & = \stuffout{\max(\dimp^{\puiss^2}, \vaht, \hlclab)}
+  \newcst[\va]{vs-ht} & = \stuffout{\vaht, \max(\dimp^{\puiss^2}, \hlclab)}
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
@@ -433,6 +433,7 @@ théorème~\ref{t:vojta-div}.
     + 18 \vdeg* \vdim*
     \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 3) f(\vdim)}
     \pmm.
+    \label{e:vs-ht-rec}
   \end{align}
   Il ne reste plus qu'à appliquer l'hypothèse sur \( \var \) (découlant de son
   appartenance à \( \varset(\ex) \)), plus précisément~\eqref{e:varset-ht}
@@ -455,14 +456,15 @@ théorème~\ref{t:vojta-div}.
   On peut ainsi, en partant de \( \va^\puiss \), construire une chaîne
   décroissante d'éléments de \( \varset(\ex) \), jusqu'au moment où l'un des
   facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex* \) pour un
-  certain \( \fct \). On en déduit alors
+  certain \( \fct \) ; à ce stade on a \( \vdim \ge \puiss - 1 \). On en
+  déduit alors
   \begin{alignat}{2}
     \wts* \hautn{\ex*}
-    & \le 2\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+    & \le 2\cst{vs-ht} \Lambda^{2\,f(\puiss-1)} \wts[1]
     &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
-    \\
+    \\ \label{e:ct-Vbig-final}
     \wts[1] \hautn{\ex[1]}
-    & \le 3\cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
+    & \le 3\cst{vs-ht} \Lambda^{2\,f(\puiss-1)} \wts[1]
     && \text{par \eqref{e:wt-ratio},}
   \end{alignat}
   qui contredit directement~\eqref{e:Vbig}. Cette contradiction prouve qu'il
@@ -497,14 +499,17 @@ coordonnées dans lequel ils s'expriment naturellement.
   \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans, et
   aucun de ses facteurs n'est réduit à un point.
 
-  On notera en outre \( \vdim* = \dim \var* \) et \( \vdim = \dim \var \) puis
-  \( \vdeg* = \deg \var* \), et \( \varfc* \) une
+  On notera en outre \( \vdim* = \dim \var* \) et \( \vdim = \dim \var \) ;
+  observons de suite que \( 1 \le \vdim* \le \genre \) et donc \( \puiss \le
+    \vdim \le \puiss\genre \). Notons également
+  \( \vdeg* = \deg \var* \) et \( B \) le majorant commun des \( \vdeg* \)
+  donné par~\eqref{e:varset-deg}. Enfin, on note \( \varfc* \) une
   \footnote{\label{fn:varfc}Cette forme est unique à multiplication par un
     scalaire près ; au besoin on la supposera normalisée de sorte que toutes
     ses normes locales soient au moins \( 1 \), par exemple en faisant en
     sorte qu'un de ses coefficients soit \( 1 \).}
-  forme de \bsc{Chow} de \( \var* \). On note enfin \( \varid \) l'idéal
-  multihomogène saturé de $\var$ et $\varid*$ ceux de ses facteurs.
+  forme de \bsc{Chow} de \( \var* \) ainsi que \( \varid \) l'idéal
+  multihomogène saturé de \( \var \) et \( \varid* \) ceux de ses facteurs.
 \end{tdef}
 
 La preuve de la proposition~\ref{p:varset-notmin} suit la méthode de
@@ -1709,7 +1714,7 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
     \, \puiss!
   }
   + o(1)
-  \\ & \le
+  \\ & \le \label{e:ct-eps*-siegel}
   \frac {
     \epsi^\puiss
     \, (\dimp + 1)^{\puiss-1}
@@ -1781,6 +1786,7 @@ deuxième facteur vaut \( 1 \) ; en utilisant alors le fait que \( \puiss \ge
 
 
 \subsection{Hauteur du système}
+\label{sec:siegel-ht}
 
 Il s'agit d'estimer la hauteur de la matrice (dans les bases monomiales
 canoniques) \( M_\sigma \) de l'application \( \sigma \) définie
@@ -3489,7 +3495,7 @@ tandis que la définition~\eqref{e:def-Vcos} de \( \Vcos \) assure que
 \end{equation}
 Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\ref{p:extra}
 assure que
-\begin{equation}
+\begin{equation} \label{e:ct-sigma}
   \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
   \le \frac{\expapx \epsi}{16}
   \pmm.
@@ -3617,8 +3623,7 @@ Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
   \frac{ \lgr{\imp*} }{ \wtw* \wts* }
 \end{align}
 par définition de \( b \) et en observant que \( \epsz < 1 \), de sorte qu'en
-utilisant successivement la proposition~\ref{p:extra} puis les
-hypothèses~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} il vient :
+utilisant successivement la proposition~\ref{p:extra} il vient :
 \begin{equation}
   \indg b[x] G
   \ge
@@ -3627,18 +3632,25 @@ hypothèses~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} il vient :
   \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
   \frac{ \eps \epsi }{ 192 (\puiss-1) \dimp B D }
+  \pmm.
+\end{equation}
+On utilise alors successivement~\eqref{e:cst-vs-deg-prod} puis
+\eqref{e:varset-deg} et \eqref{e:varset-deg-prod} pour écrire
+\begin{equation} \label{e:tp-ind}
+  \indg b[x] G
   \ge
   \frac{ \puiss }{ \cst{vs-deg-prod} B D }
   \ge
+  \frac{ \puiss }{ \Lambda^{2f(\vdim)} }
+  =
   \alpha
 \end{equation}
-d'après~\eqref{cst:vs-deg-prod}, \eqref{e:varset-deg},
-\eqref{e:varset-deg-prod} et la définition de \( \alpha \) ci-dessus.
+qui est précisément la première condition.
 
 Pour la deuxième, en utilisant la définition de \( \wtw \) et le fait que \(
   \epsz < 1 \), puis deux fois~\eqref{e:wt-ratio} et enfin
 l'hypothèse~\eqref{e:Vfar}, on écrit
-\begin{equation}
+\begin{equation} \label{e:ct-Vfar}
   \frac{ b_\fct }{ b_{\fct+1} }
   =
   \frac{
@@ -3665,7 +3677,7 @@ deuxième hypothèse est satisfaite.
 
 Pour la troisième, on observe que pour tout entier \( \vdim \le \puiss\genre
 \) on a
-\begin{equation}
+\begin{equation} \label{e:tp-3}
   \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
   \ge
   \left( \frac{\ln(\puiss\genre + 1)}{2(\puiss\genre)^2}\right)^{\puiss\genre}
@@ -3855,6 +3867,150 @@ ce qui achève la preuve de la proposition~\ref{p:varset-notmin}.
 
 \section{Ajustement des paramètres}
 \label{sec:vojta-adjust}
+
+Les sections précédentes suivent l'ordre logique de la démonstration :
+construction d'une forme auxiliaire, extrapolation et application d'un
+théorème multiplicité. Cependant, cet ordre n'est pas celui dans lequel les
+valeurs des différents paramètres sont déterminés ; la présente section a pour
+but de clarifier la façon de choisir ces valeurs qui peuvent paraître,
+sinon arbitraires, du moins mystérieuses au moment de leur introduction dans
+les sections précédentes.
+
+En premier lieu, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
+supposée contredire le théorème est fixée en premier, ainsi que la famille \(
+  (\wt*)_\fct \) comme indiqué à la sous-section~\ref{sec:wt}.
+
+Nous arrivons maintenant aux conditions définissant \( \varset(\ex) \). En
+fait, celles-ci sont déterminées de façon à ce que \( \va^\puiss \in
+  \varset(\ex) \) et qu'on puisse, en coupant par des formes données par la
+proposition~\ref{p:varset-notmin} produire d'autres formes qui restent dans \(
+  \varset(\ex) \). En fait, on peut voir ceci comme la construction d'une
+suite de sous-variétés emboîtées, en estimant à chaque étape le degré et la
+hauteur, qui dépendent des estimations à l'étape précédente.
+
+En fait, on pourrait tout à fait dans un premier temps se concentrer
+uniquement sur le degré, qu'on peut estimer indépendamment de la hauteur mais
+qui en revanche détermine de façon cruciale les estimations de hauteur (c'est
+d'ailleurs la seule raison pour laquelle on l'estime, en fin de compte). Lors
+de la construction de la fonction auxiliaire, on se contenterait de savoir que
+la borne de hauteur ne dépend pas de \( \ex \), ce qui permettrait ensuite de
+faire l'extrapolation « pour \( \hautn\ex \) assez grand » sans préciser, et
+d'obtenir un indice extrapolé permettant d'appliquer le théorème du produit,
+donnant ainsi l'estimation de degré au cran suivant.
+
+Plus précisément, pour la construction de la fonction auxiliaire on introduit
+les deux paramètres \( \epsz \) (contrôlant certains degrés de la fonction
+auxiliaire) et \( \epsi \) (contrôlant son indice de construction). À ce
+stade on a seulement besoin que \( \epsz \) soit suffisamment grand devant \(
+  \epsi \) pour que le rapport apparaissant dans~\eqref{e:ct-eps*-siegel} soit
+inférieur à \( \frac12 \) ; notons que ce rapport ne dépend pas des degrés de
+\( \var \), uniquement de ceux de la fonction auxiliaire. L'estimation de
+hauteur en revanche dépend du maximum des degrés de \( \var \) et de ses
+hauteurs.
+
+On peut alors mener les calculs de la sous-section~\ref{sec:vojta-extrap-core}
+et aboutir à~\eqref{e:prod-lem-final}, où la quantité qui y est notée \(
+  \alpha \) ne dépend que du maximum des degrés de \( \var \) tandis que \(
+  \beta \) dépend de ce maximum et de la hauteur de la forme auxiliaire, donc
+en définitive de celle de \( \var \). Dans un premier temps, en attendant les
+estimations finales, on peut tout à fait ne pas achever le calcul de ce \(
+  \beta \) car son seul impact sera de fixer une valeur minimale pour \( \Vbig
+\), paramètre qui peut être fixé en dernier.
+
+Rappelons que pour pouvoir extrapoler, il est essentiel d'avoir que cette
+quantité \( \alpha \) soit négative. Rappelons sa valeur :
+\begin{equation}
+  \alpha
+  =
+  2 \puiss \epsz
+  + 3 (\puiss - 1) \Vcos
+  + \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
+  - \frac38 \expapx \epsi
+\end{equation}
+et essayons de la relier à la structure de la fonction auxiliaire (on
+considère ici la forme \( F \in \cdn[\vmp, \vmpi] \)). Le premier terme
+provient du premier groupe de variables et peut être rendu petit en
+diminuant les degrés en ces variables, contrôlés par \( \epsz \) ; le deuxième
+correspond au deuxième groupe et peut être rendu petit en diminuant la hauteur
+de \( \ex' \), contrôlée par \( \Vcos \) (une fois les \( \wt* \)
+convenablement choisis). Le troisième terme correspond à ce qu'on perd en
+dérivant, il dépend du degré de \( \var \) car c'est le long de cette variété
+qu'on dérive ; la seule façon de le rendre petit est d'augmenter \( \sigma \)
+c'est-à-dire de ne pas dériver à un ordre trop élever. Le dernier terme enfin
+est déterminé par la condition d'approximation~\eqref{e:Vapx} ; le seul moyen
+de le rendre grand en valeur absolue et que l'indice de construction de la
+forme auxiliaire, contrôlé par \( \epsi \), soit assez grand.
+
+On se retrouve à ce stade avec deux conditions « allant en sens contraire »
+sur \( \epsz \) et \( \epsi \) : le premier doit être, par rapport au second,
+suffisamment grand pour permettre la construction de la forme auxiliaire, mais
+suffisamment petit pour pouvoir extrapoler. Un calcul élémentaire montre qu'il
+est possible de satisfaire ces deux conditions pour peu que \( \puiss > \max
+  \vdim* = \genre \) (exposants apparaissant dans la première condition).
+C'est uniquement pour répondre à cette exigence qu'on demande
+\( \puiss > \genre \) dans l'énoncé du théorème ; de même les deux conditions
+citées déterminent seules les définitions de \( \epsz \) et \( \epsi \)
+données en~\eqref{e:def-epsz} et~\eqref{e:def-epsi}. (On utilisera souvent par
+ailleurs le fait que \( \puiss \ge 2 \) et que \( \epsz < 1 \) pour simplifier
+certaines estimations, mais aucune de ces inégalités n'est cruciale pour
+l'aboutissement de la preuve.)
+
+Maintenant que \( \epsi \) est fixé, on en déduit les valeurs souhaitables de
+\( \Vcos \), déterminé par la seule condition~\eqref{e:Vcos-ct-extra} et de \(
+  \sigma \), seulement déterminé par~\eqref{e:ct-sigma}.
+
+Nous arrivons maintenant à l'application du théorème du produit : l'indice de
+la forme à laquelle nous souhaitons l'appliquer dépend d'une part de l'indice
+extrapolé de la fonction auxiliaire, donc du maximum des degrés de \( \var \)
+et d'autre part du produit de ces degrés. C'est principalement cet indice qui
+détermine la valeur de la quantité notée \( \alpha \) dans la
+section~\ref{sec:thm-prod}\footnote{Distincte de la quantité également notée
+  \( \alpha \) dans la section précédente, que le lecteur veuille bien nous
+  pardonner ce recyclage de notations entre plusieurs sections.}, et donc le
+degré de la forme obstructrice.
+
+La raison pour laquelle on introduit \( \cst{vs-deg-prod} \) dans la
+condition~\eqref{e:varset-deg} est qu'on veut pouvoir écrire~\eqref{e:tp-ind},
+c'est également ceci qui détermine sa valeur. Il est plus naturel d'absorber
+les facteurs supplémentaires dans la majoration de \( B \) que celle de \( D
+\) car la première quantité est \lat{a priori} plus petite (ceci se vérifie
+sur leurs valeurs initiales : \( \deg \va \) et \( (\deg \va)^\puiss \)
+respectivement, ensuite les deux quantités seront multipliées à chaque cran
+par le même facteur, à savoir \( \deg T \)).
+
+Nous sommes maintenant en mesure de choisir \( \Lambda \) : les deux premiers
+arguments dans le maximum assurent que \( \va^\puiss \) satisfait bien les
+conditions~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod}. Le troisième a
+pour but de satisfaire la troisième hypothèse dans l'énoncé du théorème du
+produit, voir~\eqref{e:tp-3}.
+
+Par ailleurs, la volonté de satisfaire la deuxième hypothèse du théorème du
+produit motive la définition de \( \Vfar \) : \eqref{e:ct-Vfar} est la seule
+contrainte sur \( \Vfar \).
+
+Penchons-nous à présent sur la démonstration du théorème à partir de la
+proposition~\ref{p:varset-notmin} ; elle explique la définition de la fonction
+\( f \) apparaissant en exposant dans les estimations, qui procède par
+récurrence décroissante en partant de \( f(\puiss\genre) = 1 \) et en
+descendant avec la relation~\eqref{e:ct-f}. Nous avons à ce stade pleinement
+expliqué (forme générale et définition de chaque quantité intervenant) les
+estimations de degré~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod}.
+
+Muni de ces informations, nous pouvons à présent remplacer les degrés
+intervenant dans les estimations de hauteur. On estime donc successivement la
+hauteur de la forme auxiliaire puis celle de la forme obstructrice en fonction
+des hauteurs de \( \var \), et au final on obtient la relation de
+récurrence~\eqref{e:vs-ht-rec}. Il ne reste plus qu'à dérouler cette
+récurrence (en partant rappelons-le de \( Z = \va^\puiss \)) pour obtenir la
+forme finale de~\eqref{e:varset-ht}.
+
+Enfin, de cette dernière relation on déduit~\eqref{e:ct-Vbig-final} qui
+motive à choisir \( \Vbig \) assez grand pour contredire cette relation. On se
+souvient alors que lors de l'extrapolation on devait également choisir \( \Vbig
+\) assez grand pour avoir~\eqref{e:Vbig-ct-extra} : il suffit donc maintenant
+de choisir \( \Vbig \) répondant à ces deux contraintes, ce qui n'est pas
+problématique puisqu'elles vont dans le même sens.
+
 
 \endinput
 
