@@ -308,14 +308,14 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \Lambda
   & = \max \bigl(
     (\deg \va)^\puiss,
-    \frac{ 96\puiss^2 }{ \eps \epsi } \, \deg \va,
+    \frac{ 192 \puiss^2 }{ \eps \epsi } \, \deg \va,
     (\sqrt2 \puiss \genre)^{\puiss\genre}
   \bigr)
   \\
   f(u) & = \prod_{i=u+1}^{mg} (2i + 1) \le m^{2m^2 - u}
   \\
   \newcst[]{vs-deg-prod}
-  & = \frac{ 96\puiss^2 }{ \eps \epsi }
+  & = \frac{ 192\puiss^2 }{ \eps \epsi }
   \\
   \newcst[\va]{vs-ht} & = \stuffout{\max(n^{m^2}, \vaht, \hlclab)}
 \end{align}
@@ -2627,10 +2627,9 @@ scolie~\ref{s:aux-co}. Le but de cette section est alors de montrer la
 proposition suivante.
 
 \begin{prop} \label{p:extra}
-  \worknote{Corriger, et éventuellement fixer la définition de \(
-      \cst{vs-deg-prod} \)}
+  \worknote{Ajuster la définition de \( \cst{vs-deg-prod} \)}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
-  \( \sigma = \frac{16 (\puiss-1)}{\eps} \).
+  \( \sigma = \frac{64 (\puiss-1) \dimp B}{\eps} \).
 \end{prop}
 
 La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
@@ -3155,9 +3154,9 @@ Par ailleurs, en utilisant~\eqref{e:wt-ratio}, on a
   2 (\puiss-1) \wts[1] \hautn{ \ex[1] } \, \epsi \delta / \sigma
 \end{equation}
 et au final :
-\worknote{Facteur \( 2 B \dimp \) oublié ! Puis à reporter\dots}
 \begin{equation} \label{e:ratfh1b}
   \ratfh{1''} \le
+  2 B \dimp
   \frac{ \delta \wts[1] \epsi }{ \sigma } \Bigl(
     2 (\puiss-1) \hautn{ \ex[1] }
     + \cst{vs-ht} + \ln B
@@ -3452,7 +3451,7 @@ avec :
   & =
   2 \puiss \epsz
   + 3 (\puiss - 1) \Vcos
-  + \frac{2 (\puiss - 1) \epsi}{\sigma}
+  + \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
   - \frac38 \expapx \epsi
   \\
   \beta
@@ -3487,7 +3486,7 @@ tandis que la définition~\eqref{e:def-Vcos} de \( \Vcos \) assure que
 Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\ref{p:extra}
 assure que
 \begin{equation}
-  \frac{2 (\puiss - 1) \epsi}{\sigma}
+  \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
   \le \frac{\expapx \epsi}{16}
   \pmm.
 \end{equation}
@@ -3623,11 +3622,14 @@ hypothèses~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} il vient :
   \ge
   \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
-  \frac{ \eps \epsi }{ 96 (\puiss-1) B D }
+  \frac{ \eps \epsi }{ 192 (\puiss-1) \dimp B D }
+  \ge
+  \frac{ \puiss }{ \cst{vs-deg-prod} B D }
   \ge
   \alpha
 \end{equation}
-qui est justement la première hypothèse à satisfaire.
+d'après~\eqref{cst:vs-deg-prod}, \eqref{e:varset-deg},
+\eqref{e:varset-deg-prod} et la définition de \( \alpha \) ci-dessus.
 
 Pour la deuxième, en utilisant la définition de \( \wtw \) et le fait que \(
   \epsz < 1 \), puis deux fois~\eqref{e:wt-ratio} et enfin
