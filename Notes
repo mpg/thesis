@@ -39,6 +39,7 @@ Notations {{{2
 ---------
 
 (B) Noms des formules abéliennes.
+     A priori ok dans Vojta, reprendre dans Mumford plus tard.
 
 (B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
@@ -67,6 +68,7 @@ Unifier les indices :
 
 Unifier les notations pour la ou les approximations exceptionnelles (x, y et z
 doivent rester des points quelconques, prendre e par exemple).
+    Semble OK maintenant.
 
 La convention \boldsymbol = le point, \mathit = ses coordonnées est loin
 d'être utilisée de façon consistante. On fait quoi ?
@@ -84,6 +86,8 @@ nomenclature.)
 
 Macros {{{2
 ------
+
+(A) Vojta : macros pour \Lambda et f(u)
 
 (B) retrier les macros de Vojta
 
@@ -119,8 +123,8 @@ Plongements et formulaires {{{2
 --------------------------
 
 (B) Fusionner ce qui peut l'être de sec:form-ab et sec:form-ab2.
-        Ajuster les notations dans mumford et vojta là où ces
-        sections sont référencées.
+        Fait gloablement. Reste à ajuster les notations dans mumford et vojta
+        là où ces sections sont référencées.
 
 (B) Compléter les preuves (cf. notes manuscriptes en partie)
 
@@ -130,17 +134,19 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) Finir premier jet :
-    - application thm du produit
-    - premier bouclage grossier des constantes
+(A) Créer la section 6
+
+(B) Reprendre les \todo du texte
 
 (B) Écrire la preuve du deuxième point de s:part-cases
 
 (B) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
 fine pour le deuxième \rdiv
 
-(C) Dans la représentation des dérivées, on pourrait se limiter aux formes
+(B) Dans la représentation des dérivées, on pourrait se limiter aux formes
 dans k[X]^{C'''}, est-ce utile ?
+    On dirait bien : on gagne quand même sur le degré du dénominateur et
+    surtout c'est conceptuellement plus clair et plus simple.
 
 (C) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
 faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
