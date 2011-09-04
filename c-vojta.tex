@@ -3869,12 +3869,13 @@ ce qui achève la preuve de la proposition~\ref{p:varset-notmin}.
 \label{sec:vojta-adjust}
 
 Les sections précédentes suivent l'ordre logique de la démonstration :
-construction d'une forme auxiliaire, extrapolation et application d'un
-théorème multiplicité. Cependant, cet ordre n'est pas celui dans lequel les
-valeurs des différents paramètres sont déterminés ; la présente section a pour
-but de clarifier la façon de choisir ces valeurs qui peuvent paraître,
-sinon arbitraires, du moins mystérieuses au moment de leur introduction dans
-les sections précédentes.
+réduction du théorème à l'existence d'une forme obstructice, puis construction
+de celle-ci par la méthode de \TS : construction d'une forme auxiliaire,
+extrapolation et application d'un théorème multiplicité. Cependant, cet ordre
+n'est pas celui dans lequel les valeurs des différents paramètres sont
+déterminés ; la présente section a pour but de clarifier la façon de choisir
+ces valeurs qui autrement risquent de paraître un peu « magiques » au moment
+où elles sont introduction dans les sections précédentes.
 
 En premier lieu, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
 supposée contredire le théorème est fixée en premier, ainsi que la famille \(
@@ -3884,16 +3885,16 @@ Nous arrivons maintenant aux conditions définissant \( \varset(\ex) \). En
 fait, celles-ci sont déterminées de façon à ce que \( \va^\puiss \in
   \varset(\ex) \) et qu'on puisse, en coupant par des formes données par la
 proposition~\ref{p:varset-notmin} produire d'autres formes qui restent dans \(
-  \varset(\ex) \). En fait, on peut voir ceci comme la construction d'une
+  \varset(\ex) \). On peut voir cette partie comme la construction d'une
 suite de sous-variétés emboîtées, en estimant à chaque étape le degré et la
-hauteur, qui dépendent des estimations à l'étape précédente.
+hauteur, qui dépendent des estimations à l'étape précédente ; \( \varset(\ex)
+\) est défini de sorte à contenir tous les éléments de cette suite.
 
-En fait, on pourrait tout à fait dans un premier temps se concentrer
-uniquement sur le degré, qu'on peut estimer indépendamment de la hauteur mais
-qui en revanche détermine de façon cruciale les estimations de hauteur (c'est
-d'ailleurs la seule raison pour laquelle on l'estime, en fin de compte). Lors
-de la construction de la fonction auxiliaire, on se contenterait de savoir que
-la borne de hauteur ne dépend pas de \( \ex \), ce qui permettrait ensuite de
+Remarquons qu'on pourrait tout à fait dans un premier temps se concentrer
+uniquement sur le degré puisqu'on peut l'estimer indépendamment de la hauteur,
+et qu'au contraire cette dernière dépend de façon cruciale du degré. Lors de
+la construction de la fonction auxiliaire, on se contenterait de savoir que la
+borne de hauteur ne dépend pas de \( \ex \), ce qui permettrait ensuite de
 faire l'extrapolation « pour \( \hautn\ex \) assez grand » sans préciser, et
 d'obtenir un indice extrapolé permettant d'appliquer le théorème du produit,
 donnant ainsi l'estimation de degré au cran suivant.
@@ -3909,7 +3910,7 @@ hauteur en revanche dépend du maximum des degrés de \( \var \) et de ses
 hauteurs.
 
 On peut alors mener les calculs de la sous-section~\ref{sec:vojta-extrap-core}
-et aboutir à~\eqref{e:prod-lem-final}, où la quantité qui y est notée \(
+et aboutir à~\eqref{e:prod-lem-final} : la quantité qui y est notée \(
   \alpha \) ne dépend que du maximum des degrés de \( \var \) tandis que \(
   \beta \) dépend de ce maximum et de la hauteur de la forme auxiliaire, donc
 en définitive de celle de \( \var \). Dans un premier temps, en attendant les
@@ -3936,9 +3937,9 @@ de \( \ex' \), contrôlée par \( \Vcos \) (une fois les \( \wt* \)
 convenablement choisis). Le troisième terme correspond à ce qu'on perd en
 dérivant, il dépend du degré de \( \var \) car c'est le long de cette variété
 qu'on dérive ; la seule façon de le rendre petit est d'augmenter \( \sigma \)
-c'est-à-dire de ne pas dériver à un ordre trop élever. Le dernier terme enfin
+c'est-à-dire de ne pas dériver à un ordre trop élevé. Le dernier terme enfin
 est déterminé par la condition d'approximation~\eqref{e:Vapx} ; le seul moyen
-de le rendre grand en valeur absolue et que l'indice de construction de la
+de le rendre grand en valeur absolue est que l'indice de construction de la
 forme auxiliaire, contrôlé par \( \epsi \), soit assez grand.
 
 On se retrouve à ce stade avec deux conditions « allant en sens contraire »
