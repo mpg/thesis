@@ -1720,7 +1720,7 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
     \, \puiss!
   }
   + o(1)
-  \\ & \le \label{e:ct-eps*-siegel}
+  \\ & \le
   \frac {
     \epsi^\puiss
     \, (\dimp + 1)^{\puiss-1}
@@ -1734,9 +1734,36 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
   + o(1)
   \pmm.
 \end{align}
-On utilise alors la définition \eqref{e:def-epsz} de \( \epsz \) et la
-minoration classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour
-écrire
+Or, nous allons prouver dans un instant que
+\begin{equation} \label{e:ct-eps*-siegel}
+  \frac {
+    \epsi^\puiss
+    \, (\dimp + 1)^{\puiss-1}
+    \, \puiss ^{\genre}
+    \, 3 ^{\puiss (\genre-1)}
+    \, \genre^\puiss
+  }{
+    \epsz^\genre
+    \, \puiss!
+  }
+  \le
+  \frac12
+\end{equation}
+ce qui nous donne immédiatement
+\begin{equation} \label{e:good-codim}
+  \frac {\dim \ftarget} {\dim \fspace}
+  \le
+  \frac12
+  + o(1)
+\end{equation}
+et montre que le noyau de l'application \( \sigma \) définie
+par~\eqref{e:def-ftarget} est de dimension strictement positive et permet même
+de contrôler l'exposant de \bsc{Dirichlet} lorsque nous appliquerons le lemme
+de \TS.
+
+Prouvons maintenant notre assertion~\eqref{e:ct-eps*-siegel} :
+on utilise la définition \eqref{e:def-epsz} de \( \epsz \) et la minoration
+classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
 \begin{align}
   \frac {\dim \ftarget} {\dim \fspace}
   & \le
@@ -1780,15 +1807,8 @@ minoration classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour
 \end{align}
 où l'on a utilisé le fait que \( \dimp + 1 \ge 4^\genre \).  On remarque que
 la définition \eqref{e:def-epsi} de \( \epsi \) signifie précisément que le
-deuxième facteur vaut \( 1 \) ; en utilisant alors le fait que \( \puiss \ge
-  \genre + 1 \ge 2 \), il vient enfin
-\begin{equation} \label{e:good-codim}
-  \frac {\dim \ftarget} {\dim \fspace}
-  \le
-  \frac12
-  + o(1)
-  \pmm.
-\end{equation}
+deuxième facteur vaut \( 1 \) ; il suffit maintenant d'observer que \( \puiss
+  \ge \genre + 1 \ge 2 \) pour conclure.
 
 
 \subsection{Hauteur du système}
@@ -3934,11 +3954,10 @@ Plus précisément, pour la construction de la fonction auxiliaire on introduit
 les deux paramètres \( \epsz \) (contrôlant certains degrés de la fonction
 auxiliaire) et \( \epsi \) (contrôlant son indice de construction). À ce
 stade on a seulement besoin que \( \epsz \) soit suffisamment grand devant \(
-  \epsi \) pour que le rapport apparaissant dans~\eqref{e:ct-eps*-siegel} soit
-inférieur à \( \frac12 \) ; notons que ce rapport ne dépend pas des degrés de
-\( \var \), uniquement de ceux de la fonction auxiliaire. L'estimation de
-hauteur en revanche dépend du maximum des degrés de \( \var \) et de ses
-hauteurs.
+  \epsi \) pour avoir~\eqref{e:ct-eps*-siegel} ; notons que cette condition ne
+fait pas intervenir les degrés de \( \var \), uniquement de ceux de la
+fonction auxiliaire. L'estimation de hauteur de la fonction auxiliaire en
+revanche dépend du maximum des degrés de \( \var \) et de ses hauteurs.
 
 On peut alors mener les calculs de la sous-section~\ref{sec:vojta-extrap-core}
 et aboutir à~\eqref{e:prod-lem-final} : la quantité qui y est notée \(
@@ -3976,16 +3995,17 @@ forme auxiliaire, contrôlé par \( \epsi \), soit assez grand.
 On se retrouve à ce stade avec deux conditions « allant en sens contraire »
 sur \( \epsz \) et \( \epsi \) : le premier doit être, par rapport au second,
 suffisamment grand pour permettre la construction de la forme auxiliaire, mais
-suffisamment petit pour pouvoir extrapoler. Un calcul élémentaire montre qu'il
-est possible de satisfaire ces deux conditions pour peu que \( \puiss > \max
-  \vdim* = \genre \) (exposants apparaissant dans la première condition).
-C'est uniquement pour répondre à cette exigence qu'on demande
-\( \puiss > \genre \) dans l'énoncé du théorème ; de même les deux conditions
-citées déterminent seules les définitions de \( \epsz \) et \( \epsi \)
-données en~\eqref{e:def-epsz} et~\eqref{e:def-epsi}. (On utilisera souvent par
-ailleurs le fait que \( \puiss \ge 2 \) et que \( \epsz < 1 \) pour simplifier
-certaines estimations, mais aucune de ces inégalités n'est cruciale pour
-l'aboutissement de la preuve.)
+suffisamment petit pour pouvoir extrapoler, plus précisément on veut
+avoir~\eqref{e:ct-eps*-siegel} et~\eqref{e:epsz-ct-extra}. Un calcul
+élémentaire montre qu'il est possible de satisfaire simultanément ces deux
+contraintes pour peu que \( \puiss > \max \vdim* = \genre \) (exposants
+apparaissant dans la première condition).  C'est uniquement pour répondre à
+cette exigence qu'on demande \( \puiss > \genre \) dans l'énoncé du théorème ;
+de même les deux conditions citées déterminent seules les définitions de \(
+  \epsz \) et \( \epsi \) données en~\eqref{e:def-epsz} et~\eqref{e:def-epsi}.
+(On utilisera souvent par ailleurs le fait que \( \puiss \ge 2 \) et que \(
+  \epsz < 1 \) pour simplifier certaines estimations, mais aucune de ces
+inégalités n'est cruciale pour la bonne marche de la preuve.)
 
 Maintenant que \( \epsi \) est fixé, on en déduit les valeurs souhaitables de
 \( \Vcos \), déterminé par la seule condition~\eqref{e:Vcos-ct-extra} et de \(
