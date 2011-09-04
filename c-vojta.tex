@@ -60,8 +60,14 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     \text{ pour la section~\ref{sec:thm-prod}}
     \\
     \label{e:def-Vcos}
-    \Vcos & = \frac{\eps\epsi}{48(\puiss-1)}
-    \text{ pour \eqref{e:Vcos-ct-extra}}
+    \Vcos & =
+    \frac{
+      \eps^{ 1 + \frac{\genre}{\puiss-\genre} }
+    }{
+      2
+      \, (\dimp + 1)^{1 + \frac{\genre + 1}{\puiss-\genre}}
+      \, (33 \puiss)^{1 + \frac{\genre}{\puiss-\genre}}
+    }
     \\
     \puiss & \ge \genre + 1
   \end{align}
@@ -301,9 +307,7 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
-\todo[\( \epsi \) défini plus tard, à remplacer ici après avoir vérifié si
-ça vaut la peine de supprimer la dépendance en \( \dimp \)]
-\todo[propager dans le théorème principal]
+\todo[définir ça dans le théorème principal]
 \begin{align}
   \label{e:def-Lambda}
   \Lambda
@@ -3511,9 +3515,32 @@ de \( \epsz \) assure que
 \begin{equation} \label{e:epsz-ct-extra}
   2 \puiss \epsz
   \le \frac{\expapx \epsi}{16}
-  \pmm,
+  \pmm.
 \end{equation}
-tandis que la définition~\eqref{e:def-Vcos} de \( \Vcos \) assure que
+Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \)
+puis celle~\eqref{e:Vcos} de \( \Vcos \), on a
+\begin{align} \label{e:Vcos-ct-details}
+  \frac{ \eps \epsi }{ 48 (\puiss - 1) }
+  & \ge
+  \frac{
+    \eps^{ 1 + \frac{\genre}{\puiss-\genre} }
+  }{
+    48 (\puiss - 1)
+    \, (\dimp + 1)^{1 + \frac{\genre + 1}{\puiss-\genre}}
+    \, (33 \puiss)^{\frac{\genre}{\puiss-\genre}}
+  }
+  \\ & \ge
+  \frac{
+    \eps^{ 1 + \frac{\genre}{\puiss-\genre} }
+  }{
+    2
+    \, (\dimp + 1)^{1 + \frac{\genre + 1}{\puiss-\genre}}
+    \, (33 \puiss)^{1 + \frac{\genre}{\puiss-\genre}}
+  }
+  =
+  \Vcos
+\end{align}
+qui entraîne immédiatement que
 \begin{equation} \label{e:Vcos-ct-extra}
   3 (\puiss-1) \Vcos
   \le \frac{\expapx \epsi}{16}
@@ -3524,8 +3551,9 @@ assure que
 \begin{equation} \label{e:ct-sigma}
   \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
   \le \frac{\expapx \epsi}{16}
-  \pmm.
 \end{equation}
+et on a bien \( \alpha \le - \frac{3\expapx \epsi}{16} < 0 \) comme annoncé.
+
 Par ailleurs, en remarquant que \( \vdim > \puiss \), la
 définition~\eqref{e:def-Vbig} de \( \Vbig \) montre que
 \begin{equation} \label{e:Vbig-ct-extra}
@@ -4008,8 +4036,10 @@ de même les deux conditions citées déterminent seules les définitions de \(
 inégalités n'est cruciale pour la bonne marche de la preuve.)
 
 Maintenant que \( \epsi \) est fixé, on en déduit les valeurs souhaitables de
-\( \Vcos \), déterminé par la seule condition~\eqref{e:Vcos-ct-extra} et de \(
-  \sigma \), seulement déterminé par~\eqref{e:ct-sigma}.
+\( \Vcos \) et \( \sigma \) : le premier est choisi dans le seul but
+d'avoir~\eqref{e:Vcos-ct-extra}, ce qui est assuré
+par~\eqref{e:Vcos-ct-details} et le second est seulement déterminé
+par~\eqref{e:ct-sigma}.
 
 Nous arrivons maintenant à l'application du théorème du produit : l'indice de
 la forme à laquelle nous souhaitons l'appliquer dépend d'une part de l'indice
