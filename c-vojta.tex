@@ -309,14 +309,20 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \Lambda
   & = \max \bigl(
     (\deg \va)^\puiss,
-    \frac{ 192 \puiss^2 }{ \eps \epsi } \, \deg \va,
+    \cst{vs-deg-prod} \, \deg \va,
     (\sqrt2 \puiss \genre)^{\puiss\genre}
   \bigr)
   \\
   f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
   \\
   \newcst[]{vs-deg-prod}
-  & = \frac{ 192\puiss^2 }{ \eps \epsi }
+  & =
+  \frac{
+    (\dimp + 1)^{2 + \frac{\genre+1}{\puiss-\genre}}
+    \, (33\puiss)^{2 + \frac\genre{\puiss-\genre}}
+  }{
+    \eps^{1 + \frac{\genre}{\puiss-\genre}}
+  }
   \\
   \newcst[\va]{vs-ht} & = \stuffout{\vaht, \max(\dimp^{\puiss^2}, \hlclab)}
 \end{align}
@@ -3634,6 +3640,31 @@ utilisant successivement la proposition~\ref{p:extra} il vient :
   \frac{ \eps \epsi }{ 192 (\puiss-1) \dimp B D }
   \pmm.
 \end{equation}
+Or, en utilisant successivement la définition~\eqref{e:def-epsi} de \( \epsi
+\) et celle~\eqref{e:cst-vs-deg-prod} de \( \cst{vs-deg-prod} \) on a
+\begin{align}
+  \frac{ 192 (\puiss-1) \puiss \dimp }{ \eps \epsi }
+  & =
+  \frac{
+    192 (\puiss-1) \puiss \dimp
+    \cdot
+    (\dimp + 1)^{\frac{\puiss+1}{\puiss-\genre}}
+    \, (33\puiss)^{\frac\genre{\puiss-\genre}}
+  }{
+    \eps^{1 + \frac{\genre}{\puiss-\genre}}
+  }
+  \\ & \le
+  \frac{
+    (\dimp + 1)^{2 + \frac{\genre+1}{\puiss-\genre}}
+    \, (33\puiss)^{2 + \frac\genre{\puiss-\genre}}
+  }{
+    \eps^{1 + \frac{\genre}{\puiss-\genre}}
+  }
+  =
+  \cst{vs-deg-prod}
+  \label{e:ct-cst-vs-deg}
+\end{align}
+
 On utilise alors successivement~\eqref{e:cst-vs-deg-prod} puis
 \eqref{e:varset-deg} et \eqref{e:varset-deg-prod} pour écrire
 \begin{equation} \label{e:tp-ind}
@@ -3645,7 +3676,7 @@ On utilise alors successivement~\eqref{e:cst-vs-deg-prod} puis
   =
   \alpha
 \end{equation}
-qui est précisément la première condition.
+qui est précisément la première hypothèse à satisfaire.
 
 Pour la deuxième, en utilisant la définition de \( \wtw \) et le fait que \(
   \epsz < 1 \), puis deux fois~\eqref{e:wt-ratio} et enfin
@@ -3971,8 +4002,9 @@ section~\ref{sec:thm-prod}\footnote{Distincte de la quantité également notée
 degré de la forme obstructrice.
 
 La raison pour laquelle on introduit \( \cst{vs-deg-prod} \) dans la
-condition~\eqref{e:varset-deg} est qu'on veut pouvoir écrire~\eqref{e:tp-ind},
-c'est également ceci qui détermine sa valeur. Il est plus naturel d'absorber
+condition~\eqref{e:varset-deg} est qu'on veut pouvoir écrire~\eqref{e:tp-ind}
+c'est également ceci, plus précisément~\eqref{e:ct-cst-vs-deg}, qui détermine
+sa valeur. Il est plus naturel d'absorber
 les facteurs supplémentaires dans la majoration de \( B \) que celle de \( D
 \) car la première quantité est \lat{a priori} plus petite (ceci se vérifie
 sur leurs valeurs initiales : \( \deg \va \) et \( (\deg \va)^\puiss \)
