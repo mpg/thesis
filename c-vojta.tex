@@ -1840,37 +1840,47 @@ lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
     \hlclab + 2\ln((\dimp+1)!) + 2\dimp \ln B
   \bigr)
   \\ & \qquad +
-  \sum\fctrange 2\Di* \left(
+  \sum\fctrange 2\Di* \Bigl(
     \hautl[1]{ \varfc* }
-    + (B(\genre+1) + 1) \ln(2B)
-  \right)
+    + \bigl( B(\genre+1) + 1 \bigr) \ln(B) + \ln(2)
+  \Bigr)
   + o(\delta)
   \pmm.
 \end{align}
-On majore alors \( \hlclab + 2\ln((\dimp+1)!) \) par \( 3\cst{vs-ht} \)
-d'après~\eqref{e:cst-vs-ht} ; on observe ensuite que \( \sum\fctrange 2\Di*
-  \le 12 \wts[1] \) d'après le lemme~\ref{l:sum-wts}, la
-définition~\eqref{e:d-dp-def} de \( d' \) et le fait que \( \epsz \le 1 \). On
-majore ensuite \( 2\dimp \ln B + 12 (B(\genre+1) + 1) \ln(2B) \) assez
-largement par \( 12 \dimp B^2 \). Il vient ainsi
-\todo[revoir cette majoration]
+On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
+  \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\ref{l:sum-wts} implique alors
+que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
+élémentaire que \( \alpha + \beta \le \alpha\beta \) dès que \( \alpha \ge 2
+\) et \( \beta \ge 2 \) pour écrire
+\begin{align}
+  \hautl[\infty]{M_\sigma}
+  & \le
+  4 \delta \wts[1] \hlclab
+  \Bigl(
+    \ln((\dimp+1)!) + \dimp \ln B
+    + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
+  \Bigr)
+  \\ & \qquad
+  + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + o(\delta)
+  \pmm.
+\end{align}
+Enfin, on majore \( \hlclab \) par \( \cst{vs-ht} \) par
+définition~\eqref{e:cst-vs-ht} et on utilise alors~\eqref{e:B-siegel} pour
+conclure :
 \begin{equation} \label{e:hmat-sigma}
   \hautl[\infty]{M_\sigma}
   \le
-  6 \delta \Bigl(
-    \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
-    + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-  \Bigr) + o(\delta)
+  \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + o(\delta)
   \pmm.
 \end{equation}
-
-Remarquons que l'on pourrait immédiatement utiliser les
-hypothèses~\eqref{e:varset-deg} et~\eqref{e:varset-ht} pour simplifier cette
-dernière expression ; on constaterait alors que les deux termes principaux
-sont du même ordre de grandeur : \( \cst{vs-ht} \wts[1] \Lambda^{2f(\vdim)} \)
-essentiellement. Il nous paraît cependant plus utile de conserver
-explicitement la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-\) aussi longtemps que possible.
+Remarquons que l'on pourrait invoquer l'hypothèse~\eqref{e:varset-ht} pour
+simplifier cette dernière expression, mais il nous paraît plus utile de
+conserver la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \)
+explicite aussi longtemps que possible (jusqu'à obtenir~\eqref{e:vs-ht-rec} en
+fait) ; voir néanmoins~\eqref{e:ht-faux-s} pour une telle simplification.
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -1917,11 +1927,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \\
     \hautl[\infty] \faux
     & \le
-    6 \delta \Bigl(
-      \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
-      + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-    \Bigr) + o(\delta)
-    \pmm.
+    \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+    + o(\delta)
   \end{align}
 \end{prop}
 
@@ -1943,9 +1951,9 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   \end{equation}
   De même, \( \frac q {q-p} c_\cdn = o(\delta) \) ;
   en remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
-  forme \( \faux \) satisfaisant aux conditions de l'énoncé mais de hauteur majorée
-  par \( \hautl[\infty]{M_\sigma} + o(\delta) \).  Il ne reste plus qu'à
-  invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
+  forme \( \faux \) satisfaisant aux conditions de l'énoncé mais de hauteur
+  majorée par \( \hautl[\infty]{M_\sigma} + o(\delta) \).  Il ne reste plus
+  qu'à invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
 \end{proof}
 
 Remarquons que dans la majoration de hauteur on peut en fait choisir la
@@ -1969,6 +1977,16 @@ hauteur utilisée, comme le montre le scolie suivant.
   Cette quantité est un polynôme en \( \delta \), son logarithme est donc
   négligeable devant ce dernier.
 \end{proof}
+
+En appliquant ce scolie et l'hypothèse~\eqref{e:varset-ht} on a immédiatement
+l'estimation
+\begin{equation} \label{e:ht-faux-s}
+  \hautl[1]{ \faux }
+  \le
+  7 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + o(\delta)
+  \pmm.
+\end{equation}
 
 En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
   \wemba*(\faux) \), résumons donc ici leurs principales propriétés.
