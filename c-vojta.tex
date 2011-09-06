@@ -303,7 +303,7 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   & \le \Lambda^{f(\vdim)}
   \\ \label{e:varset-ht}
   \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-  & \le \cst{vs-ht} \Lambda^{2\,f(\vdim)} \wts[1]
+  & \le \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)} \wts[1]
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
@@ -412,17 +412,14 @@ théorème~\ref{t:vojta-div}.
     \le
     \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-      + 18 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
   \end{equation}
-  car \( \Lambda > \dimp \) (ou \( \cst{vs-ht} > \dimp \) aussi si l'on veut)
-  et \( \wts[1] \ge \wtw* \wts* \).
-
-  Appliquons le théorème de \bsc{Bézout} arithmétique qu'on vient
-  de rappeler :
+  car \( \Lambda > \dimp \) et \( \wts[1] \ge \wtw* \wts* \). Appliquons le
+  théorème de \bsc{Bézout} arithmétique qu'on vient de rappeler :
   \begin{align}
-    \sum_{\fcti\in\set{1, \dots, \puiss}}
+    \sum_{\fcti=1}^\puiss
     \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
     & \le
     \sum_{\fcti\in\set{1, \dots, \puiss} \minusset{\fct}}
@@ -436,34 +433,36 @@ théorème~\ref{t:vojta-div}.
     \\ & \qquad
     + \vdeg* \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-      + 18 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)} \ln \Lambda^{f(\vdim)}
+      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \\ & \le
-    ( \vdeg* \vdim* + 1 )
-    \Lambda^{2\vdim f(\vdim)} \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
-    + 18 \vdeg* \vdim*
-    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 3) f(\vdim)}
-    \pmm.
+    \genre B \Lambda^{2\vdim f(\vdim)}
+    \Biggl(
+      7 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \Biggr)
     \label{e:vs-ht-rec}
   \end{align}
-  Il ne reste plus qu'à appliquer l'hypothèse sur \( \var \) (découlant de son
-  appartenance à \( \varset(\ex) \)), plus précisément~\eqref{e:varset-ht}
-  puis~\eqref{e:varset-deg}, pour obtenir :
+  en utilisant le fait que \( \vdim* \le \genre \).  Il ne reste plus qu'à
+  appliquer les hypothèses sur \( \var \) (découlant de son appartenance à \(
+    \varset(\ex) \)), plus précisément~\eqref{e:varset-ht}
+  puis~\eqref{e:varset-deg} sous la forme \( 11 \genre B \le \Lambda^{f(u)}
+  \), pour obtenir :
   \begin{align}
     \sum_{\fcti\in\set{1, \dots, \puiss}}
     \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
     & \le
-    ( 19 \vdeg* \vdim* + 1 )
-    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 3) f(\vdim)}
+    11 \vdim* \vdeg*
+    \wts[1] \cst{vs-ht} \Lambda^{(2 \vdim + 1 + \frac1\puiss) f(\vdim)}
     \\ & \le
-    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 4) f(\vdim)}
+    \wts[1] \cst{vs-ht} \Lambda^{(2 \vdim + 2 + \frac1\puiss) f(\vdim)}
+    \pmm.
   \end{align}
-  en utilisant le fait que \( \vdim* \le \genre \le \puiss \). On remarque
-  pour finir que \( 2\vdim + 4 \le 2 (2\vdim + 1) \) car \( \vdim \ge \puiss
-  \) vu que tous les facteurs de \( \var \) sont supposés être de dimension au
-  moins \( 1 \) et \( \puiss \ge 2 \). Ceci achève de montrer que \( \var' \)
-  appartient encore à \( \varset(\ex) \).
+  On remarque enfin que, comme \( \vdim \ge \puiss \), on a \( 2 \vdim + 2 +
+    \frac1\puiss \le 2\vdim + 1 + \frac{2\vdim}\puiss + \frac1\puiss =
+    (2\vdim + 1)(1 + \frac1\puiss) \), ce qui achève de montrer que \( \var'
+  \) appartient encore à \( \varset(\ex) \).
 
   On peut ainsi, en partant de \( \va^\puiss \), construire une chaîne
   décroissante d'éléments de \( \varset(\ex) \), jusqu'au moment où l'un des
