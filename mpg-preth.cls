@@ -47,6 +47,7 @@
 \usepackage[all]{xy}
 \catcode`\^7\catcode`\_8\relax % make other packages happy
 \usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
+\usepackage{siunitx}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic}
 \usepackage[noprefix, nocfg, refpage, french]{nomencl}
