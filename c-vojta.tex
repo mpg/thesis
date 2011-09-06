@@ -359,8 +359,8 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     & \le
     \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-    \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)}
+      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \pmm.
   \end{align}
@@ -3924,25 +3924,19 @@ tout \( \fct \), on a
   \\ & \le
   \wtw* \wts* \hautl[\infty]{ T }
   + \wts[1] \left(
-    \Lambda^{2\vdim f(\vdim)} \Bigl(
-      \ln \Lambda^{f(\vdim)} + \cst{vs-ht}
-    \Bigr)
+    \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
     + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
   \right)
   \pmm.
 \end{align*}
-On observe alors pour commencer que \( 2\vdim (\dimp + 1) \le \Lambda^{2\vdim
-    f(\vdim)} \), ce qui permet de mettre ce facteur en évidence du deuxième
-terme ci-dessus, puis que \( 2 \ln \Lambda^{f(\vdim)} + \cst{vs-ht} \le
-  \cst{vs-ht} \Lambda^{2 f(\vdim)} \). En substituant dans~\eqref{e:ht-T-var}
-il vient
+On invoque alors~\eqref{e:ht-T'-adhoc} pour conclure que
 \begin{align*}
   \wtw* \wts* \hautl[\infty]{ T' }
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-    + 17 \wts[1] \cst{vs-ht} \Lambda^{2f(\vdim)}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \pmm,
 \end{align*}
@@ -4229,6 +4223,35 @@ qui est l'estimation annoncée. En effet, \( \ln x \le \puiss \, x^{1/\puiss}
 \) puis \( \genre \le \puiss - 1 \) et on vérifie facilement (au besoin
 numériquement pour les petites valeurs) que \( 24 \puiss^3 (\puiss - 1) \le
   16^{\puiss} \), or \( 16^\puiss \le (\dimp + 1)^\puiss \le \Lambda \).
+
+Prouvons maintenant que
+\begin{equation} \label{e:ht-T'-adhoc}
+  \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
+  + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+  \le
+  \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{equation}
+Pour commencer, on a \( \ln B + \ln(\dimp + 1) \le \ln \Lambda^{f(\vdim)} \)
+d'après~\eqref{e:varset-deg} puis
+\begin{equation}
+  \ln \Lambda^{f(\vdim)}
+  \le
+  \puiss \Lambda^{\frac1\puiss f(\vdim)}
+  \le
+  \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{equation}
+Par ailleurs
+\begin{equation}
+  2 \vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+  \le
+  2 \puiss^2 \genre (\dimp + 1) \Lambda^{\frac1\puiss f(\vdim)}
+  \le
+  \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+\end{equation}
+qui aboutit largement à l'estimation annoncée.
+
 
 
 
