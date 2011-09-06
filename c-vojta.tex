@@ -4173,7 +4173,7 @@ Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
   \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{equation}
-Pour le premier terme du membre de droite, au vu des estimations précédentes,
+Pour le premier terme du membre de gauche, au vu des estimations précédentes,
 on écrit
 \begin{equation}
   \ln((\dimp+1)!)
@@ -4185,15 +4185,27 @@ on écrit
   \frac{ \Lambda }{ 5 \cdot 16 \cdot 66^2 }
   \pmm.
 \end{equation}
-Par ailleurs, en majorant grossièrement \( B \) par \( \Lambda \), il vient
+Par ailleurs, en majorant grossièrement \( B \) par \( \Lambda^{f(\vdim)} \),
+il vient
 \begin{equation}
   (\dimp + 3) \ln B
   \le
-  (\dimp + 1)^2 \ln \Lambda
+  (\dimp + 1)^2 \ln \Lambda^{f(\vdim)}
   \le
-  \frac{ 6 }{ 5 \cdot 16^3 } \Lambda
+  \frac{ 6 }{ 5 \cdot 16^3 } \Lambda^{f(\vdim)}
   \pmm.
 \end{equation}
+Comme de plus \( 3 \ln 2 \) est largement majoré en fonction de \( \Lambda \),
+le membre de gauche de~\eqref{e:B-siegel} est majoré assez amplement par
+\begin{equation}
+  \frac18 \Lambda^{f(\vdim)} + 3 \puiss B \ln(B)
+\end{equation}
+et il ne reste plus qu'à majorer le dernier terme comme suit : on rappelle
+l'inégalité élémentaire \( \ln(x) \le \alpha \, x^{1/\alpha} \) pour \( \alpha
+\) positif, qu'on applique ici avec \( \alpha = \puiss \), puis on remarque
+que \( 3 \puiss^2 B \le \frac18 \Lambda^{f(\vdim)} \) assez largement
+d'après~\eqref{e:varset-deg}, ce qui permet de conclure.
+
 
 
 
