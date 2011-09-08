@@ -415,7 +415,7 @@ théorème~\ref{t:vojta-div}.
   Le théorème de Bézout arithmétique s'écrit donc, dans notre cas et avec les
   hauteurs qui nous intéressent :
   \begin{align}
-    \hautl[\htpph]{ \chow{\var*'} }
+    \hautl[1]{ \chow{\var*'} }
     & \le
     \deg \var* \bigl( \hautl[1] T + \sqrt\dimp \bigr)
     + \deg T \Bigl(
@@ -427,72 +427,97 @@ théorème~\ref{t:vojta-div}.
     \\ & \le
     B \bigl( \hautl[1] T + \dimp \bigr)
     + \deg T \Bigl(
-      \hautl[1]{ \varfc* } + \dimp\genre B
+      \hautl[1]{ \varfc* } + \frac12 \dimp\genre B
     \Bigr)
-    + \dimp\genre B \deg T
+    + \frac12 \dimp\genre B \deg T
     \\ & \le
     \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
     + B \hautl[1] T
-    + 3 \dimp \genre B \Lambda^{2\vdim f(\vdim)}
-    \pmm.
+    + 2 \dimp \genre B \Lambda^{2\vdim f(\vdim)}
   \end{align}
-
-
-
-  
-  Appliquons le
-  théorème de \bsc{Bézout} arithmétique qu'on vient de rappeler :
+  et finalement, en multipliant par \( \wtw* \wts* \) et en majorant dans le
+  dernier terme cette quantité par \( \wts[1] \), puis en utilisant
+  l'information sur la hauteur de \( T \) fournie par la propostion :
   \begin{align}
-    \sum_{\fcti=1}^\puiss
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
+    \wtw* \wts* \hautl[1]{ \chow{\var*'} }
     & \le
-    \sum_{\fcti\in\set{1, \dots, \puiss} \minusset{\fct}}
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-    +
-    \wtw* \wts* \bigl(
-      \vdeg* \hautl[\mathrm{m}] T + \deg T \cdot \hautl{ \var* }
-    \bigr)
+    \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
+    + 2 \wts[1] \dimp \genre B \Lambda^{2\vdim f(\vdim)}
+    + \wtw* \wts* B \hautl[1] T
     \\ & \le
-    \Lambda^{2\vdim f(\vdim)} \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+    \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
+    + 2 \wts[1] \dimp \genre B \Lambda^{2\vdim f(\vdim)}
     \\ & \qquad
-    + \vdeg* \vdim* \Lambda^{2\vdim f(\vdim)}
+    + B \genre \Lambda^{2\vdim f(\vdim)}
     \Biggl(
       3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \\ & \le
-    \genre B \Lambda^{2\vdim f(\vdim)}
-    \Biggl(
-      4 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \Lambda^{2\vdim f(\vdim)} \Biggl(
+      \wtw* \wts* \hautl[1]{ \varfc* }
+      + 3 B \genre
+      \Bigl(
+        \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+        + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      \Bigr)
     \Biggr)
+  \end{align}
+  en remarquant que \( 2\dimp \le \Lambda \) pour intégrer le deuxième terme
+  de la deuxième ligne dans celui en \( \cst{vs-ht} \).
+
+  Nous pouvons maintenant substituter cette estimation dans la somme pondérée
+  des hauteurs :
+  \begin{align}
+    \sum_{\fcti=1}^\puiss
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\chow{\var[\fcti]'}}
+    & =
+    \sum_{\fcti \neq \fct}
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    + \wtw* \wts* \hautl[1]{ \chow{\var*'} }
+    \\ & \le
+    \Lambda^{2\vdim f(\vdim)} \sum_{\fcti \neq \fct}
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    + \Lambda^{2\vdim f(\vdim)} \wtw* \wts* \hautl[1]{ \varfc* }
+    \\ & \qquad
+    + 3 B \genre \Lambda^{2\vdim f(\vdim)}
+    \Bigl(
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \Bigr)
+    \\ & \le
+    4 B \genre \Lambda^{2\vdim f(\vdim)}
+    \Bigl(
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \Bigr)
+    \\ & \le
+    \frac12 \Lambda^{(2\vdim + 1) f(\vdim)}
+    \Bigl(
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \Bigr)
     \label{e:vs-ht-rec}
   \end{align}
-  en utilisant le fait que \( \vdim* \le \genre \).  Il ne reste plus qu'à
-  appliquer les hypothèses sur \( \var \) (découlant de son appartenance à \(
-    \varset(\ex) \)), plus précisément~\eqref{e:varset-ht}
-  puis~\eqref{e:varset-deg} sous la forme \( 7 \genre B \le \Lambda^{f(u)}
-  \), pour obtenir :
+  en utilisant le fait que \( 4 B \genre \) est (largement) majoré par \(
+    \Lambda^{f(\vdim)} / 2 \) d'après~\eqref{e:varset-deg}. Il ne reste plus
+  qu'à appliquer l'hypothèse de hauteur sur \( \var \), a
+  savoir~\eqref{e:varset-ht}, pour obtenir
   \begin{align}
     \sum_{\fcti\in\set{1, \dots, \puiss}}
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
+    \wtw[\fcti] \wts[\fcti] \hautl[1]{\chow{\var[\fcti]'}}
     & \le
-    7 \vdim* \vdeg*
-    \wts[1] \cst{vs-ht} \Lambda^{(2 \vdim + 1 + \frac1\puiss) f(\vdim)}
-    \\ & \le
-    \wts[1] \cst{vs-ht} \Lambda^{(2 \vdim + 2 + \frac1\puiss) f(\vdim)}
-    \pmm.
+    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 1)(1 + \frac1\puiss) f(\vdim)}
   \end{align}
-  On remarque enfin que, comme \( \vdim \ge \puiss \), on a \( 2 \vdim + 2 +
-    \frac1\puiss \le 2\vdim + 1 + \frac{2\vdim}\puiss + \frac1\puiss =
-    (2\vdim + 1)(1 + \frac1\puiss) \), ce qui achève de montrer que \( \var'
-  \) appartient encore à \( \varset(\ex) \).
+  qui achève de montrer que \( \var' \in \varset(\ex) \).
 
-  On peut ainsi, en partant de \( \va^\puiss \), construire une chaîne
-  décroissante d'éléments de \( \varset(\ex) \), jusqu'au moment où l'un des
-  facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex* \) pour un
-  certain \( \fct \) ; à ce stade on a \( \vdim \ge \puiss - 1 \). On en
-  déduit alors
+  \medskip
+
+  On peut ainsi, en partant de \( \va^\puiss \), construire une suite
+  d'éléments de \( \varset(\ex) \) de dimensions décroisantes, jusqu'au moment
+  où l'un des facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex*
+  \) pour un certain \( \fct \) ; à ce stade on a \( \vdim \ge \puiss - 1 \).
+  On en déduit alors
   \todo[Comparaison hauteur de variété à point ?]
   \begin{alignat}{2}
     \wts* \hautn{\ex*}
