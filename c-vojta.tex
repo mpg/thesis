@@ -371,7 +371,7 @@ théorème~\ref{t:vojta-div}.
 
 \begin{proof}[\proofname\ du théorème~\ref{t:vojta-div}]
   Voyons comment, en partant d'une variété \( \var \) satisfaisant aux
-  hypothèses de la proposition, on peut fabriquer un variété \( \var' \) plus
+  hypothèses de la proposition, on peut fabriquer une variété \( \var' \) plus
   petite et appartenant toujours à \( \varset(\ex) \) : on utilise la forme
   \( T \) fournie par la proposition et on note
   \( \var' \) la variété égale à \( \var \) sur tous les facteurs sauf le \(
@@ -388,7 +388,7 @@ théorème~\ref{t:vojta-div}.
   \end{equation}
   ce qui montre que les quantités apparaissant dans les
   conditions~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod} sur les degrés
-  sont au plus multipliées par \( \deg T = \Lambda^{2\vdim f(\vdim)} \) en
+  sont au plus multipliées par \( \deg T \le \Lambda^{2\vdim f(\vdim)} \) en
   passant de \( \var \) à \( \var' \). Or, par définition de \( f \) on a
   \begin{equation} \label{e:ct-f}
     f(\vdim-1) = 2\vdim f(\vdim) + f(\vdim)
@@ -3598,10 +3598,11 @@ utilisant le fait suivant (théorème~7.1 page~149 de \cite{remivds}),
 conséquence du théorème du produit .
 
 \begin{fact} \label{f:thm-prod}
-  Soient \( x_1, \dots, x_\puiss \) un point rationnel de \( \proj{\vdim_1}
+  Soient \( (x_1, \dots, x_\puiss) \) un point rationnel de \( \proj{\vdim_1}
     \times \dots \times \proj{\vdim**} \) et \( \vdim = \vdim_1 + \dots +
     \vdim** \). On considère une forme \( G \) de degré \( b \in (\N
-    \minusset 0)^\puiss \) et on suppose que
+    \minusset 0)^\puiss \) et on suppose qu'il existe \( \alpha > 0 \) tel
+  que :
   \begin{enumthm}
     \item \( \indg b[x] G \ge \alpha \) ;
     \item \(
@@ -3658,8 +3659,8 @@ Cette projection fait apparaître \( \var \), ou plus précisément son image pa
 d'arrivée, car ce plongement est adapté.  Algébriquement, ceci signifie que
 l'anneau des coordonnées homogènes de \( \var \) est une extension de type
 fini de \( \cdn[
-  \vmp[1][0], \dots, \vmp[1][\vdim*]; \dots; \vmp[\puiss][0], \dots,
-  \vmp[\puiss][\vdim*]
+  \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
+  \vmp[\puiss][0], \dots, \vmp[\puiss][{\vdim[\puiss]}]
   ]
 \). Le fait suivant, qui résume le résultat de la page~148 de~\cite{remivds},
 montre que la norme de \( \faux** \) dans cette extension est une forme
@@ -3667,8 +3668,8 @@ possédant les propriétés voulues.
 
 \begin{fact} \label{f:nfaux}
   La forme \( N(\faux**) \in \cdn[
-    \vmp[1][0], \dots, \vmp[1][\vdim*]; \dots;
-    \vmp[\puiss][0], \dots, \vmp[\puiss][\vdim*]
+    \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
+    \vmp[\puiss][0], \dots, \vmp[\puiss][{\vdim[\puiss]}]
     ] \) possède les propriétés suivantes :
   \begin{enumthm}
     \item \( \inda[\pi(\ex)] N(\faux**) \ge \inda** \faux** \) ;
@@ -3682,7 +3683,7 @@ possédant les propriétés voulues.
 \end{fact}
 
 On note désormais \( G = N(\faux**) \) puis \( \vdeg = \prod\fctrange \vdeg*
-\) et \( b = \bigl( D \delta \wts* (2\wtw* + \epsz) \bigr)_\fct \).
+\) et \( b\fct = D \delta \wts* (2\wtw* + \epsz) \).
 On souhaite alors appliquer le fait~\ref{f:thm-prod} à \( G \) avec \( \alpha
   = \puiss \Lambda^{-2f(u)} \) et \( x = \pi(\ex) \). Il s'agit tout d'abord
 de vérifier que les hypothèses sont bien satisfaites.
@@ -3696,7 +3697,8 @@ Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
   \frac{ \lgr{\imp*} }{ \wtw* \wts* }
 \end{align}
 par définition de \( b \) et en observant que \( \epsz < 1 \), de sorte qu'en
-utilisant successivement la proposition~\ref{p:extra} il vient :
+utilisant successivement l'inégalité ci-dessus, le fait précédent et la
+proposition~\ref{p:extra}, il vient :
 \begin{equation}
   \indg b[x] G
   \ge
@@ -3707,8 +3709,8 @@ utilisant successivement la proposition~\ref{p:extra} il vient :
   \frac{ \eps \epsi }{ 192 (\puiss-1) \dimp B D }
   \pmm.
 \end{equation}
-Or, en utilisant successivement la définition~\eqref{e:def-epsi} de \( \epsi
-\) et celle~\eqref{e:cst-vs-deg-prod} de \( \cst{vs-deg-prod} \) on a
+On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
+\) puis de celle~\eqref{e:cst-vs-deg-prod} de \( \cst{vs-deg-prod} \) :
 \begin{align}
   \frac{ 192 (\puiss-1) \puiss \dimp }{ \eps \epsi }
   & =
@@ -3731,9 +3733,9 @@ Or, en utilisant successivement la définition~\eqref{e:def-epsi} de \( \epsi
   \cst{vs-deg-prod}
   \label{e:ct-cst-vs-deg}
 \end{align}
-
-On utilise alors successivement~\eqref{e:cst-vs-deg-prod} puis
-\eqref{e:varset-deg} et \eqref{e:varset-deg-prod} pour écrire
+Après avoir rassemble les deux inégalités précédentes, il ne reste plus qu'à
+exploiter les hypothèses~\eqref{e:varset-deg} et \eqref{e:varset-deg-prod}
+pour obtenir
 \begin{equation} \label{e:tp-ind}
   \indg b[x] G
   \ge
@@ -3790,8 +3792,8 @@ troisième hypothèse est également satisfaite.
 
 On peut donc appliquer le fait~\ref{f:thm-prod} comme annoncé, on note \( T \)
 la forme obtenue. On a alors \( \pi(\ex) \in \zeros T \), c'est-à-dire \(
-  T(\cexa) = 0 \). On introduit alors une forme \( T'(\vmp) = T\bigl(
-    (\vadapt*(\vmp*))_\fct \bigr) \) dont on va montrer qu'elle possède bien
+  T(\cexa) = 0 \). On introduit alors une forme \( T'(\vmp*) = T\bigl(
+    \vadapt*(\vmp*) \bigr) \) dont on va montrer qu'elle possède bien
 les propriétés annoncés par la proposition~\ref{p:varset-notmin}.
 
 Tout d'abord il est clair, par construction, que \( T'(\cex) = 0 \) et que \(
@@ -3830,6 +3832,7 @@ choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
   + D \delta \wts* (2\wtw* + \epsz)
   \ln \binom{\Lambda^{2\vdim f(\vdim)} + \vdim*}{\vdim*}
   + o(\delta)
+  \pmm.
 \end{align}
 On utilise alors l'estimation élémentaire
 \begin{equation}
@@ -3895,7 +3898,7 @@ fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \).
     6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
     + \frac32 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
-  + o(\delta)
+  + o(1)
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
@@ -3905,7 +3908,7 @@ fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \).
   \label{e:ht-T-var}
 \end{align}
 où l'on a supposé \( \delta \) assez grand pour que le
-terme en \( o(\delta) \) de la permière ligne soit plus petit que la quantitée
+terme en \( o(1) \) de la première ligne soit plus petit que la quantité
 perdue en remplaçant \( \frac32 \) par \( 2 \) dans le terme précédent, qui ne
 dépend pas de \( \delta \).
 

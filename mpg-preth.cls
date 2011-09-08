@@ -287,7 +287,9 @@
   AutoSpacePunctuation=false,
   ThinColonSpace=true,
   SuppressWarning=true,
-  }
+}
+% nbsp treated as a normal space (to let frenchb do its job)
+\DeclareUnicodeCharacter{00A0}{ }
 
 % marginal notes and todos [[2
 %
