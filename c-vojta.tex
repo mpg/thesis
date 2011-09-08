@@ -299,7 +299,7 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   \prod\fctrange \vdeg*
   & \le \Lambda^{f(\vdim)}
   \\ \label{e:varset-ht}
-  \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+  \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*}
   & \le \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)} \wts[1]
   \pmm,
 \end{align}
@@ -356,7 +356,7 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     & \le
     \genre \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
       + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \pmm.
@@ -450,7 +450,7 @@ théorème~\ref{t:vojta-div}.
     \\ & \qquad
     + B \genre \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
       + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \\ & \le
@@ -458,7 +458,7 @@ théorème~\ref{t:vojta-div}.
       \wtw* \wts* \hautl[1]{ \varfc* }
       + 3 B \genre
       \Bigl(
-        \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+        \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
         + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
       \Bigr)
     \Biggr)
@@ -482,19 +482,19 @@ théorème~\ref{t:vojta-div}.
     \\ & \qquad
     + 3 B \genre \Lambda^{2\vdim f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
       + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Bigr)
     \\ & \le
     4 B \genre \Lambda^{2\vdim f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
       + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Bigr)
     \\ & \le
     \frac12 \Lambda^{(2\vdim + 1) f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
       + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Bigr)
     \label{e:vs-ht-rec}
@@ -1933,7 +1933,7 @@ conclure :
 \end{equation}
 Remarquons que l'on pourrait invoquer l'hypothèse~\eqref{e:varset-ht} pour
 simplifier cette dernière expression, mais il nous paraît plus utile de
-conserver la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \)
+conserver la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \)
 explicite aussi longtemps que possible (jusqu'à obtenir~\eqref{e:vs-ht-rec} en
 fait) ; voir néanmoins~\eqref{e:ht-faux-s} pour une telle simplification.
 
@@ -2067,7 +2067,7 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
         \le
         6 \delta \Bigl(
           \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
-          + \sum\fctrange \wtw* \wts* \hautl[1]{\var*}
+          + \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*}
         \Bigr) + o(\delta)
       \) ; \label{i:aux-co-ht}
     \item \todo[voir de quoi on a vraiment besoin] \(
@@ -3943,20 +3943,20 @@ comme estimation finale de la hauteur de \( T \) en fonction de celle de \(
   \faux** \).
 
 Utilisons maintenant le scolie~\ref{s:aux-co} pour exprimer cette hauteur en
-fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \).
+fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \).
 \begin{align}
   \wtw* \wts* \hautl[\infty] T
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
     + \frac34 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   + o(1)
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
     + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \label{e:ht-T-var}
@@ -4002,7 +4002,7 @@ précédente pour avoir
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
     + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \pmm,
