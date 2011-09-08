@@ -2458,13 +2458,23 @@ Les morphismes \( \pmor*_\dv \) s'étendent à \( \cdn[X]_{(\ideal\anyvar)} \)
 comme expliqué au deuxième paragraphe précédant le lemme~\ref{l:param-aff}.
 Nous allons maintenant étudier (dénominateur, degré et hauteur des
 coefficients) les images de certaines fonctions, en commençant par celles des
-monômes en \( \vp / \vp[\anydim] \).
+monômes en \( \vp / \vp[\anydim] \). En fait, pour les applications
+considérées, nous pouvons même nous restreindre aux monômes de la forme
+\begin{equation}
+  M_\ip
+  =
+  \prod_{\ind=0}^{\anydim+1}
+  \left( \frac{\vp*}{\vp[\anydim]} \right)^{\ip*}
+  \quad
+  \text{avec \( \ip[\anydim + 1] < \deg \anyvar \).}
+\end{equation}
+
+% XXX
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soit \( \ip \in \N^{\dimp+1} \) et \( M_\ip = \prod\limits\indrange
-    \bigl( \frac{\vp*}{\vp[\anydim]} \bigr)^{\ip*} \).  Posons \( \pden =
-    \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \( \pden_\ind \)
-  sont donnés par le lemme précédent. Alors :
+  Soit \( \ip \in \N^{\dimp+1} \) et \( M_\ip \) comme ci-dessus.  Posons \(
+    \pden = \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \(
+    \pden_\ind \) sont donnés par le lemme précédent. Alors :
   \begin{enumthm}
     \item \( P^\derp_{\ip, \dv}
         = \pdiff^\derp(M_\ip)
@@ -2580,7 +2590,7 @@ monômes en \( \vp / \vp[\anydim] \).
   (voir la remarque~\ref{r:param-deshom}) est \( \vp[0] \), même si elle
   paraît \lat{a priori} avoir moins de sens dans ce cas. En effet, on remarque
   que le dernier paragraphe de la démonstration utilise seulement le fait que
-  \( \pdiff^0 \) est l'idendité ; tout le reste en découle formellement, nulle
+  \( \pdiff^0 \) est l'identité ; tout le reste en découle formellement, nulle
   part il n'est fait usage du fait que \( \vp[\anydim] \neq \vp[0] \).
 \end{rem}
 
