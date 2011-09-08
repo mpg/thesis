@@ -2111,16 +2111,10 @@ quelconque (plongée de façon adaptée) avant de passer à une variété produi
 
 \subsection{Estimation de dérivées} \label{sec:vojta-param}
 
-\todo[Préciser la footnote, la passer en remarque]
 Soit \( \anyvar \) une variété projective de dimension \( \anydim \), plongée
 de façon adaptée dans un espace projectif \( \projd \), de degré \( \anydeg \)
 dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie
-de\footnote{\label{fn:coord-deshom}Dans toute cette section on prendra \(
-    \vp[\anydim] \) (puis \( \vmp*[\vdim*] \) en multiprojectif) comme
-  variable de déshomogénéisation pour simplifier les notations, mais il est
-  clair qu'on pourrait utiliser n'importe quel indice entre \( 0 \)  et \(
-    \anydim \) (et \( \vdim* \) en multiprojectif).  Les morphismes et formes
-  obtenus dépendront bien sûr de ce choix, mais pas leurs propriétés.}
+de
 \begin{equation}
   \cdn\Big(
     \frac{ \vp[0]           }{ \vp[\anydim] }, \dots,
@@ -2138,8 +2132,8 @@ dérivations. Les propriétés classiques des dérivations montrent alors que
 l'application
 \begin{equation}
   \begin{aligned}
-    \pmor \colon \cdn(Z)
-    & \to \cdn(Z)\series\psp
+    \pmor \colon \cdn(\anyvar)
+    & \to \cdn(\anyvar)\series\psp
     \\
     f
     & \mapsto
@@ -2170,10 +2164,28 @@ où les flèches verticales sont les projections canoniques. Posons
 \( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)
 sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
 la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
-rationnelle \( f = G/H \), nous exhiberons (au moins) un polynôme \( R_\derp
-\), dépendant éventuellement de la représentation \( G/H \) choisie, tel que
-\( R_\derp \cdot \pdiff*^\derp(f) \) soit un polynôme de degré et normes
-locales contrôlées.
+rationnelle \( f = G/\vp[\anydim] \), nous exhiberons explicitement (au moins)
+un polynôme \( R_\derp \) tel que \( R_\derp \cdot \pdiff*^\derp(f) \) soit un
+polynôme, de degré et normes locales contrôlées. Nous ne considérons que
+certains numérateurs \( G \) ayant une forme particulière ; bien qu'il soit
+possible d'obtenir des énoncés plus généraux (pour tout fraction rationnelle
+si l'on veut), le fait de se restreindre au cas particulier qui nous intéresse
+simplifie un peu les preuves et permet d'obtenir des majorations plus fines.
+
+\begin{rem} \label{r:param-deshom}
+  Ci-dessus on a choisi d'utiliser \( \vp[\anydim] \) comme variable de
+  déshomogénéisation ; on aurait aussi bien pu utiliser \( \vp* \) pour \(
+    \ind \in \set{0, \dots, \anydim} \) à la place. On obtiendrait alors une
+  base différente de l'espace des dérivations, donc un morphisme \( \pmor \)
+  différent, qu'on pourrait également chercher à représenter par un autre
+  morphisme \( \pmor* \).
+
+  On pourrait donc écrire chacun des lemmes qui vont suivre en
+  déshomogénéisant par rapport à une variable d'indice quelconque dans \(
+    \set{0, \dots, \anydim} \), néanmoins pour simplifier les notations nous
+  utiliserons toujours \( \vp[\anydim] \) ; il est clair que l'énoncé général
+  se déduit de ce cas par permutation des variables.
+\end{rem}
 
 En pratique, nous construirons en fait deux morphismes, \( \pmor*_0 \) et \(
   \pmor*_1 \), et deux familles d'applications \( \pdiff^\derp \) telles que
@@ -2226,9 +2238,10 @@ affine avant de l'appliquer à notre situation projective.
 \begin{proof}
   Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
     autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
-    fixé.} la preuve du lemme~6.1 de \cite{remivds}, en
-  utilisant aux places archimédiennes une généralisation de
-  \cite[relation~2.3.1, p.~63]{farhith}.
+    fixé. Plus précisément, on peut retrouver l'énoncé de \bsc{Rémond} par
+    évaluation de \( P_\dv^\derp \) et \( \pden \) en un point convenable.} la
+  preuve du lemme~6.1 de \cite{remivds}, en utilisant aux places
+  archimédiennes une généralisation de \cite[relation~2.3.1, p.~63]{farhith}.
 
   On va construire \( P_0^\derp \) et \( P_1^\derp \) indépendamment par
   récurrence sur la longueur de \( \derp \), en partant à chaque fois de \(
@@ -2562,13 +2575,13 @@ monômes en \( \vp / \vp[\anydim] \).
       \dv} \), ce qui prouve l'assertion sur l'ordre.
 \end{proof}
 
-\begin{rem}
+\begin{rem} \label{r:param-deshom-ord}
   L'assertion sur l'ordre vaut aussi si la variable de déshomogénéisation
-  (voir note~\ref{fn:coord-deshom} page~\pageref{fn:coord-deshom}) est
-  \( \vp[0] \), même si elle paraît \lat{a priori} avoir moins de sens dans ce
-  cas. En effet, on remarque que le dernier paragraphe de la démonstration
-  utilise seulement le fait que \( \pdiff^0 \) est l'idendité ; tout le reste
-  en découle formellement.
+  (voir la remarque~\ref{r:param-deshom}) est \( \vp[0] \), même si elle
+  paraît \lat{a priori} avoir moins de sens dans ce cas. En effet, on remarque
+  que le dernier paragraphe de la démonstration utilise seulement le fait que
+  \( \pdiff^0 \) est l'idendité ; tout le reste en découle formellement, nulle
+  part il n'est fait usage du fait que \( \vp[\anydim] \neq \vp[0] \).
 \end{rem}
 
 On souhaite maintenant étudier le développement en série des fonctions
@@ -2689,6 +2702,15 @@ indice en \( \point \) comme
 \end{equation}
 où la borne inférieure est en fait un minimum, sauf si \( \ratfi = 0 \), cas
 où l'indice est infini.
+
+\begin{rem} \label{r:ind-basis}
+  La définition ci-dessus fait usage d'une base de dérivations de \(
+    \cdn(\var*) \) \lat{via} les applications \( \der[\imp] \) (voir le début
+  de la sous-section~\ref{sec:vojta-param}. Il est important de noter qu'elle
+  ne dépend en fait pas de la base choisie, car chaque \( \lgr{\dermp*} \), et
+  donc \( \wtsum[b](\dermp) \), est bien sûr invariant par changement de base.
+\end{rem}
+
 
 \begin{lem} \label{l:indice-inversible}
   Soient \( \ratfi_1 \), \( \ratfi_2 \) et \( \alpha \) des fonctions
@@ -3131,16 +3153,17 @@ pas besoin de l'expliciter davantage.
 
 \medskip
 
-Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} aux
-formes \( \fauxv \).  Comme l'indique la note~\ref{fn:coord-deshom}
-page~\pageref{fn:coord-deshom}, il est loisible d'utiliser sur chaque facteur
+Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} à chacune
+des formes \( \fauxv \).  Comme l'indique les remarques~\ref{r:param-deshom},
+\ref{r:param-deshom-ord} et~\ref{r:ind-basis}, il est loisible d'utiliser sur
+chaque facteur
 \( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \) comme variable de
 déshomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ; simplement, les
 polynômes fournis par le lemme dépendent de ce choix, donc en définitive de \(
   \place \), ce qui est déjà le cas.  Par ailleurs, chaque application du
 lemme fournit deux familles de polynômes, satisfaisant respectivement des
 majorations de normes aux places finies ou infinies ; on ne garde que celui
-correspondant à l'indice \( \dermp \) fixé ci-dessus et la nature
+correspondant à l'indice \( \dermp \) fixé ci-dessus et à la nature
 archimédienne ou non de la place considérée, de façon à obtenir une famille
 indexée par \( \place \) de polynômes \( P_\place \) et jouissant des
 propriétés suivantes :
