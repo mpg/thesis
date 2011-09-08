@@ -89,7 +89,7 @@ Macros {{{2
 
 (A) Vojta : macros pour \Lambda et f(u)
 
-(B) retrier les macros de Vojta
+(C) retrier les macros de Vojta
 
 (B) Nomenclature : numéros de page.
     - fait petit à petit avec les relectures
@@ -113,10 +113,8 @@ Vojta {{{2
 
 (B) Reprendre notations dans la partie dérivées :
     - Q en conflit avec \pden dans la démo du premier lemme
-    - prendre X_0 pour déshomogénéiser partout, et indice par rapport à une
-      variable quelconque
 
-(B) pour \rfull etc : mettre le degré en bas (plus cohérent avec les parties
+(C) pour \rfull etc : mettre le degré en bas (plus cohérent avec les parties
 homogènes)
 
 Plongements et formulaires {{{2
@@ -133,8 +131,6 @@ Maths {{{1
 
 Vojta {{{2
 -----
-
-(A) Créer la section 6
 
 (B) Reprendre les \todo du texte
 
