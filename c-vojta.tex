@@ -2992,7 +2992,7 @@ difficulté). Dans ces estimations, nous noterons \( B \) le majorant commun
 des \( \vdeg* \) donné par \eqref{e:varset-deg} afin d'alléger l'écriture.
 
 Pour \( \ratfv4 \) on commence par remarquer que le dénominateur n'intervient
-pas dans le calcule de la hauteur, puis au numérateur que la hauteur d'une
+pas dans le calcul de la hauteur, puis au numérateur que la hauteur d'une
 coordonnée est majorée par la norme du vecteur :
 \begin{equation}
   \prod_\place
@@ -3262,7 +3262,7 @@ Par ailleurs, en utilisant~\eqref{e:wt-ratio}, on a
   \sum\fctrange \hautn{ \ex* } \lgr{\dermp*}
   \le
   (\puiss-1) \sum\fctrange
-  \wts* \hautn{ \ex* } \, \frac{ \lgr{\dermp*} }{ \wts* }
+  \wts* \hautn{ \ex* } \, \frac{ \lgr{\dermp*} }{ \wtw* \wts* }
   \le
   2 (\puiss-1) \wts[1] \hautn{ \ex[1] } \, \epsi \delta / \sigma
 \end{equation}
@@ -3400,7 +3400,8 @@ puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et \( \sigma >
   + \hautl[1]{(P_\place)_\place}
   + \sum\fctrange \deg_\fct P \cdot C_\fct
 \end{equation}
-où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) et
+où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) en \(
+  \vmp* \) et
 \begin{align}
   C_\fct
   & \le
