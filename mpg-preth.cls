@@ -888,6 +888,9 @@
 \newcommand*\hautn [1]    {\Hautn    (#1)}
 \newcommand*\normn        {\abs}
 
+\newcommand*\htpph {\mathrm{P}}
+\newcommand*\htmah {\mathrm{M}}
+
 \nomdef \hautm a {h} \@gobbletwo{\hautm[\PHi]{\PH}}{Hauteur projective
   multiplicative de \PH en utilisant la norme \PHi aux places archimédiennes}
 \nomdef \hautl a {h} \@gobbletwo{\hautl[\PHi]{\PH}}{Hauteur projective

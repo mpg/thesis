@@ -354,7 +354,7 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     \\
     \wtw* \wts* \hautl[\infty]{ T }
     & \le
-    \vdim* \Lambda^{2\vdim f(\vdim)}
+    \genre \Lambda^{2\vdim f(\vdim)}
     \Biggl(
       3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
       + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
@@ -394,26 +394,53 @@ théorème~\ref{t:vojta-div}.
 
   Pour la condition sur la hauteur, on utilise la formule suivante
   (\emph{arithmetic Bézout theorem}, \cite[p. 87]{phidg}) :
-  \todo[Vérifier la normalisation de hauteur et reporter ci-dessous.]
   \begin{equation}
-    \hautl{ \var*' }
+    \hautl[\htpph]{ \chow{\var*'} }
     \le
-    \vdeg* \hautl[\mathrm{m}] T + \deg T \cdot \hautl{ \var* }
+    \deg \var* \cdot \hautl[\mathrm{m}] T
+    + \deg T \cdot \hautl[\htpph]{ \varfc* }
   \end{equation}
   où \( \Hautl[\mathrm{m}] \) est la hauteur désignée par \( h_1 \) dans la
   référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
   par ailleurs que \( \hautl[\mathrm{m}] T \le \hautl[\infty] T + \sqrt\dimp
-  \), de sorte qu'on a immédiatement
+  \). Rappelons comment \( \Hautl[\htpph] \) se compare à \( \Hautl[1] \)
+  dans le cas particulier de la forme de \bsc{Chow} \( \chow V \) d'une
+  variété projective \( V \) :
   \begin{equation}
-    \wtw* \wts* \hautl[\mathrm{m}] T
+    \abs{ \hautl[\htpph]{ \chow V } - \hautl[1]{ \chow V } }
     \le
-    \vdim* \Lambda^{2\vdim f(\vdim)}
-    \Biggl(
-      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-    \Biggr)
+    \frac12 \ln(\dimp + 1) (\dim V + 1) \deg V
+    \pmm.
   \end{equation}
-  car \( \Lambda > \dimp \) et \( \wts[1] \ge \wtw* \wts* \). Appliquons le
+  Le théorème de Bézout arithmétique s'écrit donc, dans notre cas et avec les
+  hauteurs qui nous intéressent :
+  \begin{align}
+    \hautl[\htpph]{ \chow{\var*'} }
+    & \le
+    \deg \var* \bigl( \hautl[1] T + \sqrt\dimp \bigr)
+    + \deg T \Bigl(
+      \hautl[1]{ \varfc* }
+      + \frac12 \ln(\dimp + 1) (\vdim* + 1) \deg \var*
+    \Bigr)
+    \\ & \quad
+    + \frac12 \ln(\dimp + 1) \vdim* \deg \var*'
+    \\ & \le
+    B \bigl( \hautl[1] T + \dimp \bigr)
+    + \deg T \Bigl(
+      \hautl[1]{ \varfc* } + \dimp\genre B
+    \Bigr)
+    + \dimp\genre B \deg T
+    \\ & \le
+    \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
+    + B \hautl[1] T
+    + 3 \dimp \genre B \Lambda^{2\vdim f(\vdim)}
+    \pmm.
+  \end{align}
+
+
+
+  
+  Appliquons le
   théorème de \bsc{Bézout} arithmétique qu'on vient de rappeler :
   \begin{align}
     \sum_{\fcti=1}^\puiss
@@ -3684,7 +3711,7 @@ possédant les propriétés voulues.
 \end{fact}
 
 On note désormais \( G = N(\faux**) \) puis \( \vdeg = \prod\fctrange \vdeg*
-\) et \( b\fct = D \delta \wts* (2\wtw* + \epsz) \).
+\) et \( b_\fct = D \delta \wts* (2\wtw* + \epsz) \).
 On souhaite alors appliquer le fait~\ref{f:thm-prod} à \( G \) avec \( \alpha
   = \puiss \Lambda^{-2f(u)} \) et \( x = \pi(\ex) \). Il s'agit tout d'abord
 de vérifier que les hypothèses sont bien satisfaites.
@@ -3954,7 +3981,8 @@ précédente pour avoir
   \Biggr)
   \pmm,
 \end{align*}
-ce qui achève la preuve de la proposition~\ref{p:varset-notmin}.
+ce qui achève la preuve de la proposition~\ref{p:varset-notmin} en remarquant
+que \( \vdim* \le \genre \).
 
 
 
