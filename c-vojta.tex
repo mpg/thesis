@@ -234,7 +234,7 @@ amplement en pratique.
 Jusqu'à présent nous n'avons exploité que l'hypothèse~\eqref{e:Vcos},
 pour~\eqref{e:hautn-wt-diff}. En tenant compte de l'hypothèse~\eqref{e:Vfar}, on
 voit de plus que la suite \( \wts[1], \dots, \wts** \) décroît
-au moins comme une suite géométrique de raison inférieure à $1$. Plus
+au moins comme une suite géométrique de raison inférieure à \( 1 \). Plus
 précisément, dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
 \begin{equation} \label{e:wt-geom}
   \wts*
@@ -608,27 +608,29 @@ Nous établissons maintenant une variante de la proposition~4.1, de
 donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 
 \begin{lem} \label{l:adapt-gen}
-  Soit $\iota \colon \anyvar \embedin \projd$ un sous-schéma fermé intègre de
-  degré $\anydeg$, non contenu dans l'hyperplan d'équation $\anyvp[0] = 0$.
-  Il existe une transformation linéaire $\chi \in \GL_{\dimp+1}(\Q)$,
-  représentable par une matrice à coefficients entiers de
-  valeur absolue (archimédienne) majorée par $\max(\frac\anydeg2, 1)$, telle
-  que $\chi \circ \iota$ est un plongement adapté à \( \anyvar \) et que
-  $\anyvp[0]$ soit invariant par ce changement de coordonnées.
+  Soit \( \iota \colon \anyvar \embedin \projd \) un sous-schéma fermé intègre
+  de degré \( \anydeg \), non contenu dans l'hyperplan d'équation \( \anyvp[0]
+    = 0 \).  Il existe une transformation linéaire \( \chi \in
+    \GL_{\dimp+1}(\Q) \), représentable par une matrice à coefficients entiers
+  de valeur absolue (archimédienne) majorée par \( \max(\frac\anydeg2, 1) \),
+  telle que \( \chi \circ \iota \) est un plongement adapté à \( \anyvar \) et
+  que
+  \( \anyvp[0] \) soit invariant par ce changement de coordonnées.
 \end{lem}
 
 \begin{proof}
   On reprend la preuve de la proposition citée (p.~116) ; au moment de choisir
-  des formes linéaires $L_0, \dots, L_n$ telles que
+  des formes linéaires \( L_0, \dots, L_n \) telles que
   \begin{equation*}
     \chow \anyvar (L_0, \dots, L_\dimp) \neq 0
     \pmm,
   \end{equation*}
-  on commence en fait par fixer $L_0 = \anyvp[0]$. Le polynôme $\varfc(L_0,
-  \truc, \dots, \truc)$ est multihomogène de degré $\anydeg$ en chaque
-  variable ; vu l'hypothèse sur $\anyvar$, il est non nul grâce au théorème
-  fondamental de l'élimination. On peut donc choisir $L_1, \dots L_\anydim$
-  comme dans \cite{remivg} puis continuer la preuve sans autre modification.
+  on commence en fait par fixer \( L_0 = \anyvp[0] \). Le polynôme \(
+    \varfc(L_0, \truc, \dots, \truc) \) est multihomogène de degré \( \anydeg
+  \) en chaque variable ; vu l'hypothèse sur \( \anyvar \), il est non nul
+  grâce au théorème fondamental de l'élimination. On peut donc choisir \( L_1,
+    \dots L_\anydim \) comme dans \cite{remivg} puis continuer la preuve sans
+  autre modification.
 \end{proof}
 
 Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
@@ -733,8 +735,8 @@ proposition~\ref{p:varset-notmin}.
 Les propriétés des plongements adaptés permettent d'associer à chaque forme
 homogène, à peu de chose près, une représentation canonique modulo \( \varida
 \), définie par des restrictions de degrés en certains variables.
-Introduisons pour cela quelques notations : pour chaque $C \in (\N \cup \set{
-  +\infty }) ^{\puiss(\dimp+1)}$, on notera
+Introduisons pour cela quelques notations : pour chaque \( C \in (\N \cup
+  \set{ +\infty }) ^{\puiss(\dimp+1)} \), on notera
 \begin{equation} \label{e:C-spaces}
   \cdn[\vmp]^C
   = \{
@@ -745,18 +747,18 @@ Introduisons pour cela quelques notations : pour chaque $C \in (\N \cup \set{
     \}
   \pmm.
 \end{equation}
-On utilisera trois tels vecteurs $C'$, $C''$, $C'''$, définis respectivement
-par
+On utilisera trois tels vecteurs \( C' \), \( C'' \), \( C''' \), définis
+respectivement par
 \begin{gather} \label{e:C-i-iii}
   (C')\pexp\fct[\ind] =
   \begin{cases}
-    +\infty & \text{si $\ind \le \vdim*$} \\
+    +\infty & \text{si \( \ind \le \vdim* \)} \\
     \vdeg* - 1 & \text{sinon}
   \end{cases}
   \qquad
   (C'')\pexp\fct[\ind] =
   \begin{cases}
-    +\infty & \text{si $\ind \le \vdim* + 1$} \\
+    +\infty & \text{si \( \ind \le \vdim* + 1 \)} \\
     0 & \text{sinon}
   \end{cases}
   \\
@@ -765,9 +767,9 @@ par
   \bigr)
   \pmm,
 \end{gather}
-pour $0 \le \fct \le \puiss$ et $0 \le k \le \dimp$.  Par ailleurs, on notera
-$C'_\Delta$ et $C'''_\Delta$ les vecteurs obtenus en remplaçant $D$ par un
-certain $\Delta$ dans la définition précédente.
+pour \( 0 \le \fct \le \puiss \) et \( 0 \le k \le \dimp \).  Par ailleurs, on
+notera \( C'_\Delta \) et \( C'''_\Delta \) les vecteurs obtenus en remplaçant
+\( D \) par un certain \( \Delta \) dans la définition précédente.
 
 L'intérêt de \( \cdn[ \vmp ]^{C'''} \) est que, le plongement étant
 adapté, son intersection avec \( \varida \) est réduite à \( 0 \) : en effet,
@@ -1448,9 +1450,9 @@ d'équivalents quand \( \delta \) tend vers l'infini.
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
-La dimension de $\fspace$ est donnée par le théorème de
-\bsc{Hilbert} multihomogène dès qu'on connaît les différents multidegrés de
-$\wemb(\var)$. Il est \lat{a priori} difficile de tous les calculer, mais
+La dimension de \( \fspace \) est donnée par le théorème de \bsc{Hilbert}
+multihomogène dès qu'on connaît les différents multidegrés de
+\( \wemb(\var) \). Il est \lat{a priori} difficile de tous les calculer, mais
 comme il suffit en fait de minorer la dimension, le lemme suivant nous donne
 tout ce qu'on aura besoin de savoir sur le degré.
 
@@ -1468,21 +1470,21 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \end{lem}
 
 \begin{proof}
-  Ce degré est donné par le cardinal de l'intersection de $\wemb(\var)$ avec
-  des hyperplans génériques choisis de la façon suivante : $\vdim[\puiss]$
-  provenant du $\puiss$-ième facteur $\projd$, et $\vdim*$ hyperplans
-  provenant du facteur $\puiss + \fct$ pour $\fct \in \set{1, \dots,
-    \puiss-1}$.
+  Ce degré est donné par le cardinal de l'intersection de \( \wemb(\var) \)
+  avec des hyperplans génériques choisis de la façon suivante : \(
+    \vdim[\puiss] \) provenant du \( \puiss \)-ième facteur \( \projd \), et
+  \( \vdim* \) hyperplans provenant du facteur \( \puiss + \fct \) pour \(
+    \fct \in \set{1, \dots, \puiss-1} \).
 
-  On commence par choisir les hyperplans sur le facteur $\puiss$ : on remarque
-  qu'ils se remontent par $\wemb$ en des hyperplans sur le dernier facteur de
-  l'espace de départ $(\projd)^\puiss$. Ainsi, couper $\wemb(\var)$ par ces
-  hyperplans revient à imposer à $\point_\puiss$ de parcourir un ensemble de
-  cardinal $\vdeg[\puiss]$.
+  On commence par choisir les hyperplans sur le facteur \( \puiss \) : on
+  remarque qu'ils se remontent par \( \wemb \) en des hyperplans sur le
+  dernier facteur de l'espace de départ \( (\projd)^\puiss \). Ainsi, couper
+  \( \wemb(\var) \) par ces hyperplans revient à imposer à \( \point_\puiss \)
+  de parcourir un ensemble de cardinal \( \vdeg[\puiss] \).
 
-  Fixons maintenant un point $p'$ dans cet ensemble et notons $p = \wt** p'$.
-  On constate que $\wemb(\var) \cap \zeros{\vmp[\puiss] = p'}$ coïncide avec
-  l'image de
+  Fixons maintenant un point \( p' \) dans cet ensemble et notons \( p = \wt**
+    p' \).  On constate que \( \wemb(\var) \cap \zeros{\vmp[\puiss] = p'} \)
+  coïncide avec l'image de
   \begin{align}
     \wemb[\wt, p']'
     \colon
@@ -1497,8 +1499,8 @@ tout ce qu'on aura besoin de savoir sur le degré.
     \dots,
     \wt[\puiss-1] \point_{\puiss-1} - p)
   \end{align}
-  qui est le produit d'un point par des variétés de la forme
-  $\wemb[\wt*, p]''(\var*)$ pour $\fct$ variant de $1$ à $\puiss-1$ en
+  qui est le produit d'un point par des variétés de la forme \( \wemb[\wt*,
+    p]''(\var*) \) pour \( \fct \) variant de \( 1 \) à \( \puiss-1 \) en
   notant
   \begin{align}
     \wemb[\wt*, p]''
@@ -1511,14 +1513,14 @@ tout ce qu'on aura besoin de savoir sur le degré.
     & \mapsto
     (\point, \wt* \point - p)
   \end{align}
-  Il suffit donc de calculer le degré de ces variétés. La translation par $p$
-  n'ayant pas d'influence sur le degré, il suffit de regarder l'action de la
-  multiplication par $\wt*$. Or, celle-ci pouvant être représentée
-  globalement par des formes de degré $\wts*$, en tirant en arrière par
-  $\wemb[\wt*, p]''(\var*)$ une famille de $\vdim*$ hyperplans
+  Il suffit donc de calculer le degré de ces variétés. La translation par \( p
+  \) n'ayant pas d'influence sur le degré, il suffit de regarder l'action de
+  la multiplication par \( \wt* \). Or, celle-ci pouvant être représentée
+  globalement par des formes de degré \( \wts* \), en tirant en arrière par
+  \( \wemb[\wt*, p]''(\var*) \) une famille de \( \vdim* \) hyperplans
   génériques sur le second facteur, on obtient des hypersurfaces génériques de
-  degré $\wts*$ qui coupent donc $\var*$ en $\vdeg*
-  \wt*^{2\vdim*}$ points.
+  degré \( \wts* \) qui coupent donc \( \var* \) en \( \vdeg* \wt*^{2\vdim*}
+  \) points.
 
   Le résultat suit en prenant le produit.
 \end{proof}
@@ -2175,17 +2177,18 @@ affine avant de l'appliquer à notre situation projective.
   utilisant aux places archimédiennes une généralisation de
   \cite[relation~2.3.1, p.~63]{farhith}.
 
-  On va construire $P_0^\derp$ et $P_1^\derp$ indépendamment par récurrence
-  sur la longueur de $\derp$, en partant à chaque fois de $P_\dv^\derp = -
-  \diff_{\ind_0} \Pi$ quand $\derp_{\ind_0} = 1$ et $\derp_\ind = 0$ sinon
-  (cas $\lgr\derp = 1$), car ce choix convient. Pour la suite, on fixe un
-  $\dv$, un $\derp$ de longueur au moins $2$, et on suppose qu'on a choisi un
-  $P_\dv^{\derp'}$ convenable pour chaque $\derp'$ de longueur strictement
-  inférieure à celle de $\derp$.
+  On va construire \( P_0^\derp \) et \( P_1^\derp \) indépendamment par
+  récurrence sur la longueur de \( \derp \), en partant à chaque fois de \(
+    P_\dv^\derp = - \diff_{\ind_0} \Pi \) quand \( \derp_{\ind_0} = 1 \) et \(
+    \derp_\ind = 0 \) sinon (cas \( \lgr\derp = 1 \)), car ce choix convient.
+  Pour la suite, on fixe un \( \dv \), un \( \derp \) de longueur au moins \(
+    2 \), et on suppose qu'on a choisi un \( P_\dv^{\derp'} \) convenable pour
+  chaque \( \derp' \) de longueur strictement inférieure à celle de \( \derp
+  \).
 
-  On commence par le cas ultramétrique et on note donc provisoirement $P^\derp
-  = P_0^\derp$ pour alléger. Les polynômes recherchés sont caractérisés par la
-  relation
+  On commence par le cas ultramétrique et on note donc provisoirement \(
+    P^\derp = P_0^\derp \) pour alléger. Les polynômes recherchés sont
+  caractérisés par la relation
   \begin{equation}
     \Pi \left(
       \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
