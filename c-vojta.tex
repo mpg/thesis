@@ -515,16 +515,17 @@ théorème~\ref{t:vojta-div}.
 
   On peut ainsi, en partant de \( \va^\puiss \), construire une suite
   d'éléments de \( \varset(\ex) \) de dimensions décroisantes, jusqu'au moment
-  où l'un des facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex*
-  \) pour un certain \( \fct \) ; à ce stade on a \( \vdim \ge \puiss - 1 \).
-  On en déduit alors
-  \todo[Comparaison hauteur de variété à point ?]
+  où l'un des facteurs est réduit à un point, c'est-à-dire que \( \var* =
+    \set{\ex*} \) pour un certain \( \fct \) et en particulier \(
+    \hautl[1]{\varfc*} = \hautl[1]{\ex*} \) vu l'expression de la forme de
+  \bsc{Chow} d'un point. Par ailleurs, à ce stade on a \( \vdim \ge \puiss - 1
+  \) ; on en déduit alors
   \begin{alignat}{2}
     \wts* \hautn{\ex*}
     & \le 2\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
     &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
     \\ \label{e:ct-Vbig-final}
-    \text{d'où }
+    \text{puis }
     \wts[1] \hautn{\ex[1]}
     & \le 4\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
     && \text{par \eqref{e:wt-ratio},}
