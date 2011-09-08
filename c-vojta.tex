@@ -359,8 +359,8 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     & \le
     \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \pmm.
   \end{align}
@@ -412,8 +412,8 @@ théorème~\ref{t:vojta-div}.
     \le
     \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
   \end{equation}
   car \( \Lambda > \dimp \) et \( \wts[1] \ge \wtw* \wts* \). Appliquons le
@@ -433,27 +433,27 @@ théorème~\ref{t:vojta-div}.
     \\ & \qquad
     + \vdeg* \vdim* \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \\ & \le
     \genre B \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      7 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      4 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \label{e:vs-ht-rec}
   \end{align}
   en utilisant le fait que \( \vdim* \le \genre \).  Il ne reste plus qu'à
   appliquer les hypothèses sur \( \var \) (découlant de son appartenance à \(
     \varset(\ex) \)), plus précisément~\eqref{e:varset-ht}
-  puis~\eqref{e:varset-deg} sous la forme \( 11 \genre B \le \Lambda^{f(u)}
+  puis~\eqref{e:varset-deg} sous la forme \( 7 \genre B \le \Lambda^{f(u)}
   \), pour obtenir :
   \begin{align}
     \sum_{\fcti\in\set{1, \dots, \puiss}}
     \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]'}
     & \le
-    11 \vdim* \vdeg*
+    7 \vdim* \vdeg*
     \wts[1] \cst{vs-ht} \Lambda^{(2 \vdim + 1 + \frac1\puiss) f(\vdim)}
     \\ & \le
     \wts[1] \cst{vs-ht} \Lambda^{(2 \vdim + 2 + \frac1\puiss) f(\vdim)}
@@ -3842,18 +3842,18 @@ On utilise alors l'estimation élémentaire
   \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
 \end{equation}
-et le fait que \( 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
-\( \delta D \) et on met \( \vdim* \Lambda^{2\vdim f(\vdim)} \) en facteur (en
-majorant \( \vdim* + 1 \) par \( 2\vdim* \) le cas échéant) pour obtenir
+et le fait que \( 2 \le 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
+\( 2 \delta D \) et on met \( \vdim* \Lambda^{2\vdim f(\vdim)} \) en facteur
+(en majorant \( \vdim* + 1 \) par \( 2\vdim* \) le cas échéant) pour obtenir
 \begin{align*}
   \wtw* \wts* \hautl[\infty] T
   & \le
   \vdim*
   \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \frac1\delta \hautl[\infty]{ \faux** }
+    \frac1{2\delta} \hautl[\infty]{ \faux** }
     \\ & \qquad
-    + 2\puiss \biggl(
+    + \puiss \biggl(
       \sum_{\fcti=1}^\puiss \wts[\fcti] (\stoll{\vdim[\fcti]} + \ln 2)
       + \wts* \Bigl(
         2 \ln \bigl( \Lambda^{2\vdim f(\vdim)} (\vdim* + 1) \bigr) + 1
@@ -3869,7 +3869,7 @@ première majoration est classique et la deuxième utilise le fait que \(
 lemme~\ref{l:sum-wts} et le fait que \( \wts* \le \wts[1] \) pour estimer le
 terme de la dernière ligne ci-dessus par
 \begin{align}
-  4\puiss \wts[1] \left(
+  2\puiss \wts[1] \left(
     \puiss \ln \puiss + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
     + \ln \puiss + \frac12
   \right)
@@ -3880,8 +3880,8 @@ puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \frac1\delta \hautl[\infty]{ \faux** }
-    + \frac12 \wts[1] \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \frac1{2\delta} \hautl[\infty]{ \faux** }
+    + \frac14 \wts[1] \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   + o(1)
 \end{align}
@@ -3895,50 +3895,61 @@ fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\var*} \).
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-    + \frac32 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    + \frac34 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   + o(1)
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-    + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \label{e:ht-T-var}
 \end{align}
 où l'on a supposé \( \delta \) assez grand pour que le
 terme en \( o(1) \) de la première ligne soit plus petit que la quantité
-perdue en remplaçant \( \frac32 \) par \( 2 \) dans le terme précédent, qui ne
+perdue en remplaçant \( \frac34 \) par \( 1 \) dans le terme précédent, qui ne
 dépend pas de \( \delta \).
 
 Passons maintenant à \( T' \). Par construction, en utilisant les propriétés
-classiques de la hauteur et le fait que \( \wtw* \wts* \le \wts[1] \) pour
-tout \( \fct \), on a
+classiques de la hauteur, on a
 \begin{align*}
-  \wtw* \wts* \hautl[\infty]{ T' }
+  \hautl[\infty]{ T' }
   & \le
-  \wtw* \wts* \hautl[\infty]{ T }
-  + \wts[1] \left(
+  \hautl[\infty]{ T }
+  + \left(
     \deg T \Bigl( \hautl[\infty]{ \vadapt* } + \ln(\dimp + 1) \Bigr)
     + \ln \binom{ \deg T + \dimp + 1 }{ \dimp + 1 }
   \right)
   \\ & \le
-  \wtw* \wts* \hautl[\infty]{ T }
-  + \wts[1] \left(
+  \hautl[\infty]{ T }
+  + \left(
     \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
     + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
   \right)
   \pmm.
 \end{align*}
-On invoque alors~\eqref{e:ht-T'-adhoc} pour conclure que
+On invoque alors~\eqref{e:ht-T'-adhoc}, puis on multiplie les deux membres par
+\( \wtw* \wts* \) et, en remarquant que cette dernière quantité est majorée
+par \( \wts[1] \), il vient :
+\begin{equation}
+  \wtw* \wts* \hautl[\infty]{ T' }
+  \le
+  \wtw* \wts* \hautl[\infty]{ T }
+  +
+  \wts[1] \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{equation}
+Il ne reste plus qu'à substituer~\eqref{e:ht-T-var} dans l'estimation
+précédente pour avoir
 \begin{align*}
   \wtw* \wts* \hautl[\infty]{ T' }
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
-    + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\var[\fcti]}
+    + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \pmm,
 \end{align*}
@@ -4190,12 +4201,12 @@ d'après~\eqref{e:varset-deg}, ce qui permet de conclure.
 
 La prochaine majoration \lat{ad hoc} que nous montrons est
 \begin{equation} \label{e:ht-T-adhoc}
-  4\puiss \wts[1] \left(
+  2\puiss \wts[1] \left(
     \puiss \ln \puiss + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
     + \ln \puiss + \frac12
   \right)
   \le
-  \frac12 \Lambda^{ (1 + \frac1\puiss) f(\vdim) }
+  \frac14 \Lambda^{ (1 + \frac1\puiss) f(\vdim) }
   \pmm.
 \end{equation}
 On commence par utiliser le fait que \( \Lambda \ge (\sqrt2
@@ -4215,11 +4226,11 @@ est majorée par \( 3\vdim \ln \Lambda^{f(\vdim)} \) et comme de plus \( \vdim
   \le \puiss\genre \) le membre de droite de~\eqref{e:ht-T-adhoc} est majoré
 successivement par
 \begin{equation}
-  12 \puiss^2 \genre \ln \Lambda^{f(\vdim)}
+  6 \puiss^2 \genre \ln \Lambda^{f(\vdim)}
   \le
-  12 \puiss^3 \genre \Lambda^{\frac1\puiss f(\vdim)}
+  6 \puiss^3 \genre \Lambda^{\frac1\puiss f(\vdim)}
   \le
-  \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
 \end{equation}
 qui est l'estimation annoncée. En effet, \( \ln x \le \puiss \, x^{1/\puiss}
 \) puis \( \genre \le \puiss - 1 \) et on vérifie facilement (au besoin
