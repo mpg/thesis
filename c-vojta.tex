@@ -44,8 +44,7 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     considérée}
   \begin{align}
     \label{e:def-Vbig}
-    \Vbig & \ge \stuffout{\cst{vs-ht} \Lambda^{2\,f(\puiss-1)}}
-    \text{ pour la conclusion de la construction}
+    \Vbig & \ge 4\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
     \\ & \ge \stuffout{
       \frac{16}{3\expapx \epsi}
       \Lambda^{3f(\puiss)} \bigl(
@@ -55,9 +54,7 @@ distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
     } \text{ pour \eqref{e:Vbig-ct-extra}}
     \\
     \label{e:def-Vfar}
-    \Vfar
-    & = 2 \puiss \Lambda^{2\puiss f(\puiss)}
-    \text{ pour la section~\ref{sec:thm-prod}}
+    \Vfar & = 2 \puiss \Lambda^{2\puiss f(\puiss)}
     \\
     \label{e:def-Vcos}
     \Vcos & =
@@ -469,13 +466,15 @@ théorème~\ref{t:vojta-div}.
   facteurs est réduit à un point, c'est-à-dire que \( \var* = \ex* \) pour un
   certain \( \fct \) ; à ce stade on a \( \vdim \ge \puiss - 1 \). On en
   déduit alors
+  \todo[Comparaison hauteur de variété à point ?]
   \begin{alignat}{2}
     \wts* \hautn{\ex*}
-    & \le 2\cst{vs-ht} \Lambda^{2\,f(\puiss-1)} \wts[1]
+    & \le 2\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
     &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
     \\ \label{e:ct-Vbig-final}
+    \text{d'où }
     \wts[1] \hautn{\ex[1]}
-    & \le 3\cst{vs-ht} \Lambda^{2\,f(\puiss-1)} \wts[1]
+    & \le 4\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
     && \text{par \eqref{e:wt-ratio},}
   \end{alignat}
   qui contredit directement~\eqref{e:Vbig}. Cette contradiction prouve qu'il
