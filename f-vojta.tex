@@ -1,0 +1,156 @@
+% !TEX root = main.tex
+
+\begin{landscape} \centering
+
+\vspace*{\stretch{1}}
+
+\begin{tikzpicture}[
+  auto,
+  hypo/.style={
+    text height=0.7\baselineskip, text depth=0.3\baselineskip,
+    draw,
+  },
+  result/.style={
+    text height=0.7\baselineskip, text depth=0.3\baselineskip,
+  },
+  result2/.style={
+    text height=1.7\baselineskip, text depth=0.3\baselineskip,
+    align=center,
+  },
+  stop/.style={
+    text height=0.7\baselineskip, text depth=0.3\baselineskip,
+    draw, rounded corners, thick,
+  },
+  section/.style={
+    draw, rounded corners,
+    inner sep=0.5cm,
+  },
+  iter/.style={
+    draw, rounded corners, thick, dashed,
+    inner xsep=0.3cm, inner ysep=1cm,
+  },
+  dimdep/.style={
+    draw, dotted, ->,
+  },
+  dep/.style={
+    draw, ->,
+  },
+  dimloop/.style={
+    to path={-- ++(0, #1) -| (\tikztotarget)}, rounded corners,
+  },
+  puiss/.style={
+    draw, decorate, decoration={
+      snake,
+      amplitude=.4mm, segment length=2mm, 
+      pre length=.5mm, post length=.5mm,
+    },
+  },
+  ]
+
+  % matrice pour les étapes de base
+  \matrix [row sep=1cm, column sep=2.4cm] {
+      \node[result]  (var-deg)   { \( \deg Z \) };
+    & \node[result2] (aux-ex)    { Existence \\ et degrés };
+    & \node[result2] (ind-ok)    { Indice \\ extrapolé };
+    & \node[result2] (fo-ex)     { Existence \\ et degré };
+    & \node[result]  (next-deg)  { \( \deg Z' \) };
+    \\
+      \node[result] (var-ht)     { \( h(Z) \) };
+    & \node[result] (aux-ht)     { Hauteur };
+    & \node[result] (ind-ht)     { À \( h(e_1) \) fixé };
+    & \node[result] (fo-ht)      { Hauteur };
+    & \node[result] (next-ht)    { \( h(Z') \) };
+    \\
+  };
+
+  % nœuds supplémentaires
+  \node[hypo] (in-deg)     [left=of var-deg] { \( \deg A \) };
+  \node[hypo] (in-ht)      [left=of var-ht]  { \( h(A) \) };
+
+  \node[hypo] (eps-zgti)   [above=of aux-ex] { \( \eps_0 \gg \eps_1 \) };
+
+  \node[hypo] (Vcos)       [above=of ind-ok] { \( \gamma \ll 1 \) };
+  \begin{scope}[node distance=2mm]
+    \node[hypo] (eps)      [right=of Vcos]   { \( \eps > 0 \) };
+    \node[hypo] (eps-igtz) [left=of Vcos]    { \( \eps_1 \gg \eps_0 \) };
+  \end{scope}
+
+  \node[hypo] (Vfar)       [above=of fo-ex]  { \( \beta \gg 1 \) };
+
+  \begin{scope}[node distance=3cm]
+    \node[result] (out-ht) [below=of var-ht] { \( h(e_i) \) };
+    \node[stop]   (end)    [below=of aux-ht] { Contradiction };
+    \node[hypo]   (Vbig)   [below=of ind-ht] { \( \alpha \gg 1 \) };
+  \end{scope}
+
+  % dépendences
+  \draw[dimdep] (in-deg)     to                  (var-deg);
+  \draw[dimdep] (in-ht)      to                  (var-ht);
+
+  \draw[dep]    (eps-zgti)   to                  (aux-ex);
+  \draw[dep]    (aux-ex)     to                  (aux-ht);
+  \draw[dep]    (var-deg)    to                  (aux-ht);
+  \draw[dep]    (var-ht)     to                  (aux-ht);
+
+  \draw[dep]    (aux-ex)     to                  (ind-ok);
+  \draw[dep]    (var-deg)    to [bend left=18]   (ind-ok);
+  \draw[dep]    (eps-igtz)   to                  (ind-ok);
+  \draw[dep]    (Vcos)       to                  (ind-ok);
+  \draw[dep]    (eps)        to                  (ind-ok);
+  \draw[dep]    (ind-ok)     to                  (ind-ht);
+  \draw[dep]    (aux-ht)     to                  (ind-ht);
+  \draw[dep]    (Vbig.west)  to [bend left=30]   (ind-ht.190);
+
+  \draw[dep]    (ind-ok)     to                  (fo-ex);
+  \draw[dep]    (Vfar)       to                  (fo-ex);
+  \draw[dep]    (fo-ex)      to                  (fo-ht);
+  \draw[dep]    (aux-ht)     to [bend left=12]   (fo-ht);
+
+  \draw[dep]    (fo-ex)      to                  (next-deg);
+  \draw[dep]    (fo-ex)      to                  (next-ht);
+  \draw[dep]    (fo-ht)      to                  (next-ht);
+  \draw[dep]    (var-ht)     to [bend right=5]   (next-ht.190);
+
+  \draw[dimdep] (next-deg)   to [dimloop=+2.6cm] (var-deg);
+  \draw[dimdep] (next-ht)    to [dimloop=-1.5cm] (var-ht.280);
+
+  \draw[dimdep] (var-ht.260) to                  (out-ht);
+
+  \draw[dep]    (out-ht)     to                  (end);
+  \draw[dep]    (Vbig)       to                  (end);
+
+  \draw[puiss]  (eps-zgti)   to node [swap] { \( \scriptstyle m > g \) } (eps-igtz);
+
+  % cadres et leurs étiquettes
+  \node[section] (aux) [fit=(aux-ex)(aux-ht)] {};
+  \node[section] (ind) [fit=(ind-ok)(ind-ht)] {};
+  \node[section] (fo)  [fit=(fo-ex)(fo-ht)]   {};
+
+  \node[below] (laux) at (aux.south) {Forme auxiliaire};
+  \node[below] (lind) at (ind.south) {Extrapolation};
+  \node[below] (lfo)  at (fo.south)  {Forme obstructrice};
+
+  \node[iter] (rec) [fit=(var-ht)(var-deg)(Vcos)(next-deg)(next-ht)(laux)]{};
+  \node[above] at (rec.north)  {
+    Partie itérée.
+    Entrée : \( Z = A^m \) ;
+    sortie : \( Z_i = \{ e_i \} \) pour un certain \( i \).
+  };
+
+\end{tikzpicture}
+
+\vspace*{\stretch{1}}
+
+\captionof{figure}{%
+  Dépendances entre les différentes quantités en jeu.
+  Toutes les quantités dans le cadre en traitillé qui dépendent indirectement
+  de \( \deg Z \) en dépendent aussi directement ; les flèches correspondantes
+  sont omises pour alléger.
+}
+\label{fig:vojta}
+
+\vspace*{\stretch{1}}
+
+\end{landscape}
+
+\endinput
