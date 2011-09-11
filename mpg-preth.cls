@@ -21,10 +21,12 @@
 \DeclareOption {nomark} {\@domarkfalse}
 \ProcessOptions \relax
 
-% use Koma with custom encoding and fonts [[2
+% use Koma with custom encoding and fonts and colors [[2
 %
 \RequirePackage{pdf14} % be maximally portable
 \LoadClass[a4paper, twoside, BCOR=1cm, 11pt, titlepage=false]{scrbook}
+% add french to global options
+\edef\@classoptionslist{\@classoptionslist,french}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[sc, osf]{mathpazo} \linespread{1.05}
@@ -58,7 +60,10 @@
   autopunct=true, babel=hyphen,
   hyperref=true, backref=false]{biblatex}
 \usepackage[expansion=false, babel=true]{microtype}
-\usepackage[british, frenchb]{babel}
+% cannot use "french" here since it's already a global option (?!)
+\usepackage[latin, british, francais]{babel}
+\usepackage{nameref}  % must load nameref, varioref and hyperref in this order
+\usepackage{varioref} % to get a working \vref
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
 \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
 
