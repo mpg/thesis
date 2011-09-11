@@ -19,7 +19,7 @@
   },
   stop/.style={
     text height=0.7\baselineskip, text depth=0.3\baselineskip,
-    draw, rounded corners, thick,
+    draw, thick, rounded rectangle,
   },
   section/.style={
     draw, rounded corners,
@@ -49,38 +49,38 @@
 
   % matrice pour les étapes de base
   \matrix [row sep=1cm, column sep=2.4cm] {
-      \node[result]  (var-deg)   { \( \deg Z \) };
+      \node[result]  (var-deg)   { \( \deg \var \) };
     & \node[result2] (aux-ex)    { Existence \\ et degrés };
     & \node[result2] (ind-ok)    { Indice \\ extrapolé };
     & \node[result2] (fo-ex)     { Existence \\ et degré };
-    & \node[result]  (next-deg)  { \( \deg Z' \) };
+    & \node[result]  (next-deg)  { \( \deg \var' \) };
     \\
-      \node[result] (var-ht)     { \( h(Z) \) };
+      \node[result] (var-ht)     { \( h(\var) \) };
     & \node[result] (aux-ht)     { Hauteur };
-    & \node[result] (ind-ht)     { À \( h(e_1) \) fixé };
+    & \node[result] (ind-ht)     { À \( h(\ex[1]) \) fixé };
     & \node[result] (fo-ht)      { Hauteur };
-    & \node[result] (next-ht)    { \( h(Z') \) };
+    & \node[result] (next-ht)    { \( h(\var') \) };
     \\
   };
 
   % nœuds supplémentaires
-  \node[hypo] (in-deg)     [left=of var-deg] { \( \deg A \) };
-  \node[hypo] (in-ht)      [left=of var-ht]  { \( h(A) \) };
+  \node[hypo] (in-deg)     [left=of var-deg] { \( \deg \va \) };
+  \node[hypo] (in-ht)      [left=of var-ht]  { \( h(\va) \) };
 
-  \node[hypo] (eps-zgti)   [above=of aux-ex] { \( \eps_0 \gg \eps_1 \) };
+  \node[hypo] (eps-zgti)   [above=of aux-ex] { \( \epsz \gg \epsi \) };
 
-  \node[hypo] (Vcos)       [above=of ind-ok] { \( \gamma \ll 1 \) };
+  \node[hypo] (Vcos)       [above=of ind-ok] { \( \Vcos \ll 1 \) };
   \begin{scope}[node distance=2mm]
     \node[hypo] (eps)      [right=of Vcos]   { \( \eps > 0 \) };
-    \node[hypo] (eps-igtz) [left=of Vcos]    { \( \eps_1 \gg \eps_0 \) };
+    \node[hypo] (eps-igtz) [left=of Vcos]    { \( \epsi \gg \epsz \) };
   \end{scope}
 
-  \node[hypo] (Vfar)       [above=of fo-ex]  { \( \beta \gg 1 \) };
+  \node[hypo] (Vfar)       [above=of fo-ex]  { \( \Vfar \gg 1 \) };
 
   \begin{scope}[node distance=3cm]
-    \node[result] (out-ht) [below=of var-ht] { \( h(e_i) \) };
+    \node[result] (out-ht) [below=of var-ht] { \( h(\ex*) \) };
     \node[stop]   (end)    [below=of aux-ht] { Contradiction };
-    \node[hypo]   (Vbig)   [below=of ind-ht] { \( \alpha \gg 1 \) };
+    \node[hypo]   (Vbig)   [below=of ind-ht] { \( \Vbig \gg 1 \) };
   \end{scope}
 
   % dépendences
@@ -119,7 +119,8 @@
   \draw[dep]    (out-ht)     to                  (end);
   \draw[dep]    (Vbig)       to                  (end);
 
-  \draw[puiss]  (eps-zgti)   to node [swap] { \( \scriptstyle m > g \) } (eps-igtz);
+  \draw[puiss]  (eps-zgti)   to node [swap] {
+    \( \scriptstyle \puiss > \genre \) } (eps-igtz);
 
   % cadres et leurs étiquettes
   \node[section] (aux) [fit=(aux-ex)(aux-ht)] {};
@@ -133,8 +134,8 @@
   \node[iter] (rec) [fit=(var-ht)(var-deg)(Vcos)(next-deg)(next-ht)(laux)]{};
   \node[above] at (rec.north)  {
     Partie itérée.
-    Entrée : \( Z = A^m \) ;
-    sortie : \( Z_i = \{ e_i \} \) pour un certain \( i \).
+    Entrée : \( \var = \va^\puiss \) ;
+    sortie : \( \var* = \set{ \ex* } \) pour un certain \( \fct \).
   };
 
 \end{tikzpicture}
