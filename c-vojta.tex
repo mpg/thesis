@@ -2199,12 +2199,11 @@ Pour définir \( \pmor*_\dv \), il suffit de définir les images des différents
 impose de plus que \( \pdiff^0 \) soit l'identité, on constate que l'image du
 complémentaire de \( \ideal\anyvar \) ne contient que des séries inversibles
 (car leur terme constant l'est), ce qui permet d'étendre le morphisme à \(
-  \cdn[X]_{(\ideal\anyvar)} \).
-
-Pour tout \( \ind \in \set{0, \dots, \anydim-1} \), on peut poser \(
-  \pmor*_\dv(\vp*/\vp[\anydim]) = \vp*/\vp[\anydim] + \psp* \). Pour \( \ind >
-  \anydim \), nous utiliserons le lemme suivant, que l'on énonce dans un cadre
-affine avant de l'appliquer à notre situation projective.
+  \cdn[X]_{(\ideal\anyvar)} \). Pour tout \( \ind \in \set{0, \dots,
+    \anydim-1} \), on peut poser \( \pmor*_\dv(\vp*/\vp[\anydim]) =
+  \vp*/\vp[\anydim] + \psp* \). Pour \( \ind > \anydim \) on peut exploiter
+les relations de dépendance intégrales données par le plongement adapté, comme
+dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
 
 \begin{lem} \label{l:param-aff}
   Soient \( \anyvp[1], \dots, \anyvp[\anydim], Y \) des variables et \( L \)
@@ -2379,65 +2378,70 @@ affine avant de l'appliquer à notre situation projective.
   \end{align}
 \end{proof}
 
-Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
+Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \) de
+la façon suivante : fixons un \( \ind > \anydim \) et notons \( \tilde\Pi =
+  P_\ind(\anyvp[1], \dots, \anyvp[\anydim], 1, Y ) \), où \( P_\ind \) est
+donné par le fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées
+successives de \( \tilde\Pi \) par rapport à la dernière variable, telle que
+\( \diff_Y \Pi \notin \ideal\anyvar \). On pose alors, pour \( \derp \neq 0
+\) :
+\begin{equation}
+  \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+  =
+  \frac {
+    P_\dv^\derp ( \vp[0] / \vp[\anydim], \dots,
+    \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+  }{
+    \pden ( \vp[0] / \vp[\anydim], \dots,
+    \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+    ^{2\lgr\derp - 1}
+  }
+  \pmm,
+\end{equation}
+où les \( P_\dv^\derp \) sont donnés par le lemme précédent. On étend alors
+les morphismes \( \pmor*_\dv \) à \( \cdn[X]_{(\ideal\anyvar)} \) comme
+expliqué au deuxième paragraphe précédant le lemme~\ref{l:param-aff}. Ainsi,
+\( \pmor*_\dv \) et donc les différents \( \pdiff^\derp \) sont désormais bien
+définis.
 
-\begin{lem} \label{l:def-pmor}
-  Dans les notations précédentes, on peut définir \( \pmor*_\dv \) faisant
-  commuter le diagramme~\eqref{e:pmor} par :
+En pratique, pour l'application considérée (représenter les dérivées d'un
+déshomogénéisé de \( \faux* \)) nous n'avons pas besoin d'étudier les images
+par \( \pmor* \) des \( \anyvp* / \anyvp[\anydim] \) pour \( \ind > \anydim +
+  1 \). Ceci nous permet d'obtenir des estimations légèrement plus précises
+car il n'y a qu'une variable liée, dont on connaît en fait le polynôme
+minimal.
+
+\begin{lem} \label{l:pmor-dim+1}
+  Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
+  fait~\ref{f:plong-adapt-dep} à \( \anydim \) et \( \pden \) sa dérivée par
+  rapport à la dernière variable ; alors :
   \begin{enumthm}
-    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
-        = \frac{ \vp* }{ \vp[\anydim] } + \psp* \)
-      pour tout \( \ind \in \set{0, \dots, \anydim-1} \) ;
-    \item \( \pmor*(\frac{ \vp* }{ \vp[\anydim] })
-        = \frac{ \vp* }{ \vp[\anydim] }
-        + \sum_{\derp \neq 0}
-        \frac{ P^\derp_{\ind, \dv} }{ U_\ind^{\lgr\derp} }
-        \psp^\derp
-      \)
-  \end{enumthm}
-  où les polynômes \( P^\derp_{\ind, \dv} \) et \(  U_\ind \) satisfont
-  \begin{enumthm}
-    \item \( \deg  U_\ind   =   2 (\anydeg - 1) \) ;
-    \item \( \nv1{ U_\ind } \le \nv1{ \chow\anyvar }^2 4^{(\anydeg-1)\dv} \) ;
-    \item \( \deg  P^\derp_{\ind, \dv}   =   2 (\anydeg - 1) \lgr\derp \) ;
-    \item \( \nv1{ P^\derp_{\ind, \dv} } \le \left(
-          \nv1{ \chow\anyvar }^2
-          \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
-        \right)^{\lgr\derp} \).
+    \item \( P^\derp_{\anydim+1, \dv}
+        = \pdiff^\derp(\frac{\vp[\anydim+1]}{\vp[\anydim]})
+        \cdot \pden^{2\lgr\derp} \) est un polynôme ;
+    \item \( \deg P^\derp_{\anydim+1, \dv}
+        = 2 (\anydeg - 1) \lgr\derp \) ;
+    \item \( \nv1{ P^\derp_{\anydim+1, \dv} }
+        \le
+        \nv1{ \chow\anyvar }^{2 \lgr\derp} \, \bigl(
+          4 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp \dv }
+      \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
-  Fixons un \( \ind > \anydim \) et notons \( \tilde\Pi = P_\ind(\anyvp[1],
-    \dots, \anyvp[\anydim], 1, Y ) \), où \( P_\ind \) est donné par le
-  fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées successives de
-  \( \tilde\Pi \) par rapport à la dernière variable, telle que \( \diff_Y \Pi
-    \notin \ideal\anyvar \). On pose alors
+  D'après le deuxième point de la définition~\ref{d:plong-adapt}, \(
+    \vp[\anydim+1] \) est de degré \( \anydeg \) sur les autres variables, de
+  sorte que \( \poldep[][\anydim+1] \) est son polynôme minimal (homogène).
+  Ainsi, dans les notations des paragraphes ci-dessus, on peut prendre \(
+    \tilde\Pi = \Pi \) et appliquer le lemme précédent directement. On a ainsi
   \begin{equation}
-    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
+    \pdiff^\derp \left( \frac{ \vp[\anydim+1] }{ \vp[\anydim] } \right)
     =
     \frac {
-      P_\dv^\derp ( \vp[0] / \vp[\anydim], \dots,
-      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
+      P_\dv^\derp ( \vp[0], \dots, \vp[\anydim-1], \vp[\anydim+1] )
     }{
-      \pden ( \vp[0] / \vp[\anydim], \dots,
-      \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
-      ^{2\lgr\derp - 1}
-    }
-    \pmm,
-  \end{equation}
-  où les \( P_\dv^\derp \) sont donnés par le lemme précédent. Quitte à
-  multiplier par une puissance convenable de \( \vp[\anydim] \), on peut
-  supposer que le degré de \( \pden \) est exactement \( 2\anydeg - 1 \) et
-  que celui de \( P_\dv^\derp \) est exactement \( (2\anydeg - 1) (2\lgr\derp
-    - 1) \), de sorte que par homogénéité :
-  \begin{equation}
-    \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
-    =
-    \frac {
-      P_\dv^\derp ( \vp[0], \dots, \vp[\anydim-1], \vp* )
-    }{
-      \pden ( \vp[0], \dots, \vp[\anydim-1], \vp* )
+      \pden ( \vp[0], \dots, \vp[\anydim-1], \vp[\anydim+1] )
       ^{2\lgr\derp - 1}
     }
     =
@@ -2448,14 +2452,12 @@ Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \).
       ^{2\lgr\derp - 1}
     }
   \end{equation}
-  On pose finalement\footnote{Ceci n'a pour but que de simplifier les calculs
-    ultérieurs en rendant le degré exactement linéaire en \( \lgr\derp \).} \(
-    P_{\ind, \dv}^\derp = \pden \cdot P_\dv^\derp \) et \( \pden_\ind =
-    \pden^2 \). Les estimations de norme annoncées sont alors immédiates.
+  par homogénéité.  On pose finalement\footnote{Ceci n'a pour but que de
+    simplifier les calculs ultérieurs en rendant le degré exactement linéaire
+    en \( \lgr\derp \).} \( P_{\ind, \dv}^\derp = \pden \cdot P_\dv^\derp \).
+  Les estimations de degré et de norme annoncées sont alors immédiates.
 \end{proof}
 
-Les morphismes \( \pmor*_\dv \) s'étendent à \( \cdn[X]_{(\ideal\anyvar)} \)
-comme expliqué au deuxième paragraphe précédant le lemme~\ref{l:param-aff}.
 Nous allons maintenant étudier (dénominateur, degré et hauteur des
 coefficients) les images de certaines fonctions, en commençant par celles des
 monômes en \( \vp / \vp[\anydim] \). En fait, pour les applications
