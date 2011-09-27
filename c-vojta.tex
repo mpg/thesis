@@ -2228,19 +2228,18 @@ relations.
 
 \begin{lem} \label{l:param-aff}
   Soient \( \vaf[1], \dots, \vaf[\anydim], \vafi \) des variables et \( L \)
-  une extension algébrique finie de \( \cdn(\vaf[1], \dots, \vaf[\anydim])
+  une extension algébrique finie de \( \cdn(\vaf[1]', \dots, \vaf[\anydim]')
   \). On fixe \( \omega \) un élément de \( L \) ; on note \( \pi \) le
   morphisme de \( \cdn[\vaf[1], \dots, \vaf[\anydim], \vafi ] \) dans \( L \)
-  qui laisse stable les \( \vaf* \) et envoie \( \vafi \) sur \( \omega \).
-  Soit \( R \in \ker \pi \) tel que \( \diff_\vafi R \notin \ker
-    \pi \).
+  qui envoie \( \vaf* \) sur \( \vaf*' \) et \( \vafi \) sur \( \omega \).
+  Soit \( R \in \ker \pi \) tel que \( \diff_\vafi R \notin \ker \pi \).
 
-  On considère les dérivations standard \( \diff_\ind \) sur \( \cdn[
-    \vaf[1], \dots, \vaf[\anydim] ] \) ainsi que leurs extensions à \( L
-  \), et on note \( \der[\derp] = \frac1{\derp!} \prod_{\ind = 0}^\anydim
-    \diff_\ind^{\derp*} \) les dérivations réduites.  Il existe des polynômes
-  \( P_\dv^\derp \), pour
-  \( \derp \in \N^{\anydim} \minusset0 \), tels que :
+  On considère les dérivations standard \( \diff_\ind \) sur \( \cdn(
+    \vaf[1]', \dots, \vaf[\anydim]' ) \) ainsi que leurs extensions à \( L \),
+  et on note \( \der[\derp] = \frac1{\derp!} \prod_{\ind = 0}^\anydim
+    \diff_\ind^{\derp*} \).  Il existe des polynômes \( P_\alpha^\derp \in
+    \cdn[ \vaf[1], \dots, \vaf[\anydim], \vafi ] \), pour \( \derp \in
+    \N^{\anydim} \minusset0 \) et \( \alpha \in \set{0, 1} \), tels que :
   \begin{enumthm}
     \item \( \der[\derp] \omega
         = \pi\left(
@@ -2276,22 +2275,25 @@ relations.
 
   On commence par le cas ultramétrique et on note donc provisoirement \(
     P^\derp = P_0^\derp \) pour alléger. Les polynômes recherchés sont
-  caractérisés par la relation
+  caractérisés par la contrainte
   \begin{equation}
     R \left(
       \vaf[1] + \psp[1], \dots, \vaf[\anydim] + \psp[\anydim],
       \vafi + \sum_{ \derp \in \N^\anydim \minusset 0 }
       \frac {P^\derp} {(\diff_\vafi R)^{2\lgr\derp -1}} \psp^\derp
     \right)
-    = 0 \mod (R)
-    \pmm.
+    \in \ker \pi
+    \pmm,
   \end{equation}
-  On remplace alors \( R \) par son développement de \bsc{Taylor}, pour
-  obtenir les égalités suivantes modulo \( R \) :
+  où l'on a étendu \( \pi \) aux algèbres de séries en \( \psp[1], \dots,
+    \psp[\anydim] \) au départ et à l'arrivée. Il suffit, pour satisfaire
+  cette contrainte,  d'imposer que la série ci-dessus ait tous ses termes nuls
+  sauf le premier qui est égal à \( R \). Le développement de \bsc{Taylor} de
+  l'expression ci-dessus donne alors :
   \begin{align}
     0
     & =
-    \sum_{(\ip, \mu) \in \N^{\anydim+1}}
+    \sum_{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)} }
     \der[\ip, \mu] R
     \cdot \psp^\ip
     \cdot \left(
@@ -2324,8 +2326,11 @@ relations.
     \psp^\derp
     \pmm,
   \end{align}
-  où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \).
-  Il suffit donc de définir \( P^\derp \) par la relation de récurrence
+  où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \) et \(
+    \der[\ip, \mu] \) les dérivées divisées correspondantes dans \( \cdn[
+    \vaf[1], \dots, \vaf[\anydim], \vafi ] \).
+
+  Les polynômes \( P^\derp \) sont donc définis par la relation de récurrence
   \begin{equation}
     - P^\derp
     =
@@ -2337,10 +2342,8 @@ relations.
     \cdot (\diff_\vafi R)^{2\lgr\derp - 2}
     \cdot \prod_{\fct = 1}^\mu
     \frac {P^{\gmp\nu*}} {(\diff_\vafi R)^{2\lgr{\gmp\nu*} - 1}}
+    \pmm.
   \end{equation}
-  qui consiste à imposer que chaque terme de la série précédente soit nul, ce
-  qui assure bien sa nullité modulo \( R \).
-
   On majore alors le degré de \( P^\derp \) par récurrence :
   \begin{align}
     \deg P^\derp
@@ -2352,7 +2355,7 @@ relations.
     (\deg R - 1) (2\lgr\derp - 1)
     \pmm,
   \end{align}
-  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.  La majoration de
+  car \( \ip \) et \( \mu \) ne sont pas simultanément nuls. La majoration de
   norme locale est immédiate par analogie avec le degré vu les propriétés de
   la norme aux places ultramétriques.
 
