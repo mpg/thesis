@@ -779,7 +779,7 @@
   inverses de composantes de $\coa$ bien choisies}
 \nomdef \vaht a {h}
 
-% projective indices and coordinates [[2
+% projective (and affine) indices and coordinates [[2
 %
 % helper macros [[
 \newc@star@default@i \gp {\ind}{\dimp} {\gp@{#1}{#2}}
@@ -805,6 +805,10 @@
 \newcommand \vp {\gp X}
 \newcommand \vpi{\gp Y}
 \newcommand \ip {\gp \lambda}
+
+% affine variables
+\newc@star@default \vaf  {\ind}{} {W\ssub{#1}}
+\newc@star@default \vafi {\ind}{} {T\ssub{#1}}
 
 \newcommand \anyvar {V}
 \newcommand \anyvp  {\gp W}
@@ -966,6 +970,7 @@
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
 \newc@star@deftwo \pden   {\fct}{\indi} {Q\pexp{#1}[#2]}
 \newc@star@default \pdenp {\fct}{}      {Q\ssub{#1}}
+\newcommand       \anypden {R}
 \nomdef \poldep a {P} \@gobbletwo{\poldep}{Relation de dépendance intégrale
   des dernières variables sur les premières dans un plongement adapté}
 

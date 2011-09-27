@@ -2206,30 +2206,31 @@ les relations de dépendance intégrales données par le plongement adapté, com
 dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
 
 \begin{lem} \label{l:param-aff}
-  Soient \( \anyvp[1], \dots, \anyvp[\anydim], Y \) des variables et \( L \)
-  une algébrique extension finie de \( \cdn(\anyvp[1], \dots, \anyvp[\anydim])
-  \). On fixe \( y \) un élément de \( L \) ; on note \( \pi \) le
-  morphisme de \( \cdn[\anyvp[1], \dots, \anyvp[\anydim], Y ] \) dans \( L \)
-  qui laisse stable les \( \anyvp* \) et envoie \( Y \) sur \( y \). Soit \(
-    \Pi \in \ker \pi \) tel que \( \pden = \diff_Y \Pi \notin \ker \pi \).
+  Soient \( \vaf[1], \dots, \vaf[\anydim], \vafi \) des variables et \( L \)
+  une extension algébrique finie de \( \cdn(\vaf[1], \dots, \vaf[\anydim])
+  \). On fixe \( \omega \) un élément de \( L \) ; on note \( \pi \) le
+  morphisme de \( \cdn[\vaf[1], \dots, \vaf[\anydim], \vafi ] \) dans \( L \)
+  qui laisse stable les \( \vaf* \) et envoie \( \vafi \) sur \( \omega \).
+  Soit \( R \in \ker \pi \) tel que \( \diff_\vafi R \notin \ker
+    \pi \).
 
   On considère les dérivations standard \( \diff_\ind \) sur \( \cdn[
-    \anyvp[1], \dots, \anyvp[\anydim] ] \) ainsi que leurs extensions à \( L
+    \vaf[1], \dots, \vaf[\anydim] ] \) ainsi que leurs extensions à \( L
   \), et on note \( \der[\derp] = \frac1{\derp!} \prod_{\ind = 0}^\anydim
     \diff_\ind^{\derp*} \) les dérivations réduites.  Il existe des polynômes
   \( P_\dv^\derp \), pour
   \( \derp \in \N^{\anydim} \minusset0 \), tels que :
   \begin{enumthm}
-    \item \( \der[\derp] y
+    \item \( \der[\derp] \omega
         = \pi\left(
-          \frac{ P_\dv^\derp }{ \pden^{2\lgr\dermp - 1} }
+          \dfrac{ P_\dv^\derp }{ (\diff_\vafi R)^{2\lgr\dermp - 1} }
         \right)
       \) ;
-    \item \( \deg P_\dv^\derp \le (\deg \Pi - 1) (2\lgr\derp - 1) \) ;
+    \item \( \deg P_\dv^\derp \le (\deg R - 1) (2\lgr\derp - 1) \) ;
     \item \( \nv1{ P_\dv^\derp }
         \le \nv1 \poldep ^{2\lgr\derp - 1}
         \cdot \left(
-          (4\anydim)^{\lgr\derp -1} (\deg\Pi)^{3\lgr\derp -2}
+          (4\anydim)^{\lgr\derp -1} (\deg R)^{3\lgr\derp -2}
         \right)^\dv \).
   \end{enumthm}
 \end{lem}
@@ -2237,14 +2238,15 @@ dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
 \begin{proof}
   Il s'agit en fait de compléter\footnote{On contrôle en fait le développement
     autour d'un point générique, alors que \bsc{Rémond} l'étudie en un point
-    fixé. Plus précisément, on peut retrouver l'énoncé de \bsc{Rémond} par
-    évaluation de \( P_\dv^\derp \) et \( \pden \) en un point convenable.} la
-  preuve du lemme~6.1 de \cite{remivds}, en utilisant aux places
-  archimédiennes une généralisation de \cite[relation~2.3.1, p.~63]{farhith}.
+    fixé. Plus précisément, on pourrait retrouver l'énoncé de \bsc{Rémond} à
+    partir de celui-ci par évaluation de \( P_\dv^\derp \) et \( \diff_\vafi R
+    \) en un point convenable.} la preuve du lemme~6.1 de \cite{remivds}, en
+  utilisant aux places finies une généralisation de la relation~2.3.1, p.~63
+  de~\cite{farhith}.
 
   On va construire \( P_0^\derp \) et \( P_1^\derp \) indépendamment par
   récurrence sur la longueur de \( \derp \), en partant à chaque fois de \(
-    P_\dv^\derp = - \diff_{\ind_0} \Pi \) quand \( \derp_{\ind_0} = 1 \) et \(
+    P_\dv^\derp = - \diff_{\ind_0} R \) quand \( \derp_{\ind_0} = 1 \) et \(
     \derp_\ind = 0 \) sinon (cas \( \lgr\derp = 1 \)), car ce choix convient.
   Pour la suite, on fixe un \( \dv \), un \( \derp \) de longueur au moins \(
     2 \), et on suppose qu'on a choisi un \( P_\dv^{\derp'} \) convenable pour
@@ -2255,48 +2257,48 @@ dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
     P^\derp = P_0^\derp \) pour alléger. Les polynômes recherchés sont
   caractérisés par la relation
   \begin{equation}
-    \Pi \left(
-      \anyvp[1] + \psp[1], \dots, \anyvp[\anydim] + \psp[\anydim],
-      Y + \sum_{ \derp \in \N^\anydim \minusset 0 }
-      \frac {P^\derp} {\pden^{2\lgr\derp -1}} \psp^\derp
+    R \left(
+      \vaf[1] + \psp[1], \dots, \vaf[\anydim] + \psp[\anydim],
+      \vafi + \sum_{ \derp \in \N^\anydim \minusset 0 }
+      \frac {P^\derp} {(\diff_\vafi R)^{2\lgr\derp -1}} \psp^\derp
     \right)
-    = 0 \mod (\Pi)
+    = 0 \mod (R)
     \pmm.
   \end{equation}
-  On remplace alors \( \Pi \) par son développement de \bsc{Taylor}, pour
-  obtenir les égalités suivantes modulo \( \Pi \) :
+  On remplace alors \( R \) par son développement de \bsc{Taylor}, pour
+  obtenir les égalités suivantes modulo \( R \) :
   \begin{align}
     0
     & =
     \sum_{(\ip, \mu) \in \N^{\anydim+1}}
-    \der[\ip, \mu] \Pi
+    \der[\ip, \mu] R
     \cdot \psp^\ip
     \cdot \left(
       \sum_{ \derp \in \N^\anydim \minusset 0 }
-      \frac {P^\derp} {\pden^{2\lgr\derp - 1}} \psp^\derp
+      \frac {P^\derp} {(\diff_\vafi R)^{2\lgr\derp - 1}} \psp^\derp
     \right)^\mu
     \\
     & =
     \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
     \left(
-      \der[\ip, \mu] \Pi
+      \der[\ip, \mu] R
       \cdot \prod_{\fct = 1}^\mu
-      \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+      \frac {P^{\gmp\nu*}} {(\diff_\vafi R)^{2\lgr{\gmp\nu*} - 1}}
     \right)
     \psp^{\sum_\fct \gmp\nu* + \ip}
     \\
     & =
     \sum_{\derp \in \N^\anydim \minusset 0}
     \Biggl(
-    \frac {P^\derp} {\pden^{2\lgr\derp - 2}}
+    \frac {P^\derp} {(\diff_\vafi R)^{2\lgr\derp - 2}}
     + \sum_{\substack{
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
-    \der[\ip, \mu] \Pi
+    \der[\ip, \mu] R
     \cdot \prod_{\fct = 1}^\mu
-    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \frac {P^{\gmp\nu*}} {(\diff_\vafi R)^{2\lgr{\gmp\nu*} - 1}}
     \Biggr)
     \psp^\derp
     \pmm,
@@ -2310,23 +2312,23 @@ dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
         \\ \gmp\nu* \in \N^\anydim \minusset 0
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
-    \der[\ip, \mu] \Pi
-    \cdot \pden^{2\lgr\derp - 2}
+    \der[\ip, \mu] R
+    \cdot (\diff_\vafi R)^{2\lgr\derp - 2}
     \cdot \prod_{\fct = 1}^\mu
-    \frac {P^{\gmp\nu*}} {\pden^{2\lgr{\gmp\nu*} - 1}}
+    \frac {P^{\gmp\nu*}} {(\diff_\vafi R)^{2\lgr{\gmp\nu*} - 1}}
   \end{equation}
   qui consiste à imposer que chaque terme de la série précédente soit nul, ce
-  qui assure bien sa nullité modulo \( \Pi \).
+  qui assure bien sa nullité modulo \( R \).
 
   On majore alors le degré de \( P^\derp \) par récurrence :
   \begin{align}
     \deg P^\derp
     & \le
-    \deg\Pi - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 2)
+    \deg R - \lgr\ip - \mu + (\deg R - 1) (2\lgr\derp - 2)
     \\ & \le
-    1 - \lgr\ip - \mu + (\deg\Pi - 1) (2\lgr\derp - 1)
+    1 - \lgr\ip - \mu + (\deg R - 1) (2\lgr\derp - 1)
     \\ & \le
-    (\deg\Pi - 1) (2\lgr\derp - 1)
+    (\deg R - 1) (2\lgr\derp - 1)
     \pmm,
   \end{align}
   car \( \ip \) et \( \mu \) ne sont pas simultanément nuls.  La majoration de
@@ -2341,38 +2343,38 @@ dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
   \begin{equation}
     Q_\derp
     =
-    \pden^2 \, \diff_{\ind_0} Q_{\derp'}
-    - \pden \, \diff_{\ind_0} P \, \diff_{\anydim+1} Q_{\derp'}
-    + (2\lgr{\derp'} - 1)
-    (\diff_{\ind_0} P \, \diff_Y \pden - \pden \diff_{\ind_0} \pden)
+    (\diff_\vafi R)^2 \, \diff_{\ind_0} Q_{\derp'}
+    - \diff_\vafi R \, \diff_{\ind_0} P \, \diff_{\anydim+1} Q_{\derp'}
+    + (2\lgr{\derp'} - 1) (\diff_{\ind_0} P \, \diff_\vafi^2 R
+    - \diff_\vafi R \diff_{\ind_0} \diff_\vafi R)
     Q_{\derp'}
     \pmm.
   \end{equation}
   On en déduit immédiatement l'estimation de degré suivante :
   \begin{equation}
     \deg P^\derp
-    \le 2 (\deg\Pi - 1) + \deg P^{\derp'}
-    \le (\deg\Pi - 1) (2\lgr\derp - 1)
+    \le 2 (\deg R - 1) + \deg P^{\derp'}
+    \le (\deg R - 1) (2\lgr\derp - 1)
     \pmm.
   \end{equation}
   Pour la norme, on prouve que \(
     \nv1{Q_\derp}
     \le
-    \nv1\Pi^{2\lgr\derp-1} 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
+    \nv1 R^{2\lgr\derp-1} 4^{\lgr\derp-1} (\deg R)^{3\lgr\derp-2}
     (\lgr\derp - 1) !
   \)
   (ce qui implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
     \le \anydim^{\lgr\derp-1} \)) en exploitant la majoration de degré
-  sous la forme \( \deg P^\derp \le 2\lgr\derp \deg\Pi \).
+  sous la forme \( \deg P^\derp \le 2\lgr\derp \deg R \).
   \begin{align}
     \nv1{ Q_\derp }
     & \le
-    2(\deg\Pi)^2 \cdot \deg Q_{\derp'} \cdot \nv1\Pi^2 \nv1{ Q_{\derp'} }
-    + 2 (2\lgr{\derp'} - 1) (\deg\Pi)^3 \nv1\Pi^2
+    2(\deg R)^2 \cdot \deg Q_{\derp'} \cdot \nv1 R^2 \nv1{ Q_{\derp'} }
+    + 2 (2\lgr{\derp'} - 1) (\deg R)^3 \nv1 R^2
     \\ & \le
-    \nv1\Pi^2 \nv1{ Q_{\derp'} } \cdot 4 (\deg\Pi)^{3\lgr{\derp'}}
+    \nv1 R^2 \nv1{ Q_{\derp'} } \cdot 4 (\deg R)^{3\lgr{\derp'}}
     \\ & \le
-    \nv1\Pi^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} (\deg\Pi)^{3\lgr\derp-2}
+    \nv1 R^{2\lgr\derp-1} \cdot 4^{\lgr\derp-1} (\deg R)^{3\lgr\derp-2}
     (\lgr\derp - 1) !
     \qedhere
   \end{align}
