@@ -2203,25 +2203,27 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
     \end{cases*}
   \end{equation}
   Ceci donne clairement le premier cas ; pour le deuxième on écrit
-  \begin{align}
+  \begin{equation}
     \der[\derp] \frac{ \vp[\indi] }{ \vp[\ind] }
-    & =
+    =
     \diff_\indi^{\derp_\indi} \frac{ \vp[\indi] }{ \vp[0] }
     \cdot
     \frac1{\derp*!}
     \diff_\ind^{\derp_\ind} \frac{ \vp[0] }{ \vp* }
-    \\ & =
+    =
     \left( \frac{ \vp[\indi] }{ \vp[0] } \right)^{1 - \derp_\indi}
     \cdot
     (-1)^{\derp*}
     \left( \frac{ \vp[0] }{ \vp* } \right)^{\derp* + 1}
-  \end{align}
-  qui donne bien le résultat annoncé.
+  \end{equation}
+  qui donne bien le résultat annoncé : c'est clair si \( \derp_\indi = 1 \)
+  et sinon on a \( \lgr\derp = \derp* \) et on absorbe le \( \vp[0] / \vp* \)
+  supplémentaire dans le premier facteur.
 \end{proof}
 
 Pour le cas \( \indi = \anydim + 1 \), on utilisera des relations de
 dépendance sur les autres variables, données par le fait que le plongement est
-adapté. Le lemme suivant énonce de façon générales comment exploiter de telles
+adapté. Le lemme suivant énonce de façon générale comment exploiter de telles
 relations.
 
 \begin{lem} \label{l:param-aff}
@@ -2359,16 +2361,17 @@ relations.
   dans la démonstration de \cite[lemme~6.1]{remivds}, avec \( Q_\derp =
     P^\derp \cdot \derp! \) et où, rappelons-le, \( \derp' \) est tel que
   \( \derp[\ind_0] = \derp[\ind_0]' + 1 \) et \( \derp* = \derp*' \) sinon :
-  \begin{equation}
+  \begin{align}
     Q_\derp
-    =
+    & =
     (\diff_\vafi R)^2 \, \diff_{\ind_0} Q_{\derp'}
     - \diff_\vafi R \, \diff_{\ind_0} P \, \diff_{\anydim+1} Q_{\derp'}
+    \\ & \qquad
     + (2\lgr{\derp'} - 1) (\diff_{\ind_0} P \, \diff_\vafi^2 R
     - \diff_\vafi R \diff_{\ind_0} \diff_\vafi R)
     Q_{\derp'}
     \pmm.
-  \end{equation}
+  \end{align}
   On en déduit immédiatement l'estimation de degré suivante :
   \begin{equation}
     \deg P^\derp
