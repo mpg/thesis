@@ -607,6 +607,8 @@
 \DeclareMathOperator \Aind {Ind}
 \DeclareMathOperator \ord  {Ord}
 
+\DeclareMathOperator \supp {Supp}
+
 % automatic constants [[2
 %
 \AtBeginDocument{\let\mpg@label\label}

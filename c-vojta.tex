@@ -2102,9 +2102,10 @@ Le but de cette section est de montrer que la fonction auxiliaire que nous
 venons de construire s'annulle avec un indice élevé en \( \ex \), pour une
 définition de l'indice que nous préciserons.
 
-Auparavant, nous aurons besoin de représenter les dérivées de certaines
-fonctions rationnelles sur \( \var \) par des fractions rationnelles de
-dénominateur explicite dont on contrôle le degré et la hauteur du numérateur.
+Auparavant, nous serons amenés à considérer les dérivées sur \( \var \) des
+fonctions rationnelles obtenues en déshomogénéisant \( \faux* \) par \(
+  (\vmp*[\ind_\fct])_\fct \) où \( 0 \le \ind_\fct \le \vdim* \) et à les
+représenter par des fractions rationnelles suffisamment bien contrôlées.
 Pour commencer, nous effectuons ce travail sur une variété projective
 quelconque (plongée de façon adaptée) avant de passer à une variété produit.
 
@@ -2117,93 +2118,107 @@ dans ce plongement. Alors \( \cdn(\anyvar) \) est une extension finie
 de
 \begin{equation}
   \cdn\Big(
-    \frac{ \vp[0]           }{ \vp[\anydim] }, \dots,
-    \frac{ \vp[\anydim-1]   }{ \vp[\anydim] }
+    \frac{ \vp[1]         }{ \vp[0] }, \dots,
+    \frac{ \vp[\anydim]   }{ \vp[0] }
   \Big)
 \end{equation}
-dont \( \frac{ \vp[\anydim+1] }{ \vp[\anydim] } \) est un élément primitif.
+dont \( \frac{ \vp[\anydim+1] }{ \vp[0] } \) est un élément primitif.
 Sur ce dernier corps, on dispose des dérivations standard définies par
 \(
   \diff_\ind \frac{ \vp[\indi] }{ \vp[\anydim] } = \delta_\ind^\indi
 \)
 qui forment une base de l'espace des dérivations, et s'étendent de façon
-unique à \( \cdn(\anyvar) \) pour former une base de son espace de
-dérivations. Les propriétés classiques des dérivations montrent alors que
-l'application
+unique à \( \cdn(\anyvar) \) pour former une base de l'espace de ses
+dérivations ; on pose alors
 \begin{equation}
-  \begin{aligned}
-    \pmor \colon \cdn(\anyvar)
-    & \to \cdn(\anyvar)\series\psp
-    \\
-    f
-    & \mapsto
-    \sum_{\derp \in \N^\anydim} \der[\derp] \!f \, \psp^\derp
-  \end{aligned}
-  \qquad \text{où }
   \der[\derp]
   =
-  \frac1{\derp!}
-  \prod_{\ind = 0}^\anydim \diff_\ind^{\derp*}
+  \prod_{\ind = 0}^\anydim \frac1{\derp*!} \diff_\ind^{\derp*}
   \pmm.
 \end{equation}
-est un morphisme de \( \cdn \)-algèbres.
 
-Il est intéressant de pouvoir le représenter par un morphisme \( \pmor* \)
-faisant commuter le diagramme
-\begin{equation} \label{e:pmor}
-  \begin{aligned}[c]
-    \xymatrix{
-      \cdn[\vp]_{(\ideal\anyvar)}               \ar[d]^\pi \ar@{.>}[r]^{\pmor*}
-      & \cdn[\vp]_{(\ideal\anyvar)} \series\psp \ar[d]^\pi
-      \\ \cdn(\anyvar)                                     \ar[r]^{\pmor}
-      & \cdn(\anyvar)\series\psp
-    }
-  \end{aligned}
-\end{equation}
-où les flèches verticales sont les projections canoniques. Posons
-\( \pmor* = \sum_\derp \psp^\derp \pdiff*^\derp \) où les \( \pdiff*^\derp \)
-sont des applications linéaires sur \( \cdn[X]_{(\ideal\anyvar)} \) vérifiant
-la règle de \bsc{Leibniz} pour les dérivées divisées. Pour chaque fraction
-rationnelle \( f = G/\vp[\anydim] \), nous exhiberons explicitement (au moins)
-un polynôme \( R_\derp \) tel que \( R_\derp \cdot \pdiff*^\derp(f) \) soit un
-polynôme, de degré et normes locales contrôlées. Nous ne considérons que
-certains numérateurs \( G \) ayant une forme particulière ; bien qu'il soit
-possible d'obtenir des énoncés plus généraux (pour tout fraction rationnelle
-si l'on veut), le fait de se restreindre au cas particulier qui nous intéresse
-simplifie un peu les preuves et permet d'obtenir des majorations plus fines.
+On va alors chercher, pour tout \( \derp \) et pour certaines fonctions
+rationnelles \( f \), à donner une représentation de \( \der[\derp] f \) sous
+la forme \( G/H \) avec \( G \in \cdn[\vp] \) de degré et normes locales
+contrôlées, et \( H \in \cdn[\vp] \setminus \ideal\anyvar \) dont on contrôle
+suffisamment le lieu d'annulation. Par \og représentation \fg, on entend qu'on
+veut avoir \( \pi(G/H) = \der[\derp] f \) où \( \pi \) est la projection
+naturelle de \( \cdn[\vp]_{(\ideal\anyvar)} \) sur \( \cdn(\anyvar) \). Pour
+des raisons techniques, on construira en fait deux représentations, pour
+lesquelles on contrôlera respectivement la norme aux places finies ou
+infinies.
 
-\begin{rem} \label{r:param-deshom}
-  Ci-dessus on a choisi d'utiliser \( \vp[\anydim] \) comme variable de
-  déshomogénéisation ; on aurait aussi bien pu utiliser \( \vp* \) pour \(
-    \ind \in \set{0, \dots, \anydim} \) à la place. On obtiendrait alors une
-  base différente de l'espace des dérivations, donc un morphisme \( \pmor \)
-  différent, qu'on pourrait également chercher à représenter par un autre
-  morphisme \( \pmor* \).
+Pour l'application considérée, on peut se restreindre au cas où \( f \) est de
+la forme \( P / \vp* \) avec \( 0 \le \vp* \le \anydim \) et \( P \in
+  \cdn[ \vp[0], \dots, \vp[\anydim+1] ] \). Par linéarité et en utilisant la
+règle de \bsc{Leibniz}, il suffit pour commencer de considérer les fonctions
+de la forme \( \vp[\indi] / \vp* \) pour \( 0 \le \indi \le \anydim+1 \) et \(
+  0 \le \ind \le \anydim \). Le cas où \( \indi \neq \anydim + 1 \) est facile
+et fait l'objet du lemme suivant, valable aussi bien dans \(
+  \cdn[X]_{\ideal\anyvar} \) que dans \( \cdn(\var) \).
 
-  On pourrait donc écrire chacun des lemmes qui vont suivre en
-  déshomogénéisant par rapport à une variable d'indice quelconque dans \(
-    \set{0, \dots, \anydim} \), néanmoins pour simplifier les notations nous
-  utiliserons toujours \( \vp[\anydim] \) ; il est clair que l'énoncé général
-  se déduit de ce cas par permutation des variables.
-\end{rem}
+\begin{lem}
+  Soit \( \derp \in \N^\anydim \) ; on note \( \supp \derp \) l'ensemble des
+  indices \( \alpha \) tels que \( \derp[\alpha] \neq 0 \). Alors, pour tout
+  \( (\ind, \indi) \in \set{0, \dots, \anydim}^2 \) on a
+  \begin{equation}
+    \der[\derp] \frac{ \vp[\indi] }{ \vp* }
+    =
+    \begin{cases*}
+      0
+      & si \( \supp\derp \not\subset \set{\ind, \indi} \)
+      ou \( \derp[\indi] > 1 \) ; \\
+      \pm \left( \frac{ \vp[\indi] }{ \vp* } \right)^{1-\derp[\indi]}
+      \left( \frac{ \vp[0] }{ \vp* } \right)^{\lgr\derp}
+      & sinon.
+    \end{cases*}
+  \end{equation}
+\end{lem}
 
-En pratique, nous construirons en fait deux morphismes, \( \pmor*_0 \) et \(
-  \pmor*_1 \), et deux familles d'applications \( \pdiff^\derp \) telles que
-l'on contrôlera la norme \( \place \)-adique de \( R_\derp \cdot \pdiff^\derp
-\), où l'on rappelle que \( \dv \) vaut \( 1 \) si \( \place \) est
-archimédienne et \( 0 \) sinon.
+\begin{proof}
+  Si \( \ind = 0 \), c'est la définition même de \( \der[\derp] \). Sinon, en
+  utilisant la règle de \bsc{Leibniz} et ses conséquences usuelles, on a
+  facilement
+  \begin{equation}
+    \diff_\alpha \frac{ \vp[\indi] }{ \vp* }
+    =
+    \left( \frac{ \vp[0] }{ \vp* } \right)^2 \left(
+      \frac{ \vp* }{ \vp[0] }
+      \diff_\alpha \frac{ \vp[\indi] }{ \vp[0] }
+      -
+      \frac{ \vp[\indi] }{ \vp[0] }
+      \diff_\alpha \frac{ \vp* }{ \vp[0] }
+    \right)
+    =
+    \begin{cases*}
+      - \frac{ \vp[\indi] }{ \vp[0] } \,
+      \left( \frac{ \vp[0] }{ \vp* } \right)^2
+      & si \( \alpha = \indi \) ;
+      \\
+      \frac{ \vp[0] }{ \vp* }
+      & si \( \alpha = \ind \) ;
+      \\
+      0
+      & sinon.
+    \end{cases*}
+  \end{equation}
+  Ceci donne clairement le premier cas ; pour le deuxième on écrit
+  \begin{align}
+    \der[\derp] \frac{ \vp[\indi] }{ \vp[\ind] }
+    & =
+    \diff_\indi^{\derp_\indi} \frac{ \vp[\indi] }{ \vp[0] }
+    \cdot
+    \frac1{\derp*!}
+    \diff_\ind^{\derp_\ind} \frac{ \vp[0] }{ \vp* }
+    \\ & =
+    \left( \frac{ \vp[\indi] }{ \vp[0] } \right)^{1 - \derp_\indi}
+    \cdot
+    (-1)^{\derp*}
+    \left( \frac{ \vp[0] }{ \vp* } \right)^{\derp* + 1}
+  \end{align}
+  qui donne bien le résultat annoncé.
+\end{proof}
 
-Pour définir \( \pmor*_\dv \), il suffit de définir les images des différents
-\( \vp* / \vp[\anydim] \). En effet, ceci donne un morphisme de \( \cdn[ \vp /
-  \vp[\anydim] ] \) dans \( \cdn[X]_{(\ideal\anyvar)} \series\psp \). Si l'on
-impose de plus que \( \pdiff^0 \) soit l'identité, on constate que l'image du
-complémentaire de \( \ideal\anyvar \) ne contient que des séries inversibles
-(car leur terme constant l'est), ce qui permet d'étendre le morphisme à \(
-  \cdn[X]_{(\ideal\anyvar)} \). Pour tout \( \ind \in \set{0, \dots,
-    \anydim-1} \), on peut poser \( \pmor*_\dv(\vp*/\vp[\anydim]) =
-  \vp*/\vp[\anydim] + \psp* \). Pour \( \ind > \anydim \) on peut exploiter
-les relations de dépendance intégrales données par le plongement adapté, comme
-dans le lemme suivant, qu'on énonce dans un cadre affine pour commencer.
 
 \begin{lem} \label{l:param-aff}
   Soient \( \vaf[1], \dots, \vaf[\anydim], \vafi \) des variables et \( L \)
