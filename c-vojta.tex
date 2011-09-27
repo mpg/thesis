@@ -2229,10 +2229,10 @@ relations.
 \begin{lem} \label{l:param-aff}
   Soient \( \vaf[1], \dots, \vaf[\anydim], \vafi \) des variables et \( L \)
   une extension algébrique finie de \( \cdn(\vaf[1]', \dots, \vaf[\anydim]')
-  \). On fixe \( \omega \) un élément de \( L \) ; on note \( \pi \) le
+  \). On fixe \( \omega \) un élément de \( L \) ; on note \( \tilde\pi \) le
   morphisme de \( \cdn[\vaf[1], \dots, \vaf[\anydim], \vafi ] \) dans \( L \)
   qui envoie \( \vaf* \) sur \( \vaf*' \) et \( \vafi \) sur \( \omega \).
-  Soit \( R \in \ker \pi \) tel que \( \diff_\vafi R \notin \ker \pi \).
+  Soit \( R \in \ker \tilde\pi \) tel que \( \diff_\vafi R \notin \ker \pi \).
 
   On considère les dérivations standard \( \diff_\ind \) sur \( \cdn(
     \vaf[1]', \dots, \vaf[\anydim]' ) \) ainsi que leurs extensions à \( L \),
@@ -2242,13 +2242,13 @@ relations.
     \N^{\anydim} \minusset0 \) et \( \alpha \in \set{0, 1} \), tels que :
   \begin{enumthm}
     \item \( \der[\derp] \omega
-        = \pi\left(
+        = \tilde\pi\left(
           \dfrac{ P_\dv^\derp }{ (\diff_\vafi R)^{2\lgr\dermp - 1} }
         \right)
       \) ;
     \item \( \deg P_\dv^\derp \le (\deg R - 1) (2\lgr\derp - 1) \) ;
     \item \( \nv1{ P_\dv^\derp }
-        \le \nv1 \poldep ^{2\lgr\derp - 1}
+        \le \nv1 R ^{2\lgr\derp - 1}
         \cdot \left(
           (4\anydim)^{\lgr\derp -1} (\deg R)^{3\lgr\derp -2}
         \right)^\dv \).
@@ -2282,10 +2282,10 @@ relations.
       \vafi + \sum_{ \derp \in \N^\anydim \minusset 0 }
       \frac {P^\derp} {(\diff_\vafi R)^{2\lgr\derp -1}} \psp^\derp
     \right)
-    \in \ker \pi
+    \in \ker \tilde\pi
     \pmm,
   \end{equation}
-  où l'on a étendu \( \pi \) aux algèbres de séries en \( \psp[1], \dots,
+  où l'on a étendu \( \tilde\pi \) aux algèbres de séries en \( \psp[1], \dots,
     \psp[\anydim] \) au départ et à l'arrivée. Il suffit, pour satisfaire
   cette contrainte,  d'imposer que la série ci-dessus ait tous ses termes nuls
   sauf le premier qui est égal à \( R \). Le développement de \bsc{Taylor} de
@@ -2405,67 +2405,55 @@ relations.
   \end{align}
 \end{proof}
 
-% XXX
-
-\begin{lem} \label{l:pmor-dim+1}
-  Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
-  fait~\ref{f:plong-adapt-dep} à \( \anydim \) et \( \pden \) sa dérivée par
-  rapport à la dernière variable ; alors :
-  \begin{enumthm}
-    \item \( P^\derp_{\anydim+1, \dv}
-        = \pdiff^\derp(\frac{\vp[\anydim+1]}{\vp[\anydim]})
-        \cdot \pden^{2\lgr\derp} \) est un polynôme ;
-    \item \( \deg P^\derp_{\anydim+1, \dv}
-        = 2 (\anydeg - 1) \lgr\derp \) ;
-    \item \( \nv1{ P^\derp_{\anydim+1, \dv} }
-        \le
-        \nv1{ \chow\anyvar }^{2 \lgr\derp} \, \bigl(
-          4 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp \dv }
-      \).
-  \end{enumthm}
-\end{lem}
-
-\begin{proof}
-  D'après le deuxième point de la définition~\ref{d:plong-adapt}, \(
-    \vp[\anydim+1] \) est de degré \( \anydeg \) sur les autres variables, de
-  sorte que \( \poldep[][\anydim+1] \) est son polynôme minimal (homogène).
-  Ainsi, dans les notations des paragraphes ci-dessus, on peut prendre \(
-    \tilde\Pi = \Pi \) et appliquer le lemme précédent directement. On a ainsi
-  \begin{equation}
-    \pdiff^\derp \left( \frac{ \vp[\anydim+1] }{ \vp[\anydim] } \right)
-    =
-    \frac {
-      P_\dv^\derp ( \vp[0], \dots, \vp[\anydim-1], \vp[\anydim+1] )
+Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
+fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
+posons \( R_\ind = \poldep[][\anydim+1](1, \vaf[1], \dots, \vaf[\anydim],
+  \vaf[\indi] \vafi) \). On peut alors appliquer le lemme précédent avec \( L
+  = \cdn(V) \) en prenant pour \( \vaf[\indi]' \) et \( \omega \) les images
+respectives de \( \vp[\indi]/\vp[0] \) et \( \vp[\anydim+1]/\vp* \) dans ce
+dernier, ainsi que \( R = R_\ind \) car ce choix convient.\todo[détailler que
+\( R \) convient] On note \( \tilde P_{\ind, \dv}^\derp \) les polynômes
+obtenus et \( \tilde Q_\ind = \diff_\vafi R_\ind \). On a alors, dans \(
+  \cdn(\anyvar) \) :
+\begin{align}
+  \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
+  & =
+  \tilde\pi \left( \frac{
+      \tilde P_{\ind, \dv}^\derp (\vaf[1], \dots, \vaf[\anydim], \vafi)
     }{
-      \pden ( \vp[0], \dots, \vp[\anydim-1], \vp[\anydim+1] )
-      ^{2\lgr\derp - 1}
-    }
-    =
-    \frac {
-      P_\dv^\derp
-    }{
-      \pden
-      ^{2\lgr\derp - 1}
-    }
-  \end{equation}
-  par homogénéité.  On pose finalement\footnote{Ceci n'a pour but que de
-    simplifier les calculs ultérieurs en rendant le degré exactement linéaire
-    en \( \lgr\derp \).} \( P_{\ind, \dv}^\derp = \pden \cdot P_\dv^\derp \).
-  Les estimations de degré et de norme annoncées sont alors immédiates.
-\end{proof}
-
-Nous allons maintenant étudier (dénominateur, degré et hauteur des
-coefficients) les images de certaines fonctions, en commençant par celles des
-monômes en \( \vp / \vp[\anydim] \). En fait, pour les applications
-considérées, nous pouvons même nous restreindre aux monômes de la forme
+      \tilde Q_\ind (\vaf[1], \dots, \vaf[\anydim], \vafi) ^{2\lgr\derp - 1}
+    } \right)
+  \\ & =
+  \frac{
+    \tilde P_{\ind, \dv}^\derp
+    (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim]/\vp*)
+  }{
+    \tilde Q_\ind
+    (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim]/\vp*)
+    ^{2\lgr\derp - 1}
+  }
+  \cdot \left(
+    \frac{ \vp[0] \vp* }{ \vp[0] \vp* }
+  \right)^{2(2\anydeg-1)(2\lgr\derp-1)}
+  \\ & =
+  \frac{
+    P_{\ind, \dv}^\derp
+  }{
+    Q_\ind ^{2\lgr\derp - 1}
+  }
+\end{align}
+où \( P_{\ind, \dv}^\derp \) est homogène de degré \(
+  2(2\anydeg-1)(2\lgr\derp-1) \) en \( \vp[0], \dots, \vp[\anydim+1] \) et \(
+  Q_\ind \) homogène de degré \( 4\anydeg - 2 \) en ces mêmes variables, en
+remarquant que \( \deg R = 2\anydeg \). Par ailleurs on a
 \begin{equation}
-  M_\ip
-  =
-  \prod_{\ind=0}^{\anydim+1}
-  \left( \frac{\vp*}{\vp[\anydim]} \right)^{\ip*}
-  \quad
-  \text{avec \( \ip[\anydim + 1] < \deg \anyvar \).}
+  \nv1{ P_\dv^\derp }
+  \le
+  \nv1{ \poldep[][\anydim+1] }^{2\lgr\derp - 1}
+  \cdot (32 \anydim \anydeg^3)^{\lgr\derp \dv}
 \end{equation}
+par le dernier point du lemme précédent, et en majorant un peu largement pour
+simplifier l'écriture.
 
 % XXX
 
