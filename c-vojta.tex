@@ -2219,6 +2219,10 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
   qui donne bien le résultat annoncé.
 \end{proof}
 
+Pour le cas \( \indi = \anydim + 1 \), on utilisera des relations de
+dépendance sur les autres variables, données par le fait que le plongement est
+adapté. Le lemme suivant énonce de façon générales comment exploiter de telles
+relations.
 
 \begin{lem} \label{l:param-aff}
   Soient \( \vaf[1], \dots, \vaf[\anydim], \vafi \) des variables et \( L \)
@@ -2395,38 +2399,7 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
   \end{align}
 \end{proof}
 
-Nous sommes maintenant en mesure de définir les morphismes \( \pmor*_\dv \) de
-la façon suivante : fixons un \( \ind > \anydim \) et notons \( \tilde\Pi =
-  P_\ind(\anyvp[1], \dots, \anyvp[\anydim], 1, Y ) \), où \( P_\ind \) est
-donné par le fait~\ref{f:plong-adapt-dep}, puis \( \Pi \) une des dérivées
-successives de \( \tilde\Pi \) par rapport à la dernière variable, telle que
-\( \diff_Y \Pi \notin \ideal\anyvar \). On pose alors, pour \( \derp \neq 0
-\) :
-\begin{equation}
-  \pdiff^\derp \left( \frac{ \vp* }{ \vp[\anydim] } \right)
-  =
-  \frac {
-    P_\dv^\derp ( \vp[0] / \vp[\anydim], \dots,
-    \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
-  }{
-    \pden ( \vp[0] / \vp[\anydim], \dots,
-    \vp[\anydim-1] / \vp[\anydim], \vp* / \vp[\anydim] )
-    ^{2\lgr\derp - 1}
-  }
-  \pmm,
-\end{equation}
-où les \( P_\dv^\derp \) sont donnés par le lemme précédent. On étend alors
-les morphismes \( \pmor*_\dv \) à \( \cdn[X]_{(\ideal\anyvar)} \) comme
-expliqué au deuxième paragraphe précédant le lemme~\ref{l:param-aff}. Ainsi,
-\( \pmor*_\dv \) et donc les différents \( \pdiff^\derp \) sont désormais bien
-définis.
-
-En pratique, pour l'application considérée (représenter les dérivées d'un
-déshomogénéisé de \( \faux* \)) nous n'avons pas besoin d'étudier les images
-par \( \pmor* \) des \( \anyvp* / \anyvp[\anydim] \) pour \( \ind > \anydim +
-  1 \). Ceci nous permet d'obtenir des estimations légèrement plus précises
-car il n'y a qu'une variable liée, dont on connaît en fait le polynôme
-minimal.
+% XXX
 
 \begin{lem} \label{l:pmor-dim+1}
   Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
