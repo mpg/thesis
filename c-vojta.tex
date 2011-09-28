@@ -2455,24 +2455,35 @@ remarquant que \( \deg R = 2\anydeg \). Par ailleurs on a
 par le dernier point du lemme précédent, et en majorant un peu largement pour
 simplifier l'écriture.
 
-% XXX
+Nous sommes maintenant prêts à étudier les dérivées des monômes de la forme
+\begin{equation}
+  M^\ip_\ind
+  =
+  \prod_{\indi=0}^{\anydim+1}
+  \left( \frac{\vp[\indi]}{\vp*} \right)^{\ip[\indi]}
+  \pmm,
+\end{equation}
+qui font l'objet du lemme suivant.
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soit \( \ip \in \N^{\dimp+1} \) et \( M_\ip \) comme ci-dessus.  Posons \(
-    \pden = \prod_{\ind = \anydim + 1}^{\dimp} \pden_\ind \) où les \(
-    \pden_\ind \) sont donnés par le lemme précédent. Alors :
+  Soient \( \ip \in \N^{\anydim+1} \) et \( M_\ip \) comme ci-dessus, pour \(
+    \ind \in \set{0, \dots, \anydim} \). En conservant les notations
+  ci-dessus, il existe des formes homogènes \( P^\derp_{\ip, \dv} \) telles
+  que
   \begin{enumthm}
-    \item \( P^\derp_{\ip, \dv}
-        = \pdiff^\derp(M_\ip)
-        \cdot \vp[\anydim]^{\lgr\ip} \pden^{\lgr\derp} \) est un polynôme ;
+    \item \( \der^\derp M_\ip
+        = \frac{
+          P^\derp_{\ip, \dv}
+        }{
+          Q_\ind^{2\lgr\derp} \vp*^{\lgr\derp+\lgr\ip}
+        } \) dans \( \cdn(V) \) ;
     \item \( \deg P^\derp_{\ip, \dv}
-        = \lgr\ip + 2 (\anydeg - 1) (\dimp - \anydim) \lgr\derp \) ;
+        = \lgr\ip + 4 \anydeg \lgr\derp \) ;
     \item \( \nv1{ P^\derp_{\ip, \dv} }
         \le
-        \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
+        \nv1{ \chow\anyvar }^{2\lgr\derp}
         \left(
-          \bigl( 4^{\anydeg+1} \anydim \anydeg^{3} \bigr) ^{
-            (\dimp - \anydim) \lgr\derp }
+          \bigl( 32 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp }
           \cdot 2^{ \anydim \lgr\ip }
         \right)^\dv
       \).
@@ -2482,14 +2493,15 @@ simplifier l'écriture.
 \end{lem}
 
 \begin{proof}
-  \newcommand \indl {{ \gmp\nu[\ind, \indi_\ind] }}
+  \newcommand \indl {{ \gmp\nu[\indi, \alpha_\indi] }}
   On utilise la règle de \bsc{Leibniz} :
   \begin{equation}
-    \pdiff^\derp(M_\ip) =
+    \der^\derp M_\ip
+    =
     \sum_{\gmp\nu \in N}
-    \prod\indrange
-    \prod_{ \indi_\ind = 1 }^{ \ip* }
-    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
+    \prod_{\indi=0}^{\anydim+1}
+    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    \der^\indl \biggl( \frac{ \vp[\indi] }{ \vp* } \biggr)
     \pmm,
   \end{equation}
   où la somme est prise sur l'ensemble
@@ -2501,26 +2513,34 @@ simplifier l'écriture.
     \right\}
     \pmm.
   \end{equation}
-
-  On vérifie alors que
+  On pose alors
   \begin{equation}
     P^\derp_{\ip, \dv}
     =
     \sum_{\gmp\nu \in N}
-    \prod\indrange
-    \prod_{ \indi_\ind = 1 }^{ \ip* }
-    \pdiff^\indl \biggl( \frac{ \vp* }{ \vp[\anydim] } \biggr)
-    \pden_\ind^{\lgr\indl}
-    \vp[\anydim]
+    \prod_{\indi=0}^{\anydim+1}
+    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] } \left(
+      \der^\indl \biggl( \frac{ \vp[\indi] }{ \vp* } \biggr)
+      \pden_\ind^{2\lgr\indl}
+      \vp* ^{\lgr\indl + 1}
+    \right)
   \end{equation}
-  est bien un polynôme : pour chaque facteur de chaque terme, si \( \indl = 0
+  dont on vérifie facilement que c'est bien un polynôme :
+  pour chaque facteur non nul de chaque terme, si \( \indl = 0
   \) alors \(
-    \pdiff^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
-    \vp[\anydim]
-  \) est un polynôme, sinon \(
-    \pdiff^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
-    \pden_\ind^{\lgr\indl}
-  \) en est un, d'après le lemme précédent.
+    \der^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \vp*
+  \) est un polynôme, sinon si \( \indi \le \anydim \) on sait que \(
+    \der^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \vp* ^{\lgr\indl + 1}
+  \)
+  est un polynôme, et sinon
+  \(
+    \der^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
+    \pden_\ind^{2\lgr\indl}
+  \) en est un, d'après les paragraphes précédents. Notons qu'on choisit \(
+    2\lgr\indl \) comme exposant du dénominateur, bien qu'il soit légèrement
+  sous-optimal, pour simplifer la sommation.
 
   Le calcul du degré est direct et on ne détaille donc que l'estimation de
   norme : chaque terme de la somme est majoré en norme par
