@@ -2408,13 +2408,13 @@ relations.
 Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
 fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
 posons \( R_\ind = \poldep[][\anydim+1](1, \vaf[1], \dots, \vaf[\anydim],
-  \vaf[\indi] \vafi) \). On peut alors appliquer le lemme précédent avec \( L
+  \vaf[\ind] \vafi) \). On peut alors appliquer le lemme précédent avec \( L
   = \cdn(V) \) en prenant pour \( \vaf[\indi]' \) et \( \omega \) les images
 respectives de \( \vp[\indi]/\vp[0] \) et \( \vp[\anydim+1]/\vp* \) dans ce
-dernier, ainsi que \( R = R_\ind \) car ce choix convient.\todo[détailler que
-\( R \) convient] On note \( \tilde P_{\ind, \dv}^\derp \) les polynômes
-obtenus et \( \tilde Q_\ind = \diff_\vafi R_\ind \). On a alors, dans \(
-  \cdn(\anyvar) \) :
+dernier, ainsi que \( R = R_\ind \) car ce choix convient étant donné que \(
+  \poldep[][\anydim+1] \) est le polynôme minimal de \( \vp[\anydim+1] \).
+On note \( \tilde P_{\ind, \dv}^\derp \) les polynômes obtenus et \( \tilde
+  Q_\ind = \diff_\vafi R_\ind \). On a alors, dans \( \cdn(\anyvar) \) :
 \begin{align}
   \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
   & =
@@ -2434,18 +2434,51 @@ obtenus et \( \tilde Q_\ind = \diff_\vafi R_\ind \). On a alors, dans \(
   }
   \cdot \left(
     \frac{ \vp[0] \vp* }{ \vp[0] \vp* }
-  \right)^{2(2\anydeg-1)(2\lgr\derp-1)}
+  \right)^{(2\anydeg-1)(2\lgr\derp-1)}
   \\ & =
   \frac{
-    P_{\ind, \dv}^\derp
+    \bar P_{\ind, \dv}^\derp
   }{
-    Q_\ind ^{2\lgr\derp - 1}
+    (\bar Q_\ind) ^{2\lgr\derp - 1}
   }
 \end{align}
-où \( P_{\ind, \dv}^\derp \) est homogène de degré \(
+où \( \bar P_{\ind, \dv}^\derp \) est homogène de degré \(
   2(2\anydeg-1)(2\lgr\derp-1) \) en \( \vp[0], \dots, \vp[\anydim+1] \) et \(
-  Q_\ind \) homogène de degré \( 4\anydeg - 2 \) en ces mêmes variables, en
-remarquant que \( \deg R = 2\anydeg \). Par ailleurs on a
+  \bar Q_\ind \) homogène de degré \( 4\anydeg - 2 \) en ces mêmes variables,
+en remarquant que \( \deg R = 2\anydeg \). On pose enfin \( P_{\ind,
+    \dv}^\derp = \bar P_{\ind, \dv}^\derp \cdot \bar Q_\ind \) et \( Q_\ind =
+  (\bar Q_\ind)^2 \) de sorte qu'on a l'énoncé suivant.
+
+\begin{lem}
+  Dans les notations précédentes, pour tout \( \derp \in \N^\anydim \minusset0
+  \) on a :
+  \begin{enumthm}
+    \item \(
+        \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
+        =
+        \frac{ P_{\ind, \dv}^\derp }{ Q_\ind^{\lgr\derp} }
+      \) dans \( \cdn(V) \) ;
+    \item \(
+        \deg P_{\ind, \dv}^\derp
+        =
+      \) ;
+    \item \(
+        \nv1{ P_{\ind, \dv}^\derp }
+        \le
+      \) ;
+    \item \(
+        \deg Q_\ind
+        =
+      \) ;
+    \item \(
+        \nv1{ Q_\ind }
+        \le
+      \).
+  \end{enumthm}
+\end{lem}
+
+
+Par ailleurs on a
 \begin{equation}
   \nv1{ P_\dv^\derp }
   \le
