@@ -2411,7 +2411,8 @@ Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
 fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
 posons \( R_\ind = \poldep[][\anydim+1](1, \vaf[1], \dots, \vaf[\anydim],
   \vaf[\ind] \vafi) \). On peut alors appliquer le lemme précédent avec \( L
-  = \cdn(V) \) en prenant pour \( \vaf[\indi]' \) et \( \omega \) les images
+  = \cdn(\anyvar) \) en prenant pour \( \vaf[\indi]' \) et \( \omega \) les
+images
 respectives de \( \vp[\indi]/\vp[0] \) et \( \vp[\anydim+1]/\vp* \) dans ce
 dernier, ainsi que \( R = R_\ind \) car ce choix convient étant donné que \(
   \poldep[][\anydim+1] \) est le polynôme minimal de \( \vp[\anydim+1] \).
@@ -2459,7 +2460,7 @@ en remarquant que \( \deg R = 2\anydeg \). On pose enfin \( P_{\ind,
         \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
         =
         \frac{ P_{\ind, \dv}^\derp }{ Q_\ind^{\lgr\derp} }
-      \) dans \( \cdn(V) \) ;
+      \) dans \( \cdn(\anyvar) \) ;
     \item \(
         \deg P_{\ind, \dv}^\derp
         =
@@ -2524,7 +2525,7 @@ qui font l'objet du lemme suivant.
         }{
           Q_\ind^{2\lgr\derp} \vp*^{\lgr\derp+\lgr\ip}
         }
-      \) dans \( \cdn(V) \) ;
+      \) dans \( \cdn(\anyvar) \) ;
     \item \( \deg P^\derp_{\ip, \ind, \dv}
         =
         \lgr\ip + 4 (2\anydeg - 1) \lgr\derp
@@ -2665,65 +2666,46 @@ qui font l'objet du lemme suivant.
   prouve l'assertion sur l'ordre.
 \end{proof}
 
-\begin{rem} \label{r:param-deshom-ord}
-  L'assertion sur l'ordre vaut aussi si la variable de déshomogénéisation
-  (voir la remarque~\ref{r:param-deshom}) est \( \vp[0] \), même si elle
-  paraît \lat{a priori} avoir moins de sens dans ce cas. En effet, on remarque
-  que le dernier paragraphe de la démonstration utilise seulement le fait que
-  \( \pdiff^0 \) est l'identité ; tout le reste en découle formellement, nulle
-  part il n'est fait usage du fait que \( \vp[\anydim] \neq \vp[0] \).
-\end{rem}
-
-On souhaite maintenant étudier le développement en série des fonctions
-rationnelles sur notre variété produit \( \var \).  On étend les notations
-précédentes au cas multi-homogène de la façon évidente. En particulier, on a
-un morphisme \( \pmor \) de développement en série, qu'on représente par des
-morphismes \( \pmor*_\dv \) faisant commuter le diagramme
-\begin{equation}
-  \xymatrix{
-    \cdn[\vmp]_{(\varida)}                 \ar[d]^\pi  \ar@{.>}[r]^{\pmor*_\dv}
-    & \cdn[\vmp]_{(\varida)} \series\psmp  \ar[d]^\pi
-    \\ \cdn(\var)                                     \ar[r]^{\pmor}
-    & \cdn(\var)\series\psmp
-  }
-\end{equation}
-et qu'on écrira encore sous la forme \( \pmor*_\dv = \sum_\dermp \psmp^\dermp
-  \cdot \pdiff^\dermp \).
-
-Plus précisément, pour chaque \( \fct \in \set{1, \dots, \puiss} \), on a un
-morphisme \( \pmor*\pexp\fct \) obtenu en appliquant le lemme~\ref{l:def-pmor}
-avec \( V = \var* \) et \( \vp = \vmp* \), et on définit \( \pmor \) comme le
-produit tensoriel de ces morphismes. On remarque que les formes \( \pden** \)
-données par ces applications du lemme cité sont en fait celles définies au
-parapgraphe précédent le scolie~\ref{s:part-cases}.  Nous étudions maintenant
-l'image par \( \pmor* \) de certaines fonctions rationnelles.
+Transposons maintenant ce résultat à notre situation multiprojective. On
+rappelle auparavant que \( \cdn[\vmp]^{C''} \) est défini
+par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
 
 \begin{lem} \label{l:par-var}
-  Soit \( G \) une forme multi-homogène de multidegré \( \alpha = (\alpha_1,
-    \dots, \alpha_\puiss ) \) et \( g = G / \vmp[][\vdim]^{\alpha} \) où
-  l'on a noté \( \vmp[][\vdim]^{\alpha} = \prod\fctrange
-    (\vmp*[\vdim*])^{\alpha_\fct} \). Alors :
+  Soit \( G \in \cdn[\vmp]^{C''} \) une forme de multidegré \(
+    \alpha = (\alpha_1, \dots, \alpha_\puiss ) \) et \( g = G /
+    \vmp[][\indt*]^{\alpha} \) où l'on a noté \( \vmp[][\indt*]^{\alpha} =
+    \prod\fctrange (\vmp*[\indt*])^{\alpha_\fct} \) pour \( \indt \in
+    \prod\fctrange \set{0, \dots, \vdim*} \). Alors, pour tout \( \dermp \in
+    \prod\fctrange \N^{\vdim*} \), il existe une forme \( P_{G, \ind,
+      \dv}^\dermp \) telle que
   \begin{enumthm}
-    \item \( P^\dermp_{G, \dv}
-        = \pdiff^\dermp(g)
-        \cdot \vmp[][\vdim]^{\alpha}
-        \prod\fctrange \pden_\fct^{\lgr{\dermp*}}
-      \) est un polynôme ;
-    \item \( \deg_\fct P^\dermp_{G, \dv}
-        = \alpha_\fct + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*} \) ;
-    \item \( \nv1{ P^\dermp_{G, \dv} }
+    \item \(
+        \der^\dermp g
+        = \frac{
+          P^\dermp_{G, \ind, \dv}
+        }{
+          \prod\fctrange
+          Q_{\indt*}^{2\lgr{\dermp*}}
+          (\vmp*[\indt*])^{ \alpha_\fct + \lgr{\dermp*} }
+        }
+      \) dans \( \cdn(\var) \) ;
+    \item \(
+        \deg_\fct P^\derp_{G, \ind, \dv}
+        =
+        \alpha_\fct + 4 (2\anydeg - 1) \lgr{\dermp*}
+      \) ;
+    \item \(
+        \nv1{ P^\derp_{G, \ind, \dv} }
         \le
-        \nv1{ G }
         \prod\fctrange
-        \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \nv1{ \varfc* }^{2\lgr{\dermp*}}
         \left(
-          \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
-            (\dimp - \vdim*) \lgr{\dermp*} }
+          \bigl( 32 \vdim* \vdeg*^{3} \bigr) ^{ \lgr{\dermp*} }
           \cdot 2^{ \vdim* \alpha_\fct }
         \right)^\dv
       \).
   \end{enumthm}
-  De plus, \( \inda* \bigl( P^\derp_{G, \dv} \bigr) \ge \inda*(G) -
+  De plus, \( \inda* \bigl( P^\derp_{G, \ind, \dv} \bigr) \ge \inda*(G) -
     \wtsum*(\dermp) \).
 \end{lem}
 

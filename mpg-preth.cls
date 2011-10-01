@@ -1091,6 +1091,7 @@
 %
 % local indices
 \newc@star@default \indv  {\fct }{\puiss} {\ind \sb{\place \slast{#1}}}
+\newc@star@default \indt  {\fct }{\puiss} {\ind \sb{{#1}}}
 \newc@star@default \indiv {\fcti}{\puiss} {\indi\sb{\place \slast{#1}}}
 \newc@star@default \indig {\fcti}{\puiss} {\indi\sb{{#1}}}
 
