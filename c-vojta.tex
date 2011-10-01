@@ -2575,7 +2575,7 @@ qui font l'objet du lemme suivant.
   \begin{align}
     P^\derp_{\ip, \ind, \dv}
     =
-    \sum_{\gmp\nu \in N} \Biggl(
+    \sum_{\gmp\nu \in N'} \Biggl(
       \prod_{\indi=0}^{\anydim}
       & \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
       (-1)^{\indl[\ind]} \vp[\indi] ^{1-\indl[\indi]} \vp[0] ^{\lgr\indl}
@@ -2590,8 +2590,20 @@ qui font l'objet du lemme suivant.
     \vp*^{\lgr\indl + 1 - \indic0(\indl)}
   \end{align}
   où l'on a posé \( P_{\ind, \dv}^{(0, \dots, 0)} = 1 \) et \( \indic0(\indl)
-  \) vaut \( 1 \) si \( \indl = (0, \dots, 0) \) et \( 0 \) sinon. Les
-  lemmes~\ref{l:param-any-easy} et~\ref{l:param-any+1} donnent alors
+  \) vaut \( 1 \) si \( \indl = (0, \dots, 0) \) et \( 0 \) sinon, et pris la
+  somme sur l'ensemble
+  \begin{equation}
+    N' = \left\{
+      \gmp\nu \in N
+      \text{ tel que, \( \forall \indl \in \set{0, \dots, \anydim} \),  }
+      \supp\indl \subset \set{\ind, \indi}
+      \text{ et }
+      \indl[\indi] \le 1
+    \right\}
+    \pmm.
+  \end{equation}
+
+  Les lemmes~\ref{l:param-any-easy} et~\ref{l:param-any+1} donnent alors
   immédiatement le premier point, en remarquant que
   \begin{equation}
     \sum_{\indi=0}^{\anydim+1}
@@ -2599,6 +2611,8 @@ qui font l'objet du lemme suivant.
     \lgr\indl
     =
     \lgr\derp + \lgr\ip
+    \quad
+    \forall \gmp\nu \in N
     \pmm.
   \end{equation}
   Le calcul du degré est direct (c'est par construction celui du dénominateur)
@@ -2620,7 +2634,7 @@ qui font l'objet du lemme suivant.
   d'après le lemme précédent.
   On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
   \begin{equation}
-    \prod_{p = 0}^{\anydim - 1} \left\{
+    \prod_{p = 1}^{\anydim} \left\{
       \gmp\nu[][p] \in \N^{\lgr\ip}
       \text{ tel que }
       \sum_{\indi=0}^{\anydim+1}
@@ -2639,18 +2653,16 @@ qui font l'objet du lemme suivant.
   L'estimation annoncée suit en prenant le produit.
 
   Enfin, on constate que chaque terme de la somme définissant
-  \( P^\derp_{\ip, \ind, \dv} \) contient un facteur de la forme
+  \( P^\derp_{\ip, \ind, \dv} \) contient un facteur (pour \( \indi = 0 \)) de
+  la forme
   \(
-    \prod_{\indi_0 = 1}^{\ip[0]}
-    \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \frac{ \vp[0] }{ \vp[\anydim] } )
-    \vp[\anydim]
-  \). On peut supposer que \( \gmp\nu[0, \indi_0] \in \N \times
-    \set{0}^{\anydim-1} \) car sinon ce facteur, donc le terme correspondant,
-  est nul. De plus, on a \( \sum_{\indi_0 = 1}^{\ip[0]} \gmp\nu[0, \indi_0][0]
+    \prod_{\alpha_0 = 1}^{\ip[0]} \vp[0] ^{1-\gmp\nu[0, \alpha_0][0]}
+  \). De plus, on a \( \sum_{\alpha_0 = 1}^{\ip[0]} \gmp\nu[0, \alpha_0][0]
     \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
-  nuls dans cette somme, donc \( \vp[0]^{\ip[0] - \derp[0]} \) est en
-  facteur de chaque terme non nul de la somme définissant \( P^\derp_{\ip,
-      \dv} \), ce qui prouve l'assertion sur l'ordre.
+  nuls dans cette somme, soit autant de termes égaux à \( \vp[0] \) dans le
+  produit précédent. Ainsi, \( \vp[0]^{\ip[0] - \derp[0]} \) est en facteur de
+  chaque terme de la somme définissant \( P^\derp_{\ip, \ind, \dv} \), ce qui
+  prouve l'assertion sur l'ordre.
 \end{proof}
 
 \begin{rem} \label{r:param-deshom-ord}
