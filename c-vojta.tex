@@ -2157,7 +2157,7 @@ de la forme \( \vp[\indi] / \vp* \) pour \( 0 \le \indi \le \anydim+1 \) et \(
 et fait l'objet du lemme suivant, valable aussi bien dans \(
   \cdn[X]_{\ideal\anyvar} \) que dans \( \cdn(\var) \).
 
-\begin{lem}
+\begin{lem} \label{l:param-any-easy}
   Soit \( \derp \in \N^\anydim \) ; on note \( \supp \derp \) l'ensemble des
   indices \( \alpha \) tels que \( \derp[\alpha] \neq 0 \). Alors, pour tout
   \( (\ind, \indi) \in \set{0, \dots, \anydim}^2 \) on a
@@ -2168,7 +2168,8 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
       0
       & si \( \supp\derp \not\subset \set{\ind, \indi} \)
       ou \( \derp[\indi] > 1 \) ; \\
-      \pm \left( \frac{ \vp[\indi] }{ \vp* } \right)^{1-\derp[\indi]}
+      (-1)^{\derp*}
+      \left( \frac{ \vp[\indi] }{ \vp* } \right)^{1-\derp[\indi]}
       \left( \frac{ \vp[0] }{ \vp* } \right)^{\lgr\derp}
       & sinon.
     \end{cases*}
@@ -2450,7 +2451,7 @@ en remarquant que \( \deg R = 2\anydeg \). On pose enfin \( P_{\ind,
     \dv}^\derp = \bar P_{\ind, \dv}^\derp \cdot \bar Q_\ind \) et \( Q_\ind =
   (\bar Q_\ind)^2 \) de sorte qu'on a l'énoncé suivant.
 
-\begin{lem}
+\begin{lem} \label{l:param-any+1}
   Dans les notations précédentes, pour tout \( \derp \in \N^\anydim \minusset0
   \) on a :
   \begin{enumthm}
@@ -2512,20 +2513,23 @@ Nous sommes maintenant prêts à étudier les dérivées des monômes de la form
 qui font l'objet du lemme suivant.
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soient \( \ip \in \N^{\anydim+1} \) et \( M_\ip \) comme ci-dessus, pour \(
-    \ind \in \set{0, \dots, \anydim} \). En conservant les notations
+  Soient \( \ip \in \N^{\anydim+1} \) et \( M_\ind^\ip \) comme ci-dessus,
+  pour \( \ind \in \set{0, \dots, \anydim} \). En conservant les notations
   ci-dessus, il existe des formes homogènes \( P^\derp_{\ip, \dv} \) telles
   que
   \begin{enumthm}
-    \item \( \der^\derp M_\ip
+    \item \( \der^\derp M_\ind^\ip
         = \frac{
-          P^\derp_{\ip, \dv}
+          P^\derp_{\ip, \ind, \dv}
         }{
           Q_\ind^{2\lgr\derp} \vp*^{\lgr\derp+\lgr\ip}
-        } \) dans \( \cdn(V) \) ;
-    \item \( \deg P^\derp_{\ip, \dv}
-        = \lgr\ip + 4 \anydeg \lgr\derp \) ;
-    \item \( \nv1{ P^\derp_{\ip, \dv} }
+        }
+      \) dans \( \cdn(V) \) ;
+    \item \( \deg P^\derp_{\ip, \ind, \dv}
+        =
+        \lgr\ip + 4 (2\anydeg - 1) \lgr\derp
+      \) ;
+    \item \( \nv1{ P^\derp_{\ip, \ind, \dv} }
         \le
         \nv1{ \chow\anyvar }^{2\lgr\derp}
         \left(
@@ -2534,15 +2538,20 @@ qui font l'objet du lemme suivant.
         \right)^\dv
       \).
   \end{enumthm}
-  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \dv} \bigr)
+  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \ind, \dv} \bigr)
     \ge \ip[0]  - \derp[0] \).
 \end{lem}
 
 \begin{proof}
-  \newcommand \indl {{ \gmp\nu[\indi, \alpha_\indi] }}
+  \newcommand \indl { \gmp\nu[\indi, \alpha_\indi] }
   On utilise la règle de \bsc{Leibniz} :
   \begin{equation}
-    \der^\derp M_\ip
+    \der^\derp M_\ind^\ip
+    =
+    \der^\derp
+    \prod_{\indi=0}^{\anydim+1}
+    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    \biggl( \frac{ \vp[\indi] }{ \vp* } \biggr)
     =
     \sum_{\gmp\nu \in N}
     \prod_{\indi=0}^{\anydim+1}
@@ -2553,62 +2562,70 @@ qui font l'objet du lemme suivant.
   où la somme est prise sur l'ensemble
   \begin{equation}
     N = \left\{
-      \gmp\nu \in (\N^\anydim)^{\lgr\ip}
+      \gmp\nu \in \prod_{\indi=0}^{\anydim+1} (\N^\anydim)^{\ip[\indi]}
       \text{ tel que }
-      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*} \indl = \derp
+      \sum_{\indi=0}^{\anydim+1}
+      \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+      \indl
+      = \derp
     \right\}
     \pmm.
   \end{equation}
   On pose alors
-  \begin{equation}
-    P^\derp_{\ip, \dv}
-    =
-    \sum_{\gmp\nu \in N}
-    \prod_{\indi=0}^{\anydim+1}
-    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] } \left(
-      \der^\indl \biggl( \frac{ \vp[\indi] }{ \vp* } \biggr)
-      \pden_\ind^{2\lgr\indl}
-      \vp* ^{\lgr\indl + 1}
-    \right)
-  \end{equation}
-  dont on vérifie facilement que c'est bien un polynôme :
-  pour chaque facteur non nul de chaque terme, si \( \indl = 0
-  \) alors \(
-    \der^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
-    \vp*
-  \) est un polynôme, sinon si \( \indi \le \anydim \) on sait que \(
-    \der^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
-    \vp* ^{\lgr\indl + 1}
-  \)
-  est un polynôme, et sinon
-  \(
-    \der^\indl ( \frac{ \vp* }{ \vp[\anydim] } )
-    \pden_\ind^{2\lgr\indl}
-  \) en est un, d'après les paragraphes précédents. Notons qu'on choisit \(
-    2\lgr\indl \) comme exposant du dénominateur, bien qu'il soit légèrement
-  sous-optimal, pour simplifer la sommation.
-
-  Le calcul du degré est direct et on ne détaille donc que l'estimation de
-  norme : chaque terme de la somme est majoré en norme par
   \begin{align}
-    \prod_{\ind = \anydim + 1}^{\dimp}
-    \prod_{ \indi_\ind = 1 }^{ \ip* }
-    \left(
-      \nv1{ \chow\anyvar }^2
-      \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)^\dv
-    \right)^{\lgr\indl}
-    \le
-    \nv1{ \chow\anyvar }^{2 (\dimp - \anydim) \lgr\derp}
-    \bigl( 4^\anydeg \anydim \anydeg^{3} \bigr)
-    ^{(\dimp - \anydim) \lgr\derp \dv}
+    P^\derp_{\ip, \ind, \dv}
+    =
+    \sum_{\gmp\nu \in N} \Biggl(
+      \prod_{\indi=0}^{\anydim}
+      & \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+      (-1)^{\indl[\ind]} \vp[\indi] ^{1-\indl[\indi]} \vp[0] ^{\lgr\indl}
+      \cdot \vp* ^{\indl[\indi]} Q_\ind^{\lgr\indl}
+    \Biggr)
+    \\
+    \cdot
+    & \renewcommand\indi{{\anydim+1}}
+    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    P_{\ind, \dv}^\indl \vp[\anydim+1]^{\indic0(\indl)}
+    \cdot
+    \vp*^{\lgr\indl + 1 - \indic0(\indl)}
   \end{align}
+  où l'on a posé \( P_{\ind, \dv}^{(0, \dots, 0)} = 1 \) et \( \indic0(\indl)
+  \) vaut \( 1 \) si \( \indl = (0, \dots, 0) \) et \( 0 \) sinon. Les
+  lemmes~\ref{l:param-any-easy} et~\ref{l:param-any+1} donnent alors
+  immédiatement le premier point, en remarquant que
+  \begin{equation}
+    \sum_{\indi=0}^{\anydim+1}
+    \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    \lgr\indl
+    =
+    \lgr\derp + \lgr\ip
+    \pmm.
+  \end{equation}
+  Le calcul du degré est direct (c'est par construction celui du dénominateur)
+  et on ne détaille donc que l'estimation de norme : chaque terme de la somme
+  définissant \( P_{\ip, \ind, \dv}^\derp \) est majoré en norme par
+  \begin{align}
+    \Biggl(
+      \prod_{\indi=0}^{\anydim}
+      \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+      \nv1{ Q_\ind }^{\lgr\indl}
+    \Biggr)
+    \renewcommand\indi{{\anydim+1}}
+    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    \nv1{ P_{\ind, \dv}^\indl }
+    \le
+    \nv1{ \chow\anyvar }^{2\lgr\derp}
+    \cdot (32 \anydim \anydeg^3)^{\lgr\derp \dv}
+  \end{align}
+  d'après le lemme précédent.
   On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
   \begin{equation}
     \prod_{p = 0}^{\anydim - 1} \left\{
       \gmp\nu[][p] \in \N^{\lgr\ip}
       \text{ tel que }
-      \sum\indrange \sum_{\indi_\ind = 1}^{\ip*}
-      \gmp\nu[\ind, \indi_\ind][p]
+      \sum_{\indi=0}^{\anydim+1}
+      \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+      \indl[p]
       = \derp[p]
     \right\}
     \pmm.
@@ -2619,11 +2636,10 @@ qui font l'objet du lemme suivant.
     \le
     2^{ \derp[p] + \lgr\ip - 2 }
   \).
-  L'estimation annoncée suit en prenant le produit en majorant assez largement
-  certains facteurs.
+  L'estimation annoncée suit en prenant le produit.
 
   Enfin, on constate que chaque terme de la somme définissant
-  \( P^\derp_{\ip, \dv} \) contient un facteur de la forme
+  \( P^\derp_{\ip, \ind, \dv} \) contient un facteur de la forme
   \(
     \prod_{\indi_0 = 1}^{\ip[0]}
     \pmnum_{1, \dv}^{\gmp\nu[0, \indi_0]}( \frac{ \vp[0] }{ \vp[\anydim] } )
