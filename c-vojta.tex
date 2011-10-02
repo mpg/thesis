@@ -2442,15 +2442,14 @@ On note \( \tilde P_{\ind, \dv}^\derp \) les polynômes obtenus et \( \tilde
   \frac{
     \bar P_{\ind, \dv}^\derp
   }{
-    (\bar Q_\ind) ^{2\lgr\derp - 1}
+    (Q_\ind) ^{2\lgr\derp - 1}
   }
 \end{align}
-où \( \bar P_{\ind, \dv}^\derp \) est homogène de degré \(
-  2(2\anydeg-1)(2\lgr\derp-1) \) en \( \vp[0], \dots, \vp[\anydim+1] \) et \(
-  \bar Q_\ind \) homogène de degré \( 4\anydeg - 2 \) en ces mêmes variables,
-en remarquant que \( \deg R = 2\anydeg \). On pose enfin \( P_{\ind,
-    \dv}^\derp = \bar P_{\ind, \dv}^\derp \cdot \bar Q_\ind \) et \( Q_\ind =
-  (\bar Q_\ind)^2 \) de sorte qu'on a l'énoncé suivant.
+où \( \bar P_{\ind, \dv}^\derp \) est homogène de degré \( 2 (2\anydeg-1)
+  (2\lgr\derp-1) \) en \( \vp[0], \dots, \vp[\anydim+1] \) et \( Q_\ind \)
+homogène de degré \( 4\anydeg - 2 \) en ces mêmes variables, en remarquant que
+\( \deg R = 2\anydeg \). On pose enfin \( P_{\ind, \dv}^\derp = \bar P_{\ind,
+    \dv}^\derp \cdot \bar Q_\ind \) de sorte qu'on a l'énoncé suivant.
 
 \begin{lem} \label{l:param-any+1}
   Dans les notations précédentes, pour tout \( \derp \in \N^\anydim \minusset0
@@ -2459,7 +2458,7 @@ en remarquant que \( \deg R = 2\anydeg \). On pose enfin \( P_{\ind,
     \item \(
         \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
         =
-        \frac{ P_{\ind, \dv}^\derp }{ Q_\ind^{\lgr\derp} }
+        \frac{ P_{\ind, \dv}^\derp }{ Q_\ind^{2\lgr\derp} }
       \) dans \( \cdn(\anyvar) \) ;
     \item \(
         \deg P_{\ind, \dv}^\derp
@@ -2475,12 +2474,12 @@ en remarquant que \( \deg R = 2\anydeg \). On pose enfin \( P_{\ind,
     \item \(
         \deg Q_\ind
         =
-        4 (2\anydeg - 1)
+        2 (2\anydeg - 1)
       \) ;
     \item \(
         \nv1{ Q_\ind }
         \le
-        \nv1{ \chow\anyvar }^2 \cdot \anydeg^{2\dv}
+        \nv1{ \chow\anyvar } \cdot \anydeg^{\dv}
       \).
   \end{enumthm}
 \end{lem}
@@ -2580,7 +2579,7 @@ qui font l'objet du lemme suivant.
       \prod_{\indi=0}^{\anydim}
       & \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
       (-1)^{\indl[\ind]} \vp[\indi] ^{1-\indl[\indi]} \vp[0] ^{\lgr\indl}
-      \cdot \vp* ^{\indl[\indi]} Q_\ind^{\lgr\indl}
+      \cdot \vp* ^{\indl[\indi]} Q_\ind^{2\lgr\indl}
     \Biggr)
     \\
     \cdot
@@ -2590,13 +2589,13 @@ qui font l'objet du lemme suivant.
     \cdot
     \vp*^{\lgr\indl + 1 - \indic0(\indl)}
   \end{align}
-  où l'on a posé \( P_{\ind, \dv}^{(0, \dots, 0)} = 1 \) et \( \indic0(\indl)
-  \) vaut \( 1 \) si \( \indl = (0, \dots, 0) \) et \( 0 \) sinon, et pris la
+  où l'on a posé \( P_{\ind, \dv}^{(0, \dots, 0)} = 1 \) et \( \indic0(\nu)
+  \) vaut \( 1 \) si \( \nu = (0, \dots, 0) \) et \( 0 \) sinon, et pris la
   somme sur l'ensemble
   \begin{equation}
     N' = \left\{
       \gmp\nu \in N
-      \text{ tel que, \( \forall \indl \in \set{0, \dots, \anydim} \),  }
+      \text{ tel que, \( \forall (\indi, \alpha_\indi) \), }
       \supp\indl \subset \set{\ind, \indi}
       \text{ et }
       \indl[\indi] \le 1
@@ -2623,7 +2622,7 @@ qui font l'objet du lemme suivant.
     \Biggl(
       \prod_{\indi=0}^{\anydim}
       \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-      \nv1{ Q_\ind }^{\lgr\indl}
+      \nv1{ Q_\ind }^{2\lgr\indl}
     \Biggr)
     \renewcommand\indi{{\anydim+1}}
     \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
@@ -2685,7 +2684,7 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
           P^\dermp_{G, \ind, \dv}
         }{
           \prod\fctrange
-          Q_{\indt*}^{2\lgr{\dermp*}}
+          Q_{\fct, \indt*}^{\lgr{\dermp*}}
           (\vmp*[\indt*])^{ \alpha_\fct + \lgr{\dermp*} }
         }
       \) dans \( \cdn(\var) \) ;
@@ -2711,35 +2710,32 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
 
 \begin{proof}
   Les trois premiers points s'obtiennent en remarquant que \( g \) est une
-  combinaison linéaire de monômes en \( \vmp / \vmp[][\vdim] \), que l'image
-  d'un tel monôme par \( \pdiff^\dermp \) est donnée par
+  combinaison linéaire de monômes en \( \vmp*[\indi] / \vmp** \) pour \( \fct
+    \in \set{1, \dots, \puiss} \) et \( \indi \in \set{0, \dots, \vdim* + 1}
+  \), puis en écrivant que
   \begin{equation}
-    \pdiff^\dermp \Biggl(
-      \prod\fctrange \prod\indrange
-      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \der^\dermp \Biggl(
+      \prod\fctrange
+      \prod_{\indi=0}^{\vdim*+1}
+      \biggl( \frac{ \vmp*[\indi] }{ \vmp** } \biggr)^{\imp**}
     \Biggr)
     =
     \prod\fctrange
-    \pdiff^{\fct, \dermp*} \Biggl(
-      \prod\indrange
-      \biggl( \frac{ \vmp** }{ \vmp*[\vdim*] } \biggr)^{\imp**}
+    \der^{\fct, \dermp*} \Biggl(
+      \prod_{\indi=0}^{\vdim*+1}
+      \biggl( \frac{ \vmp*[\indi] }{ \vmp** } \biggr)^{\imp**}
     \Biggr)
   \end{equation}
-  et en appliquant le lemme~\ref{l:par-anyvar-mono}.
+  et en appliquant le lemme~\ref{l:par-anyvar-mono} sur chaque facteur.
 
   Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
     \vmp^\imp \) un monôme apparaissant dans l'écriture \( G \), puis \(
-    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \dv} \).
-  D'après le lemme cité, on alors \( \gmp\nu*[0] \ge \imp*[0] - \dermp*[0] \)
-  d'où, en sommant, \( \wtsum*(\gmp\nu) \ge \wtsum*(\imp) - \wtsum*(\dermp) \)
-  qui est équivalent à l'estimation annoncée vu la définition de l'indice.
+    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \ind, \dv}
+  \).  D'après le lemme cité, on alors \( \gmp\nu*[0] \ge \imp*[0] -
+    \dermp*[0] \) d'où, en sommant, \( \wtsum*(\gmp\nu) \ge \wtsum*(\imp) -
+    \wtsum*(\dermp) \) qui est équivalent à l'estimation annoncée vu la
+  définition de l'indice.
 \end{proof}
-
-Notons que les estimations obtenues ne valent que pour des fonctions admettant
-un monôme en \( \vmp[][\vdim] \) comme dénominateur.  On pourrait aisément en
-déduire des estimations pour des fonctions rationnelles de dénominateur
-quelconque en les écrivant comme un quotient de deux telles fonctions, mais
-ce n'est pas utile ici.
 
 
 \subsection{Minoration de l'indice}
@@ -2778,11 +2774,10 @@ où l'indice est infini.
 \begin{rem} \label{r:ind-basis}
   La définition ci-dessus fait usage d'une base de dérivations de \(
     \cdn(\var*) \) \lat{via} les applications \( \der[\imp] \) (voir le début
-  de la sous-section~\ref{sec:vojta-param}. Il est important de noter qu'elle
+  de la sous-section~\ref{sec:vojta-param}). Il est important de noter qu'elle
   ne dépend en fait pas de la base choisie, car chaque \( \lgr{\dermp*} \), et
   donc \( \wtsum[b](\dermp) \), est bien sûr invariant par changement de base.
 \end{rem}
-
 
 \begin{lem} \label{l:indice-inversible}
   Soient \( \ratfi_1 \), \( \ratfi_2 \) et \( \alpha \) des fonctions
