@@ -3221,61 +3221,60 @@ pas besoin de l'expliciter davantage.
 
 \medskip
 
-Pour expliciter \( \ratfv1 \), on applique le lemme~\ref{l:par-var} à chacune
-des formes \( \fauxv \).  Comme l'indique les remarques~\ref{r:param-deshom},
-\ref{r:param-deshom-ord} et~\ref{r:ind-basis}, il est loisible d'utiliser sur
-chaque facteur
-\( \vmp*[\indv*] \) plutôt que \( \vmp*[0] \) comme variable de
-déshomogénéisation vu que \( 0 \le \indv* \le \vdim* \) ; simplement, les
-polynômes fournis par le lemme dépendent de ce choix, donc en définitive de \(
-  \place \), ce qui est déjà le cas.  Par ailleurs, chaque application du
-lemme fournit deux familles de polynômes, satisfaisant respectivement des
-majorations de normes aux places finies ou infinies ; on ne garde que celui
-correspondant à l'indice \( \dermp \) fixé ci-dessus et à la nature
-archimédienne ou non de la place considérée, de façon à obtenir une famille
-indexée par \( \place \) de polynômes \( P_\place \) et jouissant des
-propriétés suivantes :
-\begin{enumthm}
-  \item \( \displaystyle
-      \der[\dermp]
-      \frac{
-        \fauxv(\vmp)
-      }{
-        \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-      }
-      =
-      \frac{ P_\place(\vmp) }{
-        \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-        \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
-      }
-    \) ;
-  \item \(
-      \deg_\fct P_\place
-      =
-      \Dir* + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
-    \) ; \label{i:deg-p-der}
-  \item \(
-      \nv1{ P_\place }
-      \le
-      \nv1{ \fauxv }
-      \prod\fctrange
-      \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
-      \left(
-        \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
-          (\dimp - \vdim*) \lgr{\dermp*} }
-        \cdot 2^{ \vdim* (\Dir*) }
-      \right)^\dv
-    \) ; \label{i:norm-p-der}
-  \item \(
-      \inda* \bigl( P_\place \bigr)
-      \ge
-      \inda*(\fauxv) - \wtsum*(\dermp)
-    \).
-\end{enumthm}
-Remarquons de suite que tous les \( P_\place \) sont de même degré, qu'on
-notera parfois \( \deg P \) par abus, et que \( P_\place \) parcourt un
-ensemble fini quand \( \place \) varie, car c'est déjà le cas de \( \fauxv
-\) et de \( \wembclv \).
+Nous allons maintenant expliciter \( \ratfv1 \) : pour chaque place \( \place
+\), on applique le lemme~\ref{l:par-var} avec \( G = \fauxv \) et \( \ind =
+  \indv \), et on note \( P_\place = P_{\fauxv, \indv, \dv}^\derp \) la forme
+obtenue pour notre indice \( \derp \) (plus précisément, celle des deux formes
+obtenues qui correspond à la place considérée).  Remarquons que \( P_\place \)
+parcourt un ensemble fini quand \( \place \) varie, car c'est déjà le cas de
+\( \wembclv \), donc de \( \fauxv \). Le \( P_\place \) jouissent alors des
+propriétés suivantes.
+
+\begin{coro}
+  Dans le notations précédentes, on a :
+  \begin{enumthm}
+    \item \( \displaystyle
+        \der[\dermp]
+        \frac{
+          \fauxv(\vmp)
+        }{
+          \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+        }
+        =
+        \frac{ P_\place(\vmp) }{
+          \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+          \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
+        }
+      \) ;
+    \item \(
+        \deg_\fct P_\place
+        =
+        \Dir* + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
+      \) ; \label{i:deg-p-der}
+    \item \(
+        \nv1{ P_\place }
+        \le
+        \nv1{ \fauxv }
+        \prod\fctrange
+        \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
+        \left(
+          \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
+            (\dimp - \vdim*) \lgr{\dermp*} }
+          \cdot 2^{ \vdim* (\Dir*) }
+        \right)^\dv
+      \) ; \label{i:norm-p-der}
+    \item \(
+        \inda* \bigl( P_\place \bigr)
+        \ge
+        \inda*(\fauxv) - \wtsum*(\dermp)
+      \).
+  \end{enumthm}
+\end{coro}
+
+\begin{proof}
+  % XXX
+\end{proof}
+
 
 Rappelons également que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta
   / \sigma \) ; en remarquant que \( \inda*(\fauxv) \ge \epsi \delta \)
