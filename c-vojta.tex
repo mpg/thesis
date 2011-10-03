@@ -2691,7 +2691,7 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
     \item \(
         \deg_\fct P^\derp_{G, \ind, \dv}
         =
-        \alpha_\fct + 4 (2\anydeg - 1) \lgr{\dermp*}
+        \alpha_\fct + 4 (2\vdeg* - 1) \lgr{\dermp*}
       \) ;
     \item \(
         \nv1{ P^\derp_{G, \ind, \dv} }
@@ -3230,8 +3230,8 @@ parcourt un ensemble fini quand \( \place \) varie, car c'est déjà le cas de
 \( \wembclv \), donc de \( \fauxv \). Le \( P_\place \) jouissent alors des
 propriétés suivantes.
 
-\begin{coro}
-  Dans le notations précédentes, on a :
+\begin{lem}
+  Dans les notations précédentes, on a :
   \begin{enumthm}
     \item \( \displaystyle
         \der[\dermp]
@@ -3243,13 +3243,13 @@ propriétés suivantes.
         =
         \frac{ P_\place(\vmp) }{
           \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-          \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
+          \, \pden*[\indv*](\vmp*)^{2\lgr{\dermp*}}
         }
       \) ;
     \item \(
         \deg_\fct P_\place
-        =
-        \Dir* + 2 (\vdeg* - 1) (\dimp - \vdim*) \lgr{\dermp*}
+        \le
+        3 \delta \wtw* \wts*
       \) ; \label{i:deg-p-der}
     \item \(
         \nv1{ P_\place }
@@ -3266,24 +3266,55 @@ propriétés suivantes.
     \item \(
         \inda* \bigl( P_\place \bigr)
         \ge
-        \inda*(\fauxv) - \wtsum*(\dermp)
-      \).
+        \frac34 \epsi \delta
+      \). \label{i:ind-p-der}
   \end{enumthm}
-\end{coro}
+\end{lem}
 
 \begin{proof}
-  % XXX
+  Chaque point découle du point correspondant du lemme~\ref{l:par-var}, en
+  tenant compte des informations connues sur \( \fauxv \) et \( \dermp \). Le
+  premier est immédiat car \( \deg_\fct \fauxv = \Dir* \).
+
+  Rappelons l'hypothèse faite que \( \dermp \) : on suppose que \(
+    \wtsum(\dermp) \le \epsi \delta / \sigma \). D'une part, en remarquant que
+  \( \inda*(\fauxv) \ge \epsi \delta \) par construction
+  (scolie~\ref{s:aux-co})  et que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par
+  définition, on a
+  \begin{equation} \label{e:ind-Pv}
+    \inda* \bigl( P_\place \bigr)
+    \ge
+    \inda*(\fauxv) - \wtsum*(\dermp)
+    \ge
+    \epsi \delta (1 - \sigma^{-1})
+    \ge
+    \frac34 \epsi \delta
+  \end{equation}
+  en utilisant la minoration large mais suffisante \( \sigma > 4 \). D'autre
+  part, cette hypoithèse implique que pour tout \( \fct \) on a
+  \begin{equation}
+    \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma
+    \pmm.
+  \end{equation}
+
+  Pour le degré, on a
+  \begin{align}
+    \deg_\fct P_\place
+    & =
+    \Dir* + 4 (2\vdeg* - 1) \lgr{\dermp*}
+    \\ & \le
+    \delta \wts* (2\wtw* + \epsz)
+    + 8 \vdeg* \wtw* \wts* \epsi \delta / \sigma
+    + o(\delta)
+    \\ & \le
+    \delta \wts* \wtw* (2 + \epsz + \frac{8B}{\sigma} \epsi)
+  \end{align}
+  qui donne bien la majoration annoncée, compte tenu du fait que \( 8B/\sigma
+    \le 1 \) par définition de \( \sigma \) (prop.~\ref{p:extra}) et qu'on a
+  largement \( \epsz + \epsi \le 1 \).
+
 \end{proof}
 
-
-Rappelons également que l'on a supposé que \( \wtsum(\dermp) \le \epsi \delta
-  / \sigma \) ; en remarquant que \( \inda*(\fauxv) \ge \epsi \delta \)
-par construction (scolie~\ref{s:aux-co})  et que \( \wtsum*(\dermp) \le
-  \wtsum(\dermp) \) par définition, le dernier point donne
-\begin{equation} \label{e:ind-Pv}
-  \inda*( P_\place ) \ge \epsi \delta (1 - \sigma^{-1})
-  \pmm.
-\end{equation}
 
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
 fonction en deux facteurs :
