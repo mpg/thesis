@@ -1221,9 +1221,7 @@ lemme~\ref{l:hclab}, de sorte que chacune des applications
   &  \mapsto \wembcl*_{\clmap_\fcti}
 \end{align}
 est une représentation locale de \( \wemb \) valable sur l'ouvert \( \clmap
-\).  Dans la suite de cette section, la carte \( \clmap \) choisie n'a pas
-d'importance, on notera donc simplement \( \wemba \) l'un des \( \wemba*
-\) pour alléger.
+\).
 
 Étudions maintenant l'action de \( \wemba \) sur le degré et la hauteur.  Le
 lemme suivant est une conséquence immédiate de la définition.
@@ -1233,7 +1231,7 @@ lemme suivant est une conséquence immédiate de la définition.
     (\alpha, \beta) \) où \( \alpha \in \N^\puiss \) et \( \beta \in
     \N^{\puiss-1} \). On a alors
   \begin{equation}
-    \deg \wemba(H)
+    \deg \wemba*(H)
     =
     \bigr(
     \alpha_1 + 2 \beta_1 \wts[1],
@@ -1285,7 +1283,7 @@ et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
   \end{aligned}
 \end{equation}
 de sorte que, si \( H \) est une forme de multidegré \( \Dz \) dans \(
-  \cdn[\vmp, \vmpi] \), son image par \( \wemba \) est de multidegré
+  \cdn[\vmp, \vmpi] \), son image par \( \wemba* \) est de multidegré
 exactement \( \Di \) d'après le lemme~\ref{l:deg-wemba}. Pour alléger les
 notations par la suite, on introduit le vecteur \( \wtw = (1, \dots, 1, \puiss
   - 1) \in \N^\puiss \), de sorte qu'on a \( d'_\fct = \wts* (2 \wtw* + \epsz)
@@ -1293,7 +1291,7 @@ notations par la suite, on introduit le vecteur \( \wtw = (1, \dots, 1, \puiss
 
 \medskip
 
-Revenons donc au calcul de l'action de \( \wemba \) sur la hauteur. Ce
+Revenons donc au calcul de l'action de \( \wemba* \) sur la hauteur. Ce
 morphisme étant homogène, il induit d'après la remarque ci-dessus une
 application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 \).  La base évidente de l'espace de départ est formée par les monômes \(
@@ -1311,33 +1309,34 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 \begin{lem} \label{l:hmat-wemba}
   Avec les notations précédentes, l'application linéaire
   \begin{equation}
-    \wemba \colon
+    \wemba* \colon
     \cdn [\vmp, \vmpi]_\Dz
     \to
     \cdn [\vmp]_\Di
   \end{equation}
-  est représentée dans les bases canoniques par une matrice de colonnes
+  est représentée dans les bases canoniques de monômes par une matrice dont
+  les colonnes
   \(
-  c_{p, q} = \wemba(\vmp^p\vmpi^q)
+  c_{p, q} = \wemba*(\vmp^p\vmpi^q)
   = \sum_{\lgr s = \Di - \lgr p} c_{p, q; s} \vmp^{s+p}
   \)
-  satisfaisant
-  \begin{equation}
+  satisfont
+  \begin{align}
     \hautm[1]{c_{p, q}}
-    \le
+    & \le
     \bigl(
       \hmclab (\dimp+1)!^2 \, B^{2\dimp}
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
-  \end{equation}
+  \end{align}
   où l'on rappelle que \( \hmclab \) est donné par la
   définition~\ref{d:hclab}.
 \end{lem}
 
 \begin{proof}
-  La définition de \( \wemba \) montre que \(
-  \wemba( \vmp^p \vmpi^q ) = \vmp^p \wemba(\vmpi^q) \), on a donc \(
-  \nv1 {c_{p, q}} = \nv1 {\wemba(\vmpi^q)} \). Ainsi, on a
+  La définition de \( \wemba* \) montre que \(
+  \wemba*( \vmp^p \vmpi^q ) = \vmp^p \wemba*(\vmpi^q) \), on a donc \(
+  \nv1 {c_{p, q}} = \nv1 {\wemba*(\vmpi^q)} \). Ainsi, on a
   \begin{align}
     \nv1 {c_{p, q}}
     & \le
@@ -2070,7 +2069,7 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
           + \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*}
         \Bigr) + o(\delta)
       \) ; \label{i:aux-co-ht}
-    \item \todo[voir de quoi on a vraiment besoin] \(
+    \item \(
         \nv1{\faux*}
         \le
         \nv1{\faux}
@@ -2085,13 +2084,16 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
   \end{enumthm}
 \end{scho}
 
-\begin{proof} \todo[vérifier]
-  Le premier point est une conséquence directe de la définition de \( \faux*
+\begin{proof}
+  Les trois premiers points ne font que résumer la construction. Plus
+  précisément, le premier découle de la définition de \( \faux*
   \), du lemme~\ref{l:rfull} et de la définition~\eqref{e:def-wemba} de \(
-    \wemba* \) ; le deuxième est donné par la construction et le troisième
+    \wemba* \) ; le deuxième est imposé par la construction et le troisième
   découle du lemme~\ref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
-  \( d \) et \( d' \).  Pour le quatrième point, on utilise le
-  lemme~\ref{l:rfull} ainsi que des propriétés classiques de la norme.
+  \( d \) et \( d' \).
+
+  Pour le quatrième point, on utilise le lemme~\ref{l:rfull} ainsi que des
+  propriétés classiques de la norme.
 \end{proof}
 
 
