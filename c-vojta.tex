@@ -2546,6 +2546,7 @@ qui font l'objet du lemme suivant.
 
 \begin{proof}
   \newcommand \indl { \gmp\nu[\indi, \alpha_\indi] }
+  \newcommand \sumset { {\mathcal N} }
   On utilise la règle de \bsc{Leibniz} :
   \begin{equation}
     \der^\derp M_\ind^\ip
@@ -2555,7 +2556,7 @@ qui font l'objet du lemme suivant.
     \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
     \biggl( \frac{ \vp[\indi] }{ \vp* } \biggr)
     =
-    \sum_{\gmp\nu \in N}
+    \sum_{\gmp\nu \in \sumset}
     \prod_{\indi=0}^{\anydim+1}
     \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
     \der^\indl \biggl( \frac{ \vp[\indi] }{ \vp* } \biggr)
@@ -2563,7 +2564,7 @@ qui font l'objet du lemme suivant.
   \end{equation}
   où la somme est prise sur l'ensemble
   \begin{equation}
-    N = \left\{
+    \sumset = \left\{
       \gmp\nu \in \prod_{\indi=0}^{\anydim+1} (\N^\anydim)^{\ip[\indi]}
       \text{ tel que }
       \sum_{\indi=0}^{\anydim+1}
@@ -2577,7 +2578,7 @@ qui font l'objet du lemme suivant.
   \begin{align}
     P^\derp_{\ip, \ind, \dv}
     =
-    \sum_{\gmp\nu \in N'} \Biggl(
+    \sum_{\gmp\nu \in \sumset'} \Biggl(
       \prod_{\indi=0}^{\anydim}
       & \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
       (-1)^{\indl[\ind]} \vp[\indi] ^{1-\indl[\indi]} \vp[0] ^{\lgr\indl}
@@ -2595,8 +2596,8 @@ qui font l'objet du lemme suivant.
   \) vaut \( 1 \) si \( \nu = (0, \dots, 0) \) et \( 0 \) sinon, et pris la
   somme sur l'ensemble
   \begin{equation}
-    N' = \left\{
-      \gmp\nu \in N
+    \sumset' = \left\{
+      \gmp\nu \in \sumset
       \text{ tel que, \( \forall (\indi, \alpha_\indi) \), }
       \supp\indl \subset \set{\ind, \indi}
       \text{ et }
@@ -2614,7 +2615,7 @@ qui font l'objet du lemme suivant.
     =
     \lgr\derp + \lgr\ip
     \quad
-    \forall \gmp\nu \in N
+    \forall \gmp\nu \in \sumset
     \pmm.
   \end{equation}
   Le calcul du degré est direct (c'est par construction celui du dénominateur)
@@ -2634,7 +2635,7 @@ qui font l'objet du lemme suivant.
     \cdot (32 \anydim \anydeg^3)^{\lgr\derp \dv}
   \end{align}
   d'après le lemme précédent.
-  On remarque alors que l'ensemble de sommation \( N \) s'écrit aussi
+  On remarque alors que l'ensemble de sommation \( \sumset \) s'écrit aussi
   \begin{equation}
     \prod_{p = 1}^{\anydim} \left\{
       \gmp\nu[][p] \in \N^{\lgr\ip}
@@ -3841,8 +3842,8 @@ fini de \( \cdn[
   \vmp[\puiss][0], \dots, \vmp[\puiss][{\vdim[\puiss]}]
   ]
 \). Le fait suivant, qui résume le résultat de la page~148 de~\cite{remivds},
-montre que la norme de \( \faux** \) dans cette extension est une forme
-possédant les propriétés voulues.
+montre que la norme \( N(\faux**) \) de \( \faux** \) dans cette extension est
+une forme possédant les propriétés voulues.
 
 \begin{fact} \label{f:nfaux}
   La forme \( N(\faux**) \in \cdn[

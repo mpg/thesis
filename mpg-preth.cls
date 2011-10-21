@@ -931,6 +931,7 @@
 
 \newcommand \clmaps { \Gamma }
 \newc@star@default \clmap {\ex}{} { \gamma\ssub{#1} }
+\newcommand \nclmaps { N }
 
 % Vojta-specific math [[1
 % -------------------
