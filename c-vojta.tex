@@ -12,11 +12,11 @@ Les notions de hauteur et de distance utilisées dépendent d'un plongement
 projectif \( \vaemb \colon \va \embedin \projd \) fixé, sur lequel on fait les
 hypothèses suivantes.
 
-\begin{hypo}
+\begin{hypo} \label{h:vaemb}
   \begin{enumthm}
     \item Il existe une constante réelle \( \htcmp \) telle que
       \begin{equation} \label{e:comp-h-hn}
-        \abs{ \hautl[2]\point - \hautn\point } \le \htcmp
+        \abs{ \hautl[1]\point - \hautn\point } \le \htcmp
         \qquad \forall \point \in \va(\Qbar)
         \pmm.
       \end{equation}
@@ -37,15 +37,15 @@ hypothèses suivantes.
           indice \( \ind \), on a
           \( \nv1{ L\pexp{a, b, \clmap}[\ind] } \le \hmclab* \) ;
         \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
-          \( \place \) il existe une carte \( \clmap_{x, y, \place} \in
+          \( \place \) il existe une carte \( \clmap_{a, b, x, y, \place} \in
             \clmaps \) telle que
-          \begin{equation}
+          \begin{equation} \label{e:clab-loc}
             \hmclab*^{-(a^2 + b^2)}
             \le
             \frac{
-              \nv1{ L\pexp{ a, b, \clmap_{x, y, \place} }(x, y) }
+              \nv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} }(x, y) }
             }{
-              \nnv1{ L\pexp{ a, b, \clmap_{x, y, \place} } }
+              \nnv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} } }
               \nv1 x ^{2a^2} \nv1 y ^{2b^2}
             }
             \le
@@ -334,7 +334,7 @@ dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
 sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
   \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
 suivantes, où les notions de degré et de hauteurs s'entendent dans le
-plongement \( \Theta^\puiss \) et où l'on rappelle la notation \( \wtw* = 1 \)
+plongement \( \vaemb^\puiss \) et où l'on rappelle la notation \( \wtw* = 1 \)
 si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
 \nomuse {\varset(\ex)} [chap] {Ensemble des variétés produit contenant \( \ex
   \) et satisfaisant aux conditions~\eqref{e:varset-deg}
@@ -572,7 +572,7 @@ théorème~\ref{t:vojta-div}.
   \begin{alignat}{2}
     \wts* \hautn{\ex*}
     & \le 2\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
-    &\quad& \text{par \eqref{e:varset-ht} et~\ref{f:comp-h-hn},}
+    &\quad& \text{par \eqref{e:varset-ht} et~\eqref{e:comp-h-hn},}
     \\ \label{e:ct-Vbig-final}
     \text{puis }
     \wts[1] \hautn{\ex[1]}
@@ -756,7 +756,7 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
 \begin{tdef}
 On fixe désormais des transformations linéaires \( \vadapt* \) obtenues en
 appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \), de sorte que
-\( \vadapt* \circ \Theta \) est adapté à \( \var* \) et on note \(
+\( \vadapt* \circ \vaemb \) est adapté à \( \var* \) et on note \(
   \vdegp* = \max(\vdeg*/2, 1) \).
 \end{tdef}
 
@@ -771,7 +771,7 @@ La construction et le lemme précédent montrent alors que
   \dimp! \cdot (\vdegp*)^{\dimp}
 \end{equation}
 On note \( \varida* \) l'idéal homogène saturé de \( \var* \) dans le
-plongement \( \vadapt* \circ \Theta \) et \( \varfca* \) une forme de
+plongement \( \vadapt* \circ \vaemb \) et \( \varfca* \) une forme de
 \bsc{Chow} de \( \var* \) dans ces coordonnées. Le théorème de l'élimination
 montre qu'une telle forme s'obtient en composant \( \varfc* \) avec la
 transposée de \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
@@ -785,7 +785,7 @@ Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
   \poldep** \) une relation de dépendance de \( \vmp*[\indi] \) sur \(
   \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée par l'application du
 fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans le plongement \(
-  \vadapt* \circ \Theta \). L'estimation précédente et le fait cité donnent
+  \vadapt* \circ \vaemb \). L'estimation précédente et le fait cité donnent
 une majoration des normes locales de ces polynômes, qu'on peut en fait
 améliorer en
 \begin{equation} \label{e:nv-poldep}
@@ -801,7 +801,7 @@ cette quantité apparaît déjà par ailleurs.
 On introduit ensuite \( \pden** \) la dérivée de \( \poldep** \) par rapport à
 la dernière variable et \( \pdenp* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
 Enfin, on notera \( (\cex**)_\ind \) un système de coordonnées
-multihomogène de \( \ex* \) dans le plongement \( \Theta \) et \(
+multihomogène de \( \ex* \) dans le plongement \( \vaemb \) et \(
   (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).  Nous pouvons
 maintenant énoncer les cas particuliers à exclure dans la démonstration de la
 proposition~\ref{p:varset-notmin}.
@@ -1213,9 +1213,9 @@ qui nous permettra d'exploiter la relation~\eqref{e:hautn-wt-diff}.
 
 Nous allons représenter ce morphisme par des familles de polynômes. Pour
 cela, commençons par préciser les plongements utilisés : au départ, chaque
-facteur \( \var* \) est plongé par \( \vadapt* \circ \Theta \) ; on utilise
+facteur \( \var* \) est plongé par \( \vadapt* \circ \vaemb \) ; on utilise
 ces mêmes plongements pour les \( \puiss \) premiers facteurs \( \va \) de
-l'espace d'arrivée et on garde le plongement \( \Theta \) pour les \( \puiss-1
+l'espace d'arrivée et on garde le plongement \( \vaemb \) pour les \( \puiss-1
 \) facteurs \( \va \) restants.
 
 On munit l'espace \( (\projd)^{2\puiss-1} \) (dans lequel est plongé l'espace
@@ -1242,9 +1242,9 @@ dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\clmap \)
 désigne la localisation de l'anneau des coordonnées au départ correspondant à
 l'ouvert \( \clmap \).
 
-Le lemme~\ref{l:hclab} fournit un atlas \( \clmaps \) de \( \va^2 \) avec
-sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x -
-  \beta y \) dans le plongement \( \Theta \). Voyons comment en déduire un
+Les hypothèses~\ref{h:vaemb} fournissent un atlas \( \clmaps \) de \( \va^2 \)
+avec sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x
+  - \beta y \) dans le plongement \( \vaemb \). Voyons comment en déduire un
 atlas de \( \va^\puiss \) et des représentations locales de \( \wemb \) dans
 les plongements considérés.
 
@@ -1252,15 +1252,17 @@ Soit \( \clmap = (\clmap_1, \dots, \clmap_{\puiss-1}) \in \clmaps^{\puiss-1}
 \). On lui associe un ouvert de \( \va^\puiss \), que par abus on notera
 encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
   \clmap_\fcti ) \) où \( p_\fcti \) désigne la projection sur les facteurs \(
-  \fcti \) et \( \fcti + 1 \). On introduit alors pour chaque \( \fcti \) la
-forme
+  \fcti \) et \( \fcti + 1 \). On vérifie sans peine qu'on obtient ainsi un
+atlas de \( \va^\puiss \), qu'on notera \( \clmaps^{\puiss-1} \) : ce léger
+abus est justifié par la remarque précédente.  On introduit alors pour chaque
+\( \fcti \) la forme
 \begin{equation} \label{e:def-wembclm}
   \wembclm*
   = L\pexp{\wti*, \wti**, \clmap_\fcti}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
-où \( L\pexp{\wti*, \wti**, \clmap_\fcti} \) est donnée par le
-lemme~\ref{l:hclab}, de sorte que chacune des applications
+où \( L\pexp{\wti*, \wti**, \clmap_\fcti} \) est donnée par les
+hypothèses~\ref{h:vaemb}, de sorte que chacune des applications
 \begin{align} \label{e:def-wemba}
      \wemba* \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
@@ -1269,8 +1271,8 @@ lemme~\ref{l:hclab}, de sorte que chacune des applications
   \\ \vmpi*
   &  \mapsto \wembcl*_{\clmap_\fcti}
 \end{align}
-est une représentation locale de \( \wemb \) valable sur l'ouvert \( \clmap
-\).
+est une représentation locale de \( \wemb \) dans les plongements considérés,
+valable sur l'ouvert \( \clmap \).
 
 Étudions maintenant l'action de \( \wemba \) sur le degré et la hauteur.  Le
 lemme suivant est une conséquence immédiate de la définition.
@@ -1409,7 +1411,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
     \delta \) pour tout \( \fcti \), puis en
-  utilisant le lemme~\ref{l:hclab}. En prenant le
+  utilisant les hypothèses~\ref{h:vaemb}. En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
   pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
   de~\eqref{e:varset-deg}
@@ -1792,8 +1794,8 @@ et \( \ftarget \) est somme directe de tels espaces.
 \end{proof}
 
 Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du fait
-que \( \card \clmaps^{\puiss-1} = (\dimp + 1)^{\puiss-1} \) d'après le
-lemme~\ref{l:hclab}, on a immédiatement
+que \( \card \clmaps^{\puiss-1} = (\dimp + 1)^{\puiss-1} \)\todo{\( \dimp+1
+    \to \nclmaps \)} d'après les hypothèses~\ref{h:vaemb}, on a immédiatement
 \begin{equation}
   \dim \ftarget
   \le
@@ -2982,7 +2984,7 @@ On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
   \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl[\clmap_\ex,
   \fcti]
   (\cexa[\fcti], \cexa[\puiss]) \) un système de coordonnées multihomogènes de
-\( \exi \) dans le plongement \( \Theta^{\puiss-1} \). (Ci-dessous on notera
+\( \exi \) dans le plongement \( \vaemb^{\puiss-1} \). (Ci-dessous on notera
 \( \wembcl* = \wembcl*_{\clmap_\ex} \) pour alléger.)
 On choisit alors pour tout \(
   \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
@@ -3017,7 +3019,7 @@ Pour tout place \( \place \) on note désormais \( \wembclv* =
   \wembcl[\clmap_{\wts*, \wts**, \ex*, \ex**, \place}, \fcti] \) où \(
   \wembclm* \)
 est défini par~\eqref{e:def-wembclm} et \( \clmap_{\wts*, \wts**, \ex*, \ex**,
-    \place} \) donné par le lemme~\ref{l:hclab}. De même, on note \(
+    \place} \) donné par les hypothèses~\ref{h:vaemb}. De même, on note \(
   \fauxv = \faux[\clmap_{\wts*, \wts**, \ex*, \ex**, \place}] \).
 En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant que,
 pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
@@ -3160,7 +3162,7 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
       \hautl[\infty]{ \cex* } + \hautl[1]{\vadapt*}
     \bigr)
   \Bigr) + o(\delta)
-  \intertext{puis, par le fait~\ref{f:comp-h-hn} :}
+  \intertext{puis, par~\eqref{e:comp-h-hn} :}
   & \le
   \epsz \delta \Bigl(
     \sum\fctrange \wts* \bigl(
@@ -3199,7 +3201,7 @@ Pour \( \ratfh3 \) on commence avec les mêmes arguments pour écrire
   \prod\fctirange
   \hautm[\infty]{ \exi* }^\delta
 \end{equation}
-puis on passe au logarithme et on utilise encore le fait~\ref{f:comp-h-hn} :
+puis on passe au logarithme et on utilise encore~\eqref{e:comp-h-hn} :
 \begin{align}
   \ratfh3
   & \le
@@ -3248,7 +3250,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
     \nnv1{ \wembclv* }
   }
 \end{align}
-où la dernière ligne n'est autre que la conclusion du lemme~\ref{l:hclab}
+où la dernière ligne n'est autre que~\eqref{e:clab-loc}
 compte tenu de la définition de \( \wembclv* \) ci-dessus. On note désormais
 \begin{equation} \label{e:c-wembcl}
   C_\wembcl = \prod_\place \prod\fctirange \nnv1{ \wembclv* }^{\degv}
@@ -3517,7 +3519,7 @@ permet d'exploiter~\eqref{e:Vapx} :
   \cdot \expb^{\wtapx \expapx \htcmp}
   \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
 \end{align}
-où la dernière ligne découle comme d'habitude du fait~\ref{f:comp-h-hn}.
+où la dernière ligne découle comme d'habitude de~\eqref{e:comp-h-hn}.
 
 On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
@@ -3883,7 +3885,7 @@ On considère à cet effet la projection linéaire \( \pi \) de \(
   (\projd)^\puiss \) sur cet espace obtenue en
 conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur.
 Cette projection fait apparaître \( \var \), ou plus précisément son image par
-\( \vadapt* \circ \Theta \), comme un revêtement ramifié de l'espace
+\( \vadapt* \circ \vaemb \), comme un revêtement ramifié de l'espace
 d'arrivée, car ce plongement est adapté.  Algébriquement, ceci signifie que
 l'anneau des coordonnées homogènes de \( \var \) est une extension de type
 fini de \( \cdn[
