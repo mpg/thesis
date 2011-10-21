@@ -227,8 +227,7 @@ l:  lem
 p:  prop
 s:  scho
 t:  thm
-
-ct: contrainte (provisoires ?)
+h:  hypo
 
 chap:   chapter
 sec:    section, (sub)*section

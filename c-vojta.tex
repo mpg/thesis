@@ -8,10 +8,59 @@
 Nous établissons ici une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est un hyperplan (ne contenant pas \(
   \va \)) ; nous verrons plus tard que ce cas implique le cas général.
-Le but du chapitre est donc de prouver le théorème suivant, où les notions de
-distances et de hauteurs découlent d'un plongement \( \Theta \colon \va
-  \embedin \projd \) fixé, et \( \divi \) est l'hyperplan défini par \( \vp[0]
-  = 0 \) dans ce plongement.
+Les notions de hauteur et de distance utilisées dépendent d'un plongement
+projectif \( \vaemb \colon \va \embedin \projd \) fixé, sur lequel on fait les
+hypothèses suivantes.
+
+\begin{hypo}
+  \begin{enumthm}
+    \item Il existe une constante réelle \( \htcmp \) telle que
+      \begin{equation} \label{e:comp-h-hn}
+        \abs{ \hautl[2]\point - \hautn\point } \le \htcmp
+        \qquad \forall \point \in \va(\Qbar)
+        \pmm.
+      \end{equation}
+    \item Il existe une famille de réels \( \hmclab* \) presque tous égaux à
+      \( 1 \) (de sorte que \( \hmclab = \prod_\place \hmclab*^{\degv} \) est
+      bien défini), un entier \( \nclmaps \), un ensemble \( \clmaps \) de \(
+        \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
+      suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
+      \) et \( 3 \) comme diviseurs premiers, il existe une famille
+      \( (L\pexp{a, b, \clmap})_{\clmap \in \clmaps} \) de \( (\dimp+1)
+      \)-uplets de formes telles que :
+      \begin{enumerate}
+        \item la famille \( (L\pexp{a, b, \clmap}[\ind])\indrange \) représente
+          le morphisme \( (x, y) \mapsto ax - by \) sur \( \clmap \) ;
+        \item chaque forme \( L\pexp{a, b, \clmap}[\ind] \) est bihomogène de
+          bidegré \( (2a^2, 2b^2) \) ;
+        \item pour tout place \( \place \), toute carte \( \clmap \) et tout
+          indice \( \ind \), on a
+          \( \nv1{ L\pexp{a, b, \clmap}[\ind] } \le \hmclab* \) ;
+        \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
+          \( \place \) il existe une carte \( \clmap_{x, y, \place} \in
+            \clmaps \) telle que
+          \begin{equation}
+            \hmclab*^{-(a^2 + b^2)}
+            \le
+            \frac{
+              \nv1{ L\pexp{ a, b, \clmap_{x, y, \place} }(x, y) }
+            }{
+              \nnv1{ L\pexp{ a, b, \clmap_{x, y, \place} } }
+              \nv1 x ^{2a^2} \nv1 y ^{2b^2}
+            }
+            \le
+            \hmclab*^{a^2 + b^2}
+            \pmm.
+          \end{equation}
+      \end{enumerate}
+      On note de plus \( \hlclab = \ln \hmclab \).
+  \end{enumthm}
+\end{hypo}
+
+Les notations introduites ci-dessus seront valables pour tout le chapitre. Le
+but du chapitre est alors de prouver le théorème suivant, où les notions de
+distances et de hauteurs découlent du plongement fixé, et \( \divi \) est
+l'hyperplan défini par \( \vp[0] = 0 \) dans ce plongement.
 \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
 
 \begin{thm} \label{t:vojta-div}

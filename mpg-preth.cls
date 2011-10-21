@@ -350,6 +350,7 @@
 \newtheorem {coro} [thm] {Corollaire}
 \newtheorem {fact} [thm] {Fait}
 \newtheorem {scho} [thm] {Scolie}
+\newtheorem {hypo} [thm] {Hypothèses}
 
 \theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
@@ -774,7 +775,7 @@
 \newcommand \coa  {\theta}
 \newcommand \coi  {{\mathfrak b}}
 \newcommand \vaht {\Hautl_\va}
-\newcommand \htcmp{\hat{c}_\Theta}
+\newcommand \htcmp{\hat{c}_\vaemb}
 
 \nomdef \coa g {e3}
 \nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les
@@ -921,9 +922,10 @@
 
 % abelian formulas [[2
 %
-\newcommand \hmclab [1][\Theta] {%
+\newcommand \vaemb { \Theta }
+\newcommand \hmclab [1][\vaemb] {%
   \@ifstar{ C\sb{#1, \place} }{ C\sb{#1} }}
-\newcommand \hlclab [1][\Theta] {%
+\newcommand \hlclab [1][\vaemb] {%
   \@ifstar{ c\sb{#1, \place} }{ c\sb{#1} }}
 
 \newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
