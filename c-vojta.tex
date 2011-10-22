@@ -3079,7 +3079,7 @@ a, pour tout \( \place \) :
         \wembclv**(\vmp[\fcti], \vmp[\puiss])
       }
     \right)^\delta
-  }_{\textstyle \ratfv2}
+  }_{\textstyle \ratfv2'}
   \cdot \underbrace{
     \prod\fctirange \left(
       \frac{ \wembcl*[\indiv*](\vmp) }{ \wembcl*[\indig*](\vmp) }
@@ -3111,29 +3111,52 @@ tout \( \place \) :
     }{
       \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     }
-  }_{\textstyle \ratfv1} \null
+  }_{\textstyle \ratfv1'} \null
   ( \cexa )
+  \cdot \ratfv2'(\cexa)
+  \cdot \ratfv3(\cexa)
+  \cdot \ratfv4(\cexa)
+\end{equation}
+On pose enfin
+\begin{equation}
+  \ratfv2 = \ratfv2' \cdot
+  \prod\fctirange \nnv1{ \wembclv* }^\delta
+  \quad\text{et}\quad
+  \ratfv1 = \ratfv1' \cdot
+  \prod\fctirange \nnv1{ \wembclv* }^{-\delta}
+\end{equation}
+de sorte qu'on a
+\begin{equation}
+  \der[\dermp] \ratf(\ex)
+  =
+  \ratfv1(\cexa)
   \cdot \ratfv2(\cexa)
   \cdot \ratfv3(\cexa)
   \cdot \ratfv4(\cexa)
 \end{equation}
 Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
 mais pas leur produit.
-Rappelons qu'on note \( \degv \) le degré local en \(
-  \place \) et posons \( \ratfh{p} = \sum_\place \degv
-  \ln \av{\ratfv{p}(\cexa)} \) ; cette somme converge car \( \ratfv p \)
-parcourt en fait un ensemble fini (en bijection avec l'atlas choisi en
-sous-section~\ref{sec:wemb}) lorsque \( \place \) parcourt l'ensemble des
-places de \( \cdn \).  La formule du produit donne alors
+
+Posons alors \( \ratfh{p} = \sum_\place \degv \ln \av{\ratfv{p}(\cexa)} \) où
+\( \degv \) désigne le degré local en \( \place \) ; cette somme converge car
+\( \ratfv p \) parcourt en fait un ensemble fini (de cardinal majoré par celui
+de l'atlas \( \clmaps^{\puiss-1} \) choisi en sous-section~\ref{sec:wemb})
+lorsque \( \place \) parcourt l'ensemble des places de \( \cdn \). La formule
+du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
 \end{equation}
-Supposons maintenant que \( \wtsum( \dermp ) < \epsi \delta / \sigma \)
-contrairement à la conclusion de la proposition, et montrons qu'on contredit
-alors l'égalité ci-dessus.  Pour cela, on majore séparément chacun des termes,
-en procédant de droite à gauche (par ordre plus ou moins croissant de
-difficulté). Dans ces estimations, nous noterons \( B \) le majorant commun
-des \( \vdeg* \) donné par \eqref{e:varset-deg} afin d'alléger l'écriture.
+Supposons maintenant que,
+contrairement à la conclusion de la proposition, on ait
+\begin{equation} \label{e:extra-dermp}
+  \wtsum( \dermp ) < \epsi \delta / \sigma
+\end{equation}
+et montrons qu'on contredit alors l'égalité ci-dessus. Pour cela, on majore
+séparément chacun des termes, en procédant de droite à gauche (par ordre plus
+ou moins croissant de difficulté) et on obtient une somme négative en
+utilisant l'hypothèse ci-dessus, les hypothèses~\eqref{e:Vbig}
+et~\eqref{e:Vcos} sur \( \ex \), et bien sûr les propriétés de la forme
+auxiliaire.
 
 Pour \( \ratfv4 \) on commence par remarquer que le dénominateur n'intervient
 pas dans le calcul de la hauteur, puis au numérateur que la hauteur d'une
