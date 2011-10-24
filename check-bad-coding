@@ -1,4 +1,7 @@
 #!/bin/sh
 
-echo "===> devrait être \\eqref <==="
-grep '\\ref{e:' *.tex
+/bin/echo '===> devrait être \eqref <==='
+grep -n '\\ref{e:' *.tex
+
+/bin/echo '===> devrait être \ref <==='
+grep -n '\\eqref{[^e]:' *.tex
