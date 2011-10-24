@@ -3245,6 +3245,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   \nv\infty{\cexa*} \le \nv\infty{\vadapt*} \, \nv1{\cex*} \) :
 \begin{align}
   \frac{
+    \nnv1{ \wembclv* }
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
     \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
   }{
@@ -3252,6 +3253,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }
   & \le
   \frac{
+    \nnv1{ \wembclv* }
     \nv\infty{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
     \nv\infty{ \cexa[\puiss] }^{ 2\wts[\puiss] }
   }{
@@ -3260,6 +3262,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   (\dimp+1)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
   \frac{
+    \nnv1{ \wembclv* }
     \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
     \nv1{ \cex[\puiss] }^{ 2\wts[\puiss] }
   }{
@@ -3267,34 +3270,17 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }
   ((\dimp+1) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
-  \frac{
-    \bigl( \hmclab* ((\dimp+1) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
-  }{
-    \nnv1{ \wembclv* }
-  }
+  \bigl( \hmclab* ((\dimp+1) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
 \end{align}
-où la dernière ligne n'est autre que~\eqref{e:clab-loc}
-compte tenu de la définition de \( \wembclv* \) ci-dessus. On note désormais
-\begin{equation} \label{e:c-wembcl}
-  C_\wembcl = \prod_\place \prod\fctirange \nnv1{ \wembclv* }^{\degv}
-  \pmm,
-\end{equation}
-(somme qui converge bien car \( \wembclv \) parcourt en fait un ensemble fini
-quand \( \place \) varie) de sorte qu'en prenant le logarithme dans
-l'estimation précédente, puis en sommant sur \( \place \) et sur \( \fcti \),
-compte tenu du lemme~\ref{l:sum-wts}, on a facilement
+où la dernière ligne est donnée directement par~\eqref{e:clab-loc}
+compte tenu de la définition de \( \wembclv* \) ci-dessus. Il ne reste à alors
+plus qu'à prendre le logarithme dans l'estimation précédente, multiplier par
+\( \delta \) sommer sur \( \place \) et sur \( \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
-  \delta \Bigl(
-    - \ln C_\wembcl
-    + 2 \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
-  \Bigr)
-  \pmm.
+  2 \delta \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
 \end{equation}
-Remarquons avant de continuer que le premier terme, qui semble négatif, va se
-simplifier avec son opposé qui apparaît dans la hauteur du prochain facteur,
-de sorte qu'il ne contribue pas à faire diminuer la hauteur finale et qu'on a
-pas besoin de l'expliciter davantage.
+en utilisant de plus le lemme~\ref{l:sum-wts}.
 
 \medskip
 
