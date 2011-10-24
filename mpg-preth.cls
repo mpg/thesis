@@ -836,7 +836,7 @@
 \newc@star@deftwo@i \gmpiv{\fcti}{\indiv*}{\gmp@{#1}[\place]{#2}{#3}}
 \newc@star@deftwo@i \gmpim{\fcti}{\ind} {\gmp@{#1}[\clmap]{#2}{#3}}
 % generic multiprojective symbol:
-% #1 = factor number, #2 = optional prefix for this, see \gmpiv for \wembclv
+% #1 = factor number, #2 = optional prefix for this, see \gmpiv & \wembclg
 % #3 = coordinate in this factor,
 % #4 = symbol
 \newcommandx*\gmp@ [4][2] {%
@@ -930,9 +930,12 @@
 
 \newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
 \newcommand*\multab [1] { [#1] }
+\newcommand \rmclab [3] { L\pexp{#1, #2, #3}} % représentation de \clab-
 
+\newcommand \clmap [1][] { \gamma\ssub{#1} }
+\newc@star@default \clmapv {\fcti}{\puiss-1} { \clmap[\place \slast{#1}] }
+\newc@star@default \clmape {\fcti}{\puiss-1} { \clmap[\ex \slast{#1}] }
 \newcommand \clmaps { \Gamma }
-\newc@star@default \clmap {\ex}{} { \gamma\ssub{#1} }
 \newcommand \nclmaps { N }
 
 % Vojta-specific math [[1
@@ -1002,11 +1005,10 @@
 \nomdef \wemba g {z3} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées
   associé au plongement éclatant $\wemb$}
 
-\newcommand*\wembcl  {\gmpi  L}
+\newc@star@deftwo@i \wembclg{\fcti}{\ind} {\gmp@{L}[{#1}]{#2}{#3}}
 \newcommand*\wembclv {\gmpiv L}
 \newcommand*\wembclm {\gmpim L}
-\nomdef \wembcl a {L} \@gobbletwo{\wembcl}{Formules de combinaisons linéaires
-  utilisées dans \( \wemb \)}
+\newcommand*\wembclp [2] {\rmclab{\wt[#2]}{\wt**}{#1[#2]}} % pas d'espace
 
 \newcommand \idealim { \ideala{\wemb(\var)} }
 

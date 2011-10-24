@@ -26,16 +26,16 @@ hypothèses suivantes.
         \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
       suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
       \) et \( 3 \) comme diviseurs premiers, il existe une famille
-      \( (L\pexp{a, b, \clmap})_{\clmap \in \clmaps} \) de \( (\dimp+1)
-      \)-uplets de formes telles que :
+      \( (\rmclab{a}{b}{\clmap})_{\clmap \in \clmaps} \) de \( (\dimp+1)
+      \)-uplets de formes telle que :
       \begin{enumerate}
-        \item la famille \( (L\pexp{a, b, \clmap}[\ind])\indrange \) représente
+        \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
           le morphisme \( (x, y) \mapsto ax - by \) sur \( \clmap \) ;
-        \item chaque forme \( L\pexp{a, b, \clmap}[\ind] \) est bihomogène de
+        \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
           bidegré \( (2a^2, 2b^2) \) ;
         \item pour tout place \( \place \), toute carte \( \clmap \) et tout
           indice \( \ind \), on a
-          \( \nv1{ L\pexp{a, b, \clmap}[\ind] } \le \hmclab* \) ;
+          \( \nv1{ \rmclab{a}{b}{\clmap}[\ind] } \le \hmclab* \) ;
         \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
           \( \place \) il existe une carte \( \clmap_{a, b, x, y, \place} \in
             \clmaps \) telle que
@@ -43,9 +43,9 @@ hypothèses suivantes.
             \hmclab*^{-(a^2 + b^2)}
             \le
             \frac{
-              \nv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} }(x, y) }
+              \nv1{ \rmclab{a}{b}{ \clmap_{a, b, x, y, \place} }(x, y) }
             }{
-              \nnv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} } }
+              \nnv1{ \rmclab{a}{b}{ \clmap_{a, b, x, y, \place} } }
               \nv1 x ^{2a^2} \nv1 y ^{2b^2}
             }
             \le
@@ -1258,18 +1258,19 @@ abus est justifié par la remarque précédente.  On introduit alors pour chaque
 \( \fcti \) la forme
 \begin{equation} \label{e:def-wembclm}
   \wembclm*
-  = L\pexp{\wti*, \wti**, \clmap_\fcti}
+  =
+  \wembclp{\clmap}{\fcti}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
-où \( L\pexp{\wti*, \wti**, \clmap_\fcti} \) est donnée par les
-hypothèses~\ref{h:vaemb}, de sorte que chacune des applications
+où \( \wembclp{\clmap}{\fcti} \) est donnée par les
+hypothèses~\ref{h:vaemb}, de sorte que chaque application
 \begin{align} \label{e:def-wemba}
      \wemba* \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
   \\ \vmp*
   &  \mapsto \vmp*
   \\ \vmpi*
-  &  \mapsto \wembcl*_{\clmap_\fcti}
+  &  \mapsto \wembclm*
 \end{align}
 est une représentation locale de \( \wemb \) dans les plongements considérés,
 valable sur l'ouvert \( \clmap \).
@@ -1392,13 +1393,13 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \nv1 {c_{p, q}}
     & \le
     \prod\fctirange \prod\indrange
-    \nv1{ \wembcl** \bigl(
+    \nv1{ \wembclp{\clmap}{\fcti} \bigl(
         \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss])
       \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \prod\indrange \left(
-      \nv1{ \wembcl** } \,
+      \nv1{ \wembclp{\clmap}{\fcti} } \,
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
       \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^{q\pexp\fcti[\ind]}
@@ -2121,13 +2122,13 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
         \Bigr) + o(\delta)
       \) ; \label{i:aux-co-ht}
   \end{enumthm}
-  De plus, si \( (\clmap_\place)_\place \) est une famille de carte indexée
+  De plus, si \( (\clmapv)_\place \) est une famille de carte indexée
   par les places de \( \cdn \), on a
   \begin{equation}
     \frac{
-      \nv1{ \faux[\clmap_\place] }
+      \nv1{ \faux[\clmapv] }
     }{
-      \prod\fctirange \nnv1{ \wembcl[\clmap_\place, \fcti] }^\delta
+      \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
     }
     \le
     \cdots
@@ -2878,7 +2879,7 @@ désormais à l'indice pondéré par \( \wtw \wts = (\wts[1], \dots,
 \medskip
 
 On choisit dans l'atlas \( \clmaps^{\puiss-1} \) présenté en
-sous-section~\ref{sec:wemb} une carte \( \clmap_\ex \) contenant \( \ex \), et
+sous-section~\ref{sec:wemb} une carte \( \clmape \) contenant \( \ex \), et
 on considère la forme multihomogène \( \faux** \) donnée par le
 scolie~\ref{s:aux-co}. Le but de cette section est alors de montrer la
 proposition suivante.
@@ -2980,11 +2981,10 @@ représente à peu de chose près la norme de \( \cexa* \).
 \end{proof}
 
 On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
-  \wemb(\ex) = (\ex, \exi) \) et on note \( \cexi* = \wembcl[\clmap_\ex,
-  \fcti]
-  (\cexa[\fcti], \cexa[\puiss]) \) un système de coordonnées multihomogènes de
-\( \exi \) dans le plongement \( \vaemb^{\puiss-1} \). (Ci-dessous on notera
-\( \wembcl* = \wembcl*_{\clmap_\ex} \) pour alléger.)
+  \wemb(\ex) = (\ex, \exi) \) et on note
+\( \cexi* = \wembclg\clmape* (\cexa[\fcti], \cexa[\puiss]) \),
+qui est un système de coordonnées multihomogènes de
+\( \exi \) dans le plongement \( \vaemb^{\puiss-1} \).
 On choisit alors pour tout \(
   \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
   \av{ \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
@@ -3003,23 +3003,26 @@ Introduisons maintenant une fonction rationnelle définie par
     (\vmp*[\vdim*])^{\epsz \wts* \delta, + r_\fct}
     \,
     \prod\fctirange
-    \wembcl*[\indig*](\vmp) ^{ \delta }
+    \wembclg\clmape*[\indig*](\vmp) ^{ \delta }
   }
   \pmm.
 \end{equation}
 D'après le scolie~\ref{s:part-cases}, on a \( \cexa*[\vdim*] \neq 0 \) ; par
-ailleurs le choix de \( \indig* \) assure que \( \wembcl*[\indig*]( \cexa )
-  \neq 0 \), de sorte que le dénominateur ne s'annule pas en \( \cexa \) et
+ailleurs le choix de \( \indig* \) assure que
+\( \wembclg\clmape*[\indig*]( \cexa ) \neq 0 \), de sorte que le
+dénominateur ne s'annule pas en \( \cexa \) et
 que par définition on a \( \inda** \faux** = \inda** \ratf \).
 Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
-Pour tout place \( \place \) on note désormais \( \wembclv* =
-  \wembcl[\clmap_{\wts*, \wts**, \ex*, \ex**, \place}, \fcti] \) où \(
-  \wembclm* \)
-est défini par~\eqref{e:def-wembclm} et \( \clmap_{\wts*, \wts**, \ex*, \ex**,
-    \place} \) donné par les hypothèses~\ref{h:vaemb}. De même, on note \(
-  \fauxv = \faux[\clmap_{\wts*, \wts**, \ex*, \ex**, \place}] \).
+Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
+\( \clmapv* = \clmap_{\wts[\fcti], \wts**, \ex[\fcti], \ex**, \place} \) la
+carte donnée par les hypothèses~\ref{h:vaemb} et \( \clmapv = (\clmapv[1],
+  \dots, \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).
+On note alors \( \wembclv* = \wembclg\clmapv* \) où l'on rappelle que
+\( \wembclm* \) est défini par~\eqref{e:def-wembclm}.  De même, on pose \(
+  \fauxv = \faux[\clmapv] \).
+
 En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant que,
 pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux quand \( \place \) varie, on
@@ -3037,8 +3040,8 @@ a, pour tout \( \place \) :
     \prod\fctirange
     \wembclv*[\indig](\vmp) ^{ \delta }
   }
-  \intertext{par homogénéité de \( \faux \). On introduit alors nos indices locaux
-    \( \indv \) et \( \indiv \) :}
+  \intertext{par homogénéité de \( \faux \). On introduit alors nos indices
+    locaux \( \indv \) et \( \indiv \) :}
    & =
   \frac{
     R(\vmp) \,
@@ -3081,7 +3084,9 @@ a, pour tout \( \place \) :
   }_{\textstyle \ratfv2'}
   \cdot \underbrace{
     \prod\fctirange \left(
-      \frac{ \wembcl*[\indiv*](\vmp) }{ \wembcl*[\indig*](\vmp) }
+      \frac{
+        \wembclg\clmape*[\indiv*](\vmp) }{
+        \wembclg\clmape*[\indig*](\vmp) }
     \right) ^{ \delta }
   }_{\textstyle \ratfv3}
   \cdot \underbrace{
@@ -3119,10 +3124,10 @@ tout \( \place \) :
 On pose enfin
 \begin{equation}
   \ratfv2 = \ratfv2' \cdot
-  \prod\fctirange \nnv1{ \wembclv* }^\delta
+  \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^\delta
   \quad\text{et}\quad
   \ratfv1 = \ratfv1' \cdot
-  \prod\fctirange \nnv1{ \wembclv* }^{-\delta}
+  \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
 \end{equation}
 de sorte qu'on a
 \begin{equation}
@@ -3216,8 +3221,8 @@ Pour \( \ratfh3 \) on commence avec les mêmes arguments pour écrire
   \prod\fctirange
   \left(
     \frac{
-      \av{\wembcl*[\indiv*](\cexa[\fcti], \cexa[\puiss])} }{
-      \av{\wembcl*[\indig*](\cexa[\fcti], \cexa[\puiss])} }
+      \av{\wembclg\clmape*[\indiv*](\cexa[\fcti], \cexa[\puiss])} }{
+      \av{\wembclg\clmape*[\indig*](\cexa[\fcti], \cexa[\puiss])} }
   \right) ^{ \delta \degv }
   \le
   \prod\fctirange
@@ -3244,7 +3249,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   \nv\infty{\cexa*} \le \nv\infty{\vadapt*} \, \nv1{\cex*} \) :
 \begin{align}
   \frac{
-    \nnv1{ \wembclv* }
+    \nnv1{ \wembclp\clmapv\fcti }
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
     \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
   }{
@@ -3252,7 +3257,7 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }
   & \le
   \frac{
-    \nnv1{ \wembclv* }
+    \nnv1{ \wembclp\clmapv\fcti }
     \nv\infty{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
     \nv\infty{ \cexa[\puiss] }^{ 2\wts[\puiss] }
   }{
@@ -3261,18 +3266,18 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   (\dimp+1)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
   \frac{
-    \nnv1{ \wembclv* }
+    \nnv1{ \wembclp\clmapv\fcti }
     \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
     \nv1{ \cex[\puiss] }^{ 2\wts[\puiss] }
   }{
-    \nv1{ \wembclv*(\cexa[\fcti], \cexa[\puiss]) }
+    \nv1{ \wembclp\clmapv\fcti(\cex[\fcti], \cex[\puiss]) }
   }
   ((\dimp+1) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
   \\ & \le
   \bigl( \hmclab* ((\dimp+1) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
 \end{align}
 où la dernière ligne est donnée directement par~\eqref{e:clab-loc}
-compte tenu de la définition de \( \wembclv* \) ci-dessus. Il ne reste à alors
+compte tenu de la définition de \( \clmapv \) ci-dessus. Il ne reste à alors
 plus qu'à prendre le logarithme dans l'estimation précédente, multiplier par
 \( \delta \) sommer sur \( \place \) et sur \( \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
@@ -3285,7 +3290,7 @@ en utilisant de plus le lemme~\ref{l:sum-wts}.
 
 Nous allons maintenant expliciter \( \ratfv1 \) : pour chaque place \( \place
 \), on applique le lemme~\ref{l:par-var} avec \( G = \fauxv \cdot
-  \prod\fctirange \nnv1{ \wembclv* }^{-\delta}
+  \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
 \) et \( \ind =
   \indv \), et on note \( P_\place = P_{\fauxv, \indv, \dv}^\derp \) la forme
 obtenue pour l'indice \( \derp \) fixé plus haut (plus précisément, celle des deux formes
@@ -3305,7 +3310,7 @@ propriétés suivantes.
           \fauxv(\vmp)
         }{
           \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-          \prod\fctirange \nnv1{ \wembclv* }^{\delta}
+          \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{\delta}
         }
         =
         \frac{ P_\place(\vmp) }{
@@ -3671,7 +3676,7 @@ point du scolie~\ref{s:aux-co}, il vient
   \Bigr)
   + \vdim* (\Dir*) \ln 2
   \\ & \le
-  \hautl[1] \faux + \delta C_\wembcl
+  \hautl[1] \faux + \delta C_L
   + \sum\fctrange
   2 \dimp \frac{\epsi \delta}{\sigma} \wts* (\puiss-1)^{\delta^\fct_\puiss}
   \Bigl(
@@ -3695,7 +3700,7 @@ l'hypothèse~\eqref{e:varset-ht} et par ailleurs le lemme~\ref{l:sum-wts} pour
     5\puiss \cst{vs-ht}
     + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
   \bigr)
-  + C_\wembcl
+  + C_L
   + 2 \dimp \frac{\epsi}{\sigma} \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
   + 2 \wts[1] \dimp B^2
   \\ & \le \label{e:apx-1a-ht}
@@ -3703,7 +3708,7 @@ l'hypothèse~\eqref{e:varset-ht} et par ailleurs le lemme~\ref{l:sum-wts} pour
     (5\puiss + 2\dimp \epsi / \sigma) \cst{vs-ht}
     + 2 (2\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
   \bigr)
-  + C_\wembcl
+  + C_L
   \pmm.
 \end{align}
 Il ne reste alors plus qu'à substituer~\eqref{e:apx-1a-ht}
@@ -3723,7 +3728,7 @@ et~\eqref{e:apx-1a-sum} dans~\eqref{e:apx-1a-split} pour obtenir
       + 2\dimp^2 \cst{vs-deg-prod}^{-2}
     \bigr)
   \Bigr)
-  + C_\wembcl
+  + C_L
   \\ & \le \label{e:ratfh1a}
   \wts[1] \Bigl(
     - \frac38 \hautn{\ex[1]} \expapx \epsi
@@ -3733,7 +3738,7 @@ et~\eqref{e:apx-1a-sum} dans~\eqref{e:apx-1a-split} pour obtenir
       + 3\dimp^2 \cst{vs-deg-prod}^{-2}
     \bigr)
   \Bigr)
-  + C_\wembcl
+  + C_N
 \end{align}
 
 En substituant cette dernière estimation ainsi que \eqref{e:ratfh4},
