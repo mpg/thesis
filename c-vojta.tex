@@ -3378,23 +3378,23 @@ des propriétés suivantes.
         3 \delta \wtw* \wts*
       \) ; \label{i:deg-p-der}
     \item \(
-        \nv1{ P_\place }
+        \hautl[1]{ (P_\place)_\place }
         \le
-        \nv1{ \fauxv }
-        \prod\fctrange
-        \nv1{ \varfca* }^{2 (\dimp - \vdim*) \lgr{\dermp*}}
-        \left(
-          \bigl( 4^{\vdeg*+1} \vdim* \vdeg*^{3} \bigr) ^{
-            (\dimp - \vdim*) \lgr{\dermp*} }
-          \cdot 2^{ \vdim* (\Dir*) }
-        \right)^\dv
+        15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    + o(\delta)
       \) ; \label{i:norm-p-der}
     \item \(
         \inda* \bigl( P_\place \bigr)
         \ge
         \frac34 \epsi \delta
-      \). \label{i:ind-p-der}
+      \) ; \label{i:ind-p-der}
   \end{enumthm}
+  où l'on a noté
+  \(
+    \hautl[1]{ (P_\place)_\place }
+    =
+    \sum_\place \degv \ln \nv1{ P_\place }
+  \).
 \end{lem}
 
 \begin{proof}
@@ -3419,7 +3419,7 @@ des propriétés suivantes.
     \frac34 \epsi \delta
   \end{equation}
   en utilisant la minoration large mais suffisante \( \sigma > 4 \). D'autre
-  part, cette hypoithèse implique que pour tout \( \fct \) on a
+  part, cette hypothèse implique que pour tout \( \fct \) on a
   \begin{equation}
     \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma
     \pmm.
@@ -3441,8 +3441,8 @@ des propriétés suivantes.
   largement \( \epsz + \epsi \le 1 \).
 
   Pour la hauteur, dans le point correspondant du lemme, on prend le
-  logarithme puis la somme pondérée par les degrés locaux sur toutes les
-  places :
+  logarithme puis la somme (pondérée par les degrés locaux divisés) sur toutes
+  les places :
   \begin{align}
     \hautl[1]{ (P_\place)_\place }
     & \le
@@ -3455,18 +3455,20 @@ des propriétés suivantes.
     \bigr)
   \\ & \le
     \hautl[1]{ (G_\place)_\place }
-    + 2 \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* }
+    + 2 \bigl( \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* } \bigr)
+    + \delta \genre \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
+    + o(\delta)
     \\ & \qquad
-    + \sum\fctrange
-      \lgr{\dermp*} \bigl(
-        \genre B ( \ln B + \ln( \dimp + 1 ) )
-        + \ln(32\genre) + 3 \ln B
-      \bigr)
-      + \genre (\Dir*) \ln 2
+    + \bigl(
+      \genre B ( \ln B + \ln( \dimp + 1 ) )
+      + \ln(32\genre) + 3 \ln B
+    \bigr)
+    \sum\fctrange \lgr{\dermp*}
   \end{align}
-  où l'on a utilisé~\eqref{e:nv-varfca}. Nous allons maintenant majorer
-  indépendamment chacun des termes de cette somme. Le premier est donné
-  par~\eqref{e:aux-co-htv}. Pour le deuxième, on écrit
+  où l'on a utilisé~\eqref{e:nv-varfca} et la définition de \( d' \). Nous
+  allons maintenant majorer indépendamment chacun des termes de cette somme.
+  Le premier est donné par~\eqref{e:aux-co-htv} ; nous verrons que c'est le
+  terme dominant. Pour le deuxième, on a
   \begin{equation}
     \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* }
     \le
@@ -3476,10 +3478,41 @@ des propriétés suivantes.
     \delta \wts[1] \epsi \sigma^{-1}
     \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \end{equation}
-  en utilisant la remarque précédente que \( \dermp \) puis
+  en utilisant la remarque précédente sur \( \dermp \) puis
   l'hypothèse~\eqref{e:varset-ht}.
 
-  Enfin, pour le dernier terme\dots
+  On écrit ensuite
+  \begin{equation}
+    \genre \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
+    \le
+    3 \genre \ln 2 \sum\fctrange \wts* \wtw*
+    \le
+    6 \genre \ln 2 \wts[1]
+    \le
+    \frac14 \Lambda \wts[1]
+  \end{equation}
+  en utilisant successivement le fait que \( \epsz < 1 \) puis le
+  lemme~\ref{l:sum-wts} et enfin la définition~\eqref{e:def-Lambda} de \(
+    \Lambda \) (deuxième argument du maximum et \( \puiss \ge \genre \)).
+  Enfin, on remarque que
+  \begin{equation}
+    \sum\fctrange \lgr{\dermp*}
+    \le
+    \delta \epsi \sigma^{-1} \sum\fctrange \wtw* \wts*
+    \le
+    2 \delta \wts[1] \epsi \sigma^{-1}
+  \end{equation}
+  en utilisant la remarque précédente sur \( \dermp \) et à nouveau le
+  lemme~\ref{l:sum-wts}. On invoque alors~\eqref{e:ht-Pv-adhoc} pour majorer
+  le dernier terme par
+  \begin{equation}
+    2 \delta \wts[1] \epsi \sigma^{-1}
+    \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \pmm.
+  \end{equation}
+  Il ne reste plus qu'à prendre la somme, en utilisant le fait que \( \epsi
+    \sigma^{-1} \le 4 \) (majoration très large mais suffisante) pour aboutir
+  à l'estimation annoncée.
 \end{proof}
 
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
@@ -4609,6 +4642,14 @@ Par ailleurs
   \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
 \end{equation}
 qui aboutit largement à l'estimation annoncée.
+
+On a également besoin de\todo[le prouver]
+\begin{equation} \label{e:ht-Pv-adhoc}
+  \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
+  \le
+  \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{equation}
 
 
 
