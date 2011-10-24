@@ -1489,17 +1489,17 @@ l'indice est infini.
 Au début de cette section, nous avons dit vouloir construire une forme sur \(
   \var \) provenant d'une forme sur \( \wemb(\var) \) ; plus précisément nous
 allons construire une forme \( \faux \) sur \( \wemb(\var) \) et la tirer
-localement en arrière sur \( \var \) en une famille de formes \( \faux'_\clmap \)
-grâce aux différents morphismes \( \wemba* \) introduits à la
-sous-section~\ref{sec:wemb}.
+localement en arrière sur \( \var \) en une famille de formes \(
+  \faux''_\clmap \) grâce aux différents morphismes \( \wemba* \) introduits à
+la sous-section~\ref{sec:wemb}.
 
-Revenons maintenant aux \( \faux'_\clmap \) : on ne peut brutalement exiger que
-leur indice, tel que défini précédemment, soit élevé, car le nombre de
+Revenons maintenant aux \( \faux''_\clmap \) : on ne peut brutalement exiger
+que leur indice, tel que défini précédemment, soit élevé, car le nombre de
 conditions serait trop élevé (géométriquement, il s'agirait d'exiger une
 annulation le long de \( \divi \) dans \( \projd \) alors que les degrés de
 libertés sont donnés par \( \var \) qui est de dimension plus petite). Nous
 allons donc utiliser le morphisme \( \rfull \) introduit à la
-sous-section~\ref{sec:rfull} et exiger que \( \faux* = \rfull(\faux'_\clmap)
+sous-section~\ref{sec:rfull} et exiger que \( \faux* = \rfull(\faux''_\clmap)
 \) ait un indice élevé, ce qui est loisible car le nombre de d'équations
 définissant un indicé élevé dans \( \cdn[\vmp]^{C'''} \) est convenable (le
 nombre de variables libre dans cet espace correspondant à la dimension de \(
@@ -1932,14 +1932,18 @@ majorée par tout majorant commun des normes des matrices des applications
 \( \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba* \).
 
 D'après la définition~\eqref{e:def-pi-beta} de \( \pi_{\epsi\delta} \) il est
-clair que cette application ne peut que faire décroître la norme. Par
-ailleurs, on se souvient que, si \( M_1 \) et \( M_2 \) sont deux matrices, la
-hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
+clair que cette application ne peut que faire décroître la norme. On pose
+alors \( \sigma'_\clmap = \rfull^{\Di} \circ \wemba* \) ; il
+s'agit maintenant de majorer \( \hautl[\infty]{ M_{\sigma'_\clmap} } \)
+indépendamment de \( \clmap \).
+
+On utilise le fait élémentaire suivant : si \( M_1 \) et \( M_2 \) sont deux
+matrices, la hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
   \hautl[\infty]{M_1} + \max(\hautl[1]{c}) \) où \( c \) parcourt les colonnes
-de \( M_2 \). Il ne reste plus qu'à combiner les estimations des
+de \( M_2 \). Il suffit alors de combiner les estimations des
 lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
 \begin{align}
-  \hautl[\infty]{M_\sigma}
+  \hautl[\infty]{ M_{\sigma'_\place} }
   & \le
   2 \delta \wts[1]
   \bigl(
@@ -1959,7 +1963,7 @@ que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
 élémentaire que \( \alpha + \beta \le \alpha\beta \) dès que \( \alpha \ge 2
 \) et \( \beta \ge 2 \) pour écrire
 \begin{align}
-  \hautl[\infty]{M_\sigma}
+  \hautl[\infty]{ M_{\sigma'_\place} }
   & \le
   4 \delta \wts[1] \hlclab
   \Bigl(
@@ -1974,8 +1978,17 @@ que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
 Enfin, on majore \( \hlclab \) par \( \cst{vs-ht} \) par
 définition~\eqref{e:cst-vs-ht} et on utilise alors~\eqref{e:B-siegel} pour
 conclure :
+\begin{equation} \label{e:hmat-sigma-p}
+  \hautl[\infty]{ M_{\sigma'_\place} }
+  \le
+  \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + o(\delta)
+  \pmm.
+\end{equation}
+Compte tenu des remarque précédentes, on a donc aussi
 \begin{equation} \label{e:hmat-sigma}
-  \hautl[\infty]{M_\sigma}
+  \hautl[\infty]{ M_{\sigma'_\place} }
   \le
   \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
@@ -1985,8 +1998,9 @@ conclure :
 Remarquons que l'on pourrait invoquer l'hypothèse~\eqref{e:varset-ht} pour
 simplifier cette dernière expression, mais il nous paraît plus utile de
 conserver la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \)
-explicite aussi longtemps que possible (jusqu'à obtenir~\eqref{e:vs-ht-rec} en
-fait) ; voir néanmoins~\eqref{e:ht-faux-s} pour une telle simplification.
+explicite jusqu'à obtenir la relation de récurrence~\eqref{e:vs-ht-rec} ; voir
+néanmoins le quatrième point du scolie~\ref{s:aux-co} pour une simplification
+de cet ordre.
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -2084,18 +2098,10 @@ hauteur utilisée, comme le montre le scolie suivant.
   négligeable devant ce dernier.
 \end{proof}
 
-En appliquant ce scolie et l'hypothèse~\eqref{e:varset-ht} on a immédiatement
-l'estimation
-\begin{equation} \label{e:ht-faux-s}
-  \hautl[1]{ \faux }
-  \le
-  7 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + o(\delta)
-  \pmm.
-\end{equation}
-
-En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
-  \wemba*(\faux) \), résumons donc ici leurs principales propriétés.
+Par la suite, nous travaillerons presqu'exclusivement avec les formes \(
+  \faux* = \rfull \circ \wemba*(\faux) \), la forme \( F \) ne servant qu'à
+assurer un lien global entre elles. Le scolie suivant résume toutes les
+propriétés de ces formes dont nous aurons besoin.
 
 \begin{scho} \label{s:aux-co}
   Pour toute carte \( \clmap \in \clmaps^{\puiss-1} \), la forme \( \faux* \)
@@ -2104,25 +2110,16 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
     \item \( \faux* = R \cdot \faux(\vmp, \wembclm(\vmp)) \mod \varida
       \) ;
     \item \( \inda* \faux* \ge \epsi \delta \) ;
-    \item \( \deg \faux* = \Dir \) avec
-      \(
-        d' = \bigl(
-          \wts[1] (2 + \epsz),
-          \dots,
-          \wts[\puiss-1] (2 + \epsz),
-          \wts[\puiss] (2\puiss - 2 + \epsz)
-        \bigr)
-      \) ;
+    \item \( \deg \faux* = \delta d' + o(\delta) \) avec
+      \( d'_\fct = \wts* (2 \wtw* + \epsz) \) pour tout \( \fct \) ;
     \item \(
         \hautl[1]{\faux*}
         \le
-        6 \delta \Bigl(
-          \wts[1] \bigl( \cst{vs-ht} + 4 \dimp B^2 \bigr)
-          + \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*}
-        \Bigr) + o(\delta)
+        14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+        + o(\delta)
       \) ; \label{i:aux-co-ht}
   \end{enumthm}
-  De plus, si \( (\clmapv)_\place \) est une famille de carte indexée
+  De plus, si \( (\clmapv)_\place \) est une famille de cartes indexée
   par les places de \( \cdn \), on a
   \begin{equation}
     \frac{
@@ -2137,14 +2134,29 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
 
 \begin{proof}
   Les trois premiers points ne font que résumer la construction. Plus
-  précisément, le premier découle de la définition de \( \faux*
-  \), du lemme~\ref{l:rfull} et de la définition~\eqref{e:def-wemba} de \(
-    \wemba* \) ; le deuxième est imposé par la construction et le troisième
-  découle du lemme~\ref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
+  précisément, le premier découle de la définition de \( \faux* \), du
+  lemme~\ref{l:rfull} et de la définition~\eqref{e:def-wemba} de \( \wemba* \)
+  ; le deuxième est imposé par la construction et le troisième découle du
+  lemme~\ref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
   \( d \) et \( d' \).
 
-  Pour le quatrième point, on utilise le lemme~\ref{l:rfull} ainsi que des
-  propriétés classiques de la norme.
+  Pour le quatrième point, on remarque que
+  \( \faux* = \sigma'_\clmap( \faux ) \)
+  dans les notations de la sous-section~\ref{sec:siegel-ht} de sorte qu'on a
+  \begin{align}
+    \hautl[\infty]{ \faux* }
+    \le
+    \hautl[\infty]{ M_{\sigma'_\clmap} }
+    + \hautl[1]{ \faux }
+    \le
+    2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+    + o(\delta)
+  \end{align}
+  en utilisant le résultat de la proposition précédente
+  et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie précédent montre
+  que \( \hautl[1]{ \faux* } \) est en fait majoré par la même quantité. Il ne
+  reste qu'à appliquer l'hypothèse~\eqref{e:varset-ht} pour conclure.
 \end{proof}
 
 
