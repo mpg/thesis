@@ -515,7 +515,7 @@ théorème~\ref{t:vojta-div}.
   en remarquant que \( 2\dimp \le \Lambda \) pour intégrer le deuxième terme
   de la deuxième ligne dans celui en \( \cst{vs-ht} \).
 
-  Nous pouvons maintenant substituter cette estimation dans la somme pondérée
+  Nous pouvons maintenant substituer cette estimation dans la somme pondérée
   des hauteurs :
   \begin{align}
     \sum_{\fcti=1}^\puiss
@@ -1986,7 +1986,7 @@ conclure :
   + o(\delta)
   \pmm.
 \end{equation}
-Compte tenu des remarque précédentes, on a donc aussi
+Compte tenu des remarques précédentes, on a donc aussi
 \begin{equation} \label{e:hmat-sigma}
   \hautl[\infty]{ M_{\sigma'_\place} }
   \le
@@ -1996,11 +1996,8 @@ Compte tenu des remarque précédentes, on a donc aussi
   \pmm.
 \end{equation}
 Remarquons que l'on pourrait invoquer l'hypothèse~\eqref{e:varset-ht} pour
-simplifier cette dernière expression, mais il nous paraît plus utile de
-conserver la dépendance en \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \)
-explicite jusqu'à obtenir la relation de récurrence~\eqref{e:vs-ht-rec} ; voir
-néanmoins le quatrième point du scolie~\ref{s:aux-co} pour une simplification
-de cet ordre.
+simplifier cette dernière expression ; voire à ce sujet la remarque suivant le
+scolie~\ref{s:aux-co}.
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -2115,20 +2112,25 @@ propriétés de ces formes dont nous aurons besoin.
     \item \(
         \hautl[1]{\faux*}
         \le
-        14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+        2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+        + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
         + o(\delta)
       \) ; \label{i:aux-co-ht}
   \end{enumthm}
   De plus, si \( (\clmapv)_\place \) est une famille de cartes indexée
   par les places de \( \cdn \), on a
   \begin{equation}
-    \frac{
-      \nv1{ \faux[\clmapv] }
-    }{
-      \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
-    }
+    \sum_\place \degv \ln \Biggl(
+      \frac{
+        \nv1{ \faux[\clmapv] }
+      }{
+        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
+      }
+    \Biggr)
     \le
-    \cdots
+    14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    + o(\delta)
+    \pmm.
   \end{equation}
 \end{scho}
 
@@ -2155,9 +2157,55 @@ propriétés de ces formes dont nous aurons besoin.
   \end{align}
   en utilisant le résultat de la proposition précédente
   et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie précédent montre
-  que \( \hautl[1]{ \faux* } \) est en fait majoré par la même quantité. Il ne
-  reste qu'à appliquer l'hypothèse~\eqref{e:varset-ht} pour conclure.
+  que \( \hautl[1]{ \faux* } \) est en fait majoré par la même quantité.
+
+  Enfin, en reprenant la démonstration du lemme~\ref{l:hmat-wemba} on voit
+  facilement que
+  \begin{equation}
+    \prod_\place \Biggl(
+      \frac{
+        \nv1{ \wemba[\clmapv](\faux) }
+      }{
+        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
+      }
+    \Biggr)^\degv
+    \le
+    \hautm[1]{ \faux }
+    \cdot \bigl( (\dimp+1)! \, B^{\dimp} \bigr) ^{4 \delta \wts[1]}
+    \pmm.
+  \end{equation}
+  On procède ensuite comme à la sous-section~\ref{sec:siegel-ht} (sauf qu'on
+  pourrait en fait avoir un terme  \( \hlclab \) en moins, raffinement qui n'a
+  pas d'intérêt en pratique) pour obtenir la même estimation qu'au point
+  précédent :
+  \begin{equation}
+    \sum_\place \degv \ln \Biggl(
+      \frac{
+        \nv1{ \faux[\clmapv] }
+      }{
+        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
+      }
+    \Biggr)
+    \le
+    2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+    + o(\delta)
+    \pmm.
+  \end{equation}
+  Il ne reste qu'à appliquer l'hypothèse~\eqref{e:varset-ht} pour conclure.
 \end{proof}
+
+Remarquons qu'on a utilisé l'hypothèse~\eqref{e:varset-ht} pour simplifier la
+dernière estimation contrairement à celle du quatrième point. En effet, cette
+l'estimation de \( \hautl[1]{ \faux* } \) contribuera directement, en
+section~\ref{sec:thm-prod}, à l'estimation de hauteur de la forme obstructrice
+que nous cherchons à construire (proposition~\ref{p:varset-notmin}) et il est
+donc intéressant de conserver la dépendance en \( \sum\fctrange \wtw* \wts*
+  \hautl[1]{\varfc*} \) explicite jusqu'à obtenir la relation de
+récurrence~\eqref{e:vs-ht-rec}.  L'autre estimation en revanche, ne sera
+utilisée que dans la section suivante pour assurer que les termes ne dépendant
+pas de \( \hautn{ \ex[1] } \) sont assez petits pour être couverts par cette
+dernière quantité, compte tenu de l'hypothèse~\eqref{e:Vbig}.
 
 
 
