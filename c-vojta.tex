@@ -778,7 +778,7 @@ transposée de \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
 variables ; il est alors clair que
 \begin{equation} \label{e:nv-varfca}
   \nv1{\varfca*} \le \nv1{\varfc*}
-  \cdot \bigl( (\dimp+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1)}
+  \cdot \bigl( (\dimp+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1) \dv}
 \end{equation}
 
 Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
@@ -2107,19 +2107,20 @@ propriétés de ces formes dont nous aurons besoin.
     \item \( \faux* = R \cdot \faux(\vmp, \wembclm(\vmp)) \mod \varida
       \) ;
     \item \( \inda* \faux* \ge \epsi \delta \) ;
-    \item \( \deg \faux* = \delta d' + o(\delta) \) avec
-      \( d'_\fct = \wts* (2 \wtw* + \epsz) \) pour tout \( \fct \) ;
+    \item \( \deg \faux* = \delta d' + r \) avec
+      \( d'_\fct = \wts* (2 \wtw* + \epsz) \) pour tout \( \fct \), et \( r \)
+      indépendant de \( \delta \) ;
     \item \(
         \hautl[1]{\faux*}
         \le
         2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
         + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
         + o(\delta)
-      \) ; \label{i:aux-co-ht}
+      \) ;
   \end{enumthm}
   De plus, si \( (\clmapv)_\place \) est une famille de cartes indexée
   par les places de \( \cdn \), on a
-  \begin{equation}
+  \begin{equation} \label{e:aux-co-htv}
     \sum_\place \degv \ln \Biggl(
       \frac{
         \nv1{ \faux[\clmapv] }
@@ -3182,7 +3183,7 @@ tout \( \place \) :
   \cdot \ratfv4(\cexa)
 \end{equation}
 On pose enfin
-\begin{equation}
+\begin{equation} \label{e:def-ratfv12}
   \ratfv2 = \ratfv2' \cdot
   \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^\delta
   \quad\text{et}\quad
@@ -3348,30 +3349,23 @@ en utilisant de plus le lemme~\ref{l:sum-wts}.
 
 \medskip
 
-Nous allons maintenant expliciter \( \ratfv1 \) : pour chaque place \( \place
-\), on applique le lemme~\ref{l:par-var} avec \( G = \fauxv \cdot
+Nous allons maintenant expliciter \( \ratfv1 \). Posons d'acord
+\( G_\place = \fauxv \cdot
   \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
-\) et \( \ind =
-  \indv \), et on note \( P_\place = P_{\fauxv, \indv, \dv}^\derp \) la forme
-obtenue pour l'indice \( \derp \) fixé plus haut (plus précisément, celle des deux formes
+\) ; pour chaque place \( \place \), on applique alors le
+lemme~\ref{l:par-var} avec \( G = G_\place \) et \( \ind = \indv \), et on
+note \( P_\place = P_{G_\place, \indv, \dv}^\derp \) la forme obtenue pour
+l'indice \( \derp \) fixé plus haut (plus précisément, celle des deux formes
 obtenues qui correspond à la place considérée).  Remarquons que \( P_\place \)
-parcourt un ensemble fini quand \( \place \) varie, car c'est déjà le cas de
-\( \wembclv \), donc de \( \fauxv \). Le \( P_\place \) jouissent alors des
-propriétés suivantes.
+parcourt un ensemble fini quand \( \place \) varie (cet ensemble étant plus
+petit que \( \clmaps^{\puiss-1} \)).  La famille \( P_\place \) jouit alors
+des propriétés suivantes.
 
-\begin{lem}
+\begin{lem} \label{l:ratfv1}
   Dans les notations précédentes, on a :
   \begin{enumthm}
     \item \( \displaystyle
         \ratfv1
-        =
-        \der[\dermp]
-        \frac{
-          \fauxv(\vmp)
-        }{
-          \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-          \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{\delta}
-        }
         =
         \frac{ P_\place(\vmp) }{
           \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
@@ -3405,15 +3399,17 @@ propriétés suivantes.
 
 \begin{proof}
   Chaque point découle du point correspondant du lemme~\ref{l:par-var}, en
-  tenant compte des informations connues sur \( \fauxv \) et \( \dermp \). Le
-  premier est immédiat car \( \deg_\fct \fauxv = \Dir* \).
+  tenant compte des informations connues sur \( \fauxv \) (voir le
+  scolie~\ref{s:aux-co}) et \( \dermp \). Le premier est immédiat d'après la
+  définition~\eqref{e:def-ratfv12} de \( \ratfv1 \) et le fait que \(
+    \deg_\fct \fauxv = \Dir* \).
 
   Rappelons l'hypothèse faite que \( \dermp \) : on suppose que \(
     \wtsum(\dermp) \le \epsi \delta / \sigma \). D'une part, en remarquant que
   \( \inda*(\fauxv) \ge \epsi \delta \) par construction
   (scolie~\ref{s:aux-co})  et que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par
   définition, on a
-  \begin{equation} \label{e:ind-Pv}
+  \begin{equation}
     \inda* \bigl( P_\place \bigr)
     \ge
     \inda*(\fauxv) - \wtsum*(\dermp)
@@ -3428,8 +3424,7 @@ propriétés suivantes.
     \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma
     \pmm.
   \end{equation}
-
-  Pour le degré, on a
+  Pour le degré de \( P_\place \), on écrit alors
   \begin{align}
     \deg_\fct P_\place
     & =
@@ -3445,8 +3440,47 @@ propriétés suivantes.
     \le 1 \) par définition de \( \sigma \) (prop.~\ref{p:extra}) et qu'on a
   largement \( \epsz + \epsi \le 1 \).
 
-\end{proof}
+  Pour la hauteur, dans le point correspondant du lemme, on prend le
+  logarithme puis la somme pondérée par les degrés locaux sur toutes les
+  places :
+  \begin{align}
+    \hautl[1]{ (P_\place)_\place }
+    & \le
+    \hautl[1]{ (G_\place)_\place }
+    \\ & \qquad
+    + \sum\fctrange \bigl(
+      2 \lgr{\dermp*} \hautl[1]{ \varfca* }
+      + \lgr{\dermp*} ( \ln(32\genre) + 3 \ln B )
+      + \genre (\Dir*) \ln 2
+    \bigr)
+  \\ & \le
+    \hautl[1]{ (G_\place)_\place }
+    + 2 \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* }
+    \\ & \qquad
+    + \sum\fctrange
+      \lgr{\dermp*} \bigl(
+        \genre B ( \ln B + \ln( \dimp + 1 ) )
+        + \ln(32\genre) + 3 \ln B
+      \bigr)
+      + \genre (\Dir*) \ln 2
+  \end{align}
+  où l'on a utilisé~\eqref{e:nv-varfca}. Nous allons maintenant majorer
+  indépendamment chacun des termes de cette somme. Le premier est donné
+  par~\eqref{e:aux-co-htv}. Pour le deuxième, on écrit
+  \begin{equation}
+    \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* }
+    \le
+    \delta \epsi \sigma^{-1}
+    \sum\fctrange \wts* \wtw* \hautl[1]{ \varfc* }
+    \le
+    \delta \wts[1] \epsi \sigma^{-1}
+    \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \end{equation}
+  en utilisant la remarque précédente que \( \dermp \) puis
+  l'hypothèse~\eqref{e:varset-ht}.
 
+  Enfin, pour le dernier terme\dots
+\end{proof}
 
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
 fonction en deux facteurs :
@@ -3623,8 +3657,8 @@ encore~\eqref{e:wt-ratio}
   \frac12 \wts[1] \hautn{ \ex[1] }
   \, \delta \epsi (1 - \sigma^{-1})
 \end{equation}
-où le dernier point découle de~\eqref{e:ind-Pv} et de la définition de
-l'indice.
+où la dernière estimation découle du quatrième point du lemme~\ref{l:ratfv1}
+et de la définition de l'indice.
 
 En regroupant tous les termes qui constituent \( \ratfv{1'}( \cex ) \) puis en
 sommant sur \( \place \), on majore la hauteur logarithmique de ce facteur par
