@@ -2120,19 +2120,18 @@ En pratique, nous utiliserons beaucoup les formes \( \faux* = \rfull \circ
           + \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*}
         \Bigr) + o(\delta)
       \) ; \label{i:aux-co-ht}
-    \item \(
-        \nv1{\faux*}
-        \le
-        \nv1{\faux}
-        \prod\fctrange \left(
-          \nv1{ \varfc* }
-          2 B^{(B(\genre+1) + 1)\dv}
-        \right) ^{ 2\Di* }
-        \prod\fctirange
-        \nv1{ \wembclm* }^\delta
-        \cdot \expb^{o(\delta)}
-      \).
   \end{enumthm}
+  De plus, si \( (\clmap_\place)_\place \) est une famille de carte indexée
+  par les places de \( \cdn \), on a
+  \begin{equation}
+    \frac{
+      \nv1{ \faux[\clmap_\place] }
+    }{
+      \prod\fctirange \nnv1{ \wembcl[\clmap_\place, \fcti] }^\delta
+    }
+    \le
+    \cdots
+  \end{equation}
 \end{scho}
 
 \begin{proof}
@@ -3285,9 +3284,11 @@ en utilisant de plus le lemme~\ref{l:sum-wts}.
 \medskip
 
 Nous allons maintenant expliciter \( \ratfv1 \) : pour chaque place \( \place
-\), on applique le lemme~\ref{l:par-var} avec \( G = \fauxv \) et \( \ind =
+\), on applique le lemme~\ref{l:par-var} avec \( G = \fauxv \cdot
+  \prod\fctirange \nnv1{ \wembclv* }^{-\delta}
+\) et \( \ind =
   \indv \), et on note \( P_\place = P_{\fauxv, \indv, \dv}^\derp \) la forme
-obtenue pour notre indice \( \derp \) (plus précisément, celle des deux formes
+obtenue pour l'indice \( \derp \) fixé plus haut (plus précisément, celle des deux formes
 obtenues qui correspond à la place considérée).  Remarquons que \( P_\place \)
 parcourt un ensemble fini quand \( \place \) varie, car c'est déjà le cas de
 \( \wembclv \), donc de \( \fauxv \). Le \( P_\place \) jouissent alors des
@@ -3297,11 +3298,14 @@ propriétés suivantes.
   Dans les notations précédentes, on a :
   \begin{enumthm}
     \item \( \displaystyle
+        \ratfv1
+        =
         \der[\dermp]
         \frac{
           \fauxv(\vmp)
         }{
           \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+          \prod\fctirange \nnv1{ \wembclv* }^{\delta}
         }
         =
         \frac{ P_\place(\vmp) }{
