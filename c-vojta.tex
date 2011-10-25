@@ -94,13 +94,6 @@ l'hyperplan défini par \( \vp[0] = 0 \) dans ce plongement.
   \begin{align}
     \label{e:def-Vbig}
     \Vbig & \ge 4\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
-    \\ & \ge \stuffout{
-      \frac{16}{3\expapx \epsi}
-      \Lambda^{3f(\puiss)} \bigl(
-        ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp ) \cst{vs-ht}
-        + 4\dimp^2 \cst{vs-deg-prod}^{-2}
-      \bigr)
-    } \text{ pour \eqref{e:Vbig-ct-extra}}
     \\
     \label{e:def-Vfar}
     \Vfar & = 4 \puiss \Lambda^{2\puiss f(\puiss)}
@@ -118,6 +111,7 @@ l'hyperplan défini par \( \vp[0] = 0 \) dans ce plongement.
     \puiss & \ge \genre + 1
   \end{align}
 \end{thm}
+
 
 
 \section{Réduction et autres préliminaires}
@@ -364,7 +358,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
     \cst{vs-deg-prod} \, \deg \va,
     (\sqrt2 \puiss \genre)^{\puiss\genre}
   \bigr)
-  \\ \label{e;def-f}
+  \\ \label{e:def-f}
   f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
   \\
   \newcst[]{vs-deg-prod}
@@ -3806,7 +3800,7 @@ et on a bien \( \alpha \le - \frac{3\expapx \epsi}{16} < 0 \) comme annoncé.
 
 Ainsi on a, en remarquant que \( \vdim \ge \puiss \) et que \( f \) est
 décroissante :
-\begin{align}
+\begin{align} \label{e:Vbig-ct-extra}
   \alpha \hautn{\ex[1]} + \beta
   & \le
   - \frac{3\expapx \epsi}{16} \hautn{\ex[1]}
@@ -4373,10 +4367,13 @@ forme finale de~\eqref{e:varset-ht}.
 
 Enfin, de cette dernière relation on déduit~\eqref{e:ct-Vbig-final} qui
 motive à choisir \( \Vbig \) assez grand pour contredire cette relation. On se
-souvient alors que lors de l'extrapolation on devait également choisir \( \Vbig
-\) assez grand pour avoir~\eqref{e:Vbig-ct-extra} : il suffit donc maintenant
-de choisir \( \Vbig \) répondant à ces deux contraintes, ce qui n'est pas
-problématique puisqu'elles vont dans le même sens.
+souvient alors que lors de l'extrapolation on devait également avoir \( \Vbig
+\) assez grand pour que la quantité~\eqref{e:Vbig-ct-extra} soit négative.
+Il suffit donc maintenant de choisir \( \Vbig \) répondant à ces deux
+contraintes, ce qui n'est pas problématique puisqu'elles vont dans le même
+sens : en fait, la première contrainte est la plus forte et implique
+facilement la deuxième, comme le montrent les calculs
+suivant~\eqref{e:Vbig-ct-extra}.
 
 
 \subsection{Estimations diverses}
