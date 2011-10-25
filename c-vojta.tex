@@ -762,9 +762,9 @@ appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \), de sorte que
 
 La construction et le lemme précédent montrent alors que
 \begin{equation} \label{e:vadapt-ht}
-  \hautm[\infty]{\vadapt*}
+  \nv\infty{ \vadapt* }
   \le
-  \vdegp*
+  (\vdegp*)^\dv
   \qquad\text{et}\qquad
   \hautm[\infty]{\vadapt*^{-1}}
   \le
@@ -773,8 +773,8 @@ La construction et le lemme précédent montrent alors que
 On note \( \varida* \) l'idéal homogène saturé de \( \var* \) dans le
 plongement \( \vadapt* \circ \vaemb \) et \( \varfca* \) une forme de
 \bsc{Chow} de \( \var* \) dans ces coordonnées. Le théorème de l'élimination
-montre qu'une telle forme s'obtient en composant \( \varfc* \) avec la
-transposée de \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
+montre qu'une telle forme s'obtient en composant \( \varfc* \) avec (la
+transposée de) \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
 variables ; il est alors clair que
 \begin{equation} \label{e:nv-varfca}
   \nv1{\varfca*} \le \nv1{\varfc*}
@@ -3309,7 +3309,6 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   \nv\infty{\cexa*} \le \nv\infty{\vadapt*} \, \nv1{\cex*} \) :
 \begin{align}
   \frac{
-    \nnv1{ \wembclp\clmapv\fcti }
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
     \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
   }{
@@ -3317,38 +3316,48 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
   }
   & \le
   \frac{
-    \nnv1{ \wembclp\clmapv\fcti }
     \nv\infty{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
     \nv\infty{ \cexa[\puiss] }^{ 2\wts[\puiss] }
   }{
     \nv1{ \wembclv*(\cexa[\fcti], \cexa[\puiss]) }
   }
-  (\dimp+1)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
+  (\dimp+1)^\dv
   \\ & \le
   \frac{
-    \nnv1{ \wembclp\clmapv\fcti }
     \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
     \nv1{ \cex[\puiss] }^{ 2\wts[\puiss] }
   }{
     \nv1{ \wembclp\clmapv\fcti(\cex[\fcti], \cex[\puiss]) }
   }
-  ((\dimp+1) B)^{2 \dv (\wts[\fcti] + \wts[\puiss])}
-  \\ & \le
-  \bigl( \hmclab* ((\dimp+1) B)^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
+  (\dimp+1)^\dv B^{2 \dv (\wts[\fcti] + \wts[\puiss])}
 \end{align}
-où la dernière ligne est donnée directement par~\eqref{e:clab-loc}
-compte tenu de la définition de \( \clmapv \) ci-dessus. Il ne reste à alors
-plus qu'à prendre le logarithme dans l'estimation précédente, multiplier par
-\( \delta \) sommer sur \( \place \) et sur \( \fcti \) pour avoir
+et, compte tenu de~\eqref{e:clab-loc} et de la définition de \( \clmapv \)
+ci-dessus,
+\begin{equation}
+  \frac{
+    \nnv1{ \wembclp{\clmap}{\fcti} }
+    \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
+    \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
+  }{
+    \av{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
+  }
+  \le
+  (\dimp+1)^\dv
+  \bigl( \hmclab* B^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
+  \pmm.
+\end{equation}
+Il ne reste à alors plus qu'à prendre le logarithme dans l'estimation
+précédente, multiplier par \( \delta \) puis sommer sur \( \place \) et sur \(
+  \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
-  2 \delta \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
+  2 \delta \wts[1] \bigl( \cst{vs-ht} + 2 \ln B \bigr)
 \end{equation}
-en utilisant de plus le lemme~\ref{l:sum-wts}.
+en utilisant encore le lemme~\ref{l:sum-wts}.
 
 \medskip
 
-Nous allons maintenant expliciter \( \ratfv1 \). Posons d'acord
+Nous allons maintenant expliciter \( \ratfv1 \). Posons
 \( G_\place = \fauxv \cdot
   \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
 \) ; pour chaque place \( \place \), on applique alors le
@@ -3399,31 +3408,18 @@ des propriétés suivantes.
 \begin{proof}
   Chaque point découle du point correspondant du lemme~\ref{l:par-var}, en
   tenant compte des informations connues sur \( \fauxv \) (voir le
-  scolie~\ref{s:aux-co}) et \( \dermp \). Le premier est immédiat d'après la
-  définition~\eqref{e:def-ratfv12} de \( \ratfv1 \) et le fait que \(
-    \deg_\fct \fauxv = \Dir* \).
+  scolie~\ref{s:aux-co}) et \( \dermp \) (voir~\eqref{e:extra-dermp}). Le
+  premier est immédiat d'après la définition~\eqref{e:def-ratfv12} de \(
+    \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
 
-  Rappelons l'hypothèse faite que \( \dermp \) : on suppose que \(
-    \wtsum(\dermp) \le \epsi \delta / \sigma \). D'une part, en remarquant que
-  \( \inda*(\fauxv) \ge \epsi \delta \) par construction
-  (scolie~\ref{s:aux-co})  et que \( \wtsum*(\dermp) \le \wtsum(\dermp) \) par
-  définition, on a
-  \begin{equation}
-    \inda* \bigl( P_\place \bigr)
-    \ge
-    \inda*(\fauxv) - \wtsum*(\dermp)
-    \ge
-    \epsi \delta (1 - \sigma^{-1})
-    \ge
-    \frac34 \epsi \delta
-  \end{equation}
-  en utilisant la minoration large mais suffisante \( \sigma > 4 \). D'autre
-  part, cette hypothèse implique que pour tout \( \fct \) on a
+  Avant de passer au degré, remarquons que l'hypothèse faite sur \( \dermp \)
+  implique que
   \begin{equation}
     \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma
-    \pmm.
+    \pmm,
   \end{equation}
-  Pour le degré de \( P_\place \), on écrit alors
+  remarque qui nous servira également pour l'estimation de hauteur.
+  On écrit alors
   \begin{align}
     \deg_\fct P_\place
     & =
@@ -3486,7 +3482,7 @@ des propriétés suivantes.
     \le
     3 \genre \ln 2 \sum\fctrange \wts* \wtw*
     \le
-    6 \genre \ln 2 \wts[1]
+    6 \genre \ln 2 \, \wts[1]
     \le
     \frac14 \Lambda \wts[1]
   \end{equation}
@@ -3512,6 +3508,20 @@ des propriétés suivantes.
   Il ne reste plus qu'à prendre la somme, en utilisant le fait que \( \epsi
     \sigma^{-1} \le 4 \) (majoration très large mais suffisante) pour aboutir
   à l'estimation annoncée.
+
+  Enfin, le point sur l'indice est immédiat en remarquant que \(
+    \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition puis en utilisant les
+  hypothèses :
+  \begin{equation}
+    \inda* \bigl( P_\place \bigr)
+    \ge
+    \inda*(\fauxv) - \wtsum(\dermp)
+    \ge
+    \epsi \delta (1 - \sigma^{-1})
+    \ge
+    \frac34 \epsi \delta
+  \end{equation}
+  en utilisant la minoration large mais suffisante \( \sigma \ge 4 \).
 \end{proof}
 
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
