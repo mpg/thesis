@@ -3061,14 +3061,14 @@ Introduisons maintenant une fonction rationnelle définie par
     \faux**( \vmp )
   }{
     \prod\fctrange
-    (\vmp*[\vdim*])^{\epsz \wts* \delta, + r_\fct}
+    (\vmp*[0])^{\epsz \wts* \delta, + r_\fct}
     \,
     \prod\fctirange
     \wembclg\clmape*[\indig*](\vmp) ^{ \delta }
   }
   \pmm.
 \end{equation}
-D'après le scolie~\ref{s:part-cases}, on a \( \cexa*[\vdim*] \neq 0 \) ; par
+D'après le scolie~\ref{s:part-cases}, on a \( \cexa*[0] \neq 0 \) ; par
 ailleurs le choix de \( \indig* \) assure que
 \( \wembclg\clmape*[\indig*]( \cexa ) \neq 0 \), de sorte que le
 dénominateur ne s'annule pas en \( \cexa \) et
@@ -3088,6 +3088,8 @@ En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant que,
 pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux quand \( \place \) varie, on
 a, pour tout \( \place \) :
+a
+a
 \begin{align}
   \ratf
   & =
@@ -3096,7 +3098,7 @@ a, pour tout \( \place \) :
     \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
   }{
     \prod\fctrange
-    (\vmp*[\vdim*])^{\epsz \wts* \delta + r_\fct}
+    (\vmp*[0])^{\epsz \wts* \delta + r_\fct}
     \cdot
     \prod\fctirange
     \wembclv*[\indig](\vmp) ^{ \delta }
@@ -3120,7 +3122,7 @@ a, pour tout \( \place \) :
   \right) ^{ \delta }
   \!\!\! \cdot \prod\fctrange
   \left(
-    \frac{ \vmp[\indv*] }{ \vmp[\vdim*] }
+    \frac{ \vmp*[\indv*] }{ \vmp*[0] }
   \right) ^{ \epsz \wts* \delta + r_\fct }
   \intertext{puis on utilise la définition de \( \Dir \) en scindant le
     premier facteur et de nouveau la remarque sur les \( \wembclv* \) pour
@@ -3152,12 +3154,12 @@ a, pour tout \( \place \) :
   }_{\textstyle \ratfv3}
   \cdot \underbrace{
     \prod\fctrange \left(
-      \frac{ \vmp[\indv*] }{ \vmp[\vdim*] }
+      \frac{ \vmp*[\indv*] }{ \vmp*[0] }
     \right) ^{ \epsz \wts* \delta + r_\fct }
   }_{\textstyle \ratfv4}
   \pmm.
 \end{align}
-On remarque que le dénominateur du premier facteur est égale à \( \fauxv
+On remarque que le dénominateur du premier facteur est égal à \( \fauxv
 \) modulo \( \varida \).
 
 Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
@@ -3203,11 +3205,11 @@ Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
 mais pas leur produit.
 
 Posons alors \( \ratfh{p} = \sum_\place \degv \ln \av{\ratfv{p}(\cexa)} \) où
-\( \degv \) désigne le degré local en \( \place \) ; cette somme converge car
-\( \ratfv p \) parcourt en fait un ensemble fini (de cardinal majoré par celui
-de l'atlas \( \clmaps^{\puiss-1} \) choisi en sous-section~\ref{sec:wemb})
-lorsque \( \place \) parcourt l'ensemble des places de \( \cdn \). La formule
-du produit donne alors
+\( \degv \) désigne le degré local divisé en \( \place \) ; cette somme
+converge car \( \ratfv p \) parcourt en fait un ensemble fini (de cardinal
+majoré par celui de l'atlas \( \clmaps^{\puiss-1} \) choisi en
+sous-section~\ref{sec:wemb}) lorsque \( \place \) parcourt l'ensemble des
+places de \( \cdn \). La formule du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
 \end{equation}
@@ -3224,13 +3226,13 @@ et~\eqref{e:Vcos} sur \( \ex \), et bien sûr les propriétés de la forme
 auxiliaire.
 
 Pour \( \ratfv4 \) on commence par remarquer que le dénominateur n'intervient
-pas dans le calcul de la hauteur, puis au numérateur que la hauteur d'une
-coordonnée est majorée par la norme du vecteur :
+pas dans le calcul de la hauteur, puis au numérateur que la valeur absolue
+d'une coordonnée est majorée par la norme du vecteur :
 \begin{equation}
   \prod_\place
   \prod\fctrange
   \left(
-    \frac{ \av{\cexa*[\indv*]} }{ \av{\cexa*[\vdim*]} }
+    \frac{ \av{\cexa*[\indv*]} }{ \av{\cexa*[0]} }
   \right) ^{ (\epsz \delta \wts* + r_\fct) \degv }
   \le
   \prod\fctrange
@@ -3257,8 +3259,8 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
       \hautn{ \ex* } + \htcmp + \hautl[1]{\vadapt*}
     \bigr)
   \Bigr) + o(\delta)
-  \intertext{et en utilisant~\eqref{e:vadapt-ht} et la notation \( B \)
-    ci-dessus puis en regroupant les termes :}
+  \intertext{et en utilisant~\eqref{e:vadapt-ht} puis en regroupant les termes
+    :}
   & \le
   \epsz \delta \Bigl(
     \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
@@ -3751,9 +3753,6 @@ point~\ref{i:deg-p-der} page~\pageref{i:deg-p-der}, d'abord pour \( \fct <
   \delta \wts* B\dimp
   + o(\delta)
 \end{align}
-\worknote{Si \( \epsi B\dimp > 1 \) on peut conserver le \( \epsi \) en
-  facteur, ça serait intéressant. Ou pas, si on est pas en facteur de \(
-    \hautn{\ex[1]} \), en fait.}
 où l'on a utilisé la définition~\eqref{e:d-dp-def} de \( d' \), puis le fait
 que \( \wtsum(\dermp) \le \epsi\delta / \sigma \) et les majorations larges \(
   \epsi < 1 \) et \( \sigma^{-1} \le 1/4 \). Pour \( \fct = \puiss \) on
