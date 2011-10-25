@@ -3635,7 +3635,7 @@ pour minorer le dénominateur, puis une comparaison classique de normes donne
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   \le
   \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
-  \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
+  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt^{-1}}
   \pmm.
 \end{equation}
 Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
@@ -3646,11 +3646,11 @@ permet d'exploiter~\eqref{e:Vapx} :
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
   \hautm[2]{\ex*}^{-\wtapx \expapx}
-  \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
+  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt^{-1}}
   \\ & \le
   \expb^{ -\wtapx \expapx \hautn{\ex*} }
   \cdot \expb^{\wtapx \expapx \htcmp}
-  \cdot \sqrt{\dimp+1}^\dv \, \nv1{\vadapt^{-1}}
+  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt^{-1}}
 \end{align}
 où la dernière ligne découle comme d'habitude de~\eqref{e:comp-h-hn}.
 
@@ -3675,8 +3675,8 @@ encore~\eqref{e:wt-ratio}
   \sum\fctrange
   \frac{ \imp*[0] }{ \wts* }
   \ge
-  \frac12 \wts[1] \hautn{ \ex[1] }
-  \, \delta \epsi (1 - \sigma^{-1})
+  \frac38 \wts[1] \hautn{ \ex[1] }
+  \, \delta \epsi
 \end{equation}
 où la dernière estimation découle du quatrième point du lemme~\ref{l:ratfv1}
 et de la définition de l'indice.
@@ -3687,8 +3687,7 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
   \placesapx \) :
 \begin{multline}
   \sum_\place \degv \Biggl(
-    - \delta \wts[1] \hautn{\ex[1]}
-    \wtapx\expapx \epsi (1 - \sigma^{-1}) /2
+    - \frac38 \delta \wts[1] \hautn{\ex[1]} \wtapx \expapx \epsi
     + \ln \nv1{P_\place}
     + \sum\fctrange \deg_\fct P_\place
     \biggl(
@@ -3701,157 +3700,34 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
     \biggl)
   \Biggr)
 \end{multline}
-puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et \( \sigma >
-  4 \) et en utilisant~\eqref{e:vadapt-ht} :
-\begin{equation} \label{e:apx-1a-split}
+puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et en
+utilisant~\eqref{e:vadapt-ht} et le lemme~\ref{l:ratfv1} :
+\begin{align}
+  \ratfh{1'}
+  & \le
   - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
-  + \hautl[1]{(P_\place)_\place}
-  + \sum\fctrange \deg_\fct P \cdot C_\fct
-\end{equation}
-où l'on a noté \( \deg_\fct P \) le degré commun des \( P_\place \) en \(
-  \vmp* \) et
-\begin{align}
-  C_\fct
-  & \le
-  \frac{3}2 \ln(\dimp+1)
-  + \dimp \ln B + \dimp \ln \dimp
-  + \expapx \htcmp
-  + \hautl[1]{ \varfc* }
-  + B (\genre + 1)  \bigl( \ln B + \ln (\dimp+1) \bigr)
-  \\ & \le
-  \hautl[1]{ \varfc* }
-  + \cst{vs-ht}
-  + \dimp B^2
+  + 15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + 3\delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + o(\delta)
+  \\ & \quad
+  + 3\delta \Bigl(
+    \frac{3}2 \ln(\dimp+1)
+    + \dimp \ln(B\dimp)
+    + \expapx \htcmp
+    + B (\genre + 1) \ln (B (\dimp+1))
+  \Bigr)
+  \sum\fctrange \wtw* \wts*
 \end{align}
-en majorant assez largement sur la dernière ligne. Explicitions maintenant un
-majorant du degré commun des \( P_\place \), donné par le
-point~\ref{i:deg-p-der} page~\pageref{i:deg-p-der}, d'abord pour \( \fct <
-  \puiss \) :
-\begin{align}
-  \deg_\fct P
-  & \le
-  \delta (2 + \epsz) \wts* + 2B\dimp \frac{\epsi \delta}{\sigma} \wts*
-  + o(\delta)
-  \\ & \le
-  \delta \wts* \left( 3 + \frac{B\dimp}{2} \right)
-  + o(\delta)
-  \le
-  \delta \wts* B\dimp
-  + o(\delta)
-\end{align}
-où l'on a utilisé la définition~\eqref{e:d-dp-def} de \( d' \), puis le fait
-que \( \wtsum(\dermp) \le \epsi\delta / \sigma \) et les majorations larges \(
-  \epsi < 1 \) et \( \sigma^{-1} \le 1/4 \). Pour \( \fct = \puiss \) on
-obtient de même
+On utilise alors l'hypothèse~\eqref{e:varset-ht}, le lemme~\ref{l:sum-wts} et
+l'estimation \lat{ad hoc}~\eqref{e:ratfh1a-adhoc} pour conclure :
 \begin{equation}
-  \deg_\puiss P
+  \ratfh{1'}
   \le
-  \delta \wts[\puiss] B\dimp (\puiss - 1)
+  - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
+  + 19 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + o(\delta)
   \pmm.
 \end{equation}
-On utilise alors~\eqref{e:varset-ht} d'une part et le lemme~\ref{l:sum-wts}
-d'autre part pour obtenir
-\begin{align}
-  \sum\fctrange \deg_\fct P \cdot C_\fct
-  & \le
-  \delta \wts[1] B\dimp
-  \left(
-    \cst{vs-ht} \Lambda^{2\,f(u)}
-    + 2 \bigl(
-      \cst{vs-ht} + \dimp B^2
-    \bigr)
-  \right)
-  \\ & \le \label{e:apx-1a-sum}
-  \delta \wts[1] \left(
-    \Lambda^{3f(\vdim)} \bigl(
-      3 \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
-      + 2\dimp^2 \cst{vs-deg-prod}^{-2}
-    \bigr)
-  \right)
-  \pmm.
-\end{align}
-
-Intéressons-nous maintenant à la hauteur de la famille \( (P_\place)_\place \),
-dont les normes locales sont données par le point~\ref{i:norm-p-der}
-page~\pageref{i:norm-p-der}. Compte tenu de \eqref{e:nv-varfca} et du dernier
-point du scolie~\ref{s:aux-co}, il vient
-\todo[un terme oublié en reportant le résultat du scolie]
-\begin{align}
-  \hautl[1]{ (P_\place)_\place }
-  & \le
-  \hautl[1]{ (\fauxv)_\place }
-  + \sum\fctrange
-  \bigl( 2 (\dimp - \vdim*) \lgr{\dermp*} \bigr) \Bigl(
-    \hautl[1]{ \varfc* }
-    + \vdeg* (\vdim* + 1) \ln( \vdegp* (\dimp+1) )
-    \\ & \quad \qquad + 2(\vdeg*+1) \ln 2 + \ln \vdim* + 3 \ln \vdeg*
-  \Bigr)
-  + \vdim* (\Dir*) \ln 2
-  \\ & \le
-  \hautl[1] \faux + \delta C_L
-  + \sum\fctrange
-  2 \dimp \frac{\epsi \delta}{\sigma} \wts* (\puiss-1)^{\delta^\fct_\puiss}
-  \Bigl(
-    \hautl[1]{ \varfc* }
-    + B (\genre + 1) \ln( B (\dimp+1) )
-    \\ & \quad \qquad + 2 (B + 1) \ln 2 + 3 \ln B + \ln \genre
-  \Bigr)
-  + 3 \delta \wts* (\puiss-1)^{\delta^\fct_\puiss} \genre \ln 2
-  + o(\delta)
-\end{align}
-en utilisant l'hypothèse \( \wtsum(\dermp) \le \epsi\delta / \sigma \) et la
-définition~\eqref{e:d-dp-def} de \( d' \), ainsi que \( \epsz < 1 \) et \(
-  \vdim* \le \genre \). On utilise alors d'une part le scolie~\ref{s:h1-aux}
-et la proposition~\ref{p:build-aux}, d'autre part
-l'hypothèse~\eqref{e:varset-ht} et par ailleurs le lemme~\ref{l:sum-wts} pour
-écrire
-\begin{align}
-  \frac{ \hautl[1]{ (P_\place)_\place } }{\delta + o(\delta)}
-  & \le
-  \wts[1] \Lambda^{2\,f(u)} \bigl(
-    5\puiss \cst{vs-ht}
-    + 2 (\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
-  \bigr)
-  + C_L
-  + 2 \dimp \frac{\epsi}{\sigma} \cst{vs-ht} \Lambda^{2\,f(u)} \wts[1]
-  + 2 \wts[1] \dimp B^2
-  \\ & \le \label{e:apx-1a-ht}
-  \wts[1] \Lambda^{2\,f(u)} \bigl(
-    (5\puiss + 2\dimp \epsi / \sigma) \cst{vs-ht}
-    + 2 (2\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
-  \bigr)
-  + C_L
-  \pmm.
-\end{align}
-Il ne reste alors plus qu'à substituer~\eqref{e:apx-1a-ht}
-et~\eqref{e:apx-1a-sum} dans~\eqref{e:apx-1a-split} pour obtenir
-\begin{align}
-  \frac{ \ratfh{1'} }{ \delta+o(\delta) }
-  & \le
-  \wts[1] \Bigl(
-    - \frac38 \hautn{\ex[1]} \expapx \epsi
-    + \Lambda^{2\,f(u)} \bigl(
-      (5\puiss + 2\dimp \epsi / \sigma) \cst{vs-ht}
-      + 2 (2\dimp + \puiss^2) \cst{vs-deg-prod}^{-2}
-    \bigr)
-    \\ & \qquad
-    + \Lambda^{3f(\vdim)} \bigl(
-      3 \cst{vs-ht} \cdot \cst{vs-deg-prod}^{-1}
-      + 2\dimp^2 \cst{vs-deg-prod}^{-2}
-    \bigr)
-  \Bigr)
-  + C_L
-  \\ & \le \label{e:ratfh1a}
-  \wts[1] \Bigl(
-    - \frac38 \hautn{\ex[1]} \expapx \epsi
-    + \Lambda^{3f(\vdim)} \bigl(
-      ( 1 + 3 \cst{vs-deg-prod}^{-1} + \frac{2\dimp \epsi}{\sigma} )
-      \cst{vs-ht}
-      + 3\dimp^2 \cst{vs-deg-prod}^{-2}
-    \bigr)
-  \Bigr)
-  + C_N
-\end{align}
 
 En substituant cette dernière estimation ainsi que \eqref{e:ratfh4},
 \eqref{e:ratfh3}, \eqref{e:ratfh2}, \eqref{e:ratfh1b} dans \eqref{e:prod-lem},
@@ -4636,6 +4512,16 @@ On a également besoin de\todo[le prouver]
   \pmm.
 \end{equation}
 
+On a également besoin de\todo[le prouver]
+\begin{equation} \label{e:ratfh1a-adhoc}
+  \frac{3}2 \ln(\dimp+1)
+  + \dimp \ln(B\dimp)
+  + \expapx \htcmp
+  + B (\genre + 1) \ln (B (\dimp+1))
+  \le
+  \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{equation}
 
 
 
