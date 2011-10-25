@@ -376,7 +376,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
     \eps^{1 + \frac{\genre}{\puiss-\genre}}
   }
   \\
-  \newcst[\va]{vs-ht} & = \max(\vaht, \hlclab)
+  \newcst[\va]{vs-ht} & = \max( \vaht, \hlclab, \htcmp, \ln(\dimp + 1) )
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
@@ -2988,17 +2988,17 @@ représente à peu de chose près la norme de \( \cexa* \).
   \end{equation}
   pour tout \( \ind \). D'après la note~\ref{fn:varfc}
   page~\pageref{fn:varfc}, on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
-  est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv] } \), ce qui est
-  le cas pour \( \ind \le \vdim* \) par définition de \( \indv \). Notons donc
-  \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv] } > \av{ \cexa**
+  est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui est
+  le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons donc
+  \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } > \av{ \cexa**
     } \).
 
   On utilise alors le fait qu'on connaît, dans un plongement adapté, des
   relations \( \poldep** \) liant chacune des dernières coordonnées aux
   premières,  unitaires en la dernière variable. En décomposant \( \poldep**
   \) suivant les puissances de \( \vmp** \), on voit qu'il existe des
-  polynômes \( \poldep*[\ind, \alpha] \in \cdn(\vmp*[0], \dots, \vmp*[\vdim*]
-  \) tels que :
+  polynômes \( \poldep*[\ind, \alpha] \in \cdn[ \vmp*[0], \dots, \vmp*[\vdim*]
+    ] \) tels que :
   \begin{equation}
     (\vmp**) ^{ \vdeg* }
     =
@@ -3011,26 +3011,26 @@ représente à peu de chose près la norme de \( \cexa* \).
     \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
     \le \nv1{ \poldep** }
   \end{equation}
-  On spécialise alors en \( \cexa* / \cexa*[\indv] \) et on prend les valeurs
+  On spécialise alors en \( \cexa* / \cexa*[\indv*] \) et on prend les valeurs
   absolues :
   \begin{equation}
-    \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv] } }^{ \vdeg* }
+    \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv*] } }^{ \vdeg* }
     \le
     \sum_{ \alpha=1 }^{ \vdeg* }
-    \: \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv] } }^{ \vdeg* - \alpha }
+    \: \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv*] } }^{ \vdeg* - \alpha }
     \: \av[\Bigg]{
       \poldep*[\ind, \alpha] \Biggl(
-        \frac{ \cexa*[0] }{ \cexa*[\indv] }, \dots,
-        \frac{ \cexa*[\vdim*] }{ \cexa*[\indv] }
+        \frac{ \cexa*[0] }{ \cexa*[\indv*] }, \dots,
+        \frac{ \cexa*[\vdim*] }{ \cexa*[\indv*] }
       \Biggr)
     }
   \end{equation}
   puis on divise et on utilise les remarques précédentes pour obtenir :
   \begin{align}
-    \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv] } }
+    \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv*] } }
     \le
     \sum_{ \alpha=1 }^{ \vdeg* }
-    \: \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv] } }^{ 1 - \alpha }
+    \: \av[\Bigg]{ \frac{ \cexa** }{ \cexa*[\indv*] } }^{ 1 - \alpha }
     \: \nv1{ \poldep*[\ind, \alpha] }
     \le
     \sum_{ \alpha=1 }^{ \vdeg* }
@@ -3043,14 +3043,14 @@ représente à peu de chose près la norme de \( \cexa* \).
 
 On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
   \wemb(\ex) = (\ex, \exi) \) et on note
-\( \cexi* = \wembclg\clmape* (\cexa[\fcti], \cexa[\puiss]) \),
-qui est un système de coordonnées multihomogènes de
-\( \exi \) dans le plongement \( \vaemb^{\puiss-1} \).
-On choisit alors pour tout \(
-  \fcti \) un indice \( \indiv* \in \set{0, \dots, \dimp} \) maximisant \(
-  \av{ \cexi*[\indiv*] } \), ainsi que \( \indig* \in \set{0, \dots, \dimp} \)
-tel que \( \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{
-    \cexi*[\indiv*] } \ge \nv1{ \cexi* } (\dimp+1)^{-\dv} \).
+\( \cexi* = \wembclg\clmape* (\cexa[\fcti], \cexa[\puiss]) \), qui est un
+système de coordonnées multihomogènes de \( \exi \) dans le plongement \(
+  \vaemb^{\puiss-1} \) (on rappelle que \( \wembclm* \) est défini
+par~\eqref{e:def-wembclm}).  On choisit alors pour tout \( \fcti \) un indice
+\( \indiv* \in \set{0, \dots, \dimp} \) maximisant \( \av{ \cexi*[\indiv*] }
+\), ainsi que \( \indig* \in \set{0, \dots, \dimp} \) tel que \(
+  \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{ \cexi*[\indiv*] }
+  \ge \nv1{ \cexi* } (\dimp+1)^{-\dv} \).
 
 \medskip
 
@@ -3080,16 +3080,11 @@ Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
 \( \clmapv* = \clmap_{\wts[\fcti], \wts**, \ex[\fcti], \ex**, \place} \) la
 carte donnée par les hypothèses~\ref{h:vaemb} et \( \clmapv = (\clmapv[1],
   \dots, \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).
-On note alors \( \wembclv* = \wembclg\clmapv* \) où l'on rappelle que
-\( \wembclm* \) est défini par~\eqref{e:def-wembclm}.  De même, on pose \(
-  \fauxv = \faux[\clmapv] \).
-
-En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant que,
-pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
+On note alors \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv = \faux[\clmapv]
+\).  En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant
+que, pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
   \cexa[\puiss]) \) sont proportionnels entre eux quand \( \place \) varie, on
 a, pour tout \( \place \) :
-a
-a
 \begin{align}
   \ratf
   & =
@@ -3192,7 +3187,8 @@ On pose enfin
   \ratfv1 = \ratfv1' \cdot
   \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
 \end{equation}
-de sorte qu'on a
+(où l'on rappelle que \( \wembclp\clmapv\fcti \) est donné par les
+hypothèses~\ref{h:vaemb}) de sorte que
 \begin{equation}
   \der[\dermp] \ratf(\ex)
   =
@@ -3204,7 +3200,8 @@ de sorte qu'on a
 Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
 mais pas leur produit.
 
-Posons alors \( \ratfh{p} = \sum_\place \degv \ln \av{\ratfv{p}(\cexa)} \) où
+Pour \( p \in \set{1, 2, 3, 4} \), posons alors \( \ratfh{p} = \sum_\place
+  \degv \ln \av{\ratfv{p}(\cexa)} \) où
 \( \degv \) désigne le degré local divisé en \( \place \) ; cette somme
 converge car \( \ratfv p \) parcourt en fait un ensemble fini (de cardinal
 majoré par celui de l'atlas \( \clmaps^{\puiss-1} \) choisi en
@@ -3249,14 +3246,14 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
   \\ & \le
   \epsz \delta \Bigl(
     \sum\fctrange \wts* \bigl(
-      \hautl[\infty]{ \cex* } + \hautl[1]{\vadapt*}
+      \hautl[1]{ \cex* } + \hautl[\infty]{\vadapt*}
     \bigr)
   \Bigr) + o(\delta)
   \intertext{puis, par~\eqref{e:comp-h-hn} :}
   & \le
   \epsz \delta \Bigl(
     \sum\fctrange \wts* \bigl(
-      \hautn{ \ex* } + \htcmp + \hautl[1]{\vadapt*}
+      \hautn{ \ex* } + \htcmp + \ln(\dimp+1) + \hautl[\infty]{\vadapt*}
     \bigr)
   \Bigr) + o(\delta)
   \intertext{et en utilisant~\eqref{e:vadapt-ht} puis en regroupant les termes
@@ -3273,7 +3270,7 @@ puis on passe au logarithme et on utilise le fait que \( \cexa*
   & \le
   \epsz \delta \Bigl(
     2 \puiss \wts[1] \hautn{ \ex[1] }
-    + 2 \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
+    + 2 \wts[1] \bigl( 2 \cst{vs-ht} + \ln B \bigr)
   \Bigr) + o(\delta)
   \pmm.
 \end{align}
