@@ -364,7 +364,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
     \cst{vs-deg-prod} \, \deg \va,
     (\sqrt2 \puiss \genre)^{\puiss\genre}
   \bigr)
-  \\
+  \\ \label{e;def-f}
   f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
   \\
   \newcst[]{vs-deg-prod}
@@ -2949,7 +2949,7 @@ proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
-  \( \sigma = \frac{64 (\puiss-1) \dimp B}{\eps} \).
+  \( \sigma = \frac{512 (\puiss-1) \dimp B}{\eps} \).
 \end{prop}
 
 La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
@@ -3735,10 +3735,11 @@ il vient
 \begin{align} \label{e:prod-lem-final}
   0
   & \le
-  \delta
-    \wts[1] \Bigl(
+  \delta \Bigl(
+    \wts[1] \bigl(
       \alpha \hautn{\ex[1]} + \beta
-    \Bigr) + o(\delta \wts[1])
+    \bigr) + o(\wts[1])
+  \Bigr) + o(\delta)
 \end{align}
 avec :
 \begin{align}
@@ -3746,21 +3747,15 @@ avec :
   & =
   2 \puiss \epsz
   + 3 (\puiss - 1) \Vcos
-  + \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
+  + \frac{32 (\puiss - 1) B \epsi}{\sigma}
   - \frac38 \expapx \epsi
   \\
   \beta
   & =
-  (2\epsz + 2 + \frac\epsi\sigma) (\cst{vs-ht} + \ln B)
-  + \Lambda^{3f(\vdim)} \bigl(
-    ( 1 + 3 \cst{vs-deg-prod}^{-1} + \frac{2\dimp \epsi}{\sigma} ) \cst{vs-ht}
-    + 3\dimp^2 \cst{vs-deg-prod}^{-2}
-  \bigr)
+  19 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + (6 + 4\epsz) \cst{vs-ht} + (6 + 2\epsz) \ln B
   \\ & \le
-  \Lambda^{3f(\vdim)} \bigl(
-    ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp ) \cst{vs-ht}
-    + 4\dimp^2 \cst{vs-deg-prod}^{-2}
-  \bigr)
+  20 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{align}
 
@@ -3804,22 +3799,50 @@ qui entraîne immédiatement que
 Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\ref{p:extra}
 assure que
 \begin{equation} \label{e:ct-sigma}
-  \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
+  \frac{32 (\puiss - 1) B \epsi}{\sigma}
   \le \frac{\expapx \epsi}{16}
 \end{equation}
 et on a bien \( \alpha \le - \frac{3\expapx \epsi}{16} < 0 \) comme annoncé.
 
-Par ailleurs, en remarquant que \( \vdim > \puiss \), la
-définition~\eqref{e:def-Vbig} de \( \Vbig \) montre que
-\begin{equation} \label{e:Vbig-ct-extra}
-  \frac{3\expapx \epsi}{16} \hautn{\ex[1]}
-  \ge
-  \Lambda^{3f(\vdim)} \bigl(
-    ( 3 \cst{vs-deg-prod}^{-1} + 2\dimp ) \cst{vs-ht}
-    + 4\dimp^2 \cst{vs-deg-prod}^{-2}
-  \bigr)
+Ainsi on a, en remarquant que \( \vdim \ge \puiss \) et que \( f \) est
+décroissante :
+\begin{align}
+  \alpha \hautn{\ex[1]} + \beta
+  & \le
+  - \frac{3\expapx \epsi}{16} \hautn{\ex[1]}
+  + 20 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss)}
+  \\ & \le
+  - \frac{3\expapx \epsi}{16} \Bigl(
+    \hautn{\ex[1]}
+    - \frac{320}{3\expapx \epsi}
+    \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss)}
+  \Bigr)
+  \pmm.
+\end{align}
+Or, on constate facilement en utilisant les définitions~\eqref{e:def-epsi} et
+\eqref{e:cst-vs-deg-prod} que
+\begin{equation}
+  \frac{320}{3\expapx \epsi} \le \cst{vs-deg-prod} \le \Lambda
 \end{equation}
-et que le membre de droite de~\eqref{e:prod-lem-final} est négatif,
+puis, en remarquant que \( (1 + \frac1\puiss) f(\puiss) + 1 \le (1 +
+  \frac1\puiss) f(\puiss-1) \) d'après la définition~\eqref{e:def-f} de \( f
+\) et en utilisant le fait que \( \puiss \ge 2 \), il vient :
+\begin{align}
+  \alpha \hautn{\ex[1]} + \beta
+  & \le
+  - \frac{3\expapx \epsi}{16} \Bigl(
+    \hautn{\ex[1]}
+    - \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
+  \Bigr)
+  \le
+  - \frac{9\expapx \epsi}{16}
+  \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
+  <
+  0
+\end{align}
+où l'on a utilisé l'hypothèse~\eqref{e:Vbig} et la
+définition~\eqref{e:def-Vbig}. Au final, pour \( \delta \) et \( \wts[1] \)
+assez grands, le membre de droite de~\eqref{e:prod-lem-final} est négatif,
 contradiction qui achève la preuve de la proposition~\ref{p:extra}.
 
 

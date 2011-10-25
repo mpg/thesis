@@ -1053,9 +1053,9 @@
 %
 \newcommand \Var {Z}
 \newc@star@default \var     {\fct}{\puiss} {\Var  \ssub{#1}}
-\newc@star@default \vdim    {\fct}{\puiss} {{u    \ssub{#1}}}
-\newc@star@default \vdeg    {\fct}{\puiss} {{D    \ssub{#1}}}
-\newc@star@default \vdegp   {\fct}{\puiss} {{D'   \ssub{#1}}}
+\newc@star@default \vdim    {\fct}{\puiss} { u    \ssub{#1} }
+\newc@star@default \vdeg    {\fct}{\puiss} { D    \ssub{#1} }
+\newc@star@default \vdegp   {\fct}{\puiss} { D'   \ssub{#1} }
 \newc@star@default \varfc   {\fct}{\puiss} {\chow {\var[#1]}}
 \newc@star@default \varid   {\fct}{\puiss} {\ideal{\var[#1]}}
 
