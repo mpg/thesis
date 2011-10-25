@@ -2801,7 +2801,7 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
           P^\dermp_{G, \ind, \dv}
         }{
           \prod\fctrange
-          Q_{\fct, \indt*}^{2\lgr{\dermp*}}
+          (\pden*[\indv*])^{2\lgr{\dermp*}}
           (\vmp*[\indt*])^{ \alpha_\fct + \lgr{\dermp*} }
         }
       \) dans \( \cdn(\var) \) ;
@@ -3531,8 +3531,8 @@ fonction en deux facteurs :
 \begin{equation}
   \ratfv1 =
   \frac{ P_\place(\vmp) }{
-    \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
-    \, \pdenp*(\vmp*)^{\lgr{\dermp*}}
+    \prod\fctrange (\vmp*[\indv*]) ^{ \lgr{\dermp*} + \Dir* }
+    \, (\pden*[\indv*])^{ 2 \lgr{\dermp*} }
   }
   =
   \underbrace{
@@ -3544,9 +3544,9 @@ fonction en deux facteurs :
   \underbrace{
     \prod\fctrange
     \frac{
-      (\vmp*[\indv*])^{\lgr{\dermp*} \cdot \deg \pdenp*}
+      (\vmp*[\indv*])^{ 2 \lgr{\dermp*} \cdot \deg \pden*[\indv*] }
     }{
-      \pdenp*(\vmp*)^{\lgr{\dermp*}}
+      (\pden*[\indv*])^{ 2 \lgr{\dermp*} }
     }
   }_{\textstyle \ratfv{1''}}
 \end{equation}
@@ -3555,58 +3555,35 @@ pas nul d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
 \begin{equation}
   \prod_\place
   \frac{
-    \av{ \cexa*[\indv] }^{ \deg \pdenp* \lgr{\dermp*} \degv }
+    \av{ \cexa*[\indv] }^{ 2 \deg \pden*[\indv*] \lgr{\dermp*} \degv }
   }{
     \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
   }
   \le
-  \hautm[\infty]{ \cexa* }^{ \deg \pdenp* \lgr{\dermp*} }
+  \hautm[\infty]{ \cexa* }^{ 2 \deg \pden*[\indv*] \lgr{\dermp*} }
   \pmm.
 \end{equation}
-On note alors que par définition, \( \deg \pdenp* = 2 (\vdeg*-1) (\dimp-\vdim*)
-  \le 2B\dimp \), puis en utilisant des comparaisons de hauteurs désormais
-habituelles, on a :
+On note alors que par définition, \( \deg \pden*[\indv*] = 2 (2\vdeg* - 1) \le
+  4B \), puis en utilisant des comparaisons désormais habituelles, on a :
 \begin{align}
   \ratfh{1''}
   & \le
-  2B\dimp \sum\fctrange
+  8 B \sum\fctrange
   \hautl[\infty]{ \cexa* } \lgr{\dermp*}
   \\ & \le
-  2B\dimp \sum\fctrange
-  \bigl( \hautn{ \ex* } + \cst{vs-ht} + \ln B \bigr)
-  \lgr{\dermp*}
-  \pmm.
+  8 \delta B \epsi \sigma^{-1} \sum\fctrange
+  \bigl( \hautn{ \ex* } + 2 \cst{vs-ht} + \ln B \bigr)
+  \wtw* \wts*
 \end{align}
-On se souvient ensuite que \( \wts[1] \ge \wts* \) et même \( \wts[1] \ge
-  (\puiss-1) \wts[\puiss] \) (par exemple d'après le lemme~\ref{l:sum-wts})
-pour écrire
-\begin{equation}
-  \sum\fctrange \lgr{\dermp*}
-  \le
-  \wts[1] \, \wtsum(\dermp)
-  \le
-  \wts[1] \, \epsi \delta / \sigma
-  \pmm.
-\end{equation}
-Par ailleurs, en utilisant~\eqref{e:wt-ratio}, on a
-\begin{equation}
-  \sum\fctrange \hautn{ \ex* } \lgr{\dermp*}
-  \le
-  (\puiss-1) \sum\fctrange
-  \wts* \hautn{ \ex* } \, \frac{ \lgr{\dermp*} }{ \wtw* \wts* }
-  \le
-  2 (\puiss-1) \wts[1] \hautn{ \ex[1] } \, \epsi \delta / \sigma
-\end{equation}
-et au final :
-\begin{equation} \label{e:ratfh1b}
-  \ratfh{1''} \le
-  2 B \dimp
-  \frac{ \delta \wts[1] \epsi }{ \sigma } \Bigl(
-    2 (\puiss-1) \hautn{ \ex[1] }
-    + \cst{vs-ht} + \ln B
-  \Bigr)
-  \pmm.
-\end{equation}
+puis, en invoquant~\eqref{e:wt-ratio} et le lemme~\ref{l:sum-wts} :
+\begin{align} \label{e:ratfh1b}
+  \ratfh{1''}
+  & \le
+  8 \delta B \epsi \sigma^{-1} \bigl(
+    4 (\puiss-1) \hautn{ \ex[1] } \wts[1]
+    + 2 \wts[1] (2 \cst{vs-ht} + \ln B)
+  \bigr)
+\end{align}
 
 Pour l'autre partie, on écrit
 \begin{equation}
