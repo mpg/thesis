@@ -2641,7 +2641,7 @@ qui font l'objet du lemme suivant.
       \) dans \( \cdn(\anyvar) \) ;
     \item \( \deg P^\derp_{\ip, \ind, \dv}
         =
-        \lgr\ip + 4 (2\anydeg - 1) \lgr\derp
+        \lgr\ip + (8\anydeg - 3) \lgr\derp
       \) ;
     \item \( \nv1{ P^\derp_{\ip, \ind, \dv} }
         \le
@@ -2723,7 +2723,9 @@ qui font l'objet du lemme suivant.
   \begin{equation}
     \sum_{\indi=0}^{\anydim+1}
     \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-    \lgr\indl
+    \sum_{\indi=0}^{\anydim+1}
+    \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    \lgr\indl + 1
     =
     \lgr\derp + \lgr\ip
     \quad
@@ -2806,7 +2808,7 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
     \item \(
         \deg_\fct P^\derp_{G, \ind, \dv}
         =
-        \alpha_\fct + 4 (2\vdeg* - 1) \lgr{\dermp*}
+        \alpha_\fct + (8\vdeg* - 3) \lgr{\dermp*}
       \) ;
     \item \(
         \nv1{ P^\derp_{G, \ind, \dv} }
@@ -3376,7 +3378,7 @@ des propriétés suivantes.
         \ratfv1
         =
         \frac{ P_\place(\vmp) }{
-          \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
+          \prod\fctrange (\vmp*[\indv*]) ^{ \lgr{\dermp*} + \Dir* }
           \, \pden*[\indv*](\vmp*)^{2\lgr{\dermp*}}
         }
       \) ;
@@ -3423,7 +3425,7 @@ des propriétés suivantes.
   \begin{align}
     \deg_\fct P_\place
     & =
-    \Dir* + 4 (2\vdeg* - 1) \lgr{\dermp*}
+    \Dir* + (8\vdeg* - 3) \lgr{\dermp*}
     \\ & \le
     \delta \wts* (2\wtw* + \epsz)
     + 8 \vdeg* \wtw* \wts* \epsi \delta / \sigma
