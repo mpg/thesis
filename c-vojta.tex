@@ -53,7 +53,9 @@ hypothèses suivantes.
             \pmm.
           \end{equation}
       \end{enumerate}
-      On note de plus \( \hlclab = \ln \hmclab \).
+      On note de plus \( \hlclab = \ln \hmclab \). On supposera par ailleurs
+      \( \dimp \ge 2 \) et \( N \ge 3 \) (cas d'une courbe elliptique plongée
+      à la \bsc{Weierstrass}).
   \end{enumthm}
 \end{hypo}
 
@@ -344,8 +346,6 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 \todo[définir ça dans le théorème principal]
-\worknote{Le \( 1 \) en exposant de \( \dimp + 1 \) dans \( \cst{vs-deg-prod}
-  \) est volontaire.}
 \begin{align}
   \label{e:def-Lambda}
   \Lambda
@@ -359,12 +359,9 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \\
   \newcst[]{vs-deg-prod}
   & =
-  \frac{
-    (\dimp + 1)^{1 + \frac{\genre+1}{\puiss-\genre}}
-    \, (33\puiss)^{2 + \frac\genre{\puiss-\genre}}
-  }{
-    \eps^{1 + \frac{\genre}{\puiss-\genre}}
-  }
+  \bigl(
+    67 \nclmaps \cdot 6^\puiss \cdot \eps^{-1}
+  \bigr)^{ \frac{\puiss}{\puiss-\genre} }
   \\
   \newcst[\va]{vs-ht} & = \max( \vaht, \hlclab, \htcmp, \ln(\dimp + 1) )
 \end{align}
@@ -2942,7 +2939,7 @@ proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
-  \( \sigma = \frac{512 (\puiss-1) \dimp B}{\eps} \).
+  \( \sigma = \frac{512 (\puiss-1) B}{\eps} \).
 \end{prop}
 
 La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
@@ -3811,8 +3808,8 @@ décroissante :
   \Bigr)
   \pmm.
 \end{align}
-Or, on constate facilement en utilisant les définitions~\eqref{e:def-epsi} et
-\eqref{e:cst-vs-deg-prod} que
+Or, en utilisant~\eqref{e:ct-cst-vs-deg} puis la
+définition~\eqref{e:def-Lambda} de \( \Lambda \), on a
 \begin{equation}
   \frac{320}{3\expapx \epsi} \le \cst{vs-deg-prod} \le \Lambda
 \end{equation}
@@ -3957,34 +3954,35 @@ proposition~\ref{p:extra}, il vient :
   \ge
   \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
-  \frac{ \eps \epsi }{ 192 (\puiss-1) \dimp B D }
+  \frac{ \eps \epsi }{ 1536 (\puiss-1) B D }
   \pmm.
 \end{equation}
 On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
 \) puis de celle~\eqref{e:cst-vs-deg-prod} de \( \cst{vs-deg-prod} \) :
 \begin{align}
-  \frac{ 192 (\puiss-1) \puiss \dimp }{ \eps \epsi }
+  \frac{ 1536 (\puiss-1) \puiss }{ \expapx \epsi }
   & =
   \frac{
-    192 (\puiss-1) \puiss \dimp
-    \cdot
-    (\dimp + 1)^{\frac{\puiss+1}{\puiss-\genre}}
-    \, (33\puiss)^{\frac\genre{\puiss-\genre}}
+    1536 (\puiss-1) \puiss
+    \cdot N^{ \frac{\puiss-1}{\puiss-\genre} }
+    \, (67 \cdot 6^\puiss)^{ \frac{\genre}{\puiss-\genre} }
   }{
-    \eps^{1 + \frac{\genre}{\puiss-\genre}}
+    \eps^{ \frac{\puiss}{\puiss-\genre} }
   }
   \\ & \le
   \frac{
-    (\dimp + 1)^{2 + \frac{\genre+1}{\puiss-\genre}}
-    \, (33\puiss)^{2 + \frac\genre{\puiss-\genre}}
+    N^{ \frac{\puiss}{\puiss-\genre} }
+    \, (67 \cdot 6^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
   }{
-    \eps^{1 + \frac{\genre}{\puiss-\genre}}
+    \eps^{ \frac{\puiss}{\puiss-\genre} }
   }
   =
   \cst{vs-deg-prod}
   \label{e:ct-cst-vs-deg}
 \end{align}
-Après avoir rassemble les deux inégalités précédentes, il ne reste plus qu'à
+où l'on a utilisé l'estimation \( 1536 (\puiss-1) \puiss \le 2 \cdot 67 \cdot
+  6^\puiss \) et l'hypothèse que \( N \ge 2 \).
+Après avoir rassemblé les deux inégalités précédentes, il ne reste plus qu'à
 exploiter les hypothèses~\eqref{e:varset-deg} et \eqref{e:varset-deg-prod}
 pour obtenir
 \begin{equation} \label{e:tp-ind}
