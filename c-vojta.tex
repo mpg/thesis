@@ -100,13 +100,9 @@ l'hyperplan défini par \( \vp[0] = 0 \) dans ce plongement.
     \\
     \label{e:def-Vcos}
     \Vcos & =
-    \frac{
-      \eps^{ 1 + \frac{\genre}{\puiss-\genre} }
-    }{
-      2
-      \, (\dimp + 1)^{1 + \frac{\genre + 1}{\puiss-\genre}}
-      \, (33 \puiss)^{1 + \frac{\genre}{\puiss-\genre}}
-    }
+    \left(
+      \frac{ \eps }{ 67 \nclmaps \cdot 6^\puiss }
+    \right)^{ \frac{\puiss}{\puiss-\genre} }
     \\
     \puiss & \ge \genre + 1
   \end{align}
@@ -1295,11 +1291,12 @@ notamment le degré en lequel nous établirons ces estimations.
 
 Introduisons un réel \( \epsi \) défini par :
 \begin{equation} \label{e:def-epsi}
-  \epsi =
+  \epsi
+  =
   \eps^{\frac{\genre}{\puiss-\genre}}
   \cdot \Bigl(
-    (\dimp + 1)^{\puiss+1}
-    \, (33\puiss)^\genre
+    N^{\puiss-1}
+    \, (67 \cdot 6^\puiss)^\genre
   \Bigr)^{\frac{-1}{\puiss-\genre}}
 \end{equation}
 et un rationnel \( \epsz \) tel que :
@@ -1502,9 +1499,9 @@ nombre de variables libre dans cet espace correspondant à la dimension de \(
 Concernant le degré, on reprend les multidegrés définis par~\eqref{e:d-dp-def}
 et on rappelle que \( \delta \) désigne un grand entier tel que \( \delta
   \eps_0 \) soit aussi entier. On impose alors à \( \faux \) d'être
-de degré \( \Dz \), de sorte que les \( \faux'_\clmap \) seront de degré \( \Di \)
-et les \( \faux* \) de degré \( \Dir = \Di + o(\delta) \). Par ailleurs,
-l'indice exigé sera \( \epsi \delta \), où \( \epsi \) est défini
+de degré \( \Dz \), de sorte que les \( \faux'_\clmap \) seront de degré \(
+  \Di \) et les \( \faux* \) de degré \( \Dir = \Di + o(\delta) \). Par
+ailleurs, l'indice exigé sera \( \epsi \delta \), où \( \epsi \) est défini
 par~\eqref{e:def-epsi} et la relation entre \( \epsz \) et \( \epsi \)
 permettra d'ajuster l'exposant de \bsc{Dirichlet} du système auquel on
 appliquera le lemme de \TS.
@@ -1788,9 +1785,9 @@ et \( \ftarget \) est somme directe de tels espaces.
     3\puiss \).
 \end{proof}
 
-Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du fait
-que \( \card \clmaps^{\puiss-1} = (\dimp + 1)^{\puiss-1} \)\todo{\( \dimp+1
-    \to \nclmaps \)} d'après les hypothèses~\ref{h:vaemb}, on a immédiatement
+Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du
+fait que \( \card \clmaps^{\puiss-1} = \nclmaps^{\puiss-1} \) d'après les
+hypothèses~\ref{h:vaemb}, on a immédiatement
 \begin{equation}
   \dim \ftarget
   \le
@@ -1799,7 +1796,7 @@ que \( \card \clmaps^{\puiss-1} = (\dimp + 1)^{\puiss-1} \)\todo{\( \dimp+1
   \cdot
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)^{\puiss-1}
+    \, \nclmaps^{\puiss-1}
     \, \puiss^{\vdim[\puiss]}
     \, 3^{\vdim - \puiss}
   }{
@@ -1815,7 +1812,7 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
   & \le
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)^{\puiss-1}
+    \, \nclmaps^{\puiss-1}
     \, \puiss^{\vdim[\puiss]}
     \, 3^{\vdim - \puiss}
     \, \prod\fctrange \vdim*
@@ -1827,7 +1824,7 @@ En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
   \\ & \le
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)^{\puiss-1}
+    \, \nclmaps^{\puiss-1}
     \, \puiss ^{\genre}
     \, 3 ^{\puiss (\genre-1)}
     \, \genre^\puiss
@@ -1842,7 +1839,7 @@ Or, nous allons prouver dans un instant que
 \begin{equation} \label{e:ct-eps*-siegel}
   \frac {
     \epsi^\puiss
-    \, (\dimp + 1)^{\puiss-1}
+    \, \nclmaps^{\puiss-1}
     \, \puiss ^{\genre}
     \, 3 ^{\puiss (\genre-1)}
     \, \genre^\puiss
@@ -1873,7 +1870,7 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
   & \le
   \frac {
     \epsi^{\puiss-\genre}
-    \, (\dimp + 1)^{\puiss-1}
+    \, \nclmaps^{\puiss-1}
     \, \puiss ^{\genre}
     \, 3 ^{\puiss (\genre-1)}
     \, \genre^\puiss
@@ -1889,7 +1886,7 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
   \cdot
   \frac {
     \epsi^{\puiss-\genre}
-    \, (\dimp + 1)^{\puiss-1}
+    \, \nclmaps^{\puiss-1}
     \, 3 ^{\puiss \genre}
     \, \genre^\puiss
     \, (33\puiss)^\genre
@@ -1902,17 +1899,19 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
   \cdot
   \frac {
     \epsi^{\puiss-\genre}
-    \, (\dimp + 1)^{\puiss+1}
-    \, (33\puiss)^\genre
+    \, \nclmaps^{\puiss-1}
+    \, (67 \cdot 6^\puiss)^\genre
   }{
     \eps^\genre
   }
   + o(1)
 \end{align}
-où l'on a utilisé le fait que \( \dimp + 1 \ge 4^\genre \).  On remarque que
-la définition \eqref{e:def-epsi} de \( \epsi \) signifie précisément que le
-deuxième facteur vaut \( 1 \) ; il suffit maintenant d'observer que \( \puiss
-  \ge \genre + 1 \ge 2 \) pour conclure.
+où l'on a utilisé les faits élémentaires (quitte à vérifier numériquement pour
+les petites valeurs \( \genre \cdot 3^\genre \le 5^\genre \) puis \( 33 \puiss
+  \cdot 5^\puiss \le 67 \cdot 6^\puiss \).  On remarque que la définition
+\eqref{e:def-epsi} de \( \epsi \) signifie précisément que le deuxième facteur
+vaut \( 1 \) ; il suffit maintenant d'observer que \( \puiss \ge \genre + 1
+  \ge 2 \) pour conclure.
 
 
 \subsection{Hauteur du système}
@@ -3767,19 +3766,18 @@ puis celle~\eqref{e:Vcos} de \( \Vcos \), on a
   \frac{ \eps \epsi }{ 48 (\puiss - 1) }
   & \ge
   \frac{
-    \eps^{ 1 + \frac{\genre}{\puiss-\genre} }
+    \eps^{ \frac{\puiss}{\puiss-\genre} }
   }{
     48 (\puiss - 1)
-    \, (\dimp + 1)^{1 + \frac{\genre + 1}{\puiss-\genre}}
-    \, (33 \puiss)^{\frac{\genre}{\puiss-\genre}}
+    \, \nclmaps^{ \frac{\puiss-1}{\puiss-\genre} }
+    \, (67 \cdot 6^\puiss)^{ \frac{\genre}{\puiss-\genre} }
   }
   \\ & \ge
   \frac{
-    \eps^{ 1 + \frac{\genre}{\puiss-\genre} }
+    \eps^{ \frac{\puiss}{\puiss-\genre} }
   }{
-    2
-    \, (\dimp + 1)^{1 + \frac{\genre + 1}{\puiss-\genre}}
-    \, (33 \puiss)^{1 + \frac{\genre}{\puiss-\genre}}
+    \nclmaps^{ \frac{\puiss}{\puiss-\genre} }
+    \, (67 \cdot 6^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
   }
   =
   \Vcos
