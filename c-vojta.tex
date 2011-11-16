@@ -2411,7 +2411,7 @@ relations.
     \\
     & =
     \sum_{\substack{ (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0)}
-        \\ \gmp\nu* \in \N^\anydim \minusset 0 }}
+        \\ \gmp\nu \in (\N^\anydim \minusset 0)^\mu }}
     \left(
       \der[\ip, \mu] S
       \cdot \prod_{\fct = 1}^\mu
@@ -2425,7 +2425,7 @@ relations.
     \frac {P^\derp} {R^{2\lgr\derp - 2}}
     + \sum_{\substack{
         (\ip, \mu) \in \N^{\anydim+1} \minusset{(0, 0), (0, 1)}
-        \\ \gmp\nu* \in \N^\anydim \minusset 0
+        \\ \gmp\nu \in (\N^\anydim \minusset 0)^\mu
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
     \der[\ip, \mu] S
     \cdot \prod_{\fct = 1}^\mu
@@ -2437,10 +2437,12 @@ relations.
   où l'on a noté \( (\ip, \mu) = (\ip[1], \dots, \ip[\anydim], \mu) \) et \(
     \der[\ip, \mu] \) les dérivées divisées correspondantes dans \( \cdn[
     \vaf[1], \dots, \vaf[\anydim], \vafi ] \).
+  On remarque alors que, sur l'ensemble de sommation, on a d'une part
+  \( \sum_{\fct=1}^{\mu} 2 \lgr{\gmp\nu*} - 1 = 2 \lgr\derp - \lgr\ip - \mu \)
+  et d'autre part \( 2\lgr\lambda + \mu \ge 2 \) : en effet on a soit \(
+    \lgr\lambda \ge 1 \) soit \( \mu \ge 2 \).
 
-  Compte tenu du fait que \( \sum_{\fct=1}^{\mu} 2 \lgr{\gmp\nu*} - 1 = 2
-    \lgr\derp - \lgr\ip - \mu \le 2 \lgr\derp - 2 \) sur l'ensemble de
-  sommation, on peut définir les polynômes \( P^\derp \)  par la relation de
+  On peut donc définir les polynômes \( P^\derp \)  par la relation de
   récurrence
   \begin{equation}
     - P^\derp
