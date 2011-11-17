@@ -2334,11 +2334,11 @@ relations.
 \begin{lem} \label{l:param-aff}
   Soient \( \vaf[1], \dots, \vaf[\anydim], \vafi \) des variables et \( L \)
   une extension algébrique finie de \( \cdn(\vaf[1]', \dots, \vaf[\anydim]')
-  \). On fixe \( \omega \) un élément de \( L \) ; on note \( \tilde\pi \) le
+  \). On fixe \( \omega \) un élément de \( L \) ; on note \( \pi \) le
   morphisme de \( \cdn[\vaf[1], \dots, \vaf[\anydim], \vafi ] \) dans \( L \)
   qui envoie \( \vaf* \) sur \( \vaf*' \) et \( \vafi \) sur \( \omega \).
-  Soit \( S \in \ker \tilde\pi \) ; on note \( R = \diff_\vafi S \) et on
-  suppose que \( R \notin \ker \pi \).
+  Soit \( S \in \ker \pi \) ; on note \( R = \frac{ \diff S }{ \diff
+      \vafi } \) et on suppose que \( R \notin \ker \pi \).
 
   On considère les dérivations standard \( \diff_\ind \) sur \( \cdn(
     \vaf[1]', \dots, \vaf[\anydim]' ) \) ainsi que leurs extensions à \( L \),
@@ -2348,7 +2348,7 @@ relations.
     \N^{\anydim} \minusset0 \) et \( \alpha \in \set{0, 1} \), tels que :
   \begin{enumthm}
     \item \( \der[\derp] \omega
-        = \tilde\pi\left(
+        = \pi\left(
           \dfrac{ P_\dv^\derp }{ R^{2\lgr\dermp - 1} }
         \right)
       \) ;
@@ -2374,12 +2374,12 @@ relations.
 
   On va construire \( P_0^\derp \) et \( P_1^\derp \) indépendamment par
   récurrence sur la longueur de \( \derp \), en partant à chaque fois de \(
-    P_\dv^\derp = - \diff_{\ind_0} S \) quand \( \derp_{\ind_0} = 1 \) et \(
-    \derp_\ind = 0 \) sinon (cas \( \lgr\derp = 1 \)), car ce choix convient.
-  Pour la suite, on fixe un \( \dv \), un \( \derp \) de longueur au moins \(
-    2 \), et on suppose qu'on a choisi un \( P_\dv^{\derp'} \) convenable pour
-  chaque \( \derp' \) de longueur strictement inférieure à celle de \( \derp
-  \).
+    P_\dv^\derp = - \frac{\diff S}{\diff \vaf[\ind_0]} \) quand \(
+    \derp_{\ind} = \delta^\ind_{\ind_0} \) (cas \( \lgr\derp = 1 \)), car ce
+  choix convient.  Pour la suite, on fixe un \( \dv \), un \( \derp \) de
+  longueur au moins \( 2 \), et on suppose qu'on a choisi un \( P_\dv^{\derp'}
+  \) convenable pour chaque \( \derp' \) de longueur strictement inférieure à
+  celle de \( \derp \).
 
   On commence par le cas ultramétrique et on note donc provisoirement \(
     P^\derp = P_0^\derp \) pour alléger. Les polynômes recherchés sont
@@ -2390,10 +2390,10 @@ relations.
       \vafi + \sum_{ \derp \in \N^\anydim \minusset 0 }
       \frac {P^\derp} {R^{2\lgr\derp -1}} \psp^\derp
     \right)
-    \in \ker \tilde\pi
+    \in \ker \pi
     \pmm,
   \end{equation}
-  où l'on a étendu \( \tilde\pi \) aux algèbres de séries en \( \psp[1], \dots,
+  où l'on a étendu \( \pi \) aux algèbres de séries en \( \psp[1], \dots,
     \psp[\anydim] \) au départ et à l'arrivée. Il suffit, pour satisfaire
   cette contrainte,  d'imposer que la série ci-dessus ait tous ses termes nuls
   sauf le premier qui est égal à \( S \). Le développement de \bsc{Taylor} de
@@ -2483,11 +2483,14 @@ relations.
   \begin{align}
     Q_\derp
     & =
-    R^2 \, \diff_{\ind_0} Q_{\derp'}
-    - R \, \diff_{\ind_0} S \, \diff_\vafi Q_{\derp'}
+    R^2 \, \frac{ \diff Q_{\derp'} }{ \diff \vaf[\ind_0] }
+    - R \, \frac{ \diff S }{ \diff \vaf[\ind_0] }
+    \, \frac{ \diff Q_{\derp'} }{ \diff \vafi }
     \\ & \qquad
-    + (2\lgr{\derp'} - 1) Q_{\derp'}
-    (\diff_{\ind_0} S \, \diff_\vafi R - R \diff_{\ind_0} R)
+    + (2\lgr{\derp'} - 1) Q_{\derp'} \cdot \left(
+      \frac{ \diff S }{ \diff \vaf[\ind_0] } \, \frac{ \diff R }{ \diff \vafi }
+      - R \frac{ \diff R }{ \diff \vaf[\ind_0] }
+    \right)
     \pmm.
   \end{align}
   On en déduit immédiatement les estimations de degré annoncées, en
@@ -2573,7 +2576,7 @@ relations.
   \begin{align}
     \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
     & =
-    \tilde\pi \left( \frac{
+    \pi \left( \frac{
         \tilde P_{\ind, \dv}^\derp (\vaf[1], \dots, \vaf[\anydim], \vafi)
       }{
         R(\vaf[1], \dots, \vaf[\anydim], \vafi) ^{2\lgr\derp - 1}
