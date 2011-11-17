@@ -2358,7 +2358,7 @@ relations.
         \le
         \nv1 S ^{2\lgr\derp - 1}
         \cdot \left(
-          (8\anydim)^{\lgr\derp -1} D^{3\lgr\derp -2}
+          (8\anydim)^{\lgr\derp - 1} D^{3\lgr\derp -2}
         \right)^\dv \) où \( D = \max(\deg_\vaf S, \deg_\vafi S) \).
   \end{enumthm}
 \end{lem}
@@ -2513,99 +2513,121 @@ relations.
     \le \anydim^{\lgr\derp-1} \).
 \end{proof}
 
-Notons \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
-fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
-posons \( S_\ind = \poldep[][\anydim+1](1, \vaf[1], \dots, \vaf[\anydim],
-  \vaf[\ind] \vafi) \). On peut alors appliquer le lemme précédent avec \( L
-  = \cdn(\anyvar) \) en prenant pour \( \vaf[\indi]' \) et \( \omega \) les
-images
-respectives de \( \vp[\indi]/\vp[0] \) et \( \vp[\anydim+1]/\vp* \) dans ce
-dernier, ainsi que \( S = S_\ind \) car ce choix convient étant donné que \(
-  \poldep[][\anydim+1] \) est le polynôme minimal de \( \vp[\anydim+1] \).
-On note \( \tilde P_{\ind, \dv}^\derp \) les polynômes obtenus et \( \tilde
-  Q_\ind = \diff_\vafi S_\ind \). On a alors, dans \( \cdn(\anyvar) \) :
-\begin{align}
-  \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
-  & =
-  \tilde\pi \left( \frac{
-      \tilde P_{\ind, \dv}^\derp (\vaf[1], \dots, \vaf[\anydim], \vafi)
-    }{
-      \tilde Q_\ind (\vaf[1], \dots, \vaf[\anydim], \vafi) ^{2\lgr\derp - 1}
-    } \right)
-  \\ & =
-  \frac{
-    \tilde P_{\ind, \dv}^\derp
-    (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim]/\vp*)
-  }{
-    \tilde Q_\ind
-    (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim]/\vp*)
-    ^{2\lgr\derp - 1}
-  }
-  \cdot \left(
-    \frac{ \vp[0] \vp* }{ \vp[0] \vp* }
-  \right)^{(2\anydeg-1)(2\lgr\derp-1)}
-  \\ & =
-  \frac{
-    \bar P_{\ind, \dv}^\derp
-  }{
-    (Q_\ind) ^{2\lgr\derp - 1}
-  }
-\end{align}
-où \( \bar P_{\ind, \dv}^\derp \) est homogène de degré \( 2 (2\anydeg-1)
-  (2\lgr\derp-1) \) en \( \vp[0], \dots, \vp[\anydim+1] \) et \( Q_\ind \)
-homogène de degré \( 4\anydeg - 2 \) en ces mêmes variables, en remarquant que
-\( \deg S = 2\anydeg \). On pose enfin \( P_{\ind, \dv}^\derp = \bar P_{\ind,
-    \dv}^\derp \cdot \bar Q_\ind \) de sorte qu'on a l'énoncé suivant.
+\begin{tdef}
+  On note \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
+  fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
+  \( Q = \frac{\diff \poldep[][\anydim+1]}{\diff \vp[\anydim+1]} \). Il est
+  clair que \( \deg Q = \anydeg - 1 \) et
+  \( \nv1 Q \le \nv1{ \chow\anyvar } \anydeg^\dv \).
+\end{tdef}
 
 \begin{lem} \label{l:param-any+1}
-  Dans les notations précédentes, pour tout \( \derp \in \N^\anydim \minusset0
-  \) on a :
+  Avec la définition précédente, pour tous \( \ind \in \set{0, \dots, \anydim}
+  \) et \( \derp \in \N^\anydim \minusset0 \), il existe des formes
+  homogènes \( P_{\ind, \dv}^\derp \) telles que :
   \begin{enumthm}
     \item \(
         \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
         =
-        \frac{ P_{\ind, \dv}^\derp }{ Q_\ind^{2\lgr\derp} }
+        \frac{ P_{\ind, \dv}^\derp }{ Q^{2\lgr\derp} }
       \) dans \( \cdn(\anyvar) \) ;
     \item \(
         \deg P_{\ind, \dv}^\derp
         =
-        4 (2\anydeg - 1) \lgr\derp
+        4\anydeg \lgr\derp
       \) ;
     \item \(
         \nv1{ P_{\ind, \dv}^\derp }
         \le
         \nv1{ \chow\anyvar }^{2\lgr\derp}
-        \cdot (32 \anydim \anydeg^3)^{\lgr\derp \dv}
-      \) ;
-    \item \(
-        \deg Q_\ind
-        =
-        2 (2\anydeg - 1)
-      \) ;
-    \item \(
-        \nv1{ Q_\ind }
-        \le
-        \nv1{ \chow\anyvar } \cdot \anydeg^{\dv}
+        \cdot (8 \anydim \anydeg^3)^{\lgr\derp \dv}
       \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
-  Tout est évident à partir de la construction, sauf peut-être les majorations
-  de norme. Pour celle de \( Q_\ind \), on remarque que \( \nv1{ R_\ind } \le
-    \nv1{ \chow\anyvar } \) et que \( R_\ind \) est de degré au plus \(
-    \anydeg \) en \( \vafi \). Pour celle de \( P_{\ind, \dv}^\derp \) on a
+  Posons \( S_\ind = \poldep[][\anydim+1](1, \vaf[1], \dots, \vaf[\anydim],
+    \vaf[\ind] \vafi) \) ; les degrés partiels en \( \vaf \) et \( \vafi \) de
+  \( S_\ind \) sont tous deux majorés par \( \anydeg \), et le norme par celle
+  de \( \chow\anyvar \).
+
+  On souhaite appliquer le lemme précédent avec \( L = \cdn(\anyvar) \) en
+  prenant pour \( \vaf[\indi]' \) et \( \omega \) les images respectives de \(
+    \vp[\indi]/\vp[0] \) et \( \vp[\anydim+1]/\vp* \) dans ce dernier, ainsi
+  que \( S = S_\ind \). Ceci est possible car on a
+  \begin{align}
+    \pi(R)
+    & =
+    \pi\left( \frac{ \diff S_\ind }{ \diff \vafi } \right)
+    =
+    \pi\bigl( \vaf* Q(1, \vaf[1], \dots, \vaf[\anydim], \vaf* \vafi) \bigr)
+    \\ & =
+    \frac{ \vp* }{ \vp[0] }
+    Q\left(
+      \frac{\vp[0]}{\vp[0]}, \dots, \frac{\vp[\anydim+1]}{\vp[0]}
+    \right)
+  \end{align}
+  et qu'aucun de ces facteurs n'est nul dans \( \cdn(V) \) car le plongement
+  est adapté.  On note \( \tilde P_{\ind, \dv}^\derp \) les polynômes obtenus.
+  On a alors, dans \( \cdn(\anyvar) \) :
+  \begin{align}
+    \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
+    & =
+    \tilde\pi \left( \frac{
+        \tilde P_{\ind, \dv}^\derp (\vaf[1], \dots, \vaf[\anydim], \vafi)
+      }{
+        R(\vaf[1], \dots, \vaf[\anydim], \vafi) ^{2\lgr\derp - 1}
+      } \right)
+    \\ & =
+    \frac{
+      \tilde P_{\ind, \dv}^\derp
+      (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim]/\vp*)
+    }{
+      \bigl(
+        (\vp* / \vp[0])
+        Q (\vp[0]/\vp[0], \dots, \vp[\anydim+1]/\vp[0], \vp[\anydim]/\vp*)
+      \bigr)^{2\lgr\derp - 1}
+    }
+    \cdot \left(
+      \frac{ \vp[0] \vp* }{ \vp[0] \vp* }
+    \right)^{(2\lgr\derp-1)\anydeg}
+    \\ & =
+    \frac{
+      \bar P_{\ind, \dv}^\derp (\vp[0], \dots, \vp[\anydim+1])
+    }{
+      \bigl(
+        \vp*^{\anydeg+1} Q(\vp[0], \dots, \vp[\anydim+1])
+      \bigr)^{2\lgr\derp - 1}
+    }
+    =
+    \frac{
+      P_{\ind, \dv}^\derp (\vp[0], \dots, \vp[\anydim+1])
+    }{
+      \bigl(
+        \vp*^{\anydeg+1} Q(\vp[0], \dots, \vp[\anydim+1])
+      \bigr)^{2\lgr\derp}
+    }
+  \end{align}
+  où \( \bar P_{\ind, \dv}^\derp \) est l'homogénéisé de \( \tilde P_{\ind,
+      \dv}^\derp \) par rapport à \( \vp[0] \vp* \), de degré \(
+    2\anydeg(2\lgr\derp-1) \),
+  et \( P_{\ind, \dv}^\derp = \bar P_{\ind, \dv}^\derp \vp*^{\anydeg+1} Q \).
+  Cette dernière opération n'a pour but que de simplifier les calculs
+  ultérieurs en rendant le degré exactement linéaire en \( \lgr\dermp \).
+
+  Par construction, \( P_{\ind, \dv}^\derp \) est homogène de degré \(
+    4\anydeg \lgr\derp \) et satisfait le premier point ; de plus
   \begin{align}
     \nv1{ P_{\ind, \dv}^\derp }
     & \le
     \nv1{ \chow\anyvar }^{2\lgr\derp - 1}
     \cdot \left(
-      (4\anydim)^{\lgr\derp -1} (2\anydeg)^{3\lgr\derp -2}
+      (8\anydim)^{\lgr\derp - 1} \anydeg^{3\lgr\derp -2}
     \right)^\dv
     \cdot
     \nv1{ \chow\anyvar } \cdot \anydeg^\dv
   \end{align}
-  qui donne immédiatement le résultat annoncé.
+  qui donne immédiatement le dernier point.
 \end{proof}
 
 Nous sommes maintenant prêts à étudier les dérivées des monômes de la forme
