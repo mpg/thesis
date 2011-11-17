@@ -1,7 +1,8 @@
 Next actions
 ============
 
-Les (A) de Maths/Vojta, puis les (B) et Maths/Vojta et Rédaction/Vojta
+Finir la rédaction de Vojta coeur.
+Commencer les corrolaires.
 
 Rédaction {{{1
 =========
@@ -111,9 +112,6 @@ systématiquement la norme ou mesure archimédienne utilisée
 Vojta {{{2
 -----
 
-(B) Reprendre notations dans la partie dérivées :
-    - Q en conflit avec \pden dans la démo du premier lemme
-
 (C) pour \rfull etc : mettre le degré en bas (plus cohérent avec les parties
 homogènes)
 
@@ -132,23 +130,8 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(B) Reprendre les \todo du texte
-
-(B) Écrire la preuve du deuxième point de s:part-cases
-
-(B) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
+(C) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
 fine pour le deuxième \rdiv
-
-(B) Dans la représentation des dérivées, on pourrait se limiter aux formes
-dans k[X]^{C'''}, est-ce utile ?
-    On dirait bien : on gagne quand même sur le degré du dénominateur et
-    surtout c'est conceptuellement plus clair et plus simple.
-
-(C) Étudier sérieusement la réduction au cas d'un diviseur : peut-elle se
-faire exclusivement pour Vojta (par opposition à l'énoncé final) ??
-(Attention, on veut en plus que le truc soit symétrique pour le formulaire.)
-    - Faire un squelette détaillé des réductions. (OK)
-    (C) Remplir ce squelette avec des preuves.
 
 Mumford {{{2
 -------
