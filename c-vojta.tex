@@ -2271,7 +2271,8 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
     \begin{cases*}
       0
       & si \( \supp\derp \not\subset \set{\ind, \indi} \)
-      ou \( \derp[\indi] > 1 \) ; \\
+      ou \( \derp[\indi] > 1 \) ;
+      \\
       (-1)^{\derp*}
       \left( \frac{ \vp[\indi] }{ \vp* } \right)^{1-\derp[\indi]}
       \left( \frac{ \vp[0] }{ \vp* } \right)^{\lgr\derp}
@@ -2532,7 +2533,7 @@ relations.
     \item \(
         \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
         =
-        \frac{ P_{\ind, \dv}^\derp }{ Q^{2\lgr\derp} }
+        \frac{ P_{\ind, \dv}^\derp }{ (\vp*^{\anydeg+1} Q)^{2\lgr\derp} }
       \) dans \( \cdn(\anyvar) \) ;
     \item \(
         \deg P_{\ind, \dv}^\derp
@@ -2653,18 +2654,18 @@ qui font l'objet du lemme suivant.
         = \frac{
           P^\derp_{\ip, \ind, \dv}
         }{
-          Q_\ind^{2\lgr\derp} \vp*^{\lgr\derp+\lgr\ip}
+          Q_\ind^{2\lgr\derp} \vp*^{2\lgr\derp(\anydeg+1) + \lgr\ip}
         }
       \) dans \( \cdn(\anyvar) \) ;
     \item \( \deg P^\derp_{\ip, \ind, \dv}
         =
-        \lgr\ip + (8\anydeg - 3) \lgr\derp
+        \lgr\ip + 4 \anydeg \lgr\derp
       \) ;
     \item \( \nv1{ P^\derp_{\ip, \ind, \dv} }
         \le
         \nv1{ \chow\anyvar }^{2\lgr\derp}
         \left(
-          \bigl( 32 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp }
+          \bigl( 8 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp }
           \cdot 2^{ \anydim \lgr\ip }
         \right)^\dv
       \).
@@ -2703,27 +2704,37 @@ qui font l'objet du lemme suivant.
     \right\}
     \pmm.
   \end{equation}
-  On pose alors
+
+  On pose alors \( P_{\ind, \dv}^{(0, \dots, 0)} = 1 \) et \( \indic0(\derp) =
+    1 \) si \( \derp = (0, \dots, 0) \) et \( 0 \) sinon, de sorte que d'après
+  le lemme précédent on a
+  \begin{equation}
+    \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
+    =
+    \frac{ P_{\ind, \dv}^\derp }{ (\vp*^{\anydeg+1} Q)^{2\lgr\derp} }
+    \cdot \left( \frac{ \vp[\anydim+1] }{ \vp* } \right)^{\indic0(\derp)}
+  \end{equation}
+  pour tout \( \derp \), même nul. En appliquant de plus le
+  lemme~\ref{l:param-any-easy}, il vient :
   \begin{align}
-    P^\derp_{\ip, \ind, \dv}
+    \der^\derp M_\ind^\ip
     =
     \sum_{\gmp\nu \in \sumset'} \Biggl(
       \prod_{\indi=0}^{\anydim}
-      & \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-      (-1)^{\indl[\ind]} \vp[\indi] ^{1-\indl[\indi]} \vp[0] ^{\lgr\indl}
-      \cdot \vp* ^{\indl[\indi]} Q_\ind^{2\lgr\indl}
+      \ &
+      \prod_{ \mathclap{\alpha_\indi = 1} }^{ \ip[\indi] }
+      (-1)^{\indl[\ind]}
+      \left( \frac{ \vp[\indi] }{ \vp* } \right)^{1-\indl[\indi]}
+      \left( \frac{ \vp[0] }{ \vp* } \right)^{\lgr\indl}
     \Biggr)
-    \\
-    \cdot
-    & \renewcommand\indi{{\anydim+1}}
-    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-    P_{\ind, \dv}^\indl \vp[\anydim+1]^{\indic0(\indl)}
-    \cdot
-    \vp*^{\lgr\indl + 1 - \indic0(\indl)}
+    \\ \cdot &
+    \renewcommand\indi{{\anydim+1}}
+    \prod_{ \mathclap{\alpha_\indi = 1} }^{ \ip[\indi] } \
+    \frac{ P_{\ind, \dv}^\indl }{ (\vp*^{\anydeg+1} Q)^{2\lgr\indl} }
+    \cdot \left( \frac{ \vp[\anydim+1] }{ \vp* } \right)^{\indic0(\indl)}
+    \pmm,
   \end{align}
-  où l'on a posé \( P_{\ind, \dv}^{(0, \dots, 0)} = 1 \) et \( \indic0(\nu)
-  \) vaut \( 1 \) si \( \nu = (0, \dots, 0) \) et \( 0 \) sinon, et pris la
-  somme sur l'ensemble
+  où la somme est prise sur l'ensemble
   \begin{equation}
     \sumset' = \left\{
       \gmp\nu \in \sumset
@@ -2735,37 +2746,56 @@ qui font l'objet du lemme suivant.
     \pmm.
   \end{equation}
 
-  Les lemmes~\ref{l:param-any-easy} et~\ref{l:param-any+1} donnent alors
-  immédiatement le premier point, en remarquant que
-  \begin{equation}
+  On remarque alors que
+  \(
     \sum_{\indi=0}^{\anydim+1}
     \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-    \sum_{\indi=0}^{\anydim+1}
-    \sum_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-    \lgr\indl + 1
+    1
     =
-    \lgr\derp + \lgr\ip
-    \quad
-    \forall \gmp\nu \in \sumset
-    \pmm.
-  \end{equation}
-  Le calcul du degré est direct (c'est par construction celui du dénominateur)
+    \lgr\ip
+  \)
+  de sorte que multiplier chaque facteur par \( \vp* \) dans l'expression
+  ci-dessus revient à multiplier la somme par \( \vp*^{\lgr\ip} \). On est
+  ainsi amené à poser
+  \begin{align}
+    P^\derp_{\ip, \ind, \dv}
+    =
+    \sum_{\gmp\nu \in \sumset'} \Biggl(
+      \prod_{\indi=0}^{\anydim}
+      & \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+      (-1)^{\indl[\ind]}
+      \vp[\indi] ^{1-\indl[\indi]} \vp* ^{\indl[\indi]}
+      \cdot \vp[0] ^{\lgr\indl} \vp*^{\lgr\indl(2\anydeg + 1)}
+      \cdot Q^{2\lgr\indl}
+    \Biggr)
+    \\
+    \cdot
+    & \renewcommand\indi{{\anydim+1}}
+    \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
+    P_{\ind, \dv}^\indl
+    \cdot
+    \vp[\anydim+1]^{\indic0(\indl)}
+    \vp*^{1 - \indic0(\indl)}
+  \end{align}
+  qui satisfait au premier point.
+
+  Le calcul du degré est direct (par homogénéité, c'est celui du dénominateur)
   et on ne détaille donc que l'estimation de norme : chaque terme de la somme
   définissant \( P_{\ip, \ind, \dv}^\derp \) est majoré en norme par
   \begin{align}
     \Biggl(
       \prod_{\indi=0}^{\anydim}
       \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
-      \nv1{ Q_\ind }^{2\lgr\indl}
+      \nv1{ Q }^{2\lgr\indl}
     \Biggr)
     \renewcommand\indi{{\anydim+1}}
     \prod_{ \alpha_\indi = 1 }^{ \ip[\indi] }
     \nv1{ P_{\ind, \dv}^\indl }
     \le
     \nv1{ \chow\anyvar }^{2\lgr\derp}
-    \cdot (32 \anydim \anydeg^3)^{\lgr\derp \dv}
+    \cdot (8 \anydim \anydeg^3)^{\lgr\derp \dv}
   \end{align}
-  d'après le lemme précédent.
+  d'après le lemme précédent et la définition de \( Q \).
   On remarque alors que l'ensemble de sommation \( \sumset \) s'écrit aussi
   \begin{equation}
     \prod_{p = 1}^{\anydim} \left\{
