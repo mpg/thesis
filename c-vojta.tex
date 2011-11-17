@@ -785,13 +785,15 @@ de normes utilisées). Cependant, nous utiliserons souvent la majoration plus
 évidente \( \nv1{\poldep**} \le \nv1{\varfca*} \) dans les estimations où
 cette quantité apparaît déjà par ailleurs.
 
-On introduit ensuite \( \pden** \) la dérivée de \( \poldep** \) par rapport à
-la dernière variable et \( \pdenp* = \prod_{\indi=\vdim*+1}^\dimp \pden** \).
-Enfin, on notera \( (\cex**)_\ind \) un système de coordonnées
-multihomogène de \( \ex* \) dans le plongement \( \vaemb \) et \(
-  (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).  Nous pouvons
-maintenant énoncer les cas particuliers à exclure dans la démonstration de la
-proposition~\ref{p:varset-notmin}.
+\begin{tdef} \label{d:pden-cexa}
+  On note \( \pden* \) la dérivée de \( \poldep*[\vdim*+1] \) par rapport à la
+  dernière variable.  Par ailleurs, on fixe \( (\cex**)_\ind \) un système de
+  coordonnées multihomogène de \( \ex* \) dans le plongement \( \vaemb \) et
+  on note \( (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).
+\end{tdef}
+
+Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
+démonstration de la proposition~\ref{p:varset-notmin}.
 
 \begin{scho} \label{s:part-cases}
   Dans la démonstration de la proposition~\ref{p:varset-notmin}, on peut
@@ -799,7 +801,7 @@ proposition~\ref{p:varset-notmin}.
   \begin{enumthm}
     \item \( \cexa** \neq 0 \) pour tous \( \fct \) et \( \ind \in \set{1,
           \dots, \vdim*} \) ;
-    \item \( \pdenp*(\cexa*) \neq 0 \) pour tout \( \fct \).
+    \item \( \pden*(\cexa*) \neq 0 \) pour tout \( \fct \).
   \end{enumthm}
   Remarquons qu'on a déjà \( \cexa*[0] \neq 0 \) d'après
   l'hypothèse~\eqref{e:Vapx}.
@@ -809,12 +811,14 @@ proposition~\ref{p:varset-notmin}.
   Si le premier point n'est pas satisfait, pour un certain \( (\fct, \ind) \),
   on peut prendre \( T = \vmp** \) dans la conclusion de la
   proposition ; en effet cette forme ne s'annulle en \( \ex \) mais pas
-  identiquement sur \( \var \) (car le plongement est adapté) et les
+  identiquement sur \( \var* \) (car le plongement est adapté) et les
   conditions de degré et de hauteur sont largement satisfaites.
 
-  \later
-  Si le deuxième point est faux, on a aussi la conclusion de la proposition en
-  procédant comme au lemme~4.3 de \cite{remivds}.
+  Si le deuxième point est faux pour un certain \( \fct \) , on choisit cette
+  fois \( T = \pden* \) qui convient également : en effet, le caractère adapté
+  du plongement implique que \( \vp*[\vdim*+1] \) est de degré \( \vdeg* \)
+  sur les premières variables, dont \( \pden* \) étant de degré plus petit, ne
+  peut pas s'annuler identiquement sur \( \var* \).
 \end{proof}
 
 
@@ -2831,7 +2835,8 @@ qui font l'objet du lemme suivant.
 
 Transposons maintenant ce résultat à notre situation multiprojective. On
 rappelle auparavant que \( \cdn[\vmp]^{C''} \) est défini
-par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
+par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}, et les \( \pden* \) par la
+définition~\ref{d:pden-cexa}.
 
 \begin{lem} \label{l:par-var}
   Soit \( G \in \cdn[\vmp]^{C''} \) une forme de multidegré \(
@@ -2848,14 +2853,14 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
           P^\dermp_{G, \ind, \dv}
         }{
           \prod\fctrange
-          (\pden*[\indv*])^{2\lgr{\dermp*}}
-          (\vmp*[\indt*])^{ \alpha_\fct + \lgr{\dermp*} }
+          \pden*^{2\lgr{\dermp*}}
+          (\vmp*[\indt*])^{ 2\lgr{\dermp*}(\vdeg* + 1) + \alpha_\fct }
         }
       \) dans \( \cdn(\var) \) ;
     \item \(
         \deg_\fct P^\derp_{G, \ind, \dv}
         =
-        \alpha_\fct + (8\vdeg* - 3) \lgr{\dermp*}
+        \alpha_\fct + 4\vdeg* \lgr{\dermp*}
       \) ;
     \item \(
         \nv1{ P^\derp_{G, \ind, \dv} }
@@ -2864,7 +2869,7 @@ par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}. \todo[définitions des $Q$]
         \prod\fctrange
         \nv1{ \varfca* }^{2\lgr{\dermp*}}
         \left(
-          \bigl( 32 \vdim* \vdeg*^{3} \bigr) ^{ \lgr{\dermp*} }
+          \bigl( 8 \vdim* \vdeg*^{3} \bigr) ^{ \lgr{\dermp*} }
           \cdot 2^{ \vdim* \alpha_\fct }
         \right)^\dv
       \).
@@ -3426,7 +3431,7 @@ des propriétés suivantes.
         =
         \frac{ P_\place(\vmp) }{
           \prod\fctrange (\vmp*[\indv*]) ^{ \lgr{\dermp*} + \Dir* }
-          \, \pden*[\indv*](\vmp*)^{2\lgr{\dermp*}}
+          \, \pden*(\vmp*)^{2\lgr{\dermp*}}
         }
       \) ;
     \item \(
@@ -3579,7 +3584,7 @@ fonction en deux facteurs :
   \ratfv1 =
   \frac{ P_\place(\vmp) }{
     \prod\fctrange (\vmp*[\indv*]) ^{ \lgr{\dermp*} + \Dir* }
-    \, (\pden*[\indv*])^{ 2 \lgr{\dermp*} }
+    \, (\pden*)^{ 2 \lgr{\dermp*} }
   }
   =
   \underbrace{
@@ -3593,7 +3598,7 @@ fonction en deux facteurs :
     \frac{
       (\vmp*[\indv*])^{ 2 \lgr{\dermp*} \cdot \deg \pden*[\indv*] }
     }{
-      (\pden*[\indv*])^{ 2 \lgr{\dermp*} }
+      (\pden*)^{ 2 \lgr{\dermp*} }
     }
   }_{\textstyle \ratfv{1''}}
 \end{equation}
@@ -3602,15 +3607,15 @@ pas nul d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
 \begin{equation}
   \prod_\place
   \frac{
-    \av{ \cexa*[\indv] }^{ 2 \deg \pden*[\indv*] \lgr{\dermp*} \degv }
+    \av{ \cexa*[\indv] }^{ 2 \deg \pden* \lgr{\dermp*} \degv }
   }{
     \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
   }
   \le
-  \hautm[\infty]{ \cexa* }^{ 2 \deg \pden*[\indv*] \lgr{\dermp*} }
+  \hautm[\infty]{ \cexa* }^{ 2 \deg \pden* \lgr{\dermp*} }
   \pmm.
 \end{equation}
-On note alors que par définition, \( \deg \pden*[\indv*] = 2 (2\vdeg* - 1) \le
+On note alors que par définition, \( \deg \pden* = 2 (2\vdeg* - 1) \le
   4B \), puis en utilisant des comparaisons désormais habituelles, on a :
 \begin{align}
   \ratfh{1''}

@@ -976,8 +976,7 @@
 \newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
 
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
-\newc@star@deftwo \pden   {\fct}{\indi} {Q\pexp{#1}[#2]}
-\newc@star@default \pdenp {\fct}{}      {Q\ssub{#1}}
+\newc@star@default \pden {\fct}{}       {Q\ssub{#1}}
 \newcommand       \anypden {R}
 \nomdef \poldep a {P} \@gobbletwo{\poldep}{Relation de dépendance intégrale
   des dernières variables sur les premières dans un plongement adapté}
