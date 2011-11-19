@@ -2245,16 +2245,15 @@ dérivations ; on pose alors
   \pmm.
 \end{equation}
 
-On va alors chercher, pour tout \( \derp \) et pour certaines fonctions
+On cherche alors, pour tout \( \derp \) et pour certaines fonctions
 rationnelles \( f \), à donner une représentation de \( \der[\derp] f \) sous
 la forme \( G/H \) avec \( G \in \cdn[\vp] \) de degré et normes locales
-contrôlées, et \( H \in \cdn[\vp] \setminus \ideal\anyvar \) dont on contrôle
-suffisamment le lieu d'annulation. Par \og représentation \fg, on entend qu'on
+contrôlées, et \( H \in \cdn[\vp] \setminus \ideal\anyvar \) totalement
+explicite. Par \og représentation \fg, on entend qu'on
 veut avoir \( \pi(G/H) = \der[\derp] f \) où \( \pi \) est la projection
 naturelle de \( \cdn[\vp]_{(\ideal\anyvar)} \) sur \( \cdn(\anyvar) \). Pour
-des raisons techniques, on construira en fait deux représentations, pour
-lesquelles on contrôlera respectivement la norme aux places finies ou
-infinies.
+des raisons techniques, on construira en fait deux représentations, dont
+on contrôlera respectivement les normes aux places finies ou infinies.
 
 Pour l'application considérée, on peut se restreindre au cas où \( f \) est de
 la forme \( P / \vp* \) avec \( 0 \le \vp* \le \anydim \) et \( P \in
@@ -2290,9 +2289,11 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
   utilisant la règle de \bsc{Leibniz} et ses conséquences usuelles, on a
   facilement
   \begin{equation}
-    \diff_\alpha \frac{ \vp[\indi] }{ \vp* }
+    \diff_\alpha
+    \frac{ \vp[\indi] }{ \vp[0] }
+    \left( \frac{ \vp* }{ \vp[0] } \right)^{-1}
     =
-    \left( \frac{ \vp[0] }{ \vp* } \right)^2 \left(
+    \left( \frac{ \vp* }{ \vp[0] } \right)^{-2} \left(
       \frac{ \vp* }{ \vp[0] }
       \diff_\alpha \frac{ \vp[\indi] }{ \vp[0] }
       -
@@ -2303,16 +2304,16 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
     \begin{cases*}
       - \frac{ \vp[\indi] }{ \vp[0] } \,
       \left( \frac{ \vp[0] }{ \vp* } \right)^2
-      & si \( \alpha = \indi \) ;
+      & si \( \alpha = \ind \) ;
       \\
       \frac{ \vp[0] }{ \vp* }
-      & si \( \alpha = \ind \) ;
+      & si \( \alpha = \indi \) ;
       \\
       0
       & sinon.
     \end{cases*}
   \end{equation}
-  Ceci donne clairement le premier cas ; pour le deuxième on écrit
+  Ceci donne le premier cas (en itérant) ; pour le deuxième on écrit
   \begin{equation}
     \der[\derp] \frac{ \vp[\indi] }{ \vp[\ind] }
     =
@@ -2342,7 +2343,7 @@ relations.
   \). On fixe \( \omega \) un élément de \( L \) ; on note \( \pi \) le
   morphisme de \( \cdn[\vaf[1], \dots, \vaf[\anydim], \vafi ] \) dans \( L \)
   qui envoie \( \vaf* \) sur \( \vaf*' \) et \( \vafi \) sur \( \omega \).
-  Soit \( S \in \ker \pi \) ; on note \( R = \frac{ \diff S }{ \diff
+  Soit \( S \in \ker \pi \) ; on note \( R = \frac{ \partial S }{ \partial
       \vafi } \) et on suppose que \( R \notin \ker \pi \).
 
   On considère les dérivations standard \( \diff_\ind \) sur \( \cdn(
@@ -2357,8 +2358,8 @@ relations.
           \dfrac{ P_\dv^\derp }{ R^{2\lgr\dermp - 1} }
         \right)
       \) ;
-    \item \( \deg_\vaf P_\dv^\derp \le (2\lgr\derp - 1) \deg_\vaf S \) ;
-    \item \( \deg_\vafi P_\dv^\derp \le (2\lgr\derp - 1) \deg_\vafi S \) ;
+    \item \( \deg_\vaf P_\alpha^\derp \le (2\lgr\derp - 1) \deg_\vaf S \) ;
+    \item \( \deg_\vafi P_\alpha^\derp \le (2\lgr\derp - 1) \deg_\vafi S \) ;
     \item \( \nv1{ P_\dv^\derp }
         \le
         \nv1 S ^{2\lgr\derp - 1}
@@ -2379,7 +2380,7 @@ relations.
 
   On va construire \( P_0^\derp \) et \( P_1^\derp \) indépendamment par
   récurrence sur la longueur de \( \derp \), en partant à chaque fois de \(
-    P_\dv^\derp = - \frac{\diff S}{\diff \vaf[\ind_0]} \) quand \(
+    P_\dv^\derp = - \frac{\partial S}{\partial \vaf[\ind_0]} \) quand \(
     \derp_{\ind} = \delta^\ind_{\ind_0} \) (cas \( \lgr\derp = 1 \)), car ce
   choix convient.  Pour la suite, on fixe un \( \dv \), un \( \derp \) de
   longueur au moins \( 2 \), et on suppose qu'on a choisi un \( P_\dv^{\derp'}
@@ -2443,8 +2444,8 @@ relations.
     \der[\ip, \mu] \) les dérivées divisées correspondantes dans \( \cdn[
     \vaf[1], \dots, \vaf[\anydim], \vafi ] \).
   On remarque alors que, sur l'ensemble de sommation, on a d'une part
-  \( \sum_{\fct=1}^{\mu} 2 \lgr{\gmp\nu*} - 1 = 2 \lgr\derp - \lgr\ip - \mu \)
-  et d'autre part \( 2\lgr\lambda + \mu \ge 2 \) : en effet on a soit \(
+  \( \sum_{\fct=1}^{\mu} 2 \lgr{\gmp\nu*} - 1 = 2 \lgr\derp - 2 \lgr\ip - \mu
+  \) et d'autre part \( 2\lgr\lambda + \mu \ge 2 \) : en effet on a soit \(
     \lgr\lambda \ge 1 \) soit \( \mu \ge 2 \).
 
   On peut donc définir les polynômes \( P^\derp \)  par la relation de
@@ -2458,7 +2459,7 @@ relations.
         \\ \sum_\fct \gmp\nu* + \ip = \derp }}
     \der[\ip, \mu] S
     \cdot \Bigl( \prod_{\fct = 1}^\mu P^{\gmp\nu*} \Bigr)
-    \cdot R^{\lgr\ip + \mu - 2}
+    \cdot R^{2\lgr\ip + \mu - 2}
     \pmm.
   \end{equation}
   On majore alors les degrés de \( P^\derp \) par récurrence :
@@ -2488,44 +2489,49 @@ relations.
   \begin{align}
     Q_\derp
     & =
-    R^2 \, \frac{ \diff Q_{\derp'} }{ \diff \vaf[\ind_0] }
-    - R \, \frac{ \diff S }{ \diff \vaf[\ind_0] }
-    \, \frac{ \diff Q_{\derp'} }{ \diff \vafi }
+    R^2 \, \frac{ \partial Q_{\derp'} }{ \partial \vaf[\ind_0] }
+    - R \, \frac{ \partial S }{ \partial \vaf[\ind_0] }
+    \, \frac{ \partial Q_{\derp'} }{ \partial \vafi }
     \\ & \qquad
     + (2\lgr{\derp'} - 1) Q_{\derp'} \cdot \left(
-      \frac{ \diff S }{ \diff \vaf[\ind_0] } \, \frac{ \diff R }{ \diff \vafi }
-      - R \frac{ \diff R }{ \diff \vaf[\ind_0] }
+      \frac{ \partial S }{ \partial \vaf[\ind_0] }
+      \, \frac{ \partial R }{ \partial \vafi }
+      - R \frac{ \partial R }{ \partial \vaf[\ind_0] }
     \right)
     \pmm.
   \end{align}
-  On en déduit immédiatement les estimations de degré annoncées, en
-  particulier \( \max(\deg_\vaf Q_{\derp'}, \deg_\vafi Q_{\derp'}) \le
-    2 (\lgr\derp - 1) D \), qu'on utilise pour l'estimation de norme :
+  On en déduit immédiatement les estimations de degré annoncées. En
+  particulier, on utilise le fait que \( \max(\deg_\vaf Q_{\derp'}, \deg_\vafi
+    Q_{\derp'}) \le (2\lgr\derp - 3) D \) pour l'estimation de norme :
   \begin{align}
     \nv1{ Q_\derp }
     & \le
-    2 D^2 \nv1 S^2 \cdot 2 (\lgr\derp - 1) D \nv1{ Q_{\derp'} }
-    + 2 (\lgr\derp - 1) \nv1{ Q_{\derp'} } \cdot 2 D^3 \nv1 S^2
+    2 D^2 \nv1 S^2 \cdot (2\lgr\derp - 3) D \nv1{ Q_{\derp'} }
+    + (2\lgr\derp - 3) \nv1{ Q_{\derp'} } \cdot 2 D^3 \nv1 S^2
     \\ & \le
+    4 (2\lgr\derp - 3) D^3 \nv1 S^2 \nv1{ Q_{\derp'} }
+    \le
     8 (\lgr\derp - 1) D^3 \nv1 S^2 \nv1{ Q_{\derp'} }
     \pmm.
   \end{align}
-  On en déduit par récurrence que
+  On se souvient alors que dans le cas \( \lgr\derp = 1 \) on a \( \nv1{
+      Q_\derp } \le \nv1 S D^\dv \) pour en déduire par récurrence que
   \(
     \nv1{Q_\derp}
     \le
     \nv1 S^{2\lgr\derp-1} 8^{\lgr\derp-1} D^{3\lgr\derp-2}
     (\lgr\derp - 1) !
   \) ;
-  ceci implique le résultat annoncé vu que \( \binom{\lgr\derp}{\derp}
-    \le \anydim^{\lgr\derp-1} \).
+  ceci implique le résultat annoncé vu la définition de \( Q_\derp \)
+  ci-dessus et le fait que \( \binom{\lgr\derp}{\derp} \le
+    \anydim^{\lgr\derp-1} \).
 \end{proof}
 
-\begin{tdef}
+\begin{tdef} \label{d:pden-gen}
   On note \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
   fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
-  \( Q = \frac{\diff \poldep[][\anydim+1]}{\diff \vp[\anydim+1]} \). Il est
-  clair que \( \deg Q = \anydeg - 1 \) et
+  \( Q = \frac{\partial \poldep[][\anydim+1]}{\partial \vp[\anydim+1]} \). Il
+  est clair que \( \deg Q = \anydeg - 1 \) et
   \( \nv1 Q \le \nv1{ \chow\anyvar } \anydeg^\dv \).
 \end{tdef}
 
@@ -2556,7 +2562,7 @@ relations.
 \begin{proof}
   Posons \( S_\ind = \poldep[][\anydim+1](1, \vaf[1], \dots, \vaf[\anydim],
     \vaf[\ind] \vafi) \) ; les degrés partiels en \( \vaf \) et \( \vafi \) de
-  \( S_\ind \) sont tous deux majorés par \( \anydeg \), et le norme par celle
+  \( S_\ind \) sont tous deux majorés par \( \anydeg \), et la norme par celle
   de \( \chow\anyvar \).
 
   On souhaite appliquer le lemme précédent avec \( L = \cdn(\anyvar) \) en
@@ -2589,11 +2595,11 @@ relations.
     \\ & =
     \frac{
       \tilde P_{\ind, \dv}^\derp
-      (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim]/\vp*)
+      (\vp[1]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim+1]/\vp*)
     }{
       \bigl(
         (\vp* / \vp[0])
-        Q (\vp[0]/\vp[0], \dots, \vp[\anydim+1]/\vp[0], \vp[\anydim]/\vp*)
+        Q (\vp[0]/\vp[0], \dots, \vp[\anydim]/\vp[0], \vp[\anydim+1]/\vp*)
       \bigr)^{2\lgr\derp - 1}
     }
     \cdot \left(
@@ -2651,8 +2657,8 @@ qui font l'objet du lemme suivant.
 \begin{lem} \label{l:par-anyvar-mono}
   Soient \( \ip \in \N^{\anydim+1} \) et \( M_\ind^\ip \) comme ci-dessus,
   pour \( \ind \in \set{0, \dots, \anydim} \). En conservant les notations
-  ci-dessus, il existe des formes homogènes \( P^\derp_{\ip, \dv} \) telles
-  que
+  ci-dessus, pour tout \( \derp \in \N^\anydim \), il existe des formes
+  homogènes \( P^\derp_{\ip, \dv} \) telles que
   \begin{enumthm}
     \item \( \der^\derp M_\ind^\ip
         = \frac{
@@ -2799,8 +2805,10 @@ qui font l'objet du lemme suivant.
     \nv1{ \chow\anyvar }^{2\lgr\derp}
     \cdot (8 \anydim \anydeg^3)^{\lgr\derp \dv}
   \end{align}
-  d'après le lemme précédent et la définition de \( Q \).
-  On remarque alors que l'ensemble de sommation \( \sumset \) s'écrit aussi
+  d'après le lemme précédent et le fait que
+  \( \nv1 Q ^{2\lgr{\gmp\nu}} \le \nv1{ P_{\ind, \dv}^{\gmp\nu} } \) pour tout
+  \( \gmp\nu \).  On remarque alors que l'ensemble de sommation \( \sumset' \)
+  est contenu dans \( \sumset \) qui s'écrit aussi
   \begin{equation}
     \prod_{p = 1}^{\anydim} \left\{
       \gmp\nu[][p] \in \N^{\lgr\ip}
@@ -2827,22 +2835,22 @@ qui font l'objet du lemme suivant.
     \prod_{\alpha_0 = 1}^{\ip[0]} \vp[0] ^{1-\gmp\nu[0, \alpha_0][0]}
   \). De plus, on a \( \sum_{\alpha_0 = 1}^{\ip[0]} \gmp\nu[0, \alpha_0][0]
     \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
-  nuls dans cette somme, soit autant de termes égaux à \( \vp[0] \) dans le
+  nuls dans cette somme, soit autant de facteurs égaux à \( \vp[0] \) dans le
   produit précédent. Ainsi, \( \vp[0]^{\ip[0] - \derp[0]} \) est en facteur de
   chaque terme de la somme définissant \( P^\derp_{\ip, \ind, \dv} \), ce qui
   prouve l'assertion sur l'ordre.
 \end{proof}
 
 Transposons maintenant ce résultat à notre situation multiprojective. On
-rappelle auparavant que \( \cdn[\vmp]^{C''} \) est défini
-par~\eqref{e:C-spaces} et~\eqref{e:C-i-iii}, et les \( \pden* \) par la
-définition~\ref{d:pden-cexa}.
+rappelle auparavant que les \( \pden* \) sont donnés par la
+définition~\ref{d:pden-cexa}, qui coïncide avec la définition~\ref{d:pden-gen}
+appliquée successivement à chaque facteur \( \var* \).
 
 \begin{lem} \label{l:par-var}
-  Soit \( G \in \cdn[\vmp]^{C''} \) une forme de multidegré \(
+  Soit \( G \in \cdn[(\vmp*[0], \dots, \vmp*[\vdim+1])_\fct] \) une forme de
+  multidegré \(
     \alpha = (\alpha_1, \dots, \alpha_\puiss ) \) et \( g = G /
-    \vmp[][\indt*]^{\alpha} \) où l'on a noté \( \vmp[][\indt*]^{\alpha} =
-    \prod\fctrange (\vmp*[\indt*])^{\alpha_\fct} \) pour \( \indt \in
+    \prod\fctrange (\vmp*[\indt*])^{\alpha_\fct} \) avec \( \indt \in
     \prod\fctrange \set{0, \dots, \vdim*} \). Alors, pour tout \( \dermp \in
     \prod\fctrange \N^{\vdim*} \), il existe une forme \( P_{G, \ind,
       \dv}^\dermp \) telle que
