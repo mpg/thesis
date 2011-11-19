@@ -33,23 +33,19 @@ hypothèses suivantes.
           le morphisme \( (x, y) \mapsto ax - by \) sur \( \clmap \) ;
         \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
           bidegré \( (2a^2, 2b^2) \) ;
-        \item pour tout place \( \place \), toute carte \( \clmap \) et tout
-          indice \( \ind \), on a
-          \( \nv1{ \rmclab{a}{b}{\clmap}[\ind] } \le \hmclab* \) ;
+        \item pour tout place \( \place \) et toute carte \( \clmap \), on a
+          \( \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2} \) ;
         \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
-          \( \place \) il existe une carte \( \clmap_{a, b, x, y, \place} \in
-            \clmaps \) telle que
+          \( \place \) il existe une carte \( \clmap \in \clmaps \) telle que
           \begin{equation} \label{e:clab-loc}
             \hmclab*^{-(a^2 + b^2)}
             \le
             \frac{
-              \nv1{ \rmclab{a}{b}{ \clmap_{a, b, x, y, \place} }(x, y) }
+              \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
             }{
-              \nnv1{ \rmclab{a}{b}{ \clmap_{a, b, x, y, \place} } }
+              \nnv1{ \rmclab{a}{b}{ \clmap } }
               \nv1 x ^{2a^2} \nv1 y ^{2b^2}
             }
-            \le
-            \hmclab*^{a^2 + b^2}
             \pmm.
           \end{equation}
       \end{enumerate}
@@ -769,7 +765,8 @@ variables ; il est alors clair que
 \end{equation}
 
 Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
-  \poldep** \) une relation de dépendance de \( \vmp*[\indi] \) sur \(
+  \poldep** \) \label{p:def-poldep} une relation de dépendance de \(
+  \vmp*[\indi] \) sur \(
   \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée par l'application du
 fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans le plongement \(
   \vadapt* \circ \vaemb \). L'estimation précédente et le fait cité donnent
@@ -2866,12 +2863,12 @@ appliquée successivement à chaque facteur \( \var* \).
         }
       \) dans \( \cdn(\var) \) ;
     \item \(
-        \deg_\fct P^\derp_{G, \ind, \dv}
+        \deg_\fct P^\dermp_{G, \ind, \dv}
         =
         \alpha_\fct + 4\vdeg* \lgr{\dermp*}
       \) ;
     \item \(
-        \nv1{ P^\derp_{G, \ind, \dv} }
+        \nv1{ P^\dermp_{G, \ind, \dv} }
         \le
         \nv1{ G }
         \prod\fctrange
@@ -2882,7 +2879,7 @@ appliquée successivement à chaque facteur \( \var* \).
         \right)^\dv
       \).
   \end{enumthm}
-  De plus, \( \inda* \bigl( P^\derp_{G, \ind, \dv} \bigr) \ge \inda*(G) -
+  De plus, \( \inda* \bigl( P^\dermp_{G, \ind, \dv} \bigr) \ge \inda*(G) -
     \wtsum*(\dermp) \).
 \end{lem}
 
@@ -2937,7 +2934,7 @@ pour tout \( \dermp \in \N^\vdim \).  Si \( \ratfi \) est une fraction
 rationnelle et \( \point \) un point où elle est définie, on définit son
 indice en \( \point \) comme
 \begin{equation}
-  \inda[\point] \ratfi
+  \indg{b}[\point] \ratfi
   =
   \inf \set{
     \wtsum[b](\imp)
@@ -2952,9 +2949,9 @@ où l'indice est infini.
 \begin{rem} \label{r:ind-basis}
   La définition ci-dessus fait usage d'une base de dérivations de \(
     \cdn(\var*) \) \lat{via} les applications \( \der[\imp] \) (voir le début
-  de la sous-section~\ref{sec:vojta-param}). Il est important de noter qu'elle
-  ne dépend en fait pas de la base choisie, car chaque \( \lgr{\dermp*} \), et
-  donc \( \wtsum[b](\dermp) \), est bien sûr invariant par changement de base.
+  de la sous-section~\ref{sec:vojta-param}). Cependant, elle ne dépend pas de
+  la base choisie car chaque \( \lgr{\dermp*} \), et donc \(
+    \wtsum[b](\dermp) \), est bien sûr invariant par changement de base.
 \end{rem}
 
 \begin{lem} \label{l:indice-inversible}
@@ -3044,7 +3041,7 @@ représente à peu de chose près la norme de \( \cexa* \).
   \begin{equation}
     \av{ \cexa** }
     \le
-    \av{ \cexa*[\indv] }
+    \av{ \cexa*[\indv*] }
     \cdot \nv1{ \varfc* }
     \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
   \end{equation}
@@ -3052,12 +3049,13 @@ représente à peu de chose près la norme de \( \cexa* \).
   page~\pageref{fn:varfc}, on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
   est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui est
   le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons donc
-  \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } > \av{ \cexa**
+  \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } < \av{ \cexa**
     } \).
 
   On utilise alors le fait qu'on connaît, dans un plongement adapté, des
   relations \( \poldep** \) liant chacune des dernières coordonnées aux
-  premières,  unitaires en la dernière variable. En décomposant \( \poldep**
+  premières,  unitaires en la dernière variable (voir
+  page~\pageref{p:def-poldep}). En décomposant \( \poldep**
   \) suivant les puissances de \( \vmp** \), on voit qu'il existe des
   polynômes \( \poldep*[\ind, \alpha] \in \cdn[ \vmp*[0], \dots, \vmp*[\vdim*]
     ] \) tels que :
@@ -3072,6 +3070,7 @@ représente à peu de chose près la norme de \( \cexa* \).
     \text{ et }
     \sum_{ \alpha=1 }^{ \vdeg* } \nv1{ \poldep*[\ind, \alpha] }
     \le \nv1{ \poldep** }
+    \pmm.
   \end{equation}
   On spécialise alors en \( \cexa* / \cexa*[\indv*] \) et on prend les valeurs
   absolues :
@@ -3130,7 +3129,7 @@ Introduisons maintenant une fonction rationnelle définie par
   }
   \pmm.
 \end{equation}
-D'après le scolie~\ref{s:part-cases}, on a \( \cexa*[0] \neq 0 \) ; par
+D'après l'hypothèse~\ref{e:Vapx}, on a \( \cexa*[0] \neq 0 \) ; par
 ailleurs le choix de \( \indig* \) assure que
 \( \wembclg\clmape*[\indig*]( \cexa ) \neq 0 \), de sorte que le
 dénominateur ne s'annule pas en \( \cexa \) et
@@ -3139,14 +3138,14 @@ Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
 Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
-\( \clmapv* = \clmap_{\wts[\fcti], \wts**, \ex[\fcti], \ex**, \place} \) la
-carte donnée par les hypothèses~\ref{h:vaemb} et \( \clmapv = (\clmapv[1],
-  \dots, \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).
-On note alors \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv = \faux[\clmapv]
-\).  En utilisant le premier point du scolie~\ref{s:aux-co} et en remarquant
-que, pour chaque \( \fcti \), les vecteurs \( \wembclv* (\cexa[\fcti],
-  \cexa[\puiss]) \) sont proportionnels entre eux quand \( \place \) varie, on
-a, pour tout \( \place \) :
+\( \clmapv* \) la carte donnée par les hypothèses~\ref{h:vaemb} avec \( (a, b,
+  x, y) = (\wt*, \wt**, \ex*, \ex**) \), puis \( \clmapv = (\clmapv[1], \dots,
+  \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).  On
+pose alors pour simplifier \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv =
+  \faux[\clmapv] \).  En utilisant le premier point du scolie~\ref{s:aux-co}
+et en remarquant que, pour chaque \( \fcti \), les vecteurs \( \wembclv*
+  (\cexa[\fcti], \cexa[\puiss]) \) sont non nuls et proportionnels entre eux
+quand \( \place \) varie, on a, pour tout \( \place \) :
 \begin{align}
   \ratf
   & =
@@ -3158,10 +3157,13 @@ a, pour tout \( \place \) :
     (\vmp*[0])^{\epsz \wts* \delta + r_\fct}
     \cdot
     \prod\fctirange
-    \wembclv*[\indig](\vmp) ^{ \delta }
+    \wembclv*[\indig*](\vmp) ^{ \delta }
   }
-  \intertext{par homogénéité de \( \faux \). On introduit alors nos indices
-    locaux \( \indv \) et \( \indiv \) :}
+\end{align}
+par homogénéité de \( \faux \). On introduit alors nos indices locaux \( \indv
+\) et \( \indiv \) :
+\begin{align}
+  \ratf
    & =
   \frac{
     R(\vmp) \,
@@ -3171,7 +3173,7 @@ a, pour tout \( \place \) :
     (\vmp*[\indv*])^{\epsz \wts* \delta + r_\fct}
     \cdot
     \prod\fctirange
-    \wembclv*[\indiv](\vmp) ^{ \delta }
+    \wembclv*[\indiv*](\vmp) ^{ \delta }
   }
   \cdot \prod\fctirange
   \left(
@@ -3181,9 +3183,11 @@ a, pour tout \( \place \) :
   \left(
     \frac{ \vmp*[\indv*] }{ \vmp*[0] }
   \right) ^{ \epsz \wts* \delta + r_\fct }
-  \intertext{puis on utilise la définition de \( \Dir \) en scindant le
-    premier facteur et de nouveau la remarque sur les \( \wembclv* \) pour
-    simplifier le second :}
+\end{align}
+puis on utilise la définition de \( \Dir \) en scindant le premier facteur et
+de nouveau la remarque sur les \( \wembclv* \) pour simplifier le second :
+\begin{align}
+  \ratf
   & =
   \frac{
     R(\vmp) \,
@@ -3216,8 +3220,8 @@ a, pour tout \( \place \) :
   }_{\textstyle \ratfv4}
   \pmm.
 \end{align}
-On remarque que le dénominateur du premier facteur est égal à \( \fauxv
-\) modulo \( \varida \).
+On remarque que le numérateur du premier facteur est égal à \( \fauxv \)
+modulo \( \varida \).
 
 Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
   \der[\dermp] \ratf(\ex) \neq 0 \). Comme les derniers facteurs de
@@ -3263,17 +3267,16 @@ Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
 mais pas leur produit.
 
 Pour \( p \in \set{1, 2, 3, 4} \), posons alors \( \ratfh{p} = \sum_\place
-  \degv \ln \av{\ratfv{p}(\cexa)} \) où
-\( \degv \) désigne le degré local divisé en \( \place \) ; cette somme
-converge car \( \ratfv p \) parcourt en fait un ensemble fini (de cardinal
-majoré par celui de l'atlas \( \clmaps^{\puiss-1} \) choisi en
-sous-section~\ref{sec:wemb}) lorsque \( \place \) parcourt l'ensemble des
-places de \( \cdn \). La formule du produit donne alors
+  \degv \ln \av{\ratfv{p}(\cexa)} \) où \( \degv \) désigne le degré local
+divisé en \( \place \) ; cette somme converge car chaque \( \ratfv p \)
+appartient à un ensemble fini fixe de nombres algébriques (dont le cardinal
+est majoré en fonction de \( \dimp \), \( \puiss \) et \( \nclmaps \)).  La
+formule du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
 \end{equation}
-Supposons maintenant que,
-contrairement à la conclusion de la proposition, on ait
+Supposons maintenant que, contrairement à la conclusion de la proposition, on
+ait
 \begin{equation} \label{e:extra-dermp}
   \wtsum( \dermp ) < \epsi \delta / \sigma
 \end{equation}
@@ -3284,9 +3287,9 @@ utilisant l'hypothèse ci-dessus, les hypothèses~\eqref{e:Vbig}
 et~\eqref{e:Vcos} sur \( \ex \), et bien sûr les propriétés de la forme
 auxiliaire.
 
-Pour \( \ratfv4 \) on commence par remarquer que le dénominateur n'intervient
-pas dans le calcul de la hauteur, puis au numérateur que la valeur absolue
-d'une coordonnée est majorée par la norme du vecteur :
+Pour \( \ratfv4(\cexa) \) on commence par remarquer que le dénominateur
+n'intervient pas dans le calcul de la hauteur, puis au numérateur que la
+valeur absolue d'une coordonnée est majorée par la norme du vecteur :
 \begin{equation}
   \prod_\place
   \prod\fctrange
@@ -3397,7 +3400,7 @@ et, compte tenu de~\eqref{e:clab-loc} et de la définition de \( \clmapv \)
 ci-dessus,
 \begin{equation}
   \frac{
-    \nnv1{ \wembclp{\clmap}{\fcti} }
+    \nnv1{ \wembclp{\clmapv}{\fcti} }
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
     \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
   }{
@@ -3408,12 +3411,12 @@ ci-dessus,
   \bigl( \hmclab* B^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
   \pmm.
 \end{equation}
-Il ne reste à alors plus qu'à prendre le logarithme dans l'estimation
+Il ne reste alors plus qu'à prendre le logarithme dans l'estimation
 précédente, multiplier par \( \delta \) puis sommer sur \( \place \) et sur \(
   \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
-  2 \delta \wts[1] \bigl( \cst{vs-ht} + 2 \ln B \bigr)
+  2 \delta \bigl( \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
 \end{equation}
 en utilisant encore le lemme~\ref{l:sum-wts}.
 
@@ -3424,11 +3427,11 @@ Nous allons maintenant expliciter \( \ratfv1 \). Posons
   \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
 \) ; pour chaque place \( \place \), on applique alors le
 lemme~\ref{l:par-var} avec \( G = G_\place \) et \( \ind = \indv \), et on
-note \( P_\place = P_{G_\place, \indv, \dv}^\derp \) la forme obtenue pour
-l'indice \( \derp \) fixé plus haut (plus précisément, celle des deux formes
-obtenues qui correspond à la place considérée).  Remarquons que \( P_\place \)
-parcourt un ensemble fini quand \( \place \) varie (cet ensemble étant plus
-petit que \( \clmaps^{\puiss-1} \)).  La famille \( P_\place \) jouit alors
+note \( P_\place = P_{G_\place, \indv, \dv}^\dermp \) la forme obtenue pour
+l'indice \( \dermp \) fixé plus haut (plus précisément, celle des deux formes
+obtenues qui correspond à la place considérée). Remarquons comme précédemment
+que \( P_\place \) parcourt un ensemble fini de formes à coefficients
+algébriques quand \( \place \) varie ; la famille \( P_\place \) jouit de plus
 des propriétés suivantes.
 
 \begin{lem} \label{l:ratfv1}
@@ -3474,14 +3477,13 @@ des propriétés suivantes.
   premier est immédiat d'après la définition~\eqref{e:def-ratfv12} de \(
     \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
 
-  Avant de passer au degré, remarquons que l'hypothèse faite sur \( \dermp \)
-  implique que
+  Avant de passer au degré, remarquons que l'hypothèse~\ref{e:dermp} implique
+  que
   \begin{equation}
     \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma
     \pmm,
   \end{equation}
-  remarque qui nous servira également pour l'estimation de hauteur.
-  On écrit alors
+  ce qui nous servira également pour l'estimation de hauteur.  On écrit alors
   \begin{align}
     \deg_\fct P_\place
     & =
@@ -3492,6 +3494,7 @@ des propriétés suivantes.
     + o(\delta)
     \\ & \le
     \delta \wts* \wtw* (2 + \epsz + \frac{8B}{\sigma} \epsi)
+    + o(\delta)
   \end{align}
   qui donne bien la majoration annoncée, compte tenu du fait que \( 8B/\sigma
     \le 1 \) par définition de \( \sigma \) (prop.~\ref{p:extra}) et qu'on a
@@ -3610,8 +3613,9 @@ fonction en deux facteurs :
     }
   }_{\textstyle \ratfv{1''}}
 \end{equation}
-Pour le second facteur, on commence par remarquer que le dénominateur n'est
-pas nul d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
+Pour le second facteur, on commence par remarquer que le dénominateur ne
+s'annulle pas en \( \cexa* \)
+d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
 \begin{equation}
   \prod_\place
   \frac{
@@ -3695,10 +3699,10 @@ pour minorer le dénominateur, puis une comparaison classique de normes donne
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   \le
   \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
-  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt^{-1}}
+  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
   \pmm.
 \end{equation}
-Par construction de \( \vadapt \) (lemme~\ref{l:adapt-gen}) on a \(
+Par construction de \( \vadapt* \) (lemme~\ref{l:adapt-gen}) on a \(
   \cexa*[0] = \cex*[0] \) et on remarque alors que le premier facteur dans
 l'écriture ci-dessus n'est autre que \( \distv{\ex*}{\divi} \), ce qui nous
 permet d'exploiter~\eqref{e:Vapx} :
@@ -3706,19 +3710,19 @@ permet d'exploiter~\eqref{e:Vapx} :
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
   \hautm[2]{\ex*}^{-\wtapx \expapx}
-  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt^{-1}}
+  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
   \\ & \le
   \expb^{ -\wtapx \expapx \hautn{\ex*} }
   \cdot \expb^{\wtapx \expapx \htcmp}
-  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt^{-1}}
+  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
 \end{align}
 où la dernière ligne découle comme d'habitude de~\eqref{e:comp-h-hn}.
 
 On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
   -\wtapx\expapx \sum\fctrange \imp*[0] \hautn{\ex*}
-  + \sum\fctrange \deg_\fct P^\dermp_\place \left(
-    \frac{3\dv}2 \ln(\dimp+1) + \ln \nv\infty{\vadapt^{-1}}
+  + \sum\fctrange \deg_\fct P_\place \left(
+    \frac{3\dv}2 \ln(\dimp+1) + \ln \nv\infty{\vadapt*^{-1}}
     + \wtapx\expapx \htcmp
   \right)
 \end{align}
@@ -3753,7 +3757,7 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
     \biggl(
       \frac{3\dv}2 \ln(\dimp+1)
       \\
-      + \ln \nv\infty{\vadapt^{-1}}
+      + \ln \nv\infty{\vadapt*^{-1}}
       + \wtapx\expapx \htcmp
       + \ln \nv1{ \varfc* }
       + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* (\dimp+1) )
@@ -3795,11 +3799,9 @@ il vient
 \begin{align} \label{e:prod-lem-final}
   0
   & \le
-  \delta \Bigl(
-    \wts[1] \bigl(
-      \alpha \hautn{\ex[1]} + \beta
-    \bigr) + o(\wts[1])
-  \Bigr) + o(\delta)
+  \delta \wts[1] \bigl(
+    \alpha \hautn{\ex[1]} + \beta
+  \bigr) + o(\delta \wts[1])
 \end{align}
 avec :
 \begin{align}
@@ -3819,7 +3821,7 @@ avec :
   \pmm.
 \end{align}
 
-Montrons que le terme dominant noté \( \alpha \) ci-dessus est négatif et même
+Montrons que \( \alpha \) est négatif et même
 inférieur à \( - \frac{3\expapx \epsi}{16} \). La définition~\eqref{e:def-epsz}
 de \( \epsz \) assure que
 \begin{equation} \label{e:epsz-ct-extra}
