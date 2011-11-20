@@ -3827,7 +3827,7 @@ il vient
     \alpha \hautn{\ex[1]} + \beta
   \bigr) + o(\delta \wts[1])
 \end{align}
-avec :
+avec : % reporter dans la section « ajustement » !
 \begin{align}
   \alpha
   & =
@@ -4323,7 +4323,7 @@ extrapolation et application d'un théorème multiplicité. Cependant, cet ordre
 n'est pas celui dans lequel les valeurs des différents paramètres sont
 déterminés ; la présente section a pour but de clarifier la façon de choisir
 ces valeurs qui autrement risquent de paraître un peu « magiques » au moment
-où elles sont introduction dans les sections précédentes.
+où elles sont introduites dans les sections précédentes.
 
 Par ailleurs, nous établissons ici quelques majorations \lat{ad hoc} de
 quantités apparaissant au cours de la preuve ; ces estimations sont plus ou
@@ -4334,7 +4334,7 @@ ici pour ne pas perturber le cours des sections précédentes.
 
 \subsection{Méthode d'ajustement des paramètres}
 
-En premier lieu, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
+Tout d'abord, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
 supposée contredire le théorème est fixée en premier, ainsi que la famille \(
   (\wt*)_\fct \) comme indiqué à la sous-section~\ref{sec:wt}.
 
@@ -4376,14 +4376,14 @@ estimations finales, on peut tout à fait ne pas achever le calcul de ce \(
   \beta \) car son seul impact sera de fixer une valeur minimale pour \( \Vbig
 \), paramètre qui peut être fixé en dernier.
 
-Rappelons que pour pouvoir extrapoler, il est essentiel d'avoir que cette
+Rappelons que pour pouvoir extrapoler, il est essentiel que cette
 quantité \( \alpha \) soit négative. Rappelons sa valeur :
 \begin{equation}
   \alpha
   =
   2 \puiss \epsz
   + 3 (\puiss - 1) \Vcos
-  + \frac{4 (\puiss - 1) \dimp B \epsi}{\sigma}
+  + \frac{8 (\puiss - 1) \dimp B \epsi}{\sigma}
   - \frac38 \expapx \epsi
 \end{equation}
 et essayons de la relier à la structure de la fonction auxiliaire (on
@@ -4433,7 +4433,7 @@ degré de la forme obstructrice.
 
 La raison pour laquelle on introduit \( \cst{vs-deg-prod} \) dans la
 condition~\eqref{e:varset-deg} est qu'on veut pouvoir écrire~\eqref{e:tp-ind}
-c'est également ceci, plus précisément~\eqref{e:ct-cst-vs-deg}, qui détermine
+et c'est ceci, plus précisément~\eqref{e:ct-cst-vs-deg}, qui détermine
 sa valeur. Il est plus naturel d'absorber
 les facteurs supplémentaires dans la majoration de \( B \) que celle de \( D
 \) car la première quantité est \lat{a priori} plus petite (ceci se vérifie
@@ -4562,7 +4562,7 @@ d'après~\eqref{e:varset-deg}, ce qui permet de conclure.
 
 La prochaine majoration \lat{ad hoc} que nous montrons est
 \begin{equation} \label{e:ht-T-adhoc}
-  2\puiss \wts[1] \left(
+  2\puiss \left(
     \puiss \ln \puiss + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
     + \ln \puiss + \frac12
   \right)
