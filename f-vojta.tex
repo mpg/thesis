@@ -131,7 +131,8 @@
   \node[below] (lind) at (ind.south) {Extrapolation};
   \node[below] (lfo)  at (fo.south)  {Forme obstructrice};
 
-  \node[iter] (rec) [fit=(var-ht)(var-deg)(Vcos)(next-deg)(next-ht)(laux)]{};
+  \node[iter] (rec) [fit=(var-ht)(var-deg)(Vcos)(next-deg)(next-ht)(laux)]
+  {\hfill\null};
   \node[above] at (rec.north)  {
     Partie itérée.
     Entrée : \( \var = \va^\puiss \) ;
