@@ -807,7 +807,7 @@ démonstration de la proposition~\ref{p:varset-notmin}.
 \begin{proof}
   Si le premier point n'est pas satisfait, pour un certain \( (\fct, \ind) \),
   on peut prendre \( T = \vmp** \) dans la conclusion de la
-  proposition ; en effet cette forme ne s'annulle en \( \ex \) mais pas
+  proposition ; en effet cette forme s'annulle en \( \ex \) mais pas
   identiquement sur \( \var* \) (car le plongement est adapté) et les
   conditions de degré et de hauteur sont largement satisfaites.
 
@@ -3006,7 +3006,7 @@ proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
-  \( \sigma = \frac{512 (\puiss-1) B}{\eps} \).
+  \( \sigma = \frac{128 (\puiss-1) B}{\eps} \).
 \end{prop}
 
 La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
@@ -3300,45 +3300,52 @@ valeur absolue d'une coordonnée est majorée par la norme du vecteur :
   \prod\fctrange
   \hautm[\infty]{ \cexa* }^{\epsz \delta \wts* + r_\fct}
 \end{equation}
-puis on passe au logarithme et on utilise le fait que \( \cexa*
-  = \vadapt*(\cex*) \)
+puis on passe au logarithme :
 \begin{align}
   \ratfh4
   & \le
   \epsz \delta \Bigl(
     \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
   \Bigr) + o(\delta)
-  \\ & \le
-  \epsz \delta \Bigl(
-    \sum\fctrange \wts* \bigl(
-      \hautl[1]{ \cex* } + \hautl[\infty]{\vadapt*}
-    \bigr)
-  \Bigr) + o(\delta)
-  \intertext{puis, par~\eqref{e:comp-h-hn} :}
-  & \le
-  \epsz \delta \Bigl(
-    \sum\fctrange \wts* \bigl(
-      \hautn{ \ex* } + \htcmp + \ln(\dimp+1) + \hautl[\infty]{\vadapt*}
-    \bigr)
-  \Bigr) + o(\delta)
-  \intertext{et en utilisant~\eqref{e:vadapt-ht} puis en regroupant les termes
-    :}
-  & \le
-  \epsz \delta \Bigl(
-    \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
-    + \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
-  \Bigr) + o(\delta)
-  \intertext{et enfin, en invoquant~\eqref{e:wt-ratio}, le
-    lemme~\ref{l:sum-wts} et la définition de \( \cst{vs-ht} \) :}
-  \label{e:ratfh4}
-  \ratfh4
-  & \le
-  \epsz \delta \Bigl(
-    2 \puiss \wts[1] \hautn{ \ex[1] }
-    + 2 \wts[1] \bigl( 2 \cst{vs-ht} + \ln B \bigr)
-  \Bigr) + o(\delta)
   \pmm.
 \end{align}
+Concentrons-nous sur le contenu de la parenthèse, que nous rencontrerons à
+nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
+  \vadapt*(\cex*) \), puis~\eqref{e:comp-h-hn} :
+\begin{align}
+  \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
+  & \le
+  \sum\fctrange \wts* \bigl(
+    \hautl[1]{ \cex* } + \hautl[\infty]{\vadapt*}
+  \bigr)
+  \\ & \le
+  \sum\fctrange \wts* \bigl(
+    \hautn{ \ex* } + \htcmp + \hautl[\infty]{\vadapt*}
+  \bigr)
+\end{align}
+On remarque alors que \( \hautl[\infty]{\vadapt*} \le \ln B \)
+d'après~\eqref{e:vadapt-ht} et~\eqref{e:varset-deg}. On regroupe alors les
+termes avant d'utiliser d'une part~\eqref{e:wt-ratio} et d'autre part le
+lemme~\ref{l:sum-wts} :
+\begin{align}
+  \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
+  & \le
+  \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
+  + \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
+  \\ & \le
+    2 \puiss \wts[1] \hautn{ \ex[1] }
+    + 2 \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
+  \pmm.
+  \label{e:sum-h-cexa}
+\end{align}
+Au final on a donc
+\begin{equation} \label{e:ratfh4}
+  \ratfh4
+  \le
+  2 \epsz \delta \wts[1]
+  \bigl( \puiss \hautn{ \ex[1] } + \cst{vs-ht} + \ln B \bigr)
+  \pmm.
+\end{equation}
 
 Pour \( \ratfh3 \) on commence avec les mêmes arguments pour écrire
 \begin{equation}
@@ -3416,7 +3423,7 @@ précédente, multiplier par \( \delta \) puis sommer sur \( \place \) et sur \(
   \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
-  2 \delta \bigl( \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
+  \delta \bigl( 2 \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
 \end{equation}
 en utilisant encore le lemme~\ref{l:sum-wts}.
 
@@ -3441,8 +3448,9 @@ des propriétés suivantes.
         \ratfv1
         =
         \frac{ P_\place(\vmp) }{
-          \prod\fctrange (\vmp*[\indv*]) ^{ \lgr{\dermp*} + \Dir* }
-          \, \pden*(\vmp*)^{2\lgr{\dermp*}}
+          \prod\fctrange
+          \pden*(\vmp*)^{2\lgr{\dermp*}}
+          (\vmp*[\indv*])^{ 2\lgr{\dermp*}(\vdeg* + 1) + \Dir* }
         }
       \) ;
     \item \(
@@ -3477,9 +3485,9 @@ des propriétés suivantes.
   premier est immédiat d'après la définition~\eqref{e:def-ratfv12} de \(
     \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
 
-  Avant de passer au degré, remarquons que l'hypothèse~\ref{e:dermp} implique
-  que
-  \begin{equation}
+  Avant de passer au degré, remarquons que l'hypothèse~\ref{e:extra-dermp}
+  implique que
+  \begin{equation} \label{e:dermp2wts}
     \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma
     \pmm,
   \end{equation}
@@ -3487,16 +3495,16 @@ des propriétés suivantes.
   \begin{align}
     \deg_\fct P_\place
     & =
-    \Dir* + (8\vdeg* - 3) \lgr{\dermp*}
+    \Dir* + 4\vdeg* \lgr{\dermp*}
     \\ & \le
     \delta \wts* (2\wtw* + \epsz)
     + 8 \vdeg* \wtw* \wts* \epsi \delta / \sigma
     + o(\delta)
     \\ & \le
-    \delta \wts* \wtw* (2 + \epsz + \frac{8B}{\sigma} \epsi)
+    \delta \wts* \wtw* (2 + \epsz + \frac{4B}{\sigma} \epsi)
     + o(\delta)
   \end{align}
-  qui donne bien la majoration annoncée, compte tenu du fait que \( 8B/\sigma
+  qui donne bien la majoration annoncée, compte tenu du fait que \( 4B/\sigma
     \le 1 \) par définition de \( \sigma \) (prop.~\ref{p:extra}) et qu'on a
   largement \( \epsz + \epsi \le 1 \).
 
@@ -3520,7 +3528,7 @@ des propriétés suivantes.
     + o(\delta)
     \\ & \qquad
     + \bigl(
-      \genre B ( \ln B + \ln( \dimp + 1 ) )
+      2 \genre B ( \ln B + \ln( \dimp + 1 ) )
       + \ln(32\genre) + 3 \ln B
     \bigr)
     \sum\fctrange \lgr{\dermp*}
@@ -3562,7 +3570,7 @@ des propriétés suivantes.
     \le
     2 \delta \wts[1] \epsi \sigma^{-1}
   \end{equation}
-  en utilisant la remarque précédente sur \( \dermp \) et à nouveau le
+  en utilisant à nouveau la remarque précédente sur \( \dermp \) et le
   lemme~\ref{l:sum-wts}. On invoque alors~\eqref{e:ht-Pv-adhoc} pour majorer
   le dernier terme par
   \begin{equation}
@@ -3571,8 +3579,8 @@ des propriétés suivantes.
     \pmm.
   \end{equation}
   Il ne reste plus qu'à prendre la somme, en utilisant le fait que \( \epsi
-    \sigma^{-1} \le 4 \) (majoration très large mais suffisante) pour aboutir
-  à l'estimation annoncée.
+    \sigma^{-1} \le 1/8 \) (majoration très large mais suffisante) pour
+  aboutir à l'estimation annoncée.
 
   Enfin, le point sur l'indice est immédiat en remarquant que \(
     \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition puis en utilisant les
@@ -3594,8 +3602,9 @@ fonction en deux facteurs :
 \begin{equation}
   \ratfv1 =
   \frac{ P_\place(\vmp) }{
-    \prod\fctrange (\vmp*[\indv*]) ^{ \lgr{\dermp*} + \Dir* }
-    \, (\pden*)^{ 2 \lgr{\dermp*} }
+    \prod\fctrange
+    \pden*^{2\lgr{\dermp*}}
+    (\vmp*[\indv*])^{ 2\lgr{\dermp*}(\vdeg* + 1) + \Dir* }
   }
   =
   \underbrace{
@@ -3607,7 +3616,7 @@ fonction en deux facteurs :
   \underbrace{
     \prod\fctrange
     \frac{
-      (\vmp*[\indv*])^{ 2 \lgr{\dermp*} \cdot \deg \pden*[\indv*] }
+      (\vmp*[\indv*])^{ 2 \lgr{\dermp*} \cdot \deg \pden* }
     }{
       (\pden*)^{ 2 \lgr{\dermp*} }
     }
@@ -3627,27 +3636,41 @@ d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
   \hautm[\infty]{ \cexa* }^{ 2 \deg \pden* \lgr{\dermp*} }
   \pmm.
 \end{equation}
-On note alors que par définition, \( \deg \pden* = 2 (2\vdeg* - 1) \le
-  4B \), puis en utilisant des comparaisons désormais habituelles, on a :
+On note alors que par définition, \( \deg \pden* = \vdeg* - 1 \le B \), puis
+on utilise~\eqref{e:dermp2wts}
 \begin{align}
   \ratfh{1''}
   & \le
-  8 B \sum\fctrange
+  2 B \sum\fctrange
   \hautl[\infty]{ \cexa* } \lgr{\dermp*}
   \\ & \le
-  8 \delta B \epsi \sigma^{-1} \sum\fctrange
-  \bigl( \hautn{ \ex* } + 2 \cst{vs-ht} + \ln B \bigr)
-  \wtw* \wts*
+  2 \delta B \epsi \sigma^{-1}
+  \sum\fctrange \wtw* \wts* \hautl[\infty]{ \cexa* } \lgr{\dermp*}
+  \pmm.
 \end{align}
-puis, en invoquant~\eqref{e:wt-ratio} et le lemme~\ref{l:sum-wts} :
-\begin{align} \label{e:ratfh1b}
+On adaptant la démonstration de~\eqref{e:sum-h-cexa} on a facilement
+\begin{equation}
+  \sum\fctrange \wtw* \wts* \hautl[\infty]{ \cexa* } \lgr{\dermp*}
+  \le
+  2 \wts[1] \bigl( 2(\puiss-1) \hautn{ \ex[1] } + \cst{vs-ht} + \ln B \bigr)
+\end{equation}
+en remarquant que \( \sum\fctrange \wtw* = 2(\puiss-1) \). Au final, on a donc
+\begin{align}
   \ratfh{1''}
   & \le
-  8 \delta B \epsi \sigma^{-1} \bigl(
-    4 (\puiss-1) \hautn{ \ex[1] } \wts[1]
-    + 2 \wts[1] (2 \cst{vs-ht} + \ln B)
+  4 \delta \wts[1] B \epsi \sigma^{-1} \bigl(
+    2(\puiss-1) \hautn{ \ex[1] } + \cst{vs-ht} + \ln B
   \bigr)
+  \\ & \le \label{e:ratfh1b}
+  \delta \wts[1] \bigl(
+    8(\puiss-1) B \epsi \sigma^{-1} \hautn{ \ex[1] } + \cst{vs-ht} + \ln B
+  \bigr)
+  \pmm.
 \end{align}
+en utilisant le fait que \( 4 B \epsi \sigma^{-1} \le 1 \) d'après le choix de
+\( \sigma \) pour les deux derniers termes, mais pas pour le premier car c'est
+celui qui est crucial dans le choix de \( \sigma \) : on désire donc conserver
+jusqu'au bout sa dépendance en \( \sigma \) explicite.
 
 Pour l'autre partie, on écrit
 \begin{equation}
@@ -3718,9 +3741,10 @@ permet d'exploiter~\eqref{e:Vapx} :
 \end{align}
 où la dernière ligne découle comme d'habitude de~\eqref{e:comp-h-hn}.
 
-On peut alors majorer le logarithme de~\eqref{e:apx-temp} par
+En utilisant le fait que \( \imp*[0] \le \lgr{\imp*} = \deg_\fct P_\place \),
+on peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
-  -\wtapx\expapx \sum\fctrange \imp*[0] \hautn{\ex*}
+  - \wtapx\expapx \sum\fctrange \imp*[0] \hautn{\ex*}
   + \sum\fctrange \deg_\fct P_\place \left(
     \frac{3\dv}2 \ln(\dimp+1) + \ln \nv\infty{\vadapt*^{-1}}
     + \wtapx\expapx \htcmp
@@ -3809,17 +3833,18 @@ avec :
   & =
   2 \puiss \epsz
   + 3 (\puiss - 1) \Vcos
-  + \frac{32 (\puiss - 1) B \epsi}{\sigma}
+  + \frac{8 (\puiss - 1) B \epsi}{\sigma}
   - \frac38 \expapx \epsi
   \\
   \beta
   & =
   19 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + (6 + 4\epsz) \cst{vs-ht} + (6 + 2\epsz) \ln B
+  + (3 + 2\epsz) \cst{vs-ht} + (5 + 2\epsz) \ln B
   \\ & \le
   20 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  \pmm.
 \end{align}
+où la dernière majoration utilise~\eqref{e:extra-beta-adhoc} et le fait que \(
+  2 \epsz \le 1 \).
 
 Montrons que \( \alpha \) est négatif et même
 inférieur à \( - \frac{3\expapx \epsi}{16} \). La définition~\eqref{e:def-epsz}
@@ -3860,7 +3885,7 @@ qui entraîne immédiatement que
 Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\ref{p:extra}
 assure que
 \begin{equation} \label{e:ct-sigma}
-  \frac{32 (\puiss - 1) B \epsi}{\sigma}
+  \frac{8 (\puiss - 1) B \epsi}{\sigma}
   \le \frac{\expapx \epsi}{16}
 \end{equation}
 et on a bien \( \alpha \le - \frac{3\expapx \epsi}{16} < 0 \) comme annoncé.
@@ -4594,7 +4619,7 @@ qui aboutit largement à l'estimation annoncée.
 
 On a également besoin de\todo[le prouver]
 \begin{equation} \label{e:ht-Pv-adhoc}
-  \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
+  2 \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
   \le
   \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
@@ -4611,6 +4636,13 @@ On a également besoin de\todo[le prouver]
   \pmm.
 \end{equation}
 
+On a également besoin de\todo[le prouver]
+\begin{equation} \label{e:extra-beta-adhoc}
+  \cst{vs-ht} + \ln B
+  \le
+  \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{equation}
 
 
 \endinput
