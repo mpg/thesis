@@ -3939,8 +3939,7 @@ contradiction qui achève la preuve de la proposition~\ref{p:extra}.
 La section précédente a montré que \( \faux** \) était d'indice
 élevé en \( \ex \). Nous allons maintenant en déduire l'existence d'une forme
 \( T \) comme dans la conclusion de la proposition~\ref{p:varset-notmin}, en
-utilisant le fait suivant (théorème~7.1 page~149 de \cite{remivds}),
-conséquence du théorème du produit .
+utilisant le fait suivant, conséquence du théorème du produit .
 
 \begin{fact} \label{f:thm-prod}
   Soient \( (x_1, \dots, x_\puiss) \) un point rationnel de \( \proj{\vdim_1}
@@ -3993,6 +3992,10 @@ conséquence du théorème du produit .
   \end{enumthm}
 \end{fact}
 
+\begin{proof}
+  C'est le théorème~7.1 page~149 de \cite{remivds}.
+\end{proof}
+
 Pour appliquer ce fait, nous devons fabriquer à partir de \( \faux**
 \) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) qui
 conserve un indice comparable et dont on contrôlera degré et hauteur.
@@ -4007,9 +4010,8 @@ fini de \( \cdn[
   \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
   \vmp[\puiss][0], \dots, \vmp[\puiss][{\vdim[\puiss]}]
   ]
-\). Le fait suivant, qui résume le résultat de la page~148 de~\cite{remivds},
-montre que la norme \( N(\faux**) \) de \( \faux** \) dans cette extension est
-une forme possédant les propriétés voulues.
+\). Le fait suivant montre que la norme \( N(\faux**) \) de \( \faux** \) dans
+cette extension est une forme possédant les propriétés voulues.
 
 \begin{fact} \label{f:nfaux}
   La forme \( N(\faux**) \in \cdn[
@@ -4026,6 +4028,10 @@ une forme possédant les propriétés voulues.
       \).
   \end{enumthm}
 \end{fact}
+
+\begin{proof}
+  C'est le résultat de la page~148 de~\cite{remivds}.
+\end{proof}
 
 On note désormais \( G = N(\faux**) \) puis \( \vdeg = \prod\fctrange \vdeg*
 \) et \( b_\fct = D \delta \wts* (2\wtw* + \epsz) \).
@@ -4051,16 +4057,16 @@ proposition~\ref{p:extra}, il vient :
   \ge
   \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
-  \frac{ \eps \epsi }{ 1536 (\puiss-1) B D }
+  \frac{ \eps \epsi }{ 384 (\puiss-1) B D }
   \pmm.
 \end{equation}
 On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
 \) puis de celle~\eqref{e:cst-vs-deg-prod} de \( \cst{vs-deg-prod} \) :
 \begin{align}
-  \frac{ 1536 (\puiss-1) \puiss }{ \expapx \epsi }
+  \frac{ 384 (\puiss-1) \puiss }{ \expapx \epsi }
   & =
   \frac{
-    1536 (\puiss-1) \puiss
+    384 (\puiss-1) \puiss
     \cdot N^{ \frac{\puiss-1}{\puiss-\genre} }
     \, (67 \cdot 6^\puiss)^{ \frac{\genre}{\puiss-\genre} }
   }{
@@ -4077,8 +4083,8 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
   \cst{vs-deg-prod}
   \label{e:ct-cst-vs-deg}
 \end{align}
-où l'on a utilisé l'estimation \( 1536 (\puiss-1) \puiss \le 2 \cdot 67 \cdot
-  6^\puiss \) et l'hypothèse que \( N \ge 2 \).
+où l'on a utilisé le fait que \( 384 (\puiss-1) \puiss \le 67 \cdot 6^\puiss
+\).
 Après avoir rassemblé les deux inégalités précédentes, il ne reste plus qu'à
 exploiter les hypothèses~\eqref{e:varset-deg} et \eqref{e:varset-deg-prod}
 pour obtenir
@@ -4093,7 +4099,7 @@ pour obtenir
 \end{equation}
 qui est précisément la première hypothèse à satisfaire.
 
-Pour la deuxième, en utilisant la définition de \( \wtw \) et le fait que \(
+Pour la deuxième, en utilisant la définition des \( \wtw* \) et le fait que \(
   \epsz < 1 \), puis deux fois~\eqref{e:wt-ratio} et enfin
 l'hypothèse~\eqref{e:Vfar}, on écrit
 \begin{equation} \label{e:ct-Vfar}
@@ -4121,11 +4127,15 @@ entre \( \puiss \) et \( \puiss\genre \), cette quantité est majorée par \(
 définition~\eqref{e:def-Vfar} de \( \Vfar \) implique alors directement que la
 deuxième hypothèse est satisfaite.
 
-Pour la troisième, on observe que pour tout entier \( \vdim \le \puiss\genre
-\) on a
-\begin{equation} \label{e:tp-3}
+Pour la troisième, on observe que l'expression
+\begin{equation}
   \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
-  \ge
+\end{equation}
+est décroissante en \( \vdim \) tandis que \( \alpha / \puiss =
+  \Lambda^{-2f(\vdim)} \) est croissante que \( \vdim \), de sorte qu'il
+suffit de vérifier que cette condition est satisfaite pour \( \vdim =
+  \puiss\genre \). C'est bien le cas puisque
+\begin{equation} \label{e:tp-3}
   \left( \frac{\ln(\puiss\genre + 1)}{2(\puiss\genre)^2}\right)^{\puiss\genre}
   \ge
   (\sqrt2 \puiss\genre)^{-2\puiss\genre}
@@ -4133,12 +4143,11 @@ Pour la troisième, on observe que pour tout entier \( \vdim \le \puiss\genre
   \Lambda^{-2}
 \end{equation}
 d'après la définition~\eqref{e:def-Lambda} de \( \Lambda \) (troisième
-argument du maximum). Comme \( f(\vdim) \ge 1 \) pour tout \( \vdim \), la
-troisième hypothèse est également satisfaite.
+argument du maximum) et \( f(\puiss\genre) = 1 \).
 
 On peut donc appliquer le fait~\ref{f:thm-prod} comme annoncé, on note \( T \)
 la forme obtenue. On a alors \( \pi(\ex) \in \zeros T \), c'est-à-dire \(
-  T(\cexa) = 0 \). On introduit alors une forme \( T'(\vmp*) = T\bigl(
+  T(\cexa) = 0 \). On introduit une forme \( T'(\vmp*) = T\bigl(
     \vadapt*(\vmp*) \bigr) \) dont on va montrer qu'elle possède bien
 les propriétés annoncés par la proposition~\ref{p:varset-notmin}.
 
@@ -4241,21 +4250,21 @@ fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \).
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
-    + \frac34 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    + \frac54 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   + o(1)
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
-    + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \label{e:ht-T-var}
 \end{align}
 où l'on a supposé \( \delta \) assez grand pour que le
 terme en \( o(1) \) de la première ligne soit plus petit que la quantité
-perdue en remplaçant \( \frac34 \) par \( 1 \) dans le terme précédent, qui ne
+perdue en remplaçant \( \frac54 \) par \( 2 \) dans le terme précédent, qui ne
 dépend pas de \( \delta \).
 
 Passons maintenant à \( T' \). Par construction, en utilisant les propriétés
@@ -4294,8 +4303,8 @@ précédente pour avoir
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    3 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
-    + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \pmm,
 \end{align*}
