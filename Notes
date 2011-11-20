@@ -2,7 +2,7 @@ Next actions
 ============
 
 Finir la rédaction de Vojta coeur.
-Commencer les corrolaires.
+Commencer les corollaires.
 
 Rédaction {{{1
 =========
@@ -130,8 +130,32 @@ Maths {{{1
 Vojta {{{2
 -----
 
+(A) Reprendre les notes de lecture de Siegel, plus un peu de math :
+- estimation des \epszi (à propager, chercher 67)
+- coefficients oubliés éventuels, avec les coquilles
+
+(A) Reprendre les notes de la section 1, dont math ou grosse rédac :
+- énoncé indépendant du thm principal ;
+- prop clé : les constantes on changé dans l'énoncé, propager dans la preuve
+  qu'elle implique le thm
+
+(A) Estimations ad hoc
+
+(A) Corollaires :
+- hyperplan général
+- hypersurface via un Veronese
+- variété générale via un bon choix d'hypersurface la contenant
+Parler de distance ponctuelle (sur \C_v du coup ?)
+
+(B) Coro : cas de Fahri
+
+(C) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
+\puiss par un 2 dans \Vfar comme ça, en principe sans perte à côté.
+
 (C) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
 fine pour le deuxième \rdiv
+
+(C) Degré des formules en c a^2 au lieu de 2a^2 ?
 
 Mumford {{{2
 -------
