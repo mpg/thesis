@@ -231,6 +231,7 @@ p:  prop
 s:  scho
 t:  thm
 h:  hypo
+n:  nota
 
 chap:   chapter
 sec:    section, (sub)*section

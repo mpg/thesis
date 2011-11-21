@@ -241,7 +241,7 @@ lemme suivant.
       \wts[1] \hautn{\ex[1]} \).
 \end{proof}
 
-\begin{tdef} \label{d:wt-choose}
+\begin{nota} \label{n:wt-choose}
   \nomuse[\wt]{(\wt*)}[chap]{Poids associés à \( (\ex*) \) et fixés par le
     scolie~\ref{d:wt-choose}}
   \nomdirect{g}{zeta}{\zeta}[chap]{Constante proche de zéro fixée par le
@@ -249,7 +249,7 @@ lemme suivant.
   On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
   donnée par l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta =
     \sqrt{\Vcos} / 2 \).
-\end{tdef}
+\end{nota}
 
 En remarquant que \( \Vcos < 1 \), le lemme précédent et la
 relation~\eqref{e:wt-ratio-gen} donnent immédiatement les relations :
@@ -576,7 +576,7 @@ s'applique pas (mais qui sont heureusement immédiats). Nous énoncerons ces cas
 à la fin de la sous-section suivante après avoir introduit le système de
 coordonnées dans lequel ils s'expriment naturellement.
 
-\begin{tdef} \label{d:var&co}
+\begin{nota} \label{n:var&co}
   \nomuse \var [chap]{Une variété de \( \varset(\ex) \),
     définition~\ref{d:var&co}}
   \nomuse{\vdeg*}[chap]{Le degré de \( \var* \), définition~\ref{d:var&co}}
@@ -605,7 +605,7 @@ coordonnées dans lequel ils s'expriment naturellement.
     sorte qu'un de ses coefficients soit \( 1 \).}
   forme de \bsc{Chow} de \( \var* \) ainsi que \( \varid \) l'idéal
   multihomogène saturé de \( \var \) et \( \varid* \) ceux de ses facteurs.
-\end{tdef}
+\end{nota}
 
 La preuve de la proposition~\ref{p:varset-notmin} suit la méthode de
 \TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
@@ -736,12 +736,12 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
   des coefficients est majorée par \( (p-1)! \, C^{p-1} \).
 \end{proof}
 
-\begin{tdef}
+\begin{nota}
 On fixe désormais des transformations linéaires \( \vadapt* \) obtenues en
 appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \), de sorte que
 \( \vadapt* \circ \vaemb \) est adapté à \( \var* \) et on note \(
   \vdegp* = \max(\vdeg*/2, 1) \).
-\end{tdef}
+\end{nota}
 
 La construction et le lemme précédent montrent alors que
 \begin{equation} \label{e:vadapt-ht}
@@ -782,12 +782,12 @@ de normes utilisées). Cependant, nous utiliserons souvent la majoration plus
 évidente \( \nv1{\poldep**} \le \nv1{\varfca*} \) dans les estimations où
 cette quantité apparaît déjà par ailleurs.
 
-\begin{tdef} \label{d:pden-cexa}
+\begin{nota} \label{n:pden-cexa}
   On note \( \pden* \) la dérivée de \( \poldep*[\vdim*+1] \) par rapport à la
   dernière variable.  Par ailleurs, on fixe \( (\cex**)_\ind \) un système de
   coordonnées multihomogène de \( \ex* \) dans le plongement \( \vaemb \) et
   on note \( (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).
-\end{tdef}
+\end{nota}
 
 Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
 démonstration de la proposition~\ref{p:varset-notmin}.
@@ -2561,13 +2561,13 @@ relations.
     \anydim^{\lgr\derp-1} \).
 \end{proof}
 
-\begin{tdef} \label{d:pden-gen}
+\begin{nota} \label{n:pden-gen}
   On note \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
   fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
   \( Q = \frac{\partial \poldep[][\anydim+1]}{\partial \vp[\anydim+1]} \). Il
   est clair que \( \deg Q = \anydeg - 1 \) et
   \( \nv1 Q \le \nv1{ \chow\anyvar } \anydeg^\dv \).
-\end{tdef}
+\end{nota}
 
 \begin{lem} \label{l:param-any+1}
   Avec la définition précédente, pour tous \( \ind \in \set{0, \dots, \anydim}
@@ -2877,7 +2877,7 @@ qui font l'objet du lemme suivant.
 
 Transposons maintenant ce résultat à notre situation multiprojective. On
 rappelle auparavant que les \( \pden* \) sont donnés par la
-définition~\ref{d:pden-cexa}, qui coïncide avec la définition~\ref{d:pden-gen}
+notation~\ref{n:pden-cexa}, qui coïncide avec la notation~\ref{n:pden-gen}
 appliquée successivement à chaque facteur \( \var* \).
 
 \begin{lem} \label{l:par-var}
@@ -3166,7 +3166,7 @@ Introduisons maintenant une fonction rationnelle définie par
   }
   \pmm.
 \end{equation}
-D'après l'hypothèse~\ref{e:Vapx}, on a \( \cexa*[0] \neq 0 \) ; par
+D'après l'hypothèse~\eqref{e:Vapx}, on a \( \cexa*[0] \neq 0 \) ; par
 ailleurs le choix de \( \indig* \) assure que
 \( \wembclg\clmape*[\indig*]( \cexa ) \neq 0 \), de sorte que le
 dénominateur ne s'annule pas en \( \cexa \) et
@@ -3522,7 +3522,7 @@ des propriétés suivantes.
   premier est immédiat d'après la définition~\eqref{e:def-ratfv12} de \(
     \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
 
-  Avant de passer au degré, remarquons que l'hypothèse~\ref{e:extra-dermp}
+  Avant de passer au degré, remarquons que l'hypothèse~\eqref{e:extra-dermp}
   implique que
   \begin{equation} \label{e:dermp2wts}
     \lgr{ \dermp* } < \wtw* \wts* \epsi \delta / \sigma

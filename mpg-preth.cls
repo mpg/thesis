@@ -354,6 +354,7 @@
 
 \theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
+\newtheorem {nota} [thm] {Notations}
 \newtheorem {rem}  [thm] {Remarque}
 
 \newtheorem*{ide@s}      {Idées}
