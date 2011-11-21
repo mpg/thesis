@@ -4540,85 +4540,100 @@ suivant~\eqref{e:Vbig-ct-extra}.
 
 \subsection{Estimations diverses}
 
-Commençons par rappeler quelques faits évidents : la dimension \( \genre \) de
-\( \va \) est au moins \( 1 \) ; le nombre de points considérés \( \puiss \)
-vaut donc au moins \( 2 \) et pour la dimension de l'espace de plongement on a
-\( \dimp + 1 \ge 16^\genre \ge 16 \) comme il est rappelé en
-section~\ref{sec:plong-mm-def}. Par ailleurs, \todo[référence] on a \( \deg
-  \va = \dimp + 1 \) dans le plongement considéré.
-
-Ainsi, la définition~\eqref{e:def-Lambda} de \( \Lambda \) implique
+Commençons par quelques estimations générales ; on rappelle pour commencer que
+\( \dimp \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après les
+hypothèses~\ref{h:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
+  \ge 2 \). Ainsi, le dernier argument du maximum dans la
+définition~\eqref{e:cst-vs-ht} de \( \cst{vs-ht} \) donne
+\( \cst{vs-ht} \ge 3 \ln 4 \ge 4 \).
+De plus, la définition~\eqref{e:def-Lambda} de \( \Lambda \) implique
 immédiatement, en considérant le deuxième argument du maximum, que
 \begin{equation}
-  \Lambda \ge 66^2 (\dimp + 1)^2 \ge \num{1115136}
+  \Lambda \ge 765 \cdot 5^\puiss \ge 19125
   \pmm.
 \end{equation}
 Remarquons au passage que si le deuxième argument dans le maximum domine
-largement pour \( \puiss \) et \( \genre \) petits, c'est en revanche celui
-qui croît le plus lentement en quand ces deux quantités augmentent.
+largement pour \( \puiss \) et \( \genre \) petits, le troisième croît en
+revanche bien plus vite quand ces deux quantités augmentent.
 
-Par ailleurs, on utilisera le fait élémentaire suivant : la fonction \( x
-  \mapsto x / \ln(x) \) est croissante pour \( x \ge \expb \). On en déduit
-immédiatement
+Par ailleurs, on rappelle
+l'inégalité élémentaire \( \ln(x) \le \alpha \, x^{1/\alpha} \) pour \( \alpha
+\) positif, qu'on utilise en conjonction avec~\eqref{e:varset-deg} pour
+obtenir
 \begin{equation}
-  \frac{ \dimp + 1 }{ \ln( \dimp + 1 ) }
-  \ge
-  \frac{ 16 }{ \ln 16 }
-  \ge
-  5
-\end{equation}
-et, en constatant que \( 66^2 \ge 16^2 \),
-\begin{equation}
-  \frac{ \Lambda }{ \ln \Lambda }
-  \ge
-  \frac{ 16^2 (\dimp + 1)^2 }{ 2 \bigl( \ln(\dimp + 1) + \ln(16) \bigr) }
-  \ge
-  \frac{ 16^2 (\dimp + 1)^2 }{ 4 \ln(\dimp + 1) }
-  \ge
-  16^2 (\dimp + 1)
+  \ln B
+  \le
+  \ln(\Lambda^{f(\vdim)})
+  \le
+  \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
   \pmm.
 \end{equation}
+On se contentera parfois de l'estimation un peu grossière suivante :
+\begin{equation}
+  \ln B
+  \le
+  B
+  \le
+  \frac{ \Lambda^{f(\vdim)} }{ 255 \cdot 5^\puiss }
+  \pmm.
+\end{equation}
+Enfin, on utilisera à l'occasion la remarque élémentaire suivante : \( \alpha
+  + \beta \le \alpha\beta \) dès que \( \alpha \ge 2 \) et \( \beta \ge 2 \).
+
+Avant de passer aux différentes estimations \lat{ad hoc}, commençons par une
+estimation qui nous sera utile plusieurs fois :
+\begin{align}
+  B (\genre + 1) \ln (B (\dimp+1))
+  & \le
+  B (\genre + 1) \bigl(
+    \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
+    + \cst{vs-ht}
+  \bigr)
+  \\ & \le
+  \puiss^2 B \cst{vs-ht} \Lambda^{\frac1\puiss\,f(\vdim)}
+  \\ & \le \label{e:adhoc-gen}
+  \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \pmm.
+\end{align}
+Signalons enfin qu'en général on ne cherchera pas à obtenir la plus grande
+précision possible sur le facteur constant, on se contentera d'obtenir celui
+qui est utile dans chaque situation.
+
+\medskip
 
 Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
 \begin{equation} \label{e:B-siegel}
   \cst{vs-ht}/2 + \ln(\dimp!) + \dimp \ln B
   + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \le
-  \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac14 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{equation}
-Pour le premier terme du membre de gauche, au vu des estimations précédentes,
-on écrit
-\begin{equation}
-  \ln((\dimp+1)!)
+Pour le deuxième terme, on a par définition :
+\(
+  \ln(\dimp!)
   \le
-  (\dimp+1) \ln (\dimp+1)
+  \dimp \ln (\dimp)
   \le
-  \frac{ (\dimp+1)^2 }5
-  \le
-  \frac{ \Lambda }{ 5 \cdot 66^2 }
-  \pmm.
-\end{equation}
-Par ailleurs, en majorant grossièrement \( B \) par \( \Lambda^{f(\vdim)} \),
-il vient
-\begin{equation}
-  (\dimp + 3) \ln B
-  \le
-  2(\dimp + 1) \ln \Lambda^{f(\vdim)}
-  \le
-  \frac{ 2 }{ 16^2 } \Lambda^{f(\vdim)}
-  \pmm.
-\end{equation}
-Comme de plus \( 3 \ln 2 \) est largement majoré en fonction de \( \Lambda \),
-le membre de gauche de~\eqref{e:B-siegel} est majoré assez amplement par
-\begin{equation}
-  \frac18 \Lambda^{f(\vdim)} + 3 \puiss B \ln(B)
-\end{equation}
-et il ne reste plus qu'à majorer le dernier terme comme suit : on rappelle
-l'inégalité élémentaire \( \ln(x) \le \alpha \, x^{1/\alpha} \) pour \( \alpha
-\) positif, qu'on applique ici avec \( \alpha = \puiss \), puis on remarque
-que \( 3 \puiss^2 B \le \frac18 \Lambda^{f(\vdim)} \) assez largement
-d'après~\eqref{e:varset-deg}, ce qui permet de conclure.
+  \cst{vs-ht}
+\). En utilisant de plus l'estimation~\eqref{e:adhoc-gen} ci-dessus, il vient :
+\begin{align}
+  & \cst{vs-ht}/2 + \ln(\dimp!)
+  + 3 \ln(B) B(\genre+1) + \dimp \ln B + 3\ln B + 3 \ln(2)
+  \\ & \qquad \le
+  \frac32 \cst{vs-ht}
+  + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \dimp \ln B + 3 \ln B + 3 \ln 2
+  \\ & \qquad \le
+  \frac{3\Lambda}{2\cdot255} \cst{vs-ht}
+  + \frac3{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \cst{vs-ht} \cdot \frac{ \Lambda^{f(\vdim)} }{ 255 }
+  + 3 \cdot \frac{ \Lambda^{f(\vdim)} }{ 255 }
+  + \frac{ \Lambda }{ 255 }
+\end{align}
+qui implique largement l'estimation annoncée.
+
+\medskip
 
 La prochaine majoration \lat{ad hoc} que nous montrons est
 \begin{equation} \label{e:ht-T-adhoc}
@@ -4651,61 +4666,79 @@ successivement par
   \le
   6 \puiss^3 \genre \Lambda^{\frac1\puiss f(\vdim)}
   \le
-  \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac14 \Lambda^{\frac1\puiss f(\vdim)}
+  \cdot \frac{ 24 \puiss^4 \Lambda }{ 765 \cdot 5^\puiss }
 \end{equation}
-qui est l'estimation annoncée. En effet, \( \ln x \le \puiss \, x^{1/\puiss}
-\) puis \( \genre \le \puiss - 1 \) et on vérifie facilement (au besoin
-numériquement pour les petites valeurs) que \( 24 \puiss^3 (\puiss - 1) \le
-  16^{\puiss} \), or \( 16^\puiss \le (\dimp + 1)^\puiss \le \Lambda \).
+qui implique l'estimation annoncée. En effet, on vérifie facilement (au besoin
+numériquement pour les petites valeurs) que \( 24 \puiss^4 \le 765 \cdot
+  5^\puiss \).
+
+\medskip
 
 Prouvons maintenant que
 \begin{equation} \label{e:ht-T'-adhoc}
   \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
   + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
   \le
-  \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
+  \cst{vs-ht} \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{equation}
-Pour commencer, on a \( \ln B + \ln(\dimp + 1) \le \ln \Lambda^{f(\vdim)} \)
-d'après~\eqref{e:varset-deg} puis
-\begin{equation}
-  \ln \Lambda^{f(\vdim)}
+Pour commencer, on a
+\begin{align}
+  \ln B + \ln(\dimp + 1)
   \le
-  \puiss \Lambda^{\frac1\puiss f(\vdim)}
+  \cst{vs-ht} \ln B
+  \le
+  \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
   \le
   \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
-\end{equation}
+\end{align}
 Par ailleurs
 \begin{equation}
   2 \vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
   \le
-  2 \puiss^2 \genre (\dimp + 1) \Lambda^{\frac1\puiss f(\vdim)}
+  2 \cst{vs-ht} \puiss^2 \genre \Lambda^{\frac1\puiss f(\vdim)}
   \le
   \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
 \end{equation}
 qui aboutit largement à l'estimation annoncée.
 
-On a également besoin de\todo[le prouver]
-\begin{equation} \label{e:ht-Pv-adhoc}
-  2 \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
-  \le
+\medskip
+
+On a également, en utilisant~\eqref{e:adhoc-gen} :
+\begin{align}
+  & 2 \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
+  \\ & \qquad \le
+  \frac2{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + 4 \ln(\Lambda^{f(\vdim)})
+  \\ & \qquad \le
+  \frac2{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + 4 \puiss \Lambda^{\frac1\puiss \, f(\vdim)}
+  \\ & \qquad \le \label{e:ht-Pv-adhoc}
   \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
-\end{equation}
-
-On a également besoin de\todo[le prouver]
-\begin{equation} \label{e:ratfh1a-adhoc}
-  \frac{3}2 \ln(\dimp+1)
+\end{align}
+Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
+\begin{align}
+  & \frac32 \ln(\dimp+1)
   + \dimp \ln(B\dimp)
-  + \expapx \htcmp
+  + \htcmp
   + B (\genre + 1) \ln (B (\dimp+1))
-  \le
+  \\ & \qquad \le
+  \frac32 \cst{vs-ht}
+  + \cst{vs-ht} + \cst{vs-ht} \ln B
+  + \cst{vs-ht} 
+  + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \\ & \qquad \le
+  4 \cst{vs-ht} \cdot \frac\Lambda{255}
+  + \cst{vs-ht} \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
+  + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \\ & \qquad \le \label{e:ratfh1a-adhoc}
   \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
-\end{equation}
-
-On a également besoin de\todo[le prouver]
+\end{align}
+En particulier, l'inégalité précédente implique
 \begin{equation} \label{e:extra-beta-adhoc}
   \cst{vs-ht} + \ln B
   \le
