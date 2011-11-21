@@ -1951,15 +1951,14 @@ lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
 \end{align}
 On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
   \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\ref{l:sum-wts} implique alors
-que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
-élémentaire que \( \alpha + \beta \le \alpha\beta \) dès que \( \alpha \ge 2
-\) et \( \beta \ge 2 \) pour écrire
+que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
+définition~\eqref{e:cst-vs-ht} pour écrire
 \begin{align}
   \hautl[\infty]{ M_{\sigma'_\clmap} }
   & \le
   4 \delta \wts[1] \hlclab
   \Bigl(
-    \ln(\dimp!) + \dimp \ln B
+    \cst{vs-ht}/2 + \ln(\dimp!) + \dimp \ln B
     + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \Bigr)
   \\ & \qquad
@@ -1967,9 +1966,7 @@ que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
   + o(\delta)
   \pmm.
 \end{align}
-Enfin, on majore \( \hlclab \) par \( \cst{vs-ht} \) par
-définition~\eqref{e:cst-vs-ht} et on utilise alors~\eqref{e:B-siegel} pour
-conclure :
+On invoque alors~\eqref{e:B-siegel} pour conclure :
 \begin{equation} \label{e:hmat-sigma-p}
   \hautl[\infty]{ M_{\sigma'_\clmap} }
   \le
@@ -4561,7 +4558,7 @@ et, en constatant que \( 66^2 \ge 16^2 \),
 
 Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
 \begin{equation} \label{e:B-siegel}
-  \ln((\dimp+1)!) + \dimp \ln B
+  \cst{vs-ht}/2 + \ln(\dimp!) + \dimp \ln B
   + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \le
   \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
