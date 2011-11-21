@@ -1366,12 +1366,12 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \hautm[1]{c_{p, q}}
     & \le
     \bigl(
-      \hmclab (\dimp+1)!^2 \, B^{2\dimp}
+      \hmclab (\dimp!)^2 \, B^{2\dimp}
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{align}
-  où l'on rappelle que \( \hmclab \) est donné par la
-  définition~\ref{d:hclab}.
+  où l'on rappelle que \( \hmclab \) est donné par les
+  hypothèses~\ref{h:vaemb}.
 \end{lem}
 
 \begin{proof}
@@ -1382,17 +1382,17 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \nv1 {c_{p, q}}
     & \le
     \prod\fctirange \prod\indrange
-    \nv1{ \wembclp{\clmap}{\fcti} \bigl(
+    \nv1{ \wembclp{\clmap}{\fcti}[\ind] \bigl(
         \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss])
       \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
     \prod\fctirange \prod\indrange \left(
-      \nv1{ \wembclp{\clmap}{\fcti} } \,
+      \nv1{ \wembclp{\clmap}{\fcti}[\ind] } \,
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
       \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^{q\pexp\fcti[\ind]}
-    \\ & \le
+    \\ & \le \label{e:hmat-wemba-switch}
     \prod\fctirange \left(
       \hmclab*^{\wtis* + \wts**} \,
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
@@ -1410,11 +1410,11 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     & \le
     \prod\fctirange
     \hmclab^{\wtis* + \wts**} \,
-    \bigr( (\dimp+1)! (\vdegp[\fcti])^\dimp) \bigl)^{2 \wts[\fcti]} \,
-    \bigr( (\dimp+1)! (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
+    \bigr( \dimp! \, (\vdegp[\fcti] )^\dimp) \bigl)^{2 \wts[\fcti]} \,
+    \bigr( \dimp! \, (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hmclab (\dimp+1)!^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
+    \bigr( \hmclab (\dimp!)^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
   \end{align}
   Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
 \end{proof}
@@ -1939,7 +1939,7 @@ lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
   & \le
   2 \delta \wts[1]
   \bigl(
-    \hlclab + 2\ln((\dimp+1)!) + 2\dimp \ln B
+    \hlclab + 2\ln(\dimp!) + 2\dimp \ln B
   \bigr)
   \\ & \qquad +
   \sum\fctrange 2\Di* \Bigl(
@@ -1959,7 +1959,7 @@ que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
   & \le
   4 \delta \wts[1] \hlclab
   \Bigl(
-    \ln((\dimp+1)!) + \dimp \ln B
+    \ln(\dimp!) + \dimp \ln B
     + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \Bigr)
   \\ & \qquad
@@ -2154,9 +2154,8 @@ propriétés de ces formes dont nous aurons besoin.
   montre que \( \hautl[1]{ \faux* } \) est en fait majoré par la même
   quantité.
 
-  Enfin, en reprenant la démonstration du lemme~\ref{l:hmat-wemba} on voit
-  facilement que
-  \begin{equation}
+  Admettons provisoirement que
+  \begin{equation} \label{e:fauxco-prv}
     \prod_\place \Biggl(
       \frac{
         \nv1{ \wemba[\clmapv](\faux) }
@@ -2166,7 +2165,7 @@ propriétés de ces formes dont nous aurons besoin.
     \Biggr)^\degv
     \le
     \hautm[1]{ \faux }
-    \cdot \bigl( (\dimp+1)! \, B^{\dimp} \bigr) ^{4 \delta \wts[1]}
+    \cdot \bigl( \dimp! \, B^{\dimp} \bigr) ^{4 \delta \wts[1]}
     \pmm.
   \end{equation}
   On procède ensuite comme à la sous-section~\ref{sec:siegel-ht} (sauf qu'on
@@ -2188,6 +2187,44 @@ propriétés de ces formes dont nous aurons besoin.
     \pmm.
   \end{equation}
   Il ne reste qu'à appliquer l'hypothèse~\eqref{e:varset-ht} pour conclure.
+
+  Prouvons maintenant l'assertion~\eqref{e:fauxco-prv} ci-dessus ; il s'agit en
+  fait d'une variante du lemme~\ref{l:hmat-wemba} dont on reprend globalement
+  la preuve. On commence par poser \( c_{p, q, \place} =
+    \wemba[\clmapv](\vmp^p\vmpi^q) \) puis, en procédant comme
+  pour~\eqref{e:hmat-wemba-switch}, on montre que
+  \begin{equation}
+    \frac{
+      \nv1{ c_{p, q, \place} }
+      }{
+        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
+      }
+    \le
+    \prod\fctirange \left(
+      \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
+      \nv1{ \vadapt**^{-1} }^{2\wts**}
+    \right) ^\delta
+    \pmm.
+  \end{equation}
+  La suite de la preuve est identique (à un facteur \( \hmclab*^{\wtis* +
+      \wts**} \) près) et on obtient
+  \begin{equation}
+    \prod_\place \Biggl(
+    \frac{
+      \nv1{ c_{p, q, \place} }
+      }{
+        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
+      }
+    \Biggr)^\degv
+    \le
+    \bigl( \dimp! \, B^{\dimp} \bigr) ^{4 \delta \wts[1]}
+    \pmm,
+  \end{equation}
+  qui donne l'inégalité annoncée en considérant que \( \faux \) est une
+  combinaison linéaire de monômes.
+
+
+
 \end{proof}
 
 Remarquons qu'on a utilisé l'hypothèse~\eqref{e:varset-ht} pour simplifier la
