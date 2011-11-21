@@ -99,7 +99,7 @@ l'hyperplan défini par \( \vp[0] = 0 \) dans ce plongement.
     \label{e:def-Vcos}
     \Vcos & =
     \left(
-      \frac{ \eps }{ 67 \nclmaps \cdot 6^\puiss }
+      \frac{ \eps }{ 85 \nclmaps \cdot 5^\puiss }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
     \\
     \puiss & \ge \genre + 1
@@ -356,7 +356,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   \newcst[]{vs-deg-prod}
   & =
   \bigl(
-    67 \nclmaps \cdot 6^\puiss \cdot \eps^{-1}
+    85 \nclmaps \cdot 5^\puiss \cdot \eps^{-1}
   \bigr)^{ \frac{\puiss}{\puiss-\genre} }
   \\
   \newcst[\va]{vs-ht} & = \max( \vaht, \hlclab, \htcmp, \ln(\dimp + 1) )
@@ -1294,7 +1294,7 @@ Introduisons un réel \( \epsi \) défini par :
   \eps^{\frac{\genre}{\puiss-\genre}}
   \cdot \Bigl(
     N^{\puiss-1}
-    \, (67 \cdot 6^\puiss)^\genre
+    \, (85 \cdot 5^\puiss)^\genre
   \Bigr)^{\frac{-1}{\puiss-\genre}}
 \end{equation}
 et un rationnel \( \epsz \) tel que :
@@ -1898,18 +1898,18 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
   \frac {
     \epsi^{\puiss-\genre}
     \, \nclmaps^{\puiss-1}
-    \, (67 \cdot 6^\puiss)^\genre
+    \, (85 \cdot 5^\puiss)^\genre
   }{
     \eps^\genre
   }
   + o(1)
 \end{align}
 où l'on a utilisé les faits élémentaires (quitte à vérifier numériquement pour
-les petites valeurs \( \genre \cdot 3^\genre \le 5^\genre \) puis \( 33 \puiss
-  \cdot 5^\puiss \le 67 \cdot 6^\puiss \).  On remarque que la définition
-\eqref{e:def-epsi} de \( \epsi \) signifie précisément que le deuxième facteur
-vaut \( 1 \) ; il suffit maintenant d'observer que \( \puiss \ge \genre + 1
-  \ge 2 \) pour conclure.
+les petites valeurs) \( \genre \cdot 3^\genre \le (13/3)^\genre \) puis \( 33
+  \puiss \cdot (13/3)^\puiss \le 85 \cdot 5^\puiss \).  On remarque que la
+définition \eqref{e:def-epsi} de \( \epsi \) signifie précisément que le
+deuxième facteur vaut \( 1 \) ; il suffit maintenant d'observer que \( \puiss
+  \ge \genre + 1 \ge 2 \) pour conclure.
 
 
 \subsection{Hauteur du système}
@@ -3864,14 +3864,14 @@ puis celle~\eqref{e:Vcos} de \( \Vcos \), on a
   }{
     48 (\puiss - 1)
     \, \nclmaps^{ \frac{\puiss-1}{\puiss-\genre} }
-    \, (67 \cdot 6^\puiss)^{ \frac{\genre}{\puiss-\genre} }
+    \, (85 \cdot 5^\puiss)^{ \frac{\genre}{\puiss-\genre} }
   }
   \\ & \ge
   \frac{
     \eps^{ \frac{\puiss}{\puiss-\genre} }
   }{
     \nclmaps^{ \frac{\puiss}{\puiss-\genre} }
-    \, (67 \cdot 6^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
+    \, (85 \cdot 5^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
   }
   =
   \Vcos
@@ -4068,14 +4068,14 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
   \frac{
     384 (\puiss-1) \puiss
     \cdot N^{ \frac{\puiss-1}{\puiss-\genre} }
-    \, (67 \cdot 6^\puiss)^{ \frac{\genre}{\puiss-\genre} }
+    \, (85 \cdot 5^\puiss)^{ \frac{\genre}{\puiss-\genre} }
   }{
     \eps^{ \frac{\puiss}{\puiss-\genre} }
   }
   \\ & \le
   \frac{
     N^{ \frac{\puiss}{\puiss-\genre} }
-    \, (67 \cdot 6^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
+    \, (85 \cdot 5^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
   }{
     \eps^{ \frac{\puiss}{\puiss-\genre} }
   }
@@ -4083,7 +4083,7 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
   \cst{vs-deg-prod}
   \label{e:ct-cst-vs-deg}
 \end{align}
-où l'on a utilisé le fait que \( 384 (\puiss-1) \puiss \le 67 \cdot 6^\puiss
+où l'on a utilisé le fait que \( 384 (\puiss-1) \puiss \le 85 \cdot 5^\puiss
 \).
 Après avoir rassemblé les deux inégalités précédentes, il ne reste plus qu'à
 exploiter les hypothèses~\eqref{e:varset-deg} et \eqref{e:varset-deg-prod}
