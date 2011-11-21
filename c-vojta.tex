@@ -1435,35 +1435,30 @@ appliquant un lemme de \TS.
 \subsection{Stratégie de construction de la forme auxiliaire}
 \label{sec:siegel-plan}
 
-Commençons par définir l'indice d'annulation d'une forme la long de
-\( \divi \). (Une autre notion d'indice, en un point cette fois-ci, sera
-définie de façon similaire au début de la
-sous-section~\ref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
+Commençons par définir l'indice d'annulation (par rapport à un vecteur de
+poids \( b \in \N^\puiss \)) d'une forme la long de \( \divi \) . (Une autre
+notion d'indice, en un point cette fois-ci, sera définie de façon similaire au
+début de la sous-section~\ref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
   \N^{\puiss(\dimp+1)} \), notons
-\nomuse {\wtsum*} [chap] {Somme pondérée servant à définir l'indice
-  d'annulation le long de \( \divi \)}
 \begin{equation}
-  \wtsum*( \imp )
+  \wtsum[b]*( \imp )
   =
   \frac {\imp[1][0]} {\wts[1]} + \dots
   + \frac {\imp[\puiss-1][0]} {\wts[\puiss-1]}
   + \frac {\imp[\puiss][0]} {\wts**(\puiss-1)}
   \pmm.
 \end{equation}
-Les poids dans cette somme sont essentiellement proportionnels à \( d' \), ce
-qui sera crucial pour la section~\ref{sec:thm-prod}.
-Pour toute forme \( H = \sum h_\imp \vmp^\imp \), on pose
+Pour toute forme \( H = \sum h_\imp \vmp^\imp \) et tout \( \beta > 0 \), on
+pose
 \begin{equation} \label{e:def-pi-beta}
-  \pi_\beta (H)
+  \pi_\beta^b (H)
   =
   \sum_{\wtsum*( \imp ) < \beta}
   h_\imp \vmp^\imp
 \end{equation}
 et on défini l'indice par
-\nomuse {\inda*} {Indice d'annulation le long de \( \divi \), défini
-  par~\eqref{e:inda-def}}
 \begin{equation} \label{e:inda-def}
-  \inda* H
+  \indg{b}* H
   =
   \inf \set{
     \beta \text{ tel que } \pi_\beta (H) \neq 0
@@ -1471,7 +1466,10 @@ et on défini l'indice par
   \pmm,
 \end{equation}
 où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
-l'indice est infini.
+l'indice est infini. À partir de maintenant, nous utiliserons l'indice \(
+  \inda* \) pondéré par le vecteur \( \wtw \wts = (\wtw[1] \wts[1], \dots,
+  \wtw** \wts**) \), qui est essentiellement proportionnel à \( d' \), ce
+qui sera crucial pour la section~\ref{sec:thm-prod}.
 
 \medskip
 
@@ -1482,14 +1480,14 @@ localement en arrière sur \( \var \) en une famille de formes \(
   \faux''_\clmap \) grâce aux différents morphismes \( \wemba* \) introduits à
 la sous-section~\ref{sec:wemb}.
 
-Revenons maintenant aux \( \faux''_\clmap \) : on ne peut brutalement exiger
+Mais on ne peut brutalement exiger
 que leur indice, tel que défini précédemment, soit élevé, car le nombre de
 conditions serait trop élevé (géométriquement, il s'agirait d'exiger une
 annulation le long de \( \divi \) dans \( \projd \) alors que les degrés de
 libertés sont donnés par \( \var \) qui est de dimension plus petite). Nous
 allons donc utiliser le morphisme \( \rfull \) introduit à la
 sous-section~\ref{sec:rfull} et exiger que \( \faux* = \rfull(\faux''_\clmap)
-\) ait un indice élevé, ce qui est loisible car le nombre de d'équations
+\) ait un indice élevé, ce qui est loisible car le nombre des équations
 définissant un indicé élevé dans \( \cdn[\vmp]^{C'''} \) est convenable (le
 nombre de variables libre dans cet espace correspondant à la dimension de \(
   \var \)) comme le montrera la prochaine sous-section.
@@ -1497,14 +1495,14 @@ nombre de variables libre dans cet espace correspondant à la dimension de \(
 Concernant le degré, on reprend les multidegrés définis par~\eqref{e:d-dp-def}
 et on rappelle que \( \delta \) désigne un grand entier tel que \( \delta
   \eps_0 \) soit aussi entier. On impose alors à \( \faux \) d'être
-de degré \( \Dz \), de sorte que les \( \faux'_\clmap \) seront de degré \(
+de degré \( \Dz \), de sorte que les \( \faux''_\clmap \) seront de degré \(
   \Di \) et les \( \faux* \) de degré \( \Dir = \Di + o(\delta) \). Par
 ailleurs, l'indice exigé sera \( \epsi \delta \), où \( \epsi \) est défini
 par~\eqref{e:def-epsi} et la relation entre \( \epsz \) et \( \epsi \)
 permettra d'ajuster l'exposant de \bsc{Dirichlet} du système auquel on
 appliquera le lemme de \TS.
 
-Choisissons alors dans \( \cdn[\vmp, \vmpi]_\Dz \) un supplémentaire de \(
+Choisissons donc dans \( \cdn[\vmp, \vmpi]_\Dz \) un supplémentaire de \(
   (\idealim)_\Dz \) engendré par des monômes, que l'on notera \( \fspace \) et
 dans lequel on cherchera \( \faux \).  L'entier \( \delta \) sera choisi assez
 grand pour que la dimension de \( \fspace \) coïncide avec la valeur du
@@ -1523,7 +1521,7 @@ Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
   \faux
   & \mapsto
   \bigl(
-    \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba*(\faux)
+    \pi_{\epsi\delta}^{\wtw\wts} \circ \rfull^{\Di} \circ \wemba*(\faux)
   \bigr)_\clmap
 \end{align}
 de sorte qu'il s'agit en fait de trouver une forme non nulle dans le noyau de
@@ -1556,8 +1554,8 @@ tout ce qu'on aura besoin de savoir sur le degré.
     \bigl( \wemb(\var) \bigr)
     =
     \vdeg[\puiss]
-    \prod_{\fct=1}^{\puiss-1}
-    \vdeg[\fcti] \wts[\fcti]
+    \prod\fctirange
+    \vdeg[\fcti] \wt[\fcti]^{\vdim[\fcti]}
     \pmm.
   \end{equation}
 \end{lem}
@@ -1637,7 +1635,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   utilisant le lemme précédent, car une somme de nombre positifs est minorée
   par chacun de ses termes. Il vient
   \begin{align}
-    \dim \fspace = \dim \ringa{\wemb(\var)}
+    \dim \fspace
     & =
     \Biggl(
     \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
@@ -1695,24 +1693,25 @@ et \( \ftarget \) est somme directe de tels espaces.
   \begin{align}
     \card \stairs
     & \le
-    \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
+    \delta^\vdim
     \prod\fctrange \vdeg* \wt*^{2\vdim*}
     \cdot
     \frac {
       \epsi^\puiss
       \, \puiss^{\vdim[\puiss]}
       \, 3^{\vdim - \puiss}
-      }{
+    }{
       \puiss!
       \, \prod\fctrange (\vdim* - 1)!
-      }
+    }
+    + o(\delta^\vdim)
   \end{align}
 \end{lem}
 
 \begin{proof}
   Pour choisir un indice \( \imp \) dans \( \stairs \), on peut commencer par
-  choisir \( \imp*[\vdim*] \) entre \( 0 \) et \( \vdeg* \) pour tout \( \fct
-  \), ce qui représente \( \prod\fctrange \vdeg* \) possibilités.
+  choisir \( \imp*[\vdim*+1] \) entre \( 0 \) et \( \vdeg* \) pour tout \(
+    \fct \), ce qui représente \( \prod\fctrange \vdeg* \) possibilités.
 
   On peut ensuite choisir \( \imp[1][0], \dots \imp[\puiss][0] \)
   sujets à la seule condition
@@ -1735,14 +1734,14 @@ et \( \ftarget \) est somme directe de tels espaces.
       \text{ tel que }
       \sum_{j=1}^{\vdim*} \imp*[j]
       =
-      \Dir* - \imp*[0] - \imp*[\vdim*]
+      \Dir* - \imp*[0] - \imp*[\vdim*+1]
     \right\}
     \pmm,
   \end{equation}
   qui est de cardinal
   \begin{align}
     \binom {
-      \Dir* - \imp*[0] - \imp*[\vdim*] + \vdim* - 1
+      \Dir* - \imp*[0] - \imp*[\vdim*+1] + \vdim* - 1
       }{
       \vdim* - 1
       }
@@ -1767,16 +1766,17 @@ et \( \ftarget \) est somme directe de tels espaces.
     \vdeg* \delta^{\vdim* - 1}
     + o( \delta^\vdim )
     \\ & \le
-    \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
+    \delta^\vdim
     \prod\fctrange \vdeg* \wt*^{2\vdim*}
     \cdot
     \frac {
       \epsi^\puiss (\puiss-1)
       (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
       (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
-      }{
+    }{
       \puiss! \prod\fctrange (\vdim* - 1)!
-      }
+    }
+    + o(\delta^\vdim)
   \end{align}
   d'après la définition~\eqref{e:d-dp-def} de \( d' \). Le résultat annoncé
   suit en remarquant que \( 2 + \epsz \le 3 \) et \( 2\puiss - 2 + \epsz \le
@@ -1789,7 +1789,7 @@ hypothèses~\ref{h:vaemb}, on a immédiatement
 \begin{equation}
   \dim \ftarget
   \le
-  \bigl(\delta^\vdim + o(\delta^\vdim)\bigr)
+  \delta^\vdim
   \prod\fctrange \vdeg* \wt*^{2\vdim*}
   \cdot
   \frac {
@@ -1801,6 +1801,7 @@ hypothèses~\ref{h:vaemb}, on a immédiatement
     \puiss!
     \, \prod\fctrange (\vdim* - 1)!
   }
+  + o(\delta^\vdim)
   \pmm.
 \end{equation}
 En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
@@ -1920,13 +1921,13 @@ canoniques) \( M_\sigma \) de l'application \( \sigma \) définie
 par~\eqref{e:def-ftarget}. Nous utiliserons ici la norme \( \nv\infty\truc \)
 en chaque place, de sorte que la norme de la matrice de \( \sigma \) sera
 majorée par tout majorant commun des normes des matrices des applications
-\( \pi_{\epsi\delta} \circ \rfull^{\Di} \circ \wemba* \).
+\( \pi_{\epsi\delta}^{\wtw\wts} \circ \rfull^{\Di} \circ \wemba* \).
 
-D'après la définition~\eqref{e:def-pi-beta} de \( \pi_{\epsi\delta} \) il est
-clair que cette application ne peut que faire décroître la norme. On pose
-alors \( \sigma'_\clmap = \rfull^{\Di} \circ \wemba* \) ; il
-s'agit maintenant de majorer \( \hautl[\infty]{ M_{\sigma'_\clmap} } \)
-indépendamment de \( \clmap \).
+D'après la définition~\eqref{e:def-pi-beta} de \( \pi_{\epsi\delta}^{\wtw\wts}
+\) il est clair que cette application ne peut que faire décroître la norme. On
+pose alors \( \sigma'_\clmap = \rfull^{\Di} \circ \wemba* \) ; il s'agit donc
+de majorer \( \hautl[\infty]{ M_{\sigma'_\clmap} } \) indépendamment de \(
+  \clmap \).
 
 On utilise le fait élémentaire suivant : si \( M_1 \) et \( M_2 \) sont deux
 matrices, la hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
@@ -1934,7 +1935,7 @@ matrices, la hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
 de \( M_2 \). Il suffit alors de combiner les estimations des
 lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
 \begin{align}
-  \hautl[\infty]{ M_{\sigma'_\place} }
+  \hautl[\infty]{ M_{\sigma'_\clmap} }
   & \le
   2 \delta \wts[1]
   \bigl(
@@ -1954,7 +1955,7 @@ que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise alors le fait
 élémentaire que \( \alpha + \beta \le \alpha\beta \) dès que \( \alpha \ge 2
 \) et \( \beta \ge 2 \) pour écrire
 \begin{align}
-  \hautl[\infty]{ M_{\sigma'_\place} }
+  \hautl[\infty]{ M_{\sigma'_\clmap} }
   & \le
   4 \delta \wts[1] \hlclab
   \Bigl(
@@ -1970,7 +1971,7 @@ Enfin, on majore \( \hlclab \) par \( \cst{vs-ht} \) par
 définition~\eqref{e:cst-vs-ht} et on utilise alors~\eqref{e:B-siegel} pour
 conclure :
 \begin{equation} \label{e:hmat-sigma-p}
-  \hautl[\infty]{ M_{\sigma'_\place} }
+  \hautl[\infty]{ M_{\sigma'_\clmap} }
   \le
   \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
@@ -1979,7 +1980,7 @@ conclure :
 \end{equation}
 Compte tenu des remarques précédentes, on a donc aussi
 \begin{equation} \label{e:hmat-sigma}
-  \hautl[\infty]{ M_{\sigma'_\place} }
+  \hautl[\infty]{ M_{\sigma'_\clmap} }
   \le
   \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
@@ -2038,6 +2039,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
     + o(\delta)
+    \pmm.
   \end{align}
 \end{prop}
 
@@ -2082,8 +2084,8 @@ hauteur utilisée, comme le montre le scolie suivant.
     \frac{ (\delta d_\fct + \dimp)^\dimp }{\dimp!}
     \pmm.
   \end{equation}
-  Cette quantité est un polynôme en \( \delta \), son logarithme est donc
-  négligeable devant ce dernier.
+  Cette quantité est polynomiale en \( \delta \), son logarithme est donc
+  négligeable devant~\( \delta \).
 \end{proof}
 
 Par la suite, nous travaillerons presqu'exclusivement avec les formes \(
@@ -2092,10 +2094,10 @@ assurer un lien global entre elles. Le scolie suivant résume toutes les
 propriétés de ces formes dont nous aurons besoin.
 
 \begin{scho} \label{s:aux-co}
-  Pour toute carte \( \clmap \in \clmaps^{\puiss-1} \), la forme \( \faux* \)
-  satisfait :
+  Pour toute carte \( \clmap \in \clmaps^{\puiss-1} \), la forme \( \faux*
+    \in \cdn[(\vmp*[0], \dots, \vmp*[\vdim+1])_\fct] \) satisfait :
   \begin{enumthm}
-    \item \( \faux* = R \cdot \faux(\vmp, \wembclm(\vmp)) \mod \varida
+    \item \( \faux* = R(\vmp) \cdot \faux(\vmp, \wembclm(\vmp)) \mod \varida
       \) ;
     \item \( \inda* \faux* \ge \epsi \delta \) ;
     \item \( \deg \faux* = \delta d' + r \) avec
@@ -2148,8 +2150,9 @@ propriétés de ces formes dont nous aurons besoin.
     + o(\delta)
   \end{align}
   en utilisant le résultat de la proposition précédente
-  et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie précédent montre
-  que \( \hautl[1]{ \faux* } \) est en fait majoré par la même quantité.
+  et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie~\ref{s:h1-aux}
+  montre que \( \hautl[1]{ \faux* } \) est en fait majoré par la même
+  quantité.
 
   Enfin, en reprenant la démonstration du lemme~\ref{l:hmat-wemba} on voit
   facilement que
@@ -2189,11 +2192,11 @@ propriétés de ces formes dont nous aurons besoin.
 
 Remarquons qu'on a utilisé l'hypothèse~\eqref{e:varset-ht} pour simplifier la
 dernière estimation contrairement à celle du quatrième point. En effet, cette
-l'estimation de \( \hautl[1]{ \faux* } \) contribuera directement, en
+estimation de \( \hautl[1]{ \faux* } \) contribuera directement, en
 section~\ref{sec:thm-prod}, à l'estimation de hauteur de la forme obstructrice
 que nous cherchons à construire (proposition~\ref{p:varset-notmin}) et il est
 donc intéressant de conserver la dépendance en \( \sum\fctrange \wtw* \wts*
-  \hautl[1]{\varfc*} \) explicite jusqu'à obtenir la relation de
+  \hautl[1]{\varfc*} \) explicite jusqu'à la relation de
 récurrence~\eqref{e:vs-ht-rec}.  L'autre estimation en revanche, ne sera
 utilisée que dans la section suivante pour assurer que les termes ne dépendant
 pas de \( \hautn{ \ex[1] } \) sont assez petits pour être couverts par cette
