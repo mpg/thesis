@@ -130,8 +130,6 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) énoncé indépendant du thm principal ;
-
 (A) Estimations ad hoc
 
 (A) Corollaires :
@@ -141,6 +139,11 @@ Vojta {{{2
 Parler de distance ponctuelle (sur \C_v du coup ?)
 
 (B) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
+
+(B) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
+2.4.1 et lemme 2.4.9 (env. 14 pages), à voir avec pph
+
+(B) Finalement \Vcos = \cst{vs-deg}^{-1}, on fait quoi ? Voir pph.
 
 (C) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
 \puiss par un 2 dans \Vfar comme ça, en principe sans perte à côté.

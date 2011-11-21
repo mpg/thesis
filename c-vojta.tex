@@ -71,8 +71,8 @@ par \( \vp[0] = 0 \) dans ce plongement.
 
 \begin{thm} \label{t:vojta-div}
   Pour tout réel \( 0 < \eps < 1 \), dans \( \va(\Qbar) \), il n'existe pas de
-  famille de points \( \ex[1], \dots, \ex[\puiss] \) satisfaisant
-  simultanément aux conditions suivantes :
+  famille de points \( \ex[1], \dots, \ex[\puiss] \) avec \( \puiss \ge
+    \genre + 1 \) satisfaisant simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & < \hautm[2]{\ex*}^{-\wtapx \expapx}
@@ -110,7 +110,21 @@ par \( \vp[0] = 0 \) dans ce plongement.
       \frac{ \eps }{ 85 \nclmaps \cdot 5^\puiss }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
     \\
-    \puiss & \ge \genre + 1
+    \label{e:def-Lambda}
+    \Lambda
+    & = \max \bigl(
+      (\deg \va)^\puiss,
+      \bigl(
+        85 \nclmaps \cdot 5^\puiss \cdot \eps^{-1}
+      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+      \deg \va,
+      (\sqrt2 \puiss \genre)^{\puiss\genre}
+    \bigr)
+    \\ \label{e:def-f}
+    f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
+    \\
+    \newcst[\Theta]{vs-ht}
+    & = \max( \vaht, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
   \end{align}
 \end{thm}
 
@@ -350,25 +364,12 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
-\todo[définir ça dans le théorème principal]
 \begin{align}
-  \label{e:def-Lambda}
-  \Lambda
-  & = \max \bigl(
-    (\deg \va)^\puiss,
-    \cst{vs-deg-prod} \, \deg \va,
-    (\sqrt2 \puiss \genre)^{\puiss\genre}
-  \bigr)
-  \\ \label{e:def-f}
-  f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
-  \\
   \newcst[]{vs-deg-prod}
   & =
   \bigl(
     85 \nclmaps \cdot 5^\puiss \cdot \eps^{-1}
   \bigr)^{ \frac{\puiss}{\puiss-\genre} }
-  \\
-  \newcst[\va]{vs-ht} & = \max( \vaht, \hlclab, \htcmp, \ln(\dimp + 1) )
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
@@ -3914,7 +3915,7 @@ de \( \epsz \) assure que
   \pmm.
 \end{equation}
 Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \)
-puis celle~\eqref{e:Vcos} de \( \Vcos \), on a
+puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
 \begin{align} \label{e:Vcos-ct-details}
   \frac{ \eps \epsi }{ 48 (\puiss - 1) }
   & \ge
