@@ -1982,7 +1982,7 @@ définition~\eqref{e:cst-vs-ht} pour écrire
 \begin{align}
   \hautl[\infty]{ M_{\sigma'_\clmap} }
   & \le
-  4 \delta \wts[1] \hlclab
+  4 \delta \wts[1]
   \Bigl(
     \cst{vs-ht}/2 + \ln(\dimp!) + \dimp \ln B
     + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
@@ -3635,7 +3635,7 @@ des propriétés suivantes.
   le dernier terme par
   \begin{equation}
     2 \delta \wts[1] \epsi \sigma^{-1}
-    \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \pmm.
   \end{equation}
   Il ne reste plus qu'à prendre la somme, en utilisant le fait que \( \epsi
@@ -4353,7 +4353,7 @@ par \( \wts[1] \), il vient :
   \le
   \wtw* \wts* \hautl[\infty]{ T }
   +
-  \wts[1] \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
+  \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{equation}
 Il ne reste plus qu'à substituer~\eqref{e:ht-T-var} dans l'estimation
@@ -4622,7 +4622,7 @@ Pour le deuxième terme, on a par définition :
   + 3 \ln(B) B(\genre+1) + \dimp \ln B + 3\ln B + 3 \ln(2)
   \\ & \qquad \le
   \frac32 \cst{vs-ht}
-  + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \frac3{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   + \dimp \ln B + 3 \ln B + 3 \ln 2
   \\ & \qquad \le
   \frac{3\Lambda}{2\cdot255} \cst{vs-ht}
@@ -4689,9 +4689,9 @@ Pour commencer, on a
   \le
   \cst{vs-ht} \ln B
   \le
-  \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
+  \cst{vs-ht} \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
   \le
-  \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac12 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{align}
 Par ailleurs
@@ -4700,7 +4700,7 @@ Par ailleurs
   \le
   2 \cst{vs-ht} \puiss^2 \genre \Lambda^{\frac1\puiss f(\vdim)}
   \le
-  \frac12 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac12 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
 \end{equation}
 qui aboutit largement à l'estimation annoncée.
 
@@ -4711,12 +4711,9 @@ On a également, en utilisant~\eqref{e:adhoc-gen} :
   & 2 \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
   \\ & \qquad \le
   \frac2{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + 4 \ln(\Lambda^{f(\vdim)})
-  \\ & \qquad \le
-  \frac2{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + 4 \puiss \Lambda^{\frac1\puiss \, f(\vdim)}
+  + \frac{ 4 \Lambda^{f(\vdim)} }{255}
   \\ & \qquad \le \label{e:ht-Pv-adhoc}
-  \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{align}
 Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
@@ -4732,17 +4729,20 @@ Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
   + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \\ & \qquad \le
   4 \cst{vs-ht} \cdot \frac\Lambda{255}
-  + \cst{vs-ht} \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
+  + \cst{vs-ht} \frac{ \Lambda^{f(\vdim)} }{ 255 }
   + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \\ & \qquad \le \label{e:ratfh1a-adhoc}
   \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{align}
-En particulier, l'inégalité précédente implique
+On a par ailleurs
 \begin{equation} \label{e:extra-beta-adhoc}
   \cst{vs-ht} + \ln B
   \le
-  \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \cst{vs-ht} \cdot \frac\Lambda{255}
+  + \frac{ \Lambda^{f(\vdim)} }{ 255 }
+  \le
+  \frac17 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{equation}
 
