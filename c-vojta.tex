@@ -4556,32 +4556,27 @@ Remarquons au passage que si le deuxième argument dans le maximum domine
 largement pour \( \puiss \) et \( \genre \) petits, le troisième croît en
 revanche bien plus vite quand ces deux quantités augmentent.
 
-Par ailleurs, on rappelle
-l'inégalité élémentaire \( \ln(x) \le \alpha \, x^{1/\alpha} \) pour \( \alpha
-\) positif, qu'on utilise en conjonction avec~\eqref{e:varset-deg} pour
-obtenir
+On fera fréquemment usage des deux estimations suivantes :
 \begin{equation}
   \ln B
   \le
   \ln(\Lambda^{f(\vdim)})
   \le
   \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
-  \pmm.
-\end{equation}
-On se contentera parfois de l'estimation un peu grossière suivante :
-\begin{equation}
+  \qquad\text{et}\qquad
   \ln B
   \le
   B
   \le
   \frac{ \Lambda^{f(\vdim)} }{ 255 \cdot 5^\puiss }
-  \pmm.
+  \pmm,
 \end{equation}
-Enfin, on utilisera à l'occasion la remarque élémentaire suivante : \( \alpha
-  + \beta \le \alpha\beta \) dès que \( \alpha \ge 2 \) et \( \beta \ge 2 \).
+qui découlent de~\eqref{e:varset-deg} et dont la première utilise l'inégalité
+élémentaire \( \ln(x) \le \alpha \, x^{1/\alpha} \), valable pour tout
+\( \alpha > 0 \).
 
-Avant de passer aux différentes estimations \lat{ad hoc}, commençons par une
-estimation qui nous sera utile plusieurs fois :
+Avant de passer aux différentes estimations \lat{ad hoc}, établissons encore
+une estimation qui nous sera utile plusieurs fois :
 \begin{align}
   B (\genre + 1) \ln (B (\dimp+1))
   & \le
@@ -4596,8 +4591,8 @@ estimation qui nous sera utile plusieurs fois :
   \pmm.
 \end{align}
 Signalons enfin qu'en général on ne cherchera pas à obtenir la plus grande
-précision possible sur le facteur constant, on se contentera d'obtenir celui
-qui est utile dans chaque situation.
+précision possible sur le facteur constant, on se contentera de la valeur
+utile pour chacune des situations considérées.
 
 \medskip
 
@@ -4687,18 +4682,17 @@ Pour commencer, on a
 \begin{align}
   \ln B + \ln(\dimp + 1)
   \le
-  \cst{vs-ht} \ln B
+  \frac{\Lambda^{f(\vdim)}}{255}
+  + \cst{vs-ht} \frac\Lambda{255}
   \le
-  \cst{vs-ht} \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
-  \le
-  \frac12 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac12 \cst{vs-ht} \Lambda^{f(\vdim)}
   \pmm.
 \end{align}
 Par ailleurs
 \begin{equation}
   2 \vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
   \le
-  2 \cst{vs-ht} \puiss^2 \genre \Lambda^{\frac1\puiss f(\vdim)}
+  4 \cst{vs-ht} \puiss^2 \genre \Lambda^{\frac1\puiss f(\vdim)}
   \le
   \frac12 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
 \end{equation}
