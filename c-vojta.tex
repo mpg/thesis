@@ -4746,6 +4746,62 @@ On a par ailleurs
 
 \section{Corollaires} \label{sec:vojta-coro}
 
+Le théorème~\ref{t:vojta-div} fait l'hypothèse que la variété dont on étudie
+les approximations exceptionnelles est l'hyperplan \( \vp[0] = 0 \) dans le
+plongement considéré. Nous allons en déduire un résultat similaire sans cette
+hypothèse, par des changements de plongement successifs.  Si \( \divi \) est
+un hyperplan quelconque, on se ramène au cas précédent par un changement de
+coordonnées linéaire. Si c'est un hypersurface quelconque, on se ramène à un
+hyperplan par un plongement de \bsc{Veronese}. Enfin, si c'est une variété
+quelconque, on se ramène au cas précédent en considérant une hypersurface
+convenable la contenant.
+
+Commençons par le cas d'un hyperplan quelconque. Le lemme suivant donne un
+changement de base de petite hauteur.
+
+\begin{lem}
+  Soit \( G \) un hyperplan de \( \Qbar^{\dimp+1} \), d'équation \( L \) dans
+  la base canonique. Si \( \dimp \ge 2 \), il existe une base \( (b_0, \dots,
+    b_\dimp) \) de \( \Qbar^{\dimp+1} \) telle que \( b_i \in G \) si et
+  seulement si \( i \neq 0 \), et
+  \begin{equation}
+    \hautm[2]{b_0} \cdots \hautm[2]{b_\dimp}
+    \le
+    \dimp^{\dimp/2} \, \hautm[2]{L}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  On commence par choisir une petite base de \( G \) en invoquant une version
+  absolue forte du classique lemme de \TS.
+  D'après le lemme~4.7 (p. 523) de~\cite{daphimht} et la remarque qui le suit,
+  pour tout \( \eps > \), il existe une base \( (b_1, \dots, b_n) \) de
+  \( G \) telle que
+  \begin{equation}
+    \hautl[2]{b_1} + \cdots + \hautl[2]{b_\dimp}
+    \le
+    \hautl[2]{L} + \sum_{i=1}^{\dimp-1} \sum_{j=1}^{i} \frac1{2j} + \eps
+    \pmm.
+  \end{equation}
+  Or la double somme du membre de droite est majorée par \( \dimp \ln \dimp /
+    2 \) (majoration classique du nombre de \bsc{Stirling}) ; en fait, pour \(
+    \dimp \ge 2 \) la différence entre ces deux quantités est même supérieure
+  ou égale à \( \ln 2 - 1/2 \). Il suffit alors de choisir \( \eps \)
+  inférieur à cette dernière quantité pour avoir une base \( (b_1, \dots, b_n)
+  \) de \( G \) telle que
+  \begin{equation}
+    \hautm[2]{b_1} \cdots \hautm[2]{b_\dimp}
+    \le
+    \dimp^{\dimp/2} \, \hautm[2]{L}
+    \pmm.
+  \end{equation}
+  Enfin, on choisit pour \( b_0 \) un vecteur de la base canonique
+  n'appartenant pas à \( G \). La famille \( (b_0, \dots, b_\dimp) \) est
+  alors une base de \( \Qbar^{\dimp+1} \) possédant les propriétés annoncées.
+\end{proof}
+
+
 
 \endinput
 
