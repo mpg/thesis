@@ -776,7 +776,7 @@
 \newcommand \coa  {\theta}
 \newcommand \coi  {{\mathfrak b}}
 \newcommand \vaht {\Hautl_\va}
-\newcommand \htcmp{\hat{c}_\vaemb}
+\newcommand \htcmp [1][\vaemb] {\hat{c}\ssub{\vaemb}}
 
 \nomdef \coa g {e3}
 \nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les
