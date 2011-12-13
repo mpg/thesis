@@ -749,7 +749,7 @@
   ou divise $2$, est nul sinon}
 
 \DeclareMathOperator \Dist {dist}
-\newcommand*\Distv [1][\place] {\Dist\ssub{\place}}
+\newcommand*\Distv [1][\place] {\Dist\ssub{#1}}
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
 
 \nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique

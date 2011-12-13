@@ -4845,6 +4845,45 @@ changement de base de petite hauteur.
   \end{enumthm}
 \end{lem}
 
+\begin{proof}
+  Notons \( G \) l'hyperplan d'équation \( L \) dans \( \Qbar^{\dimp+1} \) et
+  \( (b_0, \dots, b_\dimp) \) la base donnée par le lemme précédent appliqué à
+  \( G \). Quitte à multiplier \( L \) par un scalaire, ce qui ne change pas
+  sa hauteur, on suppose de plus que \( L(b_0) = 1 \).
+
+  On note de plus \( M \) la matrice dont les colonnes sont les
+  vecteurs \( b_i \) (écrits dans la base canonique de \( \Qbar^{\dimp+1} \)).
+  Ainsi, si \( x \) a pour coordonnées \( C \) dans la base canonique, ces
+  coordonnées dans la base \( (b_0, \dots, b_\dimp) \) sont \( M^{-1} C \).
+
+  On note alors \( \chi \in \GL_{\dimp+1}(\Qbar) \) la transformation linéaire
+  associée à \( M^{-1} \) (dans la base canonique) et on note de même la
+  transformation linéaire de \( \projd \) qui en découle en passant au
+  quotient. On pose alors \( \Theta' = \chi \circ \Theta \). On note
+  \( L'(\vp) = L(M(\vp)) = L(b_0) \vp[0] = \vp[0] \) ; par construction, \( L'
+  \) est une équation de \( \divi \) dans ce nouveau plongement.
+
+  Soit maintenant \( x \) un point de \( \va \), dont on note encore \( x \in
+    \Qbar^{\dimp+1} \) les coordonnées dans le plongement \( \Theta \) et \(
+    x' = M^{-1} x \) le coordonnées dans le plongement \( \Theta' \). On a
+  alors
+  \[
+    \distv[\place, \Theta]{x}{\divi}
+    =
+    \frac{
+      \av{ L'( x' ) }
+    }{
+      \nv2{ L' } \nv2{ x' }
+    }
+    =
+    \frac{
+      \av{ L( x ) }
+    }{
+      \nv2{ x' }
+    }
+\end{proof}
+
+
 
 
 \endinput
