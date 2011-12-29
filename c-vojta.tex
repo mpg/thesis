@@ -4757,55 +4757,14 @@ quelconque, on se ramène au cas précédent en considérant une hypersurface
 convenable la contenant.
 
 Commençons par le cas d'un hyperplan quelconque. Le lemme suivant donne un
-changement de base de petite hauteur.
-
-\begin{lem}
-  Soit \( G \) un hyperplan de \( \Qbar^{\dimp+1} \), d'équation \( L \) dans
-  la base canonique. Si \( \dimp \ge 2 \), il existe une base \( (b_0, \dots,
-    b_\dimp) \) de \( \Qbar^{\dimp+1} \) telle que \( b_i \in G \) si et
-  seulement si \( i \neq 0 \), et
-  \begin{equation}
-    \hautm[2]{b_0} \cdots \hautm[2]{b_\dimp}
-    \le
-    \dimp^{\dimp/2} \, \hautm[2]{L}
-    \pmm.
-  \end{equation}
-\end{lem}
-
-\begin{proof}
-  On commence par choisir une petite base de \( G \) en invoquant une version
-  absolue forte du classique lemme de \TS.
-  D'après le lemme~4.7 (p. 523) de~\cite{daphimht} et la remarque qui le suit,
-  pour tout \( \eps > \), il existe une base \( (b_1, \dots, b_n) \) de
-  \( G \) telle que
-  \begin{equation}
-    \hautl[2]{b_1} + \cdots + \hautl[2]{b_\dimp}
-    \le
-    \hautl[2]{L} + \sum_{i=1}^{\dimp-1} \sum_{j=1}^{i} \frac1{2j} + \eps
-    \pmm.
-  \end{equation}
-  Or la double somme du membre de droite est majorée par \( \dimp \ln \dimp /
-    2 \) (majoration classique du nombre de \bsc{Stirling}) ; en fait, pour \(
-    \dimp \ge 2 \) la différence entre ces deux quantités est même supérieure
-  ou égale à \( \ln 2 - 1/2 \). Il suffit alors de choisir \( \eps \)
-  inférieur à cette dernière quantité pour avoir une base \( (b_1, \dots, b_n)
-  \) de \( G \) telle que
-  \begin{equation}
-    \hautm[2]{b_1} \cdots \hautm[2]{b_\dimp}
-    \le
-    \dimp^{\dimp/2} \, \hautm[2]{L}
-    \pmm.
-  \end{equation}
-  Enfin, on choisit pour \( b_0 \) un vecteur de la base canonique
-  n'appartenant pas à \( G \). Ainsi, \( (b_0, \dots, b_\dimp) \) est
-  une base de \( \Qbar^{\dimp+1} \) possédant les propriétés annoncées.
-\end{proof}
+changement de base et estime son coût sur les différentes quantités en jeu.
 
 \begin{lem}
   Soit \( \Theta \colon \va \to \projd \) un plongement projectif et \( E \)
-  un hyperplan d'équation \( L(X) = 0 \) dans ce plongement. Alors il existe
-  un plongement \( \Theta' \colon \va \to \projd \) dans lequel \( E \) admet
-  \( \vp[0] = 0 \) comme équation et tel que :
+  un hyperplan d'équation \( L(X) = 0 \) dans ce plongement, où \( L \) est
+  normalisée de sorte qu'un de ses coefficients soit égal à \( 1 \).  Alors il
+  existe un plongement \( \Theta' \colon \va \to \projd \) dans lequel \( E \)
+  admet \( \vp[0] = 0 \) comme équation et tel que :
   \begin{enumthm}
     \item \(
         \distv[\place, \Theta']{x}{\divi}
@@ -4846,13 +4805,6 @@ changement de base de petite hauteur.
 \end{lem}
 
 \begin{proof}
-  Notons \( G \) l'hyperplan d'équation \( L \) dans \( \Qbar^{\dimp+1} \) et
-  \( (b_0, \dots, b_\dimp) \) la base donnée par le lemme précédent appliqué à
-  \( G \). Quitte à multiplier chacun des \( b_i \) par un scalaire
-  convenable, ce qui ne change pas sa hauteur, on peut supposer qu'un de ses
-  coordonnées est égale à \( 1 \), de sorte que \( \nv2{ b_i } \ge 1 \) en
-  toute place.
-
   On note de plus \( M \) la matrice dont les colonnes sont les
   vecteurs \( b_i \) (écrits dans la base canonique de \( \Qbar^{\dimp+1} \)).
   Ainsi, si \( x \) a pour coordonnées \( C \) dans la base canonique, ses
