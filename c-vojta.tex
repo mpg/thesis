@@ -4751,7 +4751,7 @@ les approximations exceptionnelles est l'hyperplan \( \vp[0] = 0 \) dans le
 plongement considéré. Nous allons en déduire un résultat similaire sans cette
 hypothèse, par des changements de plongement successifs.  Si \( \divi \) est
 un hyperplan quelconque, on se ramène au cas précédent par un changement de
-coordonnées linéaire. Si c'est un hypersurface quelconque, on se ramène à un
+coordonnées linéaire. Si c'est une hypersurface quelconque, on se ramène à un
 hyperplan par un plongement de \bsc{Veronese}. Enfin, si c'est une variété
 quelconque, on se ramène au cas précédent en considérant une hypersurface
 convenable la contenant.
@@ -4769,15 +4769,17 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \item \(
         \distv[\place, \Theta']{x}{\divi}
         \le
-        \todots
         \distv[\place, \Theta]{x}{\divi}
-      \) ;
+        \nv2{ L }^2
+        \sqrt{\dimp + 1}^\dv
+      \) ; \label{i:plin-dv}
     \item \(
         \hautm[2, \Theta']{x}
         \le
-        \todots
         \hautm[2, \Theta]{x}
-      \) ;
+        \hautm[2]{L}
+        \sqrt{\dimp + 1}
+      \) ; \label{i:plin-ht-pt}
     \item \(
         \hautl[1, \Theta']{\va}
         \le
@@ -4788,7 +4790,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   De plus, si \( \Theta \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
   également le cas de \( \Theta' \) avec les mêmes valeurs de \( \dimp \) et
   \( N \) et
-  \begin{enumthm}
+  \begin{enumthm} \setcounter{enumi}4
     \item \(
         \htcmp[\Theta']
         \le
@@ -4844,8 +4846,17 @@ changement de base et estime son coût sur les différentes quantités en jeu.
 
   Soit maintenant \( x \) un point de \( \va \), dont on note \( C_x \in
     \Qbar^{\dimp+1} \) les coordonnées dans le plongement \( \Theta \) et \(
-    C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \Theta' \). On
-  a alors
+    C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \Theta' \). Vu
+  les expressions de \( M \) et \( M^{-1} \) on a immédiatement
+  \begin{equation}
+    \nv\infty{ C _x } \le \nv2{ L } \nv2{ C'_x }
+    \quad\text{et}\quad
+    \nv\infty{ C'_x } \le \nv2{ L } \nv2{ C _x }
+  \end{equation}
+  et la deuxième comparaison donne aussitôt le point~\ref{i:plin-ht-pt}.
+
+  Par ailleurs, en appliquant la définition de la distance d'un point à une
+  hyperplan, il vient
   \[
     \distv[\place, \Theta']{x}{\divi}
     =
@@ -4855,12 +4866,13 @@ changement de base et estime son coût sur les différentes quantités en jeu.
       \nv2{ L' } \nv2{ C'_x }
     }
     =
-    \frac{
-      \av{ L( C_x ) }
-    }{
-      \todots
-    }
+    \distv[\place, \Theta']{x}{\divi}
+    \frac{ \nv2 L }{ \nv2{ L' } }
+    \frac{ \nv2{ C_x } }{ \nv2{ C'_x } }
   \]
+  qui donne le point~\ref{i:plin-dv} en remarquant que \( \nv2{ L' } = 1 \)
+  par construction et en utilisant la comparaison ci-dessus pour majorer le
+  dernier facteur.
 \end{proof}
 
 
