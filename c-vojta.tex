@@ -4760,11 +4760,11 @@ Commençons par le cas d'un hyperplan quelconque. Le lemme suivant donne un
 changement de base et estime son coût sur les différentes quantités en jeu.
 
 \begin{lem}
-  Soit \( \Theta \colon \va \to \projd \) un plongement projectif et \( E \)
-  un hyperplan d'équation \( L(X) = 0 \) dans ce plongement, où \( L \) est
-  normalisée de sorte qu'un de ses coefficients soit égal à \( 1 \).  Alors il
-  existe un plongement \( \Theta' \colon \va \to \projd \) dans lequel \( E \)
-  admet \( \vp[0] = 0 \) comme équation et tel que :
+  Soit \( \Theta \colon \va \to \projd \) un plongement projectif et \( \divi
+  \) un hyperplan d'équation \( L(\vp) = 0 \) dans ce plongement, où \( L \)
+  est normalisée de sorte qu'un de ses coefficients soit égal à \( 1 \).
+  Alors il existe un plongement \( \Theta' \colon \va \to \projd \) dans
+  lequel \( \divi \) admet \( \vp[0] = 0 \) comme équation et tel que :
   \begin{enumthm}
     \item \(
         \distv[\place, \Theta']{x}{\divi}
@@ -4805,24 +4805,49 @@ changement de base et estime son coût sur les différentes quantités en jeu.
 \end{lem}
 
 \begin{proof}
-  On note de plus \( M \) la matrice dont les colonnes sont les
-  vecteurs \( b_i \) (écrits dans la base canonique de \( \Qbar^{\dimp+1} \)).
-  Ainsi, si \( x \) a pour coordonnées \( C \) dans la base canonique, ses
-  coordonnées dans la base \( (b_0, \dots, b_\dimp) \) sont \( M^{-1} C \).
+  Par hypothèse, un des coefficients de \( L \) vaut \( 1 \). Notons \( \sigma
+  \) la transformation de \( \projd \) donnée par l'échange de la coordonnée
+  correspondante avec \( \vp[0] \). Cette transformation ne change clairement ni
+  les distances, ni les hauteurs. Par ailleurs, une équation de \( \divi \) dans
+  le plongement \( \sigma \circ \Theta \) est \( L_\sigma(\vp) =
+    L(\sigma^{-1}(\vp)) = \vp[0] + l_1 \vp[1] + \dots + l_\dimp \vp[\dimp] \).
+  Posons alors
+  \begin{equation}
+    M = \begin{pmatrix}
+      1      & -l_1   & -l_2   & \dots  & -l_\dimp \\
+      0      & 1      & 0      & \dots  & 0 \\
+      \vdots & \ddots & \ddots & \ddots & \vdots \\
+      \vdots &        & \ddots & 1      & 0 \\
+      0      & \hdotsfor2      & 0      & 1 \\
+    \end{pmatrix}
+    \quad\text{soit}\quad
+    M^{-1} = \begin{pmatrix}
+      1      & l_1    & l_2    & \dots   & l_\dimp \\
+      0      & 1      & 0      & \dots  & 0 \\
+      \vdots & \ddots & \ddots & \ddots & \vdots \\
+      \vdots &        & \ddots & 1      & 0 \\
+      0      & \hdotsfor2      & 0      & 1 \\
+    \end{pmatrix}
+  \end{equation}
+  de sorte que toutes les colonnes de \( M \) sauf la première sont les
+  coordonnées homogènes (dans le plongement \( \sigma \circ \Theta \)) de
+  points de \( \divi \). Plus précisément, en relevant dans \( \cdn^{\dimp+1}
+  \), ces vecteurs constituent une base du relevé de \( \divi \).
 
-  On note alors \( \chi \in \GL_{\dimp+1}(\Qbar) \) la transformation linéaire
+  On note alors \( \chi \in \GL_{\dimp+1}(\cdn) \) la transformation linéaire
   associée à \( M^{-1} \) (dans la base canonique) et on note de même la
   transformation linéaire de \( \projd \) qui en découle en passant au
-  quotient. On pose alors \( \Theta' = \chi \circ \Theta \). On note
-  \( L'(\vp) = L(M(\vp)) = L(b_0) \vp[0] \) ; par construction, \( L' \) est
-  une équation de \( \divi \) dans ce nouveau plongement.
+  quotient. On pose alors \( \Theta' = \chi \circ \sigma \circ \Theta \). On
+  note \( L'(\vp) = L_\sigma(M(\vp)) = \vp[0] \) ; par construction, \( L' \)
+  est une équation de \( \divi \) dans ce nouveau plongement, qui satisfait
+  donc à la première condition.
 
   Soit maintenant \( x \) un point de \( \va \), dont on note \( C_x \in
     \Qbar^{\dimp+1} \) les coordonnées dans le plongement \( \Theta \) et \(
-    C'_x = M^{-1} C_x \) le coordonnées dans le plongement \( \Theta' \). On a
-  alors
+    C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \Theta' \). On
+  a alors
   \[
-    \distv[\place, \Theta]{x}{\divi}
+    \distv[\place, \Theta']{x}{\divi}
     =
     \frac{
       \av{ L'( C'_x ) }
@@ -4833,7 +4858,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \frac{
       \av{ L( C_x ) }
     }{
-      \nv2{ L } \nv2{ C_x }
+      \todots
     }
   \]
 \end{proof}
