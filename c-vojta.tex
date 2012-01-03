@@ -4783,9 +4783,9 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \item \(
         \hautl[1, \Theta']{\va}
         \le
-        \todots
         \hautl[1, \Theta]{\va}
-      \).
+        + \hautl[1]{ L } (\genre+1) \deg \va
+      \). \label{i:plin-ht-va}
   \end{enumthm}
   De plus, si \( \Theta \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
   également le cas de \( \Theta' \) avec les mêmes valeurs de \( \dimp \) et
@@ -4834,7 +4834,9 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   de sorte que toutes les colonnes de \( M \) sauf la première sont les
   coordonnées homogènes (dans le plongement \( \sigma \circ \Theta \)) de
   points de \( \divi \). Plus précisément, en relevant dans \( \cdn^{\dimp+1}
-  \), ces vecteurs constituent une base du relevé de \( \divi \).
+  \), ces vecteurs constituent une base du relevé de \( \divi \). On remarque
+  que les normes de lignes et des colonnes de \( M \) comme de \( M^{-1} \)
+  sont majorées par la norme de \( L \).
 
   On note alors \( \chi \in \GL_{\dimp+1}(\cdn) \) la transformation linéaire
   associée à \( M^{-1} \) (dans la base canonique) et on note de même la
@@ -4873,6 +4875,24 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   qui donne le point~\ref{i:plin-dv} en remarquant que \( \nv2{ L' } = 1 \)
   par construction et en utilisant la comparaison ci-dessus pour majorer le
   dernier facteur.
+
+  Par ailleurs, si \( \chow\va \) est une forme de \bsc{Chow} de \( \va \)
+  dans le plongement \( \vaemb \), on obtient une forme de \bsc{Chow} \(
+    \chow\va' \) de \( \va \) dans \( \vaemb' \) en composant \( \chow\va \)
+  avec (la transposée de) \( M^{-1} \sigma \) sur chacun des \( \genre + 1 \)
+  groupes de \( \dimp + 1 \) variables, de sorte que,
+  si \( \deg \va \) désigne le degré de \( \va \) en tant que sous-variété de
+  \( \projd \) (qui est évidemment le même dans les plongements \( \vaemb \)
+  et \( \vaemb' \)) c'est-à-dire le degré de \( \chow\va \) en chacun des
+  groupes de variables, on a
+  \begin{equation}
+    \nv1{ \chow\va' }
+    \le
+    \nv1{ \chow\va }
+    \nv1{ L }^{(\genre+1) \deg \va}
+  \end{equation}
+  qui établit~\ref{i:plin-ht-va}.
+
 \end{proof}
 
 
