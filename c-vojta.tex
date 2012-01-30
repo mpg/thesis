@@ -5148,6 +5148,58 @@ un coût, qui consiste à remplacer \( \expapx \) par \( \expapx / (\dimp + 1)
   \end{align}
 \end{coro}
 
+\begin{proof}
+  Soit \( L = l_0 \vp[0] + \dots + l_\dimp \vp[\dimp] \) une équation de \(
+    \divi \). Pour chaque place \( \place \), on note \( i_\place \) un indice
+  tel que \( \av{ l_{i_\place} } \) soit maximal, de sorte que \( \av{
+      l_{i_\place} } \ge \nv2 L (\dimp + 1)^{-\dv/2} \).  On considère alors
+  les points \( p_i \) définis comme \( p_0 \) mais avec le \( 1 \) en \( i
+  \)-ème position ; on a \( \distv{\divi}{p_{i_\place}} \ge (\dimp +
+    1)^{-\dv/2} \).
+
+  On définit maintenant pour chaque \( i \) un ensemble de places
+  \begin{equation}
+    \placesapx_i
+    =
+    \set{
+      \place \in \placesapx \text{ telle que }
+      \distv{\divi}{p_{i_\place}} \ge (\dimp + 1)^{-\dv/2}
+    }
+    \pmm.
+  \end{equation}
+  Le paragraphe précédent montre que \( \placesapx = \placesapx_0 \cup
+    \cdots \cup \placesapx_\dimp \). (Cette réunion n'est pas nécessairement
+  disjointe, mais il n'est pas utile qu'elle le soit.) On associe à chacun de
+  ces ensemble le nombre réel \( \sigma_i = \sum_{\place \in \placesapx_i}
+    \wtapx \degv \) où \( \degv \) désigne comme d'habitude le dégré local en
+  \( \place \) divisé par le degré global. Par hypothèse, on a
+  \( 1 = \sum\placerange \wtapx \degv \ge \sum_{i=0}^\dimp \sigma_i \)
+  et il exite donc (au moins) un indice \( i \) tel que \( \sigma_i \ge
+    1/(\dimp + 1) \). On fixe un tel indice, désormais désigné par \( i \).
+
+  On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( \place \in
+    \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \). Enfin, on pose
+  \( \expapx' = \expapx \sigma_i \) de sorte qu'on a
+  \begin{equation}
+    (n + 1)^{-3\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \le
+    \frac{ \distv{p_0}{\divi}^2 }{ (n + 1)^{\dv/2} }
+    \hautm[2]{\ex*}^{-\wtapx' \expapx'}
+    \quad \forall \place \in \placesapx'
+    \pmm.
+  \end{equation}
+  On considère pour finir le plongement \( \vaemb' \) obtenu à partir de \(
+    \vaemb \) en échangeant les coordonnées d'indices \( i \) et \( 0 \), ce
+  qui n'a aucune incidence sur la distance ni la hauteur. On peut alors
+  appliquer le corollaire~\ref{c:vojta-div-dv} avec le plongement \( \vaemb' \) le réel \(
+    \expapx' \), l'ensemble de places \( \placesapx_i \) et les poids \(
+    \wtapx' \), car ses hypothèses sont impliquées par celle du présent
+  corrolaire compte tenu de la comparaison ci-dessu et du fait que \( \expapx'
+    \ge \expapx / (\dimp + 1) \).
+\end{proof}
+
+
 \endinput
 
 % vim: spell spelllang=fr
