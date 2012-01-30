@@ -73,10 +73,10 @@ hauteurs découlent du plongement fixé.
 
 \begin{thm} \label{t:vojta-div}
   \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
-  Soit \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
-  hypothèses~\ref{h:vaemb} et \( \divi \) l'hyperplan défini par 
-  \( \vp[0] = 0 \) dans ce plongement.  Pour tout réel \( 0 < \eps < 1 \),
-  il n'existe pas dans \( \va(\Qbar) \) de famille de points \( \ex[1],
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
+  hypothèses~\ref{h:vaemb}, \( \divi \) l'hyperplan défini par
+  \( \vp[0] = 0 \) dans ce plongement et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
@@ -4986,11 +4986,12 @@ remplacement de \( 85 \) par \( 86 \) partout où ce nombre apparaît en même
 temps que \( \expapx \).
 
 \begin{coro} \label{c:vojta-div-dv}
-  Soit \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
-  hypothèses~\ref{h:vaemb}, \( \divi \) un hyperplan de \( \projd \) et \( p_0
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
+  hypothèses~\ref{h:vaemb}, \( \divi \) un hyperplan de \( \projd \), \( p_0
   \) le point de \( \projd \) de coordonnées homogènes \( (1 {:} 0 {:} \cdots
-    {:} 0) \). Pour tout réel \( 0 < \eps < 1 \),
-  il n'existe pas dans \( \va(\Qbar) \) de famille de points \( \ex[1],
+    {:} 0) \)
+  et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
@@ -5036,11 +5037,13 @@ temps que \( \expapx \).
 \end{coro}
 
 \begin{proof}
-  On considère le plongement \( \vaemb' \) donné par le lemme précédent et on
-  prévoit d'appliquer le théorème~\ref{t:vojta-div} à \( E \) et \( \vaemb'
-  \) avec \( \expapx' = 85 \expapx / 86 \) pour une raison qui deviendra
-  bientôt claire. Il s'agit de vérifier que les hypothèses du corollaire
-  impliquent bien celles du théorème.
+  On remarque pour commencer que le résultat est vide dans le cas où \( p_0
+    \in E \), car la première condition n'est jamais satisfaite. Dans le cas
+  contraire, on considère le plongement \( \vaemb' \) donné par le lemme
+  précédent et on prévoit d'appliquer le théorème~\ref{t:vojta-div} à \( E \)
+  et \( \vaemb' \) avec \( \expapx' = 85 \expapx / 86 \) pour une raison qui
+  deviendra bientôt claire. Il s'agit de vérifier que les hypothèses du
+  corollaire impliquent bien celles du théorème.
 
   Pour l'hypothèse principale~\eqref{e:Vapx}, on utilise d'abord le
   point~\ref{i:plin-dv} du lemme, puis l'hypothèse principale du présent
@@ -5096,6 +5099,54 @@ temps que \( \expapx \).
     \cst{vs-ht}[\vaemb'] \) par définition et en utilisant les points restants
   du lemme précédent.
 \end{proof}
+
+Le défaut du résultat précédent et que l'hypothèse d'approximation est
+d'autant plus forte (et donc le résultat d'autant plus faible) que \( p_0 \)
+est proche de \( E \), jusqu'à obtenir un hypothèse impossible à satisfaire
+(donc un résultat vide) lorsque \( p_0 \). Le corollaire suivant évite ce
+problème en considérant des permutations de coordonnées ; ceci a en revanche
+un coût, qui consiste à remplacer \( \expapx \) par \( \expapx / (\dimp + 1)
+\) dans les autres hypothèses, comme nous le verrons au cours de la preuve.
+
+\begin{coro} \label{c:vojta-div-any}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
+  aux hypothèses~\ref{h:vaemb}, \( \divi \) un hyperplan de \( \projd \)
+  et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
+    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+  simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{\ex*}{\divi}
+    & <
+    (n + 1)^{-3\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \\
+    \hautn{\ex[1]}
+    & > 4\cst{ht-v-div-dv} \Lambda_2^{(1 + \frac1\puiss)
+      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    \\
+    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    4 \puiss \Lambda_2^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    \\
+    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \left(
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^\puiss (\dimp+1) }
+    \right)^{ \frac{\puiss}{\puiss-\genre} }
+  \end{align}
+  avec \( \cst{ht-v-div-dv} \) comme en~\ref{e:cst-ht-v-div-dv} et
+  \begin{align}
+    \Lambda_2
+    & = \max \bigl(
+      (\deg \va)^\puiss,
+      \bigl(
+        86 \nclmaps \cdot 5^\puiss \cdot \eps^{-1} (\dimp + 1)
+      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+      \deg \va,
+      (\sqrt2 \puiss \genre)^{\puiss\genre}
+    \bigr)
+  \end{align}
+\end{coro}
 
 \endinput
 
