@@ -21,7 +21,8 @@ lequel on fait les hypothèses suivantes.
         \qquad \forall \point \in \va(\Qbar)
         \pmm.
       \end{equation}
-    \item Il existe une famille de réels \( \hmclab* \) presque tous égaux à
+    \item \label{i:clab}
+      Il existe une famille de réels \( \hmclab* \) presque tous égaux à
       \( 1 \) (de sorte que \( \hmclab = \prod_\place \hmclab*^{\degv} \) est
       bien défini), un entier \( \nclmaps \), un ensemble \( \clmaps \) de \(
         \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
@@ -31,11 +32,15 @@ lequel on fait les hypothèses suivantes.
       \)-uplets de formes telle que :
       \begin{enumerate}
         \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
-          le morphisme \( (x, y) \mapsto ax - by \) sur \( \clmap \) ;
+          le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \(
+            \vaemb \) sur (l'image de) \( \clmap \) ;
         \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
           bidegré \( (2a^2, 2b^2) \) ;
         \item pour tout place \( \place \) et toute carte \( \clmap \), on a
-          \( \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2} \) ;
+          \begin{equation} \label{e:clab-norm}
+            \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2}
+            \pmm;
+          \end{equation}
         \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
           \( \place \) il existe une carte \( \clmap \in \clmaps \) telle que
           \begin{equation} \label{e:clab-loc}
@@ -44,7 +49,6 @@ lequel on fait les hypothèses suivantes.
             \frac{
               \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
             }{
-              \nnv1{ \rmclab{a}{b}{ \clmap } }
               \nv1 x ^{2a^2} \nv1 y ^{2b^2}
             }
             \pmm.
@@ -4798,8 +4802,8 @@ changement de base et estime son coût sur les différentes quantités en jeu.
       \) ; \label{i:plin-htcmp}
     \item \(
         \hmclab[\vaemb']
-        \le
-        \todots
+        =
+        \nv1 L ^{5/2}
         \hmclab[\vaemb]
       \).
   \end{enumthm}
@@ -4907,7 +4911,68 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   \end{equation}
   qui donne directement~\ref{i:plin-htcmp}.
 
+  Enfin, si \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) est
+  une famille de \( (\dimp+1) \)-uplets de formes comme au point~\ref{i:clab}
+  des hypothèses~\ref{h:vaemb}, on pose
+  \begin{equation}
+    \rmclab{a}{b}{\clmap}[\vaemb']
+    =
+    M^{-1} \rmclab{a}{b}{\clmap}[\vaemb](MX, MY)
+  \end{equation}
+  de sorte que la famille
+  \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) satisfait aux
+  mêmes hypothèses dans le plongement \( \vaemb' \), sauf
+  peut-être~\ref{e:clab-norm} et~\ref{e:clab-loc}. Montrons que ces deux
+  conditions sont satisfaites avec \( \hmclab[\vaemb'] = \nv1 L ^{5/2}
+    \hmclab[\vaemb] \) comme annoncé.
 
+  Pour la première, en utilisant les propriétés de la norme \( 1 \), on a
+  immédiatement
+  \begin{align}
+    \nnv1{ \rmclab{a}{b}{\clmap}[\vaemb'] }
+    \le
+    \nv1{ L }
+    \nnv1{ \rmclab{a}{b}{\clmap}[\vaemb] }
+    \nv1{ L }^{2(a^2 + b^2)}
+    \le
+    \hmclab[\vaemb]*^{a^2 + b^2} \nv1{ L }^{\frac52(a^2 + b^2)}
+    =
+    \hmclab[\vaemb']*^{a^2 + b^2}
+  \end{align}
+  en remarquant que pour \( (a, b) \ge (1, 1) \) on a
+  \( 1 + 2(a^2 + b^2) \le \frac52 (a^2 + b^2) \).
+  Pour la deuxième, on écrit de même
+  \begin{align}
+    \frac{
+      \nv1{ \rmclab{a}{b}{\clmap}[\vaemb'](C'_x, C'_y) }
+    }{
+      \nv1{C'_x}^{2a^2} \nv1{C'_y}^{2b^2}
+    }
+    & =
+    \frac{
+      \nv1{ M^{-1} \rmclab{a}{b}{\clmap}[\vaemb](C_x, C_y) }
+    }{
+      \nv1{C'_x}^{2a^2} \nv1{C'_y}^{2b^2}
+    }
+    \left( \frac{ \nv1{C_x} }{ \nv1{C'_x} } \right)^{2a^2}
+    \left( \frac{ \nv1{C_y} }{ \nv1{C'_y} } \right)^{2b^2}
+    \\ & \ge
+    \frac{
+      \nv1{ \rmclab{a}{b}{\clmap}[\vaemb](C_x, C_y) }
+    }{
+      \nv1{C'_x}^{2a^2} \nv1{C'_y}^{2b^2}
+    }
+    \, \frac1{
+      \nv1 L ^{1 + 2(a^2 + b^2)}
+    }
+    \ge
+    \hmclab[\vaemb']*^{-(a^2 + b^2)}
+    \pmm.
+  \end{align}
+  Enfin, il est clair que \( N = \card \clmaps \) reste inchangé car
+  l'ensemble de cartes considéré est le même (les cartes sont des ouverts de
+  \( \va^2 \), pas de son image dans un plongement) ; par ailleurs \( \dimp \)
+  n'est bien évidemment pas modifié par un changement de coordonnées linéaire.
 \end{proof}
 
 
