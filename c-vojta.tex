@@ -4764,31 +4764,31 @@ Commençons par le cas d'un hyperplan quelconque. Le lemme suivant donne un
 changement de base et estime son coût sur les différentes quantités en jeu.
 
 \begin{lem}
-  Soit \( \vaemb \colon \va \to \projd \) un plongement projectif et \( \divi
-  \) un hyperplan d'équation \( L(\vp) = 0 \) dans ce plongement, où \( L \)
-  est normalisée de sorte qu'un de ses coefficients soit égal à \( 1 \).
-  Alors il existe un plongement \( \vaemb' \colon \va \to \projd \) dans
-  lequel \( \divi \) admet \( \vp[0] = 0 \) comme équation et tel que :
+  Soient \( \vaemb \colon \va \to \projd \) un plongement projectif, \( p_0 \)
+  les point de coordonnées homogènes \( (1: 0 : \cdots : 0) \) et \( \divi \)
+  un hyperplan ne contenant pas \( p_0 \).  Il existe un plongement \( \vaemb'
+    \colon \va \to \projd \) dans lequel \( \divi \) admet \( \vp[0] = 0 \)
+  comme équation et tel que :
   \begin{enumthm}
     \item \(
         \distv[\place, \vaemb']{x}{\divi}
         \le
         \distv[\place, \vaemb]{x}{\divi}
-        \nv2{ L }^2
-        \sqrt{\dimp + 1}^\dv
+        \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
+        \, (\dimp + 1)^{3\dv/2}
       \) ; \label{i:plin-dv}
     \item \(
         \hautm[2, \vaemb']{x}
         \le
         \hautm[2, \vaemb]{x}
-        \hautm[2]{L}
+        \cdot \hautm[2, \vaemb]{E}
         \sqrt{\dimp + 1}
       \) ; \label{i:plin-ht-pt}
     \item \(
         \hautl[1, \vaemb']{\va}
         \le
         \hautl[1, \vaemb]{\va}
-        + \hautl[1]{ L } (\genre+1) \deg \va
+        + \hautl[1, \vaemb]{ E } (\genre+1) \deg \va
       \). \label{i:plin-ht-va}
   \end{enumthm}
   De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
@@ -4798,25 +4798,45 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \item \(
         \htcmp[\vaemb']
         =
-        \htcmp[\vaemb] + \hautl[2] L + \sqrt{\dimp+1}
+        \htcmp[\vaemb]
+        + \hautl[2, \vaemb] E + \sqrt{\dimp+1}
       \) ; \label{i:plin-htcmp}
     \item \(
-        \hmclab[\vaemb']
+        \hmclab[\vaemb']*
         =
-        \nv1 L ^{5/2}
-        \hmclab[\vaemb]
+        \hmclab[\vaemb]*
+        \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-5/2}
+        \, (\dimp + 1)^{5\dv/2}
+      \) ; \label{i:plin-hmclab}
+    \item \(
+        \hlclab[\vaemb']
+        =
+        \hlclab[\vaemb]
+        + \frac52 \hautl[1, \vaemb] E
       \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
-  Par hypothèse, un des coefficients de \( L \) vaut \( 1 \). Notons \( \sigma
-  \) la transformation de \( \projd \) donnée par l'échange de la coordonnée
-  correspondante avec \( \vp[0] \). Cette transformation ne change clairement ni
-  les distances, ni les hauteurs. Par ailleurs, une équation de \( \divi \) dans
-  le plongement \( \sigma \circ \Theta \) est \( L_\sigma(\vp) =
-    L(\sigma^{-1}(\vp)) = \vp[0] + l_1 \vp[1] + \dots + l_\dimp \vp[\dimp] \).
-  Posons alors
+  Notons \( L \) une équation de \( E \), qu'on peut supposer de la forme
+  \( L(\vp) = \vp[0] + l_1 \vp[1] + \dots + l_\dimp \vp[\dimp] \). Remarquons
+  de suite que \( \distv[\place, \vaemb]{\divi}{p_0} = \nv2 L ^{-1} \le \nv1 L
+    ^{-1} \sqrt{\dimp+1}^\dv \). Ainsi, pour avoir les points~\ref{i:plin-dv}
+  et~\ref{i:plin-hmclab}, il suffit de prouver respectivement
+  \(
+    \distv[\place, \vaemb']{x}{\divi}
+    \le
+    \distv[\place, \vaemb]{x}{\divi}
+    \cdot \nv1{ L }^2
+    \, \sqrt{\dimp + 1}^\dv
+  \) et \(
+    \hmclab[\vaemb']*
+    =
+    \hmclab[\vaemb]*
+    \cdot \nv1 L ^{5/2}
+  \).
+
+  Posons maintenant
   \begin{equation}
     M = \begin{pmatrix}
       1      & -l_1   & -l_2   & \dots  & -l_\dimp \\
@@ -4835,7 +4855,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \end{pmatrix}
   \end{equation}
   de sorte que toutes les colonnes de \( M \) sauf la première sont les
-  coordonnées homogènes (dans le plongement \( \sigma \circ \Theta \)) de
+  coordonnées homogènes (dans le plongement \( \Theta \)) de
   points de \( \divi \). Plus précisément, en relevant dans \( \cdn^{\dimp+1}
   \), ces vecteurs constituent une base du relevé de \( \divi \). On remarque
   que les normes de lignes et des colonnes de \( M \) comme de \( M^{-1} \)
@@ -4844,10 +4864,10 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   On note alors \( \chi \in \GL_{\dimp+1}(\cdn) \) la transformation linéaire
   associée à \( M^{-1} \) (dans la base canonique) et on note de même la
   transformation linéaire de \( \projd \) qui en découle en passant au
-  quotient. On pose alors \( \Theta' = \chi \circ \sigma \circ \Theta \). On
-  note \( L'(\vp) = L_\sigma(M(\vp)) = \vp[0] \) ; par construction, \( L' \)
-  est une équation de \( \divi \) dans ce nouveau plongement, qui satisfait
-  donc à la première condition.
+  quotient. On pose alors \( \Theta' = \chi \circ \Theta \). On
+  note \( L'(\vp) = L(M(\vp)) = \vp[0] \) ; par construction, \( L' \)
+  est une équation de \( \divi \) dans ce nouveau plongement, lequel
+  satisfait donc à la première condition.
 
   Soit maintenant \( x \) un point de \( \va \), dont on note \( C_x \in
     \Qbar^{\dimp+1} \) les coordonnées dans le plongement \( \Theta \) et \(
@@ -4923,8 +4943,8 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) satisfait aux
   mêmes hypothèses dans le plongement \( \vaemb' \), sauf
   peut-être~\ref{e:clab-norm} et~\ref{e:clab-loc}. Montrons que ces deux
-  conditions sont satisfaites avec \( \hmclab[\vaemb'] = \nv1 L ^{5/2}
-    \hmclab[\vaemb] \) comme annoncé.
+  conditions sont satisfaites avec \( \hmclab[\vaemb'] = \hmclab[\vaemb] \cdot
+    \nv1 L ^{5/2} \) comme annoncé.
 
   Pour la première, en utilisant les propriétés de la norme \( 1 \), on a
   immédiatement
@@ -4965,10 +4985,9 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \, \frac1{
       \nv1 L ^{1 + 2(a^2 + b^2)}
     }
-    \ge
-    \hmclab[\vaemb']*^{-(a^2 + b^2)}
-    \pmm.
   \end{align}
+  qui implique les deux derniers points de l'énoncé.
+
   Enfin, il est clair que \( N = \card \clmaps \) reste inchangé car
   l'ensemble de cartes considéré est le même (les cartes sont des ouverts de
   \( \va^2 \), pas de son image dans un plongement) ; par ailleurs \( \dimp \)
