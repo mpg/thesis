@@ -4898,7 +4898,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   \end{equation}
   qui établit~\ref{i:plin-ht-va}.
 
-  Par ailleurs, les comparaisons~\ref{e:plin-norm} donnent immédiatement
+  Par ailleurs, les comparaisons~\eqref{e:plin-norm} donnent immédiatement
   \begin{equation}
     \abs{ \hautl[2, \vaemb] x - \hautl[2, \vaemb'] x }
     \le
@@ -4924,7 +4924,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   de sorte que la famille
   \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) satisfait aux
   mêmes hypothèses dans le plongement \( \vaemb' \), sauf
-  peut-être~\ref{e:clab-norm} et~\ref{e:clab-loc}. Montrons que ces deux
+  peut-être~\eqref{e:clab-norm} et~\eqref{e:clab-loc}. Montrons que ces deux
   conditions sont satisfaites avec \( \hmclab[\vaemb']* = \hmclab[\vaemb]*
     \cdot \nv1 L ^{5/2} \), ce qui impliquera le dernier point de l'énoncé.
 
@@ -5038,9 +5038,63 @@ temps que \( \expapx \).
 \begin{proof}
   On considère le plongement \( \vaemb' \) donné par le lemme précédent et on
   prévoit d'appliquer le théorème~\ref{t:vojta-div} à \( E \) et \( \vaemb'
-  \). Il s'agit de vérifier que les hypothèses du corollaire impliquent bien
-  celles du théorème.
+  \) avec \( \expapx' = 85 \expapx / 86 \) pour une raison qui deviendra
+  bientôt claire. Il s'agit de vérifier que les hypothèses du corollaire
+  impliquent bien celles du théorème.
 
+  Pour l'hypothèse principale~\eqref{e:Vapx}, on utilise d'abord le
+  point~\ref{i:plin-dv} du lemme, puis l'hypothèse principale du présent
+  corollaire, la définition de \( \expapx' \) et enfin le
+  point~\ref{i:plin-ht-pt} du lemme :
+  \begin{align}
+    \distv[\place, \vaemb']{x}{\divi}
+    & \le
+    \distv[\place, \vaemb]{x}{\divi}
+    \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
+    \, (\dimp + 1)^{\dv/2}
+    \\ & \le
+    \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx}
+    =
+    \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx'}
+    \cdot \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx/86}
+    \\ & \le
+    \hautm[2, \vaemb']{x}^{-\wtapx \expapx'}
+    \cdot \hautm[2, \vaemb]{E}^{\wtapx \expapx'}
+    (\dimp + 1)^{\wtapx \expapx'/2}
+    \cdot \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx/86}
+    \\ & \le
+    \hautm[2, \vaemb']{x}^{-\wtapx \expapx'}
+    \Bigl(
+      \hautm[2, \vaemb]{E}^{85}
+      (\dimp + 1)^{85/2}
+      /
+      \hautm[2, \vaemb]{\ex*}
+    \Bigr)^{-\wtapx \expapx/86}
+    \pmm,
+  \end{align}
+  qui donne le résultat voulu pour peu que la quantité dans la dernière
+  parenthèse soit inférieure à \( 1 \). Or, la deuxième hypothèse entraîne
+  largement cette inégalité, par exemple :
+  \(
+    \hautl[2, \vaemb]{\ex*}
+    \ge
+    2 \cst{ht-v-div-dv} \Lambda_1
+    \ge
+    85 ( \hautl[1, \vaemb]{E} + \ln (\dimp + 1) )
+  \)
+  en utilisant de diverses façon la définition de \( \cst{ht-v-div-dv} \) et
+  le fait que \( \Lambda_1 \ge 85 \).
+
+  Les autres hypothèses sont plus faciles, car un changement de coordonnées
+  linéaire ne modifie en rien la hauteur normalisée, c'est-à-dire la forme
+  quadratique définissant la géométrie de l'espace de \MoW. Les conditions
+  s'écrivant dans cet espace sont donc inchangées en passant de \( \vaemb \) à
+  \( \vaemb' \).  Ainsi, les hypothèses~\eqref{e:Vcos} et~\eqref{e:Vfar} sont
+  satisfaites car les hypothèses correspondantes du corollaire sont les mêmes,
+  compte tenu du changement de \( \expapx \). Il en est de même
+  pour~\eqref{e:Vbig} en remarquant de plus que \( \cst{ht-v-div-dv} >
+    \cst{vs-ht}[\vaemb'] \) par définition et en utilisant les points restants
+  du lemme précédent.
 \end{proof}
 
 \endinput

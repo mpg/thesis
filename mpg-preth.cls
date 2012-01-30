@@ -617,8 +617,17 @@
 
 % print an automatic constant
 \newcounter{cst}
-\newcommand*\cst [1] {%
-  \ensuremath{ c\sb{ \ref{cst@#1} \@nameuse{cst@@#1} } }}
+\newcommandx*\cst [2][2] {%
+  \ensuremath{ c\sb{
+      \ref{cst@#1}
+      \@ifmtarg{#2}{
+        \@nameuse{cst@@#1}
+      }{
+        , #2
+      }
+    }
+  }%
+}
 
 % define an automatic constant
 % Warning: puts a label e:cst-<name>, no other label allowed for this equation
