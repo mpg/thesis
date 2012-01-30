@@ -4765,7 +4765,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
 
 \begin{lem}
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif, \( p_0 \)
-  les point de coordonnées homogènes \( (1: 0 : \cdots : 0) \) et \( \divi \)
+  le point de coordonnées homogènes \( (1: 0 : \cdots : 0) \) et \( \divi \)
   un hyperplan ne contenant pas \( p_0 \).  Il existe un plongement \( \vaemb'
     \colon \va \to \projd \) dans lequel \( \divi \) admet \( \vp[0] = 0 \)
   comme équation et tel que :
@@ -4775,7 +4775,7 @@ changement de base et estime son coût sur les différentes quantités en jeu.
         \le
         \distv[\place, \vaemb]{x}{\divi}
         \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
-        \, (\dimp + 1)^{3\dv/2}
+        \, (\dimp + 1)^{\dv/2}
       \) ; \label{i:plin-dv}
     \item \(
         \hautm[2, \vaemb']{x}
@@ -4802,13 +4802,6 @@ changement de base et estime son coût sur les différentes quantités en jeu.
         + \hautl[2, \vaemb] E + \sqrt{\dimp+1}
       \) ; \label{i:plin-htcmp}
     \item \(
-        \hmclab[\vaemb']*
-        =
-        \hmclab[\vaemb]*
-        \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-5/2}
-        \, (\dimp + 1)^{5\dv/2}
-      \) ; \label{i:plin-hmclab}
-    \item \(
         \hlclab[\vaemb']
         =
         \hlclab[\vaemb]
@@ -4820,23 +4813,8 @@ changement de base et estime son coût sur les différentes quantités en jeu.
 \begin{proof}
   Notons \( L \) une équation de \( E \), qu'on peut supposer de la forme
   \( L(\vp) = \vp[0] + l_1 \vp[1] + \dots + l_\dimp \vp[\dimp] \). Remarquons
-  de suite que \( \distv[\place, \vaemb]{\divi}{p_0} = \nv2 L ^{-1} \le \nv1 L
-    ^{-1} \sqrt{\dimp+1}^\dv \). Ainsi, pour avoir les points~\ref{i:plin-dv}
-  et~\ref{i:plin-hmclab}, il suffit de prouver respectivement
-  \(
-    \distv[\place, \vaemb']{x}{\divi}
-    \le
-    \distv[\place, \vaemb]{x}{\divi}
-    \cdot \nv1{ L }^2
-    \, \sqrt{\dimp + 1}^\dv
-  \) et \(
-    \hmclab[\vaemb']*
-    =
-    \hmclab[\vaemb]*
-    \cdot \nv1 L ^{5/2}
-  \).
-
-  Posons maintenant
+  de suite que \( \distv[\place, \vaemb]{\divi}{p_0} = \nv2 L ^{-1} \).
+  Par ailleurs,
   \begin{equation}
     M = \begin{pmatrix}
       1      & -l_1   & -l_2   & \dots  & -l_\dimp \\
@@ -4943,8 +4921,8 @@ changement de base et estime son coût sur les différentes quantités en jeu.
   \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) satisfait aux
   mêmes hypothèses dans le plongement \( \vaemb' \), sauf
   peut-être~\ref{e:clab-norm} et~\ref{e:clab-loc}. Montrons que ces deux
-  conditions sont satisfaites avec \( \hmclab[\vaemb'] = \hmclab[\vaemb] \cdot
-    \nv1 L ^{5/2} \) comme annoncé.
+  conditions sont satisfaites avec \( \hmclab[\vaemb']* = \hmclab[\vaemb]*
+    \cdot \nv1 L ^{5/2} \), ce qui impliquera le dernier point de l'énoncé.
 
   Pour la première, en utilisant les propriétés de la norme \( 1 \), on a
   immédiatement
@@ -4985,16 +4963,14 @@ changement de base et estime son coût sur les différentes quantités en jeu.
     \, \frac1{
       \nv1 L ^{1 + 2(a^2 + b^2)}
     }
+    \pmm.
   \end{align}
-  qui implique les deux derniers points de l'énoncé.
 
   Enfin, il est clair que \( N = \card \clmaps \) reste inchangé car
   l'ensemble de cartes considéré est le même (les cartes sont des ouverts de
   \( \va^2 \), pas de son image dans un plongement) ; par ailleurs \( \dimp \)
   n'est bien évidemment pas modifié par un changement de coordonnées linéaire.
 \end{proof}
-
-
 
 
 \endinput
