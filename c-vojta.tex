@@ -4770,49 +4770,32 @@ quitte à changer l'ensemble de places considérés dans l'hypothèse
 d'approximation. En attendant, le lemme suivant donne un changement de base
 dans le cas favorable et estime son coût sur les différentes quantités en jeu.
 
-\begin{lem}
-  Soient \( \vaemb \colon \va \to \projd \) un plongement projectif, \( p_0 \)
-  le point de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \(
-    \divi \) un hyperplan ne contenant pas \( p_0 \).  Il existe un plongement
+\begin{lem} Soient \( \vaemb \colon \va \to \projd \) un plongement projectif,
+  \( p_0 \) le point de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \)
+  et \( \divi \) un hyperplan ne contenant pas \( p_0 \).  Il existe un
+  plongement
   \( \vaemb' \colon \va \to \projd \) dans lequel \( \divi \) admet \( \vp[0]
     = 0 \) comme équation et tel que :
   \begin{enumthm}
-    \item \(
-        \distv[\place, \vaemb']{x}{\divi}
-        \le
-        \distv[\place, \vaemb]{x}{\divi}
-        \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
-        \, (\dimp + 1)^{\dv/2}
+    \item \( \distv[\place, \vaemb']{x}{\divi} \le \distv[\place,
+        \vaemb]{x}{\divi} \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2} \,
+        (\dimp + 1)^{\dv/2}
       \) ; \label{i:plin-dv}
-    \item \(
-        \hautm[2, \vaemb']{x}
-        \le
-        \hautm[2, \vaemb]{x}
-        \cdot \hautm[2, \vaemb]{E}
-        \sqrt{\dimp + 1}
+    \item \( \hautm[2, \vaemb']{x} \le \hautm[2, \vaemb]{x} \cdot \hautm[2,
+        \vaemb]{E} \sqrt{\dimp + 1}
       \) ; \label{i:plin-ht-pt}
-    \item \(
-        \hautl[1, \vaemb']{\va}
-        \le
-        \hautl[1, \vaemb]{\va}
-        + \hautl[1, \vaemb]{ E } (\genre+1) \deg \va
+    \item \( \hautl[1, \vaemb']{\va} \le \hautl[1, \vaemb]{\va} + \hautl[1,
+        \vaemb]{ E } (\genre+1) \deg \va
       \). \label{i:plin-ht-va}
-  \end{enumthm}
-  De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
-  également le cas de \( \vaemb' \) avec les mêmes valeurs de \( \dimp \) et
+  \end{enumthm} De plus, si \( \vaemb \) satisfait les
+  hypothèses~\ref{h:vaemb}, alors c'est également le cas de \( \vaemb' \) avec
+  les mêmes valeurs de \( \dimp \) et
   \( N \) et
   \begin{enumthm} \setcounter{enumi}3
-    \item \(
-        \htcmp[\vaemb']
-        =
-        \htcmp[\vaemb]
-        + \hautl[2, \vaemb] E + \sqrt{\dimp+1}
+    \item \( \htcmp[\vaemb'] = \htcmp[\vaemb] + \hautl[2, \vaemb] E +
+        \sqrt{\dimp+1}
       \) ; \label{i:plin-htcmp}
-    \item \(
-        \hlclab[\vaemb']
-        =
-        \hlclab[\vaemb]
-        + \frac52 \hautl[1, \vaemb] E
+    \item \( \hlclab[\vaemb'] = \hlclab[\vaemb] + \frac52 \hautl[1, \vaemb] E
       \).
   \end{enumthm}
 \end{lem}
@@ -4865,7 +4848,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \end{equation}
   et la deuxième comparaison donne aussitôt le point~\ref{i:plin-ht-pt}.
 
-  Par ailleurs, en appliquant la définition de la distance d'un point à une
+  Par ailleurs, en appliquant la définition de la distance d'un point à un
   hyperplan, il vient
   \[
     \distv[\place, \Theta']{x}{\divi}

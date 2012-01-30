@@ -1,8 +1,7 @@
 Next actions
 ============
 
-Finir la rédaction de Vojta coeur.
-Commencer les corollaires.
+Coros Vojta + corrections de constantes.
 
 Rédaction {{{1
 =========
@@ -131,17 +130,20 @@ Vojta {{{2
 -----
 
 (A) Corollaires :
-- hyperplan général
 - hypersurface via un Veronese
 - variété générale via un bon choix d'hypersurface la contenant
 Parler de distance ponctuelle (sur \C_v du coup ?)
 
-(B) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
+(A) Corrections normalisations et constantes :
+- htcmp : hauteur 2 au lieu de 1 (énoncé + utilisations)
+- Vcos : 5^\puiss à remplacer par 5^\genre comme indiqué
+- adhoc du coup ? à cause du \Lambda...
+(cf notes papiers)
 
-(B) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
+(C) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
+
+(C) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
 2.4.1 et lemme 2.4.9 (env. 14 pages), à voir avec pph
-
-(B) Finalement \Vcos = \cst{vs-deg}^{-1}, on fait quoi ? Voir pph.
 
 (C) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
 \puiss par un 2 dans \Vfar comme ça, en principe sans perte à côté.
