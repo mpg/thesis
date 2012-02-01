@@ -760,6 +760,8 @@
 \DeclareMathOperator \Dist {dist}
 \newcommand*\Distv [1][\place] {\Dist\ssub{#1}}
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
+\newcommand*\Distpv[1][\place] {\Dist^{\mathrm p}\ssub{#1}}
+\newcommand*\distpv[3][\place] {\Distpv[#1](#2,#3)}
 
 \nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique
   projective entre \PH et \PHi}

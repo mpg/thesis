@@ -4770,32 +4770,50 @@ quitte à changer l'ensemble de places considérés dans l'hypothèse
 d'approximation. En attendant, le lemme suivant donne un changement de base
 dans le cas favorable et estime son coût sur les différentes quantités en jeu.
 
-\begin{lem} Soient \( \vaemb \colon \va \to \projd \) un plongement projectif,
+\begin{lem}
+  Soient \( \vaemb \colon \va \to \projd \) un plongement projectif,
   \( p_0 \) le point de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \)
   et \( \divi \) un hyperplan ne contenant pas \( p_0 \).  Il existe un
-  plongement
-  \( \vaemb' \colon \va \to \projd \) dans lequel \( \divi \) admet \( \vp[0]
-    = 0 \) comme équation et tel que :
+  plongement \( \vaemb' \colon \va \to \projd \) dans lequel \( \divi \) admet
+  \( \vp[0] = 0 \) comme équation et tel que :
   \begin{enumthm}
-    \item \( \distv[\place, \vaemb']{x}{\divi} \le \distv[\place,
-        \vaemb]{x}{\divi} \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2} \,
-        (\dimp + 1)^{\dv/2}
+    \item \(
+        \distv[\place, \vaemb']{x}{\divi}
+        \le
+        \distv[\place, \vaemb]{x}{\divi}
+        \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
+        \, (\dimp + 1)^{\dv/2}
       \) ; \label{i:plin-dv}
-    \item \( \hautm[2, \vaemb']{x} \le \hautm[2, \vaemb]{x} \cdot \hautm[2,
-        \vaemb]{E} \sqrt{\dimp + 1}
+    \item \(
+        \hautm[2, \vaemb']{x}
+        \le
+        \hautm[2, \vaemb]{x}
+        \cdot \hautm[2, \vaemb]{E}
+        \sqrt{\dimp + 1}
       \) ; \label{i:plin-ht-pt}
-    \item \( \hautl[1, \vaemb']{\va} \le \hautl[1, \vaemb]{\va} + \hautl[1,
-        \vaemb]{ E } (\genre+1) \deg \va
+    \item \(
+        \hautl[1, \vaemb']{\va}
+        \le
+        \hautl[1, \vaemb]{\va}
+        + \hautl[1, \vaemb]{ E } (\genre+1) \deg \va
       \). \label{i:plin-ht-va}
-  \end{enumthm} De plus, si \( \vaemb \) satisfait les
-  hypothèses~\ref{h:vaemb}, alors c'est également le cas de \( \vaemb' \) avec
-  les mêmes valeurs de \( \dimp \) et
+  \end{enumthm}
+  De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
+  également le cas de \( \vaemb' \) avec les mêmes valeurs de \( \dimp \) et
   \( N \) et
   \begin{enumthm} \setcounter{enumi}3
-    \item \( \htcmp[\vaemb'] = \htcmp[\vaemb] + \hautl[2, \vaemb] E +
-        \sqrt{\dimp+1}
+    \item \(
+        \htcmp[\vaemb']
+        =
+        \htcmp[\vaemb]
+        + \hautl[2, \vaemb] E
+        + \sqrt{\dimp+1}
       \) ; \label{i:plin-htcmp}
-    \item \( \hlclab[\vaemb'] = \hlclab[\vaemb] + \frac52 \hautl[1, \vaemb] E
+    \item \(
+        \hlclab[\vaemb']
+        =
+        \hlclab[\vaemb]
+        + \frac52 \hautl[1, \vaemb] E
       \).
   \end{enumthm}
 \end{lem}
@@ -5188,6 +5206,69 @@ un coût, qui consiste à remplacer \( \expapx \) par \( \expapx / (\dimp + 1)
 
 \subsection{Hypersurfaces}
 
+On utilise un plongement de \bsc{Veronese} remodelé, tel que défini dans
+\cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp} pour se ramener au cas
+précédent. Le lemme suivant précise l'effet de ce plongement sur les
+différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
+
+\begin{lem} \label{l:hs-vero}
+  Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( F \)
+  une hypersurface de \( \projd \), de degré \( \delta \). On note \( \chi \)
+  le plongement de \bsc{Veronese} modifié de degré \( \delta \), qui va donc
+  de \( \projd \) dans \( \proj{\dimp'} \) où \( \dimp' = \binom{\dimp +
+      \delta}{\delta} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
+  plongement, l'image de \( F \) est découpée par un hyperplan \( \divi \) et
+  on a :
+  \begin{enumthm}
+    \item \(
+        \hautm[2, \vaemb'] \divi
+        \le
+        \hautm[2, \vaemb] F
+        \cdot \todots
+      \) ;
+    \item \(
+        \distpv[\place, \vaemb']{x}{\divi}
+        \le
+        \distpv[\place, \vaemb]{x}{F}
+        \cdot \todots
+      \) ; \label{i:hs-vero-dv}
+    \item \(
+        \hautm[2, \vaemb']{x}
+        \le
+        \hautm[2, \vaemb]{x}
+        \cdot \todots
+      \) ; \label{i:hs-vero-ht-pt}
+    \item \(
+        \deg_{\vaemb'} \va
+        \le
+        \deg_{\vaemb} \va
+        \cdot \todots
+      \) ; \label{i:hs-vero-deg-va}
+    \item \(
+        \hautl[1, \vaemb']{\va}
+        \le
+        \hautl[1, \vaemb]{\va}
+        + \todots
+      \). \label{i:hs-vero-ht-va}
+  \end{enumthm}
+  De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
+  également le cas de \( \vaemb' \) avec \( \dimp' \) pour dimension ambiante,
+  la même valeur de \( N \) et
+  \begin{enumthm} \setcounter{enumi}5
+    \item \(
+        \htcmp[\vaemb']
+        =
+        \htcmp[\vaemb]
+        + \todots
+      \) ; \label{i:hs-vero-htcmp}
+    \item \(
+        \hlclab[\vaemb']
+        =
+        \hlclab[\vaemb]
+        + \todots
+      \).
+  \end{enumthm}
+\end{lem}
 
 \endinput
 
