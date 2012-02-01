@@ -456,7 +456,7 @@ construction itérative dans la démonstration ci-dessus.
   \). Rappelons comment \( \Hautl[\htpph] \) se compare à \( \Hautl[1] \)
   dans le cas particulier de la forme de \bsc{Chow} \( \chow V \) d'une
   variété projective \( V \) :
-  \begin{equation}
+  \begin{equation} \label{e:ht-pph-1}
     \abs{ \hautl[\htpph]{ \chow V } - \hautl[1]{ \chow V } }
     \le
     \frac12 \ln(\dimp + 1) (\dim V + 1) \deg V
@@ -4746,6 +4746,7 @@ On a par ailleurs
   \pmm.
 \end{equation}
 
+\clearpage % XXX provisoire
 
 
 \section{Corollaires} \label{sec:vojta-coro}
@@ -5234,21 +5235,24 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
       \) ; \label{i:hs-vero-dv}
     \item \(
         \hautm[2, \vaemb']{x}
-        \le
+        =
         \hautm[2, \vaemb]{x}
-        \cdot \todots
+        \cdot \delta
       \) ; \label{i:hs-vero-ht-pt}
     \item \(
         \deg_{\vaemb'} \va
-        \le
+        =
         \deg_{\vaemb} \va
-        \cdot \todots
+        \cdot \delta
       \) ; \label{i:hs-vero-deg-va}
     \item \(
-        \hautl[1, \vaemb']{\va}
+        \abs{
+          \hautl[1, \vaemb']{\va}
+          -
+          \delta \hautl[1, \vaemb]{\va}
+        }
         \le
-        \hautl[1, \vaemb]{\va}
-        + \todots
+        \todots
       \). \label{i:hs-vero-ht-va}
   \end{enumthm}
   De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
@@ -5259,7 +5263,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \htcmp[\vaemb']
         =
         \htcmp[\vaemb]
-        + \todots
+        \cdots \delta
       \) ; \label{i:hs-vero-htcmp}
     \item \(
         \hlclab[\vaemb']
@@ -5269,6 +5273,29 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
       \).
   \end{enumthm}
 \end{lem}
+
+\begin{proof}
+  Les points~\ref{i:hs-vero-deg-va} et~\ref{i:hs-vero-ht-va} sont donnés
+  directement par~\cite[p. 85-86]{phidg} et la remarque de~\cite[p.
+  102]{remgdmp} expliquant le lien entre les formes résultantes de différents
+  indices et les plongements de \bsc{Veronese} modifiés. Pour le deuxième
+  point cependant, on a besoin de plus de comparer les hauteurs comme
+  en~\ref{e:ht-pph-1}.
+
+  Le point~\ref{i:hs-vero-ht-pt} est une propriété classique et facile du
+  plongement de \bsc{Veronese} et le point~\ref{i:hs-vero-htcmp} en découle
+  immédiatement.
+
+  Pour le point~\ref{i:hs-vero-dv} on utilise la première formule en haut de
+  la page~89 de~\cite{phidg} (et à nouveau la remarque de~\cite[p.
+  102]{remgdmp} pour le lien entre indice et plongement de \bsc{Veronese}
+  modifié) puis on effectue un développement limité\todo.
+
+  Pour les deux points restants, on utilise la définition du plongement et nos
+  petites mimines\todo.
+
+\end{proof}
+
 
 \endinput
 
