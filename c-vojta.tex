@@ -121,8 +121,9 @@ hauteurs découlent du plongement fixé.
     \\
     \label{e:def-Vcos}
     \Vcos & =
+    \frac1{ \puiss }
     \left(
-      \frac{ \eps }{ 85 \nclmaps \cdot 5^\puiss }
+      \frac{ \eps }{ 85 \nclmaps \cdot 5^\genre }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
     \\
     \label{e:def-Lambda}
@@ -3931,8 +3932,8 @@ de \( \epsz \) assure que
   \le \frac{\expapx \epsi}{16}
   \pmm.
 \end{equation}
-Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \)
-puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
+Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \),
+on a
 \begin{align} \label{e:Vcos-ct-details}
   \frac{ \eps \epsi }{ 48 (\puiss - 1) }
   & \ge
@@ -3947,12 +3948,14 @@ puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
   \frac{
     \eps^{ \frac{\puiss}{\puiss-\genre} }
   }{
+    \puiss
     \nclmaps^{ \frac{\puiss}{\puiss-\genre} }
-    \, (85 \cdot 5^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
+    \, (85 \cdot 5^\genre)^{ \frac{\puiss}{\puiss-\genre} }
   }
-  =
-  \Vcos
 \end{align}
+en remarquant que \( 48 \cdot 85^{ \frac{\genre}{\puiss-\genre} } \le 85^{
+    \frac{\puiss}{\puiss-\genre} } \). On reconnaît alors la
+définition~\eqref{e:def-Vcos} de \( \Vcos \) dans la dernière expression, ce
 qui entraîne immédiatement que
 \begin{equation} \label{e:Vcos-ct-extra}
   3 (\puiss-1) \Vcos
