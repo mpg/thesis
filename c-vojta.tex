@@ -17,7 +17,7 @@ lequel on fait les hypothèses suivantes.
   \begin{enumthm}
     \item Il existe une constante réelle \( \htcmp \) telle que
       \begin{equation} \label{e:comp-h-hn}
-        \abs{ \hautl[1]\point - \hautn\point } \le \htcmp
+        \abs{ \hautl[2]\point - \hautn\point } \le \htcmp
         \qquad \forall \point \in \va(\Qbar)
         \pmm.
       \end{equation}
@@ -3386,7 +3386,7 @@ nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
   \bigr)
   \\ & \le
   \sum\fctrange \wts* \bigl(
-    \hautn{ \ex* } + \htcmp + \hautl[\infty]{\vadapt*}
+    \hautn{ \ex* } + \htcmp + \frac12\ln(\dimp+1) + \hautl[\infty]{\vadapt*}
   \bigr)
 \end{align}
 On remarque alors que \( \hautl[\infty]{\vadapt*} \le \ln B \)
@@ -3397,10 +3397,10 @@ lemme~\ref{l:sum-wts} :
   \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
   & \le
   \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
-  + \bigl( \htcmp + \ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
+  + \bigl( \htcmp + \frac12\ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
   \\ & \le
     2 \puiss \wts[1] \hautn{ \ex[1] }
-    + 2 \wts[1] \bigl( \cst{vs-ht} + \ln B \bigr)
+    + 2 \wts[1] \bigl( \frac32\cst{vs-ht} + \ln B \bigr)
   \pmm.
   \label{e:sum-h-cexa}
 \end{align}
@@ -3409,7 +3409,7 @@ Au final on a donc
   \ratfh4
   \le
   2 \epsz \delta \wts[1]
-  \bigl( \puiss \hautn{ \ex[1] } + \cst{vs-ht} + \ln B \bigr)
+  \bigl( \puiss \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B \bigr)
   \pmm.
 \end{equation}
 
@@ -3714,22 +3714,24 @@ on utilise~\eqref{e:dermp2wts}
   \sum\fctrange \wtw* \wts* \hautl[\infty]{ \cexa* } \lgr{\dermp*}
   \pmm.
 \end{align}
-On adaptant la démonstration de~\eqref{e:sum-h-cexa} on a facilement
+En adaptant la démonstration de~\eqref{e:sum-h-cexa} on a facilement
 \begin{equation}
   \sum\fctrange \wtw* \wts* \hautl[\infty]{ \cexa* } \lgr{\dermp*}
   \le
-  2 \wts[1] \bigl( 2(\puiss-1) \hautn{ \ex[1] } + \cst{vs-ht} + \ln B \bigr)
+  2 \wts[1] \bigl(
+    2(\puiss-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
+  \bigr)
 \end{equation}
 en remarquant que \( \sum\fctrange \wtw* = 2(\puiss-1) \). Au final, on a donc
 \begin{align}
   \ratfh{1''}
   & \le
   4 \delta \wts[1] B \epsi \sigma^{-1} \bigl(
-    2(\puiss-1) \hautn{ \ex[1] } + \cst{vs-ht} + \ln B
+    2(\puiss-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
   \bigr)
   \\ & \le \label{e:ratfh1b}
   \delta \wts[1] \bigl(
-    8(\puiss-1) B \epsi \sigma^{-1} \hautn{ \ex[1] } + \cst{vs-ht} + \ln B
+    8(\puiss-1) B \epsi \sigma^{-1} \hautn{\ex[1]} + \frac32\cst{vs-ht} + \ln B
   \bigr)
   \pmm.
 \end{align}
@@ -3905,7 +3907,7 @@ avec : % reporter dans la section « ajustement » !
   \beta
   & =
   19 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + (3 + 2\epsz) \cst{vs-ht} + (5 + 2\epsz) \ln B
+  + (\frac72 + 3\epsz) \cst{vs-ht} + (5 + 2\epsz) \ln B
   \\ & \le
   20 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
 \end{align}

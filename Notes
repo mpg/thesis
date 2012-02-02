@@ -135,10 +135,9 @@ Vojta {{{2
 Parler de distance ponctuelle (sur \C_v du coup ?)
 
 (A) Corrections normalisations et constantes :
-- htcmp : hauteur 2 au lieu de 1 (énoncé + utilisations)
 - Vcos : 5^\puiss à remplacer par 5^\genre comme indiqué
 - adhoc du coup ? à cause du \Lambda...
-(cf notes papiers)
+(cf notes papier)
 
 (C) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
 
