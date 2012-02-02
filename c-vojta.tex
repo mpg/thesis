@@ -130,8 +130,9 @@ hauteurs découlent du plongement fixé.
     \Lambda
     & = \max \bigl(
       (\deg \va)^\puiss,
+      5 \puiss^2
       \bigl(
-        85 \nclmaps \cdot 5^\puiss \cdot \eps^{-1}
+        85 \nclmaps \cdot 5^\genre \cdot \eps^{-1}
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
       \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
@@ -383,8 +384,9 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 \begin{align}
   \newcst[]{vs-deg-prod}
   & =
+  5 \puiss^2
   \bigl(
-    85 \nclmaps \cdot 5^\puiss \cdot \eps^{-1}
+    85 \nclmaps \cdot 5^\genre \cdot \eps^{-1}
   \bigr)^{ \frac{\puiss}{\puiss-\genre} }
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
@@ -4154,8 +4156,9 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
   }
   \\ & \le
   \frac{
+    5 \puiss^2
     N^{ \frac{\puiss}{\puiss-\genre} }
-    \, (85 \cdot 5^\puiss)^{ \frac{\puiss}{\puiss-\genre} }
+    \, (85 \cdot 5^\genre)^{ \frac{\puiss}{\puiss-\genre} }
   }{
     \eps^{ \frac{\puiss}{\puiss-\genre} }
   }
@@ -4163,8 +4166,7 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
   \cst{vs-deg-prod}
   \label{e:ct-cst-vs-deg}
 \end{align}
-où l'on a utilisé le fait que \( 384 (\puiss-1) \puiss \le 85 \cdot 5^\puiss
-\).
+où l'on a utilisé le fait que \( 384 \le 5 \cdot 85 \).
 Après avoir rassemblé les deux inégalités précédentes, il ne reste plus qu'à
 exploiter les hypothèses~\eqref{e:varset-deg} et \eqref{e:varset-deg-prod}
 pour obtenir
