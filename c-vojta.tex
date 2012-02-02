@@ -4808,7 +4808,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         =
         \htcmp[\vaemb]
         + \hautl[2, \vaemb] E
-        + \sqrt{\dimp+1}
+        + \frac12 \ln(\dimp + 1)
       \) ; \label{i:plin-htcmp}
     \item \(
         \hlclab[\vaemb']
@@ -4860,12 +4860,17 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \Qbar^{\dimp+1} \) les coordonnées dans le plongement \( \Theta \) et \(
     C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \Theta' \). Vu
   les expressions de \( M \) et \( M^{-1} \) on a immédiatement
-  \begin{equation} \label{e:plin-norm}
-    \nv\infty{ C _x } \le \nv2{ L } \nv2{ C'_x }
-    \quad\text{et}\quad
-    \nv\infty{ C'_x } \le \nv2{ L } \nv2{ C _x }
-  \end{equation}
-  et la deuxième comparaison donne aussitôt le point~\ref{i:plin-ht-pt}.
+  \begin{align} \label{e:plin-norm1}
+    \nv1{ C _x } & \le \nv1{ L } \nv1{ C'_x }
+    &
+    \nv1{ C'_x } & \le \nv1{ L } \nv1{ C _x }
+    \\ \label{e:plin-norm}
+    \nv\infty{ C _x } & \le \nv2{ L } \nv2{ C'_x }
+    &
+    \nv\infty{ C'_x } & \le \nv2{ L } \nv2{ C _x }
+  \end{align}
+  et la dernière inégalité donne aussitôt le point~\ref{i:plin-ht-pt} en
+  comparant \( \nv\infty\truc \) à \( \nv2\truc \).
 
   Par ailleurs, en appliquant la définition de la distance d'un point à un
   hyperplan, il vient
@@ -4878,7 +4883,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
       \nv2{ L' } \nv2{ C'_x }
     }
     =
-    \distv[\place, \Theta']{x}{\divi}
+    \distv[\place, \Theta]{x}{\divi}
     \frac{ \nv2 L }{ \nv2{ L' } }
     \frac{ \nv2{ C_x } }{ \nv2{ C'_x } }
   \]
@@ -4889,7 +4894,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   Par ailleurs, si \( \chow\va \) est une forme de \bsc{Chow} de \( \va \)
   dans le plongement \( \vaemb \), on obtient une forme de \bsc{Chow} \(
     \chow\va' \) de \( \va \) dans \( \vaemb' \) en composant \( \chow\va \)
-  avec (la transposée de) \( M^{-1} \sigma \) sur chacun des \( \genre + 1 \)
+  avec (la transposée de) \( M^{-1} \) sur chacun des \( \genre + 1 \)
   groupes de \( \dimp + 1 \) variables, de sorte que,
   si \( \deg \va \) désigne le degré de \( \va \) en tant que sous-variété de
   \( \projd \) (qui est évidemment le même dans les plongements \( \vaemb \)
@@ -4907,14 +4912,14 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \begin{equation}
     \abs{ \hautl[2, \vaemb] x - \hautl[2, \vaemb'] x }
     \le
-    \hautl[2] L + \sqrt{\dimp+1}
+    \hautl[2] L + \frac12 \ln(\dimp + 1)
   \end{equation}
   d'où, en constatant que les hauteurs normalisées sont les mêmes dans \(
     \vaemb \) et \( \vaemb' \)
   \begin{equation}
     \abs{ \hautl[2, \vaemb'] x - \hautn x }
     \le
-    \htcmp[\vaemb] + \hautl[2] L + \sqrt{\dimp+1}
+    \htcmp[\vaemb] + \hautl[2] L + \frac12 \ln(\dimp + 1)
   \end{equation}
   qui donne directement~\ref{i:plin-htcmp}.
 
@@ -4948,7 +4953,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \end{align}
   en remarquant que pour \( (a, b) \ge (1, 1) \) on a
   \( 1 + 2(a^2 + b^2) \le \frac52 (a^2 + b^2) \).
-  Pour la deuxième, on écrit de même
+  Pour la deuxième, en utilisant~\eqref{e:plin-norm1}, on écrit de même
   \begin{align}
     \frac{
       \nv1{ \rmclab{a}{b}{\clmap}[\vaemb'](C'_x, C'_y) }
@@ -4959,7 +4964,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \frac{
       \nv1{ M^{-1} \rmclab{a}{b}{\clmap}[\vaemb](C_x, C_y) }
     }{
-      \nv1{C'_x}^{2a^2} \nv1{C'_y}^{2b^2}
+      \nv1{C_x}^{2a^2} \nv1{C_y}^{2b^2}
     }
     \left( \frac{ \nv1{C_x} }{ \nv1{C'_x} } \right)^{2a^2}
     \left( \frac{ \nv1{C_y} }{ \nv1{C'_y} } \right)^{2b^2}
@@ -4967,10 +4972,16 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \frac{
       \nv1{ \rmclab{a}{b}{\clmap}[\vaemb](C_x, C_y) }
     }{
-      \nv1{C'_x}^{2a^2} \nv1{C'_y}^{2b^2}
+      \nv1{C_x}^{2a^2} \nv1{C_y}^{2b^2}
     }
     \, \frac1{
       \nv1 L ^{1 + 2(a^2 + b^2)}
+    }
+    \ge
+    \frac{
+      \hmclab[\vaemb]*^{-(a^2 + b^2)}
+    }{
+      \nv1 L ^{\frac52(a^2 + b^2)}
     }
     \pmm.
   \end{align}
@@ -4981,14 +4992,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   n'est bien évidemment pas modifié par un changement de coordonnées linéaire.
 \end{proof}
 
-On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div},
-avec une hypothèse d'approximation modifiée, point sur lequel nous
-reviendrons. Le résultat étant énoncé ici sous une forme un peu plus compacte,
-précisons pour la commodité du lecteur que les seuls autres changements sont
-le remplacement de \( \cst{vs-ht} \) par \( \cst{ht-v-div-dv} \) avec une
-définition différente faisant intervenir la hauteur de \( E \), ainsi que le
-remplacement de \( 85 \) par \( 86 \) partout où ce nombre apparaît en même
-temps que \( \expapx \).
+On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}.
 
 \begin{coro} \label{c:vojta-div-dv}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
@@ -4998,7 +5002,8 @@ temps que \( \expapx \).
   et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
-  simultanément aux conditions suivantes :
+  simultanément aux conditions suivantes, où les notions de distance et de
+  hauteur sont relatives au plongement \( \vaemb \) :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & <
@@ -5035,11 +5040,21 @@ temps que \( \expapx \).
       \hautl[1]{\va} + \hautl[1]{ E } (\genre+1) \deg \va,
       \hlclab + \frac52 \hautl[1] E,
       \\ & \qquad
-      \htcmp + \hautl[2] E + \sqrt{\dimp+1},
+      \htcmp + \hautl[2] E + \frac12 \ln(\dimp + 1),
       \dimp\ln(\dimp + 1)
     \bigr)
   \end{align}
 \end{coro}
+
+Avant de passer à la démonstration, examinons les différences entre cet énoncé
+et le théorème~\ref{t:vojta-div} : les deux principales sont une hypothèse
+moins restrictive sur \( \divi \) compensée par une hypothèse d'approximation
+plus contraignante, en particulier si \( \divi \) est proche de \( p_0 \).
+Les seuls autres changements concernent les valeurs des constantes :
+\( \cst{vs-ht} \) est remplacée par \( \cst{ht-v-div-dv} \) avec une
+définition différente faisant intervenir la hauteur de \( E \), et le nombre
+\( 85 \) est remplacé par \( 86 \) partout où il apparaît en même temps que \(
+  \expapx \).
 
 \begin{proof}
   On remarque pour commencer que le résultat est vide dans le cas où \( p_0
@@ -5055,9 +5070,9 @@ temps que \( \expapx \).
   corollaire, la définition de \( \expapx' \) et enfin le
   point~\ref{i:plin-ht-pt} du lemme :
   \begin{align}
-    \distv[\place, \vaemb']{x}{\divi}
+    \distv[\place, \vaemb']{\ex*}{\divi}
     & \le
-    \distv[\place, \vaemb]{x}{\divi}
+    \distv[\place, \vaemb]{\ex*}{\divi}
     \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
     \, (\dimp + 1)^{\dv/2}
     \\ & \le
@@ -5066,12 +5081,12 @@ temps que \( \expapx \).
     \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx'}
     \cdot \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx/86}
     \\ & \le
-    \hautm[2, \vaemb']{x}^{-\wtapx \expapx'}
+    \hautm[2, \vaemb']{\ex*}^{-\wtapx \expapx'}
     \cdot \hautm[2, \vaemb]{E}^{\wtapx \expapx'}
     (\dimp + 1)^{\wtapx \expapx'/2}
     \cdot \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx/86}
     \\ & \le
-    \hautm[2, \vaemb']{x}^{-\wtapx \expapx'}
+    \hautm[2, \vaemb']{\ex*}^{-\wtapx \expapx'}
     \Bigl(
       \hautm[2, \vaemb]{E}^{85}
       (\dimp + 1)^{85/2}
@@ -5088,7 +5103,7 @@ temps que \( \expapx \).
     \ge
     2 \cst{ht-v-div-dv} \Lambda_1
     \ge
-    85 ( \hautl[1, \vaemb]{E} + \ln (\dimp + 1) )
+    85 ( \hautl[1, \vaemb]{E} + \frac12 \ln (\dimp + 1) )
   \)
   en utilisant de diverses façon la définition de \( \cst{ht-v-div-dv} \) et
   le fait que \( \Lambda_1 \ge 85 \).
@@ -5103,15 +5118,20 @@ temps que \( \expapx \).
   pour~\eqref{e:Vbig} en remarquant de plus que \( \cst{ht-v-div-dv} >
     \cst{vs-ht}[\vaemb'] \) par définition et en utilisant les points restants
   du lemme précédent.
+
+  On peut donc comme appliquer le théorème~\ref{t:vojta-div} comme prévu et en
+  déduire qu'il n'existe pas de famille de points satisfaisant aux hypothèses
+  du présent énoncé.
 \end{proof}
 
 Le défaut du résultat précédent et que l'hypothèse d'approximation est
 d'autant plus forte (et donc le résultat d'autant plus faible) que \( p_0 \)
-est proche de \( E \), jusqu'à obtenir un hypothèse impossible à satisfaire
-(donc un résultat vide) lorsque \( p_0 \). Le corollaire suivant évite ce
-problème en considérant des permutations de coordonnées ; ceci a en revanche
-un coût, qui consiste à remplacer \( \expapx \) par \( \expapx / (\dimp + 1)
-\) dans les autres hypothèses, comme nous le verrons au cours de la preuve.
+est proche de \( \divi \), jusqu'à obtenir un hypothèse impossible à
+satisfaire (donc un résultat vide) lorsque \( p_0 \in \divi \). Le corollaire
+suivant évite ce problème en considérant des permutations de coordonnées ;
+ceci a en revanche un coût, qui consiste à remplacer \( \expapx \) par \(
+  \expapx / (\dimp + 1) \) dans les autres hypothèses, comme nous le verrons
+au cours de la preuve.
 
 \begin{coro} \label{c:vojta-div-any}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
@@ -5176,20 +5196,21 @@ un coût, qui consiste à remplacer \( \expapx \) par \( \expapx / (\dimp + 1)
     \cdots \cup \placesapx_\dimp \). (Cette réunion n'est pas nécessairement
   disjointe, mais il n'est pas utile qu'elle le soit.) On associe à chacun de
   ces ensemble le nombre réel \( \sigma_i = \sum_{\place \in \placesapx_i}
-    \wtapx \degv \) où \( \degv \) désigne comme d'habitude le dégré local en
+    \wtapx \degv \) où \( \degv \) désigne comme d'habitude le degré local en
   \( \place \) divisé par le degré global. Par hypothèse, on a
-  \( 1 = \sum\placerange \wtapx \degv \ge \sum_{i=0}^\dimp \sigma_i \)
-  et il exite donc (au moins) un indice \( i \) tel que \( \sigma_i \ge
+  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^\dimp \sigma_i \)
+  et il existe donc (au moins) un indice \( i \) tel que \( \sigma_i \ge
     1/(\dimp + 1) \). On fixe un tel indice, désormais désigné par \( i \).
 
   On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( \place \in
-    \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \). Enfin, on pose
-  \( \expapx' = \expapx \sigma_i \) de sorte qu'on a
+    \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \) pour avoir \(
+    \sum_{\place \in \placesapx'} \wtapx' \degv = 1 \).  Enfin, on pose \(
+    \expapx' = \expapx \sigma_i \) de sorte qu'on a
   \begin{equation}
     (n + 1)^{-3\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \le
-    \frac{ \distv{p_0}{\divi}^2 }{ (n + 1)^{\dv/2} }
+    \frac{ \distv{p_{i_\place}}{\divi}^2 }{ (n + 1)^{\dv/2} }
     \hautm[2]{\ex*}^{-\wtapx' \expapx'}
     \quad \forall \place \in \placesapx'
     \pmm.
@@ -5197,11 +5218,11 @@ un coût, qui consiste à remplacer \( \expapx \) par \( \expapx / (\dimp + 1)
   On considère pour finir le plongement \( \vaemb' \) obtenu à partir de \(
     \vaemb \) en échangeant les coordonnées d'indices \( i \) et \( 0 \), ce
   qui n'a aucune incidence sur la distance ni la hauteur. On peut alors
-  appliquer le corollaire~\ref{c:vojta-div-dv} avec le plongement \( \vaemb' \) le réel \(
-    \expapx' \), l'ensemble de places \( \placesapx_i \) et les poids \(
-    \wtapx' \), car ses hypothèses sont impliquées par celle du présent
-  corrolaire compte tenu de la comparaison ci-dessu et du fait que \( \expapx'
-    \ge \expapx / (\dimp + 1) \).
+  appliquer le corollaire~\ref{c:vojta-div-dv} avec le plongement \( \vaemb'
+  \), le réel \( \expapx' \), l'ensemble de places \( \placesapx' \) et les
+  poids \( \wtapx' \), car ses hypothèses sont impliquées par celle du présent
+  corollaire compte tenu de la comparaison ci-dessus et du fait que \(
+    \expapx' \ge \expapx / (\dimp + 1) \).
 \end{proof}
 
 
@@ -5215,7 +5236,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
 \begin{lem} \label{l:hs-vero}
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( F \)
   une hypersurface de \( \projd \), de degré \( \delta \). On note \( \chi \)
-  le plongement de \bsc{Veronese} modifié de degré \( \delta \), qui va donc
+  le plongement de \bsc{Veronese} remodelé de degré \( \delta \), qui va donc
   de \( \projd \) dans \( \proj{\dimp'} \) où \( \dimp' = \binom{\dimp +
       \delta}{\delta} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
   plongement, l'image de \( F \) est découpée par un hyperplan \( \divi \) et
@@ -5228,9 +5249,9 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \cdot \todots
       \) ;
     \item \(
-        \distpv[\place, \vaemb']{x}{\divi}
+        \distv[\place, \vaemb']{x}{\divi}
         \le
-        \distpv[\place, \vaemb]{x}{F}
+        \distv[\place, \vaemb]{x}{F}
         \cdot \todots
       \) ; \label{i:hs-vero-dv}
     \item \(
@@ -5243,13 +5264,13 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \deg_{\vaemb'} \va
         =
         \deg_{\vaemb} \va
-        \cdot \delta
+        \cdot \delta^\genre
       \) ; \label{i:hs-vero-deg-va}
     \item \(
         \abs{
           \hautl[1, \vaemb']{\va}
           -
-          \delta \hautl[1, \vaemb]{\va}
+          \delta^{\genre+1} \hautl[1, \vaemb]{\va}
         }
         \le
         \todots
@@ -5278,7 +5299,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
   Les points~\ref{i:hs-vero-deg-va} et~\ref{i:hs-vero-ht-va} sont donnés
   directement par~\cite[p. 85-86]{phidg} et la remarque de~\cite[p.
   102]{remgdmp} expliquant le lien entre les formes résultantes de différents
-  indices et les plongements de \bsc{Veronese} modifiés. Pour le deuxième
+  indices et les plongements de \bsc{Veronese} remodelés. Pour le deuxième
   point cependant, on a besoin de plus de comparer les hauteurs comme
   en~\ref{e:ht-pph-1}.
 
@@ -5289,7 +5310,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
   Pour le point~\ref{i:hs-vero-dv} on utilise la première formule en haut de
   la page~89 de~\cite{phidg} (et à nouveau la remarque de~\cite[p.
   102]{remgdmp} pour le lien entre indice et plongement de \bsc{Veronese}
-  modifié) puis on effectue un développement limité\todo.
+  remodelé) puis on effectue un développement limité\todo.
 
   Pour les deux points restants, on utilise la définition du plongement et nos
   petites mimines\todo.
