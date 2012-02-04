@@ -1,7 +1,7 @@
 Next actions
 ============
 
-Coros Vojta + corrections de constantes.
+Coros Vojta.
 
 Rédaction {{{1
 =========
@@ -132,12 +132,6 @@ Vojta {{{2
 (A) Corollaires :
 - hypersurface via un Veronese
 - variété générale via un bon choix d'hypersurface la contenant
-Parler de distance ponctuelle (sur \C_v du coup ?)
-
-(A) Corrections normalisations et constantes :
-- Vcos : 5^\puiss à remplacer par 5^\genre comme indiqué
-- adhoc du coup ? à cause du \Lambda...
-(cf notes papier)
 
 (C) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
 

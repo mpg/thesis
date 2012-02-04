@@ -4567,11 +4567,19 @@ Commençons par quelques estimations générales ; on rappelle pour commencer qu
 hypothèses~\ref{h:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
   \ge 2 \). Ainsi, le dernier argument du maximum dans la
 définition~\eqref{e:cst-vs-ht} de \( \cst{vs-ht} \) donne
-\( \cst{vs-ht} \ge 3 \ln 4 \ge 4 \).
+\( \cst{vs-ht} \ge \dimp \ln 4 \ge 4 \).
 De plus, la définition~\eqref{e:def-Lambda} de \( \Lambda \) implique
 immédiatement, en considérant le deuxième argument du maximum, que
 \begin{equation}
-  \Lambda \ge 765 \cdot 5^\puiss \ge 19125
+  \Lambda
+  \ge
+  5 \cdot \puiss^2 \cdot 85 \cdot 3 \cdot 5^\genre \cdot 3
+  \ge
+  3\,825 \, \puiss^2 \, 5^\genre
+  \ge
+  19\,125 \, \puiss^2
+  \ge
+  76\,500
   \pmm.
 \end{equation}
 Remarquons au passage que si le deuxième argument dans le maximum domine
@@ -4590,7 +4598,7 @@ On fera fréquemment usage des deux estimations suivantes :
   \le
   B
   \le
-  \frac{ \Lambda^{f(\vdim)} }{ 255 \cdot 5^\puiss }
+  \frac{ \Lambda^{f(\vdim)} }{ 1\,275 \cdot \puiss^2 \cdot 5^\genre }
   \pmm,
 \end{equation}
 qui découlent de~\eqref{e:varset-deg} et dont la première utilise l'inégalité
@@ -4609,7 +4617,7 @@ une estimation qui nous sera utile plusieurs fois :
   \\ & \le
   \puiss^2 B \cst{vs-ht} \Lambda^{\frac1\puiss\,f(\vdim)}
   \\ & \le \label{e:adhoc-gen}
-  \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{align}
 Signalons enfin qu'en général on ne cherchera pas à obtenir la plus grande
@@ -4633,20 +4641,19 @@ Pour le deuxième terme, on a par définition :
   \dimp \ln (\dimp)
   \le
   \cst{vs-ht}
-\). En utilisant de plus l'estimation~\eqref{e:adhoc-gen} ci-dessus, il vient :
+\)
+de sorte que la somme des deux premiers termes est au plus \( \frac32
+  \cst{vs-ht} \).
+En utilisant de plus l'estimation~\eqref{e:adhoc-gen} ci-dessus, il vient :
 \begin{align}
   & \cst{vs-ht}/2 + \ln(\dimp!)
   + 3 \ln(B) B(\genre+1) + \dimp \ln B + 3\ln B + 3 \ln(2)
   \\ & \qquad \le
-  \frac32 \cst{vs-ht}
-  + \frac3{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + \dimp \ln B + 3 \ln B + 3 \ln 2
-  \\ & \qquad \le
-  \frac{3\Lambda}{2\cdot255} \cst{vs-ht}
-  + \frac3{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + \cst{vs-ht} \cdot \frac{ \Lambda^{f(\vdim)} }{ 255 }
-  + 3 \cdot \frac{ \Lambda^{f(\vdim)} }{ 255 }
-  + \frac{ \Lambda }{ 255 }
+  \frac{3\Lambda}{2\cdot1\,275} \cst{vs-ht}
+  + \frac3{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \cst{vs-ht} \cdot \frac{ \Lambda^{f(\vdim)} }{ 1\,275 }
+  + 3 \cdot \frac{ \Lambda^{f(\vdim)} }{ 1\,275 }
+  + \frac{ \Lambda }{ 1\,275 }
 \end{align}
 qui implique largement l'estimation annoncée.
 
@@ -4676,19 +4683,21 @@ On commence par utiliser le fait que \( \Lambda \ge (\sqrt2
 où l'on utilise le fait que \( \puiss \ge 2 \) pour la dernière minoration.
 Comme de plus \( \vdim \ge \puiss \), la parenthèse dans~\eqref{e:ht-T-adhoc}
 est majorée par \( 3\vdim \ln \Lambda^{f(\vdim)} \) et comme de plus \( \vdim
-  \le \puiss\genre \) le membre de droite de~\eqref{e:ht-T-adhoc} est majoré
+  \le \puiss\genre \) le membre de gauche de~\eqref{e:ht-T-adhoc} est majoré
 successivement par
 \begin{equation}
   6 \puiss^2 \genre \ln \Lambda^{f(\vdim)}
   \le
   6 \puiss^3 \genre \Lambda^{\frac1\puiss f(\vdim)}
   \le
-  \frac14 \Lambda^{\frac1\puiss f(\vdim)}
-  \cdot \frac{ 24 \puiss^4 \Lambda }{ 765 \cdot 5^\puiss }
+  \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \cdot \frac{ 24 \puiss^4 }{ \Lambda }
 \end{equation}
-qui implique l'estimation annoncée. En effet, on vérifie facilement (au besoin
-numériquement pour les petites valeurs) que \( 24 \puiss^4 \le 765 \cdot
-  5^\puiss \).
+qui implique l'estimation annoncée pour peu que le dernier facteur soit
+inférieur à \( 1 \). Or on a vu que \( \Lambda \ge 19\,125 \puiss^2 \) et un
+simple calcul montre que cette quantité est supérieure à \( 24 \puiss^4 \)
+tant que \( \puiss \le 28 \) ; par ailleurs pour \( \puiss > 28 \) on a
+immédiatement \( (\sqrt2 \, \puiss)^\puiss \ge \puiss^5 \ge 24 \puiss^4 \).
 
 \medskip
 
@@ -4701,13 +4710,15 @@ Prouvons maintenant que
   \pmm.
 \end{equation}
 Pour commencer, on a
-\begin{align}
+\begin{align} \label{e:extra-beta-adhoc}
   \ln B + \ln(\dimp + 1)
   \le
-  \frac{\Lambda^{f(\vdim)}}{255}
-  + \cst{vs-ht} \frac\Lambda{255}
+  \ln B + \cst{vs-ht}
   \le
-  \frac12 \cst{vs-ht} \Lambda^{f(\vdim)}
+  \frac{\Lambda^{f(\vdim)}}{1\,275}
+  + \cst{vs-ht} \frac\Lambda{1\,275}
+  \le
+  \frac17 \cst{vs-ht} \Lambda^{f(\vdim)}
   \pmm.
 \end{align}
 Par ailleurs
@@ -4726,8 +4737,8 @@ On a également, en utilisant~\eqref{e:adhoc-gen} :
 \begin{align}
   & 2 \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(32\genre) + 3 \ln B
   \\ & \qquad \le
-  \frac2{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + \frac{ 4 \Lambda^{f(\vdim)} }{255}
+  \frac2{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \frac{ 4 \Lambda^{f(\vdim)} }{1\,275}
   \\ & \qquad \le \label{e:ht-Pv-adhoc}
   \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
@@ -4742,27 +4753,15 @@ Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
   \frac32 \cst{vs-ht}
   + \cst{vs-ht} + \cst{vs-ht} \ln B
   + \cst{vs-ht} 
-  + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \\ & \qquad \le
-  4 \cst{vs-ht} \cdot \frac\Lambda{255}
-  + \cst{vs-ht} \frac{ \Lambda^{f(\vdim)} }{ 255 }
-  + \frac1{255} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  4 \cst{vs-ht} \cdot \frac\Lambda{1\,275}
+  + \cst{vs-ht} \frac{ \Lambda^{f(\vdim)} }{ 1\,275 }
+  + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \\ & \qquad \le \label{e:ratfh1a-adhoc}
   \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \pmm.
 \end{align}
-On a par ailleurs
-\begin{equation} \label{e:extra-beta-adhoc}
-  \cst{vs-ht} + \ln B
-  \le
-  \cst{vs-ht} \cdot \frac\Lambda{255}
-  + \frac{ \Lambda^{f(\vdim)} }{ 255 }
-  \le
-  \frac17 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  \pmm.
-\end{equation}
-
-\clearpage % XXX provisoire
 
 
 \section{Corollaires} \label{sec:vojta-coro}
