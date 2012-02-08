@@ -5249,7 +5249,49 @@ au cours de la preuve.
 
 On utilise un plongement de \bsc{Veronese} remodelé, tel que défini dans
 \cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp} pour se ramener au cas
-précédent. Le lemme suivant précise l'effet de ce plongement sur les
+précédent. On commence par un lemme technique qui nous sera utile pour estimer
+quelques normes et hauteurs.
+
+\begin{lem} \label{l:norm-mn}
+  Soient \( n \) et \( \delta \) deux entiers, et \( \alpha \in \N^{n+1} \)
+  tel que \( \alpha_0 + \dots + \alpha_n = \delta \). Alors pour toute place
+  \( \place \) d'un corps de nombres contenant \( \binom\delta\alpha^{-1/2}
+  \), on a
+  \begin{equation}
+    \av*{ \binom\delta\alpha^{-1/2} }
+    \le
+    \begin{cases}
+      \delta^{n/2} & \text{si } \place \mid p \le \delta \\
+      1 & \text{sinon.}
+    \end{cases}
+  \end{equation}
+  De plus, cette valeur absolue vaut \( 1 \) si \( \place \) divise un premier
+  strictement supérieur à \( \delta \).
+\end{lem}
+
+\begin{proof}
+  Le cas des places archimédiennes est clair. Pour les places finies, on note
+  \( p \) tel que \( \av\truc \) prolonge \( \av\truc[p] \) et
+  utilise la définition du multinomial en terme de factorielles et la formule
+  de \bsc{Legendre} :
+  \begin{equation}
+    v_p( \binom\delta\alpha )
+    =
+    \sum_{i = 1}^{\floor{\ln_p\delta}}
+    \floor*{ \frac{\delta}{p^i} }
+    - \floor*{ \frac{\alpha_0}{p^i} }
+    - \dots
+    - \floor*{ \frac{\alpha_n}{p^i} }
+  \end{equation}
+  qui montre immédiatement la dernière assertion, car la somme est vide si \(
+    p > \delta \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
+  en sommant sur \( i \) on a \( v_p( \binom\delta\alpha ) \le n \ln_p(\delta)
+  \) qui donne bien l'estimation annoncée.
+\end{proof}
+
+
+
+Le lemme suivant précise l'effet de ce plongement sur les
 différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
 
 \begin{lem} \label{l:hs-vero}

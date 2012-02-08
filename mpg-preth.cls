@@ -560,6 +560,9 @@
 \DeclarePairedDelimiter \set {\lbrace} {\rbrace}
 \newcommand \minusset {\setminus \set}
 
+% integer parts [[3
+\DeclarePairedDelimiter \floor {\lfloor} {\rfloor}
+
 % general algebraic geometry [[2
 %
 \newcommand \Ideal {\mathcal I}
