@@ -5286,13 +5286,10 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \cdot \delta^\genre
       \) ; \label{i:hs-vero-deg-va}
     \item \(
-        \abs{
-          \hautl[1, \vaemb']{\va}
-          -
-          \delta^{\genre+1} \hautl[1, \vaemb]{\va}
-        }
+        \hautl[1, \vaemb']{\va}
         \le
-        \todots
+        \delta^{\genre+1} \hautl[1, \vaemb]{\va}
+        + \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
   \end{enumthm}
   De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
@@ -5303,7 +5300,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \htcmp[\vaemb']
         =
         \htcmp[\vaemb]
-        \cdots \delta
+        \cdot \delta
       \) ; \label{i:hs-vero-htcmp}
     \item \(
         \hlclab[\vaemb']
@@ -5315,16 +5312,33 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
 \end{lem}
 
 \begin{proof}
-  Les points~\ref{i:hs-vero-deg-va} et~\ref{i:hs-vero-ht-va} sont donnés
-  directement par~\cite[p. 85-86]{phidg} et la remarque de~\cite[p.
-  102]{remgdmp} expliquant le lien entre les formes résultantes de différents
-  indices et les plongements de \bsc{Veronese} remodelés. Pour le deuxième
-  point cependant, on a besoin de plus de comparer les hauteurs comme
-  en~\ref{e:ht-pph-1}.
+  On utilise la remarque de~\cite[p.  102]{remgdmp} pour interpréter les
+  distances et hauteurs dans le plongement de \bsc{Veronese} remodelé comme
+  des distances et hauteurs d'indice \( (\delta, \dots, \delta) \) dans le
+  plongement initial.
 
-  Le point~\ref{i:hs-vero-ht-pt} est une propriété classique et facile du
-  plongement de \bsc{Veronese} et le point~\ref{i:hs-vero-htcmp} en découle
-  immédiatement.
+  On trouve alors les comparaisons de degré et de hauteurs qui nous
+  intéressent dans~\cite[p. 85-86]{phidg} : les points~\ref{i:hs-vero-deg-va}
+  et~\ref{i:hs-vero-ht-pt} en découlent directement et le
+  point~\ref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier. Par
+  ailleurs, la référence citée donne \( \hautl[\htpph, \vaemb'] \va =
+    \delta^{\genre+1} \hautl[\htpph, \vaemb] \va \) (en notant \(
+    \Hautl[\htpph] \) la hauteur utilisée dans cette référence), dont on
+  déduit le point~\ref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
+  comme en~\ref{e:ht-pph-1} :
+  \begin{align}
+    \hautl[1, \vaemb'] \va
+    & \le
+    \hautl[\htpph, \vaemb'] \va
+    + \frac12 \ln(\dimp' + 1) (\genre + 1) \deg_{\vaemb'} \va
+    \\ & \le
+    \delta^{\genre+1} \hautl[\htpph, \vaemb] \va
+    + \frac12 \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+    \\ & \le
+    \delta^{\genre+1} \hautl[\htpph, \vaemb] \va
+    + \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+    \pmm.
+  \end{align}
 
   Pour le point~\ref{i:hs-vero-dv} on utilise la première formule en haut de
   la page~89 de~\cite{phidg} (et à nouveau la remarque de~\cite[p.
