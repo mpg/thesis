@@ -5354,7 +5354,8 @@ sur les différents paramètres en jeu dans notre situation.
         \hlclab[\vaemb']
         =
         \hlclab[\vaemb]
-        + \todots
+        \cdot \delta
+        + \delta (2\dimp + \frac52 \ln(\dimp + 1))
       \).
   \end{enumthm}
 \end{lem}
@@ -5448,18 +5449,77 @@ sur les différents paramètres en jeu dans notre situation.
     \le
     (\dimp + 1)^{\delta \, \dv}
     \cdot
-    \nnv1{ \rmclab ab\clmap }
+    \nnv1{ \rmclab ab\clmap }^\delta
     \cdot
     \delta^{\dimp (a^2 + b^2) \dpv}
     \le
-    \hmclab*[\vaemb']^{a^2 + b^2}
+    \hmclab[\vaemb']*^{a^2 + b^2}
   \end{equation}
   en posant
   \(
-    \hmclab*[\vaemb'] = \hmclab*
-    \cdot (\dimp + 1)^{\delta \, \dv/2} \cdot \delta^{\dimp \dpv}
-  \) (car \( a^2 + b^2 \ge 2 \)).
+    \hmclab[\vaemb']* = \hmclab*^\delta
+    \cdot (\dimp + 1)^{5\delta \dv/2} \cdot \delta^{\dimp \dpv}
+  \) (l'exposant de \( \dimp + 1 \) n'est pas optimal ici mais sera utile au
+  paragraphe suivant).
 
+  Par ailleurs, on sait que si \( x \) désigne des coordonnées homogènes d'un
+  point de \( \projd \) et \( x' \) l'image de ces coordonnées par \( \chi \),
+  on a en toute place \( \nv2{ x' } = \nv2{ x }^\delta \). Ainsi, vu les
+  définitions ci-dessus, on a
+  \begin{equation} \label{e:clab-loc}
+    \frac{
+      \nv2{ \rmclab{a}{b}{ \clmap }[\chi](x', y') }
+    }{
+      \nv2{ x' }^{2a^2} \nv2{ y' }^{2b^2}
+    }
+    =
+    \left(
+      \frac{
+        \nv2{ \rmclab{a}{b}{ \clmap }(x, y) }
+      }{
+        \nv2 x ^{2a^2} \nv2 y ^{2b^2}
+      }
+    \right)^\delta
+  \end{equation}
+  puis, en utilisant des comparaisons classiques de normes :
+  \begin{align}
+    \frac{
+      \nv1{ \rmclab{a}{b}{ \clmap }[\chi](x', y') }
+    }{
+      \nv1{ x' }^{2a^2} \nv1{ y' }^{2b^2}
+    }
+    & \ge
+    \frac{
+      \nv2{ \rmclab{a}{b}{ \clmap }[\chi](x', y') }
+    }{
+      \nv2{ x' }^{2a^2} \nv2{ y' }^{2b^2}
+    }
+    \, (\dimp' + 1)^{-(a^2 + b^2)\dv}
+    \\ & \ge
+    \left(
+      \frac{
+        \nv2{ \rmclab{a}{b}{ \clmap }(x, y) }
+      }{
+        \nv2 x ^{2a^2} \nv2 y ^{2b^2}
+      }
+      (\dimp + 1)^{-(a^2 + b^2)\dv}
+    \right)^\delta
+    \\ & \ge
+    \left(
+      \frac{
+        \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
+      }{
+        \nv1 x ^{2a^2} \nv1 y ^{2b^2}
+      }
+      (\dimp + 1)^{-(a^2 + b^2 + 1/2)\dv}
+    \right)^\delta
+    \\ & \ge
+    \hmclab[\vaemb']*^{-(a^2 + b^2)}
+    \pmm.
+  \end{align}
+  Pour en déduire la dernier point, il ne reste plus qu'à prendre le produit
+  sur les différentes places comme à la fin du lemme précédent puis le
+  logarithme.
 \end{proof}
 
 
