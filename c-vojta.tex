@@ -5271,7 +5271,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \distv[\place, \vaemb']{x}{\divi}
         \le
         \distv[\place, \vaemb]{x}{F}
-        \cdot \todots
+        \cdot \sqrt\delta
       \) ; \label{i:hs-vero-dv}
     \item \(
         \hautm[2, \vaemb']{x}
@@ -5341,12 +5341,15 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
   \end{align}
 
   Pour le point~\ref{i:hs-vero-dv} on utilise la première formule en haut de
-  la page~89 de~\cite{phidg} (et à nouveau la remarque de~\cite[p.
-  102]{remgdmp} pour le lien entre indice et plongement de \bsc{Veronese}
-  remodelé) puis on effectue un développement limité\todo.
-
-  Pour les deux points restants, on utilise la définition du plongement et nos
-  petites mimines\todo.
+  la page~89 de~\cite{phidg} qu'on interprète ainsi :
+  \begin{equation}
+    \distv[\place, \vaemb'] x y
+    =
+    \sqrt{ 1 - \bigl( 1 - \distv[\place, \vaemb] x y ^2 \bigr)^\delta }
+    \pmm.
+  \end{equation}
+  On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\delta \le
+    \delta z \) avec \( z = \distv[\place, \vaemb] x y ^2 \).
 
 \end{proof}
 
