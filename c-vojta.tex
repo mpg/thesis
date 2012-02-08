@@ -5405,14 +5405,60 @@ sur les différents paramètres en jeu dans notre situation.
     \chi(F) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( F
   \) dans le plongement initial : c'est un polynômes homogène de degré \(
     \delta \) en \( X = (X_0, \dots, X_\dimp) \) mais on peut aussi le voir
-  comme une forme linéaire en \( Y = (Y_\alpha)_\alpha \) (où \( \alpha \)
+  comme une forme linéaire en \( Z = (Z_\alpha)_\alpha \) (où \( \alpha \)
   parcourt l'ensemble des \( (\dimp + 1) \)-uplets de longueur \( \delta \)),
-  en faisant le changement de variable \( Y_\alpha = X^\alpha \). On note \( L
-    = \sum l_\alpha Y_\alpha \) la forme linéaire obtenue, puis \( L' =
-    l_\alpha \binom\delta\alpha^{-1/2} Y_\alpha \). Par construction, \( L' \)
+  en faisant le changement de variable \( Z_\alpha = X^\alpha \). On note \( L
+    = \sum l_\alpha Z_\alpha \) la forme linéaire obtenue, puis \( L' =
+    l_\alpha \binom\delta\alpha^{-1/2} Z_\alpha \). Par construction, \( L' \)
   est bien l'équation dans le nouveau plongement d'un hyperplan \( \divi \)
   contenant \( \chi(F) \). Par ailleurs, le lemme précédent donne l'estimation
   de hauteur annoncée.
+
+  Enfin, pour chaque \( (a, b, \clmap) \) on considère la famille
+  \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) donnée par les
+  hypothèses~\ref{h:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
+  \( \delta \), on regarde \( \prod\indrange
+    (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
+  bihomogène de bidegré \( (2\delta a^2, 2\delta b^2) \) en \( (\vmp[1],
+    \vmp[2]) \), comme une forme bihomogène de \( (2a^2, 2\beta^2) \) en la
+  famille des monômes de bidegré \( (\delta, \delta) \) en \( (\vmp[1], \vmp[2])
+  \), image qu'on note provisoirement \( K_\beta \). La famille des \( K_\beta
+  \) représente le morphisme \( (x, y) \mapsto ax - by \) dans le plongement
+  de \bsc{Veronese} non remodelé.
+
+  La famille correspondante dans le plongement remodelé, notée \( (\rmclab
+    ab\clmap[\chi, \beta])_\beta \),  s'en déduit en
+  multipliant chacun des coefficients de \( K_\beta \) par un monôme de degré
+  \( 2(a^2 + b^2) \) en les \( \binom\delta\alpha^{-1/2} \) puis en
+  multipliant la forme obtenue par \( \binom\delta\beta^{1/2} \).
+  D'après le lemme précédent, on a donc
+  \begin{equation}
+    \nv1{ \rmclab ab\clmap[\chi, \beta] }
+    \le
+    \av{ \textstyle \binom\delta\beta^{1/2} }
+    \cdot
+    \nnv1{ \rmclab ab\clmap }
+    \cdot
+    \delta^{\dimp (a^2 + b^2) \dpv}
+  \end{equation}
+  où \( \dpv \) vaut \( 1 \) si \( \place \) divise un premier inférieur ou
+  égal à \( \delta \) et \( 0 \) sinon. En sommant sur \( \beta \) il vient
+  \begin{equation}
+    \nv1{ \rmclab ab\clmap[\chi, \beta] }
+    \le
+    (\dimp + 1)^{\delta \, \dv}
+    \cdot
+    \nnv1{ \rmclab ab\clmap }
+    \cdot
+    \delta^{\dimp (a^2 + b^2) \dpv}
+    \le
+    \hmclab*[\vaemb']^{a^2 + b^2}
+  \end{equation}
+  en posant
+  \(
+    \hmclab*[\vaemb'] = \hmclab*
+    \cdot (\dimp + 1)^{\delta \, \dv/2} \cdot \delta^{\dimp \dpv}
+  \) (car \( a^2 + b^2 \ge 2 \)).
 
 \end{proof}
 
