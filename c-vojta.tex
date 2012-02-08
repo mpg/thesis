@@ -5267,6 +5267,10 @@ quelques normes et hauteurs.
   \end{equation}
   De plus, cette valeur absolue vaut \( 1 \) si \( \place \) divise un premier
   strictement supérieur à \( \delta \).
+
+  En particulier si on note \( b \) le vecteur dont les composantes sont les
+  \( \binom\delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a \(
+    \hautm[\infty] b \le \expb^{\delta n} \).
 \end{lem}
 
 \begin{proof}
@@ -5286,13 +5290,15 @@ quelques normes et hauteurs.
   qui montre immédiatement la dernière assertion, car la somme est vide si \(
     p > \delta \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
   en sommant sur \( i \) on a \( v_p( \binom\delta\alpha ) \le n \ln_p(\delta)
-  \) qui donne bien l'estimation annoncée.
+  \) qui donne bien l'estimation de valeur absolue annoncée.
+
+  L'estimation de hauteur s'en déduit en prenant le produit sur toutes les
+  places et en observant qu'il n'y a pas plus de \( 2 \delta / \ln \delta \)
+  nombres premiers inférieurs à \( \delta \).\todo[référence ?]
 \end{proof}
 
-
-
-Le lemme suivant précise l'effet de ce plongement sur les
-différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
+Le lemme suivant précise l'effet d'un plongement de \bsc{Veronese} remodelé
+sur les différents paramètres en jeu dans notre situation.
 
 \begin{lem} \label{l:hs-vero}
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( F \)
@@ -5307,7 +5313,7 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
         \hautm[2, \vaemb'] \divi
         \le
         \hautm[2, \vaemb] F
-        \cdot \todots
+        \cdot \expb^{\delta\dimp}
       \) ;
     \item \(
         \distv[\place, \vaemb']{x}{\divi}
@@ -5392,6 +5398,21 @@ différents paramètres, où \( \Distv \) désigne la distance ponctuelle.
   \end{equation}
   On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\delta \le
     \delta z \) avec \( z = \distv[\place, \vaemb] x y ^2 \).
+
+  Pour la hauteur de \( \divi \), on remarque pour commencer que les résultats
+  de~\cite[p. 85-86]{phidg} utilisés ci-dessus s'appliquent pas, car ce
+  dernier n'est pas l'image de \( F \) dans le plongement ; en fait on a \(
+    \chi(F) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( F
+  \) dans le plongement initial : c'est un polynômes homogène de degré \(
+    \delta \) en \( X = (X_0, \dots, X_\dimp) \) mais on peut aussi le voir
+  comme une forme linéaire en \( Y = (Y_\alpha)_\alpha \) (où \( \alpha \)
+  parcourt l'ensemble des \( (\dimp + 1) \)-uplets de longueur \( \delta \)),
+  en faisant le changement de variable \( Y_\alpha = X^\alpha \). On note \( L
+    = \sum l_\alpha Y_\alpha \) la forme linéaire obtenue, puis \( L' =
+    l_\alpha \binom\delta\alpha^{-1/2} Y_\alpha \). Par construction, \( L' \)
+  est bien l'équation dans le nouveau plongement d'un hyperplan \( \divi \)
+  contenant \( \chi(F) \). Par ailleurs, le lemme précédent donne l'estimation
+  de hauteur annoncée.
 
 \end{proof}
 
