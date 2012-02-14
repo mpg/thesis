@@ -4786,7 +4786,7 @@ quitte à changer l'ensemble de places considérés dans l'hypothèse
 d'approximation. En attendant, le lemme suivant donne un changement de base
 dans le cas favorable et estime son coût sur les différentes quantités en jeu.
 
-\begin{lem}
+\begin{lem} \label{l:plin}
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif,
   \( p_0 \) le point de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \)
   et \( \divi \) un hyperplan ne contenant pas \( p_0 \).  Il existe un
@@ -5076,7 +5076,8 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
 \begin{proof}
   On remarque pour commencer que le résultat est vide dans le cas où \( p_0
     \in E \), car la première condition n'est jamais satisfaite. Dans le cas
-  contraire, on considère le plongement \( \vaemb' \) donné par le lemme
+  contraire, on considère le plongement \( \vaemb' \) donné par le
+  lemme~\ref{l:plin}
   précédent et on prévoit d'appliquer le théorème~\ref{t:vojta-div} à \( E \)
   et \( \vaemb' \) avec \( \expapx' = 85 \expapx / 86 \) pour une raison qui
   deviendra bientôt claire. Il s'agit de vérifier que les hypothèses du
@@ -5109,7 +5110,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
       (\dimp + 1)^{85/2}
       /
       \hautm[2, \vaemb]{\ex*}
-    \Bigr)^{-\wtapx \expapx/86}
+    \Bigr)^{\wtapx \expapx/86}
     \pmm,
   \end{align}
   qui donne le résultat voulu pour peu que la quantité dans la dernière
@@ -5136,7 +5137,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \cst{vs-ht}[\vaemb'] \) par définition et en utilisant les points restants
   du lemme précédent.
 
-  On peut donc comme appliquer le théorème~\ref{t:vojta-div} comme prévu et en
+  On peut donc appliquer le théorème~\ref{t:vojta-div} comme prévu et en
   déduire qu'il n'existe pas de famille de points satisfaisant aux hypothèses
   du présent énoncé.
 \end{proof}
@@ -5287,7 +5288,7 @@ quelques normes et hauteurs.
     - \dots
     - \floor*{ \frac{\alpha_n}{p^i} }
   \end{equation}
-  qui montre immédiatement la dernière assertion, car la somme est vide si \(
+  qui donne immédiatement le cas d'égalité, car la somme est vide si \(
     p > \delta \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
   en sommant sur \( i \) on a \( v_p( \binom\delta\alpha ) \le n \ln_p(\delta)
   \) qui donne bien l'estimation de valeur absolue annoncée.
@@ -5319,12 +5320,12 @@ sur les différents paramètres en jeu dans notre situation.
         \distv[\place, \vaemb']{x}{\divi}
         \le
         \distv[\place, \vaemb]{x}{F}
-        \cdot \sqrt\delta
+        \cdot \sqrt\delta^\dv
       \) ; \label{i:hs-vero-dv}
     \item \(
-        \hautm[2, \vaemb']{x}
+        \haut[2, \vaemb']{x}
         =
-        \hautm[2, \vaemb]{x}
+        \haut[2, \vaemb]{x}
         \cdot \delta
       \) ; \label{i:hs-vero-ht-pt}
     \item \(
@@ -5384,13 +5385,13 @@ sur les différents paramètres en jeu dans notre situation.
     \delta^{\genre+1} \hautl[\htpph, \vaemb] \va
     + \frac12 \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
     \\ & \le
-    \delta^{\genre+1} \hautl[\htpph, \vaemb] \va
+    \delta^{\genre+1} \hautl[1, \vaemb] \va
     + \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
 
-  Pour le point~\ref{i:hs-vero-dv} on utilise la première formule en haut de
-  la page~89 de~\cite{phidg} qu'on interprète ainsi :
+  Pour le point~\ref{i:hs-vero-dv}, aux places infinies on utilise la première
+  formule en haut de la page~89 de~\cite{phidg} qu'on interprète ainsi :
   \begin{equation}
     \distv[\place, \vaemb'] x y
     =
@@ -5401,7 +5402,7 @@ sur les différents paramètres en jeu dans notre situation.
     \delta z \) avec \( z = \distv[\place, \vaemb] x y ^2 \).
 
   Pour la hauteur de \( \divi \), on remarque pour commencer que les résultats
-  de~\cite[p. 85-86]{phidg} utilisés ci-dessus s'appliquent pas, car ce
+  de~\cite[p. 85-86]{phidg} utilisés ci-dessus ne s'appliquent pas, car ce
   dernier n'est pas l'image de \( F \) dans le plongement ; en fait on a \(
     \chi(F) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( F
   \) dans le plongement initial : c'est un polynômes homogène de degré \(
@@ -5416,36 +5417,36 @@ sur les différents paramètres en jeu dans notre situation.
   de hauteur annoncée.
 
   Enfin, pour chaque \( (a, b, \clmap) \) on considère la famille
-  \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) donnée par les
+  \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par les
   hypothèses~\ref{h:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
   \( \delta \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
   bihomogène de bidegré \( (2\delta a^2, 2\delta b^2) \) en \( (\vmp[1],
-    \vmp[2]) \), comme une forme bihomogène de \( (2a^2, 2\beta^2) \) en la
+    \vmp[2]) \), comme une forme bihomogène de \( (2a^2, 2b^2) \) en la
   famille des monômes de bidegré \( (\delta, \delta) \) en \( (\vmp[1], \vmp[2])
-  \), image qu'on note provisoirement \( K_\beta \). La famille des \( K_\beta
-  \) représente le morphisme \( (x, y) \mapsto ax - by \) dans le plongement
-  de \bsc{Veronese} non remodelé.
+  \), image qu'on note provisoirement \( K_\beta \). La famille \(
+    (K_\beta)_\beta \) représente le morphisme \( (x, y) \mapsto ax - by \)
+  sur l'ouvert \( \clmap \) dans le plongement \( \vaemb' \).
 
   La famille correspondante dans le plongement remodelé, notée \( (\rmclab
-    ab\clmap[\chi, \beta])_\beta \),  s'en déduit en
+    ab\clmap[\vaemb', \beta])_\beta \),  s'en déduit en
   multipliant chacun des coefficients de \( K_\beta \) par un monôme de degré
   \( 2(a^2 + b^2) \) en les \( \binom\delta\alpha^{-1/2} \) puis en
   multipliant la forme obtenue par \( \binom\delta\beta^{1/2} \).
   D'après le lemme précédent, on a donc
   \begin{equation}
-    \nv1{ \rmclab ab\clmap[\chi, \beta] }
+    \nv1{ \rmclab ab\clmap[\vaemb', \beta] }
     \le
     \av{ \textstyle \binom\delta\beta^{1/2} }
     \cdot
-    \nnv1{ \rmclab ab\clmap }
+    \nnv1{ \rmclab ab\clmap }^\delta
     \cdot
     \delta^{\dimp (a^2 + b^2) \dpv}
   \end{equation}
   où \( \dpv \) vaut \( 1 \) si \( \place \) divise un premier inférieur ou
   égal à \( \delta \) et \( 0 \) sinon. En sommant sur \( \beta \) il vient
   \begin{equation}
-    \nv1{ \rmclab ab\clmap[\chi, \beta] }
+    \nnv1{ \rmclab ab\clmap[\vaemb'] }
     \le
     (\dimp + 1)^{\delta \, \dv}
     \cdot
@@ -5458,7 +5459,7 @@ sur les différents paramètres en jeu dans notre situation.
   en posant
   \(
     \hmclab[\vaemb']* = \hmclab*^\delta
-    \cdot (\dimp + 1)^{5\delta \dv/2} \cdot \delta^{\dimp \dpv}
+    \cdot (\dimp + 1)^{5\delta \dv/4} \cdot \delta^{\dimp \dpv}
   \) (l'exposant de \( \dimp + 1 \) n'est pas optimal ici mais sera utile au
   paragraphe suivant).
 
@@ -5468,14 +5469,14 @@ sur les différents paramètres en jeu dans notre situation.
   définitions ci-dessus, on a
   \begin{equation} \label{e:clab-loc}
     \frac{
-      \nv2{ \rmclab{a}{b}{ \clmap }[\chi](x', y') }
+      \nv2{ \rmclab{a}{b}{ \clmap }[\vaemb'](x', y') }
     }{
       \nv2{ x' }^{2a^2} \nv2{ y' }^{2b^2}
     }
     =
     \left(
       \frac{
-        \nv2{ \rmclab{a}{b}{ \clmap }(x, y) }
+        \nv2{ \rmclab{a}{b}{ \clmap }[\vaemb](x, y) }
       }{
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
@@ -5484,13 +5485,13 @@ sur les différents paramètres en jeu dans notre situation.
   puis, en utilisant des comparaisons classiques de normes :
   \begin{align}
     \frac{
-      \nv1{ \rmclab{a}{b}{ \clmap }[\chi](x', y') }
+      \nv1{ \rmclab{a}{b}{ \clmap }[\vaemb'](x', y') }
     }{
       \nv1{ x' }^{2a^2} \nv1{ y' }^{2b^2}
     }
     & \ge
     \frac{
-      \nv2{ \rmclab{a}{b}{ \clmap }[\chi](x', y') }
+      \nv2{ \rmclab{a}{b}{ \clmap }[\vaemb'](x', y') }
     }{
       \nv2{ x' }^{2a^2} \nv2{ y' }^{2b^2}
     }
@@ -5498,7 +5499,7 @@ sur les différents paramètres en jeu dans notre situation.
     \\ & \ge
     \left(
       \frac{
-        \nv2{ \rmclab{a}{b}{ \clmap }(x, y) }
+        \nv2{ \rmclab{a}{b}{ \clmap }[\vaemb](x, y) }
       }{
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
@@ -5507,17 +5508,19 @@ sur les différents paramètres en jeu dans notre situation.
     \\ & \ge
     \left(
       \frac{
-        \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
+        \nv1{ \rmclab{a}{b}{ \clmap }[\vaemb](x, y) }
       }{
         \nv1 x ^{2a^2} \nv1 y ^{2b^2}
       }
       (\dimp + 1)^{-(a^2 + b^2 + 1/2)\dv}
     \right)^\delta
     \\ & \ge
+    \bigl( \hmclab[\vaemb]* (\dimp + 1)^{5\dv / 4} \bigr)^{-\delta(a^2 + b^2)}
+    \ge
     \hmclab[\vaemb']*^{-(a^2 + b^2)}
     \pmm.
   \end{align}
-  Pour en déduire la dernier point, il ne reste plus qu'à prendre le produit
+  Pour en déduire le dernier point, il ne reste plus qu'à prendre le produit
   sur les différentes places comme à la fin du lemme précédent puis le
   logarithme.
 \end{proof}
