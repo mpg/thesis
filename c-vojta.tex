@@ -5254,24 +5254,24 @@ précédent. On commence par un lemme technique qui nous sera utile pour estimer
 quelques normes et hauteurs.
 
 \begin{lem} \label{l:norm-mn}
-  Soient \( n \) et \( \delta \) deux entiers, et \( \alpha \in \N^{n+1} \)
-  tel que \( \alpha_0 + \dots + \alpha_n = \delta \). Alors pour toute place
-  \( \place \) d'un corps de nombres contenant \( \binom\delta\alpha^{-1/2}
+  Soient \( n \) et \( \Delta \) deux entiers, et \( \alpha \in \N^{n+1} \)
+  tel que \( \alpha_0 + \dots + \alpha_n = \Delta \). Alors pour toute place
+  \( \place \) d'un corps de nombres contenant \( \binom\Delta\alpha^{-1/2}
   \), on a
   \begin{equation}
-    \av*{ \binom\delta\alpha^{-1/2} }
+    \av*{ \binom\Delta\alpha^{-1/2} }
     \le
     \begin{cases}
-      \delta^{n/2} & \text{si } \place \mid p \le \delta \\
+      \Delta^{n/2} & \text{si } \place \mid p \le \Delta \\
       1 & \text{sinon.}
     \end{cases}
   \end{equation}
   De plus, cette valeur absolue vaut \( 1 \) si \( \place \) divise un premier
-  strictement supérieur à \( \delta \).
+  strictement supérieur à \( \Delta \).
 
   En particulier si on note \( b \) le vecteur dont les composantes sont les
-  \( \binom\delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a \(
-    \hautm[\infty] b \le \expb^{\delta n} \).
+  \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a \(
+    \hautm[\infty] b \le \expb^{\Delta n} \).
 \end{lem}
 
 \begin{proof}
@@ -5280,22 +5280,22 @@ quelques normes et hauteurs.
   utilise la définition du multinomial en terme de factorielles et la formule
   de \bsc{Legendre} :
   \begin{equation}
-    v_p( \binom\delta\alpha )
+    v_p( \binom\Delta\alpha )
     =
-    \sum_{i = 1}^{\floor{\ln_p\delta}}
-    \floor*{ \frac{\delta}{p^i} }
+    \sum_{i = 1}^{\floor{\ln_p\Delta}}
+    \floor*{ \frac{\Delta}{p^i} }
     - \floor*{ \frac{\alpha_0}{p^i} }
     - \dots
     - \floor*{ \frac{\alpha_n}{p^i} }
   \end{equation}
   qui donne immédiatement le cas d'égalité, car la somme est vide si \(
-    p > \delta \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
-  en sommant sur \( i \) on a \( v_p( \binom\delta\alpha ) \le n \ln_p(\delta)
+    p > \Delta \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
+  en sommant sur \( i \) on a \( v_p( \binom\Delta\alpha ) \le n \ln_p(\Delta)
   \) qui donne bien l'estimation de valeur absolue annoncée.
 
   L'estimation de hauteur s'en déduit en prenant le produit sur toutes les
-  places et en observant qu'il n'y a pas plus de \( 2 \delta / \ln \delta \)
-  nombres premiers inférieurs à \( \delta \).\todo[référence ?]
+  places et en observant qu'il n'y a pas plus de \( 2 \Delta / \ln \Delta \)
+  nombres premiers inférieurs à \( \Delta \).\todo[référence ?]
 \end{proof}
 
 Le lemme suivant précise l'effet d'un plongement de \bsc{Veronese} remodelé
@@ -5303,10 +5303,10 @@ sur les différents paramètres en jeu dans notre situation.
 
 \begin{lem} \label{l:hs-vero}
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( F \)
-  une hypersurface de \( \projd \), de degré \( \delta \). On note \( \chi \)
-  le plongement de \bsc{Veronese} remodelé de degré \( \delta \), qui va donc
+  une hypersurface de \( \projd \), de degré \( \Delta \). On note \( \chi \)
+  le plongement de \bsc{Veronese} remodelé de degré \( \Delta \), qui va donc
   de \( \projd \) dans \( \proj{\dimp'} \) où \( \dimp' = \binom{\dimp +
-      \delta}{\delta} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
+      \Delta}{\Delta} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
   plongement, l'image de \( F \) est découpée par un hyperplan \( \divi \) et
   on a :
   \begin{enumthm}
@@ -5314,31 +5314,31 @@ sur les différents paramètres en jeu dans notre situation.
         \hautm[2, \vaemb'] \divi
         \le
         \hautm[2, \vaemb] F
-        \cdot \expb^{\delta\dimp}
+        \cdot \expb^{\Delta\dimp}
       \) ;
     \item \(
         \distv[\place, \vaemb']{x}{\divi}
         \le
         \distv[\place, \vaemb]{x}{f}
-        \cdot \delta^{\dv/2}
+        \cdot \Delta^{\dv/2}
       \) ; \label{i:hs-vero-dv}
     \item \(
         \hautl[2, \vaemb']{x}
         =
         \hautl[2, \vaemb]{x}
-        \cdot \delta
+        \cdot \Delta
       \) ; \label{i:hs-vero-ht-pt}
     \item \(
         \deg_{\vaemb'} \va
         =
         \deg_{\vaemb} \va
-        \cdot \delta^\genre
+        \cdot \Delta^\genre
       \) ; \label{i:hs-vero-deg-va}
     \item \(
         \hautl[1, \vaemb']{\va}
         \le
-        \delta^{\genre+1} \hautl[1, \vaemb]{\va}
-        + \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+        \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
+        + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
   \end{enumthm}
   De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
@@ -5349,14 +5349,14 @@ sur les différents paramètres en jeu dans notre situation.
         \htcmp[\vaemb']
         =
         \htcmp[\vaemb]
-        \cdot \delta
+        \cdot \Delta
       \) ; \label{i:hs-vero-htcmp}
     \item \(
         \hlclab[\vaemb']
         =
         \hlclab[\vaemb]
-        \cdot \delta
-        + \delta (2\dimp + \frac52 \ln(\dimp + 1))
+        \cdot \Delta
+        + \Delta (2\dimp + \frac52 \ln(\dimp + 1))
       \).
   \end{enumthm}
 \end{lem}
@@ -5364,7 +5364,7 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{proof}
   On utilise la remarque de~\cite[p.  102]{remgdmp} pour interpréter les
   distances et hauteurs dans le plongement de \bsc{Veronese} remodelé comme
-  des distances et hauteurs d'indice \( (\delta, \dots, \delta) \) dans le
+  des distances et hauteurs d'indice \( (\Delta, \dots, \Delta) \) dans le
   plongement initial.
 
   On trouve alors les comparaisons de degré et de hauteurs qui nous
@@ -5372,7 +5372,7 @@ sur les différents paramètres en jeu dans notre situation.
   et~\ref{i:hs-vero-ht-pt} en découlent directement et le
   point~\ref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier. Par
   ailleurs, la référence citée donne \( \hautl[\htpph, \vaemb'] \va =
-    \delta^{\genre+1} \hautl[\htpph, \vaemb] \va \) (en notant \(
+    \Delta^{\genre+1} \hautl[\htpph, \vaemb] \va \) (en notant \(
     \Hautl[\htpph] \) la hauteur utilisée dans cette référence), dont on
   déduit le point~\ref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
   comme en~\eqref{e:ht-pph-1} :
@@ -5382,11 +5382,11 @@ sur les différents paramètres en jeu dans notre situation.
     \hautl[\htpph, \vaemb'] \va
     + \frac12 \ln(\dimp' + 1) (\genre + 1) \deg_{\vaemb'} \va
     \\ & \le
-    \delta^{\genre+1} \hautl[\htpph, \vaemb] \va
-    + \frac12 \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+    \Delta^{\genre+1} \hautl[\htpph, \vaemb] \va
+    + \frac12 \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
     \\ & \le
-    \delta^{\genre+1} \hautl[1, \vaemb] \va
-    + \delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+    \Delta^{\genre+1} \hautl[1, \vaemb] \va
+    + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
 
@@ -5395,23 +5395,23 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{equation}
     \distv[\place, \vaemb'] x y
     =
-    \sqrt{ 1 - \bigl( 1 - \distv[\place, \vaemb] x y ^2 \bigr)^\delta }
+    \sqrt{ 1 - \bigl( 1 - \distv[\place, \vaemb] x y ^2 \bigr)^\Delta }
     \pmm.
   \end{equation}
-  On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\delta \le
-    \delta z \) avec \( z = \distv[\place, \vaemb] x y ^2 \).
+  On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\Delta \le
+    \Delta z \) avec \( z = \distv[\place, \vaemb] x y ^2 \).
 
   Pour la hauteur de \( \divi \), on remarque pour commencer que les résultats
   de~\cite[p. 85-86]{phidg} utilisés ci-dessus ne s'appliquent pas, car ce
   dernier n'est pas l'image de \( F \) dans le plongement ; en fait on a \(
     \chi(F) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( F
   \) dans le plongement initial : c'est un polynômes homogène de degré \(
-    \delta \) en \( X = (X_0, \dots, X_\dimp) \) mais on peut aussi le voir
+    \Delta \) en \( X = (X_0, \dots, X_\dimp) \) mais on peut aussi le voir
   comme une forme linéaire en \( Z = (Z_\alpha)_\alpha \) (où \( \alpha \)
-  parcourt l'ensemble des \( (\dimp + 1) \)-uplets de longueur \( \delta \)),
+  parcourt l'ensemble des \( (\dimp + 1) \)-uplets de longueur \( \Delta \)),
   en faisant le changement de variable \( Z_\alpha = X^\alpha \). On note \( L
     = \sum l_\alpha Z_\alpha \) la forme linéaire obtenue, puis \( L' =
-    l_\alpha \binom\delta\alpha^{-1/2} Z_\alpha \). Par construction, \( L' \)
+    l_\alpha \binom\Delta\alpha^{-1/2} Z_\alpha \). Par construction, \( L' \)
   est bien l'équation dans le nouveau plongement d'un hyperplan \( \divi \)
   contenant \( \chi(F) \). Par ailleurs, le lemme précédent donne l'estimation
   de hauteur annoncée.
@@ -5419,11 +5419,11 @@ sur les différents paramètres en jeu dans notre situation.
   Enfin, pour chaque \( (a, b, \clmap) \) on considère la famille
   \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par les
   hypothèses~\ref{h:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
-  \( \delta \), on regarde \( \prod\indrange
+  \( \Delta \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
-  bihomogène de bidegré \( (2\delta a^2, 2\delta b^2) \) en \( (\vmp[1],
+  bihomogène de bidegré \( (2\Delta a^2, 2\Delta b^2) \) en \( (\vmp[1],
     \vmp[2]) \), comme une forme bihomogène de \( (2a^2, 2b^2) \) en la
-  famille des monômes de bidegré \( (\delta, \delta) \) en \( (\vmp[1], \vmp[2])
+  famille des monômes de bidegré \( (\Delta, \Delta) \) en \( (\vmp[1], \vmp[2])
   \), image qu'on note provisoirement \( K_\beta \). La famille \(
     (K_\beta)_\beta \) représente le morphisme \( (x, y) \mapsto ax - by \)
   sur l'ouvert \( \clmap \) dans le plongement \( \vaemb' \).
@@ -5431,41 +5431,41 @@ sur les différents paramètres en jeu dans notre situation.
   La famille correspondante dans le plongement remodelé, notée \( (\rmclab
     ab\clmap[\vaemb', \beta])_\beta \),  s'en déduit en
   multipliant chacun des coefficients de \( K_\beta \) par un monôme de degré
-  \( 2(a^2 + b^2) \) en les \( \binom\delta\alpha^{-1/2} \) puis en
-  multipliant la forme obtenue par \( \binom\delta\beta^{1/2} \).
+  \( 2(a^2 + b^2) \) en les \( \binom\Delta\alpha^{-1/2} \) puis en
+  multipliant la forme obtenue par \( \binom\Delta\beta^{1/2} \).
   D'après le lemme précédent, on a donc
   \begin{equation}
     \nv1{ \rmclab ab\clmap[\vaemb', \beta] }
     \le
-    \av{ \textstyle \binom\delta\beta^{1/2} }
+    \av{ \textstyle \binom\Delta\beta^{1/2} }
     \cdot
-    \nnv1{ \rmclab ab\clmap }^\delta
+    \nnv1{ \rmclab ab\clmap }^\Delta
     \cdot
-    \delta^{\dimp (a^2 + b^2) \dpv}
+    \Delta^{\dimp (a^2 + b^2) \dpv}
   \end{equation}
   où \( \dpv \) vaut \( 1 \) si \( \place \) divise un premier inférieur ou
-  égal à \( \delta \) et \( 0 \) sinon. En sommant sur \( \beta \) il vient
+  égal à \( \Delta \) et \( 0 \) sinon. En sommant sur \( \beta \) il vient
   \begin{equation}
     \nnv1{ \rmclab ab\clmap[\vaemb'] }
     \le
-    (\dimp + 1)^{\delta \, \dv}
+    (\dimp + 1)^{\Delta \, \dv}
     \cdot
-    \nnv1{ \rmclab ab\clmap }^\delta
+    \nnv1{ \rmclab ab\clmap }^\Delta
     \cdot
-    \delta^{\dimp (a^2 + b^2) \dpv}
+    \Delta^{\dimp (a^2 + b^2) \dpv}
     \le
     \hmclab[\vaemb']*^{a^2 + b^2}
   \end{equation}
   en posant
   \(
-    \hmclab[\vaemb']* = \hmclab*^\delta
-    \cdot (\dimp + 1)^{5\delta \dv/4} \cdot \delta^{\dimp \dpv}
+    \hmclab[\vaemb']* = \hmclab*^\Delta
+    \cdot (\dimp + 1)^{5\Delta \dv/4} \cdot \Delta^{\dimp \dpv}
   \) (l'exposant de \( \dimp + 1 \) n'est pas optimal ici mais sera utile au
   paragraphe suivant).
 
   Par ailleurs, on sait que si \( x \) désigne des coordonnées homogènes d'un
   point de \( \projd \) et \( x' \) l'image de ces coordonnées par \( \chi \),
-  on a en toute place \( \nv2{ x' } = \nv2{ x }^\delta \). Ainsi, vu les
+  on a en toute place \( \nv2{ x' } = \nv2{ x }^\Delta \). Ainsi, vu les
   définitions ci-dessus, on a
   \begin{equation} \label{e:clab-loc}
     \frac{
@@ -5480,7 +5480,7 @@ sur les différents paramètres en jeu dans notre situation.
       }{
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
-    \right)^\delta
+    \right)^\Delta
   \end{equation}
   puis, en utilisant des comparaisons classiques de normes :
   \begin{align}
@@ -5504,7 +5504,7 @@ sur les différents paramètres en jeu dans notre situation.
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
       (\dimp + 1)^{-(a^2 + b^2)\dv}
-    \right)^\delta
+    \right)^\Delta
     \\ & \ge
     \left(
       \frac{
@@ -5513,9 +5513,9 @@ sur les différents paramètres en jeu dans notre situation.
         \nv1 x ^{2a^2} \nv1 y ^{2b^2}
       }
       (\dimp + 1)^{-(a^2 + b^2 + 1/2)\dv}
-    \right)^\delta
+    \right)^\Delta
     \\ & \ge
-    \bigl( \hmclab[\vaemb]* (\dimp + 1)^{5\dv / 4} \bigr)^{-\delta(a^2 + b^2)}
+    \bigl( \hmclab[\vaemb]* (\dimp + 1)^{5\dv / 4} \bigr)^{-\Delta(a^2 + b^2)}
     \ge
     \hmclab[\vaemb']*^{-(a^2 + b^2)}
     \pmm.
@@ -5528,19 +5528,19 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{coro} \label{c:vojta-hs}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
   aux hypothèses~\ref{h:vaemb}, \( F \) une hypersurface de \( \projd \) de
-  degré \( \delta \) et \( 0 < \eps < 1 \) un nombre réel.
+  degré \( \Delta \) et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & <
-    \bigl( \delta (n + 1)^3 \bigr)^{-\dv/2}
+    \bigl( \Delta (n + 1)^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > \frac4\delta \cst{ht-v-hs} \Lambda_3^{(1 + \frac1\puiss)
+    & > \frac4\Delta \cst{ht-v-hs} \Lambda_3^{(1 + \frac1\puiss)
       \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
     \\
     \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
@@ -5549,8 +5549,8 @@ sur les différents paramètres en jeu dans notre situation.
     \cos(\ex*, \ex[\fcti]) & > 1 -
     \frac1{ \puiss }
     \left(
-      \frac{ \delta \eps }{
-        86 \nclmaps \cdot 5^\genre \binom{\dimp + \delta}{\delta}
+      \frac{ \Delta \eps }{
+        86 \nclmaps \cdot 5^\genre \binom{\dimp + \Delta}{\Delta}
         }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
   \end{align}
@@ -5558,32 +5558,32 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{align}
     \Lambda_3
     & = \max \bigl(
-      (\delta^\genre \deg \va)^\puiss,
+      (\Delta^\genre \deg \va)^\puiss,
       5 \puiss^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot (\delta\eps)^{-1}
-        { \textstyle \binom{\dimp + \delta}{\delta} }
+        86 \nclmaps \cdot 5^\genre \cdot (\Delta\eps)^{-1}
+        { \textstyle \binom{\dimp + \Delta}{\Delta} }
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
-      \delta^\genre \deg \va,
+      \Delta^\genre \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
     \bigr)
     \\
     \newcst[\Theta]{ht-v-hs}
     & = \max \bigl(
-      \delta^{\genre+1} \hautl[1]{\va}
+      \Delta^{\genre+1} \hautl[1]{\va}
       + \bigl(
-        \delta^{\genre+1} \dimp \ln(\delta)
-        + \delta^\genre \expb^{\delta\dimp} \hautl[1]{ F }
+        \Delta^{\genre+1} \dimp \ln(\Delta)
+        + \Delta^\genre \expb^{\Delta\dimp} \hautl[1]{ F }
       \bigr) (\genre+1) \deg \va,
       \\ & \qquad
-      \delta \hlclab + 3 \delta \dimp + \frac52 \dimp \ln \delta
-      + \frac52 \hautl[1] F \expb^{\delta\dimp}
+      \Delta \hlclab + 3 \Delta \dimp + \frac52 \dimp \ln \Delta
+      + \frac52 \hautl[1] F \expb^{\Delta\dimp}
       \\ & \qquad
-      \delta \htcmp
-      + \hautl[2] F \expb^{\delta\dimp}
-      + \frac\delta2 \ln(\dimp),
+      \Delta \htcmp
+      + \hautl[2] F \expb^{\Delta\dimp}
+      + \frac\Delta2 \ln(\dimp),
       \\ & \qquad
-      \delta^\dimp \ln(\delta) \dimp
+      \Delta^\dimp \ln(\Delta) \dimp
     \bigr)
   \end{align}
 \end{coro}
@@ -5591,7 +5591,7 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{proof}
   On considère le plongement \( \vaemb' \) et l'hyperplan \( \divi \) fournis
   par le lemme~\ref{l:hs-vero} précédent et on prévoit d'appliquer le
-  corollaire~\ref{c:vojta-div-any} dans ce cadre avec \( \eps' = \delta\eps \)
+  corollaire~\ref{c:vojta-div-any} dans ce cadre avec \( \eps' = \Delta\eps \)
   comme exposant d'approximation. Il s'agit donc de vérifier que nos
   conditions impliquent celles du corollaire en question.
 
@@ -5600,17 +5600,17 @@ sur les différents paramètres en jeu dans notre situation.
     \distv[\place, \vaemb']{ \ex* }{\divi}
     \le
     \distv[\place, \vaemb]{ \ex* }{f}
-    \cdot \delta^{\dv/2}
+    \cdot \Delta^{\dv/2}
     & \le
-    \bigl( \delta (n + 1)^3 \bigr)^{-\dv/2}
+    \bigl( \Delta (n + 1)^3 \bigr)^{-\dv/2}
     \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx}
-    \cdot \delta^{\dv/2}
+    \cdot \Delta^{\dv/2}
     \\ & \le
-    \delta (n + 1)^{-3\dv/2}
-    \hautm[2, \vaemb']{\ex*}^{-\delta \wtapx \expapx}
+    \Delta (n + 1)^{-3\dv/2}
+    \hautm[2, \vaemb']{\ex*}^{-\Delta \wtapx \expapx}
   \end{align}
   ce qui justifie le choix fait pour \( \eps' \). La condition suivante vient
-  en remarquant que la hauteur normalisé est multipliée par \( \delta \) en
+  en remarquant que la hauteur normalisé est multipliée par \( \Delta \) en
   changeant de plongement et que les constantes ont été adapté pour tenir
   compte des variations de degrés, hauteurs et dimension ambiante. Enfin, les
   rapports de hauteurs normalisés et les angles dans l'espace de \MoW sont
