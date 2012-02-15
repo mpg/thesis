@@ -5323,9 +5323,9 @@ sur les différents paramètres en jeu dans notre situation.
         \cdot \sqrt\delta^\dv
       \) ; \label{i:hs-vero-dv}
     \item \(
-        \haut[2, \vaemb']{x}
+        \hautl[2, \vaemb']{x}
         =
-        \haut[2, \vaemb]{x}
+        \hautl[2, \vaemb]{x}
         \cdot \delta
       \) ; \label{i:hs-vero-ht-pt}
     \item \(
@@ -5525,6 +5525,68 @@ sur les différents paramètres en jeu dans notre situation.
   logarithme.
 \end{proof}
 
+\begin{coro} \label{c:vojta-hs}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
+  aux hypothèses~\ref{h:vaemb}, \( F \) une hypersurface de \( \projd \) de
+  degré \( \delta \) et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
+    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+  simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{\ex*}{\divi}
+    & <
+    \bigl( \delta (n + 1)^3 \bigr)^{-\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \\
+    \hautn{\ex[1]}
+    & > \frac4\delta \cst{ht-v-hs} \Lambda_3^{(1 + \frac1\puiss)
+      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    \\
+    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    4 \puiss \Lambda_3^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    \\
+    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \frac1{ \puiss }
+    \left(
+      \frac{ \delta \eps }{
+        86 \nclmaps \cdot 5^\genre \binom{\dimp + \delta}{\delta}
+        }
+    \right)^{ \frac{\puiss}{\puiss-\genre} }
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda_3
+    & = \max \bigl(
+      (\delta^\genre \deg \va)^\puiss,
+      5 \puiss^2
+      \bigl(
+        86 \nclmaps \cdot 5^\genre \cdot (\delta\eps)^{-1}
+        { \textstyle \binom{\dimp + \delta}{\delta} }
+      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+      \delta^\genre \deg \va,
+      (\sqrt2 \puiss \genre)^{\puiss\genre}
+    \bigr)
+    \\
+    \newcst[\Theta]{ht-v-hs}
+    & = \max \bigl(
+      \delta^{\genre+1} \hautl[1]{\va}
+      + \bigl(
+        \delta^{\genre+1} \dimp \ln(\delta)
+        + \delta^\genre \expb^{\delta\dimp} \hautl[1]{ F }
+      \bigr) (\genre+1) \deg \va,
+      \\ & \qquad
+      \delta \hlclab + 3 \delta \dimp + \frac52 \dimp \ln \delta
+      + \frac52 \hautl[1] E \expb^{\delta\dimp}
+      \\ & \qquad
+      \delta \htcmp
+      + \hautl[2] E \expb^{\delta\dimp}
+      + \frac\delta2 \ln(\dimp),
+      \\ & \qquad
+      \delta^\dimp \ln(\delta) \dimp
+    \bigr)
+  \end{align}
+\end{coro}
 
 \endinput
 
