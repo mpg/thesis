@@ -5621,6 +5621,78 @@ sur les différents paramètres en jeu dans notre situation.
   conclure.
 \end{proof}
 
+
+\subsection{Variétés quelconques}
+
+Il s'agit de choisir une hypersurface contenant la variété et ne passant par
+aucun des points considérés, puis de lui appliquer le corollaire précédent. Le
+lemme suivant donne un choix possible d'hypersurface de degré et hauteur
+contrôlés.
+
+\begin{lem}
+  Soient \( V \) une sous-variété de \( \projd \) de degré \( \Delta \) et de
+  dimension \( u \), et \( \ex[1], \dots, \ex[\puiss] \) des points dans \(
+    \projd(\Qbar) \setminus V(\Qbar) \). Il existe une hypersurface \( F \) de
+  \( \projd \) contenant \( V \) mais aucun des \( \ex* \), de degré \( \deg V
+  \) et de hauteur
+  \begin{equation}
+    \hautm[1] F
+    \le
+    \hautl[1] V
+    + (u + 2) \ln (\Delta + 2) \bigl( \delta + \dimp + 1 \bigr)
+    + \ln(\puiss/2 + 1)
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  On se base sur la proposition~6.1 (p. 543) de~\cite{remdcl}, qui fournit une
+  famille de polynômes \( P_1, \dots, P_s \) définissant \( V \)
+  (ensemblistement). On utilisera plutôt les hauteurs \( \Hautl[1] \), pour
+  lesquelles on obtient la majoration suivante :
+  \begin{equation}
+    \hautl[1]{ P_i }
+    \le
+    \hautl[1] V + (u + 2) \Delta \ln \Delta
+    \pmm.
+  \end{equation}
+  Par ailleurs, on remarque que, en reprenant les notations de la référence
+  citée :
+  \begin{equation}
+    s = \card \mathcal M_2 \le (\Delta + 2)^{(u+2)(\dimp+1)}
+  \end{equation}
+  par définition en remarquant qu'il y a au plus \( \Delta + 2 \) entiers de
+  valeur absolue inférieure ou égale à \( \max(\Delta/2, 1) \).
+
+  Pour chaque \( \fct \in \set{1, \dots, \puiss} \) on fixe un \( \fcti_\fct
+  \) tel que \( P_{\fcti_\fct}(\ex*) \neq 0 \). On considère alors le polynôme
+  \( \mathcal P \in \Qbar[X_1, \dots, X_s] \) défini par
+  \begin{equation}
+    \mathcal P
+    =
+    \prod\fctrange P_1(\ex*) X_1 + \dots + P_s(\ex*) X_s
+  \end{equation}
+  qui est donc homogène de degré \( \puiss \), et n'est pas le polynôme nul,
+  car un de ses coefficients est \( \prod\fctrange P_{\fcti_\fct}(\ex*) \) qui
+  n'est pas nul. On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
+    \abs{\lambda_\fcti} \le \max(\puiss/2, 1) \) en lequel \( \mathcal P \) ne
+  s'annulle pas.
+
+  On pose alors \( Q = \mathcal P(\lambda) \) et \( F = \zeros Q \). Par
+  construction, il est clair que \( F \) est de degré \( \Delta \) et contient
+  \( V \) mais aucun des \( \ex* \). Par ailleurs, \( \hautl[1]{\lambda}
+    \le \ln s + \ln(\puiss/2 + 1) \), ce qui donne immédiatement
+  \begin{equation}
+    \hautl[1] F
+    \le
+    \hautl[1] V + (u + 2) \Delta \ln \Delta
+    + (u+2)(\dimp+1) \ln (\Delta + 2)
+    + \ln(\puiss/2 + 1)
+  \end{equation}
+  qui implique l'estimation annoncée.
+\end{proof}
+
+
 \endinput
 
 % vim: spell spelllang=fr
