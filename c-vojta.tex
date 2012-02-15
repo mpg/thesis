@@ -5319,8 +5319,8 @@ sur les différents paramètres en jeu dans notre situation.
     \item \(
         \distv[\place, \vaemb']{x}{\divi}
         \le
-        \distv[\place, \vaemb]{x}{F}
-        \cdot \sqrt\delta^\dv
+        \distv[\place, \vaemb]{x}{f}
+        \cdot \delta^{\dv/2}
       \) ; \label{i:hs-vero-dv}
     \item \(
         \hautl[2, \vaemb']{x}
@@ -5577,16 +5577,49 @@ sur les différents paramètres en jeu dans notre situation.
       \bigr) (\genre+1) \deg \va,
       \\ & \qquad
       \delta \hlclab + 3 \delta \dimp + \frac52 \dimp \ln \delta
-      + \frac52 \hautl[1] E \expb^{\delta\dimp}
+      + \frac52 \hautl[1] F \expb^{\delta\dimp}
       \\ & \qquad
       \delta \htcmp
-      + \hautl[2] E \expb^{\delta\dimp}
+      + \hautl[2] F \expb^{\delta\dimp}
       + \frac\delta2 \ln(\dimp),
       \\ & \qquad
       \delta^\dimp \ln(\delta) \dimp
     \bigr)
   \end{align}
 \end{coro}
+
+\begin{proof}
+  On considère le plongement \( \vaemb' \) et l'hyperplan \( \divi \) fournis
+  par le lemme~\ref{l:hs-vero} précédent et on prévoit d'appliquer le
+  corollaire~\ref{c:vojta-div-any} dans ce cadre avec \( \eps' = \delta\eps \)
+  comme exposant d'approximation. Il s'agit donc de vérifier que nos
+  conditions impliquent celles du corollaire en question.
+
+  Concernant l'hypothèse d'approximation, on
+  \begin{align}
+    \distv[\place, \vaemb']{ \ex* }{\divi}
+    \le
+    \distv[\place, \vaemb]{ \ex* }{f}
+    \cdot \delta^{\dv/2}
+    & \le
+    \bigl( \delta (n + 1)^3 \bigr)^{-\dv/2}
+    \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx}
+    \cdot \delta^{\dv/2}
+    \\ & \le
+    \delta (n + 1)^{-3\dv/2}
+    \hautm[2, \vaemb']{\ex*}^{-\delta \wtapx \expapx}
+  \end{align}
+  ce qui justifie le choix fait pour \( \eps' \). La condition suivante vient
+  en remarquant que la hauteur normalisé est multipliée par \( \delta \) en
+  changeant de plongement et que les constantes ont été adapté pour tenir
+  compte des variations de degrés, hauteurs et dimension ambiante. Enfin, les
+  rapports de hauteurs normalisés et les angles dans l'espace de \MoW sont
+  invariants sous le changement de plongement considéré, les deux dernières
+  conditions sont donc inchangées.
+
+  On peut dont appliquer le corollaire~\ref{c:vojta-div-any} comme prévu et
+  conclure.
+\end{proof}
 
 \endinput
 
