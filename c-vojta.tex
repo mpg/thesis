@@ -5692,6 +5692,89 @@ contrôlés.
   qui implique l'estimation annoncée.
 \end{proof}
 
+\begin{coro} \label{c:vojta-gen1}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
+  aux hypothèses~\ref{h:vaemb}, \( V \) une variété de \( \projd \) de
+  degré \( \Delta \) et de dimension \( u \), et \( 0 < \eps < 1 \) un nombre
+  réel.  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
+    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+  simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{\ex*}{\divi}
+    & <
+    \bigl( \Delta (n + 1)^3 \bigr)^{-\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \\
+    \hautn{\ex[1]}
+    & > \frac4\Delta \cst{ht-v-gen1} \Lambda_3^{(1 + \frac1\puiss)
+      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    \\
+    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    4 \puiss \Lambda_3^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    \\
+    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \frac1{ \puiss }
+    \left(
+      \frac{ \Delta \eps }{
+        86 \nclmaps \cdot 5^\genre \binom{\dimp + \Delta}{\Delta}
+        }
+    \right)^{ \frac{\puiss}{\puiss-\genre} }
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda_3
+    & = \max \bigl(
+      (\Delta^\genre \deg \va)^\puiss,
+      5 \puiss^2
+      \bigl(
+        86 \nclmaps \cdot 5^\genre \cdot (\Delta\eps)^{-1}
+        { \textstyle \binom{\dimp + \Delta}{\Delta} }
+      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+      \Delta^\genre \deg \va,
+      (\sqrt2 \puiss \genre)^{\puiss\genre}
+    \bigr)
+    \\
+    \newcst[\Theta]{ht-v-gen1}
+    & = \max \biggl(
+      \Delta^{\genre+1} \hautl[1]{\va}
+      +  (\genre+1) \deg \va \Bigl(
+        \Delta^{\genre+1} \dimp \ln(\Delta)
+      \\ & \hspace{4em}
+        + \Delta^\genre \expb^{\Delta\dimp}
+        \bigl(
+          \hautl[1]{ V }
+          + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
+          + \ln(\puiss/2 + 1)
+        \bigr)
+      \Bigr),
+      \\ & \qquad
+      \Delta \hlclab + 3 \Delta \dimp + \frac52 \dimp \ln \Delta
+      + \frac52 V \expb^{\Delta\dimp}
+        \bigl(
+          \hautl[1]{ V }
+          + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
+          + \ln(\puiss/2 + 1)
+        \bigr)
+      \\ & \qquad
+      \Delta \htcmp
+      + \expb^{\Delta\dimp}
+        \bigl(
+          \hautl[1]{ V }
+          + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
+          + \ln(\puiss/2 + 1)
+        \bigr)
+      + \frac\Delta2 \ln(\dimp),
+      \\ & \qquad
+      \Delta^\dimp \ln(\Delta) \dimp
+    \biggr)
+  \end{align}
+\end{coro}
+
+\begin{proof}
+  Découle immédiatement du corollaire~\ref{c:vojta-hs} appliqué à
+  l'hypersurface produite par le lemme précédent.
+\end{proof}
 
 \endinput
 
