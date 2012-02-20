@@ -59,38 +59,34 @@ on associe les constantes suivantes.
   \end{enumthm}
 \end{nota}
 
-\begin{rem}
+\begin{rem} \label{r:vaemb}
   L'annexe~\ref{chap:plong-mm} montre que de telles constantes existent pour
-  tout plongement et donne des valeurs admissibles dans un certain nombre de
-  cas, par exemple celui où \( \va \) est une courbe elliptique plongée à la
-  \bsc{Weierstrass} ou bien le cas plus général où l'on utilisera un
-  plongement de \bsc{Mumford} modifié.
+  tout plongement et donne des valeurs admissibles pour tout ou partie de ces
+  constantes dans un certain nombre de cas, par exemple celui où \( \va \) est
+  une courbe elliptique plongée à la \bsc{Weierstrass} ou bien le cas plus
+  général où l'on utilisera un plongement de \bsc{Mumford} modifié. Elle
+  établit par ailleurs des relations entre \( \htcmp \) et \( \hlclab \) ; on
+  formulera néanmoins les énoncés suivants avec une dépendance explicite en
+  chacune de ces constantes pour des raisons de clarté et d'optimalité pour
+  les cas où l'une serait mieux contrôler que l'autre.
 
   Dans tous les cas considérés, on aura \( \dimp \ge 2 \) et \( N \ge 3 \), et
   le degré de (l'image de) \( \va \) dans le plongement sera au moins \( 3 \).
-
-  Par ailleurs, on peut toujours majorer \( \htcmp \) par \( 4 \hlclab \) en
-  suivant la méthode utilisée dans~\cite{daphimhva2} pour déduire la
-  proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à
-  un cas particulier de l'hypothèse~\eqref{e:clab-loc}. On formule néanmoins
-  les énoncés avec un \( \htcmp \) indépendant de \( \hlclab
-  \) car dans certains cas on sait expliciter de la première constante mais
-  pas de la seconde.
 \end{rem}
 
 On fixe désormais et jusqu'au début de la section~\ref{sec:vojta-coro} un
-plongement projectif de \( \va \) et des constantes comme ci-dessus.  Le but
-des prochaines sections est alors de prouver le théorème suivant, où les
-notions de distance et de hauteurs découlent du plongement fixé.
+plongement projectif de \( \va \) et des constantes associées à ce plongement
+comme ci-dessus. Le but des prochaines sections est alors de prouver le
+théorème suivant, où les notions de distance et de hauteurs découlent du
+plongement fixé.
 
 \begin{thm} \label{t:vojta-div}
   \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
-  hypothèses~\ref{h:vaemb}, \( \divi \) l'hyperplan défini par
-  \( \vp[0] = 0 \) dans ce plongement et \( 0 < \eps < 1 \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
-  simultanément aux conditions suivantes :
+  Soient \( \divi \) l'hyperplan défini par \( \vp[0] = 0 \) dans le
+  plongement fixé et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+    \va(\Qbar) \) aucune famille de points \( \ex[1], \dots, \ex[\puiss] \)
+  avec \( \puiss \ge \genre + 1 \) satisfaisant simultanément aux conditions
+  suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & < \hautm[2]{\ex*}^{-\wtapx \expapx}
@@ -176,8 +172,8 @@ Nous utiliserons des combinaisons linéaires des \( \ex* \) de petite hauteur.
 Les lemmes suivants permettent de choisir les coefficients pour ces
 combinaisons ; nous les prendrons entiers et n'ayant que \( 2 \) et \( 3 \)
 pour diviseurs premiers, de sorte à disposer de représentations polynomiales
-convenables des formes linéaires abéliennes associées données par
-les hypothèses~\ref{h:vaemb}.
+convenables des formes linéaires abéliennes associées
+satisfaisant~\eqref{e:clab-norm} et~\eqref{e:clab-loc}.
 
 \begin{lem} \label{l:wt-choose-gen}
   Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
@@ -1274,7 +1270,7 @@ dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\clmap \)
 désigne la localisation de l'anneau des coordonnées au départ correspondant à
 l'ouvert \( \clmap \).
 
-Les hypothèses~\ref{h:vaemb} fournissent un atlas \( \clmaps \) de \( \va^2 \)
+On dispose (notations~\ref{n:vaemb}) d'un atlas \( \clmaps \) de \( \va^2 \)
 avec sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x
   - \beta y \) dans le plongement \( \vaemb \). Voyons comment en déduire un
 atlas de \( \va^\puiss \) et des représentations locales de \( \wemb \) dans
@@ -1294,7 +1290,7 @@ On introduit alors pour chaque \( \fcti \) la forme
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
 où \( \wembclp{\clmap}{\fcti} \) est donnée par les
-hypothèses~\ref{h:vaemb}, de sorte que chaque application
+notations~\ref{n:vaemb}, de sorte que chaque application
 \begin{align} \label{e:def-wemba}
      \wemba* \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
@@ -1418,7 +1414,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \pmm,
   \end{align}
   où l'on rappelle que \( \hmclab \) est donné par les
-  hypothèses~\ref{h:vaemb}.
+  notations~\ref{n:vaemb}.
 \end{lem}
 
 \begin{proof}
@@ -1448,7 +1444,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
     \delta \) pour tout \( \fcti \), puis en
-  utilisant les hypothèses~\ref{h:vaemb}. En prenant le
+  utilisant les notations~\ref{n:vaemb}. En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
   pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
   de~\eqref{e:varset-deg}
@@ -1831,8 +1827,8 @@ et \( \ftarget \) est somme directe de tels espaces.
 \end{proof}
 
 Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du
-fait que \( \card \clmaps^{\puiss-1} = \nclmaps^{\puiss-1} \) d'après les
-hypothèses~\ref{h:vaemb}, on a immédiatement
+fait que \( \card \clmaps^{\puiss-1} = \nclmaps^{\puiss-1} \), on a
+immédiatement
 \begin{equation}
   \dim \ftarget
   \le
@@ -3219,7 +3215,7 @@ Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
 Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
-\( \clmapv* \) la carte donnée par les hypothèses~\ref{h:vaemb} avec \( (a, b,
+\( \clmapv* \) la carte donnée par les notations~\ref{n:vaemb} avec \( (a, b,
   x, y) = (\wt*, \wt**, \ex*, \ex**) \), puis \( \clmapv = (\clmapv[1], \dots,
   \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).  On
 pose alors pour simplifier \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv =
@@ -3335,7 +3331,7 @@ On pose enfin
   \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
 \end{equation}
 (où l'on rappelle que \( \wembclp\clmapv\fcti \) est donné par les
-hypothèses~\ref{h:vaemb}) de sorte que
+notations~\ref{n:vaemb}) de sorte que
 \begin{equation}
   \der[\dermp] \ratf(\ex)
   =
@@ -4566,8 +4562,8 @@ suivant~\eqref{e:Vbig-ct-extra}.
 \subsection{Estimations diverses}
 
 Commençons par quelques estimations générales ; on rappelle pour commencer que
-\( \dimp \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après les
-hypothèses~\ref{h:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
+\( \dimp \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après la
+remarque~\ref{r:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
   \ge 2 \). Ainsi, le dernier argument du maximum dans la
 définition~\eqref{e:cst-vs-ht} de \( \cst{vs-ht} \) donne
 \( \cst{vs-ht} \ge \dimp \ln 4 \ge 4 \).
@@ -4816,11 +4812,6 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         \hautl[1, \vaemb]{\va}
         + \hautl[1, \vaemb]{ E } (\genre+1) \deg \va
       \). \label{i:plin-ht-va}
-  \end{enumthm}
-  De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
-  également le cas de \( \vaemb' \) avec les mêmes valeurs de \( \dimp \) et
-  \( N \) et
-  \begin{enumthm} \setcounter{enumi}3
     \item \(
         \htcmp[\vaemb']
         =
@@ -4835,6 +4826,8 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         + \frac52 \hautl[1, \vaemb] E
       \).
   \end{enumthm}
+  Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
+  par les notations~\ref{n:vaemb} et la dimension ambiante sont inchangées.
 \end{lem}
 
 \begin{proof}
@@ -4943,7 +4936,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
 
   Enfin, si \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) est
   une famille de \( (\dimp+1) \)-uplets de formes comme au point~\ref{i:clab}
-  des hypothèses~\ref{h:vaemb}, on pose
+  des notations~\ref{n:vaemb}, on pose
   \begin{equation}
     \rmclab{a}{b}{\clmap}[\vaemb']
     =
@@ -5013,11 +5006,10 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
 On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}.
 
 \begin{coro} \label{c:vojta-div-dv}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant aux
-  hypothèses~\ref{h:vaemb}, \( \divi \) un hyperplan de \( \projd \), \( p_0
-  \) le point de \( \projd \) de coordonnées homogènes \( (1 {:} 0 {:} \cdots
-    {:} 0) \)
-  et \( 0 < \eps < 1 \) un nombre réel.
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( \divi \) un hyperplan de \( \projd \), \( p_0 \) le point de \( \projd \)
+  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \eps < 1
+  \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes, où les notions de distance et de
@@ -5155,9 +5147,8 @@ ceci a en revanche un coût, qui consiste à remplacer \( \expapx \) par \(
 au cours de la preuve.
 
 \begin{coro} \label{c:vojta-div-any}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
-  aux hypothèses~\ref{h:vaemb}, \( \divi \) un hyperplan de \( \projd \)
-  et \( 0 < \eps < 1 \) un nombre réel.
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( \divi \) un hyperplan de \( \projd \) et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
@@ -5343,11 +5334,6 @@ sur les différents paramètres en jeu dans notre situation.
         \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
         + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
-  \end{enumthm}
-  De plus, si \( \vaemb \) satisfait les hypothèses~\ref{h:vaemb}, alors c'est
-  également le cas de \( \vaemb' \) avec \( \dimp' \) pour dimension ambiante,
-  la même valeur de \( N \) et
-  \begin{enumthm} \setcounter{enumi}5
     \item \(
         \htcmp[\vaemb']
         =
@@ -5362,6 +5348,8 @@ sur les différents paramètres en jeu dans notre situation.
         + \Delta (2\dimp + \frac52 \ln(\dimp + 1))
       \).
   \end{enumthm}
+  Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
+  par les notations~\ref{n:vaemb} est inchangé.
 \end{lem}
 
 \begin{proof}
@@ -5421,7 +5409,7 @@ sur les différents paramètres en jeu dans notre situation.
 
   Enfin, pour chaque \( (a, b, \clmap) \) on considère la famille
   \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par les
-  hypothèses~\ref{h:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
+  notations~\ref{n:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
   \( \Delta \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
   bihomogène de bidegré \( (2\Delta a^2, 2\Delta b^2) \) en \( (\vmp[1],
@@ -5470,7 +5458,7 @@ sur les différents paramètres en jeu dans notre situation.
   point de \( \projd \) et \( x' \) l'image de ces coordonnées par \( \chi \),
   on a en toute place \( \nv2{ x' } = \nv2{ x }^\Delta \). Ainsi, vu les
   définitions ci-dessus, on a
-  \begin{equation} \label{e:clab-loc}
+  \begin{equation}
     \frac{
       \nv2{ \rmclab{a}{b}{ \clmap }[\vaemb'](x', y') }
     }{
@@ -5529,8 +5517,8 @@ sur les différents paramètres en jeu dans notre situation.
 \end{proof}
 
 \begin{coro} \label{c:vojta-hs}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
-  aux hypothèses~\ref{h:vaemb}, \( F \) une hypersurface de \( \projd \) de
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( F \) une hypersurface de \( \projd \) de
   degré \( \Delta \) et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
@@ -5696,10 +5684,10 @@ contrôlés.
 \end{proof}
 
 \begin{coro} \label{c:vojta-gen1}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement satisfaisant
-  aux hypothèses~\ref{h:vaemb}, \( V \) une variété de \( \projd \) de
-  degré \( \Delta \) et de dimension \( u \), et \( 0 < \eps < 1 \) un nombre
-  réel.  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
+    u \), et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}

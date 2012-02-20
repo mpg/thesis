@@ -121,8 +121,6 @@ Plongements et formulaires {{{2
         Fait gloablement. Reste à ajuster les notations dans mumford et vojta
         là où ces sections sont référencées.
 
-(B) Compléter les preuves (cf. notes manuscriptes en partie)
-
 Maths {{{1
 =====
 
@@ -155,6 +153,17 @@ Annexe normes et mesures {{{2
 ------------------------
 
 (B) Faire un état des lieux et un plan d'attaque.
+
+Plongements et formulaires {{{2
+--------------------------
+
+(B) Compléter les preuves (cf. notes manuscriptes en partie)
+
+(B) Majoration de la constante de comparaison en fonction des formules de
+duplication :
+  méthode utilisée dans~\cite{daphimhva2} pour déduire la
+  proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à
+  un cas particulier de l'hypothèse~\eqref{e:clab-loc}.
 
 Autres, divers {{{2
 --------------
