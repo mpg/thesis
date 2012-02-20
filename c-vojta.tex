@@ -10,21 +10,21 @@ particulier où la variété à approcher est (dans un plongement fixé)
 l'hyperplan \( \vp[0] = 0 \) ; nous verrons plus tard
 (section~\ref{sec:vojta-coro}) que ce cas implique le cas général.  Cet
 hyperplan, ainsi que les notions de hauteur et de distance utilisées dépendent
-d'un plongement projectif \( \vaemb \colon \va \embedin \projd \) fixé, sur
-lequel on fait les hypothèses suivantes.
+d'un plongement projectif \( \vaemb \colon \va \embedin \projd \) fixé, auquel
+on associe les constantes suivantes.
 
-\begin{hypo} \label{h:vaemb}
+\begin{nota} \label{n:vaemb}
   \begin{enumthm}
-    \item Il existe une constante réelle \( \htcmp \) telle que
+    \item On note \( \htcmp \) une constante réelle telle que
       \begin{equation} \label{e:comp-h-hn}
         \abs{ \hautl[2]\point - \hautn\point } \le \htcmp
         \qquad \forall \point \in \va(\Qbar)
         \pmm.
       \end{equation}
     \item \label{i:clab}
-      Il existe une famille de réels \( \hmclab* \) presque tous égaux à
-      \( 1 \) (de sorte que \( \hmclab = \prod_\place \hmclab*^{\degv} \) est
-      bien défini), un entier \( \nclmaps \), un ensemble \( \clmaps \) de \(
+      On note \( \hmclab* \) une famille de réels presque tous égaux à
+      \( 1 \) (de sorte que \( \hlclab = \sum_\place \degv \ln\hmclab* \) est
+      bien défini), \( \nclmaps \) un entier, \( \clmaps \) un ensemble de \(
         \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
       suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
       \) et \( 3 \) comme diviseurs premiers, il existe une famille
@@ -56,29 +56,32 @@ lequel on fait les hypothèses suivantes.
           (Le membre de droite est par ailleurs majoré par \( \hmclab*^{a^2 +
               b^2} \) d'après les propriétés de la norme utilisée.)
       \end{enumerate}
-
-      On note de plus \( \hlclab = \ln \hmclab \). On supposera par ailleurs
-      que \( \dimp \ge 2 \) et \( N \ge 3 \), et que le degré de \( \va \)
-      dans ce plongement est au moins \( 3 \).
   \end{enumthm}
-\end{hypo}
+\end{nota}
 
-Ces hypothèses recouvrent aussi bien le cas où \( \va \) est une courbe
-elliptique plongée à la \bsc{Weierstrass} que le cas plus général où l'on
-utilisera un plongement de \bsc{Mumford} modifié ; voir
-l'annexe~\ref{chap:plong-mm} pour plus de détails à ce sujet. Remarquons par
-ailleurs qu'on peut toujours majorer \( \htcmp \) en fonction de \( \hlclab \)
-en suivant la méthode utilisée dans~\cite{daphimhva2} pour déduire la
-proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à un
-cas particulier de l'hypothèse~\eqref{e:clab-loc}. On formule néanmoins les
-énoncés avec un \( \htcmp \) indépendant de \( \hlclab \) car dans certains
-cas on sait expliciter de la première constante mais pas de la seconde.
+\begin{rem}
+  L'annexe~\ref{chap:plong-mm} montre que de telles constantes existent pour
+  tout plongement et donne des valeurs admissibles dans un certain nombre de
+  cas, par exemple celui où \( \va \) est une courbe elliptique plongée à la
+  \bsc{Weierstrass} ou bien le cas plus général où l'on utilisera un
+  plongement de \bsc{Mumford} modifié.
+
+  Dans tous les cas considérés, on aura \( \dimp \ge 2 \) et \( N \ge 3 \), et
+  le degré de (l'image de) \( \va \) dans le plongement sera au moins \( 3 \).
+
+  Par ailleurs, on peut toujours majorer \( \htcmp \) par \( 4 \hlclab \) en
+  suivant la méthode utilisée dans~\cite{daphimhva2} pour déduire la
+  proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à
+  un cas particulier de l'hypothèse~\eqref{e:clab-loc}. On formule néanmoins
+  les énoncés avec un \( \htcmp \) indépendant de \( \hlclab
+  \) car dans certains cas on sait expliciter de la première constante mais
+  pas de la seconde.
+\end{rem}
 
 On fixe désormais et jusqu'au début de la section~\ref{sec:vojta-coro} un
-plongement répondant aux hypothèses ci-dessus ; on utilisera également les
-notations introduites dans ces hypothèses. Le but des prochaines sections est
-alors de prouver le théorème suivant, où les notions de distance et de
-hauteurs découlent du plongement fixé.
+plongement projectif de \( \va \) et des constantes comme ci-dessus.  Le but
+des prochaines sections est alors de prouver le théorème suivant, où les
+notions de distance et de hauteurs découlent du plongement fixé.
 
 \begin{thm} \label{t:vojta-div}
   \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}

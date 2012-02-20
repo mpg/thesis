@@ -129,9 +129,9 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) Corollaires :
-- hypersurface via un Veronese
-- variété générale via un bon choix d'hypersurface la contenant
+(A) corriger et simplifier les coros
+
+(A) utilisation de l'hypothèse \hmclab (minoration)
 
 (C) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
 
