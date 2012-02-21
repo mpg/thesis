@@ -5669,55 +5669,64 @@ contrôlés.
     \hautm[1] F
     \le
     \hautl[1] V
-    + (u + 2) \ln (\Delta + 2) \bigl( \delta + \dimp + 1 \bigr)
-    + \ln(\puiss/2 + 1)
+    + (u + 2) \ln (\Delta + 1) \bigl( \Delta + \dimp + 1 \bigr)
+    + \ln(\puiss/2)
     \pmm.
   \end{equation}
 \end{lem}
 
 \begin{proof}
   On se base sur la proposition~6.1 (p. 543) de~\cite{remdcl}, qui fournit une
-  famille de polynômes \( P_1, \dots, P_s \) définissant \( V \)
-  (ensemblistement). On utilisera plutôt les hauteurs \( \Hautl[1] \), pour
-  lesquelles on obtient la majoration suivante :
+  famille de formes \( P_1, \dots, P_s \) de degré \( \Delta \) définissant \(
+    V \) (ensemblistement), avec une variante : si \( \Delta = 1 \) on choisit
+  pour \( \mathcal M_2 \) (dans les notations de la preuve de \lat{loc. cit.})
+  l'ensemble des matrices dont les coefficients sont \( 0 \) ou \( 1 \), de
+  sorte que pour tout \( \Delta \) on a
+  \begin{equation}
+    s = \card \mathcal M_2 \le (\Delta + 1)^{(u+2)(\dimp+1)}
+    \pmm.
+  \end{equation}
+  Par ailleurs, on utilisera plutôt les hauteurs \( \Hautl[1] \), pour
+  lesquelles on obtient la majoration suivante
   \begin{equation}
     \hautl[1]{ P_i }
     \le
-    \hautl[1] V + (u + 2) \Delta \ln \Delta
-    \pmm.
+    \hautl[1] V + (u + 1) \Delta \ln(\Delta + 1)
   \end{equation}
-  Par ailleurs, on remarque que, en reprenant les notations de la référence
-  citée :
-  \begin{equation}
-    s = \card \mathcal M_2 \le (\Delta + 2)^{(u+2)(\dimp+1)}
-  \end{equation}
-  par définition en remarquant qu'il y a au plus \( \Delta + 2 \) entiers de
-  valeur absolue inférieure ou égale à \( \max(\Delta/2, 1) \).
+  en remarquant que les \( P_i \) sont une spécialisation de la forme de
+  \bsc{Chow} de \( V \) en des points (formes linéaires) de hauteur \(
+    \Hautm[1] \) au plus \( \Delta + 1 \) : au plus deux coefficients non
+  nuls, tous deux dans \( I_\Delta \).
+
+  Si \( \puiss = 1 \), il suffit de choisir un \( P_i \) ne s'annulant pas en
+  \( \ex[1] \). On suppose donc désormais que \( \puiss \ge 2 \).
 
   Pour chaque \( \fct \in \set{1, \dots, \puiss} \) on fixe un \( \fcti_\fct
   \) tel que \( P_{\fcti_\fct}(\ex*) \neq 0 \). On considère alors le polynôme
-  \( \mathcal P \in \Qbar[X_1, \dots, X_s] \) défini par
+  \( \mathcal P \in \Qbar[T_1, \dots, T_s] \) défini par
   \begin{equation}
     \mathcal P
     =
-    \prod\fctrange P_1(\ex*) X_1 + \dots + P_s(\ex*) X_s
+    \prod\fctrange P_1(\ex*) T_1 + \dots + P_s(\ex*) T_s
   \end{equation}
   qui est donc homogène de degré \( \puiss \), et n'est pas le polynôme nul,
   car un de ses coefficients est \( \prod\fctrange P_{\fcti_\fct}(\ex*) \) qui
   n'est pas nul. On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
-    \abs{\lambda_\fcti} \le \max(\puiss/2, 1) \) en lequel \( \mathcal P \) ne
+    \abs{\lambda_\fcti} \le \puiss/2 \) en lequel \( \mathcal P \) ne
   s'annulle pas.
 
-  On pose alors \( Q = \mathcal P(\lambda) \) et \( F = \zeros Q \). Par
-  construction, il est clair que \( F \) est de degré \( \Delta \) et contient
-  \( V \) mais aucun des \( \ex* \). Par ailleurs, \( \hautl[1]{\lambda}
-    \le \ln s + \ln(\puiss/2 + 1) \), ce qui donne immédiatement
+  On pose alors \( Q = \lambda_1 P_1 + \dots + \lambda_s P_s \) et \( F =
+    \zeros Q \). Par construction, il est clair que \( F \) est de degré \(
+    \Delta \) et contient \( V \) mais aucun des \( \ex* \) (en effet, \(
+    \prod\fctrange Q(\ex*) = \mathcal P(\lambda) \neq 0 \)).  Par ailleurs, \(
+    \hautl[1]{\lambda} \le \ln s + \ln(\puiss/2) \), ce qui donne
+  immédiatement
   \begin{equation}
     \hautl[1] F
     \le
-    \hautl[1] V + (u + 2) \Delta \ln \Delta
-    + (u+2)(\dimp+1) \ln (\Delta + 2)
-    + \ln(\puiss/2 + 1)
+    \hautl[1] V + (u + 1) \Delta \ln(\Delta + 1)
+    + (u+2)(\dimp+1) \ln (\Delta + 1)
+    + \ln(\puiss/2)
   \end{equation}
   qui implique l'estimation annoncée.
 \end{proof}
