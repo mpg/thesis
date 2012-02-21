@@ -1437,7 +1437,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
       \nv1{ \vadapt**^{-1} }^{2\wts**}
     \right) ^{q\pexp\fcti[\ind]}
-    \\ & \le \label{e:hmat-wemba-switch}
+    \\ & \le
     \prod\fctirange \left(
       \hmclab*^{\wtis* + \wts**} \,
       \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
@@ -2218,8 +2218,8 @@ propriétés de ces formes dont nous aurons besoin.
 
   Pour la dernière assertion, on procède exactement comme pour majorer la
   hauteur de \( \faux* \) sauf qu'on utilise le corollaire~\ref{c:ht-wemba} à
-  la place du lemme~\ref{l:hmat-wemba}, ce qui donne une majoration en tous
-  points similaire à la précédente :
+  la place du lemme~\ref{l:hmat-wemba}, ce qui donne une majoration identique
+  à la précédente :
   \begin{align}
     \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
     \le
@@ -3248,7 +3248,7 @@ de nouveau la remarque sur les \( \wembclv* \) pour simplifier le second :
         \wembclv**(\vmp[\fcti], \vmp[\puiss])
       }
     \right)^\delta
-  }_{\textstyle \ratfv2'}
+  }_{\textstyle \ratfv2}
   \cdot \underbrace{
     \prod\fctirange \left(
       \frac{
@@ -3272,7 +3272,7 @@ l'écriture précédente sont tous définis et inversibles en \( \cex \) grâce 
 différents choix d'indices et au premier point du scolie~\ref{s:part-cases},
 une nouvelle application du lemme~\ref{l:indice-inversible} montre que, pour
 tout \( \place \) :
-\begin{equation}
+\begin{equation} \label{e:def-ratfv1}
   \der[\dermp] \ratf(\ex)
   =
   \underbrace{
@@ -3282,30 +3282,21 @@ tout \( \place \) :
     }{
       \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
     }
-  }_{\textstyle \ratfv1'} \null
+  }_{\textstyle \ratfv1} \null
   ( \cexa )
-  \cdot \ratfv2'(\cexa)
+  \cdot \ratfv2(\cexa)
   \cdot \ratfv3(\cexa)
   \cdot \ratfv4(\cexa)
 \end{equation}
-On pose enfin
-\begin{equation} \label{e:def-ratfv12}
-  \ratfv2 = \ratfv2' \cdot
-  \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^\delta
-  \quad\text{et}\quad
-  \ratfv1 = \ratfv1' \cdot
-  \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
-\end{equation}
-(où l'on rappelle que \( \wembclp\clmapv\fcti \) est donné par les
-notations~\ref{n:vaemb}) de sorte que
-\begin{equation}
+c'est-à-dire que
+\(
   \der[\dermp] \ratf(\ex)
   =
   \ratfv1(\cexa)
   \cdot \ratfv2(\cexa)
   \cdot \ratfv3(\cexa)
   \cdot \ratfv4(\cexa)
-\end{equation}
+\).
 Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
 mais pas leur produit.
 
@@ -3445,25 +3436,13 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
     \nv1{ \wembclp\clmapv\fcti(\cex[\fcti], \cex[\puiss]) }
   }
   (\dimp+1)^\dv B^{2 \dv (\wts[\fcti] + \wts[\puiss])}
-\end{align}
-et, compte tenu de~\eqref{e:clab-loc} et de la définition de \( \clmapv \)
-ci-dessus,
-\begin{equation}
-  \frac{
-    \nnv1{ \wembclp{\clmapv}{\fcti} }
-    \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
-    \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
-  }{
-    \av{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
-  }
-  \le
+  \\ & \le
   (\dimp+1)^\dv
   \bigl( \hmclab* B^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
-  \pmm.
-\end{equation}
-Il ne reste alors plus qu'à prendre le logarithme dans l'estimation
-précédente, multiplier par \( \delta \) puis sommer sur \( \place \) et sur \(
-  \fcti \) pour avoir
+\end{align}
+compte tenu de~\eqref{e:clab-loc} et du choix des \( \clmapv \).  Il ne reste
+alors plus qu'à prendre le logarithme dans l'estimation précédente, multiplier
+par \( \delta \) puis sommer sur \( \place \) et sur \( \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
   \delta \bigl( 2 \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
@@ -3472,12 +3451,10 @@ en utilisant encore le lemme~\ref{l:sum-wts}.
 
 \medskip
 
-Nous allons maintenant expliciter \( \ratfv1 \). Posons
-\( G_\place = \fauxv \cdot
-  \prod\fctirange \nnv1{ \wembclp\clmapv\fcti }^{-\delta}
-\) ; pour chaque place \( \place \), on applique alors le
-lemme~\ref{l:par-var} avec \( G = G_\place \) et \( \ind = \indv \), et on
-note \( P_\place = P_{G_\place, \indv, \dv}^\dermp \) la forme obtenue pour
+Nous allons maintenant expliciter \( \ratfv1 \).
+Pour chaque place \( \place \), on applique alors le
+lemme~\ref{l:par-var} avec \( G = \fauxv \) et \( \ind = \indv \), et on
+note \( P_\place = P_{\fauxv, \indv, \dv}^\dermp \) la forme obtenue pour
 l'indice \( \dermp \) fixé plus haut (plus précisément, celle des deux formes
 obtenues qui correspond à la place considérée). Remarquons comme précédemment
 que \( P_\place \) parcourt un ensemble fini de formes à coefficients
@@ -3525,7 +3502,7 @@ des propriétés suivantes.
   Chaque point découle du point correspondant du lemme~\ref{l:par-var}, en
   tenant compte des informations connues sur \( \fauxv \) (voir le
   scolie~\ref{s:aux-co}) et \( \dermp \) (voir~\eqref{e:extra-dermp}). Le
-  premier est immédiat d'après la définition~\eqref{e:def-ratfv12} de \(
+  premier est immédiat d'après la définition~\eqref{e:def-ratfv1} de \(
     \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
 
   Avant de passer au degré, remarquons que l'hypothèse~\eqref{e:extra-dermp}
@@ -3557,7 +3534,7 @@ des propriétés suivantes.
   \begin{align}
     \hautl[1]{ (P_\place)_\place }
     & \le
-    \hautl[1]{ (G_\place)_\place }
+    \hautl[1]{ (\fauxv)_\place }
     \\ & \qquad
     + \sum\fctrange \bigl(
       2 \lgr{\dermp*} \hautl[1]{ \varfca* }
@@ -3565,7 +3542,7 @@ des propriétés suivantes.
       + \genre (\Dir*) \ln 2
     \bigr)
   \\ & \le
-    \hautl[1]{ (G_\place)_\place }
+    \hautl[1]{ (\fauxv)_\place }
     + 2 \bigl( \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* } \bigr)
     + \delta \genre \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
     + o(\delta)
