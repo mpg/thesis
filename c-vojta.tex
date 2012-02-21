@@ -23,8 +23,7 @@ on associe les constantes suivantes.
       \end{equation}
     \item \label{i:clab}
       On note \( \hmclab* \) une famille de réels presque tous égaux à
-      \( 1 \) (de sorte que \( \hlclab = \sum_\place \degv \ln\hmclab* \) est
-      bien défini), \( \nclmaps \) un entier, \( \clmaps \) un ensemble de \(
+      \( 1 \), \( \nclmaps \) un entier, \( \clmaps \) un ensemble de \(
         \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
       suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
       \) et \( 3 \) comme diviseurs premiers, il existe une famille
@@ -54,8 +53,11 @@ on associe les constantes suivantes.
             \pmm.
           \end{equation}
           (Le membre de droite est par ailleurs majoré par \( \hmclab*^{a^2 +
-              b^2} \) d'après les propriétés de la norme utilisée.)
+              b^2} \) d'après l'inégalité précédente les propriétés de la
+          norme utilisée.)
       \end{enumerate}
+      On note enfin \( \hmclab = \prod_\place \hmclab*^\degv \) et
+      \( \hlclab = \ln \hmclab \).
   \end{enumthm}
 \end{nota}
 
@@ -1462,6 +1464,32 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
 \end{proof}
 
+Énonçons de suite une variante qui nous sera utile par la suite.
+
+\begin{coro} \label{c:ht-wemba}
+  Soient \( (\clmapv)_\place \) est une famille de cartes indexée
+  par les places de \( \cdn \) et \( F \in \cdn[\vmp, \vmpi] \) une forme
+  homogène. Alors
+  \begin{equation}
+    \prod_\place \nv1{ \wemba[\clmapv](F) }^\degv
+    \le
+    \hautm[1] F
+    \bigl(
+      \hmclab (\dimp!)^2 \, B^{2\dimp}
+    \bigr) ^{2 \delta \wts[1]}
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Pour le cas où \( F \) est un monôme, on reprend point par point le preuve
+  précédente, en remplaçant simplement \( \wembclp{\clmap}{\fcti}[\ind] \) par
+  \( \wembclp{\clmapv}{\fcti}[\ind] \) au début, différence qui disparaît au
+  moment où l'on majore la norme de ces formes par \( \hmclab* \), car cette
+  majoration ne dépend pas de la carte utilisée.
+
+  Le cas général se déduit de celui des monômes par linéarité.
+\end{proof}
+
 
 
 \section{Construction d'une forme auxiliaire} \label{sec:siegel}
@@ -2124,7 +2152,7 @@ hauteur utilisée, comme le montre le scolie suivant.
     \frac{ (\delta d_\fct + \dimp)^\dimp }{\dimp!}
     \pmm.
   \end{equation}
-  Cette quantité est polynomiale en \( \delta \), son logarithme est donc
+  Cette quantité étant polynomiale en \( \delta \), son logarithme est
   négligeable devant~\( \delta \).
 \end{proof}
 
@@ -2154,13 +2182,7 @@ propriétés de ces formes dont nous aurons besoin.
   De plus, si \( (\clmapv)_\place \) est une famille de cartes indexée
   par les places de \( \cdn \), on a
   \begin{equation} \label{e:aux-co-htv}
-    \sum_\place \degv \ln \Biggl(
-      \frac{
-        \nv1{ \faux[\clmapv] }
-      }{
-        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
-      }
-    \Biggr)
+    \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
     \le
     14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     + o(\delta)
@@ -2194,74 +2216,18 @@ propriétés de ces formes dont nous aurons besoin.
   montre que \( \hautl[1]{ \faux* } \) est en fait majoré par la même
   quantité.
 
-  Admettons provisoirement que
-  \begin{equation} \label{e:fauxco-prv}
-    \prod_\place \Biggl(
-      \frac{
-        \nv1{ \wemba[\clmapv](\faux) }
-      }{
-        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
-      }
-    \Biggr)^\degv
-    \le
-    \hautm[1]{ \faux }
-    \cdot \bigl( \dimp! \, B^{\dimp} \bigr) ^{4 \delta \wts[1]}
-    \pmm.
-  \end{equation}
-  On procède ensuite comme à la sous-section~\ref{sec:siegel-ht} (sauf qu'on
-  pourrait en fait avoir un terme  \( \hlclab \) en moins, raffinement qui n'a
-  pas d'intérêt en pratique) pour obtenir la même estimation qu'au point
-  précédent :
-  \begin{equation}
-    \sum_\place \degv \ln \Biggl(
-      \frac{
-        \nv1{ \faux[\clmapv] }
-      }{
-        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
-      }
-    \Biggr)
+  Pour la dernière assertion, on procède exactement comme pour majorer la
+  hauteur de \( \faux* \) sauf qu'on utilise le corollaire~\ref{c:ht-wemba} à
+  la place du lemme~\ref{l:hmat-wemba}, ce qui donne une majoration en tous
+  points similaire à la précédente :
+  \begin{align}
+    \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
     \le
     2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
     + o(\delta)
-    \pmm.
-  \end{equation}
+  \end{align}
   Il ne reste qu'à appliquer l'hypothèse~\eqref{e:varset-ht} pour conclure.
-
-  Prouvons maintenant l'assertion~\eqref{e:fauxco-prv} ci-dessus ; il s'agit en
-  fait d'une variante du lemme~\ref{l:hmat-wemba} dont on reprend globalement
-  la preuve. On commence par poser \( c_{p, q, \place} =
-    \wemba[\clmapv](\vmp^p\vmpi^q) \) puis, en procédant comme
-  pour~\eqref{e:hmat-wemba-switch}, on montre que
-  \begin{equation}
-    \frac{
-      \nv1{ c_{p, q, \place} }
-      }{
-        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
-      }
-    \le
-    \prod\fctirange \left(
-      \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
-      \nv1{ \vadapt**^{-1} }^{2\wts**}
-    \right) ^\delta
-    \pmm.
-  \end{equation}
-  La suite de la preuve est identique (à un facteur \( \hmclab*^{\wtis* +
-      \wts**} \) près) et on obtient
-  \begin{equation}
-    \prod_\place \Biggl(
-    \frac{
-      \nv1{ c_{p, q, \place} }
-      }{
-        \prod\fctirange \nnv1{ \wembclp{\clmapv}{\fcti} }^\delta
-      }
-    \Biggr)^\degv
-    \le
-    \bigl( \dimp! \, B^{\dimp} \bigr) ^{4 \delta \wts[1]}
-    \pmm,
-  \end{equation}
-  qui donne l'inégalité annoncée en considérant que \( \faux \) est une
-  combinaison linéaire de monômes.
 \end{proof}
 
 Remarquons qu'on a utilisé l'hypothèse~\eqref{e:varset-ht} pour simplifier la
