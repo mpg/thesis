@@ -1,5 +1,5 @@
 \documentclass[
-% full,
+full,
 % pph,
 % nomark,
 ] {mpg-preth}
@@ -27,6 +27,7 @@
 \inlineinclude{title+toc}{%
   \maketitle
   \setcounter{tocdepth}{2}
+  \vspace*{-2em} % horreur provisoire
   \listoftoc*{toc}
 }
 
@@ -46,9 +47,10 @@
   \printbibliography[heading=bibempty]
 }
 
-\inlineinclude{notations}{%
-  \chapter{Liste des notations}
-  \printnomenclature
-}
+%% pas du tout à jour
+%\inlineinclude{notations}{%
+%  \chapter{Liste des notations}
+%  \printnomenclature
+%}
 
 \end{document}

@@ -131,7 +131,6 @@
 % generic title information [[2
 %
 \author{Manuel \bsc{Pégourié-Gonnard}}
-\subtitle{Notes de travail}
 \date{}
 \hypersetup{pdfauthor={Manuel Pégourié-Gonnard}}
 
