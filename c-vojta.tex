@@ -5191,31 +5191,31 @@ précédent. On commence par un lemme technique qui nous sera utile pour estimer
 quelques normes et hauteurs.
 
 \begin{lem} \label{l:norm-mn}
-  Soient \( n \) et \( \Delta \) deux entiers, et \( \alpha \in \N^{n+1} \)
-  tel que \( \alpha_0 + \dots + \alpha_n = \Delta \). Alors pour toute place
-  \( \place \) d'un corps de nombres contenant \( \binom\Delta\alpha^{-1/2}
-  \), on a
+  Soient \( \dimp \) et \( \Delta \) deux entiers, et \( \alpha \in
+    \N^{\dimp+1} \) tel que \( \alpha_0 + \dots + \alpha_\dimp = \Delta \).
+  Pour toute place \( \place \) d'un corps de nombres contenant \(
+    \binom\Delta\alpha^{-1/2} \), on pose \( \dpv = 1 \) si \( \place \)
+  divise un premier inférieur ou égal ) \( \Delta \) et \( 0 \) sinon. On a
+  alors
   \begin{equation}
     \av*{ \binom\Delta\alpha^{-1/2} }
     \le
-    \begin{cases}
-      \Delta^{n/2} & \text{si } \place \mid p \le \Delta \\
-      1 & \text{sinon.}
-    \end{cases}
+    \Delta^{\dpv \dimp / 2}
   \end{equation}
   De plus, cette valeur absolue vaut \( 1 \) si \( \place \) divise un premier
   strictement supérieur à \( \Delta \).
 
+  Par ailleurs, on a \( \sum_\place \degv \dpv \le 2\Delta / \ln \Delta \).
   En particulier si on note \( b \) le vecteur dont les composantes sont les
-  \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a \(
-    \hautm[\infty] b \le \expb^{\Delta n} \).
+  \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a
+  \( \hautl[\infty] b \le \Delta\dimp  \).
 \end{lem}
 
 \begin{proof}
   Le cas des places archimédiennes est clair. Pour les places finies, on note
   \( p \) tel que \( \av\truc \) prolonge \( \av\truc[p] \) et
   utilise la définition du multinomial en terme de factorielles et la formule
-  de \bsc{Legendre} :
+  (de \bsc{Legendre}) donnant la valuation d'une factorielle :
   \begin{equation}
     v_p( \binom\Delta\alpha )
     =
@@ -5230,10 +5230,10 @@ quelques normes et hauteurs.
   en sommant sur \( i \) on a \( v_p( \binom\Delta\alpha ) \le n \ln_p(\Delta)
   \) qui donne bien l'estimation de valeur absolue annoncée.
 
-  L'estimation de hauteur s'en déduit en prenant le produit sur toutes les
-  places et en observant qu'il n'y a pas plus de \( 1.25506 \Delta / \ln
-    \Delta \) nombres premiers inférieurs à \( \Delta \), d'après le
-  corollaire~1, page~69 de~\cite{rosch}.
+  La somme pondérée des \( \dpv \) est par définition le nombre de premiers
+  inférieurs ou égaux à \( \Delta \), qui est au plus
+  \( 1.25506 \Delta / \ln \Delta \) d'après le corollaire~1, page~69
+  de~\cite{rosch}. L'estimation de hauteur annoncée en découle immédiatement.
 \end{proof}
 
 Le lemme suivant précise l'effet d'un plongement de \bsc{Veronese} remodelé
@@ -5378,8 +5378,7 @@ sur les différents paramètres en jeu dans notre situation.
     \cdot
     \Delta^{\dimp (a^2 + b^2) \dpv}
   \end{equation}
-  où \( \dpv \) vaut \( 1 \) si \( \place \) divise un premier inférieur ou
-  égal à \( \Delta \) et \( 0 \) sinon. En sommant sur \( \beta \) il vient
+  puis en sommant sur \( \beta \) :
   \begin{equation}
     \nnv1{ \rmclab ab\clmap[\vaemb'] }
     \le
@@ -5455,9 +5454,9 @@ sur les différents paramètres en jeu dans notre situation.
     \hmclab[\vaemb']*^{-(a^2 + b^2)}
     \pmm.
   \end{align}
-  Pour en déduire le dernier point, il ne reste plus qu'à prendre le produit
-  sur les différentes places comme à la fin du lemme précédent puis le
-  logarithme.
+  Pour en déduire le dernier point, il ne reste plus qu'à prendre le
+  logarithme puis la somme pondérée sur les différentes places en utilisant à
+  nouveau le lemme précédent pour la somme des \( \dpv \).
 \end{proof}
 
 \begin{coro} \label{c:vojta-hs}
