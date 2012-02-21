@@ -5546,12 +5546,13 @@ sur les différents paramètres en jeu dans notre situation.
       (\Delta^\genre \deg \va)^\puiss,
       5 \puiss^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
-        \Delta \sbin{\dimp + \Delta}{\Delta}
+        86 \nclmaps \cdot 5^\genre
+        \Delta \sbin{\dimp + \Delta}{\Delta} \, \expapx^{-1}
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
       \Delta^\genre \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
     \bigr)
+    \qquad\null
     \\
     \newcst[\Theta]{ht-v-hs}
     & =
@@ -5784,6 +5785,90 @@ contrôlés.
   Découle immédiatement du corollaire~\ref{c:vojta-hs} appliqué à
   l'hypersurface produite par le lemme précédent.
 \end{proof}
+
+On énonce maintenant une version du précédant corollaire avec des constantes
+légèrement simplifiées.
+
+\begin{coro} \label{c:vojta-gen2}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
+    u \), et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
+    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+  simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{\ex*}{\divi}
+    & <
+    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \\
+    \hautn{\ex[1]}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \\
+    \hautn{\ex*} & > \hautn{\ex[\fct-1]}
+    \cdot \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \\
+    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \frac1{ \puiss \, \cst{v-gen} }
+  \end{align}
+  avec
+  \begin{align}
+    \newcst[]{v-gen}
+    & =
+    \bigl(
+        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
+        \, \expapx^{-1}
+    \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+    \\
+    \Lambda_4
+    & =
+    \cst{v-gen}
+    \bigl( (\sqrt2 \puiss \genre\Delta)^\genre \deg \va \bigr)^\puiss
+    \\
+    \cst{ht-v-gen1}
+    & =
+    \Delta \max \bigl(
+      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    \bigr)
+    + (\genre + 1) \deg \va
+    \Bigl(
+      \Delta^\dimp \ln(\Delta) \dimp
+    \\ & \qquad
+      + \Delta^\genre \bigl (
+        \hautl[1] F
+        + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
+        + \ln(\puiss/2)
+      \bigr)
+    \Bigr)
+  \end{align}
+\end{coro}
+
+\begin{proof}
+  La définition de \( \cst{ht-v-gen1} \) n'a pas changé, elle est simplement
+  rappellée pour référence, et l'apparition de \( \cst{v-gen} \) ne change
+  rien. La définition du \( \Lambda \) a été simplifié en observant que \(
+    5\puiss^2 \deg \va \le (\deg \va)^\puiss (\sqrt2
+    \puiss\genre^{\puiss\genre} \) compte tenu du fait que \( \puiss \ge 2 \)
+  et \( \deg \va \ge 3 \) (c'est évidant pour \( \puiss \) assez grand et on
+  le vérifie numériquement pour les petites valeurs).
+
+  On montre maintenant que \( \prod_{i=\puiss}^{\puiss\genre} (2i + 1) \le
+    \frac12 (2\puiss\genre)^{\puiss\genre} \). C'est clair si \( \genre = 1 \)
+  et dans le cas contraire on remarque qu'il s'agit d'un produit de \(
+    \puiss\genre - \puiss + 1 \) facteurs tous inférieurs à \( \puiss\genre \)
+  sauf le dernier qu'on regroupe avec le premier car \( (2\puiss +
+    1)(2\puiss\genre + 1) \le (2\puiss\genre)^2 \) pour \( \genre \ge 2 \) (et
+  donc \( \puiss \ge 3 \)).
+
+  On en déduit que la deuxième condition ci-dessus implique celle du
+  corollaire précédent en remarquant que \( \frac4\delta \le \Lambda_4^{1/4}
+  \) puis que \( (1 + \frac1\puiss) \prod_{i=\puiss}^{\puiss\genre} (2i + 1) +
+    \frac14 \le (2\puiss\genre)^{\puiss\genre} \). On procède de façon
+  similaire pour la troisième condition en remarquant que cette fois le
+  produit dans l'exposant commence à \( i = \puiss + 1 \).
+\end{proof}
+
 
 \endinput
 
