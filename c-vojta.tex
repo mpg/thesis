@@ -5185,10 +5185,40 @@ au cours de la preuve.
 
 \subsection{Hypersurfaces}
 
-On utilise un plongement de \bsc{Veronese} remodelé, tel que défini dans
-\cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp} pour se ramener au cas
-précédent. On commence par un lemme technique qui nous sera utile pour estimer
-quelques normes et hauteurs.
+Pour se ramener au cas précédent, on utilise un plongement de \bsc{Veronese}
+remodelé, tel que défini dans \cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp},
+dont on rappelle la définition (sur les coordonnées homogènes) :
+\begin{align}
+  \chi_\Delta \colon \projd & \to \prod{\dimp'} \\
+  (x_0 : \dots : x_\dimp) & \mapsto 
+  ({\textstyle \binom\Delta\alpha} x^\alpha)_\alpha
+\end{align}
+où \( \dimp' = \binom{\dimp + \Delta}{\Delta} - 1 \) et \( \alpha \) parcourt
+l'ensemble des \( (\dimp+1) \)-uplets d'entiers de longueur \( \Delta \).
+L'intérêt de ce plongement par rapport au plongement de \bsc{Veronese}
+classique réside dans le fait qu'on a, aux places archimédiennes :
+\begin{equation}
+  \nv2{ \chi_\Delta(x) }
+  =
+  \left(
+    \sum_\alpha \binom\Delta\alpha \av{x}^{2\alpha}
+  \right)^{1/2}
+  =
+  \nv2{ x }^\Delta
+\end{equation}
+d'après la formule multinomiale. Par ailleurs, aux places ultramétriques, si
+l'on choisit un indice \( \ind \) tel que \( \av{ x_\ind } \) soit maximal, il
+n'est pas difficile de constater que \( x_\ind^\Delta \) est une coordonnée de
+\( \chi_\Delta(x) \) qui est aussi de valeur absolue maximal. On a ainsi
+\begin{equation}
+  \nv2{ \chi_\Delta(x) }
+  =
+  \nv2{ x }^\Delta
+  \quad \forall \place
+  \pmm.
+\end{equation}
+Dans les estimations de normes et hauteurs à venir, on aura aussi besoin du
+lemme suivant.
 
 \begin{lem} \label{l:norm-mn}
   Soient \( \dimp \) et \( \Delta \) deux entiers, et \( \alpha \in
