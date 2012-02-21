@@ -478,6 +478,8 @@
 \renewcommand \ge {\geqslant}
 \renewcommand \le {\leqslant}
 
+\newcommand \sbin [2] {{\textstyle\binom{#1}{#2}}}
+
 % supscripts and subscripts [[2
 %
 \newcommand* \ssub [1] {\@ifnotmtarg{#1}{\sb{#1}}}

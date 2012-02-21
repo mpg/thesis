@@ -5279,9 +5279,9 @@ sur les différents paramètres en jeu dans notre situation.
   on a :
   \begin{enumthm}
     \item \(
-        \hautl[2, \vaemb'] \divi
+        \hautl[1, \vaemb'] \divi
         \le
-        \hautl[2, \vaemb] F
+        \hautl[1, \vaemb] F
         + \Delta\dimp
       \) ;
     \item \(
@@ -5513,14 +5513,14 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{coro} \label{c:vojta-hs}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( F \) une hypersurface de \( \projd \) de
-  degré \( \Delta \) et \( 0 < \eps < 1 \) un nombre réel.
+  degré \( \Delta \) et \( 0 < \expapx < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & <
-    \bigl( \Delta (n + 1)^3 \bigr)^{-\dv/2}
+    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
@@ -5534,8 +5534,8 @@ sur les différents paramètres en jeu dans notre situation.
     \cos(\ex*, \ex[\fcti]) & > 1 -
     \frac1{ \puiss }
     \left(
-      \frac{ \Delta \eps }{
-        86 \nclmaps \cdot 5^\genre \binom{\dimp + \Delta}{\Delta}
+      \frac{ \expapx }{
+        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
         }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
   \end{align}
@@ -5546,29 +5546,22 @@ sur les différents paramètres en jeu dans notre situation.
       (\Delta^\genre \deg \va)^\puiss,
       5 \puiss^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot (\Delta\eps)^{-1}
-        { \textstyle \binom{\dimp + \Delta}{\Delta} }
+        86 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
+        \Delta \sbin{\dimp + \Delta}{\Delta}
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
       \Delta^\genre \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
     \bigr)
     \\
     \newcst[\Theta]{ht-v-hs}
-    & = \max \bigl(
-      \Delta^{\genre+1} \hautl[1]{\va}
-      + \bigl(
-        \Delta^{\genre+1} \dimp \ln(\Delta)
-        + \Delta^\genre (\hautl[1]{ F } + \Delta\dimp)
-      \bigr) (\genre+1) \deg \va,
-      \\ & \qquad
-      \Delta \hlclab + 3 \Delta \dimp + \frac52 \dimp \ln \Delta
-      + \frac52 (\hautl[1] F + \Delta\dimp)
-      \\ & \qquad
-      \Delta \htcmp
-      + \hautl[2] F + \Delta\dimp
-      + \frac\Delta2 \ln(\dimp),
-      \\ & \qquad
-      \Delta^\dimp \ln(\Delta) \dimp
+    & =
+    \Delta \max \bigl(
+      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    \bigr)
+    + (\genre + 1) \deg \va
+    \bigl(
+      \Delta^\genre \hautl[1] F
+      + \Delta^\dimp \ln(\Delta) \dimp
     \bigr)
   \end{align}
 \end{coro}
@@ -5576,34 +5569,86 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{proof}
   On considère le plongement \( \vaemb' \) et l'hyperplan \( \divi \) fournis
   par le lemme~\ref{l:hs-vero} précédent et on prévoit d'appliquer le
-  corollaire~\ref{c:vojta-div-any} dans ce cadre avec \( \eps' = \Delta\eps \)
-  comme exposant d'approximation. Il s'agit donc de vérifier que nos
-  conditions impliquent celles du corollaire en question.
+  corollaire~\ref{c:vojta-div-any} dans ce cadre avec \( \expapx' =
+    \expapx/\Delta \) comme exposant d'approximation. Il s'agit donc de
+  vérifier que nos conditions impliquent celles du corollaire en question.
 
   Concernant l'hypothèse d'approximation, on
   \begin{align}
     \distv[\place, \vaemb']{ \ex* }{\divi}
     \le
-    \distv[\place, \vaemb]{ \ex* }{f}
+    \distv[\place, \vaemb]{ \ex* }{F}
     \cdot \Delta^{\dv/2}
     & \le
-    \bigl( \Delta (n + 1)^3 \bigr)^{-\dv/2}
+    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx}
     \cdot \Delta^{\dv/2}
     \\ & \le
-    \Delta (n + 1)^{-3\dv/2}
-    \hautm[2, \vaemb']{\ex*}^{-\Delta \wtapx \expapx}
+    (n' + 1)^{-3\dv/2}
+    \hautm[2, \vaemb']{\ex*}^{-\wtapx \expapx'}
   \end{align}
-  ce qui justifie le choix fait pour \( \eps' \). La condition suivante vient
-  en remarquant que la hauteur normalisé est multipliée par \( \Delta \) en
-  changeant de plongement et que les constantes ont été adapté pour tenir
-  compte des variations de degrés, hauteurs et dimension ambiante. Enfin, les
-  rapports de hauteurs normalisés et les angles dans l'espace de \MoW sont
-  invariants sous le changement de plongement considéré, les deux dernières
-  conditions sont donc inchangées.
+  ce qui justifie le choix fait pour \( \expapx' \).
 
-  On peut dont appliquer le corollaire~\ref{c:vojta-div-any} comme prévu et
-  conclure.
+  On adapte alors les constantes pour tenir compte des variations de degrés,
+  hauteurs et dimension ambiante ainsi que du choix de \( \expapx \).
+  Détaillons le cas de \( \cst{ht-v-hs} \). En utilisant abondamment le lemme
+  précédent, on a
+  \begin{align}
+    & \hautl[1, \vaemb']{\va}
+    + \hautl[1, \vaemb']{ \divi } (\genre+1) \deg_{\vaemb'} \va
+    \\ & \quad \le
+    \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
+    + (\genre + 1) \deg_{\vaemb} \va \Bigl(
+      \Delta^{\genre+1} \ln(\dimp + 1)
+      + \Delta^\genre \bigl( \hautl[1, \vaemb] F + \Delta\dimp \bigr)
+    \Bigr)
+  \end{align}
+  puis
+  \begin{equation}
+    \hlclab[\vaemb'] + \frac52 \hautl[1, \vaemb'] E
+    \le
+    \Delta \hlclab[\vaemb] + 2 \Delta\dimp
+    + \frac52 ( \hautl[1, \vaemb] F + \Delta\dimp)
+  \end{equation}
+  et
+  \begin{equation}
+    \htcmp[\vaemb'] + \hautl[2, \vaemb'] E + \frac12 \ln(\dimp' + 1)
+    \le
+    \Delta \htcmp[\vaemb]
+    + \hautl[1, \vaemb] F + \Delta\dimp
+    + \frac12 \Delta \ln\dimp
+  \end{equation}
+  ce qui prouve que
+  \begin{align}
+    \cst{ht-v-div-dv}[\vaemb']
+    & \le \max \Bigl(
+      \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
+      + \Delta^\genre (\genre + 1) \deg_{\vaemb} \va
+      \bigl( \hautl[1, \vaemb] F + 2\Delta\dimp \bigr),\
+      \\ & \qquad
+      \Delta \hlclab[\vaemb] + \frac52 \hautl[1, \vaemb] F
+      + \frac94 \Delta\dimp,\
+      \Delta \htcmp[\vaemb] + \hautl[1, \vaemb] F + \frac32 \Delta\dimp,\
+      \Delta^\dimp \ln(\Delta) \dimp
+    \Bigr)
+    \\ & \le
+    \Delta \max \bigl(
+      \Delta^\genre \hautl[1, \vaemb]{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
+    \bigr)
+    + (\genre + 1) \deg_{\vaemb} \va
+    \bigl(
+      \Delta^\genre \hautl[1, \vaemb] F
+      + \Delta^\dimp \ln(\Delta) \dimp
+    \bigr)
+  \end{align}
+  en prenant le maximum terme par terme, assez largement pour le dernier.
+
+  La condition suivante vient alors en remarquant que la hauteur normalisée
+  est multipliée par \( \Delta \) en changeant de plongement.  Enfin, les
+  rapports de hauteurs normalisés et les angles dans l'espace de \MoW étant
+  invariants sous le changement de plongement considéré, les deux dernières
+  conditions sont inchangées.  On peut dont appliquer le
+  corollaire~\ref{c:vojta-div-any} comme prévu et conclure.
 \end{proof}
 
 
