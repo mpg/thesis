@@ -5235,10 +5235,10 @@ lemme suivant.
   De plus, cette valeur absolue vaut \( 1 \) si \( \place \) divise un premier
   strictement supérieur à \( \Delta \).
 
-  Par ailleurs, on a \( \sum_\place \degv \dpv \le 2\Delta / \ln \Delta \).
-  En particulier si on note \( b \) le vecteur dont les composantes sont les
-  \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a
-  \( \hautl[\infty] b \le \Delta\dimp  \).
+  Par ailleurs, on a \( \sum_\place \degv \dpv \le 1.26 \Delta / \ln \Delta
+  \).  En particulier si on note \( b \) le vecteur dont les composantes sont
+  les \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a
+  \( \hautl[\infty] b \le \Delta\dimp \).
 \end{lem}
 
 \begin{proof}
@@ -5319,7 +5319,7 @@ sur les différents paramètres en jeu dans notre situation.
         =
         \hlclab[\vaemb]
         \cdot \Delta
-        + \Delta (2\dimp + \frac52 \ln(\dimp + 1))
+        + 2 \Delta\dimp
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
@@ -5335,7 +5335,8 @@ sur les différents paramètres en jeu dans notre situation.
   On trouve alors les comparaisons de degré et de hauteurs qui nous
   intéressent dans~\cite[p. 85-86]{phidg} : les points~\ref{i:hs-vero-deg-va}
   et~\ref{i:hs-vero-ht-pt} en découlent directement et le
-  point~\ref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier. Par
+  point~\ref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier
+  (pour lequel ou pouvait aussi utiliser~\eqref{e:vero-norm} en fait). Par
   ailleurs, la référence citée donne \( \hautl[\htpph, \vaemb'] \va =
     \Delta^{\genre+1} \hautl[\htpph, \vaemb] \va \) (en notant \(
     \Hautl[\htpph] \) la hauteur utilisée dans cette référence), dont on
@@ -5498,9 +5499,15 @@ sur les différents paramètres en jeu dans notre situation.
     \hmclab[\vaemb']*^{-(a^2 + b^2)}
     \pmm.
   \end{align}
-  Pour en déduire le dernier point, il ne reste plus qu'à prendre le
-  logarithme puis la somme pondérée sur les différentes places en utilisant à
-  nouveau le lemme précédent pour la somme des \( \dpv \).
+  En utilisant à nouveau le lemme précédent il vient
+  \begin{equation}
+    \hlclab[\vaemb']
+    =
+    \hlclab[\vaemb] \cdot \Delta
+    + \frac54\Delta \ln(\dimp + 1) + 1.26 \Delta\dimp
+  \end{equation}
+  dont le dernier point se déduit en remarquant que \( \frac54 \ln(\dimp +
+    1) / \dimp \le \frac58 \ln 3 \le 0.69 \) car \( \dimp \ge 2 \).
 \end{proof}
 
 \begin{coro} \label{c:vojta-hs}
