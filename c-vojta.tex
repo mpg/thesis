@@ -5206,11 +5206,11 @@ classique réside dans le fait qu'on a, aux places archimédiennes :
   =
   \nv2{ x }^\Delta
 \end{equation}
-d'après la formule multinomiale. Par ailleurs, aux places ultramétriques, si
-l'on choisit un indice \( \ind \) tel que \( \av{ x_\ind } \) soit maximal, il
-n'est pas difficile de constater que \( x_\ind^\Delta \) est une coordonnée de
-\( \chi_\Delta(x) \) qui est aussi de valeur absolue maximal. On a ainsi
-\begin{equation}
+d'après la formule multinomiale. Par ailleurs, pour chaque place ultramétrique, si
+l'on choisit un indice \( \indv \) tel que \( \av{ x_\indv } \) soit maximale,
+il n'est pas difficile de constater que \( x_\indv^\Delta \) est une coordonnée
+de \( \chi_\Delta(x) \) qui est aussi de valeur absolue maximale. On a ainsi
+\begin{equation} \label{e:vero-norm}
   \nv2{ \chi_\Delta(x) }
   =
   \nv2{ x }^\Delta
@@ -5287,7 +5287,7 @@ sur les différents paramètres en jeu dans notre situation.
     \item \(
         \distv[\place, \vaemb']{x}{\divi}
         \le
-        \distv[\place, \vaemb]{x}{f}
+        \distv[\place, \vaemb]{x}{F}
         \cdot \Delta^{\dv/2}
       \) ; \label{i:hs-vero-dv}
     \item \(
@@ -5355,16 +5355,30 @@ sur les différents paramètres en jeu dans notre situation.
     \pmm.
   \end{align}
 
-  Pour le point~\ref{i:hs-vero-dv}, aux places infinies on utilise la première
+  Pour~\ref{i:hs-vero-dv}, pour chaque place, introduisons un point
+  \( y_\place \in F \) tel que \( \distv[\place, \vaemb] x F = \distv[\place,
+    \vaemb] x{y_\place} \) ; par définition on a \( \distv[\place, \vaemb'] x
+    \divi \le \distv[\place, \vaemb'] x{y_\place} \). Pour majorer cette
+  dernière quantité, aux places infinies on utilise la première
   formule en haut de la page~89 de~\cite{phidg} qu'on interprète ainsi :
   \begin{equation}
-    \distv[\place, \vaemb'] x y
+    \distv[\place, \vaemb'] x{y_\place}
     =
-    \sqrt{ 1 - \bigl( 1 - \distv[\place, \vaemb] x y ^2 \bigr)^\Delta }
+    \sqrt{ 1 - \bigl( 1 - \distv[\place, \vaemb] x{y_\place}^2 \bigr)^\Delta }
     \pmm.
   \end{equation}
   On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\Delta \le
-    \Delta z \) avec \( z = \distv[\place, \vaemb] x y ^2 \).
+    \Delta z \) avec \( z = \distv[\place, \vaemb] x{y_\place}^2 \). Aux places
+  finies, on se base sur la définition de la distance : aux dénominateurs on
+  utilise~\eqref{e:vero-norm} et au numérateur on voit facilement par le
+  même type d'argument que \( \nv{}{ \chi(x) \wedge \chi(y) } \le \nv{}{ x
+      \wedge y }^\Delta \) de sorte que
+  \(
+    \distv[\place, \vaemb'] x{y_\place}
+    \le
+    \distv[\place, \vaemb] x{y_\place}^{\Delta}
+  \) ce qui implique largement l'estimation annoncée, la distance étant plus
+  petite que \( 1 \).
 
   Pour la hauteur de \( \divi \), on remarque pour commencer que les résultats
   de~\cite[p. 85-86]{phidg} utilisés ci-dessus ne s'appliquent pas, car ce

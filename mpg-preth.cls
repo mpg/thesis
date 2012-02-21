@@ -729,8 +729,8 @@
   $\cdn$}
 
 \newdelimcommandx \av  [3][3=\place] {\abs#1   {#2}\ssub{#3}}
-\newdelimcommandx \nv  [4][4=\place] {\norm#1  {#3}\sb{#2, #4}}
-\newdelimcommandx \nnv [4][4=\place] {\nnorm#1 {#3}\sb{#2, #4}}
+\newdelimcommandx \nv  [4][4=\place] {\norm#1  {#3}\sb{\sfirst{#2} #4}}
+\newdelimcommandx \nnv [4][4=\place] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
 
 \nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un
   nombre}
