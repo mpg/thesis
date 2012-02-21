@@ -5249,10 +5249,10 @@ sur les différents paramètres en jeu dans notre situation.
   on a :
   \begin{enumthm}
     \item \(
-        \hautm[2, \vaemb'] \divi
+        \hautl[2, \vaemb'] \divi
         \le
-        \hautm[2, \vaemb] F
-        \cdot \expb^{\Delta\dimp}
+        \hautl[2, \vaemb] F
+        + \Delta\dimp
       \) ;
     \item \(
         \distv[\place, \vaemb']{x}{\divi}
@@ -5508,14 +5508,14 @@ sur les différents paramètres en jeu dans notre situation.
       \Delta^{\genre+1} \hautl[1]{\va}
       + \bigl(
         \Delta^{\genre+1} \dimp \ln(\Delta)
-        + \Delta^\genre \expb^{\Delta\dimp} \hautl[1]{ F }
+        + \Delta^\genre (\hautl[1]{ F } + \Delta\dimp)
       \bigr) (\genre+1) \deg \va,
       \\ & \qquad
       \Delta \hlclab + 3 \Delta \dimp + \frac52 \dimp \ln \Delta
-      + \frac52 \hautl[1] F \expb^{\Delta\dimp}
+      + \frac52 (\hautl[1] F + \Delta\dimp)
       \\ & \qquad
       \Delta \htcmp
-      + \hautl[2] F \expb^{\Delta\dimp}
+      + \hautl[2] F + \Delta\dimp
       + \frac\Delta2 \ln(\dimp),
       \\ & \qquad
       \Delta^\dimp \ln(\Delta) \dimp
@@ -5676,29 +5676,29 @@ contrôlés.
       +  (\genre+1) \deg \va \Bigl(
         \Delta^{\genre+1} \dimp \ln(\Delta)
       \\ & \hspace{4em}
-        + \Delta^\genre \expb^{\Delta\dimp}
+        + \Delta^\genre
         \bigl(
           \hautl[1]{ V }
           + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
           + \ln(\puiss/2 + 1)
+          + \Delta\dimp
         \bigr)
       \Bigr),
       \\ & \qquad
       \Delta \hlclab + 3 \Delta \dimp + \frac52 \dimp \ln \Delta
-      + \frac52 V \expb^{\Delta\dimp}
+      + \frac52
         \bigl(
           \hautl[1]{ V }
           + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
           + \ln(\puiss/2 + 1)
+          + \Delta\dimp
         \bigr)
       \\ & \qquad
       \Delta \htcmp
-      + \expb^{\Delta\dimp}
-        \bigl(
-          \hautl[1]{ V }
-          + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
-          + \ln(\puiss/2 + 1)
-        \bigr)
+      + \hautl[1]{ V }
+      + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
+      + \ln(\puiss/2 + 1)
+      + \Delta\dimp
       + \frac\Delta2 \ln(\dimp),
       \\ & \qquad
       \Delta^\dimp \ln(\Delta) \dimp
