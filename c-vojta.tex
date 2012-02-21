@@ -5536,12 +5536,12 @@ sur les différents paramètres en jeu dans notre situation.
     \left(
       \frac{ \expapx }{
         86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
-        }
+      }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
   \end{align}
   avec
   \begin{align}
-    \Lambda_3
+    \Lambda_3 \label{e:deg-v-hs}
     & = \max \bigl(
       (\Delta^\genre \deg \va)^\puiss,
       5 \puiss^2
@@ -5669,7 +5669,7 @@ contrôlés.
     \hautm[1] F
     \le
     \hautl[1] V
-    + (u + 2) \ln (\Delta + 1) \bigl( \Delta + \dimp + 1 \bigr)
+    + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
     + \ln(\puiss/2)
     \pmm.
   \end{equation}
@@ -5741,7 +5741,7 @@ contrôlés.
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & <
-    \bigl( \Delta (n + 1)^3 \bigr)^{-\dv/2}
+    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
@@ -5755,58 +5755,28 @@ contrôlés.
     \cos(\ex*, \ex[\fcti]) & > 1 -
     \frac1{ \puiss }
     \left(
-      \frac{ \Delta \eps }{
-        86 \nclmaps \cdot 5^\genre \binom{\dimp + \Delta}{\Delta}
-        }
+      \frac{ \expapx }{
+        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
+      }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
   \end{align}
-  avec
+  avec \( \Lambda_3 \) comme en~\eqref{e:deg-v-hs} et
   \begin{align}
-    \Lambda_3
-    & = \max \bigl(
-      (\Delta^\genre \deg \va)^\puiss,
-      5 \puiss^2
-      \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot (\Delta\eps)^{-1}
-        { \textstyle \binom{\dimp + \Delta}{\Delta} }
-      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
-      \Delta^\genre \deg \va,
-      (\sqrt2 \puiss \genre)^{\puiss\genre}
-    \bigr)
-    \\
     \newcst[\Theta]{ht-v-gen1}
-    & = \max \biggl(
-      \Delta^{\genre+1} \hautl[1]{\va}
-      +  (\genre+1) \deg \va \Bigl(
-        \Delta^{\genre+1} \dimp \ln(\Delta)
-      \\ & \hspace{4em}
-        + \Delta^\genre
-        \bigl(
-          \hautl[1]{ V }
-          + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
-          + \ln(\puiss/2 + 1)
-          + \Delta\dimp
-        \bigr)
-      \Bigr),
-      \\ & \qquad
-      \Delta \hlclab + 3 \Delta \dimp + \frac52 \dimp \ln \Delta
-      + \frac52
-        \bigl(
-          \hautl[1]{ V }
-          + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
-          + \ln(\puiss/2 + 1)
-          + \Delta\dimp
-        \bigr)
-      \\ & \qquad
-      \Delta \htcmp
-      + \hautl[1]{ V }
-      + (u + 2) \ln (\Delta + 2) ( \Delta + \dimp + 1 )
-      + \ln(\puiss/2 + 1)
-      + \Delta\dimp
-      + \frac\Delta2 \ln(\dimp),
-      \\ & \qquad
+    & =
+    \Delta \max \bigl(
+      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    \bigr)
+    + (\genre + 1) \deg \va
+    \Bigl(
       \Delta^\dimp \ln(\Delta) \dimp
-    \biggr)
+    \\ & \qquad
+      + \Delta^\genre \bigl (
+        \hautl[1] F
+        + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
+        + \ln(\puiss/2)
+      \bigr)
+    \Bigr)
   \end{align}
 \end{coro}
 
