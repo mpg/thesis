@@ -1,7 +1,7 @@
 Next actions
 ============
 
-Coros Vojta.
+Mumford
 
 Rédaction {{{1
 =========
@@ -17,34 +17,26 @@ de l'homogène dans Mumford, et probablement du multi dans NMA.
     Virer ce qui devient redondant dans Vojta.
     Virer ce qui devient redondant dans NMA.
 
-(B) Commencer à faire un squelette grossier de ce qu'il faut pour mettre
-Vojta et Mumford ensemble. Noter les références précises.
-    - Lire les références notées.
-    - Commencer un squelette d'annexe avec les lemmes de géométrie euclidienne
-      et de décompte.
-
-(B) Reprendre les notes sur les variantes d'énoncés possibles et les
+(C) Reprendre les notes sur les variantes d'énoncés possibles et les
 inclure, soit dans la partie fusion, soit dans l'intro (voire dans une annexe
 flottante si j'hésite).
+    Mouaibof, vraiment utile ? À voir plus tard.
 
 (C) Préciser la portée des \eps_i (a priori, pour l'instant locaux à Vojta,
 peut-être qu'il y en a d'autres locaux à Mumford). Ça serait plus clair s'ils
 étaient globaux, non ? Utiliser un système comme les constantes automatiques ?
 Voire directement des constantes automatiques ?
     Non, pas automatique : changement de version trop relous mentalement.
+    Donc action : chercher des \eps_i dans Mumford et corriger.
 
 (C) Ajouter des références biblio pour toute l'intro.
 
 Notations {{{2
 ---------
 
-(B) Noms des formules abéliennes.
-     A priori ok dans Vojta, reprendre dans Mumford plus tard.
-
-(B) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
+(C) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
 (Faire ça petit à petit au fur et à mesure des relectures et éditions.)
-
-(C) c_v(\va) -> H_{v,\va} avec macro dédiée.
+        Mouais, ça part en vrille la nomenclature, laisser tomber ?
 
 Dans NMA {{{3
 
@@ -66,10 +58,6 @@ Unifier les indices :
 - k et l en bas (de 0 à n)
 - en fait, le contraire paraît mieux (cohérence avec homogène simple)
 
-Unifier les notations pour la ou les approximations exceptionnelles (x, y et z
-doivent rester des points quelconques, prendre e par exemple).
-    Semble OK maintenant.
-
 La convention \boldsymbol = le point, \mathit = ses coordonnées est loin
 d'être utilisée de façon consistante. On fait quoi ?
     Laisser tomber... Préciser dans le texte si réelle ambiguité.
@@ -87,19 +75,19 @@ nomenclature.)
 Macros {{{2
 ------
 
-(A) Vojta : macros pour \Lambda et f(u)
+(B) Vojta : macros pour \Lambda et f(u)
 
 (C) retrier les macros de Vojta
 
-(B) Nomenclature : numéros de page.
+(C) Nomenclature : numéros de page.
     - fait petit à petit avec les relectures
 
 (B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
 
-(C) normes et hauteurs : virer les vieilles version imprécises, indiquer
+(B) normes et hauteurs : virer les vieilles version imprécises, indiquer
 systématiquement la norme ou mesure archimédienne utilisée
 
-(C) Reprendre le source de mumford
+(B) Reprendre le source de mumford
     - présentation du source
     - labels
 
@@ -127,8 +115,6 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(A) corriger et simplifier les coros
-
 (C) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
 
 (C) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
@@ -137,15 +123,22 @@ Vojta {{{2
 (C) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
 \puiss par un 2 dans \Vfar comme ça, en principe sans perte à côté.
 
+(C) Virer le 4 dans \Vbig ?
+
 (C) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
 fine pour le deuxième \rdiv
 
 (C) Degré des formules en c a^2 au lieu de 2a^2 ?
 
+
 Mumford {{{2
 -------
 
-Rien pour le moment, cf. lecture.
+(A) Réintégrer (une partie de) l'annexe B
+
+(A) Refaire Liouville
+
+(A) Changer les constantes dépendant du plongement
 
 Annexe normes et mesures {{{2
 ------------------------
@@ -154,6 +147,8 @@ Annexe normes et mesures {{{2
 
 Plongements et formulaires {{{2
 --------------------------
+
+(A) Transférer la partie interface depuis vojta vers l'annexe (début)
 
 (B) Compléter les preuves (cf. notes manuscriptes en partie)
 
@@ -197,6 +192,9 @@ Hartshorne, Ample Subvarieties of Abelian Var, LNM 156
 Pourquoi c'est un sous-fermé de X : Hindry 92 ; LNM 1566 Oort p. 117-122
 
 Pourquoi c'est tout ssi le Stab est de dim non nulle, même références.
+    Ça OK, c'est trivial : si x \in X alors x + Stab(X) \subset X.
+    Réciproquement, si Z_X = X, alors X est un transalaté de ss-va, donc son
+    Stab est la ss-va en question.
 
 
 Aide-mémoire {{{1
