@@ -62,13 +62,13 @@ résultats suivants, dont le premier est tiré de \cite[« Closest point propert
   \gamma_n = \sum_{q=1}^{n-1} 1/2q \) et \( \dv = 0 \) si \( v \) est
 ultramétrique, \( \dv = 1 \) sinon.
 
-\begin{fact} \label{ClosestPoint}
+\begin{fact} \label{f:closest-point}
   Pour toute variété \( V \subset \Proj^n \) et tout point \( \p x \in
     \Proj^n(\C_v) \), il existe un point \( \p y \in V(\C_v) \) tel que \(
     \Distv(\p x, \p y) \le \Distv(\p x, V)^{1/\deg V} e^{\dv\gamma_{n+1}} \).
 \end{fact}
 
-\begin{lem} \label{PonctuelAlg}
+\begin{lem} \label{l:dv-p-alg-gen}
   Pour toute variété \( V \subset \Proj^n \) et tous points \( \p x \in
     \Proj^n(\C_v) \) et \( \p y \in V(\C_v) \), on a \( \Distv(\p x, V) \le
     \cst{CPonctuelAlg}\, \Distv(\p x, \p y)^m \) avec
@@ -96,7 +96,7 @@ Par ailleurs, il sera utile de pouvoir de plus choisir un indice \( i \) de
 sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
 \) (resp. \( \Onv y \)). Le lemme facile suivant montre que c'est possible.
 
-\begin{lem} \label{ChoixI}
+\begin{lem} \label{l:dv-common-i}
   Pour chaque \( \p x \in \Proj^n \), il existe \( i \in \{0,\dots, n\} \) tel
   que \( \frac {\av {x_i}} {\Onv x} \ge (\frac{1}{\sqrt{n+1}})^\dv \). De
   plus, pour le même indice \( i \), pour tout point \( \p y \) satisfaisant
@@ -120,7 +120,7 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
     \hat{z} = (z_1, \dots, z_n) \) le vecteur obtenu en omettant la première
   coordonnée. On a alors, vu l'hypothèse sur \( \p x \) et la définition de la
   distance :
-  \begin{equation} \label{pva}
+  \begin{equation} \label{e:dvci-hat}
     \eps_0 \Onv y \Onv x
     \ge
     \Onv{y \wedge x}
@@ -135,12 +135,13 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
   On traite d'abord le cas ultramétrique, par l'absurde. En effet, si on avait
   \( \av{y_0}< \Onv{\hatys} = \Onv{y} \), il viendrait \( \Onv{x_0 \hatys} >
     \Onv{y_0 \hatxs} \) et la propriété ultramétrique appliquée au dernier
-  membre de (\ref{pva}) donnerait \( \eps_0 \Onv{y}\Onv{x}  \ge
+  membre de \eqref{e:dvci-hat} donnerait \( \eps_0 \Onv{y}\Onv{x}  \ge
     \av{x_0}\Onv{\hatys} \), puis \( \eps_0 \ge 1 \) contrairement aux
   hypothèses.
 
-  Pour le cas archimédien, l'inégalité triangulaire dans (\ref{pva}) donne \(
-    \eps_0 \Onv{y}\Onv{x}  \ge \av{x_0}\Onv{\hatys} - \av{y_0}\Onv{\hatxs}
+  Pour le cas archimédien, l'inégalité triangulaire dans \eqref{e:dvci-hat}
+  donne
+  \( \eps_0 \Onv{y}\Onv{x}  \ge \av{x_0}\Onv{\hatys} - \av{y_0}\Onv{\hatxs}
   \).  En regroupant les termes et en divisant par \( \Onv{y}\Onv{x} \), puis
   en remarquant que \( \Onv{\hatxs}/\Onv{x} \le 1 \) il vient successivement :
   \begin{align}
@@ -151,7 +152,7 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
     \cdot \frac{\av{x_0}}{\Onv{x}}
     - \eps_0
     \pmm, \notag
-    \\ \label{contrainte}
+    \\ \label{e:dvci-contrainte}
     \frac{\av{y_0}}{\Onv{y}}
     & \ge
     \frac{\Onv{\hatys}}{\Onv{y}}
@@ -161,8 +162,8 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
     \pmm.
   \end{align}
   Notons \( t = \av{y_0}/\Onv{y} \in [0; 1] \) ; comme \( \Onv{y}^2 =
-    \av{y_0}^2 + \Onv{\hatys}^2 \), on réécrit (\ref{contrainte}) sous la
-  forme \( t \ge \sqrt{\frac{1-t^2}{n+1}}-\eps_0 \), ou encore :
+    \av{y_0}^2 + \Onv{\hatys}^2 \), on réécrit \eqref{e:dvci-contrainte} sous
+  la forme \( t \ge \sqrt{\frac{1-t^2}{n+1}}-\eps_0 \), ou encore :
   \begin{equation}
     \left( \frac{n+2}{n+1} \right) t^2
     + 2t\eps_0
@@ -188,7 +189,7 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
   et en observant que \( n \ge 2 \).
 \end{proof}
 
-\begin{proof}[Démonstration du lemme~\ref{PonctuelAlg}.]
+\begin{proof}[Démonstration du lemme~\ref{l:dv-p-alg-gen}.]
   On regarde \( \md f \) comme un polynôme en \( s \) à coefficients dans \(
     k[X] \) et on appelle \( g \) la famille de ses coefficients; ils sont
   homogènes de degré \( ld \) et s'annulent en \( y \). On peut supposer que
@@ -271,7 +272,7 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
     \pmm,
   \end{align*}
   où la dernière somme est majorée par \( 2 \), d'où finalement :
-  \begin{equation} \label{Comp}
+  \begin{equation} \label{e:dvpa-comp}
     \frac{\Onv{g(x)}}{\Onv x^{ld}}
     \le
     \Onnv[v, 2]g \Distv(\p x, \p y)^m 
@@ -296,7 +297,7 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
   \) vu la définition et une majoration facile de l'intégrale, tandis que pour
   \( (c) \) l'on peut prendre \( [(n+1)^2n/2]^{\dv\cdot ld} \) d'après
   \cite[dém. du lemme~3.3]{remgdmp}. La constante \( (b) \) est donnée par
-  l'inégalité (\ref{Comp}) ci-dessus ; la dernière découle du fait que \(
+  l'inégalité \eqref{e:dvpa-comp} ci-dessus ; la dernière découle du fait que \(
     \mv{\md_x f} \le \mv{f} \) dès que \( \Onv x = 1 \) (c.-à-d. du fait que
   la distance est majorée par \( 1 \)). En reportant ceci dans la définition
   de \( \mv{\truc} \) et en intégrant, il vient \( \mv{\md f} \le
