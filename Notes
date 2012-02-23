@@ -88,7 +88,6 @@ Macros {{{2
 systématiquement la norme ou mesure archimédienne utilisée
 
 (B) Reprendre le source de mumford
-    - présentation du source
     - labels
 
 (C) Revoir le source pour utiliser les macros quand elles existent (genre H(x)

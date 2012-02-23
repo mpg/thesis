@@ -5,117 +5,143 @@
 \section{Énoncé principal}
 
 On prouve ci-dessous une inégalité de \bsc{Mumford} explicite dans le cas
-particulier où $\varapx$ est une sous-variété abélienne de \( \va \), qu'on
-notera donc désormais $\vai$. Le résultat principal de ce chapitre est le
-suivant.
+particulier où \( \varapx \) est une sous-variété abélienne de \( \va \),
+qu'on notera donc désormais \( \vai \). Le résultat principal de ce chapitre
+est le suivant.
 
 \begin{thm} \label{Mumford}
-  Soient $\vai$ une sous-variété abélienne de $\va$, $\p x$ et $\p y$ deux
-  points de $\va(\Qbar)$ satisfaisant la condition d'approximation
-  (\eqref{e:HA}) ci-dessus. On note $d = \deg \vai$, $l = \dim\vai + 1$ et on
-  choisit $\phi > 0$ et $\rho > 0$ tels que $ld^2((\rho^2/4) + 2\phi +
-  \rho\phi)< \eps$. On pose $B = (4^g-1)h(\va) + 3g\log(2)$ et $C =
-  3\cdot4^gh(\va) + \log\Big( 10\sqrt2\cdot 2^{7g/2}
-    (n+1)^6\big(\frac{16e\sqrt 2}{30}(n+1)^{9/2}\big)^{ld}\Big)$. On suppose
-  en outre :
+  Soient \( \vai \) une sous-variété abélienne de \( \va \), \( \p x \) et \(
+    \p y \) deux points de \( \va(\Qbar) \) satisfaisant la condition
+  d'approximation (\eqref{e:HA}) ci-dessus. On note \( d = \deg \vai \), \( l
+    = \dim\vai + 1 \) et on choisit \( \phi > 0 \) et \( \rho > 0 \) tels que
+  \( ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps \). On pose
+  \( B = (4^g-1)h(\va) + 3g\log(2) \) et
+  \(
+    C = 3\cdot4^gh(\va)
+    + \log\Bigl(
+      10\sqrt2\cdot 2^{7g/2} (n+1)^6 
+      \bigl(\frac{16e\sqrt 2}{30}(n+1)^{9/2}\bigr)^{ld}
+    \Bigr)
+  \). On suppose en outre :
   \begin{enumerate}
-    \item $\cos(\p{x},\p{y}) \ge 1-\phi$, \label{cone}
-    \item $\Hautn(\p{x}) \le \Hautn(\p{y}) \le (1+\rho)\Hautn(\p{x})$,
-      \label{sect}
-    \item $\Hautn(\p{x}) > [h(\vai) + C + B(ld + \eps/d)] \cdot [\eps/d -
-      ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}$\label{Loin}
+    \item \(
+        \cos(\p{x},\p{y}) \ge 1-\phi
+      \) ; \label{cone}
+    \item \(
+        \Hautn(\p{x}) \le \Hautn(\p{y}) \le (1+\rho)\Hautn(\p{x})
+      \) ; \label{sect}
+    \item \(
+        \Hautn(\p{x})
+        >
+        [h(\vai) + C + B(ld + \eps/d)]
+        \cdot [\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
+      \). \label{Loin}
   \end{enumerate}
-  On a alors $\p x - \p y \in \vai(\Qbar)$.
+  On a alors \( \p x - \p y \in \vai(\Qbar) \).
 \end{thm}
 
-Les conditions sur $\p{x}$ et $\p{y}$ ont une interprétation géométrique très
-simple dans l'espace de \bsc{Mordell-Weil}. En effet (\ref{cone}) demande que
-les points se trouvent dans un même demi-cône d'angle petit, (\ref{sect})
-précise qu'ils doivent se trouver dans un même secteur de petite largeur
-exponentielle et (\ref{Loin}) que ce secteur est suffisamment loin de
-l'origine. Le théorème~affirme alors qu'il y a, modulo $\vai(\Qbar)$, au plus
-une approximation exceptionnelle dans un secteur de cône d'angle
-$\arccos(1-\phi)$, de largeur exponentielle $1+\rho$, extérieur à une sphère
-de rayon adéquat centrée en l'origine.
+Les conditions sur \( \p{x} \) et \( \p{y} \) ont une interprétation
+géométrique très simple dans l'espace de \bsc{Mordell-Weil}. En effet
+(\ref{cone}) demande que les points se trouvent dans un même demi-cône d'angle
+petit, (\ref{sect}) précise qu'ils doivent se trouver dans un même secteur de
+petite largeur exponentielle et (\ref{Loin}) que ce secteur est suffisamment
+loin de l'origine. Le théorème~affirme alors qu'il y a, modulo \( \vai(\Qbar)
+\), au plus une approximation exceptionnelle dans un secteur de cône d'angle
+\( \arccos(1-\phi) \), de largeur exponentielle \( 1+\rho \), extérieur à une
+sphère de rayon adéquat centrée en l'origine.
+
 
 
 \section{Comportement métrique des opérations}
 
 La situation d'approximation considérée met en jeu plusieurs types de
-géométrie sur $\va$ : la géométrie euclidienne de son espace de
+géométrie sur \( \va \) : la géométrie euclidienne de son espace de
 \bsc{Mordell-Weil}, la géométrie algébrique et projective de la variété
-plongée, une géométrie métrique, locale, en chaque place de $S$. On s'attend à
-ce que les métriques locales sur $\va$ se comportent de façon agréable
-vis-à-vis des structures géométrique et arithmétique, par exemple que les
-opérations soient uniformément continues, voire lipschitziennes. On montre ici
-que c'est bien le cas et on explicite une valeur admissible pour la constante
-de \bsc{Lipschitz}.
+plongée, une géométrie métrique, locale, en chaque place de \( S \). On
+s'attend à ce que les métriques locales sur \( \va \) se comportent de façon
+agréable vis-à-vis des structures géométrique et arithmétique, par exemple que
+les opérations soient uniformément continues, voire lipschitziennes. On montre
+ici que c'est bien le cas et on explicite une valeur admissible pour la
+constante de \bsc{Lipschitz}.
 
 \begin{prop} \label{MetricOp}
-  Il existe une constante $\cst{CMetricOp}$ telle que, pour tous $\p x$,
-  $\p x'$, $\p y$, $\p y'$ dans $\va(\C_v)$, on a :
+  Il existe une constante \( \cst{CMetricOp} \) telle que, pour tous \( \p x
+  \), \( \p x' \), \( \p y \), \( \p y' \) dans \( \va(\C_v) \), on a :
   \begin{equation}
-  \max\big(\Distv(\p x \pm \p y, \p x' \pm \p y')\big) \le \cst{CMetricOp}
-  \cdot \max \big(\Distv(\p x, \p x'), \Distv(\p y, \p y')\big) \pmm,
+  \max\bigl(\Distv(\p x \pm \p y, \p x' \pm \p y')\bigr) \le \cst{CMetricOp}
+  \cdot \max \bigl(\Distv(\p x, \p x'), \Distv(\p y, \p y')\bigr) \pmm,
   \end{equation}
   où dans le membre de gauche il faut prendre le même signe sur les deux
-  termes.  De plus, on peut choisir $\newcst{CMetricOp} = c_v(\va)^3 \av
-  2^{-5g/2}[5\sqrt2\cdot2^{7g/2}(n+1)^{9/2}]^\dv$.
+  termes.  De plus, on peut choisir
+  \begin{equation}
+    \newcst{CMetricOp}
+    =
+    c_v(\va)^3 \av
+    2^{-5g/2} \bigl( 5\sqrt2\cdot2^{7g/2}(n+1)^{9/2} \bigr)^\dv
+    \pmm.
+  \end{equation}
 \end{prop}
 
 Pour établir ce résultat, on va en fait étudier les propriétés métriques du
-morphisme $\xi : \va^2 \to \va^2,\ (\p x, \p y) \mapsto (\p x + \p y, \p x -
-\p y)$. Ce dernier présente en effet l'avantage de pouvoir être représenté
-globalement par une famille $F$ de polynômes totalement explicite (en
+morphisme \( \xi : \va^2 \to \va^2,\ (\p x, \p y) \mapsto (\p x + \p y, \p x -
+  \p y) \). Ce dernier présente en effet l'avantage de pouvoir être représenté
+globalement par une famille \( F \) de polynômes totalement explicite (en
 particulier, de degré et hauteur contrôlés) à condition toutefois de regarder
-$\va^2$ comme plongée dans $\Proj^N$ (où $N = n^2+2n$) par un plongement de
-\bsc{Segre}. Si l'on note $\p z$ (resp. $\p z'$) l'image de $(\p x, \p y)$
-(resp. $(\p x', \p y')$) par ce plongement, on est ainsi ramené à montrer que
-$\Distv(\xi \p z, \xi \p z') \le \cst{CMetricOp} \sqrt2^{\,-\dv} \Distv(\p z,
-\p z')$. Par ailleurs on pourra supposer $\Distv( \p z, \p z') \le \sqrt2\,
-\cst{CMetricOp}^{-1}$, car sinon la conclusion du lemme~est vide, compte tenu
-du fait que la distance est bornée par $1$. On utilisera alors un
-développement de \bsc{Taylor} des formes $F$ représentant $\xi$ au voisinage
-de $\p z$.
+\( \va^2 \) comme plongée dans \( \Proj^N \) (où \( N = n^2+2n \)) par un
+plongement de \bsc{Segre}. Si l'on note \( \p z \) (resp. \( \p z' \)) l'image
+de \( (\p x, \p y) \) (resp. \( (\p x', \p y') \)) par ce plongement, on est
+ainsi ramené à montrer que \( \Distv(\xi \p z, \xi \p z') \le \cst{CMetricOp}
+  \sqrt2^{\,-\dv} \Distv(\p z, \p z') \). Par ailleurs on pourra supposer \(
+  \Distv( \p z, \p z') \le \sqrt2\, \cst{CMetricOp}^{-1} \), car sinon la
+conclusion du lemme~est vide, compte tenu du fait que la distance est bornée
+par \( 1 \). On utilisera alors un développement de \bsc{Taylor} des formes \(
+  F \) représentant \( \xi \) au voisinage de \( \p z \).
 
-En comparant les termes d'ordres $1$ et $2$ au terme principal dans ce
-développement, va apparaître une quantité $\Onv{F(z)} / (\Onnv{F}\Onv{z}^2)
-\le 1$, qui détermine en grande partie le rayon sur lequel le développement de
-\bsc{Taylor} donne une majoration utile. Il est donc indispensable de pouvoir
-minorer cette quantité uniformément en $\p z$. Le lemme~suivant donne une
-telle minoration en fonction de la constante locale $c_v(\va)$. Notons que
-cette minoration est la seule étape de la preuve où intervient le fait que le
-morphisme $\xi$ est donné par les opérations de $\va$, le reste s'appliquant
-en fait à n'importe quel morphisme d'espaces projectifs.
+En comparant les termes d'ordres \( 1 \) et \( 2 \) au terme principal dans ce
+développement, va apparaître une quantité \( \Onv{F(z)} / (\Onnv{F}\Onv{z}^2)
+  \le 1 \), qui détermine en grande partie le rayon sur lequel le
+développement de \bsc{Taylor} donne une majoration utile. Il est donc
+indispensable de pouvoir minorer cette quantité uniformément en \( \p z \). Le
+lemme~suivant donne une telle minoration en fonction de la constante locale \(
+  c_v(\va) \). Notons que cette minoration est la seule étape de la preuve où
+intervient le fait que le morphisme \( \xi \) est donné par les opérations de
+\( \va \), le reste s'appliquant en fait à n'importe quel morphisme d'espaces
+projectifs.
 
 \begin{lem} \label{TvIndepF}
-  Il existe un choix de $F$ tel que pour tout $\p z \in \va(\C_v)$ on ait
+  Il existe un choix de \( F \) tel que pour tout \( \p z \in \va(\C_v) \) on
+  ait
   \begin{equation}
-  \frac{\Onv{F(z)}}{\Onnv{F}\Onv{z}^2} \ge \cst{Tv} \pmm,
+    \frac{\Onv{F(z)}}{\Onnv{F}\Onv{z}^2} \ge \cst{Tv} \pmm,
   \end{equation}
-  avec $\newcst{Tv} = \av 2^{5g/2} 2^{-7g\dv/2} (n+1)^{-3\dv/2}
-  c_v(\va)^{-3}$.
+  avec \(
+    \newcst{Tv}
+    =
+    \av 2^{5g/2} 2^{-7g\dv/2} (n+1)^{-3\dv/2} c_v(\va)^{-3}
+  \).
 \end{lem}
 
 \begin{proof}[Démonstration (du lemme~\ref{TvIndepF}).]
   On utilise le formulaire de la section~\ref{sec:form-ab2}.
 
-  On commence par estimer $\Onnv{F}$. Chaque $F_{ij}$ s'écrit comme une somme
-  de $4^g$ termes de norme $\Onv[v, \infty]{\truc}$ au plus $\av 2^{-g} \Onv
-  \vai^2$ ; on a donc $\Onv {F_{ij}} \le 2^{g\dv} \av 2 ^{-g} \Onv \vai ^2$ et
-  $\Onnv F \le  \sqrt{N+1}^\dv 2^{g\dv} \av 2 ^{-g} \Onv \vai ^2$. Pour la
-  suite, on se base sur la minoration (\ref{NormDupl}) et le fait que $\xi^2$
-  est le morphisme de multiplication par $2$ sur les deux facteurs. On a ainsi
+  On commence par estimer \( \Onnv{F} \). Chaque \( F_{ij} \) s'écrit comme
+  une somme de \( 4^g \) termes de norme \( \Onv[v, \infty]{\truc} \) au plus
+  \( \av 2^{-g} \Onv \vai^2 \) ; on a donc \( \Onv {F_{ij}} \le 2^{g\dv} \av 2
+    ^{-g} \Onv \vai ^2 \) et \( \Onnv F \le  \sqrt{N+1}^\dv 2^{g\dv} \av 2
+    ^{-g} \Onv \vai ^2 \). Pour la suite, on se base sur la minoration
+  (\ref{NormDupl}) et le fait que \( \xi^2 \) est le morphisme de
+  multiplication par \( 2 \) sur les deux facteurs. On a ainsi
   \begin{equation}
     F^2(\tilde\Delta)
     = (\xi^2)^*\tilde\Delta
     = [2]^* \tilde\Delta = G(\Delta) \otimes G(\Delta)
     \pmm.
   \end{equation}
-  En appliquant ceci en un point $\p z = (\p x, \p y)$, on peut, par
-  homogénéité remplacer $\Delta(\p x)$ par n'importe quel système de
-  coordonnées $x$ de $\p x$ et faire de même pour $\p y$, puis choisir $z = x
-  \otimes y$ comme représentant de $\p z$. Il vient alors :
+  En appliquant ceci en un point \( \p z = (\p x, \p y) \), on peut, par
+  homogénéité remplacer \( \Delta(\p x) \) par n'importe quel système de
+  coordonnées \( x \) de \( \p x \) et faire de même pour \( \p y \), puis
+  choisir \( z = x \otimes y \) comme représentant de \( \p z \). Il vient
+  alors :
   \begin{equation}
     \frac {\Onv{F^2(z)}} {\Onv z ^4}
     = \frac {\Onv{G(x)} \Onv{G(y)}} {\Onv x ^4 \Onv y ^4}
@@ -129,7 +155,7 @@ en fait à n'importe quel morphisme d'espaces projectifs.
     = \Onnv F ^3 \left( \frac {\Onv{F(z)}} {\Onnv F \Onv z ^2} \right) ^2
     \pmm,
   \end{equation}
-  d'où (en se rappelant que $N+1 = (n+1)^2$)
+  d'où (en se rappelant que \( N+1 = (n+1)^2 \))
   \begin{align*}
     \left(\frac {\Onv{F(z)}} {\Onnv F \Onv z ^2} \right)^2
     & \ge \av2^{2g} 4^{-2g\dv} \Onv\coa^{-6} \Onnv F ^{-3} \\
@@ -139,69 +165,98 @@ en fait à n'importe quel morphisme d'espaces projectifs.
 \end{proof}
 
 \begin{proof}[Démonstration (de la proposition~\ref{MetricOp}).]
-  Il s'agit de montrer que $\Onv{F(z')}$ n'est pas trop petit devant $\Onv
-  {F(z)}$ et que $\Onv{F(z) \wedge F(z')}$ n'est pas trop grand devant $\Onv
-  {F(z)}^2$. Comme annoncé, on supposera que $\Distv (\p z, \p z') <
-  \sqrt2^\dv\, \cst{CMetricOp}^{-1}$, c'est-à-dire, vu que $\cst{CMetricOp} =
-  (5\sqrt2\cdot N\sqrt{N+1})^\dv / \cst{Tv}$, que $\Distv (\p z, \p z') =
-  \cst{Tv}\eps_1/(5 N \sqrt{N+1})^\dv$ pour un certain $\eps_1 < 1$. On peut
-  en particulier appliquer le lemme~\ref{ChoixI} à $z$ et $z'$ (en remplaçant
-  $n$ par $N$) et supposer, quitte à renuméroter les coordonnées, que
-  $\av{z'_0} \ge (N+1)^{-\dv/2}\Onv{z'}$ et $z_0 \neq 0$. On écrit alors le
-  développement de \bsc{Taylor} homogène de $F$ comme suit :
+  Il s'agit de montrer que \( \Onv{F(z')} \) n'est pas trop petit devant \(
+    \Onv {F(z)} \) et que \( \Onv{F(z) \wedge F(z')} \) n'est pas trop grand
+  devant \( \Onv {F(z)}^2 \). Comme annoncé, on supposera que \( \Distv (\p z,
+    \p z') < \sqrt2^\dv\, \cst{CMetricOp}^{-1} \), c'est-à-dire, vu que \(
+    \cst{CMetricOp} = (5\sqrt2\cdot N\sqrt{N+1})^\dv / \cst{Tv} \), que \(
+    \Distv (\p z, \p z') = \cst{Tv}\eps_1/(5 N \sqrt{N+1})^\dv \) pour un
+  certain \( \eps_1 < 1 \). On peut en particulier appliquer le
+  lemme~\ref{ChoixI} à \( z \) et \( z' \) (en remplaçant \( n \) par \( N \))
+  et supposer, quitte à renuméroter les coordonnées, que \( \av{z'_0} \ge
+    (N+1)^{-\dv/2}\Onv{z'} \) et \( z_0 \neq 0 \). On écrit alors le
+  développement de \bsc{Taylor} homogène de \( F \) comme suit :
   \begin{equation}
-    F(z') = \frac{(z'_0)^2}{z_0^2}F(z) + \sum_{1 \le i \le N} R_i + \sum_{1
-      \le i, j \le N} R_{ij} \pmm,
+    F(z')
+    =
+    \frac{ (z'_0)^2 }{ z_0^2 } F(z)
+    + \sum_{1 \le i \le N} R_i
+    + \sum_{1 \le i, j \le N} R_{ij}
+    \pmm,
   \end{equation}
   où
   \begin{equation}
-    R_i = \frac{z'_0}{z_0} \frac{\partial F}{\partial Z_i}(z) \left( z'_i -
-      \frac{z'_0}{z_0} z_i \right)
+    R_i
+    =
+    \frac{z'_0}{z_0} \frac{\partial F}{\partial Z_i}(z)
+    \left( z'_i - \frac{z'_0}{z_0} z_i \right)
   \end{equation}
   et
   \begin{equation}
-    R_{ij} = \frac 1 2 \frac{\partial^2 F}{\partial Z_i \partial Z_j}(z)
-    \left( z'_i - \frac{z'_0}{z_0} z_i \right)\left( z'_j - \frac{z'_0}{z_0}
-      z_j \right) \pmm.
+    R_{ij}
+    =
+    \frac12 \frac{ \partial^2 F }{ \partial Z_i \partial Z_j }(z)
+    \left( z'_i - \frac{z'_0}{z_0} z_i \right)
+    \left( z'_j - \frac{z'_0}{z_0} z_j \right)
+    \pmm.
   \end{equation}
   On utilise alors l'hypothèse sous la forme
   \begin{equation}
     \av{z'_i - \frac{z'_0}{z_0} z_i}
-    \le \Onv{z \wedge z'}/\av{z_0}
-    \le \frac{\cst{Tv}\,\eps_1}{(5N\sqrt{N+1})^\dv} \frac{\Onv z
-      \Onv{z'}}{\av{z_0}} \pmm.
+    \le
+    \Onv{z \wedge z'} / \av{z_0}
+    \le
+    \frac{\cst{Tv}\,\eps_1}{(5N\sqrt{N+1})^\dv}
+    \frac{\Onv z \Onv{z'}}{\av{z_0}}
+    \pmm.
   \end{equation}
   Il vient alors, grâce au lemme~\ref{TvIndepF},
   \begin{align*}
-    \frac{\Onv{R_i}}{\Onv{F(z) \cdot {z_0'}^2/z_0^2}}
-    &\le \frac{\Onv{z'}}{\av{z'_0}}\frac{\Onnv{F} \Onv z^2}{\Onv{F(z)}}
-    \frac{2^\dv \cst{Tv}\,\eps_1}{(5N\sqrt{N+1})^\dv} \\
-    &\le \left(\frac2{5N\sqrt{N+1}}\right)^\dv \frac{\Onv{z'}}{\av{z'_0}}
-    \eps_1 \le \left(\frac2{5N}\right)^\dv \eps_1 \pmm.
+    \frac{ \Onv{R_i} }{ \Onv{F(z) \cdot {z_0'}^2/z_0^2} }
+    & \le
+    \frac{ \Onv{z'} }{ \av{z'_0} }
+    \frac{ \Onnv{F} \Onv z^2 }{ \Onv{F(z)} }
+    \frac{ 2^\dv \cst{Tv}\,\eps_1 }{ (5N\sqrt{N+1})^\dv }
+    \\ & \le
+    \left( \frac2{ 5N\sqrt{N+1} } \right)^\dv
+    \frac{ \Onv{z'} }{ \av{z'_0} } \eps_1
+    \le
+    \left( \frac2{5N} \right)^\dv \eps_1
+    \pmm.
   \end{align*}
   On obtient de même
   \begin{equation}
-    \frac{\Onv{R_{ij}}}{\Onv{F(z) \cdot {z_0'}^2/z_0^2}} \le
-    \left(\frac1{25N^2}\right)^\dv \eps_1 \pmm,
+    \frac{ \Onv{R_{ij}} }{ \Onv{F(z) \cdot {z_0'}^2/z_0^2} }
+    \le
+    \left( \frac1{25N^2} \right)^\dv \eps_1
+    \pmm,
   \end{equation}
-  puis en sommant : $\Onv{\sum R_i + \sum R_{ij}} \le (1/2)^\dv \Onv{F(z)
-    \cdot {z_0'}^2/z_0^2} \eps_1$. Enfin, les inégalités triangulaire aux
-  places infinies et ultramétrique aux places finies donnent $\Onv{F(z')} \ge
-  (1/2)^\dv \Onv{F(z) \cdot {z_0'}^2/z_0^2}$. Afin d'estimer la distance, il
-  reste à majorer $\Onv{F(z) \wedge F(z')}$. Pour ce faire, on développe le
-  second facteur, on remarque que le premier terme du produit est nul et on
-  majore brutalement le terme restant par le produit des normes ; il vient
-  ainsi :
+  puis en sommant : \( \Onv{\sum R_i + \sum R_{ij}} \le (1/2)^\dv \Onv{F(z)
+      \cdot {z_0'}^2/z_0^2} \eps_1 \). Enfin, les inégalités triangulaire aux
+  places infinies et ultramétrique aux places finies donnent \( \Onv{F(z')}
+    \ge (1/2)^\dv \Onv{F(z) \cdot {z_0'}^2/z_0^2} \). Afin d'estimer la
+  distance, il reste à majorer \( \Onv{F(z) \wedge F(z')} \). Pour ce faire,
+  on développe le second facteur, on remarque que le premier terme du produit
+  est nul et on majore brutalement le terme restant par le produit des normes
+  ; il vient ainsi :
   \begin{align*}
     \Distv(\xi(\p z), \xi(\p z'))
-    & = \frac{\Onv{F(z) \wedge F(z')}}{\Onv{F(z)}\Onv{F(z')}} \\
-    & \le \frac{2^\dv \Onv{\sum R_i + \sum R_{ij}} \Onv{F(z)}}{\Onv{F(z)}
-      \Onv{F(z) \cdot {z_0'}^2/z_0^2}} \\
-    & \le \eps_1 \pmm,
+    & =
+    \frac{ \Onv{F(z) \wedge F(z')} }{ \Onv{F(z)} \Onv{F(z')} }
+    \\ & \le
+    \frac{
+      2^\dv \Onv{\sum R_i + \sum R_{ij}} \Onv{F(z)}
+    }{
+      \Onv{F(z)} \Onv{F(z) \cdot {z_0'}^2/z_0^2}
+    }
+    \\ & \le
+    \eps_1
+    \pmm,
   \end{align*}
-  qui, vu la définition de $\eps_1$, équivaut à la conclusion de la
+  qui, vu la définition de \( \eps_1 \), équivaut à la conclusion de la
   proposition.
 \end{proof}
+
 
 
 \section{Inégalité de \bsc{Liouville}}
@@ -209,311 +264,373 @@ en fait à n'importe quel morphisme d'espaces projectifs.
 On établit ici un analogue de l'inégalité bien connue de \bsc{Liouville}.
 L'énoncé suivant est une application directe de la formule du produit :
 
-\begin{prop} \label{PLiouvilleMal}
-  Soit $V$ une sous-variété de $\Proj^n$ définie sur un corps de nombres
-  $\cdn$ et $S$ un sous-ensemble fini de $M(\cdn)$. Pour tout point $\p z \in
-  \Proj^n(\Qbar)$, on a soit $\p z \in V(\Qbar)$, soit
-  \begin{equation}
-    \prod_{v \in S} \Distv(\p z, V)^{e_v} \ge \frac1{H(V) H(\p z)^{ld}} \pmm,
-  \end{equation}
-  où $l = \dim V + 1$, $d = \deg V$ et $e_v = [\cdn_v : \Q_v] / [\cdn : \Q]$
-  est le degré local relatif, de sorte que le membre de gauche est bien défini
-  sur $\Qbar$.
+\begin{prop} \label{PLiouvilleMal} Soit \( V \) une sous-variété de \( \Proj^n
+  \) définie sur un corps de nombres \( \cdn \) et \( S \) un sous-ensemble
+  fini de \( M(\cdn) \). Pour tout point \( \p z \in \Proj^n(\Qbar) \), on a
+  soit \( \p z \in V(\Qbar) \), soit \begin{equation} \prod_{v \in S}
+    \Distv(\p z, V)^{e_v} \ge \frac1{H(V) H(\p z)^{ld}} \pmm, \end{equation}
+  où \( l = \dim V + 1 \), \( d = \deg V \) et \( e_v = [\cdn_v : \Q_v] /
+    [\cdn : \Q] \) est le degré local relatif, de sorte que le membre de
+  gauche est bien défini sur \( \Qbar \).
 \end{prop}
 
 \begin{proof}
   On remarque en effet que
   \begin{equation}
-    \prod_{v \in M(\cdn)} \Distv(\p z, V)^{e_v} = \prod_{v \in M(\cdn)}
-    \frac{\mv{\md_z f}} {\mv f \Onv z^{ld}} = \frac{H(\md_z f)}{H(V) H(\p
-      z)^{ld}} \pmm.
+    \prod_{v \in M(\cdn)} \Distv(\p z, V)^{e_v}
+    =
+    \prod_{v \in M(\cdn)} \frac{ \mv{\md_z f} }{ \mv f \Onv z^{ld} }
+    =
+    \frac{ H(\md_z f) }{ H(V) H(\p z)^{ld} }
+    \pmm.
   \end{equation}
-  Or, d'une part cette quantité est majorée par $\prod_{v \in S} \Distv(\p z,
-  V)^{e_v}$ (la distance est bornée par $1$) et d'autre part $H(\md_z f) \ge
-  1$ par la formule du produit dès que $\p z \not\in V(\Qbar)$.
+  Or, d'une part cette quantité est majorée par
+  \( \prod_{v \in S} \Distv(\p z, V)^{e_v} \) (la distance est bornée par \( 1
+  \)) et d'autre part \( H(\md_z f) \ge 1 \) par la formule du produit dès que
+  \( \p z \not\in V(\Qbar) \).
 \end{proof}
 
 Cette version évidente de l'inégalité présente l'inconvénient de faire
-apparaître la dimension de $V$ plus $1$ en exposant de $H(\p z)$. On peut s'en
-affranchir, modulo une certaine constante ne dépendant que de la géométrie de
-$V$ plongée. En effet, \bsc{Rémond} a donné \cite[prop.~6.1]{remdcl} une
-version explicite de la proposition~2.10 de \cite{faldaav}, disant qu'on peut
-définir $V$ par des équations de degré $d$ et de hauteur majorée de façon
-explicite.
+apparaître la dimension de \( V \) plus \( 1 \) en exposant de \( H(\p z) \).
+On peut s'en affranchir, modulo une certaine constante ne dépendant que de la
+géométrie de \( V \) plongée. En effet, \bsc{Rémond} a donné
+\cite[prop.~6.1]{remdcl} une version explicite de la proposition~2.10 de
+\cite{faldaav}, disant qu'on peut définir \( V \) par des équations de degré
+\( d \) et de hauteur majorée de façon explicite.
 
 Nous allons montrer une version métrique de cette proposition. Plus
 précisément, les résultats de \bsc{Rémond} et \bsc{Faltings} reposent sur le
-fait que, génériquement, par une projection linéaire $\Proj^n \to \Proj^l$,
-l'image de $V$ est une hypersurface de degré $d$. On tire ensuite en arrière
-une équation de cette hypersurface pour obtenir une des équations de $V$
-recherchées. Dans notre cas, il faudra comme chez \bsc{Rémond} contrôler la
-hauteur des projections, mais également leur action sur la distance. Le
-principal résultat technique de cette section s'énonce ainsi :
+fait que, génériquement, par une projection linéaire \( \Proj^n \to \Proj^l
+\), l'image de \( V \) est une hypersurface de degré \( d \). On tire ensuite
+en arrière une équation de cette hypersurface pour obtenir une des équations
+de \( V \) recherchées. Dans notre cas, il faudra comme chez \bsc{Rémond}
+contrôler la hauteur des projections, mais également leur action sur la
+distance. Le principal résultat technique de cette section s'énonce ainsi :
 
 \begin{lem} \label{lProjection}
-  Soient $V \in \Proj^n$ une variété de degré $d$, de dimension $l-1$, définie
-  sur un corps de nombres $\cdn$ et $S$ un ensemble fini de places de $\cdn$.
-  Il existe une constante $\cst{Cproj} = \cst{Cproj}(d, l, n, \abs S)$ telle
-  que, pour tout point $\p z \in \Proj^n(\Qbar) \setminus V(\Qbar)$, il existe
-  une projection linéaire $\pi : \Proj^n \setminus \zeros(\pi) \to \Proj^l$
-  (où $\zeros(\pi)$ désigne le centre de la projection) telle que :
+  Soient \( V \in \Proj^n \) une variété de degré \( d \), de dimension \( l-1
+  \), définie sur un corps de nombres \( \cdn \) et \( S \) un ensemble fini
+  de places de \( \cdn \).  Il existe une constante \( \cst{Cproj} =
+    \cst{Cproj}(d, l, n, \abs S) \) telle que, pour tout point \( \p z \in
+    \Proj^n(\Qbar) \setminus V(\Qbar) \), il existe une projection linéaire \(
+    \pi : \Proj^n \setminus \zeros(\pi) \to \Proj^l \) (où \( \zeros(\pi) \)
+  désigne le centre de la projection) telle que :
   \begin{enumerate}
-    \item $\pi$ est surjective,
-    \item $\zeros(\pi) \cap V = \emptyset$,
-    \item $\p z \not\in \zeros(\pi)$,
-    \item $\pi(\p z) \not\in \pi(V)$,
-    \item $\forall v \in S,\ \Distv\big(\pi(\p z), \pi_* V)\big)
-      \le \cst{Cproj} \cdot \Distv(\p z, V)$.
+    \item \( \pi \) est surjective,
+    \item \( \zeros(\pi) \cap V = \emptyset \),
+    \item \( \p z \not\in \zeros(\pi) \),
+    \item \( \pi(\p z) \not\in \pi(V) \),
+    \item \( \forall v \in S,\ \Distv\bigl(\pi(\p z), \pi_* V)\bigr) \le
+        \cst{Cproj} \cdot \Distv(\p z, V) \).
   \end{enumerate}
-  Plus précisément, on peut choisir $\pi$ définie par des formes linéaires à
-  coefficients entiers de valeur absolue inférieure ou égale à
-  % $(2ld + d + l + 1 + 2\abs sld)/2$
-  $ (\abs S /2 +2)(ld+1)$ et prendre
+  Plus précisément, on peut choisir \( \pi \) définie par des formes linéaires
+  à coefficients entiers de valeur absolue inférieure ou égale à \(  (\abs S
+    /2 +2)(ld+1) \) et prendre
   \begin{equation}
-    \newcst{Cproj} = \left( \frac {(l+1)^{9/2} (n+1)^3}4 \right)^{ld\dv} \big(
-      (\abs S /2 +2) (ld+1) \big)^{2(ld+1)^{(l+1)(n+1)}} \pmm.
+    \newcst{Cproj}
+    =
+    \left( \frac {(l+1)^{9/2} (n+1)^3}4 \right)^{ld\dv}
+    \bigl( (\abs S /2 +2) (ld+1) \bigr)^{ 2(ld+1)^{(l+1)(n+1)} }
+    \pmm.
   \end{equation}
 \end{lem}
 
 Pour la démonstration, commençons par introduire quelques notations. Appelons
-$Y = (Y_0,\ldots, Y_l)$ les coordonnées homogènes sur $\Proj^l$ et notons $v =
-\big(v_p^{(k)}\big)_{0\le p \le l}^{1 \le k \le l}$ les coordonnées duales sur
-la puissance $l$-ième de $(\Proj^l)^\vee$. On introduit enfin des groupes de
-variables $t = \big(t_{pq}^{(k)}\big)_{0\le p, q \le l}^{1 \le k \le l}$ et
-pour chaque anneau de polynômes contenant les variables $t$, l'idéal $I_t$
-engendré par les $t_{pq}^{(k)} + t_{qp}^{(k)}$. La projection $\pi$ provient
-d'un morphisme $\tilde\pi : \cdn[Y] \to \cdn [X]$ donné par $Y_p \mapsto
-\sum_i m_i^{(p)} X_i$. On s'intéresse par la suite au cas où les $m_i^{(p)}$
-sont entiers, de valeur absolue majorée par un certain $\Delta$. On note enfin
-$m = \big(m_i^{(p)}\big)_{0\le i \le n}^{0 \le p \le l}$.
+\( Y = (Y_0,\ldots, Y_l) \) les coordonnées homogènes sur \( \Proj^l \) et
+notons \( v = \bigl(v_p^{(k)}\bigr)_{0\le p \le l}^{1 \le k \le l} \) les
+coordonnées duales sur la puissance \( l \)-ième de \( (\Proj^l)^\vee \). On
+introduit enfin des groupes de variables \( t = \bigl(t_{pq}^{(k)}\bigr)_{0\le
+    p, q \le l}^{1 \le k \le l} \) et pour chaque anneau de polynômes
+contenant les variables \( t \), l'idéal \( I_t \) engendré par les \(
+  t_{pq}^{(k)} + t_{qp}^{(k)} \). La projection \( \pi \) provient d'un
+morphisme \( \tilde\pi : \cdn[Y] \to \cdn [X] \) donné par \( Y_p \mapsto
+  \sum_i m_i^{(p)} X_i \). On s'intéresse par la suite au cas où les \(
+  m_i^{(p)} \) sont entiers, de valeur absolue majorée par un certain \(
+  \Delta \). On note enfin \( m = \bigl(m_i^{(p)}\bigr)_{0\le i \le n}^{0 \le p
+    \le l} \).
 
-Par dualité, $\tilde\pi$ fournit un morphisme $\big(\tilde\pi^\vee
-\big)^{\otimes l} : \cdn[u] \to \cdn[v]$, qu'on notera $\mu$, donné par
-$u_i^{(k)} \mapsto \sum_p m_i^{(p)} v_p^{(k)}$. Il est immédiat à partir de la
-définition que $\mu$ envoie la forme de \bsc{Chow} d'une variété sur celle de
-son
-image, c'est-à-dire que $\mu(f_V) = f_{\pi_* V}$. Par ailleurs, le
-comportement de $\mu$ par rapport au morphisme $\md$ est se lit sur le
-diagramme suivant :
+Par dualité, \( \tilde\pi \) fournit un morphisme \( \bigl(\tilde\pi^\vee
+  \bigr)^{\otimes l} : \cdn[u] \to \cdn[v] \), qu'on notera \( \mu \), donné
+par \( u_i^{(k)} \mapsto \sum_p m_i^{(p)} v_p^{(k)} \). Il est immédiat à
+partir de la définition que \( \mu \) envoie la forme de \bsc{Chow} d'une
+variété sur celle de son image, c'est-à-dire que \( \mu(f_V) = f_{\pi_* V} \).
+Par ailleurs, le comportement de \( \mu \) par rapport au morphisme \( \md \)
+est se lit sur le diagramme suivant :
 \begin{equation}
   \xymatrix{
-    \cdn[u] \ar@/^4ex/[rrr]^{\md_x} \ar[r]_-\md \ar[d]^\mu & \cdn[s,X]/I_s
-    \ar[rr]_{ev_x} \ar@{.>}[dr]|-{\mu_2} & & \cdn[s]/I_s \ar[d]^{\mu_2}
+    \cdn[u] \ar@/^4ex/[rrr]^{\md_x}
+    \ar[r]_-\md
+    \ar[d]^\mu
+    & \cdn[s,X]/I_s \ar[rr]_{ev_x}
+    \ar@{.>}[dr]|-{\mu_2}
+    & & \cdn[s]/I_s \ar[d]^{\mu_2}
     \\
-    \cdn[v] \ar@/_4ex/[rrr]_{\md_{\pi(x)}}\ar[r]^-\md & \cdn[t,Y]/I_t
-    \ar[r]^{\tilde\pi} & \cdn[t, X]/I_t \ar[r]^{ev_x} & \cdn[t]/I_t
+    \cdn[v]
+    \ar@/_4ex/[rrr]_{\md_{\pi(x)}}
+    \ar[r]^-\md
+    & \cdn[t,Y]/I_t
+    \ar[r]^{\tilde\pi}
+    & \cdn[t, X]/I_t
+    \ar[r]^{ev_x}
+    & \cdn[t]/I_t
   }
 \end{equation}
-où l'on a noté $ev_x$ le morphisme d'évaluation en $x$, et où $\mu_2$ est
-donné par $s_{ij}^{(k)} \mapsto \sum_{p, q} m_i^{(p)} m_j^{(q)} t_{pq}^{(k)}$.
-Un simple calcul montre que $\mu_2$ est bien défini et que le diagramme
-commute. Ainsi, de même que $f_{\pi_* V}$ s'obtient en spécialisant $f_V$ en
-certaines formes linéaires (c.-à-d. en prenant son image par $\mu$),
-$\md_{\pi(x)} f_{\pi_* V}$ est aussi une spécialisation de $\md_x f_V$ (image
-par $\mu_2$). On utilise ce denier fait pour établir le lemme suivant, mais on
-retiendra également que les coefficients de $f_{\pi_* V}$ sont des polynômes
-homogènes de degré $ld$ en $m$.
+où l'on a noté \( ev_x \) le morphisme d'évaluation en \( x \), et où \( \mu_2
+\) est donné par \( s_{ij}^{(k)} \mapsto \sum_{p, q} m_i^{(p)} m_j^{(q)}
+  t_{pq}^{(k)} \).  Un simple calcul montre que \( \mu_2 \) est bien défini et
+que le diagramme commute. Ainsi, de même que \( f_{\pi_* V} \) s'obtient en
+spécialisant \( f_V \) en certaines formes linéaires (c.-à-d. en prenant son
+image par \( \mu \)), \( \md_{\pi(x)} f_{\pi_* V} \) est aussi une
+spécialisation de \( \md_x f_V \) (image par \( \mu_2 \)). On utilise ce
+denier fait pour établir le lemme suivant, mais on retiendra également que les
+coefficients de \( f_{\pi_* V} \) sont des polynômes homogènes de degré \( ld
+\) en \( m \).
 
 \begin{lem} \label{lNumerateur}
-  Dans les notations précédentes, on a $\mv{\md_{\pi(x)} f_{\pi_* V}} \le
-  \cst{Cmudxf} \cdot \mv{\md_x f_V}$, avec
+  Dans les notations précédentes, on a \( \mv{\md_{\pi(x)} f_{\pi_* V}} \le
+    \cst{Cmudxf} \cdot \mv{\md_x f_V} \), avec
   \begin{equation}
     \newcst{Cmudxf}
-    = \cst{Cmudxf}(\Delta, n, l, d)
-    = \left( \frac{l(l+1)n(n+1)}4 e^{\gamma_{l+1}} \Delta^2 \right)^{ld\dv}
+    =
+    \cst{Cmudxf}(\Delta, n, l, d)
+    =
+    \left( \frac{l(l+1)n(n+1)}4 e^{\gamma_{l+1}} \Delta^2 \right)^{ld\dv}
     \pmm.
   \end{equation}
 \end{lem}
 
 \begin{proof}
   Aux places finies, le résultat est immédiat compte tenu du caractère entier
-  de $m$. Aux places archimédiennes, on utilise la norme $L_1$ (longueur) des
-  polynômes, qui se comporte bien par spécialisation :
+  de \( m \). Aux places archimédiennes, on utilise la norme \( L_1 \)
+  (longueur) des polynômes, qui se comporte bien par spécialisation :
   \begin{equation}
-    \Onv[1]{\md_{\pi(x)} f_{\pi_* V}} \le \left( \frac{l(l+1)}2 \Delta^2
-    \right)^{ld} \Onv[1]{\md_x f_V} \pmm,
+    \Onv[1]{\md_{\pi(x)} f_{\pi_* V}}
+    \le
+    \left( \frac{l(l+1)}2 \Delta^2 \right)^{ld}
+    \Onv[1]{\md_x f_V}
+    \pmm,
   \end{equation}
-  car on a substitué des formes de longueur $\le \Delta^2 l(l+1)/2$ dans la
-  forme $\md_x f_V$ multihomogène de degré $d$ en $l$ groupes de variables. On
-  compare alors la mesure à la longueur : $\Onv[1]{\md_x f_V} \le
-  \big(n(n+1)/2\big)^{ld} \mv{\md_x f_V}$ et enfin
+  car on a substitué des formes de longueur \( \le \Delta^2 l(l+1)/2 \) dans
+  la forme \( \md_x f_V \) multihomogène de degré \( d \) en \( l \) groupes
+  de variables. On compare alors la mesure à la longueur : \( \Onv[1]{\md_x
+      f_V} \le \bigl(n(n+1)/2\bigr)^{ld} \mv{\md_x f_V} \) et enfin
   \begin{equation}
     \mv{\md_{\pi(x)} f_{\pi_* V}}
-    \le e^{ld\gamma_{l+1}} \Onv[1]{\md_{\pi(x)} f_{\pi_* V}} \pmm.
+    \le
+    e^{ld\gamma_{l+1}}
+    \Onv[1]{ \md_{\pi(x)} f_{\pi_* V} }
+    \pmm.
   \end{equation}
   Le lemme suit en concaténant ces trois inégalités.
 \end{proof}
 
-\begin{lem} \label{lCramer}
-  Soit $R$ une matrice $r \times r$ inversible à coefficients entiers, de
-  valeur absolue inférieure ou égale à $C$, et $v$ une place de $\Q$. Alors
-  $\Onv{R^{-1}} \le r! \cdot C^{r-\dv}$, où $\Onv{\truc}$ désigne la norme du
-  sup des coefficients aux places finies et la norme euclidienne de la famille
-  des coefficients sinon.
+\begin{lem} \label{lCramer} Soit \( R \) une matrice \( r \times r \)
+  inversible à coefficients entiers, de valeur absolue inférieure ou égale à
+  \( C \), et \( v \) une place de \( \Q \). Alors \( \Onv{R^{-1}} \le r!
+    \cdot C^{r-\dv} \), où \( \Onv{\truc} \) désigne la norme du sup des
+  coefficients aux places finies et la norme euclidienne de la famille des
+  coefficients sinon.
 \end{lem}
 
-\begin{proof} \worknote{Dupliqué par le lemme \ref{l:cramer} qui
-    donne aussi une estimation de hauteur, qui serait d'ailleurs peut-être
-    utile ici.}
+\begin{proof}
+  \worknote{Dupliqué par le lemme \ref{l:cramer} qui donne aussi une
+    estimation de hauteur, qui serait d'ailleurs peut-être utile ici.}
   On utilise les formules de \bsc{Cramer}. À la place archimédienne, on minore
-  $\det R$ par $1$ et on majore par $(r-1)! C^{r-1}$ la norme de chaque
-  cofacteur. La norme de la comatrice et donc de l'inverse est ainsi majorée
-  par $(r-1)(r-1)! C^{r-1} \le r! C^r$. Aux places finies, la comatrice est à
-  coefficients entiers, et on majore $\av{\det R}^{-1}$ par $\av{\det
-    R}[\infty] \le r! C^r$ par la formule du produit.
+  \( \det R \) par \( 1 \) et on majore par \( (r-1)! C^{r-1} \) la norme de
+  chaque cofacteur. La norme de la comatrice et donc de l'inverse est ainsi
+  majorée par \( (r-1)(r-1)! C^{r-1} \le r! C^r \). Aux places finies, la
+  comatrice est à coefficients entiers, et on majore \( \av{\det R}^{-1} \)
+  par \( \av{\det R}[\infty] \le r! C^r \) par la formule du produit.
 \end{proof}
 
 Si les conditions~1 à~4 de la conclusion du lemme~\ref{lProjection} peuvent
-être satisfaites en exigeant la non-annulation de certains polynômes en $m$,
-comme chez \bsc{Rémond}, en revanche, la condition~5 s'obtient plutôt en
-choisissant une valeur de $m$ en laquelle certains polynômes ne prendront pas
-une valeur \og trop petite\fg{} aux places de $S$. L'objet du lemme suivant
-est d'énoncer des conditions suffisantes pour qu'un tel choix soit possible.
+être satisfaites en exigeant la non-annulation de certains polynômes en \( m
+\), comme chez \bsc{Rémond}, en revanche, la condition~5 s'obtient plutôt en
+choisissant une valeur de \( m \) en laquelle certains polynômes ne prendront
+pas une valeur \og trop petite\fg{} aux places de \( S \). L'objet du lemme
+suivant est d'énoncer des conditions suffisantes pour qu'un tel choix soit
+possible.
 
 \begin{lem} \label{lCube}
-  Soient $N$, $D$ et $b$ des entiers naturels non nuls. On note
-  $\mathcal{C}(D) = (\Z \cap [-D, D])^N \subset \Z^N$. Soient par ailleurs
-  $\cdn$ un corps de nombres et $v$ une place de $\cdn$. Il existe une
-  constante $\cst{cCube} = \cst{cCube}(D, N, b)$ telle que, pour tout
-  polynôme $B$ de degré $b$ en $N$ variables, il existe une hypersurface $H$
-  de degré $b$ qui contient tout les points $w \in \mathcal C(D)$ tels que
+  Soient \( N \), \( D \) et \( b \) des entiers naturels non nuls. On note \(
+    \mathcal{C}(D) = (\Z \cap [-D, D])^N \subset \Z^N \). Soient par ailleurs
+  \( \cdn \) un corps de nombres et \( v \) une place de \( \cdn \). Il existe
+  une constante \( \cst{cCube} = \cst{cCube}(D, N, b) \) telle que, pour tout
+  polynôme \( B \) de degré \( b \) en \( N \) variables, il existe une
+  hypersurface \( H \) de degré \( b \) qui contient tout les points \( w \in
+    \mathcal C(D) \) tels que
   \begin{equation}
-    \av{B(w)} < \cst{cCube} \cdot \Onv{B} \pmm.
+    \av{B(w)}
+    <
+    \cst{cCube} \cdot \Onv{B}
+    \pmm.
   \end{equation}
-  De plus, posant $M = M(N, b) = \binom{N+b-1}{b-1}$, on peut prendre
-  $\newcst{cCube} = M^{-\dv/2}\cdot M!^{-1} D^{-bM}$.
+  De plus, posant \( M = M(N, b) = \binom{N+b-1}{b-1} \), on peut prendre \(
+    \newcst{cCube} = M^{-\dv/2}\cdot M!^{-1} D^{-bM} \).
 \end{lem}
 
 \begin{proof}
   On procède par linéarisation du problème grâce à un plongement de
-  \bsc{Veronese} de degré $b$. Pour chaque $w \in \mathcal C(D)$, on considère
-  le vecteur colonne $w'$ formé des monômes de degré $b$ en $w$ et le vecteur
-  ligne $B'$ des coefficients de $B$, ordonnés de telle sorte que $B(w) = B'
-  \cdot w'$. Ces vecteurs $w'$ ont $M = \binom{N+b-1}{b-1}$ coordonnées,
-  entières, bornées par $D^b$. On considère $W = (w_1, \dots, w_M)$ une
-  famille d'éléments de $\mathcal{C}(D)$ et on note $W'$ la matrice carrée
-  dont les colonnes sont $w'_1, \dots, w'_M$. Posant $B(W) = (B(w_1), \dots,
-  B(w_n))$, on a ainsi $B(W) = B'W'$.
+  \bsc{Veronese} de degré \( b \). Pour chaque \( w \in \mathcal C(D) \), on
+  considère le vecteur colonne \( w' \) formé des monômes de degré \( b \) en
+  \( w \) et le vecteur ligne \( B' \) des coefficients de \( B \), ordonnés
+  de telle sorte que \( B(w) = B' \cdot w' \). Ces vecteurs \( w' \) ont \( M
+    = \binom{N+b-1}{b-1} \) coordonnées, entières, bornées par \( D^b \). On
+  considère \( W = (w_1, \dots, w_M) \) une famille d'éléments de \(
+    \mathcal{C}(D) \) et on note \( W' \) la matrice carrée dont les colonnes
+  sont \( w'_1, \dots, w'_M \). Posant \( B(W) = (B(w_1), \dots, B(w_n)) \),
+  on a ainsi \( B(W) = B'W' \).
 
-  Supposons maintenant que $W'$ est inversible. On a donc ainsi $B' =
-  B(W)\cdot(W')^{-1}$, puis $\Onv{B(W)} \ge \Onv{(W')^{-1}}^{-1} \Onv{B'}$. Il
-  existe ainsi par le lemme~\ref{ChoixI} un indice $i_v$ tel que
+  Supposons maintenant que \( W' \) est inversible. On a donc ainsi \( B' =
+    B(W)\cdot(W')^{-1} \), puis \( \Onv{B(W)} \ge \Onv{(W')^{-1}}^{-1}
+    \Onv{B'} \). Il existe ainsi par le lemme~\ref{ChoixI} un indice \( i_v \)
+  tel que
   \begin{equation}
-    \Onv{B(w_{i_v})} \ge \sqrt{M}^{\,-\dv} \Onv{(W')^{-1}}^{-1} \Onv{B} \ge
+    \Onv{B(w_{i_v})}
+    \ge
+    \sqrt{M}^{\,-\dv} \Onv{(W')^{-1}}^{-1} \Onv{B}
+    \ge
     (\sqrt M^\dv \cdot M!)^{-1}D^{-bM} \Onv{B}
   \end{equation}
-  par le lemme~\ref{lCramer}. Or le membre de droite est précisément
-  $\cst{cCube} \Onv{B}$.
+  par le lemme~\ref{lCramer}. Or le membre de droite est précisément \(
+    \cst{cCube} \Onv{B} \).
 
-  Par contraposée, si $w_1, \dots, w_M$ sont dans $\cube{D}$ et que pour tout
-  $i$ on a $\av{B(w_i)} < \cst{cCube} \Onv{B}$, alors $w_1', \dots, w_M'$ sont
-  linéairement liés : il existe ainsi un hyperplan de $\cdn^M$ contenant les
-  images de tous les points satisfaisant à la condition du lemme.
-  L'hypersurface $H$ recherchée est alors obtenue en tirant en arrière cet
-  hyperplan.
+  Par contraposée, si \( w_1, \dots, w_M \) sont dans \( \cube{D} \) et que
+  pour tout \( i \) on a \( \av{B(w_i)} < \cst{cCube} \Onv{B} \), alors \(
+    w_1', \dots, w_M' \) sont linéairement liés : il existe ainsi un hyperplan
+  de \( \cdn^M \) contenant les images de tous les points satisfaisant à la
+  condition du lemme.  L'hypersurface \( H \) recherchée est alors obtenue en
+  tirant en arrière cet hyperplan.
 \end{proof}
 
 \begin{rem}
   Comme on sait par ailleurs \cite[rem. précédant la prop.~4.1]{remivds} qu'on
-  peut choisir $w$ dans $\cube{D}$ n'annullant pas un polynôme donné de degré
-  $b$ dès que $D \le b/2$, on peut utiliser le lemme précédent pour trouver
-  des points entiers de taille contrôlée qui ne sont pas \og trop près \fg{}
-  d'une hypersurface donnée.
+  peut choisir \( w \) dans \( \cube{D} \) n'annullant pas un polynôme donné
+  de degré \( b \) dès que \( D \le b/2 \), on peut utiliser le lemme
+  précédent pour trouver des points entiers de taille contrôlée qui ne sont
+  pas \og trop près \fg{} d'une hypersurface donnée.
 \end{rem}
 
 \begin{proof}[Démonstration du lemme~\ref{lProjection}]
-  On fixe $z$ et on cherche à interpréter les conditions à satisfaire comme un
-  système d'inéquations polynomiales (au sens du lemme~précédent) en $m$.
-  D'après \bsc{Rémond}, il existe un polynôme $P_z$ homogène de degré $d$ en
-  chacun des $l+1$ groupes de variables $m^{(p)}$ (obtenu en spécialisant en
-  $z$ le polynôme $P(M, \truc)$ de la preuve de \cite[prop.~6.2]{remdcl}), tel
-  que $P_z(m) = 0$ si et seulement si $\pi(\p z) \in \pi(V)$ lorsque cela a un
-  sens. On pose alors
+  On fixe \( z \) et on cherche à interpréter les conditions à satisfaire
+  comme un système d'inéquations polynomiales (au sens du lemme~précédent) en
+  \( m \).  D'après \bsc{Rémond}, il existe un polynôme \( P_z \) homogène de
+  degré \( d \) en chacun des \( l+1 \) groupes de variables \( m^{(p)} \)
+  (obtenu en spécialisant en \( z \) le polynôme \( P(M, \truc) \) de la
+  preuve de \cite[prop.~6.2]{remdcl}), tel que \( P_z(m) = 0 \) si et
+  seulement si \( \pi(\p z) \in \pi(V) \) lorsque cela a un sens. On pose
+  alors
   \begin{equation}
-    A_z(m) = f_V(m^{(1)}, \dots, m^{(l)}) \cdot \det((m_i^{(p)})_{0 \le i,p
-      \le l}) \cdot P_z(m) \pmm.
+    A_z(m)
+    =
+    f_V( m^{(1)}, \dots, m^{(l)} )
+    \cdot \det( (m_i^{(p)})_{0 \le i,p \le l} )
+    \cdot P_z(m)
+    \pmm.
   \end{equation}
-  C'est un polynôme homogène de degré global $2ld + l + d + 1$ ; les
+  C'est un polynôme homogène de degré global \( 2ld + l + d + 1 \) ; les
   conditions~1, 2 et~4 de la conclusion du lemme sont satisfaites dès qu'il ne
   s'annule pas.
 
-  Par ailleurs, pour chaque place $v$ de $S$, on fixe $g_v$ un coefficient (vu
-  comme polynôme en $m$) de $f_{\pi_* V}$ tel que $\Onv{g_v} \ge \binom{n+d}d
-  ^{-l\dv/2} \Onv{f_V}$, ce qui est possible par une variante du
-  lemme~\ref{ChoixI} vu le nombre de tels coefficients. On regarde aussi $h_z
-  = \sum m_i^{(0)}z_i$ comme une forme linéaire en $m$. On pose alors $\delta
-  = \big(2ld + l + d + 1) + \abs{S}(ld + 1)\big)/2$ et par le
-  lemme~\ref{lCube}, pour chaque $v \in S$, on associe à $g_v$ (resp. $h_z$)
-  une forme $G_v$ de degré $ld$ (resp. une forme linéaire $H_{z, v}$) telle
-  que pour tout $m \in \cube\delta$
+  Par ailleurs, pour chaque place \( v \) de \( S \), on fixe \( g_v \) un
+  coefficient (vu comme polynôme en \( m \)) de \( f_{\pi_* V} \) tel que \(
+    \Onv{g_v} \ge \binom{n+d}d ^{-l\dv/2} \Onv{f_V} \), ce qui est possible
+  par une variante du lemme~\ref{ChoixI} vu le nombre de tels coefficients. On
+  regarde aussi \( h_z = \sum m_i^{(0)}z_i \) comme une forme linéaire en \( m
+  \). On pose alors \( \delta = \bigl(2ld + l + d + 1) + \abs{S}(ld + 1)\bigr)/2
+  \) et par le lemme~\ref{lCube}, pour chaque \( v \in S \), on associe à \(
+    g_v \) (resp. \( h_z \)) une forme \( G_v \) de degré \( ld \) (resp. une
+  forme linéaire \( H_{z, v} \)) telle que pour tout \( m \in \cube\delta \)
   \begin{equation} \label{eAppCube}
     \begin{aligned}
       \av{g_v(m)} < \cst{cCube}(\Delta, (l+1)(n+1), ld) \Onv{g_v}
-      & \Longrightarrow G_v(m) = 0 \\
+      & \Longrightarrow
+      G_v(m) = 0
+      \\
       \av{h_{z, v}(m)} < \cst{cCube}(\Delta, (l+1), 1) \Onv{h_{z, v}}
-      & \Longrightarrow H_{z, v}(m) = 0 \pmm.
+      & \Longrightarrow
+      H_{z, v}(m) = 0
+      \pmm.
     \end{aligned}
   \end{equation}
-  Le polynôme $A_z\prod_v G_v H_{z, v}$ étant de degré $2\delta$, on peut
-  choisir un point $m$ de $\cube{\delta}$ ne l'anullant pas ; on fixe
-  désormais un tel $m$. En particulier, $h_z(m) \neq 0$ assure que $\pi(\p z)
-  \not\in \pi(V)$, et comme $A_z(m) \neq 0$, les points~1 à~4 sont vérifiés.
-  Pour le point~5, on utilise le lemme~\ref{lNumerateur} et les minorations
-  déduites de~\eqref{eAppCube}. Pour le calcul de $\cst{cCube}$, on utilisera
-  la majoration $\Delta \le (ld+1)(\abs{S}/2 + 2)$ et le fait que $\sqrt M \,
-  M! \le M^M$ pour tout entier $M$.
+  Le polynôme \( A_z\prod_v G_v H_{z, v} \) étant de degré \( 2\delta \), on
+  peut choisir un point \( m \) de \( \cube{\delta} \) ne l'anullant pas ; on
+  fixe désormais un tel \( m \). En particulier, \( h_z(m) \neq 0 \) assure
+  que \( \pi(\p z) \not\in \pi(V) \), et comme \( A_z(m) \neq 0 \), les
+  points~1 à~4 sont vérifiés.  Pour le point~5, on utilise le
+  lemme~\ref{lNumerateur} et les minorations déduites de~\eqref{eAppCube}.
+  Pour le calcul de \( \cst{cCube} \), on utilisera la majoration \( \Delta
+    \le (ld+1)(\abs{S}/2 + 2) \) et le fait que \( \sqrt M \, M! \le M^M \)
+  pour tout entier \( M \).
 
-  On a $\Onv{\pi(z)} \ge \av{h_z(m)}$ et $\Onv{h_z} = \Onv z$ par
-  construction, et le choix de $m$ donne
+  On a \( \Onv{\pi(z)} \ge \av{h_z(m)} \) et \( \Onv{h_z} = \Onv z \) par
+  construction, et le choix de \( m \) donne
   \begin{equation}
-    \Onv z \le \cst{cCube} (\Delta, (l+1)(n+1), ld) \Onv{\pi(z)} \pmm,
+    \Onv z
+    \le
+    \cst{cCube}( \Delta, (l+1)(n+1), ld )
+    \Onv{\pi(z)}
+    \pmm,
   \end{equation}
   d'où
-  \begin{equation} %\label{epiz}
+  \begin{equation}
     \Onv z
-    \le \Onv{\pi(z)} \left( (l+1)(ld+1)(\abs{S}/2 + 2) \right)^{ld(l+1)}
+    \le
+    \Onv{\pi(z)} \left( (l+1)(ld+1)(\abs{S}/2 + 2) \right)^{ld(l+1)}
     \pmm.
   \end{equation}
-  On procède de même pour comparer $\mv{f_v}$ à $\mv{f_{\pi_* V}}$, en
-  utilisant de plus le fait que $\mv{f_v} \le \Onv{f_v}
-  \exp(ld\gamma_{n(n+1)/2}\dv)$ et $\Onv{f_{\pi_* V}} \le \mv{f_{\pi_* V}}
-  \big( l(l+1)/2 \big)^{ld\dv}$. Il vient
-  \begin{multline} % \label{epif}
-    \mv{f_v} \le \mv{f_{\pi_* V}} \left( l(l+1)\sqrt{n(n+1)} \right)^{ld\dv}
+  On procède de même pour comparer \( \mv{f_v} \) à \( \mv{f_{\pi_* V}} \), en
+  utilisant de plus le fait que
+  \( \mv{f_v} \le \Onv{f_v} \exp(ld\gamma_{n(n+1)/2}\dv) \) et
+  \( \Onv{f_{\pi_* V}} \le \mv{f_{\pi_* V}} \bigl( l(l+1)/2 \bigr)^{ld\dv} \).
+  Il vient
+  \begin{multline}
+    \mv{f_v}
+    \le
+    \mv{f_{\pi_* V}} \left( l(l+1)\sqrt{n(n+1)} \right)^{ld\dv}
     \\
-    \cdot \left( (ld+1)^{(l+1)(n+1)+1} (\abs{S}/2 + 2)
+    \cdot \left(
+      (ld+1)^{(l+1)(n+1)+1} (\abs{S}/2 + 2)
     \right)^{(ld+1)^{(l+1)(n+1)}}
     \pmm.
   \end{multline}
   Or d'après le lemme~\ref{lNumerateur}, on a
-  \begin{align} %\label{epimdf}
+  \begin{align}
     \mv{\md_{\pi(x)}f_{\pi_* V}}
-    & \le \cst{Cmudxf}(\Delta, n, l, d) \mv{\md_x f_V} \notag \\
-    & \le \left( \frac{l(l+1)n(n+1)}4 e^{\gamma_{l+1}} (\abs S/2 +2)
-    \right)^{ld\dv} \mv{\md_x f_V}  \pmm.
+    & \le
+    \cst{Cmudxf}(\Delta, n, l, d) \mv{\md_x f_V} \notag
+    \\ & \le
+    \left(
+      \frac{l(l+1)n(n+1)}4 e^{\gamma_{l+1}} (\abs S/2 +2)
+    \right)^{ld\dv} \mv{\md_x f_V}
+    \pmm.
   \end{align}
   La conclusion suit en substituant ces trois dernières inégalités dans la
-  définition de $\Distv(\pi(\p z), \pi_* V)$.
+  définition de \( \Distv(\pi(\p z), \pi_* V) \).
 \end{proof}
 
 \begin{coro}
-  Si $\pi$ est choisie comme au lemme \ref{lProjection}, on a
+  Si \( \pi \) est choisie comme au lemme \ref{lProjection}, on a
   \begin{gather*}
     H(\pi(\p z))
-    \le (n+1)^{3/2} (\abs S /2 +2) (ld+1) H(\p z) \\
+    \le
+    (n+1)^{3/2} (\abs S /2 +2) (ld+1) H(\p z)
+    \\
     H(\pi_* V)
-    \le \bigl(l(n+1)^2 \cdot e \cdot (\abs S /2 +2) (ld+1) H'V\bigr)
+    \le
+    \bigl( l(n+1)^2 \cdot e \cdot (\abs S /2 +2) (ld+1) H'V \bigr)
     \pmm.
   \end{gather*}
 \end{coro}
 
 \begin{proof}
-  On utilise simplement le fait que $\pi$ est donnée par une matrice entière à
-  coefficients majorés en valeur absolue par $(\abs S /2 +2) (ld+1)$ pour la
-  première inégalité. Pour la deuxième, on utilise également le fait qu'une
-  forme de \bsc{Chow} de $\pi_* V$ s'obtient en spécialisant une forme de
-  \bsc{Chow} de $V$ en des formes linéaires à coefficient entiers également
-  bornés par $(\abs S /2 +2) (ld+1)$, comme au lemme \ref{lNumerateur}.
+  On utilise simplement le fait que \( \pi \) est donnée par une matrice
+  entière à coefficients majorés en valeur absolue par \( (\abs S /2 +2)
+    (ld+1) \) pour la première inégalité. Pour la deuxième, on utilise
+  également le fait qu'une forme de \bsc{Chow} de \( \pi_* V \) s'obtient en
+  spécialisant une forme de \bsc{Chow} de \( V \) en des formes linéaires à
+  coefficient entiers également bornés par \( (\abs S /2 +2) (ld+1) \), comme
+  au lemme~\ref{lNumerateur}.
 \end{proof}
 
 On peut alors démontrer notre deuxième version de l'inégalité de
@@ -521,43 +638,56 @@ On peut alors démontrer notre deuxième version de l'inégalité de
 
 \begin{prop} \label{pLiouvilleBien}
   Sous les mêmes hypothèses et notations qu'à la proposition
-  \ref{PLiouvilleMal}, on a soit $\p z \in V(\Qbar)$, soit
+  \ref{PLiouvilleMal}, on a soit \( \p z \in V(\Qbar) \), soit
   \begin{equation}
-    \prod_{v \in S} \Distv(\p z, V)^{e_v} \ge \cst{cLiouville} \frac1{H(V)
-      H(\p z)^d} \pmm,
+    \prod_{v \in S} \Distv(\p z, V)^{e_v}
+    \ge
+    \cst{cLiouville} \frac1{ H(V) H(\p z)^d }
+    \pmm,
   \end{equation}
   avec
   \begin{multline}
-    \newcst[]{cLiouville}^{-1} = (n+1)^{3/2} \big( (l+1)^{11/2} (n+1)^5
-    \big)^{ld} \\
-    \cdot \big( (\abs S /2 +2)(ld +1) \big)^{\abs S(1 + 2(ld
-      +1)^{(l+1)(n+1)})}
+    \newcst[]{cLiouville}^{-1}
+    =
+    (n+1)^{3/2} \bigl( (l+1)^{11/2} (n+1)^5 \bigr)^{ld}
+    \\ \cdot
+    \bigl( (\abs S /2 +2)(ld +1) \bigr)^{
+      \abs S ( 1 + 2(ld +1)^{(l+1)(n+1)} )
+    }
   \end{multline}
 \end{prop}
 
 \begin{proof}
-  Si $\p z \not\in V(\Qbar)$, on choisit par le lemme~\ref{lProjection} une
-  bonne projection $\pi$. On choisit une équation $E$ de $\pi_* V$, qui est
-  donc de degré $d = \deg(V)$. En utilisant l'expression de la distance d'un
-  point à une hypersurface, ainsi que de la hauteur de cette dernière, en
-  fonction d'une de ses équations, il vient :
+  Si \( \p z \not\in V(\Qbar) \), on choisit par le lemme~\ref{lProjection}
+  une bonne projection \( \pi \). On choisit une équation \( E \) de \( \pi_*
+    V \), qui est donc de degré \( d = \deg(V) \). En utilisant l'expression
+  de la distance d'un point à une hypersurface, ainsi que de la hauteur de
+  cette dernière, en fonction d'une de ses équations, il vient :
   \begin{align*}
     \prod_{v \in S} \Distv(\p z, V)^{e_v}
-    & \ge \prod_{v \in S} \cst{Cproj}^{-e_v} \Distv(\pi(\p z), \pi_* V)^{e_v}
-    \\ & \ge \prod_{v \in S} \cst{Cproj}^{-e_v}
+    & \ge
+    \prod_{v \in S} \cst{Cproj}^{-e_v} \Distv(\pi(\p z), \pi_* V)^{e_v}
+    \\ & \ge
+    \prod_{v \in S} \cst{Cproj}^{-e_v}
     \cdot \prod_{v \in M(\cdn)}
-    \left(\frac {\av{E(\p z)}} {\mv{E} \Onv{\pi(z)}^d} \right)^{e_v}
-    \\ & \ge \prod_{v \in S} \cst{Cproj}^{-e_v}
-    \frac1{H(\pi_* V) H(\pi(\p z))^d}
-    \\ & \ge \prod_{v \in S} \cst{Cproj}^{-e_v}
-    \frac1{H(V) H(\p z)^d}
-    \\ & \qquad \cdot \frac1 {
-      (n+1)^{3/2} \big( l(n+1)^2 \cdot e \big)^{ld} (\abs S /2 +2)(ld +1)
+    \left( \frac{ \av{E(\p z)} }{ \mv{E} \Onv{\pi(z)}^d } \right)^{e_v}
+    \\ & \ge
+    \prod_{v \in S} \cst{Cproj}^{-e_v}
+    \frac1{ H(\pi_* V) H(\pi(\p z))^d }
+    \\ & \ge
+    \prod_{v \in S} \cst{Cproj}^{-e_v}
+    \frac1{ H(V) H(\p z)^d }
+    \\ & \qquad \cdot
+    \frac1 {
+      (n+1)^{3/2} \bigl( l(n+1)^2 \cdot e \bigr)^{ld} (\abs S /2 +2)(ld +1)
     }
-    \\ &\ge \cst{cLiouville} \frac1{H(V) H(\p z)^d}
+    \\ & \ge
+    \cst{cLiouville}
+    \frac1{ H(V) H(\p z)^d }
     \qedhere
   \end{align*}
 \end{proof}
+
 
 
 \section{Inégalité de \bsc{Mumford}}
@@ -566,104 +696,135 @@ La stratégie de la preuve est la suivante : si on a deux approximations
 exceptionnelles, suffisamment proches dans l'espace de \bsc{Mordell-Weil} (au
 sens des hypothèses (\ref{cone}) et (\ref{sect}) du théorème~\ref{Mumford}) et
 de hauteur assez grande, on fabrique, (en prenant leur différence, sous
-l'hypothèse que $\vai$ est un sous-groupe) une approximation de qualité telle
-qu'elle appartiendra nécessairement à $\vai$, d'après une des inégalités de
-\bsc{Liouville} énoncées à la section précédente.
+l'hypothèse que \( \vai \) est un sous-groupe) une approximation de qualité
+telle qu'elle appartiendra nécessairement à \( \vai \), d'après une des
+inégalités de \bsc{Liouville} énoncées à la section précédente.
 
 \begin{lem} \label{Precis}
-  Si $\p z = \p x - \p y$, où $\p x$ et $\p y$ satisfont l'hypothèse
-  (\eqref{e:HA}) du théorème~\ref{Mumford}, on a $\prod_{v \in S} \Distv(\p z,
-  \vai)^{e_v} \le \cst{CPrecis}H^{-\eps/d}$, avec
+  Si \( \p z = \p x - \p y \), où \( \p x \) et \( \p y \) satisfont
+  l'hypothèse (\eqref{e:HA}) du théorème~\ref{Mumford}, on a \( \prod_{v \in
+      S} \Distv(\p z, \vai)^{e_v} \le \cst{CPrecis}H^{-\eps/d} \), avec
   \begin{equation}
-    \newcst[]{CPrecis} = H(\va)^{3\cdot4^g} 10\sqrt2\,(n+1)^6
-    2^{7g/2}\left(\frac{(2n^2+1)(n+1)^2}{2n} e^{\gamma_{\frac{(n+1)n}{2}} +
-        \gamma_{n+1}} \right)^{ld}
+    \newcst[]{CPrecis}
+    =
+    H(\va)^{3\cdot4^g}
+    10\sqrt2\,(n+1)^6
+    2^{7g/2}
+    \left(
+      \frac{(2n^2+1)(n+1)^2}{2n}
+      e^{ \gamma_{\frac{(n+1)n}{2}} + \gamma_{n+1} }
+    \right)^{ld}
   \end{equation}
-  et $H = \min\big(H(\p x), H(\p y)\big)$.
+  et \( H = \min\bigl(H(\p x), H(\p y)\bigr) \).
 \end{lem}
 
 \begin{proof}
-  On a par hypothèse $\max(\Distv(\p x, \vai), \Distv(\p y, \vai)) \le
-  H^{-\lambda_v \eps}$.  On sait alors grâce au fait~\ref{ClosestPoint} 
-  qu'il existe des points $\p x',\p y' \in \vai(\C_v)$ tels que
+  On a par hypothèse \( \max(\Distv(\p x, \vai), \Distv(\p y, \vai)) \le
+    H^{-\lambda_v \eps} \).  On sait alors grâce au fait~\ref{ClosestPoint}
+  qu'il existe des points \( \p x',\p y' \in \vai(\C_v) \) tels que
   \begin{equation}
     \max(\Distv(\p x, \p x'), \Distv(\p y, \p y'))
-    \le H^{-\lambda_v \eps/d} e^{\dv \gamma_{n+1}}
+    \le
+    H^{-\lambda_v \eps/d} e^{\dv \gamma_{n+1}}
     \pmm.
   \end{equation}
   On a alors en utilisant successivement le lemme~\ref{PonctuelAlg} et la
   proposition~\ref{MetricOp} :
   \begin{align*}
     \Distv(\p z, \vai)
-    & \le \cst{CPonctuelAlg}\, \Distv(\p x - \p y, \p x' - \p y') \\
-    & \le \cst{CPonctuelAlg}\, \cst{CMetricOp}\,
-    \max(\Distv(\p x, \p x'), \Distv(\p y, \p y')) \\
-    & \le \cst{CPonctuelAlg}\, \cst{CMetricOp}\,e^{\dv
-      \gamma_{n+1}}H^{-\lambda_v \eps/d} \pmm.
+    & \le
+    \cst{CPonctuelAlg}\, \Distv(\p x - \p y, \p x' - \p y')
+    \\ & \le
+    \cst{CPonctuelAlg}\, \cst{CMetricOp}\,
+    \max(\Distv(\p x, \p x'), \Distv(\p y, \p y'))
+    \\ & \le
+    \cst{CPonctuelAlg}\, \cst{CMetricOp}
+    \, e^{\dv \gamma_{n+1}}H^{-\lambda_v \eps/d}
+    \pmm.
   \end{align*}
-  On prend alors le produit sur $v \in S$, en supposant (c'est le cas
-  défavorable) que $S$ contient toutes les places divisant $2$ ou $\infty$.
-  Comme $c_v(\va) \ge 1$, on a $\prod_{v \in S} c_v(\va) \le \prod_{v \in
-    M(\cdn)} c_v(\va) \le H(\va)^{4^g}$. Vu la normalisation des $\lambda_v$,
-  on a ainsi la conclusion du lemme.
+  On prend alors le produit sur \( v \in S \), en supposant (c'est le cas
+  défavorable) que \( S \) contient toutes les places divisant \( 2 \) ou \(
+    \infty \).  Comme \( c_v(\va) \ge 1 \), on a \( \prod_{v \in S} c_v(\va)
+    \le \prod_{v \in M(\cdn)} c_v(\va) \le H(\va)^{4^g} \). Vu la
+  normalisation des \( \lambda_v \), on a ainsi la conclusion du lemme.
 \end{proof}
 
 \begin{lem} \label{Petit}
-  Soient $\p{x}$ et $\p{y}$ satisfaisant aux hypothèses (\ref{cone}) et
-  (\ref{sect}) du théorème~\ref{Mumford}, notons $\p z$ leur différence. On a
-  alors $\Hautn(\p z) \le (\rho^2/4 + 2\phi + \rho\phi) \Hautn(\p{x})$.
+  Soient \( \p{x} \) et \( \p{y} \) satisfaisant aux hypothèses (\ref{cone})
+  et (\ref{sect}) du théorème~\ref{Mumford}, notons \( \p z \) leur
+  différence. On a alors \( \Hautn(\p z) \le (\rho^2/4 + 2\phi + \rho\phi)
+    \Hautn(\p{x}) \).
 \end{lem}
 
 \begin{proof}
-  On note $\langle\truc; \truc \rangle$ le produit scalaire et $\Onv[N]{\truc}
-  = \sqrt{\Hautn(\truc)}$ la norme dans l'espace de \bsc{Mordell-Weil}. On
-  remarque de plus que l'hypothèse \ref{sect} implique $\Onv[N]{\p{y}} \le
-  (1+\rho)^{1/2}\Onv[N]{\p{x}} \le (1+\rho/2) \Onv[N]{\p{x}}$. Il vient alors :
+  On note \( \langle\truc; \truc \rangle \) le produit scalaire et \(
+    \Onv[N]{\truc} = \sqrt{\Hautn(\truc)} \) la norme dans l'espace de
+  \bsc{Mordell-Weil}. On remarque de plus que l'hypothèse \ref{sect} implique
+  \( \Onv[N]{\p{y}} \le (1+\rho)^{1/2}\Onv[N]{\p{x}} \le (1+\rho/2)
+    \Onv[N]{\p{x}} \). Il vient alors :
   \begin{align*}
     \Hautn(\p{z})
-    & = \Onv[N]{\p{x}-\p{y}}^2 \\ & = \Onv[N]{\p{x}}^2 + \Onv[N]{\p{y}}^2 -
-    2\langle \p{x}; \p{y} \rangle \\
-    & = \left(\Onv[N]{\p{y}} - \Onv[N]{\p{x}}\right)^2 +
-    2\Onv[N]{\p{x}}\Onv[N]{\p{y}}\left( 1- \cos(\p{x}, \p{y}) \right) \\
-    & \le \left( \frac{\rho}{2}\Onv[N]{\p{x}} \right)^2 + 2\left(
-      1+\frac{\rho}{2} \right) \Onv[N]{\p{x}}^2 \cdot \phi \\
-    & \le ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(\p{x})\pmm{.}\qedhere
+    & =
+    \Onv[N]{\p{x}-\p{y}}^2
+    \\ & =
+    \Onv[N]{\p{x}}^2 + \Onv[N]{\p{y}}^2 - 2\langle \p{x}; \p{y} \rangle
+    \\ & =
+    \left( \Onv[N]{\p{y}} - \Onv[N]{\p{x}} \right)^2
+    + 2 \Onv[N]{\p{x}} \Onv[N]{\p{y}} \left( 1- \cos(\p{x}, \p{y}) \right)
+    \\ & \le
+    \left( \frac{\rho}{2}\Onv[N]{\p{x}} \right)^2
+    + 2\left( 1+\frac{\rho}{2} \right)
+    \Onv[N]{\p{x}}^2 \cdot \phi
+    \\ & \le
+    \bigl( (\rho^2/4) + 2\phi + \rho\phi \bigr)
+    \Hautn(\p{x})
+    \pmm.
+    \qedhere
   \end{align*}
 \end{proof}
 
 \begin{proof}[Démonstration (du théorème~\ref{Mumford}).]
-  En utilisant les conclusions des deux lemmes
-  précédents, on montre que $\p z$ ne satisfait pas à la conclusion la
-  proposition~\ref{PLiouvilleMal} dès que $\p x$ satisfait l'hypothèse
-  (\ref{Loin}) du théorème~\ref{Mumford}.  On a besoin de pouvoir comparer les
-  hauteurs projective et normalisée. On utilise à cet effet le lemme~3.9 de
-  \cite{daphimhva2} et la remarque subséquente : $\lvert\Hautn(\truc) -
-  h(\truc)\rvert \le B$, avec $B$ comme dans l'énoncé du théorème. En
-  injectant ceci dans le lemme~\ref{Precis}, on a $\sum_{v \in S} e_v
-  \log\Distv(\p z, \vai) \le -(\eps/d) \Hautn(\p x) + B\eps/d +
-  \cst{CPrecis}$. De même, le lemme~\ref{Petit} donne $h(\p z) \le ((\rho^2/4)
-  + 2\phi + \rho\phi) \Hautn(\p x) + B$. Ces estimations contredisent la
-  conclusion de la proposition~\ref{PLiouvilleMal} dès que
+  En utilisant les conclusions des deux lemmes précédents, on montre que \( \p
+    z \) ne satisfait pas à la conclusion la proposition~\ref{PLiouvilleMal}
+  dès que \( \p x \) satisfait l'hypothèse (\ref{Loin}) du
+  théorème~\ref{Mumford}.  On a besoin de pouvoir comparer les hauteurs
+  projective et normalisée. On utilise à cet effet le lemme~3.9 de
+  \cite{daphimhva2} et la remarque subséquente : \( \lvert\Hautn(\truc) -
+    h(\truc)\rvert \le B \), avec \( B \) comme dans l'énoncé du théorème. En
+  injectant ceci dans le lemme~\ref{Precis}, on a \( \sum_{v \in S} e_v
+    \log\Distv(\p z, \vai) \le -(\eps/d) \Hautn(\p x) + B\eps/d +
+    \cst{CPrecis} \). De même, le lemme~\ref{Petit} donne \( h(\p z) \le
+    ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(\p x) + B \). Ces estimations
+  contredisent la conclusion de la proposition~\ref{PLiouvilleMal} dès que
   \begin{equation}
-    \big(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\big) \Hautn(\p x)
-    > h(\vai) + \cst{CPrecis} + B(ld + \eps/d)
+    \bigl(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\bigr)
+    \Hautn(\p x)
+    >
+    h(\vai) + \cst{CPrecis} + B(ld + \eps/d)
     \pmm.
   \end{equation}
-  Or, un calcul facile montre que la constante $C$ du théorème majore
-  $\cst{CPrecis}$ et que la relation précédente est impliquée par
-  l'hypothèse (\ref{Loin}) du théorème ; cette dernière oblige donc $\p z$ à
-  être sur $\vai$.
+  Or, un calcul facile montre que la constante \( C \) du théorème majore \(
+    \cst{CPrecis} \) et que la relation précédente est impliquée par
+  l'hypothèse (\ref{Loin}) du théorème ; cette dernière oblige donc \( \p z \)
+  à être sur \( \vai \).
 \end{proof}
 
-\emph{Remarque.} En utilisant la proposition~\ref{pLiouvilleBien} en lieu et
-place de la proposition~\ref{PLiouvilleMal} ci-dessus, on obtient une variante
-du théorème, avec la même conclusion mais en affaiblissant la condition
-$ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps$ en $d^2((\rho^2/4) + 2\phi +
-\rho\phi)< \eps$ et en remplaçant la condition 3 par
-\begin{equation}
-  \Hautn(\p{x}) > [h(\vai) + C + \log \cst{cLiouville} + B(d + \eps/d)] \cdot
-  [\eps/d - d((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
-\end{equation}
+\begin{rem}
+  En utilisant la proposition~\ref{pLiouvilleBien} en lieu et place de la
+  proposition~\ref{PLiouvilleMal} ci-dessus, on obtient une variante du
+  théorème, avec la même conclusion mais en affaiblissant la condition
+  \( ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps \) en
+  \( d^2((\rho^2/4) + 2\phi + \rho\phi)< \eps \) et en remplaçant la condition
+  3 par
+  \begin{equation}
+    \Hautn(\p{x})
+    >
+    \bigl( h(\vai) + C + \log \cst{cLiouville} + B(d + \eps/d) \bigr)
+    \cdot \bigl(\eps/d - d((\rho^2/4) + 2\phi + \rho\phi) \bigr)^{-1}
+    \pmm.
+  \end{equation}
+\end{rem}
+
 
 \endinput
 
