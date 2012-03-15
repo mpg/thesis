@@ -283,158 +283,37 @@ projectifs.
 
 \startout
 
-Par ailleurs, on peut également partir de la distance ainsi définie entre les
-points pour définir une distance « ensembliste » entre un point et une variété
-par \( \Distv^E(\p x, V) = \inf_{\p y \in V(\C_v)} \Distv(\p x, \p y) \).
-Cette définition présente l'inconvénient de ne pas tenir compte de la
-structure géométrique de \( V \), notamment des singularités éventuelles.
-Néanmoins, les deux notions se comparent tout à fait bien, à l'aide des deux
-résultats suivants, dont le premier est tiré de \cite[« Closest point property
-» p.~89]{phidg}. On rappelle pour la lecture de ces énoncés les notations \(
-  \gamma_n = \sum_{q=1}^{n-1} 1/2q \) et \( \dv = 0 \) si \( v \) est
-ultramétrique, \( \dv = 1 \) sinon.
-
-\begin{fact} \label{f:closest-point}
-  Pour toute variété \( V \subset \Proj^n \) et tout point \( \p x \in
-    \Proj^n(\C_v) \), il existe un point \( \p y \in V(\C_v) \) tel que \(
-    \Distv(\p x, \p y) \le \Distv(\p x, V)^{1/\deg V} e^{\dv\gamma_{n+1}} \).
-\end{fact}
-
 \begin{lem} \label{l:dv-p-alg-gen}
-  Pour toute variété \( V \subset \Proj^n \) et tous points \( \p x \in
-    \Proj^n(\C_v) \) et \( \p y \in V(\C_v) \), on a \( \Distv(\p x, V) \le
-    \cst{CPonctuelAlg}\, \Distv(\p x, \p y)^m \) avec
+  Pour toute variété \( V \subset \Proj^n \) et tous points \( x \in
+    \Proj^n(\C_v) \) et \( y \in V(\C_v) \), on a \( \distalgv x V  \le
+    \cst{CPonctuelAlg}\, \distv x y ^m \) avec
   \begin{equation}
     \newcst{CPonctuelAlg}
     =
-    \left( 2 (n+1){3m/2} \left(\frac{2n^2+1}{n^2}
+    \left( 2 (n+1)^{3m/2} \left(
+        \frac{2n^2+1}{n^2}
         \exp\bigl(\gamma_{\frac{(n+1)n}2} + \gamma_{n+1}\bigr) \right)^{ld}
     \right)^\dv
     \pmm,
   \end{equation}
-  où \( l = \dim V + 1 \), \( d = \deg V \) et \( m = m_{\p y}(V) \) est la
-  multiplicité de \( V \) en \( \p y \).
-\end{lem}
-
-La démonstration repose sur un développement de \( \md f \) autour de \( \p y
-\) relativement à \( X \), qui permet de quantifier le fait que, \( \md_y f \)
-étant nul, \( \md_x f \) doit être petit pour \( \p x \) voisin de \( \p y \).
-De façon générale, pour écrire un développement de \bsc{Taylor} , il faudra
-s'assurer de l'existence une carte affine \( X_i \neq 0 \) contenant à la fois
-\( \p x \) et \( \p y \). On voit facilement que la non-existence d'un telle
-carte affine impliquerait \( \Distv(\p x, \p y) = 1 \). En pratique, on pourra
-supposer sans problème que \( \p x \) et \( \p y \) sont suffisamment proches.
-Par ailleurs, il sera utile de pouvoir de plus choisir un indice \( i \) de
-sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
-\) (resp. \( \Onv y \)). Le lemme facile suivant montre que c'est possible.
-
-\begin{lem} \label{l:dv-common-i}
-  Pour chaque \( \p x \in \Proj^n \), il existe \( i \in \{0,\dots, n\} \) tel
-  que \( \frac {\av {x_i}} {\Onv x} \ge (\frac{1}{\sqrt{n+1}})^\dv \). De
-  plus, pour le même indice \( i \), pour tout point \( \p y \) satisfaisant
-  \( \Distv(\p x, \p y) \le \eps_0 \) avec \( \eps_0 <
-    (\frac{1}{\sqrt{n+1}})^\dv \), on a
-  \begin{equation}
-    \frac{\av{y_i}}{\Onv y}
-    \ge
-    \left(\frac{\sqrt{n+1}}{n+2}-\eps_0\right)^\dv
-    \pmm.
-  \end{equation}
-  En particulier, si \( \eps_0 < (\frac{1}{4\sqrt{n+1}})^\dv \) on a \(
-    \frac{\av{y_i}}{\Onv y} \ge (\frac{1}{2\sqrt{n+1}})^\dv \) et \( y_i \)
-  est non nul.
+  où \( l = \dim V + 1 \), \( d = \deg V \) et \( m = m_{y}(V) \) est la
+  multiplicité de \( V \) en \( y \).
 \end{lem}
 
 \begin{proof}
-  Pour le premier point, il suffit de choisir \( i \in \{ 0, \dots, n\} \)
-  maximisant \( \av{\coa_i} \). Afin d'alléger les notations, on supposera par
-  la suite \( i = 0 \). Pour chaque \( z = (z_0, \dots, z_n) \) on notera \(
-    \hat{z} = (z_1, \dots, z_n) \) le vecteur obtenu en omettant la première
-  coordonnée. On a alors, vu l'hypothèse sur \( \p x \) et la définition de la
-  distance :
-  \begin{equation} \label{e:dvci-hat}
-    \eps_0 \Onv y \Onv x
-    \ge
-    \Onv{y \wedge x}
-    \ge
-    \Onv{x_0 \hatys - y_0 \hatxs}
-    \pmm,
-  \end{equation}
-  où la deuxième inégalité vient en remarquant que toutes les coordonnées de
-  \( x_0 \hatys - y_0 \hatxs \) apparaissent également comme coordonnées de \(
-    y \wedge x \).
-
-  On traite d'abord le cas ultramétrique, par l'absurde. En effet, si on avait
-  \( \av{y_0}< \Onv{\hatys} = \Onv{y} \), il viendrait \( \Onv{x_0 \hatys} >
-    \Onv{y_0 \hatxs} \) et la propriété ultramétrique appliquée au dernier
-  membre de \eqref{e:dvci-hat} donnerait \( \eps_0 \Onv{y}\Onv{x}  \ge
-    \av{x_0}\Onv{\hatys} \), puis \( \eps_0 \ge 1 \) contrairement aux
-  hypothèses.
-
-  Pour le cas archimédien, l'inégalité triangulaire dans \eqref{e:dvci-hat}
-  donne
-  \( \eps_0 \Onv{y}\Onv{x}  \ge \av{x_0}\Onv{\hatys} - \av{y_0}\Onv{\hatxs}
-  \).  En regroupant les termes et en divisant par \( \Onv{y}\Onv{x} \), puis
-  en remarquant que \( \Onv{\hatxs}/\Onv{x} \le 1 \) il vient successivement :
-  \begin{align}
-    \frac{\Onv{\hatxs}}{\Onv{x}}
-    \cdot \frac{\av{y_0}}{\Onv{y}}
-    & \ge
-    \frac{\Onv{\hatys}}{\Onv{y}}
-    \cdot \frac{\av{x_0}}{\Onv{x}}
-    - \eps_0
-    \pmm, \notag
-    \\ \label{e:dvci-contrainte}
-    \frac{\av{y_0}}{\Onv{y}}
-    & \ge
-    \frac{\Onv{\hatys}}{\Onv{y}}
-    \cdot
-    \frac{1}{\sqrt{n+1}}
-    - \eps_0
-    \pmm.
-  \end{align}
-  Notons \( t = \av{y_0}/\Onv{y} \in [0; 1] \) ; comme \( \Onv{y}^2 =
-    \av{y_0}^2 + \Onv{\hatys}^2 \), on réécrit \eqref{e:dvci-contrainte} sous
-  la forme \( t \ge \sqrt{\frac{1-t^2}{n+1}}-\eps_0 \), ou encore :
-  \begin{equation}
-    \left( \frac{n+2}{n+1} \right) t^2
-    + 2t\eps_0
-    + \eps_0^2
-    - \frac{1}{n+1}
-    \ge
-    0
-    \pmm,
-  \end{equation}
-  qui, compte tenu de l'hypothèse sur \( \eps_0 \) et de la positivité de \( t
-  \), implique :
-  \begin{align*}
-    t
-    & \ge
-    \frac{n+1}{n+2}
-    \sqrt{ \frac{-\eps_0^2}{n+1}+\frac{n+2}{(n+1)^2} }
-    - \left( \frac{n+1}{n+2} \right) \eps_0
-    \\ & \ge
-    \frac{\sqrt{n+1}}{n+2} - \eps_0
-    \pmm,
-  \end{align*}
-  comme annoncé. Le cas particulier s'en déduit immédiatement en substituant
-  et en observant que \( n \ge 2 \).
-\end{proof}
-
-\begin{proof}[Démonstration du lemme~\ref{l:dv-p-alg-gen}.]
   On regarde \( \md f \) comme un polynôme en \( s \) à coefficients dans \(
     k[X] \) et on appelle \( g \) la famille de ses coefficients; ils sont
   homogènes de degré \( ld \) et s'annulent en \( y \). On peut supposer que
-  \( \Distv(\p x, \p y) < (2n^2\sqrt{n+1})^{-\dv} \) car sinon la conclusion
+  \( \distv x y  < (2n^2\sqrt{n+1})^{-\dv} \) car sinon la conclusion
   du lemme est vide, la distance étant identiquement bornée par \( 1 \). On
-  suppose alors grâce au lemme~précédent que \( y_0 = x_0 = 1 \), \( \Onv y
-    \le (\sqrt{n+1})^\dv \) et \( \Onv x \le (2 \sqrt{n+1})^\dv \).
+  suppose alors grâce au lemme~précédent que \( y_0 = x_0 = 1 \), \( \nv2 y
+    \le (\sqrt{n+1})^\dv \) et \( \nv2 x \le (2 \sqrt{n+1})^\dv \).
 
-  Par ailleurs, \( \Onv y \le \Onv x + \Onv {y-x} \le \Onv x + \Onv{x \wedge
+  Par ailleurs, \( \nv2 y \le \nv2 x + \nv2 {y-x} \le \nv2 x + \nv2{x \wedge
       y} \), car chaque coefficient de \( x - y \) est un coefficient de \( x
-    \wedge y \).  En substituant \( \Onv{x \wedge y} = \Distv(\p x, \p y) \Onv
-    x \Onv y \) et en divisant l'inégalité obtenue par \( \Onv x \), compte
-  tenu de l'hypothèse sur la distance, il vient \( \Onv y / \Onv x \le 1 +
+    \wedge y \).  En substituant \( \nv2{x \wedge y} = \distv x y  \nv2
+    x \nv2 y \) et en divisant l'inégalité obtenue par \( \nv2 x \), compte
+  tenu de l'hypothèse sur la distance, il vient \( \nv2 y / \nv2 x \le 1 +
     (2n^2)^{-1} \). On dispose alors de toutes les estimations utiles pour
   exploiter le développement de \bsc{Taylor} de la famille \( g \) au
   voisinage de \( y \).
@@ -457,57 +336,57 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
     \pmm.
   \end{equation}
 
-  On majore maintenant \( \Onv {g(x)} / \Onv x ^{ld} \) en procédant terme à
+  On majore maintenant \( \nv2 {g(x)} / \nv2 x ^{ld} \) en procédant terme à
   terme.
   \begin{align*}
-    \frac {\Onv{R_{k, \alpha}}} {\Onv x ^{ld}}
+    \frac {\nv2{R_{k, \alpha}}} {\nv2 x ^{ld}}
     & \le
     \Onnv[v, 2]{ \frac1{\alpha!} \frac{\partial^kg}{\partial X^\alpha} }
-    \Onv y^{ld-k}
-    \Onv{x \wedge y}^k
-    / \Onv x^{ld}
+    \nv2 y^{ld-k}
+    \nv2{x \wedge y}^k
+    / \nv2 x^{ld}
     \\ & \le
-    2^{ld\dv} \Onnv[v, 2] g \Onv y^{ld-k} \Onv x^k \Onv y^k
-    \Distv(\p x, \p y)^k
-    / \Onv x^{ld}
+    2^{ld\dv} \Onnv[v, 2] g \nv2 y^{ld-k} \nv2 x^k \nv2 y^k
+    \distv x y ^k
+    / \nv2 x^{ld}
     \\ & \le
     \left( \frac{2n^2+1}{n^2} \right)^{ld\dv}
     \Onnv[v, 2] g
-    \Distv(\p x, \p y)^k
+    \distv x y ^k
     (\sqrt{n+1})^{k\dv}
     \pmm.
   \end{align*}
   On majore alors le nombre de termes pour obtenir :
   \begin{equation}
-    \frac{\Onv{R_k}}{\Onv x^{ld}}
+    \frac{\nv2{R_k}}{\nv2 x^{ld}}
     \le
     \left(\frac{2n^2+1}{n^2}\right)^{ld\dv}
     \Onnv[v, 2]g
-    \Distv(\p x, \p y)^k
+    \distv x y ^k
     (n+1)^{3k\dv/2}
     \pmm,
   \end{equation}
-  puis, si \( v \) est finie, \( \Onv {g(x)} / \Onv x ^{ld} \le \Onnv[v, 2]g
-    \Distv(\p x, \p y)^m \) par l'inégalité ultramétrique ; et si \( v \) est
+  puis, si \( v \) est finie, \( \nv2 {g(x)} / \nv2 x ^{ld} \le \Onnv[v, 2]g
+    \distv x y ^m \) par l'inégalité ultramétrique ; et si \( v \) est
   infinie :
   \begin{align*}
-    \frac{\Onv{g(x)}}{\Onv x^{ld}}
+    \frac{\nv2{g(x)}}{\nv2 x^{ld}}
     & \le
     \left(\frac{2n^2+1}{n^2}\right)^{ld} \Onnv[v, 2]g
     \sum_{k=m}^{ld}
-    \Distv(\p x, \p y)^k (n+1)^{3k/2} \\
+    \distv x y ^k (n+1)^{3k/2} \\
     & \le
     \left(\frac{2n^2+1}{n^2}\right)^{ld} \Onnv[v, 2]g
-    \Distv(\p x, \p y)^m (n+1)^{3m/2} \\
+    \distv x y ^m (n+1)^{3m/2} \\
     & \phantom{\le} \qquad
-    \cdot \sum_{k=0}^{ld-m} \bigl(\Distv(\p x, \p y) (n+1)^{3/2}\bigr)^k
+    \cdot \sum_{k=0}^{ld-m} \bigl(\distv x y  (n+1)^{3/2}\bigr)^k
     \pmm,
   \end{align*}
   où la dernière somme est majorée par \( 2 \), d'où finalement :
   \begin{equation} \label{e:dvpa-comp}
-    \frac{\Onv{g(x)}}{\Onv x^{ld}}
+    \frac{\nv2{g(x)}}{\nv2 x^{ld}}
     \le
-    \Onnv[v, 2]g \Distv(\p x, \p y)^m 
+    \Onnv[v, 2]g \distv x y ^m 
     \left(
       2 (n+1)^{3m/2} \left(\frac{2n^2+1}{n^2}\right)^{ld}
     \right)^\dv
@@ -515,13 +394,13 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
   \end{equation}
   La fin de la démonstration consiste alors en des comparaisons de normes :
   \begin{equation}
-    \mv{\md_x f} i
+    \mv{\md_x f}
     \stackrel{(a)}{\ll}
-    \Onv[v, 2]{\md_x f}
-    = \Onv{g(x)}
-    \stackrel{(b)}{\ll} \Onnv[v, 2] g i
-    = \Onv[v, 2]{\md f} i
-    \stackrel{(c)}{\ll} \mv{\md f} i
+    \nv2{\md_x f}
+    = \nv2{g(x)}
+    \stackrel{(b)}{\ll} \Onnv[v, 2] g
+    = \nv2{\md f}
+    \stackrel{(c)}{\ll} \mv{\md f}
     \stackrel{(d)}{\ll} \mv f
     \pmm,
   \end{equation}
@@ -530,9 +409,9 @@ sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit comparable  à \( \Onv x
   \( (c) \) l'on peut prendre \( [(n+1)^2n/2]^{\dv\cdot ld} \) d'après
   \cite[dém. du lemme~3.3]{remgdmp}. La constante \( (b) \) est donnée par
   l'inégalité \eqref{e:dvpa-comp} ci-dessus ; la dernière découle du fait que \(
-    \mv{\md_x f} \le \mv{f} \) dès que \( \Onv x = 1 \) (c.-à-d. du fait que
-  la distance est majorée par \( 1 \)). En reportant ceci dans la définition
-  de \( \mv{\truc} \) et en intégrant, il vient \( \mv{\md f} \le
+    \mv{\md_x f} \le \mv{f} \) dès que \( \nv2 x = 1 \) (c.-à-d. du fait que
+  la distance est majorée par \( 1 \)) : en effet, en reportant ceci dans la
+  définition de \( \mv{\truc} \) et en intégrant, il vient \( \mv{\md f} \le
     \exp(\dv\cdot ld \gamma_{n+1}) \mv f \).  Le lemme suit en mettant ces
   constantes bout à bout.
 \end{proof}

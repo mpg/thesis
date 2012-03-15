@@ -767,9 +767,6 @@
 \newcommand*\Distv [1][\place] {\Dist\ssub{#1}}
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
 
-\newcommand*\Distpv[1][\place] {\Dist^{\mathrm p}\ssub{#1}} % XXX obsolete
-\newcommand*\distpv[3][\place] {\Distpv[#1](#2,#3)} % XXX obsolete
-
 \DeclareMathOperator \Distalg {Dist}
 \newcommand*\Distalgv [1][\place] {\Distalg\ssub{#1}}
 \newcommand*\distalgv [3][\place] {\Distalgv[#1](#2,#3)}

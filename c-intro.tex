@@ -525,7 +525,7 @@ variété, on s'écarte par contre légèrement des références citée, en posa
 \begin{equation}
   \distv x V
   =
-  \min{y \in V(\Cv)} \distv x y
+  \min_{y \in V(\Cv)} \distv x y
 \end{equation}
 qui sera parfois plus commode. Les deux notions sont en fait très comparables,
 voir la section suivante.
@@ -667,7 +667,112 @@ Dans l'autre sens, on a le résultat suivant.
   \todo\dots
 \end{prop}
 
+La démonstration repose sur un développement de \( \md f \) autour de \( y
+\) relativement à \( X \), qui permet de quantifier le fait que, \( \md_y f \)
+étant nul, \( \md_x f \) doit être petit pour \( x \) voisin de \( y \).
+De façon générale, pour écrire un développement de \bsc{Taylor} , il faudra
+s'assurer de l'existence une carte affine \( X_i \neq 0 \) contenant à la fois
+\( x \) et \( y \). On voit facilement que la non-existence d'un telle
+carte affine impliquerait \( \distv x y  = 1 \), rendant le résultat banal. En
+pratique, on pourra supposer sans problème que \( x \) et \( y \) sont
+suffisamment proches.  Par ailleurs, il sera utile de pouvoir de plus choisir
+un indice \( i \) de sorte que \( \av{x_i} \) (resp.  \( \av{y_i} \)) soit
+comparable  à \( \nv2 x \) (resp. \( \nv2 y \)). Le lemme élémentaire suivant
+montre que c'est possible.
+
+\begin{lem} \label{l:dv-common-i}
+  Pour chaque \( x \in \projd \), il existe \( i \in \set{0, \dots, n} \) tel
+  que \( \frac{ \av{x_i} }{ \nv2 x } \ge (\frac1{\sqrt{n+1}})^\dv \). De
+  plus, pour le même indice \( i \), pour tout point \( y \) satisfaisant
+  \( \distv x y  \le \eps_0 \) avec \( \eps_0 < (\frac{1}{\sqrt{n+1}})^\dv \),
+  on a
+  \begin{equation}
+    \frac{\av{y_i}}{\nv2 y}
+    \ge
+    \left( \frac{\sqrt{n+1}}{n+2} - \eps_0 \right)^\dv
+    \pmm.
+  \end{equation}
+  En particulier, si \( \eps_0 < (\frac1{4\sqrt{n+1}})^\dv \) on a \(
+    \frac{\av{y_i}}{\nv2 y} \ge (\frac1{2\sqrt{n+1}})^\dv \) et \( y_i \neq 0
+  \).
+\end{lem}
+
 \begin{proof}
+  Pour le premier point, il suffit de choisir \( i \in \set{ 0, \dots, n } \)
+  maximisant \( \av{x_i} \). Afin d'alléger les notations, on supposera par
+  la suite \( i = 0 \). Pour chaque \( z = (z_0, \dots, z_n) \) on notera \(
+    \hat{z} = (z_1, \dots, z_n) \) le vecteur obtenu en omettant la première
+  coordonnée. On a alors, vu l'hypothèse sur \( x \) et la définition de la
+  distance :
+  \begin{equation} \label{e:dvci-hat}
+    \eps_0 \nv2 y \nv2 x
+    \ge
+    \nv2{y \wedge x}
+    \ge
+    \nv2{x_0 \hatys - y_0 \hatxs}
+    \pmm,
+  \end{equation}
+  où la deuxième inégalité vient en remarquant que toutes les coordonnées de
+  \( x_0 \hatys - y_0 \hatxs \) apparaissent également comme coordonnées de \(
+    y \wedge x \).
+
+  On traite d'abord le cas ultramétrique, par l'absurde. En effet, si on avait
+  \( \av{y_0} < \nv2{\hatys} = \nv2{y} \), il viendrait \( \nv2{x_0 \hatys} >
+    \nv2{y_0 \hatxs} \) et la propriété ultramétrique appliquée au dernier
+  membre de \eqref{e:dvci-hat} donnerait \( \eps_0 \nv2{y}\nv2{x}  \ge
+    \av{x_0}\nv2{\hatys} \), puis \( \eps_0 \ge 1 \) contrairement aux
+  hypothèses.
+
+  Pour le cas archimédien, l'inégalité triangulaire dans le membre de droite
+  de \eqref{e:dvci-hat} donne
+  \( \eps_0 \nv2{y}\nv2{x}  \ge \av{x_0}\nv2{\hatys} - \av{y_0}\nv2{\hatxs}
+  \).  En divisant par \( \nv2{y}\nv2{x} \) puis en remarquant que \(
+    \nv2{\hatxs}/\nv2{x} \le 1 \) il vient successivement :
+  \begin{align}
+    \frac{\nv2{\hatxs}}{\nv2{x}}
+    \cdot \frac{\av{y_0}}{\nv2{y}}
+    & \ge
+    \frac{\nv2{\hatys}}{\nv2{y}}
+    \cdot \frac{\av{x_0}}{\nv2{x}}
+    - \eps_0
+    \pmm, \notag
+    \\ \label{e:dvci-contrainte}
+    \frac{\av{y_0}}{\nv2{y}}
+    & \ge
+    \frac{\nv2{\hatys}}{\nv2{y}}
+    \cdot
+    \frac{1}{\sqrt{n+1}}
+    - \eps_0
+    \pmm.
+  \end{align}
+  Notons \( t = \av{y_0}/\nv2{y} \in [0; 1] \) ; comme \( \nv2{y}^2 =
+    \av{y_0}^2 + \nv2{\hatys}^2 \), on réécrit \eqref{e:dvci-contrainte} sous
+  la forme \( t \ge \sqrt{\frac{1-t^2}{n+1}}-\eps_0 \), ou encore :
+  \begin{equation}
+    \left( \frac{n+2}{n+1} \right) t^2
+    + 2t\eps_0
+    + \eps_0^2
+    - \frac{1}{n+1}
+    \ge
+    0
+    \pmm,
+  \end{equation}
+  qui, compte tenu de l'hypothèse sur \( \eps_0 \) et de la positivité de \( t
+  \), implique :
+  \begin{align*}
+    t
+    & \ge
+    \frac{n+1}{n+2}
+    \sqrt{ \frac{-\eps_0^2}{n+1}+\frac{n+2}{(n+1)^2} }
+    - \left( \frac{n+1}{n+2} \right) \eps_0
+    \\ & \ge
+    \frac{\sqrt{n+1}}{n+2} - \eps_0
+    \pmm,
+  \end{align*}
+  comme annoncé. Le cas particulier s'en déduit immédiatement en substituant.
+\end{proof}
+
+\begin{proof}[\proofname{} de la proposition~\ref{p:dv-p2alg}.]
   \todo\dots
 \end{proof}
 
