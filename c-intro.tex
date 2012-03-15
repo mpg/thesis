@@ -552,7 +552,58 @@ Ainsi, une large partie des raisonnements effectués par la suite se fera sur
 \( \Qbar \).
 
 
-\subsection{Distances projectives} \label{sec:distv-def}
+\section{Compléments sur les distances} \label{sec:distv-cmp}
+
+On commence par établir une expression simple de la distance entre un point et
+un hyperplan, cas qui sera fondamental dans plusieurs applications, puis on
+étudie les liens entre la distance définie ci-dessus et celle utilisée
+notamment dans~\cite{phidg}.
+
+\begin{prop}
+  Si \( E \) est un hyperplan de \( \projd \), d'équation \( L \), on a
+  \begin{equation}
+    \distv x E
+    =
+    \frac{ \av{L(x)} }{ \nv2 L \nv2 x }
+    \quad \forall x \in \projd(\Cv)
+    \pmm.
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  On commence par se ramener au cas \( L = X_0 \). Pour cela, si \( \place \)
+  est ultramétrique, on commence par choisir un coefficient de \( L \) de
+  valeur absolue maximale : quitte à permuter les coordonnées, on peut
+  supposer que c'est celui d'indice \( 0 \). En divisant par ce coefficient,
+  on se ramène au cas \( L = X_0 + l_1 X_1 + \dots + l_n X_n \) avec les \(
+    l_i \) entiers.  Il est alors facile de voir que le changement de
+  coordonnée donné par \( x'_0 = L(x) \) et \( x'_i = x_i \) pour \( i \ge 1
+  \) est une isométrie (son inverse est également à coefficients entiers), de
+  sorte qu'on s'est bien ramené au cas \( L = X_0 \) sans modifier les
+  quantités apparaissant dans chacun des deux membres, ni perdre en
+  généralité.
+
+  Aux places archimédiennes, on plonge \( \cdn_\place \) dans \( \C \) et on
+  note \( \overline E \) le relevé de \( E \) dans \( \C^{n+1} \). On munit ce
+  dernier de la forme hermitienne standard et on considère un vecteur unitaire
+  normal à \( \overline E \), qu'on note \( a_0 \). On complète ce vecteur en
+  un base orthonormée et on considère le changement de coordonnée qui envoie
+  cette base sur la base canonique : étant donné par une transformation
+  unitaire, il ne modifie aucun des deux membres de l'égalité à prouver, et
+  nous ramène bien au cas \( L = X_0 \).
+
+  Par ailleurs, l'égalité qu'on cherche à montrer est banale si \( x \in
+    E(\Cv) \). On peut donc supposer que ce n'est pas le cas, et même
+  choisir \( (1, x_1, \dots, x_n) \) comme représentant que \( x \). Le membre
+  de droite est alors égal à \( \nv2 x ^{-1} \).
+
+  Soit maintenant \( y = (0, y_1, \dots, y_n) \in E(\Cv) \). On a
+  \( x \wedge y = (-y_1, \dots, -y_n, x_1 y_2 - x_2 y_1, \dots) \), donc ce
+  \( \nv2{ x \wedge y } \ge \nv2 y \), avec égalité si et seulement si \( y_i
+    = x_i \) pour tout \( i \in \set{1, \dots, n} \). Ainsi, pour tout \( y
+    \in E(\Cv) \) on a \( \distv x y \ge \nv2 x ^{-1} \), où l'égalité est
+  possible, ce qui achève la preuve.
+\end{proof}
 
 
 \startout
