@@ -510,18 +510,33 @@ Ce dernier est ainsi un espace vectoriel euclidien, de dimension finie (égale
 au rang de \( \va \) sur \( \cdn \)) dès que \( \cdn \) est un corps de
 nombres.
 
-Pour chaque place \( \place \) de \( \cdn \), on utilise la distance \( \place
-\)-adique \( \Distv \) entre un point et une variété définie en
-\ref{sec:distv-def}.
+Pour chaque place \( \place \) de \( \cdn \), on pose
+\begin{equation}
+  \distv x y
+  =
+  \frac{ \nv2{ x \wedge y } }{ \nv2 x \nv2 y }
+  \pmm.
+\end{equation}
+Cette définition correspond, pour les points, à la distance d'indice \( 1 \)
+utilisée dans \cite{phidg} et \cite{jadotth}. Cette dernière référence
+(notamment lemme~3.2 \textit{(ii)}, page 51) montre qu'il s'agit bien d'une
+distance au sens usuel du terme. Pour la distance entre un point et une
+variété, on s'écarte par contre légèrement des références citée, en posant
+\begin{equation}
+  \distv x V
+  =
+  \min{y \in V(\Cv)} \distv x y
+\end{equation}
+qui sera parfois plus commode. Les deux notions sont en fait très comparables,
+voir la section suivante.
 
 On choisit un ensemble fini \( \placesapx \) de \( \cdn \), une sous-variété
 \( \varapx \) de \( \va \), et un réel \( \expapx > 0 \).  On considère alors
 la condition d'approximation suivante.
-\worknote[later]{préciser la hauteur utilisée}
 \begin{equation} \tag{\textsc{HA}} \label{e:HA}
   \distv \point \varapx
   \le
-  \hautm{\point}^{-\wtapx\expapx}
+  \hautm[2]{\point}^{-\wtapx\expapx}
   \quad \forall \place \in \placesapx
   \pmm,
 \end{equation}
@@ -539,8 +554,6 @@ Ainsi, une large partie des raisonnements effectués par la suite se fera sur
 
 \subsection{Distances projectives} \label{sec:distv-def}
 
-(On utilise en fait la distance ponctuelle par défaut, et la distance
-algébrique seulement de façon occasionnelle.)
 
 \startout
 
@@ -580,11 +593,7 @@ cette quantité est bien définie. Elle est nulle exactement dans le cas où \(
   \zeros F \) est une hypersurface, on a l'expression naturelle \( \Distv(\p
   x, V) = \av{F(x)} / \Onv F \Onv x \). Dans le cas général, on peut penser
 aux coefficients de \( \md f \in \C_v[X][s] \) comme à des formes générales
-s'annulant en tout point de \( V \). Enfin, dans le cas où \( V \) est réduite
-à un point \( \p y \), on a la formule explicite \( \Distv (\p x, \p y) =
-  \Onv{x \wedge y} / \Onv x \Onv y \). On peut alors montrer (voir
-\cite{jadotth}) que l'inégalité triangulaire est satisfaite et qu'on a donc
-bien une distance au sens usuel entre les points.
+s'annulant en tout point de \( V \).
 
 \stopout
 

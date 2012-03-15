@@ -729,6 +729,8 @@
 \nomdef \place a {v} \@gobbletwo{\place}{Une place, en général non fixée, de
   $\cdn$}
 
+\newcommand \Cv {\C_\place}
+
 \newdelimcommandx \av  [3][3=\place] {\abs#1   {#2}\ssub{#3}}
 \newdelimcommandx \nv  [4][4=\place] {\norm#1  {#3}\sb{\sfirst{#2} #4}}
 \newdelimcommandx \nnv [4][4=\place] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
@@ -764,8 +766,13 @@
 \DeclareMathOperator \Dist {dist}
 \newcommand*\Distv [1][\place] {\Dist\ssub{#1}}
 \newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
-\newcommand*\Distpv[1][\place] {\Dist^{\mathrm p}\ssub{#1}}
-\newcommand*\distpv[3][\place] {\Distpv[#1](#2,#3)}
+
+\newcommand*\Distpv[1][\place] {\Dist^{\mathrm p}\ssub{#1}} % XXX obsolete
+\newcommand*\distpv[3][\place] {\Distpv[#1](#2,#3)} % XXX obsolete
+
+\DeclareMathOperator \Distalg {Dist}
+\newcommand*\Distalgv [1][\place] {\Distalg\ssub{#1}}
+\newcommand*\distalgv [3][\place] {\Distalgv[#1](#2,#3)}
 
 \nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique
   projective entre \PH et \PHi}
