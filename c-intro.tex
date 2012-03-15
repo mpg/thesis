@@ -628,8 +628,8 @@ rapport à ces références, on considère uniquement la distance d'indice \( (1
 
 Nous appellerons cette distance \emph{algébrique}, par opposition à la
 distance ensembliste définie ci-dessus. Examinons un peu les relations entre
-ces deux notions. Tout d'abord, dans le cas où \( V \) est réduite à un point
-\( y \), on a \( \distv x y = \distalgv x V \) d'après \cite[p. 50]{jadotth}.
+ces deux notions. Tout d'abord, dans le cas où \( V = \set y \) est réduite à
+un point, on a \( \distv x y = \distalgv x V \) d'après \cite[p. 50]{jadotth}.
 Par ailleurs, dans le cas où \( V \) est une hypersurface de degré \( \Delta
 \) et d'équation \( F \), la proposition~3.6 (p.~64) de cette même référence
 montre que
@@ -640,9 +640,55 @@ montre que
   \pmm.
 \end{equation}
 Si \( V \) est en fait un hyperplan, on a \( \mvp F = \nv2 F \) d'après la
-proposition~2.3 (p.~23) de la référence citée, de sorte que la
-proposition~\ref{p:dv-hp} dit en fait simplement que \( \distalgv = \distv \)
+proposition~4 (p.~266) de~\cite{phiha1}, de sorte que la
+proposition~\ref{p:dv-hp} dit en fait simplement que \( \Distalgv = \Distv \)
 dans ce cas particulier.
+% Plutôt que phiha1, on peu citer Jadot, prop 2.3 (ii) p. 23, qui le cite,
+% mais énonce le truc sous une forme plus directe.
+% Sinon y'a aussi la page 86 de phidg, au moment où il cite Lau1...
+
+Dans le cas général, on a la comparaison suivante.
+\begin{fact} \label{f:closest-point}
+  Pour toute variété \( V \subset \Proj^n \) et tout point \( \p x \in
+    \Proj^n(\C_v) \), il existe un point \( \p y \in V(\C_v) \) tel que \(
+    \Distv(\p x, \p y) \le \Distv(\p x, V)^{1/\deg V} e^{\dv\gamma_{n+1}} \).
+\end{fact}
+
+\begin{proof}
+  Pour les places infinies, c'est la \eng{closest point property} p.~89
+  de~\cite{phidg}. Pour les places finies, on constate que la preuve s'adapte,
+  car le résultat crucial (lemme~5.2 de la référence citée) est en fait vrai
+  aux places finies sans le dernier facteur (et en remplaçant évidemment la
+  mesure par la norme du sup).
+\end{proof}
+
+Dans l'autre sens, on a le résultat suivant.
+\begin{prop} \label{p:dv-p2alg}
+  \todo\dots
+\end{prop}
+
+\begin{proof}
+  \todo\dots
+\end{proof}
+
+Ensemble, les deux résultats précédents montrent que \( \distv x V = \distalgv
+  x V \) dès que \( V \) est linéaire et \( \place \) finie. C'est
+probablement aussi le cas aux places archimédiennes (on sait que c'est vrai
+pour les points et les hyperplans), mais on ne le montre pas pour l'instant.
+
+Par ailleurs, dans le cas particulier où \( V \) est une hypersurface, on peut
+obtenir une version un peu plus précise de~\ref{p:dv-p2alg} en utilisant
+l'expression particulière de la distance algébrique dans ce cas. Cette version
+nous sera utile par exemple pour démontrer une inégalité de
+\bsc{Liouville}.\todo[réf Liouville]
+
+\begin{prop} \label{p:dv-p2alg-hs}
+  \todo\dots
+\end{prop}
+
+\begin{proof}
+  \todo\dots
+\end{proof}
 
 
 \cleardoublepage
