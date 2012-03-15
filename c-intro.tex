@@ -559,7 +559,7 @@ un hyperplan, cas qui sera fondamental dans plusieurs applications, puis on
 étudie les liens entre la distance définie ci-dessus et celle utilisée
 notamment dans~\cite{phidg}.
 
-\begin{prop}
+\begin{prop} \label{p:dv-hp}
   Si \( E \) est un hyperplan de \( \projd \), d'équation \( L \), on a
   \begin{equation}
     \distv x E
@@ -605,48 +605,44 @@ notamment dans~\cite{phidg}.
   possible, ce qui achève la preuve.
 \end{proof}
 
+Remarquons que le distance entre points et variété définie ici ne dépend en
+fait que de l'ensemble des points de la variété mais pas de la structure
+géométrique (multiplicités) de celle-ci. Une autre notion de distance,
+développée dans \cite{jadotth} et \cite{phidg} pour le cas projectif, et
+\cite{remgdmp} pour le cas multiprojectif (qui englobe bien sûr le précédent)
+prend au contraire en compte cette structure. Cette distance est définie par
+\begin{equation}
+  \distalgv x V
+  =
+  \frac{
+    \mvp{\md_x f_V}
+  }{
+    \mvp{f_V} \nv2 x ^{\Delta(u+1)}
+  }
+\end{equation}
+où \( f_V \) est une forme de \bsc{Chow} de \( V \), son degré est noté \(
+  \Delta \) et sa dimension \( u \). Le morphisme \( \md_x \) est défini dans
+les références citées (p. 88 de \cite{phidg} par exemple) ; par ailleurs, par
+rapport à ces références, on considère uniquement la distance d'indice \( (1,
+  \dots, 1) \).
 
-\startout
-
-On utilisera la notion de distance locale (c.-à-d. relative à une place \( v
-\) de \( \cdn \)) entre points et sous-variétés de \( \Proj^n \), définie dans
-\cite{phidg}, dont nous rappelons ou établissons ci-dessous quelques
-propriétés de base, après en avoir esquissé la construction pour mémoire.
-Quand aucune référence explicite n'est donnée, les propriétés énoncées sont
-tirées de \cite{phidg} ou \cite{remgdmp} ; il convient par ailleurs de
-spécialiser en \( \mathbf{d} = (1, \dots, 1) \) ces références pour retrouver
-la notion utilisée ici.
-
-On associe à chaque sous-variété \( V \subset \Proj^n \) de dimension \( l-1
-\), sa forme de \bsc{Chow} \( f \in \C_v[u] = \C_v[u^{(1)}, \dots, u^{(l)}]
-\). Cette forme est homogène de degré \( d = \deg V \) en chaque groupe de
-variables \( u^{(k)} = (u^{(k)}_0, \dots, u^{(k)}_n) \) ; elle est unique
-modulo \( \C_v^{*} \).  Le théorème~de l'élimination indique que les points de
-l'hypersurface définie par \( f \) dans \( ((\Proj^n)^\vee)^l) \) sont
-exactement les \( l \)-uplets \( P_1, \dots, P_l \) d'hyperplans de \( \Proj^n
-\) tels que \( V \cap P_1 \cap \cdots \cap P_l \neq \emptyset \).
-
-Pour chaque \( k \) entre \( 1 \) et \( l \), on introduit un groupe de
-nouvelles variables \( s^{(k)}_{ij} \) indexées par les couples \( 0 \le i < j
-  \le n \). Par commodité d'écriture, on pose par ailleurs \( s^{(k)}_{ij} = -
-  s^{(k)}_{ji} \) si \( i > j \) et \( s^{(k)}_{ii} = 0 \). On introduit alors
-le morphisme \( \md : \C_v[u] \to \C_v[X, s] \) défini par \( \md u^{(k)}_i =
-  \sum_j X_j s^{(k)}_{ij} \). Pour \( x \in \C_v^n \), on note de plus \( ev_x
-  : \C_v[X, s] \to k[s] \) le morphisme d'évaluation, et \( \md_x = ev_x \circ
-  \md \) le morphisme composé.
-
-L'équivalence \( \md_x f = 0 \Leftrightarrow \p x \in V(\C_v) \) justifie
-alors de définir la distance de \( \p x \) à \( V \) par \begin{equation}
-  \Distv(\p x, V) = \frac{M_v(\md_x f)}{M_v(f) \Onv x ^{ld}} \pmm.
-\end{equation} Comme \( \md f \) est homogène de degré \( ld \) en \( X \),
-cette quantité est bien définie. Elle est nulle exactement dans le cas où \(
-  \p x \in V \) et est toujours majorée par~\( 1 \). Dans le cas où \( V =
-  \zeros F \) est une hypersurface, on a l'expression naturelle \( \Distv(\p
-  x, V) = \av{F(x)} / \Onv F \Onv x \). Dans le cas général, on peut penser
-aux coefficients de \( \md f \in \C_v[X][s] \) comme à des formes générales
-s'annulant en tout point de \( V \).
-
-\stopout
+Nous appellerons cette distance \emph{algébrique}, par opposition à la
+distance ensembliste définie ci-dessus. Examinons un peu les relations entre
+ces deux notions. Tout d'abord, dans le cas où \( V \) est réduite à un point
+\( y \), on a \( \distv x y = \distalgv x V \) d'après \cite[p. 50]{jadotth}.
+Par ailleurs, dans le cas où \( V \) est une hypersurface de degré \( \Delta
+\) et d'équation \( F \), la proposition~3.6 (p.~64) de cette même référence
+montre que
+\begin{equation}
+  \distalgv x V
+  =
+  \frac{ \av{F(x)} }{ \mvp F \nv2 x ^\Delta }
+  \pmm.
+\end{equation}
+Si \( V \) est en fait un hyperplan, on a \( \mvp F = \nv2 F \) d'après la
+proposition~2.3 (p.~23) de la référence citée, de sorte que la
+proposition~\ref{p:dv-hp} dit en fait simplement que \( \distalgv = \distv \)
+dans ce cas particulier.
 
 
 \cleardoublepage
