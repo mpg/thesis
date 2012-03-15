@@ -774,7 +774,7 @@
 \nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique
   projective entre \PH et \PHi}
 
-\newcommand*\mv [2][\place] {M\sb{#1}(#2)} % XXX duplicates \mvp?
+\newcommand*\mv [2][\place] {M\sb{#1}(#2)} % XXX obsolete, use \mvp!
 \nomdef \mv a {M} \@gobbletwo{\mv\PH}{Mesure homogène locale en $\place$ de la
   forme \PH : c'est la norme du $\sup$ aux places finies et la mesure de
   \bsc{Philippon} aux places infinies}
