@@ -526,9 +526,14 @@ variété, on s'écarte par contre légèrement des références citée, en posa
   \distv x V
   =
   \min_{y \in V(\Cv)} \distv x y
+  \pmm.
 \end{equation}
-qui sera parfois plus commode. Les deux notions sont en fait très comparables,
-voir la section suivante.
+Les deux notions sont en fait très comparables, voir la section suivante. La
+notion qu'on vient de définir bénéficie par contre de la propriété suivante :
+si \( V \subset V' \) alors \( \distv x V' \le \distv x V \), qu'on utilisera
+couramment pour se ramener au cas où \( V \) est une hypersurface.
+
+\medskip
 
 On choisit un ensemble fini \( \placesapx \) de \( \cdn \), une sous-variété
 \( \varapx \) de \( \va \), et un réel \( \expapx > 0 \).  On considère alors
@@ -958,7 +963,7 @@ Par ailleurs, dans le cas particulier où \( V \) est une hypersurface, on peut
 obtenir une version un peu plus précise de~\ref{p:dv-p2alg} en utilisant
 l'expression particulière de la distance algébrique dans ce cas. Cette version
 nous sera utile par exemple pour démontrer une inégalité de
-\bsc{Liouville}.\todo[réf Liouville]
+\bsc{Liouville} (section~\ref{sec:liouville}).
 
 \begin{prop} \label{p:dv-p2alg-hs}
   Pour toute hypersurface \( V \subset \projd \) et tous points \( x \in

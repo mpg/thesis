@@ -278,47 +278,95 @@ projectifs.
   proposition.
 \end{proof}
 
+
 
-\section{Inégalité de \bsc{Liouville}}
+\section{Inégalité de \bsc{Liouville}} \label{sec:liouville}
 
-On établit ici un analogue de l'inégalité bien connue de \bsc{Liouville}.
-L'énoncé suivant est une application directe de la formule du produit :
+On établit ici l'analogue suivant de la classique inégalité de
+\bsc{Liouville}.
 
-\begin{prop} \label{PLiouvilleMal}
-  Soit \( V \) une sous-variété de \( \projd \) définie sur un corps de
-  nombres \( \cdn \) et \( \placesapx \) un sous-ensemble fini de \( M(\cdn)
-  \). Pour tout point \( x \in \Proj^n(\Qbar) \), on a soit \( x \in V(\Qbar)
-  \), soit
+\begin{prop} \label{p:liouville}
+  Soit \( V \) une sous-variété de \( \projd \), de dimension \( u \) et de
+  degré \( d \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in
+  V(\Qbar) \) soit
   \begin{equation}
-    \prod_{v \in \placesapx} \distalgv x V ^\degv
+    \prod_{v \in \placesapx} \distv x V ^\degv
     \ge
-    \frac1{ \hautm[2] V \hautm[2] x ^{ld} }
-    \pmm,
-  \end{equation}
-  où \( l = \dim V + 1 \), \( d = \deg V \) et \( \degv = [\cdn_v : \Q_v] /
-  [\cdn : \Q] \).
-\end{prop}
-
-\begin{proof}
-  On remarque en effet que
-  \begin{equation}
-    \prod_{v \in M(\cdn)} \distalgv x V ^\degv
-    =
-    \prod_{v \in M(\cdn)} \frac{ \mvp{\md_x f} }{ \mvp f \nv2 x^{ld} }
-    =
-    \frac{ \hautm[2]{ \md_x f } }{ \hautm[2] V \hautm[2] x ^{ld} }
+    \frac1{
+      (n+1)^{3/2}
+      (3d)^{d (u+1)}
+      \, \hautm[1]{ \chow V }
+      \, \hautm[2] x ^d
+    }
     \pmm.
   \end{equation}
-  Or, d'une part cette quantité est majorée par
-  \( \prod_{v \in \placesapx} \distalgv x V ^\degv \) (la distance est bornée
-  par \( 1 \)) et d'autre part \( \hautm[2]{ \md_x f } \ge 1 \) par la formule
-  du produit dès que \( x \not\in V(\Qbar) \).
+\end{prop}
+
+Ce type d'inégalité se prouve de façon naturelle avec la distance algébrique
+(section~\ref{sec:distv-cmp}). Cependant, si l'on traite directement le cas
+général en utilisant la définition, on obtient \( d (u+1) \) comme exposant de
+\( \hautm[2] x \). On commence donc par le cas d'une hypersurface, où la
+distance algébrique admet une expression plus simple, puis on remarque que
+tout variété est une intersection d'hypersurfaces.
+
+On pourrait se ramener au cas d'un hyperplan, où la distance admet une
+expression simple, par un plongement de \bsc{Veronese} (remodelé) comme dans
+le lemme~\ref{l:hs-vero}, mais on obtient en fait de meilleurs constantes en
+utilisant la propriété~\ref{p:dv-p2alg-hs}.
+
+\begin{lem} \label{l:liou-hs}
+  Soit \( V \) une hypersurface de \( \projd \), d'équation \( F \) et de
+  degré \( d \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in
+  V(\Qbar) \) soit
+  \begin{equation}
+    \prod_{v \in \placesapx} \distv x V ^\degv
+    \ge
+    \frac1{
+      (17/8)^d (n+1)^{3/2}
+      \, \hautm[2] G
+      \, \hautm[2] x ^d
+    }
+    \pmm.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  Plutôt que la proposition~\ref{p:dv-p2alg-hs}, on utilise en fait
+  l'inégalité~\eqref{e:dv-p2alg-hs} établie au cours de sa preuve afin
+  d'éviter une comparaison norme-mesure superflue. On remarque également qu'on
+  peut supposer \( m = 1 \) dans cette comparaison. On a alors :
+  \begin{align}
+    \prod_{v \in \placesapx}
+    \distv x V ^\degv
+    & \ge
+    \prod_{v \in M(\cdn)}
+    \distv x V ^\degv
+    \\ & \ge
+    \prod_{v \in M(\cdn)}
+    \left(
+      \frac{27}{26} (n+1)^{3/2}
+      \left( \frac{164}{81} \right)^{d}
+    \right)^{-\dv}
+    \frac{ \av{G(x)} }{ \nv2 x^{d} \nv2 G }
+  \end{align}
+  qui implique le résultat annoncé, \lat{via} une simple comparaison
+  numérique pour la constante.
 \end{proof}
 
-Cette version évidente de l'inégalité présente l'inconvénient de faire
-apparaître la dimension de \( V \) dans l'exposant de \( \hautm[2] x \), ce
-qui n'est pas naturel.
-
+\begin{proof}[\proofname{} de la proposition~\ref{p:liouville}]
+  Si \( x \not\in V(\Qbar) \), la proposition~6.1 de~\cite{remdcl}
+  donne une forme \( G \) homogène de degré \( d \), contenant \( V \) mais
+  pas \( x \), telle que
+  \begin{equation}
+    \hautm[1] G
+    \le
+    \hautm[1] V \cdot (d + 1)^{ d (u + 1) }
+  \end{equation}
+  en tenant compte des différences de hauteurs utilisées, comme observé dans
+  la preuve du lemme~\ref{l:hs-choice}. Il suffit alors d'appliquer la
+  propriété précédente à \( \zeros G \) et de remarquer que \( 17/8 \cdot
+  (d+1)^2 \le (3d)^2 \) pour conclure.
+\end{proof}
 
 
 
