@@ -824,6 +824,8 @@ montre que c'est possible.
 
   On majore maintenant \( \av{G(x)} / \nv2 x ^{ld} \) en procédant terme à
   terme.
+  \worknote{On ne pourrait pas être plus précis sur les dérivées (leur somme
+  en fait) ?}
   \begin{align*}
     \frac {\nv2{R_{k, \alpha}}} {\nv2 x ^{ld}}
     & \le
@@ -959,11 +961,37 @@ nous sera utile par exemple pour démontrer une inégalité de
 \bsc{Liouville}.\todo[réf Liouville]
 
 \begin{prop} \label{p:dv-p2alg-hs}
-  \todo\dots
+  Pour toute hypersurface \( V \subset \projd \) et tous points \( x \in
+    \projd(\Cv) \) et \( y \in V(\Cv) \), on a
+  \begin{equation}
+    \distalgv x V
+    \le
+    \distv x y ^m
+    \, \bigl( (17/8)^d (n+1)^{d + 3m/2} \bigr)^\dv
+  \end{equation}
+  où \( d = \deg V \) et \( m \) est la multiplicité de \( V \) en \( y \).
 \end{prop}
 
 \begin{proof}
-  \todo\dots
+  On procède comme pour la propriété précédente, sauf que cette fois-ci on
+  peut seulement supposer que \( \distv(x, y) \le (4 (n+1)^{7/2})^{-\dv} \),
+  dont on déduit également que \( \nv2 y / \nv2 x \le 82/81 \). On développe
+  alors une équation \( G \) de \( V \), et non plus un coefficient de \( \md
+  f \) ; on obtient ainsi, au lieu de~\eqref{e:dvpa-comp}, la majoration
+  suivante :
+  \begin{equation} \label{e:dv-p2alg-hs}
+    \frac{ \av{G(x)} }{\nv2 x^{d}}
+    \le
+    \nv2{ G }
+    \distv x y ^m
+    \left(
+      \frac{27}{26} (n+1)^{3m/2}
+      \left( \frac{164}{81} \right)^{d}
+    \right)^\dv
+    \pmm.
+  \end{equation}
+  On utilise à nouveau~\cite[dém. du lemme~3.3]{remgdmp}, qui donne \( \nv2 G
+  \le \mvp G (n+1)^d \), pour conclure.
 \end{proof}
 
 
