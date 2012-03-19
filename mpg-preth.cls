@@ -663,7 +663,7 @@
 %
 \newcommand \va    {\mathcal A}
 \newcommand \vai   {\mathcal B}
-\newcommand \oa    {\p{0}}
+\newcommand \oa    {\boldsymbol 0}
 \newcommand \genre {g}
 
 \nomdef \va a {A} \@gobbletwo{\va}{La variété abélienne ambiante}
@@ -895,8 +895,6 @@
 
 % points and coordinates [[2
 %
-% XXX: used inconsistently
-\newcommand*\p [1] {{\boldsymbol{#1}}}
 
 % XXX use \pp, \cp; \pmp, \cmp instead
 % replacement: check each case for 'p' vs 'mp'
@@ -905,11 +903,6 @@
 \newcommand \pointii {z}
 \newcommand \coord   {{\mathbf x}}
 \newcommand \coordi  {{\mathbf y}}
-
-\nomdef \point   a {x} \@gobbletwo{\point  }{Un point non fixé de $\va$}
-\nomdef \pointi  a {y} \@gobbletwo{\pointi }{Un autre point non fixé de $\va$}
-\nomdef \pointii a {z} \@gobbletwo{\pointii}{Encore un autre point non fixé de
-  $\va$}
 
 % height functions [[2
 %

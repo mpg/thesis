@@ -10,8 +10,8 @@ qu'on notera donc désormais \( \vai \). Le résultat principal de ce chapitre
 est le suivant.
 
 \begin{thm} \label{t:mumford}
-  Soient \( \vai \) une sous-variété abélienne de \( \va \), \( \p x \) et \(
-    \p y \) deux points de \( \va(\Qbar) \) satisfaisant la condition
+  Soient \( \vai \) une sous-variété abélienne de \( \va \), \( x \) et \(
+    y \) deux points de \( \va(\Qbar) \) satisfaisant la condition
   d'approximation (\eqref{e:HA}) ci-dessus. On note \( d = \deg \vai \), \( l
     = \dim\vai + 1 \) et on choisit \( \phi > 0 \) et \( \rho > 0 \) tels que
   \( ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps \). On pose
@@ -25,22 +25,22 @@ est le suivant.
   \). On suppose en outre :
   \begin{enumerate}
     \item \(
-        \cos(\p{x},\p{y}) \ge 1-\phi
+        \cos(x, y) \ge 1-\phi
       \) ; \label{i:m-cone}
     \item \(
-        \Hautn(\p{x}) \le \Hautn(\p{y}) \le (1+\rho)\Hautn(\p{x})
+        \Hautn(x) \le \Hautn(y) \le (1+\rho)\Hautn(x)
       \) ; \label{i:m-sect}
     \item \(
-        \Hautn(\p{x})
+        \Hautn(x)
         >
         [h(\vai) + C + B(ld + \eps/d)]
         \cdot [\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
       \). \label{i:m-loin}
   \end{enumerate}
-  On a alors \( \p x - \p y \in \vai(\Qbar) \).
+  On a alors \( x - y \in \vai(\Qbar) \).
 \end{thm}
 
-Les conditions sur \( \p{x} \) et \( \p{y} \) ont une interprétation
+Les conditions sur \( x \) et \( y \) ont une interprétation
 géométrique très simple dans l'espace de \bsc{Mordell-Weil}. En effet
 \ref{i:m-cone} demande que les points se trouvent dans un même demi-cône
 d'angle petit, \ref{i:m-sect} précise qu'ils doivent se trouver dans un même
@@ -65,11 +65,11 @@ ici que c'est bien le cas et on explicite une valeur admissible pour la
 constante de \bsc{Lipschitz}.
 
 \begin{prop} \label{MetricOp}
-  Il existe une constante \( \cst{CMetricOp} \) telle que, pour tous \( \p x
-  \), \( \p x' \), \( \p y \), \( \p y' \) dans \( \va(\C_v) \), on a :
+  Il existe une constante \( \cst{CMetricOp} \) telle que, pour tous \( x
+  \), \( x' \), \( y \), \( y' \) dans \( \va(\C_v) \), on a :
   \begin{equation}
-  \max\bigl(\Distv(\p x \pm \p y, \p x' \pm \p y')\bigr) \le \cst{CMetricOp}
-  \cdot \max \bigl(\Distv(\p x, \p x'), \Distv(\p y, \p y')\bigr) \pmm,
+  \max\bigl(\Distv(x \pm y, x' \pm y')\bigr) \le \cst{CMetricOp}
+  \cdot \max \bigl(\Distv(x, x'), \Distv(y, y')\bigr) \pmm,
   \end{equation}
   où dans le membre de gauche il faut prendre le même signe sur les deux
   termes.  De plus, on peut choisir
@@ -92,37 +92,37 @@ général ; on écrit ici la comparaison dans le cas de \( (\Proj^n)^2 \) (cas \
   q = 2 \), \( d=(1,1) \) de \cite[lemme~4.3]{remgdmp}) :
 \begin{equation}
   \max_{i \in \{1, 2\}}
-  \Distv(\p x^{(i)}, \p y^{(i)})
+  \Distv(x^{(i)}, y^{(i)})
   \le
-  \Distv(s(\p x), s(\p y))
+  \Distv(s(x), s(y))
   \le
-  \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Distv(\p x^{(i)}, \p y^{(i)})
+  \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Distv(x^{(i)}, y^{(i)})
   \pmm,
 \end{equation}
-où \( \p x = (\p x^{(1)}, \p x^{(2)}) \in (\Proj^n)^2 \) et \( s : (\Proj^n)^2
+où \( x = (x^{(1)}, x^{(2)}) \in (\Proj^n)^2 \) et \( s : (\Proj^n)^2
   \to \Proj^{n^2+2n} \) est le plongement de \bsc{Segre}.
 \stopout
 
 Pour établir ce résultat, on va en fait étudier les propriétés métriques du
-morphisme \( \xi : \va^2 \to \va^2,\ (\p x, \p y) \mapsto (\p x + \p y, \p x -
-  \p y) \). Ce dernier présente en effet l'avantage de pouvoir être représenté
+morphisme \( \xi : \va^2 \to \va^2,\ (x, y) \mapsto (x + y, x -
+  y) \). Ce dernier présente en effet l'avantage de pouvoir être représenté
 globalement par une famille \( F \) de polynômes totalement explicite (en
 particulier, de degré et hauteur contrôlés) à condition toutefois de regarder
 \( \va^2 \) comme plongée dans \( \Proj^N \) (où \( N = n^2+2n \)) par un
-plongement de \bsc{Segre}. Si l'on note \( \p z \) (resp. \( \p z' \)) l'image
-de \( (\p x, \p y) \) (resp. \( (\p x', \p y') \)) par ce plongement, on est
-ainsi ramené à montrer que \( \Distv(\xi \p z, \xi \p z') \le \cst{CMetricOp}
-  \sqrt2^{\,-\dv} \Distv(\p z, \p z') \). Par ailleurs on pourra supposer \(
-  \Distv( \p z, \p z') \le \sqrt2\, \cst{CMetricOp}^{-1} \), car sinon la
+plongement de \bsc{Segre}. Si l'on note \( z \) (resp. \( z' \)) l'image
+de \( (x, y) \) (resp. \( (x', y') \)) par ce plongement, on est
+ainsi ramené à montrer que \( \Distv(\xi z, \xi z') \le \cst{CMetricOp}
+  \sqrt2^{\,-\dv} \Distv(z, z') \). Par ailleurs on pourra supposer \(
+  \Distv( z, z') \le \sqrt2\, \cst{CMetricOp}^{-1} \), car sinon la
 conclusion du lemme~est vide, compte tenu du fait que la distance est bornée
 par \( 1 \). On utilisera alors un développement de \bsc{Taylor} des formes \(
-  F \) représentant \( \xi \) au voisinage de \( \p z \).
+  F \) représentant \( \xi \) au voisinage de \( z \).
 
 En comparant les termes d'ordres \( 1 \) et \( 2 \) au terme principal dans ce
 développement, va apparaître une quantité \( \Onv{F(z)} / (\Onnv{F}\Onv{z}^2)
   \le 1 \), qui détermine en grande partie le rayon sur lequel le
 développement de \bsc{Taylor} donne une majoration utile. Il est donc
-indispensable de pouvoir minorer cette quantité uniformément en \( \p z \). Le
+indispensable de pouvoir minorer cette quantité uniformément en \( z \). Le
 lemme~suivant donne une telle minoration en fonction de la constante locale \(
   c_v(\va) \). Notons que cette minoration est la seule étape de la preuve où
 intervient le fait que le morphisme \( \xi \) est donné par les opérations de
@@ -130,7 +130,7 @@ intervient le fait que le morphisme \( \xi \) est donné par les opérations de
 projectifs.
 
 \begin{lem} \label{TvIndepF}
-  Il existe un choix de \( F \) tel que pour tout \( \p z \in \va(\C_v) \) on
+  Il existe un choix de \( F \) tel que pour tout \( z \in \va(\C_v) \) on
   ait
   \begin{equation}
     \frac{\Onv{F(z)}}{\Onnv{F}\Onv{z}^2} \ge \cst{Tv} \pmm,
@@ -158,10 +158,10 @@ projectifs.
     = [2]^* \tilde\Delta = G(\Delta) \otimes G(\Delta)
     \pmm.
   \end{equation}
-  En appliquant ceci en un point \( \p z = (\p x, \p y) \), on peut, par
-  homogénéité remplacer \( \Delta(\p x) \) par n'importe quel système de
-  coordonnées \( x \) de \( \p x \) et faire de même pour \( \p y \), puis
-  choisir \( z = x \otimes y \) comme représentant de \( \p z \). Il vient
+  En appliquant ceci en un point \( z = (x, y) \), on peut, par
+  homogénéité remplacer \( \Delta(x) \) par n'importe quel système de
+  coordonnées \( x \) de \( x \) et faire de même pour \( y \), puis
+  choisir \( z = x \otimes y \) comme représentant de \( z \). Il vient
   alors :
   \begin{equation}
     \frac {\Onv{F^2(z)}} {\Onv z ^4}
@@ -188,10 +188,10 @@ projectifs.
 \begin{proof}[Démonstration (de la proposition~\ref{MetricOp}).]
   Il s'agit de montrer que \( \Onv{F(z')} \) n'est pas trop petit devant \(
     \Onv {F(z)} \) et que \( \Onv{F(z) \wedge F(z')} \) n'est pas trop grand
-  devant \( \Onv {F(z)}^2 \). Comme annoncé, on supposera que \( \Distv (\p z,
-    \p z') < \sqrt2^\dv\, \cst{CMetricOp}^{-1} \), c'est-à-dire, vu que \(
+  devant \( \Onv {F(z)}^2 \). Comme annoncé, on supposera que \( \Distv (z,
+    z') < \sqrt2^\dv\, \cst{CMetricOp}^{-1} \), c'est-à-dire, vu que \(
     \cst{CMetricOp} = (5\sqrt2\cdot N\sqrt{N+1})^\dv / \cst{Tv} \), que \(
-    \Distv (\p z, \p z') = \cst{Tv}\eps_1/(5 N \sqrt{N+1})^\dv \) pour un
+    \Distv (z, z') = \cst{Tv}\eps_1/(5 N \sqrt{N+1})^\dv \) pour un
   certain \( \eps_1 < 1 \). On peut en particulier appliquer le
   lemme~\ref{l:dv-common-i} à \( z \) et \( z' \) (en remplaçant \( n \) par \( N \))
   et supposer, quitte à renuméroter les coordonnées, que \( \av{z'_0} \ge
@@ -261,7 +261,7 @@ projectifs.
   est nul et on majore brutalement le terme restant par le produit des normes
   ; il vient ainsi :
   \begin{align*}
-    \Distv(\xi(\p z), \xi(\p z'))
+    \Distv(\xi(z), \xi(z'))
     & =
     \frac{ \Onv{F(z) \wedge F(z')} }{ \Onv{F(z)} \Onv{F(z')} }
     \\ & \le
@@ -378,13 +378,12 @@ sens des hypothèses \ref{i:m-cone} et \ref{i:m-sect} du
 théorème~\ref{t:mumford}) et de hauteur assez grande, on fabrique, (en prenant
 leur différence, sous l'hypothèse que \( \vai \) est un sous-groupe) une
 approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
-\), d'après une des inégalités de \bsc{Liouville} énoncées à la section
-précédente.
+\), d'après l'inégalité de \bsc{Liouville}.
 
 \begin{lem} \label{Precis}
-  Si \( \p z = \p x - \p y \), où \( \p x \) et \( \p y \) satisfont
+  Si \( z = x - y \), où \( x \) et \( y \) satisfont
   l'hypothèse (\eqref{e:HA}) du théorème~\ref{t:mumford}, on a \( \prod_{v \in
-      S} \Distv(\p z, \vai)^{e_v} \le \cst{CPrecis}H^{-\eps/d} \), avec
+      S} \Distv(z, \vai)^{e_v} \le \cst{CPrecis}H^{-\eps/d} \), avec
   \begin{equation}
     \newcst[]{CPrecis}
     =
@@ -396,15 +395,15 @@ précédente.
       e^{ \gamma_{\frac{(n+1)n}{2}} + \gamma_{n+1} }
     \right)^{ld}
   \end{equation}
-  et \( H = \min\bigl(H(\p x), H(\p y)\bigr) \).
+  et \( H = \min\bigl(H(x), H(y)\bigr) \).
 \end{lem}
 
 \begin{proof}
-  On a par hypothèse \( \max(\Distv(\p x, \vai), \Distv(\p y, \vai)) \le
+  On a par hypothèse \( \max(\Distv(x, \vai), \Distv(y, \vai)) \le
     H^{-\lambda_v \eps} \).  On sait alors grâce au fait~\ref{f:closest-point}
-  qu'il existe des points \( \p x',\p y' \in \vai(\C_v) \) tels que
+  qu'il existe des points \( x',y' \in \vai(\C_v) \) tels que
   \begin{equation}
-    \max(\Distv(\p x, \p x'), \Distv(\p y, \p y'))
+    \max(\Distv(x, x'), \Distv(y, y'))
     \le
     H^{-\lambda_v \eps/d} e^{\dv \gamma_{n+1}}
     \pmm.
@@ -412,12 +411,12 @@ précédente.
   On a alors en utilisant successivement le lemme~\ref{l:dv-p-alg-gen} et la
   proposition~\ref{MetricOp} :
   \begin{align*}
-    \Distv(\p z, \vai)
+    \Distv(z, \vai)
     & \le
-    \cst{CPonctuelAlg}\, \Distv(\p x - \p y, \p x' - \p y')
+    \cst{CPonctuelAlg}\, \Distv(x - y, x' - y')
     \\ & \le
     \cst{CPonctuelAlg}\, \cst{CMetricOp}\,
-    \max(\Distv(\p x, \p x'), \Distv(\p y, \p y'))
+    \max(\Distv(x, x'), \Distv(y, y'))
     \\ & \le
     \cst{CPonctuelAlg}\, \cst{CMetricOp}
     \, e^{\dv \gamma_{n+1}}H^{-\lambda_v \eps/d}
@@ -431,10 +430,10 @@ précédente.
 \end{proof}
 
 \begin{lem} \label{Petit}
-  Soient \( \p{x} \) et \( \p{y} \) satisfaisant aux hypothèses \ref{i:m-cone}
-  et \ref{i:m-sect} du théorème~\ref{t:mumford}, notons \( \p z \) leur
-  différence. On a alors \( \Hautn(\p z) \le (\rho^2/4 + 2\phi + \rho\phi)
-    \Hautn(\p{x}) \).
+  Soient \( x \) et \( y \) satisfaisant aux hypothèses \ref{i:m-cone}
+  et \ref{i:m-sect} du théorème~\ref{t:mumford}, notons \( z \) leur
+  différence. On a alors \( \Hautn(z) \le (\rho^2/4 + 2\phi + \rho\phi)
+    \Hautn(x) \).
 \end{lem}
 
 \begin{proof}
@@ -442,70 +441,54 @@ précédente.
     \Onv[N]{\truc} = \sqrt{\Hautn(\truc)} \) la norme dans l'espace de
   \bsc{Mordell-Weil}. On remarque de plus que l'hypothèse \ref{i:m-sect}
   implique
-  \( \Onv[N]{\p{y}} \le (1+\rho)^{1/2}\Onv[N]{\p{x}} \le (1+\rho/2)
-    \Onv[N]{\p{x}} \). Il vient alors :
+  \( \Onv[N]{y} \le (1+\rho)^{1/2}\Onv[N]{x} \le (1+\rho/2)
+    \Onv[N]{x} \). Il vient alors :
   \begin{align*}
-    \Hautn(\p{z})
+    \Hautn(z)
     & =
-    \Onv[N]{\p{x}-\p{y}}^2
+    \Onv[N]{x-y}^2
     \\ & =
-    \Onv[N]{\p{x}}^2 + \Onv[N]{\p{y}}^2 - 2\langle \p{x}; \p{y} \rangle
+    \Onv[N]{x}^2 + \Onv[N]{y}^2 - 2\langle x; y \rangle
     \\ & =
-    \left( \Onv[N]{\p{y}} - \Onv[N]{\p{x}} \right)^2
-    + 2 \Onv[N]{\p{x}} \Onv[N]{\p{y}} \left( 1- \cos(\p{x}, \p{y}) \right)
+    \left( \Onv[N]{y} - \Onv[N]{x} \right)^2
+    + 2 \Onv[N]{x} \Onv[N]{y} \left( 1- \cos(x, y) \right)
     \\ & \le
-    \left( \frac{\rho}{2}\Onv[N]{\p{x}} \right)^2
+    \left( \frac{\rho}{2}\Onv[N]{x} \right)^2
     + 2\left( 1+\frac{\rho}{2} \right)
-    \Onv[N]{\p{x}}^2 \cdot \phi
+    \Onv[N]{x}^2 \cdot \phi
     \\ & \le
     \bigl( (\rho^2/4) + 2\phi + \rho\phi \bigr)
-    \Hautn(\p{x})
+    \Hautn(x)
     \pmm.
     \qedhere
   \end{align*}
 \end{proof}
 
 \begin{proof}[Démonstration (du théorème~\ref{t:mumford}).]
-  En utilisant les conclusions des deux lemmes précédents, on montre que \( \p
+  En utilisant les conclusions des deux lemmes précédents, on montre que \(
     z \) ne satisfait pas à la conclusion la proposition~\ref{PLiouvilleMal}
-  dès que \( \p x \) satisfait l'hypothèse \ref{i:m-loin} du
+  dès que \( x \) satisfait l'hypothèse \ref{i:m-loin} du
   théorème~\ref{t:mumford}.  On a besoin de pouvoir comparer les hauteurs
   projective et normalisée. On utilise à cet effet le lemme~3.9 de
   \cite{daphimhva2} et la remarque subséquente : \( \lvert\Hautn(\truc) -
     h(\truc)\rvert \le B \), avec \( B \) comme dans l'énoncé du théorème. En
   injectant ceci dans le lemme~\ref{Precis}, on a \( \sum_{v \in S} e_v
-    \log\Distv(\p z, \vai) \le -(\eps/d) \Hautn(\p x) + B\eps/d +
-    \cst{CPrecis} \). De même, le lemme~\ref{Petit} donne \( h(\p z) \le
-    ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(\p x) + B \). Ces estimations
+    \log\Distv(z, \vai) \le -(\eps/d) \Hautn(x) + B\eps/d +
+    \cst{CPrecis} \). De même, le lemme~\ref{Petit} donne \( h(z) \le
+    ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(x) + B \). Ces estimations
   contredisent la conclusion de la proposition~\ref{PLiouvilleMal} dès que
   \begin{equation}
     \bigl(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\bigr)
-    \Hautn(\p x)
+    \Hautn(x)
     >
     h(\vai) + \cst{CPrecis} + B(ld + \eps/d)
     \pmm.
   \end{equation}
   Or, un calcul facile montre que la constante \( C \) du théorème majore \(
     \cst{CPrecis} \) et que la relation précédente est impliquée par
-  l'hypothèse \ref{i:m-loin} du théorème ; cette dernière oblige donc \( \p z
+  l'hypothèse \ref{i:m-loin} du théorème ; cette dernière oblige donc \( z
   \) à être sur \( \vai \).
 \end{proof}
-
-\begin{rem}
-  En utilisant la proposition~\ref{pLiouvilleBien} en lieu et place de la
-  proposition~\ref{PLiouvilleMal} ci-dessus, on obtient une variante du
-  théorème, avec la même conclusion mais en affaiblissant la condition
-  \( ld^2((\rho^2/4) + 2\phi + \rho\phi) < \eps \) en
-  \( d^2((\rho^2/4) + 2\phi + \rho\phi) < \eps \) et en remplaçant la condition
-  3 par
-  \begin{equation}
-    \Hautn(\p{x})
-    >
-    \bigl( h(\vai) + C + \log \cst{cLiouville} + B(d + \eps/d) \bigr)
-    \cdot \bigl(\eps/d - d((\rho^2/4) + 2\phi + \rho\phi) \bigr)^{-1}
-    \pmm.
-  \end{equation}
-\end{rem}
 
 
 \cleardoublepage
