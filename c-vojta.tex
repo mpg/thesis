@@ -17,8 +17,8 @@ on associe les constantes suivantes.
   \begin{enumthm}
     \item On note \( \htcmp \) une constante réelle telle que
       \begin{equation} \label{e:comp-h-hn}
-        \abs{ \hautl[2]\point - \hautn\point } \le \htcmp
-        \qquad \forall \point \in \va(\Qbar)
+        \abs{ \hautl[2]x - \hautn x } \le \htcmp
+        \qquad \forall x \in \va(\Qbar)
         \pmm.
       \end{equation}
     \item \label{i:clab}
@@ -1641,7 +1641,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   On commence par choisir les hyperplans sur le facteur \( \puiss \) : on
   remarque qu'ils se remontent par \( \wemb \) en des hyperplans sur le
   dernier facteur de l'espace de départ \( (\projd)^\puiss \). Ainsi, couper
-  \( \wemb(\var) \) par ces hyperplans revient à imposer à \( \point_\puiss \)
+  \( \wemb(\var) \) par ces hyperplans revient à imposer à \( x_\puiss \)
   de parcourir un ensemble de cardinal \( \vdeg[\puiss] \).
 
   Fixons maintenant un point \( p' \) dans cet ensemble et notons \( p = \wt**
@@ -1654,12 +1654,12 @@ tout ce qu'on aura besoin de savoir sur le degré.
     & \to
     \va^{2\puiss-1}
     \\
-    (\point_1, \dots, \point_{\puiss-1}, p')
+    (x_1, \dots, x_{\puiss-1}, p')
     & \mapsto
-    (\point_1, \dots, \point_{\puiss-1}, p';
-    \wt[1] \point_1 - p,
+    (x_1, \dots, x_{\puiss-1}, p';
+    \wt[1] x_1 - p,
     \dots,
-    \wt[\puiss-1] \point_{\puiss-1} - p)
+    \wt[\puiss-1] x_{\puiss-1} - p)
   \end{align}
   qui est le produit d'un point par des variétés de la forme \( \wemb[\wt*,
     p]''(\var*) \) pour \( \fct \) variant de \( 1 \) à \( \puiss-1 \) en
@@ -1671,9 +1671,9 @@ tout ce qu'on aura besoin de savoir sur le degré.
     & \to
     \va^2
     \\
-    \point
+    x
     & \mapsto
-    (\point, \wt* \point - p)
+    (x, \wt* x - p)
   \end{align}
   Il suffit donc de calculer le degré de ces variétés. La translation par \( p
   \) n'ayant pas d'influence sur le degré, il suffit de regarder l'action de
@@ -2974,15 +2974,15 @@ intéresse, ce qui n'était pas utile précédemment mais le sera cette fois pou
   + \frac {\lgr{\dermp[\puiss]}} {b_\puiss}
 \end{equation}
 pour tout \( \dermp \in \N^\vdim \).  Si \( \ratfi \) est une fraction
-rationnelle et \( \point \) un point où elle est définie, on définit son
-indice en \( \point \) comme
+rationnelle et \( x \) un point où elle est définie, on définit son
+indice en \( x \) comme
 \begin{equation}
-  \indg{b}[\point] \ratfi
+  \indg{b}[x] \ratfi
   =
   \inf \set{
     \wtsum[b](\imp)
     \text{ pour }
-    \imp \text{ tel que } \der[\imp] \ratfi(\point) \neq 0
+    \imp \text{ tel que } \der[\imp] \ratfi(x) \neq 0
   }
   \pmm,
 \end{equation}
@@ -2999,42 +2999,42 @@ où l'indice est infini.
 
 \begin{lem} \label{l:indice-inversible}
   Soient \( \ratfi_1 \), \( \ratfi_2 \) et \( \alpha \) des fonctions
-  rationnelles telles que \( \ratfi_1 = \alpha \ratfi_2 \) et \( \point \) un
+  rationnelles telles que \( \ratfi_1 = \alpha \ratfi_2 \) et \( x \) un
   point où elles sont toutes les trois définies.
   \begin{enumthm}
     \item Si \( \dermp \) est tel que \( \der[\gmp\nu] \ratfi_2(x) = 0 \) dès
       que \( \gmp\nu < \dermp \) pour l'ordre produit sur \( \N^\vdim
-      \), alors \( \der[\dermp] \ratfi_1(\point) = \alpha(\point) \,
-        \der[\dermp] \ratfi_2(\point) \).
-    \item Si \( \alpha(\point) \neq 0 \) on a \( \indg b[\point](\ratfi_1) =
-        \indg b[\point](\ratfi_2) \).
+      \), alors \( \der[\dermp] \ratfi_1(x) = \alpha(x) \,
+        \der[\dermp] \ratfi_2(x) \).
+    \item Si \( \alpha(x) \neq 0 \) on a \( \indg b[x](\ratfi_1) =
+        \indg b[x](\ratfi_2) \).
   \end{enumthm}
 \end{lem}
 
 \begin{proof}
   Le premier point découle facilement de la formule de \bsc{Leibniz} :
   \begin{equation}
-    \der[\dermp] \ratfi_1(\point)
+    \der[\dermp] \ratfi_1(x)
     =
     \sum_{\gmp\nu \le \dermp}
-    \der[\dermp - \gmp\nu] \alpha(\point) \,
-    \der[\gmp\nu] \ratfi_2(\point)
+    \der[\dermp - \gmp\nu] \alpha(x) \,
+    \der[\gmp\nu] \ratfi_2(x)
     \pmm.
   \end{equation}
   Or, par hypothèse, tous les termes de cette somme sont nuls sauf peut-être
   celui où \( \gmp\nu = \dermp \).
 
-  Si \( \alpha(\point) \neq 0 \) alors \( \alpha^{-1} \) est également définie
-  en \( \point \) et les deux autres fonctions jouent donc un rôle symétrique.
+  Si \( \alpha(x) \neq 0 \) alors \( \alpha^{-1} \) est également définie
+  en \( x \) et les deux autres fonctions jouent donc un rôle symétrique.
   Ainsi, si un indice \( \dermp \) est minimal pour la condition \(
-    \der[\dermp] \ratfi_1(\point) \neq 0 \), il l'est aussi pour la condition \(
-    \der[\dermp] \ratfi_2(\point) \neq 0 \) grâce au point précédent, ce qui
-  prouve que les deux fonctions ont le même indice en \( \point \).
+    \der[\dermp] \ratfi_1(x) \neq 0 \), il l'est aussi pour la condition \(
+    \der[\dermp] \ratfi_2(x) \neq 0 \) grâce au point précédent, ce qui
+  prouve que les deux fonctions ont le même indice en \( x \).
 \end{proof}
 
-Si \( G \) est une forme multihomogène, on défini \( \indg b[\point] G =
-  \indg b[\point] G/H \) où \( H \) est n'importe quelle forme multihomogène de
-même degré ne s'annulant pas en \( \point \). Le deuxième point du lemme
+Si \( G \) est une forme multihomogène, on défini \( \indg b[x] G =
+  \indg b[x] G/H \) où \( H \) est n'importe quelle forme multihomogène de
+même degré ne s'annulant pas en \( x \). Le deuxième point du lemme
 précédent montre que cette définition a bien un sens. On s'intéressera
 désormais à l'indice pondéré par \( \wtw \wts = (\wts[1], \dots,
   \wts[\puiss-1], (\puiss-1) \wts**) \).

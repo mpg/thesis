@@ -16,10 +16,10 @@ suivant \cite[\eng{Theorem~II}]{faldaav}.
 
 \begin{thm}[\bsc{Faltings}] \label{t:fal2}
   Soit $\varapx$ une sous-variété quelconque de $\va$, $\place$ une place de $\cdn$,
-  et $\eps > 0$. Il n'existe qu'un nombre fini de points $\point$ dans
+  et $\eps > 0$. Il n'existe qu'un nombre fini de points $x$ dans
   $\va(\cdn)$ tels que
   \begin{equation}
-    0 < \distv{\point}{\varapx} \le \hautm{\point}^{-\eps}
+    0 < \distv{x}{\varapx} \le \hautm{x}^{-\eps}
     \pmm,
     \label{e:has}
   \end{equation}
@@ -76,7 +76,7 @@ simultanément à la condition (C) et aux trois conditions suivantes :
 \begin{enumthm}
   \item $\hautn{x_1} > \alpha'$ ;
   \item $\cos(x_i, x_j) > 1 - \beta'$ pour tous $i$ et $j$ ;
-  \item $\abs{ \hautn{y} - \hautn{x} } < \delta$.
+  \item $\abs{ \hautn y - \hautn x } < \delta$.
 \end{enumthm}
 Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
 constantes apparaissant dans ces deux inégalités soient effectives, elle
@@ -410,16 +410,16 @@ sous-variété à approcher est une variété abélienne.  L'énoncé obtenu est
 suivant.
 
 \begin{thm} \label{t:mumford}
-  Soient $\vai$ une sous-variété abélienne de $\va$, $\point$ et $\pointi$
+  Soient $\vai$ une sous-variété abélienne de $\va$, $x$ et $y$
   deux points de $\va(\Qbar)$ satisfaisant à la condition d'approximation
   \eqref{e:has} ci-dessus. Il existe des constantes $\phi$, $\rho$ et $B$
   telles que si
   \begin{enumthm}
-    \item $\cos(\point, \pointi) \ge 1 - \phi$ ;
-    \item $\hautn{\point} \le \hautn{\pointi} \le (1+\rho) \hautn{\pointi}$ ;
-    \item $\hautn{\point} > B$ ;
+    \item $\cos(x, y) \ge 1 - \phi$ ;
+    \item $\hautn x \le \hautn y \le (1+\rho) \hautn y$ ;
+    \item $\hautn x > B$ ;
   \end{enumthm}
-  alors $\point - \pointi \in \vai(\Qbar)$.
+  alors $x - y \in \vai(\Qbar)$.
 \end{thm}
 
 Des valeurs admissibles pour $B$, $\rho$ et $\phi$ sont totalement explicitées
@@ -428,7 +428,7 @@ en fonction du degré de $\vai$, de sa dimension, du $\eps$ apparaissant dans
 du plongement ambiant.
 
 L'approche adoptée la suivante : étant donné deux points satisfaisant aux
-trois conditions du théorème, on considère leur différence $\pointii$. La
+trois conditions du théorème, on considère leur différence $z$. La
 géométrie euclidienne élémentaire montre qu'il est de petite hauteur
 normalisée, donc de petite hauteur projective. Une constante de comparaison
 explicite entre ces deux hauteurs est fournie par \cite{daphimhva2}.
@@ -443,9 +443,9 @@ loi de groupe, algébrique, est lipschitzienne en toute place), mais expliciter
 une constante de \bsc{Lipschitz} nécessite d'utiliser assez soigneusement les
 formules d'addition de \cite{daphimhva2}.
 
-Une fois ceci établi, on constate que $\pointii$ est une très bonne
+Une fois ceci établi, on constate que $z$ est une très bonne
 approximation de $\vai$, de petite hauteur, suffisamment pour contredire
-l'inégalité de \bsc{Liouville}, à moins que $\pointii$ ne soit justement sur
+l'inégalité de \bsc{Liouville}, à moins que $z$ ne soit justement sur
 $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 
@@ -539,16 +539,16 @@ On choisit un ensemble fini \( \placesapx \) de \( \cdn \), une sous-variété
 \( \varapx \) de \( \va \), et un réel \( \expapx > 0 \).  On considère alors
 la condition d'approximation suivante.
 \begin{equation} \tag{\textsc{HA}} \label{e:HA}
-  \distv \point \varapx
+  \distv x \varapx
   \le
-  \hautm[2]{\point}^{-\wtapx\expapx}
+  \hautm[2]{x}^{-\wtapx\expapx}
   \quad \forall \place \in \placesapx
   \pmm,
 \end{equation}
 où les \( \wtapx \) sont des réels positifs tels que
 \( \sum_{\place \in \placesapx} \wtapx [\cdn_v : \Q_v]/[\cdn : \Q] = 1 \).
 
-On constate alors que ce système d'inégalités a en fait un sens pour $\point
+On constate alors que ce système d'inégalités a en fait un sens pour $x
 \in \projd(\Qbar)$ : pour chaque place $w$ prolongeant une place $\place$ de
 $\placesapx$, on impose la condition sur la distance $w$-adique avec
 $\wtapx[w] = \wtapx$. La normalisation choisie fait que le système ainsi

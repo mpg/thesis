@@ -774,11 +774,6 @@
 \nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique
   projective entre \PH et \PHi}
 
-\newcommand*\mv [2][\place] {M\sb{#1}(#2)} % XXX obsolete, use \mvp!
-\nomdef \mv a {M} \@gobbletwo{\mv\PH}{Mesure homogène locale en $\place$ de la
-  forme \PH : c'est la norme du $\sup$ aux places finies et la mesure de
-  \bsc{Philippon} aux places infinies}
-
 % embeding-dependant values [[2
 %
 \newcommand \dimp {n}
@@ -895,14 +890,6 @@
 
 % points and coordinates [[2
 %
-
-% XXX use \pp, \cp; \pmp, \cmp instead
-% replacement: check each case for 'p' vs 'mp'
-\newcommand \point   {x}
-\newcommand \pointi  {y}
-\newcommand \pointii {z}
-\newcommand \coord   {{\mathbf x}}
-\newcommand \coordi  {{\mathbf y}}
 
 % height functions [[2
 %
