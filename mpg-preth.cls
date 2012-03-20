@@ -892,12 +892,12 @@
 
 % height functions [[2
 %
-\newcommand*\Hautm [1][?] {H \ssub{#1}}
-\newcommand*\Hautl [1][?] {h \ssub{#1}}
-\newcommand \Hautn       {\hat\Hautl}
+\newcommand*\Hautm [1][] {H \ssub{#1}}
+\newcommand*\Hautl [1][] {h \ssub{#1}}
+\newcommand \Hautn       {\hat h}
 
-\newcommand*\hautm [2][?] {\Hautm[#1](#2)}
-\newcommand*\hautl [2][?] {\Hautl[#1](#2)}
+\newcommand*\hautm [2][] {\Hautm[#1](#2)}
+\newcommand*\hautl [2][] {\Hautl[#1](#2)}
 \newcommand*\hautn [1]    {\Hautn    (#1)}
 \newcommand*\normn        {\abs}
 

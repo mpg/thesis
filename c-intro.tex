@@ -4,26 +4,26 @@
 
 \section{Aperçu du problème}
 
-Soit $\va$ une variété abélienne définie sur un corps de nombres~$\cdn$. Une
-fois $\va$ munie d'un fibré ample et symétrique $\fibre$ et plongée dans un
-espace projectif $\projd$ par un tel fibré, on dispose de deux notions héritées
-de l'espace projectif ambiant : une hauteur, et (pour tout place $\place$ de
-$\cdn$) une distance $\place$-adique (définie précisément plus bas) entre un
-point et une variété.
-
-Dans ces conditions, \bsc{Faltings} a démontré le théorème d'approximation
-suivant \cite[\eng{Theorem~II}]{faldaav}.
+Soit \( \va \) une variété abélienne définie sur un corps de nombres~\( \cdn
+\). Une fois \( \va \) dans un espace projectif \( \projd \), on dispose de
+deux notions héritées de l'espace projectif ambiant : une hauteur, et (pour
+tout place \( \place \) de \( \cdn \)) une distance \( \place \)-adique
+(définie précisément plus bas) entre un point et une variété. Dans ces
+conditions, \bsc{Faltings} a démontré le théorème d'approximation suivant
+\cite[\eng{Theorem~II}]{faldaav}.
 
 \begin{thm}[\bsc{Faltings}] \label{t:fal2}
-  Soit $\varapx$ une sous-variété quelconque de $\va$, $\place$ une place de $\cdn$,
-  et $\eps > 0$. Il n'existe qu'un nombre fini de points $x$ dans
+  Soit $\varapx$ une sous-variété quelconque de $\va$, $\place$ une place de
+  $\cdn$, et $\eps > 0$. Il n'existe qu'un nombre fini de points $x$ dans
   $\va(\cdn)$ tels que
-  \begin{equation}
-    0 < \distv{x}{\varapx} \le \hautm{x}^{-\eps}
-    \pmm,
-    \label{e:has}
+  \begin{equation} \label{e:has}
+    0
+    <
+    \distv x \varapx
+    \le
+    \hautm[] x ^{-\eps}
+    \pmm.
   \end{equation}
-  où $\Hautm$ désigne la hauteur de \bsc{Weil} multiplicative.
 \end{thm}
 
 Comme de nombreux énoncés de géométrie diophantiennes, ce résultat n'est
@@ -104,7 +104,10 @@ suivante.
   $\cdn(\xi)$. Pour tout $\eps > 0$, il n'existe qu'un nombre fini de
   points $x \in \cdn$ tels que
   \begin{equation}
-    \av{x - \xi} < H(x)^{-2-\eps} \pmm.
+    \av{x - \xi}
+    <
+    \hautm[2] x ^{-2-\eps}
+    \pmm.
   \end{equation}
 \end{thm}
 
@@ -451,6 +454,7 @@ $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 \section{Définitions et notations}
 
+\startout[remplacer par un plongement générique]
 On fixe une variété abélienne \( \va \) de dimension \( \genre \), définie sur
 \( \Qbar \), munie d'un fibré \( \fibre \) ample et symétrique.  On choisit
 sur \( \fibre^{\otimes 16} \) une structure thêta et on plonge \( \va \) dans
@@ -463,6 +467,7 @@ On note par ailleurs \( \oa \) l'origine de \( \va \), et on fixe un système
 de coordonnées homogènes \( \coa \) de son image par \( \mmemb \). On fixe
 également un corps de nombres \( \cdn \) sur lequel \( \va \), \( \mmemb \) et
 \( \coa \) sont définis, et qui contient les racines quatrièmes de l'unité.
+\stopout
 
 Si \( \place \) est une place finie de \( \cdn \), on définit la norme \(
   \place \)-adique d'une famille finie comme le maximum des valeurs absolues
@@ -492,12 +497,11 @@ On note également \( \Hautm[\star] = \exp(\Hautl[\star]) \) la hauteur
 multiplicative.
 
 Pour un point de \( \va(\Qbar) \), ces deux grandeurs dépendent du plongement
-\( \mmemb \) fixé, mais pas du système de coordonnées homogènes choisies, ni
-même du corps \( \cdn \) utilisé. On utilisera par ailleurs la hauteur
-normalisée de \NT \( \Hautn \) associé à l'une des hauteurs \(
-  \Hautl[\star] \), qui dépend toujours du fibré \( \fibre \), mais plus du
-choix d'un plongement associé à ce fibré, ni de la norme ou mesure utilisée
-aux places archimédiennes.
+\( \vaemb \) fixé, mais pas du système de coordonnées homogènes choisi, ni du
+corps \( \cdn \) utilisé. On utilisera par ailleurs la hauteur normalisée de
+\NT \( \Hautn \) associé à l'une des hauteurs \( \Hautl[\star] \), qui dépend
+toujours du fibré \( \fibre \), mais plus du choix d'un plongement associé à
+ce fibré, ni de la norme ou mesure utilisée aux places archimédiennes.
 
 La hauteur normalisée possède par ailleurs des propriétés agréables vis-à-vis
 des opérations de \( \va \). En particulier, elle induit une forme quadratique
