@@ -267,11 +267,12 @@ que ceci soit utilisé dans le reste du texte, nous nous arrêtons donc ici (pou
 l'instant).
 
 
-\subsection{Multiplication par deux}
+\subsection{Addition-soustraction}
 \label{sec:form-ab2}
 
-\startout[Section utilisée seulement dans \bsc{Mumford} et assez mal extraite
-de ce dernier. À revoir.]
+\startout[À revoir. Donne une valeur de \( \hmclab \) satisfaisant sa
+deuxième propriété. Notes (mal) extraites d'une vieille version de
+\bsc{Mumford}.]
 
 Il convient de commencer par rappeler quelques faits concernant les
 plongements utilisés. On a dit que les coordonnées étaient naturellement
@@ -287,6 +288,7 @@ les coordonnées manquantes s'obtiennent en multipliant les anciennes par des
 racines quatrièmes de l'unité, ce qui préserve les estimations de normes
 locales.
 
+\worknote{Attention : N en conflit avec \nclmaps}
 Par ailleurs, on note $\tilde\Theta$ le plongement composé $\va^2 \to
 (\Proj^n)^2 \to \Proj^N$ et $\tilde\Delta_{ij} = \Delta_i\Delta_j$ les
 coordonnées correspondantes. On définit de façon similaire un plongement
@@ -323,6 +325,61 @@ multiplication par $2$) et satisfaisant à l'inégalité suivante :
 \begin{equation} \label{NormDupl}
   \frac {\Onv {G(x)}}  {\Onv x ^4} \ge \av 2^g 4^{-g\dv} \Onv\coa^{-3} \pmm.
 \end{equation}
+
+\begin{lem} \label{TvIndepF}
+  Avec le choix de \( F \) ci-dessus, pour tout \( z \in \va(\C_v) \) on a
+  \begin{equation}
+    \frac{\Onv{F(z)}}{\Onnv{F}\Onv{z}^2} \ge \cst{Tv} \pmm,
+  \end{equation}
+  avec \(
+    \newcst{Tv}
+    =
+    \av 2^{5g/2} 2^{-7g\dv/2} (n+1)^{-3\dv/2} c_v(\va)^{-3}
+  \).
+\end{lem}
+
+\begin{proof}[Démonstration (du lemme~\ref{TvIndepF}).]
+  On utilise le formulaire de la section~\ref{sec:form-ab2}.
+
+  On commence par estimer \( \Onnv{F} \). Chaque \( F_{ij} \) s'écrit comme
+  une somme de \( 4^g \) termes de norme \( \Onv[v, \infty]{\truc} \) au plus
+  \( \av 2^{-g} \Onv \vai^2 \) ; on a donc \( \Onv {F_{ij}} \le 2^{g\dv} \av 2
+    ^{-g} \Onv \vai ^2 \) et \( \Onnv F \le  \sqrt{N+1}^\dv 2^{g\dv} \av 2
+    ^{-g} \Onv \vai ^2 \). Pour la suite, on se base sur la minoration
+  (\ref{NormDupl}) et le fait que \( \xi^2 \) est le morphisme de
+  multiplication par \( 2 \) sur les deux facteurs. On a ainsi
+  \begin{equation}
+    F^2(\tilde\Delta)
+    = (\xi^2)^*\tilde\Delta
+    = [2]^* \tilde\Delta = G(\Delta) \otimes G(\Delta)
+    \pmm.
+  \end{equation}
+  En appliquant ceci en un point \( z = (x, y) \), on peut, par
+  homogénéité remplacer \( \Delta(x) \) par n'importe quel système de
+  coordonnées \( x \) de \( x \) et faire de même pour \( y \), puis
+  choisir \( z = x \otimes y \) comme représentant de \( z \). Il vient
+  alors :
+  \begin{equation}
+    \frac {\Onv{F^2(z)}} {\Onv z ^4}
+    = \frac {\Onv{G(x)} \Onv{G(y)}} {\Onv x ^4 \Onv y ^4}
+    \ge \av 2 ^{2g} 4^{-2g\dv} \Onv\coa ^{-6}
+    \pmm.
+  \end{equation}
+  Or,
+  \begin{equation}
+    \frac {\Onv{F^2(z)}} {\Onv z ^4}
+    \le \frac {\Onnv F \Onv{F(z)}^2} {\Onv z ^4}
+    = \Onnv F ^3 \left( \frac {\Onv{F(z)}} {\Onnv F \Onv z ^2} \right) ^2
+    \pmm,
+  \end{equation}
+  d'où (en se rappelant que \( N+1 = (n+1)^2 \))
+  \begin{align*}
+    \left(\frac {\Onv{F(z)}} {\Onnv F \Onv z ^2} \right)^2
+    & \ge \av2^{2g} 4^{-2g\dv} \Onv\coa^{-6} \Onnv F ^{-3} \\
+    & \ge \av2^{5g} 2^{-7d\dv} (n+1)^{-3\dv} c_v(\va)
+  \end{align*}
+  et le lemme.
+\end{proof}
 
 \stopout
 
