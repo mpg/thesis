@@ -71,7 +71,7 @@ cas général.
     f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
     \\
     \newcst[\Theta]{vs-ht}
-    & = \max( \hautl[1]\va, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
+    & = \max( \hautl[1]{ \chow\va }, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
   \end{align}
 \end{thm}
 
@@ -1204,7 +1204,7 @@ dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\clmap \)
 désigne la localisation de l'anneau des coordonnées au départ correspondant à
 l'ouvert \( \clmap \).
 
-On dispose (notations~\ref{n:vaemb}) d'un atlas \( \clmaps \) de \( \va^2 \)
+On dispose (section~\ref{sec:vaemb}) d'un atlas \( \clmaps \) de \( \va^2 \)
 avec sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x
   - \beta y \) dans le plongement \( \vaemb \). Voyons comment en déduire un
 atlas de \( \va^\puiss \) et des représentations locales de \( \wemb \) dans
@@ -1223,8 +1223,8 @@ On introduit alors pour chaque \( \fcti \) la forme
   \wembclp{\clmap}{\fcti}
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
-où \( \wembclp{\clmap}{\fcti} \) est donnée par les
-notations~\ref{n:vaemb}, de sorte que chaque application
+où \( \wembclp{\clmap}{\fcti} \) est donnée par la
+section~\ref{sec:vaemb}, de sorte que chaque application
 \begin{align} \label{e:def-wemba}
      \wemba* \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
@@ -1347,8 +1347,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{align}
-  où l'on rappelle que \( \hmclab \) est donné par les
-  notations~\ref{n:vaemb}.
+  où l'on rappelle que \( \hmclab \) est donné par la section~\ref{sec:vaemb}.
 \end{lem}
 
 \begin{proof}
@@ -1378,7 +1377,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
     \delta \) pour tout \( \fcti \), puis en
-  utilisant les notations~\ref{n:vaemb}. En prenant le
+  utilisant la section~\ref{sec:vaemb}. En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
   pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
   de~\eqref{e:varset-deg}
@@ -3113,7 +3112,7 @@ Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
 Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
-\( \clmapv* \) la carte donnée par les notations~\ref{n:vaemb} avec \( (a, b,
+\( \clmapv* \) la carte donnée par la section~\ref{sec:vaemb} avec \( (a, b,
   x, y) = (\wt*, \wt**, \ex*, \ex**) \), puis \( \clmapv = (\clmapv[1], \dots,
   \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).  On
 pose alors pour simplifier \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv =
@@ -4702,7 +4701,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
-  par les notations~\ref{n:vaemb} et la dimension ambiante sont inchangées.
+  à la section\ref{sec:vaemb} et la dimension ambiante sont inchangées.
 \end{lem}
 
 \begin{proof}
@@ -4811,7 +4810,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
 
   Enfin, si \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) est
   une famille de \( (\dimp+1) \)-uplets de formes comme au point~\ref{i:clab}
-  des notations~\ref{n:vaemb}, on pose
+  de la section~\ref{sec:vaemb}, on pose
   \begin{equation}
     \rmclab{a}{b}{\clmap}[\vaemb']
     =
@@ -5255,7 +5254,7 @@ sur les différents paramètres en jeu dans notre situation.
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
-  par les notations~\ref{n:vaemb} est inchangé.
+  à la section~\ref{sec:vaemb} est inchangé.
 \end{lem}
 
 \begin{proof}
@@ -5329,8 +5328,8 @@ sur les différents paramètres en jeu dans notre situation.
   de hauteur annoncée.
 
   Enfin, pour chaque \( (a, b, \clmap) \) on considère la famille
-  \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par les
-  notations~\ref{n:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
+  \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par la
+  section~\ref{sec:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
   \( \Delta \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
   bihomogène de bidegré \( (2\Delta a^2, 2\Delta b^2) \) en \( (\vmp[1],
