@@ -6,81 +6,10 @@
 \label{sec:vojta-main}
 
 Nous établissons d'abord une inégalité de \bsc{Vojta} effective dans le cas
-particulier où la variété à approcher est (dans un plongement fixé)
-l'hyperplan \( \vp[0] = 0 \) ; nous verrons plus tard
-(section~\ref{sec:vojta-coro}) que ce cas implique le cas général.  Cet
-hyperplan, ainsi que les notions de hauteur et de distance utilisées dépendent
-d'un plongement projectif \( \vaemb \colon \va \embedin \projd \) fixé, auquel
-on associe les constantes suivantes.
-
-\begin{nota} \label{n:vaemb} \todo[Déplacer dans l'intro et/ou l'annexe]
-  \begin{enumthm}
-    \item On note \( \htcmp \) une constante réelle telle que
-      \begin{equation} \label{e:comp-h-hn}
-        \abs{ \hautl[2]x - \hautn x } \le \htcmp
-        \qquad \forall x \in \va(\Qbar)
-        \pmm.
-      \end{equation}
-    \item \label{i:clab}
-      On note \( \hmclab* \) une famille de réels presque tous égaux à
-      \( 1 \), \( \nclmaps \) un entier, \( \clmaps \) un ensemble de \(
-        \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
-      suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
-      \) et \( 3 \) comme diviseurs premiers, il existe une famille
-      \( (\rmclab{a}{b}{\clmap})_{\clmap \in \clmaps} \) de \( (\dimp+1)
-      \)-uplets de formes telle que :
-      \begin{enumerate}
-        \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
-          le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \(
-            \vaemb \) sur (l'image de) \( \clmap \) ;
-        \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
-          bidegré \( (2a^2, 2b^2) \) ;
-        \item pour tout place \( \place \) et toute carte \( \clmap \), on a
-          \begin{equation} \label{e:clab-norm}
-            \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2}
-            \pmm;
-          \end{equation}
-        \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
-          \( \place \) il existe une carte \( \clmap \in \clmaps \) telle que
-          \begin{equation} \label{e:clab-loc}
-            \hmclab*^{-(a^2 + b^2)}
-            \le
-            \frac{
-              \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
-            }{
-              \nv1 x ^{2a^2} \nv1 y ^{2b^2}
-            }
-            \pmm.
-          \end{equation}
-          (Le membre de droite est par ailleurs majoré par \( \hmclab*^{a^2 +
-              b^2} \) d'après l'inégalité précédente les propriétés de la
-          norme utilisée.)
-      \end{enumerate}
-      On note enfin \( \hmclab = \prod_\place \hmclab*^\degv \) et
-      \( \hlclab = \ln \hmclab \).
-  \end{enumthm}
-\end{nota}
-
-\begin{rem} \label{r:vaemb}
-  L'annexe~\ref{chap:plong-mm} montre que de telles constantes existent pour
-  tout plongement et donne des valeurs admissibles pour tout ou partie de ces
-  constantes dans un certain nombre de cas, par exemple celui où \( \va \) est
-  une courbe elliptique plongée à la \bsc{Weierstrass} ou bien le cas plus
-  général où l'on utilisera un plongement de \bsc{Mumford} modifié. Elle
-  établit par ailleurs des relations entre \( \htcmp \) et \( \hlclab \) ; on
-  formulera néanmoins les énoncés suivants avec une dépendance explicite en
-  chacune de ces constantes pour des raisons de clarté et d'optimalité pour
-  les cas où l'une serait mieux contrôler que l'autre.
-
-  Dans tous les cas considérés, on aura \( \dimp \ge 2 \) et \( N \ge 3 \), et
-  le degré de (l'image de) \( \va \) dans le plongement sera au moins \( 3 \).
-\end{rem}
-
-On fixe désormais et jusqu'au début de la section~\ref{sec:vojta-coro} un
-plongement projectif de \( \va \) et des constantes associées à ce plongement
-comme ci-dessus. Le but des prochaines sections est alors de prouver le
-théorème suivant, où les notions de distance et de hauteurs découlent du
-plongement fixé.
+particulier où la variété à approcher est, dans un plongement fixé \( \vaemb
+\) fixé (\lat{cf.} section~\ref{sec:vaemb}) l'hyperplan \( \vp[0] = 0 \) ;
+nous verrons plus tard (section~\ref{sec:vojta-coro}) que ce cas implique le
+cas général.
 
 \begin{thm} \label{t:vojta-div}
   \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
@@ -145,6 +74,9 @@ plongement fixé.
     & = \max( \hautl[1]\va, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
   \end{align}
 \end{thm}
+
+La démonstration de ce théorème occupera la majeure partie de ce chapitre,
+jusqu'à la section~\ref{sec:vojta-coro} non incluse.
 
 
 

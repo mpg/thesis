@@ -457,22 +457,70 @@ $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 \section{Définitions et notations}
 
 
-\subsection{Plongement projectif}
+\subsection{Plongement projectif} \label{sec:vaemb}
 
-\startout[remplacer par un plongement générique]
-On fixe une variété abélienne \( \va \) de dimension \( \genre \), définie sur
-\( \Qbar \), munie d'un fibré \( \fibre \) ample et symétrique.  On choisit
-sur \( \fibre^{\otimes 16} \) une structure thêta et on plonge \( \va \) dans
-un espace projectif \( \projd \) avec \( \dimp = 16^\genre \deg\fibre - 1 \)
-par un plongement de \bsc{Mumford} modifié (voir~\ref{sec:plong-mm-def}), noté
-\( \mmemb \). On identifiera la plupart du temps \( \va \) et son image par \(
-  \mmemb \).
+\begin{nota} \label{n:vaemb}
+  \begin{enumthm}
+    \item On note \( \htcmp \) une constante réelle telle que
+      \begin{equation} \label{e:comp-h-hn}
+        \abs{ \hautl[2]x - \hautn x } \le \htcmp
+        \qquad \forall x \in \va(\Qbar)
+        \pmm.
+      \end{equation}
+    \item \label{i:clab}
+      On note \( \hmclab* \) une famille de réels presque tous égaux à
+      \( 1 \), \( \nclmaps \) un entier, \( \clmaps \) un ensemble de \(
+        \nclmaps \) ouverts recouvrant \( \va^2 \),  possédant la propriété
+      suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
+      \) et \( 3 \) comme diviseurs premiers, il existe une famille
+      \( (\rmclab{a}{b}{\clmap})_{\clmap \in \clmaps} \) de \( (\dimp+1)
+      \)-uplets de formes telle que :
+      \begin{enumerate}
+        \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
+          le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \(
+            \vaemb \) sur (l'image de) \( \clmap \) ;
+        \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
+          bidegré \( (2a^2, 2b^2) \) ;
+        \item pour tout place \( \place \) et toute carte \( \clmap \), on a
+          \begin{equation} \label{e:clab-norm}
+            \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2}
+            \pmm;
+          \end{equation}
+        \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
+          \( \place \) il existe une carte \( \clmap \in \clmaps \) telle que
+          \begin{equation} \label{e:clab-loc}
+            \hmclab*^{-(a^2 + b^2)}
+            \le
+            \frac{
+              \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
+            }{
+              \nv1 x ^{2a^2} \nv1 y ^{2b^2}
+            }
+            \pmm.
+          \end{equation}
+          (Le membre de droite est par ailleurs majoré par \( \hmclab*^{a^2 +
+              b^2} \) d'après l'inégalité précédente les propriétés de la
+          norme utilisée.)
+      \end{enumerate}
+      On note enfin \( \hmclab = \prod_\place \hmclab*^\degv \) et
+      \( \hlclab = \ln \hmclab \).
+  \end{enumthm}
+\end{nota}
 
-On note par ailleurs \( \oa \) l'origine de \( \va \), et on fixe un système
-de coordonnées homogènes \( \coa \) de son image par \( \mmemb \). On fixe
-également un corps de nombres \( \cdn \) sur lequel \( \va \), \( \mmemb \) et
-\( \coa \) sont définis, et qui contient les racines quatrièmes de l'unité.
-\stopout
+\begin{rem} \label{r:vaemb}
+  L'annexe~\ref{chap:plong-mm} montre que de telles constantes existent pour
+  tout plongement et donne des valeurs admissibles pour tout ou partie de ces
+  constantes dans un certain nombre de cas, par exemple celui où \( \va \) est
+  une courbe elliptique plongée à la \bsc{Weierstrass} ou bien le cas plus
+  général où l'on utilisera un plongement de \bsc{Mumford} modifié. Elle
+  établit par ailleurs des relations entre \( \htcmp \) et \( \hlclab \) ; on
+  formulera néanmoins les énoncés suivants avec une dépendance explicite en
+  chacune de ces constantes pour des raisons de clarté et d'optimalité pour
+  les cas où l'une serait mieux contrôler que l'autre.
+
+  Dans tous les cas considérés, on aura \( \dimp \ge 2 \) et \( N \ge 3 \), et
+  le degré de (l'image de) \( \va \) dans le plongement sera au moins \( 3 \).
+\end{rem}
 
 
 \subsection{Normes et hauteurs}
