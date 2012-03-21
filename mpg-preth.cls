@@ -676,6 +676,8 @@
 \nomdef \MW a {MW} \@gobbletwo{\MW[\PHi]\PH}{Espace de \MoW de la variété
   abélienne \PHi sur le corps \PH}
 
+\newcommand*\nnt {\abs} % norme de Néron-Tate
+
 \newcommand \mmemb { \Theta }
 \nomdef \mmemb g {E3} \@gobbletwo{\mmemb}{Plongement de \bsc{Mumford
     modifié}}
@@ -886,9 +888,6 @@
   multimultiindice \PH}
 \nomdef \lgt s {n2} \@gobbletwo{\lgt\PH}{Longueur totale du multimultiindice
   \PH}
-
-% points and coordinates [[2
-%
 
 % height functions [[2
 %

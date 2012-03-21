@@ -25,28 +25,28 @@ est le suivant.
 
   Si \( x \) et \( y \) sont deux points de \( \va(\Qbar) \) tels que
   \begin{align}
-    \label{e:Mapx}
     0 < \distv z \varapx
     & <
     \hautm[2] z ^{-\wtapx\expapx}
     \quad \forall \place \in \placesapx
     \quad \text{où \( z \) est \( x \) ou \( y \)}
+    \label{e:Mapx}
     \\
-    \label{e:Mbig}
     \Hautn(x)
     & >
-    [h(\vai) + C + B(ld + \eps/d)]
-    \cdot [\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
+    [h(\vai) + C + B(ld + \frac \eps d)]
+    \cdot [\frac \eps d - ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
+    \label{e:Mbig}
     \\
-    \label{e:Mcos}
     \cos(x, y)
     & >
     1 - \phi
+    \label{e:Mcos}
     \\
-    \label{e:Mclose}
     \Hautn(x)
     & <
     \Hautn(y) \le (1+\rho)\Hautn(x)
+    \label{e:Mclose}
   \end{align}
   alors \( x - y \in \vai(\Qbar) \).
 \end{thm}
@@ -54,8 +54,8 @@ est le suivant.
 La preuve consiste à montrer que la différence \( x - y \) est encore très
 proche de \( \vai \) tout en étant de hauteur relativement petite, de sorte
 qu'une inégalité de \bsc{Liouville} la contraint à être sur \( \vai \). On
-commence donc par étudier l'action des opérations sur la distance, puis on
-établit une inégalité de \bsc{Liouville}, avant d'achever la preuve du
+commence donc par établir une inégalité de \bsc{Liouville}, puis on étudie
+l'action des opérations sur la distance, avant d'achever la preuve du
 théorème.
 
 
@@ -65,7 +65,7 @@ théorème.
 La situation d'approximation considérée met en jeu plusieurs types de
 géométrie sur \( \va \) : la géométrie euclidienne de son espace de
 \bsc{Mordell-Weil}, la géométrie algébrique et projective de la variété
-plongée, une géométrie métrique, locale, en chaque place de \( S \). On
+plongée, une géométrie métrique, locale, en chaque place de \( \placesapx \). On
 s'attend à ce que les métriques locales sur \( \va \) se comportent de façon
 agréable vis-à-vis des structures géométrique et arithmétique, par exemple que
 les opérations soient uniformément continues, voire lipschitziennes. On montre
@@ -329,7 +329,7 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
 
 La stratégie de la preuve est la suivante : si on a deux approximations
 exceptionnelles, suffisamment proches dans l'espace de \bsc{Mordell-Weil} (au
-sens des hypothèses \ref{e:Mcos} et \ref{e:Mclose} du
+sens des hypothèses \eqref{e:Mcos} et \eqref{e:Mclose} du
 théorème~\ref{t:mumford}) et de hauteur assez grande, on fabrique, (en prenant
 leur différence, sous l'hypothèse que \( \vai \) est un sous-groupe) une
 approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
@@ -338,7 +338,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \begin{lem} \label{l:diff-close}
   Si \( z = x - y \), où \( x \) et \( y \) satisfont
   l'hypothèse \eqref{e:Mapx} du théorème~\ref{t:mumford}, on a \( \prod_{v \in
-      S} \Distv(z, \vai)^{e_v} \le \cst{diff-close} H^{-\eps/d} \), avec
+      \placesapx} \Distv(z, \vai)^{e_v} \le \cst{diff-close} H^{-\eps/d} \), avec
   \begin{equation}
     \newcst[]{diff-close}
     =
@@ -377,40 +377,40 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     \, e^{\dv \gamma_{n+1}}H^{-\lambda_v \eps/d}
     \pmm.
   \end{align*}
-  On prend alors le produit sur \( v \in S \), en supposant (c'est le cas
-  défavorable) que \( S \) contient toutes les places divisant \( 2 \) ou \(
-    \infty \).  Comme \( c_v(\va) \ge 1 \), on a \( \prod_{v \in S} c_v(\va)
+  On prend alors le produit sur \( v \in \placesapx \), en supposant (c'est le cas
+  défavorable) que \( \placesapx \) contient toutes les places divisant \( 2 \) ou \(
+    \infty \).  Comme \( c_v(\va) \ge 1 \), on a \( \prod_{v \in \placesapx} c_v(\va)
     \le \prod_{v \in M(\cdn)} c_v(\va) \le H(\va)^{4^g} \). Vu la
   normalisation des \( \lambda_v \), on a ainsi la conclusion du lemme.
 \end{proof}
 
 \begin{lem} \label{l:diff-small}
-  Soient \( x \) et \( y \) satisfaisant aux hypothèses \ref{e:Mcos}
-  et \ref{e:Mclose} du théorème~\ref{t:mumford}, notons \( z \) leur
+  Soient \( x \) et \( y \) satisfaisant aux hypothèses \eqref{e:Mcos}
+  et \eqref{e:Mclose} du théorème~\ref{t:mumford}, notons \( z \) leur
   différence. On a alors \( \Hautn(z) \le (\rho^2/4 + 2\phi + \rho\phi)
     \Hautn(x) \).
 \end{lem}
 
 \begin{proof}
   On note \( \langle\truc; \truc \rangle \) le produit scalaire et \(
-    \Onv[N]{\truc} = \sqrt{\Hautn(\truc)} \) la norme dans l'espace de
-  \bsc{Mordell-Weil}. On remarque de plus que l'hypothèse \ref{e:Mclose}
+    \nnt{\truc} = \sqrt{\Hautn(\truc)} \) la norme dans l'espace de
+  \bsc{Mordell-Weil}. On remarque de plus que l'hypothèse \eqref{e:Mclose}
   implique
-  \( \Onv[N]{y} \le (1+\rho)^{1/2}\Onv[N]{x} \le (1+\rho/2)
-    \Onv[N]{x} \). Il vient alors :
+  \( \nnt{y} \le (1+\rho)^{1/2}\nnt{x} \le (1+\rho/2)
+    \nnt{x} \). Il vient alors :
   \begin{align*}
     \Hautn(z)
     & =
-    \Onv[N]{x-y}^2
+    \nnt{x-y}^2
     \\ & =
-    \Onv[N]{x}^2 + \Onv[N]{y}^2 - 2\langle x; y \rangle
+    \nnt{x}^2 + \nnt{y}^2 - 2\langle x; y \rangle
     \\ & =
-    \left( \Onv[N]{y} - \Onv[N]{x} \right)^2
-    + 2 \Onv[N]{x} \Onv[N]{y} \left( 1- \cos(x, y) \right)
+    \left( \nnt{y} - \nnt{x} \right)^2
+    + 2 \nnt{x} \nnt{y} \left( 1- \cos(x, y) \right)
     \\ & \le
-    \left( \frac{\rho}{2}\Onv[N]{x} \right)^2
+    \left( \frac{\rho}{2}\nnt{x} \right)^2
     + 2\left( 1+\frac{\rho}{2} \right)
-    \Onv[N]{x}^2 \cdot \phi
+    \nnt{x}^2 \cdot \phi
     \\ & \le
     \bigl( (\rho^2/4) + 2\phi + \rho\phi \bigr)
     \Hautn(x)
@@ -422,12 +422,12 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \begin{proof}[Démonstration (du théorème~\ref{t:mumford}).]
   En utilisant les conclusions des deux lemmes précédents, on montre que \(
     z \) ne satisfait pas à la conclusion la proposition~\ref{p:liouville}
-  dès que \( x \) satisfait l'hypothèse \ref{e:Mbig} du
+  dès que \( x \) satisfait l'hypothèse \eqref{e:Mbig} du
   théorème~\ref{t:mumford}.  On a besoin de pouvoir comparer les hauteurs
   projective et normalisée. On utilise à cet effet le lemme~3.9 de
   \cite{daphimhva2} et la remarque subséquente : \( \lvert\Hautn(\truc) -
     h(\truc)\rvert \le B \), avec \( B \) comme dans l'énoncé du théorème. En
-  injectant ceci dans le lemme~\ref{l:diff-close}, on a \( \sum_{v \in S} e_v
+  injectant ceci dans le lemme~\ref{l:diff-close}, on a \( \sum_{v \in \placesapx} e_v
     \log\Distv(z, \vai) \le -(\eps/d) \Hautn(x) + B\eps/d +
     \cst{diff-close} \). De même, le lemme~\ref{l:diff-small} donne \( h(z) \le
     ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(x) + B \). Ces estimations
@@ -441,7 +441,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
   \end{equation}
   Or, un calcul facile montre que la constante \( C \) du théorème majore \(
     \cst{diff-close} \) et que la relation précédente est impliquée par
-  l'hypothèse \ref{e:Mbig} du théorème ; cette dernière oblige donc \( z
+  l'hypothèse \eqref{e:Mbig} du théorème ; cette dernière oblige donc \( z
   \) à être sur \( \vai \).
 \end{proof}
 
