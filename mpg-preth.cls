@@ -746,9 +746,6 @@
   multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
   si $\place$ est archimédienne}
 
-\newcommand* \Onv [2][\place] {\norm  {#2}\ssub{#1}} % XXX needs checking
-\newcommand* \Onnv[2][\place] {\nnorm {#2}\ssub{#1}} % XXX needs checking
-
 \newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
 

@@ -60,181 +60,6 @@ théorème.
 
 
 
-\section{Comportement métrique des opérations}
-
-La situation d'approximation considérée met en jeu plusieurs types de
-géométrie sur \( \va \) : la géométrie euclidienne de son espace de
-\bsc{Mordell-Weil}, la géométrie algébrique et projective de la variété
-plongée, une géométrie métrique, locale, en chaque place de \( \placesapx \). On
-s'attend à ce que les métriques locales sur \( \va \) se comportent de façon
-agréable vis-à-vis des structures géométrique et arithmétique, par exemple que
-les opérations soient uniformément continues, voire lipschitziennes. On montre
-ici que c'est bien le cas et on explicite une valeur admissible pour la
-constante de \bsc{Lipschitz}.
-
-\begin{prop} \label{p:addsub-dv}
-  Il existe une constante \( \cst{Cp:addsub-dv} \) telle que, pour tous \( x
-  \), \( x' \), \( y \), \( y' \) dans \( \va(\C_v) \), on a :
-  \begin{equation}
-  \max \bigl( \Distv(x \pm y, x' \pm y') \bigr)
-  \le
-  :\cst{Cp:addsub-dv}
-  \cdot \max \bigl( \Distv(x, x'), \Distv(y, y') \bigr)
-  \pmm,
-  \end{equation}
-  où dans le membre de gauche il faut prendre le même signe sur les deux
-  termes. De plus, on peut choisir
-  \begin{equation}
-    \newcst{Cp:addsub-dv}
-    =
-    c_v(\va)^3 \av
-    2^{-5g/2} \bigl( 5\sqrt2\cdot2^{7g/2}(n+1)^{9/2} \bigr)^\dv
-    \pmm.
-  \end{equation}
-\end{prop}
-
-\begin{proof}
-  On sera naturellement amené à considérer des situations multiprojectives.
-  Dans ce cas, plusieurs notions de distances peuvent être considérées, dont
-  seules les deux plus élémentaires nous intéressent ici : il s'agit du
-  maximum des distances sur chaque facteur d'une part, et de la distance
-  déduite d'un plongement de \bsc{Segre} d'autre part. Ces distances se
-  comparent bien en général ; on écrit ici la comparaison dans le cas de \(
-    (\Proj^n)^2 \) (cas \( q = 2 \), \( d=(1,1) \) de
-  \cite[lemme~4.3]{remgdmp}) :
-  \begin{equation}
-    \max_{i \in \{1, 2\}}
-    \Distv(x^{(i)}, y^{(i)})
-    \le
-    \Distv(s(x), s(y))
-    \le
-    \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Distv(x^{(i)}, y^{(i)})
-    \pmm,
-  \end{equation}
-  où \( x = (x^{(1)}, x^{(2)}) \in (\Proj^n)^2 \) et \( s : (\Proj^n)^2
-    \to \Proj^{n^2+2n} \) est le plongement de \bsc{Segre}.
-
-  Pour établir ce résultat, on va en fait étudier les propriétés métriques du
-  morphisme \( \xi : \va^2 \to \va^2,\ (x, y) \mapsto (x + y, x - y) \). Ce
-  dernier présente en effet l'avantage de pouvoir être représenté globalement
-  par une famille \( F \) de polynômes totalement explicite (en particulier,
-  de degré et hauteur contrôlés) à condition toutefois de regarder
-  \( \va^2 \) comme plongée dans \( \Proj^N \) (où \( N = n^2+2n \)) par un
-  plongement de \bsc{Segre}. Si l'on note \( z \) (resp. \( z' \)) l'image de
-  \( (x, y) \) (resp. \( (x', y') \)) par ce plongement, on est ainsi ramené à
-  montrer que \( \Distv(\xi z, \xi z') \le \cst{Cp:addsub-dv} \sqrt2^{\,-\dv}
-    \Distv(z, z') \). Par ailleurs on pourra supposer \( \Distv( z, z') \le
-    \sqrt2\, \cst{Cp:addsub-dv}^{-1} \), car sinon la conclusion du lemme~est
-  vide, compte tenu du fait que la distance est bornée par \( 1 \). On
-  utilisera alors un développement de \bsc{Taylor} des formes \( F \)
-  représentant \( \xi \) au voisinage de \( z \).
-
-  En comparant les termes d'ordres \( 1 \) et \( 2 \) au terme principal dans
-  ce développement, va apparaître une quantité \( \Onv{F(z)} /
-    (\Onnv{F}\Onv{z}^2) \le 1 \), qui détermine en grande partie le rayon sur
-  lequel le développement de \bsc{Taylor} donne une majoration utile. Il est
-  donc indispensable de pouvoir minorer cette quantité uniformément en \( z
-  \). Le lemme~suivant donne une telle minoration en fonction de la constante
-  locale \( c_v(\va) \). Notons que cette minoration est la seule étape de la
-  preuve où intervient le fait que le morphisme \( \xi \) est donné par les
-  opérations de
-  \( \va \), le reste s'appliquant en fait à n'importe quel morphisme
-  d'espaces projectifs.
-
-  Il s'agit de montrer que \( \Onv{F(z')} \) n'est pas trop petit devant \(
-    \Onv {F(z)} \) et que \( \Onv{F(z) \wedge F(z')} \) n'est pas trop grand
-  devant \( \Onv {F(z)}^2 \). Comme annoncé, on supposera que \( \Distv (z,
-    z') < \sqrt2^\dv\, \cst{Cp:addsub-dv}^{-1} \), c'est-à-dire, vu que \(
-    \cst{Cp:addsub-dv} = (5\sqrt2\cdot N\sqrt{N+1})^\dv / \cst{Tv} \), que \(
-    \Distv (z, z') = \cst{Tv}\eps_1/(5 N \sqrt{N+1})^\dv \) pour un
-  certain \( \eps_1 < 1 \). On peut en particulier appliquer le
-  lemme~\ref{l:dv-common-i} à \( z \) et \( z' \) (en remplaçant \( n \) par \( N \))
-  et supposer, quitte à renuméroter les coordonnées, que \( \av{z'_0} \ge
-    (N+1)^{-\dv/2}\Onv{z'} \) et \( z_0 \neq 0 \). On écrit alors le
-  développement de \bsc{Taylor} homogène de \( F \) comme suit :
-  \begin{equation}
-    F(z')
-    =
-    \frac{ (z'_0)^2 }{ z_0^2 } F(z)
-    + \sum_{1 \le i \le N} R_i
-    + \sum_{1 \le i, j \le N} R_{ij}
-    \pmm,
-  \end{equation}
-  où
-  \begin{equation}
-    R_i
-    =
-    \frac{z'_0}{z_0} \frac{\partial F}{\partial Z_i}(z)
-    \left( z'_i - \frac{z'_0}{z_0} z_i \right)
-  \end{equation}
-  et
-  \begin{equation}
-    R_{ij}
-    =
-    \frac12 \frac{ \partial^2 F }{ \partial Z_i \partial Z_j }(z)
-    \left( z'_i - \frac{z'_0}{z_0} z_i \right)
-    \left( z'_j - \frac{z'_0}{z_0} z_j \right)
-    \pmm.
-  \end{equation}
-  On utilise alors l'hypothèse sous la forme
-  \begin{equation}
-    \av{z'_i - \frac{z'_0}{z_0} z_i}
-    \le
-    \Onv{z \wedge z'} / \av{z_0}
-    \le
-    \frac{\cst{Tv}\,\eps_1}{(5N\sqrt{N+1})^\dv}
-    \frac{\Onv z \Onv{z'}}{\av{z_0}}
-    \pmm.
-  \end{equation}
-  Il vient alors, grâce au lemme~\ref{TvIndepF},
-  \begin{align*}
-    \frac{ \Onv{R_i} }{ \Onv{F(z) \cdot {z_0'}^2/z_0^2} }
-    & \le
-    \frac{ \Onv{z'} }{ \av{z'_0} }
-    \frac{ \Onnv{F} \Onv z^2 }{ \Onv{F(z)} }
-    \frac{ 2^\dv \cst{Tv}\,\eps_1 }{ (5N\sqrt{N+1})^\dv }
-    \\ & \le
-    \left( \frac2{ 5N\sqrt{N+1} } \right)^\dv
-    \frac{ \Onv{z'} }{ \av{z'_0} } \eps_1
-    \le
-    \left( \frac2{5N} \right)^\dv \eps_1
-    \pmm.
-  \end{align*}
-  On obtient de même
-  \begin{equation}
-    \frac{ \Onv{R_{ij}} }{ \Onv{F(z) \cdot {z_0'}^2/z_0^2} }
-    \le
-    \left( \frac1{25N^2} \right)^\dv \eps_1
-    \pmm,
-  \end{equation}
-  puis en sommant : \( \Onv{\sum R_i + \sum R_{ij}} \le (1/2)^\dv \Onv{F(z)
-      \cdot {z_0'}^2/z_0^2} \eps_1 \). Enfin, les inégalités triangulaire aux
-  places infinies et ultramétrique aux places finies donnent \( \Onv{F(z')}
-    \ge (1/2)^\dv \Onv{F(z) \cdot {z_0'}^2/z_0^2} \). Afin d'estimer la
-  distance, il reste à majorer \( \Onv{F(z) \wedge F(z')} \). Pour ce faire,
-  on développe le second facteur, on remarque que le premier terme du produit
-  est nul et on majore brutalement le terme restant par le produit des normes
-  ; il vient ainsi :
-  \begin{align*}
-    \Distv(\xi(z), \xi(z'))
-    & =
-    \frac{ \Onv{F(z) \wedge F(z')} }{ \Onv{F(z)} \Onv{F(z')} }
-    \\ & \le
-    \frac{
-      2^\dv \Onv{\sum R_i + \sum R_{ij}} \Onv{F(z)}
-    }{
-      \Onv{F(z)} \Onv{F(z) \cdot {z_0'}^2/z_0^2}
-    }
-    \\ & \le
-    \eps_1
-    \pmm,
-  \end{align*}
-  qui, vu la définition de \( \eps_1 \), équivaut à la conclusion de la
-  proposition.
-\end{proof}
-
-
-
 \section{Inégalité de \bsc{Liouville}} \label{sec:liouville}
 
 On établit ici l'analogue suivant de la classique inégalité de
@@ -325,6 +150,160 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
 
 
 
+\section{Comportement métrique des opérations}
+
+La situation d'approximation considérée met en jeu plusieurs types de
+géométrie sur \( \va \) : la géométrie euclidienne de son espace de
+\bsc{Mordell-Weil}, la géométrie algébrique et projective de la variété
+plongée, une géométrie métrique, locale, en chaque place de \( \placesapx \). On
+s'attend à ce que les métriques locales sur \( \va \) se comportent de façon
+agréable vis-à-vis des structures géométrique et arithmétique, par exemple que
+les opérations soient uniformément continues, voire lipschitziennes. On montre
+ici que c'est bien le cas et on explicite une valeur admissible pour la
+constante de \bsc{Lipschitz}.
+
+\begin{prop} \label{p:addsub-dv}
+  Il existe une constante \( \cst{addsub-dv} \) telle que, pour tous \( x
+  \), \( x' \), \( y \), \( y' \) dans \( \va(\C_v) \), on a :
+  \begin{equation}
+  \max \bigl( \Distv(x \pm y, x' \pm y') \bigr)
+  \le
+  \cst{addsub-dv}
+  \cdot \max \bigl( \Distv(x, x'), \Distv(y, y') \bigr)
+  \pmm,
+  \end{equation}
+  où dans le membre de gauche il faut prendre le même signe sur les deux
+  termes. De plus, on peut choisir
+  \begin{equation}
+    \newcst{addsub-dv}
+    =
+    c_v(\va)^3 \av
+    2^{-5g/2} \bigl( 5\sqrt2\cdot2^{7g/2}(n+1)^{9/2} \bigr)^\dv
+    \pmm.
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  On considère le plongement de \bsc{Segre} \( s \colon (\projd)^2 \to
+    \proj{n^2 + n} \). D'après le lemme~4.3 (p.~121) de \cite{remgdmp},
+  appliqué avec \( q = 2 \) et \( d = (1,1) \), ainsi que le paragraphe~2.3
+  (p.~103 notamment) de cette référence donnant le lien entre indices (d'une
+  forme de \bsc{Chow} ou, par extension, d'un distance) et plongements de
+  \bsc{Segre} (et de \bsc{Veronese} remodelé), on a
+  \begin{equation}
+    \max_{i \in \{1, 2\}}
+    \Distv(x^{(i)}, y^{(i)})
+    \le
+    \Distv(s(x), s(y))
+    \le
+    \sqrt 2^{\,\dv} \max_{i \in \{1, 2\}} \Distv(x^{(i)}, y^{(i)})
+    \pmm,
+  \end{equation}
+  où \( x = (x^{(1)}, x^{(2)}) \in (\Proj^n)^2 \).
+
+  On considère alors le morphisme
+  \( \xi : \va^2 \to \va^2,\ (x, y) \mapsto (x + y, x - y) \), qui
+  présente en effet l'avantage de pouvoir être représenté globalement
+  par une famille \( F \) de formes de degré \( 2 \), dans le plongement de
+  \bsc{Segre} (voir section~\ref{sec:vaemb}). Si l'on note \( z = s(x, y) \)
+  et \( z' = s(x', y') \) les images dans ce plongement, on est ainsi ramené à
+  montrer que \( \Distv(\xi z, \xi z') \le \cst{addsub-dv} \sqrt2^{\,-\dv}
+    \Distv(z, z') \). Par ailleurs on pourra supposer \( \Distv( z, z') \le
+    \sqrt2\, \cst{addsub-dv}^{-1} \), car sinon la conclusion du lemme~est
+  vide, compte tenu du fait que la distance est bornée par \( 1 \).
+
+  On va utiliser un développement de \bsc{Taylor} au voisinage de \( z \) des
+  formes représentant \( \xi \) pour montrer que \( \nv2{F(z')} \) n'est pas
+  trop petit devant \( \nv2 {F(z)} \) et que \( \nv2{F(z) \wedge F(z')} \)
+  n'est pas trop grand devant \( \nv2 {F(z)}^2 \). L'hypothèse faite sur la
+  distance permet d'appliquer le lemme~\ref{l:dv-common-i} à \( z \) et \( z'
+  \) (en remplaçant \( n \) par \( n^2 + n \)) et donc de supposer, quitte à
+  renuméroter les coordonnées, que \( \av{z'_0} \ge (N+1)^{-\dv/2}\nv2{z'} \)
+  et \( z_0 \neq 0 \). On écrit alors le développement de \bsc{Taylor}
+  homogène de \( F \) comme suit :
+  \begin{equation}
+    F(z')
+    =
+    \frac{ (z'_0)^2 }{ z_0^2 } F(z)
+    + \sum_{1 \le i \le N} R_i
+    + \sum_{1 \le i, j \le N} R_{ij}
+    \pmm,
+  \end{equation}
+  où
+  \begin{equation}
+    R_i
+    =
+    \frac{z'_0}{z_0} \frac{\partial F}{\partial Z_i}(z)
+    \left( z'_i - \frac{z'_0}{z_0} z_i \right)
+  \end{equation}
+  et
+  \begin{equation}
+    R_{ij}
+    =
+    \frac12 \frac{ \partial^2 F }{ \partial Z_i \partial Z_j }(z)
+    \left( z'_i - \frac{z'_0}{z_0} z_i \right)
+    \left( z'_j - \frac{z'_0}{z_0} z_j \right)
+    \pmm.
+  \end{equation}
+  On utilise alors l'hypothèse sous la forme
+  \begin{equation}
+    \av{z'_i - \frac{z'_0}{z_0} z_i}
+    \le
+    \nv2{z \wedge z'} / \av{z_0}
+    \le
+    \frac{\cst{Tv}\,\eps_1}{(5N\sqrt{N+1})^\dv}
+    \frac{\nv2 z \nv2{z'}}{\av{z_0}}
+    \pmm.
+  \end{equation}
+  Il vient alors, grâce au lemme~\ref{TvIndepF},
+  \begin{align*}
+    \frac{ \nv2{R_i} }{ \nv2{F(z) \cdot {z_0'}^2/z_0^2} }
+    & \le
+    \frac{ \nv2{z'} }{ \av{z'_0} }
+    \frac{ \nnv2{F} \nv2 z^2 }{ \nv2{F(z)} }
+    \frac{ 2^\dv \cst{Tv}\,\eps_1 }{ (5N\sqrt{N+1})^\dv }
+    \\ & \le
+    \left( \frac2{ 5N\sqrt{N+1} } \right)^\dv
+    \frac{ \nv2{z'} }{ \av{z'_0} } \eps_1
+    \le
+    \left( \frac2{5N} \right)^\dv \eps_1
+    \pmm.
+  \end{align*}
+  On obtient de même
+  \begin{equation}
+    \frac{ \nv2{R_{ij}} }{ \nv2{F(z) \cdot {z_0'}^2/z_0^2} }
+    \le
+    \left( \frac1{25N^2} \right)^\dv \eps_1
+    \pmm,
+  \end{equation}
+  puis en sommant : \( \nv2{\sum R_i + \sum R_{ij}} \le (1/2)^\dv \nv2{F(z)
+      \cdot {z_0'}^2/z_0^2} \eps_1 \). Enfin, les inégalités triangulaire aux
+  places infinies et ultramétrique aux places finies donnent \( \nv2{F(z')}
+    \ge (1/2)^\dv \nv2{F(z) \cdot {z_0'}^2/z_0^2} \). Afin d'estimer la
+  distance, il reste à majorer \( \nv2{F(z) \wedge F(z')} \). Pour ce faire,
+  on développe le second facteur, on remarque que le premier terme du produit
+  est nul et on majore brutalement le terme restant par le produit des normes
+  ; il vient ainsi :
+  \begin{align*}
+    \Distv(\xi(z), \xi(z'))
+    & =
+    \frac{ \nv2{F(z) \wedge F(z')} }{ \nv2{F(z)} \nv2{F(z')} }
+    \\ & \le
+    \frac{
+      2^\dv \nv2{\sum R_i + \sum R_{ij}} \nv2{F(z)}
+    }{
+      \nv2{F(z)} \nv2{F(z) \cdot {z_0'}^2/z_0^2}
+    }
+    \\ & \le
+    \eps_1
+    \pmm,
+  \end{align*}
+  qui, vu la définition de \( \eps_1 \), équivaut à la conclusion de la
+  proposition.
+\end{proof}
+
+
+
 \section{Inégalité de \bsc{Mumford}}
 
 La stratégie de la preuve est la suivante : si on a deux approximations
@@ -370,10 +349,10 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     & \le
     \cst{CPonctuelAlg}\, \Distv(x - y, x' - y')
     \\ & \le
-    \cst{CPonctuelAlg}\, \cst{Cp:addsub-dv}\,
+    \cst{CPonctuelAlg}\, \cst{addsub-dv}\,
     \max(\Distv(x, x'), \Distv(y, y'))
     \\ & \le
-    \cst{CPonctuelAlg}\, \cst{Cp:addsub-dv}
+    \cst{CPonctuelAlg}\, \cst{addsub-dv}
     \, e^{\dv \gamma_{n+1}}H^{-\lambda_v \eps/d}
     \pmm.
   \end{align*}
