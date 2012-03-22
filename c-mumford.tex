@@ -11,41 +11,42 @@ est le suivant.
 
 \begin{thm} \label{t:mumford}
   Soient \( \vai \) une sous-variété abélienne de \( \va \) ;
-  on note \( d = \deg \vai \), \( l = \dim\vai + 1 \).
-  On choisit \( \phi > 0 \) et \( \rho > 0 \) tels que
-  \( ld^2((\rho^2/4) + 2\phi + \rho\phi)< \eps \). On pose
-  \( B = (4^g-1)h(\va) + 3g\log(2) \) et
-  \(
-    C = 3\cdot4^gh(\va)
-    + \log\Bigl(
-      10\sqrt2\cdot 2^{7g/2} (n+1)^6
-      \bigl(\frac{16e\sqrt 2}{30}(n+1)^{9/2}\bigr)^{ld}
-    \Bigr)
-  \).
-
+  on note \( d = \deg \vai \) et \( l = \dim\vai + 1 \).
+  On choisit \( \expapx > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \) tels que
+  \begin{equation} \label{e:rho-phi}
+    \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
+    \le
+    \frac{ \expapx }{ 2d }
+    \pmm.
+  \end{equation}
   Si \( x \) et \( y \) sont deux points de \( \va(\Qbar) \) tels que
   \begin{align}
     0 < \distv z \varapx
-    & <
+    & \le
     \hautm[2] z ^{-\wtapx\expapx}
     \quad \forall \place \in \placesapx
     \quad \text{où \( z \) est \( x \) ou \( y \)}
     \label{e:Mapx}
     \\
-    \Hautn(x)
-    & >
-    [h(\vai) + C + B(ld + \frac \eps d)]
-    \cdot [\frac \eps d - ld((\rho^2/4) + 2\phi + \rho\phi)]^{-1}
+    \hautn x
+    & \ge
+    \frac2\expapx \bigl(
+      \hautl[1]{ \chow\vai }
+      + ld \ln(3d)
+      + \htcmp
+      + \hlclab
+      + 6 \ln(n + 1)
+    \bigr)
     \label{e:Mbig}
     \\
     \cos(x, y)
-    & >
+    & \ge
     1 - \phi
     \label{e:Mcos}
     \\
-    \Hautn(x)
-    & <
-    \Hautn(y) \le (1+\rho)\Hautn(x)
+    \hautn x
+    & \le
+    \hautn y \le (1+\rho) \hautn x
     \label{e:Mclose}
   \end{align}
   alors \( x - y \in \vai(\Qbar) \).
@@ -322,7 +323,7 @@ leur différence, sous l'hypothèse que \( \vai \) est un sous-groupe) une
 approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \), d'après l'inégalité de \bsc{Liouville}.
 
-\begin{lem} \label{l:diff-close}
+\begin{lem} \label{l:diff-apx}
   Soient \( x \) et \( y \) dans \( \proj(\Qbar) \), on pose \( z = x -
     y \) et \( H = \min\bigl( H(x), H(y) \bigr) \).
   Si \( x \) et \( y \) satisfont à~\eqref{e:Mapx}, on a
@@ -330,7 +331,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     \prod\placerange
     \Distv(z, \vai)^\degv
     \le
-    H^{-\eps}
+    H^{-\expapx}
     \cdot 5 \sqrt2 (n + 1)^3 \hmclab
     \pmm.
   \end{equation}
@@ -344,7 +345,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
   \begin{equation}
     \max \bigl( \Distv(x, x'_v), \Distv(y, y'_v) \bigr)
     \le
-    H^{-\wtapx \eps}
+    H^{-\wtapx \expapx}
     \pmm.
   \end{equation}
   Comme \( \vai \) est un sous-groupe, \( x'_v - y'_v \in \vai \), donc la
@@ -352,7 +353,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
   \begin{equation}
     \distv z \vai
     \le
-    H^{-\wtapx \eps}
+    H^{-\wtapx \expapx}
     \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
     \pmm.
   \end{equation}
@@ -365,8 +366,8 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \begin{lem} \label{l:diff-small}
   Soient \( x \) et \( y \) satisfaisant aux hypothèses \eqref{e:Mcos}
   et \eqref{e:Mclose} du théorème~\ref{t:mumford}, notons \( z \) leur
-  différence. On a alors \( \Hautn(z) \le (\rho^2/4 + 2\phi + \rho\phi)
-    \Hautn(x) \).
+  différence. On a alors \( \hautn z \le (\rho^2/4 + 2\phi + \rho\phi)
+    \hautn x \).
 \end{lem}
 
 \begin{proof}
@@ -398,29 +399,56 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \end{proof}
 
 \begin{proof}[Démonstration (du théorème~\ref{t:mumford}).]
-  En utilisant les conclusions des deux lemmes précédents, on montre que \(
-    z \) ne satisfait pas à la conclusion la proposition~\ref{p:liouville}
-  dès que \( x \) satisfait l'hypothèse \eqref{e:Mbig} du
-  théorème~\ref{t:mumford}.  On a besoin de pouvoir comparer les hauteurs
-  projective et normalisée. On utilise à cet effet le lemme~3.9 de
-  \cite{daphimhva2} et la remarque subséquente : \( \lvert\Hautn(\truc) -
-    h(\truc)\rvert \le B \), avec \( B \) comme dans l'énoncé du théorème. En
-  injectant ceci dans le lemme~\ref{l:diff-close}, on a \( \sum_{v \in \placesapx} \degv
-    \log\Distv(z, \vai) \le -(\eps/d) \Hautn(x) + B\eps/d +
-    \cst{diff-close} \). De même, le lemme~\ref{l:diff-small} donne \( h(z) \le
-    ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(x) + B \). Ces estimations
-  contredisent la conclusion de la proposition~\ref{p:liouville} dès que
+  Compte tenu de l'inégalité de gauche de~\eqref{e:Mclose} et de la
+  comparaison entre hauteurs projective et normalisée, le
+  lemme~\ref{l:diff-apx} donne, en prenant le logarithme :
   \begin{equation}
-    \bigl(\eps/d - ld((\rho^2/4) + 2\phi + \rho\phi)\bigr)
-    \Hautn(x)
-    >
-    h(\vai) + \cst{diff-close} + B(ld + \eps/d)
+    \sum\placerange
+    \degv \ln\Distv(z, \vai)
+    \le
+    - \expapx \hautn x
+    + \expapx \htcmp
+    + \ln(5\sqrt2) + 3 \ln(n + 1) + \hlclab
     \pmm.
   \end{equation}
-  Or, un calcul facile montre que la constante \( C \) du théorème majore \(
-    \cst{diff-close} \) et que la relation précédente est impliquée par
-  l'hypothèse \eqref{e:Mbig} du théorème ; cette dernière oblige donc \( z
-  \) à être sur \( \vai \).
+  Par ailleurs, le lemme~\ref{l:diff-small} et l'hypothèse~\eqref{e:rho-phi}
+  donnent
+  \begin{equation}
+    \hautl[2] z
+    \le
+    (\rho^2/4 + 2\phi + \rho\phi)
+    \hautn x
+    \le
+    \frac{ \expapx }{ 2d }
+    \hautn x
+    \pmm.
+  \end{equation}
+
+  Supposons maintenant que \( z \not\in \vai(\Qbar) \) et montrons qu'on
+  contredit alors~\eqref{e:Mbig}. En effet, l'inégalité de \bsc{Liouville}
+  (proposition~\ref{p:liouville}) appliquée à \( z \) et \( \vai \) donne
+  alors
+  \begin{equation}
+    \sum\placerange
+    \degv \ln\Distv(z, \vai)
+    \ge
+    - d \hautl[2] z
+    - \hautl[1]{ \chow\vai }
+    - \frac32 \ln(n + 1)
+    - ld \ln(3d)
+  \end{equation}
+  puis, en substituant les inégalités précédentes :
+  \begin{equation}
+    \frac\expapx2 \hautn x
+    \le
+    \hautl[1]{ \chow\vai }
+    + ld \ln(3d)
+    + \expapx \htcmp
+    + \hlclab
+    + \frac92 \ln(n + 1)
+    + \ln(5\sqrt2)
+  \end{equation}
+  qui contredit bien~\eqref{e:Mbig}, achevant ainsi la preuve.
 \end{proof}
 
 
