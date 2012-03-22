@@ -124,10 +124,12 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
     \\ & \ge
     \prod_{v \in M(\cdn)}
     \left(
-      \frac{27}{26} (n+1)^{3/2}
-      \left( \frac{164}{81} \right)^{d}
-    \right)^{-\dv}
-    \frac{ \av{G(x)} }{ \nv2 x^{d} \nv2 G }
+      \left(
+        \frac{27}{26} (n+1)^{3/2}
+        \left( \frac{164}{81} \right)^{d}
+      \right)^{-\dv}
+      \frac{ \av{G(x)} }{ \nv2 x^{d} \nv2 G }
+    \right)^\degv
   \end{align}
   qui implique le résultat annoncé, \lat{via} une simple comparaison
   numérique pour la constante.
@@ -143,9 +145,9 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
     \hautm[1] V \cdot (d + 1)^{ d (u + 1) }
   \end{equation}
   en tenant compte des différences de hauteurs utilisées, comme observé dans
-  la preuve du lemme~\ref{l:hs-choice}. Il suffit alors d'appliquer la
-  propriété précédente à \( \zeros G \) et de remarquer que \( 17/8 \cdot
-  (d+1)^2 \le (3d)^2 \) pour conclure.
+  la preuve du lemme~\ref{l:hs-choice}. Il suffit alors d'appliquer le
+  lemme précédent à \( \zeros G \) et de remarquer que \( 17/8 \cdot (d+1)^2
+    \le (3d)^2 \) pour conclure.
 \end{proof}
 
 
@@ -321,52 +323,43 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \), d'après l'inégalité de \bsc{Liouville}.
 
 \begin{lem} \label{l:diff-close}
-  Si \( z = x - y \), où \( x \) et \( y \) satisfont
-  l'hypothèse \eqref{e:Mapx} du théorème~\ref{t:mumford}, on a \( \prod_{v \in
-      \placesapx} \Distv(z, \vai)^{e_v} \le \cst{diff-close} H^{-\eps/d} \), avec
+  Soient \( x \) et \( y \) dans \( \proj(\Qbar) \), on pose \( z = x -
+    y \) et \( H = \min\bigl( H(x), H(y) \bigr) \).
+  Si \( x \) et \( y \) satisfont à~\eqref{e:Mapx}, on a
   \begin{equation}
-    \newcst[]{diff-close}
-    =
-    H(\va)^{3\cdot4^g}
-    10\sqrt2\,(n+1)^6
-    2^{7g/2}
-    \left(
-      \frac{(2n^2+1)(n+1)^2}{2n}
-      e^{ \gamma_{\frac{(n+1)n}{2}} + \gamma_{n+1} }
-    \right)^{ld}
+    \prod\placerange
+    \Distv(z, \vai)^\degv
+    \le
+    H^{-\eps}
+    \cdot 5 \sqrt2 (n + 1)^3 \hmclab
+    \pmm.
   \end{equation}
-  et \( H = \min\bigl( H(x), H(y) \bigr) \).
 \end{lem}
 
 \begin{proof}
-  On a par hypothèse \( \max(\Distv(x, \vai), \Distv(y, \vai)) \le
-    H^{-\lambda_v \eps} \).  On sait alors grâce au fait~\ref{f:closest-point}
-  qu'il existe des points \( x',y' \in \vai(\C_v) \) tels que
+  En chaque place \( v \), il existe des points \( x'_v \) et \( y'_v \) dans
+  \( \vai(\Cv) \) tels que \( \distv x \vai = \distv{ x }{ x' } \) et
+  \( \distv y \vai = \distv{ y }{ y' } \). L'hypothèse~\eqref{e:Mapx} donne
+  alors
   \begin{equation}
-    \max(\Distv(x, x'), \Distv(y, y'))
+    \max \bigl( \Distv(x, x'_v), \Distv(y, y'_v) \bigr)
     \le
-    H^{-\lambda_v \eps/d} e^{\dv \gamma_{n+1}}
+    H^{-\wtapx \eps}
     \pmm.
   \end{equation}
-  On a alors en utilisant successivement la proposition~\ref{p:dv-p2alg} et la
-  proposition~\ref{p:addsub-dv} :
-  \begin{align}
-    \Distv(z, \vai)
-    & \le
-    \cst{CPonctuelAlg}\, \Distv(x - y, x' - y')
-    \\ & \le
-    \cst{CPonctuelAlg}\, \cst{addsub-dv}\,
-    \max(\Distv(x, x'), \Distv(y, y'))
-    \\ & \le
-    \cst{CPonctuelAlg}\, \cst{addsub-dv}
-    \, e^{\dv \gamma_{n+1}}H^{-\lambda_v \eps/d}
+  Comme \( \vai \) est un sous-groupe, \( x'_v - y'_v \in \vai \), donc la
+  proposition~\ref{p:addsub-dv} donne
+  \begin{equation}
+    \distv z \vai
+    \le
+    H^{-\wtapx \eps}
+    \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
     \pmm.
-  \end{align}
-  On prend alors le produit sur \( v \in \placesapx \), en supposant (c'est le cas
-  défavorable) que \( \placesapx \) contient toutes les places divisant \( 2 \) ou \(
-    \infty \).  Comme \( c_v(\va) \ge 1 \), on a \( \prod_{v \in \placesapx} c_v(\va)
-    \le \prod_{v \in M(\cdn)} c_v(\va) \le H(\va)^{4^g} \). Vu la
-  normalisation des \( \lambda_v \), on a ainsi la conclusion du lemme.
+  \end{equation}
+  On prend alors le produit sur \( v \in \placesapx \), en supposant (c'est le
+  cas défavorable) que \( \placesapx \) contient toutes les places
+  archimédiennes et toutes celles où \( \hmclab* > 1 \).  La normalisation \(
+    \sum\placerange \wtapx \degv \) permet alors de conclure.
 \end{proof}
 
 \begin{lem} \label{l:diff-small}
@@ -412,7 +405,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
   projective et normalisée. On utilise à cet effet le lemme~3.9 de
   \cite{daphimhva2} et la remarque subséquente : \( \lvert\Hautn(\truc) -
     h(\truc)\rvert \le B \), avec \( B \) comme dans l'énoncé du théorème. En
-  injectant ceci dans le lemme~\ref{l:diff-close}, on a \( \sum_{v \in \placesapx} e_v
+  injectant ceci dans le lemme~\ref{l:diff-close}, on a \( \sum_{v \in \placesapx} \degv
     \log\Distv(z, \vai) \le -(\eps/d) \Hautn(x) + B\eps/d +
     \cst{diff-close} \). De même, le lemme~\ref{l:diff-small} donne \( h(z) \le
     ((\rho^2/4) + 2\phi + \rho\phi) \Hautn(x) + B \). Ces estimations
