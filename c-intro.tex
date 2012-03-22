@@ -627,8 +627,12 @@ Pour chaque place \( \place \) de \( \cdn \), on pose
 Cette définition correspond, pour les points, à la distance d'indice \( 1 \)
 utilisée dans \cite{phidg} et \cite{jadotth}. Cette dernière référence
 (notamment lemme~3.2 \textit{(ii)}, page 51) montre qu'il s'agit bien d'une
-distance au sens usuel du terme. Pour la distance entre un point et une
-variété, on s'écarte par contre légèrement des références citée, en posant
+distance au sens usuel du terme (ultramétrique si \( v \) l'est). Par
+ailleurs, il est évident à partir de la définition que la distance est
+toujours majorée par \( 1 \).
+
+Pour la distance entre un point et une variété, on s'écarte par contre
+légèrement des références citée, en posant
 \begin{equation}
   \distv x V
   =
@@ -638,7 +642,8 @@ variété, on s'écarte par contre légèrement des références citée, en posa
 Les deux notions sont en fait très comparables, voir la section suivante. La
 notion qu'on vient de définir bénéficie par contre de la propriété suivante :
 si \( V \subset V' \) alors \( \distv x V' \le \distv x V \), qu'on utilisera
-couramment pour se ramener au cas où \( V \) est une hypersurface.
+couramment pour se ramener au cas où \( V \) est une hypersurface. Évidemment,
+on a \( \distv x V = 0 \Leftrightarrow x \in V(\Cv) \).
 
 \medskip
 
@@ -777,9 +782,11 @@ prend au contraire en compte cette structure. Cette distance est définie par
 \end{equation}
 où \( f_V \) est une forme de \bsc{Chow} de \( V \), son degré est noté \(
   \Delta \) et sa dimension \( u \). Le morphisme \( \md_x \) est défini dans
-les références citées (p. 88 de \cite{phidg} par exemple) ; par ailleurs, par
+les références citées (p.~88 de \cite{phidg} par exemple) ; par ailleurs, par
 rapport à ces références, on considère uniquement la distance d'indice \( (1,
-  \dots, 1) \).
+  \dots, 1) \). Comme pour la notion de distance précédemment définie, on a \(
+  0 \le \distv x V \le 1 \) avec égalité à gauche si et seulement si \( x \in
+  V \) (voir la référence précédente).
 
 Nous appellerons cette distance \emph{algébrique}, par opposition à la
 distance ensembliste définie ci-dessus. Examinons un peu les relations entre
