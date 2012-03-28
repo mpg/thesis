@@ -1353,7 +1353,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \hautm[1]{c_{p, q}}
     & \le
     \bigl(
-      \hmclab (\dimp!)^2 \, B^{2\dimp}
+      \hmclab ((\dimp+1)!)^2 \, B^{2\dimp}
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{align}
@@ -1396,11 +1396,11 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     & \le
     \prod\fctirange
     \hmclab^{\wtis* + \wts**} \,
-    \bigr( \dimp! \, (\vdegp[\fcti] )^\dimp) \bigl)^{2 \wts[\fcti]} \,
-    \bigr( \dimp! \, (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
+    \bigr( (\dimp+1)! \, (\vdegp[\fcti] )^\dimp) \bigl)^{2 \wts[\fcti]} \,
+    \bigr( (\dimp+1)! \, (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hmclab (\dimp!)^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
+    \bigr( \hmclab ((\dimp+1)!)^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
   \end{align}
   Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
 \end{proof}
@@ -1416,7 +1416,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \le
     \hautm[1] F
     \bigl(
-      \hmclab (\dimp!)^2 \, B^{2\dimp}
+      \hmclab ((\dimp+1)!)^2 \, B^{2\dimp}
     \bigr) ^{2 \delta \wts[1]}
   \end{equation}
 \end{coro}
@@ -1950,7 +1950,7 @@ lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
   & \le
   2 \delta \wts[1]
   \bigl(
-    \hlclab + 2\ln(\dimp!) + 2\dimp \ln B
+    \hlclab + 2\ln((\dimp+1)!) + 2\dimp \ln B
   \bigr)
   \\ & \qquad +
   \sum\fctrange 2\Di* \Bigl(
@@ -1969,7 +1969,7 @@ définition~\eqref{e:cst-vs-ht} pour écrire
   & \le
   4 \delta \wts[1]
   \Bigl(
-    \cst{vs-ht}/2 + \ln(\dimp!) + \dimp \ln B
+    \cst{vs-ht}/2 + \ln((\dimp+1)!) + \dimp \ln B
     + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \Bigr)
   \\ & \qquad
@@ -4513,7 +4513,7 @@ utile pour chacune des situations considérées.
 
 Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
 \begin{equation} \label{e:B-siegel}
-  \cst{vs-ht}/2 + \ln(\dimp!) + \dimp \ln B
+  \cst{vs-ht}/2 + \ln((\dimp+1)!) + \dimp \ln B
   + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \le
   \frac14 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
@@ -4521,9 +4521,9 @@ Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
 \end{equation}
 Pour le deuxième terme, on a par définition :
 \(
-  \ln(\dimp!)
+  \ln((\dimp+1)!)
   \le
-  \dimp \ln (\dimp)
+  \dimp \ln (\dimp+1)
   \le
   \cst{vs-ht}
 \)
@@ -4531,7 +4531,7 @@ de sorte que la somme des deux premiers termes est au plus \( \frac32
   \cst{vs-ht} \).
 En utilisant de plus l'estimation~\eqref{e:adhoc-gen} ci-dessus, il vient :
 \begin{align}
-  & \cst{vs-ht}/2 + \ln(\dimp!)
+  & \cst{vs-ht}/2 + \ln((\dimp+1)!)
   + 3 \ln(B) B(\genre+1) + \dimp \ln B + 3\ln B + 3 \ln(2)
   \\ & \qquad \le
   \frac{3\Lambda}{2\cdot1\,275} \cst{vs-ht}
