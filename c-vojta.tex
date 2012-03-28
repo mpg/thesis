@@ -3847,11 +3847,11 @@ on a
     \nclmaps^{ \frac{\puiss}{\puiss-\genre} }
     \, (85 \cdot 5^\genre)^{ \frac{\puiss}{\puiss-\genre} }
   }
+  =
+  \Vcos
 \end{align}
 en remarquant que \( 48 \cdot 85^{ \frac{\genre}{\puiss-\genre} } \le 85^{
-    \frac{\puiss}{\puiss-\genre} } \). On reconnaît alors la
-définition~\eqref{e:def-Vcos} de \( \Vcos \) dans la dernière expression, ce
-qui entraîne immédiatement que
+    \frac{\puiss}{\puiss-\genre} } \). Ceci entraîne immédiatement que
 \begin{equation} \label{e:Vcos-ct-extra}
   3 (\puiss-1) \Vcos
   \le \frac{\expapx \epsi}{16}
@@ -3880,14 +3880,22 @@ décroissante :
   \Bigr)
   \pmm.
 \end{align}
-Or, en utilisant~\eqref{e:ct-cst-vs-deg} puis la
-définition~\eqref{e:def-Lambda} de \( \Lambda \), on a
+Or, en remarquant que \( \cst{vs-deg-prod} = 5 \puiss / \Vcos \) d'après les
+définitions respectives~\eqref{e:def-Vcos} et~\eqref{e:cst-vs-deg-prod} de ces
+deux constantes, la comparaison~\eqref{e:Vcos-ct-details} entraîne
 \begin{equation}
-  \frac{320}{3\expapx \epsi} \le \cst{vs-deg-prod} \le \Lambda
+  \frac{320}{3\expapx \epsi}
+  \le
+  \frac{ 48(\puiss-1) \cdot 5\puiss }{ \eps\epsi }
+  \le
+  \cst{vs-deg-prod}
+  \le
+  \Lambda
 \end{equation}
-puis, en remarquant que \( (1 + \frac1\puiss) f(\puiss) + 1 \le (1 +
-  \frac1\puiss) f(\puiss-1) \) d'après la définition~\eqref{e:def-f} de \( f
-\) et en utilisant le fait que \( \puiss \ge 2 \), il vient :
+par définition~\eqref{e:def-Lambda} de \( \Lambda \). Par ailleurs,
+\( (1 + \frac1\puiss) f(\puiss) + 1 \le (1 + \frac1\puiss) f(\puiss-1) \)
+d'après la définition~\eqref{e:def-f} de \( f \), donc en utilisant le fait
+que \( \puiss \ge 2 \), il vient :
 \begin{align}
   \alpha \hautn{\ex[1]} + \beta
   & \le
