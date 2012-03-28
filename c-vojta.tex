@@ -1014,21 +1014,19 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   \( \Delta_\fct \). On note \( \Ideal_{S, T} \) l'idéal engendré par les
   \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
 
-  Il existe une forme \( R \) ne dépendant que des familles \( S \) et \(
-    \Delta \), de degré noté \( r \), et, pour tout \( \alpha \in \N^\puiss \),
-  une application linéaire
+  Posons
+  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
+    ( S\mexp*[\ind] )^{\Delta_\fct} \) et \( r = \deg R \) ; la multiplication
+  par \( R \) modulo \( \Ideal_{S, T} \) est alors représentée en tout degré
+  \( \alpha \in \N^\puiss \) par une application linéaire
   \begin{equation}
     \relim^\alpha \colon
     \cdn [\vmp]_ {\alpha}^{C'_\Delta}
     \to
     \cdn [\vmp]_ {\alpha+r}^{C''}
   \end{equation}
-  qui est la multiplication par \( R \) modulo \( \Ideal_{S, T} \).
-
-  De plus, on peut prendre
-  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
-    ( S\mexp*[\ind] )^{\Delta_\fct} \) ; les colonnes \( c_q^{\relim} \) de la
-  matrice de \( \relim \) dans la base canonique satisfont alors
+  telle que les colonnes \( c_q^{\relim} \) de sa matrice dans les bases de
+  monômes satisfont
   \begin{equation}
     \nv1{ c_q^{\relim} }
     \le
