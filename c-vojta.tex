@@ -2247,7 +2247,8 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
 \begin{lem} \label{l:param-any-easy}
   Soit \( \derp \in \N^\anydim \) ; on note \( \supp \derp \) l'ensemble des
   indices \( \alpha \) tels que \( \derp[\alpha] \neq 0 \). Alors, pour tout
-  \( (\ind, \indi) \in \set{0, \dots, \anydim}^2 \) on a
+  \( (\ind, \indi) \in \set{0, \dots, \anydim}^2 \) tel que  \( \ind \neq
+    \indi \) on a
   \begin{equation}
     \der[\derp] \frac{ \vp[\indi] }{ \vp* }
     =
@@ -2262,12 +2263,15 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
       & sinon.
     \end{cases*}
   \end{equation}
+  Par ailleurs, si \( \ind = \indi \) alors
+  \( \der[\derp] \frac{ \vp[\indi] }{ \vp* } \) vaut \( 0 \) si \( \derp \neq
+    0 \) et \( 1 \) sinon.
 \end{lem}
 
 \begin{proof}
-  Si \( \ind = 0 \), c'est la définition même de \( \der[\derp] \). Sinon, en
-  utilisant la règle de \bsc{Leibniz} et ses conséquences usuelles, on a
-  facilement
+  Si \( \ind = 0 \), c'est la définition même de \( \der[\derp] \) ; si \(
+    \ind = \indi \) le résultat est clair également. Sinon, en utilisant la
+  règle de \bsc{Leibniz} et ses conséquences usuelles, on a facilement
   \begin{equation}
     \diff_\alpha
     \frac{ \vp[\indi] }{ \vp[0] }
@@ -2294,22 +2298,24 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
     \end{cases*}
   \end{equation}
   Ceci donne le premier cas (en itérant) ; pour le deuxième on écrit
-  \begin{equation}
+  \begin{align}
     \der[\derp] \frac{ \vp[\indi] }{ \vp[\ind] }
-    =
+    & =
     \diff_\indi^{\derp_\indi} \frac{ \vp[\indi] }{ \vp[0] }
     \cdot
     \frac1{\derp*!}
     \diff_\ind^{\derp_\ind} \frac{ \vp[0] }{ \vp* }
-    =
+    \\ & =
     \left( \frac{ \vp[\indi] }{ \vp[0] } \right)^{1 - \derp_\indi}
     \cdot
     (-1)^{\derp*}
     \left( \frac{ \vp[0] }{ \vp* } \right)^{\derp* + 1}
-  \end{equation}
-  qui donne bien le résultat annoncé : c'est clair si \( \derp_\indi = 1 \)
-  et sinon on a \( \lgr\derp = \derp* \) et on absorbe le \( \vp[0] / \vp* \)
-  supplémentaire dans le premier facteur.
+    =
+    (-1)^{\derp*}
+    \left( \frac{ \vp[\indi] }{ \vp[\ind] } \right)^{1 - \derp_\indi}
+    \left( \frac{ \vp[0] }{ \vp* } \right)^{\derp[\ind] + \derp[\indi]}
+  \end{align}
+  qui donne bien le résultat annoncé.
 \end{proof}
 
 Pour le cas \( \indi = \anydim + 1 \), on utilisera des relations de
@@ -2729,7 +2735,9 @@ qui font l'objet du lemme suivant.
   \begin{equation}
     \sumset' = \left\{
       \gmp\nu \in \sumset
-      \text{ tel que, \( \forall (\indi, \alpha_\indi) \), }
+      \text{ tel que }
+      \gmp\nu[\ind][\alpha_\ind] = 0
+      \text{ et, \( \forall (\indi, \alpha_\indi) \), }
       \supp\indl \subset \set{\ind, \indi}
       \text{ et }
       \indl[\indi] \le 1
