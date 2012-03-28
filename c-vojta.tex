@@ -924,47 +924,53 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \pmm,
   \end{equation}
   où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
-  On pose ensuite, pour tout \( \fct \), tout
-  \( \ind \in \{ 0, \dots, \dimp \} \) et tout
-  \( p \in \N^{\puiss(\dimp+1)} \),
+  On a alors \(
+    (\vmp**)^{\Delta_\fct}
+    =
+    - \sum _{\alpha=1}^{\Delta_\fct}
+    P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta_\fct - \alpha}
+    \mod \Ideal \) et plus généralement, le lemme~2.4 de \cite{remivg} fournit
+  pour tout \( \gamma \in \N \) et tout \( \alpha \in \set{1, \dots,
+      \Delta_\fct} \) un polynôme \( U_{\gamma, \alpha, \Delta_\fct} \) tel que
+  si l'on pose, pour tout \( \fct \in \set{1, \dots, \puiss} \) et tout \(
+    \ind \in \set{ 0, \dots, \dimp } \) :
   \begin{equation}
-    \rho_{\fct, \ind, p}
+    R_{\fct, \ind, \gamma}
     =
     \begin{dcases*}
-      ( \vmp*[\ind] ) ^{p\mexp*[\ind]}
+      ( \vmp*[\ind] ) ^\gamma
       & si \( \ind \le \vdim* \) ;
       \\
       \sum _{\alpha=1}^{\Delta_\fct}
-      U_{p, \alpha, \Delta_\fct}
+      U_{\gamma, \alpha, \Delta_\fct}
       ( P\mexp*[\ind, 1], \dots, P\mexp*[\ind, \Delta\mexp*] )
       (\vmp**)^{\Delta_\fct - \alpha}
       & sinon,
     \end{dcases*}
   \end{equation}
-  où les polynômes \( U \) sont donnés par le lemme~2.4 de \cite{remivg}, ce
-  qui implique que \( \rho_{\fct, \ind, p} \) est toujours congru à
-  \( ( \vmp*[\ind] ) ^{p\mexp*[\ind]} \) modulo \( \Ideal \) et qu'on a
-  l'estimation de norme
+  alors \( R_{\fct, \ind, \gamma} = ( \vmp*[\ind] ) ^\gamma \mod \Ideal \) et
+  on a l'estimation de norme
   \begin{equation}
-    \nv1{ \rho_{\fct, \ind, p} }
+    \nv1{ R_{\fct, \ind, \gamma} }
     \le
     \left(
     \nv1{ P\mexp*[\ind] } (2\Delta_\fct)^\dv
-    \right) ^{p\mexp*[\ind]}
+    \right) ^\gamma
     \pmm.
   \end{equation}
   On définit alors \( \rdiv^\beta \) par son action sur les monômes, en posant
+  pour tout \( p \in \N^{\puiss(\dimp+1)} \) :
   \begin{equation}
     c_p
     = \rdiv^\beta(\vmp^p)
-    = \prod\fctrange \prod\indrange \rho_{\fct, \ind, p}
+    = \prod\fctrange \prod\indrange R_{\fct, \ind, \gmp p**}
   \end{equation}
   et en prolongeant par linéarité. L'estimation de norme annoncée découle
   directement de la majoration précédente en prenant le produit.
   
   Par ailleurs, il est clair que si une forme ne fait intervenir que les
   variables \( \vmp*[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de
-  même de son image. En effet, \( \rdiv^\alpha \) consiste à substituer, dans
+  même de son image. En effet, \( \rdiv^\beta \) consiste à substituer, dans
   chaque monôme, le facteur en \( \vmp** \) (pour \( \ind > \vdim* \)) par un
   polynôme en \( \vmp*[0], \dots, \vmp*[\vdim*] \) et ne peut donc pas
   introduire de variables \( \vmp** \) pour \( \ind > \vdim* \).
