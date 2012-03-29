@@ -564,6 +564,9 @@
 % integer parts [[3
 \DeclarePairedDelimiter \floor {\lfloor} {\rfloor}
 
+% scalar product [[3
+\DeclarePairedDelimiter \scal \langle \rangle
+
 % general algebraic geometry [[2
 %
 \newcommand \Ideal {\mathcal I}
@@ -677,6 +680,7 @@
   abélienne \PHi sur le corps \PH}
 
 \newcommand*\nnt {\abs} % norme de Néron-Tate
+\newcommand*\scalnt [2] {\scal{#1, #2}} % produit scalaire associé
 
 \newcommand \mmemb { \Theta }
 \nomdef \mmemb g {E3} \@gobbletwo{\mmemb}{Plongement de \bsc{Mumford
@@ -894,8 +898,9 @@
 
 \newcommand*\hautm [2][] {\Hautm[#1](#2)}
 \newcommand*\hautl [2][] {\Hautl[#1](#2)}
-\newcommand*\hautn [1]    {\Hautn    (#1)}
-\newcommand*\normn        {\abs}
+\newcommand*\hautn [1]   {\Hautn    (#1)}
+
+% \nnt + \scalnt available for Néron-Tate norm & scalar product
 
 \newcommand*\htpph {\mathrm{P}}
 \newcommand*\htmah {\mathrm{M}}
@@ -905,13 +910,6 @@
 \nomdef \hautl a {h} \@gobbletwo{\hautl[\PHi]{\PH}}{Hauteur projective
   logarithmique de \PH en utilisant la norme \PHi aux places archimédiennes}
 \nomdef \hautn a {h} \@gobbletwo{\hautn      {\PH}}{Hauteur de \NT de \PH}
-\nomdef \normn s {n1} \@gobbletwo{\normn\PH}{Norme de \NT de \PH}
-
-\newcommand* \scalarn [2] {\langle#1,#2\rangle}
-
-\nomdef \scalarn s {angle} \@gobbletwo{\scalarn\PH\PHi}{Produit scalaire,
-  relativement à la forme quadratique de \NT, des points \PH et \PHi de $\va$
-  ou de son espace de \MoW}
 
 \newcommand \stoll [1] {\mathrm{St}\sb{#1}}
 

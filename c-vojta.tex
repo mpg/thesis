@@ -163,16 +163,16 @@ satisfaisant~\eqref{e:clab-norm} et~\eqref{e:clab-loc}.
 En utilisant les inégalités élémentaires \( (1 + \zeta)^{-1} \ge 1 - \zeta \)
 et \( (1 + \zeta)^{1/2} \le 1 + \zeta/2 \), on en déduit facilement que pour
 toute famille \( (\wt*) \) satisfaisant à~\eqref{e:wt-ratio-gen}, on a
-\begin{equation} \label{e:wt-diff-normn-gen}
-  \abs[\big]{ \wt* \normn{\ex*} - \wt[1] \normn{\ex[1]} }
+\begin{equation} \label{e:wt-diff-nnt-gen}
+  \abs[\big]{ \wt* \nnt{\ex*} - \wt[1] \nnt{\ex[1]} }
   \le
-  \frac\zeta2 \wt[1] \normn{\ex[1]}
+  \frac\zeta2 \wt[1] \nnt{\ex[1]}
   \quad\text{et}\quad
-  \abs[\big]{ \wt* \normn{\ex*} - \wt[\fcti] \normn{\ex[\fcti]} }
+  \abs[\big]{ \wt* \nnt{\ex*} - \wt[\fcti] \nnt{\ex[\fcti]} }
   \le
-  \zeta \wt[1] \normn{\ex[1]}
+  \zeta \wt[1] \nnt{\ex[1]}
 \end{equation}
-pour tous \( \fct \) et \( \fcti \), où \( \hautn\truc = \normn\truc^2 \)
+pour tous \( \fct \) et \( \fcti \), où \( \nnt\truc = \hautn\truc^{1/2} \)
 désigne la norme de \NT. Cette inégalité nous sera utile pour démontrer le
 lemme suivant.
 
@@ -193,28 +193,28 @@ lemme suivant.
 \begin{proof}
   En développant le membre de gauche, il vient successivement
   \begin{alignat*}{2}
-    \normn{\wt* \ex* - \wt** \ex**}^2
+    \nnt{\wt* \ex* - \wt** \ex**}^2
     & =
-    \normn{\wt* \ex*}^2 + \normn{\wt** \ex**}^2
-    - 2 \scalarn{\wt* \ex*}{\wt** \ex**}
+    \nnt{\wt* \ex*}^2 + \nnt{\wt** \ex**}^2
+    - 2 \scalnt{\wt* \ex*}{\wt** \ex**}
     \\
-    & = \wts* \normn{\ex*}^2 + \wts** \normn{\ex**}^2
-    - 2 \wt* \wt** \scalarn{\ex*}{\ex**}
+    & = \wts* \nnt{\ex*}^2 + \wts** \nnt{\ex**}^2
+    - 2 \wt* \wt** \scalnt{\ex*}{\ex**}
     \\
-    & = \left( \wt* \normn{\ex*} - \wt** \normn{\ex**} \right)^2
+    & = \left( \wt* \nnt{\ex*} - \wt** \nnt{\ex**} \right)^2
     + 2 \wt* \wt** \left(
-      \normn{\ex*} \normn{\ex**} - \scalarn{\ex*}{\ex**}
+      \nnt{\ex*} \nnt{\ex**} - \scalnt{\ex*}{\ex**}
     \right)
     \\
-    & \le \left( \wt* \normn{\ex*} - \wt** \normn{\ex**} \right)^2
-    + 2 \wt* \wt** \normn{\ex*} \normn{\ex**} \Vcos
+    & \le \left( \wt* \nnt{\ex*} - \wt** \nnt{\ex**} \right)^2
+    + 2 \wt* \wt** \nnt{\ex*} \nnt{\ex**} \Vcos
     && \text{d'après~\eqref{e:Vcos}}
     \\
-    & \le \left( \zeta \wt[1] \normn{\ex[1]} \right)^2
-    + 2 \left( \wt[1] \normn{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
-    && \text{d'après~\eqref{e:wt-diff-normn-gen} et~\eqref{e:wt-ratio-gen}}
+    & \le \left( \zeta \wt[1] \nnt{\ex[1]} \right)^2
+    + 2 \left( \wt[1] \nnt{\ex[1]} \sqrt{1 + \zeta} \right)^2 \Vcos
+    && \text{d'après~\eqref{e:wt-diff-nnt-gen} et~\eqref{e:wt-ratio-gen}}
   \end{alignat*}
-  qui donne le résultat annoncé en factorisant \( (\wt[1] \normn{\ex[1]})^2 =
+  qui donne le résultat annoncé en factorisant \( (\wt[1] \nnt{\ex[1]})^2 =
       \wts[1] \hautn{\ex[1]} \).
 \end{proof}
 

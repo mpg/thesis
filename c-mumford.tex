@@ -374,8 +374,8 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \end{lem}
 
 \begin{proof}
-  On note \( \langle\truc; \truc \rangle \) le produit scalaire et \(
-    \nnt{\truc} = \sqrt{\Hautn(\truc)} \) la norme dans l'espace de
+  On note \( \scalnt \truc\truc \) le produit scalaire et \(
+    \nnt\truc = \sqrt{\hautn\truc} \) la norme dans l'espace de
   \bsc{Mordell-Weil}. On remarque de plus que l'hypothèse \eqref{e:Mclose}
   implique
   \( \nnt x \le \nnt y \le (1+\rho)^{1/2}\nnt x \le (1+\rho/2)
@@ -385,7 +385,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     & =
     \nnt{x-y}^2
     \\ & =
-    \nnt x ^2 + \nnt y ^2 - 2\langle x; y \rangle
+    \nnt x ^2 + \nnt y ^2 - 2 \scalnt x y
     \\ & =
     \left( \nnt y  - \nnt x  \right)^2
     + 2 \nnt x  \nnt y  \left( 1- \cos(x, y) \right)
