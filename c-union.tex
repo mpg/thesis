@@ -1,16 +1,135 @@
 % !TEX root = main.tex
 
 \chapter{Déduction des résultats principaux}
+\label{chap:union}
 
-\section{Décompte des grands points}
+Nous déduisons ici des deux chapitres précédents des décomptes
+d'approximations exceptionnelles, en procédant en deux temps : pour les points
+de hauteur assez grande (au sens de~\eqref{e:Vbig} et/ou~\eqref{e:Mbig}), que
+nous appellerons grands points, nous combinons les inégalités de \bsc{Vojta}
+et de \bsc{Mumford} obtenues précédemment ; pour les petits points, on procède
+à des décomptes triviaux soit en oubliant l'hypothèse d'approximation, soit en
+renforçant celle-ci pour interdire leur existence.
 
-\section{Décompte des petits points}
+\section{Décomptes des grands points}
+\label{sec:big-points}
 
-\section{Variante de l'hypothèse d'approximation}
+On commence par compter le nombre de points dans chaque cône tronqué.
 
-\section{Formes linéaires de logarithme}
+\begin{lem} \label{l:big-by-cone}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Pour tout réel \( \expapx > \) et tout entier \( \puiss \ge \genre + 1 \),
+  il existe au plus
+  \begin{equation}
+    \todots
+  \end{equation}
+  points distinct modulo \( \vai \) et satisfaisant simultanément aux
+  conditions suivantes :
+  \begin{align}
+    0 < \distv{\ex*} V
+    & <
+    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \\
+    \hautn{\ex[1]}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \\
+    \cos(\ex*, \ex[\fcti])
+    & > 1 - \frac1{ \puiss \, \cst{v-gen} }
+  \end{align}
+  avec
+  \begin{align}
+    \cst{v-gen}
+    & =
+    \bigl(
+        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
+        \, \expapx^{-1}
+    \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+    \\
+    \Lambda_4
+    & =
+    \cst{v-gen}
+    \bigl( (\sqrt2 \puiss \genre\Delta)^\genre \deg \va \bigr)^\puiss
+    \\
+    \cst{ht-v-gen1}
+    & =
+    \Delta \max \bigl(
+      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    \bigr)
+    + (\genre + 1) \deg \va
+    \Bigl(
+      \Delta^\dimp \ln(\Delta) \dimp
+    \\ & \qquad
+      + \Delta^\genre \bigl (
+        \hautl[1] V
+        + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
+        + \ln(\puiss/2)
+      \bigr)
+    \Bigr)
+    \pmm.
+  \end{align}
+\end{lem}
 
-\section{Une ex-conjecture de \bsc{Lang}}
+\begin{proof}
+  ~\todo
+\end{proof}
+
+Le fait suivant permet de recouvrir l'espace de \MoW par de tels cônes.
+
+\begin{fact}
+  Soient \( r \) un entier et \( \gamma > 0 \) un réel. On peut recouvrir \(
+    \R^r \) par \( \floor{(1 + \sqrt{8/\gamma})^r} \) ensembles dans chacun
+  desquels deux points quelconques satisfont \( \cos(x, y) \ge 1 - \gamma \).
+\end{fact}
+
+\begin{proof}
+  C'est le corollaire~6.1, p.~542 de~\cite{remdcl}.
+\end{proof}
+
+On déduit immédiatement de ce fait un décompte des grands points.
+
+\begin{prop} \label{p:big-gen}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  fini \( r \).
+  Pour tout réel \( \expapx > \) et tout entier \( \puiss \ge \genre + 1 \),
+  il existe au plus
+  \begin{equation}
+    \todots
+  \end{equation}
+  points \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  simultanément aux deux conditions suivantes :
+  \begin{align}
+    0 < \distv{\ex*} V
+    & <
+    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+    \\
+    \hautn{\ex[1]}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+  \end{align}
+  avec \( \cst{v-gen} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  lemme~\ref{l:big-by-cone}.
+\end{prop}
+
+
+
+\section{Décomptes des petits points}
+\label{sec:small-points}
+
+
+
+\section{Décomptes complets}
+\label{sec:all-points}
+
+
+
+\section{Hypothèse d'approximation produit}
+\label{sec:ha-prod}
 
 
 \cleardoublepage
