@@ -457,7 +457,7 @@ $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 \section{Définitions et notations}
 
 \todo[Coordonnées projectives et multiprojectives, formes de Chow et hauteur
-  d'une variété.]
+d'une variété, notation \( \gamma_n \).]
 
 \subsection{Normes et hauteurs}
 
@@ -717,7 +717,19 @@ objets considérés (points, variétés, etc.) sont supposés définis sur \( \Q
 On commence par établir une expression simple de la distance entre un point et
 un hyperplan, cas qui sera fondamental pour l'inégalité de \bsc{Vojta} par
 exemple, puis on étudie les liens entre la distance définie ci-dessus et celle
-utilisée notamment dans~\cite{phidg}.
+utilisée notamment dans~\cite{phidg}. Certains des résultats établis ici ne
+sont pas utiles pour le reste de la thèse\footnote{Plus précisément, les seuls
+  résultats utilisés sont la proposition~\ref{p:dv-hp}, le
+  lemme~\ref{l:dv-common-i} et la proposition~\ref{p:dv-p2alg-hs}.} mais sont
+inclus afin de donner une vision assez complète des relations entre ces deux
+notions.
+
+Par ailleurs, dans toute cette section, contrairement au reste du texte, les
+objets (points, variétés) considérés ne sont pas supposés définis sur \( \Qbar
+\), les résultats sont valables pour des objets définis sur \( \Cv \). En
+revanche, les résultats d'existence (fait~\ref{f:closest-point} en
+particulier) ne permettent en aucun cas de garantir le caractère algébrique
+des objets obtenus.
 
 \begin{prop} \label{p:dv-hp}
   Si \( E \) est un hyperplan de \( \projd \), d'équation \( L \), on a
@@ -806,9 +818,6 @@ proposition~4, p.~266 de~\cite{phiha1} (reprise dans la proposition~2.3,
 point~(ii), p.~23 de \cite{jadotth} sous une forme plus proche de nos
 notations), de sorte que la proposition~\ref{p:dv-hp} dit en fait simplement
 que \( \distalgv \truc V = \distv \truc V \) dans ce cas particulier.
-% Plutôt que phiha1, on peu citer Jadot, prop 2.3 (ii) p. 23, qui le cite,
-% mais énonce le truc sous une forme plus directe.
-% Sinon y'a aussi la page 86 de phidg, au moment où il cite Lau1...
 
 Dans le cas général, on a la comparaison suivante.
 \begin{fact} \label{f:closest-point}
@@ -843,8 +852,8 @@ La démonstration repose sur un développement de \( \md f \) autour de \( y
 \) relativement à \( X \), qui permet de quantifier le fait que, \( \md_y f \)
 étant nul, \( \md_x f \) doit être petit pour \( x \) voisin de \( y \).
 De façon générale, pour écrire un développement de \bsc{Taylor} , il faudra
-s'assurer de l'existence une carte affine \( X_i \neq 0 \) contenant à la fois
-\( x \) et \( y \). On voit facilement que la non-existence d'un telle
+s'assurer de l'existence d'une carte affine \( X_i \neq 0 \) contenant à la
+fois \( x \) et \( y \). On voit facilement que la non-existence d'un telle
 carte affine impliquerait \( \distv x y  = 1 \), rendant le résultat banal. En
 pratique, on pourra supposer sans problème que \( x \) et \( y \) sont
 suffisamment proches.  Par ailleurs, il sera utile de pouvoir de plus choisir
