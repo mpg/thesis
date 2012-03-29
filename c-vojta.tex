@@ -783,9 +783,9 @@ démonstration de la proposition~\ref{p:varset-notmin}.
 
   Si le deuxième point est faux pour un certain \( \fct \) , on choisit cette
   fois \( T = \pden* \) qui convient également : en effet, le caractère adapté
-  du plongement implique que \( \poldep*[\vdim*+1] \) irréductible et de degré
-  \( \vdeg* \) en \( \vp*[\vdim*+1] \) donc \( \pden* \) étant de degré plus
-  petit, ne peut pas s'annuler identiquement sur \( \var* \).
+  du plongement implique que \( \poldep*[\vdim*+1] \) est irréductible et de
+  degré \( \vdeg* \) en \( \vmp*[\vdim*+1] \) donc \( \pden* \) étant de degré
+  plus petit, ne peut pas s'annuler identiquement sur \( \var* \).
 \end{proof}
 
 
@@ -926,36 +926,36 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
   où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
   On a alors \(
     (\vmp**)^{\Delta_\fct}
-    =
+    \equiv
     - \sum _{\alpha=1}^{\Delta_\fct}
     P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta_\fct - \alpha}
     \mod \Ideal \) et plus généralement, le lemme~2.4 de \cite{remivg} fournit
-  pour tout \( \gamma \in \N \) et tout \( \alpha \in \set{1, \dots,
-      \Delta_\fct} \) un polynôme \( U_{\gamma, \alpha, \Delta_\fct} \) tel que
-  si l'on pose, pour tout \( \fct \in \set{1, \dots, \puiss} \) et tout \(
+  pour tout \( q \in \N \) et tout \( \alpha \in \set{1, \dots,
+      \Delta_\fct} \) un polynôme \( U_{q, \alpha, \Delta_\fct} \) tel que
+  si l'on pose, pour \( \fct \in \set{1, \dots, \puiss} \) et \(
     \ind \in \set{ 0, \dots, \dimp } \) :
   \begin{equation}
-    R_{\fct, \ind, \gamma}
+    R_{\fct, \ind, q}
     =
     \begin{dcases*}
-      ( \vmp*[\ind] ) ^\gamma
+      ( \vmp*[\ind] ) ^q
       & si \( \ind \le \vdim* \) ;
       \\
       \sum _{\alpha=1}^{\Delta_\fct}
-      U_{\gamma, \alpha, \Delta_\fct}
+      U_{q, \alpha, \Delta_\fct}
       ( P\mexp*[\ind, 1], \dots, P\mexp*[\ind, \Delta\mexp*] )
       (\vmp**)^{\Delta_\fct - \alpha}
       & sinon,
     \end{dcases*}
   \end{equation}
-  alors \( R_{\fct, \ind, \gamma} = ( \vmp*[\ind] ) ^\gamma \mod \Ideal \) et
+  alors \( R_{\fct, \ind, q} \equiv ( \vmp*[\ind] ) ^q \mod \Ideal \) et
   on a l'estimation de norme
   \begin{equation}
-    \nv1{ R_{\fct, \ind, \gamma} }
+    \nv1{ R_{\fct, \ind, q} }
     \le
     \left(
     \nv1{ P\mexp*[\ind] } (2\Delta_\fct)^\dv
-    \right) ^\gamma
+    \right) ^q
     \pmm.
   \end{equation}
   On définit alors \( \rdiv^\beta \) par son action sur les monômes, en posant
@@ -967,7 +967,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
   \end{equation}
   et en prolongeant par linéarité. L'estimation de norme annoncée découle
   directement de la majoration précédente en prenant le produit.
-  
+
   Par ailleurs, il est clair que si une forme ne fait intervenir que les
   variables \( \vmp*[\ind] \) pour \( \ind \le \vdim* + 1 \), il en est de
   même de son image. En effet, \( \rdiv^\beta \) consiste à substituer, dans
@@ -2297,7 +2297,19 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
       & sinon.
     \end{cases*}
   \end{equation}
-  Ceci donne le premier cas (en itérant) ; pour le deuxième on écrit
+  Si \( \supp\derp \not\subset \set{\ind, \indi} \), il existe un \( \alpha \)
+  distinct de \( \ind \) et \( \indi \) tel que \( \der[\derp] \) contient un
+  facteur \( \diff_\alpha \) et on a donc \(
+    \der[\derp] \frac{ \vp[\indi] }{ \vp* } = 0
+  \).
+  De même, \( \derp[\indi] > 1 \) on a \(
+    \der[\derp] \frac{ \vp[\indi] }{ \vp* } = 0
+  \) car \(
+    \diff_\indi \circ \diff_\indi \frac{ \vp[\indi] }{ \vp* }
+    = \diff_\indi \frac{ \vp[0] }{ \vp* }
+    = 0
+  \).
+  Ceci donne le premier cas ; pour le deuxième, on écrit
   \begin{align}
     \der[\derp] \frac{ \vp[\indi] }{ \vp[\ind] }
     & =
@@ -3827,8 +3839,8 @@ de \( \epsz \) assure que
   \le \frac{\expapx \epsi}{16}
   \pmm.
 \end{equation}
-Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \),
-on a
+Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \)
+puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
 \begin{align} \label{e:Vcos-ct-details}
   \frac{ \eps \epsi }{ 48 (\puiss - 1) }
   & \ge
@@ -4957,6 +4969,7 @@ On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}
       \htcmp + \hautl[2] E + \frac12 \ln(\dimp + 1),
       \dimp\ln(\dimp + 1)
     \bigr)
+    \pmm.
   \end{align}
 \end{coro}
 
@@ -5698,7 +5711,7 @@ contrôlés.
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*}{\divi}
+    0 < \distv{\ex*} V
     & <
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
@@ -5731,7 +5744,7 @@ contrôlés.
       \Delta^\dimp \ln(\Delta) \dimp
     \\ & \qquad
       + \Delta^\genre \bigl (
-        \hautl[1] F
+        \hautl[1] V
         + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)
@@ -5755,7 +5768,7 @@ légèrement simplifiées.
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*}{\divi}
+    0 < \distv{\ex*} V
     & <
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
@@ -5794,7 +5807,7 @@ légèrement simplifiées.
       \Delta^\dimp \ln(\Delta) \dimp
     \\ & \qquad
       + \Delta^\genre \bigl (
-        \hautl[1] F
+        \hautl[1] V
         + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)
@@ -5807,7 +5820,7 @@ légèrement simplifiées.
   rappelée pour référence, et l'apparition de \( \cst{v-gen} \) ne change
   rien. La définition du \( \Lambda \) a été simplifié en observant que \(
     5\puiss^2 \deg \va \le (\deg \va)^\puiss (\sqrt2
-    \puiss\genre^{\puiss\genre}) \) compte tenu du fait que \( \puiss \ge 2 \)
+    \puiss\genre)^{\puiss\genre} \) compte tenu du fait que \( \puiss \ge 2 \)
   et \( \deg \va \ge 3 \) (c'est évident pour \( \puiss \) assez grand et on
   le vérifie numériquement pour les petites valeurs).
 
