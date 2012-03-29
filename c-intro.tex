@@ -1131,12 +1131,55 @@ montre que c'est possible.
   preuve.
 \end{proof}
 
-\worknote{On peut probablement se ramener à une hypersurface, cf Jadot p.
-  76-77 par exemple.}
-Ensemble, les deux résultats précédents montrent que \( \distv x V = \distalgv
-  x V \) dès que \( V \) est linéaire et \( \place \) finie. C'est
-probablement aussi le cas aux places archimédiennes (on sait que c'est vrai
-pour les points et les hyperplans), mais on ne le montre pas pour l'instant.
+Les deux dernières propositions permettent donc de comparer la distance
+algébrique et la distance ponctuelle en toute généralité. On voit bien
+intervenir la structure géométrique de la variété \lat{via} son degré ou sa
+multiplicité en un point (évidemment majorée par le degré) respectivement. En
+conséquence, le corollaire suivant est assez naturel : il montre que les deux
+distances coïncident dans le cas d'un sous-variété linéaire, ce qu'on savait
+déjà dans les cas particulier des points et des hyperplans.
+
+\begin{coro}
+  Si \( V \) est une sous-variété linéaire de \( \projd \), pour tout point \(
+    x \in \projd(\Cv) \) on a \( \distv x V = \distalgv x V \).
+\end{coro}
+
+\begin{proof}
+  Si \( v \) est finie, c'est une conséquence immédiate des deux propositions
+  précédentes. Sinon, on utilise la proposition~3.10, p.~76 de \cite{jadotth}
+  et sa preuve, qui montre qu'on peut supposer que \( V \) est définie par \(
+    \vp[0] = \dots = \vp* = 0 \) et que \( x = (0, \dots, x_\ind,
+    x_{\ind+1}, 0, \dots, 0) \). Si l'on pose \( y = (0, \dots, 0,
+    1, 0, \dots, 0) \) où le \( 1 \) est en \( (\ind+1) \)-ième position (en
+  particulier, \( y \in V \)), on a
+  \begin{equation}
+    \distv x y
+    =
+    \frac{ \nv2{ x \wedge y } }{ \nv2 x \, \nv2 y }
+    =
+    \frac{ \av{ x_\ind } }{ \nv2 x }
+    =
+    \distalgv x V
+  \end{equation}
+  où la dernière égalité est le résultat de la proposition citée. Par
+  ailleurs, il est clair que pour tout \( y \in V \), c'est-à-dire
+  \( y = (0, \dots, 0, y_{\ind+1}, \dots, y_n) \),  on a
+  \begin{equation}
+    \distv x y ^2
+    =
+    \frac{
+      \av{ x_\ind }^2 \nv2 y ^2
+      + \av{ x_{\ind+1} } \sum_{\indi=\ind+2}^n \av{ y_\indi }^2
+    }{
+      \nv2 x ^2 \nv2 y ^2
+    }
+    \ge
+    \frac{ \av{ x_\ind }^2 }{ \nv2 x ^2 }
+    =
+    \distalgv x V ^2
+  \end{equation}
+  ce qui achève la preuve.
+\end{proof}
 
 Par ailleurs, dans le cas particulier où \( V \) est une hypersurface, on peut
 obtenir une version un peu plus précise de~\ref{p:dv-p2alg} en utilisant
