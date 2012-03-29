@@ -2,7 +2,7 @@
 
 \chapter{Inégalité de \bsc{Vojta}} \label{chap:vojta}
 
-\section{Énoncé principal}
+\section{Cas particulier fondamental}
 \label{sec:vojta-main}
 
 Nous établissons d'abord une inégalité de \bsc{Vojta} effective dans le cas
@@ -14,7 +14,7 @@ cas général.
 \begin{thm} \label{t:vojta-div}
   \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
   Soient \( \divi \) l'hyperplan défini par \( \vp[0] = 0 \) dans le
-  plongement fixé et \( 0 < \eps < 1 \) un nombre réel.  Pour tout
+  plongement fixé et \( 0 < \expapx < 1 \) un nombre réel.  Pour tout
   \( \puiss \ge \genre + 1 \), il n'existe dans \( \va(\Qbar) \) aucune famille
   de points \( \ex[1], \dots, \ex[\puiss] \) satisfaisant simultanément aux
   conditions suivantes :
@@ -53,7 +53,7 @@ cas général.
     \Vcos & =
     \frac1{ \puiss }
     \left(
-      \frac{ \eps }{ 85 \nclmaps \cdot 5^\genre }
+      \frac{ \expapx }{ 85 \nclmaps \cdot 5^\genre }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
     \\
     \label{e:def-Lambda}
@@ -62,7 +62,7 @@ cas général.
       (\deg \va)^\puiss,
       5 \puiss^2
       \bigl(
-        85 \nclmaps \cdot 5^\genre \cdot \eps^{-1}
+        85 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
       \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
@@ -89,7 +89,7 @@ pour traiter en premier le cas où \( \divi = \zeros{X_0} \), l'autre raison
 étant que l'indice d'annulation le long de \( \divi \) admet une définition
 particulièrement commode à manipuler dans ce cas (section~\ref{sec:siegel}).
 
-Notons pour commencer qu'on peut supposer \( \eps < 1 \), car sinon
+Notons pour commencer qu'on peut supposer \( \expapx < 1 \), car sinon
 l'inégalité de la taille appliquée à l'expression de la distance ci-dessus
 montre qu'il n'existe aucun point satisfaisant~\eqref{e:Vapx}, sans même
 utiliser les autres conditions. De même, on peut supposer que \( \divi \) ne
@@ -323,7 +323,7 @@ où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
   & =
   5 \puiss^2
   \bigl(
-    85 \nclmaps \cdot 5^\genre \cdot \eps^{-1}
+    85 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
   \bigr)^{ \frac{\puiss}{\puiss-\genre} }
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
@@ -1278,7 +1278,7 @@ Introduisons un réel \( \epsi \) défini par :
 \begin{equation} \label{e:def-epsi}
   \epsi
   =
-  \eps^{\frac{\genre}{\puiss-\genre}}
+  \expapx^{\frac{\genre}{\puiss-\genre}}
   \cdot \Bigl(
     N^{\puiss-1}
     \, (85 \cdot 5^\puiss)^\genre
@@ -1286,9 +1286,9 @@ Introduisons un réel \( \epsi \) défini par :
 \end{equation}
 et un rationnel \( \epsz \) tel que :
 \begin{equation} \label{e:def-epsz}
-  \frac{\eps \epsi}{33\puiss}
+  \frac{\expapx \epsi}{33\puiss}
   \le \epsz \le
-  \frac{\eps \epsi}{32\puiss}
+  \frac{\expapx \epsi}{32\puiss}
   \pmm,
 \end{equation}
 et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
@@ -1505,7 +1505,7 @@ nombre de variables libre dans cet espace correspondant à la dimension de \(
 
 Concernant le degré, on reprend les multidegrés définis par~\eqref{e:d-dp-def}
 et on rappelle que \( \delta \) désigne un grand entier tel que \( \delta
-  \eps_0 \) soit aussi entier. On impose alors à \( \faux \) d'être
+  \epsz \) soit aussi entier. On impose alors à \( \faux \) d'être
 de degré \( \Dz \), de sorte que les \( \faux''_\clmap \) seront de degré \(
   \Di \) et les \( \faux* \) de degré \( \Dir = \Di + o(\delta) \). Par
 ailleurs, l'indice exigé sera \( \epsi \delta \), où \( \epsi \) est défini
@@ -1887,7 +1887,7 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
     \, (33\puiss)^\genre
     \, \expb^\puiss
   }{
-    \eps^\genre
+    \expapx^\genre
     \, \puiss^\puiss
   }
   + o(1)
@@ -1901,7 +1901,7 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
     \, \genre^\puiss
     \, (33\puiss)^\genre
   }{
-    \eps^\genre
+    \expapx^\genre
   }
   + o(1)
   \\ & \le
@@ -1912,7 +1912,7 @@ classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
     \, \nclmaps^{\puiss-1}
     \, (85 \cdot 5^\puiss)^\genre
   }{
-    \eps^\genre
+    \expapx^\genre
   }
   + o(1)
 \end{align}
@@ -3010,7 +3010,7 @@ proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
-  \( \sigma = \frac{128 (\puiss-1) B}{\eps} \).
+  \( \sigma = \frac{128 (\puiss-1) B}{\expapx} \).
 \end{prop}
 
 La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
@@ -3842,10 +3842,10 @@ de \( \epsz \) assure que
 Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \)
 puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
 \begin{align} \label{e:Vcos-ct-details}
-  \frac{ \eps \epsi }{ 48 (\puiss - 1) }
+  \frac{ \expapx \epsi }{ 48 (\puiss - 1) }
   & \ge
   \frac{
-    \eps^{ \frac{\puiss}{\puiss-\genre} }
+    \expapx^{ \frac{\puiss}{\puiss-\genre} }
   }{
     48 (\puiss - 1)
     \, \nclmaps^{ \frac{\puiss-1}{\puiss-\genre} }
@@ -3853,7 +3853,7 @@ puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
   }
   \\ & \ge
   \frac{
-    \eps^{ \frac{\puiss}{\puiss-\genre} }
+    \expapx^{ \frac{\puiss}{\puiss-\genre} }
   }{
     \puiss
     \nclmaps^{ \frac{\puiss}{\puiss-\genre} }
@@ -3898,7 +3898,7 @@ deux constantes, la comparaison~\eqref{e:Vcos-ct-details} entraîne
 \begin{equation}
   \frac{320}{3\expapx \epsi}
   \le
-  \frac{ 48(\puiss-1) \cdot 5\puiss }{ \eps\epsi }
+  \frac{ 48(\puiss-1) \cdot 5\puiss }{ \expapx\epsi }
   \le
   \cst{vs-deg-prod}
   \le
@@ -4052,7 +4052,7 @@ proposition~\ref{p:extra}, il vient :
   \ge
   \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
-  \frac{ \eps \epsi }{ 384 (\puiss-1) B D }
+  \frac{ \expapx \epsi }{ 384 (\puiss-1) B D }
   \pmm.
 \end{equation}
 On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
@@ -4065,7 +4065,7 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
     \cdot N^{ \frac{\puiss-1}{\puiss-\genre} }
     \, (85 \cdot 5^\puiss)^{ \frac{\genre}{\puiss-\genre} }
   }{
-    \eps^{ \frac{\puiss}{\puiss-\genre} }
+    \expapx^{ \frac{\puiss}{\puiss-\genre} }
   }
   \\ & \le
   \frac{
@@ -4073,7 +4073,7 @@ On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
     N^{ \frac{\puiss}{\puiss-\genre} }
     \, (85 \cdot 5^\genre)^{ \frac{\puiss}{\puiss-\genre} }
   }{
-    \eps^{ \frac{\puiss}{\puiss-\genre} }
+    \expapx^{ \frac{\puiss}{\puiss-\genre} }
   }
   =
   \cst{vs-deg-prod}
@@ -4329,7 +4329,7 @@ regroupées ici pour ne pas perturber le cours des sections précédentes.
 
 \subsection{Méthode d'ajustement des paramètres}
 
-Tout d'abord, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
+Tout d'abord, \( \expapx \) est fixé par l'énoncé, et la famille \( \ex \)
 supposée contredire le théorème est fixée en premier, ainsi que la famille \(
   (\wt*)_\fct \) comme indiqué à la sous-section~\ref{sec:wt}.
 
@@ -4922,7 +4922,7 @@ On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}
 \begin{coro} \label{c:vojta-div-dv}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \divi \) un hyperplan de \( \projd \), \( p_0 \) le point de \( \projd \)
-  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \eps < 1
+  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \expapx < 1
   \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
@@ -4945,7 +4945,7 @@ On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}
     \cos(\ex*, \ex[\fcti]) & > 1 -
     \frac1{ \puiss }
     \left(
-      \frac{ \eps }{ 86 \nclmaps \cdot 5^\genre }
+      \frac{ \expapx }{ 86 \nclmaps \cdot 5^\genre }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
   \end{align}
   avec
@@ -4955,7 +4955,7 @@ On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}
       (\deg \va)^\puiss,
       5 \puiss^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot \eps^{-1}
+        86 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
       \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
@@ -5063,7 +5063,7 @@ au cours de la preuve.
 
 \begin{coro} \label{c:vojta-div-any}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( \divi \) un hyperplan de \( \projd \) et \( 0 < \eps < 1 \) un nombre réel.
+  \( \divi \) un hyperplan de \( \projd \) et \( 0 < \expapx < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
@@ -5084,7 +5084,7 @@ au cours de la preuve.
     \cos(\ex*, \ex[\fcti]) & > 1 -
     \frac1{ \puiss }
     \left(
-      \frac{ \eps }{ 86 \nclmaps \cdot 5^\genre (\dimp+1) }
+      \frac{ \expapx }{ 86 \nclmaps \cdot 5^\genre (\dimp+1) }
     \right)^{ \frac{\puiss}{\puiss-\genre} }
   \end{align}
   avec \( \cst{ht-v-div-dv} \) comme en~\eqref{e:cst-ht-v-div-dv} et
@@ -5094,7 +5094,7 @@ au cours de la preuve.
       (\deg \va)^\puiss,
       5 \puiss^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot \eps^{-1} (\dimp + 1)
+        86 \nclmaps \cdot 5^\genre \cdot \expapx^{-1} (\dimp + 1)
       \bigr)^{ \frac{\puiss}{\puiss-\genre} }
       \deg \va,
       (\sqrt2 \puiss \genre)^{\puiss\genre}
@@ -5706,7 +5706,7 @@ contrôlés.
 \begin{coro} \label{c:vojta-gen1}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
-    u \), et \( 0 < \eps < 1 \) un nombre réel.
+    u \), et \( 0 < \expapx < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
@@ -5763,7 +5763,7 @@ légèrement simplifiées.
 \begin{coro} \label{c:vojta-gen2}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
-    u \), et \( 0 < \eps < 1 \) un nombre réel.
+    u \), et \( 0 < \expapx < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
     \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
   simultanément aux conditions suivantes :
@@ -5812,6 +5812,7 @@ légèrement simplifiées.
         + \ln(\puiss/2)
       \bigr)
     \Bigr)
+    \pmm.
   \end{align}
 \end{coro}
 
