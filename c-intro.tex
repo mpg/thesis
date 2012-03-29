@@ -461,14 +461,14 @@ $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 \subsection{Normes et hauteurs}
 
-À chaque place \( \place \) d'un corps de nombres, on associe la valeur
-absolue qui prolonge une des valeurs absolues standard de \( \Q \), autrement
-dit \( \av p = p^{-1} \) si \( \place \mid p \) et \( \av 2 = 2 \) si \(
-  \place \) est archimédienne.
+À chaque place \( \place \) d'un corps de nombres \( \cdn \), on associe la
+valeur absolue qui prolonge une des valeurs absolues standard de \( \Q \),
+autrement dit \( \av p = p^{-1} \) si \( \place \mid p \) et \( \av 2 = 2 \)
+si \( \place \) est archimédienne.
 
 Si \( \place \) est une place finie de \( \cdn \), on définit la norme \(
   \place \)-adique d'une famille finie comme le maximum des valeurs absolues
-\( \place \)-adiques de ses éléments. On défini alors la norme d'un polynôme
+\( \place \)-adiques de ses éléments. On définit alors la norme d'un polynôme
 comme celle de la famille de ses coefficients. Aux places infinies, on dispose
 des différentes normes et mesures définies en~\ref{sec:nma-def}.
 
@@ -509,13 +509,12 @@ aux places archimédiennes pour définir la hauteur projective.
 
 Cette hauteur normalisée induit une forme quadratique définie positive sur
 l'espace de \MoW de \( \va \), défini comme
-\begin{equation}
-  \MW\cdn = \va(\cdn) \otimes_\Z \R
-  \pmm.
-\end{equation}
-Ce dernier est ainsi un espace vectoriel euclidien, de dimension finie (égale
-au rang de \( \va \) sur \( \cdn \)) dès que \( \cdn \) est un corps de
-nombres.
+\(
+  \MW\Qbar = \va(\Qbar) \otimes_\Z \R
+\).
+Plus précisément, la partie \( \MW\cdn = \va(\cdn) \otimes_\Z \R \)
+définie sur un corps de nombres \( \cdn \) est un espace euclidien de
+dimension (finie) égale au rang de \( \va \) sur \( \cdn \).
 
 
 \subsection{Plongement projectif} \label{sec:vaemb}
@@ -581,10 +580,10 @@ On introduit une paire de constantes \( \hmclab \) et \( \hlclab = \ln \hmclab
       \stackrel{\vaemb^2}{\longrightarrow}
       (\projd)^2
       \stackrel{s}{\longrightarrow}
-      \proj{n^2 + n}
+      \proj{n^2 + 2n}
     \) (où la seconde flèche est le plongement de \bsc{Segre}) telle que
     \begin{enumerate}
-      \item \( \nnv1 F \ge \hmclab* \) ;
+      \item \( \nnv1 F \le \hmclab* \) ;
       \item Pour tout \( z \in s \circ \vaemb^2 (\va) \) on a
         \begin{equation} \label{e:addsub-loc}
           \frac{
@@ -610,8 +609,8 @@ On introduit une paire de constantes \( \hmclab \) et \( \hlclab = \ln \hmclab
 
   Par ailleurs, dans tous les cas considérés, on aura \( \dimp \ge 2 \) et \(
     N \ge 3 \), et le degré de (l'image de) \( \va \) dans le plongement sera
-  au moins \( 3 \). On exploitera ces hypothèses pour simplifier l'expression
-  de quelques estimations.
+  au moins \( 3 \). On exploitera ces hypothèses pour simplifier quelques
+  estimations.
 \end{rem}
 
 
@@ -641,7 +640,7 @@ légèrement des références citée, en posant
 \end{equation}
 Les deux notions sont en fait très comparables, voir la section suivante. La
 notion qu'on vient de définir bénéficie par contre de la propriété suivante :
-si \( V \subset V' \) alors \( \distv x V' \le \distv x V \), qu'on utilisera
+si \( V \subset V' \) alors \( \distv x {V'} \le \distv x V \), qu'on utilisera
 couramment pour se ramener au cas où \( V \) est une hypersurface. Évidemment,
 on a \( \distv x V = 0 \Leftrightarrow x \in V(\Cv) \).
 
@@ -650,7 +649,7 @@ on a \( \distv x V = 0 \Leftrightarrow x \in V(\Cv) \).
 Soient \( \cdn \) un corps de nombres, \( \placesapx \) un ensemble fini de
 places de \( \cdn \) et \( (\wtapx)\placerange \) une famille de réels telle
 que \( \sum\placerange \wtapx \degv = 1 \). On considère de plus une famille
-de constantes \( (c_v) \) et un réel \( \expapx > 0 \), et on associe à toutes
+de constantes \( (c_v) \), un réel \( \expapx > 0 \) et on associe à toutes
 ces données la condition d'approximation suivante.
 \begin{equation} \label{e:ha-sys}
   \distv x \varapx
@@ -672,7 +671,7 @@ ainsi que \( c_w = c_v \). On a toujours
   1
 \end{equation}
 et il est clair que la condition~\eqref{e:ha-sys} est équivalente à
-\begin{equation} \label{e:ha-sys}
+\begin{equation} \label{e:ha-sys-ext}
   \distv[w] x \varapx
   \le
   c_w
@@ -702,14 +701,15 @@ précis.
 
 \medskip
 
-Vu que toutes les conditions considérées ont un sens sur \( \Qbar \), dans
-toute la suite on se préoccupera assez peu du corps de nombres sur lequel on
-travaille. La notation \( \cdn \) désignera n'importe quel corps de nombres
-« assez grand », c'est-à-dire contenant un corps de définition de tous les
-objets en jeu, mais aussi, par exemple, des racines carrées de coefficients
-multinomiaux quand c'est utile pour travailler avec un plongement de
-\bsc{Veronese} remodelé.
-
+Vu que toutes les conditions considérées ont un sens sur \( \Qbar \), dans les
+chapitres~\ref{chap:vojta} et~\ref{chap:mumford} on se préoccupera assez peu
+du corps de nombres sur lequel on travaille. La notation \( \cdn \) désignera
+n'importe quel corps de nombres « assez grand », c'est-à-dire contenant un
+corps de définition de tous les objets en jeu, mais aussi, par exemple, des
+racines carrées de coefficients multinomiaux quand c'est utile pour travailler
+avec un plongement de \bsc{Veronese} remodelé.  En particulier, tous les
+objets considérés (points, variétés, etc.) sont supposés définis sur \( \Qbar
+\) sauf mention explicite du contraire.
 
 
 \section{Compléments sur les distances} \label{sec:distv-cmp}
@@ -735,22 +735,22 @@ utilisée notamment dans~\cite{phidg}.
   est ultramétrique, on commence par choisir un coefficient de \( L \) de
   valeur absolue maximale : quitte à permuter les coordonnées, on peut
   supposer que c'est celui d'indice \( 0 \). En divisant par ce coefficient,
-  on se ramène au cas \( L = X_0 + l_1 X_1 + \dots + l_n X_n \) avec les \(
-    l_i \) entiers.  Il est alors facile de voir que le changement de
-  coordonnée donné par \( x'_0 = L(x) \) et \( x'_i = x_i \) pour \( i \ge 1
-  \) est une isométrie (son inverse est également à coefficients entiers), de
-  sorte qu'on s'est bien ramené au cas \( L = X_0 \) sans modifier les
-  quantités apparaissant dans chacun des deux membres, ni perdre en
-  généralité.
+  on se ramène au cas \( L = X_0 + l_1 X_1 + \dots + l_n X_n \) avec \(
+    \av{ l_i } \le 1 \) entiers.  Il est alors facile de voir que le
+  changement de coordonnées donné par \( x'_0 = L(x) \) et \( x'_i = x_i \)
+  pour \( i \ge 1 \) est une isométrie (son inverse est également à
+  coefficients de module inférieur ou égal à \( 1 \)), de sorte qu'on s'est
+  bien ramené au cas \( L = X_0 \) sans modifier les quantités apparaissant
+  dans chacun des deux membres, ni perdre en généralité.
 
   Aux places archimédiennes, on plonge \( \cdn_\place \) dans \( \C \) et on
   note \( \overline E \) le relevé de \( E \) dans \( \C^{n+1} \). On munit ce
   dernier de la forme hermitienne standard et on considère un vecteur unitaire
   normal à \( \overline E \), qu'on note \( a_0 \). On complète ce vecteur en
-  un base orthonormée et on considère le changement de coordonnée qui envoie
-  cette base sur la base canonique : étant donné par une transformation
-  unitaire, il ne modifie aucun des deux membres de l'égalité à prouver, et
-  nous ramène bien au cas \( L = X_0 \).
+  un base orthonormée et on considère le changement de coordonnées qui envoie
+  cette base sur la base canonique : étant une transformation unitaire, il ne
+  modifie aucun des deux membres de l'égalité à prouver, et nous ramène bien
+  au cas \( L = X_0 \).
 
   Par ailleurs, l'égalité qu'on cherche à montrer est banale si \( x \in
     E(\Cv) \). On peut donc supposer que ce n'est pas le cas, et même
@@ -759,9 +759,9 @@ utilisée notamment dans~\cite{phidg}.
 
   Soit maintenant \( y = (0, y_1, \dots, y_n) \in E(\Cv) \). On a
   \( x \wedge y = (-y_1, \dots, -y_n, x_1 y_2 - x_2 y_1, \dots) \), donc ce
-  \( \nv2{ x \wedge y } \ge \nv2 y \), avec égalité si et seulement si \( y_i
-    = x_i \) pour tout \( i \in \set{1, \dots, n} \). Ainsi, pour tout \( y
-    \in E(\Cv) \) on a \( \distv x y \ge \nv2 x ^{-1} \), où l'égalité est
+  \( \nv2{ x \wedge y } \ge \nv2 y \), avec égalité si et seulement si \( y \)
+  est colinéaire à \( (0, x_1, \dots, x_n) \).  Ainsi, pour tout \( y \in
+    E(\Cv) \) on a \( \distv x y \ge \nv2 x ^{-1} \), où l'égalité est
   possible, ce qui achève la preuve.
 \end{proof}
 
@@ -802,9 +802,10 @@ montre que
   \pmm.
 \end{equation}
 Si \( V \) est en fait un hyperplan, on a \( \mvp F = \nv2 F \) d'après la
-proposition~4 (p.~266) de~\cite{phiha1}, de sorte que la
-proposition~\ref{p:dv-hp} dit en fait simplement que \( \Distalgv = \Distv \)
-dans ce cas particulier.
+proposition~4, p.~266 de~\cite{phiha1} (reprise dans la proposition~2.3,
+point~(ii), p.~23 de \cite{jadotth} sous une forme plus proche de nos
+notations), de sorte que la proposition~\ref{p:dv-hp} dit en fait simplement
+que \( \distalgv \truc V = \distv \truc V \) dans ce cas particulier.
 % Plutôt que phiha1, on peu citer Jadot, prop 2.3 (ii) p. 23, qui le cite,
 % mais énonce le truc sous une forme plus directe.
 % Sinon y'a aussi la page 86 de phidg, au moment où il cite Lau1...
@@ -898,18 +899,17 @@ montre que c'est possible.
   de \eqref{e:dvci-hat} donne
   \( \eps_0 \nv2{y}\nv2{x}  \ge \av{x_0}\nv2{\hatys} - \av{y_0}\nv2{\hatxs}
   \).  En divisant par \( \nv2{y}\nv2{x} \) puis en remarquant que \(
-    \nv2{\hatxs}/\nv2{x} \le 1 \) il vient successivement :
+    \nv2{\hatxs}/\nv2{x} \le 1 \) il vient :
   \begin{align}
+    \frac{\av{y_0}}{\nv2{y}}
+    \ge
     \frac{\nv2{\hatxs}}{\nv2{x}}
     \cdot \frac{\av{y_0}}{\nv2{y}}
-    & \ge
+    \ge
     \frac{\nv2{\hatys}}{\nv2{y}}
     \cdot \frac{\av{x_0}}{\nv2{x}}
     - \eps_0
-    \pmm, \notag
-    \\
-    \frac{\av{y_0}}{\nv2{y}}
-    & \ge
+    \ge
     \frac{\nv2{\hatys}}{\nv2{y}}
     \cdot
     \frac{1}{\sqrt{n+1}}
@@ -946,13 +946,13 @@ montre que c'est possible.
 \begin{proof}[\proofname{} de la proposition~\ref{p:dv-p2alg}.]
   Notons pour commencer qu'on peut supposer \( \dim V \ge 1 \) (donc \( n \ge
     2 \)) car on sait que les deux distances sont égales si \( V \) est un
-  point.  peut supposer \( n \ge 2 \).  On peut de plus supposer que \( \distv
-    x y  < (n+1)^{-9\dv/2} \) car sinon la conclusion du lemme est vide, la
-  distance étant de toutes façons bornée par \( 1 \). (On peut en fait
-  supposer une majoration plus forte, mais celle-ci est largement suffisante.)
-  Les hypothèses du lemme précédent sont satisfaites ; en l'utilisant (et
-  quitte à renuméroter) on peut supposer que \( y_0 = x_0 = 1 \), \( \nv2 y
-    \le (\sqrt{n+1})^\dv \) et \( \nv2 x \le (2 \sqrt{n+1})^\dv \).
+  point. On peut de plus supposer que \( \distv x y  < (n+1)^{-9\dv/2} \) car
+  sinon la conclusion du lemme est vide, la distance étant de toutes façons
+  bornée par \( 1 \). (On peut en fait supposer une majoration plus forte,
+  mais celle-ci est largement suffisante.) Les hypothèses du lemme précédent
+  sont satisfaites ; en l'utilisant (et quitte à renuméroter) on peut supposer
+  que \( y_0 = x_0 = 1 \), \( \nv2 y \le (\sqrt{n+1})^\dv \) et \( \nv2 x \le
+    (2 \sqrt{n+1})^\dv \).
 
   Par ailleurs, \( \nv2 y \le \nv2 x + \nv2 {y-x} \le \nv2 x + \nv2{x \wedge
       y} \), car chaque coefficient de \( x - y \) est aussi un coefficient de
@@ -977,7 +977,7 @@ montre que c'est possible.
     \sum_{k=m}^{ld} \ \overbrace{
       \sum_{\substack{\alpha \in \N^n \\ \lgr\alpha = k}}
       \underbrace{
-        \frac 1{\alpha!} \frac{\partial^k g}{\partial X^\alpha} (y)
+        \frac 1{\alpha!} \frac{\partial^k G}{\partial X^\alpha} (y)
         \prod_{1 \le i \le n} (x_i - y_i)^{\alpha_i}
       }_{\textstyle R_{k, \alpha}}
     }^{\textstyle R_k}
@@ -986,8 +986,6 @@ montre que c'est possible.
 
   On majore maintenant \( \av{G(x)} / \nv2 x ^{ld} \) en procédant terme à
   terme.
-  \worknote{On ne pourrait pas être plus précis sur les dérivées (leur somme
-  en fait) ?}
   \begin{align*}
     \frac {\nv2{R_{k, \alpha}}} {\nv2 x ^{ld}}
     & \le
@@ -1006,7 +1004,9 @@ montre que c'est possible.
     (\sqrt{n+1})^{k\dv}
     \pmm.
   \end{align*}
-  On remarque alors qu'il y a au plus \( (n+1)^k \) termes :
+  (Pour la dernière estimation, on a majoré \( \nv2 y \) par \( \sqrt{n+1} \) et
+  \( (\nv2 y / \nv2 x)^{ld -k} \) par \( (82/81)^{ld} \).)
+  On remarque alors qu'il y a au plus \( (n+1)^k \) termes dans \( R_k \) :
   \begin{equation}
     \frac{ \nv2{R_k} }{ \nv2 x^{ld} }
     \le
@@ -1020,7 +1020,7 @@ montre que c'est possible.
     \distv x y ^m \) par l'inégalité ultramétrique et, si \( v \) est
   infinie :
   \begin{align*}
-    \frac{\nv2{g(x)}}{\nv2 x^{ld}}
+    \frac{\nv2{G(x)}}{\nv2 x^{ld}}
     & \le
     \left( \frac{164}{81} \right)^{ld}
     \nv2 G
@@ -1138,7 +1138,7 @@ nous sera utile par exemple pour démontrer une inégalité de
 
 \begin{proof}
   On procède comme pour la propriété précédente, sauf que cette fois-ci on
-  peut seulement supposer que \( \distv(x, y) \le (4 (n+1)^{7/2})^{-\dv} \),
+  peut seulement supposer que \( \distv x y \le (4 (n+1)^{7/2})^{-\dv} \),
   dont on déduit également que \( \nv2 y / \nv2 x \le 82/81 \). On développe
   alors une équation \( G \) de \( V \), et non plus un coefficient de \( \md
   f \) ; on obtient ainsi, au lieu de~\eqref{e:dvpa-comp}, la majoration
