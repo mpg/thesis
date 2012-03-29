@@ -1046,35 +1046,55 @@ montre que c'est possible.
     \right)^\dv
     \pmm.
   \end{equation}
-  La fin de la démonstration consiste alors en des comparaisons de normes :
+  La fin de la démonstration consiste alors en des comparaisons de normes et
+  mesures, qu'on peut résumer ainsi :
   \begin{equation}
     \frac{ \mvp{\md_x f} }{ \nv2 x ^{ld} }
-    \stackrel{(a)}{\ll}
+    \ll
     \frac{ \nv2{\md_x f} }{ \nv2 x ^{ld} }
     =
     \frac{ \nv2{\mathcal G(x)} }{ \nv2 x ^{ld} }
-    \stackrel{(b)}{\ll}
+    \ll
     \nnv2{ \mathcal G }
     =
     \nv2{ \md f }
-    \stackrel{(c)}{\ll}
+    \ll
     \mvp{\md f}
-    \stackrel{(d)}{\ll}
+    \ll
     \mvp f
-    \pmm,
+    \pmm.
   \end{equation}
-  où l'on peut choisir \( \exp(\dv \cdot ld \gamma_{(n+1)n/2}) \) pour \( (a)
-  \) vu la définition et une majoration facile de l'intégrale, tandis que pour
-  \( (c) \) l'on peut prendre \( (n(n+1)^2/2)^{ld\dv} \) d'après
-  \cite[dém. du lemme~3.3]{remgdmp}. La constante \( (b) \) est donnée par
-  l'inégalité \eqref{e:dvpa-comp} ci-dessus ; la dernière découle du fait que \(
-    \mvp{\md_x f} \le \mvp f \) dès que \( \nv2 x = 1 \) (c.-à-d. du fait que
-  la distance est majorée par \( 1 \)) : en effet, en reportant ceci dans la
-  définition de \( \mvp\truc \) et en intégrant, il vient \( \mvp{\md f} \le
-    \exp(\dv\cdot ld \gamma_{n+1}) \mvp f \).
+  Plus précisément, vu la définition de la mesure et une majoration facile de
+  l'intégrale dans cette définition, on a
+  \begin{equation}
+    \mvp{\md_x f}
+    \le
+    \nv2{\md_x f}
+    \cdot \exp(\dv \cdot ld \gamma_{(n+1)n/2})
+  \end{equation}
+  où l'on a noté \( \gamma_j = \sum_{i=1}^j \frac1{2i} \). La deuxième
+  majoration est donnée par~\eqref{e:dvpa-comp} ci-dessus ; pour la troisième
+  on a
+  \begin{equation}
+    \nv2{ \md f }
+    \le
+    \mvp{\md f}
+    \cdot (n(n+1)^2/2)^{ld\dv}
+  \end{equation}
+  d'après \cite[dém. du lemme~3.3]{remgdmp}. Pour la dernière, on utilise le
+  fait que la distance est bornée par \( 1 \), autrement dit que
+  \( \mvp{\md_x f} \le \mvp f \) dès que \( \nv2 x = 1 \) : en reportant ceci
+  dans la définition de \( \mvp\truc \) et en intégrant, il vient facilement
+  \begin{equation}
+    \mvp{\md f}
+    \le
+    \mvp f
+    \cdot \exp(\dv\cdot ld \gamma_{n+1})
+    \pmm.
+  \end{equation}
 
-  En mettant tout ceci bout à bout, et en utilisant la majoration classique \(
-    \gamma_n \le (1 + \ln n)/2 \), il vient :
+  On met alors ces estimations bout à bout et on utilise la majoration
+  classique \( \gamma_n \le (1 + \ln n)/2 \) pour obtenir
   \begin{align}
     \distalgv x V
     & \le
