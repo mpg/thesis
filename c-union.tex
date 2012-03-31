@@ -19,23 +19,21 @@ On commence par compter le nombre de points dans chaque cône tronqué.
 \begin{lem} \label{l:big-by-cone}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  Pour tout réel \( \expapx > \) et tout entier \( \puiss \ge \genre + 1 \),
-  il existe au plus
-  \begin{equation}
-    \todots
-  \end{equation}
-  points distinct modulo \( \vai \) et satisfaisant simultanément aux
-  conditions suivantes :
+  On fixe réel \( \expapx > 0 \), un entier \( \puiss \ge \genre + 1 \) et on
+  considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
+  \) distincts modulo \( \vai \) et satisfaisant simultanément aux conditions
+  suivantes :
   \begin{align}
+    \label{e:big-ha}
     0 < \distv{\ex*} V
     & <
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
-    \\
+    \\ \label{e:big-big}
     \hautn{\ex[1]}
     & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
-    \\
+    \\ \label{e:big-cos}
     \cos(\ex*, \ex[\fcti])
     & > 1 - \frac1{ \puiss \, \cst{v-gen} }
   \end{align}
@@ -44,36 +42,81 @@ On commence par compter le nombre de points dans chaque cône tronqué.
     \cst{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
         \, \expapx^{-1}
     \bigr)^{ \frac{\puiss}{\puiss-\genre} }
     \\
     \Lambda_4
     & =
     \cst{v-gen}
-    \bigl( (\sqrt2 \puiss \genre\Delta)^\genre \deg \va \bigr)^\puiss
+    \bigl( (\sqrt2 \puiss \genre d)^\genre \deg \va \bigr)^\puiss
     \\
     \cst{ht-v-gen1}
     & =
-    \Delta \max \bigl(
-      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    d \max \bigl(
+      d^\genre \hautl[1]{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \Bigl(
-      \Delta^\dimp \ln(\Delta) \dimp
+      d^\dimp \ln(d) \dimp
     \\ & \qquad
-      + \Delta^\genre \bigl (
+      + d^\genre \bigl (
         \hautl[1] V
-        + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
+        + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)
     \Bigr)
     \pmm.
   \end{align}
+  On a alors nécessairement
+  \begin{equation}
+    p
+    \le
+    (\puiss - 1) (2\puiss\genre)^{(\puiss\genre)}
+    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+    \pmm.
+  \end{equation}
 \end{lem}
 
 \begin{proof}
-  ~\todo
+  Soit \( x_1, \dots, x_p \) une famille comme dans l'énoncé, qu'on suppose de
+  plus ordonnée par hauteur normalisée croissante. On pose
+  \( \phi =( \puiss \, \cst{v-gen})^{-1} \) et
+  \( \rho = \sqrt{ \expapx / d } \).  On constate facilement que
+  \( \phi \le \expapx / (2580 d) \) de sorte que ce couple \( (\rho, \phi) \)
+  satisfait à~\eqref{e:rho-phi}. Par ailleurs, il est clair que la
+  condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig}, car \(
+    \cst{v-gen} \ge 2/\expapx \) et la parenthèse dans le membre de droite
+  de~\eqref{e:Mbig} est largement majorée par \( 3 \cst{ht-v-gen1}
+  \).\worknote{sauf peut-être \( h(\vai) \) vs \( h(V) \)} On peut donc
+  appliquer le théorème~\ref{t:mumford} et conclure que
+  \( \hautn{ x_{i+1} } > (1 + \sqrt{\expapx / d}) \hautn{ x_i } \) pour tout
+  \( i \le p-1 \).
+
+  On pose alors
+  \begin{equation}
+    \eta
+    =
+    \left\lceil
+      (2\puiss\genre)^{(\puiss\genre)}
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+    \right\rceil
+  \end{equation}
+  de sorte que, pour tout \( i \le p - \eta \), on a
+  \begin{equation}
+    \hautn{ x_{i+\eta} }
+    >
+    (1 + \sqrt{\expapx / d})^\eta
+    \hautn{ x_i }
+    \ge
+    \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \hautn{ x_i }
+    \pmm.
+  \end{equation}
+  Supposons alors que \( p \ge (\puiss - 1) \eta + 1 \) contrairement à la
+  conclusion du lemme : on pourrait alors poser \( \ex* = x_{1 + (\fct-1)
+      \eta} \) pour \( i \in {1, \puiss} \) et la famille \( (\ex*)_\fct \)
+  contredirait alors le corollaire~\ref{c:vojta-gen2}, ce qui est absurde.
 \end{proof}
 
 Le fait suivant permet de recouvrir l'espace de \MoW par de tels cônes.
