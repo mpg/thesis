@@ -19,8 +19,8 @@ On commence par compter le nombre de points dans chaque cône tronqué.
 \begin{lem} \label{l:big-by-cone}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On fixe réel \( \expapx > 0 \), un entier \( \puiss \ge \genre + 1 \) et on
-  considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
+  On fixe réel \( 0 < \expapx < d \), un entier \( \puiss \ge \genre + 1 \) et
+  on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
   \) distincts modulo \( \vai \) et satisfaisant simultanément aux conditions
   suivantes :
   \begin{align}
@@ -72,8 +72,24 @@ On commence par compter le nombre de points dans chaque cône tronqué.
   \begin{equation}
     p
     \le
-    (\puiss - 1) (2\puiss\genre)^{(\puiss\genre)}
-    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+    \sqrt{\frac d \expapx}
+    (4\puiss\genre)^{\puiss\genre}
+    \bigl(
+      - \ln \expapx
+      +
+      \cst{big/cone}
+    \bigr)
+    \pmm,
+  \end{equation}
+  où
+  \begin{equation}
+    \newcst[]{big/cone}
+    =
+    9
+    + 2 \ln \nclmaps
+    + \puiss \deg\va
+    + \ln(d+1) (n+1 + \puiss\genre)
+    + \puiss\genre (\ln(\puiss\genre) + 2)
     \pmm.
   \end{equation}
 \end{lem}
@@ -98,7 +114,7 @@ On commence par compter le nombre de points dans chaque cône tronqué.
     \eta
     =
     \left\lceil
-      (2\puiss\genre)^{(\puiss\genre)}
+      (2\puiss\genre)^{\puiss\genre}
       \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
     \right\rceil
   \end{equation}
@@ -117,6 +133,76 @@ On commence par compter le nombre de points dans chaque cône tronqué.
   conclusion du lemme : on pourrait alors poser \( \ex* = x_{1 + (\fct-1)
       \eta} \) pour \( i \in {1, \puiss} \) et la famille \( (\ex*)_\fct \)
   contredirait alors le corollaire~\ref{c:vojta-gen2}, ce qui est absurde.
+
+  Ainsi, on a
+  \begin{equation}
+    p
+    \le
+    (\puiss - 1)
+    \left(
+      (2\puiss\genre)^{\puiss\genre}
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+      + 1
+    \right)
+    \le
+    \puiss
+    (2\puiss\genre)^{\puiss\genre}
+    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+    \pmm.
+  \end{equation}
+  On remarque alors que la fonction \( x \mapsto \ln(1+x)/x \) est
+  décroissante pour \( x > 0 \) pour minorer le dénominateur par \( \ln(2)
+    \sqrt{\expapx / d} \) compte tenu de l'hypothèse sur \( \expapx \) ; on
+  obtient alors, en remarquant de plus que \( \ln 2 \ge 1/2 \) :
+  \begin{equation}
+    p
+    \le
+    \puiss (2\puiss\genre)^{\puiss\genre}
+    \cdot 2 \sqrt{\frac d \expapx}
+    \cdot \ln \Lambda_4
+    \le
+    (4\puiss\genre)^{\puiss\genre}
+    \cdot \sqrt{\frac d \expapx}
+    \cdot \ln \Lambda_4
+    \pmm.
+  \end{equation}
+  On écrit alors
+  \begin{align}
+    \ln \Lambda_4
+    & =
+    \frac\puiss{\puiss-\genre}
+    \left(
+      \ln 86
+      + \ln \nclmaps
+      + \genre \ln 5
+      + \ln d
+      + {\textstyle \ln \binom{n+d}d}
+      - \ln \expapx
+    \right)
+    \\ & \qquad
+    + \puiss \bigl(
+      \deg\va + \genre (\ln2/2 + \ln(\puiss\genre) + \ln d)
+    \bigr)
+    \\ & \le
+    2 \bigl(
+      9/2
+      + \ln \nclmaps
+      + \genre \ln 5
+      + (n+1) \ln(d+1)
+      - \ln \expapx
+    \bigr)
+    \\ & \qquad
+    + \puiss \deg\va
+    + \puiss\genre (\ln(\puiss\genre) + \ln2/2)
+    + \puiss\genre \ln d
+    \\ & \le
+    - \ln \expapx
+    + 9
+    + 2 \ln \nclmaps
+    + \puiss \deg\va
+    + \ln(d+1) (n+1 + \puiss\genre)
+    + \puiss\genre (\ln(\puiss\genre) + 2)
+  \end{align}
 \end{proof}
 
 Le fait suivant permet de recouvrir l'espace de \MoW par de tels cônes.
@@ -158,6 +244,52 @@ On déduit immédiatement de ce fait un décompte des grands points.
   avec \( \cst{v-gen} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\ref{l:big-by-cone}.
 \end{prop}
+
+\begin{proof}
+  En utilisant le fait précédent, on recouvre l'espace euclidien \( \Gamma
+    \otimes_\Z \R \) muni du produit scalaire donné par la hauteur de \NT par
+  des ensembles dans lesquels deux points quelconques
+  satisfont~\eqref{e:big-cos}. Le nombre d'ensembles nécessaires est au plus
+  \begin{equation}
+    \left(
+      1 + \sqrt{8 \puiss}
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+    \le
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+  \end{equation}
+  en remarquant que \( 1 + \sqrt{ 8 \cdot 86 \cdot 3 \cdot 5 } \le 3 \sqrt{ 86
+      \cdot 3 \cdot 5 } \).
+
+  On applique le lemme~\ref{l:big-by-cone} à chacun de ces ensembles. Ainsi,
+  dans les notations du lemme en question, le nombre de points satisfaisant
+  les deux conditions de l'énoncé est au plus
+  \begin{equation}
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+    (\puiss - 1)
+    \left\lceil
+      (2\puiss\genre)^{(\puiss\genre)}
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+    \right\rceil
+  \end{equation}
+
+\end{proof}
+
 
 
 
