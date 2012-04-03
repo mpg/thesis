@@ -205,7 +205,7 @@ On commence par compter le nombre de points dans chaque cône tronqué.
   \end{align}
 \end{proof}
 
-Le fait suivant permet de recouvrir l'espace de \MoW par de tels cônes.
+On utilise ensuite le fait suivant.
 
 \begin{fact}
   Soient \( r \) un entier et \( \gamma > 0 \) un réel. On peut recouvrir \(
@@ -217,8 +217,6 @@ Le fait suivant permet de recouvrir l'espace de \MoW par de tels cônes.
   C'est le corollaire~6.1, p.~542 de~\cite{remdcl}.
 \end{proof}
 
-On déduit immédiatement de ce fait un décompte des grands points.
-
 \begin{prop} \label{p:big-gen}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
@@ -227,10 +225,23 @@ On déduit immédiatement de ce fait un décompte des grands points.
   Pour tout réel \( \expapx > \) et tout entier \( \puiss \ge \genre + 1 \),
   il existe au plus
   \begin{equation}
-    \todots
+    \sqrt{\frac d \expapx}
+    (4\puiss\genre)^{\puiss\genre}
+    \bigl(
+      - \ln \expapx
+      +
+      \cst{big/cone}
+    \bigr)
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
   \end{equation}
-  points \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
-  simultanément aux deux conditions suivantes :
+  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  aux deux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*} V
     & <
@@ -241,7 +252,7 @@ On déduit immédiatement de ce fait un décompte des grands points.
     \hautn{\ex[1]}
     & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
   \end{align}
-  avec \( \cst{v-gen} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\ref{l:big-by-cone}.
 \end{prop}
 
@@ -270,24 +281,8 @@ On déduit immédiatement de ce fait un décompte des grands points.
   en remarquant que \( 1 + \sqrt{ 8 \cdot 86 \cdot 3 \cdot 5 } \le 3 \sqrt{ 86
       \cdot 3 \cdot 5 } \).
 
-  On applique le lemme~\ref{l:big-by-cone} à chacun de ces ensembles. Ainsi,
-  dans les notations du lemme en question, le nombre de points satisfaisant
-  les deux conditions de l'énoncé est au plus
-  \begin{equation}
-    \left(
-      3 \sqrt\puiss
-      \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
-    \right)^r
-    (\puiss - 1)
-    \left\lceil
-      (2\puiss\genre)^{(\puiss\genre)}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
-    \right\rceil
-  \end{equation}
-
+  Il ne reste plus qu'à appliquer lemme~\ref{l:big-by-cone} à chacun de ces
+  ensembles pour conclure.
 \end{proof}
 
 
