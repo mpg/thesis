@@ -302,7 +302,89 @@ On utilise ensuite le fait suivant.
 \label{sec:ha-prod}
 
 On utilisera le lemme suivant, qui n'est rien d'autre qu'une version plus
-abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}.
+abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}. Par ailleurs, par rapport
+à cette référence, on a fixé \( \eps'(T) = \eps/2 \), d'où \( A(T) = \card T
+\), car c'est la valeur qui a le plus de sens pour les applications, afin de
+simplifier légèrement l'énoncé et sa preuve. L'énoncé ci-dessous est
+volontairement aussi abstrait que possible afin de mettre en lumière le
+caractère purement combinatoire de la preuve et d'être utilisable dans
+d'autres situations que celle étudiée ici ; juste après l'énoncé on détaille
+la correspondance avec avec la situation étudiée ici afin d'en éclairer le
+sens.
+
+\begin{lem}
+  Soit \( A \) un ensemble et \( H \) une fonction de \( A \) dans \( [1,
+    +\infty \mathclose[ \). Soit par ailleurs \( M \) un autre ensemble et,
+  pour chaque élément \( v \) de \( M \) :
+  \begin{itemize}
+    \item une fonction \( d_v \colon A \to [0, 1] \) ;
+    \item deux réels \( 0 < \degv < 1 \) et \( 0 < c_v < 0 \).
+  \end{itemize}
+  Pour tout réel \( \eps > 0 \) et tout partie finie \( S \) de \( M \), on
+  définit
+  \[
+    E(\eps, S)
+    =
+    \set*{
+      x \in A
+      \text{ tel que }
+      \prod_{v \in S} d_v(x)^\degv
+      \le
+      \bigl( \prod_{v \in S} c_v^\degv \bigr)
+      H(x)^{-\eps}
+    }
+    \pmm.
+  \]
+  De plus, pour toute famille de réels \( (\lambda_v)_{v\in S} \), on définit
+  \[
+    E'(\eps, S, \lambda)
+    =
+    \set*{
+      x \in A
+      \text{ tel que }
+      d_v(x)
+      \le
+      c_v H(x)^{-\lambda_v \eps}
+      \quad \forall v \in S
+    }
+    \pmm.
+  \]
+  On note enfin \( \parts M \) l'ensemble des parties finies de \( M \) et on
+  suppose qu'il existe une fonction \( g \colon \R_{>0} \times \parts M \to \N
+  \) telle que pour tout \( \eps > 0 \), tout \( S \in \parts M \) et toute
+  famille \( (\lambda_v)_{v\in S} \) de réels positifs telle que \( \sum_{v\in
+      S} \lambda_v \degv = 1 \), on ait
+  \[
+    \card E'(\eps, S, \lambda)
+    \le
+    g(\eps, S)
+    \pmm.
+  \]
+  Alors, pour tout \( \eps > 0 \) et tout \( S \in \parts M \) on a
+  \[
+    \card E(\eps, S)
+    \le
+    \sum_{T \in \parts S}
+    \binom{2\card T - 1}{\card T - 1}
+    g(\eps/2, T)
+    \pmm.
+  \]
+\end{lem}
+
+Avant de passer à la preuve, expliquons comment nous choisirons les différents
+paramètres. L'ensemble \( A \) sera un sous-groupe de rang fini (voire de type
+fini) de \( \va(\Qbar) \) et \( H \) la hauteur induite sur cet ensemble par
+le choix d'un plongement projectif de \( \va \). L'ensemble \( M \) sera
+l'ensemble des places d'un corps de nombres \( \cdn \) suffisamment gros et en
+chaque place \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local
+divisé par le degré global. En revanche, le choix des constantes \( c_v \)
+dépendra de l'application envisagée. On reconnaît la condition sur la famille
+\( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés de
+la section précédente.
+
+\begin{proof}
+
+\end{proof}
 
 
 \cleardoublepage

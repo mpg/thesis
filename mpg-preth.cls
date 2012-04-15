@@ -618,6 +618,8 @@
 
 \DeclareMathOperator \supp {Supp}
 
+\newcommand*\parts [1] {\mathcal P(#1)}
+
 % automatic constants [[2
 %
 \AtBeginDocument{\let\mpg@label\label}
