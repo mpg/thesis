@@ -318,7 +318,7 @@ sens.
   pour chaque élément \( v \) de \( M \) :
   \begin{itemize}
     \item une fonction \( d_v \colon A \to [0, 1] \) ;
-    \item deux réels \( 0 < \degv < 1 \) et \( 0 < c_v < 0 \).
+    \item deux réels \( 0 < \degv < 1 \) et \( c_v > 0 \).
   \end{itemize}
   Pour tout réel \( \eps > 0 \) et tout partie finie \( S \) de \( M \), on
   définit
@@ -372,18 +372,112 @@ sens.
 \end{lem}
 
 Avant de passer à la preuve, expliquons comment nous choisirons les différents
-paramètres. L'ensemble \( A \) sera un sous-groupe de rang fini (voire de type
-fini) de \( \va(\Qbar) \) et \( H \) la hauteur induite sur cet ensemble par
-le choix d'un plongement projectif de \( \va \). L'ensemble \( M \) sera
-l'ensemble des places d'un corps de nombres \( \cdn \) suffisamment gros et en
-chaque place \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local
-divisé par le degré global. En revanche, le choix des constantes \( c_v \)
-dépendra de l'application envisagée. On reconnaît la condition sur la famille
+paramètres. L'ensemble \( A \) sera l'intersection d'un sous-groupe de rang
+fini (voire de type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus
+  V(\Qbar) \), et \( H \) la hauteur induite sur cet ensemble par le choix
+d'un plongement projectif de \( \va \). L'ensemble \( M \) sera l'ensemble des
+places d'un corps de nombres \( \cdn \) suffisamment gros et en chaque place
+\( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local divisé par le
+degré global. En revanche, le choix des constantes \( c_v \) dépendra de
+l'application envisagée. On reconnaît la condition sur la famille
 \( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés de
 la section précédente.
 
 \begin{proof}
+  On suppose \( S \) et \( \eps \) fixés. On remarque que pour toute famille
+  \( \lambda \) telle que que \( \sum_{v \in S} \lambda_v \degv \) on a \(
+    E'(\eps, S, \lambda) \subset E(\eps, S) \) ; à l'inverse on aimerait bien
+  recouvrir \( E(\eps, S) \) par de tels ensembles, en nombre fini. Dans ce
+  but, pour tout \( x \in A \) (tel que \( H(x) > 1 \) pour simplifier pour
+  l'instant), on introduit une famille de réels \( \lambda(x) \) telle que
+  \begin{equation} \label{e:x2wt}
+    d_v(x)
+    =
+    c_v H(x)^{-\lambda_v(x) \eps}
+    \quad \forall v \in S
+  \end{equation}
+  de sorte que \( x \in E'(\eps, S, \lambda(x)) \). De plus, si \( x \in E(\eps,
+    S) \) on a \( \sum_{v \in S} \lambda_v \degv \ge 1 \). Ainsi, on a
+  recouvert \( E(\eps, S) \) par des ensembles de la forme \( E'(\eps, S,
+    \lambda(x)) \) mais ceux-ci ne sont \lat{a priori} pas en nombre fini ;
+  par ailleurs les familles \( \lambda(x) \) obtenues ne sont pas
+  nécessairement composées que de nombres positifs. (Le fait que leur somme
+  pondérée ne soit pas exactement \( 1 \) n'est en revanche pas gênant, il
+  suffirait de choisir une famille \( \lambda'(x) \) plus petite (pour l'ordre
+  produit) sommant à \( 1 \), car la fonction \( \lambda \mapsto E'(\eps, S,
+    \lambda) \) est décroissante.)
 
+  Pour forcer les \( \lambda(x) \) à être positifs\footnote{Ce qui n'est en
+    soi pas indispensable (on pourrait en fait se dispenser de cette hypothèse
+    dans les résultats de décompte précédents en considérant un ensemble de
+    places plus petit) mais sera utile pour assurer la finitude et contrôler
+    le cardinal de l'ensemble \( C \) ci-dessous.} on introduit la fonction \(
+    \pi \colon E(\eps, S) \to \parts S \) définie par
+  \begin{equation}
+    \pi(x)
+    =
+    \set{
+      v \in S
+      \text{ tel que }
+      d_v(x) \le c_v
+    }
+    \pmm.
+  \end{equation}
+  On introduit par ailleurs l'ensemble
+  \begin{equation}
+    C
+    =
+    \set{
+      (\lambda_v)_{v \in T}
+      \text{ tel que }
+      \lambda_v \degv \card T \in \N
+      \text{ et }
+      \sum_{v \in T} \lambda_v \degv = 1
+    }
+  \end{equation}
+  qui est fini et de cardinal \( \binom{2\card T - 1}{\card T - 1} \) car il
+  est en bijection avec l'ensemble des familles de \( \card T \) entiers
+  naturels dont la somme est \( \card T \). Pour obtenir la conclusion du
+  lemme, il suffit donc de montrer que
+  \begin{equation}
+    \pi^{-1}(T)
+    =
+    \bigcup_{\lambda \in C} E(\eps/2, T, \lambda)
+  \end{equation}
+  (où l'on a noté \( \pi^{-1}(T) = \pi^{-1}(\set T) \) pour alléger) car les
+  \( \pi^{-1}(T) \) forment une évidemment partition de \( E(\eps, S) \).
+
+  Fixons donc \( T \in \parts S \) et \( x \in \pi^{-1}(T) \). Par définition
+  de \( E(\eps, S) \) et de \( \pi \) on a
+  \begin{align}
+    \bigl( \prod_{v \in S} c_v^\degv \bigr)
+    H(x)^{-\eps}
+    \ge
+    \prod_{v \in S} d_v(x)^\degv
+    \ge
+    \prod_{v \in T} d_v(x)^\degv
+    \prod_{v \in S \setminus T} c_v^\degv
+  \end{align}
+  d'où \( x \in E(\eps, T) \). Par ailleurs, si \( H(x) = 1 \) il est clair
+  que \( x \in E'(\eps, S, \lambda) \) pour n'importe quelle famille \(
+    \lambda \in C \), on suppose donc \( H(x) > 1 \) et on associe à \( x \)
+  une famille \( \lambda(x) \) comme en~\eqref{e:x2wt}. Cette fois-ci, les \(
+    \lambda_v(x) \) sont tous positifs. Par ailleurs, on a successivement
+  \begin{align}
+    2 \card T
+    \sum_{v \in T} \lambda_v(x) \degv
+    & \ge
+    2 \card T
+    \\
+    \sum_{v \in T} \floor{ 2 \card T \lambda_v(x) \degv }
+    & \ge
+    \card T
+  \end{align}
+  dont on déduit l'existence d'entiers naturels \( a_v(x) \) inférieurs à
+  \( 2 \card T \lambda_v(x) \degv \) et dont la somme est exactement \( \card
+    T \). On pose alors \( \lambda'(x) = a_v(x) / (\degv \card T) \) de sorte
+  que \( \lambda'(x) \in C \) et \( x \in E'(\eps/2, T, \lambda'(x)) \), ce qui
+  achève la preuve.
 \end{proof}
 
 
