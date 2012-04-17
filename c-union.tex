@@ -351,9 +351,9 @@ sens.
   \]
   On note enfin \( \parts M \) l'ensemble des parties finies de \( M \) et on
   suppose qu'il existe une fonction \( g \colon \R_{>0} \times \parts M \to \N
-  \) telle que pour tout \( \eps > 0 \), tout \( S \in \parts M \) et toute
-  famille \( (\lambda_v)_{v\in S} \) de réels positifs telle que \( \sum_{v\in
-      S} \lambda_v \degv = 1 \), on ait
+  \) telle que pour tout \( \eps > 0 \), tout \( S \in \parts M \) non vide et
+  toute famille \( (\lambda_v)_{v\in S} \) de réels positifs telle que \(
+    \sum_{v\in S} \lambda_v \degv = 1 \), on ait
   \[
     \card E'(\eps, S, \lambda)
     \le
@@ -364,7 +364,7 @@ sens.
   \[
     \card E(\eps, S)
     \le
-    \sum_{T \in \parts S}
+    \sum_{T \in \parts S \minusset\emptyset}
     \binom{2\card T - 1}{\card T - 1}
     g(\eps/2, T)
     \pmm.
@@ -423,7 +423,8 @@ la section précédente.
     }
     \pmm.
   \end{equation}
-  On introduit par ailleurs l'ensemble
+  On remarque que \( \pi \) prend en fait ses valeurs dans \( \parts S
+    \minusset\emptyset \).  On introduit par ailleurs l'ensemble
   \begin{equation}
     C
     =
@@ -445,7 +446,8 @@ la section précédente.
     \bigcup_{\lambda \in C} E(\eps/2, T, \lambda)
   \end{equation}
   (où l'on a noté \( \pi^{-1}(T) = \pi^{-1}(\set T) \) pour alléger) car les
-  \( \pi^{-1}(T) \) forment une évidemment partition de \( E(\eps, S) \).
+  \( \pi^{-1}(T) \) pour \( T \) parcourant l'ensemble des parties non vides
+  de \( S \) forment une évidemment partition de \( E(\eps, S) \).
 
   Fixons donc \( T \in \parts S \) et \( x \in \pi^{-1}(T) \). Par définition
   de \( E(\eps, S) \) et de \( \pi \) on a
@@ -478,6 +480,19 @@ la section précédente.
     T \). On pose alors \( \lambda'(x) = a_v(x) / (\degv \card T) \) de sorte
   que \( \lambda'(x) \in C \) et \( x \in E'(\eps/2, T, \lambda'(x)) \), ce qui
   achève la preuve.
+\end{proof}
+
+En pratique, la fonction de comptage ne dépend pas de l'ensemble de places
+considérées, on utilisera donc le scolie suivant.
+
+\begin{sco}
+  Dans la situation du lemme précédent, si l'on suppose de plus que la
+  fonction \( g \) ne dépend pas de son deuxième argument, alors on a
+  \( \card E(\eps, S) \le 5^{\card S} g(\eps/2) \).
+\end{sco}
+
+\begin{proof}
+  C'est un calcul élémentaire, fait page~125 de \cite{farhith}.
 \end{proof}
 
 

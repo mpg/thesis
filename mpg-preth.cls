@@ -348,7 +348,7 @@
 \newtheorem {lem}  [thm] {Lemme}
 \newtheorem {coro} [thm] {Corollaire}
 \newtheorem {fact} [thm] {Fait}
-\newtheorem {scho} [thm] {Scolie}
+\newtheorem {sco}  [thm] {Scolie}
 \newtheorem {hypo} [thm] {Hypothèses}
 
 \theoremstyle{definition}
