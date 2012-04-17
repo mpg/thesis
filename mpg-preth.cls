@@ -620,6 +620,8 @@
 
 \newcommand*\parts [1] {\mathcal P(#1)}
 
+\newcommand \torsion {\mathrm{tor}}
+
 % automatic constants [[2
 %
 \AtBeginDocument{\let\mpg@label\label}
@@ -901,6 +903,8 @@
 \newcommand*\hautm [2][] {\Hautm[#1](#2)}
 \newcommand*\hautl [2][] {\Hautl[#1](#2)}
 \newcommand*\hautn [1]   {\Hautn    (#1)}
+
+\newcommand \hmin {\Hautn_{\mathrm{min}}}
 
 % \nnt + \scalnt available for Néron-Tate norm & scalar product
 

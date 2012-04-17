@@ -286,10 +286,59 @@ On utilise ensuite le fait suivant.
 \end{proof}
 
 
-
 
 \section{Décomptes des petits points}
 \label{sec:small-points}
+
+Pour compter les petits points, la condition d'approximation utilisée pour les
+grands points est plus délicate à exploiter. On utilisera donc une des trois
+méthodes un peu grossières suivantes : renforcer considérablement la condition
+d'approximation de sorte qu'il n'y ait pas de petits points, la renforcer
+légèrement pour qu'il n'y ait pas de très petits points, ou bien compter tous
+les petits points sans tenir compte de la condition d'approximation. Pour ces
+deux dernières méthodes, on utilisera le fait suivant.
+
+\begin{fact}
+  Soient \( E \) un espace euclidien de dimension \( r \) et deux réels \(
+    \rho \) et \( \mu \). On peut recouvrir toute boule (fermée) de rayon \(
+    \rho \) par des boules (ouvertes) de rayon \( \mu \) en nombre inférieur à
+  \( ( 2 \, \frac\rho\mu + 1 )^r \).
+\end{fact}
+
+\begin{proof}
+  C'est le lemme~6.1, p.~541 de \cite{remdcl}, où l'on a par ailleurs effectué
+  le changement de notations \( \mu = \rho / \gamma \).  L'énonce donné dans
+  la référence citée ne précise pas si les boules sont ouvertes ou fermées,
+  mais on constate facilement que la preuve qui y est proposée fonctionne
+  parfaitement pour la variante la plus forte, énoncée ci-dessus.
+\end{proof}
+
+Une façon d'utiliser le résultat est, comme annoncé, de compter les petits
+point sans aucune hypothèse d'approximation.
+
+\begin{coro}
+  Soit \( \Gamma \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
+  \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \( \hautn x \)
+  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
+  Pour tout réel positif \( R \), on a
+  \begin{equation}
+    \card \set*{
+      x \in \Gamma
+      \text{ tel que }
+      \hautn x \le R
+    }
+    \le
+    \card \Gamma_\torsion
+    \cdot
+    \left( 1 + 2\sqrt{R / \hmin} \right)^r
+  \end{equation}
+  où \( \Gamma_\torsion \) désigne l'ensemble des points de torsion de \(
+    \Gamma \).
+\end{coro}
+
+\begin{proof}
+
+\end{proof}
 
 
 
