@@ -498,7 +498,7 @@ grands points est plus délicate à exploiter. On utilisera donc une des trois
 méthodes un peu grossières suivantes : renforcer la condition d'approximation
 de sorte qu'il n'y ait pas de petits points, ou bien compter tous les petits
 points sans tenir compte de la condition d'approximation. Pour cette dernière
-méthodes on utilisera le fait suivant.
+méthode on utilisera le fait suivant.
 
 \begin{fact}
   Soient \( E \) un espace euclidien de dimension \( r \) et deux réels \(
@@ -603,7 +603,7 @@ condition d'approximation pour les éliminer grâce à l'inégalité de
   \begin{align}
     F
     & \le
-    (d-\expapx) \hautn x
+    (d-\expapx) \hautl[2] x
     + \hautl[1]{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
@@ -657,6 +657,56 @@ On en déduit immédiatement le corollaire pratique suivant.
 \section{Décomptes complets}
 \label{sec:all-points}
 
+\begin{thm}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de type
+  fini ; on note \( r \) son rang et \( \hmin \) le minimum de \( \hautn x \)
+  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
+  Le nombre de points de \( \Gamma \) distincts modulo \( \vai \) et
+  satisfaisant à
+  \begin{equation}
+    0 < \distv x V
+    <
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \hautm[2] x ^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+  \end{equation}
+  est majoré par
+  \begin{equation}
+    \card \Gamma_\torsion
+    \cdot
+    \hmin^{-r/2}
+    \left(
+      3 \cst{ht-m=g+1}
+      \Bigl(
+      86 \nclmaps \cdot d^{\genre+1} \sbin{\dimp + d}{d}
+      \, \expapx^{-1}
+      \bigl( 8 \genre (\genre+1) \bigr)^\genre
+      \deg \va
+      \Bigr)^{\genre+1}
+    \right)^{r/2}
+  \end{equation}
+  avec
+  \begin{align}
+    \newcst{ht-m=g+1}
+    & =
+    d \max \bigl(
+      d^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    \bigr)
+    + (\genre + 1) \deg \va
+    \Bigl(
+      d^\dimp \ln(d) \dimp
+    \\ & \qquad
+      + d^\genre \bigl (
+        \hautl[1] V
+        + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
+        + \ln((\genre+1)\/2)
+      \bigr)
+    \Bigr)
+    \pmm.
+  \end{align}
+\end{thm}
 
 
 \cleardoublepage
