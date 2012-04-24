@@ -21,13 +21,13 @@ On commence par compter le nombre de points dans chaque cône tronqué.
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
   On fixe réel \( 0 < \expapx < d \), un entier \( \puiss \ge \genre + 1 \) et
   on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
-  \) distincts modulo \( \vai \) et satisfaisant simultanément aux conditions
-  suivantes :
+  \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
+  conditions suivantes :
   \begin{align}
     \label{e:big-ha}
     0 < \distv{\ex*} V
     & <
-    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\ \label{e:big-big}
@@ -218,11 +218,13 @@ On utilise ensuite le fait suivant.
 \end{proof}
 
 \begin{prop} \label{p:big-gen}
+  \worknote{On pourrait utiliser \( \Gamma / (\Gamma \cap \vai(\Qbar) \) à la
+    place.}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
   On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > \) et tout entier \( \puiss \ge \genre + 1 \),
+  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
   il existe au plus
   \begin{equation}
     \sqrt{\frac d \expapx}
@@ -245,7 +247,7 @@ On utilise ensuite le fait suivant.
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
@@ -287,70 +289,6 @@ On utilise ensuite le fait suivant.
 
 
 
-\section{Décomptes des petits points}
-\label{sec:small-points}
-
-Pour compter les petits points, la condition d'approximation utilisée pour les
-grands points est plus délicate à exploiter. On utilisera donc une des trois
-méthodes un peu grossières suivantes : renforcer considérablement la condition
-d'approximation de sorte qu'il n'y ait pas de petits points, la renforcer
-légèrement pour qu'il n'y ait pas de très petits points, ou bien compter tous
-les petits points sans tenir compte de la condition d'approximation. Pour ces
-deux dernières méthodes, on utilisera le fait suivant.
-
-\begin{fact}
-  Soient \( E \) un espace euclidien de dimension \( r \) et deux réels \(
-    \rho \) et \( \mu \). On peut recouvrir toute boule (fermée) de rayon \(
-    \rho \) par des boules (ouvertes) de rayon \( \mu \) en nombre inférieur à
-  \( ( 2 \, \frac\rho\mu + 1 )^r \).
-\end{fact}
-
-\begin{proof}
-  C'est le lemme~6.1, p.~541 de \cite{remdcl}, où l'on a par ailleurs effectué
-  le changement de notations \( \mu = \rho / \gamma \).  L'énonce donné dans
-  la référence citée ne précise pas si les boules sont ouvertes ou fermées,
-  mais on constate facilement que la preuve qui y est proposée fonctionne
-  parfaitement pour la variante la plus forte, énoncée ci-dessus.
-\end{proof}
-
-Une façon d'utiliser le résultat est, comme annoncé, de compter les petits
-point sans aucune hypothèse d'approximation.
-
-\begin{coro}
-  Soit \( \Gamma \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
-  \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \( \hautn x \)
-  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
-  Pour tout réel positif \( R \), on a
-  \begin{equation}
-    \card \set*{
-      x \in \Gamma
-      \text{ tel que }
-      \hautn x \le R
-    }
-    \le
-    \card \Gamma_\torsion
-    \cdot
-    \left( 1 + 2\sqrt{R / \hmin} \right)^r
-  \end{equation}
-  où \( \Gamma_\torsion \) désigne l'ensemble des points de torsion de \(
-    \Gamma \).
-\end{coro}
-
-\begin{proof}
-  Dans \( \Gamma \otimes_\Z \R \) muni de la structure euclidienne induite par
-  la hauteur normalisée, on applique le fait précédent avec \( \rho = \sqrt R
-  \) et \( \mu = \sqrt{\hmin} \) puis on remarque que la préimage dans \(
-    \Gamma \) de chacune des boules ouvertes de rayon \( \mu \) est composée
-  de points qui sont tous égaux modulo \( \Gamma_\torsion \).
-\end{proof}
-
-
-
-\section{Décomptes complets}
-\label{sec:all-points}
-
-
-
 \section{Hypothèse d'approximation produit}
 \label{sec:ha-prod}
 
@@ -360,7 +298,7 @@ abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}. Par ailleurs, par rapport
 \), car c'est la valeur qui a le plus de sens pour les applications, afin de
 simplifier légèrement l'énoncé et sa preuve. L'énoncé ci-dessous est
 volontairement aussi abstrait que possible afin de mettre en lumière le
-caractère purement combinatoire de la preuve et d'être utilisable le plus
+caractère purement combinatoire de la preuve et d'être utilisable dans le plus
 grand nombre de situations ; juste après l'énoncé on détaille la
 correspondance avec la situation étudiée ici afin d'en éclairer le sens.
 
@@ -437,7 +375,7 @@ la section précédente.
 
 \begin{proof}
   On suppose \( S \) et \( \eps \) fixés. On remarque que pour toute famille
-  \( \lambda \) telle que que \( \sum_{v \in S} \lambda_v \degv \) on a \(
+  \( \lambda \) telle que que \( \sum_{v \in S} \lambda_v \degv = 1 \) on a \(
     E'(\eps, S, \lambda) \subset E(\eps, S) \) ; à l'inverse on aimerait bien
   recouvrir \( E(\eps, S) \) par de tels ensembles, en nombre fini. Dans ce
   but, pour tout \( x \in A \) (tel que \( H(x) > 1 \) pour simplifier pour
@@ -449,7 +387,7 @@ la section précédente.
     \quad \forall v \in S
   \end{equation}
   de sorte que \( x \in E'(\eps, S, \lambda(x)) \). De plus, si \( x \in E(\eps,
-    S) \) on a \( \sum_{v \in S} \lambda_v \degv \ge 1 \). Ainsi, on a
+    S) \) on a \( \sum_{v \in S} \lambda_v(x) \degv \ge 1 \). Ainsi, on a
   recouvert \( E(\eps, S) \) par des ensembles de la forme \( E'(\eps, S,
     \lambda(x)) \) mais ceux-ci ne sont \lat{a priori} pas en nombre fini ;
   par ailleurs les familles \( \lambda(x) \) obtenues ne sont pas
@@ -459,7 +397,7 @@ la section précédente.
   produit) sommant à \( 1 \), car la fonction \( \lambda \mapsto E'(\eps, S,
     \lambda) \) est décroissante.)
 
-  Pour forcer les \( \lambda(x) \) à être positifs\footnote{Ce qui n'est en
+  Pour forcer les \( \lambda_v(x) \) à être positifs\footnote{Ce qui n'est en
     soi pas indispensable (on pourrait en fait se dispenser de cette hypothèse
     dans les résultats de décompte précédents en considérant un ensemble de
     places plus petit) mais sera utile pour assurer la finitude et contrôler
@@ -476,7 +414,8 @@ la section précédente.
     \pmm.
   \end{equation}
   On remarque que \( \pi \) prend en fait ses valeurs dans \( \parts S
-    \minusset\emptyset \).  On introduit par ailleurs l'ensemble
+    \minusset\emptyset \).  Par ailleurs, pour toute partie non vide \( T \)
+  de \( S \), on introduit l'ensemble
   \begin{equation}
     C
     =
@@ -501,8 +440,8 @@ la section précédente.
   \( \pi^{-1}(T) \) pour \( T \) parcourant l'ensemble des parties non vides
   de \( S \) forment une évidemment partition de \( E(\eps, S) \).
 
-  Fixons donc \( T \in \parts S \) et \( x \in \pi^{-1}(T) \). Par définition
-  de \( E(\eps, S) \) et de \( \pi \) on a
+  Fixons donc \( \emptyset \neq T \in \parts S \) et \( x \in \pi^{-1}(T)
+  \). Par définition de \( E(\eps, S) \) et de \( \pi \) on a
   \begin{align}
     \bigl( \prod_{v \in S} c_v^\degv \bigr)
     H(x)^{-\eps}
@@ -516,22 +455,24 @@ la section précédente.
   que \( x \in E'(\eps, S, \lambda) \) pour n'importe quelle famille \(
     \lambda \in C \), on suppose donc \( H(x) > 1 \) et on associe à \( x \)
   une famille \( \lambda(x) \) comme en~\eqref{e:x2wt}. Cette fois-ci, les \(
-    \lambda_v(x) \) sont tous positifs. Par ailleurs, on a successivement
+    \lambda_v(x) \) sont tous positifs ou nuls. Par ailleurs, on a
+  successivement
   \begin{align}
     2 \card T
     \sum_{v \in T} \lambda_v(x) \degv
     & \ge
     2 \card T
     \\
-    \sum_{v \in T} \floor{ 2 \card T \lambda_v(x) \degv }
+    \sum_{v \in T} \floor{ 2 \lambda_v(x) \degv \card T }
     & \ge
     \card T
   \end{align}
-  dont on déduit l'existence d'entiers naturels \( a_v(x) \) inférieurs à
-  \( 2 \card T \lambda_v(x) \degv \) et dont la somme est exactement \( \card
-    T \). On pose alors \( \lambda'(x) = a_v(x) / (\degv \card T) \) de sorte
-  que \( \lambda'(x) \in C \) et \( x \in E'(\eps/2, T, \lambda'(x)) \), ce qui
-  achève la preuve.
+  donc il existe des entiers naturels \( a_v(x) \) inférieurs ou égaux à
+  \( 2 \lambda_v(x) \degv \card T \) et dont la somme est exactement
+  \( \card T \). On pose alors \( \lambda'(x) = a_v(x) / (\degv \card T) \) de
+  sorte que \( \lambda'(x) \in C \) et \( \lambda'_v(x) \le 2 \lambda_v(x) \),
+  ce qui implique que \( x \in E'(\eps/2, T, \lambda'(x)) \), achevant ainsi
+  la preuve.
 \end{proof}
 
 En pratique, la fonction de comptage ne dépend pas de l'ensemble de places
@@ -546,6 +487,93 @@ considérées, on utilisera donc le scolie suivant.
 \begin{proof}
   C'est un calcul élémentaire, fait page~125 de \cite{farhith}.
 \end{proof}
+
+
+
+\section{Décomptes des petits points}
+\label{sec:small-points}
+
+Pour compter les petits points, la condition d'approximation utilisée pour les
+grands points est plus délicate à exploiter. On utilisera donc une des trois
+méthodes un peu grossières suivantes : renforcer la condition d'approximation
+de sorte qu'il n'y ait pas de petits points, ou bien compter tous les petits
+points sans tenir compte de la condition d'approximation. Pour cette dernière
+méthodes on utilisera le fait suivant.
+
+\begin{fact}
+  Soient \( E \) un espace euclidien de dimension \( r \) et deux réels \(
+    \rho \) et \( \mu \). On peut recouvrir toute boule (fermée) de rayon \(
+    \rho \) par des boules (ouvertes) de rayon \( \mu \) en nombre inférieur à
+  \( ( 2 \, \frac\rho\mu + 1 )^r \).
+\end{fact}
+
+\begin{proof}
+  C'est le lemme~6.1, p.~541 de \cite{remdcl}, où l'on a par ailleurs effectué
+  le changement de notations \( \mu = \rho / \gamma \).  L'énonce donné dans
+  la référence citée ne précise pas si les boules sont ouvertes ou fermées,
+  mais on constate facilement que la preuve qui y est proposée fonctionne
+  parfaitement pour la variante la plus forte, énoncée ci-dessus.
+\end{proof}
+
+Une façon d'utiliser le résultat est, comme annoncé, de compter les petits
+points sans aucune hypothèse d'approximation.
+
+\begin{coro}
+  Soit \( \Gamma \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
+  \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \( \hautn x \)
+  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
+  Pour tout réel positif \( R \), on a
+  \begin{equation}
+    \card \set*{
+      x \in \Gamma
+      \text{ tel que }
+      \hautn x \le R
+    }
+    \le
+    \card \Gamma_\torsion
+    \cdot
+    \left( 1 + 2\sqrt{R / \hmin} \right)^r
+  \end{equation}
+  où \( \Gamma_\torsion \) désigne l'ensemble des points de torsion de \(
+    \Gamma \).
+\end{coro}
+
+\begin{proof}
+  Dans \( \Gamma \otimes_\Z \R \) muni de la structure euclidienne induite par
+  la hauteur normalisée, on applique le fait précédent avec \( \rho = \sqrt R
+  \) et \( \mu = \sqrt{\hmin} \) puis on remarque que la préimage dans \(
+    \Gamma \) de chacune des boules ouvertes de rayon \( \mu \) est composée
+  de points qui sont tous égaux modulo \( \Gamma_\torsion \).
+\end{proof}
+
+\begin{rem}
+  Si dans l'énoncé précédent on prend \( \Gamma = \va(\cdn) \), on retrouve le
+  lemme~2.11.1, p.~117 de~\cite{farhith}.
+\end{rem}
+
+L'autre méthode de traitement des petits points consiste à renforcer la
+condition d'approximation pour les éliminer grâce à l'inégalité de
+\bsc{Liouville}.
+
+\begin{lem}
+  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
+  \( d \). Pour tout entier \( R \ge \todots \), il n'existe aucun point de
+  hauteur normalisée inférieure ou égale à \( R \) tel que
+  \begin{equation}
+    \prod\placerange
+    \distv x \varapx ^\degv
+    \le
+    R^{-1}
+    \hautm[2]{x}^{-\expapx}
+    \pmm.
+  \end{equation}
+\end{lem}
+
+
+
+\section{Décomptes complets}
+\label{sec:all-points}
+
 
 
 \cleardoublepage
