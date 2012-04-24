@@ -619,10 +619,38 @@ condition d'approximation pour les éliminer grâce à l'inégalité de
   fausse.
 \end{proof}
 
+On en déduit immédiatement le corollaire pratique suivant.
 
+\begin{coro}
+  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
+  \( d \). Si \( R \) est un réel supérieur ou égal à
+  \begin{equation}
+    \frac1\expapx \left(
+      \hautl[1]{ \chow V }
+      + d (u+1) \ln(3d)
+      + \frac32 \ln(n+1)
+      + d \htcmp
+    \right)
+    \pmm,
+  \end{equation}
+  il n'existe aucun point \( x \in \va(\Qbar) \) tels que
+  \begin{equation}
+    0
+    <
+    \prod\placerange
+    \distv x V ^\degv
+    \le
+    \expb^{- d R}
+    \hautm[2]{x}^{-\expapx}
+    \quad\text{et}\quad
+    \hautn x \le R
+    \pmm.
+  \end{equation}
+\end{coro}
 
-
-
+\begin{proof}
+  Application immédiate du lemme précédent avec \( F = d R \).
+\end{proof}
 
 
 
