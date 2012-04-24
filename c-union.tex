@@ -557,17 +557,72 @@ condition d'approximation pour les éliminer grâce à l'inégalité de
 
 \begin{lem}
   Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
-  \( d \). Pour tout entier \( R \ge \todots \), il n'existe aucun point de
-  hauteur normalisée inférieure ou égale à \( R \) tel que
+  \( d \). Si \( R \) et \( F \) sont deux réels positifs,
+  l'ensemble des points \( x \in \va(\Qbar) \) tels que
   \begin{equation}
+    0
+    <
     \prod\placerange
-    \distv x \varapx ^\degv
+    \distv x V ^\degv
     \le
-    R^{-1}
+    \expb^{-F}
     \hautm[2]{x}^{-\expapx}
-    \pmm.
+    \quad\text{et}\quad
+    \hautn x \le R
   \end{equation}
+  est vide dès que
+  \( F
+    >
+    (d-\expapx) R
+    + \hautl[1]{ \chow V }
+    + d (u+1) \ln(3d)
+    + \frac32 \ln(n+1)
+    + (d-\expapx) \htcmp
+  \).
 \end{lem}
+
+\begin{proof}
+  Si l'ensemble en question n'est pas vide, on choisit un point \( x \) dedans
+  et on lui applique l'inégalité de \bsc{Liouville}
+  (proposition~\ref{p:liouville}) :
+  \begin{equation}
+    \frac1{
+      (n+1)^{3/2}
+      (3d)^{d (u+1)}
+      \, \hautm[1]{ \chow V }
+      \, \hautm[2] x ^d
+    }
+    \le
+    \prod\placerange
+    \distv x V ^\degv
+    \le
+    \expb^{-F}
+    \hautm[2]{x}^{-\expapx}
+  \end{equation}
+  puis en prenant les opposés des logarithmes
+  \begin{align}
+    F
+    & \le
+    (d-\expapx) \hautn x
+    + \hautl[1]{ \chow V }
+    + d (u+1) \ln(3d)
+    + \frac32 \ln(n+1)
+    \\ & \le
+    (d-\expapx) R
+    + \hautl[1]{ \chow V }
+    + d (u+1) \ln(3d)
+    + \frac32 \ln(n+1)
+    + (d-\expapx) \htcmp
+    \pmm.
+  \end{align}
+  Par contraposée, l'ensemble considéré est vide si cette inégalité est
+  fausse.
+\end{proof}
+
+
+
+
+
 
 
 
