@@ -1,5 +1,3 @@
-% !TEX root = main.tex
-
 \chapter{Déduction des résultats principaux}
 \label{chap:union}
 
@@ -518,7 +516,7 @@ méthode on utilisera le fait suivant.
 Une façon d'utiliser le résultat est, comme annoncé, de compter les petits
 points sans aucune hypothèse d'approximation.
 
-\begin{coro}
+\begin{coro} \label{c:small-va}
   Soit \( \Gamma \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
   \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \( \hautn x \)
   quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
@@ -675,16 +673,18 @@ On en déduit immédiatement le corollaire pratique suivant.
   est majoré par
   \begin{equation}
     \card \Gamma_\torsion
-    \cdot
-    \hmin^{-r/2}
     \left(
-      3 \cst{ht-m=g+1}
-      \Bigl(
-      86 \nclmaps \cdot d^{\genre+1} \sbin{\dimp + d}{d}
-      \, \expapx^{-1}
-      \bigl( 8 \genre (\genre+1) \bigr)^\genre
-      \deg \va
-      \Bigr)^{\genre+1}
+      \frac{
+        5 \cst{ht-m=g+1}
+        \Bigl(
+          86 \nclmaps \cdot d^{\genre+1} \sbin{\dimp + d}{d}
+          \, \expapx^{-1}
+          \bigl( 8 \genre (\genre+1) \bigr)^\genre
+          \deg \va
+        \Bigr)^{\genre+1}
+      }{
+        \min(1, \sqrt{\hmin})
+      }
     \right)^{r/2}
   \end{equation}
   avec
@@ -707,6 +707,85 @@ On en déduit immédiatement le corollaire pratique suivant.
     \pmm.
   \end{align}
 \end{thm}
+
+\begin{proof}
+  Remarquons qu'on peut supposer \( r \ge 1 \) car sinon le résultat est
+  banal.  En combinant la proposition~\ref{p:big-gen} et le
+  corollaire~\ref{c:small-va} appliqué avec \( R = \cst{ht-v-gen1}
+    \Lambda_4^{(2\puiss\genre)^{\puiss\genre}} \), on voit que le nombre de
+  points en question est au plus
+  \begin{equation}
+    \sqrt{\frac d \expapx}
+    2 \puiss
+    (2\puiss\genre)^{\puiss\genre}
+    \ln \Lambda_4
+    \left( 3 \sqrt{ \puiss \cst{v-gen} } \right)^r
+    +
+    \card \Gamma_\torsion
+    \cdot
+    \left( 1 + \frac2{\sqrt{\hmin}}
+      \left(
+        \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+      \right)^{1/2}
+    \right)^r
+    \pmm.
+  \end{equation}
+  On voit facilement que le premier terme est majoré par \( \Lambda_4^{3r} \)
+  : en effet, on a
+  \begin{align}
+    6 \sqrt{\frac d \expapx}
+    \cdot \sqrt{ \cst{v-gen} }
+    & \le
+    \cst{v-gen}
+    \\
+    \ln \Lambda_4
+    & \le
+    \Lambda_4
+    \\
+    \puiss \sqrt\puiss
+    (2\puiss\genre)^{\puiss\genre}
+    & \le
+    (\sqrt2 \puiss \genre)^{2\puiss\genre}
+  \end{align}
+  qui donne bien le résultat voulu en prenant le produit vu la définition de
+  \( \Lambda_4 \). En particulier, comme \( (2\puiss\genre)^{\puiss\genre} /
+    2 \ge 8 \), le premier terme est largement majoré par \( \Lambda_4^{ \frac
+      r2 (2\puiss\genre)^{\puiss\genre} } / \Lambda_4 \).
+
+  Par ailleurs, le deuxième terme est majoré par
+  \begin{equation}
+    \card \Gamma_\torsion
+    \left(
+      \frac{
+        (2 + \frac1{\Lambda_4})
+      }{
+        \min(1, \sqrt{\hmin})
+      }
+      \left(
+        \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+      \right)^{1/2}
+    \right)^r
+    \pmm.
+  \end{equation}
+  Il ne reste alors qu'à remarquer que \( \card \Gamma_\torsion \ge 1 \) et
+  que \( (2 + \frac1{\Lambda_4})^r + \frac1{\Lambda_4} \le 5^{r/2} \) pour
+  majorer la somme par
+  \begin{equation}
+    \card \Gamma_\torsion
+    \left(
+      \frac{
+        5 \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+      }{
+        \min(1, \sqrt{\hmin})
+      }
+    \right)^{r/2}
+    \pmm.
+  \end{equation}
+  Il suffit alors de prendre \( \puiss = \genre + 1 \) (choix qui minimise la
+  quantité précédente, croissante en \( \puiss \)) pour obtenir le résultat
+  annoncé.
+\end{proof}
+
 
 
 \cleardoublepage
