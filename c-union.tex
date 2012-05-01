@@ -677,11 +677,10 @@ On en déduit immédiatement le corollaire pratique suivant.
       \frac{
         5 \cst{ht-m=g+1}
         \Bigl(
-          86 \nclmaps \cdot d^{\genre+1} \sbin{\dimp + d}{d}
-          \, \expapx^{-1}
-          \bigl( 8 \genre (\genre+1) \bigr)^\genre
-          \deg \va
-        \Bigr)^{\genre+1}
+          \expapx^{-1}
+          d^{\genre+1} \sbin{\dimp + d}{d}
+          \cst{lambda}
+        \Bigr)^{(\sqrt2(\genre+1))^{2\genre(\genre+1)}}
       }{
         \min(1, \sqrt{\hmin})
       }
@@ -689,7 +688,7 @@ On en déduit immédiatement le corollaire pratique suivant.
   \end{equation}
   avec
   \begin{align}
-    \newcst{ht-m=g+1}
+    \newcst[]{ht-m=g+1}
     & =
     d \max \bigl(
       d^\genre \hautl[1]{\va}, \hlclab, \htcmp
@@ -704,6 +703,11 @@ On en déduit immédiatement le corollaire pratique suivant.
         + \ln((\genre+1)\/2)
       \bigr)
     \Bigr)
+    \\
+    \newcst[]{lambda}
+    & =
+    86 \nclmaps \deg \va
+    \bigl( 8 \genre (\genre+1) \bigr)^\genre
     \pmm.
   \end{align}
 \end{thm}
@@ -881,12 +885,16 @@ le résultat suivant.
   \begin{align}
     0 < \prod\placerange \distv{\ex*} V ^\degv
     & <
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
     \exp\left(
-      - d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+      - 2 d
+      \cst{ht-m=g+1}
+      \Bigl(
+        \expapx^{-1}
+        d^{\genre+1} \sbin{\dimp + d}{d}
+        \cst{lambda}
+      \Bigr)^{(\sqrt2(\genre+1))^{2\genre(\genre+1)}}
     \right)
     \hautm[2]{\ex*}^{-\expapx}
-    \quad \forall \place \in \placesapx
   \end{align}
   avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\ref{l:big-by-cone}.
