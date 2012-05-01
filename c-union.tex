@@ -619,7 +619,7 @@ condition d'approximation pour les éliminer grâce à l'inégalité de
 
 On en déduit immédiatement le corollaire pratique suivant.
 
-\begin{coro}
+\begin{coro} \label{c:kill-small}
   Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
   \( d \). Si \( R \) est un réel supérieur ou égal à
   \begin{equation}
@@ -786,6 +786,67 @@ On en déduit immédiatement le corollaire pratique suivant.
   annoncé.
 \end{proof}
 
+On peut également renforcer la condition d'approximation pour interdire
+l'existence de petits points, ce qui donne la proposition suivante.
+
+\begin{prop} \label{p:all-gen}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  fini \( r \).
+  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  il existe au plus
+  \begin{equation}
+    \sqrt{\frac d \expapx}
+    (4\puiss\genre)^{\puiss\genre}
+    \bigl(
+      - \ln \expapx
+      +
+      \cst{big/cone}
+    \bigr)
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+  \end{equation}
+  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  à la condition suivante :
+  \begin{align}
+    0 < \distv{\ex*} V
+    & <
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \exp\left(
+      - \wtapx d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \right)
+    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \quad \forall \place \in \placesapx
+  \end{align}
+  avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  lemme~\ref{l:big-by-cone}.
+\end{prop}
+
+\begin{proof}
+  La condition d'approximation considérée implique en particulier
+  \begin{equation}
+    0
+    <
+    \prod\placerange \distv{\ex*} V ^\degv
+    <
+    \exp\left(
+      - d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \right)
+    \hautm[2]{\ex*}^{-\expapx}
+  \end{equation}
+  de sorte qu'on peut appliquer le corollaire~\ref{c:kill-small} avec
+  \( R = \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}} \)
+  car cette quantité satisfait amplement l'hypothèse du corollaire. Ainsi, on
+  voit que tous les points satisfaisant cette condition d'approximation
+  satisfont aussi \( \hautn{\ex[1]} \ge R \) et on peut appliquer la
+  proposition~\ref{p:big-gen} pour aboutir au résultat annoncé.
+\end{proof}
 
 
 \cleardoublepage
