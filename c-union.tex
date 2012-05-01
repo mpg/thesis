@@ -848,6 +848,50 @@ l'existence de petits points, ce qui donne la proposition suivante.
   proposition~\ref{p:big-gen} pour aboutir au résultat annoncé.
 \end{proof}
 
+On peut alors choisir \( \puiss \) de façon à optimiser ce résultat dans une
+des deux directions suivantes : obtenir la condition la plus faible possible,
+ou bien le décompte le plus précis possible. Dans le premier cas, on obtient
+le résultat suivant.
+
+\begin{thm}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  fini \( r \).
+  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  il existe au plus
+  \begin{equation}
+    \sqrt{\frac d \expapx}
+    (4\puiss\genre)^{\puiss\genre}
+    \bigl(
+      - \ln \expapx
+      +
+      \cst{big/cone}
+    \bigr)
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+  \end{equation}
+  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  à la condition suivante :
+  \begin{align}
+    0 < \prod\placerange \distv{\ex*} V ^\degv
+    & <
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
+    \exp\left(
+      - d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \right)
+    \hautm[2]{\ex*}^{-\expapx}
+    \quad \forall \place \in \placesapx
+  \end{align}
+  avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  lemme~\ref{l:big-by-cone}.
+\end{thm}
+
 
 \cleardoublepage
 \endinput
