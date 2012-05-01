@@ -678,11 +678,11 @@ On en déduit immédiatement le corollaire pratique suivant.
         5 \cst{ht-m=g+1}
         \Bigl(
           \expapx^{-1}
-          d^{\genre+1} \sbin{\dimp + d}{d}
-          \cst{lambda}
+          \, d \sbin{\dimp + d}{d}
+          \, \cst{lambda}
         \Bigr)^{(\sqrt2(\genre+1))^{2\genre(\genre+1)}}
       }{
-        \min(1, \sqrt{\hmin})
+        \min(1, \hmin)
       }
     \right)^{r/2}
   \end{equation}
@@ -780,14 +780,33 @@ On en déduit immédiatement le corollaire pratique suivant.
       \frac{
         5 \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
       }{
-        \min(1, \sqrt{\hmin})
+        \min(1, \hmin)
       }
     \right)^{r/2}
     \pmm.
   \end{equation}
-  Il suffit alors de prendre \( \puiss = \genre + 1 \) (choix qui minimise la
-  quantité précédente, croissante en \( \puiss \)) pour obtenir le résultat
-  annoncé.
+  Cette majoration est valable pour tout \( \puiss > \genre \) ;
+  on remarque par ailleurs que cette quantité est croissante en \( \puiss \),
+  on pose donc \( \puiss = \genre + 1 \) pour obtenir la meilleure estimation
+  possible. On a alors
+  \begin{align}
+    \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    & =
+    \left(
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+      \bigr)^{ \genre + 1 }
+      \bigl( (\sqrt2 \genre(\genre+1)\Delta)^\genre \deg \va \bigr)^{\genre+1}
+    \right)^{(2\genre(\genre+1))^{\genre(\genre+1)}}
+    \\ & \le
+    \Bigl(
+      \expapx^{-1}
+      \, d \sbin{\dimp + d}{d}
+      \, \cst{lambda}
+    \Bigr)^{(\genre+1) (2\genre(\genre+1))^{\genre(\genre+1)}}
+  \end{align}
+  qui aboutit à l'estimation annoncée en comparant les exposants.
 \end{proof}
 
 On peut également renforcer la condition d'approximation pour interdire
@@ -854,7 +873,7 @@ l'existence de petits points, ce qui donne la proposition suivante.
 
 On peut alors choisir \( \puiss \) de façon à optimiser ce résultat dans une
 des deux directions suivantes : obtenir la condition la plus faible possible,
-ou bien le décompte le plus précis possible. Dans le premier cas, on obtient
+ou bien le décompte le plus précis possible. Dans le premier sens, on obtient
 le résultat suivant.
 
 \begin{thm}
