@@ -655,7 +655,7 @@ On en déduit immédiatement le corollaire pratique suivant.
 \section{Décomptes complets}
 \label{sec:all-points}
 
-\begin{thm}
+\begin{thm} \label{t:inc-small}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
   On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de type
@@ -786,9 +786,12 @@ On en déduit immédiatement le corollaire pratique suivant.
     \pmm.
   \end{equation}
   Cette majoration est valable pour tout \( \puiss > \genre \) ;
-  on remarque par ailleurs que cette quantité est croissante en \( \puiss \),
-  on pose donc \( \puiss = \genre + 1 \) pour obtenir la meilleure estimation
-  possible. On a alors
+  on remarque par ailleurs que cette quantité est croissante en \( \puiss \) :
+  en effet, la seule partie qui ne l'est pas est l'exposant \( \puiss /
+    (\puiss - \genre) \) dans la définition de \( \cst{v-gen} \) mais celui-ci
+  est largement composé par le \( (2\puiss\genre)^{\puiss\genre} \) en
+  exposant de \( \Lambda_4 \).  On pose donc \( \puiss = \genre + 1 \) pour
+  obtenir la meilleure estimation possible, ce qui donne
   \begin{align}
     \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
     & =
@@ -806,7 +809,12 @@ On en déduit immédiatement le corollaire pratique suivant.
       \, \cst{lambda}
     \Bigr)^{(\genre+1) (2\genre(\genre+1))^{\genre(\genre+1)}}
   \end{align}
-  qui aboutit à l'estimation annoncée en comparant les exposants.
+  puis on note que
+  \(
+    (\genre+1) \genre^{\genre(\genre+1)}
+    \le
+    (\genre+1)^{2\genre(\genre+1)}
+  \) pour conclure.
 \end{proof}
 
 On peut également renforcer la condition d'approximation pour interdire
@@ -881,43 +889,62 @@ le résultat suivant.
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
   On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
-  il existe au plus
-  \begin{equation}
-    \sqrt{\frac d \expapx}
-    (4\puiss\genre)^{\puiss\genre}
-    \bigl(
-      - \ln \expapx
-      +
-      \cst{big/cone}
-    \bigr)
-    \left(
-      3 \sqrt\puiss
-      \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
-    \right)^r
-  \end{equation}
-  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
-  à la condition suivante :
+  Pour tout réel \( \expapx > 0 \), le nombre de points de \( \Gamma \)
+  distincts modulo \( \vai \) et satisfaisant à la condition
   \begin{align}
-    0 < \prod\placerange \distv{\ex*} V ^\degv
+    0 < \distv{\ex*} V
     & <
+    \hautm[2]{\ex*}^{-\wtapx\expapx}
+    \\ & \qquad \cdot
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \exp\left(
-      - 2 d
+      - \wtapx 2 d
       \cst{ht-m=g+1}
       \Bigl(
         \expapx^{-1}
-        d^{\genre+1} \sbin{\dimp + d}{d}
+        d \sbin{\dimp + d}{d}
         \cst{lambda}
       \Bigr)^{(\sqrt2(\genre+1))^{2\genre(\genre+1)}}
     \right)
-    \hautm[2]{\ex*}^{-\expapx}
   \end{align}
-  avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
-  lemme~\ref{l:big-by-cone}.
+  pour tout \( \place \in \placesapx \)
+  avec \( \cst{ht-m=g+1} \) et \( \cst{lambda} \) comme au
+  théorème~\ref{t:inc-small} est au plus
+  \begin{equation}
+    \sqrt{\frac d \expapx}
+    (4\genre(\genre+1))^{\genre(\genre+1)}
+    \bigl(
+      - \ln \expapx
+      + \cst{ln-lambda}
+    \bigr)
+    \left(
+      3 \sqrt{\genre+1}
+      \bigl(
+        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\genre+1}{2} }
+    \right)^r
+  \end{equation}
+  avec
+  \begin{equation}
+    \newcst[]{ln-lambda}
+    =
+    9
+    + 2 \ln \nclmaps
+    + \ln(d+1) (n+1 + \genre(\genre+1))
+    + (\genre+1) \left( \deg\va + 2\genre (\ln(\genre+1) + 1) \right)
+    \pmm.
+  \end{equation}
 \end{thm}
+
+\begin{proof}
+  L'énoncé de la proposition~\ref{p:all-gen} est valable pour tout \( \puiss
+    \ge \genre + 1 \).  Comme dans la preuve du
+  théorème~\ref{t:inc-small}, on remarque la quantité \(
+    \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+  \) est minimale pour \( \puiss = \genre + 1 \) et on spécialise donc
+  la proposition~\ref{p:all-gen} avec cette valeur.
+\end{proof}
 
 
 \cleardoublepage
