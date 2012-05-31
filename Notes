@@ -1,8 +1,3 @@
-Next actions
-============
-
-Mumford
-
 Rédaction {{{1
 =========
 
@@ -17,34 +12,18 @@ de l'homogène dans Mumford, et probablement du multi dans NMA.
     Virer ce qui devient redondant dans Vojta.
     Virer ce qui devient redondant dans NMA.
 
-(C) Reprendre les notes sur les variantes d'énoncés possibles et les
-inclure, soit dans la partie fusion, soit dans l'intro (voire dans une annexe
-flottante si j'hésite).
-    Mouaibof, vraiment utile ? À voir plus tard.
+(B) Virer NMA et placer ce qu'il faut dans l'intro
 
-(C) Préciser la portée des \eps_i (a priori, pour l'instant locaux à Vojta,
-peut-être qu'il y en a d'autres locaux à Mumford). Ça serait plus clair s'ils
-étaient globaux, non ? Utiliser un système comme les constantes automatiques ?
-Voire directement des constantes automatiques ?
-    Non, pas automatique : changement de version trop relous mentalement.
-    Donc action : chercher des \eps_i dans Mumford et corriger.
+(B) Finir les notations/def de l'intro (cf todo dedans)
+
+(B) Détails pour coro style Siegel-Lang dans l'intro
 
 (C) Ajouter des références biblio pour toute l'intro.
 
 Notations {{{2
 ---------
 
-(C) Finir de nomenclaturer les trucs sans macro dédiée (\eps, S, etc).
-(Faire ça petit à petit au fur et à mesure des relectures et éditions.)
-        Mouais, ça part en vrille la nomenclature, laisser tomber ?
-
-Dans NMA {{{3
-
-Au début : dire un corps *local* et ne pas le noter \cdn.
-
-Consistance interne et avec le reste : commencer par faire une liste ici.
-
-(C) À homogénéiser petit à petit. {{{3
+(D) À homogénéiser petit à petit. {{{3
 Noter ci-dessous les divergences observées, qui seront traitées une par une
 tranquillement.
 
@@ -57,10 +36,6 @@ Unifier les indices :
 - i et j en haut (de 1 à m ou m-1)
 - k et l en bas (de 0 à n)
 - en fait, le contraire paraît mieux (cohérence avec homogène simple)
-
-La convention \boldsymbol = le point, \mathit = ses coordonnées est loin
-d'être utilisée de façon consistante. On fait quoi ?
-    Laisser tomber... Préciser dans le texte si réelle ambiguité.
 
 Clarifier l'utilisation des (multi)variables X, Y : peut-on les réutiliser
 pour le cas d'un projectif simple (pas produit) ? Ou vaut-il mieux utiliser
@@ -75,31 +50,17 @@ nomenclature.)
 Macros {{{2
 ------
 
-(B) Vojta : macros pour \Lambda et f(u)
+(D) Vojta : macros pour \Lambda et f(u)
 
-(C) retrier les macros de Vojta
+(D) retrier les macros de Vojta
 
-(C) Nomenclature : numéros de page.
-    - fait petit à petit avec les relectures
+(D) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
 
-(B) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
-
-(B) normes et hauteurs : virer les vieilles version imprécises, indiquer
-systématiquement la norme ou mesure archimédienne utilisée
-
-(B) Reprendre le source de mumford
-    - labels
-
-(C) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
+(D) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
 -> \Haut\point).
 
-(C) Virer les macros de compatibilité (marquées par XXX)
-
-Vojta {{{2
------
-
-(C) pour \rfull etc : mettre le degré en bas (plus cohérent avec les parties
-homogènes)
+(D) (vojta) pour \rfull etc : mettre le degré en bas (plus cohérent avec les
+parties homogènes)
 
 Biblio {{{2
 ------
@@ -119,50 +80,41 @@ Vérfier que Vojta est référencé quelque part.
 Plongements et formulaires {{{2
 --------------------------
 
-(B) Fusionner ce qui peut l'être de sec:form-ab et sec:form-ab2.
-        Fait gloablement. Reste à ajuster les notations dans mumford et vojta
-        là où ces sections sont référencées.
-
 Maths {{{1
 =====
 
 Vojta {{{2
 -----
 
-(C) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
+(B) Expliquer que V est une sous-var de P^n et pas de A
 
-(C) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
+(B) Écrire les variantes prévues pour le produit
+
+(B) Dans les résultats actuels, remplacer n par max(n, card S)
+
+(D) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
+
+(D) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
 2.4.1 et lemme 2.4.9 (env. 14 pages), à voir avec pph
 
-(C) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
+(D) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
 \puiss par un 2 dans \Vfar comme ça, en principe sans perte à côté.
 
-(C) Virer le 4 dans \Vbig ?
+(D) Virer le 4 dans \Vbig ?
 
-(C) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
+(D) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
 fine pour le deuxième \rdiv
 
-(C) Degré des formules en c a^2 au lieu de 2a^2 ?
+(D) Degré des formules en c a^2 au lieu de 2a^2 ?
 
 
 Mumford {{{2
 -------
 
-(A) Réintégrer (une partie de) l'annexe B
-
-(A) Refaire Liouville
-
-(A) Changer les constantes dépendant du plongement
-
-Annexe normes et mesures {{{2
-------------------------
-
-(B) Faire un état des lieux et un plan d'attaque.
+(A) Écrire la version étendue
 
 Plongements et formulaires {{{2
 --------------------------
-
-(A) Transférer la partie interface depuis vojta vers l'annexe (début)
 
 (B) Compléter les preuves (cf. notes manuscriptes en partie)
 
@@ -175,19 +127,12 @@ duplication :
 Autres, divers {{{2
 --------------
 
-(C) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
+(B) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
 remplacer \C_v par k_v (voire k) ?
     Question plus importante : a-t-on besoin de savoir ça ??
 
 Lecture {{{1
 =======
-
-Mumford {{{2
--------
-
-(B) Lire attentivement la partie proprement mumford de remdcl.
-
-(B) Relire le Mumford de Fahri.
 
 Références à acquérir et à ajouter au .bib {{{2
 ------------------------------------------
@@ -200,6 +145,14 @@ Rémond, sur le thm du produit. XXIe journées arithm de Rome, 99
 Vojta, Apllications of AAG (?) to Diophantine Approx LNM 1553
 
 Hartshorne, Ample Subvarieties of Abelian Var, LNM 156
+
+Pour l'annexe de Serre avec les formules de multiplication :
+MR0570648 (82k:10041) Waldschmidt, Michel Nombres
+transcendants et groupes algébriques. (French) [Transcendental
+numbers and algebraic groups] With appendices by Daniel Bertrand
+and Jean-Pierre Serre. With an English summary. Astérisque,
+69-70. Société Mathématique de France, Paris, 1979. 218 pp.
+(Reviewer: Pierre Lelong), 10F35 (14G25 14L15)
 
 (B) Trucs sur Z_X de Rémond {{{2
 
