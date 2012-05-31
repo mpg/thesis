@@ -725,8 +725,6 @@
 \newcommand*\normlun [1]   {\norm{#1}\sb1}
 \newcommand*\normeuc [1]   {\norm{#1}\sb2}
 \newcommand*\normhom [1]   {\norm{#1}\sb{\mathrm h}}
-\newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
-\newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 
 \nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de
   la forme \PH}
@@ -744,6 +742,7 @@
 \newdelimcommandx \av  [3][3=\place] {\abs#1   {#2}\ssub{#3}}
 \newdelimcommandx \nv  [4][4=\place] {\norm#1  {#3}\sb{\sfirst{#2} #4}}
 \newdelimcommandx \nnv [4][4=\place] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
+\newcommand \nh {\mathrm h} % usage : \nv\nh P
 
 \nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un
   nombre}
@@ -754,6 +753,8 @@
   multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
   si $\place$ est archimédienne}
 
+\newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
+\newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 \newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
 

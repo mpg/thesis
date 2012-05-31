@@ -463,23 +463,81 @@ d'une variété, notation \( \gamma_n \).]
 
 À chaque place \( \place \) d'un corps de nombres \( \cdn \), on associe la
 valeur absolue qui prolonge une des valeurs absolues standard de \( \Q \),
-autrement dit \( \av p = p^{-1} \) si \( \place \mid p \) et \( \av 2 = 2 \)
-si \( \place \) est archimédienne.
+autrement dit \( \av p = p^{-1} \) si \( \place \) divise un premier \( p \)
+et \( \av 2 = 2 \) si \( \place \) est archimédienne.
 
 Si \( \place \) est une place finie de \( \cdn \), on définit la norme \(
   \place \)-adique d'une famille finie comme le maximum des valeurs absolues
-\( \place \)-adiques de ses éléments. On définit alors la norme d'un polynôme
-comme celle de la famille de ses coefficients. Aux places infinies, on dispose
-des différentes normes et mesures définies en~\ref{sec:nma-def}.
+\( \place \)-adiques de ses éléments. Si \( v \) est archimédienne, on
+utilisera les normes usuelles suivantes :
+\begin{align}
+  \nv\infty x & = \max_i{ \av{ x_i } } &
+  \nv1 x & = \sum_i{ \av{ x_i } } &
+  \nv2 x & = \Bigl( \sum_i{ \av{ x_i }^2 } \Bigr)^{1/2}
+  \pmm.
+\end{align}
+On définit alors la norme d'un polynôme comme celle de la famille de ses
+coefficients. Pour les polynômes (multi)homogènes, on sera également amené à
+utiliser la variante suivante de la norme euclidienne :
+\begin{equation}
+  \nv\nh P
+  =
+  \bigl(
+  \sum_\alpha \av{P_\alpha}^2 \cdot \binom{\delta}{\alpha}^{-1}
+  \bigr)^{1/2}
+  \quad\text{où }
+  P = \sum_\alpha P_\alpha X^\alpha
+  \text{et}
+  \delta = \deg P
+\end{equation}
+avec les notations de la sous-section précédente concernant les puissances et
+coefficients multinomiaux. Cette norme est utilisée par exemple
+dans~\cite{nesphilnm} p. 111, dont le lemme~3.3 (et sa démonstration) rappelle
+ou établi quelques comparaison entre cette norme et d'autres quantités
+usuelles.
+
+Aux places archimédiennes, on dispose également de deux notions de mesure pour
+les polynômes. La première est la classique mesure de Mahler, définie par
+\begin{equation}
+  \ln \mahler P
+  =
+  \int_0^1 \Diff t_1 \dots \int_0^1 \Diff t_n
+  \ln \av{ P(\expb^{2\pi i t_1}, \dots, \expb^{2\pi i t_n}) }
+\end{equation}
+si \( P \neq 0 \) et \( \mahler(0) = 0 \). La seconde est une variante
+introduite par \bsc{Philippon} pour les formes multihomogènes en intégrant sur
+un produit de sphères et non de cercles ainsi qu'en ajoutant un facteur
+correctif. Plus précisément :
+\begin{equation}
+  \log \mespph F
+  =
+  \bigl(
+    \int_{S_{1}\times\cdots\times S_{l}}
+    \log\av F\ \mu_1 \wedge \cdots \wedge \mu_l
+  \bigr)
+  + \sum_{k=1}^l \delta_k \cdot \gamma_{n_k}
+  \pmm,
+\end{equation}
+où \( S_k = \{ u \in \C^{n_k},\ \normeuc u = 1 \} \) est la sphère de
+dimension \( 2n_k-1 \) plongée dans \( \C^{n_k} \) muni de sa structure
+hermitienne usuelle, \( \mu_k \) désigne la mesure sur \( S_k \) invariante
+par l'action du groupe unitaire et normalisée par \( \mu_k(S_k) = 1 \), et
+enfin \( \gamma_n = \frac12 \sum_{q=1}^{n} \frac1q \). On renvoie
+à~\cite{nesphilnm} p.~86 pour un rappel des propriétés essentielles.
 
 On notera \( \nv\star\truc \) la norme locale en \( \place \) correspondant à
 la norme \( \star \) si \( \place \) est archimédienne et à celle du maximum
 sinon. De même, \( \mvp{} \) et \( \mvm{} \) désignent respectivement la
 mesure de \bsc{Philippon} et de \bsc{Mahler} si \( \place \) est archimédienne
-et la norme du maximum sinon.
+et la norme du maximum (de la famille des coefficients) sinon.
+Si \( \mathcal F = (F_1, \dots, F_p) \) est une famille de polynômes, on
+définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la norme \(
+  \nv\star\truc \) du vecteur des \( \nv\star{ F_i } \).
 
-On définit alors la hauteur additive d'une famille finie d'éléments de \( \cdn
-\), ou d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
+\medskip
+
+On définit maintenant la hauteur additive d'une famille finie d'éléments de \(
+  \cdn \), d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
 \begin{equation}
   \hautl[\star]\truc
   =
@@ -490,9 +548,8 @@ On définit alors la hauteur additive d'une famille finie d'éléments de \( \cd
 \end{equation}
 où \( \degv = [\cdn_\place : \Q_\place] / [\cdn : \Q] \),
 la somme est prise sur l'ensemble des places de \( \cdn \) et \( \star \)
-désigne l'une des normes ou mesures archimédiennes de l'annexe~\ref{chap:nma}.
-On note également \( \Hautm[\star] = \exp(\Hautl[\star]) \) la hauteur
-multiplicative.
+désigne l'une des normes ou mesures introduites ci-dessus.  On note également
+\( \Hautm[\star] = \exp(\Hautl[\star]) \) la hauteur multiplicative.
 
 La hauteur d'une famille, ainsi définie, est invariante par multiplication de
 cette famille par un scalaire, et ne dépend pas non plus du corps de nombres.
@@ -501,7 +558,7 @@ celle de ses coordonnées homogène.
 
 Si l'on fixe un plongement \( \vaemb \colon \va \to \projd \), on a donc des
 notions de hauteur sur \( \va(\Qbar) \) associée à ce plongement. Si de plus
-de plongement est associé à un fibré \( \fibre \) symétrique, on peut
+ce plongement est associé à un fibré \( \fibre \) symétrique, on peut
 définir de façon classique une hauteur normalisée \( \Hautn \) (dite de
 \NT), qui dépend encore du fibré \( \fibre \) mais plus du choix d'un
 plongement particulier associé à ce fibré, ni de la norme ou mesure utilisée
@@ -514,7 +571,11 @@ l'espace de \MoW de \( \va \), défini comme
 \).
 Plus précisément, la partie \( \MW\cdn = \va(\cdn) \otimes_\Z \R \)
 définie sur un corps de nombres \( \cdn \) est un espace euclidien de
-dimension (finie) égale au rang de \( \va \) sur \( \cdn \).
+dimension (finie) égale au rang de \( \va \) sur \( \cdn \). Par extension, si
+\( \Gamma \) est un sous-groupe de \( \va(\Qbar) \), on note \( \MW\Gamma \)
+le sous-espace de \( \MW\Qbar \) engendré par l'image de \( \Gamma \) ; cet
+espace est de dimension finie si et seulement si \( \Gamma \) est de rang
+fini.
 
 
 \subsection{Plongement projectif} \label{sec:vaemb}
@@ -524,7 +585,7 @@ associé à un fibré symétrique comme évoqué ci-dessus. On introduit alors
 quelques constantes et notations associées à ce plongement. L'existence de
 constantes possédant les propriétés voulues est établie dans
 l'annexe~\ref{chap:plong-mm} pour tout plongement ; des valeurs explicites
-sont données pour certains types de plongement.
+sont éventuellement données pour certains types de plongement.
 
 Pour commencer, on note \( \htcmp \) une constante réelle telle que
 \begin{equation} \label{e:comp-h-hn}

@@ -1,5 +1,5 @@
 \documentclass[
-full,
+% full,
 % pph,
 % nomark,
 ] {mpg-preth}
@@ -7,13 +7,13 @@ full,
 \includeonly {%
   % title+toc,
   %
-  % c-intro,
+  c-intro,
   % c-vojta,
   % c-mumford,
-  c-union,
+  % c-union,
   %
   % a-plong,
-  % a-normes-mesures,
+  a-normes-mesures,
   %
   % biblio,
   % notations,
@@ -42,16 +42,8 @@ full,
 
 \inlineinclude{biblio}{%
   \chapter{Références bibliographiques}
-  \setlength\overfullrule{0pt}% XXX
   \printbibliography[heading=bibempty]
   \cleardoublepage
 }
-
-%% pas du tout à jour
-%\inlineinclude{notations}{%
-%  \chapter{Liste des notations}
-%  \printnomenclature
-%  \cleardoublepage
-%}
 
 \end{document}
