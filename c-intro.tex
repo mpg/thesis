@@ -452,46 +452,43 @@ l'inégalité de \bsc{Liouville}, à moins que $z$ ne soit justement sur
 $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 
-\clearpage % temporaire
 
 \section{Définitions et notations}
 
-\todo[formes de Chow et hauteur d'une variété, notation \( \gamma_n \).]
-
 \subsection{Formes homogènes et multihomogènes}
 
-On notera généralement \( \cp = (\cp[0], \dots, \cp[n]) \) un groupe de
+On notera généralement \( \vp = (\vp[0], \dots, \vp[n]) \) un groupe de
 variables. Si \( \ip \in \N^{n+1} \) est un multiindice, on notera
-\( \cp^\ip = \cp[0]^{\ip[0]} \cdots \cp[n]^{\ip[n]} \). On introduit également
+\( \vp^\ip = \vp[0]^{\ip[0]} \cdots \vp[n]^{\ip[n]} \). On introduit également
 les notations \( \ip! = \ip[0]! \cdots \ip[n]! \) et \( \lgr\ip = \ip[0] +
   \dots + \ip[n] \) ; on note alors \( \binom{\lgr\ip}{\ip} =
   \frac{\lgr\ip!}{\ip!} \) le coefficient multinomial. Pour les dérivées, on
 utilisera les notations
 \begin{equation}
-  \frac{\partial^\ip}{\partial \cp^\ip}
+  \frac{\partial^\ip}{\partial \vp^\ip}
   =
-  \frac{ \partial^{\ip[0]} }{ \partial \cp^{\ip[0]} }
+  \frac{ \partial^{\ip[0]} }{ \partial \vp^{\ip[0]} }
   \cdots
-  \frac{ \partial^{\ip[n]} }{ \partial \cp^{\ip[n]} }
+  \frac{ \partial^{\ip[n]} }{ \partial \vp^{\ip[n]} }
   \quad\text{et}\quad
-  \der\ip
+  \der[\ip]
   =
-  \frac1{\ip!} \frac{\partial^\ip}{\partial \cp^\ip}
+  \frac1{\ip!} \frac{\partial^\ip}{\partial \vp^\ip}
   \pmm.
 \end{equation}
 
 Introduisons maintenant quelques notations pour les formes multihomogènes ;
 nous travaillerons principalement avec des formes sur des puissances d'espaces
 projectifs, nous nous limitons donc à ce cas pour alléger un peu. On notera
-\( \cmp = (\cmp[1], \dots, \cmp[m]) \) un groupe de groupe de variables, où \(
-  \cmp[i] = (\cmp[i][0], \dots, \cmp[i][n]) \). On étend naturellement les
-notations projectives : pour \( \imp \in \N^{(n+1)m} \) on note \( \cmp^\imp =
-  (\cmp[1])^{\imp[1]} \cdots (\cmp[m])^{\imp[m]} \) ; on procède de même pour
+\( \vmp = (\vmp[1], \dots, \vmp[m]) \) un groupe de groupe de variables, où \(
+  \vmp[i] = (\vmp[i][0], \dots, \vmp[i][n]) \). On étend naturellement les
+notations projectives : pour \( \imp \in \N^{(n+1)m} \) on note \( \vmp^\imp =
+  (\vmp[1])^{\imp[1]} \cdots (\vmp[m])^{\imp[m]} \) ; on procède de même pour
 les factorielles et les dérivées (divisées). Par ailleurs, on note \( \vlg\imp
   = (\lgr{\imp[1]}, \dots, \lgr{\imp[m]}) \) le vecteur des longueurs de \(
   \ip \) et \( \lgt\imp = \sum_{i=1}^m \lgr{\imp[i]} \).
 
-\subsection{Normes et hauteurs}
+\subsection{Normes locales}
 
 À chaque place \( \place \) d'un corps de nombres \( \cdn \), on associe la
 valeur absolue qui prolonge une des valeurs absolues standard de \( \Q \),
@@ -554,8 +551,29 @@ où \( S_k = \{ u \in \C^{n_k},\ \normeuc u = 1 \} \) est la sphère de
 dimension \( 2n_k-1 \) plongée dans \( \C^{n_k} \) muni de sa structure
 hermitienne usuelle, \( \mu_k \) désigne la mesure sur \( S_k \) invariante
 par l'action du groupe unitaire et normalisée par \( \mu_k(S_k) = 1 \), et
-enfin \( \gamma_n = \frac12 \sum_{q=1}^{n} \frac1q \). On renvoie
+enfin
+\begin{equation} \label{e:def-gamma-n}
+  \gamma_n = \frac12 \sum_{q=1}^{n} \frac1q
+  \pmm.
+\end{equation}
+On renvoie
 à~\cite{nesphilnm} p.~86 pour un rappel des propriétés essentielles.
+
+On rappelle au passage la définition du nombre de \bsc{Stoll}
+\begin{equation} \label{e:def-stoll}
+  \stoll n
+  =
+  \sum_{i=1}^{n} \gamma_i
+  =
+  \sum_{i=1}^{n} \sum_{j=1}^{i} \frac1{2j}
+\end{equation}
+et les majorations élémentaires
+\begin{align}
+  \gamma_n & \le \frac{1 + \ln n}2
+  &
+  \stoll n & \le \frac{(n+1) \ln(n+1)}2 \le n \ln(n+1)
+\end{align}
+obtenues en comparant avec des intégrales, par exemple.
 
 On notera \( \nv\star\truc \) la norme locale en \( \place \) correspondant à
 la norme \( \star \) si \( \place \) est archimédienne et à celle du maximum
@@ -566,10 +584,10 @@ Si \( \mathcal F = (F_1, \dots, F_p) \) est une famille de polynômes, on
 définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la norme \(
   \nv\star\truc \) du vecteur des \( \nv\star{ F_i } \).
 
-\medskip
+\subsection{Hauteurs}
 
-On définit maintenant la hauteur additive d'une famille finie d'éléments de \(
-  \cdn \), d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
+On définit la hauteur additive d'une famille finie d'éléments de \( \cdn \),
+d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
 \begin{equation}
   \hautl[\star]\truc
   =
@@ -588,10 +606,17 @@ cette famille par un scalaire, et ne dépend pas non plus du corps de nombres.
 Ceci permet de définir la hauteur d'un point de \( \projd(\Qbar) \) comme
 celle de ses coordonnées homogène.
 
-Si l'on fixe un plongement \( \vaemb \colon \va \to \projd \), on a donc des
-notions de hauteur sur \( \va(\Qbar) \) associée à ce plongement. Si de plus
-ce plongement est associé à un fibré \( \fibre \) symétrique, on peut
-définir de façon classique une hauteur normalisée \( \Hautn \) (dite de
+Si \( V \) est une sous-variété de \( \projd \) on peut lui associer des
+formes de \bsc{Chow} associées à certains indices de la façon rappelée dans
+\cite{nesphilnm} au début du chapitre~6. Nous ne considérerons généralement
+que la forme d'indice \( (1, \dots, 1) \), que nous noterons \( \chow V \).
+Cette forme est bien définie à multiplication par un scalaire près, la
+définition \( \hautl[\star] V = \hautl[\star]{ \chow V } \) a donc un sens.
+
+Par ailleurs, si l'on fixe un plongement \( \vaemb \colon \va \to \projd \),
+on a des notions de hauteurs sur \( \va(\Qbar) \) associées à ce plongement.
+Si de plus ce plongement est associé à un fibré \( \fibre \) symétrique, on
+peut définir de façon classique une hauteur normalisée \( \Hautn \) (dite de
 \NT), qui dépend encore du fibré \( \fibre \) mais plus du choix d'un
 plongement particulier associé à ce fibré, ni de la norme ou mesure utilisée
 aux places archimédiennes pour définir la hauteur projective.
@@ -610,7 +635,7 @@ espace est de dimension finie si et seulement si \( \Gamma \) est de rang
 fini.
 
 
-\subsection{Plongement projectif} \label{sec:vaemb}
+\subsection{Plongement projectif de la variété abélienne} \label{sec:vaemb}
 
 On supposera en général fixé un plongement \( \vaemb \colon \va \to \projd \)
 associé à un fibré symétrique comme évoqué ci-dessus. On introduit alors
