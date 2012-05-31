@@ -456,8 +456,40 @@ $\vai$ ; ce qui établit le théorème~\ref{t:mumford}.
 
 \section{Définitions et notations}
 
-\todo[Coordonnées projectives et multiprojectives, formes de Chow et hauteur
-d'une variété, notation \( \gamma_n \).]
+\todo[formes de Chow et hauteur d'une variété, notation \( \gamma_n \).]
+
+\subsection{Formes homogènes et multihomogènes}
+
+On notera généralement \( \cp = (\cp[0], \dots, \cp[n]) \) un groupe de
+variables. Si \( \ip \in \N^{n+1} \) est un multiindice, on notera
+\( \cp^\ip = \cp[0]^{\ip[0]} \cdots \cp[n]^{\ip[n]} \). On introduit également
+les notations \( \ip! = \ip[0]! \cdots \ip[n]! \) et \( \lgr\ip = \ip[0] +
+  \dots + \ip[n] \) ; on note alors \( \binom{\lgr\ip}{\ip} =
+  \frac{\lgr\ip!}{\ip!} \) le coefficient multinomial. Pour les dérivées, on
+utilisera les notations
+\begin{equation}
+  \frac{\partial^\ip}{\partial \cp^\ip}
+  =
+  \frac{ \partial^{\ip[0]} }{ \partial \cp^{\ip[0]} }
+  \cdots
+  \frac{ \partial^{\ip[n]} }{ \partial \cp^{\ip[n]} }
+  \quad\text{et}\quad
+  \der\ip
+  =
+  \frac1{\ip!} \frac{\partial^\ip}{\partial \cp^\ip}
+  \pmm.
+\end{equation}
+
+Introduisons maintenant quelques notations pour les formes multihomogènes ;
+nous travaillerons principalement avec des formes sur des puissances d'espaces
+projectifs, nous nous limitons donc à ce cas pour alléger un peu. On notera
+\( \cmp = (\cmp[1], \dots, \cmp[m]) \) un groupe de groupe de variables, où \(
+  \cmp[i] = (\cmp[i][0], \dots, \cmp[i][n]) \). On étend naturellement les
+notations projectives : pour \( \imp \in \N^{(n+1)m} \) on note \( \cmp^\imp =
+  (\cmp[1])^{\imp[1]} \cdots (\cmp[m])^{\imp[m]} \) ; on procède de même pour
+les factorielles et les dérivées (divisées). Par ailleurs, on note \( \vlg\imp
+  = (\lgr{\imp[1]}, \dots, \lgr{\imp[m]}) \) le vecteur des longueurs de \(
+  \ip \) et \( \lgt\imp = \sum_{i=1}^m \lgr{\imp[i]} \).
 
 \subsection{Normes et hauteurs}
 
