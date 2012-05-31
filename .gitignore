@@ -12,5 +12,6 @@
 *.nls
 *.loc
 *.run.xml
+*.fls
 
 .*.swp
