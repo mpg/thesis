@@ -4,63 +4,15 @@ Rédaction {{{1
 Général {{{2
 -------
 
-(B) Les notations sur les coordonnées (multi)homogènes sont sans doute à
-placer dans le chap. 1 plutôt que dans l'intro de Vojta : on utilise au moins
-de l'homogène dans Mumford, et probablement du multi dans NMA.
-- Penser aux dérivées divisées aussi.
-- majorations multinômiales et autres : les regrouper au début de NMA ?
-    Virer ce qui devient redondant dans Vojta.
-    Virer ce qui devient redondant dans NMA.
-
-(B) Virer NMA et placer ce qu'il faut dans l'intro
-
-(B) Finir les notations/def de l'intro (cf todo dedans)
-
 (B) Détails pour coro style Siegel-Lang dans l'intro
 
 (C) Ajouter des références biblio pour toute l'intro.
 
-Notations {{{2
----------
-
-(D) À homogénéiser petit à petit. {{{3
-Noter ci-dessous les divergences observées, qui seront traitées une par une
-tranquillement.
-
-Dans siegel: passer aux nouvelles macros multiprojectives
-- \lambda devient \imp
-- p, q et s dans les lemmes de la section « calculs de hauteur »
-- l:hmat-wemba (avant, énoncé et preuve) : p, q (\fcti) et s pas bons
-
-Unifier les indices :
-- i et j en haut (de 1 à m ou m-1)
-- k et l en bas (de 0 à n)
-- en fait, le contraire paraît mieux (cohérence avec homogène simple)
-
-Clarifier l'utilisation des (multi)variables X, Y : peut-on les réutiliser
-pour le cas d'un projectif simple (pas produit) ? Ou vaut-il mieux utiliser
-une autre lettre (W est sans doute libre) ? (Ensuite, le dire dans la
-nomenclature.)
-    Oui, on peut. Sinon trop relou W partout dans Mumford. Mais expliquer ça
-    dans l'intro, puis en début de partie multihomogène.
-
-\vlg vs \lg vs \lgr...
-    Les définitions paraissent OK, vérifier les usages au cas où.
-
 Macros {{{2
 ------
 
-(D) Vojta : macros pour \Lambda et f(u)
-
-(D) retrier les macros de Vojta
-
-(D) hauteurs : faire une version dont l'argument type-de-norme est obligatoire
-
 (D) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
 -> \Haut\point).
-
-(D) (vojta) pour \rfull etc : mettre le degré en bas (plus cohérent avec les
-parties homogènes)
 
 Biblio {{{2
 ------
@@ -77,9 +29,6 @@ LNM : citer directement l'ouvrage, pas les chapitres.
 
 Vérfier que Vojta est référencé quelque part.
 
-Plongements et formulaires {{{2
---------------------------
-
 Maths {{{1
 =====
 
@@ -94,7 +43,7 @@ Vojta {{{2
 
 (D) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
 
-(D) Mettre les plongement adapté en annexe : sections 2.2.3 et 2.2.4 plus
+(D) Mettre les plongement adaptés en annexe : sections 2.2.3 et 2.2.4 plus
 2.4.1 et lemme 2.4.9 (env. 14 pages), à voir avec pph
 
 (D) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
@@ -111,7 +60,9 @@ fine pour le deuxième \rdiv
 Mumford {{{2
 -------
 
-(A) Écrire la version étendue
+(A) Écrire la version étendue (?)
+
+(B) Expliquer l'obstruction (à reprendre dans l'intro ensuite)
 
 Plongements et formulaires {{{2
 --------------------------
@@ -124,6 +75,17 @@ duplication :
   proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à
   un cas particulier de l'hypothèse~\eqref{e:clab-loc}.
 
+Décomptes {{{2
+---------
+
+(B) Utiliser le quotient \Gamma / \vai dans le cas d'un translaté
+
+(B) Utiliser la version de Vojta pour produit
+
+(B) Réorganiser les résultats et leur hiérarchie
+
+(C) Rédiger la pseudo-minimisation pénible
+
 Autres, divers {{{2
 --------------
 
@@ -134,6 +96,11 @@ Autres, divers {{{2
 (B) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
 remplacer \C_v par k_v (voire k) ?
     Question plus importante : a-t-on besoin de savoir ça ??
+    Élements de réponse :
+    - par k, certainement pas (si X(k) vide).
+    - par k_v non plus, même raison (penser à X(R) vide)
+    - par un truc dans lequel \Qbar est dense, ça serait sympa par contre :
+    c'est OK aux places infinies, mais pour les autres ?
 
 Lecture {{{1
 =======
