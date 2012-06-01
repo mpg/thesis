@@ -83,22 +83,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \le
     \sqrt{\frac d \expapx}
     (4\puiss\genre)^{\puiss\genre}
-    \bigl(
-      - \ln \expapx
-      +
-      \cst{big/cone}
-    \bigr)
-    \pmm,
-  \end{equation}
-  où
-  \begin{equation}
-    \newcst[]{big/cone}
-    =
-    9
-    + 2 \ln \nclmaps
-    + \puiss \deg\va
-    + \ln(d+1) (n+1 + \puiss\genre)
-    + \puiss\genre (\ln(\puiss\genre) + 2)
+    \ln \Lambda_4
     \pmm.
   \end{equation}
 \end{lem}
@@ -109,16 +94,16 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   \( \phi =( \puiss \, \cst{v-gen})^{-1} \) et
   \( \rho = \sqrt{ \expapx / d } \).  On constate facilement que
   \( \phi \le \expapx / (2580 d) \) de sorte que ce couple \( (\rho, \phi) \)
-  satisfait à~\eqref{e:rho-phi}. Par ailleurs, il est clair que la
-  condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig}, car \(
+  satisfait à~\eqref{e:rho-phi}. Par ailleurs, il est assez facile de voir que la
+  condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig} : en effet \(
     \cst{v-gen} \ge 2/\expapx \) et la parenthèse dans le membre de droite
-  de~\eqref{e:Mbig} est largement majorée par \( 3 \cst{ht-v-gen1}
-  \).\worknote{sauf peut-être \( h(\vai) \) vs \( h(V) \)} On peut donc
-  appliquer le théorème~\ref{t:mumford} et conclure que
-  \( \hautn{ x_{i+1} } > (1 + \sqrt{\expapx / d}) \hautn{ x_i } \) pour tout
-  \( i \le p-1 \).
+  de~\eqref{e:Mbig} est largement majorée par \( 4 \cst{ht-v-gen1} \) en
+  utilisant entre autres~\eqref{e:comp-h-hn-var} et le fait que \( \hautn \vai
+    = 0 \) (prop.~9 de \cite{phiha1}).
 
-  On pose alors
+  On peut donc appliquer le théorème~\ref{t:mumford} et conclure que
+  \( \hautn{ x_{i+1} } > (1 + \sqrt{\expapx / d}) \hautn{ x_i } \) pour tout
+  \( i \le p-1 \). On pose alors
   \begin{equation}
     \eta
     =
@@ -169,50 +154,47 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \puiss (2\puiss\genre)^{\puiss\genre}
     \cdot 2 \sqrt{\frac d \expapx}
     \cdot \ln \Lambda_4
-    \le
-    (4\puiss\genre)^{\puiss\genre}
-    \cdot \sqrt{\frac d \expapx}
-    \cdot \ln \Lambda_4
-    \pmm.
   \end{equation}
-  On écrit alors
-  \begin{align}
-    \ln \Lambda_4
-    & =
-    \frac\puiss{\puiss-\genre}
-    \left(
-      \ln 86
-      + \ln \nclmaps
-      + \genre \ln 5
-      + \ln d
-      + {\textstyle \ln \binom{n+d}d}
-      - \ln \expapx
-    \right)
-    \\ & \qquad
-    + \puiss \bigl(
-      \deg\va + \genre (\ln2/2 + \ln(\puiss\genre) + \ln d)
-    \bigr)
-    \\ & \le
-    2 \bigl(
-      9/2
-      + \ln \nclmaps
-      + \genre \ln 5
-      + (n+1) \ln(d+1)
-      - \ln \expapx
-    \bigr)
-    \\ & \qquad
-    + \puiss \deg\va
-    + \puiss\genre (\ln(\puiss\genre) + \ln2/2)
-    + \puiss\genre \ln d
-    \\ & \le
-    - \ln \expapx
-    + 9
-    + 2 \ln \nclmaps
-    + \puiss \deg\va
-    + \ln(d+1) (n+1 + \puiss\genre)
-    + \puiss\genre (\ln(\puiss\genre) + 2)
-  \end{align}
+  qui donne aisément le résultat annoncé.
 \end{proof}
+
+
+  % \begin{align}
+  %   \ln \Lambda_4
+  %   & =
+  %   \frac\puiss{\puiss-\genre}
+  %   \left(
+  %     \ln 86
+  %     + \ln \nclmaps
+  %     + \genre \ln 5
+  %     + \ln d
+  %     + {\textstyle \ln \binom{n+d}d}
+  %     - \ln \expapx
+  %   \right)
+  %   \\ & \qquad
+  %   + \puiss \bigl(
+  %     \deg\va + \genre (\ln2/2 + \ln(\puiss\genre) + \ln d)
+  %   \bigr)
+  %   \\ & \le
+  %   2 \bigl(
+  %     9/2
+  %     + \ln \nclmaps
+  %     + \genre \ln 5
+  %     + (n+1) \ln(d+1)
+  %     - \ln \expapx
+  %   \bigr)
+  %   \\ & \qquad
+  %   + \puiss \deg\va
+  %   + \puiss\genre (\ln(\puiss\genre) + \ln2/2)
+  %   + \puiss\genre \ln d
+  %   \\ & \le
+  %   - \ln \expapx
+  %   + 9
+  %   + 2 \ln \nclmaps
+  %   + \puiss \deg\va
+  %   + \ln(d+1) (n+1 + \puiss\genre)
+  %   + \puiss\genre (\ln(\puiss\genre) + 2)
+  % \end{align}
 
 On utilise ensuite le fait suivant.
 
@@ -227,8 +209,6 @@ On utilise ensuite le fait suivant.
 \end{proof}
 
 \begin{prop} \label{p:big-gen}
-  \worknote{On pourrait utiliser \( \Gamma / (\Gamma \cap \vai(\Qbar) \) à la
-    place.}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
   On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
@@ -238,11 +218,7 @@ On utilise ensuite le fait suivant.
   \begin{equation}
     \sqrt{\frac d \expapx}
     (4\puiss\genre)^{\puiss\genre}
-    \bigl(
-      - \ln \expapx
-      +
-      \cst{big/cone}
-    \bigr)
+    \ln \Lambda_4
     \left(
       3 \sqrt\puiss
       \bigl(
@@ -263,7 +239,7 @@ On utilise ensuite le fait suivant.
     \hautn{\ex[1]}
     & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
   \end{align}
-  avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\ref{l:big-by-cone}.
 \end{prop}
 
@@ -519,7 +495,7 @@ considérées, on utilisera donc le scolie suivant.
 \section{Décompte grossier des petits points}
 \label{sec:small-points}
 
-Il ne semble pas facile d'exploiter l'hypothèse d'approximation dans le
+Il ne semble pas évident d'exploiter l'hypothèse d'approximation dans le
 décompte des petits points. Nous rappelons donc pour mémoire comment
 compter les points de petite hauteur d'une variété abélienne appartenant à un
 groupe de type fini donné : ce décompte repose sur une propriété élémentaire
@@ -870,11 +846,7 @@ l'existence de petits points, ce qui donne la proposition suivante.
   \begin{equation}
     \sqrt{\frac d \expapx}
     (4\puiss\genre)^{\puiss\genre}
-    \bigl(
-      - \ln \expapx
-      +
-      \cst{big/cone}
-    \bigr)
+    \ln \Lambda_4
     \left(
       3 \sqrt\puiss
       \bigl(
@@ -895,7 +867,7 @@ l'existence de petits points, ce qui donne la proposition suivante.
     \hautm[2]{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
   \end{align}
-  avec \( \cst{big/cone} \), \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\ref{l:big-by-cone}.
 \end{prop}
 

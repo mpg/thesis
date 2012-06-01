@@ -78,12 +78,11 @@ duplication :
 Décomptes {{{2
 ---------
 
-(C) Utiliser le quotient \Gamma / \vai dans le cas d'un translaté
+(C) Utiliser le quotient \Gamma / \vai dans le cas d'un translaté à partir de
+    p:big-gen ?
     Ça dépend si on veut utiliser un truc du genre B(\eps) pour tenir compte
     de la hauteur des points par lesquels on translate ou pas.
     = à discuter avec pph
-
-(B) Récrire le début en laissant \ln \Lambda_4
 
 (B) Écrire la version produit, en faisant propre la différence modulo \vai
 
@@ -91,12 +90,16 @@ Décomptes {{{2
 
 (C) Rédiger la pseudo-minimisation pénible
 
+(C) inégalités strictes vs larges à vérifier
+
 Autres, divers {{{2
 --------------
 
-(B) Chap 4 : inégalités strictes vs larges à vérifier
-
 (B) Vojta : vérifier les hypothèses type \eps \le 1 etc dans les coro
+
+(C) Plongement (intro + annexe) : hypothèses précises :
+- image projectivement normale pour phiha1 p. 275
+- hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi)
 
 (B) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
 remplacer \C_v par k_v (voire k) ?

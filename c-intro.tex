@@ -488,6 +488,7 @@ les factorielles et les dérivées (divisées). Par ailleurs, on note \( \vlg\im
   = (\lgr{\imp[1]}, \dots, \lgr{\imp[m]}) \) le vecteur des longueurs de \(
   \ip \) et \( \lgt\imp = \sum_{i=1}^m \lgr{\imp[i]} \).
 
+
 \subsection{Normes locales}
 
 À chaque place \( \place \) d'un corps de nombres \( \cdn \), on associe la
@@ -512,11 +513,12 @@ utiliser la variante suivante de la norme euclidienne :
   \nv\nh P
   =
   \bigl(
-  \sum_\alpha \av{P_\alpha}^2 \cdot \binom{\delta}{\alpha}^{-1}
+  \sum_\alpha \av{P_\alpha}^2
+  \cdot {\textstyle \binom{\delta}{\alpha}^{-1} }
   \bigr)^{1/2}
   \quad\text{où }
   P = \sum_\alpha P_\alpha X^\alpha
-  \text{et}
+  \text{ et }
   \delta = \deg P
 \end{equation}
 avec les notations de la sous-section précédente concernant les puissances et
@@ -638,20 +640,28 @@ fini.
 \subsection{Plongement projectif de la variété abélienne} \label{sec:vaemb}
 
 On supposera en général fixé un plongement \( \vaemb \colon \va \to \projd \)
-associé à un fibré symétrique comme évoqué ci-dessus. On introduit alors
-quelques constantes et notations associées à ce plongement. L'existence de
-constantes possédant les propriétés voulues est établie dans
-l'annexe~\ref{chap:plong-mm} pour tout plongement ; des valeurs explicites
-sont éventuellement données pour certains types de plongement.
+projectivement normal et associé à un fibré symétrique comme évoqué ci-dessus.
+On introduit alors quelques constantes et notations associées à ce plongement.
+L'existence de constantes possédant les propriétés voulues est établie dans
+l'annexe~\ref{chap:plong-mm} pour tout plongement satisfaisant les hypothèses
+ci-dessus ; des valeurs explicites y sont éventuellement données pour certains
+types de plongement.
 
-Pour commencer, on note \( \htcmp \) une constante réelle telle que
+Pour commencer, on note \( \htcmp \) une constante réelle telle que pour toute
+sous-variété \( V \) de \( \va \) on ait
+\begin{equation} \label{e:comp-h-hn-var}
+  \abs{ \hautl[2] V - \hautn V }
+  \le
+  \htcmp (\dim V + 1) \deg V
+\end{equation}
+où \( \Hautn \) est la hauteur normalisée telle que définie dans \cite{phiha1}
+pour les variétés, dont les principales propriétés sont résumées par la
+proposition~9 de cette même référence. En particulier on a
 \begin{equation} \label{e:comp-h-hn}
   \abs{ \hautl[2]x - \hautn x } \le \htcmp
   \qquad \forall x \in \va(\Qbar)
   \pmm.
 \end{equation}
-L'existence d'une telle constante est immédiate, d'après les propriétés
-usuelles des hauteurs normalisées.
 
 On introduit une paire de constantes \( \hmclab \) et \( \hlclab = \ln \hmclab
 \), dont la première se décompose en \( \hmclab = \prod_\place \hmclab*^\degv
