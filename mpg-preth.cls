@@ -40,6 +40,7 @@
 \colorlet{keys}{green}
 \colorlet{todo}{red}
 \colorlet{later}{blue}
+\colorlet{out}{gray}
 
 % load various useful packages [[2
 %
@@ -313,7 +314,6 @@
 
 % temporary or outdated stuff [[2
 %
-\colorlet{out}{gray}
 \newcommand \startout [1][] {%
   \worknote[later]{(ne pas relire pour l'instant) #1}
   \let\normal@default@color\default@color

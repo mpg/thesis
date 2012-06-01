@@ -78,11 +78,16 @@ duplication :
 Décomptes {{{2
 ---------
 
-(B) Utiliser le quotient \Gamma / \vai dans le cas d'un translaté
+(C) Utiliser le quotient \Gamma / \vai dans le cas d'un translaté
+    Ça dépend si on veut utiliser un truc du genre B(\eps) pour tenir compte
+    de la hauteur des points par lesquels on translate ou pas.
+    = à discuter avec pph
+
+(B) Récrire le début en laissant \ln \Lambda_4
+
+(B) Écrire la version produit, en faisant propre la différence modulo \vai
 
 (B) Utiliser la version de Vojta pour produit
-
-(B) Réorganiser les résultats et leur hiérarchie
 
 (C) Rédiger la pseudo-minimisation pénible
 
@@ -113,7 +118,7 @@ Perspect. Math. 15 Acad Press, San Diego 1994 p 175-182.
 
 Rémond, sur le thm du produit. XXIe journées arithm de Rome, 99
 
-Vojta, Apllications of AAG (?) to Diophantine Approx LNM 1553
+Vojta, Applications of AAG (?) to Diophantine Approx LNM 1553
 
 Hartshorne, Ample Subvarieties of Abelian Var, LNM 156
 
@@ -125,7 +130,11 @@ and Jean-Pierre Serre. With an English summary. Astérisque,
 69-70. Société Mathématique de France, Paris, 1979. 218 pp.
 (Reviewer: Pierre Lelong), 10F35 (14G25 14L15)
 
-(B) Trucs sur Z_X de Rémond {{{2
+Des trucs pour :
+- majorer le cardinal de la torsion rationnelle (Ratazzi ?)
+- minorer \hmin (?? Pour les courbes, c'est Hindry-Silverman)
+
+Trucs sur Z_X de Rémond {{{2
 
 Pourquoi c'est un sous-fermé de X : Hindry 92 ; LNM 1566 Oort p. 117-122
 

@@ -2,17 +2,28 @@
 \label{chap:union}
 
 Nous déduisons ici des deux chapitres précédents des décomptes
-d'approximations exceptionnelles, en procédant en deux temps : pour les points
-de hauteur assez grande (au sens de~\eqref{e:Vbig} et/ou~\eqref{e:Mbig}), que
-nous appellerons grands points, nous combinons les inégalités de \bsc{Vojta}
-et de \bsc{Mumford} obtenues précédemment ; pour les petits points, on procède
-à des décomptes triviaux soit en oubliant l'hypothèse d'approximation, soit en
-renforçant celle-ci pour interdire leur existence.
+d'approximations exceptionnelles. Plus précisément, on donne un décompte des
+points de hauteur assez grande (au sens de~\eqref{e:Vbig} et~\eqref{e:Mbig}),
+que nous appellerons grands points, en combinant les inégalités de \bsc{Vojta}
+et de \bsc{Mumford} obtenues précédemment.
 
+On en déduit ensuite un décompte des grands points avec une hypothèse
+d'approximation sous la forme d'un produit sur les places, plus naturelle que
+l'hypothèse technique avec un système d'inégalités. Cette forme constitue le
+résultat principal de la thèse.
+
+Enfin, pour les petits points, après avoir rappelé une méthode de décompte
+grossière ne tenant pas compte de l'hypothèse d'approximation, on présente une
+méthode pour les éliminer en renforçant ladite hypothèse, puis on discute de
+choix possibles pour la valeur d'un paramètre laissé libre jusque là, afin
+d'optimiser l'hypothèse et/ou le décompte obtenu.
+
+
+
 \section{Décomptes des grands points}
 \label{sec:big-points}
 
-On commence par compter le nombre de points dans chaque cône tronqué.
+On commence par majorer le nombre de points dans chaque cône tronqué.
 
 \begin{lem} \label{l:big-by-cone}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
@@ -290,15 +301,19 @@ On utilise ensuite le fait suivant.
 \section{Hypothèse d'approximation produit}
 \label{sec:ha-prod}
 
-On utilisera le lemme suivant, qui n'est rien d'autre qu'une version plus
-abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}. Par ailleurs, par rapport
-à cette référence, on a fixé \( \eps'(T) = \eps/2 \), d'où \( A(T) = \card T
-\), car c'est la valeur qui a le plus de sens pour les applications, afin de
-simplifier légèrement l'énoncé et sa preuve. L'énoncé ci-dessous est
+Comme annoncé dans l'introduction (page~\pageref{e:ha-prod}), on déduit ici de
+l'énoncé précédent une version où l'hypothèse d'approximation fait apparaître
+un produit sur l'ensemble des places plutôt qu'une inégalité par place.
+
+Pour cela, on utilise le lemme suivant, qui n'est rien d'autre qu'une version
+plus abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}. Par ailleurs, par
+rapport à cette référence, on a fixé \( \eps'(T) = \eps/2 \), d'où \( A(T) =
+  \card T \), car c'est la valeur qui a le plus de sens pour les applications,
+afin de simplifier légèrement l'énoncé et sa preuve. L'énoncé ci-dessous est
 volontairement aussi abstrait que possible afin de mettre en lumière le
 caractère purement combinatoire de la preuve et d'être utilisable dans le plus
-grand nombre de situations ; juste après l'énoncé on détaille la
-correspondance avec la situation étudiée ici afin d'en éclairer le sens.
+grand nombre de situations ; immédiatement après l'énoncé on détaille la
+correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
 
 \begin{lem}
   Soit \( A \) un ensemble et \( H \) une fonction de \( A \) dans \( [1,
@@ -359,6 +374,7 @@ correspondance avec la situation étudiée ici afin d'en éclairer le sens.
   \]
 \end{lem}
 
+\todo[Différence modulo \( \vai \)]
 Avant de passer à la preuve, expliquons comment nous choisirons les différents
 paramètres. L'ensemble \( A \) sera l'intersection d'un sous-groupe de rang
 fini (voire de type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus
@@ -486,17 +502,28 @@ considérées, on utilisera donc le scolie suivant.
   C'est un calcul élémentaire, fait page~125 de \cite{farhith}.
 \end{proof}
 
+\begin{thm}
+  \todo \color{out}
+  (Résultat final pour les grands points avec hypothèse produit.)
+\end{thm}
+
+\begin{proof}
+  \color{out}
+  Application du scolie précédent au théorème de la section d'avant, puis
+  absorption de la constante de l'hypothèse dans la hauteur par changement
+  d'epsilon.
+\end{proof}
+
 
 
-\section{Décomptes des petits points}
+\section{Décompte grossier des petits points}
 \label{sec:small-points}
 
-Pour compter les petits points, la condition d'approximation utilisée pour les
-grands points est plus délicate à exploiter. On utilisera donc une des trois
-méthodes un peu grossières suivantes : renforcer la condition d'approximation
-de sorte qu'il n'y ait pas de petits points, ou bien compter tous les petits
-points sans tenir compte de la condition d'approximation. Pour cette dernière
-méthode on utilisera le fait suivant.
+Il ne semble pas facile d'exploiter l'hypothèse d'approximation dans le
+décompte des petits points. Nous rappelons donc pour mémoire comment
+compter les points de petite hauteur d'une variété abélienne appartenant à un
+groupe de type fini donné : ce décompte repose sur une propriété élémentaire
+en géométrie euclidienne, que l'on commence par rappeler.
 
 \begin{fact}
   Soient \( E \) un espace euclidien de dimension \( r \) et deux réels \(
@@ -513,14 +540,14 @@ méthode on utilisera le fait suivant.
   parfaitement pour la variante la plus forte, énoncée ci-dessus.
 \end{proof}
 
-Une façon d'utiliser le résultat est, comme annoncé, de compter les petits
-points sans aucune hypothèse d'approximation.
+On en déduit la majoration suivante du nombre de points de petite hauteur sans
+aucune hypothèse d'approximation.
 
 \begin{coro} \label{c:small-va}
   Soit \( \Gamma \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
-  \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \( \hautn x \)
-  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
-  Pour tout réel positif \( R \), on a
+  \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \(
+    \hautn x \) quand \( x \) parcourt l'ensemble des points d'ordre infini de
+  \( \Gamma \).  Pour tout réel positif \( R \), on a
   \begin{equation}
     \card \set*{
       x \in \Gamma
@@ -546,114 +573,13 @@ points sans aucune hypothèse d'approximation.
 
 \begin{rem}
   Si dans l'énoncé précédent on prend \( \Gamma = \va(\cdn) \), on retrouve le
-  lemme~2.11.1, p.~117 de~\cite{farhith}.
+  lemme~2.11.1, p.~117 de~\cite{farhith}. On rappelle par ailleurs que dans ce
+  cas (\todo??) donne une estimation de \( \card \Gamma_\torsion \) et
+  (\todo??) une estimation de \( \hmin \).
 \end{rem}
 
-L'autre méthode de traitement des petits points consiste à renforcer la
-condition d'approximation pour les éliminer grâce à l'inégalité de
-\bsc{Liouville}.
-
-\begin{lem}
-  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
-  \( d \). Si \( R \) et \( F \) sont deux réels positifs,
-  l'ensemble des points \( x \in \va(\Qbar) \) tels que
-  \begin{equation}
-    0
-    <
-    \prod\placerange
-    \distv x V ^\degv
-    \le
-    \expb^{-F}
-    \hautm[2]{x}^{-\expapx}
-    \quad\text{et}\quad
-    \hautn x \le R
-  \end{equation}
-  est vide dès que
-  \( F
-    >
-    (d-\expapx) R
-    + \hautl[1]{ \chow V }
-    + d (u+1) \ln(3d)
-    + \frac32 \ln(n+1)
-    + (d-\expapx) \htcmp
-  \).
-\end{lem}
-
-\begin{proof}
-  Si l'ensemble en question n'est pas vide, on choisit un point \( x \) dedans
-  et on lui applique l'inégalité de \bsc{Liouville}
-  (proposition~\ref{p:liouville}) :
-  \begin{equation}
-    \frac1{
-      (n+1)^{3/2}
-      (3d)^{d (u+1)}
-      \, \hautm[1]{ \chow V }
-      \, \hautm[2] x ^d
-    }
-    \le
-    \prod\placerange
-    \distv x V ^\degv
-    \le
-    \expb^{-F}
-    \hautm[2]{x}^{-\expapx}
-  \end{equation}
-  puis en prenant les opposés des logarithmes
-  \begin{align}
-    F
-    & \le
-    (d-\expapx) \hautl[2] x
-    + \hautl[1]{ \chow V }
-    + d (u+1) \ln(3d)
-    + \frac32 \ln(n+1)
-    \\ & \le
-    (d-\expapx) R
-    + \hautl[1]{ \chow V }
-    + d (u+1) \ln(3d)
-    + \frac32 \ln(n+1)
-    + (d-\expapx) \htcmp
-    \pmm.
-  \end{align}
-  Par contraposée, l'ensemble considéré est vide si cette inégalité est
-  fausse.
-\end{proof}
-
-On en déduit immédiatement le corollaire pratique suivant.
-
-\begin{coro} \label{c:kill-small}
-  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
-  \( d \). Si \( R \) est un réel supérieur ou égal à
-  \begin{equation}
-    \frac1\expapx \left(
-      \hautl[1]{ \chow V }
-      + d (u+1) \ln(3d)
-      + \frac32 \ln(n+1)
-      + d \htcmp
-    \right)
-    \pmm,
-  \end{equation}
-  il n'existe aucun point \( x \in \va(\Qbar) \) tels que
-  \begin{equation}
-    0
-    <
-    \prod\placerange
-    \distv x V ^\degv
-    \le
-    \expb^{- d R}
-    \hautm[2]{x}^{-\expapx}
-    \quad\text{et}\quad
-    \hautn x \le R
-    \pmm.
-  \end{equation}
-\end{coro}
-
-\begin{proof}
-  Application immédiate du lemme précédent avec \( F = d R \).
-\end{proof}
-
-
-
-\section{Décomptes complets}
-\label{sec:all-points}
+On en déduit pour finir un résultat de décompte complet (petits et grands
+points) des approximations exceptionnelles.
 
 \begin{thm} \label{t:inc-small}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
@@ -817,7 +743,121 @@ On en déduit immédiatement le corollaire pratique suivant.
   \) pour conclure.
 \end{proof}
 
-On peut également renforcer la condition d'approximation pour interdire
+Ce résultat n'est pas particulièrement satisfaisant dans le sens où la
+majoration est essentiellement donnée par celle provenant des petits points et
+ne tenant donc pas compte de l'hypothèse d'approximation. La section suivante
+présente une autre approche possible pour obtenir des énoncés ne faisant pas
+explicitement intervenir l'hypothèse que les points sont grands.
+
+
+
+\section{Élimination des petits points}
+\label{sec:no-small-points}
+
+On établit ici une variante du résultat principale où l'on se dispense de
+l'hypothèse que les points sont grands en renforçant l'hypothèse
+d'approximation pour éliminer les petits grâce à l'inégalité de
+\bsc{Liouville}. Le résultat fondamental d'élimination des petits points est
+le suivant.
+
+\begin{lem}
+  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
+  \( d \). Si \( R \) et \( F \) sont deux réels positifs,
+  l'ensemble des points \( x \in \va(\Qbar) \) tels que
+  \begin{equation}
+    0
+    <
+    \prod\placerange
+    \distv x V ^\degv
+    \le
+    \expb^{-F}
+    \hautm[2]{x}^{-\expapx}
+    \quad\text{et}\quad
+    \hautn x \le R
+  \end{equation}
+  est vide dès que
+  \( F
+    >
+    (d-\expapx) R
+    + \hautl[1]{ \chow V }
+    + d (u+1) \ln(3d)
+    + \frac32 \ln(n+1)
+    + (d-\expapx) \htcmp
+  \).
+\end{lem}
+
+\begin{proof}
+  Si l'ensemble en question n'est pas vide, on choisit un point \( x \) dedans
+  et on lui applique l'inégalité de \bsc{Liouville}
+  (proposition~\ref{p:liouville}) :
+  \begin{equation}
+    \frac1{
+      (n+1)^{3/2}
+      (3d)^{d (u+1)}
+      \, \hautm[1]{ \chow V }
+      \, \hautm[2] x ^d
+    }
+    \le
+    \prod\placerange
+    \distv x V ^\degv
+    \le
+    \expb^{-F}
+    \hautm[2]{x}^{-\expapx}
+  \end{equation}
+  puis en prenant les opposés des logarithmes
+  \begin{align}
+    F
+    & \le
+    (d-\expapx) \hautl[2] x
+    + \hautl[1]{ \chow V }
+    + d (u+1) \ln(3d)
+    + \frac32 \ln(n+1)
+    \\ & \le
+    (d-\expapx) R
+    + \hautl[1]{ \chow V }
+    + d (u+1) \ln(3d)
+    + \frac32 \ln(n+1)
+    + (d-\expapx) \htcmp
+    \pmm.
+  \end{align}
+  Par contraposée, l'ensemble considéré est vide si cette inégalité est
+  fausse.
+\end{proof}
+
+On en déduit immédiatement le corollaire pratique suivant.
+
+\begin{coro} \label{c:kill-small}
+  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
+  \( d \). Si \( R \) est un réel supérieur ou égal à
+  \begin{equation}
+    \frac1\expapx \left(
+      \hautl[1]{ \chow V }
+      + d (u+1) \ln(3d)
+      + \frac32 \ln(n+1)
+      + d \htcmp
+    \right)
+    \pmm,
+  \end{equation}
+  il n'existe aucun point \( x \in \va(\Qbar) \) tels que
+  \begin{equation}
+    0
+    <
+    \prod\placerange
+    \distv x V ^\degv
+    \le
+    \expb^{- d R}
+    \hautm[2]{x}^{-\expapx}
+    \quad\text{et}\quad
+    \hautn x \le R
+    \pmm.
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Application immédiate du lemme précédent avec \( F = d R \).
+\end{proof}
+
+On peut alors renforcer la condition d'approximation pour interdire
 l'existence de petits points, ce qui donne la proposition suivante.
 
 \begin{prop} \label{p:all-gen}
@@ -884,7 +924,7 @@ des deux directions suivantes : obtenir la condition la plus faible possible,
 ou bien le décompte le plus précis possible. Dans le premier sens, on obtient
 le résultat suivant.
 
-\begin{thm}
+\begin{coro}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
   On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
@@ -935,7 +975,7 @@ le résultat suivant.
     + (\genre+1) \left( \deg\va + 2\genre (\ln(\genre+1) + 1) \right)
     \pmm.
   \end{equation}
-\end{thm}
+\end{coro}
 
 \begin{proof}
   L'énoncé de la proposition~\ref{p:all-gen} est valable pour tout \( \puiss
@@ -946,6 +986,7 @@ le résultat suivant.
   la proposition~\ref{p:all-gen} avec cette valeur.
 \end{proof}
 
+\textcolor{out}{\todo Dans l'autre sens, discussion et proposition de choix}
 
 \cleardoublepage
 \endinput
