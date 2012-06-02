@@ -85,7 +85,7 @@ On établit ici l'analogue suivant de la classique inégalité de
 \end{prop}
 
 Ce type d'inégalité se prouve de façon naturelle avec la distance algébrique
-(section~\ref{sec:distv-cmp}). Cependant, si l'on traite directement le cas
+(section~\vref{sec:distv-cmp}). Cependant, si l'on traite directement le cas
 général en utilisant la définition, on obtient \( d (u+1) \) comme exposant de
 \( \hautm[2] x \). On commence donc par le cas d'une hypersurface, où la
 distance algébrique admet une expression plus simple, puis on remarque que
@@ -93,8 +93,8 @@ tout variété est une intersection d'hypersurfaces.
 
 On pourrait se ramener au cas d'un hyperplan, où la distance admet une
 expression simple, par un plongement de \bsc{Veronese} (remodelé) comme dans
-le lemme~\ref{l:hs-vero}, mais on obtient en fait de meilleurs constantes en
-utilisant la propriété~\ref{p:dv-p2alg-hs}.
+le lemme~\vref{l:hs-vero}, mais on obtient en fait de meilleurs constantes en
+utilisant la propriété~\vref{p:dv-p2alg-hs}.
 
 \begin{lem} \label{l:liou-hs}
   Soit \( V \) une hypersurface de \( \projd \), d'équation \( F \) et de
@@ -113,7 +113,7 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
 \end{lem}
 
 \begin{proof}
-  Plutôt que la proposition~\ref{p:dv-p2alg-hs}, on utilise en fait
+  Plutôt que la proposition~\vref{p:dv-p2alg-hs}, on utilise en fait
   l'inégalité~\eqref{e:dv-p2alg-hs} établie au cours de sa preuve afin
   d'éviter une comparaison norme-mesure superflue. On remarque également qu'on
   peut supposer \( m = 1 \) dans cette comparaison. On a alors :
@@ -137,7 +137,7 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
   numérique pour la constante.
 \end{proof}
 
-\begin{proof}[\proofname{} de la proposition~\ref{p:liouville}]
+\begin{proof}[\proofname{} de la proposition~\vref{p:liouville}]
   Si \( x \not\in V(\Qbar) \), la proposition~6.1 de~\cite{remdcl}
   donne une forme \( G \) homogène de degré \( d \), contenant \( V \) mais
   pas \( x \), telle que
@@ -147,7 +147,7 @@ utilisant la propriété~\ref{p:dv-p2alg-hs}.
     \hautm[1] V \cdot (d + 1)^{ d (u + 1) }
   \end{equation}
   en tenant compte des différences de hauteurs utilisées, comme observé dans
-  la preuve du lemme~\ref{l:hs-choice}. Il suffit alors d'appliquer le
+  la preuve du lemme~\vref{l:hs-choice}. Il suffit alors d'appliquer le
   lemme précédent à \( \zeros G \) et de remarquer que \( 17/8 \cdot (d+1)^2
     \le (3d)^2 \) pour conclure.
 \end{proof}
@@ -203,7 +203,7 @@ constante de \bsc{Lipschitz}.
   \( \xi : \va^2 \to \va^2,\ (x, y) \mapsto (x + y, x - y) \), qui
   présente l'avantage de pouvoir être représenté globalement
   par une famille \( F \) de formes de degré \( 2 \) dans le plongement de
-  \bsc{Segre} (voir section~\ref{sec:vaemb}). Si l'on note \( z = s(x, y) \)
+  \bsc{Segre} (voir section~\vref{sec:vaemb}). Si l'on note \( z = s(x, y) \)
   et \( z' = s(x', y') \) les images dans ce plongement, on est ainsi ramené à
   montrer que
   \begin{equation} \label{e:addsub-dv}
@@ -220,7 +220,7 @@ constante de \bsc{Lipschitz}.
   formes représentant \( \xi \) pour montrer que \( \nv2{F(z')} \) n'est pas
   trop petit devant \( \nv2 {F(z)} \) puis que \( \nv2{F(z) \wedge F(z')} \)
   n'est pas trop grand devant \( \nv2 {F(z)}^2 \). L'hypothèse faite sur la
-  distance permet d'appliquer le lemme~\ref{l:dv-common-i} à \( z \) et \( z'
+  distance permet d'appliquer le lemme~\vref{l:dv-common-i} à \( z \) et \( z'
   \) (en remplaçant \( n \) par \( n' = n^2 + 2n \)) et donc de supposer,
   quitte à renuméroter les coordonnées, que \( z_0 = z'_0 = 1 \) et \( \nv2{
       z' } \le (n')^{\dv/2} \).  Le développement de
@@ -319,7 +319,7 @@ constante de \bsc{Lipschitz}.
 La stratégie de la preuve est la suivante : si on a deux approximations
 exceptionnelles, suffisamment proches dans l'espace de \bsc{Mordell-Weil} (au
 sens des hypothèses \eqref{e:Mcos} et \eqref{e:Mclose} du
-théorème~\ref{t:mumford}) et de hauteur assez grande, on fabrique, (en prenant
+théorème~\vref{t:mumford}) et de hauteur assez grande, on fabrique, (en prenant
 leur différence, sous l'hypothèse que \( \vai \) est un sous-groupe) une
 approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \), d'après l'inégalité de \bsc{Liouville}.
@@ -350,7 +350,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     \pmm.
   \end{equation}
   Comme \( \varapx \) est translaté d'un sous-groupe \( \vai \), on a
-  \( x'_v - y'_v \in \vai(\Cv) \), donc la proposition~\ref{p:addsub-dv} donne
+  \( x'_v - y'_v \in \vai(\Cv) \), donc la proposition~\vref{p:addsub-dv} donne
   \begin{equation}
     \distv z \vai
     \le
@@ -368,7 +368,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 
 \begin{lem} \label{l:diff-small}
   Soient \( x \) et \( y \) satisfaisant aux hypothèses \eqref{e:Mcos}
-  et \eqref{e:Mclose} du théorème~\ref{t:mumford}, notons \( z \) leur
+  et \eqref{e:Mclose} du théorème~\vref{t:mumford}, notons \( z \) leur
   différence. On a alors \( \hautn z \le (\rho^2/4 + 2\phi + \rho\phi)
     \hautn x \).
 \end{lem}
@@ -401,10 +401,10 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
   \end{align}
 \end{proof}
 
-\begin{proof}[Démonstration (du théorème~\ref{t:mumford}).]
+\begin{proof}[Démonstration (du théorème~\vref{t:mumford}).]
   Compte tenu de l'inégalité de gauche de~\eqref{e:Mclose} et de la
   comparaison entre hauteurs projective et normalisée, le
-  lemme~\ref{l:diff-apx} donne, en prenant le logarithme :
+  lemme~\vref{l:diff-apx} donne, en prenant le logarithme :
   \begin{equation} \label{e:close-log}
     \sum\placerange
     \degv \ln\Distv(z, \vai)
@@ -414,7 +414,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     + \ln(5\sqrt2) + 3 \ln(n + 1) + \hlclab
     \pmm.
   \end{equation}
-  Par ailleurs, le lemme~\ref{l:diff-small} et l'hypothèse~\eqref{e:rho-phi}
+  Par ailleurs, le lemme~\vref{l:diff-small} et l'hypothèse~\eqref{e:rho-phi}
   donnent
   \begin{equation} \label{e:h2-diff}
     \hautl[2] z
@@ -433,7 +433,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 
   Supposons maintenant que \( z \not\in \vai(\Qbar) \) et montrons qu'on
   contredit~\eqref{e:Mbig}. En effet, l'inégalité de \bsc{Liouville}
-  (proposition~\ref{p:liouville}) appliquée à \( z \) et \( \vai \) donne
+  (proposition~\vref{p:liouville}) appliquée à \( z \) et \( \vai \) donne
   \begin{align}
     \sum\placerange
     \degv \ln\Distv(z, \vai)

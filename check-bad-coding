@@ -2,6 +2,10 @@
 
 /bin/echo '===> devrait être \eqref <==='
 grep -n '\\ref{e:' *.tex
+grep -n '\\vref{e:' *.tex
 
 /bin/echo '===> devrait être \ref <==='
 grep -n '\\eqref{[^e]:' *.tex
+
+/bin/echo '===> devrait être \vref <==='
+grep -n '\\ref{[^e]:' *.tex

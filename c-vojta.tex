@@ -7,8 +7,8 @@
 
 Nous établissons d'abord une inégalité de \bsc{Vojta} effective dans le cas
 particulier où la variété à approcher est, dans un plongement fixé \( \vaemb
-\) fixé (\lat{cf.} section~\ref{sec:vaemb}) l'hyperplan \( \vp[0] = 0 \) ;
-nous verrons plus tard (section~\ref{sec:vojta-coro}) que ce cas implique le
+\) fixé (\lat{cf.} section~\vref{sec:vaemb}) l'hyperplan \( \vp[0] = 0 \) ;
+nous verrons plus tard (section~\vref{sec:vojta-coro}) que ce cas implique le
 cas général.
 
 \begin{thm} \label{t:vojta-div}
@@ -34,11 +34,11 @@ cas général.
     \label{e:Vfar}
   \end{align}
   avec
-  \nomuse \Vbig {Dans le théorème~\ref{t:vojta-div}, minore la hauteur du plus
+  \nomuse \Vbig {Dans le théorème~\vref{t:vojta-div}, minore la hauteur du plus
   petit point}
-  \nomuse \Vfar {Dans le théorème~\ref{t:vojta-div}, minore l'écart
+  \nomuse \Vfar {Dans le théorème~\vref{t:vojta-div}, minore l'écart
     multiplicatif entre les points}
-  \nomuse \Vcos {Dans le théorème~\ref{t:vojta-div}, contrôle l'angle entre
+  \nomuse \Vcos {Dans le théorème~\vref{t:vojta-div}, contrôle l'angle entre
     les points}
   \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
     considérée}
@@ -76,18 +76,18 @@ cas général.
 \end{thm}
 
 La démonstration de ce théorème occupera la majeure partie de ce chapitre,
-jusqu'à la section~\ref{sec:vojta-coro} non incluse.
+jusqu'à la section~\vref{sec:vojta-coro} non incluse.
 
 
 
 \section{Réduction et autres préliminaires}
 \label{sec:vojta-reduc}
 
-On rappelle pour commencer que d'après la proposition~\ref{p:dv-hp}, on a
+On rappelle pour commencer que d'après la proposition~\vref{p:dv-hp}, on a
 \( \distv x \divi = \av{x_0} / \nv2 x \), ce qui est une motivation
 pour traiter en premier le cas où \( \divi = \zeros{X_0} \), l'autre raison
 étant que l'indice d'annulation le long de \( \divi \) admet une définition
-particulièrement commode à manipuler dans ce cas (section~\ref{sec:siegel}).
+particulièrement commode à manipuler dans ce cas (section~\vref{sec:siegel}).
 
 Notons pour commencer qu'on peut supposer \( \expapx < 1 \), car sinon
 l'inégalité de la taille appliquée à l'expression de la distance ci-dessus
@@ -101,7 +101,7 @@ satisfaisant~\eqref{e:Vapx}.
 \label{sec:wt}
 
 \nomuse[\ex]{(\ex*)}[chap]{Famille d'approximations de \( \divi \) dont
-  l'existence contredirait le théorème~\ref{t:vojta-div}}
+  l'existence contredirait le théorème~\vref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
 famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Bien que cette
 famille soit toujours supposée satisfaire à toutes les conditions du théorème,
@@ -220,11 +220,11 @@ lemme suivant.
 
 \begin{nota} \label{n:wt-choose}
   \nomuse[\wt]{(\wt*)}[chap]{Poids associés à \( (\ex*) \) et fixés par le
-    scolie~\ref{d:wt-choose}}
+    scolie~\vref{d:wt-choose}}
   \nomdirect{g}{zeta}{\zeta}[chap]{Constante proche de zéro fixée par le
-    scolie~\ref{d:wt-choose}}
+    scolie~\vref{d:wt-choose}}
   On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
-  donnée par l'application du lemme~\ref{l:wt-choose-gen} avec \( \zeta =
+  donnée par l'application du lemme~\vref{l:wt-choose-gen} avec \( \zeta =
     \sqrt{\Vcos} / 2 \).
 \end{nota}
 
@@ -333,7 +333,7 @@ Pour commencer, remarquons que cet ensemble n'est pas vide puisqu'il contient
 \( \va^\puiss \). En effet, la définition de \( \Lambda \) (deux premiers
 arguments du maximum) assure que~\eqref{e:varset-deg}
 et~\eqref{e:varset-deg-prod} sont satisfait ; le fait que \( \cst{vs-ht} \ge
-  \hautl[1]\va \), que \( \Lambda > 2 \) et le lemme~\ref{l:sum-wts}
+  \hautl[1]\va \), que \( \Lambda > 2 \) et le lemme~\vref{l:sum-wts}
 garantissent que la condition~\eqref{e:varset-ht} l'est aussi.
 
 Nous allons voir qu'à partir d'une variété dans \( \varset(\ex) \) on peut en
@@ -361,11 +361,11 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
 \end{prop}
 
 Supposons un instant cet énoncé acquis et voyons comment on en déduit le
-théorème~\ref{t:vojta-div} ; nous appelons « motrice » la forme \( T \) de la
+théorème~\vref{t:vojta-div} ; nous appelons « motrice » la forme \( T \) de la
 proposition car c'est elle qui « fait marcher la machine » en permettant la
 construction itérative dans la démonstration ci-dessus.
 
-\begin{proof}[\proofname\ du théorème~\ref{t:vojta-div}]
+\begin{proof}[\proofname\ du théorème~\vref{t:vojta-div}]
   Voyons comment, en partant d'une variété \( \var \) satisfaisant aux
   hypothèses de la proposition, on peut fabriquer une variété \( \var' \) plus
   petite et appartenant toujours à \( \varset(\ex) \) : on utilise la forme
@@ -535,11 +535,11 @@ construction itérative dans la démonstration ci-dessus.
   \end{align}
   qui contredit directement~\eqref{e:Vbig}. Cette contradiction prouve qu'il
   est absurde de supposer l'existence d'une famille satisfaisant simultanément
-  toutes les conditions du théorème~\ref{t:vojta-div}.
+  toutes les conditions du théorème~\vref{t:vojta-div}.
 \end{proof}
 
-Il suffit donc d'établir la proposition \ref{p:varset-notmin} pour prouver le
-théorème \ref{t:vojta-div} ; la démonstration de cette proposition nous
+Il suffit donc d'établir la proposition \vref{p:varset-notmin} pour prouver le
+théorème \vref{t:vojta-div} ; la démonstration de cette proposition nous
 occupera le reste du chapitre. L'intérêt de l'énoncer immédiatement plutôt
 qu'au moment où nous serons en mesure de l'établir est de pouvoir écarter
 rapidement quelques cas particuliers pour lesquels la méthode qui suit ne
@@ -549,15 +549,15 @@ coordonnées dans lequel ils s'expriment naturellement.
 
 \begin{nota} \label{n:var&co}
   \nomuse \var [chap]{Une variété de \( \varset(\ex) \),
-    définition~\ref{d:var&co}}
-  \nomuse{\vdeg*}[chap]{Le degré de \( \var* \), définition~\ref{d:var&co}}
+    définition~\vref{d:var&co}}
+  \nomuse{\vdeg*}[chap]{Le degré de \( \var* \), définition~\vref{d:var&co}}
   \nomuse{\vdim*}[chap]{La dimension de \( \var* \),
-    définition~\ref{d:var&co}}
-  \nomuse{\vdim }[chap]{La dimension de \( \var \), définition~\ref{d:var&co}}
+    définition~\vref{d:var&co}}
+  \nomuse{\vdim }[chap]{La dimension de \( \var \), définition~\vref{d:var&co}}
   \nomuse{\varfc*}[chap]{Une forme de \bsc{Chow} de \( \var* \),
-    définition~\ref{d:var&co}}
+    définition~\vref{d:var&co}}
   \nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \),
-    définition~\ref{d:var&co}}
+    définition~\vref{d:var&co}}
   Désormais et jusqu'à la fin du chapitre, nous fixons une variété
   \( \var = \var[1] \times \dots \times \var[\puiss] \) satisfaisant aux
   hypothèses de la proposition ; en particulier elle n'est contenue dans aucun
@@ -578,7 +578,7 @@ coordonnées dans lequel ils s'expriment naturellement.
   multihomogène saturé de \( \var \) et \( \varid* \) ceux de ses facteurs.
 \end{nota}
 
-La preuve de la proposition~\ref{p:varset-notmin} suit la méthode de
+La preuve de la proposition~\vref{p:varset-notmin} suit la méthode de
 \TS : on construit d'abord une forme auxiliaire ayant un indice élevé le long
 de \( \divi \), puis on montre qu'elle s'annule en \( \ex \) avec un indice
 plus faible mais toujours élevé par rapport à son degré et on conclut en
@@ -708,7 +708,7 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
 
 \begin{nota}
 On fixe désormais des transformations linéaires \( \vadapt* \) obtenues en
-appliquant le lemme~\ref{l:adapt-gen} à chacun des \( \var* \), de sorte que
+appliquant le lemme~\vref{l:adapt-gen} à chacun des \( \var* \), de sorte que
 \( \vadapt* \circ \vaemb \) est adapté à \( \var* \) et on note \(
   \vdegp* = \max(\vdeg*/2, 1) \).
 \end{nota}
@@ -738,7 +738,7 @@ Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
   \poldep** \) \label{p:def-poldep} une relation de dépendance de \(
   \vmp*[\indi] \) sur \(
   \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée par l'application du
-fait~\ref{f:plong-adapt-dep} au facteur \( \var* \) dans le plongement \(
+fait~\vref{f:plong-adapt-dep} au facteur \( \var* \) dans le plongement \(
   \vadapt* \circ \vaemb \). L'estimation précédente et le fait cité donnent
 une majoration des normes locales de ces polynômes, qu'on peut en fait
 améliorer en
@@ -760,10 +760,10 @@ cette quantité apparaît déjà par ailleurs.
 \end{nota}
 
 Nous pouvons maintenant énoncer les cas particuliers à exclure dans la
-démonstration de la proposition~\ref{p:varset-notmin}.
+démonstration de la proposition~\vref{p:varset-notmin}.
 
 \begin{sco} \label{s:part-cases}
-  Dans la démonstration de la proposition~\ref{p:varset-notmin}, on peut
+  Dans la démonstration de la proposition~\vref{p:varset-notmin}, on peut
   supposer que :
   \begin{enumthm}
     \item \( \cexa** \neq 0 \) pour tous \( \fct \) et \( \ind \in \set{1,
@@ -851,8 +851,8 @@ homogène.
 
 L'idée générale est la suivante : on peut exploiter les relations de
 dépendance des dernières variables sur les premières données par le
-fait~\ref{f:plong-adapt-dep} pour réduire le degré en les dernières variables,
-et le deuxième point de la définition~\ref{d:plong-adapt} permet même
+fait~\vref{f:plong-adapt-dep} pour réduire le degré en les dernières variables,
+et le deuxième point de la définition~\vref{d:plong-adapt} permet même
 d'éliminer totalement les variables d'indice strictement supérieur à \( \vdim*
   + 1 \), à condition de multiplier par un certain dénominateur intervenant
 dans ces relations de dépendance rationnelles.
@@ -1082,7 +1082,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   l'énoncé du lemme précédent, telles que \( \Ideal_{S, T} \subset \varida \)
   et \( S \notin \varida \) ;
   elle découle du fait qu'on a utilisé un plongement adapté.
-  En effet, d'après le fait~\ref{f:plong-adapt-gen}, pour tous \( \fct \) et
+  En effet, d'après le fait~\vref{f:plong-adapt-gen}, pour tous \( \fct \) et
   \( \ind \), il existe des formes \( A\mexp*[\ind, \beta] \) et \(
     B\mexp*[\ind, \beta] \) dans
   \( \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) telles que \(
@@ -1168,7 +1168,7 @@ ne sera pas utile de préciser le degré.
 Introduisons un plongement, dit \emph{éclatant} ou pondéré par \( \wt =
   (\wt[1], \dots, \wt**) \), défini par
 \nomuse \wemb [chap] {Plongement éclatant introduit à la
-  section~\ref{sec:wemb}}
+  section~\vref{sec:wemb}}
 \begin{alignat}{2} \label{e:def-wemb}
   \wemb \colon && \var
   & \longto \va^\puiss \times \va^{\puiss-1}
@@ -1214,7 +1214,7 @@ dans les coordonnées choisies et \( ( \cdn [\vmp] / \varida )_\clmap \)
 désigne la localisation de l'anneau des coordonnées au départ correspondant à
 l'ouvert \( \clmap \).
 
-On dispose (section~\ref{sec:vaemb}) d'un atlas \( \clmaps \) de \( \va^2 \)
+On dispose (section~\vref{sec:vaemb}) d'un atlas \( \clmaps \) de \( \va^2 \)
 avec sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x
   - \beta y \) dans le plongement \( \vaemb \). Voyons comment en déduire un
 atlas de \( \va^\puiss \) et des représentations locales de \( \wemb \) dans
@@ -1234,7 +1234,7 @@ On introduit alors pour chaque \( \fcti \) la forme
   \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
 \end{equation}
 où \( \wembclp{\clmap}{\fcti} \) est donnée par la
-section~\ref{sec:vaemb}, de sorte que chaque application
+section~\vref{sec:vaemb}, de sorte que chaque application
 \begin{align} \label{e:def-wemba}
      \wemba* \colon \cdn [\vmp, \vmpi]
   &  \to \cdn[\vmp]
@@ -1269,7 +1269,7 @@ lemme suivant est une conséquence immédiate de la définition.
 
 Avant de passer aux estimations de hauteur, il est utile d'introduire quelques
 paramètres\footnote{Paramètres dont les définitions peuvent paraître
-  énigmatiques à ce stade ; voir la section~\ref{sec:vojta-adjust} pour une
+  énigmatiques à ce stade ; voir la section~\vref{sec:vojta-adjust} pour une
   meilleure appréciation de ces choix.} qui seront utilisés tout au long de ce
 chapitre et qui contrôlent notamment le degré en lequel nous établirons ces
 estimations.
@@ -1312,7 +1312,7 @@ et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
 \end{equation}
 de sorte que, si \( H \) est une forme de multidegré \( \Dz \) dans \(
   \cdn[\vmp, \vmpi] \), son image par \( \wemba* \) est de multidegré
-exactement \( \Di \) d'après le lemme~\ref{l:deg-wemba}. Pour alléger les
+exactement \( \Di \) d'après le lemme~\vref{l:deg-wemba}. Pour alléger les
 notations par la suite, on introduit le vecteur \( \wtw = (1, \dots, 1, \puiss
   - 1) \in \N^\puiss \), de sorte qu'on a \( d'_\fct = \wts* (2 \wtw* + \epsz)
 \) pour tout \( \fct \).
@@ -1357,7 +1357,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{align}
-  où l'on rappelle que \( \hmclab \) est donné par la section~\ref{sec:vaemb}.
+  où l'on rappelle que \( \hmclab \) est donné par la section~\vref{sec:vaemb}.
 \end{lem}
 
 \begin{proof}
@@ -1387,7 +1387,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \end{align}
   en remarquant que, par définition de \( d \), on a \( \lgr{q\mexpi*} =
     \delta \) pour tout \( \fcti \), puis en
-  utilisant la section~\ref{sec:vaemb}. En prenant le
+  utilisant la section~\vref{sec:vaemb}. En prenant le
   produit sur toutes les places (et en prenant la racine \( \delta \)-ième
   pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
   de~\eqref{e:varset-deg}
@@ -1402,7 +1402,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \prod\fctirange
     \bigr( \hmclab ((\dimp+1)!)^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
   \end{align}
-  Le résultat annoncé suit en invoquant le lemme~\ref{l:sum-wts}.
+  Le résultat annoncé suit en invoquant le lemme~\vref{l:sum-wts}.
 \end{proof}
 
 Énonçons de suite une variante qui nous sera utile par la suite.
@@ -1450,7 +1450,7 @@ appliquant un lemme de \TS.
 Commençons par définir l'indice d'annulation (par rapport à un vecteur de
 poids \( b \in \N^\puiss \)) d'une forme la long de \( \divi \) . (Une autre
 notion d'indice, en un point cette fois-ci, sera définie de façon similaire au
-début de la sous-section~\ref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
+début de la sous-section~\vref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
   \N^{\puiss(\dimp+1)} \), notons
 \begin{equation}
   \wtsum[b]*( \imp )
@@ -1480,7 +1480,7 @@ où la borne inférieure est en fait un minimum, sauf si \( H = 0 \), cas où
 l'indice est infini. À partir de maintenant, nous utiliserons l'indice \(
   \inda* \) pondéré par le vecteur \( \wtw \wts = (\wtw[1] \wts[1], \dots,
   \wtw** \wts**) \), qui est essentiellement proportionnel à \( d' \), ce
-qui sera crucial pour la section~\ref{sec:thm-prod}.
+qui sera crucial pour la section~\vref{sec:thm-prod}.
 
 \medskip
 
@@ -1489,7 +1489,7 @@ Au début de cette section, nous avons dit vouloir construire une forme sur \(
 allons construire une forme \( \faux \) sur \( \wemb(\var) \) et la tirer
 localement en arrière sur \( \var \) en une famille de formes \(
   \faux''_\clmap \) grâce aux différents morphismes \( \wemba* \) introduits à
-la sous-section~\ref{sec:wemb}.
+la sous-section~\vref{sec:wemb}.
 
 Mais on ne peut brutalement exiger
 que leur indice, tel que défini précédemment, soit élevé, car le nombre de
@@ -1497,7 +1497,7 @@ conditions serait trop élevé (géométriquement, il s'agirait d'exiger une
 annulation le long de \( \divi \) dans \( \projd \) alors que les degrés de
 libertés sont donnés par \( \var \) qui est de dimension plus petite). Nous
 allons donc utiliser le morphisme \( \rfull \) introduit à la
-sous-section~\ref{sec:rfull} et exiger que \( \faux* = \rfull(\faux''_\clmap)
+sous-section~\vref{sec:rfull} et exiger que \( \faux* = \rfull(\faux''_\clmap)
 \) ait un indice élevé, ce qui est loisible car le nombre des équations
 définissant un indicé élevé dans \( \cdn[\vmp]^{C'''} \) est convenable (le
 nombre de variables libre dans cet espace correspondant à la dimension de \(
@@ -1815,7 +1815,7 @@ immédiatement
   + o(\delta^\vdim)
   \pmm.
 \end{equation}
-En combinant ce résultat avec le lemme~\ref{l:dim-fspace} et en observant que
+En combinant ce résultat avec le lemme~\vref{l:dim-fspace} et en observant que
 \( \vdim* \le \genre \), on a
 \begin{align}
   \frac {\dim \ftarget} {\dim \fspace}
@@ -1944,7 +1944,7 @@ On utilise le fait élémentaire suivant : si \( M_1 \) et \( M_2 \) sont deux
 matrices, la hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
   \hautl[\infty]{M_1} + \max(\hautl[1]{c}) \) où \( c \) parcourt les colonnes
 de \( M_2 \). Il suffit alors de combiner les estimations des
-lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
+lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
 \begin{align}
   \hautl[\infty]{ M_{\sigma'_\clmap} }
   & \le
@@ -1961,7 +1961,7 @@ lemmes~\ref{l:rfull} et~\ref{l:hmat-wemba} pour obtenir
   \pmm.
 \end{align}
 On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
-  \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\ref{l:sum-wts} implique alors
+  \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\vref{l:sum-wts} implique alors
 que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
 définition~\eqref{e:cst-vs-ht} pour écrire
 \begin{align}
@@ -1997,7 +1997,7 @@ Compte tenu des remarques précédentes, on a donc aussi
 \end{equation}
 Remarquons que l'on pourrait invoquer l'hypothèse~\eqref{e:varset-ht} pour
 simplifier cette dernière expression ; voire à ce sujet la remarque suivant le
-scolie~\ref{s:aux-co}.
+scolie~\vref{s:aux-co}.
 
 
 \subsection{Construction finale de la forme auxiliaire}
@@ -2052,7 +2052,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
 \end{prop}
 
 \begin{proof}
-  On applique le fait~\ref{f:siegel} à la matrice \( M_\sigma \) introduite à
+  On applique le fait~\vref{f:siegel} à la matrice \( M_\sigma \) introduite à
   la sous-section précédente, de dimensions \( p = \dim \ftarget \) et \( q =
     \dim \fspace \) estimées précédemment.  La relation~\eqref{e:good-codim}
   se lit alors \( \frac pq \le \frac12 + o(1) \), ce qui implique directement
@@ -2133,14 +2133,14 @@ propriétés de ces formes dont nous aurons besoin.
 \begin{proof}
   Les trois premiers points ne font que résumer la construction. Plus
   précisément, le premier découle de la définition de \( \faux* \), du
-  lemme~\ref{l:rfull} et de la définition~\eqref{e:def-wemba} de \( \wemba* \)
+  lemme~\vref{l:rfull} et de la définition~\eqref{e:def-wemba} de \( \wemba* \)
   ; le deuxième est imposé par la construction et le troisième découle du
-  lemme~\ref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
+  lemme~\vref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
   \( d \) et \( d' \).
 
   Pour le quatrième point, on remarque que
   \( \faux* = \sigma'_\clmap( \faux ) \)
-  dans les notations de la sous-section~\ref{sec:siegel-ht} de sorte qu'on a
+  dans les notations de la sous-section~\vref{sec:siegel-ht} de sorte qu'on a
   \begin{align}
     \hautl[\infty]{ \faux* }
     \le
@@ -2152,13 +2152,13 @@ propriétés de ces formes dont nous aurons besoin.
     + o(\delta)
   \end{align}
   en utilisant le résultat de la proposition précédente
-  et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie~\ref{s:h1-aux}
+  et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie~\vref{s:h1-aux}
   montre que \( \hautl[1]{ \faux* } \) est en fait majoré par la même
   quantité.
 
   Pour la dernière assertion, on procède exactement comme pour majorer la
-  hauteur de \( \faux* \) sauf qu'on utilise le corollaire~\ref{c:ht-wemba} à
-  la place du lemme~\ref{l:hmat-wemba}, ce qui donne une majoration identique
+  hauteur de \( \faux* \) sauf qu'on utilise le corollaire~\vref{c:ht-wemba} à
+  la place du lemme~\vref{l:hmat-wemba}, ce qui donne une majoration identique
   à la précédente :
   \begin{align}
     \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
@@ -2173,8 +2173,8 @@ propriétés de ces formes dont nous aurons besoin.
 Remarquons qu'on a utilisé l'hypothèse~\eqref{e:varset-ht} pour simplifier la
 dernière estimation contrairement à celle du quatrième point. En effet, cette
 estimation de \( \hautl[1]{ \faux* } \) contribuera directement, en
-section~\ref{sec:thm-prod}, à l'estimation de hauteur de la forme motrice
-que nous cherchons à construire (proposition~\ref{p:varset-notmin}) et il est
+section~\vref{sec:thm-prod}, à l'estimation de hauteur de la forme motrice
+que nous cherchons à construire (proposition~\vref{p:varset-notmin}) et il est
 donc intéressant de conserver la dépendance en \( \sum\fctrange \wtw* \wts*
   \hautl[1]{\varfc*} \) explicite jusqu'à la relation de
 récurrence~\eqref{e:vs-ht-rec}.  L'autre estimation en revanche, ne sera
@@ -2528,7 +2528,7 @@ relations.
 
 \begin{nota} \label{n:pden-gen}
   On note \( \poldep[][\anydim+1] \) le polynôme donné par l'application du
-  fait~\ref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
+  fait~\vref{f:plong-adapt-dep} à \( \anyvar \) avec \( \ind = \anydim+1 \) et
   \( Q = \frac{\partial \poldep[][\anydim+1]}{\partial \vp[\anydim+1]} \). Il
   est clair que \( \deg Q = \anydeg - 1 \) et
   \( \nv1 Q \le \nv1{ \chow\anyvar } \anydeg^\dv \).
@@ -2724,7 +2724,7 @@ qui font l'objet du lemme suivant.
     \cdot \left( \frac{ \vp[\anydim+1] }{ \vp* } \right)^{\indic0(\derp)}
   \end{equation}
   pour tout \( \derp \), même nul. En appliquant de plus le
-  lemme~\ref{l:param-any-easy}, il vient :
+  lemme~\vref{l:param-any-easy}, il vient :
   \begin{align}
     \der^\derp M_\ind^\ip
     =
@@ -2844,7 +2844,7 @@ qui font l'objet du lemme suivant.
 
 Transposons maintenant ce résultat à notre situation multiprojective. On
 rappelle auparavant que les \( \pden* \) sont donnés par la
-notation~\ref{n:pden-cexa}, qui coïncide avec la notation~\ref{n:pden-gen}
+notation~\vref{n:pden-cexa}, qui coïncide avec la notation~\vref{n:pden-gen}
 appliquée successivement à chaque facteur \( \var* \).
 
 \begin{lem} \label{l:par-var}
@@ -2905,7 +2905,7 @@ appliquée successivement à chaque facteur \( \var* \).
       \biggl( \frac{ \vmp*[\indi] }{ \vmp** } \biggr)^{\imp**}
     \Biggr)
   \end{equation}
-  et en appliquant le lemme~\ref{l:par-anyvar-mono} sur chaque facteur.
+  et en appliquant le lemme~\vref{l:par-anyvar-mono} sur chaque facteur.
 
   Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
     \vmp^\imp \) un monôme apparaissant dans l'écriture \( G \), puis \(
@@ -2923,7 +2923,7 @@ appliquée successivement à chaque facteur \( \var* \).
 Nous allons maintenant montrer que la forme auxiliaire construite précédemment
 s'annule avec un indice élevé en \( \ex \). Commençons par préciser la notion
 d'indice utilisée, similaire à celle définie au début de la
-sous-section~\ref{sec:siegel-plan}, mais cette fois en un point. Par ailleurs
+sous-section~\vref{sec:siegel-plan}, mais cette fois en un point. Par ailleurs
 on introduit d'abord la notion d'indice pondéré par un vecteur \( b \in
   \N^\puiss \) quelconque avant de spécialiser au vecteur de poids qui nous
 intéresse, ce qui n'était pas utile précédemment mais le sera cette fois pour
@@ -2953,7 +2953,7 @@ où l'indice est infini.
 \begin{rem} \label{r:ind-basis}
   La définition ci-dessus fait usage d'une base de dérivations de \(
     \cdn(\var*) \) \lat{via} les applications \( \der[\imp] \) (voir le début
-  de la sous-section~\ref{sec:vojta-param}). Cependant, elle ne dépend pas de
+  de la sous-section~\vref{sec:vojta-param}). Cependant, elle ne dépend pas de
   la base choisie car chaque \( \lgr{\dermp*} \), et donc \(
     \wtsum[b](\dermp) \), est bien sûr invariant par changement de base.
 \end{rem}
@@ -3003,9 +3003,9 @@ désormais à l'indice pondéré par \( \wtw \wts = (\wts[1], \dots,
 \medskip
 
 On choisit dans l'atlas \( \clmaps^{\puiss-1} \) présenté en
-sous-section~\ref{sec:wemb} une carte \( \clmape \) contenant \( \ex \), et
+sous-section~\vref{sec:wemb} une carte \( \clmape \) contenant \( \ex \), et
 on considère la forme multihomogène \( \faux** \) donnée par le
-scolie~\ref{s:aux-co}. Le but de cette section est alors de montrer la
+scolie~\vref{s:aux-co}. Le but de cette section est alors de montrer la
 proposition suivante.
 
 \begin{prop} \label{p:extra}
@@ -3022,7 +3022,7 @@ adaptés à chaque place.
 
 On rappelle que \( \cexa \) désigne un système de coordonnées multihomogènes
 (dans le plongement adapté) du point \( \ex \) supposé contredire le
-théorème~\ref{t:vojta-div}.  On choisit, pour tout \(
+théorème~\vref{t:vojta-div}.  On choisit, pour tout \(
   \fct \), un indice \( \indv* \in \set{0, \dots, \vdim*} \) de sorte que \(
   \av{ \cexa*[\indv*] } \) soit maximal parmi \( \av{\cexa*[0]}, \dots,
   \av{\cexa*[\vdim*]} \).  Le lemme suivant montre que cette valeur absolue
@@ -3049,7 +3049,7 @@ représente à peu de chose près la norme de \( \cexa* \).
     \cdot \nv1{ \varfc* }
     \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
   \end{equation}
-  pour tout \( \ind \). D'après la note~\ref{fn:varfc}
+  pour tout \( \ind \). D'après la note~\vref{fn:varfc}
   page~\pageref{fn:varfc}, on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
   est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui est
   le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons donc
@@ -3142,11 +3142,11 @@ Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
 Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
-\( \clmapv* \) la carte donnée par la section~\ref{sec:vaemb} avec \( (a, b,
+\( \clmapv* \) la carte donnée par la section~\vref{sec:vaemb} avec \( (a, b,
   x, y) = (\wt*, \wt**, \ex*, \ex**) \), puis \( \clmapv = (\clmapv[1], \dots,
   \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).  On
 pose alors pour simplifier \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv =
-  \faux[\clmapv] \).  En utilisant le premier point du scolie~\ref{s:aux-co}
+  \faux[\clmapv] \).  En utilisant le premier point du scolie~\vref{s:aux-co}
 et en remarquant que, pour chaque \( \fcti \), les vecteurs \( \wembclv*
   (\cexa[\fcti], \cexa[\puiss]) \) sont non nuls et proportionnels entre eux
 quand \( \place \) varie, on a, pour tout \( \place \) :
@@ -3230,8 +3230,8 @@ modulo \( \varida \).
 Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
   \der[\dermp] \ratf(\ex) \neq 0 \). Comme les derniers facteurs de
 l'écriture précédente sont tous définis et inversibles en \( \cex \) grâce aux
-différents choix d'indices et au premier point du scolie~\ref{s:part-cases},
-une nouvelle application du lemme~\ref{l:indice-inversible} montre que, pour
+différents choix d'indices et au premier point du scolie~\vref{s:part-cases},
+une nouvelle application du lemme~\vref{l:indice-inversible} montre que, pour
 tout \( \place \), on a l'expression suivante, où l'on rappelle que \( \fauxv
   = \faux[\clmapv] \) :
 \begin{equation} \label{e:def-ratfv1}
@@ -3322,7 +3322,7 @@ nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
 On remarque alors que \( \hautl[\infty]{\vadapt*} \le \ln B \)
 d'après~\eqref{e:vadapt-ht} et~\eqref{e:varset-deg}. On regroupe alors les
 termes avant d'utiliser d'une part~\eqref{e:wt-ratio} et d'autre part le
-lemme~\ref{l:sum-wts} :
+lemme~\vref{l:sum-wts} :
 \begin{align}
   \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
   & \le
@@ -3409,13 +3409,13 @@ par \( \delta \) puis sommer sur \( \place \) et sur \( \fcti \) pour avoir
   \ratfh2 \le
   \delta \bigl( 2 \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
 \end{equation}
-en utilisant encore le lemme~\ref{l:sum-wts}.
+en utilisant encore le lemme~\vref{l:sum-wts}.
 
 \medskip
 
 Nous allons maintenant expliciter \( \ratfv1 \).
 Pour chaque place \( \place \), on applique alors le
-lemme~\ref{l:par-var} avec \( G = \fauxv \) et \( \ind = \indv \), et on
+lemme~\vref{l:par-var} avec \( G = \fauxv \) et \( \ind = \indv \), et on
 note \( P_\place = P_{\fauxv, \indv, \dv}^\dermp \) la forme obtenue pour
 l'indice \( \dermp \) fixé plus haut (plus précisément, celle des deux formes
 obtenues qui correspond à la place considérée). Remarquons comme précédemment
@@ -3461,9 +3461,9 @@ des propriétés suivantes.
 \end{lem}
 
 \begin{proof}
-  Chaque point découle du point correspondant du lemme~\ref{l:par-var}, en
+  Chaque point découle du point correspondant du lemme~\vref{l:par-var}, en
   tenant compte des informations connues sur \( \fauxv \) (voir le
-  scolie~\ref{s:aux-co}) et \( \dermp \) (voir~\eqref{e:extra-dermp}). Le
+  scolie~\vref{s:aux-co}) et \( \dermp \) (voir~\eqref{e:extra-dermp}). Le
   premier est immédiat d'après la définition~\eqref{e:def-ratfv1} de \(
     \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
 
@@ -3487,7 +3487,7 @@ des propriétés suivantes.
     + o(\delta)
   \end{align}
   qui donne bien la majoration annoncée, compte tenu du fait que \( 4B/\sigma
-    \le 1 \) par définition de \( \sigma \) (prop.~\ref{p:extra}) et qu'on a
+    \le 1 \) par définition de \( \sigma \) (prop.~\vref{p:extra}) et qu'on a
   largement \( \epsz + \epsi \le 1 \).
 
   Pour la hauteur, dans le point correspondant du lemme, on prend le
@@ -3542,7 +3542,7 @@ des propriétés suivantes.
     \frac14 \Lambda \wts[1]
   \end{equation}
   en utilisant successivement le fait que \( \epsz < 1 \) puis le
-  lemme~\ref{l:sum-wts} et enfin la définition~\eqref{e:def-Lambda} de \(
+  lemme~\vref{l:sum-wts} et enfin la définition~\eqref{e:def-Lambda} de \(
     \Lambda \) (deuxième argument du maximum et \( \puiss \ge \genre \)).
   Enfin, on remarque que
   \begin{equation}
@@ -3553,7 +3553,7 @@ des propriétés suivantes.
     2 \delta \wts[1] \epsi \sigma^{-1}
   \end{equation}
   en utilisant à nouveau la remarque précédente sur \( \dermp \) et le
-  lemme~\ref{l:sum-wts}. On invoque alors~\eqref{e:ht-Pv-adhoc} pour majorer
+  lemme~\vref{l:sum-wts}. On invoque alors~\eqref{e:ht-Pv-adhoc} pour majorer
   le dernier terme par
   \begin{equation}
     2 \delta \wts[1] \epsi \sigma^{-1}
@@ -3606,7 +3606,7 @@ fonction en deux facteurs :
 \end{equation}
 Pour le second facteur, on commence par remarquer que le dénominateur ne
 s'annulle pas en \( \cexa* \)
-d'après le deuxième point du scolie~\ref{s:part-cases} et qu'on a donc
+d'après le deuxième point du scolie~\vref{s:part-cases} et qu'on a donc
 \begin{equation}
   \prod_\place
   \frac{
@@ -3673,7 +3673,7 @@ où la dernière somme est prise sur les multiindices \( \imp \) tels que \(
   \lgr{\imp*} = \deg_\fct P_\place \) et \( \wtsum*(\imp) \ge \frac34 \epsi
   \delta \). Étudions de plus près les valeurs
 absolues des monômes intervenant dans cette écriture ; d'après le
-lemme~\ref{l:coord-norm} on a :
+lemme~\vref{l:coord-norm} on a :
 \begin{align}
   \prod\fctrange \prod\indrange
   \Biggl(
@@ -3710,7 +3710,7 @@ pour minorer le dénominateur, puis une comparaison classique de normes donne
   \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
   \pmm.
 \end{equation}
-Par construction de \( \vadapt* \) (lemme~\ref{l:adapt-gen}) on a \(
+Par construction de \( \vadapt* \) (lemme~\vref{l:adapt-gen}) on a \(
   \cexa*[0] = \cex*[0] \) et on remarque alors que le premier facteur dans
 l'écriture ci-dessus n'est autre que \( \distv{\ex*}{\divi} \), ce qui nous
 permet d'exploiter~\eqref{e:Vapx} :
@@ -3751,7 +3751,7 @@ encore~\eqref{e:wt-ratio}
   \frac38 \wts[1] \hautn{ \ex[1] }
   \, \delta \epsi
 \end{equation}
-où la dernière estimation découle du quatrième point du lemme~\ref{l:ratfv1}
+où la dernière estimation découle du quatrième point du lemme~\vref{l:ratfv1}
 et de la définition de l'indice.
 
 En regroupant tous les termes qui constituent \( \ratfv{1'}( \cex ) \) puis en
@@ -3774,7 +3774,7 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
   \Biggr)
 \end{multline}
 puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et en
-utilisant~\eqref{e:vadapt-ht} et le lemme~\ref{l:ratfv1} :
+utilisant~\eqref{e:vadapt-ht} et le lemme~\vref{l:ratfv1} :
 \begin{align}
   \ratfh{1'}
   & \le
@@ -3791,7 +3791,7 @@ utilisant~\eqref{e:vadapt-ht} et le lemme~\ref{l:ratfv1} :
   \Bigr)
   \sum\fctrange \wtw* \wts*
 \end{align}
-On utilise alors l'hypothèse~\eqref{e:varset-ht}, le lemme~\ref{l:sum-wts} et
+On utilise alors l'hypothèse~\eqref{e:varset-ht}, le lemme~\vref{l:sum-wts} et
 l'estimation \lat{ad hoc}~\eqref{e:ratfh1a-adhoc} pour conclure :
 \begin{equation}
   \ratfh{1'}
@@ -3869,7 +3869,7 @@ en remarquant que \( 48 \cdot 85^{ \frac{\genre}{\puiss-\genre} } \le 85^{
   \le \frac{\expapx \epsi}{16}
   \pmm.
 \end{equation}
-Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\ref{p:extra}
+Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\vref{p:extra}
 assure que
 \begin{equation} \label{e:ct-sigma}
   \frac{8 (\puiss - 1) B \epsi}{\sigma}
@@ -3924,7 +3924,7 @@ que \( \puiss \ge 2 \), il vient :
 où l'on a utilisé l'hypothèse~\eqref{e:Vbig} et la
 définition~\eqref{e:def-Vbig}. Au final, pour \( \delta \) et \( \wts[1] \)
 assez grands, le membre de droite de~\eqref{e:prod-lem-final} est négatif,
-contradiction qui achève la preuve de la proposition~\ref{p:extra}.
+contradiction qui achève la preuve de la proposition~\vref{p:extra}.
 
 
 
@@ -3933,7 +3933,7 @@ contradiction qui achève la preuve de la proposition~\ref{p:extra}.
 
 La section précédente a montré que \( \faux** \) était d'indice
 élevé en \( \ex \). Nous allons maintenant en déduire l'existence d'une forme
-\( T \) comme dans la conclusion de la proposition~\ref{p:varset-notmin}, en
+\( T \) comme dans la conclusion de la proposition~\vref{p:varset-notmin}, en
 utilisant le fait suivant, conséquence du théorème du produit.
 
 \begin{fact} \label{f:thm-prod}
@@ -4030,7 +4030,7 @@ cette extension est une forme possédant les propriétés voulues.
 
 On note désormais \( G = N(\faux**) \) puis \( \vdeg = \prod\fctrange \vdeg*
 \) et \( b_\fct = D \delta \wts* (2\wtw* + \epsz) \).
-On souhaite alors appliquer le fait~\ref{f:thm-prod} à \( G \) avec \( \alpha
+On souhaite alors appliquer le fait~\vref{f:thm-prod} à \( G \) avec \( \alpha
   = \puiss \Lambda^{-2f(u)} \) et \( x = \pi(\ex) \). Il s'agit tout d'abord
 de vérifier que les hypothèses sont bien satisfaites.
 
@@ -4044,7 +4044,7 @@ Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
 \end{align}
 par définition de \( b \) et en observant que \( \epsz < 1 \), de sorte qu'en
 utilisant successivement l'inégalité ci-dessus, le fait précédent et la
-proposition~\ref{p:extra}, il vient :
+proposition~\vref{p:extra}, il vient :
 \begin{equation}
   \indg b[x] G
   \ge
@@ -4140,11 +4140,11 @@ suffit de vérifier que cette condition est satisfaite pour \( \vdim =
 d'après la définition~\eqref{e:def-Lambda} de \( \Lambda \) (troisième
 argument du maximum) et \( f(\puiss\genre) = 1 \).
 
-On peut donc appliquer le fait~\ref{f:thm-prod} comme annoncé, on note \( T \)
+On peut donc appliquer le fait~\vref{f:thm-prod} comme annoncé, on note \( T \)
 la forme obtenue. On a alors \( \pi(\ex) \in \zeros T \), c'est-à-dire \(
   T(\cexa) = 0 \). On introduit une forme \( T'(\vmp*) = T\bigl(
     \vadapt*(\vmp*) \bigr) \) dont on va montrer qu'elle possède bien
-les propriétés annoncés par la proposition~\ref{p:varset-notmin}.
+les propriétés annoncés par la proposition~\vref{p:varset-notmin}.
 
 Tout d'abord il est clair, par construction, que \( T'(\cex) = 0 \) et que \(
   T' \) ne s'annule pas identiquement sur \( \var \). Pour l'assertion sur le
@@ -4155,8 +4155,8 @@ degré, d'après le choix de \( \alpha \) on a
 qui est bien la majoration annoncée.
 
 Concernant la hauteur, on commence par majorer \( \hautl[\infty] T \) en
-fonction de \( \hautl[\infty]{ \faux** } \) ; le fait~\ref{f:thm-prod} donne
-immédiatement la majoration suivante, compte tenu du fait~\ref{f:nfaux} et du
+fonction de \( \hautl[\infty]{ \faux** } \) ; le fait~\vref{f:thm-prod} donne
+immédiatement la majoration suivante, compte tenu du fait~\vref{f:nfaux} et du
 choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
   \sqrt{\vdim*} \) sont négligeables devant \( \delta \) :
 \begin{align}
@@ -4216,7 +4216,7 @@ On remarque alors que pour tout \( \fcti \) on a \( \stoll{\vdim[\fcti]} \le
   \vdim[\fcti] \ln (1 + \vdim[\fcti]) \le \puiss \ln \puiss \) où la
 première majoration est classique et la deuxième utilise le fait que \(
   \vdim[\fcti] \le \genre \le \puiss - 1 \). On utilise de plus le
-lemme~\ref{l:sum-wts} et le fait que \( \wts* \le \wts[1] \) pour estimer le
+lemme~\vref{l:sum-wts} et le fait que \( \wts* \le \wts[1] \) pour estimer le
 terme de la dernière ligne ci-dessus par
 \begin{align}
   2\puiss \wts[1] \left(
@@ -4238,7 +4238,7 @@ puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
 comme estimation finale de la hauteur de \( T \) en fonction de celle de \(
   \faux** \).
 
-Utilisons maintenant le scolie~\ref{s:aux-co} pour exprimer cette hauteur en
+Utilisons maintenant le scolie~\vref{s:aux-co} pour exprimer cette hauteur en
 fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \).
 \begin{align}
   \wtw* \wts* \hautl[\infty] T
@@ -4303,7 +4303,7 @@ précédente pour avoir
   \Biggr)
   \pmm,
 \end{align*}
-ce qui achève la preuve de la proposition~\ref{p:varset-notmin} en remarquant
+ce qui achève la preuve de la proposition~\vref{p:varset-notmin} en remarquant
 que \( \vdim* \le \genre \).
 
 
@@ -4331,12 +4331,12 @@ regroupées ici pour ne pas perturber le cours des sections précédentes.
 
 Tout d'abord, \( \expapx \) est fixé par l'énoncé, et la famille \( \ex \)
 supposée contredire le théorème est fixée en premier, ainsi que la famille \(
-  (\wt*)_\fct \) comme indiqué à la sous-section~\ref{sec:wt}.
+  (\wt*)_\fct \) comme indiqué à la sous-section~\vref{sec:wt}.
 
 Nous arrivons maintenant aux conditions définissant \( \varset(\ex) \). En
 fait, celles-ci sont déterminées de façon à ce que \( \va^\puiss \in
   \varset(\ex) \) et qu'on puisse, en coupant par des formes données par la
-proposition~\ref{p:varset-notmin} produire d'autres formes qui restent dans \(
+proposition~\vref{p:varset-notmin} produire d'autres formes qui restent dans \(
   \varset(\ex) \). On peut voir cette partie comme la construction d'une
 suite de sous-variétés emboîtées, en estimant à chaque étape le degré et la
 hauteur, qui dépendent des estimations à l'étape précédente ; \( \varset(\ex)
@@ -4362,7 +4362,7 @@ fait pas intervenir les degrés de \( \var \), uniquement ceux de la
 fonction auxiliaire. L'estimation de hauteur de la fonction auxiliaire en
 revanche dépend du maximum des degrés de \( \var \) et de ses hauteurs.
 
-On peut alors mener les calculs de la sous-section~\ref{sec:vojta-extrap-core}
+On peut alors mener les calculs de la sous-section~\vref{sec:vojta-extrap-core}
 et aboutir à~\eqref{e:prod-lem-final} : la quantité qui y est notée \(
   \alpha \) ne dépend que du maximum des degrés de \( \var \) tandis que \(
   \beta \) dépend de ce maximum et de la hauteur de la forme auxiliaire, donc
@@ -4421,7 +4421,7 @@ la forme à laquelle nous souhaitons l'appliquer dépend d'une part de l'indice
 extrapolé de la fonction auxiliaire, donc du maximum des degrés de \( \var \)
 et d'autre part du produit de ces degrés. C'est principalement cet indice qui
 détermine la valeur de la quantité notée \( \alpha \) dans la
-section~\ref{sec:thm-prod}\footnote{Distincte de la quantité également notée
+section~\vref{sec:thm-prod}\footnote{Distincte de la quantité également notée
   \( \alpha \) dans la section précédente, que le lecteur veuille bien nous
   pardonner ce recyclage de notations entre plusieurs sections.}, et donc le
 degré de la forme motrice.
@@ -4447,7 +4447,7 @@ produit motive la définition de \( \Vfar \) : \eqref{e:ct-Vfar} est la seule
 contrainte sur \( \Vfar \).
 
 Penchons-nous à présent sur la démonstration du théorème à partir de la
-proposition~\ref{p:varset-notmin} ; elle explique la définition de la fonction
+proposition~\vref{p:varset-notmin} ; elle explique la définition de la fonction
 \( f \) apparaissant en exposant dans les estimations, qui procède par
 récurrence décroissante en partant de \( f(\puiss\genre) = 1 \) et en
 descendant avec la relation~\eqref{e:ct-f}. Nous avons à ce stade pleinement
@@ -4477,7 +4477,7 @@ suivant~\eqref{e:Vbig-ct-extra}.
 
 Commençons par quelques estimations générales ; on rappelle pour commencer que
 \( \dimp \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après la
-remarque~\ref{r:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
+remarque~\vref{r:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
   \ge 2 \). Ainsi, le dernier argument du maximum dans la
 définition~\eqref{e:cst-vs-ht} de \( \cst{vs-ht} \) donne
 \( \cst{vs-ht} \ge \dimp \ln 3 \ge 2 \).
@@ -4679,7 +4679,7 @@ Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
 
 \section{Corollaires} \label{sec:vojta-coro}
 
-Le théorème~\ref{t:vojta-div} fait l'hypothèse que la variété dont on étudie
+Le théorème~\vref{t:vojta-div} fait l'hypothèse que la variété dont on étudie
 les approximations exceptionnelles est l'hyperplan \( \vp[0] = 0 \) dans le
 plongement considéré. Nous allons en déduire un résultat similaire sans cette
 hypothèse, par des changements de plongement successifs.  Si \( \divi \) est
@@ -4741,7 +4741,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
-  à la section\ref{sec:vaemb} et la dimension ambiante sont inchangées.
+  à la section\vref{sec:vaemb} et la dimension ambiante sont inchangées.
 \end{lem}
 
 \begin{proof}
@@ -4794,7 +4794,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     &
     \nv\infty{ C'_x } & \le \nv2{ L } \nv2{ C _x }
   \end{align}
-  et la dernière inégalité donne aussitôt le point~\ref{i:plin-ht-pt} en
+  et la dernière inégalité donne aussitôt le point~\vref{i:plin-ht-pt} en
   comparant \( \nv\infty\truc \) à \( \nv2\truc \).
 
   Par ailleurs, en appliquant la définition de la distance d'un point à un
@@ -4812,7 +4812,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \frac{ \nv2 L }{ \nv2{ L' } }
     \frac{ \nv2{ C_x } }{ \nv2{ C'_x } }
   \]
-  qui donne le point~\ref{i:plin-dv} en remarquant que \( \nv2{ L' } = 1 \)
+  qui donne le point~\vref{i:plin-dv} en remarquant que \( \nv2{ L' } = 1 \)
   par construction et en utilisant la comparaison ci-dessus pour majorer le
   dernier facteur.
 
@@ -4831,7 +4831,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \nv1{ \chow\va }
     \nv1{ L }^{(\genre+1) \deg \va}
   \end{equation}
-  qui établit~\ref{i:plin-ht-va}.
+  qui établit~\vref{i:plin-ht-va}.
 
   Par ailleurs, les comparaisons~\eqref{e:plin-norm} donnent immédiatement
   \begin{equation}
@@ -4846,11 +4846,11 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \le
     \htcmp[\vaemb] + \hautl[2] L + \frac12 \ln(\dimp + 1)
   \end{equation}
-  qui donne directement~\ref{i:plin-htcmp}.
+  qui donne directement~\vref{i:plin-htcmp}.
 
   Enfin, si \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) est
-  une famille de \( (\dimp+1) \)-uplets de formes comme au point~\ref{i:clab}
-  de la section~\ref{sec:vaemb}, on pose
+  une famille de \( (\dimp+1) \)-uplets de formes comme au point~\vref{i:clab}
+  de la section~\vref{sec:vaemb}, on pose
   \begin{equation}
     \rmclab{a}{b}{\clmap}[\vaemb']
     =
@@ -4917,7 +4917,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   n'est bien évidemment pas modifié par un changement de coordonnées linéaire.
 \end{proof}
 
-On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}.
+On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div}.
 
 \begin{coro} \label{c:vojta-div-dv}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
@@ -4974,7 +4974,7 @@ On en déduit une version un peu plus générale du théorème~\ref{t:vojta-div}
 \end{coro}
 
 Avant de passer à la démonstration, examinons les différences entre cet énoncé
-et le théorème~\ref{t:vojta-div} : les deux principales sont une hypothèse
+et le théorème~\vref{t:vojta-div} : les deux principales sont une hypothèse
 moins restrictive sur \( \divi \) compensée par une hypothèse d'approximation
 plus contraignante, en particulier si \( \divi \) est proche de \( p_0 \).
 Les seuls autres changements concernent les valeurs des constantes :
@@ -4987,16 +4987,16 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   On remarque pour commencer que le résultat est vide dans le cas où \( p_0
     \in E \), car la première condition n'est jamais satisfaite. Dans le cas
   contraire, on considère le plongement \( \vaemb' \) donné par le
-  lemme~\ref{l:plin}
-  précédent et on prévoit d'appliquer le théorème~\ref{t:vojta-div} à \( E \)
+  lemme~\vref{l:plin}
+  précédent et on prévoit d'appliquer le théorème~\vref{t:vojta-div} à \( E \)
   et \( \vaemb' \) avec \( \expapx' = 85 \expapx / 86 \) pour une raison qui
   deviendra bientôt claire. Il s'agit de vérifier que les hypothèses du
   corollaire impliquent bien celles du théorème.
 
   Pour l'hypothèse principale~\eqref{e:Vapx}, on utilise d'abord le
-  point~\ref{i:plin-dv} du lemme, puis l'hypothèse principale du présent
+  point~\vref{i:plin-dv} du lemme, puis l'hypothèse principale du présent
   corollaire, la définition de \( \expapx' \) et enfin le
-  point~\ref{i:plin-ht-pt} du lemme :
+  point~\vref{i:plin-ht-pt} du lemme :
   \begin{align}
     \distv[\place, \vaemb']{\ex*}{\divi}
     & \le
@@ -5047,7 +5047,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \cst{vs-ht}[\vaemb'] \) par définition et en utilisant les points restants
   du lemme précédent.
 
-  On peut donc appliquer le théorème~\ref{t:vojta-div} comme prévu et en
+  On peut donc appliquer le théorème~\vref{t:vojta-div} comme prévu et en
   déduire qu'il n'existe pas de famille de points satisfaisant aux hypothèses
   du présent énoncé.
 \end{proof}
@@ -5147,7 +5147,7 @@ au cours de la preuve.
   On considère pour finir le plongement \( \vaemb' \) obtenu à partir de \(
     \vaemb \) en échangeant les coordonnées d'indices \( i \) et \( 0 \), ce
   qui n'a aucune incidence sur la distance ni la hauteur. On peut alors
-  appliquer le corollaire~\ref{c:vojta-div-dv} avec le plongement \( \vaemb'
+  appliquer le corollaire~\vref{c:vojta-div-dv} avec le plongement \( \vaemb'
   \), le réel \( \expapx' \), l'ensemble de places \( \placesapx' \) et les
   poids \( \wtapx' \), car ses hypothèses sont impliquées par celle du présent
   corollaire compte tenu de la comparaison ci-dessus et du fait que \(
@@ -5295,7 +5295,7 @@ sur les différents paramètres en jeu dans notre situation.
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
-  à la section~\ref{sec:vaemb} est inchangé.
+  à la section~\vref{sec:vaemb} est inchangé.
 \end{lem}
 
 \begin{proof}
@@ -5305,14 +5305,14 @@ sur les différents paramètres en jeu dans notre situation.
   plongement initial.
 
   On trouve alors les comparaisons de degré et de hauteurs qui nous
-  intéressent dans~\cite[p. 85-86]{phidg} : les points~\ref{i:hs-vero-deg-va}
-  et~\ref{i:hs-vero-ht-pt} en découlent directement et le
-  point~\ref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier
+  intéressent dans~\cite[p. 85-86]{phidg} : les points~\vref{i:hs-vero-deg-va}
+  et~\vref{i:hs-vero-ht-pt} en découlent directement et le
+  point~\vref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier
   (pour lequel ou pouvait aussi utiliser~\eqref{e:vero-norm} en fait). Par
   ailleurs, la référence citée donne \( \hautl[\htpph, \vaemb'] \va =
     \Delta^{\genre+1} \hautl[\htpph, \vaemb] \va \) (en notant \(
     \Hautl[\htpph] \) la hauteur utilisée dans cette référence), dont on
-  déduit le point~\ref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
+  déduit le point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
   comme en~\eqref{e:ht-pph-1} :
   \begin{align}
     \hautl[1, \vaemb'] \va
@@ -5328,7 +5328,7 @@ sur les différents paramètres en jeu dans notre situation.
     \pmm.
   \end{align}
 
-  Pour~\ref{i:hs-vero-dv}, pour chaque place, introduisons un point
+  Pour~\vref{i:hs-vero-dv}, pour chaque place, introduisons un point
   \( y_\place \in F \) tel que \( \distv[\place, \vaemb] x F = \distv[\place,
     \vaemb] x{y_\place} \) ; par définition on a \( \distv[\place, \vaemb'] x
     \divi \le \distv[\place, \vaemb'] x{y_\place} \). Pour majorer cette
@@ -5369,7 +5369,7 @@ sur les différents paramètres en jeu dans notre situation.
 
   Enfin, pour chaque \( (a, b, \clmap) \) on considère la famille
   \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par la
-  section~\ref{sec:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
+  section~\vref{sec:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
   \( \Delta \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
   bihomogène de bidegré \( (2\Delta a^2, 2\Delta b^2) \) en \( (\vmp[1],
@@ -5540,8 +5540,8 @@ sur les différents paramètres en jeu dans notre situation.
 
 \begin{proof}
   On considère le plongement \( \vaemb' \) et l'hyperplan \( \divi \) fournis
-  par le lemme~\ref{l:hs-vero} précédent et on prévoit d'appliquer le
-  corollaire~\ref{c:vojta-div-any} dans ce cadre avec \( \expapx' =
+  par le lemme~\vref{l:hs-vero} précédent et on prévoit d'appliquer le
+  corollaire~\vref{c:vojta-div-any} dans ce cadre avec \( \expapx' =
     \expapx/\Delta \) comme exposant d'approximation. Il s'agit donc de
   vérifier que nos conditions impliquent celles du corollaire en question.
 
@@ -5620,7 +5620,7 @@ sur les différents paramètres en jeu dans notre situation.
   rapports de hauteurs normalisés et les angles dans l'espace de \MoW étant
   invariants sous le changement de plongement considéré, les deux dernières
   conditions sont inchangées.  On peut dont appliquer le
-  corollaire~\ref{c:vojta-div-any} comme prévu et conclure.
+  corollaire~\vref{c:vojta-div-any} comme prévu et conclure.
 \end{proof}
 
 
@@ -5753,7 +5753,7 @@ contrôlés.
 \end{coro}
 
 \begin{proof}
-  Découle immédiatement du corollaire~\ref{c:vojta-hs} appliqué à
+  Découle immédiatement du corollaire~\vref{c:vojta-hs} appliqué à
   l'hypersurface produite par le lemme précédent.
 \end{proof}
 
