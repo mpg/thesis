@@ -384,18 +384,20 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
   \]
 \end{lem}
 
-\todo[Différence modulo \( \vai \)]
-Avant de passer à la preuve, expliquons comment nous choisirons les différents
-paramètres. L'ensemble \( A \) sera l'intersection d'un sous-groupe de rang
-fini (voire de type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus
-  V(\Qbar) \), et \( H \) la hauteur induite sur cet ensemble par le choix
-d'un plongement projectif de \( \va \). L'ensemble \( M \) sera l'ensemble des
-places d'un corps de nombres \( \cdn \) suffisamment gros et en chaque place
-\( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local divisé par le
-degré global. En revanche, le choix des constantes \( c_v \) dépendra de
-l'application envisagée. On reconnaît la condition sur la famille
-\( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés de
-la section précédente.
+\begin{rem} \label{r:app-prod}
+  Dans l'application prévue, les paramètres seront choisis de la façon
+  suivante.  L'ensemble \( A \) sera l'intersection d'un système complet de
+  représentants modulo \( \vai \) dans un sous-groupe de rang fini (voire de
+  type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus V(\Qbar) \) et
+  \( H \) la hauteur induite sur cet ensemble par le choix d'un plongement
+  projectif de \( \va \). L'ensemble \( M \) sera l'ensemble des places d'un
+  corps de nombres \( \cdn \) suffisamment gros et en chaque place
+  \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local divisé par le
+  degré global. En revanche, le choix des constantes \( c_v \) dépendra de
+  l'application envisagée. On reconnaît la condition sur la famille
+  \( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés
+  de la section précédente.
+\end{rem}
 
 \begin{proof}
   On suppose \( S \) et \( \eps \) fixés. On remarque que pour toute famille
@@ -512,16 +514,137 @@ considérées, on utilisera donc le scolie suivant.
   C'est un calcul élémentaire, fait page~125 de \cite{farhith}.
 \end{proof}
 
-\begin{thm}
-  \todo \color{out}
-  (Résultat final pour les grands points avec hypothèse produit.)
+\begin{coro}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  fini \( r \).
+  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  il existe au plus
+  \begin{equation}
+    2 \cdot 5^{\card S} \cdot
+    \sqrt{ \frac{d}\expapx }
+    (4\puiss\genre)^{\puiss\genre}
+    \ln \Lambda_4
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        172 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+  \end{equation}
+  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  aux deux conditions suivantes :
+  \begin{align}
+    0 < \prod\placerange \distv{\ex*} V ^\degv
+    & <
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
+    \hautm[2]{\ex*}^{-\expapx}
+    \\
+    \hautn{\ex[1]}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+  \end{align}
+  avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  lemme~\vref{l:big-by-cone}.
+\end{coro}
+
+\begin{proof}
+  On applique le scolie précédent à la proposition~\vref{p:big-gen} comme
+  prévu à la remarque~\vref{r:app-prod}. On constate que vu la définition de
+  \( \Lambda_4 \), en y remplaçant \( \expapx \) par \( \expapx / 2 \), on
+  ajoute \( \ln(2) m / (m-g) \) à son logarithme et que
+  \begin{equation}
+    \ln \Lambda_4 + \ln(2) m / (m-g)
+    \le
+    \sqrt 2 \ln \Lambda_4
+    \pmm;
+  \end{equation}
+ les autres changements dans le décompte sont évidents. Pour la condition
+ d'approximation, on observe que \( \sum_\placerange \dv\degv \le 1 \), le cas
+ le plus défavorable étant celui où \( S \) contient toutes les places
+ archimédiennes.
+\end{proof}
+
+On peut alors simplifier légèrement la condition d'approximation en absorbant
+la constante ; on aboutit au résultat suivant.
+
+\begin{thm} \label{t:big-gen-prod}
+  Soient \( V \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  fini \( r \).
+  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  il existe au plus
+  \begin{equation}
+    2 \cdot 5^{\card S} \cdot
+    \sqrt{ \frac{d}\expapx }
+    (4\puiss\genre)^{\puiss\genre}
+    \ln \Lambda_5
+    \left(
+      3 \sqrt\puiss
+      \bigl(
+        174 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+    \right)^r
+  \end{equation}
+  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  aux deux conditions suivantes :
+  \begin{align}
+    0 < \prod\placerange \distv{\ex*} V ^\degv
+    & <
+    \hautm[2]{\ex*}^{-\expapx}
+    \\
+    \hautn{\ex[1]}
+    & > \cst{ht-v-gen1} \Lambda_5^{(2\puiss\genre)^{\puiss\genre}}
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda_5
+    & =
+    \bigl(
+        87 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
+        \, \expapx^{-1}
+    \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+    \bigl( (\sqrt2 \puiss \genre d)^\genre \deg \va \bigr)^\puiss
+    \\
+    \cst{ht-v-gen1}
+    & =
+    d \max \bigl(
+      d^\genre \hautl[1]{\va}, \hlclab, \htcmp
+    \bigr)
+    + (\genre + 1) \deg \va
+    \Bigl(
+      d^\dimp \ln(d) \dimp
+    \\ & \qquad
+      + d^\genre \bigl (
+        \hautl[1] V
+        + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
+        + \ln(\puiss/2)
+      \bigr)
+    \Bigr)
+    \pmm.
+  \end{align}
 \end{thm}
 
 \begin{proof}
-  \color{out}
-  Application du scolie précédent au théorème de la section d'avant, puis
-  absorption de la constante de l'hypothèse dans la hauteur par changement
-  d'epsilon.
+  On constate pour commencer que
+  \begin{equation}
+    \frac12 \ln \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)
+    \le
+    \frac32 d \sbin{d+\dimp}{\dimp}^3
+    \le
+    \frac{ \Lambda_4^{(2mg)^{mg}} }{ 87 \eps }
+  \end{equation}
+  où la dernière inégalité est très large. On en déduit immédiatement que
+  \begin{equation}
+    \hautm[2]{ \ex* }^{\eps/87}
+    \ge
+    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
+  \end{equation}
+  puis que les hypothèses du présent énoncé impliquent celles de l'énoncé
+  précédent en remplaçant \( \eps \) par \( 86\eps / 87 \).
 \end{proof}
 
 
