@@ -23,12 +23,40 @@ d'optimiser l'hypothèse et/ou le décompte obtenu.
 \section{Décomptes des grands points}
 \label{sec:big-points}
 
+Avant toute chose, remarquons qu'il n'y a pas de grandes approximations
+exceptionnelles si \( \eps \) est trop grand, en vertu de l'inégalité de
+\bsc{Liouville}.
+
+\begin{sco} \label{s:nobig-liouville}
+  Soit \( V \) une sous-variété de \( \projd \), de dimension \( u \) et de
+  degré \( d \). Il n'existe aucun point \( x \in \projd(\Qbar) \)
+  tel que
+  \begin{align}
+    \label{e:nobig-ha}
+    0 < \prod\placerange \distv x V ^\degv
+    & <
+    \hautm[2] x ^{-\expapx}
+    \\ \label{e:nobig-big}
+    \hautm[2] x
+    & >
+    (n+1)^{3/2}
+    (3d)^{d (u+1)}
+    \, \hautm[1]{ \chow V }
+  \end{align}
+  pour \( \eps \ge d + 1 \).
+\end{sco}
+
+\begin{proof}
+  Un tel point contredirait directement l'inégalité de \bsc{Liouville}
+  (proposition~\vref{p:liouville}).
+\end{proof}
+
 On commence par majorer le nombre de points dans chaque cône tronqué.
 
 \begin{lem} \label{l:big-by-cone}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On fixe réel \( 0 < \expapx < d \), un entier \( \puiss \ge \genre + 1 \) et
+  On fixe un réel \( 0 < \expapx \), un entier \( \puiss \ge \genre + 1 \) et
   on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
   \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
   conditions suivantes :
@@ -89,14 +117,20 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 \end{lem}
 
 \begin{proof}
+  Pour commencer, remarquons qu'on peut supposer \( \eps < d + 1 \). En effet,
+  sinon le scolie~\vref{s:nobig-liouville} s'applique, car~\eqref{e:big-ha}
+  implique immédiatement~\eqref{e:nobig-ha} et~\eqref{e:big-big} implique
+  assez largement~\eqref{e:nobig-big} vu la définition de \( \cst{ht-v-gen1}
+  \).
+
   Soit \( x_1, \dots, x_p \) une famille comme dans l'énoncé, qu'on suppose de
   plus ordonnée par hauteur normalisée croissante. On pose
   \( \phi =( \puiss \, \cst{v-gen})^{-1} \) et
   \( \rho = \sqrt{ \expapx / d } \).  On constate facilement que
   \( \phi \le \expapx / (2580 d) \) de sorte que ce couple \( (\rho, \phi) \)
-  satisfait à~\eqref{e:rho-phi}. Par ailleurs, il est assez facile de voir que la
-  condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig} : en effet \(
-    \cst{v-gen} \ge 2/\expapx \) et la parenthèse dans le membre de droite
+  satisfait à~\eqref{e:rho-phi}. Par ailleurs, il est assez facile de voir que
+  la condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig} : en effet
+  \( \cst{v-gen} \ge 2/\expapx \) et la parenthèse dans le membre de droite
   de~\eqref{e:Mbig} est largement majorée par \( 4 \cst{ht-v-gen1} \) en
   utilisant entre autres~\eqref{e:comp-h-hn-var} et le fait que \( \hautn \vai
     = 0 \) (prop.~9 de \cite{phiha1}).
