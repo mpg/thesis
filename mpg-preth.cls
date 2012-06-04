@@ -44,13 +44,14 @@
 
 % load various useful packages [[2
 %
+\usepackage{scrpage2}
 \usepackage{mathtools, amsthm}
 \usepackage{mathstyle}
 \catcode`\^12\catcode`\_12\relax % xy wants to see the real catcodes
 \usepackage[all]{xy}
 \catcode`\^7\catcode`\_8\relax % make other packages happy
 \usepackage{ifmtarg, fixltx2e, mparhack, xargs, xspace, cmdstring, ted, trace}
-\usepackage{siunitx, varioref}
+\usepackage{siunitx, varioref, etex}
 \usepackage{afterpage, pdflscape, tikz}
 \usetikzlibrary{arrows,positioning,fit,decorations.pathmorphing,shapes.misc}
 \usepackage{enumitem}
@@ -67,6 +68,23 @@
 \usepackage{varioref} % to get a working \vref
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
 \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
+
+% equation number in headers [[2
+%
+\newmarks\eqmark
+
+%% \pagestyle{scrheadings}
+%% \rehead[]{eq deb : \firstmarks\eqmark}
+%% \lohead[]{eq fin : \botmarks\eqmark}
+%% 
+%% \newtagform{am}[\ameq]{(}{)}
+%% \newcommand*\ameq [1] {%
+%%   \if@display
+%%     \marks\eqmark{#1}%
+%%   \fi
+%%   #1%
+%% }
+%% \usetagform{am}
 
 % showkeys [[2
 %
