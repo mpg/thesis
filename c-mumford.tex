@@ -469,6 +469,12 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 
 \section{Étude du morphisme des différences}
 
+Soit \( X \) une sous-variété de \( \va \) ; on note \( D = \deg X \) et \( u
+  = \dim X \). Remarquons de suite que le degré de \( X \) est nécessairement
+au moins \( 2 \), car si \( X \) était linéaire, elle contiendrait une droite
+projective, c'est-à-dire une courbe de genre \( 0 \), or il est impossible de
+plonger une telle courbe dans une variété abélienne.
+
 Pour tout entier \( m \ge 2 \) on définit un morphisme
 \begin{align}
   s_m \colon \va^m & \to \va^{m-1} \\
@@ -479,78 +485,84 @@ dans le plongement suivant :
 \begin{equation}
   \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
 \end{equation}
-où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N = \dots
-\)\todo.
+où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N = 
+  (n+1)^{m-1} - 1 \).
 
-Soit \( X \) une sous-variété de \( \va \) ;
-notons \( S_X \) le stabilisateur de \( X \).
+Par ailleurs, notons \( S_X \) le stabilisateur de \( X \). Par définition,
+on a (ensemblistement) :
+\begin{equation}
+  S_X = \bigcap_{x \in X(\Qbar)} X - x
+  \pmm.
+\end{equation}
+Par noethérieneté il est clair qu'on peut en fait prendre
+une intersection finie ; le lemme suivant précise ce résultat.
+
 
 \begin{lem}
-  Il existe un entier \( M \le (\deg X)^{\dim X + 2} - 1 \) et
-  une famille \( (x_1, \dots, x_M) \) de points de \( X(\Qbar) \)
-  telle qu'on ait, ensemblistement :
-  \begin{equation}
-    S_X = \bigcap_{i=1}^{M} X - x_i
-  \end{equation}
+  Posons \( M = 2 D^{u+1} - 2 \) ; pour tout \( m \ge M \) il existe
+  \( (x_1, \dots, x_m) \in X^m(\Qbar) \) tel que
+  \( S_X = \bigcap_{i=1}^m X - x_i \).
 \end{lem}
 
-\begin{ideas}
-  On a
-  \begin{equation}
-    S_X = \bigcap_{x \in X(\Qbar)} X - x
-  \end{equation}
-  par définition, et par noethérieneté il est clair qu'on peut en fait prendre
-  une intersection finie ; reste à quantifier ce « finie ».
-
+\begin{proof}
   En partant d'un \( X - x_1 \) pour \( x_1 \) quelconque, on va couper
   successivement par des \( X - x_i \) choisis de sorte à faire chuter la
   dimension d'au moins une des composantes de dimension maximale de
   l'intersection partielle qui n'est pas une composante de \( S_X \).
   Clairement, ce processus se termine et l'intersection obtenue est \( S_X \).
 
-  Plus précisément, si l'on note \( (Y\pexp i[k])_k \) l'ensemble des
-  composantes de l'intersection partielle à l'étape \( i \), on a toujours
+  Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} X - x_i \) le fermé de
+  \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider à
+  compter les composantes à chaque étape, on considère la quantité (introduite
+  dans \cite{XXX}\todo) :
   \begin{equation}
-    \sum_k \deg Y\pexp i[k] \cdot (\deg X)^{\dim Y\pexp i[k]}
-    \le
-    (\deg X)^{\dim X + 1}
-    \pmm.
+    SH(Y, d)
+    =
+    \sum_Z \deg Z d^{\dim Z}
   \end{equation}
-  En effet, c'est clairement le cas à l'étape 1, et si c'est vrai à l'étape \(
-    i \), ça l'est à l'étape \( i + 1 \) par Bézout (réduit).
+  où la somme est prise sur l'ensemble des composantes irréductibles de \( Y
+  \). Il est clair que \( SH(Y_1, D) = SH(X, D) = D^{u+1} \). Par ailleurs,
+  comme chaque \( Y_j \) peut être défini (ensemblistement) par des équations
+  de degré au plus \( D \), la proposition~3.3 de la référence citée
+  s'applique et garantit que \( SH(Y_{j+1}, D) \le SH(Y_j, D) \) ce qui donne
+  immédiatement par récurrence \( SH(Y_j, D) \le D^{u+1} \).
 
-  On en déduit qu'à chaque étape, le nombre de composantes (qui ne sont pas
-  des composante de \( S_X \)) de dimension \( \dim X - j \) est au plus
-  \( (\deg X)^{j+1} \). Ainsi, il faut au plus \( (\deg X)^2 \) pour éliminer
-  les composantes de dimension \( \dim X - 1 \) après la première étape (on
-  suppose \( X \) irréductible au début), etc. jusqu'à \( (\deg X)^{\dim X +
-      1} \) pour éliminer les composantes de dimension \( 0 \) à la fin.
+  Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
+  composantes de \( Y_j \) de dimension \( u - k \) est au plus \( D^{k+1} \).
+  On peut être un peu plus précis pour \( Y_1 \) et voir que toutes ses
+  composantes sont de dimension au plus \( u - 1 \) car \( X - x_1 \) n'a
+  qu'une composante. Ainsi, en choisissant successivement les \( x_i \) de
+  façon à ce que \( X - x_{j+2} \) coupe strictement une des composantes de \(
+    Y_j \) de dimension maximale parmi celles qui ne sont pas composantes de \(
+    S_X \), on voit qu'il existe un \( j_1 \le 1 + D^2 \) tel que \( Y_j \) n'ai
+  plus de composante de dimension \( u - 1 \) à part celles de \( S_X \), et
+  en continuant jusqu'à avoir éliminé les composantes indésirables de
+  dimension \( 0 \), qu'il existe un \( j_u \le 1 + D^2 + D^3 + \dots +
+    D^{u+1} \) tel que \( Y_{j_u} \) n'ait plus aucune composante autre que celles
+  de \( S_X \), c'est-à-dire tel que \( Y_{j_u} = S_X \).
 
-  Au final le nombre d'étapes est
+  Le nombre de points utilisés est alors
   \begin{equation}
-    1 + (\deg X)^2 + (\deg X)^3 + \dots + (\deg X)^{\dim X + 1}
+    j_u + 1
     \le
-    (\deg X)^{\dim X + 2} - 1
-    \pmm.
+    2 + D^2 \sum_{l=0}^{u-1} D^l
+    =
+    2 + \frac{D}{D+1} (D^{u+1} - D)
+    \le
+    2 + 2 (D^{u+1} - D)
+    \le M
+    \pmm,
   \end{equation}
-\end{ideas}
+  en utilisant le fait que \( D \ge 2 \).
 
-\begin{coro}
-  Pour tout entier \( m \) supérieur à l'entier \( m \) du lemme précédent, il
-  existe un ouvert dense de \( X^m \) tel
-  que pour tout point \( (x_1, \dots, x_m) \) de cet ouvert, on ait
-  \begin{equation} \label{e:IS}
-    S_X = \bigcap_{i=1}^{m} X - x_i \tag{IS}
-    \pmm.
-  \end{equation}
-\end{coro}
-
-\begin{proof}
-  Il est clair que si \( (x_1, \dots, x_M) \) satisfait \eqref{IS} c'est
-  aussi le cas de toute extension de cette famille ; il existe donc au moins
-  un point de \( X^m \) possédant la propriété voulue. Par ailleurs, il est
-  clair que cette propriété est ouverte.
+  Par ailleurs, on constate qu'une fois qu'on a choisit \( x_1, \dots, x_{j_u+1}
+  \) tels que \( Y_{j_u} = S_X \), on peut rajouter des \( x_i \) arbitraires pour
+  \( i > j_u + 1 \) et qu'on aura toujours \( S_X = \bigcap_i X - x_i \). Ainsi,
+  pour tout \( m \ge M \) il existe une famille \( (x_i)_i \in X^m \)
+  possédant la propriété voulue.
 \end{proof}
+
+% XXX
 
 \begin{lem}
   On choisir \( m \ge M + 1 \).
