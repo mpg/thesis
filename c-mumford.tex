@@ -513,19 +513,22 @@ une intersection finie ; le lemme suivant précise ce résultat.
 
   Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} X - x_i \) le fermé de
   \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider à
-  compter les composantes à chaque étape, on considère la quantité (introduite
-  dans \cite{XXX}\todo) :
+  compter les composantes à chaque étape, on considère la quantité :
   \begin{equation}
     SH(Y, d)
     =
     \sum_Z \deg Z d^{\dim Z}
   \end{equation}
-  où la somme est prise sur l'ensemble des composantes irréductibles de \( Y
-  \). Il est clair que \( SH(Y_1, D) = SH(X, D) = D^{u+1} \). Par ailleurs,
-  comme chaque \( Y_j \) peut être défini (ensemblistement) par des équations
-  de degré au plus \( D \), la proposition~3.3 de la référence citée
-  s'applique et garantit que \( SH(Y_{j+1}, D) \le SH(Y_j, D) \) ce qui donne
-  immédiatement par récurrence \( SH(Y_j, D) \le D^{u+1} \).
+  où la somme est prise sur l'ensemble des composantes de \( Y \). Cette
+  définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi (*)
+  p.~362) ; on est ici dans le cas homogène c'est-à-dire \( p = 1 \) dans les
+  notations de cette référence.
+
+  Il est clair que \( SH(Y_1, D) = SH(X, D) = D^{u+1} \). Par ailleurs, comme
+  chaque \( Y_j \) peut être défini (ensemblistement) par des équations de
+  degré au plus \( D \), on peut appliquer à ces équations la proposition~3.3
+  de la référence citée, ce qui garantit que \( SH(Y_{j+1}, D) \le SH(Y_j, D)
+  \) et donne immédiatement par récurrence \( SH(Y_j, D) \le D^{u+1} \).
 
   Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
   composantes de \( Y_j \) de dimension \( u - k \) est au plus \( D^{k+1} \).
