@@ -558,31 +558,39 @@ une intersection finie ; le lemme suivant précise ce résultat.
   \end{equation}
   en utilisant le fait que \( D \ge 2 \).
 
-  Par ailleurs, on constate qu'une fois qu'on a choisit \( x_1, \dots, x_{j_u+1}
-  \) tels que \( Y_{j_u} = S_X \), on peut rajouter des \( x_i \) arbitraires pour
-  \( i > j_u + 1 \) et qu'on aura toujours \( S_X = \bigcap_i X - x_i \). Ainsi,
-  pour tout \( m \ge M \) il existe une famille \( (x_i)_i \in X^m \)
-  possédant la propriété voulue.
+  Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
+    x_{j_u+1} \) tels que \( Y_{j_u} = S_X \), on peut rajouter des \( x_i \)
+  arbitraires pour \( i > j_u + 1 \) et on aura toujours \( S_X = \bigcap_i
+    X - x_i \). Ainsi, pour tout \( m \ge M \) il existe une famille \(
+    (x_i)_i \in X^m \) possédant la propriété voulue.
 \end{proof}
 
-% XXX
-
 \begin{lem}
-  On choisir \( m \ge M + 1 \).
-  Pour \( x \in X^m \) satisfaisant \eqref{IS}, on a
+  Pour tous \( m \ge 2 \) et \( x \in X^m \), on a
   \begin{equation}
-    s_m^{-1} ( s_m(x) ) \cap X^m
-    =
     x + \delta(S_X)
+    \subset
+    s_m^{-1} ( s_m(x) ) \cap X^m
+    \subset
+    x + \delta(\bigcap_{i=1}^m X - x_i)
   \end{equation}
-  où \( \delta \colon X \to X^m \) est le plongement diagonal.
+  où \( \delta \colon X \to X^m \) est le plongement diagonal. En particulier,
+  si \( S_X = \bigcap_{i=1}^m X - x_i \), ces inclusions sont des égalités.
 \end{lem}
 
 \begin{ideas}
-  Il est clair que la fibre contient \( x + \delta(S_X) \). 
+  Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
+    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_X \) donne
+  clairement \( x + \delta(S_X) \subset X \), ce qui établit l'inclusion
+  annoncé.
 
-  Réciproquement, cf (2) dans le mail.
+  Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \cap X^m \), on a
+  \( y_m - x_m = y_i - x_i \) pour tout \( i \), donc d'une part \( y = x +
+    \delta(y_m - x_m) \) et d'autre part \( y_m - x_m \in \bigcap_{i=1}^m X -
+    x_i \).
 \end{ideas}
+
+% XXX
 
 \begin{coro}
   Pour \( m \ge M + 1 \), la fibre générique de \( s_m \) est isomorphe à \(
