@@ -595,7 +595,7 @@ une intersection finie ; le lemme suivant précise ce résultat.
 
 On note désormais \( M \) l'entier introduit par le lemme précédent.
 
-\begin{coro}
+\begin{coro} \label{c:gen-fiber}
   Pour \( m \ge M \), il existe un ouvert dense de \( s_m(X^m) \) où les
   fibres de \( {s_m}_{|X} \) sont de dimension \( \dim S_X \). En particulier,
   \( \dim s_m(X^m) = m \dim X - \dim S_X \)
@@ -613,15 +613,104 @@ On note désormais \( M \) l'entier introduit par le lemme précédent.
   paragraphe précédent, cet ouvert n'est pas vide, il est donc dense.
 \end{proof}
 
-% XXX
+On rappelle que dans l'énoncé suivant, \( Z = s_m(X^m) \) et que le degré est
+relatif au plongement \( Z \embedin \proj N \) évoqué précédemment.
 
 \begin{lem}
-  On a \( \deg Z \le (\deg X)^m (2m)^{ (m+1) \dim X - \dim S_X } \).
+  On a \( \deg Z \le D^m (2m)^{ (m+1)(u - \dim S_X) } / \deg S_X \).
 \end{lem}
 
-\begin{ideas}
-  Cf (3).
-\end{ideas}
+\begin{proof}
+  On note \( u' = \dim Z = mu - \dim S_X \) et on choisit des hyperplans de \(
+    \proj N \) qu'on notera \( H_1, \dots, H_{u'} \) et qu'on supposera en
+  position générale, de sorte que \( F = \bigcap_i H_i \) est un ensemble fini
+  de points, de cardinal \( \deg Z \). On peut même supposer que \( F \) est
+  inclus dans l'ouvert donné par le corollaire~\vref{c:gen-fiber} car ce
+  dernier est dense.
+
+  On note donc \( F = \set{y_1, \dots, y_p} \) ; pour chaque \( y_j \) on
+  choisit un point \( x_j \in s_m^{-1}(y_j) \cap X^m \). Pour tout \( j \in
+    \set{1, \dots, p} \) et tout \( k \in \set{1, \dots, m} \), le morphisme
+  \( \pi_k s_m \), où \( \pi_k \) est la projection sur le \( k \)-ième
+  facteur, qui est en fait la différence de \( \va \), est représenté sur un
+  voisinage de \( x_j \) par une famille de \( n + 1 \) formes multihomogènes
+  de multidegré \( (0, \dots, 0, 2, 0, \dots, 0, 2) \) où le premier \( 2 \)
+  est en \( k \)-ième position. On en déduit aisément que \( s_m \) est
+  représenté sur un voisinage de \( x_j \) par une famille de \( N + 1 \)
+  formes multihomogènes de multidegré \( (2, \dots, 2, 2(m-1)) \). On a \lat{a
+    priori} une telle famille par point \( x_j \), mais quitte à prendre une
+  combinaison linéaire de toutes ces familles, on voit qu'il existe une
+  famille de formes de multidegré \( (2, \dots, 2, 2(m-1)) \) représentant \(
+    s_m \) sur un ouvert contenant tous les \( x_j \).
+
+  Maintenant, pour chaque \( i \in \set{1, \dots, u'} \), on choisit une
+  équation \( E_i \) de \( H_i \). Dans cette forme linéaire, on substitue aux
+  variables les éléments de la famille du paragraphe précédent et on note \(
+    \tilde E_i \) la forme multihomogène obtenue, qui est de multidegré \( (2,
+    \dots, 2, 2(m-1)) \), puis on note \( \tilde H_i \) l'hypersurface de \(
+    (\projd)^m \) définie par \( \tilde E_i \).
+
+  Par construction, il est clair que pour tout \( j \in \set{1, \dots, p} \),
+  la fibre \( s_m^{-1}(-y_j) \cap X^m \) est un translaté de \( \delta(S_X) \)
+  et est une composante isolée de l'intersection \( X^m \cap \bigcap_i \tilde
+    H_i \) : en effet, les fibres sont deux à deux d'intersection vide et les
+  autres composantes éventuelles de l'intersection sont celles provenant du
+  lieu des zéros commun des formes choisies pour représenter \( s_m \), qui ne
+  contient aucune des fibres en question grâce au choix de cette famille.
+
+  On invoque alors la proposition~3.3, p.~365 de \cite{philz} dont on reprend
+  les notations (voir p.~364 et p.~362) :
+  \begin{equation}
+    SH( X^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
+    \le
+    SH( X^m ; 2, \dots, 2, 2(m-1) )
+    \pmm.
+  \end{equation}
+  On remarque que le seul multidegré non nul de \( X^m \) est celui
+  d'indice \( (u, \dots, u) \) et qu'il vaut \( D^m \),  de sorte que l'on a
+  \begin{equation}
+    SH( X^m ; 2, \dots, 2, 2(m-1) )
+    =
+    D^m
+    \frac{ (mu)! }{ (u!)^m }
+    \, 2^{mu} (m-1)^u
+    \le
+    D^m
+    (2m)^{mu} (m-1)^u
+  \end{equation}
+  en majorant le coefficient multinomial qui apparaît dans cette expression
+  par \( m^{mu} \). Par ailleurs, on a
+  \begin{align}
+    SH( X^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
+    \ge
+    p \cdot H( \delta(S_X); 2, \dots, 2, 2(m-1) )
+  \end{align}
+  d'après le paragraphe précédent. De plus, on voit assez facilement que tous
+  les multidegrés de \( \delta(S_X) \) sont égaux à \( \deg S_X \), ce qui
+  donne
+  \begin{align}
+    H( \delta(S_X); 2, \dots, 2, 2(m-1) )
+    & =
+    \ \sum_{ \mathclap{\alpha_1 + \dots + \alpha_m = \dim S_X} } \
+    \deg S_X
+    \, \frac{ (\dim S_X)! }{ \alpha_1! \cdots \alpha_m! }
+    \, 2^{m\dim S_X} (m-1)^{\dim S_X}
+    \\ & =
+    \deg S_X
+    (2m)^{m\dim S_X} (m-1)^{\dim S_X}
+  \end{align}
+  d'après la formule multinomiale. Ainsi, on a
+  \begin{equation}
+    p
+    \le
+    \frac{ D^m }{ \deg S_X }
+    (2m)^{m(u-\dim S_X)} (m-1)^{u - \dim S_X}
+    \le
+    \frac{ D^m }{ \deg S_X }
+    (2m)^{(m+1)(u-\dim S_X)}
+  \end{equation}
+  comme annoncé.
+\end{proof}
 
 \begin{lem}
   On a \( \hautl Z \le \dots \).
