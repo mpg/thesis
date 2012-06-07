@@ -480,21 +480,50 @@ Pour tout entier \( m \ge 2 \) on définit un morphisme
   s_m \colon \va^m & \to \va^{m-1} \\
   (x_1, \dots, x_m) & \mapsto (x_1 - x_m, \dots, x_{m-1} - x_m)
 \end{align}
-et on se propose d'étudier (dimension, degré, hauteur) l'image \( s_m(X^m) \)
-dans le plongement suivant :
+et on se propose d'étudier (dimension, degré, hauteur) l'image \( s_m(X^m) \),
+qu'on notera \( Z \). Le degré et la hauteur seront relatifs au
+plongement projectif suivant :
 \begin{equation}
-  \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
+  s_m(X^m) \subset \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
 \end{equation}
-où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N = 
+où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N =
   (n+1)^{m-1} - 1 \).
 
-Par ailleurs, notons \( S_X \) le stabilisateur de \( X \). Par définition,
-on a (ensemblistement) :
+On commence par étudier la forme des fibres du morphisme restreint à \( X \).
+Dans l'énoncé suivant, \( S_X \) désigne le stabilisateur de \( X \).
+
+\begin{lem}
+  Pour tous \( m \ge 2 \) et \( x \in X^m \), on a
+  \begin{equation}
+    x + \delta(S_X)
+    \subset
+    s_m^{-1} ( s_m(x) ) \cap X^m
+    \subset
+    x + \delta(\bigcap_{i=1}^m X - x_i)
+  \end{equation}
+  où \( \delta \colon X \to X^m \) est le plongement diagonal. En particulier,
+  si \( S_X = \bigcap_{i=1}^m X - x_i \), ces inclusions sont des égalités.
+\end{lem}
+
+\begin{proof}
+  Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
+    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_X \) donne
+  clairement \( x + \delta(S_X) \subset X \), ce qui établit l'inclusion
+  annoncé.
+
+  Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
+  \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
+    \delta(y_m - x_m) \). Si de plus \( y \in X^m \) on a \( y_m - x_m \in
+    \bigcap_{i=1}^m X - x_i \).
+\end{proof}
+
+Étudions dans quel cas l'égalité peut être obtenue. Par définition du
+stabilisateur, on a (ensemblistement) :
 \begin{equation}
   S_X = \bigcap_{x \in X(\Qbar)} X - x
   \pmm.
 \end{equation}
-Par noethérieneté il est clair qu'on peut en fait prendre
+Par noethérieneté, il est clair qu'on peut en fait prendre
 une intersection finie ; le lemme suivant précise ce résultat.
 
 \begin{lem}
@@ -540,8 +569,8 @@ une intersection finie ; le lemme suivant précise ce résultat.
   plus de composante de dimension \( u - 1 \) à part celles de \( S_X \), et
   en continuant jusqu'à avoir éliminé les composantes indésirables de
   dimension \( 0 \), qu'il existe un \( j_u \le 1 + D^2 + D^3 + \dots +
-    D^{u+1} \) tel que \( Y_{j_u} \) n'ait plus aucune composante autre que celles
-  de \( S_X \), c'est-à-dire tel que \( Y_{j_u} = S_X \).
+    D^{u+1} \) tel que \( Y_{j_u} \) n'ait plus aucune composante autre que
+  celles de \( S_X \), c'est-à-dire tel que \( Y_{j_u} = S_X \).
 
   Le nombre de points utilisés est alors
   \begin{equation}
@@ -564,30 +593,7 @@ une intersection finie ; le lemme suivant précise ce résultat.
     (x_i)_i \in X^m \) possédant la propriété voulue.
 \end{proof}
 
-\begin{lem}
-  Pour tous \( m \ge 2 \) et \( x \in X^m \), on a
-  \begin{equation}
-    x + \delta(S_X)
-    \subset
-    s_m^{-1} ( s_m(x) ) \cap X^m
-    \subset
-    x + \delta(\bigcap_{i=1}^m X - x_i)
-  \end{equation}
-  où \( \delta \colon X \to X^m \) est le plongement diagonal. En particulier,
-  si \( S_X = \bigcap_{i=1}^m X - x_i \), ces inclusions sont des égalités.
-\end{lem}
-
-\begin{proof}
-  Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
-    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_X \) donne
-  clairement \( x + \delta(S_X) \subset X \), ce qui établit l'inclusion
-  annoncé.
-
-  Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
-  \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
-    \delta(y_m - x_m) \). Si de plus \( y \in X^m \) on a \( y_m - x_m \in
-    \bigcap_{i=1}^m X - x_i \).
-\end{proof}
+On note désormais \( M \) l'entier introduit par le lemme précédent.
 
 \begin{coro}
   Pour \( m \ge M \), il existe un ouvert dense de \( s_m(X^m) \) où les
@@ -604,12 +610,10 @@ une intersection finie ; le lemme suivant précise ce résultat.
   Par ailleurs, toutes les fibres sont de dimension au moins \( \dim S_X \).
   Par semi-continuité supérieure de la dimension des fibres, l'ensemble des
   points où elle est égale à \( \dim S_X \) est donc un ouvert. D'après le
-  paragraphe précédent, cet ouvert est non vide ; il est donc dense.
+  paragraphe précédent, cet ouvert n'est pas vide, il est donc dense.
 \end{proof}
 
 % XXX
-
-On note désormais \( Z = s_m(X^m) \).
 
 \begin{lem}
   On a \( \deg Z \le (\deg X)^m (2m)^{ (m+1) \dim X - \dim S_X } \).
@@ -639,23 +643,23 @@ On fixe désormais \( m = \) la borne de Rémond plus 2. On fixe de plus \(
 \begin{lem}
   On a 
   \begin{equation}
-    \hautl(z)
+    \hautl z 
     \le
     (\rho^2/4 + 2\phi + \rho\phi) (\dots) \hautn{ x_m }
   \end{equation}
 \end{lem}
 
 \begin{ideas}
-  On utilise \vref{l:diff-small} pour contrôler chaque \( \hautn(x_i - x_m)
+  On utilise \vref{l:diff-small} pour contrôler chaque \( \hautn{ x_i - x_m }
   \). On compare ensuite à la hauteur projective. On conclut en utilisant
   la formule pour les hauteurs dans un Segre. (référence ?)\todo
 \end{ideas}
 
 \begin{lem}
   \begin{equation}
-    \prod_\placerange \distv(z, Z)
+    \prod_\placerange \distv z Z ^\degv
     \le
-    cte(\va) \hautm{ x_m }^{-\expapx}
+    cte(\va) \hautm[2]{ x_m }^{-\expapx}
   \end{equation}
 \end{lem}
 
