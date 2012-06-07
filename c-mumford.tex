@@ -465,6 +465,181 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \end{proof}
 
 
+\clearpage % XXX provisoire
+
+\section{Étude du morphisme des différences}
+
+Pour tout entier \( m \ge 2 \) on définit un morphisme
+\begin{align}
+  s_m \colon \va^m & \to \va^{m-1} \\
+  (x_1, \dots, x_m) & \mapsto (x_1 - x_m, \dots, x_{m-1} - x_m)
+\end{align}
+et on se propose d'étudier (dimension, degré, hauteur) l'image \( s_m(X^m) \)
+dans le plongement suivant :
+\begin{equation}
+  \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
+\end{equation}
+où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N = \dots
+\)\todo.
+
+Soit \( X \) une sous-variété de \( \va \) ;
+notons \( S_X \) le stabilisateur de \( X \).
+
+\begin{lem}
+  Il existe un entier \( M \le (\deg X)^{\dim X + 2} - 1 \) et
+  une famille \( (x_1, \dots, x_M) \) de points de \( X(\Qbar) \)
+  telle qu'on ait, ensemblistement :
+  \begin{equation}
+    S_X = \bigcap_{i=1}^{M} X - x_i
+  \end{equation}
+\end{lem}
+
+\begin{ideas}
+  On a
+  \begin{equation}
+    S_X = \bigcap_{x \in X(\Qbar)} X - x
+  \end{equation}
+  par définition, et par noethérieneté il est clair qu'on peut en fait prendre
+  une intersection finie ; reste à quantifier ce « finie ».
+
+  En partant d'un \( X - x_1 \) pour \( x_1 \) quelconque, on va couper
+  successivement par des \( X - x_i \) choisis de sorte à faire chuter la
+  dimension d'au moins une des composantes de dimension maximale de
+  l'intersection partielle qui n'est pas une composante de \( S_X \).
+  Clairement, ce processus se termine et l'intersection obtenue est \( S_X \).
+
+  Plus précisément, si l'on note \( (Y\pexp i[k])_k \) l'ensemble des
+  composantes de l'intersection partielle à l'étape \( i \), on a toujours
+  \begin{equation}
+    \sum_k \deg Y\pexp i[k] \cdot (\deg X)^{\dim Y\pexp i[k]}
+    \le
+    (\deg X)^{\dim X + 1}
+    \pmm.
+  \end{equation}
+  En effet, c'est clairement le cas à l'étape 1, et si c'est vrai à l'étape \(
+    i \), ça l'est à l'étape \( i + 1 \) par Bézout (réduit).
+
+  On en déduit qu'à chaque étape, le nombre de composantes (qui ne sont pas
+  des composante de \( S_X \)) de dimension \( \dim X - j \) est au plus
+  \( (\deg X)^{j+1} \). Ainsi, il faut au plus \( (\deg X)^2 \) pour éliminer
+  les composantes de dimension \( \dim X - 1 \) après la première étape (on
+  suppose \( X \) irréductible au début), etc. jusqu'à \( (\deg X)^{\dim X +
+      1} \) pour éliminer les composantes de dimension \( 0 \) à la fin.
+
+  Au final le nombre d'étapes est
+  \begin{equation}
+    1 + (\deg X)^2 + (\deg X)^3 + \dots + (\deg X)^{\dim X + 1}
+    \le
+    (\deg X)^{\dim X + 2} - 1
+    \pmm.
+  \end{equation}
+\end{ideas}
+
+\begin{coro}
+  Pour tout entier \( m \) supérieur à l'entier \( m \) du lemme précédent, il
+  existe un ouvert dense de \( X^m \) tel
+  que pour tout point \( (x_1, \dots, x_m) \) de cet ouvert, on ait
+  \begin{equation} \label{e:IS}
+    S_X = \bigcap_{i=1}^{m} X - x_i \tag{IS}
+    \pmm.
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Il est clair que si \( (x_1, \dots, x_M) \) satisfait \eqref{IS} c'est
+  aussi le cas de toute extension de cette famille ; il existe donc au moins
+  un point de \( X^m \) possédant la propriété voulue. Par ailleurs, il est
+  clair que cette propriété est ouverte.
+\end{proof}
+
+\begin{lem}
+  On choisir \( m \ge M + 1 \).
+  Pour \( x \in X^m \) satisfaisant \eqref{IS}, on a
+  \begin{equation}
+    s_m^{-1} ( s_m(x) ) \cap X^m
+    =
+    x + \delta(S_X)
+  \end{equation}
+  où \( \delta \colon X \to X^m \) est le plongement diagonal.
+\end{lem}
+
+\begin{ideas}
+  Il est clair que la fibre contient \( x + \delta(S_X) \). 
+
+  Réciproquement, cf (2) dans le mail.
+\end{ideas}
+
+\begin{coro}
+  Pour \( m \ge M + 1 \), la fibre générique de \( s_m \) est isomorphe à \(
+    S_X \). En particulier, \( \dim s_m(X^m) = m \dim X - \dim S_X \)
+\end{coro}
+
+On note désormais \( Z = s_m(X^m) \).
+
+\begin{lem}
+  On a \( \deg Z \le (\deg X)^m (2m)^{ (m+1) \dim X - \dim S_X } \).
+\end{lem}
+
+\begin{ideas}
+  Cf (3).
+\end{ideas}
+
+\begin{lem}
+  On a \( \hautl Z \le \dots \).
+\end{lem}
+
+\begin{ideas}
+  On calcule l'action de \( s_m \) sur la hauteur des points grâce aux
+  formules, puis on utilise le minimum essentiel (référence ?)\todo
+\end{ideas}
+
+
+
+\section{Cas général}
+
+On fixe désormais \( m = \) la borne de Rémond plus 2. On fixe de plus \(
+  (x_1, \dots x_m) \in \va(\Qbar)^m \) satisfaisant les hypothèse de Mumford
+(en particulier \( x_m \) a la plus petite hauteur). On note \( z = s_m(x) \).
+
+\begin{lem}
+  On a 
+  \begin{equation}
+    \hautl(z)
+    \le
+    (\rho^2/4 + 2\phi + \rho\phi) (\dots) \hautn{ x_m }
+  \end{equation}
+\end{lem}
+
+\begin{ideas}
+  On utilise \vref{l:diff-small} pour contrôler chaque \( \hautn(x_i - x_m)
+  \). On compare ensuite à la hauteur projective. On conclut en utilisant
+  la formule pour les hauteurs dans un Segre. (référence ?)\todo
+\end{ideas}
+
+\begin{lem}
+  \begin{equation}
+    \prod_\placerange \distv(z, Z)
+    \le
+    cte(\va) \hautm{ x_m }^{-\expapx}
+  \end{equation}
+\end{lem}
+
+\begin{ideas}
+  On utilise \vref{l:diff-apx} pour chaque composante puis la formule pour les
+  distances dans un Segre. (référence ?)
+\end{ideas}
+
+\begin{lem}
+  On a \( z \in Z \).
+\end{lem}
+
+\begin{ideas}
+  On procède comme dans la démo du thm 3.1.1.
+\end{ideas}
+
+La suite : cf (5) sur papier.
+
+
 \cleardoublepage
 \endinput
 

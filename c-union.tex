@@ -647,6 +647,22 @@ la constante ; on aboutit au résultat suivant.
   précédent en remplaçant \( \eps \) par \( 86\eps / 87 \).
 \end{proof}
 
+L'énoncé précédent laisse libre le choix du paramètre \( m \) qui peut être
+n'importe quel entier supérieur ou égal à \( g + 1 \). Il est clair que la
+condition sur la hauteur est d'autant plus forte que \( m \) est grande : en
+effet, 
+
+La dépendance en \( \expapx \) dans le décompte précédent est en
+\begin{equation}
+  \left( \frac1\expapx \right)^{\frac12 + \frac r2 \cdot \frac m{m-g}}
+  \ln \left( \frac1\expapx \right)
+  \pmm.
+\end{equation}
+L'exposant du premier facteur tend donc vers \( (r+1) / 2 \) lorsque \( m \)
+tend vers l'infini. Cependant, quand \( m \) grandit, le facteur \(
+  (4mg)^{mg} \) dans le décompte croît rapidement et par ailleurs la condition
+de hauteur croît rapidement.
+
 
 
 \section{Décompte grossier des petits points}
@@ -879,15 +895,14 @@ points) des approximations exceptionnelles.
 Ce résultat n'est pas particulièrement satisfaisant dans le sens où la
 majoration est essentiellement donnée par celle provenant des petits points et
 ne tenant donc pas compte de l'hypothèse d'approximation. La section suivante
-présente une autre approche possible pour obtenir des énoncés ne faisant pas
-explicitement intervenir l'hypothèse que les points sont grands.
+présente une autre approche possible : éliminer les petits points.
 
 
 
 \section{Élimination des petits points}
 \label{sec:no-small-points}
 
-On établit ici une variante du résultat principale où l'on se dispense de
+On établit ici une variante du résultat principal où l'on se dispense de
 l'hypothèse que les points sont grands en renforçant l'hypothèse
 d'approximation pour éliminer les petits grâce à l'inégalité de
 \bsc{Liouville}. Le résultat fondamental d'élimination des petits points est
