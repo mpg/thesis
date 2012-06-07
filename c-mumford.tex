@@ -712,14 +712,54 @@ relatif au plongement \( Z \embedin \proj N \) évoqué précédemment.
   comme annoncé.
 \end{proof}
 
+Dans le lemme suivant, on rappelle que \( \hautl[2]{ s_m(x) } \) est la
+hauteur donnée par le plongement dans \( \proj N \).
+
 \begin{lem}
-  On a \( \hautl Z \le \dots \).
+  Pour tout \( x \in X^m \), on a 
+  \begin{equation}
+    \hautl[2]{ s_m(x) }
+    \le
+    4 (m-1) \max_{1 \le i \le m} \bigl( \hautl[2]{ x_i } \bigr)
+    + (m-1) \hlclab
+    \pmm.
+  \end{equation}
 \end{lem}
 
-\begin{ideas}
-  On calcule l'action de \( s_m \) sur la hauteur des points grâce aux
-  formules, puis on utilise le minimum essentiel (référence ?)\todo
-\end{ideas}
+\begin{proof}
+  On reprend la construction faite dans la démonstration du lemme précédent
+  pour exhiber une famille de formes représentant \( s_m \) au voisinage de \(
+    x \), en détaillant la construction pour bien contrôler la hauteur de cette
+  famille.
+
+  La section~\vref{sec:vaemb} fournit, pour chaque \( i \in \set{1, \dots,
+      m-1} \) une famille de formes bihomogènes de bidegré \( (2, 2) \)
+  représentant la soustraction de \( \va^2 \) dans \( \va \) au voisinage de
+  \( (x_i, x_m) \), que l'on notera \( (L\pexp i[k])_{k \in \set{0,
+        \dots, n}} \), telle que \( \nnv1{ L\pexp i } \le \hmclab* \).
+  Pour chaque \( l \in \set{0, \dots, n}^{m-1} \) on pose
+  \begin{equation}
+    S_l(\vmp[1], \dots, \vmp[m-1])
+    =
+    \prod_{i=1}^m L\pexp i[l_i]( \vmp[i], \vmp[m] )
+  \end{equation}
+  de sorte que la famille \( (S_l)_l \) représente \( s_m \) au voisinnage de
+  \( x \). On a alors \( \nnv1{ S } \le \hmclab* ^{m-1} \) par les propriétés
+  de la norme \( L_1 \). Par ailleurs, les propriétés de la norme euclidienne
+  donnent \( \nv2{ S(x) } \le \nnv2{ S } \nv2{ x_1 }^2 \dots \nv2{ x_{m-1} }^2
+    \nv2{ x_m }^{2(m-1)} \) compte tenu du multidegré des formes \( S_l \).
+
+  Le résultat annoncé vient en prenant le logarithme puis la somme sur toutes
+  les places.
+\end{proof}
+
+\begin{coro}
+  On a \( \hautl Z \le \dots \).
+\end{coro}
+
+\begin{proof}
+  On passe par le minimum essentiel.
+\end{proof}
 
 
 
