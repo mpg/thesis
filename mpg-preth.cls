@@ -640,6 +640,8 @@
 
 \newcommand \torsion {\mathrm{tor}}
 
+\newcommand \miness {\mu^{\mathrm{ess}}}
+
 % automatic constants [[2
 %
 \AtBeginDocument{\let\mpg@label\label}
@@ -744,11 +746,6 @@
 \newcommand*\normeuc [1]   {\norm{#1}\sb2}
 \newcommand*\normhom [1]   {\norm{#1}\sb{\mathrm h}}
 
-\nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de
-  la forme \PH}
-\nomdef \mahler a {M} \@gobbletwo{\mahler\PH}{Mesure de \bsc{Mahler} de la
-  forme \PH}
-
 % local absolute values, norms, distances, ... [[2
 %
 \newcommand \place {v}
@@ -780,6 +777,10 @@
   \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
 \nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme
   \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
+\nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de
+  la forme \PH}
+\nomdef \mahler a {M} \@gobbletwo{\mahler\PH}{Mesure de \bsc{Mahler} de la
+  forme \PH}
 
 \newcommand \dv  {{\delta\smash{\sb\place}}}
 \newcommand \dpv {{\delta'\sb\place}}

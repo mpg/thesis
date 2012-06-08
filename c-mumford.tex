@@ -754,11 +754,60 @@ hauteur donnée par le plongement dans \( \proj N \).
 \end{proof}
 
 \begin{coro}
-  On a \( \hautl Z \le \dots \).
+  On a \(
+    \hautl[\htpph] Z
+    \le
+    \bigl( 8 D^{m-1}\hautl[\htpph] X + D^m \hlclab)
+    (2m)^{ (m+2)u + 1 }
+  \).
 \end{coro}
 
 \begin{proof}
-  On passe par le minimum essentiel.
+  Il suffit de savoir majorer le minimum essentiel de \( Z \) en fonction de
+  celui de \( X \), en vertu des comparaison suivantes, données par le
+  théorème 3.1 de \cite{daphimhva1} :
+  \worknote{Recopié depuis \cite{daphimht}, à vérifier directement dans la
+    réf. citée quand même.}
+  \begin{equation}
+    \miness(V) \deg V
+    \le
+    \hautl[\htpph] V
+    \le
+    \miness(V) \deg V (\dim V + 1)
+  \end{equation}
+  où \( \miness \) désigne le minimum essentiel, défini en utilisant la
+  hauteur \( \Hautl[2] \) pour les points. (On rappelle que \( \Hautl[\htpph]
+  \) est la hauteur obtenue en utilisant la mesure de \bsc{Philippon} aux
+  places archimédiennes.)
+
+  Notons \( F \) l'ensemble des points de \( x \in X \) tels que \( \hautl[2]
+    x \le 2 \miness(X) \) ; par définition \( F \) est dense dans \( X \),
+  donc \( F^m \) est dense dans \( X^m \) et \( s_m(F^m) \) est dense dans \(
+    Z \). On applique alors le lemme précédent pour majorer la hauteur des
+  points de \( s_m(F^m) \) et obtenir
+  \begin{equation}
+    \miness(Z)
+    \le
+    8 (m-1) \miness(X) + (m-1) \hlclab
+    \pmm.
+  \end{equation}
+
+  Il est alors aisé de passer aux hauteurs grâce à l'encadrement rappelé
+  ci-dessus, en utilisant les lemmes précédents pour majorer (un peu largement)
+  \( \deg Z \) par \( D^m (2m)^{ (m+1)u } \) et sa dimension par \( mu \).
+  \begin{align}
+    \hautl[\htpph] Z
+    & \le
+    \miness(Z) \deg Z (\dim Z + 1)
+    \\ & \le
+    (8 (m-1) \miness(X) + (m-1) \hlclab)
+    D^m (2m)^{ (m+1)u }
+    mu
+    \\ & \le
+    (8  \hautl[\htpph] X / D +  \hlclab)
+    D^m (2m)^{ (m+2)u + 1 }
+  \end{align}
+  qui donne bien la majoration annoncée.
 \end{proof}
 
 
