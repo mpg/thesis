@@ -880,19 +880,31 @@ conséquences ou analogues directs de ceux de la
 section~\vref{sec:mumford-grp}.
 
 \begin{lem}
-  On a
+  Sous les hypothèses~\eqref{e:Mcos-gen} et~\eqref{e:Mclose-gen} du
+  théorème~\eqref{t:mumford-gen}, on a
   \begin{equation}
     \hautl z
     \le
-    (\rho^2/4 + 2\phi + \rho\phi) (\dots) \hautn{ x_m }
+    (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m }
+    + (m-1) \htcmp
+    \pmm.
   \end{equation}
 \end{lem}
 
-\begin{ideas}
-  On utilise \vref{l:diff-small} pour contrôler chaque \( \hautn{ x_i - x_m }
-  \). On compare ensuite à la hauteur projective. On conclut en utilisant
-  la formule pour les hauteurs dans un Segre. (référence ?)\todo
-\end{ideas}
+\begin{proof}
+  Pour chaque \( i \in \set{1, \dots, m-1} \), on applique le lemme
+  \vref{l:diff-small} avec \( x = x_m \) et \( y = x_i \), ce qui montre que
+  \( \hautn{z_i} \le (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m } \).
+  On écrit ensuite
+  \begin{equation}
+    \hautl[2]{z}
+    =
+    \sum_{i=1}^{m-1} \hautl[2]{z_i}
+    \le
+    \sum_{i=1}^{m-1} (\hautn{z_i} + \htcmp)
+  \end{equation}
+  pour aboutir au résultat annoncé.
+\end{proof}
 
 \begin{lem}
   \begin{equation}
