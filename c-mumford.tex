@@ -460,6 +460,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \end{proof}
 
 \begin{proof}[Démonstration (du théorème~\vref{t:mumford-grp}).]
+  \label{page:demo-mumgrp}
   Compte tenu de l'inégalité de gauche de~\eqref{e:Mclose} et de la
   comparaison entre hauteurs projective et normalisée, le
   lemme~\vref{l:diff-apx} donne, en prenant le logarithme :
@@ -879,7 +880,7 @@ une famille \( x = (x_1, \dots, x_m) \in \va(\Qbar)^m \) (et non plus \( X^m
 conséquences ou analogues directs de ceux de la
 section~\vref{sec:mumford-grp}.
 
-\begin{lem}
+\begin{lem} \label{l:img-small}
   Sous les hypothèses~\eqref{e:Mcos-gen} et~\eqref{e:Mclose-gen} du
   théorème~\eqref{t:mumford-gen}, on a
   \begin{equation}
@@ -906,7 +907,7 @@ section~\vref{sec:mumford-grp}.
   pour aboutir au résultat annoncé.
 \end{proof}
 
-\begin{lem}
+\begin{lem} \label{l:img-apx}
   Si \( x \) satisfait l'hypothèse~\eqref{e:Mapx-gen} et la première inégalité
   de l'hypothèse~\eqref{e:Mclose-gen} du théorème~\vref{t:mumford-gen}, on a
   \begin{equation}
@@ -959,15 +960,145 @@ section~\vref{sec:mumford-grp}.
 \end{proof}
 
 \begin{lem}
-  On a \( z \in Z \).
+  Sous les hypothèses du théorème~\vref{t:mumford-gen} (sauf \( x_i \in \Gamma
+  \) et la définition de \( m \)), on a \( z \in Z \).
 \end{lem}
 
-\begin{ideas}
-  On procède comme dans la démo du thm 3.1.1.
-\end{ideas}
+\begin{proof}
+  On procède comme en page~\pageref{page:demo-mumgrp} pour la preuve du
+  théorème~\ref{t:mumford-grp}. Si \( z \not\in Z \), l'inégalité de
+  \bsc{Liouville} (proposition~\vref{p:liouville}) appliquée à \( z \) et \( Z
+  \) donne, en prenant les logarithmes :
+  \begin{align} \label{e:liou}
+    \sum\placerange \degv \ln\distv z Z
+    & \ge
+    - (\deg Z) \hautl[2] z
+    - \hautl[1]{ Z }
+    \\ & \qquad
+    - \frac32 \ln(N + 1)
+    - (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
+    \pmm.
+  \end{align}
+  On va maintenant estimer une par une les quantités apparaissant dans le
+  membre de droite.
 
-La suite : cf (5) sur papier.
+  Dans la démonstration du lemme~3.3, p. 111 de \cite{remgdmp}, il est établit
+  que si \( P \) est une forme multihomogène de multidegré \( \delta \) en
+  plusieurs groupes de \( n + 1 \) variables, dont on note \( p_\alpha \)
+  les coefficients, on a aux places archimédiennes
+  \begin{equation}
+    \abs{ p_\alpha }
+    \le
+    \binom \delta \alpha
+    \mahler P
+    \le
+    \binom \delta \alpha
+    \mespph P
+  \end{equation}
+  ce qui en sommant sur les multimultiindices \( \alpha \) tels que \(
+    \vlg\alpha = \delta \), donne immédiatement, par la formule multinomiale :
+  \begin{equation}
+    \normlun P
+    \le
+    (n+1)^{\lgr\delta}
+    \mespph P
+    \pmm.
+  \end{equation}
+  En appliquant ceci à la forme de \bsc{Chow} de \( Z \), qui est
+  multihomogène de degré \( \deg Z \) en \( \dim Z + 1 \) groupes de \( N + 1
+  \) variables, puis en utilisant les estimations de la section précédente, il
+  vient :
+  \begin{align} \label{e:liou-h1-img}
+    \hautl[1] Z
+    & \le
+    \hautl[\htpph] Z
+    + (\deg Z) (\dim Z + 1) \ln(N+1)
+    \\ & \le
+    \bigl( 8 D^{m-1}\hautl[\htpph] X + D^m \hlclab)
+    (2m)^{ (m+2)u }
+    \\ & \qquad
+    + D^m (2m)^{mu} (m-1)^{u-1} (um + 1) (m-1)\ln(n+1)
+    \\ & \le
+    (2m)^{ (m+2)u } \Bigl(
+    D^{m-1} \hautl[\htpph] X
+    + D^m \bigl( \hlclab + \ln(n+1) \bigr)
+    \Bigr)
+    \pmm.
+  \end{align}
 
+  Par ailleurs, ces mêmes estimations donnent :
+  \begin{align}
+    (\dim Z + 1) \ln(3 \deg Z)
+    & \le
+    (um + 1) \bigl( (m+1) u \ln(2m) + \ln 3 \bigr)
+    \\ & \le
+    u^2 (m+1) \bigl( (m+1) \ln(2m) + \ln 3 \bigr)
+    \\ & \le
+    2^{u+2} m^3
+  \end{align}
+  où, la dernière ligne utilise le fait que \( u^2 \le 2^{u+1} \) et,
+  pour majorer le facteur en \( m \), une vérification numérique pour les
+  petites valeurs. Au final on a
+  \begin{equation} \label{e:liou-cst2}
+    (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
+    \le
+    2^{mu} m^{(m+1)u - 1}
+    \cdot 2^{u+2} m^3
+    \le
+    D^m (2m)^{(m+1)u + 2}
+    \pmm.
+  \end{equation}
+
+  Enfin, le lemme~\vref{l:img-small} et l'hypothèse~\eqref{e:rho-phi-gen}
+  donnent
+  \begin{align}
+    (\deg Z) \hautl[2] z
+    & \le
+    \frac\expapx2 \hautn{ x_m }
+    + D^m (2m)^{(m+1)u} \htcmp
+    \pmm.
+  \end{align}
+  On peut maintenant substituer cette estimation ainsi
+  que~\eqref{e:liou-h1-img} et~\eqref{e:liou-cst2} dans l'inégalité de
+  \bsc{Liouville} écrite en~\eqref{e:liou} :
+  \begin{align}
+    \sum\placerange \degv \ln\distv z Z
+    & \ge
+    - \frac\expapx2 \hautn{ x_m }
+    - D^m (2m)^{(m+1)u} \htcmp
+    \\ & \qquad
+    - (2m)^{ (m+2)u } \Bigl(
+    D^{m-1} \hautl[\htpph] X
+    + D^m \bigl( \hlclab + \ln(n+1) \bigr)
+    \Bigr)
+    \\ & \qquad
+    - 2(m-1) \ln(n+1)
+    - D^m (2m)^{(m+1)u + 2}
+    \\ & \ge
+    - \frac\expapx2 \hautn{ x_m }
+    - D^{m-1} (2m)^{ (m+2)u } \, \hautl[\htpph] X
+    \\ & \qquad
+    - D^m (2m)^{ (m+2)u + 1}
+    \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+    \pmm.
+  \end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{proof}
 
 \cleardoublepage
 \endinput
