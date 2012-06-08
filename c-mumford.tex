@@ -907,17 +907,56 @@ section~\vref{sec:mumford-grp}.
 \end{proof}
 
 \begin{lem}
+  Si \( x \) satisfait l'hypothèse~\eqref{e:Mapx-gen} et la première inégalité
+  de l'hypothèse~\eqref{e:Mclose-gen} du théorème~\vref{t:mumford-gen}, on a
   \begin{equation}
     \prod_\placerange \distv z Z ^\degv
     \le
-    cte(\va) \hautm[2]{ x_m }^{-\expapx}
+    \expb^{-\expapx \hautn{ x_m }}
+    \cdot \hmclab \expb^\htcmp
+    \cdot 5 \sqrt{2m-2} \, (n + 1)^3
   \end{equation}
 \end{lem}
 
-\begin{ideas}
-  On utilise \vref{l:diff-apx} pour chaque composante puis la formule pour les
-  distances dans un Segre. (référence ?)
-\end{ideas}
+\begin{proof}
+  C'est une variante du lemme~\vref{l:diff-apx} ; la démonstration est
+  identique sauf pour l'étape finale et quelques comparaisons de hauteurs.
+  Pour chaque \( i \in \set{1, \dots, m-1} \) et chaque \( v \in \placesapx
+  \), la définition de la distance permet de choisir un point \( y_{i, v} \in
+    \varapx(\Cv) \) tel que
+  \begin{equation}
+    \distv{ x_i }{ y_{i, v} }
+    =
+    \distv{ x_i }\varapx
+    \le
+    \exp(-\wtapx \expapx \hautn{ x_m } + \htcmp)
+  \end{equation}
+  où l'inégalité découle directement des hypothèses et d'une comparaison entre
+  hauteurs.
+  La proposition~\vref{p:addsub-dv} donne alors
+  \begin{equation}
+    \max_i \distv{ x_i - x_m }{ y_{i, v} - y_{m, v} }
+    \le
+    \exp(-\wtapx \expapx \hautn{ x_m } + \htcmp)
+    \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
+    \pmm.
+  \end{equation}
+  Or, d'après le lemme~4.3, p.~121 de \cite{remgdmp} (interprété à la lumière
+  des remarques p.~102 de la même référence concernant le lien entre indices
+  d'une distance et plongement de \bsc{Segre}), en notant \( y_v = (y_{1, v},
+    \dots, y_{m, v}) \in X^m(\Cv) \), on a
+  \begin{equation}
+    \distv{ s_m(x) }{ s_m(y_v) }
+    \le
+    (m-1)^{\dv/2}
+    \, \max_i \distv{ x_i - x_m }{ y_{i, v} - y_{m, v} }
+    \pmm.
+  \end{equation}
+  Or par définition le membre de gauche majore \( \distv{ z, Z } \). Il suffit
+  alors de prendre le produit sur \( v \) (en supposant que \( S \) contient
+  toutes les places archimédiennes que c'est le cas défavorable) pour
+  conclure.
+\end{proof}
 
 \begin{lem}
   On a \( z \in Z \).
