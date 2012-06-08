@@ -66,9 +66,19 @@ Pour le cas général, l'énoncé est le suivant.
 \begin{thm} \label{t:mumford-gen}
   Soit \( \varapx \) une sous-variété de \( \va \) ; on note \( d = \deg
     \varapx \) et \( l = \dim\varapx + 1 \). On fixe un sous-groupe \( \Gamma
-    \subset \va(\Qbar) \) de type fini dont on note \( r \) le rang, puis on
-  pose \( m = \todots \). On choisit alors \( \expapx > 0 \) puis \( \phi > 0
-  \) et \( \rho > 0 \) tels que
+    \subset \va(\Qbar) \) de rang fini \( r \), puis on
+  pose
+  \begin{equation}
+    m
+    =
+    \bigl(
+    2^{34} \cdot h_0(\va) \cdot \deg X
+    \bigr)^{ (r+1) g^{ 5(\dim X + 1)^2 } }
+    + 1
+    \pmm.
+  \end{equation}
+  On choisit alors \( \expapx > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \)
+  tels que
   \begin{equation} \label{e:rho-phi-gen}
     \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
     \le
@@ -78,15 +88,23 @@ Pour le cas général, l'énoncé est le suivant.
   Si \( x_1, \dots, x_m \) est une famille de points de \( \Gamma \)
   telle que, pour tous \( i \) et \( j \) entre \( 1 \) et \( m \) :
   \begin{align}
-    0 < \distv{ x_i }\varapx
-    & \le
+    0
+    & <
+    \distv{ x_i }\varapx
+    \le
     \hautm[2]{ x_i }^{-\wtapx\expapx}
     \quad \forall \place \in \placesapx
     \label{e:Mapx-gen}
     \\
     \hautn{ x_m }
     & \ge
-    \dots
+    \frac2\expapx
+    D^{m-1} (2m)^{ (m+2)u }
+    \Bigl(
+      \hautl[\htpph] X
+      + 4 D m^2 \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+    \Bigr)
+    \quad
     \label{e:Mbig-gen}
     \\
     \cos(x_i, x_j)
@@ -102,8 +120,8 @@ Pour le cas général, l'énoncé est le suivant.
     \label{e:Mclose-gen}
   \end{align}
   alors il existe une sous-variété abélienne \( \vai \subset \va \) dont un
-  translaté est contenue dans \( \varapx \) et deux indices \( i \) et \( j \)
-  tels que \( x_i - x_j \in \vai \).
+  translaté est contenue dans \( \varapx \) et deux indices distincts \( i \)
+  et \( j \) tels que \( x_i - x_j \in \vai \).
 \end{thm}
 
 Avant d'attaquer les preuves proprement dites, on démontre une inégalité de
@@ -459,7 +477,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
   \end{align}
 \end{proof}
 
-\begin{proof}[Démonstration (du théorème~\vref{t:mumford-grp}).]
+\begin{proof}[Démonstration du théorème~\vref{t:mumford-grp}.]
   \label{page:demo-mumgrp}
   Compte tenu de l'inégalité de gauche de~\eqref{e:Mclose} et de la
   comparaison entre hauteurs projective et normalisée, le
@@ -1083,22 +1101,85 @@ section~\vref{sec:mumford-grp}.
     \pmm.
   \end{align}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  Par ailleurs, le lemme~\vref{l:img-apx} dit que
+  \begin{equation}
+    \sum\placerange \degv \ln\distv z Z
+    \le
+    -\expapx \hautn{ x_m }
+    + \hlclab + \htcmp
+    + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
+  \end{equation}
+  Les deux dernières égalités mises ensemble donnent
+  \begin{equation}
+    \frac\expapx2 \hautn{ x_m }
+    \le
+    D^{m-1} (2m)^{ (m+2)u } \, \hautl[\htpph] X
+    + D^m (2m)^{ (m+2)u + 2} \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+  \end{equation}
+  qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.
 \end{proof}
+
+On rappelle la version effective de l'ex-conjecture de \bsc{Mordell-Lang}
+obtenue par \bsc{Rémond}.
+
+\begin{fact}
+  \worknote{On doit pouvoir mettre une inégalité stricte, non ?}
+  Soient \( X \subset \va \) une sous-variété et \( \Gamma \subset \va(\Qbar)
+  \) un sous-groupe de rang fini \( r \). Alors il existe un entier naturel
+  \begin{equation}
+    S
+    \le
+    \bigl(
+    2^{34} \cdot h_0(\va) \cdot \deg X
+    \bigr)^{ (r+1) g^{ 5(\dim X + 1)^2 } }
+    \pmm,
+  \end{equation}
+  des points \( x_1, \dots, x_S \) de \( X(\Qbar) \cap \Gamma \) et des
+  sous-variétés abéliennes \( B_1, \dots, B_s \) de \( \va \) telles que \(
+    x_i + B_i \subset X \) pour tout \( i \in \set{1, \dots, S} \) et
+  \begin{equation}
+    X(\Qbar) \cap \Gamma
+    =
+    \bigcup_{i=1}^{S} (x_i + B_i)(\Qbar) \cap \Gamma
+    \pmm.
+  \end{equation}
+\end{fact}
+
+\begin{proof}
+  \worknote{Introduire \( h_0(\va) \) et vérifier les hypothèse sur le
+    plongement.}
+  C'est une version du théorème de~2.1, p.~517 de \cite{remdcl} où la fonction
+  notée \( f \) dans ledit énoncé est explicitée, citée dans \cite{daphimhva2}
+  p.~643.
+\end{proof}
+
+Nous sommes maintenant prêts à conclure.
+
+\begin{proof}[Démonstration du théorème~\vref{t:mumford-gen}.]
+  Soit \( x = (x_1, \dots, x_m) \) une famille de points comme dans l'énoncé.
+  D'après le lemme précédent, il existe un point \( y \in \varapx(\Qbar) \)
+  tel que \( x_i - x_m = y_i - y_m \) pour tout \( i \). En particulier, pour
+  tout \( i \) on a
+  \begin{equation}
+    y_i - y_m
+    \in
+    (X - y_m)(\Qbar) \cap \Gamma
+    =
+    \bigcup_{k=1}^{S} (z_k + B_k)(\Qbar) \cap \Gamma
+  \end{equation}
+  où l'égalité de droite découle du fait précédent, avec \( z_k \in X - y_m \)
+  et \( z_k + B_k \in X \), où \( B_k \subset \va \) est une sous-variété
+  abélienne, pour tout \( k \), et \( S < m \).
+
+  Ainsi, il existe un indice \( k \in \set{1, \dots, S} \) et deux indices
+  distincts \( i \) et \( j \) tels que \( y_i - y_m \in z_k + B_k \) et \(
+    y_j - y_m \in z_k + B_k \). Par différence, on a alors
+  \begin{equation}
+    y_i - y_j = x_i - x_j \in B_k
+  \end{equation}
+  et \( z_k + y_m + B_k \subset X \), ce qui achève la preuve.
+\end{proof}
+
 
 \cleardoublepage
 \endinput
