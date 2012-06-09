@@ -9,7 +9,7 @@ le cas particulier où \( \avar \) est un translaté d'une sous-variété
 abélienne de \( \va \), la deuxième dans le cas général. À part être plus
 simple à démonter et servir d'échauffement pour le cas général, la version
 particulière présente deux intérêts majeurs : elle s'énonce sur \( \Qbar \)
-sans devoir se restreindre à un sous-groupe de type fini de \( \va(\Qbar) \),
+sans devoir se restreindre à un sous-groupe de rang fini de \( \va(\Qbar) \)
 et les constantes obtenues y sont sensiblement meilleures.
 
 \begin{thm} \label{t:mumford-grp}
@@ -25,8 +25,10 @@ et les constantes obtenues y sont sensiblement meilleures.
   \end{equation}
   Si \( x \) et \( y \) sont deux points de \( \va(\Qbar) \) tels que
   \begin{align}
-    0 < \distv z \avar
-    & \le
+    0
+    & <
+    \distv z \avar
+    \le
     \hautm[2] z ^{-\wtapx\eps}
     \quad \forall v \in \placesapx
     \quad \text{où \( z \) est \( x \) ou \( y \)}
@@ -41,6 +43,7 @@ et les constantes obtenues y sont sensiblement meilleures.
       + \hlclab
       + 6 \ln(n + 1)
     \bigr)
+    \quad
     \label{e:Mbig}
     \\
     \cos(x, y)
@@ -66,14 +69,13 @@ Pour le cas général, l'énoncé est le suivant.
 \begin{thm} \label{t:mumford-gen}
   Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
     \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \Gamma
-    \subset \va(\Qbar) \) de rang fini \( r \), puis on
-  pose
+    \subset \va(\Qbar) \) de rang fini \( r \), puis on pose
   \begin{equation}
     m
     =
     \bigl(
-    2^{34} \cdot h_0(\va) \cdot \deg X
-    \bigr)^{ (r+1) g^{ 5(\dim X + 1)^2 } }
+    2^{34} \cdot h_0(\va) \cdot \adeg
+    \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
     + 1
     \pmm.
   \end{equation}
@@ -82,7 +84,7 @@ Pour le cas général, l'énoncé est le suivant.
   \begin{equation} \label{e:rho-phi-gen}
     \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
     \le
-    \frac{ \eps }{ 2\adeg^m }
+    \frac{ \eps }{ 2 \adeg^m (2m)^{(m+1)\adim} }
     \pmm.
   \end{equation}
   Si \( x_1, \dots, x_m \) est une famille de points de \( \Gamma \)
@@ -99,10 +101,10 @@ Pour le cas général, l'énoncé est le suivant.
     \hautn{ x_m }
     & \ge
     \frac2\eps
-    D^{m-1} (2m)^{ (m+2)\adim }
+    \adeg^{m-1} (2m)^{ (m+2)\adim }
     \Bigl(
       \hautl[\htpph] X
-      + 4 D m^2 \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+      + 4 \adeg m^2 \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
     \Bigr)
     \quad
     \label{e:Mbig-gen}
@@ -120,7 +122,7 @@ Pour le cas général, l'énoncé est le suivant.
     \label{e:Mclose-gen}
   \end{align}
   alors il existe une sous-variété abélienne \( \vai \subset \va \) dont un
-  translaté est contenue dans \( \avar \) et deux indices distincts \( i \)
+  translaté est contenu dans \( \avar \) et deux indices distincts \( i \)
   et \( j \) tels que \( x_i - x_j \in \vai \).
 \end{thm}
 
@@ -133,7 +135,7 @@ expliciter l'obstruction à la version naïve de cette inégalité.
 
 Une fois réunis ces ingrédients techniques, on peut conclure directement dans
 le cas des translatés de sous-variété abéliennes ; pour le cas général, on
-étudie préalablement un morphisme « des différences » qui joue un rôle central
+étudie au préalable un morphisme « des différences » qui joue un rôle central
 dans la preuve.
 
 
@@ -164,7 +166,7 @@ Ce type d'inégalité se prouve de façon naturelle avec la distance algébrique
 général en utilisant la définition, on obtient \( \adeg (\adim+1) \) comme
 exposant de \( \hautm[2] x \). On commence donc par le cas d'une hypersurface,
 où la distance algébrique admet une expression plus simple, puis on remarque
-que tout variété est une intersection d'hypersurfaces.
+que toute variété est une intersection d'hypersurfaces.
 
 On pourrait se ramener au cas d'un hyperplan, où la distance admet une
 expression simple, par un plongement de \bsc{Veronese} (remodelé) comme dans
@@ -389,7 +391,7 @@ valeur admissible pour la constante de \bsc{Lipschitz}.
 
 
 
-\section{Inégalité de \bsc{Mumford} pour les translatés de sous-groupes}
+\section{Cas des translatés de sous-variétés abéliennes}
 \label{sec:mumford-grp}
 
 La stratégie de la preuve est la suivante : si on a deux approximations
@@ -402,7 +404,7 @@ une approximation de qualité telle qu'elle appartiendra nécessairement à \(
 
 \begin{lem} \label{l:diff-apx}
   Soient \( x \) et \( y \) dans \( \proj(\Qbar) \), on pose \( z = x -
-    y \) et \( H = \min\bigl( \hautm[2](x), \hautm[2](y) \bigr) \).
+    y \) et \( H = \min\bigl( \hautm[2] x, \hautm[2] y \bigr) \).
   Si \( x \) et \( y \) satisfont à~\eqref{e:Mapx}, on a
   \begin{equation}
     \prod\placerange
@@ -828,7 +830,7 @@ hauteur donnée par le plongement dans \( \proj N \).
     =
     \prod_{i=1}^m L\pexp i[l_i]( \vmp[i], \vmp[m] )
   \end{equation}
-  de sorte que la famille \( (S_l)_l \) représente \( s_m \) au voisinnage de
+  de sorte que la famille \( (S_l)_l \) représente \( s_m \) au voisinage de
   \( x \). On a alors \( \nnv1{ S } \le \hmclab* ^{m-1} \) par les propriétés
   de la norme \( L_1 \). Par ailleurs, les propriétés de la norme euclidienne
   donnent \( \nv2{ S(x) } \le \nnv2{ S } \nv2{ x_1 }^2 \dots \nv2{ x_{m-1} }^2
@@ -898,7 +900,7 @@ hauteur donnée par le plongement dans \( \proj N \).
 
 
 
-\section{Inégalité de \bsc{Mumford} dans le cas général}
+\section{Cas général}
 
 Dans toute cette section, on continue de supposer que \( m \ge M \) et on fixe
 une famille \( x = (x_1, \dots, x_m) \in \va(\Qbar)^m \) (et non plus \(
@@ -1144,12 +1146,12 @@ obtenue par \bsc{Rémond}.
     \pmm,
   \end{equation}
   des points \( x_1, \dots, x_S \) de \( \avar(\Qbar) \cap \Gamma \) et des
-  sous-variétés abéliennes \( B_1, \dots, B_s \) de \( \va \) telles que \(
-    x_i + B_i \subset \avar \) pour tout \( i \in \set{1, \dots, S} \) et
+  sous-variétés abéliennes \( \vai_1, \dots, \vai_s \) de \( \va \) telles que
+  \( x_i + \vai_i \subset \avar \) pour tout \( i \in \set{1, \dots, S} \) et
   \begin{equation}
     \avar(\Qbar) \cap \Gamma
     =
-    \bigcup_{i=1}^{S} (x_i + B_i)(\Qbar) \cap \Gamma
+    \bigcup_{i=1}^{S} (x_i + \vai_i)(\Qbar) \cap \Gamma
     \pmm.
   \end{equation}
 \end{fact}
@@ -1174,19 +1176,19 @@ Nous sommes maintenant prêts à conclure.
     \in
     (\avar - y_m)(\Qbar) \cap \Gamma
     =
-    \bigcup_{k=1}^{S} (z_k + B_k)(\Qbar) \cap \Gamma
+    \bigcup_{k=1}^{S} (z_k + \vai_k)(\Qbar) \cap \Gamma
   \end{equation}
   où l'égalité de droite découle du fait précédent, avec \( z_k \in \avar -
-    y_m \) et \( z_k + B_k \in \avar \), où \( B_k \subset \va \) est une
-  sous-variété abélienne, pour tout \( k \), et \( S < m \).
+    y_m \) et \( z_k + \vai_k \in \avar \), où \( \vai_k \subset \va \) est
+  une sous-variété abélienne, pour tout \( k \), et \( S < m \).
 
   Ainsi, il existe un indice \( k \in \set{1, \dots, S} \) et deux indices
-  distincts \( i \) et \( j \) tels que \( y_i - y_m \in z_k + B_k \) et \(
-    y_j - y_m \in z_k + B_k \). Par différence, on a alors
+  distincts \( i \) et \( j \) tels que \( y_i - y_m \in z_k + \vai_k \) et \(
+    y_j - y_m \in z_k + \vai_k \). Par différence, on a alors
   \begin{equation}
-    y_i - y_j = x_i - x_j \in B_k
+    y_i - y_j = x_i - x_j \in \vai_k
   \end{equation}
-  et \( z_k + y_m + B_k \subset \avar \), ce qui achève la preuve.
+  et \( z_k + y_m + \vai_k \subset \avar \), ce qui achève la preuve.
 \end{proof}
 
 
