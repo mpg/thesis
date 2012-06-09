@@ -5,7 +5,7 @@
 \section{Énoncés principaux}
 
 On prouve ici deux inégalités de \bsc{Mumford} explicites : la première dans
-le cas particulier où \( \varapx \) est un translaté d'une sous-variété
+le cas particulier où \( \avar \) est un translaté d'une sous-variété
 abélienne de \( \va \), la deuxième dans le cas général. À part être plus
 simple à démonter et servir d'échauffement pour le cas général, la version
 particulière présente deux intérêts majeurs : elle s'énonce sur \( \Qbar \)
@@ -13,31 +13,31 @@ sans devoir se restreindre à un sous-groupe de type fini de \( \va(\Qbar) \),
 et les constantes obtenues y sont sensiblement meilleures.
 
 \begin{thm} \label{t:mumford-grp}
-  Soient \( \vai \) une sous-variété abélienne de \( \va \) et \( \varapx \)
+  Soient \( \vai \) une sous-variété abélienne de \( \va \) et \( \avar \)
   un translaté de \( \vai \) par un point algébrique ;
-  on note \( d = \deg \vai \) et \( l = \dim\vai + 1 \).
-  On choisit \( \expapx > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \) tels que
+  on note \( \adeg = \deg \vai \) et \( \adim = \dim\vai \).
+  On choisit \( \eps > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \) tels que
   \begin{equation} \label{e:rho-phi-grp}
     \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
     \le
-    \frac{ \expapx }{ 2d }
+    \frac{ \eps }{ 2\adeg }
     \pmm.
   \end{equation}
   Si \( x \) et \( y \) sont deux points de \( \va(\Qbar) \) tels que
   \begin{align}
-    0 < \distv z \varapx
+    0 < \distv z \avar
     & \le
-    \hautm[2] z ^{-\wtapx\expapx}
-    \quad \forall \place \in \placesapx
+    \hautm[2] z ^{-\wtapx\eps}
+    \quad \forall v \in \placesapx
     \quad \text{où \( z \) est \( x \) ou \( y \)}
     \label{e:Mapx}
     \\
     \hautn x
     & \ge
-    \frac2\expapx \bigl(
+    \frac2\eps \bigl(
       \hautl[1]{ \chow\vai }
-      + ld \ln(3d)
-      + (d + 1) \htcmp
+      + (\adim + 1) \adeg \ln(3\adeg)
+      + (\adeg + 1) \htcmp
       + \hlclab
       + 6 \ln(n + 1)
     \bigr)
@@ -64,8 +64,8 @@ la section~\vref{sec:obstruction}.
 Pour le cas général, l'énoncé est le suivant.
 
 \begin{thm} \label{t:mumford-gen}
-  Soit \( \varapx \) une sous-variété de \( \va \) ; on note \( d = \deg
-    \varapx \) et \( l = \dim\varapx + 1 \). On fixe un sous-groupe \( \Gamma
+  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
+    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \Gamma
     \subset \va(\Qbar) \) de rang fini \( r \), puis on
   pose
   \begin{equation}
@@ -77,12 +77,12 @@ Pour le cas général, l'énoncé est le suivant.
     + 1
     \pmm.
   \end{equation}
-  On choisit alors \( \expapx > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \)
+  On choisit alors \( \eps > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \)
   tels que
   \begin{equation} \label{e:rho-phi-gen}
     \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
     \le
-    \frac{ \expapx }{ 2d^m }
+    \frac{ \eps }{ 2\adeg^m }
     \pmm.
   \end{equation}
   Si \( x_1, \dots, x_m \) est une famille de points de \( \Gamma \)
@@ -90,16 +90,16 @@ Pour le cas général, l'énoncé est le suivant.
   \begin{align}
     0
     & <
-    \distv{ x_i }\varapx
+    \distv{ x_i }\avar
     \le
-    \hautm[2]{ x_i }^{-\wtapx\expapx}
-    \quad \forall \place \in \placesapx
+    \hautm[2]{ x_i }^{-\wtapx\eps}
+    \quad \forall v \in \placesapx
     \label{e:Mapx-gen}
     \\
     \hautn{ x_m }
     & \ge
-    \frac2\expapx
-    D^{m-1} (2m)^{ (m+2)u }
+    \frac2\eps
+    D^{m-1} (2m)^{ (m+2)\adim }
     \Bigl(
       \hautl[\htpph] X
       + 4 D m^2 \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
@@ -120,7 +120,7 @@ Pour le cas général, l'énoncé est le suivant.
     \label{e:Mclose-gen}
   \end{align}
   alors il existe une sous-variété abélienne \( \vai \subset \va \) dont un
-  translaté est contenue dans \( \varapx \) et deux indices distincts \( i \)
+  translaté est contenue dans \( \avar \) et deux indices distincts \( i \)
   et \( j \) tels que \( x_i - x_j \in \vai \).
 \end{thm}
 
@@ -143,17 +143,17 @@ On établit ici l'analogue suivant de la classique inégalité de
 \bsc{Liouville}.
 
 \begin{prop} \label{p:liouville}
-  Soit \( V \) une sous-variété de \( \projd \), de dimension \( u \) et de
-  degré \( d \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in
+  Soit \( V \) une sous-variété de \( \projd \), de dimension \( \adim \) et de
+  degré \( \adeg \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in
   V(\Qbar) \) soit
   \begin{equation}
     \prod_{v \in \placesapx} \distv x V ^\degv
     \ge
     \frac1{
       (n+1)^{3/2}
-      (3d)^{d (u+1)}
+      (3\adeg)^{\adeg (\adim+1)}
       \, \hautm[1]{ \chow V }
-      \, \hautm[2] x ^d
+      \, \hautm[2] x ^\adeg
     }
     \pmm.
   \end{equation}
@@ -161,7 +161,7 @@ On établit ici l'analogue suivant de la classique inégalité de
 
 Ce type d'inégalité se prouve de façon naturelle avec la distance algébrique
 (section~\vref{sec:distv-cmp}). Cependant, si l'on traite directement le cas
-général en utilisant la définition, on obtient \( d (u+1) \) comme exposant de
+général en utilisant la définition, on obtient \( \adeg (\adim+1) \) comme exposant de
 \( \hautm[2] x \). On commence donc par le cas d'une hypersurface, où la
 distance algébrique admet une expression plus simple, puis on remarque que
 tout variété est une intersection d'hypersurfaces.
@@ -173,15 +173,15 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
 
 \begin{lem} \label{l:liou-hs}
   Soit \( V \) une hypersurface de \( \projd \), d'équation \( F \) et de
-  degré \( d \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in
+  degré \( \adeg \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in
   V(\Qbar) \) soit
   \begin{equation}
     \prod_{v \in \placesapx} \distv x V ^\degv
     \ge
     \frac1{
-      (17/8)^d (n+1)^{3/2}
+      (17/8)^\adeg (n+1)^{3/2}
       \, \hautm[2] G
-      \, \hautm[2] x ^d
+      \, \hautm[2] x ^\adeg
     }
     \pmm.
   \end{equation}
@@ -203,9 +203,9 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
     \left(
       \left(
         \frac{27}{26} (n+1)^{3/2}
-        \left( \frac{164}{81} \right)^{d}
+        \left( \frac{164}{81} \right)^{\adeg}
       \right)^{-\dv}
-      \frac{ \av{G(x)} }{ \nv2 x^{d} \nv2 G }
+      \frac{ \av{G(x)} }{ \nv2 x^{\adeg} \nv2 G }
     \right)^\degv
   \end{align}
   qui implique le résultat annoncé, \lat{via} une simple comparaison
@@ -214,17 +214,17 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
 
 \begin{proof}[\proofname{} de la proposition~\vref{p:liouville}]
   Si \( x \not\in V(\Qbar) \), la proposition~6.1 de~\cite{remdcl}
-  donne une forme \( G \) homogène de degré \( d \), contenant \( V \) mais
+  donne une forme \( G \) homogène de degré \( \adeg \), contenant \( V \) mais
   pas \( x \), telle que
   \begin{equation}
     \hautm[1] G
     \le
-    \hautm[1] V \cdot (d + 1)^{ d (u + 1) }
+    \hautm[1] V \cdot (\adeg + 1)^{ \adeg (\adim + 1) }
   \end{equation}
   en tenant compte des différences de hauteurs utilisées, comme observé dans
   la preuve du lemme~\vref{l:hs-choice}. Il suffit alors d'appliquer le
-  lemme précédent à \( \zeros G \) et de remarquer que \( 17/8 \cdot (d+1)^2
-    \le (3d)^2 \) pour conclure.
+  lemme précédent à \( \zeros G \) et de remarquer que \( 17/8 \cdot (\adeg+1)^2
+    \le (3\adeg)^2 \) pour conclure.
 \end{proof}
 
 
@@ -256,7 +256,7 @@ constante de \bsc{Lipschitz}.
 \begin{proof}
   On considère le plongement de \bsc{Segre} \( s \colon (\projd)^2 \to
     \proj{n'} \) avec \( n' = n^2 + 2n \). D'après le lemme~4.3 (p.~121) de
-  \cite{remgdmp}, appliqué avec \( q = 2 \) et \( d = (1,1) \), ainsi que le
+  \cite{remgdmp}, appliqué avec \( q = 2 \) et \( \adeg = (1,1) \), ainsi que le
   paragraphe~2.3 (p.~103 notamment) de cette référence donnant le lien entre
   indices (d'une forme de \bsc{Chow} ou, par extension, d'une distance) et
   plongements de \bsc{Segre} (et de \bsc{Veronese} remodelé), on a
@@ -402,13 +402,13 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 
 \begin{lem} \label{l:diff-apx}
   Soient \( x \) et \( y \) dans \( \proj(\Qbar) \), on pose \( z = x -
-    y \) et \( H = \min\bigl( H(x), H(y) \bigr) \).
+    y \) et \( H = \min\bigl( \hautm[2](x), \hautm[2](y) \bigr) \).
   Si \( x \) et \( y \) satisfont à~\eqref{e:Mapx}, on a
   \begin{equation}
     \prod\placerange
     \Distv(z, \vai)^\degv
     \le
-    H^{-\expapx}
+    H^{-\eps}
     \cdot 5 \sqrt2 (n + 1)^3 \hmclab
     \pmm.
   \end{equation}
@@ -416,23 +416,23 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 
 \begin{proof}
   En chaque place \( v \), il existe des points \( x'_v \) et \( y'_v \) dans
-  \( \varapx(\Cv) \) tels que \( \distv x \varapx = \distv{ x }{ x'_v } \) et
-  \( \distv y \varapx = \distv{ y }{ y'_v } \). L'hypothèse~\eqref{e:Mapx}
+  \( \avar(\Cv) \) tels que \( \distv x \avar = \distv{ x }{ x'_v } \) et
+  \( \distv y \avar = \distv{ y }{ y'_v } \). L'hypothèse~\eqref{e:Mapx}
   donne alors
   \begin{equation}
     \max \bigl( \Distv(x, x'_v), \Distv(y, y'_v) \bigr)
     \le
-    H^{-\wtapx \expapx}
+    H^{-\wtapx \eps}
     \pmm.
   \end{equation}
-  Comme \( \varapx \) est translaté d'un sous-groupe \( \vai \), on a
+  Comme \( \avar \) est translaté d'un sous-groupe \( \vai \), on a
   \( x'_v - y'_v \in \vai(\Cv) \), donc la proposition~\vref{p:addsub-dv} donne
   \begin{equation}
     \distv z \vai
     \le
     \distv z {x'_v - y'_v}
     \le
-    H^{-\wtapx \expapx}
+    H^{-\wtapx \eps}
     \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
     \pmm.
   \end{equation}
@@ -486,8 +486,8 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     \sum\placerange
     \degv \ln\Distv(z, \vai)
     \le
-    - \expapx \hautn x
-    + \expapx \htcmp
+    - \eps \hautn x
+    + \eps \htcmp
     + \ln(5\sqrt2) + 3 \ln(n + 1) + \hlclab
     \pmm.
   \end{equation}
@@ -502,7 +502,7 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     \hautn x
     + \htcmp
     \le
-    \frac{ \expapx }{ 2d }
+    \frac{ \eps }{ 2\adeg }
     \hautn x
     + \htcmp
     \pmm.
@@ -515,25 +515,25 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
     \sum\placerange
     \degv \ln\Distv(z, \vai)
     & \ge
-    - d \hautl[2] z
+    - \adeg \hautl[2] z
     - \hautl[1]{ \chow\vai }
     - \frac32 \ln(n + 1)
-    - ld \ln(3d)
+    - (\adim + 1)\adeg \ln(3\adeg)
     \\ & \ge
-    - \frac{ \expapx }{ 2 } \hautn x
-    - d \htcmp
+    - \frac{ \eps }{ 2 } \hautn x
+    - \adeg \htcmp
     - \hautl[1]{ \chow\vai }
     - \frac32 \ln(n + 1)
-    - ld \ln(3d)
+    - (\adim + 1)\adeg \ln(3\adeg)
   \end{align}
   où la deuxième ligne vient en substituant~\eqref{e:h2-diff}.
   En comparant avec~\eqref{e:close-log}, il vient :
   \begin{equation}
-    \frac\expapx2 \hautn x
+    \frac\eps2 \hautn x
     \le
     \hautl[1]{ \chow\vai }
-    + ld \ln(3d)
-    + (d + \expapx) \htcmp
+    + (\adim + 1)\adeg \ln(3\adeg)
+    + (\adeg + \eps) \htcmp
     + \hlclab
     + \frac92 \ln(n + 1)
     + \ln(5\sqrt2)
@@ -542,13 +542,12 @@ approximation de qualité telle qu'elle appartiendra nécessairement à \( \vai
 \end{proof}
 
 
-\clearpage % XXX provisoire
 
 \section{Étude du morphisme des différences}
 
-Soit \( X \) une sous-variété de \( \va \) ; on note \( D = \deg X \) et \( u
-  = \dim X \). Remarquons de suite que le degré de \( X \) est nécessairement
-au moins \( 2 \), car si \( X \) était linéaire, elle contiendrait une droite
+Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \adeg \) et \( \adim
+  = \adim \). Remarquons de suite que le degré de \( \avar \) est nécessairement
+au moins \( 2 \), car si \( \avar \) était linéaire, elle contiendrait une droite
 projective, c'est-à-dire une courbe de genre \( 0 \), or il est impossible de
 plonger une telle courbe dans une variété abélienne.
 
@@ -557,66 +556,66 @@ Pour tout entier \( m \ge 2 \) on définit un morphisme
   s_m \colon \va^m & \to \va^{m-1} \\
   (x_1, \dots, x_m) & \mapsto (x_1 - x_m, \dots, x_{m-1} - x_m)
 \end{align}
-et on se propose d'étudier (dimension, degré, hauteur) l'image \( s_m(X^m) \),
+et on se propose d'étudier (dimension, degré, hauteur) l'image \( s_m(\avar^m) \),
 qu'on notera \( Z \). Le degré et la hauteur seront relatifs au
 plongement projectif suivant :
 \begin{equation}
-  s_m(X^m) \subset \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
+  s_m(\avar^m) \subset \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
 \end{equation}
 où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N =
   (n+1)^{m-1} - 1 \).
 
-On commence par étudier la forme des fibres du morphisme restreint à \( X \).
-Dans l'énoncé suivant, \( S_X \) désigne le stabilisateur de \( X \).
+On commence par étudier la forme des fibres du morphisme restreint à \( \avar \).
+Dans l'énoncé suivant, \( S_\avar \) désigne le stabilisateur de \( \avar \).
 
 \begin{lem}
-  Pour tous \( m \ge 2 \) et \( x \in X^m \), on a
+  Pour tous \( m \ge 2 \) et \( x \in \avar^m \), on a
   \begin{equation}
-    x + \delta(S_X)
+    x + \delta(S_\avar)
     \subset
-    s_m^{-1} ( s_m(x) ) \cap X^m
+    s_m^{-1} ( s_m(x) ) \cap \avar^m
     \subset
-    x + \delta(\bigcap_{i=1}^m X - x_i)
+    x + \delta(\bigcap_{i=1}^m \avar - x_i)
   \end{equation}
-  où \( \delta \colon X \to X^m \) est le plongement diagonal. En particulier,
-  si \( S_X = \bigcap_{i=1}^m X - x_i \), ces inclusions sont des égalités.
+  où \( \delta \colon \avar \to \avar^m \) est le plongement diagonal. En particulier,
+  si \( S_\avar = \bigcap_{i=1}^m \avar - x_i \), ces inclusions sont des égalités.
 \end{lem}
 
 \begin{proof}
   Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
-    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_X \) donne
-  clairement \( x + \delta(S_X) \subset X \), ce qui établit l'inclusion
+    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_\avar \) donne
+  clairement \( x + \delta(S_\avar) \subset \avar \), ce qui établit l'inclusion
   annoncé.
 
   Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
   \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
-    \delta(y_m - x_m) \). Si de plus \( y \in X^m \) on a \( y_m - x_m \in
-    \bigcap_{i=1}^m X - x_i \).
+    \delta(y_m - x_m) \). Si de plus \( y \in \avar^m \) on a \( y_m - x_m \in
+    \bigcap_{i=1}^m \avar - x_i \).
 \end{proof}
 
 Étudions dans quel cas l'égalité peut être obtenue. Par définition du
 stabilisateur, on a (ensemblistement) :
 \begin{equation}
-  S_X = \bigcap_{x \in X(\Qbar)} X - x
+  S_\avar = \bigcap_{x \in \avar(\Qbar)} \avar - x
   \pmm.
 \end{equation}
 Par noethérieneté, il est clair qu'on peut en fait prendre
 une intersection finie ; le lemme suivant précise ce résultat.
 
 \begin{lem}
-  Posons \( M = 2 D^{u+1} - 2 \) ; pour tout \( m \ge M \) il existe
-  \( (x_1, \dots, x_m) \in X^m(\Qbar) \) tel que
-  \( S_X = \bigcap_{i=1}^m X - x_i \).
+  Posons \( M = 2 \adeg^{\adim+1} - 2 \) ; pour tout \( m \ge M \) il existe
+  \( (x_1, \dots, x_m) \in \avar^m(\Qbar) \) tel que
+  \( S_\avar = \bigcap_{i=1}^m \avar - x_i \).
 \end{lem}
 
 \begin{proof}
-  En partant d'un \( X - x_1 \) pour \( x_1 \) quelconque, on va couper
-  successivement par des \( X - x_i \) choisis de sorte à faire chuter la
+  En partant d'un \( \avar - x_1 \) pour \( x_1 \) quelconque, on va couper
+  successivement par des \( \avar - x_i \) choisis de sorte à faire chuter la
   dimension d'au moins une des composantes de dimension maximale de
-  l'intersection partielle qui n'est pas une composante de \( S_X \).
-  Clairement, ce processus se termine et l'intersection obtenue est \( S_X \).
+  l'intersection partielle qui n'est pas une composante de \( S_\avar \).
+  Clairement, ce processus se termine et l'intersection obtenue est \( S_\avar \).
 
-  Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} X - x_i \) le fermé de
+  Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le fermé de
   \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider à
   compter les composantes à chaque étape, on considère la quantité :
   \begin{equation}
@@ -629,67 +628,67 @@ une intersection finie ; le lemme suivant précise ce résultat.
   p.~362) ; on est ici dans le cas homogène c'est-à-dire \( p = 1 \) dans les
   notations de cette référence.
 
-  Il est clair que \( SH(Y_1, D) = SH(X, D) = D^{u+1} \). Par ailleurs, comme
+  Il est clair que \( SH(Y_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \). Par ailleurs, comme
   chaque \( Y_j \) peut être défini (ensemblistement) par des équations de
-  degré au plus \( D \), on peut appliquer à ces équations la proposition~3.3
-  de la référence citée, ce qui garantit que \( SH(Y_{j+1}, D) \le SH(Y_j, D)
-  \) et donne immédiatement par récurrence \( SH(Y_j, D) \le D^{u+1} \).
+  degré au plus \( \adeg \), on peut appliquer à ces équations la proposition~3.3
+  de la référence citée, ce qui garantit que \( SH(Y_{j+1}, \adeg) \le SH(Y_j, \adeg)
+  \) et donne immédiatement par récurrence \( SH(Y_j, \adeg) \le \adeg^{\adim+1} \).
 
   Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
-  composantes de \( Y_j \) de dimension \( u - k \) est au plus \( D^{k+1} \).
+  composantes de \( Y_j \) de dimension \( \adim - k \) est au plus \( \adeg^{k+1} \).
   On peut être un peu plus précis pour \( Y_1 \) et voir que toutes ses
-  composantes sont de dimension au plus \( u - 1 \) car \( X - x_1 \) n'a
+  composantes sont de dimension au plus \( \adim - 1 \) car \( \avar - x_1 \) n'a
   qu'une composante. Ainsi, en choisissant successivement les \( x_i \) de
-  façon à ce que \( X - x_{j+2} \) coupe strictement une des composantes de \(
+  façon à ce que \( \avar - x_{j+2} \) coupe strictement une des composantes de \(
     Y_j \) de dimension maximale parmi celles qui ne sont pas composantes de \(
-    S_X \), on voit qu'il existe un \( j_1 \le 1 + D^2 \) tel que \( Y_j \) n'ai
-  plus de composante de dimension \( u - 1 \) à part celles de \( S_X \), et
+    S_\avar \), on voit qu'il existe un \( j_1 \le 1 + \adeg^2 \) tel que \( Y_j \) n'ai
+  plus de composante de dimension \( \adim - 1 \) à part celles de \( S_\avar \), et
   en continuant jusqu'à avoir éliminé les composantes indésirables de
-  dimension \( 0 \), qu'il existe un \( j_u \le 1 + D^2 + D^3 + \dots +
-    D^{u+1} \) tel que \( Y_{j_u} \) n'ait plus aucune composante autre que
-  celles de \( S_X \), c'est-à-dire tel que \( Y_{j_u} = S_X \).
+  dimension \( 0 \), qu'il existe un \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots +
+    \adeg^{\adim+1} \) tel que \( Y_{j_\adim} \) n'ait plus aucune composante autre que
+  celles de \( S_\avar \), c'est-à-dire tel que \( Y_{j_\adim} = S_\avar \).
 
   Le nombre de points utilisés est alors
   \begin{equation}
-    j_u + 1
+    j_\adim + 1
     \le
-    2 + D^2 \sum_{l=0}^{u-1} D^l
+    2 + \adeg^2 \sum_{l=0}^{\adim-1} \adeg^l
     =
-    2 + \frac{D}{D+1} (D^{u+1} - D)
+    2 + \frac{\adeg}{\adeg+1} (\adeg^{\adim+1} - \adeg)
     \le
-    2 + 2 (D^{u+1} - D)
+    2 + 2 (\adeg^{\adim+1} - \adeg)
     \le M
     \pmm,
   \end{equation}
-  en utilisant le fait que \( D \ge 2 \).
+  en utilisant le fait que \( \adeg \ge 2 \).
 
   Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
-    x_{j_u+1} \) tels que \( Y_{j_u} = S_X \), on peut rajouter des \( x_i \)
-  arbitraires pour \( i > j_u + 1 \) et on aura toujours \( S_X = \bigcap_i
-    X - x_i \). Ainsi, pour tout \( m \ge M \) il existe une famille \(
-    (x_i)_i \in X^m \) possédant la propriété voulue.
+    x_{j_\adim+1} \) tels que \( Y_{j_\adim} = S_\avar \), on peut rajouter des \( x_i \)
+  arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \( S_\avar = \bigcap_i
+    \avar - x_i \). Ainsi, pour tout \( m \ge M \) il existe une famille \(
+    (x_i)_i \in \avar^m \) possédant la propriété voulue.
 \end{proof}
 
 On note désormais \( M \) l'entier introduit par le lemme précédent et on
 suppose \( m \ge M \) jusqu'à la fin de cette section. Sous cette hypothèse,
-on peut calculer la dimension de \( Z = s_m(X^m) \) puis estimer son degré et
+on peut calculer la dimension de \( Z = s_m(\avar^m) \) puis estimer son degré et
 sa hauteur.
 
 \begin{coro} \label{c:gen-fiber}
   Il existe un ouvert dense de \( Z \) où les fibres de
-  \( {s_m}_{|X} \) sont de dimension \( \dim S_X \). En particulier,
-  \( \dim s_m(X^m) = m \dim X - \dim S_X \)
+  \( {s_m}_{|\avar} \) sont de dimension \( \dim S_\avar \). En particulier,
+  \( \dim s_m(\avar^m) = m \adim - \dim S_\avar \)
 \end{coro}
 
 \begin{proof}
-  On choisit un point \( (x_1, \dots, x_m) \in X^m \) tel que
-  \( S_X = \bigcap_{i=1}^m X - x_i \), ce qui est possible d'après le choix de
-  \( m \). La fibre de \( {s_m}_{|X} \) en \( s_m(x) \) est alors isomorphe à
-  \( S_X \) et en particulier, de même dimension.
+  On choisit un point \( (x_1, \dots, x_m) \in \avar^m \) tel que
+  \( S_\avar = \bigcap_{i=1}^m \avar - x_i \), ce qui est possible d'après le choix de
+  \( m \). La fibre de \( {s_m}_{|\avar} \) en \( s_m(x) \) est alors isomorphe à
+  \( S_\avar \) et en particulier, de même dimension.
 
-  Par ailleurs, toutes les fibres sont de dimension au moins \( \dim S_X \).
+  Par ailleurs, toutes les fibres sont de dimension au moins \( \dim S_\avar \).
   Par semi-continuité supérieure de la dimension des fibres, l'ensemble des
-  points où elle est égale à \( \dim S_X \) est donc un ouvert. D'après le
+  points où elle est égale à \( \dim S_\avar \) est donc un ouvert. D'après le
   paragraphe précédent, cet ouvert n'est pas vide, il est donc dense.
 \end{proof}
 
@@ -697,19 +696,19 @@ On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
 \( Z \embedin \proj N \) évoqué précédemment.
 
 \begin{lem}
-  On a \( \deg Z \le D^m (2m)^{ (m+1)u } \).
+  On a \( \deg Z \le \adeg^m (2m)^{ (m+1)\adim } \).
 \end{lem}
 
 \begin{proof}
-  On note \( u' = \dim Z = mu - \dim S_X \) et on choisit des hyperplans de \(
-    \proj N \) qu'on notera \( H_1, \dots, H_{u'} \) et qu'on supposera en
+  On note \( \adim' = \dim Z = mu - \dim S_\avar \) et on choisit des hyperplans de \(
+    \proj N \) qu'on notera \( H_1, \dots, H_{\adim'} \) et qu'on supposera en
   position générale, de sorte que \( F = \bigcap_i H_i \) est un ensemble fini
   de points, de cardinal \( \deg Z \). On peut même supposer que \( F \) est
   inclus dans l'ouvert donné par le corollaire~\vref{c:gen-fiber} car ce
   dernier est dense.
 
   On note donc \( F = \set{y_1, \dots, y_p} \) ; pour chaque \( y_j \) on
-  choisit un point \( x_j \in s_m^{-1}(y_j) \cap X^m \). Pour tout \( j \in
+  choisit un point \( x_j \in s_m^{-1}(y_j) \cap \avar^m \). Pour tout \( j \in
     \set{1, \dots, p} \) et tout \( k \in \set{1, \dots, m} \), le morphisme
   \( \pi_k s_m \), où \( \pi_k \) est la projection sur le \( k \)-ième
   facteur, qui est en fait la différence de \( \va \), est représenté sur un
@@ -723,7 +722,7 @@ On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
   famille de formes de multidegré \( (2, \dots, 2, 2(m-1)) \) représentant \(
     s_m \) sur un ouvert contenant tous les \( x_j \).
 
-  Maintenant, pour chaque \( i \in \set{1, \dots, u'} \), on choisit une
+  Maintenant, pour chaque \( i \in \set{1, \dots, \adim'} \), on choisit une
   équation \( E_i \) de \( H_i \). Dans cette forme linéaire, on substitue aux
   variables les éléments de la famille du paragraphe précédent et on note \(
     \tilde E_i \) la forme multihomogène obtenue, qui est de multidegré \( (2,
@@ -731,8 +730,8 @@ On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
     (\projd)^m \) définie par \( \tilde E_i \).
 
   Par construction, il est clair que pour tout \( j \in \set{1, \dots, p} \),
-  la fibre \( s_m^{-1}(-y_j) \cap X^m \) est un translaté de \( \delta(S_X) \)
-  et est une composante isolée de l'intersection \( X^m \cap \bigcap_i \tilde
+  la fibre \( s_m^{-1}(y_j) \cap \avar^m \) est un translaté de \( \delta(S_\avar) \)
+  et est une composante isolée de l'intersection \( \avar^m \cap \bigcap_i \tilde
     H_i \) : en effet, les fibres sont deux à deux d'intersection vide et les
   autres composantes éventuelles de l'intersection sont celles provenant du
   lieu des zéros commun des formes choisies pour représenter \( s_m \), qui ne
@@ -741,50 +740,50 @@ On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
   On invoque alors la proposition~3.3, p.~365 de \cite{philz} dont on reprend
   les notations (voir p.~364 et p.~362) :
   \begin{equation}
-    SH( X^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
+    SH( \avar^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
     \le
-    SH( X^m ; 2, \dots, 2, 2(m-1) )
+    SH( \avar^m ; 2, \dots, 2, 2(m-1) )
     \pmm.
   \end{equation}
-  On remarque que le seul multidegré non nul de \( X^m \) est celui
-  d'indice \( (u, \dots, u) \) et qu'il vaut \( D^m \),  de sorte que l'on a
+  On remarque que le seul multidegré non nul de \( \avar^m \) est celui
+  d'indice \( (\adim, \dots, \adim) \) et qu'il vaut \( \adeg^m \),  de sorte que l'on a
   \begin{equation}
-    SH( X^m ; 2, \dots, 2, 2(m-1) )
+    SH( \avar^m ; 2, \dots, 2, 2(m-1) )
     =
-    D^m
-    \frac{ (mu)! }{ (u!)^m }
-    \, 2^{mu} (m-1)^u
+    \adeg^m
+    \frac{ (mu)! }{ (\adim!)^m }
+    \, 2^{mu} (m-1)^\adim
     \le
-    D^m
-    (2m)^{mu} (m-1)^{u-1}
+    \adeg^m
+    (2m)^{mu} (m-1)^{\adim-1}
   \end{equation}
   en majorant le coefficient multinomial qui apparaît dans cette expression
   par \( m^{mu-1} \). Par ailleurs, on a
   \begin{align}
-    SH( X^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
+    SH( \avar^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
     \ge
-    p \cdot H( \delta(S_X); 2, \dots, 2, 2(m-1) )
+    p \cdot H( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
   \end{align}
   d'après le paragraphe précédent. De plus, on voit assez facilement que tous
-  les multidegrés de \( \delta(S_X) \) sont égaux à \( \deg S_X \), ce qui
+  les multidegrés de \( \delta(S_\avar) \) sont égaux à \( \deg S_\avar \), ce qui
   donne
   \begin{align}
-    H( \delta(S_X); 2, \dots, 2, 2(m-1) )
+    H( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
     & =
-    \ \sum_{ \mathclap{\alpha_1 + \dots + \alpha_m = \dim S_X} } \
-    \deg S_X
-    \, \frac{ (\dim S_X)! }{ \alpha_1! \cdots \alpha_m! }
-    \, 2^{m\dim S_X} (m-1)^{\dim S_X}
+    \ \sum_{ \mathclap{\alpha_1 + \dots + \alpha_m = \dim S_\avar} } \
+    \deg S_\avar
+    \, \frac{ (\dim S_\avar)! }{ \alpha_1! \cdots \alpha_m! }
+    \, 2^{m\dim S_\avar} (m-1)^{\dim S_\avar}
     \\ & =
-    \deg S_X
-    (2m)^{m\dim S_X} (m-1)^{\dim S_X}
+    \deg S_\avar
+    (2m)^{m\dim S_\avar} (m-1)^{\dim S_\avar}
   \end{align}
   d'après la formule multinomiale. Ainsi, on a
   \begin{equation} \label{e:deg-img-good}
     \deg Z = p
     \le
-    \frac{ D^m }{ \deg S_X }
-    (2m)^{m(u-\dim S_X)} (m-1)^{u - \dim S_X - 1}
+    \frac{ \adeg^m }{ \deg S_\avar }
+    (2m)^{m(\adim-\dim S_\avar)} (m-1)^{\adim - \dim S_\avar - 1}
   \end{equation}
   qui est un peu plus précis que la majoration annoncée.
 \end{proof}
@@ -793,7 +792,7 @@ Dans le lemme suivant, on rappelle que \( \hautl[2]{ s_m(x) } \) est la
 hauteur donnée par le plongement dans \( \proj N \).
 
 \begin{lem}
-  Pour tout \( x \in X^m \), on a
+  Pour tout \( x \in \avar^m \), on a
   \begin{equation}
     \hautl[2]{ s_m(x) }
     \le
@@ -834,14 +833,14 @@ hauteur donnée par le plongement dans \( \proj N \).
   On a \(
     \hautl[\htpph] Z
     \le
-    \bigl( 8 D^{m-1}\hautl[\htpph] X + D^m \hlclab)
-    (2m)^{ (m+2)u }
+    \bigl( 8 \adeg^{m-1}\hautl[\htpph] \avar + \adeg^m \hlclab)
+    (2m)^{ (m+2)\adim }
   \).
 \end{coro}
 
 \begin{proof}
   Il suffit de savoir majorer le minimum essentiel de \( Z \) en fonction de
-  celui de \( X \), en vertu des comparaison suivantes, données par le
+  celui de \( \avar \), en vertu des comparaison suivantes, données par le
   théorème 3.1 de \cite{daphimhva1} :
   \worknote{Recopié depuis \cite{daphimht}, à vérifier directement dans la
     réf. citée quand même.}
@@ -857,33 +856,33 @@ hauteur donnée par le plongement dans \( \proj N \).
   \) est la hauteur obtenue en utilisant la mesure de \bsc{Philippon} aux
   places archimédiennes.)
 
-  Notons \( F \) l'ensemble des points de \( x \in X \) tels que \( \hautl[2]
-    x \le 2 \miness(X) \) ; par définition \( F \) est dense dans \( X \),
-  donc \( F^m \) est dense dans \( X^m \) et \( s_m(F^m) \) est dense dans \(
+  Notons \( F \) l'ensemble des points de \( x \in \avar \) tels que \( \hautl[2]
+    x \le 2 \miness(\avar) \) ; par définition \( F \) est dense dans \( \avar \),
+  donc \( F^m \) est dense dans \( \avar^m \) et \( s_m(F^m) \) est dense dans \(
     Z \). On applique alors le lemme précédent pour majorer la hauteur des
   points de \( s_m(F^m) \) et obtenir
   \begin{equation}
     \miness(Z)
     \le
-    8 (m-1) \miness(X) + (m-1) \hlclab
+    8 (m-1) \miness(\avar) + (m-1) \hlclab
     \pmm.
   \end{equation}
 
   Il est alors aisé de passer aux hauteurs grâce à l'encadrement rappelé
   ci-dessus, en utilisant les informations déjà obtenues sous la forme suivant
-  : \( \dim Z \le mu \) et \( \deg Z \le D^m (2m)^{ mu } (m-1)^{u-1} \)
+  : \( \dim Z \le mu \) et \( \deg Z \le \adeg^m (2m)^{ mu } (m-1)^{\adim-1} \)
   par~\eqref{e:deg-img-good} :
   \begin{align}
     \hautl[\htpph] Z
     & \le
     \miness(Z) \deg Z (\dim Z + 1)
     \\ & \le
-    (8 (m-1) \miness(X) + (m-1) \hlclab)
-    D^m (2m)^{ mu } (m-1)^{u-1}
+    (8 (m-1) \miness(\avar) + (m-1) \hlclab)
+    \adeg^m (2m)^{ mu } (m-1)^{\adim-1}
     mu
     \\ & \le
-    (8  \hautl[\htpph] X / D +  \hlclab)
-    D^m (2m)^{ (m+2)u }
+    (8  \hautl[\htpph] \avar / \adeg +  \hlclab)
+    \adeg^m (2m)^{ (m+2)\adim }
   \end{align}
   qui donne bien la majoration annoncée.
 \end{proof}
@@ -893,7 +892,7 @@ hauteur donnée par le plongement dans \( \proj N \).
 \section{Inégalité de \bsc{Mumford} dans le cas général}
 
 Dans toute cette section, on continue de supposer que \( m \ge M \) et on fixe
-une famille \( x = (x_1, \dots, x_m) \in \va(\Qbar)^m \) (et non plus \( X^m
+une famille \( x = (x_1, \dots, x_m) \in \va(\Qbar)^m \) (et non plus \( \avar^m
 \)) et on note \( z = s_m(x) \). Les trois premiers énoncés sont des
 conséquences ou analogues directs de ceux de la
 section~\vref{sec:mumford-grp}.
@@ -931,7 +930,7 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \prod_\placerange \distv z Z ^\degv
     \le
-    \expb^{-\expapx \hautn{ x_m }}
+    \expb^{-\eps \hautn{ x_m }}
     \cdot \hmclab \expb^\htcmp
     \cdot 5 \sqrt{2m-2} \, (n + 1)^3
   \end{equation}
@@ -942,13 +941,13 @@ section~\vref{sec:mumford-grp}.
   identique sauf pour l'étape finale et quelques comparaisons de hauteurs.
   Pour chaque \( i \in \set{1, \dots, m-1} \) et chaque \( v \in \placesapx
   \), la définition de la distance permet de choisir un point \( y_{i, v} \in
-    \varapx(\Cv) \) tel que
+    \avar(\Cv) \) tel que
   \begin{equation}
     \distv{ x_i }{ y_{i, v} }
     =
-    \distv{ x_i }\varapx
+    \distv{ x_i }\avar
     \le
-    \exp(-\wtapx \expapx \hautn{ x_m } + \htcmp)
+    \exp(-\wtapx \eps \hautn{ x_m } + \htcmp)
   \end{equation}
   où l'inégalité découle directement des hypothèses et d'une comparaison entre
   hauteurs.
@@ -956,14 +955,14 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \max_i \distv{ x_i - x_m }{ y_{i, v} - y_{m, v} }
     \le
-    \exp(-\wtapx \expapx \hautn{ x_m } + \htcmp)
+    \exp(-\wtapx \eps \hautn{ x_m } + \htcmp)
     \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
     \pmm.
   \end{equation}
   Or, d'après le lemme~4.3, p.~121 de \cite{remgdmp} (interprété à la lumière
   des remarques p.~102 de la même référence concernant le lien entre indices
   d'une distance et plongement de \bsc{Segre}), en notant \( y_v = (y_{1, v},
-    \dots, y_{m, v}) \in X^m(\Cv) \), on a
+    \dots, y_{m, v}) \in \avar^m(\Cv) \), on a
   \begin{equation}
     \distv{ s_m(x) }{ s_m(y_v) }
     \le
@@ -1032,14 +1031,14 @@ section~\vref{sec:mumford-grp}.
     \hautl[\htpph] Z
     + (\deg Z) (\dim Z + 1) \ln(N+1)
     \\ & \le
-    \bigl( 8 D^{m-1}\hautl[\htpph] X + D^m \hlclab)
-    (2m)^{ (m+2)u }
+    \bigl( 8 \adeg^{m-1}\hautl[\htpph] \avar + \adeg^m \hlclab)
+    (2m)^{ (m+2)\adim }
     \\ & \qquad
-    + D^m (2m)^{mu} (m-1)^{u-1} (um + 1) (m-1)\ln(n+1)
+    + \adeg^m (2m)^{mu} (m-1)^{\adim-1} (m \adim + 1) (m-1)\ln(n+1)
     \\ & \le
-    (2m)^{ (m+2)u } \Bigl(
-    D^{m-1} \hautl[\htpph] X
-    + D^m \bigl( \hlclab + \ln(n+1) \bigr)
+    (2m)^{ (m+2)\adim } \Bigl(
+    \adeg^{m-1} \hautl[\htpph] \avar
+    + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \pmm.
   \end{align}
@@ -1048,22 +1047,22 @@ section~\vref{sec:mumford-grp}.
   \begin{align}
     (\dim Z + 1) \ln(3 \deg Z)
     & \le
-    (um + 1) \bigl( (m+1) u \ln(2m) + \ln 3 \bigr)
+    (m \adim + 1) \bigl( (m+1) \adim \ln(2m) + \ln 3 \bigr)
     \\ & \le
-    u^2 (m+1) \bigl( (m+1) \ln(2m) + \ln 3 \bigr)
+    \adim^2 (m+1) \bigl( (m+1) \ln(2m) + \ln 3 \bigr)
     \\ & \le
-    2^{u+2} m^3
+    2^{\adim+2} m^3
   \end{align}
-  où, la dernière ligne utilise le fait que \( u^2 \le 2^{u+1} \) et,
+  où, la dernière ligne utilise le fait que \( \adim^2 \le 2^{\adim+1} \) et,
   pour majorer le facteur en \( m \), une vérification numérique pour les
   petites valeurs. Au final on a
   \begin{equation} \label{e:liou-cst2}
     (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
     \le
-    2^{mu} m^{(m+1)u - 1}
-    \cdot 2^{u+2} m^3
+    2^{mu} m^{(m+1)\adim - 1}
+    \cdot 2^{\adim+2} m^3
     \le
-    D^m (2m)^{(m+1)u + 2}
+    \adeg^m (2m)^{(m+1)\adim + 2}
     \pmm.
   \end{equation}
 
@@ -1072,8 +1071,8 @@ section~\vref{sec:mumford-grp}.
   \begin{align}
     (\deg Z) \hautl[2] z
     & \le
-    \frac\expapx2 \hautn{ x_m }
-    + D^m (2m)^{(m+1)u} \htcmp
+    \frac\eps2 \hautn{ x_m }
+    + \adeg^m (2m)^{(m+1)\adim} \htcmp
     \pmm.
   \end{align}
   On peut maintenant substituer cette estimation ainsi
@@ -1082,21 +1081,21 @@ section~\vref{sec:mumford-grp}.
   \begin{align}
     \sum\placerange \degv \ln\distv z Z
     & \ge
-    - \frac\expapx2 \hautn{ x_m }
-    - D^m (2m)^{(m+1)u} \htcmp
+    - \frac\eps2 \hautn{ x_m }
+    - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
-    - (2m)^{ (m+2)u } \Bigl(
-    D^{m-1} \hautl[\htpph] X
-    + D^m \bigl( \hlclab + \ln(n+1) \bigr)
+    - (2m)^{ (m+2)\adim } \Bigl(
+    \adeg^{m-1} \hautl[\htpph] \avar
+    + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \\ & \qquad
     - 2(m-1) \ln(n+1)
-    - D^m (2m)^{(m+1)u + 2}
+    - \adeg^m (2m)^{(m+1)\adim + 2}
     \\ & \ge
-    - \frac\expapx2 \hautn{ x_m }
-    - D^{m-1} (2m)^{ (m+2)u } \, \hautl[\htpph] X
+    - \frac\eps2 \hautn{ x_m }
+    - \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl[\htpph] \avar
     \\ & \qquad
-    - D^m (2m)^{ (m+2)u + 1}
+    - \adeg^m (2m)^{ (m+2)\adim + 1}
     \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
     \pmm.
   \end{align}
@@ -1105,16 +1104,16 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \sum\placerange \degv \ln\distv z Z
     \le
-    -\expapx \hautn{ x_m }
+    -\eps \hautn{ x_m }
     + \hlclab + \htcmp
     + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
   \end{equation}
   Les deux dernières égalités mises ensemble donnent
   \begin{equation}
-    \frac\expapx2 \hautn{ x_m }
+    \frac\eps2 \hautn{ x_m }
     \le
-    D^{m-1} (2m)^{ (m+2)u } \, \hautl[\htpph] X
-    + D^m (2m)^{ (m+2)u + 2} \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+    \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl[\htpph] \avar
+    + \adeg^m (2m)^{ (m+2)\adim + 2} \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
   \end{equation}
   qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.
 \end{proof}
@@ -1124,21 +1123,21 @@ obtenue par \bsc{Rémond}.
 
 \begin{fact}
   \worknote{On doit pouvoir mettre une inégalité stricte, non ?}
-  Soient \( X \subset \va \) une sous-variété et \( \Gamma \subset \va(\Qbar)
+  Soient \( \avar \subset \va \) une sous-variété et \( \Gamma \subset \va(\Qbar)
   \) un sous-groupe de rang fini \( r \). Alors il existe un entier naturel
   \begin{equation}
     S
     \le
     \bigl(
-    2^{34} \cdot h_0(\va) \cdot \deg X
-    \bigr)^{ (r+1) g^{ 5(\dim X + 1)^2 } }
+    2^{34} \cdot h_0(\va) \cdot \adeg
+    \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
     \pmm,
   \end{equation}
-  des points \( x_1, \dots, x_S \) de \( X(\Qbar) \cap \Gamma \) et des
+  des points \( x_1, \dots, x_S \) de \( \avar(\Qbar) \cap \Gamma \) et des
   sous-variétés abéliennes \( B_1, \dots, B_s \) de \( \va \) telles que \(
-    x_i + B_i \subset X \) pour tout \( i \in \set{1, \dots, S} \) et
+    x_i + B_i \subset \avar \) pour tout \( i \in \set{1, \dots, S} \) et
   \begin{equation}
-    X(\Qbar) \cap \Gamma
+    \avar(\Qbar) \cap \Gamma
     =
     \bigcup_{i=1}^{S} (x_i + B_i)(\Qbar) \cap \Gamma
     \pmm.
@@ -1146,7 +1145,7 @@ obtenue par \bsc{Rémond}.
 \end{fact}
 
 \begin{proof}
-  \worknote{Introduire \( h_0(\va) \) et vérifier les hypothèse sur le
+  \worknote{Introduire \( h_0(\va) \) et vérifier les hypothèses sur le
     plongement.}
   C'est une version du théorème de~2.1, p.~517 de \cite{remdcl} où la fonction
   notée \( f \) dans ledit énoncé est explicitée, citée dans \cite{daphimhva2}
@@ -1155,20 +1154,20 @@ obtenue par \bsc{Rémond}.
 
 Nous sommes maintenant prêts à conclure.
 
-\begin{proof}[Démonstration du théorème~\vref{t:mumford-gen}.]
+\begin{proof}[\proofname{} du théorème~\vref{t:mumford-gen}.]
   Soit \( x = (x_1, \dots, x_m) \) une famille de points comme dans l'énoncé.
-  D'après le lemme précédent, il existe un point \( y \in \varapx(\Qbar) \)
+  D'après le lemme précédent, il existe un point \( y \in \avar(\Qbar) \)
   tel que \( x_i - x_m = y_i - y_m \) pour tout \( i \). En particulier, pour
   tout \( i \) on a
   \begin{equation}
     y_i - y_m
     \in
-    (X - y_m)(\Qbar) \cap \Gamma
+    (\avar - y_m)(\Qbar) \cap \Gamma
     =
     \bigcup_{k=1}^{S} (z_k + B_k)(\Qbar) \cap \Gamma
   \end{equation}
-  où l'égalité de droite découle du fait précédent, avec \( z_k \in X - y_m \)
-  et \( z_k + B_k \in X \), où \( B_k \subset \va \) est une sous-variété
+  où l'égalité de droite découle du fait précédent, avec \( z_k \in \avar - y_m \)
+  et \( z_k + B_k \in \avar \), où \( B_k \subset \va \) est une sous-variété
   abélienne, pour tout \( k \), et \( S < m \).
 
   Ainsi, il existe un indice \( k \in \set{1, \dots, S} \) et deux indices
@@ -1177,7 +1176,7 @@ Nous sommes maintenant prêts à conclure.
   \begin{equation}
     y_i - y_j = x_i - x_j \in B_k
   \end{equation}
-  et \( z_k + y_m + B_k \subset X \), ce qui achève la preuve.
+  et \( z_k + y_m + B_k \subset \avar \), ce qui achève la preuve.
 \end{proof}
 
 

@@ -16,7 +16,6 @@ Notations {{{2
     - chapitre décomptes
     - param dans Vojta
     - intro
-    - Mumford
 
 (B) Approximations : on garde \ex pour la partie technique de Vojta, partout
 ailleurs on utilise x (voire x et y dans Mumford simple).
@@ -28,6 +27,7 @@ Liste des notations "en dur" "globales" :
 - g la dimention de \va
 - m un nombre de points ou d'approximations
 - x, y, z des points quelconques ou des approximations
+- \Gamma un groupe, r son rang
 
 Macros {{{2
 ------

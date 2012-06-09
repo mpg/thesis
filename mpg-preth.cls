@@ -691,13 +691,12 @@
 \newcommand \va    {\mathcal A}
 \newcommand \vai   {\mathcal B}
 \newcommand \oa    {\boldsymbol 0}
-\newcommand \genre {g}
+\newcommand \genre {g} % XXX en dur
 
 \nomdef \va a {A} \@gobbletwo{\va}{La variété abélienne ambiante}
 \nomdef \vai a {B} \@gobbletwo{\vai}{Une sous-variété abélienne fixée de
   $\va$}
 \nomdef \oa n {0} \@gobbletwo{\oa}{L'origine de $\va$}
-\nomdef \genre a {g} \@gobbletwo{\genre}{La dimension de $\va$}
 
 \newcommand*\MW[2][\va]{MW\sb{\!#1}(#2)}
 \nomdef \MW a {MW} \@gobbletwo{\MW[\PHi]\PH}{Espace de \MoW de la variété
@@ -706,9 +705,7 @@
 \newcommand*\nnt {\abs} % norme de Néron-Tate
 \newcommand*\scalnt [2] {\scal{#1, #2}} % produit scalaire associé
 
-\newcommand \mmemb { \Theta }
-\nomdef \mmemb g {E3} \@gobbletwo{\mmemb}{Plongement de \bsc{Mumford
-    modifié}}
+\newcommand \mmemb { \Theta } % XXX utiliser \vaemb
 
 \newcommand \placesapx  { \mathcal S }
 \newcommand \placerange { \sb{\place \in \placesapx} }
@@ -724,20 +721,8 @@
     \place \)}
 
 \newcommand \varapx { E } % XXX utiliser \avar en général et \divi sinon
-\nomdef \varapx a {E} \@gobbletwo{\varapx}{Variété dont on étudie les
-  approximations}
 
-\newcommand \expapx { \eps }
-\nomdef \expapx g {e0} \@gobbletwo{\expapx}{L'exposant d'approximation}
-
-\nomdef \alpha g {a} \@gobbletwo{\alpha}{Un des paramètres de l'énoncé de
-  Vojta et Mumford}
-\nomdef \beta g {b} \@gobbletwo{\beta}{Un des
-  paramètres de l'énoncé de Vojta et Mumford}
-\nomdef \gamma g {c} \@gobbletwo{\gamma}{Un des paramètres de l'énoncé de
-  Vojta et Mumford}
-\nomdef \delta g {d} \@gobbletwo{\delta}{Un des paramètres de l'énoncé de
-  Vojta et Mumford}
+\newcommand \expapx { \eps } % XXX en dur
 
 % archimedian norms and measures [[2
 %
@@ -963,6 +948,7 @@
 \newc@star@default \clmape {\fcti}{\puiss-1} { \clmap[\ex \slast{#1}] }
 \newcommand \clmaps { \Gamma }
 \newcommand \nclmaps { N }
+
 
 % Vojta-specific math [[1
 % -------------------
