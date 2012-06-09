@@ -723,7 +723,7 @@
 \nomdef \degv g {D} \@gobbletwo{\degv}{Degré local de \( \cdn \) en \(
     \place \)}
 
-\newcommand \varapx { E }
+\newcommand \varapx { E } % XXX utiliser \avar en général et \divi sinon
 \nomdef \varapx a {E} \@gobbletwo{\varapx}{Variété dont on étudie les
   approximations}
 
@@ -777,6 +777,7 @@
   \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
 \nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme
   \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
+
 \nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de
   la forme \PH}
 \nomdef \mahler a {M} \@gobbletwo{\mahler\PH}{Mesure de \bsc{Mahler} de la
@@ -849,13 +850,19 @@
 \newcommand \vp {\gp X}
 \newcommand \vpi{\gp Y}
 \newcommand \ip {\gp \lambda}
+\newcommand \anyvp  {\gp W} % XXX utiliser \vp a priori
 
 % affine variables
 \newc@star@default \vaf  {\ind}{} {W\ssub{#1}}
 \newc@star@default \vafi {\ind}{} {T\ssub{#1}}
 
-\newcommand \anyvar {V}
-\newcommand \anyvp  {\gp W}
+% variety, approximations of which we're studying, or any variety
+\newcommand \avar {V}
+\newcommand \adim {u}
+\newcommand \adeg {d}
+
+% random variety, when needing to distinguish it from \avar
+\newcommand \anyvar {U}
 \newcommand \anydim {s}
 \newcommand \anydeg {\Delta}
 

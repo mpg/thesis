@@ -8,16 +8,41 @@ Général {{{2
 
 (C) Ajouter des références biblio pour toute l'intro.
 
+Notations {{{2
+---------
+
+(B) Utiliser \avar etc de façon consistante :
+    - corollaires dans Vojta
+    - chapitre décomptes
+    - param dans Vojta
+    - intro
+    - Mumford
+
+(B) Approximations : on garde \ex pour la partie technique de Vojta, partout
+ailleurs on utilise x (voire x et y dans Mumford simple).
+
+Liste des notations "en dur" "globales" :
+- \eps l'exposant d'approximation
+- v une place
+- n la dimension ambiante
+- g la dimention de \va
+- m un nombre de points ou d'approximations
+- x, y, z des points quelconques ou des approximations
+
 Macros {{{2
 ------
 
 (D) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
 -> \Haut\point).
 
+(D) Rendre obligatoire le premier argument des hauteurs
+
+(D) Passer en dur les notations en dur
+
 Biblio {{{2
 ------
 
-Siegel : citer Bombieri-Valler plutôt ?
+Siegel : citer Bombieri-Vaaler plutôt ?
 
 Prénoms vs initiales vs rien (pour Fahri).
 
@@ -27,7 +52,7 @@ Jadot (et Farhi ?) : url sur thèses en ligne
 
 LNM : citer directement l'ouvrage, pas les chapitres.
 
-Vérfier que Vojta est référencé quelque part.
+Vérifier que Vojta est cité quelque part.
 
 Maths {{{1
 =====
@@ -40,6 +65,8 @@ Vojta {{{2
 (B) Écrire les variantes prévues pour le produit
 
 (B) Dans les résultats actuels, remplacer n par max(n, card S)
+
+(B) vérifier les hypothèses type \eps \le 1 etc dans les coro
 
 (D) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
 
@@ -56,11 +83,10 @@ fine pour le deuxième \rdiv
 
 (D) Degré des formules en c a^2 au lieu de 2a^2 ?
 
+(D) Virer le m dans \Vcos comme dans Farhi ?
 
 Mumford {{{2
 -------
-
-(A) Écrire la version étendue (?)
 
 (B) Expliquer l'obstruction (à reprendre dans l'intro ensuite)
 
@@ -78,13 +104,7 @@ duplication :
 Décomptes {{{2
 ---------
 
-(C) Utiliser le quotient \Gamma / \vai dans le cas d'un translaté à partir de
-    p:big-gen ?
-    Ça dépend si on veut utiliser un truc du genre B(\eps) pour tenir compte
-    de la hauteur des points par lesquels on translate ou pas.
-    = à discuter avec pph
-
-(B) Écrire la version produit, en faisant propre la différence modulo \vai
+(B) Faire l'intro avec la condition de différence modulo B-petit
 
 (B) Utiliser la version de Vojta pour produit
 
@@ -94,8 +114,6 @@ Décomptes {{{2
 
 Autres, divers {{{2
 --------------
-
-(B) Vojta : vérifier les hypothèses type \eps \le 1 etc dans les coro
 
 (C) Plongement (intro + annexe) : hypothèses précises :
 - image projectivement normale pour phiha1 p. 275
