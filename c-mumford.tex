@@ -37,7 +37,7 @@ et les constantes obtenues y sont sensiblement meilleures.
     \hautn x
     & \ge
     \frac2\eps \bigl(
-      \hautl[1]{ \chow\vai }
+      \hautl[1]{ \vai }
       + (\adim + 1) \adeg \ln(3\adeg)
       + (\adeg + 1) \htcmp
       + \hlclab
@@ -182,7 +182,7 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
     \ge
     \frac1{
       (17/8)^\adeg (n+1)^{3/2}
-      \, \hautm[2] G
+      \, \hautm[2] F
       \, \hautm[2] x ^\adeg
     }
     \pmm.
@@ -216,16 +216,16 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
 
 \begin{proof}[\proofname{} de la proposition~\vref{p:liouville}]
   Si \( x \not\in V(\Qbar) \), la proposition~6.1 de~\cite{remdcl}
-  donne une forme \( G \) homogène de degré \( \adeg \), contenant \( V \)
+  donne une forme \( F \) homogène de degré \( \adeg \), contenant \( V \)
   mais pas \( x \), telle que
   \begin{equation}
-    \hautm[1] G
+    \hautm[1] F
     \le
     \hautm[1] V \cdot (\adeg + 1)^{ \adeg (\adim + 1) }
   \end{equation}
   en tenant compte des différences de hauteurs utilisées, comme observé dans
   la preuve du lemme~\vref{l:hs-choice}. Il suffit alors d'appliquer le
-  lemme précédent à \( \zeros G \) et de remarquer que \( 17/8 \cdot
+  lemme précédent à \( \zeros F \) et de remarquer que \( 17/8 \cdot
     (\adeg+1)^2 \le (3\adeg)^2 \) pour conclure.
 \end{proof}
 
@@ -545,25 +545,36 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
 
 \section{Étude du morphisme des différences}
 
-Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \adeg \)
-et \( \adim = \adim \). Remarquons de suite que le degré de \( \avar \) est
-nécessairement au moins \( 2 \), car si \( \avar \) était linéaire, elle
-contiendrait une droite projective, c'est-à-dire une courbe de genre \( 0 \),
-or il est impossible de plonger une telle courbe dans une variété abélienne.
+Comme dans l'énoncé du théorème, on choisit \( \avar \) une sous-variété de \(
+  \va \) ; on note \( \adeg = \adeg \) et \( \adim = \adim \). Remarquons de
+suite que le degré de \( \avar \) est nécessairement au moins \( 2 \), car si
+\( \avar \) était linéaire, elle contiendrait une droite projective,
+c'est-à-dire une courbe de genre \( 0 \), or il est impossible de plonger une
+telle courbe dans une variété abélienne.
 
-Pour tout entier \( m \ge 2 \) on définit un morphisme
+Dans le cas des translatés de sous-variétés abéliennes, la preuve reposait sur
+le morphisme
+\begin{align}
+  s_2 \colon \va^2 & \to \va \\
+  (x, y) & \mapsto x - y
+  \pmm.
+\end{align}
+Si \( \avar = z + \vai \), l'image de
+\( \avar^2 \) par ce morphisme est exactement \( \vai \), qui a même dimension
+et même degré que \( \avar \) et dont la hauteur est majorée en fonction de
+celle de \( \va \). On montre alors que si \( (x, y) \) satisfait les
+hypothèses du théorème, son image est dans \( s_2(\avar^2) \), ce qui permet
+de conclure.
+
+Pour tout entier \( m \ge 2 \), on définit un morphisme
 \begin{align}
   s_m \colon \va^m & \to \va^{m-1} \\
   (x_1, \dots, x_m) & \mapsto (x_1 - x_m, \dots, x_{m-1} - x_m)
 \end{align}
-et on se propose d'étudier (dimension, degré, hauteur) l'image \( s_m(\avar^m)
-\), qu'on notera \( Z \). Le degré et la hauteur seront relatifs au plongement
-projectif suivant :
-\begin{equation}
-  s_m(\avar^m) \subset \va^{m-1} \embedin (\projd)^{m-1} \to \proj N
-\end{equation}
-où la deuxième flèche est un plongement de \bsc{Segre}, donc \( N =
-  (n+1)^{m-1} - 1 \).
+et on note \( Z = s_m(\avar^m) \) plongée dans \( \proj N \), où
+\( N = (n+1)^{m-1} - 1 \) par un plongement de \bsc{Segre}. Le but de cette
+section est de contrôler le degré et la hauteur de \( Z \) dans ce plongement
+en fonction du degré et de la hauteur de \( \avar \).
 
 On commence par étudier la forme des fibres du morphisme restreint à \( \avar
 \).  Dans l'énoncé suivant, \( S_\avar \) désigne le stabilisateur de \( \avar
