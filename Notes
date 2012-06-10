@@ -1,12 +1,11 @@
+À voir avec pph
+===============
+
+Références intro :
+- Théorème de Siegel et ses versions quantitatives
+
 Rédaction {{{1
 =========
-
-Général {{{2
--------
-
-(B) Détails pour coro style Siegel-Lang dans l'intro
-
-(C) Ajouter des références biblio pour toute l'intro.
 
 Notations {{{2
 ---------
@@ -44,7 +43,7 @@ Biblio {{{2
 
 Siegel : citer Bombieri-Vaaler plutôt ?
 
-LNM : citer directement l'ouvrage, pas les chapitres.
+LNM : citer directement l'ouvrage, pas les chapitres (?)
 
 Maths {{{1
 =====
@@ -80,10 +79,16 @@ fine pour le deuxième \rdiv
 Mumford {{{2
 -------
 
-(B) Expliquer l'obstruction (à reprendre dans l'intro ensuite)
+(B) Refaire l'étude du morphisme, simplifiée
+
+(C) Ouverture sur ce qu'on ferait si les fibres étaient finies ?
 
 Plongements et formulaires {{{2
 --------------------------
+
+(C) (intro + annexe) hypothèses précises :
+- image projectivement normale pour phiha1 p. 275
+- hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi)
 
 (B) Compléter les preuves (cf. notes manuscriptes en partie)
 
@@ -98,42 +103,16 @@ Décomptes {{{2
 
 (B) Faire l'intro avec la condition de différence modulo B-petit
 
+(B) Le groupe de rf dans Mumford est-il indispensable ?
+
 (B) Utiliser la version de Vojta pour produit
 
 (C) Rédiger la pseudo-minimisation pénible
 
 (C) inégalités strictes vs larges à vérifier
 
-Autres, divers {{{2
---------------
-
-(C) Plongement (intro + annexe) : hypothèses précises :
-- image projectivement normale pour phiha1 p. 275
-- hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi)
-
-(B) Dans la « closest point property » de pph (p. 89 du LNM), peut-on
-remplacer \C_v par k_v (voire k) ?
-    Question plus importante : a-t-on besoin de savoir ça ??
-    Élements de réponse :
-    - par k, certainement pas (si X(k) vide).
-    - par k_v non plus, même raison (penser à X(R) vide)
-    - par un truc dans lequel \Qbar est dense, ça serait sympa par contre :
-    c'est OK aux places infinies, mais pour les autres ?
-
-Lecture {{{1
-=======
-
-Références à acquérir et à ajouter au .bib {{{2
-------------------------------------------
-
-Faltings, the general case of Lang in "Barsotti Symposium in AG",
-Perspect. Math. 15 Acad Press, San Diego 1994 p 175-182.
-
-Rémond, sur le thm du produit. XXIe journées arithm de Rome, 99
-
-Vojta, Applications of AAG (?) to Diophantine Approx LNM 1553
-
-Hartshorne, Ample Subvarieties of Abelian Var, LNM 156
+Références {{{1
+==========
 
 Pour l'annexe de Serre avec les formules de multiplication :
 MR0570648 (82k:10041) Waldschmidt, Michel Nombres
@@ -143,19 +122,12 @@ and Jean-Pierre Serre. With an English summary. Astérisque,
 69-70. Société Mathématique de France, Paris, 1979. 218 pp.
 (Reviewer: Pierre Lelong), 10F35 (14G25 14L15)
 
-Des trucs pour :
+À trouver : des trucs pour :
 - majorer le cardinal de la torsion rationnelle (Ratazzi ?)
 - minorer \hmin (?? Pour les courbes, c'est Hindry-Silverman)
 
-Trucs sur Z_X de Rémond {{{2
-
-Pourquoi c'est un sous-fermé de X : Hindry 92 ; LNM 1566 Oort p. 117-122
-
-Pourquoi c'est tout ssi le Stab est de dim non nulle, même références.
-    Ça OK, c'est trivial : si x \in X alors x + Stab(X) \subset X.
-    Réciproquement, si Z_X = X, alors X est un transalaté de ss-va, donc son
-    Stab est la ss-va en question.
-
+Pourquoi le Z_X de Rémond est un fermé de X : Hindry 92 ; LNM 1566 Oort p.
+117-122
 
 Aide-mémoire {{{1
 ============
@@ -211,15 +183,5 @@ Normes pour la nomenclature :
 \vert : n1
 \Vert : n2
 triple : n3
-
-Math {{{2
-----
-
-Préciser à un moment si on normalise les formes de Chow de sorte que le
-dénominateur dans la construction des formules de dépendance intégrale de
-Rémond soit 1, et si c'est systématique ou pas.
-    Bah non : c'est possible que si le plongement est adapté (ou au moins
-    presque), dont on le fait que quand on dit que le plongement est adapté.
-    C'est signalé en s:plong-adapt, deuxième paragraphe.
 
 # vim: fdm=marker fdl=1 ai syn=mkd
