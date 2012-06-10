@@ -56,7 +56,6 @@
 \usetikzlibrary{arrows,positioning,fit,decorations.pathmorphing,shapes.misc}
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic}
-\usepackage[noprefix, nocfg, refpage, french]{nomencl}
 \usepackage{csquotes}
 \usepackage[style=alphabetic, sorting=nyt, sortcites=true, firstinits=true,
   autopunct=true, babel=hyphen,
@@ -157,154 +156,6 @@
 %
 \bibliography{these}
 \defbibheading{bibempty}{}
-
-% nomenclature [[2
-%
-\makenomenclature
-
-% placeholders for descriptions
-\newcommand*\nom@ph [2] {%
-  \newcommand#1{\ensuremath{\text{$#2$}}\xspace}}
-\nom@ph \PH   \star
-\nom@ph \PHi  \bullet
-
-% print a macro and its result with placeholders substitution
-\newcommand*\printmacro [2] {%
-  \if@private
-    \ted@toks{\relax#2\@nil}%
-    \Substitute*{\the\ted@toks} {}                     {\string}%
-    \Substitute*{\the\ted@toks} {\string\@nil\string}  {}%
-    \Substitute*{\the\ted@toks} {\string\PH}           {\PH{}}%
-    \Substitute*{\the\ted@toks} {\string\PHi}          {\PHi{}}%
-    \makebox[0pt][r]{%
-      \color{keys}\ttfamily\footnotesize \the\ted@toks \space}%
-  \fi
-  $#1#2$%
-}
-
-% for notations without macro & internal use:
-%
-% \nomdirect{<group code>}{<sort string>}{<displayed>}[<scope>]{<description>}
-\newcommandx*\nomdirect [5][4] {%
-  \@bsphack
-  \@ifmtarg{#4}{%
-    \nom@direct{#1}{#2}{#3}{#5}%
-  }{%
-    \begingroup \edef\next{\endgroup
-      \unexpanded{\nom@direct{#1}{#2}{#3}}{\nom@local{#4}\unexpanded{#5}}%
-    }\next
-  }%
-}
-\newcommand*\nom@direct [4] {%
-  \begingroup \edef\next{\endgroup
-    \noexpand\nomenclature[\@nameuse{nom@groupsort@@#1}-\unexpanded{#2}]%
-    {\noexpand\printmacro{\nom@color}\unexpanded{{#3}}}%
-    {\nom@color\unexpanded{#4}}%
-  }\next
-  \nom@color@reset
-  \@esphack
-}
-
-% scopes
-%
-% \nom@newscope{<id>}{<code>}
-\newcommand \nom@newscope [2] {%
-  \@namedef{nom@scope@@#1}{#2}%
-}
-% using a declared scope
-\newcommand \nom@local [1] {%
-  \@nameuse{nom@scope@@#1} : \noexpand\MakeLowercase
-}
-% scopes used
-\nom@newscope {chap} {Chapitre \thechapter}
-\nom@newscope {sec}  {Section \thesection}
-\nom@newscope {sub}  {Sous-section \thesubsection}
-
-% groups
-%
-% \nom@newgroup{<id>}{<sort key>}{<name>}
-\newcommand*\nom@newgroup [3] {%
-  \@namedef{nom@groupsort@@#1}{#2}%
-  \@namedef{nom@groupname@@#2}{#3}%
-}
-% typesetting group name in the actual nomenclature (#1 = sort key)
-\renewcommand*\nomgroup [1] {%
-  \item[\sffamily\bfseries \@nameuse{nom@groupname@@#1}]
-}
-% group list
-\nom@newgroup s A {Symboles}
-\nom@newgroup n B {Signes numériques}
-\nom@newgroup g C {Lettres grecques}
-\nom@newgroup a D {Lettres latines}
-\nom@newgroup c E {Constantes automatiques}
-
-% normal usage is indirect (as opposed to \nomdirect}):
-% preamble: \nomdef<csname>{<group id>}{<sort string>}
-% document: \nomuse[<csname>]{<code>}{<desc>}
-% the first token of <code> will be used as <csname> by default
-\newcommand*\nomdef [3] {%
-  \@namedef{nom@csname@@\cmdstring#1}{{#2}{#3}}%
-  % \nomuse{#1\PH\PHi}{test} % debugging only
-}
-\newcommand*\nomuse [2][] {%
-  \@ifmtarg{#1}{%
-    \expandafter\nom@use\@car#2\@nil{#2}%
-  }{%
-    \nom@use{#1}{#2}%
-  }%
-}
-\newcommand \nom@use [2] {%
-  \ifcsname nom@csname@@\cmdstring#1\endcsname \else
-    \errmessage{\string\nomuse\space without matching \string\nomdef!}%
-  \fi
-  \begingroup \edef\next{\endgroup
-    \noexpand\nomdirect\@nameuse{nom@csname@@\cmdstring#1}%
-  }\next{#2}%
-}
-
-% possibly disable next nomenclature command, usage:
-% \nomprv\nomdirect...
-\newcommand \nomprv {}
-\newcommand \nom@color {}
-\newcommand \nom@color@reset {}
-\if@private
-  \let \nom@color@normal \nom@color
-  \renewcommand \nomprv {%
-    \let \nom@color \nom@color@prv
-  }
-  \newcommand \nom@color@prv {%
-    \noexpand\color{keys}%
-  }
-  \renewcommand \nom@color@reset {%
-    \let \nom@color \nom@color@normal
-  }
-\else
-  \let \nom@direct@real \nom@direct
-  \renewcommand \nomprv {%
-    \let \nom@direct \nom@direct@skip
-  }
-  \newcommand \nom@direct@skip [4] {%
-    \let \nom@direct \nom@direct@real
-  }
-\fi
-
-% remove \chapter and \preamble from original definition
-\renewenvironment{thenomenclature}{%
-  \list{}{%
-    \labelwidth\nom@tempdim
-    \leftmargin\labelwidth
-    \advance\leftmargin\labelsep
-    \itemsep\nomitemsep
-    \let\makelabel\nomlabel}%
-  }{%
-  \endlist
-  \nompostamble}
-
-% use the same style as table of stuff for page numbers
-\renewcommand\pagedeclaration[1]{%
-  \begingroup \def\vskip##1\p@{}%
-  \@dottedtocline{-1}{0pt}{0pt}{}{#1}%
-  \endgroup}
 
 % frenchb settings [[2
 %
@@ -526,29 +377,16 @@
 \newcommand* \proj [2][] {\Proj \ssup{#2}                 \ssub{#1}}
 \newcommand* \aff  [2][] {\Aff  \@ifnotmtarg{#2}{\sp{\!#2}} \ssub{#1}}
 
-\nomdef \proj a {P} \@gobbletwo{\proj\PH}{L'espace projectif standard de
-  dimension \PH}
-\nomdef \aff  a {A} \@gobbletwo{\aff \PH}{L'espace affine standard de
-  dimension \PH}
-
 % standard functions [[2
 %
 \newcommand*\I     [1][] {\std{Id}\ssub{#1}}
 \newcommand*\indic [1]   {\std{1}\ssub{#1}}
-
-\nomdef \I     a {Id} \@gobbletwo{\I\PH}{Fonction identité sur l'ensemble \PH}
-\nomdef \indic n {1} \@gobbletwo{\indic\PH}{Fonction indicatrice de l'ensemble
-  \PH}
 
 % less standard but still usefull sets [[2
 %
 \newcommand \Qbar {\overline\Q}
 \newcommand \cdn {{\boldsymbol k}}
 \newcommand \Cdn {{\boldsymbol K}}
-
-\nomdef \Qbar a {Q} \@gobbletwo{\Qbar}{Une clôture algébrique fixée de $\Q$}
-\nomdef \cdn a {k} \@gobbletwo{\cdn}{Un corps de nombres}
-\nomdef \Cdn a {K} \@gobbletwo{\Cdn}{Une extension finie de $\cdn$}
 
 % delimiters [[2
 %
@@ -589,32 +427,20 @@
 %
 \newcommand \Ideal {\mathcal I}
 \newcommand*\ideal [1] {\Ideal\sb{#1}}
-\nomdef \ideal a {I} \@gobbletwo{\ideal\PH}{Idéal (multi)homogène saturé de la
-  variété plongée \PH}
 
 \newcommand \Ring {\mathcal R}
 \newcommand*\ring [1] {\Ring\sb{#1}}
-\nomdef \ring a {R} \@gobbletwo{\ring\PH}{Anneau des coordonnées
-  (multi)homogènes de la variété plongée \PH}
 
 \newcommand \Korper {\mathcal K}
 \newcommand*\korper [1] {\Korper(#1)}
-\nomdef \korper a {K} \@gobbletwo{\korper\PH}{Corps des fonctions rationnelles
-  de la variété \PH}
 
 \newcommand \Zeros {\mathcal Z}
 \newcommand*\zeros [1] {\Zeros(#1)}
-\nomdef \zeros a {Z} \@gobbletwo{\zeros\PH}{Lieu des zéros de la (famille de)
-  forme(s) \PH}
 
 \newcommand \Chow {f}
 \newcommand*\chow [1] {\Chow\sb{#1}}
-\nomdef \chow a {f} \@gobbletwo{\chow\PH}{Forme de \bsc{Chow} de la variété
-  plongée \PH}
 
 \newcommand \md {\mathfrak{d}}
-\nomdef \md a {d} \@gobbletwo{\md}{Le morphisme symétrisant utilisé dans la
-  définition des distances projectives}
 
 % missing operators & general symbols [[2
 %
@@ -622,14 +448,11 @@
 \newcommand*\diff[1][] {\Diff\ssup{#1}}
 
 \newcommand*\der [1][] {\partial\ssup{#1}}
-\nomdef \der a {d} \@gobbletwo{\der\PH}{Dérivée divisée d'ordre \PH}
 
 \DeclareMathOperator \card {Card}
 \DeclareMathOperator \vect {Vect}
 
 \newcommand*\expb {\mathrm e}
-
-\nomdef \expb a {e} \@gobbletwo{\expb}{Base des logarithmes népériens}
 
 \DeclareMathOperator \Aind {Ind}
 \DeclareMathOperator \ord  {Ord}
@@ -673,12 +496,7 @@
   }%
   \if@display
     \label{e:cst-#2}%
-    %\noeqref{e:cst-#2}%
   \fi
-  \begingroup \edef\x{\endgroup
-    \noexpand\nomdirect{c}{\alph{cst}}{\unexpanded{\cst{#2}}}{%
-      \if@display \unexpanded{définie par~\protect\refeq{e:cst-#2}}\fi}%
-  }\x
   \cst{#2}}
 
 \tocbasicautomode
@@ -695,14 +513,7 @@
 \newcommand \vai   {\mathcal B}
 \newcommand \oa    {\boldsymbol 0}
 
-\nomdef \va a {A} \@gobbletwo{\va}{La variété abélienne ambiante}
-\nomdef \vai a {B} \@gobbletwo{\vai}{Une sous-variété abélienne fixée de
-  $\va$}
-\nomdef \oa n {0} \@gobbletwo{\oa}{L'origine de $\va$}
-
 \newcommand*\MW[2][\va]{MW\sb{\!#1}(#2)}
-\nomdef \MW a {MW} \@gobbletwo{\MW[\PHi]\PH}{Espace de \MoW de la variété
-  abélienne \PHi sur le corps \PH}
 
 \newcommand*\nnt {\abs} % norme de Néron-Tate
 \newcommand*\scalnt [2] {\scal{#1, #2}} % produit scalaire associé
@@ -712,13 +523,6 @@
 
 \newcommand*\wtapx [1][v] { \lambda\ssub{#1} }
 \newcommand*\degv  [1][v] { \Delta \ssub{#1} }
-
-\nomdef \placesapx a {S} \@gobbletwo{\placesapx}{Ensemble fini de places de \(
-    \cdn \) auxquelles on impose une condition d'approximation}
-\nomdef \wtapx g {l} \@gobbletwo{\wtapx}{Poids de la place \( v \)
-  dans la condition d'approximation}
-\nomdef \degv g {D} \@gobbletwo{\degv}{Degré local de \( \cdn \) en \(
-    v \)}
 
 \newcommand \varapx { E } % XXX utiliser \avar en général et \divi sinon
 
@@ -735,11 +539,6 @@
 \newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 \newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 
-\nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de
-  la forme \PH}
-\nomdef \mahler a {M} \@gobbletwo{\mahler\PH}{Mesure de \bsc{Mahler} de la
-  forme \PH}
-
 % local absolute values, norms, distances, ... [[2
 %
 \newcommand \Cv {\C_v}
@@ -749,30 +548,11 @@
 \newdelimcommandx \nnv [4][4=v] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
 \newcommand \nh {\mathrm h} % usage : \nv\nh P
 
-\nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $v$-adique d'un
-  nombre}
-\nomdef \nv  s {n2} \@gobbletwo{\nv\PHi\PH }{Norme $v$-adique d'un
-  vecteur ou d'une forme, en utilisant norme ou mesure \PHi si $v$ est
-  archimédienne}
-\nomdef \nnv s {n3} \@gobbletwo{\nnv\PHi\PH}{Norme $v$-adique d'un
-  multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
-  si $v$ est archimédienne}
-
 \newcommand* \mvp [2][v] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][v] {\mahler[#1]{#2}}
 
-\nomdef \mvm a {Mv} \@gobbletwo{\mvm\PH}{Mesure de \bsc{Mahler} de la forme
-  \PH si $v$ est archimédienne, norme du $\sup$ sinon}
-\nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme
-  \PH si $v$ est archimédienne, norme du $\sup$ sinon}
-
 \newcommand \dv  {{\delta\smash{\sb v}}}
 \newcommand \dpv {{\delta'\sb v}}
-
-\nomdef \dv  a {dv1} \@gobbletwo{\dv }{Vaut $1$ si $v$ est archimédienne,
-  est nul sinon}
-\nomdef \dpv a {dv2} \@gobbletwo{\dpv}{Vaut $1$ si $v$ est archimédienne
-  ou divise $2$, est nul sinon}
 
 \DeclareMathOperator \Dist {dist}
 \newcommand*\Distv [1][v] {\Dist\ssub{#1}}
@@ -782,9 +562,6 @@
 \newcommand*\Distalgv [1][v] {\Distalg\ssub{#1}}
 \newcommand*\distalgv [3][v] {\Distalgv[#1](#2,#3)}
 
-\nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $v$-adique
-  projective entre \PH et \PHi}
-
 % embeding-dependant values [[2
 %
 \newcommand \vaemb { \Theta }
@@ -792,17 +569,9 @@
 \newcommand \fibre  {\mathcal L}
 \newcommand \fibrei {\mathcal M}
 
-\nomdef \fibre a {L} \@gobbletwo{\fibre}{Le fibré donnant « le » plongement
-  projectif}
-
 \newcommand \coa  {\theta}
 \newcommand \coi  {{\mathfrak b}}
 \newcommand \htcmp [1][\vaemb] {\hat{c}\ssub{#1}}
-
-\nomdef \coa g {e3}
-\nomdef \coi a {b} \@gobbletwo{\coi}{Vecteur dont les composantes sont les
-  inverses de composantes de $\coa$ bien choisies}
-\nomdef \vaht a {h}
 
 \newcommand \hmclab [1][\vaemb] {%
   \@ifstar{ C\sb{#1, v} }{ C\sb{#1} }}
@@ -831,10 +600,6 @@
 \newcommand \indi     {l}
 \newcommand \indrange  {\sb{\ind =0}\sp n}
 \newcommand \indirange {\sb{\indi=0}\sp n}
-\nomdef \ind a {k} \@gobbletwo{\ind}{Un indice entier, variant en général
-  entre $0$ et $n$}
-\nomdef \indi a {l} \@gobbletwo{\indi}{Un indice entier, variant en général
-  entre $0$ et $n$}
 
 % point : x -- coordonnées : \gp x
 \newcommand \vp {\gp X}
@@ -857,14 +622,9 @@
 \newcommand \anydeg {\Delta}
 
 \newcommand*\lgr [1] {\abs{#1}}
-\nomdef \lgr s {n1} \@gobbletwo{\lgr\PH}{Longueur du multiindice \PH}
 
 \newcommand*\ncoef  [1] {\mathcal N(#1)}
 \newcommand*\maxbin [1] {m(#1)}
-\nomdef \ncoef a {N} \@gobbletwo{\ncoef\PH}{Nombre de coefficients du polynôme
-  \PH}
-\nomdef \maxbin a {m} \@gobbletwo{\maxbin\PH}{Maximum des coefficients
-  binomiaux $\binom\PH{i}$}
 
 % multiprojective indices and coordinates [[2
 %
@@ -889,8 +649,6 @@
 
 \newcommand \fct      {i}
 \newcommand \fctrange  {\sb{\fct =1}\sp m}
-\nomdef \fct a {i} \@gobbletwo{\fct}{Un indice entier, variant en général
-  entre $1$ et $m$}
 
 % point : x, x_i, coordonnées : \gmp x
 \newcommand \vmp {\gmp X}
@@ -898,11 +656,6 @@
 
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
-
-\nomdef \vlg s {n1} \@gobbletwo{\vlg\PH}{Vecteur des longueurs du
-  multimultiindice \PH}
-\nomdef \lgt s {n2} \@gobbletwo{\lgt\PH}{Longueur totale du multimultiindice
-  \PH}
 
 % height functions [[2
 %
@@ -921,12 +674,6 @@
 \newcommand*\htpph {\mathrm{P}}
 \newcommand*\htmah {\mathrm{M}}
 
-\nomdef \hautm a {h} \@gobbletwo{\hautm{\PHi}{\PH}}{Hauteur projective
-  multiplicative de \PH en utilisant la norme \PHi aux places archimédiennes}
-\nomdef \hautl a {h} \@gobbletwo{\hautl{\PHi}{\PH}}{Hauteur projective
-  logarithmique de \PH en utilisant la norme \PHi aux places archimédiennes}
-\nomdef \hautn a {h} \@gobbletwo{\hautn      {\PH}}{Hauteur de \NT de \PH}
-
 \newcommand \stoll [1] {\mathrm{St}\sb{#1}}
 
 
@@ -938,15 +685,10 @@
 \newcommand \Vbig { \alpha \sb{\mathrm{V}} }
 \newcommand \Vfar { \beta  \sb{\mathrm{V}} }
 \newcommand \Vcos { \gamma \sb{\mathrm{V}} }
-\nomdef \Vbig g {a}
-\nomdef \Vfar g {b}
-\nomdef \Vcos g {c}
 
 % general situation [[2
 %
 \newcommand \divi {E}
-\nomdef \divi a {E} \@gobbletwo{\divi}{Le diviseur dont on étudie les
-  approximations exceptionnelles}
 
 \newcommand \Excep { e }
 \newcommand \cex   { \gmp\Excep }
@@ -962,19 +704,13 @@
 \newc@star@default \wtis    {\fcti}{m-1} {a\ssub{#1}\sp2}
 \newc@star@default \wtw     {\fct }{m  } {\eta\ssub{#1}}
 
-\nomdef \ex a {e}
-\nomdef \wt a {a}
-
 \newcommand \prodwt {\wts[1] \dots \wts[m] (m-1)}
 
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
 \newc@star@default \pden {\fct}{}       {Q\ssub{#1}}
 \newcommand       \anypden {R}
-\nomdef \poldep a {P} \@gobbletwo{\poldep}{Relation de dépendance intégrale
-  des dernières variables sur les premières dans un plongement adapté}
 
 \newcommand \varset {\mathcal V}
-\nomdef \varset a {V}
 
 % weighted embedding [[2
 %
@@ -983,18 +719,11 @@
 
 \newcommand \fcti      {j}
 \newcommand \fctirange {\sb{\fcti=1}\sp{m-1}}
-\nomdef \fcti a {j} \@gobbletwo{\fcti}{Un indice entier, variant en général
-  entre $1$ et $m-1$}
 
 \newcommand \vmpi {\smpi Y}
 
 \newcommand*\wemb  [1][\wt] {\varphi\ssub{#1}}
 \newc@star@default \wemba {\clmap}{} {\psi\ssub{\wt\slast{#1}}}
-
-\nomdef \wemb  g {z1} \@gobbletwo{\wemb }{Plongement éclatant associé au
-  vecteur de poids $\wt$}
-\nomdef \wemba g {z3} \@gobbletwo{\wemba}{Morphisme d'algèbres graduées
-  associé au plongement éclatant $\wemb$}
 
 \newc@star@deftwo@i \wembclg{\fcti}{\ind} {\gmp@{L}[{#1}]{#2}{#3}}
 \newcommand*\wembclv {\gmpiv L}
@@ -1012,20 +741,11 @@
 \newcommand \stairs {\Stairs}
 \newcommand \vanish {\@ifstar {\Vanish*\wt@scale} {\Vanish\wt@scale}}
 
-\nomdef \stairs a {E} \@gobbletwo{\stairs}{Cylindre sur le dessus de
-  multi-escalier défini par les poids $\wt$ et le facteur d'échelle
-  $\epsi\delta$}
-\nomdef \vanish a {q} \@gobbletwo{\vanish}{Idéal d'annulation $\vanish +
-  \varid$}
-
 %\newcommand  \wtsum         {\@ifstar{ S\sp\wt\sb0 }{ S\sp\wt }}
 \newcommand* \wtsum [1][\wtw\wts] {\@ifstar{ S\ssup{#1}\sb0 }{ S\ssup{#1} }}
 
 \newc@star@default@i \indg {\divi}{\ex} {\Aind\ssup{#1}\ssub{#2}}
 \newc@star@default   \inda {\divi}{\ex} {\indg{\wtw\wts}[#1]}
-
-\nomdef \wtsum a {S}
-\nomdef \inda a {Ind}
 
 % various (degree) conditions for subsets in lemmas
 \newc@ifstar\Dz   { \delta d      }{ \delta d \sb\fct }
@@ -1059,22 +779,11 @@
 \newcommand \ringa  [1] {\tilde\Ring  \sb{#1}}
 \newcommand \chowa  [1] {\tilde\Chow  \sb{#1}}
 
-\nomdef \var     a {Z}
-\nomdef \vdim    a {u}
-\nomdef \vdeg    a {D}
-\nomdef \vdegp   a {D'}
-\nomdef \varfc   a {f}
-\nomdef \varid   a {I}
-\nomdef \vadapt  g {z2}
-
 % various "epsilons" [[2
 %
 % Note: no additional braces, or \expi\sp2 would be typeset incorrectly
 \newcommand \epsz   {\eps\sb0}
 \newcommand \epsi   {\eps\sb1}
-
-\nomdef \epsz   g {e00} \@gobbletwo{\epsz  }{Un epsilon}
-\nomdef \epsi   g {e01} \@gobbletwo{\epsi  }{Un autre epsilon}
 
 % auxiliary form & co [[2
 %
@@ -1102,17 +811,6 @@
 \newcommand \rdiv  { \rho\sb{\mathrm{div }} }
 \newcommand \relim { \rho\sb{\mathrm{elim}} }
 \newcommand \rfull { \rho }
-
-\nomdef \rdiv g {r} \@gobbletwo{\rdiv}{Morphisme de réduction par division
-  dans la construction de la forme auxiliaire pour l'inégalité de \bsc{Vojta}}
-\nomdef \relim g {r} \@gobbletwo{\relim}{Morphisme de réduction par
-  élimination de variables dans le construction de la forme auxiliaire pour
-  l'inégalité de \bsc{Vojta}}
-
-% nomdefs [[2
-%
-\nomdef r a {r} \@gobbletwo{r}{Degré du facteur parasitant la forme
-  auxiliaire}
 
 % Parametrisation [[2
 %
