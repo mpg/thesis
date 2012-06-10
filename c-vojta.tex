@@ -20,7 +20,7 @@ cas général.
   conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
-    & < \hautm[2]{\ex*}^{-\wtapx \expapx}
+    & < \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \label{e:Vapx}
     \\
@@ -71,7 +71,7 @@ cas général.
     f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
     \\
     \newcst[\Theta]{vs-ht}
-    & = \max( \hautl[1]{ \chow\va }, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
+    & = \max( \hautl1{ \chow\va }, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
   \end{align}
 \end{thm}
 
@@ -313,7 +313,7 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   \prod\fctrange \vdeg*
   & \le \Lambda^{f(\vdim)}
   \\ \label{e:varset-ht}
-  \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*}
+  \sum\fctrange \wtw* \wts* \hautl1{\varfc*}
   & \le \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)} \wts[1]
   \pmm,
 \end{align}
@@ -333,7 +333,7 @@ Pour commencer, remarquons que cet ensemble n'est pas vide puisqu'il contient
 \( \va^\puiss \). En effet, la définition de \( \Lambda \) (deux premiers
 arguments du maximum) assure que~\eqref{e:varset-deg}
 et~\eqref{e:varset-deg-prod} sont satisfait ; le fait que \( \cst{vs-ht} \ge
-  \hautl[1]\va \), que \( \Lambda > 2 \) et le lemme~\vref{l:sum-wts}
+  \hautl1\va \), que \( \Lambda > 2 \) et le lemme~\vref{l:sum-wts}
 garantissent que la condition~\eqref{e:varset-ht} l'est aussi.
 
 Nous allons voir qu'à partir d'une variété dans \( \varset(\ex) \) on peut en
@@ -349,11 +349,11 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     \deg T
     & \le \Lambda^{2\vdim f(\vdim)}
     \\
-    \wtw* \wts* \hautl[\infty]{ T }
+    \wtw* \wts* \hautl\infty{ T }
     & \le
     \genre \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
       + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \pmm.
@@ -394,19 +394,19 @@ construction itérative dans la démonstration ci-dessus.
   Pour la condition sur la hauteur, on utilise la formule suivante
   (\emph{arithmetic Bézout theorem}, \cite[p. 87]{phidg}) :
   \begin{equation}
-    \hautl[\htpph]{ \chow{\var*'} }
+    \hautl\htpph{ \chow{\var*'} }
     \le
-    \deg \var* \cdot \hautl[\mathrm{m}] T
-    + \deg T \cdot \hautl[\htpph]{ \varfc* }
+    \deg \var* \cdot \hautl{\mathrm{m}} T
+    + \deg T \cdot \hautl\htpph{ \varfc* }
   \end{equation}
-  où \( \Hautl[\mathrm{m}] \) est la hauteur désignée par \( h_1 \) dans la
+  où \( \Hautl{\mathrm{m}} \) est la hauteur désignée par \( h_1 \) dans la
   référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
-  par ailleurs que \( \hautl[\mathrm{m}] T \le \hautl[\infty] T + \sqrt\dimp
-  \). Rappelons comment \( \Hautl[\htpph] \) se compare à \( \Hautl[1] \)
+  par ailleurs que \( \hautl{\mathrm{m}} T \le \hautl\infty T + \sqrt\dimp
+  \). Rappelons comment \( \Hautl\htpph \) se compare à \( \Hautl1 \)
   dans le cas particulier de la forme de \bsc{Chow} \( \chow V \) d'une
   variété projective \( V \) :
   \begin{equation} \label{e:ht-pph-1}
-    \abs{ \hautl[\htpph]{ \chow V } - \hautl[1]{ \chow V } }
+    \abs{ \hautl\htpph{ \chow V } - \hautl1{ \chow V } }
     \le
     \frac12 \ln(\dimp + 1) (\dim V + 1) \deg V
     \pmm.
@@ -414,50 +414,50 @@ construction itérative dans la démonstration ci-dessus.
   Le théorème de Bézout arithmétique s'écrit donc, dans notre cas et avec les
   hauteurs qui nous intéressent :
   \begin{align}
-    \hautl[1]{ \chow{\var*'} }
+    \hautl1{ \chow{\var*'} }
     & \le
-    \deg \var* \bigl( \hautl[\infty] T + \sqrt\dimp \bigr)
+    \deg \var* \bigl( \hautl\infty T + \sqrt\dimp \bigr)
     + \deg T \Bigl(
-      \hautl[1]{ \varfc* }
+      \hautl1{ \varfc* }
       + \frac12 \ln(\dimp + 1) (\vdim* + 1) \deg \var*
     \Bigr)
     \\ & \quad
     + \frac12 \ln(\dimp + 1) \vdim* \deg \var*'
     \\ & \le
-    B \bigl( \hautl[\infty] T + \dimp \bigr)
+    B \bigl( \hautl\infty T + \dimp \bigr)
     + \deg T \Bigl(
-      \hautl[1]{ \varfc* } + \frac12 \dimp\genre B
+      \hautl1{ \varfc* } + \frac12 \dimp\genre B
     \Bigr)
     + \frac12 \dimp\genre B \deg T
     \\ & \le
-    \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
-    + B \hautl[\infty] T
+    \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
+    + B \hautl\infty T
     + 2 \dimp \genre B \Lambda^{2\vdim f(\vdim)}
   \end{align}
   et finalement, en multipliant par \( \wtw* \wts* \) et en majorant dans le
   dernier terme cette quantité par \( \wts[1] \), puis en utilisant
   l'information sur la hauteur de \( T \) fournie par la proposition :
   \begin{align}
-    \wtw* \wts* \hautl[1]{ \chow{\var*'} }
+    \wtw* \wts* \hautl1{ \chow{\var*'} }
     & \le
-    \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
+    \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
     + 2 \wts[1] \dimp \genre B \Lambda^{2\vdim f(\vdim)}
-    + \wtw* \wts* B \hautl[1] T
+    + \wtw* \wts* B \hautl1 T
     \\ & \le
-    \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl[1]{ \varfc* }
+    \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
     + 2 \wts[1] \dimp \genre B \Lambda^{2\vdim f(\vdim)}
     \\ & \qquad
     + B \genre \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
       + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Biggr)
     \\ & \le
     \Lambda^{2\vdim f(\vdim)} \Biggl(
-      \wtw* \wts* \hautl[1]{ \varfc* }
+      \wtw* \wts* \hautl1{ \varfc* }
       + B \genre
       \Bigl(
-        6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+        6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
         + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
       \Bigr)
     \Biggr)
@@ -469,31 +469,31 @@ construction itérative dans la démonstration ci-dessus.
   des hauteurs :
   \begin{align}
     \sum_{\fcti=1}^\puiss
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\chow{\var[\fcti]'}}
+    \wtw[\fcti] \wts[\fcti] \hautl1{\chow{\var[\fcti]'}}
     & =
     \sum_{\fcti \neq \fct}
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
-    + \wtw* \wts* \hautl[1]{ \chow{\var*'} }
+    \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+    + \wtw* \wts* \hautl1{ \chow{\var*'} }
     \\ & \le
     \Lambda^{2\vdim f(\vdim)} \sum_{\fcti \neq \fct}
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
-    + \Lambda^{2\vdim f(\vdim)} \wtw* \wts* \hautl[1]{ \varfc* }
+    \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+    + \Lambda^{2\vdim f(\vdim)} \wtw* \wts* \hautl1{ \varfc* }
     \\ & \qquad
     + B \genre \Lambda^{2\vdim f(\vdim)}
     \Bigl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
       + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Bigr)
     \\ & \le
     7 B \genre \Lambda^{2\vdim f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
       + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Bigr)
     \\ & \le
     \frac12 \Lambda^{(2\vdim + 1) f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
       + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     \Bigr)
     \label{e:vs-ht-rec}
@@ -504,7 +504,7 @@ construction itérative dans la démonstration ci-dessus.
   savoir~\eqref{e:varset-ht}, pour obtenir
   \begin{align}
     \sum_{\fcti=1}^\puiss
-    \wtw[\fcti] \wts[\fcti] \hautl[1]{\chow{\var[\fcti]'}}
+    \wtw[\fcti] \wts[\fcti] \hautl1{\chow{\var[\fcti]'}}
     & \le
     \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 2 + \frac1\puiss) f(\vdim)}
   \end{align}
@@ -522,7 +522,7 @@ construction itérative dans la démonstration ci-dessus.
   d'éléments de \( \varset(\ex) \) de dimensions décroissantes, jusqu'au
   moment où l'un des facteurs est réduit à un point, c'est-à-dire que \( \var*
     = \set{\ex*} \) pour un certain \( \fct \) et en particulier \(
-    \hautl[1]{\varfc*} = \hautl[1]{\ex*} \) vu l'expression de la forme de
+    \hautl1{\varfc*} = \hautl1{\ex*} \) vu l'expression de la forme de
   \bsc{Chow} d'un point. Par ailleurs, à ce stade on a \( \vdim \ge \puiss - 1
   \) ; on en déduit alors, par \eqref{e:varset-ht} et~\eqref{e:comp-h-hn},
   \begin{align}
@@ -693,8 +693,8 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
 
 \begin{lem} \label{l:cramer}
   Soit \( M \) une matrice \( p \times p \) inversible à coefficients entiers.
-  On a alors \( \hautm[\infty]{M^{-1}} \le (p-1)! \cdot
-    \hautm[\infty]{M}^{p-1} \).
+  On a alors \( \hautm\infty{M^{-1}} \le (p-1)! \cdot
+    \hautm\infty{M}^{p-1} \).
 \end{lem}
 
 \begin{proof}
@@ -703,7 +703,7 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
   toutes les places, de sorte qu'il s'agit d'estimer la hauteur de la
   comatrice. Cette dernière est à coefficients entiers, donc de norme
   inférieur à \( 1 \) aux places finies, et la valeur absolue archimédienne
-  des coefficients est majorée par \( (p-1)! \, \hautm[\infty]{M}^{p-1} \).
+  des coefficients est majorée par \( (p-1)! \, \hautm\infty{M}^{p-1} \).
 \end{proof}
 
 \begin{nota}
@@ -719,7 +719,7 @@ La construction et le lemme précédent montrent alors que
   \le
   (\vdegp*)^\dv
   \qquad\text{et}\qquad
-  \hautm[\infty]{\vadapt*^{-1}}
+  \hautm\infty{\vadapt*^{-1}}
   \le
   \dimp! \cdot (\vdegp*)^{\dimp}
 \end{equation}
@@ -1350,7 +1350,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \)
   satisfont
   \begin{align}
-    \hautm[1]{c_{p, q}}
+    \hautm1{c_{p, q}}
     & \le
     \bigl(
       \hmclab ((\dimp+1)!)^2 \, B^{2\dimp}
@@ -1392,7 +1392,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   pour simplifier l'écriture) il vient, compte tenu de~\eqref{e:vadapt-ht} et
   de~\eqref{e:varset-deg}
   \begin{align}
-    \hautm[1]{c_{p, q}}^{1/\delta}
+    \hautm1{c_{p, q}}^{1/\delta}
     & \le
     \prod\fctirange
     \hmclab^{\wtis* + \wts**} \,
@@ -1414,7 +1414,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \begin{equation}
     \prod_\place \nv1{ \wemba[\clmapv](F) }^\degv
     \le
-    \hautm[1] F
+    \hautm1 F
     \bigl(
       \hmclab ((\dimp+1)!)^2 \, B^{2\dimp}
     \bigr) ^{2 \delta \wts[1]}
@@ -1937,16 +1937,16 @@ majorée par tout majorant commun des normes des matrices des applications
 D'après la définition~\eqref{e:def-pi-beta} de \( \pi_{\epsi\delta}^{\wtw\wts}
 \) il est clair que cette application ne peut que faire décroître la norme. On
 pose alors \( \sigma'_\clmap = \rfull^{\Di} \circ \wemba* \) ; il s'agit donc
-de majorer \( \hautl[\infty]{ M_{\sigma'_\clmap} } \) indépendamment de \(
+de majorer \( \hautl\infty{ M_{\sigma'_\clmap} } \) indépendamment de \(
   \clmap \).
 
 On utilise le fait élémentaire suivant : si \( M_1 \) et \( M_2 \) sont deux
-matrices, la hauteur \( \Hautl[\infty]\) de leur produit est majorée par \(
-  \hautl[\infty]{M_1} + \max(\hautl[1]{c}) \) où \( c \) parcourt les colonnes
+matrices, la hauteur \( \Hautl\infty\) de leur produit est majorée par \(
+  \hautl\infty{M_1} + \max(\hautl1{c}) \) où \( c \) parcourt les colonnes
 de \( M_2 \). Il suffit alors de combiner les estimations des
 lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
 \begin{align}
-  \hautl[\infty]{ M_{\sigma'_\clmap} }
+  \hautl\infty{ M_{\sigma'_\clmap} }
   & \le
   2 \delta \wts[1]
   \bigl(
@@ -1954,7 +1954,7 @@ lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
   \bigr)
   \\ & \qquad +
   \sum\fctrange 2\Di* \Bigl(
-    \hautl[1]{ \varfc* }
+    \hautl1{ \varfc* }
     + \bigl( B(\genre+1) + 1 \bigr) \ln(B) + \ln(2)
   \Bigr)
   + o(\delta)
@@ -1965,7 +1965,7 @@ On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
 que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
 définition~\eqref{e:cst-vs-ht} pour écrire
 \begin{align}
-  \hautl[\infty]{ M_{\sigma'_\clmap} }
+  \hautl\infty{ M_{\sigma'_\clmap} }
   & \le
   4 \delta \wts[1]
   \Bigl(
@@ -1973,25 +1973,25 @@ définition~\eqref{e:cst-vs-ht} pour écrire
     + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
   \Bigr)
   \\ & \qquad
-  + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \pmm.
 \end{align}
 On invoque alors~\eqref{e:B-siegel} pour conclure :
 \begin{equation} \label{e:hmat-sigma-p}
-  \hautl[\infty]{ M_{\sigma'_\clmap} }
+  \hautl\infty{ M_{\sigma'_\clmap} }
   \le
   \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \pmm.
 \end{equation}
 Compte tenu des remarques précédentes, on a donc aussi
 \begin{equation} \label{e:hmat-sigma}
-  \hautl[\infty]{ M_\sigma }
+  \hautl\infty{ M_\sigma }
   \le
   \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \pmm.
 \end{equation}
@@ -2010,9 +2010,9 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
   dans un corps de nombres \( \cdn \) avec \( p < q \), il existe un vecteur
   \( x \in \cdn^q \) non nul tel que \( M x = 0 \) et satisfaisant
   \begin{equation}
-    \hautl[\infty] x
+    \hautl\infty x
     \le
-    \frac p{q-p} \bigl( \hautl[\infty] M + \ln q \bigr)
+    \frac p{q-p} \bigl( \hautl\infty M + \ln q \bigr)
     + \frac q{q-p} c_\cdn
     \pmm,
   \end{equation}
@@ -2042,10 +2042,10 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
       \delta, \dots, \delta
     \bigr)
     \\
-    \hautl[\infty] \faux
+    \hautl\infty \faux
     & \le
     \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-    + 6 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+    + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
     + o(\delta)
     \pmm.
   \end{align}
@@ -2070,7 +2070,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   De même, \( \frac q {q-p} c_\cdn = o(\delta) \) ;
   en remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
   forme \( \faux \) satisfaisant aux conditions de l'énoncé mais de hauteur
-  majorée par \( \hautl[\infty]{M_\sigma} + o(\delta) \).  Il ne reste plus
+  majorée par \( \hautl\infty{M_\sigma} + o(\delta) \).  Il ne reste plus
   qu'à invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
 \end{proof}
 
@@ -2078,7 +2078,7 @@ Remarquons que dans la majoration de hauteur on peut en fait choisir la
 hauteur utilisée, comme le montre le scolie suivant.
 
 \begin{sco} \label{s:h1-aux}
-  On a \( \hautl[1] \faux \le \hautl[\infty] \faux + o(\delta) \).
+  On a \( \hautl1 \faux \le \hautl\infty \faux + o(\delta) \).
 \end{sco}
 
 \begin{proof}
@@ -2112,10 +2112,10 @@ propriétés de ces formes dont nous aurons besoin.
       \( d'_\fct = \wts* (2 \wtw* + \epsz) \) pour tout \( \fct \), et \( r \)
       indépendant de \( \delta \) ;
     \item \(
-        \hautl[1]{\faux*}
+        \hautl1{\faux*}
         \le
         2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-        + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+        + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
         + o(\delta)
       \) ;
   \end{enumthm}
@@ -2142,18 +2142,18 @@ propriétés de ces formes dont nous aurons besoin.
   \( \faux* = \sigma'_\clmap( \faux ) \)
   dans les notations de la sous-section~\vref{sec:siegel-ht} de sorte qu'on a
   \begin{align}
-    \hautl[\infty]{ \faux* }
+    \hautl\infty{ \faux* }
     \le
-    \hautl[\infty]{ M_{\sigma'_\clmap} }
-    + \hautl[1]{ \faux }
+    \hautl\infty{ M_{\sigma'_\clmap} }
+    + \hautl1{ \faux }
     \le
     2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-    + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+    + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
     + o(\delta)
   \end{align}
   en utilisant le résultat de la proposition précédente
   et~\eqref{e:hmat-sigma-p}. Le même argument qu'au scolie~\vref{s:h1-aux}
-  montre que \( \hautl[1]{ \faux* } \) est en fait majoré par la même
+  montre que \( \hautl1{ \faux* } \) est en fait majoré par la même
   quantité.
 
   Pour la dernière assertion, on procède exactement comme pour majorer la
@@ -2164,7 +2164,7 @@ propriétés de ces formes dont nous aurons besoin.
     \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
     \le
     2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-    + 12 \delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+    + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
     + o(\delta)
   \end{align}
   Il ne reste qu'à appliquer l'hypothèse~\eqref{e:varset-ht} pour conclure.
@@ -2172,11 +2172,11 @@ propriétés de ces formes dont nous aurons besoin.
 
 Remarquons qu'on a utilisé l'hypothèse~\eqref{e:varset-ht} pour simplifier la
 dernière estimation contrairement à celle du quatrième point. En effet, cette
-estimation de \( \hautl[1]{ \faux* } \) contribuera directement, en
+estimation de \( \hautl1{ \faux* } \) contribuera directement, en
 section~\vref{sec:thm-prod}, à l'estimation de hauteur de la forme motrice
 que nous cherchons à construire (proposition~\vref{p:varset-notmin}) et il est
 donc intéressant de conserver la dépendance en \( \sum\fctrange \wtw* \wts*
-  \hautl[1]{\varfc*} \) explicite jusqu'à la relation de
+  \hautl1{\varfc*} \) explicite jusqu'à la relation de
 récurrence~\eqref{e:vs-ht-rec}.  L'autre estimation en revanche, ne sera
 utilisée que dans la section suivante pour assurer que les termes ne dépendant
 pas de \( \hautn{ \ex[1] } \) sont assez petits pour être couverts par cette
@@ -3294,14 +3294,14 @@ valeur absolue d'une coordonnée est majorée par la norme du vecteur :
   \right) ^{ (\epsz \delta \wts* + r_\fct) \degv }
   \le
   \prod\fctrange
-  \hautm[\infty]{ \cexa* }^{\epsz \delta \wts* + r_\fct}
+  \hautm\infty{ \cexa* }^{\epsz \delta \wts* + r_\fct}
 \end{equation}
 puis on passe au logarithme :
 \begin{align}
   \ratfh4
   & \le
   \epsz \delta \Bigl(
-    \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
+    \sum\fctrange \wts* \hautl\infty{ \cexa* }
   \Bigr) + o(\delta)
   \pmm.
 \end{align}
@@ -3309,22 +3309,22 @@ Concentrons-nous sur le contenu de la parenthèse, que nous rencontrerons à
 nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
   \vadapt*(\cex*) \), puis~\eqref{e:comp-h-hn} :
 \begin{align}
-  \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
+  \sum\fctrange \wts* \hautl\infty{ \cexa* }
   & \le
   \sum\fctrange \wts* \bigl(
-    \hautl[1]{ \cex* } + \hautl[\infty]{\vadapt*}
+    \hautl1{ \cex* } + \hautl\infty{\vadapt*}
   \bigr)
   \\ & \le
   \sum\fctrange \wts* \bigl(
-    \hautn{ \ex* } + \htcmp + \frac12\ln(\dimp+1) + \hautl[\infty]{\vadapt*}
+    \hautn{ \ex* } + \htcmp + \frac12\ln(\dimp+1) + \hautl\infty{\vadapt*}
   \bigr)
 \end{align}
-On remarque alors que \( \hautl[\infty]{\vadapt*} \le \ln B \)
+On remarque alors que \( \hautl\infty{\vadapt*} \le \ln B \)
 d'après~\eqref{e:vadapt-ht} et~\eqref{e:varset-deg}. On regroupe alors les
 termes avant d'utiliser d'une part~\eqref{e:wt-ratio} et d'autre part le
 lemme~\vref{l:sum-wts} :
 \begin{align}
-  \sum\fctrange \wts* \hautl[\infty]{ \cexa* }
+  \sum\fctrange \wts* \hautl\infty{ \cexa* }
   & \le
   \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
   + \bigl( \htcmp + \frac12\ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
@@ -3354,7 +3354,7 @@ Pour \( \ratfh3 \) on commence avec les mêmes arguments pour écrire
   \right) ^{ \delta \degv }
   \le
   \prod\fctirange
-  \hautm[\infty]{ \exi* }^\delta
+  \hautm\infty{ \exi* }^\delta
 \end{equation}
 puis on passe au logarithme et on utilise encore~\eqref{e:comp-h-hn} :
 \begin{align}
@@ -3441,7 +3441,7 @@ des propriétés suivantes.
         3 \delta \wtw* \wts*
       \) ; \label{i:deg-p-der}
     \item \(
-        \hautl[1]{ (P_\place)_\place }
+        \hautl1{ (P_\place)_\place }
         \le
         15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
     + o(\delta)
@@ -3454,7 +3454,7 @@ des propriétés suivantes.
   \end{enumthm}
   où l'on a noté
   \(
-    \hautl[1]{ (P_\place)_\place }
+    \hautl1{ (P_\place)_\place }
     =
     \sum_\place \degv \ln \nv1{ P_\place }
   \).
@@ -3494,18 +3494,18 @@ des propriétés suivantes.
   logarithme puis la somme (pondérée par les degrés locaux divisés) sur toutes
   les places :
   \begin{align}
-    \hautl[1]{ (P_\place)_\place }
+    \hautl1{ (P_\place)_\place }
     & \le
-    \hautl[1]{ (\fauxv)_\place }
+    \hautl1{ (\fauxv)_\place }
     \\ & \qquad
     + \sum\fctrange \bigl(
-      2 \lgr{\dermp*} \hautl[1]{ \varfca* }
+      2 \lgr{\dermp*} \hautl1{ \varfca* }
       + \lgr{\dermp*} ( \ln(8\genre) + 3 \ln B )
       + \genre (\Dir*) \ln 2
     \bigr)
   \\ & \le
-    \hautl[1]{ (\fauxv)_\place }
-    + 2 \bigl( \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* } \bigr)
+    \hautl1{ (\fauxv)_\place }
+    + 2 \bigl( \sum\fctrange \lgr{\dermp*} \hautl1{ \varfc* } \bigr)
     + \delta \genre \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
     + o(\delta)
     \\ & \qquad
@@ -3520,10 +3520,10 @@ des propriétés suivantes.
   Le premier est donné par~\eqref{e:aux-co-htv} ; nous verrons que c'est le
   terme dominant. Pour le deuxième, on a
   \begin{equation}
-    \sum\fctrange \lgr{\dermp*} \hautl[1]{ \varfc* }
+    \sum\fctrange \lgr{\dermp*} \hautl1{ \varfc* }
     \le
     \delta \epsi \sigma^{-1}
-    \sum\fctrange \wts* \wtw* \hautl[1]{ \varfc* }
+    \sum\fctrange \wts* \wtw* \hautl1{ \varfc* }
     \le
     \delta \wts[1] \epsi \sigma^{-1}
     \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
@@ -3615,7 +3615,7 @@ d'après le deuxième point du scolie~\vref{s:part-cases} et qu'on a donc
     \av{ \pden_\fct(\cexa*) }^{ \lgr{\dermp*} \degv }
   }
   \le
-  \hautm[\infty]{ \cexa* }^{ 2 \deg \pden* \lgr{\dermp*} }
+  \hautm\infty{ \cexa* }^{ 2 \deg \pden* \lgr{\dermp*} }
   \pmm.
 \end{equation}
 On note alors que par définition, \( \deg \pden* = \vdeg* - 1 \le B \), puis
@@ -3624,15 +3624,15 @@ on utilise~\eqref{e:dermp2wts}
   \ratfh{1''}
   & \le
   2 B \sum\fctrange
-  \hautl[\infty]{ \cexa* } \lgr{\dermp*}
+  \hautl\infty{ \cexa* } \lgr{\dermp*}
   \\ & \le
   2 \delta B \epsi \sigma^{-1}
-  \sum\fctrange \wtw* \wts* \hautl[\infty]{ \cexa* }
+  \sum\fctrange \wtw* \wts* \hautl\infty{ \cexa* }
   \pmm.
 \end{align}
 En adaptant la démonstration de~\eqref{e:sum-h-cexa} on a facilement
 \begin{equation}
-  \sum\fctrange \wtw* \wts* \hautl[\infty]{ \cexa* }
+  \sum\fctrange \wtw* \wts* \hautl\infty{ \cexa* }
   \le
   2 \wts[1] \bigl(
     2(\puiss-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
@@ -3717,7 +3717,7 @@ permet d'exploiter~\eqref{e:Vapx} :
 \begin{align}
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
-  \hautm[2]{\ex*}^{-\wtapx \expapx}
+  \hautm2{\ex*}^{-\wtapx \expapx}
   \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
   \\ & \le
   \expb^{ -\wtapx \expapx \hautn{\ex*} }
@@ -3780,7 +3780,7 @@ utilisant~\eqref{e:vadapt-ht} et le lemme~\vref{l:ratfv1} :
   & \le
   - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
   + 15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  + 3\delta \sum\fctrange \wtw* \wts* \hautl[1]{ \varfc* }
+  + 3\delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \\ & \quad
   + 3\delta \Bigl(
@@ -3964,12 +3964,12 @@ utilisant le fait suivant, conséquence du théorème du produit.
       \) ;
     \item la hauteur de \( T \) satisfait à
       \begin{align}
-        b_\fct \, \hautl[\infty] T
+        b_\fct \, \hautl\infty T
         & \le
         \vdim*
         \left( \frac\puiss\alpha \right)^\vdim
         \left(
-          \hautl[\infty] G
+          \hautl\infty G
           + \sum_{\fcti=1}^\puiss \bigl(
             b_\fcti (\stoll{\vdim[\fcti]} + \ln 2) + \sqrt{\vdim[\fcti]}
           \bigr)
@@ -4017,9 +4017,9 @@ cette extension est une forme possédant les propriétés voulues.
     \item \( \inda[\pi(\ex)] N(\faux**) \ge \inda** \faux** \) ;
     \item \( \deg N(\faux**) = (\prod\fctrange \vdeg*) \deg \faux** \) ;
     \item \(
-        \hautl[\infty]{ N(\faux**) }
+        \hautl\infty{ N(\faux**) }
         \le
-        (\prod\fctrange \vdeg*) \hautl[\infty]{ \faux** } + o(\delta)
+        (\prod\fctrange \vdeg*) \hautl\infty{ \faux** } + o(\delta)
       \).
   \end{enumthm}
 \end{fact}
@@ -4154,18 +4154,18 @@ degré, d'après le choix de \( \alpha \) on a
 \end{equation}
 qui est bien la majoration annoncée.
 
-Concernant la hauteur, on commence par majorer \( \hautl[\infty] T \) en
-fonction de \( \hautl[\infty]{ \faux** } \) ; le fait~\vref{f:thm-prod} donne
+Concernant la hauteur, on commence par majorer \( \hautl\infty T \) en
+fonction de \( \hautl\infty{ \faux** } \) ; le fait~\vref{f:thm-prod} donne
 immédiatement la majoration suivante, compte tenu du fait~\vref{f:nfaux} et du
 choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
   \sqrt{\vdim*} \) sont négligeables devant \( \delta \) :
 \begin{align}
-  D \delta \wts* (2\wtw* + \epsz) \hautl[\infty] T
+  D \delta \wts* (2\wtw* + \epsz) \hautl\infty T
   & \le
   \vdim*
   \Lambda^{2\vdim f(\vdim)}
   \left(
-    D \hautl[\infty]{ \faux** }
+    D \hautl\infty{ \faux** }
     + \sum_{\fcti=1}^\puiss
     D \delta \wts[\fcti] (2\wtw[\fcti] + \epsz)
     (\stoll{\vdim[\fcti]} + \ln 2)
@@ -4196,12 +4196,12 @@ et le fait que \( 2 \le 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
 \( 2 \delta D \) et on met \( \vdim* \Lambda^{2\vdim f(\vdim)} \) en facteur
 (en majorant \( \vdim* + 1 \) par \( 2\vdim* \) le cas échéant) pour obtenir
 \begin{align*}
-  \wtw* \wts* \hautl[\infty] T
+  \wtw* \wts* \hautl\infty T
   & \le
   \vdim*
   \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \frac1{2\delta} \hautl[\infty]{ \faux** }
+    \frac1{2\delta} \hautl\infty{ \faux** }
     \\ & \qquad
     + \puiss \biggl(
       \sum_{\fcti=1}^\puiss \wts[\fcti] (\stoll{\vdim[\fcti]} + \ln 2)
@@ -4226,11 +4226,11 @@ terme de la dernière ligne ci-dessus par
 \end{align}
 puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
 \begin{align}
-  \wtw* \wts* \hautl[\infty] T
+  \wtw* \wts* \hautl\infty T
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    \frac1{2\delta} \hautl[\infty]{ \faux** }
+    \frac1{2\delta} \hautl\infty{ \faux** }
     + \frac14 \wts[1] \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   + o(1)
@@ -4239,20 +4239,20 @@ comme estimation finale de la hauteur de \( T \) en fonction de celle de \(
   \faux** \).
 
 Utilisons maintenant le scolie~\vref{s:aux-co} pour exprimer cette hauteur en
-fonction de \( \sum\fctrange \wtw* \wts* \hautl[1]{\varfc*} \).
+fonction de \( \sum\fctrange \wtw* \wts* \hautl1{\varfc*} \).
 \begin{align}
-  \wtw* \wts* \hautl[\infty] T
+  \wtw* \wts* \hautl\infty T
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
     + \frac54 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   + o(1)
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
     + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \label{e:ht-T-var}
@@ -4265,15 +4265,15 @@ dépend pas de \( \delta \).
 Passons maintenant à \( T' \). Par construction, en utilisant les propriétés
 classiques de la hauteur, on a
 \begin{align*}
-  \hautl[\infty]{ T' }
+  \hautl\infty{ T' }
   & \le
-  \hautl[\infty]{ T }
+  \hautl\infty{ T }
   + \left(
-    \deg T \Bigl( \hautl[\infty]{ \vadapt* } + \ln(\dimp + 1) \Bigr)
+    \deg T \Bigl( \hautl\infty{ \vadapt* } + \ln(\dimp + 1) \Bigr)
     + \ln \binom{ \deg T + \dimp + 1 }{ \dimp + 1 }
   \right)
   \\ & \le
-  \hautl[\infty]{ T }
+  \hautl\infty{ T }
   + \left(
     \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
     + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
@@ -4284,9 +4284,9 @@ On invoque alors~\eqref{e:ht-T'-adhoc}, puis on multiplie les deux membres par
 \( \wtw* \wts* \) et, en remarquant que cette dernière quantité est majorée
 par \( \wts[1] \), il vient :
 \begin{equation}
-  \wtw* \wts* \hautl[\infty]{ T' }
+  \wtw* \wts* \hautl\infty{ T' }
   \le
-  \wtw* \wts* \hautl[\infty]{ T }
+  \wtw* \wts* \hautl\infty{ T }
   +
   \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
   \pmm.
@@ -4294,11 +4294,11 @@ par \( \wts[1] \), il vient :
 Il ne reste plus qu'à substituer~\eqref{e:ht-T-var} dans l'estimation
 précédente pour avoir
 \begin{align*}
-  \wtw* \wts* \hautl[\infty]{ T' }
+  \wtw* \wts* \hautl\infty{ T' }
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl[1]{\varfc[\fcti]}
+    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
     + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
   \Biggr)
   \pmm,
@@ -4714,30 +4714,30 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         \, (\dimp + 1)^{\dv/2}
       \) ; \label{i:plin-dv}
     \item \(
-        \hautm[2, \vaemb']{x}
+        \hautm{2, \vaemb'}{x}
         \le
-        \hautm[2, \vaemb]{x}
-        \cdot \hautm[2, \vaemb]{E}
+        \hautm{2, \vaemb}{x}
+        \cdot \hautm{2, \vaemb}{E}
         \sqrt{\dimp + 1}
       \) ; \label{i:plin-ht-pt}
     \item \(
-        \hautl[1, \vaemb']{\va}
+        \hautl{1, \vaemb'}{\va}
         \le
-        \hautl[1, \vaemb]{\va}
-        + \hautl[1, \vaemb]{ E } (\genre+1) \deg \va
+        \hautl{1, \vaemb}{\va}
+        + \hautl{1, \vaemb}{ E } (\genre+1) \deg \va
       \). \label{i:plin-ht-va}
     \item \(
         \htcmp[\vaemb']
         =
         \htcmp[\vaemb]
-        + \hautl[2, \vaemb] E
+        + \hautl{2, \vaemb} E
         + \frac12 \ln(\dimp + 1)
       \) ; \label{i:plin-htcmp}
     \item \(
         \hlclab[\vaemb']
         =
         \hlclab[\vaemb]
-        + \frac52 \hautl[1, \vaemb] E
+        + \frac52 \hautl{1, \vaemb} E
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
@@ -4835,16 +4835,16 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
 
   Par ailleurs, les comparaisons~\eqref{e:plin-norm} donnent immédiatement
   \begin{equation}
-    \abs{ \hautl[2, \vaemb] x - \hautl[2, \vaemb'] x }
+    \abs{ \hautl{2, \vaemb} x - \hautl{2, \vaemb'} x }
     \le
-    \hautl[2] L + \frac12 \ln(\dimp + 1)
+    \hautl2 L + \frac12 \ln(\dimp + 1)
   \end{equation}
   d'où, en constatant que les hauteurs normalisées sont les mêmes dans \(
     \vaemb \) et \( \vaemb' \)
   \begin{equation}
-    \abs{ \hautl[2, \vaemb'] x - \hautn x }
+    \abs{ \hautl{2, \vaemb'} x - \hautn x }
     \le
-    \htcmp[\vaemb] + \hautl[2] L + \frac12 \ln(\dimp + 1)
+    \htcmp[\vaemb] + \hautl2 L + \frac12 \ln(\dimp + 1)
   \end{equation}
   qui donne directement~\vref{i:plin-htcmp}.
 
@@ -4932,7 +4932,7 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
     0 < \distv{\ex*}{\divi}
     & <
     \frac{ \distv{p_0}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
@@ -4963,10 +4963,10 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
     \\
     \newcst[\Theta]{ht-v-div-dv}
     & = \max \bigl(
-      \hautl[1]{\va} + \hautl[1]{ E } (\genre+1) \deg \va,
-      \hlclab + \frac52 \hautl[1] E,
+      \hautl1{\va} + \hautl1{ E } (\genre+1) \deg \va,
+      \hlclab + \frac52 \hautl1 E,
       \\ & \qquad
-      \htcmp + \hautl[2] E + \frac12 \ln(\dimp + 1),
+      \htcmp + \hautl2 E + \frac12 \ln(\dimp + 1),
       \dimp\ln(\dimp + 1)
     \bigr)
     \pmm.
@@ -5004,22 +5004,22 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
     \, (\dimp + 1)^{\dv/2}
     \\ & \le
-    \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx}
+    \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx}
     =
-    \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx'}
-    \cdot \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx/86}
+    \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx'}
+    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx/86}
     \\ & \le
-    \hautm[2, \vaemb']{\ex*}^{-\wtapx \expapx'}
-    \cdot \hautm[2, \vaemb]{E}^{\wtapx \expapx'}
+    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \expapx'}
+    \cdot \hautm{2, \vaemb}{E}^{\wtapx \expapx'}
     (\dimp + 1)^{\wtapx \expapx'/2}
-    \cdot \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx/86}
+    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx/86}
     \\ & \le
-    \hautm[2, \vaemb']{\ex*}^{-\wtapx \expapx'}
+    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \expapx'}
     \Bigl(
-      \hautm[2, \vaemb]{E}^{85}
+      \hautm{2, \vaemb}{E}^{85}
       (\dimp + 1)^{85/2}
       /
-      \hautm[2, \vaemb]{\ex*}
+      \hautm{2, \vaemb}{\ex*}
     \Bigr)^{\wtapx \expapx/86}
     \pmm,
   \end{align}
@@ -5027,11 +5027,11 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   parenthèse soit inférieure à \( 1 \). Or, la deuxième hypothèse entraîne
   largement cette inégalité, par exemple :
   \(
-    \hautl[2, \vaemb]{\ex*}
+    \hautl{2, \vaemb}{\ex*}
     \ge
     2 \cst{ht-v-div-dv} \Lambda_1
     \ge
-    85 ( \hautl[1, \vaemb]{E} + \frac12 \ln (\dimp + 1) )
+    85 ( \hautl{1, \vaemb}{E} + \frac12 \ln (\dimp + 1) )
   \)
   en utilisant de diverses façon la définition de \( \cst{ht-v-div-dv} \) et
   le fait que \( \Lambda_1 \ge 85 \).
@@ -5071,7 +5071,7 @@ au cours de la preuve.
     0 < \distv{\ex*}{\divi}
     & <
     (n + 1)^{-3\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
@@ -5137,10 +5137,10 @@ au cours de la preuve.
     \expapx' = \expapx \sigma_i \) de sorte qu'on a
   \begin{equation}
     (n + 1)^{-3\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \le
     \frac{ \distv{p_{i_\place}}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm[2]{\ex*}^{-\wtapx' \expapx'}
+    \hautm2{\ex*}^{-\wtapx' \expapx'}
     \quad \forall \place \in \placesapx'
     \pmm.
   \end{equation}
@@ -5210,7 +5210,7 @@ lemme suivant.
   Par ailleurs, on a \( \sum_\place \degv \dpv \le 1.26 \Delta / \ln \Delta
   \).  En particulier si on note \( b \) le vecteur dont les composantes sont
   les \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a
-  \( \hautl[\infty] b \le \Delta\dimp \).
+  \( \hautl\infty b \le \Delta\dimp \).
 \end{lem}
 
 \begin{proof}
@@ -5251,9 +5251,9 @@ sur les différents paramètres en jeu dans notre situation.
   on a :
   \begin{enumthm}
     \item \(
-        \hautl[1, \vaemb'] \divi
+        \hautl{1, \vaemb'} \divi
         \le
-        \hautl[1, \vaemb] F
+        \hautl{1, \vaemb} F
         + \Delta\dimp
       \) ;
     \item \(
@@ -5263,9 +5263,9 @@ sur les différents paramètres en jeu dans notre situation.
         \cdot \Delta^{\dv/2}
       \) ; \label{i:hs-vero-dv}
     \item \(
-        \hautl[2, \vaemb']{x}
+        \hautl{2, \vaemb'}{x}
         =
-        \hautl[2, \vaemb]{x}
+        \hautl{2, \vaemb}{x}
         \cdot \Delta
       \) ; \label{i:hs-vero-ht-pt}
     \item \(
@@ -5275,9 +5275,9 @@ sur les différents paramètres en jeu dans notre situation.
         \cdot \Delta^\genre
       \) ; \label{i:hs-vero-deg-va}
     \item \(
-        \hautl[1, \vaemb']{\va}
+        \hautl{1, \vaemb'}{\va}
         \le
-        \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
+        \Delta^{\genre+1} \hautl{1, \vaemb}{\va}
         + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
     \item \(
@@ -5309,21 +5309,21 @@ sur les différents paramètres en jeu dans notre situation.
   et~\vref{i:hs-vero-ht-pt} en découlent directement et le
   point~\vref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier
   (pour lequel ou pouvait aussi utiliser~\eqref{e:vero-norm} en fait). Par
-  ailleurs, la référence citée donne \( \hautl[\htpph, \vaemb'] \va =
-    \Delta^{\genre+1} \hautl[\htpph, \vaemb] \va \) (en notant \(
-    \Hautl[\htpph] \) la hauteur utilisée dans cette référence), dont on
+  ailleurs, la référence citée donne \( \hautl{\htpph, \vaemb'} \va =
+    \Delta^{\genre+1} \hautl{\htpph, \vaemb} \va \) (en notant \(
+    \Hautl\htpph \) la hauteur utilisée dans cette référence), dont on
   déduit le point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
   comme en~\eqref{e:ht-pph-1} :
   \begin{align}
-    \hautl[1, \vaemb'] \va
+    \hautl{1, \vaemb'} \va
     & \le
-    \hautl[\htpph, \vaemb'] \va
+    \hautl{\htpph, \vaemb'} \va
     + \frac12 \ln(\dimp' + 1) (\genre + 1) \deg_{\vaemb'} \va
     \\ & \le
-    \Delta^{\genre+1} \hautl[\htpph, \vaemb] \va
+    \Delta^{\genre+1} \hautl{\htpph, \vaemb} \va
     + \frac12 \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
     \\ & \le
-    \Delta^{\genre+1} \hautl[1, \vaemb] \va
+    \Delta^{\genre+1} \hautl{1, \vaemb} \va
     + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
@@ -5492,7 +5492,7 @@ sur les différents paramètres en jeu dans notre situation.
     0 < \distv{\ex*}{F}
     & <
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
@@ -5528,11 +5528,11 @@ sur les différents paramètres en jeu dans notre situation.
     \newcst[\Theta]{ht-v-hs}
     & =
     \Delta \max \bigl(
-      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+      \Delta^\genre \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \bigl(
-      \Delta^\genre \hautl[1] F
+      \Delta^\genre \hautl1 F
       + \Delta^\dimp \ln(\Delta) \dimp
     \bigr)
   \end{align}
@@ -5553,11 +5553,11 @@ sur les différents paramètres en jeu dans notre situation.
     \cdot \Delta^{\dv/2}
     & \le
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2, \vaemb]{\ex*}^{-\wtapx \expapx}
+    \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx}
     \cdot \Delta^{\dv/2}
     \\ & \le
     (n' + 1)^{-3\dv/2}
-    \hautm[2, \vaemb']{\ex*}^{-\wtapx \expapx'}
+    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \expapx'}
   \end{align}
   ce qui justifie le choix fait pour \( \expapx' \).
 
@@ -5566,50 +5566,50 @@ sur les différents paramètres en jeu dans notre situation.
   Détaillons le cas de \( \cst{ht-v-hs} \). En utilisant abondamment le lemme
   précédent, on a
   \begin{align}
-    & \hautl[1, \vaemb']{\va}
-    + \hautl[1, \vaemb']{ \divi } (\genre+1) \deg_{\vaemb'} \va
+    & \hautl{1, \vaemb'}{\va}
+    + \hautl{1, \vaemb'}{ \divi } (\genre+1) \deg_{\vaemb'} \va
     \\ & \quad \le
-    \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
+    \Delta^{\genre+1} \hautl{1, \vaemb}{\va}
     + (\genre + 1) \deg_{\vaemb} \va \Bigl(
       \Delta^{\genre+1} \ln(\dimp + 1)
-      + \Delta^\genre \bigl( \hautl[1, \vaemb] F + \Delta\dimp \bigr)
+      + \Delta^\genre \bigl( \hautl{1, \vaemb} F + \Delta\dimp \bigr)
     \Bigr)
   \end{align}
   puis
   \begin{equation}
-    \hlclab[\vaemb'] + \frac52 \hautl[1, \vaemb'] E
+    \hlclab[\vaemb'] + \frac52 \hautl{1, \vaemb'} E
     \le
     \Delta \hlclab[\vaemb] + 2 \Delta\dimp
-    + \frac52 ( \hautl[1, \vaemb] F + \Delta\dimp)
+    + \frac52 ( \hautl{1, \vaemb} F + \Delta\dimp)
   \end{equation}
   et
   \begin{equation}
-    \htcmp[\vaemb'] + \hautl[2, \vaemb'] E + \frac12 \ln(\dimp' + 1)
+    \htcmp[\vaemb'] + \hautl{2, \vaemb'} E + \frac12 \ln(\dimp' + 1)
     \le
     \Delta \htcmp[\vaemb]
-    + \hautl[1, \vaemb] F + \Delta\dimp
+    + \hautl{1, \vaemb} F + \Delta\dimp
     + \frac12 \Delta \ln\dimp
   \end{equation}
   ce qui prouve que
   \begin{align}
     \cst{ht-v-div-dv}[\vaemb']
     & \le \max \Bigl(
-      \Delta^{\genre+1} \hautl[1, \vaemb]{\va}
+      \Delta^{\genre+1} \hautl{1, \vaemb}{\va}
       + \Delta^\genre (\genre + 1) \deg_{\vaemb} \va
-      \bigl( \hautl[1, \vaemb] F + 2\Delta\dimp \bigr),\
+      \bigl( \hautl{1, \vaemb} F + 2\Delta\dimp \bigr),\
       \\ & \qquad
-      \Delta \hlclab[\vaemb] + \frac52 \hautl[1, \vaemb] F
+      \Delta \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} F
       + \frac94 \Delta\dimp,\
-      \Delta \htcmp[\vaemb] + \hautl[1, \vaemb] F + \frac32 \Delta\dimp,\
+      \Delta \htcmp[\vaemb] + \hautl{1, \vaemb} F + \frac32 \Delta\dimp,\
       \Delta^\dimp \ln(\Delta) \dimp
     \Bigr)
     \\ & \le
     \Delta \max \bigl(
-      \Delta^\genre \hautl[1, \vaemb]{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
+      \Delta^\genre \hautl{1, \vaemb}{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
     \bigr)
     + (\genre + 1) \deg_{\vaemb} \va
     \bigl(
-      \Delta^\genre \hautl[1, \vaemb] F
+      \Delta^\genre \hautl{1, \vaemb} F
       + \Delta^\dimp \ln(\Delta) \dimp
     \bigr)
   \end{align}
@@ -5638,9 +5638,9 @@ contrôlés.
   \( \projd \) contenant \( V \) mais aucun des \( \ex* \), de degré \( \deg V
   \) et de hauteur
   \begin{equation}
-    \hautl[1] F
+    \hautl1 F
     \le
-    \hautl[1] V
+    \hautl1 V
     + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
     + \ln(\puiss/2)
     \pmm.
@@ -5658,16 +5658,16 @@ contrôlés.
     s = \card \mathcal M_2 \le (\Delta + 1)^{(u+2)(\dimp+1)}
     \pmm.
   \end{equation}
-  Par ailleurs, on utilisera plutôt les hauteurs \( \Hautl[1] \), pour
+  Par ailleurs, on utilisera plutôt les hauteurs \( \Hautl1 \), pour
   lesquelles on obtient la majoration suivante
   \begin{equation}
-    \hautl[1]{ P_i }
+    \hautl1{ P_i }
     \le
-    \hautl[1] V + (u + 1) \Delta \ln(\Delta + 1)
+    \hautl1 V + (u + 1) \Delta \ln(\Delta + 1)
   \end{equation}
   en remarquant que les \( P_i \) sont une spécialisation de la forme de
   \bsc{Chow} de \( V \) en des points (formes linéaires) de hauteur \(
-    \Hautm[1] \) au plus \( \Delta + 1 \) : au plus deux coefficients non
+    \Hautm1 \) au plus \( \Delta + 1 \) : au plus deux coefficients non
   nuls, tous deux dans \( I_\Delta \).
 
   Si \( \puiss = 1 \), il suffit de choisir un \( P_i \) ne s'annulant pas en
@@ -5691,12 +5691,12 @@ contrôlés.
     \zeros Q \). Par construction, il est clair que \( F \) est de degré \(
     \Delta \) et contient \( V \) mais aucun des \( \ex* \) (en effet, \(
     \prod\fctrange Q(\ex*) = \mathcal P(\lambda) \neq 0 \)).  Par ailleurs, \(
-    \hautl[1]{\lambda} \le \ln s + \ln(\puiss/2) \), ce qui donne
+    \hautl1{\lambda} \le \ln s + \ln(\puiss/2) \), ce qui donne
   immédiatement
   \begin{equation}
-    \hautl[1] F
+    \hautl1 F
     \le
-    \hautl[1] V + (u + 1) \Delta \ln(\Delta + 1)
+    \hautl1 V + (u + 1) \Delta \ln(\Delta + 1)
     + (u+2)(\dimp+1) \ln (\Delta + 1)
     + \ln(\puiss/2)
   \end{equation}
@@ -5714,7 +5714,7 @@ contrôlés.
     0 < \distv{\ex*} V
     & <
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
@@ -5737,14 +5737,14 @@ contrôlés.
     \newcst[\Theta]{ht-v-gen1}
     & =
     \Delta \max \bigl(
-      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+      \Delta^\genre \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \Bigl(
       \Delta^\dimp \ln(\Delta) \dimp
     \\ & \qquad
       + \Delta^\genre \bigl (
-        \hautl[1] V
+        \hautl1 V
         + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)
@@ -5771,7 +5771,7 @@ légèrement simplifiées.
     0 < \distv{\ex*} V
     & <
     \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
@@ -5800,14 +5800,14 @@ légèrement simplifiées.
     \cst{ht-v-gen1}
     & =
     \Delta \max \bigl(
-      \Delta^\genre \hautl[1]{\va}, \hlclab, \htcmp
+      \Delta^\genre \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \Bigl(
       \Delta^\dimp \ln(\Delta) \dimp
     \\ & \qquad
       + \Delta^\genre \bigl (
-        \hautl[1] V
+        \hautl1 V
         + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)

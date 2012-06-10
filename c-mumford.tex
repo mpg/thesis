@@ -29,7 +29,7 @@ et les constantes obtenues y sont sensiblement meilleures.
     & <
     \distv z \avar
     \le
-    \hautm[2] z ^{-\wtapx\eps}
+    \hautm2 z ^{-\wtapx\eps}
     \quad \forall v \in \placesapx
     \quad \text{où \( z \) est \( x \) ou \( y \)}
     \label{e:Mapx}
@@ -95,7 +95,7 @@ Pour le cas général, l'énoncé est le suivant.
     & <
     \distv{ x_i }\avar
     \le
-    \hautm[2]{ x_i }^{-\wtapx\eps}
+    \hautm2{ x_i }^{-\wtapx\eps}
     \quad \forall v \in \placesapx
     \label{e:Mapx-gen}
     \\
@@ -104,7 +104,7 @@ Pour le cas général, l'énoncé est le suivant.
     \frac2\eps
     \adeg^{m-1} (2m)^{ (m+2)\adim }
     \Bigl(
-      \hautl[\htpph] X
+      \hautl\htpph X
       + 4 \adeg m^2 \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
     \Bigr)
     \quad
@@ -155,8 +155,8 @@ On établit ici l'analogue suivant de la classique inégalité de
     \frac1{
       (n+1)^{3/2}
       (3\adeg)^{\adeg (\adim+1)}
-      \, \hautm[1]{ \chow V }
-      \, \hautm[2] x ^\adeg
+      \, \hautm1{ \chow V }
+      \, \hautm2 x ^\adeg
     }
     \pmm.
   \end{equation}
@@ -165,7 +165,7 @@ On établit ici l'analogue suivant de la classique inégalité de
 Ce type d'inégalité se prouve de façon naturelle avec la distance algébrique
 (section~\vref{sec:distv-cmp}). Cependant, si l'on traite directement le cas
 général en utilisant la définition, on obtient \( \adeg (\adim+1) \) comme
-exposant de \( \hautm[2] x \). On commence donc par le cas d'une hypersurface,
+exposant de \( \hautm2 x \). On commence donc par le cas d'une hypersurface,
 où la distance algébrique admet une expression plus simple, puis on remarque
 que toute variété est une intersection d'hypersurfaces.
 
@@ -183,8 +183,8 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
     \ge
     \frac1{
       (17/8)^\adeg (n+1)^{3/2}
-      \, \hautm[2] F
-      \, \hautm[2] x ^\adeg
+      \, \hautm2 F
+      \, \hautm2 x ^\adeg
     }
     \pmm.
   \end{equation}
@@ -220,9 +220,9 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
   donne une forme \( F \) homogène de degré \( \adeg \), contenant \( V \)
   mais pas \( x \), telle que
   \begin{equation}
-    \hautm[1] F
+    \hautm1 F
     \le
-    \hautm[1] V \cdot (\adeg + 1)^{ \adeg (\adim + 1) }
+    \hautm1 V \cdot (\adeg + 1)^{ \adeg (\adim + 1) }
   \end{equation}
   en tenant compte des différences de hauteurs utilisées, comme observé dans
   la preuve du lemme~\vref{l:hs-choice}. Il suffit alors d'appliquer le
@@ -410,7 +410,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \prod\placerange
     \Distv(z, \vai)^\degv
     \le
-    \hautm[2] x ^{-\eps}
+    \hautm2 x ^{-\eps}
     \cdot \expb^{\eps\htcmp}
     \cdot 5 \sqrt2 (n + 1)^3 \hmclab
     \pmm.
@@ -425,7 +425,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   \begin{equation}
     \max \bigl( \Distv(x, x'_v), \Distv(y, y'_v) \bigr)
     \le
-    \hautm[2] x ^{-\wtapx \eps}
+    \hautm2 x ^{-\wtapx \eps}
     \cdot \expb^{\wtapx \eps \htcmp}
     \pmm.
   \end{equation}
@@ -437,7 +437,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \le
     \distv z {x'_v - y'_v}
     \le
-    \hautm[2] x ^{-\wtapx \eps}
+    \hautm2 x ^{-\wtapx \eps}
     \cdot \expb^{\wtapx \eps \htcmp}
     \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
     \pmm.
@@ -451,7 +451,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
 \begin{lem} \label{l:diff-small}
   Soient \( x \) et \( y \) satisfaisant aux hypothèses \eqref{e:Mcos}
   et \eqref{e:Mclose} du théorème~\vref{t:mumford-grp}, notons \( z \) leur
-  différence. On a alors \( \hautl[2] z \le (\rho^2/4 + 2\phi + \rho\phi)
+  différence. On a alors \( \hautl2 z \le (\rho^2/4 + 2\phi + \rho\phi)
     \hautn x + \htcmp \).
 \end{lem}
 
@@ -497,7 +497,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   Par ailleurs, le lemme~\vref{l:diff-small} et
   l'hypothèse~\eqref{e:rho-phi-grp} donnent
   \begin{equation} \label{e:h2-diff}
-    \hautl[2] z
+    \hautl2 z
     \le
     (\rho^2/4 + 2\phi + \rho\phi)
     \hautn x
@@ -516,14 +516,14 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \sum\placerange
     \degv \ln\Distv(z, \vai)
     & \ge
-    - \adeg \hautl[2] z
-    - \hautl[1]{ \vai }
+    - \adeg \hautl2 z
+    - \hautl1{ \vai }
     - \frac32 \ln(n + 1)
     - (\adim + 1)\adeg \ln(3\adeg)
     \\ & \ge
     - \frac{ \eps }{ 2 } \hautn x
     - \adeg \htcmp
-    - \hautl[1]{ \chow\vai }
+    - \hautl1{ \chow\vai }
     - \frac32 \ln(n + 1)
     - (\adim + 1)\adeg \ln(3\adeg)
   \end{align}
@@ -532,7 +532,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   \begin{equation}
     \frac\eps2 \hautn x
     \le
-    \hautl[1]{ \vai }
+    \hautl1{ \vai }
     + (\adim + 1)\adeg \ln(3\adeg)
     + (\adeg + \eps) \htcmp
     + \hlclab
@@ -544,9 +544,9 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   normalisée est nulle \cite[prop. 9]{phiha1} ; ainsi, en
   utilisant~\eqref{e:comp-h-hn-var} et une comparaison de normes, on a
   \begin{equation}
-    \hautl[1]{ \vai }
+    \hautl1{ \vai }
     \le
-    \hautl[2] \vai
+    \hautl2 \vai
     + \frac12 \adeg (\adim + 1) \ln(n+1)
     \le
     \htcmp \adeg (\adim + 1)
@@ -837,15 +837,15 @@ On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
   qui est un peu plus précis que la majoration annoncée.
 \end{proof}
 
-Dans le lemme suivant, on rappelle que \( \hautl[2]{ s_m(x) } \) est la
+Dans le lemme suivant, on rappelle que \( \hautl2{ s_m(x) } \) est la
 hauteur donnée par le plongement dans \( \proj N \).
 
 \begin{lem}
   Pour tout \( x \in \avar^m \), on a
   \begin{equation}
-    \hautl[2]{ s_m(x) }
+    \hautl2{ s_m(x) }
     \le
-    4 (m-1) \max_{1 \le i \le m} \bigl( \hautl[2]{ x_i } \bigr)
+    4 (m-1) \max_{1 \le i \le m} \bigl( \hautl2{ x_i } \bigr)
     + (m-1) \hlclab
     \pmm.
   \end{equation}
@@ -880,9 +880,9 @@ hauteur donnée par le plongement dans \( \proj N \).
 
 \begin{coro}
   On a \(
-    \hautl[\htpph] Z
+    \hautl\htpph Z
     \le
-    \bigl( 8 \adeg^{m-1}\hautl[\htpph] \avar + \adeg^m \hlclab)
+    \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
     (2m)^{ (m+2)\adim }
   \).
 \end{coro}
@@ -896,17 +896,17 @@ hauteur donnée par le plongement dans \( \proj N \).
   \begin{equation}
     \miness(V) \deg V
     \le
-    \hautl[\htpph] V
+    \hautl\htpph V
     \le
     \miness(V) \deg V (\dim V + 1)
   \end{equation}
   où \( \miness \) désigne le minimum essentiel, défini en utilisant la
-  hauteur \( \Hautl[2] \) pour les points. (On rappelle que \( \Hautl[\htpph]
+  hauteur \( \Hautl2 \) pour les points. (On rappelle que \( \Hautl\htpph
   \) est la hauteur obtenue en utilisant la mesure de \bsc{Philippon} aux
   places archimédiennes.)
 
   Notons \( F \) l'ensemble des points de \( x \in \avar \) tels que \(
-    \hautl[2] x \le 2 \miness(\avar) \) ; par définition \( F \) est dense
+    \hautl2 x \le 2 \miness(\avar) \) ; par définition \( F \) est dense
   dans \( \avar \), donc \( F^m \) est dense dans \( \avar^m \) et \( s_m(F^m)
   \) est dense dans \( Z \). On applique alors le lemme précédent pour majorer
   la hauteur des points de \( s_m(F^m) \) et obtenir
@@ -922,7 +922,7 @@ hauteur donnée par le plongement dans \( \proj N \).
   : \( \dim Z \le mu \) et \( \deg Z \le \adeg^m (2m)^{ mu } (m-1)^{\adim-1}
   \) par~\eqref{e:deg-img-good} :
   \begin{align}
-    \hautl[\htpph] Z
+    \hautl\htpph Z
     & \le
     \miness(Z) \deg Z (\dim Z + 1)
     \\ & \le
@@ -930,7 +930,7 @@ hauteur donnée par le plongement dans \( \proj N \).
     \adeg^m (2m)^{ mu } (m-1)^{\adim-1}
     mu
     \\ & \le
-    (8  \hautl[\htpph] \avar / \adeg +  \hlclab)
+    (8  \hautl\htpph \avar / \adeg +  \hlclab)
     \adeg^m (2m)^{ (m+2)\adim }
   \end{align}
   qui donne bien la majoration annoncée.
@@ -950,7 +950,7 @@ section~\vref{sec:mumford-grp}.
   Sous les hypothèses~\eqref{e:Mcos-gen} et~\eqref{e:Mclose-gen} du
   théorème~\vref{t:mumford-gen}, on a
   \begin{equation}
-    \hautl[2] z
+    \hautl2 z
     \le
     (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m }
     + (m-1) \htcmp
@@ -964,9 +964,9 @@ section~\vref{sec:mumford-grp}.
   \( \hautn{z_i} \le (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m } \).
   On écrit ensuite
   \begin{equation}
-    \hautl[2]{z}
+    \hautl2{z}
     =
-    \sum_{i=1}^{m-1} \hautl[2]{z_i}
+    \sum_{i=1}^{m-1} \hautl2{z_i}
     \le
     \sum_{i=1}^{m-1} (\hautn{z_i} + \htcmp)
   \end{equation}
@@ -1038,8 +1038,8 @@ section~\vref{sec:mumford-grp}.
   \begin{align} \label{e:liou}
     \sum\placerange \degv \ln\distv z Z
     & \ge
-    - (\deg Z) \hautl[2] z
-    - \hautl[1]{ Z }
+    - (\deg Z) \hautl2 z
+    - \hautl1{ Z }
     \\ & \qquad
     - \frac32 \ln(N + 1)
     - (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
@@ -1075,18 +1075,18 @@ section~\vref{sec:mumford-grp}.
   \) variables, puis en utilisant les estimations de la section précédente, il
   vient :
   \begin{align} \label{e:liou-h1-img}
-    \hautl[1] Z
+    \hautl1 Z
     & \le
-    \hautl[\htpph] Z
+    \hautl\htpph Z
     + (\deg Z) (\dim Z + 1) \ln(N+1)
     \\ & \le
-    \bigl( 8 \adeg^{m-1}\hautl[\htpph] \avar + \adeg^m \hlclab)
+    \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
     (2m)^{ (m+2)\adim }
     \\ & \qquad
     + \adeg^m (2m)^{mu} (m-1)^{\adim-1} (m \adim + 1) (m-1)\ln(n+1)
     \\ & \le
     (2m)^{ (m+2)\adim } \Bigl(
-    \adeg^{m-1} \hautl[\htpph] \avar
+    \adeg^{m-1} \hautl\htpph \avar
     + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \pmm.
@@ -1118,7 +1118,7 @@ section~\vref{sec:mumford-grp}.
   Enfin, le lemme~\vref{l:img-small} et l'hypothèse~\eqref{e:rho-phi-gen}
   donnent
   \begin{align}
-    (\deg Z) \hautl[2] z
+    (\deg Z) \hautl2 z
     & \le
     \frac\eps2 \hautn{ x_m }
     + \adeg^m (2m)^{(m+1)\adim} \htcmp
@@ -1134,7 +1134,7 @@ section~\vref{sec:mumford-grp}.
     - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
     - (2m)^{ (m+2)\adim } \Bigl(
-    \adeg^{m-1} \hautl[\htpph] \avar
+    \adeg^{m-1} \hautl\htpph \avar
     + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \\ & \qquad
@@ -1142,7 +1142,7 @@ section~\vref{sec:mumford-grp}.
     - \adeg^m (2m)^{(m+1)\adim + 2}
     \\ & \ge
     - \frac\eps2 \hautn{ x_m }
-    - \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl[\htpph] \avar
+    - \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl\htpph \avar
     \\ & \qquad
     - \adeg^m (2m)^{ (m+2)\adim + 1}
     \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
@@ -1161,7 +1161,7 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
-    \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl[\htpph] \avar
+    \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl\htpph \avar
     + \adeg^m (2m)^{ (m+2)\adim + 2} \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
   \end{equation}
   qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.

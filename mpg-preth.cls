@@ -911,12 +911,12 @@
 
 % height functions [[2
 %
-\newcommand*\Hautm [1][] {H \ssub{#1}}
-\newcommand*\Hautl [1][] {h \ssub{#1}}
+\newcommand*\Hautm [1]   {H \ssub{#1}}
+\newcommand*\Hautl [1]   {h \ssub{#1}}
 \newcommand \Hautn       {\hat h}
 
-\newcommand*\hautm [2][] {\Hautm[#1](#2)}
-\newcommand*\hautl [2][] {\Hautl[#1](#2)}
+\newcommand*\hautm [2]   {\Hautm{#1}(#2)}
+\newcommand*\hautl [2]   {\Hautl{#1}(#2)}
 \newcommand*\hautn [1]   {\Hautn    (#1)}
 
 \newcommand \hmin {\Hautn_{\mathrm{min}}}
@@ -926,9 +926,9 @@
 \newcommand*\htpph {\mathrm{P}}
 \newcommand*\htmah {\mathrm{M}}
 
-\nomdef \hautm a {h} \@gobbletwo{\hautm[\PHi]{\PH}}{Hauteur projective
+\nomdef \hautm a {h} \@gobbletwo{\hautm{\PHi}{\PH}}{Hauteur projective
   multiplicative de \PH en utilisant la norme \PHi aux places archimédiennes}
-\nomdef \hautl a {h} \@gobbletwo{\hautl[\PHi]{\PH}}{Hauteur projective
+\nomdef \hautl a {h} \@gobbletwo{\hautl{\PHi}{\PH}}{Hauteur projective
   logarithmique de \PH en utilisant la norme \PHi aux places archimédiennes}
 \nomdef \hautn a {h} \@gobbletwo{\hautn      {\PH}}{Hauteur de \NT de \PH}
 
@@ -1118,7 +1118,7 @@
 \newcommand*\ratf      {\xi}
 \newcommand*\ratfi     {\zeta}
 \newcommand*\ratfv [1] {\alpha\sb{#1, \place}}
-\newcommand*\ratfh [1] {\hautl[]{\alpha\sb{#1}(\cexa)}}
+\newcommand*\ratfh [1] {\hautl{}{\alpha\sb{#1}(\cexa)}}
 
 % misc (ok) [[2
 %

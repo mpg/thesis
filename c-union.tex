@@ -38,13 +38,13 @@ exceptionnelles si \( \eps \) est trop grand, en vertu de l'inégalité de
     \label{e:nobig-ha}
     0 < \prod\placerange \distv x V ^\degv
     & <
-    \hautm[2] x ^{-\expapx}
+    \hautm2 x ^{-\expapx}
     \\ \label{e:nobig-big}
-    \hautm[2] x
+    \hautm2 x
     & >
     (n+1)^{3/2}
     (3d)^{d (u+1)}
-    \, \hautm[1]{ \chow V }
+    \, \hautm1{ \chow V }
   \end{align}
   pour \( \eps \ge d + 1 \).
 \end{sco}
@@ -68,7 +68,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     0 < \distv{\ex*} V
     & <
     \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\ \label{e:big-big}
     \hautn{\ex[1]}
@@ -94,14 +94,14 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \cst{ht-v-gen1}
     & =
     d \max \bigl(
-      d^\genre \hautl[1]{\va}, \hlclab, \htcmp
+      d^\genre \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \Bigl(
       d^\dimp \ln(d) \dimp
     \\ & \qquad
       + d^\genre \bigl (
-        \hautl[1] V
+        \hautl1 V
         + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)
@@ -269,7 +269,7 @@ On utilise ensuite le fait suivant.
     0 < \distv{\ex*} V
     & <
     \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
     \\
     \hautn{\ex[1]}
@@ -542,7 +542,7 @@ considérées, on utilisera donc le scolie suivant.
     0 < \prod\placerange \distv{\ex*} V ^\degv
     & <
     \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
-    \hautm[2]{\ex*}^{-\expapx}
+    \hautm2{\ex*}^{-\expapx}
     \\
     \hautn{\ex[1]}
     & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
@@ -596,7 +596,7 @@ la constante ; on aboutit au résultat suivant.
   \begin{align}
     0 < \prod\placerange \distv{\ex*} V ^\degv
     & <
-    \hautm[2]{\ex*}^{-\expapx}
+    \hautm2{\ex*}^{-\expapx}
     \\
     \hautn{\ex[1]}
     & > \cst{ht-v-gen1} \Lambda_5^{(2\puiss\genre)^{\puiss\genre}}
@@ -614,14 +614,14 @@ la constante ; on aboutit au résultat suivant.
     \cst{ht-v-gen1}
     & =
     d \max \bigl(
-      d^\genre \hautl[1]{\va}, \hlclab, \htcmp
+      d^\genre \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \Bigl(
       d^\dimp \ln(d) \dimp
     \\ & \qquad
       + d^\genre \bigl (
-        \hautl[1] V
+        \hautl1 V
         + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
         + \ln(\puiss/2)
       \bigr)
@@ -641,7 +641,7 @@ la constante ; on aboutit au résultat suivant.
   \end{equation}
   où la dernière inégalité est très large. On en déduit immédiatement que
   \begin{equation}
-    \hautm[2]{ \ex* }^{\eps/87}
+    \hautm2{ \ex* }^{\eps/87}
     \ge
     \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
   \end{equation}
@@ -744,7 +744,7 @@ points) des approximations exceptionnelles.
     0 < \distv x V
     <
     \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm[2] x ^{-\wtapx \expapx}
+    \hautm2 x ^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
   \end{equation}
   est majoré par
@@ -768,14 +768,14 @@ points) des approximations exceptionnelles.
     \newcst[]{ht-m=g+1}
     & =
     d \max \bigl(
-      d^\genre \hautl[1]{\va}, \hlclab, \htcmp
+      d^\genre \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (\genre + 1) \deg \va
     \Bigl(
       d^\dimp \ln(d) \dimp
     \\ & \qquad
       + d^\genre \bigl (
-        \hautl[1] V
+        \hautl1 V
         + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
         + \ln((\genre+1)\/2)
       \bigr)
@@ -921,7 +921,7 @@ le suivant.
     \distv x V ^\degv
     \le
     \expb^{-F}
-    \hautm[2]{x}^{-\expapx}
+    \hautm2{x}^{-\expapx}
     \quad\text{et}\quad
     \hautn x \le R
   \end{equation}
@@ -929,7 +929,7 @@ le suivant.
   \( F
     >
     (d-\expapx) R
-    + \hautl[1]{ \chow V }
+    + \hautl1{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
     + (d-\expapx) \htcmp
@@ -944,27 +944,27 @@ le suivant.
     \frac1{
       (n+1)^{3/2}
       (3d)^{d (u+1)}
-      \, \hautm[1]{ \chow V }
-      \, \hautm[2] x ^d
+      \, \hautm1{ \chow V }
+      \, \hautm2 x ^d
     }
     \le
     \prod\placerange
     \distv x V ^\degv
     \le
     \expb^{-F}
-    \hautm[2]{x}^{-\expapx}
+    \hautm2{x}^{-\expapx}
   \end{equation}
   puis en prenant les opposés des logarithmes
   \begin{align}
     F
     & \le
-    (d-\expapx) \hautl[2] x
-    + \hautl[1]{ \chow V }
+    (d-\expapx) \hautl2 x
+    + \hautl1{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
     \\ & \le
     (d-\expapx) R
-    + \hautl[1]{ \chow V }
+    + \hautl1{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
     + (d-\expapx) \htcmp
@@ -981,7 +981,7 @@ On en déduit immédiatement le corollaire pratique suivant.
   \( d \). Si \( R \) est un réel supérieur ou égal à
   \begin{equation}
     \frac1\expapx \left(
-      \hautl[1]{ \chow V }
+      \hautl1{ \chow V }
       + d (u+1) \ln(3d)
       + \frac32 \ln(n+1)
       + d \htcmp
@@ -996,7 +996,7 @@ On en déduit immédiatement le corollaire pratique suivant.
     \distv x V ^\degv
     \le
     \expb^{- d R}
-    \hautm[2]{x}^{-\expapx}
+    \hautm2{x}^{-\expapx}
     \quad\text{et}\quad
     \hautn x \le R
     \pmm.
@@ -1038,7 +1038,7 @@ l'existence de petits points, ce qui donne la proposition suivante.
     \exp\left(
       - \wtapx d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
     \right)
-    \hautm[2]{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \expapx}
     \quad \forall \place \in \placesapx
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
@@ -1055,7 +1055,7 @@ l'existence de petits points, ce qui donne la proposition suivante.
     \exp\left(
       - d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
     \right)
-    \hautm[2]{\ex*}^{-\expapx}
+    \hautm2{\ex*}^{-\expapx}
   \end{equation}
   de sorte qu'on peut appliquer le corollaire~\vref{c:kill-small} avec
   \( R = \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}} \)
@@ -1080,7 +1080,7 @@ le résultat suivant.
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \hautm[2]{\ex*}^{-\wtapx\expapx}
+    \hautm2{\ex*}^{-\wtapx\expapx}
     \\ & \qquad \cdot
     \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
     \exp\left(

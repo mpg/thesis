@@ -21,7 +21,7 @@ conditions, \bsc{Faltings} a démontré le théorème d'approximation suivant
     <
     \distv x \avar
     \le
-    \hautm[] x ^{-\eps}
+    \hautm{} x ^{-\eps}
     \pmm.
   \end{equation}
 \end{thm}
@@ -111,7 +111,7 @@ suivante.
   \begin{equation}
     \av{x - \xi}
     <
-    \hautm[2] x ^{-2-\eps}
+    \hautm2 x ^{-2-\eps}
     \pmm.
   \end{equation}
 \end{thm}
@@ -126,15 +126,15 @@ Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établ
 des versions quantitatives du théorème. Plus précisément, la démonstration de
 \bsc{Roth} consiste en un fait qu'on peut appeler, anachroniquement, une
 inégalité à la \bsc{Vojta} : aucune suite \( x_1, \dots, x_m \)
-d'approximations exceptionnelles n'est telle que \( \hautm[]{x_1} > c_1 \) et
-\( \hautm[]{x_i} > c_2 \cdot \hautm[]{x_{i-1}} \) pour tout \( i > 1 \).
+d'approximations exceptionnelles n'est telle que \( \hautm{}{x_1} > c_1 \) et
+\( \hautm{}{x_i} > c_2 \cdot \hautm{}{x_{i-1}} \) pour tout \( i > 1 \).
 
 Pour établir une version quantitative du théorème de \bsc{Roth}, il a fallu
 expliciter une valeur admissible des constantes \( c_1 \) et \( c_2 \), d'une
 part, et d'autre part lui adjoindre une inégalité que j'appellerai encore
 anachroniquement à la \bsc{Mumford}, disant qu'il existe une constante \( c_3
 \) telle que deux approximations exceptionnelles \( x \) et \( y \), de
-hauteur assez grande, satisfont toujours \( \hautm[] x > c_3 \hautm[] y \).
+hauteur assez grande, satisfont toujours \( \hautm{} x > c_3 \hautm{} y \).
 Dans le cas du théorème de \bsc{Roth}, ceci découle immédiatement de
 l'inégalité de la taille. La conjonction de ces deux inégalités donne
 clairement un décompte des approximations exceptionnelles de hauteur assez
@@ -153,7 +153,7 @@ l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
   \begin{equation}
     \distv x \avar
     \ge
-    c(\avar) \cdot \hautm[]{x}^{-\adeg}
+    c(\avar) \cdot \hautm{}{x}^{-\adeg}
     \pmm.
   \end{equation}
 \end{prop}
@@ -169,7 +169,7 @@ d'approximation de \bsc{Faltings} :
     il n'y pas besoin d'une variété abélienne ambiante ;
   \item elle n'admet pas d'exceptions, contre un nombre fini d'approximations
     exceptionnelles pour \bsc{Faltings} ;
-  \item en revanche, l'exposant de \( \hautm[] x \) est nettement plus mauvais.
+  \item en revanche, l'exposant de \( \hautm{} x \) est nettement plus mauvais.
 \end{itemize}
 Comme on le verra en \vref{s:siegel}, il est intéressant pour certaines
 applications de disposer d'un exposant strictement inférieur à \( 1 \).
@@ -261,7 +261,7 @@ d'approximation de \bsc{Faltings} : on remarque que la hauteur (relative à \(
   \divi \)) d'un point entier \( x \) est essentiellement donné par le produit
 des inverse des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
 \) parcourt les places archimédiennes de \( \cdn \). Or ces distances sont
-minorées par \( \hautm[]{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
+minorées par \( \hautm{}{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
 nombre fini de points. Ceci est bien sûr contradictoire dès que \( \eps < 1
 \), ce qui prouve que seules les approximations exceptionnelles de \( \divi \)
 peuvent donner des points entiers. Dénombrer ces dernières donne donc
@@ -463,7 +463,7 @@ définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la norme \(
 On définit la hauteur additive d'une famille finie d'éléments de \( \cdn \),
 d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
 \begin{equation}
-  \hautl[\star]\truc
+  \hautl\star\truc
   =
   \sum_{v}
   \degv
@@ -473,7 +473,7 @@ d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
 où \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \),
 la somme est prise sur l'ensemble des places de \( \cdn \) et \( \star \)
 désigne l'une des normes ou mesures introduites ci-dessus.  On note également
-\( \Hautm[\star] = \exp(\Hautl[\star]) \) la hauteur multiplicative.
+\( \Hautm\star = \exp(\Hautl\star) \) la hauteur multiplicative.
 
 La hauteur d'une famille, ainsi définie, est invariante par multiplication de
 cette famille par un scalaire, et ne dépend pas non plus du corps de nombres.
@@ -485,7 +485,7 @@ formes de \bsc{Chow} associées à certains indices de la façon rappelée dans
 \cite{nesphilnm} au début du chapitre~6. Nous ne considérerons généralement
 que la forme d'indice \( (1, \dots, 1) \), que nous noterons \( \chow V \).
 Cette forme est bien définie à multiplication par un scalaire près, la
-définition \( \hautl[\star] V = \hautl[\star]{ \chow V } \) a donc un sens.
+définition \( \hautl\star V = \hautl\star{ \chow V } \) a donc un sens.
 
 Par ailleurs, si l'on fixe un plongement \( \vaemb \colon \va \to \projd \),
 on a des notions de hauteurs sur \( \va(\Qbar) \) associées à ce plongement.
@@ -522,7 +522,7 @@ types de plongement.
 Pour commencer, on note \( \htcmp \) une constante réelle telle que pour toute
 sous-variété \( V \) de \( \va \) on ait
 \begin{equation} \label{e:comp-h-hn-var}
-  \abs{ \hautl[2] V - \hautn V }
+  \abs{ \hautl2 V - \hautn V }
   \le
   \htcmp (\dim V + 1) \deg V
 \end{equation}
@@ -530,7 +530,7 @@ où \( \Hautn \) est la hauteur normalisée telle que définie dans \cite{phiha1
 pour les variétés, dont les principales propriétés sont résumées par la
 proposition~9 de cette même référence. En particulier on a
 \begin{equation} \label{e:comp-h-hn}
-  \abs{ \hautl[2]x - \hautn x } \le \htcmp
+  \abs{ \hautl2x - \hautn x } \le \htcmp
   \qquad \forall x \in \va(\Qbar)
   \pmm.
 \end{equation}
@@ -602,7 +602,7 @@ On introduit une paire de constantes \( \hmclab \) et \( \hlclab = \ln \hmclab
   \worknote{On pourrait en fait dissocier \( \hmclab \) en deux (les deux
     points ci-dessus). À voir une fois les relations réellement établies.}
   L'annexe~\vref{chap:plong-mm} établit en fait des relations entre \( \htcmp
-  \) et \( \hlclab \) (ainsi que \( \hautl[2]{ \chow\va } \)) ; on formulera
+  \) et \( \hlclab \) (ainsi que \( \hautl2{ \chow\va } \)) ; on formulera
   néanmoins les énoncés suivants avec une dépendance explicite en chacune de
   ces constantes pour des raisons de clarté et d'optimalité pour les cas où
   l'une serait mieux contrôlée que les autres.
@@ -656,7 +656,7 @@ ces données la condition d'approximation suivante.
   \distv x \avar
   \le
   c_v
-  \hautm[2]{x}^{-\wtapx\expapx}
+  \hautm2{x}^{-\wtapx\expapx}
   \quad \forall v \in \placesapx
   \pmm.
 \end{equation}
@@ -676,7 +676,7 @@ et il est clair que la condition~\eqref{e:ha-sys} est équivalente à
   \distv[w] x \avar
   \le
   c_w
-  \hautm[2]{x}^{-\wtapx[w]\expapx}
+  \hautm2{x}^{-\wtapx[w]\expapx}
   \quad \forall w \in \placesapx'
   \pmm.
 \end{equation}
@@ -689,7 +689,7 @@ Enfin, on considérera aussi des conditions d'approximation de la forme
   \distv x \avar ^\degv
   \le
   c
-  \hautm[2]{x}^{-\expapx}
+  \hautm2{x}^{-\expapx}
   \pmm.
 \end{equation}
 Il est clair qu'une telle condition a également un sens sur \( \Qbar \). Par
