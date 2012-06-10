@@ -126,8 +126,8 @@ Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établ
 des versions quantitatives du théorème. Plus précisément, la démonstration de
 \bsc{Roth} consiste en un fait qu'on peut appeler, anachroniquement, une
 inégalité à la \bsc{Vojta} : aucune suite \( x_1, \dots, x_m \)
-d'approximations exceptionnelles n'est telle que \( \hautm{x_1} > c_1 \) et
-\( \hautm{x_i} > c_2 \cdot \hautm{x_{i-1}} \) pour tout \( i > 1 \).
+d'approximations exceptionnelles n'est telle que \( \hautm[]{x_1} > c_1 \) et
+\( \hautm[]{x_i} > c_2 \cdot \hautm[]{x_{i-1}} \) pour tout \( i > 1 \).
 
 Pour établir une version quantitative du théorème de \bsc{Roth}, il a fallu
 expliciter une valeur admissible des constantes \( c_1 \) et \( c_2 \), d'une
@@ -153,7 +153,7 @@ l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
   \begin{equation}
     \distv x \avar
     \ge
-    c(\avar) \cdot \hautm{x}^{-\adeg}
+    c(\avar) \cdot \hautm[]{x}^{-\adeg}
     \pmm.
   \end{equation}
 \end{prop}
@@ -169,7 +169,7 @@ d'approximation de \bsc{Faltings} :
     il n'y pas besoin d'une variété abélienne ambiante ;
   \item elle n'admet pas d'exceptions, contre un nombre fini d'approximations
     exceptionnelles pour \bsc{Faltings} ;
-  \item en revanche, l'exposant de \( \hautm x \) est nettement plus mauvais.
+  \item en revanche, l'exposant de \( \hautm[] x \) est nettement plus mauvais.
 \end{itemize}
 Comme on le verra en \vref{s:siegel}, il est intéressant pour certaines
 applications de disposer d'un exposant strictement inférieur à \( 1 \).
@@ -261,7 +261,7 @@ d'approximation de \bsc{Faltings} : on remarque que la hauteur (relative à \(
   \divi \)) d'un point entier \( x \) est essentiellement donné par le produit
 des inverse des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
 \) parcourt les places archimédiennes de \( \cdn \). Or ces distances sont
-minorées par \( \hautm{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
+minorées par \( \hautm[]{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
 nombre fini de points. Ceci est bien sûr contradictoire dès que \( \eps < 1
 \), ce qui prouve que seules les approximations exceptionnelles de \( \divi \)
 peuvent donner des points entiers. Dénombrer ces dernières donne donc

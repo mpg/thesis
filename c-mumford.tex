@@ -463,7 +463,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   \( \nnt x \le \nnt y \le (1+\rho)^{1/2}\nnt x \le (1+\rho/2)
     \nnt x \). Il vient alors :
   \begin{align}
-    \Hautn(z)
+    \hautn z
     & =
     \nnt{x-y}^2
     \\ & =
@@ -477,7 +477,7 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \nnt x ^2 \cdot \phi
     \\ & \le
     \bigl( (\rho^2/4) + 2\phi + \rho\phi \bigr)
-    \Hautn(x)
+    \hautn x
   \end{align}
   et une simple comparaison de hauteurs permet de conclure.
 \end{proof}
@@ -950,7 +950,7 @@ section~\vref{sec:mumford-grp}.
   Sous les hypothèses~\eqref{e:Mcos-gen} et~\eqref{e:Mclose-gen} du
   théorème~\vref{t:mumford-gen}, on a
   \begin{equation}
-    \hautl z
+    \hautl[2] z
     \le
     (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m }
     + (m-1) \htcmp

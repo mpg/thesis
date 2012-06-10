@@ -55,17 +55,17 @@
     & \node[result2] (fo-ex)     { Existence \\ et degré };
     & \node[result]  (next-deg)  { \( \deg \var' \) };
     \\
-      \node[result] (var-ht)     { \( h(\var) \) };
+      \node[result] (var-ht)     { \( \hautl[]{ \var } \) };
     & \node[result] (aux-ht)     { Hauteur };
-    & \node[result] (ind-ht)     { À \( h(\ex[1]) \) fixé };
+    & \node[result] (ind-ht)     { À \( \hautl[]{ \ex[1] } \) fixé };
     & \node[result] (fo-ht)      { Hauteur };
-    & \node[result] (next-ht)    { \( h(\var') \) };
+    & \node[result] (next-ht)    { \( \hautl[]{ \var' } \) };
     \\
   };
 
   % nœuds supplémentaires
   \node[hypo] (in-deg)     [left=of var-deg] { \( \deg \va \) };
-  \node[hypo] (in-ht)      [left=of var-ht]  { \( h(\va) \) };
+  \node[hypo] (in-ht)      [left=of var-ht]  { \( \hautl[]{ \va } \) };
 
   \node[hypo] (eps-zgti)   [above=of aux-ex] { \( \epsz \gg \epsi \) };
 
@@ -78,7 +78,7 @@
   \node[hypo] (Vfar)       [above=of fo-ex]  { \( \Vfar \gg 1 \) };
 
   \begin{scope}[node distance=3cm]
-    \node[result] (out-ht) [below=of var-ht] { \( h(\ex*) \) };
+    \node[result] (out-ht) [below=of var-ht] { \( \hautl[]{ \ex* } \) };
     \node[stop]   (end)    [below=of aux-ht] { Contradiction };
     \node[hypo]   (Vbig)   [below=of ind-ht] { \( \Vbig \gg 1 \) };
   \end{scope}

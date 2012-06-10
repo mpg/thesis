@@ -31,9 +31,6 @@ Liste des notations "en dur" "globales" :
 Macros {{{2
 ------
 
-(D) Revoir le source pour utiliser les macros quand elles existent (genre H(x)
--> \Haut\point).
-
 (D) Rendre obligatoire le premier argument des hauteurs
 
 (D) Passer en dur les notations en dur
