@@ -38,7 +38,7 @@ exceptionnelles si \( \eps \) est trop grand, en vertu de l'inégalité de
     \label{e:nobig-ha}
     0 < \prod\placerange \distv x V ^\degv
     & <
-    \hautm2 x ^{-\expapx}
+    \hautm2 x ^{-\eps}
     \\ \label{e:nobig-big}
     \hautm2 x
     & >
@@ -59,7 +59,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 \begin{lem} \label{l:big-by-cone}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On fixe un réel \( 0 < \expapx \), un entier \( \puiss \ge \genre + 1 \) et
+  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
   on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
   \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
   conditions suivantes :
@@ -67,43 +67,43 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \label{e:big-ha}
     0 < \distv{\ex*} V
     & <
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\ \label{e:big-big}
     \hautn{\ex[1]}
-    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \\ \label{e:big-cos}
     \cos(\ex*, \ex[\fcti])
-    & > 1 - \frac1{ \puiss \, \cst{v-gen} }
+    & > 1 - \frac1{ m \, \cst{v-gen} }
   \end{align}
   avec
   \begin{align}
     \cst{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-    \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+    \bigr)^{ \frac{m}{m-g} }
     \\
     \Lambda_4
     & =
     \cst{v-gen}
-    \bigl( (\sqrt2 \puiss \genre d)^\genre \deg \va \bigr)^\puiss
+    \bigl( (\sqrt2 m g d)^g \deg \va \bigr)^m
     \\
     \cst{ht-v-gen1}
     & =
     d \max \bigl(
-      d^\genre \hautl1{\va}, \hlclab, \htcmp
+      d^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
-    + (\genre + 1) \deg \va
+    + (g + 1) \deg \va
     \Bigl(
-      d^\dimp \ln(d) \dimp
+      d^n \ln(d) n
     \\ & \qquad
-      + d^\genre \bigl (
+      + d^g \bigl (
         \hautl1 V
-        + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
-        + \ln(\puiss/2)
+        + (u + 2) \ln (d + 1) ( d + n + 1 )
+        + \ln(m/2)
       \bigr)
     \Bigr)
     \pmm.
@@ -112,8 +112,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   \begin{equation}
     p
     \le
-    \sqrt{\frac d \expapx}
-    (4\puiss\genre)^{\puiss\genre}
+    \sqrt{\frac d \eps}
+    (4mg)^{mg}
     \ln \Lambda_4
     \pmm.
   \end{equation}
@@ -128,67 +128,67 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 
   Soit \( x_1, \dots, x_p \) une famille comme dans l'énoncé, qu'on suppose de
   plus ordonnée par hauteur normalisée croissante. On pose
-  \( \phi =( \puiss \, \cst{v-gen})^{-1} \) et
-  \( \rho = \sqrt{ \expapx / d } \).  On constate facilement que
-  \( \phi \le \expapx / (2580 d) \) de sorte que ce couple \( (\rho, \phi) \)
+  \( \phi =( m \, \cst{v-gen})^{-1} \) et
+  \( \rho = \sqrt{ \eps / d } \).  On constate facilement que
+  \( \phi \le \eps / (2580 d) \) de sorte que ce couple \( (\rho, \phi) \)
   satisfait à~\eqref{e:rho-phi-grp}. Par ailleurs, il est assez facile de voir
   que la condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig} : en
-  effet \( \cst{v-gen} \ge 2/\expapx \cdot \adeg (\adim+1) \) et la parenthèse
+  effet \( \cst{v-gen} \ge 2/\eps \cdot \adeg (\adim+1) \) et la parenthèse
   dans le membre de droite de~\eqref{e:Mbig} est largement majorée par \( 5
     \cst{ht-v-gen1} \).
 
   On peut donc appliquer le théorème~\vref{t:mumford-grp} et conclure que
-  \( \hautn{ x_{i+1} } > (1 + \sqrt{\expapx / d}) \hautn{ x_i } \) pour tout
+  \( \hautn{ x_{i+1} } > (1 + \sqrt{\eps / d}) \hautn{ x_i } \) pour tout
   \( i \le p-1 \). On pose alors
   \begin{equation}
     \eta
     =
     \left\lceil
-      (2\puiss\genre)^{\puiss\genre}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+      (2mg)^{mg}
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / d}) }
     \right\rceil
   \end{equation}
   de sorte que, pour tout \( i \le p - \eta \), on a
   \begin{equation}
     \hautn{ x_{i+\eta} }
     >
-    (1 + \sqrt{\expapx / d})^\eta
+    (1 + \sqrt{\eps / d})^\eta
     \hautn{ x_i }
     \ge
-    \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \Lambda_4^{(2mg)^{mg}}
     \hautn{ x_i }
     \pmm.
   \end{equation}
-  Supposons alors que \( p \ge (\puiss - 1) \eta + 1 \) contrairement à la
+  Supposons alors que \( p \ge (m - 1) \eta + 1 \) contrairement à la
   conclusion du lemme : on pourrait alors poser \( \ex* = x_{1 + (\fct-1)
-      \eta} \) pour \( i \in {1, \puiss} \) et la famille \( (\ex*)_\fct \)
+      \eta} \) pour \( i \in {1, m} \) et la famille \( (\ex*)_\fct \)
   contredirait alors le corollaire~\vref{c:vojta-gen2}, ce qui est absurde.
 
   Ainsi, on a
   \begin{equation}
     p
     \le
-    (\puiss - 1)
+    (m - 1)
     \left(
-      (2\puiss\genre)^{\puiss\genre}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+      (2mg)^{mg}
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / d}) }
       + 1
     \right)
     \le
-    \puiss
-    (2\puiss\genre)^{\puiss\genre}
-    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\expapx / d}) }
+    m
+    (2mg)^{mg}
+    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / d}) }
     \pmm.
   \end{equation}
   On remarque alors que la fonction \( x \mapsto \ln(1+x)/x \) est
   décroissante pour \( x > 0 \) pour minorer le dénominateur par \( \ln(2)
-    \sqrt{\expapx / d} \) compte tenu de l'hypothèse sur \( \expapx \) ; on
+    \sqrt{\eps / d} \) compte tenu de l'hypothèse sur \( \eps \) ; on
   obtient alors, en remarquant de plus que \( \ln 2 \ge 1/2 \) :
   \begin{equation}
     p
     \le
-    \puiss (2\puiss\genre)^{\puiss\genre}
-    \cdot 2 \sqrt{\frac d \expapx}
+    m (2mg)^{mg}
+    \cdot 2 \sqrt{\frac d \eps}
     \cdot \ln \Lambda_4
   \end{equation}
   qui donne aisément le résultat annoncé.
@@ -198,38 +198,38 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   % \begin{align}
   %   \ln \Lambda_4
   %   & =
-  %   \frac\puiss{\puiss-\genre}
+  %   \frac m{m-g}
   %   \left(
   %     \ln 86
   %     + \ln \nclmaps
-  %     + \genre \ln 5
+  %     + g \ln 5
   %     + \ln d
   %     + {\textstyle \ln \binom{n+d}d}
-  %     - \ln \expapx
+  %     - \ln \eps
   %   \right)
   %   \\ & \qquad
-  %   + \puiss \bigl(
-  %     \deg\va + \genre (\ln2/2 + \ln(\puiss\genre) + \ln d)
+  %   + m \bigl(
+  %     \deg\va + g (\ln2/2 + \ln(mg) + \ln d)
   %   \bigr)
   %   \\ & \le
   %   2 \bigl(
   %     9/2
   %     + \ln \nclmaps
-  %     + \genre \ln 5
+  %     + g \ln 5
   %     + (n+1) \ln(d+1)
-  %     - \ln \expapx
+  %     - \ln \eps
   %   \bigr)
   %   \\ & \qquad
-  %   + \puiss \deg\va
-  %   + \puiss\genre (\ln(\puiss\genre) + \ln2/2)
-  %   + \puiss\genre \ln d
+  %   + m \deg\va
+  %   + mg (\ln(mg) + \ln2/2)
+  %   + mg \ln d
   %   \\ & \le
-  %   - \ln \expapx
+  %   - \ln \eps
   %   + 9
   %   + 2 \ln \nclmaps
-  %   + \puiss \deg\va
-  %   + \ln(d+1) (n+1 + \puiss\genre)
-  %   + \puiss\genre (\ln(\puiss\genre) + 2)
+  %   + m \deg\va
+  %   + \ln(d+1) (n+1 + mg)
+  %   + mg (\ln(mg) + 2)
   % \end{align}
 
 On utilise ensuite le fait suivant.
@@ -247,58 +247,58 @@ On utilise ensuite le fait suivant.
 \begin{prop} \label{p:big-gen}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
-    \sqrt{\frac d \expapx}
-    (4\puiss\genre)^{\puiss\genre}
+    \sqrt{\frac d \eps}
+    (4mg)^{mg}
     \ln \Lambda_4
     \left(
-      3 \sqrt\puiss
+      3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
-  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\vref{l:big-by-cone}.
 \end{prop}
 
 \begin{proof}
-  En utilisant le fait précédent, on recouvre l'espace euclidien \( \Gamma
+  En utilisant le fait précédent, on recouvre l'espace euclidien \( \grp
     \otimes_\Z \R \) muni du produit scalaire donné par la hauteur de \NT par
   des ensembles dans lesquels deux points quelconques
   satisfont~\eqref{e:big-cos}. Le nombre d'ensembles nécessaires est au plus
   \begin{equation}
     \left(
-      1 + \sqrt{8 \puiss}
+      1 + \sqrt{8 m}
       \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
     \le
     \left(
-      3 \sqrt\puiss
+      3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
   en remarquant que \( 1 + \sqrt{ 8 \cdot 86 \cdot 3 \cdot 5 } \le 3 \sqrt{ 86
@@ -519,33 +519,33 @@ considérées, on utilisera donc le scolie suivant.
 \begin{coro}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
-    \sqrt{ \frac{d}\expapx }
-    (4\puiss\genre)^{\puiss\genre}
+    \sqrt{ \frac{d}\eps }
+    (4mg)^{mg}
     \ln \Lambda_4
     \left(
-      3 \sqrt\puiss
+      3 \sqrt m
       \bigl(
-        172 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+        172 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
-  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
     0 < \prod\placerange \distv{\ex*} V ^\degv
     & <
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
-    \hautm2{\ex*}^{-\expapx}
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-1/2}
+    \hautm2{\ex*}^{-\eps}
     \\
     \hautn{\ex[1]}
-    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\vref{l:big-by-cone}.
@@ -554,7 +554,7 @@ considérées, on utilisera donc le scolie suivant.
 \begin{proof}
   On applique le scolie précédent à la proposition~\vref{p:big-gen} comme
   prévu à la remarque~\vref{r:app-prod}. On constate que vu la définition de
-  \( \Lambda_4 \), en y remplaçant \( \expapx \) par \( \expapx / 2 \), on
+  \( \Lambda_4 \), en y remplaçant \( \eps \) par \( \eps / 2 \), on
   ajoute \( \ln(2) m / (m-g) \) à son logarithme et que
   \begin{equation}
     \ln \Lambda_4 + \ln(2) m / (m-g)
@@ -574,56 +574,56 @@ la constante ; on aboutit au résultat suivant.
 \begin{thm} \label{t:big-gen-prod}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
-    \sqrt{ \frac{d}\expapx }
-    (4\puiss\genre)^{\puiss\genre}
+    \sqrt{ \frac{d}\eps }
+    (4mg)^{mg}
     \ln \Lambda_5
     \left(
-      3 \sqrt\puiss
+      3 \sqrt m
       \bigl(
-        174 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+        174 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
-  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
     0 < \prod\placerange \distv{\ex*} V ^\degv
     & <
-    \hautm2{\ex*}^{-\expapx}
+    \hautm2{\ex*}^{-\eps}
     \\
     \hautn{\ex[1]}
-    & > \cst{ht-v-gen1} \Lambda_5^{(2\puiss\genre)^{\puiss\genre}}
+    & > \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}}
   \end{align}
   avec
   \begin{align}
     \Lambda_5
     & =
     \bigl(
-        87 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-    \bigr)^{ \frac{\puiss}{\puiss-\genre} }
-    \bigl( (\sqrt2 \puiss \genre d)^\genre \deg \va \bigr)^\puiss
+        87 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+    \bigr)^{ \frac{m}{m-g} }
+    \bigl( (\sqrt2 m g d)^g \deg \va \bigr)^m
     \\
     \cst{ht-v-gen1}
     & =
     d \max \bigl(
-      d^\genre \hautl1{\va}, \hlclab, \htcmp
+      d^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
-    + (\genre + 1) \deg \va
+    + (g + 1) \deg \va
     \Bigl(
-      d^\dimp \ln(d) \dimp
+      d^n \ln(d) n
     \\ & \qquad
-      + d^\genre \bigl (
+      + d^g \bigl (
         \hautl1 V
-        + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
-        + \ln(\puiss/2)
+        + (u + 2) \ln (d + 1) ( d + n + 1 )
+        + \ln(m/2)
       \bigr)
     \Bigr)
     \pmm.
@@ -633,9 +633,9 @@ la constante ; on aboutit au résultat suivant.
 \begin{proof}
   On constate pour commencer que
   \begin{equation}
-    \frac12 \ln \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)
+    \frac12 \ln \bigl( d \sbin{d+n}{n}^3 \bigr)
     \le
-    \frac32 d \sbin{d+\dimp}{\dimp}^3
+    \frac32 d \sbin{d+n}{n}^3
     \le
     \frac{ \Lambda_4^{(2mg)^{mg}} }{ 87 \eps }
   \end{equation}
@@ -643,7 +643,7 @@ la constante ; on aboutit au résultat suivant.
   \begin{equation}
     \hautm2{ \ex* }^{\eps/87}
     \ge
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-1/2}
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-1/2}
   \end{equation}
   puis que les hypothèses du présent énoncé impliquent celles de l'énoncé
   précédent en remplaçant \( \eps \) par \( 86\eps / 87 \).
@@ -654,10 +654,10 @@ n'importe quel entier supérieur ou égal à \( g + 1 \). Il est clair que la
 condition sur la hauteur est d'autant plus forte que \( m \) est grande : en
 effet, 
 
-La dépendance en \( \expapx \) dans le décompte précédent est en
+La dépendance en \( \eps \) dans le décompte précédent est en
 \begin{equation}
-  \left( \frac1\expapx \right)^{\frac12 + \frac r2 \cdot \frac m{m-g}}
-  \ln \left( \frac1\expapx \right)
+  \left( \frac1\eps \right)^{\frac12 + \frac r2 \cdot \frac m{m-g}}
+  \ln \left( \frac1\eps \right)
   \pmm.
 \end{equation}
 L'exposant du premier facteur tend donc vers \( (r+1) / 2 \) lorsque \( m \)
@@ -695,13 +695,13 @@ On en déduit la majoration suivante du nombre de points de petite hauteur sans
 aucune hypothèse d'approximation.
 
 \begin{coro} \label{c:small-va}
-  Soit \( \Gamma \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
-  \( r \) le rang de \( \Gamma \) et \( \hmin \) le minimum de \(
+  Soit \( \grp \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
+  \( r \) le rang de \( \grp \) et \( \hmin \) le minimum de \(
     \hautn x \) quand \( x \) parcourt l'ensemble des points d'ordre infini de
-  \( \Gamma \).  Pour tout réel positif \( R \), on a
+  \( \grp \).  Pour tout réel positif \( R \), on a
   \begin{equation}
     \card \set*{
-      x \in \Gamma
+      x \in \grp
       \text{ tel que }
       \hautn x \le R
     }
@@ -711,19 +711,19 @@ aucune hypothèse d'approximation.
     \left( 1 + 2\sqrt{R / \hmin} \right)^r
   \end{equation}
   où \( \Gamma_\torsion \) désigne l'ensemble des points de torsion de \(
-    \Gamma \).
+    \grp \).
 \end{coro}
 
 \begin{proof}
-  Dans \( \Gamma \otimes_\Z \R \) muni de la structure euclidienne induite par
+  Dans \( \grp \otimes_\Z \R \) muni de la structure euclidienne induite par
   la hauteur normalisée, on applique le fait précédent avec \( \rho = \sqrt R
   \) et \( \mu = \sqrt{\hmin} \) puis on remarque que la préimage dans \(
-    \Gamma \) de chacune des boules ouvertes de rayon \( \mu \) est composée
+    \grp \) de chacune des boules ouvertes de rayon \( \mu \) est composée
   de points qui sont tous égaux modulo \( \Gamma_\torsion \).
 \end{proof}
 
 \begin{rem}
-  Si dans l'énoncé précédent on prend \( \Gamma = \va(\cdn) \), on retrouve le
+  Si dans l'énoncé précédent on prend \( \grp = \va(\cdn) \), on retrouve le
   lemme~2.11.1, p.~117 de~\cite{farhith}. On rappelle par ailleurs que dans ce
   cas (\todo??) donne une estimation de \( \card \Gamma_\torsion \) et
   (\todo??) une estimation de \( \hmin \).
@@ -735,17 +735,17 @@ points) des approximations exceptionnelles.
 \begin{thm} \label{t:inc-small}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de type
+  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de type
   fini ; on note \( r \) son rang et \( \hmin \) le minimum de \( \hautn x \)
-  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \Gamma \).
-  Le nombre de points de \( \Gamma \) distincts modulo \( \vai \) et
+  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \grp \).
+  Le nombre de points de \( \grp \) distincts modulo \( \vai \) et
   satisfaisant à
   \begin{equation}
     0 < \distv x V
     <
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm2 x ^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2 x ^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
   \end{equation}
   est majoré par
   \begin{equation}
@@ -754,10 +754,10 @@ points) des approximations exceptionnelles.
       \frac{
         5 \cst{ht-m=g+1}
         \Bigl(
-          \expapx^{-1}
-          \, d \sbin{\dimp + d}{d}
+          \eps^{-1}
+          \, d \sbin{n + d}{d}
           \, \cst{lambda}
-        \Bigr)^{(\sqrt2(\genre+1))^{2\genre(\genre+1)}}
+        \Bigr)^{(\sqrt2(g+1))^{2g(g+1)}}
       }{
         \min(1, \hmin)
       }
@@ -768,23 +768,23 @@ points) des approximations exceptionnelles.
     \newcst[]{ht-m=g+1}
     & =
     d \max \bigl(
-      d^\genre \hautl1{\va}, \hlclab, \htcmp
+      d^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
-    + (\genre + 1) \deg \va
+    + (g + 1) \deg \va
     \Bigl(
-      d^\dimp \ln(d) \dimp
+      d^n \ln(d) n
     \\ & \qquad
-      + d^\genre \bigl (
+      + d^g \bigl (
         \hautl1 V
-        + (u + 2) \ln (d + 1) ( d + \dimp + 1 )
-        + \ln((\genre+1)\/2)
+        + (u + 2) \ln (d + 1) ( d + n + 1 )
+        + \ln((g+1)\/2)
       \bigr)
     \Bigr)
     \\
     \newcst[]{lambda}
     & =
     86 \nclmaps \deg \va
-    \bigl( 8 \genre (\genre+1) \bigr)^\genre
+    \bigl( 8 g (g+1) \bigr)^g
     \pmm.
   \end{align}
 \end{thm}
@@ -793,20 +793,20 @@ points) des approximations exceptionnelles.
   Remarquons qu'on peut supposer \( r \ge 1 \) car sinon le résultat est
   banal.  En combinant la proposition~\vref{p:big-gen} et le
   corollaire~\vref{c:small-va} appliqué avec \( R = \cst{ht-v-gen1}
-    \Lambda_4^{(2\puiss\genre)^{\puiss\genre}} \), on voit que le nombre de
+    \Lambda_4^{(2mg)^{mg}} \), on voit que le nombre de
   points en question est au plus
   \begin{equation}
-    \sqrt{\frac d \expapx}
-    2 \puiss
-    (2\puiss\genre)^{\puiss\genre}
+    \sqrt{\frac d \eps}
+    2 m
+    (2mg)^{mg}
     \ln \Lambda_4
-    \left( 3 \sqrt{ \puiss \cst{v-gen} } \right)^r
+    \left( 3 \sqrt{ m \cst{v-gen} } \right)^r
     +
     \card \Gamma_\torsion
     \cdot
     \left( 1 + \frac2{\sqrt{\hmin}}
       \left(
-        \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+        \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
       \right)^{1/2}
     \right)^r
     \pmm.
@@ -814,7 +814,7 @@ points) des approximations exceptionnelles.
   On voit facilement que le premier terme est majoré par \( \Lambda_4^{3r} \)
   : en effet, on a
   \begin{align}
-    6 \sqrt{\frac d \expapx}
+    6 \sqrt{\frac d \eps}
     \cdot \sqrt{ \cst{v-gen} }
     & \le
     \cst{v-gen}
@@ -823,15 +823,15 @@ points) des approximations exceptionnelles.
     & \le
     \Lambda_4
     \\
-    \puiss \sqrt\puiss
-    (2\puiss\genre)^{\puiss\genre}
+    m \sqrt m
+    (2mg)^{mg}
     & \le
-    (\sqrt2 \puiss \genre)^{2\puiss\genre}
+    (\sqrt2 m g)^{2mg}
   \end{align}
   qui donne bien le résultat voulu en prenant le produit vu la définition de
-  \( \Lambda_4 \). En particulier, comme \( (2\puiss\genre)^{\puiss\genre} /
+  \( \Lambda_4 \). En particulier, comme \( (2mg)^{mg} /
     2 \ge 8 \), le premier terme est largement majoré par \( \Lambda_4^{ \frac
-      r2 (2\puiss\genre)^{\puiss\genre} } / \Lambda_4 \).
+      r2 (2mg)^{mg} } / \Lambda_4 \).
 
   Par ailleurs, le deuxième terme est majoré par
   \begin{equation}
@@ -843,7 +843,7 @@ points) des approximations exceptionnelles.
         \min(1, \sqrt{\hmin})
       }
       \left(
-        \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+        \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
       \right)^{1/2}
     \right)^r
     \pmm.
@@ -855,42 +855,42 @@ points) des approximations exceptionnelles.
     \card \Gamma_\torsion
     \left(
       \frac{
-        5 \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+        5 \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
       }{
         \min(1, \hmin)
       }
     \right)^{r/2}
     \pmm.
   \end{equation}
-  Cette majoration est valable pour tout \( \puiss > \genre \) ;
-  on remarque par ailleurs que cette quantité est croissante en \( \puiss \) :
-  en effet, la seule partie qui ne l'est pas est l'exposant \( \puiss /
-    (\puiss - \genre) \) dans la définition de \( \cst{v-gen} \) mais celui-ci
-  est largement composé par le \( (2\puiss\genre)^{\puiss\genre} \) en
-  exposant de \( \Lambda_4 \).  On pose donc \( \puiss = \genre + 1 \) pour
+  Cette majoration est valable pour tout \( m > g \) ;
+  on remarque par ailleurs que cette quantité est croissante en \( m \) :
+  en effet, la seule partie qui ne l'est pas est l'exposant \( m /
+    (m - g) \) dans la définition de \( \cst{v-gen} \) mais celui-ci
+  est largement composé par le \( (2mg)^{mg} \) en
+  exposant de \( \Lambda_4 \).  On pose donc \( m = g + 1 \) pour
   obtenir la meilleure estimation possible, ce qui donne
   \begin{align}
-    \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \Lambda_4^{(2mg)^{mg}}
     & =
     \left(
       \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-      \bigr)^{ \genre + 1 }
-      \bigl( (\sqrt2 \genre(\genre+1)\Delta)^\genre \deg \va \bigr)^{\genre+1}
-    \right)^{(2\genre(\genre+1))^{\genre(\genre+1)}}
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+      \bigr)^{ g + 1 }
+      \bigl( (\sqrt2 g(g+1)\Delta)^g \deg \va \bigr)^{g+1}
+    \right)^{(2g(g+1))^{g(g+1)}}
     \\ & \le
     \Bigl(
-      \expapx^{-1}
-      \, d \sbin{\dimp + d}{d}
+      \eps^{-1}
+      \, d \sbin{n + d}{d}
       \, \cst{lambda}
-    \Bigr)^{(\genre+1) (2\genre(\genre+1))^{\genre(\genre+1)}}
+    \Bigr)^{(g+1) (2g(g+1))^{g(g+1)}}
   \end{align}
   puis on note que
   \(
-    (\genre+1) \genre^{\genre(\genre+1)}
+    (g+1) g^{g(g+1)}
     \le
-    (\genre+1)^{2\genre(\genre+1)}
+    (g+1)^{2g(g+1)}
   \) pour conclure.
 \end{proof}
 
@@ -921,18 +921,18 @@ le suivant.
     \distv x V ^\degv
     \le
     \expb^{-F}
-    \hautm2{x}^{-\expapx}
+    \hautm2{x}^{-\eps}
     \quad\text{et}\quad
     \hautn x \le R
   \end{equation}
   est vide dès que
   \( F
     >
-    (d-\expapx) R
+    (d-\eps) R
     + \hautl1{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
-    + (d-\expapx) \htcmp
+    + (d-\eps) \htcmp
   \).
 \end{lem}
 
@@ -952,22 +952,22 @@ le suivant.
     \distv x V ^\degv
     \le
     \expb^{-F}
-    \hautm2{x}^{-\expapx}
+    \hautm2{x}^{-\eps}
   \end{equation}
   puis en prenant les opposés des logarithmes
   \begin{align}
     F
     & \le
-    (d-\expapx) \hautl2 x
+    (d-\eps) \hautl2 x
     + \hautl1{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
     \\ & \le
-    (d-\expapx) R
+    (d-\eps) R
     + \hautl1{ \chow V }
     + d (u+1) \ln(3d)
     + \frac32 \ln(n+1)
-    + (d-\expapx) \htcmp
+    + (d-\eps) \htcmp
     \pmm.
   \end{align}
   Par contraposée, l'ensemble considéré est vide si cette inégalité est
@@ -980,7 +980,7 @@ On en déduit immédiatement le corollaire pratique suivant.
   Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
   \( d \). Si \( R \) est un réel supérieur ou égal à
   \begin{equation}
-    \frac1\expapx \left(
+    \frac1\eps \left(
       \hautl1{ \chow V }
       + d (u+1) \ln(3d)
       + \frac32 \ln(n+1)
@@ -996,7 +996,7 @@ On en déduit immédiatement le corollaire pratique suivant.
     \distv x V ^\degv
     \le
     \expb^{- d R}
-    \hautm2{x}^{-\expapx}
+    \hautm2{x}^{-\eps}
     \quad\text{et}\quad
     \hautn x \le R
     \pmm.
@@ -1013,33 +1013,33 @@ l'existence de petits points, ce qui donne la proposition suivante.
 \begin{prop} \label{p:all-gen}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > 0 \) et tout entier \( \puiss \ge \genre + 1 \),
+  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
-    \sqrt{\frac d \expapx}
-    (4\puiss\genre)^{\puiss\genre}
+    \sqrt{\frac d \eps}
+    (4mg)^{mg}
     \ln \Lambda_4
     \left(
-      3 \sqrt\puiss
+      3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\puiss}{2(\puiss-\genre)} }
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
-  points de \( \Gamma \) distincts modulo \( \vai \) et satisfaisant
+  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   à la condition suivante :
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
-      - \wtapx d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+      - \wtapx d \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \right)
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
   lemme~\vref{l:big-by-cone}.
@@ -1053,19 +1053,19 @@ l'existence de petits points, ce qui donne la proposition suivante.
     \prod\placerange \distv{\ex*} V ^\degv
     <
     \exp\left(
-      - d \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+      - d \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \right)
-    \hautm2{\ex*}^{-\expapx}
+    \hautm2{\ex*}^{-\eps}
   \end{equation}
   de sorte qu'on peut appliquer le corollaire~\vref{c:kill-small} avec
-  \( R = \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}} \)
+  \( R = \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}} \)
   car cette quantité satisfait amplement l'hypothèse du corollaire. Ainsi, on
   voit que tous les points satisfaisant cette condition d'approximation
   satisfont aussi \( \hautn{\ex[1]} \ge R \) et on peut appliquer la
   proposition~\vref{p:big-gen} pour aboutir au résultat annoncé.
 \end{proof}
 
-On peut alors choisir \( \puiss \) de façon à optimiser ce résultat dans une
+On peut alors choisir \( m \) de façon à optimiser ce résultat dans une
 des deux directions suivantes : obtenir la condition la plus faible possible,
 ou bien le décompte le plus précis possible. Dans le premier sens, on obtient
 le résultat suivant.
@@ -1073,42 +1073,42 @@ le résultat suivant.
 \begin{coro}
   Soient \( V \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
-  On considère de plus un sous-groupe \( \Gamma \subset \va(\Qbar) \) de rang
+  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
-  Pour tout réel \( \expapx > 0 \), le nombre de points de \( \Gamma \)
+  Pour tout réel \( \eps > 0 \), le nombre de points de \( \grp \)
   distincts modulo \( \vai \) et satisfaisant à la condition
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \hautm2{\ex*}^{-\wtapx\expapx}
+    \hautm2{\ex*}^{-\wtapx\eps}
     \\ & \qquad \cdot
-    \bigl( d \sbin{d+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
+    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
       - \wtapx 2 d
       \cst{ht-m=g+1}
       \Bigl(
-        \expapx^{-1}
-        d \sbin{\dimp + d}{d}
+        \eps^{-1}
+        d \sbin{n + d}{d}
         \cst{lambda}
-      \Bigr)^{(\sqrt2(\genre+1))^{2\genre(\genre+1)}}
+      \Bigr)^{(\sqrt2(g+1))^{2g(g+1)}}
     \right)
   \end{align}
-  pour tout \( \place \in \placesapx \)
+  pour tout \( v \in \placesapx \)
   avec \( \cst{ht-m=g+1} \) et \( \cst{lambda} \) comme au
   théorème~\vref{t:inc-small} est au plus
   \begin{equation}
-    \sqrt{\frac d \expapx}
-    (4\genre(\genre+1))^{\genre(\genre+1)}
+    \sqrt{\frac d \eps}
+    (4g(g+1))^{g(g+1)}
     \bigl(
-      - \ln \expapx
+      - \ln \eps
       + \cst{ln-lambda}
     \bigr)
     \left(
-      3 \sqrt{\genre+1}
+      3 \sqrt{g+1}
       \bigl(
-        86 \nclmaps \cdot 5^\genre d \sbin{\dimp + d}{d}
-        \, \expapx^{-1}
-        \bigr)^{ \frac{\genre+1}{2} }
+        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        \, \eps^{-1}
+        \bigr)^{ \frac{g+1}{2} }
     \right)^r
   \end{equation}
   avec
@@ -1117,18 +1117,18 @@ le résultat suivant.
     =
     9
     + 2 \ln \nclmaps
-    + \ln(d+1) (n+1 + \genre(\genre+1))
-    + (\genre+1) \left( \deg\va + 4\genre \ln(\genre+1) \right)
+    + \ln(d+1) (n+1 + g(g+1))
+    + (g+1) \left( \deg\va + 4g \ln(g+1) \right)
     \pmm.
   \end{equation}
 \end{coro}
 
 \begin{proof}
-  L'énoncé de la proposition~\vref{p:all-gen} est valable pour tout \( \puiss
-    \ge \genre + 1 \).  Comme dans la preuve du
+  L'énoncé de la proposition~\vref{p:all-gen} est valable pour tout \( m
+    \ge g + 1 \).  Comme dans la preuve du
   théorème~\vref{t:inc-small}, on remarque la quantité \(
-    \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
-  \) est minimale pour \( \puiss = \genre + 1 \) et on spécialise donc
+    \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
+  \) est minimale pour \( m = g + 1 \) et on spécialise donc
   la proposition~\vref{p:all-gen} avec cette valeur.
 \end{proof}
 

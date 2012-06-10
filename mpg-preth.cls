@@ -662,7 +662,7 @@
 
 % define an automatic constant
 % Warning: puts a label e:cst-<name>, no other label allowed for this equation
-\newcommand*\newcst [2][\place] {%
+\newcommand*\newcst [2][v] {%
   \begingroup
   \let\showkeyslabelformat\@gobble
   \refstepcounter{cst}%
@@ -694,7 +694,6 @@
 \newcommand \va    {\mathcal A}
 \newcommand \vai   {\mathcal B}
 \newcommand \oa    {\boldsymbol 0}
-\newcommand \genre {g} % XXX en dur
 
 \nomdef \va a {A} \@gobbletwo{\va}{La variété abélienne ambiante}
 \nomdef \vai a {B} \@gobbletwo{\vai}{Une sous-variété abélienne fixée de
@@ -708,24 +707,23 @@
 \newcommand*\nnt {\abs} % norme de Néron-Tate
 \newcommand*\scalnt [2] {\scal{#1, #2}} % produit scalaire associé
 
-\newcommand \mmemb { \Theta } % XXX utiliser \vaemb
-
 \newcommand \placesapx  { \mathcal S }
-\newcommand \placerange { \sb{\place \in \placesapx} }
+\newcommand \placerange { \sb{v \in \placesapx} }
 
-\newcommand*\wtapx [1][\place] { \lambda\ssub{#1} }
-\newcommand*\degv  [1][\place] { \Delta \ssub{#1} }
+\newcommand*\wtapx [1][v] { \lambda\ssub{#1} }
+\newcommand*\degv  [1][v] { \Delta \ssub{#1} }
 
 \nomdef \placesapx a {S} \@gobbletwo{\placesapx}{Ensemble fini de places de \(
     \cdn \) auxquelles on impose une condition d'approximation}
-\nomdef \wtapx g {l} \@gobbletwo{\wtapx}{Poids de la place \( \place \)
+\nomdef \wtapx g {l} \@gobbletwo{\wtapx}{Poids de la place \( v \)
   dans la condition d'approximation}
 \nomdef \degv g {D} \@gobbletwo{\degv}{Degré local de \( \cdn \) en \(
-    \place \)}
+    v \)}
 
 \newcommand \varapx { E } % XXX utiliser \avar en général et \divi sinon
 
-\newcommand \expapx { \eps } % XXX en dur
+\newcommand \grp { \Gamma }
+% rang : r
 
 % archimedian norms and measures [[2
 %
@@ -734,72 +732,66 @@
 \newcommand*\normeuc [1]   {\norm{#1}\sb2}
 \newcommand*\normhom [1]   {\norm{#1}\sb{\mathrm h}}
 
-% local absolute values, norms, distances, ... [[2
-%
-\newcommand \place {v}
-\nomdef \place a {v} \@gobbletwo{\place}{Une place, en général non fixée, de
-  $\cdn$}
-
-\newcommand \Cv {\C_\place}
-
-\newdelimcommandx \av  [3][3=\place] {\abs#1   {#2}\ssub{#3}}
-\newdelimcommandx \nv  [4][4=\place] {\norm#1  {#3}\sb{\sfirst{#2} #4}}
-\newdelimcommandx \nnv [4][4=\place] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
-\newcommand \nh {\mathrm h} % usage : \nv\nh P
-
-\nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $\place$-adique d'un
-  nombre}
-\nomdef \nv  s {n2} \@gobbletwo{\nv\PHi\PH }{Norme $\place$-adique d'un
-  vecteur ou d'une forme, en utilisant norme ou mesure \PHi si $\place$ est
-  archimédienne}
-\nomdef \nnv s {n3} \@gobbletwo{\nnv\PHi\PH}{Norme $\place$-adique d'un
-  multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
-  si $\place$ est archimédienne}
-
 \newcommand*\mespph  [2][] {\mathrm  M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
 \newcommand*\mahler  [2][] {\mathcal M\ssub{#1}\@ifnotmtarg{#2}{(#2)}}
-\newcommand* \mvp [2][\place] {\mespph[#1]{#2}}
-\newcommand* \mvm [2][\place] {\mahler[#1]{#2}}
-
-\nomdef \mvm a {Mv} \@gobbletwo{\mvm\PH}{Mesure de \bsc{Mahler} de la forme
-  \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
-\nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme
-  \PH si $\place$ est archimédienne, norme du $\sup$ sinon}
 
 \nomdef \mespph a {M} \@gobbletwo{\mespph\PH}{Mesure à la \bsc{Philippon} de
   la forme \PH}
 \nomdef \mahler a {M} \@gobbletwo{\mahler\PH}{Mesure de \bsc{Mahler} de la
   forme \PH}
 
-\newcommand \dv  {{\delta\smash{\sb\place}}}
-\newcommand \dpv {{\delta'\sb\place}}
+% local absolute values, norms, distances, ... [[2
+%
+\newcommand \Cv {\C_v}
 
-\nomdef \dv  a {dv1} \@gobbletwo{\dv }{Vaut $1$ si $\place$ est archimédienne,
+\newdelimcommandx \av  [3][3=v] {\abs#1   {#2}\ssub{#3}}
+\newdelimcommandx \nv  [4][4=v] {\norm#1  {#3}\sb{\sfirst{#2} #4}}
+\newdelimcommandx \nnv [4][4=v] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
+\newcommand \nh {\mathrm h} % usage : \nv\nh P
+
+\nomdef \av  s {n1} \@gobbletwo{\av\PH }{Valeur absolue $v$-adique d'un
+  nombre}
+\nomdef \nv  s {n2} \@gobbletwo{\nv\PHi\PH }{Norme $v$-adique d'un
+  vecteur ou d'une forme, en utilisant norme ou mesure \PHi si $v$ est
+  archimédienne}
+\nomdef \nnv s {n3} \@gobbletwo{\nnv\PHi\PH}{Norme $v$-adique d'un
+  multivecteur ou d'une forme multihomogène, en utilisant norme ou mesure \PHi
+  si $v$ est archimédienne}
+
+\newcommand* \mvp [2][v] {\mespph[#1]{#2}}
+\newcommand* \mvm [2][v] {\mahler[#1]{#2}}
+
+\nomdef \mvm a {Mv} \@gobbletwo{\mvm\PH}{Mesure de \bsc{Mahler} de la forme
+  \PH si $v$ est archimédienne, norme du $\sup$ sinon}
+\nomdef \mvp a {Mv} \@gobbletwo{\mvp\PH}{Mesure de \bsc{Philippon} de la forme
+  \PH si $v$ est archimédienne, norme du $\sup$ sinon}
+
+\newcommand \dv  {{\delta\smash{\sb v}}}
+\newcommand \dpv {{\delta'\sb v}}
+
+\nomdef \dv  a {dv1} \@gobbletwo{\dv }{Vaut $1$ si $v$ est archimédienne,
   est nul sinon}
-\nomdef \dpv a {dv2} \@gobbletwo{\dpv}{Vaut $1$ si $\place$ est archimédienne
+\nomdef \dpv a {dv2} \@gobbletwo{\dpv}{Vaut $1$ si $v$ est archimédienne
   ou divise $2$, est nul sinon}
 
 \DeclareMathOperator \Dist {dist}
-\newcommand*\Distv [1][\place] {\Dist\ssub{#1}}
-\newcommand*\distv [3][\place] {\Distv[#1](#2,#3)}
+\newcommand*\Distv [1][v] {\Dist\ssub{#1}}
+\newcommand*\distv [3][v] {\Distv[#1](#2,#3)}
 
 \DeclareMathOperator \Distalg {Dist}
-\newcommand*\Distalgv [1][\place] {\Distalg\ssub{#1}}
-\newcommand*\distalgv [3][\place] {\Distalgv[#1](#2,#3)}
+\newcommand*\Distalgv [1][v] {\Distalg\ssub{#1}}
+\newcommand*\distalgv [3][v] {\Distalgv[#1](#2,#3)}
 
-\nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $\place$-adique
+\nomdef \distv a {dist} \@gobbletwo{\distv\PH\PHi}{Distance $v$-adique
   projective entre \PH et \PHi}
 
 % embeding-dependant values [[2
 %
-\newcommand \dimp {n}
-\newcommand \dimpi {\dimp^2 + 2\dimp} % pour les Segre
-\newcommand*\projd [1][] {\proj[#1]\dimp}
+\newcommand \vaemb { \Theta }
+\newcommand*\projd [1][] {\proj[#1]n}
 \newcommand \fibre  {\mathcal L}
 \newcommand \fibrei {\mathcal M}
 
-\nomdef \dimp a {n} \@gobbletwo{\dimp}{Dimension de l'espace projectif
-  ambiant}
 \nomdef \fibre a {L} \@gobbletwo{\fibre}{Le fibré donnant « le » plongement
   projectif}
 
@@ -812,29 +804,39 @@
   inverses de composantes de $\coa$ bien choisies}
 \nomdef \vaht a {h}
 
+\newcommand \hmclab [1][\vaemb] {%
+  \@ifstar{ C\sb{#1, v} }{ C\sb{#1} }}
+\newcommand \hlclab [1][\vaemb] {%
+  \@ifstar{ c\sb{#1, v} }{ c\sb{#1} }}
+
+\newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
+\newcommand*\multab [1] { [#1] }
+\newcommand \rmclab [3] { L\pexp{#1, #2, #3}} % représentation de \clab-
+
+\newcommand \clmap [1][] { \gamma\ssub{#1} }
+\newc@star@default \clmapv {\fcti}{m-1} { \clmap[v \slast{#1}] }
+\newc@star@default \clmape {\fcti}{m-1} { \clmap[\ex \slast{#1}] }
+\newcommand \clmaps { \Gamma }
+\newcommand \nclmaps { N }
+
 % projective (and affine) indices and coordinates [[2
 %
 % helper macros [[
-\newc@star@default@i \gp {\ind}{\dimp} {\gp@{#1}{#2}}
+\newc@star@default@i \gp {\ind}{n} {\gp@{#1}{#2}}
 \newcommand*\gp@ [2] {%
   #1\ssub{#2}}
 % ]]
 
 \newcommand \ind      {k}
 \newcommand \indi     {l}
-\newcommand \indrange  {\sb{\ind =0}\sp\dimp}
-\newcommand \indirange {\sb{\indi=0}\sp\dimp}
+\newcommand \indrange  {\sb{\ind =0}\sp n}
+\newcommand \indirange {\sb{\indi=0}\sp n}
 \nomdef \ind a {k} \@gobbletwo{\ind}{Un indice entier, variant en général
-  entre $0$ et $\dimp$}
+  entre $0$ et $n$}
 \nomdef \indi a {l} \@gobbletwo{\indi}{Un indice entier, variant en général
-  entre $0$ et $\dimp$}
+  entre $0$ et $n$}
 
-\newcommand*\ch   [1] {\vp[#1]}
-
-\newcommand \pp {x}
-\newcommand \ppi{y}
-\newcommand \cp {\gp x}
-\newcommand \cpi{\gp y}
+% point : x -- coordonnées : \gp x
 \newcommand \vp {\gp X}
 \newcommand \vpi{\gp Y}
 \newcommand \ip {\gp \lambda}
@@ -869,7 +871,7 @@
 % helper macros [[
 \newc@star@deftwo@i \gmp  {\fct }{\ind} {\gmp@{#1}{#2}{#3}}
 \newc@star@deftwo@i \gmpi {\fcti}{\ind} {\gmp@{#1}{#2}{#3}}
-\newc@star@deftwo@i \gmpiv{\fcti}{\indiv*}{\gmp@{#1}[\place]{#2}{#3}}
+\newc@star@deftwo@i \gmpiv{\fcti}{\indiv*}{\gmp@{#1}[v]{#2}{#3}}
 \newc@star@deftwo@i \gmpim{\fcti}{\ind} {\gmp@{#1}[\clmap]{#2}{#3}}
 % generic multiprojective symbol:
 % #1 = factor number, #2 = optional prefix for this, see \gmpiv & \wembclg
@@ -885,21 +887,14 @@
 \newcommand \mexp {\gmp{}} % FIXME: p\mexp usage is stupid, use \gmp p
 % ]]
 
-\newcommand \puiss {m}
-\nomdef \puiss a {m}
-
 \newcommand \fct      {i}
-\newcommand \fctrange  {\sb{\fct =1}\sp\puiss}
+\newcommand \fctrange  {\sb{\fct =1}\sp m}
 \nomdef \fct a {i} \@gobbletwo{\fct}{Un indice entier, variant en général
-  entre $1$ et $\puiss$}
+  entre $1$ et $m$}
 
-\newcommand \pmp {x}
-\newcommand \cmp {\gmp x}
+% point : x, x_i, coordonnées : \gmp x
 \newcommand \vmp {\gmp X}
-
 \newcommand \imp {\gmp \lambda}
-\nomdef \lambda g {l} \@gobbletwo{\lambda}{Un indice multiprojectif, dans
-  \( \bigl( \N\sp{\dimp + 1} \bigr)\sp\puiss \)}
 
 \newcommand*\vlg [1] {\abs{#1}}
 \newcommand*\lgt [1] {\lVert#1\rVert}
@@ -934,24 +929,6 @@
 
 \newcommand \stoll [1] {\mathrm{St}\sb{#1}}
 
-% abelian formulas [[2
-%
-\newcommand \vaemb { \Theta }
-\newcommand \hmclab [1][\vaemb] {%
-  \@ifstar{ C\sb{#1, \place} }{ C\sb{#1} }}
-\newcommand \hlclab [1][\vaemb] {%
-  \@ifstar{ c\sb{#1, \place} }{ c\sb{#1} }}
-
-\newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
-\newcommand*\multab [1] { [#1] }
-\newcommand \rmclab [3] { L\pexp{#1, #2, #3}} % représentation de \clab-
-
-\newcommand \clmap [1][] { \gamma\ssub{#1} }
-\newc@star@default \clmapv {\fcti}{\puiss-1} { \clmap[\place \slast{#1}] }
-\newc@star@default \clmape {\fcti}{\puiss-1} { \clmap[\ex \slast{#1}] }
-\newcommand \clmaps { \Gamma }
-\newcommand \nclmaps { N }
-
 
 % Vojta-specific math [[1
 % -------------------
@@ -976,19 +953,19 @@
 \newcommand \cexi  { \gmpi{\Excep'}} % no space here!
 \newcommand \cexa  { \gmp{\tilde\Excep}} % no space here!
 
-\newc@star@default \ex      {\fct }{\puiss  } {\Excep\ssub{#1}}
-\newc@star@default \exi     {\fcti}{\puiss-1} {\Excep'\ssub{#1}}
+\newc@star@default \ex      {\fct }{m  } {\Excep\ssub{#1}}
+\newc@star@default \exi     {\fcti}{m-1} {\Excep'\ssub{#1}}
 
-\newc@star@default \wt      {\fct }{\puiss  } {a\ssub{#1}}
-\newc@star@default \wts     {\fct }{\puiss  } {a\ssub{#1}\sp2}
-\newc@star@default \wti     {\fcti}{\puiss-1} {a\ssub{#1}}
-\newc@star@default \wtis    {\fcti}{\puiss-1} {a\ssub{#1}\sp2}
-\newc@star@default \wtw     {\fct }{\puiss  } {\eta\ssub{#1}}
+\newc@star@default \wt      {\fct }{m  } {a\ssub{#1}}
+\newc@star@default \wts     {\fct }{m  } {a\ssub{#1}\sp2}
+\newc@star@default \wti     {\fcti}{m-1} {a\ssub{#1}}
+\newc@star@default \wtis    {\fcti}{m-1} {a\ssub{#1}\sp2}
+\newc@star@default \wtw     {\fct }{m  } {\eta\ssub{#1}}
 
 \nomdef \ex a {e}
 \nomdef \wt a {a}
 
-\newcommand \prodwt {\wts[1] \dots \wts[\puiss] (\puiss-1)}
+\newcommand \prodwt {\wts[1] \dots \wts[m] (m-1)}
 
 \newc@star@deftwo \poldep {\fct}{\indi} {P\pexp{#1}[#2]}
 \newc@star@default \pden {\fct}{}       {Q\ssub{#1}}
@@ -1005,9 +982,9 @@
 \newcommand \mexpi {\smpi{}}
 
 \newcommand \fcti      {j}
-\newcommand \fctirange {\sb{\fcti=1}\sp{\puiss-1}}
+\newcommand \fctirange {\sb{\fcti=1}\sp{m-1}}
 \nomdef \fcti a {j} \@gobbletwo{\fcti}{Un indice entier, variant en général
-  entre $1$ et $\puiss-1$}
+  entre $1$ et $m-1$}
 
 \newcommand \vmpi {\smpi Y}
 
@@ -1066,17 +1043,17 @@
 % the product sub-variety considered and its attributes [[2
 %
 \newcommand \Var {Z}
-\newc@star@default \var     {\fct}{\puiss} {\Var  \ssub{#1}}
-\newc@star@default \vdim    {\fct}{\puiss} { u    \ssub{#1} }
-\newc@star@default \vdeg    {\fct}{\puiss} { D    \ssub{#1} }
-\newc@star@default \vdegp   {\fct}{\puiss} { D'   \ssub{#1} }
-\newc@star@default \varfc   {\fct}{\puiss} {\chow {\var[#1]}}
-\newc@star@default \varid   {\fct}{\puiss} {\ideal{\var[#1]}}
+\newc@star@default \var     {\fct}{m} {\Var  \ssub{#1}}
+\newc@star@default \vdim    {\fct}{m} { u    \ssub{#1} }
+\newc@star@default \vdeg    {\fct}{m} { D    \ssub{#1} }
+\newc@star@default \vdegp   {\fct}{m} { D'   \ssub{#1} }
+\newc@star@default \varfc   {\fct}{m} {\chow {\var[#1]}}
+\newc@star@default \varid   {\fct}{m} {\ideal{\var[#1]}}
 
-\newc@star@default \vadapt  {\fct}{\puiss} {\chi   \ssub{#1}}
-\newc@star@default \varfca  {\fct}{\puiss} {\chowa {\var[#1]}}
-\newc@star@default \varida  {\fct}{\puiss} {\ideala{\var[#1]}}
-\newc@star@default \vringa  {\fct}{\puiss} {\ringa {\var[#1]}}
+\newc@star@default \vadapt  {\fct}{m} {\chi   \ssub{#1}}
+\newc@star@default \varfca  {\fct}{m} {\chowa {\var[#1]}}
+\newc@star@default \varida  {\fct}{m} {\ideala{\var[#1]}}
+\newc@star@default \vringa  {\fct}{m} {\ringa {\var[#1]}}
 
 \newcommand \ideala [1] {\tilde\Ideal \sb{#1}}
 \newcommand \ringa  [1] {\tilde\Ring  \sb{#1}}
@@ -1104,20 +1081,20 @@
 \newc@star@default \faux {\clmap}{\clmap\sb\ex} {
   F\@ifnotmtarg{#1}{'\sb{#1}}
 }
-\newcommand \fauxv { \faux[\place] }
+\newcommand \fauxv { \faux[v] }
 
 % for extrapolation [[2
 %
 % local indices
-\newc@star@default \indv  {\fct }{\puiss} {\ind \sb{\place \slast{#1}}}
-\newc@star@default \indt  {\fct }{\puiss} {\ind \sb{{#1}}}
-\newc@star@default \indiv {\fcti}{\puiss} {\indi\sb{\place \slast{#1}}}
-\newc@star@default \indig {\fcti}{\puiss} {\indi\sb{{#1}}}
+\newc@star@default \indv  {\fct }{m} {\ind \sb{v \slast{#1}}}
+\newc@star@default \indt  {\fct }{m} {\ind \sb{{#1}}}
+\newc@star@default \indiv {\fcti}{m} {\indi\sb{v \slast{#1}}}
+\newc@star@default \indig {\fcti}{m} {\indi\sb{{#1}}}
 
 % rational functions
 \newcommand*\ratf      {\xi}
 \newcommand*\ratfi     {\zeta}
-\newcommand*\ratfv [1] {\alpha\sb{#1, \place}}
+\newcommand*\ratfv [1] {\alpha\sb{#1, v}}
 \newcommand*\ratfh [1] {\hautl{}{\alpha\sb{#1}(\cexa)}}
 
 % misc (ok) [[2
@@ -1132,77 +1109,27 @@
   élimination de variables dans le construction de la forme auxiliaire pour
   l'inégalité de \bsc{Vojta}}
 
-% misc (???)  [[2
+% nomdefs [[2
 %
-\newcommand \vb {{\mathbf e}}
-\newcommand \Mbase {{\mathcal M}}
-
-\nomdef \vb a {e} \@gobbletwo{\vb}{Vecteur (de base ?)}
-\nomdef \Mbase a {M} \@gobbletwo{\Mbase}{Matrice d'une application dans une
-  base donnée}
-
-\newcommand \monome {{\mathfrak m}}
-\nomdef \monome a {m} \@gobbletwo{\monome}{Un monome}
-
-\newcommand\mat{M} % matrice
-\nomdef \mat a {M} \@gobbletwo{\mat}{Une matrice}
-
-\newcommand\opdef{{\mathcal U}}
-\nomdef \opdef a {U} \@gobbletwo{\opdef}{Ouvert de définition d'une certaine
-  famille de formes, précisé localement}
-
-\newcommand \opdefi {\mathcal D}
-
-% Vojta-wide notations without a dedicated macro [[2
-% (btw, isn't this evil?)
-%
-\nomdef d a {d} \@gobbletwo{d}{Le degré, divisé par $\delta$, de la forme
-  auxiliaire vue sur l'image par le plongement éclatant}
-\nomdef \delta g {d} \@gobbletwo{\delta}{Un entier suffisamment divisible
-  et grand, gouvernant l'ordre de grandeur du degré de la forme auxiliaire}
-
-\nomdef F a {F} \@gobbletwo{F}{La forme auxiliaire vue sur \( \wemb(\var) \)}
-\nomdef R a {R} \@gobbletwo{R}{Facteur parasitant la forme auxiliaire}
 \nomdef r a {r} \@gobbletwo{r}{Degré du facteur parasitant la forme
   auxiliaire}
 
-% Local notations without dedicated macro [[2
-%
-\nomdef \alpha g {a} \@gobbletwo{\alpha}{Parfois utilisé localement comme
-  indice ou (multi)degré}
-\nomdef \beta g {b} \@gobbletwo{\beta}{Parfois utilisé localement comme
-  indice ou (multi)degré}
-\nomdef f a {f} \@gobbletwo{f}{Parfois un multiindice, élément de \(
-    \N\sp\puiss \)}
-\nomdef \Delta g {D} \@gobbletwo{\Delta}{Parfois un multidegré, élément de
-  \( \N\sp\puiss \)}
-\nomdef p a {p} \@gobbletwo{p}{Parfois un entier ou un (multi)multiindice}
-\nomdef q a {q} \@gobbletwo{q}{Parfois un entier ou un (multi)multiindice}
-
 % Parametrisation [[2
 %
-\newcommand \psmp   {\gmp t}
+\newcommand \psmp   {\gmp t} % paramètre
 \newcommand \psp    {\gp  t}
-\newcommand \forme  {H}
-\newcommand \dermp  {\gmp\kappa}
+\newcommand \dermp  {\gmp\kappa} % ordre de dérivation
 \newcommand \derp   {\gp \kappa}
 
 \newc@ifstar \pmor  {\tau} {\tilde\tau}
 \newcommand  \pmnum {\Delta}
 \newcommand  \pmden {\Gamma}
 
-\newcommand \pdiff {\@ifstar{\Delta}{\Delta\sb\dv}}
-
-
-% unsorted math stuff [[1
+% Other specific math [[1
 % -------------------
 
-\newcommand*\hatxs {\smash{\hat x}}
-\newcommand*\hatys {\smash{\hat y}}
+\newcommand \opdefi {\mathcal D}
 
-\newcommand*\cube [1] {\mathcal C(#1)}
-\nomdef \cube a {C} \@gobbletwo{\cube\PH}{L'ensemble des points à coordonnées
-  entières du cube de demi-arête \PH centré en l'origine}
 
 % [[1
 % vim: ft=tex fdm=marker fmr=[[,]] fdl=1 spell spelllang=fr,en

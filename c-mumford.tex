@@ -69,7 +69,7 @@ Pour le cas général, l'énoncé est le suivant.
 
 \begin{thm} \label{t:mumford-gen}
   Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
-    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \Gamma
+    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
     \subset \va(\Qbar) \) de rang fini \( r \), puis on pose
   \begin{equation}
     m
@@ -88,7 +88,7 @@ Pour le cas général, l'énoncé est le suivant.
     \frac{ \eps }{ 2 \adeg^m (2m)^{(m+1)\adim} }
     \pmm.
   \end{equation}
-  Si \( x_1, \dots, x_m \) est une famille de points de \( \Gamma \)
+  Si \( x_1, \dots, x_m \) est une famille de points de \( \grp \)
   telle que, pour tous \( i \) et \( j \) entre \( 1 \) et \( m \) :
   \begin{align}
     0
@@ -1026,7 +1026,7 @@ section~\vref{sec:mumford-grp}.
 \end{proof}
 
 \begin{lem}
-  Sous les hypothèses du théorème~\vref{t:mumford-gen} (sauf \( x_i \in \Gamma
+  Sous les hypothèses du théorème~\vref{t:mumford-gen} (sauf \( x_i \in \grp
   \) et la définition de \( m \)), on a \( z \in Z \).
 \end{lem}
 
@@ -1172,7 +1172,7 @@ obtenue par \bsc{Rémond}.
 
 \begin{fact}
   \worknote{On doit pouvoir mettre une inégalité stricte, non ?}
-  Soient \( \avar \subset \va \) une sous-variété et \( \Gamma \subset
+  Soient \( \avar \subset \va \) une sous-variété et \( \grp \subset
     \va(\Qbar) \) un sous-groupe de rang fini \( r \). Alors il existe un
   entier naturel
   \begin{equation}
@@ -1183,13 +1183,13 @@ obtenue par \bsc{Rémond}.
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
     \pmm,
   \end{equation}
-  des points \( x_1, \dots, x_S \) de \( \avar(\Qbar) \cap \Gamma \) et des
+  des points \( x_1, \dots, x_S \) de \( \avar(\Qbar) \cap \grp \) et des
   sous-variétés abéliennes \( \vai_1, \dots, \vai_s \) de \( \va \) telles que
   \( x_i + \vai_i \subset \avar \) pour tout \( i \in \set{1, \dots, S} \) et
   \begin{equation}
-    \avar(\Qbar) \cap \Gamma
+    \avar(\Qbar) \cap \grp
     =
-    \bigcup_{i=1}^{S} (x_i + \vai_i)(\Qbar) \cap \Gamma
+    \bigcup_{i=1}^{S} (x_i + \vai_i)(\Qbar) \cap \grp
     \pmm.
   \end{equation}
 \end{fact}
@@ -1212,9 +1212,9 @@ Nous sommes maintenant prêts à conclure.
   \begin{equation}
     y_i - y_m
     \in
-    (\avar - y_m)(\Qbar) \cap \Gamma
+    (\avar - y_m)(\Qbar) \cap \grp
     =
-    \bigcup_{k=1}^{S} (z_k + \vai_k)(\Qbar) \cap \Gamma
+    \bigcup_{k=1}^{S} (z_k + \vai_k)(\Qbar) \cap \grp
   \end{equation}
   où l'égalité de droite découle du fait précédent, avec \( z_k \in \avar -
     y_m \) et \( z_k + \vai_k \in \avar \), où \( \vai_k \subset \va \) est

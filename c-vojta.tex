@@ -14,14 +14,14 @@ cas général.
 \begin{thm} \label{t:vojta-div}
   \nomuse \divi [chap] {L'hyperplan à approcher,  défini par \( \vp[0] = 0 \)}
   Soient \( \divi \) l'hyperplan défini par \( \vp[0] = 0 \) dans le
-  plongement fixé et \( 0 < \expapx < 1 \) un nombre réel.  Pour tout
-  \( \puiss \ge \genre + 1 \), il n'existe dans \( \va(\Qbar) \) aucune famille
-  de points \( \ex[1], \dots, \ex[\puiss] \) satisfaisant simultanément aux
+  plongement fixé et \( 0 < \eps < 1 \) un nombre réel.  Pour tout
+  \( m \ge g + 1 \), il n'existe dans \( \va(\Qbar) \) aucune famille
+  de points \( \ex[1], \dots, \ex[m] \) satisfaisant simultanément aux
   conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
-    & < \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    & < \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \label{e:Vapx}
     \\
     \hautn{\ex[1]} & > \Vbig
@@ -40,38 +40,38 @@ cas général.
     multiplicatif entre les points}
   \nomuse \Vcos {Dans le théorème~\vref{t:vojta-div}, contrôle l'angle entre
     les points}
-  \nomuse \puiss [chap] {cardinal de la famille d'approximations \( (\ex*) \)
+  \nomuse m [chap] {cardinal de la famille d'approximations \( (\ex*) \)
     considérée}
   \begin{align}
     \label{e:def-Vbig}
-    \Vbig & = 4\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
+    \Vbig & = 4\cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)}
     \\
     \label{e:def-Vfar}
-    \Vfar & = 4 \puiss \Lambda^{2\puiss f(\puiss)}
+    \Vfar & = 4 m \Lambda^{2m f(m)}
     \\
     \label{e:def-Vcos}
     \Vcos & =
-    \frac1{ \puiss }
+    \frac1{ m }
     \left(
-      \frac{ \expapx }{ 85 \nclmaps \cdot 5^\genre }
-    \right)^{ \frac{\puiss}{\puiss-\genre} }
+      \frac{ \eps }{ 85 \nclmaps \cdot 5^g }
+    \right)^{ \frac{m}{m-g} }
     \\
     \label{e:def-Lambda}
     \Lambda
     & = \max \bigl(
-      (\deg \va)^\puiss,
-      5 \puiss^2
+      (\deg \va)^m,
+      5 m^2
       \bigl(
-        85 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
-      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+        85 \nclmaps \cdot 5^g \cdot \eps^{-1}
+      \bigr)^{ \frac{m}{m-g} }
       \deg \va,
-      (\sqrt2 \puiss \genre)^{\puiss\genre}
+      (\sqrt2 m g)^{mg}
     \bigr)
     \\ \label{e:def-f}
-    f(\vdim) & = \prod_{i=\vdim+1}^{\puiss\genre} (2i + 1)
+    f(\vdim) & = \prod_{i=\vdim+1}^{mg} (2i + 1)
     \\
     \newcst[\Theta]{vs-ht}
-    & = \max( \hautl1{ \chow\va }, \hlclab, \htcmp, \dimp\ln(\dimp + 1) )
+    & = \max( \hautl1{ \chow\va }, \hlclab, \htcmp, n\ln(n + 1) )
   \end{align}
 \end{thm}
 
@@ -89,7 +89,7 @@ pour traiter en premier le cas où \( \divi = \zeros{X_0} \), l'autre raison
 étant que l'indice d'annulation le long de \( \divi \) admet une définition
 particulièrement commode à manipuler dans ce cas (section~\vref{sec:siegel}).
 
-Notons pour commencer qu'on peut supposer \( \expapx < 1 \), car sinon
+Notons pour commencer qu'on peut supposer \( \eps < 1 \), car sinon
 l'inégalité de la taille appliquée à l'expression de la distance ci-dessus
 montre qu'il n'existe aucun point satisfaisant~\eqref{e:Vapx}, sans même
 utiliser les autres conditions. De même, on peut supposer que \( \divi \) ne
@@ -103,7 +103,7 @@ satisfaisant~\eqref{e:Vapx}.
 \nomuse[\ex]{(\ex*)}[chap]{Famille d'approximations de \( \divi \) dont
   l'existence contredirait le théorème~\vref{t:vojta-div}}
 La démonstration procède par l'absurde : si le théorème est faux, fixons une
-famille \( \ex[1], \dots, \ex[\puiss] \) qui le contredit. Bien que cette
+famille \( \ex[1], \dots, \ex[m] \) qui le contredit. Bien que cette
 famille soit toujours supposée satisfaire à toutes les conditions du théorème,
 nous préciserons dans les hypothèses de la plupart des énoncés suivants la ou
 lesquelles de ces conditions nous utilisons, par souci de clarté.
@@ -117,7 +117,7 @@ satisfaisant~\eqref{e:clab-norm} et~\eqref{e:clab-loc}.
 
 \begin{lem} \label{l:wt-choose-gen}
   Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
-    3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, \puiss} \) :
+    3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, m} \) :
   \begin{equation} \label{e:wt-ratio-gen}
     \frac1{1 + \zeta}
     \le
@@ -179,7 +179,7 @@ lemme suivant.
 \begin{lem}
   Soit \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
   à~\eqref{e:wt-ratio-gen}. Si de plus la famille \( (\ex*) \) satisfait
-  à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, \puiss} \) on a
+  à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, m} \) on a
   \begin{equation}
     \hautn{\wt* \ex* - \wt** \ex**}
     \le
@@ -261,27 +261,27 @@ par exemple, l'énoncé suivant nous sera utile par la suite.
 
 \begin{lem} \label{l:sum-wts}
   On a \(
-    \sum_{\fct=1}^{\puiss-1} (\wts* + \wts**)
+    \sum_{\fct=1}^{m-1} (\wts* + \wts**)
     = \sum\fctrange \wtw* \wts*
     \le 2 \wts[1]
-  \), où l'on a noté \( \wtw* = 1 \) si \( \fct < \puiss \) et \( \wtw** =
-    \puiss - 1 \).
+  \), où l'on a noté \( \wtw* = 1 \) si \( \fct < m \) et \( \wtw** =
+    m - 1 \).
 \end{lem}
 
 \begin{proof}
   En effet, on écrit
   \begin{align}
-    \frac1{\wts[1]} \sum_{\fct=1}^{\puiss-1} (\wts* + \wts**)
+    \frac1{\wts[1]} \sum_{\fct=1}^{m-1} (\wts* + \wts**)
     & = 1
-    + \frac{(\puiss-1) \wts**}{\wts[1]}
-    + \sum_{\fct=2}^{\puiss-1} \frac{\wts*}{\wts[1]}
+    + \frac{(m-1) \wts**}{\wts[1]}
+    + \sum_{\fct=2}^{m-1} \frac{\wts*}{\wts[1]}
     \\
     & \le 1
-    + \frac{\puiss(1+\zeta)}{\Vfar^{\puiss-1}}
-    + (1+\zeta) \sum_{\fct=2}^{\puiss-1} \Vfar^{-\fct+1}
+    + \frac{m(1+\zeta)}{\Vfar^{m-1}}
+    + (1+\zeta) \sum_{\fct=2}^{m-1} \Vfar^{-\fct+1}
     \\
     & \le 1 + (1+\zeta) \left(
-      \Bigl( \frac2\Vfar \Bigr)^{\puiss-1}
+      \Bigl( \frac2\Vfar \Bigr)^{m-1}
       + \frac1{\Vfar-1}
     \right)
     \pmm.
@@ -294,13 +294,13 @@ par exemple, l'énoncé suivant nous sera utile par la suite.
 \subsection{Réduction à l'existence d'une forme motrice}
 \label{sec:vojta-prop}
 
-Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^\puiss \) plongée
-dans \( (\projd)^\puiss \), et introduisons l'ensemble \( \varset(\ex) \) des
+Nous regardons \( \ex = (\ex*) \) comme un point de \( \va^m \) plongée
+dans \( (\projd)^m \), et introduisons l'ensemble \( \varset(\ex) \) des
 sous-variétés produit \( \var = \var[1] \times \dots \times \var** \) de \(
-  \va^\puiss \) qui contiennent \( \ex \) et satisfont aux majorations
+  \va^m \) qui contiennent \( \ex \) et satisfont aux majorations
 suivantes, où les notions de degré et de hauteurs s'entendent dans le
-plongement \( \vaemb^\puiss \) et où l'on rappelle la notation \( \wtw* = 1 \)
-si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
+plongement \( \vaemb^m \) et où l'on rappelle la notation \( \wtw* = 1 \)
+si \( \fct < m \) et \( \wtw** = m-1 \) :
 \nomuse {\varset(\ex)} [chap] {Ensemble des variétés produit contenant \( \ex
   \) et satisfaisant aux conditions~\eqref{e:varset-deg}
   à~\eqref{e:varset-ht}}
@@ -314,23 +314,23 @@ si \( \fct < \puiss \) et \( \wtw** = \puiss-1 \) :
   & \le \Lambda^{f(\vdim)}
   \\ \label{e:varset-ht}
   \sum\fctrange \wtw* \wts* \hautl1{\varfc*}
-  & \le \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)} \wts[1]
+  & \le \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)} \wts[1]
   \pmm,
 \end{align}
 où l'on a noté \( \vdeg* = \deg \var* \) et \( \vdim = \dim \var \), ainsi que
 \begin{align}
   \newcst[]{vs-deg-prod}
   & =
-  5 \puiss^2
+  5 m^2
   \bigl(
-    85 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
-  \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+    85 \nclmaps \cdot 5^g \cdot \eps^{-1}
+  \bigr)^{ \frac{m}{m-g} }
 \end{align}
 de sorte que l'ensemble \( \varset(\ex) \) ne dépend de \( \ex \) que
 par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
 
 Pour commencer, remarquons que cet ensemble n'est pas vide puisqu'il contient
-\( \va^\puiss \). En effet, la définition de \( \Lambda \) (deux premiers
+\( \va^m \). En effet, la définition de \( \Lambda \) (deux premiers
 arguments du maximum) assure que~\eqref{e:varset-deg}
 et~\eqref{e:varset-deg-prod} sont satisfait ; le fait que \( \cst{vs-ht} \ge
   \hautl1\va \), que \( \Lambda > 2 \) et le lemme~\vref{l:sum-wts}
@@ -351,10 +351,10 @@ facteur réduit à un point. Pour cela, on utilise la proposition suivante.
     \\
     \wtw* \wts* \hautl\infty{ T }
     & \le
-    \genre \Lambda^{2\vdim f(\vdim)}
+    g \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     \Biggr)
     \pmm.
   \end{align}
@@ -401,14 +401,14 @@ construction itérative dans la démonstration ci-dessus.
   \end{equation}
   où \( \Hautl{\mathrm{m}} \) est la hauteur désignée par \( h_1 \) dans la
   référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
-  par ailleurs que \( \hautl{\mathrm{m}} T \le \hautl\infty T + \sqrt\dimp
+  par ailleurs que \( \hautl{\mathrm{m}} T \le \hautl\infty T + \sqrt n
   \). Rappelons comment \( \Hautl\htpph \) se compare à \( \Hautl1 \)
   dans le cas particulier de la forme de \bsc{Chow} \( \chow V \) d'une
   variété projective \( V \) :
   \begin{equation} \label{e:ht-pph-1}
     \abs{ \hautl\htpph{ \chow V } - \hautl1{ \chow V } }
     \le
-    \frac12 \ln(\dimp + 1) (\dim V + 1) \deg V
+    \frac12 \ln(n + 1) (\dim V + 1) \deg V
     \pmm.
   \end{equation}
   Le théorème de Bézout arithmétique s'écrit donc, dans notre cas et avec les
@@ -416,23 +416,23 @@ construction itérative dans la démonstration ci-dessus.
   \begin{align}
     \hautl1{ \chow{\var*'} }
     & \le
-    \deg \var* \bigl( \hautl\infty T + \sqrt\dimp \bigr)
+    \deg \var* \bigl( \hautl\infty T + \sqrt n \bigr)
     + \deg T \Bigl(
       \hautl1{ \varfc* }
-      + \frac12 \ln(\dimp + 1) (\vdim* + 1) \deg \var*
+      + \frac12 \ln(n + 1) (\vdim* + 1) \deg \var*
     \Bigr)
     \\ & \quad
-    + \frac12 \ln(\dimp + 1) \vdim* \deg \var*'
+    + \frac12 \ln(n + 1) \vdim* \deg \var*'
     \\ & \le
-    B \bigl( \hautl\infty T + \dimp \bigr)
+    B \bigl( \hautl\infty T + n \bigr)
     + \deg T \Bigl(
-      \hautl1{ \varfc* } + \frac12 \dimp\genre B
+      \hautl1{ \varfc* } + \frac12 ng B
     \Bigr)
-    + \frac12 \dimp\genre B \deg T
+    + \frac12 ng B \deg T
     \\ & \le
     \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
     + B \hautl\infty T
-    + 2 \dimp \genre B \Lambda^{2\vdim f(\vdim)}
+    + 2 n g B \Lambda^{2\vdim f(\vdim)}
   \end{align}
   et finalement, en multipliant par \( \wtw* \wts* \) et en majorant dans le
   dernier terme cette quantité par \( \wts[1] \), puis en utilisant
@@ -441,34 +441,34 @@ construction itérative dans la démonstration ci-dessus.
     \wtw* \wts* \hautl1{ \chow{\var*'} }
     & \le
     \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
-    + 2 \wts[1] \dimp \genre B \Lambda^{2\vdim f(\vdim)}
+    + 2 \wts[1] n g B \Lambda^{2\vdim f(\vdim)}
     + \wtw* \wts* B \hautl1 T
     \\ & \le
     \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
-    + 2 \wts[1] \dimp \genre B \Lambda^{2\vdim f(\vdim)}
+    + 2 \wts[1] n g B \Lambda^{2\vdim f(\vdim)}
     \\ & \qquad
-    + B \genre \Lambda^{2\vdim f(\vdim)}
+    + B g \Lambda^{2\vdim f(\vdim)}
     \Biggl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+      + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     \Biggr)
     \\ & \le
     \Lambda^{2\vdim f(\vdim)} \Biggl(
       \wtw* \wts* \hautl1{ \varfc* }
-      + B \genre
+      + B g
       \Bigl(
-        6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-        + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+        6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+        + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
       \Bigr)
     \Biggr)
   \end{align}
-  en remarquant que \( 2\dimp \le \cst{vs-ht} \Lambda \) pour intégrer le
+  en remarquant que \( 2n \le \cst{vs-ht} \Lambda \) pour intégrer le
   deuxième terme de la deuxième ligne dans celui en \( \cst{vs-ht} \).
 
   Nous pouvons maintenant substituer cette estimation dans la somme pondérée
   des hauteurs :
   \begin{align}
-    \sum_{\fcti=1}^\puiss
+    \sum_{\fcti=1}^m
     \wtw[\fcti] \wts[\fcti] \hautl1{\chow{\var[\fcti]'}}
     & =
     \sum_{\fcti \neq \fct}
@@ -479,58 +479,58 @@ construction itérative dans la démonstration ci-dessus.
     \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
     + \Lambda^{2\vdim f(\vdim)} \wtw* \wts* \hautl1{ \varfc* }
     \\ & \qquad
-    + B \genre \Lambda^{2\vdim f(\vdim)}
+    + B g \Lambda^{2\vdim f(\vdim)}
     \Bigl(
-      6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+      + 4 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     \Bigr)
     \\ & \le
-    7 B \genre \Lambda^{2\vdim f(\vdim)}
+    7 B g \Lambda^{2\vdim f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     \Bigr)
     \\ & \le
     \frac12 \Lambda^{(2\vdim + 1) f(\vdim)}
     \Bigl(
-      \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+      \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+      + \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     \Bigr)
     \label{e:vs-ht-rec}
   \end{align}
-  en utilisant le fait que \( 7 B \genre \) est (largement) majoré par \(
+  en utilisant le fait que \( 7 B g \) est (largement) majoré par \(
     \Lambda^{f(\vdim)} / 2 \) d'après~\eqref{e:varset-deg}. Il ne reste plus
   qu'à appliquer l'hypothèse de hauteur sur \( \var \), à
   savoir~\eqref{e:varset-ht}, pour obtenir
   \begin{align}
-    \sum_{\fcti=1}^\puiss
+    \sum_{\fcti=1}^m
     \wtw[\fcti] \wts[\fcti] \hautl1{\chow{\var[\fcti]'}}
     & \le
-    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 2 + \frac1\puiss) f(\vdim)}
+    \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 2 + \frac1m) f(\vdim)}
   \end{align}
   qui achève de montrer que \( \var' \in \varset(\ex) \) car
   \begin{equation}
-    (2\vdim + 2 + \frac1\puiss) f(\vdim)
+    (2\vdim + 2 + \frac1m) f(\vdim)
     \le
-    (2\vdim + 1)(1 + \frac1\puiss) f(\vdim)
+    (2\vdim + 1)(1 + \frac1m) f(\vdim)
     =
-    (1 + \frac1\puiss) f(\vdim-1)
+    (1 + \frac1m) f(\vdim-1)
     \pmm.
   \end{equation}
 
-  On peut ainsi, en partant de \( \va^\puiss \), construire une suite
+  On peut ainsi, en partant de \( \va^m \), construire une suite
   d'éléments de \( \varset(\ex) \) de dimensions décroissantes, jusqu'au
   moment où l'un des facteurs est réduit à un point, c'est-à-dire que \( \var*
     = \set{\ex*} \) pour un certain \( \fct \) et en particulier \(
     \hautl1{\varfc*} = \hautl1{\ex*} \) vu l'expression de la forme de
-  \bsc{Chow} d'un point. Par ailleurs, à ce stade on a \( \vdim \ge \puiss - 1
+  \bsc{Chow} d'un point. Par ailleurs, à ce stade on a \( \vdim \ge m - 1
   \) ; on en déduit alors, par \eqref{e:varset-ht} et~\eqref{e:comp-h-hn},
   \begin{align}
     \wts* \hautn{\ex*}
-    & \le 2\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
+    & \le 2\cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)} \wts[1]
     \intertext{puis, par \eqref{e:wt-ratio},}
     \wts[1] \hautn{\ex[1]}
-    & \le 4\cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)} \wts[1]
+    & \le 4\cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)} \wts[1]
     \label{e:ct-Vbig-final}
   \end{align}
   qui contredit directement~\eqref{e:Vbig}. Cette contradiction prouve qu'il
@@ -559,15 +559,15 @@ coordonnées dans lequel ils s'expriment naturellement.
   \nomuse{\varid}[chap]{L'idéal homogène saturé de \( \var \),
     définition~\vref{d:var&co}}
   Désormais et jusqu'à la fin du chapitre, nous fixons une variété
-  \( \var = \var[1] \times \dots \times \var[\puiss] \) satisfaisant aux
+  \( \var = \var[1] \times \dots \times \var[m] \) satisfaisant aux
   hypothèses de la proposition ; en particulier elle n'est contenue dans aucun
   hyperplan d'équation \( \vmp*[0] = 0 \) puisqu'elle contient
   \( \ex \) qui n'est d'après \eqref{e:Vapx} sur aucun de ces hyperplans, et
   aucun de ses facteurs n'est réduit à un point.
 
   On notera en outre \( \vdim* = \dim \var* \) et \( \vdim = \dim \var \) ;
-  observons de suite que \( 1 \le \vdim* \le \genre \) et donc \( \puiss \le
-    \vdim \le \puiss\genre \). Notons également
+  observons de suite que \( 1 \le \vdim* \le g \) et donc \( m \le
+    \vdim \le mg \). Notons également
   \( \vdeg* = \deg \var* \) et \( B \) le majorant commun des \( \vdeg* \)
   donné par~\eqref{e:varset-deg}. Enfin, on note \( \varfc* \) une
   \footnote{\label{fn:varfc}Cette forme est unique à multiplication par un
@@ -599,7 +599,7 @@ d'exploiter~\eqref{e:hautn-wt-diff}.
   Suivant \cite{remivg}, si \( \anyvar \) est une variété de dimension
   \( \anydim \) et \( \projd \) un espace projectif muni de coordonnées
   homogènes \( \anyvp[0], \dots, \anyvp** \), on dit qu'un plongement
-  \( \iota\colon \anyvar \embedin \proj\dimp \) est adapté si
+  \( \iota\colon \anyvar \embedin \projd \) est adapté si
   \begin{enumthm}
     \item \( \anyvar \cap \zeros{\anyvp[0], \dots, \anyvp[\anydim]}
         = \emptyset \) ;
@@ -634,7 +634,7 @@ variables sur la base de transcendance choisie.
 \begin{fact} \label{f:plong-adapt-dep}
   Si le plongement \( \iota \colon \anyvar \embedin \projd \) est adapté, il
   existe des formes homogènes \( \poldep[][\ind] \) pour \( \ind \in
-    \set{\anydim+1, \dots, \dimp} \) telles que :
+    \set{\anydim+1, \dots, n} \) telles que :
   \begin{enumthm}
     \item \(
         \poldep[][\ind]
@@ -666,7 +666,7 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   Soit \( \iota \colon \anyvar \embedin \projd \) un sous-schéma fermé intègre
   de degré \( \anydeg \), non contenu dans l'hyperplan d'équation \( \anyvp[0]
     = 0 \).  Il existe une transformation linéaire \( \chi \in
-    \GL_{\dimp+1}(\Q) \), représentable par une matrice à coefficients entiers
+    \GL_{n+1}(\Q) \), représentable par une matrice à coefficients entiers
   de valeur absolue (archimédienne) majorée par \( \max(\frac\anydeg2, 1) \),
   telle que \( \chi \circ \iota \) est un plongement adapté à \( \anyvar \) et
   que
@@ -677,7 +677,7 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   On reprend la preuve de la proposition citée (p.~116) ; au moment de choisir
   des formes linéaires \( L_0, \dots, L_n \) telles que
   \begin{equation*}
-    \chow \anyvar (L_0, \dots, L_\dimp) \neq 0
+    \chow \anyvar (L_0, \dots, L_n) \neq 0
     \pmm,
   \end{equation*}
   on commence en fait par fixer \( L_0 = \anyvp[0] \). Le polynôme \(
@@ -721,7 +721,7 @@ La construction et le lemme précédent montrent alors que
   \qquad\text{et}\qquad
   \hautm\infty{\vadapt*^{-1}}
   \le
-  \dimp! \cdot (\vdegp*)^{\dimp}
+  n! \cdot (\vdegp*)^{n}
 \end{equation}
 On note \( \varida* \) l'idéal homogène saturé de \( \var* \) dans le
 plongement \( \vadapt* \circ \vaemb \) et \( \varfca* \) une forme de
@@ -731,10 +731,10 @@ transposée de) \( \vadapt* \) sur chacun des \( \vdim* + 1 \) groupes de
 variables ; il est alors clair que
 \begin{equation} \label{e:nv-varfca}
   \nv1{\varfca*} \le \nv1{\varfc*}
-  \cdot \bigl( (\dimp+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1) \dv}
+  \cdot \bigl( (n+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1) \dv}
 \end{equation}
 
-Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, \dimp} \), on notera \(
+Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, n} \), on notera \(
   \poldep** \) \label{p:def-poldep} une relation de dépendance de \(
   \vmp*[\indi] \) sur \(
   \vmp*[0], \dots, \vmp*[\vdim*] \) telle que donnée par l'application du
@@ -796,7 +796,7 @@ Les propriétés des plongements adaptés permettent d'associer à chaque forme
 homogène, à peu de chose près, une représentation canonique modulo \( \varida
 \), définie par des restrictions de degrés en certaines variables.
 Introduisons pour cela quelques notations : pour chaque \( C \in (\N \cup
-  \set{ +\infty }) ^{\puiss(\dimp+1)} \), on notera
+  \set{ +\infty }) ^{m(n+1)} \), on notera
 \begin{equation} \label{e:C-spaces}
   \cdn[\vmp]^C
   = \{
@@ -807,7 +807,7 @@ Introduisons pour cela quelques notations : pour chaque \( C \in (\N \cup
     \}
   \pmm.
 \end{equation}
-Pour tout \( \Delta \in \N^\puiss \) on définit trois tels vecteurs \(
+Pour tout \( \Delta \in \N^m \) on définit trois tels vecteurs \(
   C'_\Delta \), \( C'' \) et \( C'''_\Delta \) par :
 \begin{gather} \label{e:C-i-iii}
   (C'_\Delta)\pexp\fct[\ind] =
@@ -827,7 +827,7 @@ Pour tout \( \Delta \in \N^\puiss \) on définit trois tels vecteurs \(
   \bigr)
   \pmm,
 \end{gather}
-pour \( 0 \le \fct \le \puiss \) et \( 0 \le k \le \dimp \).  Par ailleurs, on
+pour \( 0 \le \fct \le m \) et \( 0 \le k \le n \).  Par ailleurs, on
 omettra l'indice \( \Delta \) lorsqu'il est égal à \( \vdeg \) (le vecteur des
 degrés de \( \var \)) pour alléger les notations.
 
@@ -843,7 +843,7 @@ homogènes de degré \( \beta \), notées \( \cdn[ \vmp ]^{C'''}_{\beta} \) et \
 \) ayant le même terme dominant, de sorte que le morphisme de réduction, qui
 est injectif, n'est pas très loin d'être un isomorphisme en degré assez grand.
 
-Nous allons maintenant expliciter, en chaque multidegré \( \beta \in \N^\puiss
+Nous allons maintenant expliciter, en chaque multidegré \( \beta \in \N^m
 \), une application linéaire \( \rfull^\beta \) définie sur la partie homogène
 \( \cdn[ \vmp ]_\beta \) et à valeurs dans \( \cdn[ \vmp ]^{C'''} \), qui
 permet par exemple de déterminer l'appartenance à \( \varida \) d'une forme
@@ -877,8 +877,8 @@ de réduction modulo des relations de dépendance intégrale sous une forme un
 peu générale avant de l'appliquer au cas qui nous intéresse.
 
 \begin{lem}
-  Pour \( \fct \in \{ 1, \dots, \puiss \} \) et \( \ind \in \{ \vdim* + 1,
-  \dots \dimp \} \), on se donne :
+  Pour \( \fct \in \{ 1, \dots, m \} \) et \( \ind \in \{ \vdim* + 1,
+  \dots n \} \), on se donne :
   \begin{enumthm}
     \item \( \Delta_\fct \in \N^* \) ;
     \item \( P\mexp*[\ind]
@@ -889,7 +889,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
   \end{enumthm}
   On note \( N_\fct = \max_\ind \nv1 { P\mexp*[\ind] } \) et \( \Ideal \)
   l'idéal engendré par les \( P\mexp*[\ind] \). En tout multidegré
-  \( \beta \in \N^\puiss \), il existe une (unique) application linéaire
+  \( \beta \in \N^m \), il existe une (unique) application linéaire
   \begin{equation}
     \rdiv^\beta \colon \cdn [\vmp]_ \beta \to \cdn [\vmp]_ \beta^{C'_\Delta}
   \end{equation}
@@ -904,7 +904,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     N_\fct \cdot (2 \Delta_\fct)^\dv
     \bigr) ^{\beta_\fct}
   \end{equation}
-  pour tout \( p \in \N^{\puiss(\dimp+1)} \) de multilongueur \( \beta \), et
+  pour tout \( p \in \N^{m(n+1)} \) de multilongueur \( \beta \), et
   l'image de \( \cdn [\vmp]_ \beta ^{C''} \) par \( \rdiv^\beta \) est
   contenue dans \( \cdn [\vmp]_ \beta ^{C'''_\Delta} \).
 \end{lem}
@@ -932,8 +932,8 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \mod \Ideal \) et plus généralement, le lemme~2.4 de \cite{remivg} fournit
   pour tout \( q \in \N \) et tout \( \alpha \in \set{1, \dots,
       \Delta_\fct} \) un polynôme \( U_{q, \alpha, \Delta_\fct} \) tel que
-  si l'on pose, pour \( \fct \in \set{1, \dots, \puiss} \) et \(
-    \ind \in \set{ 0, \dots, \dimp } \) :
+  si l'on pose, pour \( \fct \in \set{1, \dots, m} \) et \(
+    \ind \in \set{ 0, \dots, n } \) :
   \begin{equation}
     R_{\fct, \ind, q}
     =
@@ -959,7 +959,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     \pmm.
   \end{equation}
   On définit alors \( \rdiv^\beta \) par son action sur les monômes, en posant
-  pour tout \( p \in \N^{\puiss(\dimp+1)} \) :
+  pour tout \( p \in \N^{m(n+1)} \) :
   \begin{equation}
     c_p
     = \rdiv^\beta(\vmp^p)
@@ -977,14 +977,14 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
 \end{proof}
 
 \begin{coro} \label{c:hmat-rdiv}
-  Pour tout \( \alpha \in \N^\puiss \), il existe une application linéaire \(
+  Pour tout \( \alpha \in \N^m \), il existe une application linéaire \(
     \rdiv^\alpha \) égale à l'identité modulo \( \varida \), dont la matrice
   dans la base monomiale canonique a des colonnes de normes \( \nv1\truc \)
   majorées par
   \begin{equation}
     \prod\fctrange \left(
     \nv1{ \varfc* }
-    2 B^{(B(\genre+1) + 1)\dv}
+    2 B^{(B(g+1) + 1)\dv}
   \right) ^{ \alpha_\fct }
   \pmm.
   \end{equation}
@@ -996,18 +996,18 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
   \begin{equation}
     ( 2 \vdegp* )^{\vdeg* (\vdim* + 1)} \cdot 2 \vdeg*
     \le
-    2 B^{(B(\genre+1) + 1)}
+    2 B^{(B(g+1) + 1)}
   \end{equation}
   car d'après~\eqref{e:varset-deg}, \( B \) est un majorant commun des \(
     \vdeg* \) et donc de \( 2\vdegp* \), et pour tout \( \fct \) on a \(
-    \vdim* \le \genre \).
+    \vdim* \le g \).
 \end{proof}
 
 Intéressons-nous maintenant au morphisme \( \relim \).
 
 \begin{lem}
-  Soient, pour tout \( \fct \in \{ 1, \dots, \puiss \} \) et tout \( \ind \in
-  \{ \vdim* + 1, \dots \dimp \} \), des formes
+  Soient, pour tout \( \fct \in \{ 1, \dots, m \} \) et tout \( \ind \in
+  \{ \vdim* + 1, \dots n \} \), des formes
   \( S\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \) et
   \( T\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*+1] ] \)
   telles que \( \deg S\mexp*[\ind] + 1 = \deg T\mexp*[\ind] \) et des entiers
@@ -1015,10 +1015,10 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   \( S\mexp*[\ind] \vmp*[\ind] - T\mexp*[\ind] \).
 
   Posons
-  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{\dimp}
+  \( R = \prod\fctrange \prod_{\ind = \vdim*+1}^{n}
     ( S\mexp*[\ind] )^{\Delta_\fct} \) et \( r = \deg R \) ; la multiplication
   par \( R \) modulo \( \Ideal_{S, T} \) est alors représentée en tout degré
-  \( \alpha \in \N^\puiss \) par une application linéaire
+  \( \alpha \in \N^m \) par une application linéaire
   \begin{equation}
     \relim^\alpha \colon
     \cdn [\vmp]_ {\alpha}^{C'_\Delta}
@@ -1047,7 +1047,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
     \prod\fctrange \left(
     \prod_{\ind=1}^{\vdim*}
     (\vmp*[\ind])^{q\mexp*[\ind]}
-    \prod_{\ind=\vdim*+1}^\dimp
+    \prod_{\ind=\vdim*+1}^n
     (T\mexp*[\ind])^{q\mexp*[\ind]}
     (S\mexp*[\ind])^{\Delta_\fct - q\mexp*[\ind]}
     \right)
@@ -1103,7 +1103,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
 \end{proof}
 
 On note désormais \( R \) la forme donnée par le lemme précédent et \( r \in
-  \N^\puiss \) son multidegré. Notons qu'on a pas besoin d'en savoir plus sur
+  \N^m \) son multidegré. Notons qu'on a pas besoin d'en savoir plus sur
 cette forme, à part le fait qu'elle n'appartient pas à \( \varida \) et ne
 dépend que de \( \var \) mais pas du degré \( \alpha \) considéré. En effet,
 en pratique on fera tendre ce dernier vers l'infini ; c'est en ce sens qu'il
@@ -1111,7 +1111,7 @@ faut comprendre la notation \( o(\alpha) \) dans le lemme suivant, qui résume
 la construction de \( \rfull^\alpha \) à partir des briques précédentes.
 
 \begin{lem} \label{l:rfull}
-  Pour tout multidegré \( \alpha \in \N^\puiss \) il existe une application
+  Pour tout multidegré \( \alpha \in \N^m \) il existe une application
   linéaire
   \begin{equation}
     \rfull^\alpha \colon
@@ -1125,7 +1125,7 @@ la construction de \( \rfull^\alpha \) à partir des briques précédentes.
   \begin{equation}
     \prod\fctrange \left(
       \nv1{ \varfc* }
-      2 B^{(B(\genre+1) + 1)\dv}
+      2 B^{(B(g+1) + 1)\dv}
     \right) ^{ 2\alpha_\fct }
     \cdot \expb^{o(\alpha)}
     \pmm.
@@ -1171,14 +1171,14 @@ Introduisons un plongement, dit \emph{éclatant} ou pondéré par \( \wt =
   section~\vref{sec:wemb}}
 \begin{alignat}{2} \label{e:def-wemb}
   \wemb \colon && \var
-  & \longto \va^\puiss \times \va^{\puiss-1}
-  = \va^{2\puiss-1}
+  & \longto \va^m \times \va^{m-1}
+  = \va^{2m-1}
   \\ &&
-  (\pmp_1, \dots, \pmp_\puiss)
+  (x_1, \dots, x_m)
   & \longmapsto
-  (\pmp_1, \dots, \pmp_\puiss;
-  \wt[1] \pmp_1 - \wt** \pmp_\puiss, \dots,
-  \wt[\puiss-1] \pmp_{\puiss-1} - \wt** \pmp_\puiss)
+  (x_1, \dots, x_m;
+  \wt[1] x_1 - \wt** x_m, \dots,
+  \wt[m-1] x_{m-1} - \wt** x_m)
   \pmm.
 \end{alignat}
 qui nous permettra d'exploiter la relation~\eqref{e:hautn-wt-diff}.
@@ -1186,19 +1186,19 @@ qui nous permettra d'exploiter la relation~\eqref{e:hautn-wt-diff}.
 Nous allons représenter ce morphisme par des familles de polynômes. Pour
 cela, commençons par préciser les plongements utilisés : au départ, chaque
 facteur \( \var* \) est plongé par \( \vadapt* \circ \vaemb \) ; on utilise
-ces mêmes plongements pour les \( \puiss \) premiers facteurs \( \va \) de
-l'espace d'arrivée et on garde le plongement \( \vaemb \) pour les \( \puiss-1
+ces mêmes plongements pour les \( m \) premiers facteurs \( \va \) de
+l'espace d'arrivée et on garde le plongement \( \vaemb \) pour les \( m-1
 \) facteurs \( \va \) restants.
 
-On munit l'espace \( (\projd)^{2\puiss-1} \) (dans lequel est plongé l'espace
+On munit l'espace \( (\projd)^{2m-1} \) (dans lequel est plongé l'espace
 d'arrivée) des coordonnées multihomogènes \( \vmp, \vmpi = \vmp[1], \dots,
-  \vmp[\puiss], \vmpi[1], \dots, \vmpi[\puiss-1] \) ; dans ce contexte quand \(
+  \vmp[m], \vmpi[1], \dots, \vmpi[m-1] \) ; dans ce contexte quand \(
   \fct \) et \( \fcti \) sont deux indices non précisés, on supposera
-implicitement \( 1 \le \fct \le \puiss \) et \( 1 \le \fcti \le \puiss-1 \).
+implicitement \( 1 \le \fct \le m \) et \( 1 \le \fcti \le m-1 \).
 
 \nomuse \wemba [chap] {Représentation polynomiale du plongement éclatant}
 Une représentation de \( \wemb \) dans ces plongements, définie sur un ouvert
-\( \clmap \) de \( \va^\puiss \), est un morphisme \( \wemba \) tel que le
+\( \clmap \) de \( \va^m \), est un morphisme \( \wemba \) tel que le
 diagramme suivant, dont les flèches verticales sont les projections
 canoniques, commute.
 \begin{equation}
@@ -1217,21 +1217,21 @@ l'ouvert \( \clmap \).
 On dispose (section~\vref{sec:vaemb}) d'un atlas \( \clmaps \) de \( \va^2 \)
 avec sur chaque carte une représentation locale de \( (x, y) \mapsto \alpha x
   - \beta y \) dans le plongement \( \vaemb \). Voyons comment en déduire un
-atlas de \( \va^\puiss \) et des représentations locales de \( \wemb \) dans
+atlas de \( \va^m \) et des représentations locales de \( \wemb \) dans
 les plongements considérés.
 
-Soit \( \clmap = (\clmap_1, \dots, \clmap_{\puiss-1}) \in \clmaps^{\puiss-1}
-\). On lui associe un ouvert de \( \va^\puiss \), que par abus on notera
+Soit \( \clmap = (\clmap_1, \dots, \clmap_{m-1}) \in \clmaps^{m-1}
+\). On lui associe un ouvert de \( \va^m \), que par abus on notera
 encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
   \clmap_\fcti ) \) où \( p_\fcti \) désigne la projection sur les facteurs \(
-  \fcti \) et \( \puiss \). On vérifie sans peine qu'on obtient ainsi un
-atlas de \( \va^\puiss \), qu'on notera encore \( \clmaps^{\puiss-1} \).
+  \fcti \) et \( m \). On vérifie sans peine qu'on obtient ainsi un
+atlas de \( \va^m \), qu'on notera encore \( \clmaps^{m-1} \).
 On introduit alors pour chaque \( \fcti \) la forme
 \begin{equation} \label{e:def-wembclm}
   \wembclm*
   =
   \wembclp{\clmap}{\fcti}
-  \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss]) \bigr)
+  \bigl( \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[m]) \bigr)
 \end{equation}
 où \( \wembclp{\clmap}{\fcti} \) est donnée par la
 section~\vref{sec:vaemb}, de sorte que chaque application
@@ -1241,7 +1241,7 @@ section~\vref{sec:vaemb}, de sorte que chaque application
   \\ \vmp*
   &  \mapsto \vmp*
   \\ \vmpi*
-  &  \mapsto \wembclm*( \vmp*, \vmp[\puiss] )
+  &  \mapsto \wembclm*( \vmp*, \vmp[m] )
 \end{align}
 est une représentation locale de \( \wemb \) dans les plongements considérés,
 valable sur l'ouvert \( \clmap \) (ou plus précisément, son image dans le
@@ -1252,16 +1252,16 @@ lemme suivant est une conséquence immédiate de la définition.
 
 \begin{lem} \label{l:deg-wemba}
   Soit \( H \in \Qbar[\vmp, \vmpi] \) une forme multihomogène de multidegré \(
-    (\alpha, \beta) \) où \( \alpha \in \N^\puiss \) et \( \beta \in
-    \N^{\puiss-1} \). On a alors
+    (\alpha, \beta) \) où \( \alpha \in \N^m \) et \( \beta \in
+    \N^{m-1} \). On a alors
   \begin{equation}
     \deg \wemba*(H)
     =
     \bigr(
     \alpha_1 + 2 \beta_1 \wts[1],
     \dots,
-    \alpha_{\puiss-1} + 2 \beta_{\puiss-1} \wts[\puiss-1],
-    \alpha_\puiss + 2 \lgr\beta \wts[\puiss]
+    \alpha_{m-1} + 2 \beta_{m-1} \wts[m-1],
+    \alpha_m + 2 \lgr\beta \wts[m]
     \bigl)
     \pmm.
   \end{equation}
@@ -1278,17 +1278,17 @@ Introduisons un réel \( \epsi \) défini par :
 \begin{equation} \label{e:def-epsi}
   \epsi
   =
-  \expapx^{\frac{\genre}{\puiss-\genre}}
+  \eps^{\frac{g}{m-g}}
   \cdot \Bigl(
-    N^{\puiss-1}
-    \, (85 \cdot 5^\puiss)^\genre
-  \Bigr)^{\frac{-1}{\puiss-\genre}}
+    N^{m-1}
+    \, (85 \cdot 5^m)^g
+  \Bigr)^{\frac{-1}{m-g}}
 \end{equation}
 et un rationnel \( \epsz \) tel que :
 \begin{equation} \label{e:def-epsz}
-  \frac{\expapx \epsi}{33\puiss}
+  \frac{\eps \epsi}{33m}
   \le \epsz \le
-  \frac{\expapx \epsi}{32\puiss}
+  \frac{\eps \epsi}{32m}
   \pmm,
 \end{equation}
 et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
@@ -1298,23 +1298,23 @@ et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
     d & = \bigl(
       \epsz \wts[1],
       \dots,
-      \epsz \wts[\puiss],
+      \epsz \wts[m],
       1, \dots, 1
-    \bigr) \in \Q^{2\puiss-1}
+    \bigr) \in \Q^{2m-1}
     \\
     d' & = \bigl(
       \wts[1] (2 + \epsz),
       \dots,
-      \wts[\puiss-1] (2 + \epsz),
-      \wts[\puiss] (2\puiss - 2 + \epsz)
-    \bigr) \in \Q^\puiss
+      \wts[m-1] (2 + \epsz),
+      \wts[m] (2m - 2 + \epsz)
+    \bigr) \in \Q^m
   \end{aligned}
 \end{equation}
 de sorte que, si \( H \) est une forme de multidegré \( \Dz \) dans \(
   \cdn[\vmp, \vmpi] \), son image par \( \wemba* \) est de multidegré
 exactement \( \Di \) d'après le lemme~\vref{l:deg-wemba}. Pour alléger les
-notations par la suite, on introduit le vecteur \( \wtw = (1, \dots, 1, \puiss
-  - 1) \in \N^\puiss \), de sorte qu'on a \( d'_\fct = \wts* (2 \wtw* + \epsz)
+notations par la suite, on introduit le vecteur \( \wtw = (1, \dots, 1, m
+  - 1) \in \N^m \), de sorte qu'on a \( d'_\fct = \wts* (2 \wtw* + \epsz)
 \) pour tout \( \fct \).
 
 \medskip
@@ -1326,11 +1326,11 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
   \vmp^p \vmpi^q \) pour
 \begin{equation}
   (p, q)
-  \in \N^{\puiss (\dimp+1)} \times \N^{(\puiss-1) (\dimp+1)}
+  \in \N^{m (n+1)} \times \N^{(m-1) (n+1)}
   \text{ tel que }
   \lgr{p\mexp*} = \Dz* = \delta \epsz \wts*
   \text{ et }
-  \lgr{q\mexpi*} = \Dz_{\puiss + \fcti} = \delta
+  \lgr{q\mexpi*} = \Dz_{m + \fcti} = \delta
   \pmm.
 \end{equation}
 
@@ -1353,7 +1353,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \hautm1{c_{p, q}}
     & \le
     \bigl(
-      \hmclab ((\dimp+1)!)^2 \, B^{2\dimp}
+      \hmclab ((n+1)!)^2 \, B^{2n}
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{align}
@@ -1369,7 +1369,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     & \le
     \prod\fctirange \prod\indrange
     \nv1{ \wembclp{\clmap}{\fcti}[\ind] \bigl(
-        \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[\puiss])
+        \vadapt[\fcti]^{-1}(\vmp[\fcti]), \vadapt**^{-1}(\vmp[m])
       \bigr) }
     ^{q\pexp\fcti[\ind]}
     \\ & \le
@@ -1396,11 +1396,11 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     & \le
     \prod\fctirange
     \hmclab^{\wtis* + \wts**} \,
-    \bigr( (\dimp+1)! \, (\vdegp[\fcti] )^\dimp) \bigl)^{2 \wts[\fcti]} \,
-    \bigr( (\dimp+1)! \, (\vdegp[\puiss])^\dimp) \bigl)^{2 \wts[\puiss]}
+    \bigr( (n+1)! \, (\vdegp[\fcti] )^n) \bigl)^{2 \wts[\fcti]} \,
+    \bigr( (n+1)! \, (\vdegp[m])^n) \bigl)^{2 \wts[m]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hmclab ((\dimp+1)!)^2 \, B^{2\dimp} \bigr)^{\wtis* + \wts**} \,
+    \bigr( \hmclab ((n+1)!)^2 \, B^{2n} \bigr)^{\wtis* + \wts**} \,
   \end{align}
   Le résultat annoncé suit en invoquant le lemme~\vref{l:sum-wts}.
 \end{proof}
@@ -1408,15 +1408,15 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 Énonçons de suite une variante qui nous sera utile par la suite.
 
 \begin{coro} \label{c:ht-wemba}
-  Soient \( (\clmapv)_\place \) est une famille de cartes indexée
+  Soient \( (\clmapv)_v \) est une famille de cartes indexée
   par les places de \( \cdn \) et \( F \in \cdn[\vmp, \vmpi] \) une forme
   homogène. Alors
   \begin{equation}
-    \prod_\place \nv1{ \wemba[\clmapv](F) }^\degv
+    \prod_v \nv1{ \wemba[\clmapv](F) }^\degv
     \le
     \hautm1 F
     \bigl(
-      \hmclab ((\dimp+1)!)^2 \, B^{2\dimp}
+      \hmclab ((n+1)!)^2 \, B^{2n}
     \bigr) ^{2 \delta \wts[1]}
   \end{equation}
 \end{coro}
@@ -1448,15 +1448,15 @@ appliquant un lemme de \TS.
 \label{sec:siegel-plan}
 
 Commençons par définir l'indice d'annulation (par rapport à un vecteur de
-poids \( b \in \N^\puiss \)) d'une forme la long de \( \divi \) . (Une autre
+poids \( b \in \N^m \)) d'une forme la long de \( \divi \) . (Une autre
 notion d'indice, en un point cette fois-ci, sera définie de façon similaire au
 début de la sous-section~\vref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
-  \N^{\puiss(\dimp+1)} \), notons
+  \N^{m(n+1)} \), notons
 \begin{equation}
   \wtsum[b]*( \imp )
   =
   \frac {\imp[1][0]} { b_1 } + \dots
-  + \frac {\imp[\puiss][0]} { b_\puiss }
+  + \frac {\imp[m][0]} { b_m }
   \pmm.
 \end{equation}
 Pour toute forme \( H = \sum h_\imp \vmp^\imp \) et tout \( \beta > 0 \), on
@@ -1524,7 +1524,7 @@ Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
   \sigma \colon \fspace
   & \to
   \ftarget =
-  \bigoplus_{\clmap \in \clmaps^{\puiss-1}} \bigl(
+  \bigoplus_{\clmap \in \clmaps^{m-1}} \bigl(
     \cdn[\vmp]^{C'''}_\Dir
     \cap \vect( (\vmp^\imp)_{\wtsum*(\imp) < \epsi\delta} )
   \bigr)
@@ -1561,10 +1561,10 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \begin{lem}
   Avec les notations précédentes, on a
   \begin{equation}
-    \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
+    \deg_{(0, \dots, 0, \vdim[m]; \vdim[1], \dots, \vdim[m-1])}
     \bigl( \wemb(\var) \bigr)
     =
-    \vdeg[\puiss]
+    \vdeg[m]
     \prod\fctirange
     \vdeg[\fcti] \wt[\fcti]^{2\vdim[\fcti]}
     \pmm.
@@ -1574,35 +1574,35 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \begin{proof}
   Ce degré est donné par le cardinal de l'intersection de \( \wemb(\var) \)
   avec des hyperplans génériques choisis de la façon suivante : \(
-    \vdim[\puiss] \) provenant du \( \puiss \)-ième facteur \( \projd \), et
-  \( \vdim* \) hyperplans provenant du facteur \( \puiss + \fct \) pour \(
-    \fct \in \set{1, \dots, \puiss-1} \).
+    \vdim[m] \) provenant du \( m \)-ième facteur \( \projd \), et
+  \( \vdim* \) hyperplans provenant du facteur \( m + \fct \) pour \(
+    \fct \in \set{1, \dots, m-1} \).
 
-  On commence par choisir les hyperplans sur le facteur \( \puiss \) : on
+  On commence par choisir les hyperplans sur le facteur \( m \) : on
   remarque qu'ils se remontent par \( \wemb \) en des hyperplans sur le
-  dernier facteur de l'espace de départ \( (\projd)^\puiss \). Ainsi, couper
-  \( \wemb(\var) \) par ces hyperplans revient à imposer à \( x_\puiss \)
-  de parcourir un ensemble de cardinal \( \vdeg[\puiss] \).
+  dernier facteur de l'espace de départ \( (\projd)^m \). Ainsi, couper
+  \( \wemb(\var) \) par ces hyperplans revient à imposer à \( x_m \)
+  de parcourir un ensemble de cardinal \( \vdeg[m] \).
 
   Fixons maintenant un point \( p' \) dans cet ensemble et notons \( p = \wt**
-    p' \).  On constate que \( \wemb(\var) \cap \zeros{\vmp[\puiss] = p'} \)
+    p' \).  On constate que \( \wemb(\var) \cap \zeros{\vmp[m] = p'} \)
   coïncide avec l'image de
   \begin{align}
     \wemb[\wt, p']'
     \colon
-    \var[1] \times \dots \times \var[\puiss-1] \times \set{p'}
+    \var[1] \times \dots \times \var[m-1] \times \set{p'}
     & \to
-    \va^{2\puiss-1}
+    \va^{2m-1}
     \\
-    (x_1, \dots, x_{\puiss-1}, p')
+    (x_1, \dots, x_{m-1}, p')
     & \mapsto
-    (x_1, \dots, x_{\puiss-1}, p';
+    (x_1, \dots, x_{m-1}, p';
     \wt[1] x_1 - p,
     \dots,
-    \wt[\puiss-1] x_{\puiss-1} - p)
+    \wt[m-1] x_{m-1} - p)
   \end{align}
   qui est le produit d'un point par des variétés de la forme \( \wemb[\wt*,
-    p]''(\var*) \) pour \( \fct \) variant de \( 1 \) à \( \puiss-1 \) en
+    p]''(\var*) \) pour \( \fct \) variant de \( 1 \) à \( m-1 \) en
   notant
   \begin{align}
     \wemb[\wt*, p]''
@@ -1632,7 +1632,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   \begin{align}
     \dim \fspace
     \ge
-    \frac{ \epsz^{\vdim[\puiss]}
+    \frac{ \epsz^{\vdim[m]}
       \prod\fctrange \vdeg* \, \wt* ^{2\vdim*}
       }{ \prod\fctrange \vdim* ! }
     \delta^\vdim
@@ -1649,17 +1649,17 @@ tout ce qu'on aura besoin de savoir sur le degré.
     \dim \fspace
     & =
     \Biggl(
-    \sum_{\substack{ t \in \N^{2\puiss-1} \\ \vlg t = \vlg u }}
+    \sum_{\substack{ t \in \N^{2m-1} \\ \vlg t = \vlg u }}
     \deg_t \wemb(\var) \frac{ d^t }{ t! }
     \Biggr)
     \delta^\vdim
     + o( \delta^\vdim )
     \\
     & \ge
-    \deg_{(0, \dots, 0, \vdim[\puiss]; \vdim[1], \dots, \vdim[\puiss-1])}
+    \deg_{(0, \dots, 0, \vdim[m]; \vdim[1], \dots, \vdim[m-1])}
     \bigl( \wemb(\var) \bigr)
     \cdot
-    \frac { (\epsz \wts**)^{\vdim[\puiss]} }{ \prod\fctrange \vdim* ! }
+    \frac { (\epsz \wts**)^{\vdim[m]} }{ \prod\fctrange \vdim* ! }
     \, \delta^\vdim
     + o( \delta^\vdim )
   \end{align}
@@ -1674,12 +1674,12 @@ l'ensemble suivant :
     \stairs
     & =
     \Biggl\{
-      ( \imp[1], \dots, \imp[\puiss] )
+      ( \imp[1], \dots, \imp[m] )
       \in
       \prod\fctrange \bigl(
         \N^{\vdim* + 1}
         \times \{ 0, \dots, \vdeg* - 1 \}
-        \times \{ 0 \}^{\dimp - \vdim* - 1}
+        \times \{ 0 \}^{n - \vdim* - 1}
       \bigr)
       \\ & \qquad
       \text{tel que }
@@ -1708,11 +1708,11 @@ et \( \ftarget \) est somme directe de tels espaces.
     \prod\fctrange \vdeg* \wt*^{2\vdim*}
     \cdot
     \frac {
-      \epsi^\puiss
-      \, \puiss^{\vdim[\puiss]}
-      \, 3^{\vdim - \puiss}
+      \epsi^m
+      \, m^{\vdim[m]}
+      \, 3^{\vdim - m}
     }{
-      \puiss!
+      m!
       \, \prod\fctrange (\vdim* - 1)!
     }
     + o(\delta^\vdim)
@@ -1724,7 +1724,7 @@ et \( \ftarget \) est somme directe de tels espaces.
   choisir \( \imp*[\vdim*+1] \) entre \( 0 \) et \( \vdeg* \) pour tout \(
     \fct \), ce qui représente \( \prod\fctrange \vdeg* \) possibilités.
 
-  On peut ensuite choisir des entiers \( \imp[1][0], \dots \imp[\puiss][0] \)
+  On peut ensuite choisir des entiers \( \imp[1][0], \dots \imp[m][0] \)
   sujets à la seule condition
   \begin{equation}
     \wtsum*(\lambda) \le \delta \epsi \pmm.
@@ -1732,8 +1732,8 @@ et \( \ftarget \) est somme directe de tels espaces.
   Le lemme~2.14.5 de \cite{farhith} donne le nombre de choix possibles, qui
   est
   \begin{equation}
-    \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
-    + o(\delta^\puiss)
+    \frac {\prodwt} {m !} (\delta\epsi)^m
+    + o(\delta^m)
     \pmm.
   \end{equation}
 
@@ -1771,7 +1771,7 @@ et \( \ftarget \) est somme directe de tels espaces.
   \begin{align}
     \card \stairs
     & \le
-    \frac {\prodwt} {\puiss !} (\delta\epsi)^\puiss
+    \frac {\prodwt} {m !} (\delta\epsi)^m
     \cdot \prod\fctrange
     \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - 1)!}
     \vdeg* \delta^{\vdim* - 1}
@@ -1781,21 +1781,21 @@ et \( \ftarget \) est somme directe de tels espaces.
     \prod\fctrange \vdeg* \wt*^{2\vdim*}
     \cdot
     \frac {
-      \epsi^\puiss (\puiss-1)
-      (2\puiss - 2 + \epsz) ^{\vdim[\puiss]-1}
-      (2 + \epsz) ^{\vdim - \puiss - \vdim[\puiss] + 1}
+      \epsi^m (m-1)
+      (2m - 2 + \epsz) ^{\vdim[m]-1}
+      (2 + \epsz) ^{\vdim - m - \vdim[m] + 1}
     }{
-      \puiss! \prod\fctrange (\vdim* - 1)!
+      m! \prod\fctrange (\vdim* - 1)!
     }
     + o(\delta^\vdim)
   \end{align}
   d'après la définition~\eqref{e:d-dp-def} de \( d' \). Le résultat annoncé
-  suit en remarquant que \( 2 + \epsz \le 3 \) et \( 2\puiss - 2 + \epsz \le
-    3\puiss \).
+  suit en remarquant que \( 2 + \epsz \le 3 \) et \( 2m - 2 + \epsz \le
+    3m \).
 \end{proof}
 
 Compte tenu de la définition~\eqref{e:def-ftarget} de \( \ftarget \) et du
-fait que \( \card \clmaps^{\puiss-1} = \nclmaps^{\puiss-1} \), on a
+fait que \( \card \clmaps^{m-1} = \nclmaps^{m-1} \), on a
 immédiatement
 \begin{equation}
   \dim \ftarget
@@ -1804,43 +1804,43 @@ immédiatement
   \prod\fctrange \vdeg* \wt*^{2\vdim*}
   \cdot
   \frac {
-    \epsi^\puiss
-    \, \nclmaps^{\puiss-1}
-    \, \puiss^{\vdim[\puiss]}
-    \, 3^{\vdim - \puiss}
+    \epsi^m
+    \, \nclmaps^{m-1}
+    \, m^{\vdim[m]}
+    \, 3^{\vdim - m}
   }{
-    \puiss!
+    m!
     \, \prod\fctrange (\vdim* - 1)!
   }
   + o(\delta^\vdim)
   \pmm.
 \end{equation}
 En combinant ce résultat avec le lemme~\vref{l:dim-fspace} et en observant que
-\( \vdim* \le \genre \), on a
+\( \vdim* \le g \), on a
 \begin{align}
   \frac {\dim \ftarget} {\dim \fspace}
   & \le
   \frac {
-    \epsi^\puiss
-    \, \nclmaps^{\puiss-1}
-    \, \puiss^{\vdim[\puiss]}
-    \, 3^{\vdim - \puiss}
+    \epsi^m
+    \, \nclmaps^{m-1}
+    \, m^{\vdim[m]}
+    \, 3^{\vdim - m}
     \, \prod\fctrange \vdim*
   }{
-    \epsz^{\vdim[\puiss]}
-    \, \puiss!
+    \epsz^{\vdim[m]}
+    \, m!
   }
   + o(1)
   \\ & \le
   \frac {
-    \epsi^\puiss
-    \, \nclmaps^{\puiss-1}
-    \, \puiss ^{\genre}
-    \, 3 ^{\puiss (\genre-1)}
-    \, \genre^\puiss
+    \epsi^m
+    \, \nclmaps^{m-1}
+    \, m ^{g}
+    \, 3 ^{m (g-1)}
+    \, g^m
   }{
-    \epsz^\genre
-    \, \puiss!
+    \epsz^g
+    \, m!
   }
   + o(1)
   \pmm.
@@ -1848,14 +1848,14 @@ En combinant ce résultat avec le lemme~\vref{l:dim-fspace} et en observant que
 Or, nous allons prouver dans un instant que
 \begin{equation} \label{e:ct-eps*-siegel}
   \frac {
-    \epsi^\puiss
-    \, \nclmaps^{\puiss-1}
-    \, \puiss ^{\genre}
-    \, 3 ^{\puiss (\genre-1)}
-    \, \genre^\puiss
+    \epsi^m
+    \, \nclmaps^{m-1}
+    \, m ^{g}
+    \, 3 ^{m (g-1)}
+    \, g^m
   }{
-    \epsz^\genre
-    \, \puiss!
+    \epsz^g
+    \, m!
   }
   \le
   \frac12
@@ -1874,54 +1874,54 @@ de \TS.
 
 Prouvons maintenant notre assertion~\eqref{e:ct-eps*-siegel} :
 on utilise la définition \eqref{e:def-epsz} de \( \epsz \) et la minoration
-classique \( \puiss! \ge \puiss^\puiss \expb^{-\puiss} \) pour écrire
+classique \( m! \ge m^m \expb^{-m} \) pour écrire
 \begin{align}
   \frac {\dim \ftarget} {\dim \fspace}
   & \le
   \frac {
-    \epsi^{\puiss-\genre}
-    \, \nclmaps^{\puiss-1}
-    \, \puiss ^{\genre}
-    \, 3 ^{\puiss (\genre-1)}
-    \, \genre^\puiss
-    \, (33\puiss)^\genre
-    \, \expb^\puiss
+    \epsi^{m-g}
+    \, \nclmaps^{m-1}
+    \, m ^{g}
+    \, 3 ^{m (g-1)}
+    \, g^m
+    \, (33m)^g
+    \, \expb^m
   }{
-    \expapx^\genre
-    \, \puiss^\puiss
+    \eps^g
+    \, m^m
   }
   + o(1)
   \\ & \le
-  \frac 1 { \puiss^{\puiss-\genre} }
+  \frac 1 { m^{m-g} }
   \cdot
   \frac {
-    \epsi^{\puiss-\genre}
-    \, \nclmaps^{\puiss-1}
-    \, 3 ^{\puiss \genre}
-    \, \genre^\puiss
-    \, (33\puiss)^\genre
+    \epsi^{m-g}
+    \, \nclmaps^{m-1}
+    \, 3 ^{m g}
+    \, g^m
+    \, (33m)^g
   }{
-    \expapx^\genre
+    \eps^g
   }
   + o(1)
   \\ & \le
-  \frac 1 { \puiss^{\puiss-\genre} }
+  \frac 1 { m^{m-g} }
   \cdot
   \frac {
-    \epsi^{\puiss-\genre}
-    \, \nclmaps^{\puiss-1}
-    \, (85 \cdot 5^\puiss)^\genre
+    \epsi^{m-g}
+    \, \nclmaps^{m-1}
+    \, (85 \cdot 5^m)^g
   }{
-    \expapx^\genre
+    \eps^g
   }
   + o(1)
 \end{align}
 où l'on a utilisé les faits élémentaires (quitte à vérifier numériquement pour
-les petites valeurs) \( \genre \cdot 3^\genre \le (13/3)^\genre \) puis \( 33
-  \puiss \cdot (13/3)^\puiss \le 85 \cdot 5^\puiss \).  On remarque que la
+les petites valeurs) \( g \cdot 3^g \le (13/3)^g \) puis \( 33
+  m \cdot (13/3)^m \le 85 \cdot 5^m \).  On remarque que la
 définition \eqref{e:def-epsi} de \( \epsi \) signifie précisément que le
-deuxième facteur vaut \( 1 \) ; il suffit maintenant d'observer que \( \puiss
-  \ge \genre + 1 \ge 2 \) pour conclure.
+deuxième facteur vaut \( 1 \) ; il suffit maintenant d'observer que \( m
+  \ge g + 1 \ge 2 \) pour conclure.
 
 
 \subsection{Hauteur du système}
@@ -1950,12 +1950,12 @@ lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
   & \le
   2 \delta \wts[1]
   \bigl(
-    \hlclab + 2\ln((\dimp+1)!) + 2\dimp \ln B
+    \hlclab + 2\ln((n+1)!) + 2n \ln B
   \bigr)
   \\ & \qquad +
   \sum\fctrange 2\Di* \Bigl(
     \hautl1{ \varfc* }
-    + \bigl( B(\genre+1) + 1 \bigr) \ln(B) + \ln(2)
+    + \bigl( B(g+1) + 1 \bigr) \ln(B) + \ln(2)
   \Bigr)
   + o(\delta)
   \pmm.
@@ -1969,8 +1969,8 @@ définition~\eqref{e:cst-vs-ht} pour écrire
   & \le
   4 \delta \wts[1]
   \Bigl(
-    \cst{vs-ht}/2 + \ln((\dimp+1)!) + \dimp \ln B
-    + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
+    \cst{vs-ht}/2 + \ln((n+1)!) + n \ln B
+    + 3 \ln(B) \bigl( B(g+1) + 1 \bigr) + 3 \ln(2)
   \Bigr)
   \\ & \qquad
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
@@ -1981,7 +1981,7 @@ On invoque alors~\eqref{e:B-siegel} pour conclure :
 \begin{equation} \label{e:hmat-sigma-p}
   \hautl\infty{ M_{\sigma'_\clmap} }
   \le
-  \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \pmm.
@@ -1990,7 +1990,7 @@ Compte tenu des remarques précédentes, on a donc aussi
 \begin{equation} \label{e:hmat-sigma}
   \hautl\infty{ M_\sigma }
   \le
-  \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \pmm.
@@ -2038,13 +2038,13 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     = \bigl(
       \epsz \wts[1] \delta,
       \dots,
-      \epsz \wts[\puiss] \delta,
+      \epsz \wts[m] \delta,
       \delta, \dots, \delta
     \bigr)
     \\
     \hautl\infty \faux
     & \le
-    \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
     + o(\delta)
     \pmm.
@@ -2085,11 +2085,11 @@ hauteur utilisée, comme le montre le scolie suivant.
   La différence entre ces deux hauteurs est majorée par le logarithme du
   nombre de coefficients de \( \faux \), qui est au plus
   \begin{equation}
-    \prod_{\fct=1}^{2\puiss-1}
-    \binom{\delta d_\fct + \dimp}{\dimp}
+    \prod_{\fct=1}^{2m-1}
+    \binom{\delta d_\fct + n}{n}
     \le
-    \prod_{\fct=1}^{2\puiss-1}
-    \frac{ (\delta d_\fct + \dimp)^\dimp }{\dimp!}
+    \prod_{\fct=1}^{2m-1}
+    \frac{ (\delta d_\fct + n)^n }{n!}
     \pmm.
   \end{equation}
   Cette quantité étant polynomiale en \( \delta \), son logarithme est
@@ -2102,7 +2102,7 @@ assurer un lien global entre elles. Le scolie suivant résume toutes les
 propriétés de ces formes dont nous aurons besoin.
 
 \begin{sco} \label{s:aux-co}
-  Pour toute carte \( \clmap \in \clmaps^{\puiss-1} \), la forme \( \faux*
+  Pour toute carte \( \clmap \in \clmaps^{m-1} \), la forme \( \faux*
     \in \cdn[(\vmp*[0], \dots, \vmp*[\vdim+1])_\fct] \) satisfait :
   \begin{enumthm}
     \item \( \faux* = R(\vmp) \cdot \faux(\vmp, \wembclm(\vmp)) \mod \varida
@@ -2114,17 +2114,17 @@ propriétés de ces formes dont nous aurons besoin.
     \item \(
         \hautl1{\faux*}
         \le
-        2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+        2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
         + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
         + o(\delta)
       \) ;
   \end{enumthm}
-  De plus, si \( (\clmapv)_\place \) est une famille de cartes indexée
+  De plus, si \( (\clmapv)_v \) est une famille de cartes indexée
   par les places de \( \cdn \), on a
   \begin{equation} \label{e:aux-co-htv}
-    \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
+    \sum_v \degv \ln \nv1{ \faux[\clmapv] }
     \le
-    14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + o(\delta)
     \pmm.
   \end{equation}
@@ -2147,7 +2147,7 @@ propriétés de ces formes dont nous aurons besoin.
     \hautl\infty{ M_{\sigma'_\clmap} }
     + \hautl1{ \faux }
     \le
-    2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
     + o(\delta)
   \end{align}
@@ -2161,9 +2161,9 @@ propriétés de ces formes dont nous aurons besoin.
   la place du lemme~\vref{l:hmat-wemba}, ce qui donne une majoration identique
   à la précédente :
   \begin{align}
-    \sum_\place \degv \ln \nv1{ \faux[\clmapv] }
+    \sum_v \degv \ln \nv1{ \faux[\clmapv] }
     \le
-    2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
     + o(\delta)
   \end{align}
@@ -2850,7 +2850,7 @@ appliquée successivement à chaque facteur \( \var* \).
 \begin{lem} \label{l:par-var}
   Soit \( G \in \cdn[(\vmp*[0], \dots, \vmp*[\vdim+1])_\fct] \) une forme de
   multidegré \(
-    \alpha = (\alpha_1, \dots, \alpha_\puiss ) \) et \( g = G /
+    \alpha = (\alpha_1, \dots, \alpha_m ) \) et \( g = G /
     \prod\fctrange (\vmp*[\indt*])^{\alpha_\fct} \) avec \( \indt \in
     \prod\fctrange \set{0, \dots, \vdim*} \). Alors, pour tout \( \dermp \in
     \prod\fctrange \N^{\vdim*} \), il existe une forme \( P_{G, \ind,
@@ -2890,7 +2890,7 @@ appliquée successivement à chaque facteur \( \var* \).
 \begin{proof}
   Les trois premiers points s'obtiennent en remarquant que \( g \) est une
   combinaison linéaire de monômes en \( \vmp*[\indi] / \vmp** \) pour \( \fct
-    \in \set{1, \dots, \puiss} \) et \( \indi \in \set{0, \dots, \vdim* + 1}
+    \in \set{1, \dots, m} \) et \( \indi \in \set{0, \dots, \vdim* + 1}
   \), puis en écrivant que
   \begin{equation}
     \der^\dermp \Biggl(
@@ -2925,14 +2925,14 @@ s'annule avec un indice élevé en \( \ex \). Commençons par préciser la notio
 d'indice utilisée, similaire à celle définie au début de la
 sous-section~\vref{sec:siegel-plan}, mais cette fois en un point. Par ailleurs
 on introduit d'abord la notion d'indice pondéré par un vecteur \( b \in
-  \N^\puiss \) quelconque avant de spécialiser au vecteur de poids qui nous
+  \N^m \) quelconque avant de spécialiser au vecteur de poids qui nous
 intéresse, ce qui n'était pas utile précédemment mais le sera cette fois pour
 énoncer la variante du théorème du produit que nous utiliserons. Posons
 \begin{equation}
   \wtsum[b]( \dermp )
   =
   \frac {\lgr{\dermp[1]}} {b_1} + \dots
-  + \frac {\lgr{\dermp[\puiss]}} {b_\puiss}
+  + \frac {\lgr{\dermp[m]}} {b_m}
 \end{equation}
 pour tout \( \dermp \in \N^\vdim \).  Si \( \ratfi \) est une fraction
 rationnelle et \( x \) un point où elle est définie, on définit son
@@ -2998,11 +2998,11 @@ Si \( G \) est une forme multihomogène, on défini \( \indg b[x] G =
 même degré ne s'annulant pas en \( x \). Le deuxième point du lemme
 précédent montre que cette définition a bien un sens. On s'intéressera
 désormais à l'indice pondéré par \( \wtw \wts = (\wts[1], \dots,
-  \wts[\puiss-1], (\puiss-1) \wts**) \).
+  \wts[m-1], (m-1) \wts**) \).
 
 \medskip
 
-On choisit dans l'atlas \( \clmaps^{\puiss-1} \) présenté en
+On choisit dans l'atlas \( \clmaps^{m-1} \) présenté en
 sous-section~\vref{sec:wemb} une carte \( \clmape \) contenant \( \ex \), et
 on considère la forme multihomogène \( \faux** \) donnée par le
 scolie~\vref{s:aux-co}. Le but de cette section est alors de montrer la
@@ -3010,7 +3010,7 @@ proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
-  \( \sigma = \frac{128 (\puiss-1) B}{\expapx} \).
+  \( \sigma = \frac{128 (m-1) B}{\eps} \).
 \end{prop}
 
 La preuve consistera à évaluer les valeurs absolues locales des valeurs en \(
@@ -3106,16 +3106,16 @@ représente à peu de chose près la norme de \( \cexa* \).
   Le résultat désiré est alors donné exactement par~\eqref{e:nv-poldep}.
 \end{proof}
 
-On introduit ensuite le point \( \exi \in \va^{\puiss-1} \) tel que \(
+On introduit ensuite le point \( \exi \in \va^{m-1} \) tel que \(
   \wemb(\ex) = (\ex, \exi) \) et on note
-\( \cexi* = \wembclg\clmape* (\cexa[\fcti], \cexa[\puiss]) \), qui est un
+\( \cexi* = \wembclg\clmape* (\cexa[\fcti], \cexa[m]) \), qui est un
 système de coordonnées multihomogènes de \( \exi \) dans le plongement \(
-  \vaemb^{\puiss-1} \) (on rappelle que \( \wembclm* \) est défini
+  \vaemb^{m-1} \) (on rappelle que \( \wembclm* \) est défini
 par~\eqref{e:def-wembclm}).  On choisit alors pour tout \( \fcti \) un indice
-\( \indiv* \in \set{0, \dots, \dimp} \) maximisant \( \av{ \cexi*[\indiv*] }
-\), ainsi que \( \indig* \in \set{0, \dots, \dimp} \) tel que \(
+\( \indiv* \in \set{0, \dots, n} \) maximisant \( \av{ \cexi*[\indiv*] }
+\), ainsi que \( \indig* \in \set{0, \dots, n} \) tel que \(
   \cexi*[\indig*] \neq 0 \). Il est alors clair que \( \av{ \cexi*[\indiv*] }
-  \ge \nv1{ \cexi* } (\dimp+1)^{-\dv} \).
+  \ge \nv1{ \cexi* } (n+1)^{-\dv} \).
 
 \medskip
 
@@ -3141,21 +3141,21 @@ que par définition on a \( \inda** \faux** = \inda** \ratf \).
 Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
-Pour tout place \( \place \) et tout indice \( \fcti \) on note désormais
+Pour tout place \( v \) et tout indice \( \fcti \) on note désormais
 \( \clmapv* \) la carte donnée par la section~\vref{sec:vaemb} avec \( (a, b,
   x, y) = (\wt*, \wt**, \ex*, \ex**) \), puis \( \clmapv = (\clmapv[1], \dots,
-  \clmapv**) \) la carte correspondante dans \( \clmaps^{\puiss-1} \).  On
+  \clmapv**) \) la carte correspondante dans \( \clmaps^{m-1} \).  On
 pose alors pour simplifier \( \wembclv* = \wembclg\clmapv* \) et \( \fauxv =
   \faux[\clmapv] \).  En utilisant le premier point du scolie~\vref{s:aux-co}
 et en remarquant que, pour chaque \( \fcti \), les vecteurs \( \wembclv*
-  (\cexa[\fcti], \cexa[\puiss]) \) sont non nuls et proportionnels entre eux
-quand \( \place \) varie, on a, pour tout \( \place \) :
+  (\cexa[\fcti], \cexa[m]) \) sont non nuls et proportionnels entre eux
+quand \( v \) varie, on a, pour tout \( v \) :
 \begin{align}
   \ratf
   & =
   \frac{
     R(\vmp) \,
-    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[m-1](\vmp) )
   }{
     \prod\fctrange
     (\vmp*[0])^{\epsz \wts* \delta + r_\fct}
@@ -3171,7 +3171,7 @@ par homogénéité de \( \faux \). On introduit alors nos indices locaux \( \ind
    & =
   \frac{
     R(\vmp) \,
-    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[m-1](\vmp) )
   }{
     \prod\fctrange
     (\vmp*[\indv*])^{\epsz \wts* \delta + r_\fct}
@@ -3195,7 +3195,7 @@ de nouveau la remarque sur les \( \wembclv* \) pour simplifier le second :
   & =
   \frac{
     R(\vmp) \,
-    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[\puiss-1](\vmp) )
+    \faux( \vmp; \wembclv[1](\vmp), \dots, \wembclv[m-1](\vmp) )
   }{
     \prod\fctrange (\vmp*[\indv*]) ^{ \Dir* }
   }
@@ -3204,9 +3204,9 @@ de nouveau la remarque sur les \( \wembclv* \) pour simplifier le second :
     \prod\fctirange \left(
       \frac{
         ( \vmp[\fcti ][{\indv[\fcti ]}] )^{ 2\wts[\fcti ] }
-        ( \vmp[\puiss][{\indv[\puiss]}] )^{ 2\wts[\puiss] }
+        ( \vmp[m][{\indv[m]}] )^{ 2\wts[m] }
       }{
-        \wembclv**(\vmp[\fcti], \vmp[\puiss])
+        \wembclv**(\vmp[\fcti], \vmp[m])
       }
     \right)^\delta
   }_{\textstyle \ratfv2}
@@ -3232,7 +3232,7 @@ Soit maintenant \( \dermp \in \N^\vdim \) un indice minimal tel que \(
 l'écriture précédente sont tous définis et inversibles en \( \cex \) grâce aux
 différents choix d'indices et au premier point du scolie~\vref{s:part-cases},
 une nouvelle application du lemme~\vref{l:indice-inversible} montre que, pour
-tout \( \place \), on a l'expression suivante, où l'on rappelle que \( \fauxv
+tout \( v \), on a l'expression suivante, où l'on rappelle que \( \fauxv
   = \faux[\clmapv] \) :
 \begin{equation} \label{e:def-ratfv1}
   \der[\dermp] \ratf(\ex)
@@ -3259,14 +3259,14 @@ c'est-à-dire que
   \cdot \ratfv3(\cexa)
   \cdot \ratfv4(\cexa)
 \).
-Remarquons que chacun des facteurs du membre de droite dépend de \( \place \),
+Remarquons que chacun des facteurs du membre de droite dépend de \( v \),
 mais pas leur produit.
 
-Pour \( p \in \set{1, 2, 3, 4} \), posons alors \( \ratfh{p} = \sum_\place
+Pour \( p \in \set{1, 2, 3, 4} \), posons alors \( \ratfh{p} = \sum_v
   \degv \ln \av{\ratfv{p}(\cexa)} \) où \( \degv \) désigne le degré local
-divisé en \( \place \) ; cette somme converge car chaque \( \ratfv p \)
+divisé en \( v \) ; cette somme converge car chaque \( \ratfv p \)
 appartient à un ensemble fini fixe de nombres algébriques (dont le cardinal
-est majoré en fonction de \( \dimp \), \( \puiss \) et \( \nclmaps \)).  La
+est majoré en fonction de \( n \), \( m \) et \( \nclmaps \)).  La
 formule du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
@@ -3287,7 +3287,7 @@ Pour \( \ratfv4(\cexa) \) on commence par remarquer que le dénominateur
 n'intervient pas dans le calcul de la hauteur, puis au numérateur que la
 valeur absolue d'une coordonnée est majorée par la norme du vecteur :
 \begin{equation}
-  \prod_\place
+  \prod_v
   \prod\fctrange
   \left(
     \frac{ \av{\cexa*[\indv*]} }{ \av{\cexa*[0]} }
@@ -3316,7 +3316,7 @@ nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
   \bigr)
   \\ & \le
   \sum\fctrange \wts* \bigl(
-    \hautn{ \ex* } + \htcmp + \frac12\ln(\dimp+1) + \hautl\infty{\vadapt*}
+    \hautn{ \ex* } + \htcmp + \frac12\ln(n+1) + \hautl\infty{\vadapt*}
   \bigr)
 \end{align}
 On remarque alors que \( \hautl\infty{\vadapt*} \le \ln B \)
@@ -3327,9 +3327,9 @@ lemme~\vref{l:sum-wts} :
   \sum\fctrange \wts* \hautl\infty{ \cexa* }
   & \le
   \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
-  + \bigl( \htcmp + \frac12\ln(\dimp+1) + \ln B \bigr) \sum\fctrange \wts*
+  + \bigl( \htcmp + \frac12\ln(n+1) + \ln B \bigr) \sum\fctrange \wts*
   \\ & \le
-    2 \puiss \wts[1] \hautn{ \ex[1] }
+    2 m \wts[1] \hautn{ \ex[1] }
     + 2 \wts[1] \bigl( \frac32\cst{vs-ht} + \ln B \bigr)
   \pmm.
   \label{e:sum-h-cexa}
@@ -3339,18 +3339,18 @@ Au final on a donc
   \ratfh4
   \le
   2 \epsz \delta \wts[1]
-  \bigl( \puiss \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B \bigr)
+  \bigl( m \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B \bigr)
   \pmm.
 \end{equation}
 
 Pour \( \ratfh3 \) on commence avec les mêmes arguments pour écrire
 \begin{equation}
-  \prod_\place
+  \prod_v
   \prod\fctirange
   \left(
     \frac{
-      \av{\wembclg\clmape*[\indiv*](\cexa[\fcti], \cexa[\puiss])} }{
-      \av{\wembclg\clmape*[\indig*](\cexa[\fcti], \cexa[\puiss])} }
+      \av{\wembclg\clmape*[\indiv*](\cexa[\fcti], \cexa[m])} }{
+      \av{\wembclg\clmape*[\indig*](\cexa[\fcti], \cexa[m])} }
   \right) ^{ \delta \degv }
   \le
   \prod\fctirange
@@ -3367,7 +3367,7 @@ puis on passe au logarithme et on utilise encore~\eqref{e:comp-h-hn} :
   \ratfh3 \label{e:ratfh3}
   & \le
   \delta \bigl(
-    3 \wts[1] (\puiss-1) \Vcos \hautn{\ex[1]} + o(\wts[1])
+    3 \wts[1] (m-1) \Vcos \hautn{\ex[1]} + o(\wts[1])
   \bigr)
   \pmm.
 \end{align}
@@ -3378,33 +3378,33 @@ définition de \( \indiv* \) puis on utilise la majoration évidente \(
 \begin{align}
   \frac{
     \av{ \cexa[\fcti ][{\indv[\fcti ]}] }^{ 2\wts[\fcti ] }
-    \av{ \cexa[\puiss][{\indv[\puiss]}] }^{ 2\wts[\puiss] }
+    \av{ \cexa[m][{\indv[m]}] }^{ 2\wts[m] }
   }{
-    \av{ \wembclv**(\cexa[\fcti], \cexa[\puiss]) }
+    \av{ \wembclv**(\cexa[\fcti], \cexa[m]) }
   }
   & \le
   \frac{
     \nv\infty{ \cexa[\fcti ] }^{ 2\wts[\fcti ] }
-    \nv\infty{ \cexa[\puiss] }^{ 2\wts[\puiss] }
+    \nv\infty{ \cexa[m] }^{ 2\wts[m] }
   }{
-    \nv1{ \wembclv*(\cexa[\fcti], \cexa[\puiss]) }
+    \nv1{ \wembclv*(\cexa[\fcti], \cexa[m]) }
   }
-  (\dimp+1)^\dv
+  (n+1)^\dv
   \\ & \le
   \frac{
     \nv1{ \cex[\fcti ] }^{ 2\wts[\fcti ] }
-    \nv1{ \cex[\puiss] }^{ 2\wts[\puiss] }
+    \nv1{ \cex[m] }^{ 2\wts[m] }
   }{
-    \nv1{ \wembclp\clmapv\fcti(\cex[\fcti], \cex[\puiss]) }
+    \nv1{ \wembclp\clmapv\fcti(\cex[\fcti], \cex[m]) }
   }
-  (\dimp+1)^\dv B^{2 \dv (\wts[\fcti] + \wts[\puiss])}
+  (n+1)^\dv B^{2 \dv (\wts[\fcti] + \wts[m])}
   \\ & \le
-  (\dimp+1)^\dv
-  \bigl( \hmclab* B^{2\dv} \bigr)^{\wts[\fcti] + \wts[\puiss]}
+  (n+1)^\dv
+  \bigl( \hmclab* B^{2\dv} \bigr)^{\wts[\fcti] + \wts[m]}
 \end{align}
 compte tenu de~\eqref{e:clab-loc} et du choix des \( \clmapv \).  Il ne reste
 alors plus qu'à prendre le logarithme dans l'estimation précédente, multiplier
-par \( \delta \) puis sommer sur \( \place \) et sur \( \fcti \) pour avoir
+par \( \delta \) puis sommer sur \( v \) et sur \( \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
   \delta \bigl( 2 \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
@@ -3414,13 +3414,13 @@ en utilisant encore le lemme~\vref{l:sum-wts}.
 \medskip
 
 Nous allons maintenant expliciter \( \ratfv1 \).
-Pour chaque place \( \place \), on applique alors le
+Pour chaque place \( v \), on applique alors le
 lemme~\vref{l:par-var} avec \( G = \fauxv \) et \( \ind = \indv \), et on
-note \( P_\place = P_{\fauxv, \indv, \dv}^\dermp \) la forme obtenue pour
+note \( P_v = P_{\fauxv, \indv, \dv}^\dermp \) la forme obtenue pour
 l'indice \( \dermp \) fixé plus haut (plus précisément, celle des deux formes
 obtenues qui correspond à la place considérée). Remarquons comme précédemment
-que \( P_\place \) parcourt un ensemble fini de formes à coefficients
-algébriques quand \( \place \) varie ; la famille \( P_\place \) jouit de plus
+que \( P_v \) parcourt un ensemble fini de formes à coefficients
+algébriques quand \( v \) varie ; la famille \( P_v \) jouit de plus
 des propriétés suivantes.
 
 \begin{lem} \label{l:ratfv1}
@@ -3429,34 +3429,34 @@ des propriétés suivantes.
     \item \( \displaystyle
         \ratfv1
         =
-        \frac{ P_\place(\vmp) }{
+        \frac{ P_v(\vmp) }{
           \prod\fctrange
           \pden*(\vmp*)^{2\lgr{\dermp*}}
           (\vmp*[\indv*])^{ 2\lgr{\dermp*}(\vdeg* + 1) + \Dir* }
         }
       \) ;
     \item \(
-        \deg_\fct P_\place
+        \deg_\fct P_v
         \le
         3 \delta \wtw* \wts*
       \) ; \label{i:deg-p-der}
     \item \(
-        \hautl1{ (P_\place)_\place }
+        \hautl1{ (P_v)_v }
         \le
-        15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+        15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + o(\delta)
       \) ; \label{i:norm-p-der}
     \item \(
-        \inda* \bigl( P_\place \bigr)
+        \inda* \bigl( P_v \bigr)
         \ge
         \frac34 \epsi \delta
       \) ; \label{i:ind-p-der}
   \end{enumthm}
   où l'on a noté
   \(
-    \hautl1{ (P_\place)_\place }
+    \hautl1{ (P_v)_v }
     =
-    \sum_\place \degv \ln \nv1{ P_\place }
+    \sum_v \degv \ln \nv1{ P_v }
   \).
 \end{lem}
 
@@ -3475,7 +3475,7 @@ des propriétés suivantes.
   \end{equation}
   ce qui nous servira également pour l'estimation de hauteur.  On écrit alors
   \begin{align}
-    \deg_\fct P_\place
+    \deg_\fct P_v
     & =
     \Dir* + 4\vdeg* \lgr{\dermp*}
     \\ & \le
@@ -3494,24 +3494,24 @@ des propriétés suivantes.
   logarithme puis la somme (pondérée par les degrés locaux divisés) sur toutes
   les places :
   \begin{align}
-    \hautl1{ (P_\place)_\place }
+    \hautl1{ (P_v)_v }
     & \le
-    \hautl1{ (\fauxv)_\place }
+    \hautl1{ (\fauxv)_v }
     \\ & \qquad
     + \sum\fctrange \bigl(
       2 \lgr{\dermp*} \hautl1{ \varfca* }
-      + \lgr{\dermp*} ( \ln(8\genre) + 3 \ln B )
-      + \genre (\Dir*) \ln 2
+      + \lgr{\dermp*} ( \ln(8g) + 3 \ln B )
+      + g (\Dir*) \ln 2
     \bigr)
   \\ & \le
-    \hautl1{ (\fauxv)_\place }
+    \hautl1{ (\fauxv)_v }
     + 2 \bigl( \sum\fctrange \lgr{\dermp*} \hautl1{ \varfc* } \bigr)
-    + \delta \genre \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
+    + \delta g \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
     + o(\delta)
     \\ & \qquad
     + \bigl(
-      2 \genre B ( \ln B + \ln( \dimp + 1 ) )
-      + \ln(8\genre) + 3 \ln B
+      2 g B ( \ln B + \ln( n + 1 ) )
+      + \ln(8g) + 3 \ln B
     \bigr)
     \sum\fctrange \lgr{\dermp*}
   \end{align}
@@ -3526,24 +3526,24 @@ des propriétés suivantes.
     \sum\fctrange \wts* \wtw* \hautl1{ \varfc* }
     \le
     \delta \wts[1] \epsi \sigma^{-1}
-    \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \end{equation}
   en utilisant la remarque précédente sur \( \dermp \) puis
   l'hypothèse~\eqref{e:varset-ht}.
 
   On écrit ensuite
   \begin{equation}
-    \genre \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
+    g \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
     \le
-    3 \genre \ln 2 \sum\fctrange \wts* \wtw*
+    3 g \ln 2 \sum\fctrange \wts* \wtw*
     \le
-    6 \genre \ln 2 \, \wts[1]
+    6 g \ln 2 \, \wts[1]
     \le
     \frac14 \Lambda \wts[1]
   \end{equation}
   en utilisant successivement le fait que \( \epsz < 1 \) puis le
   lemme~\vref{l:sum-wts} et enfin la définition~\eqref{e:def-Lambda} de \(
-    \Lambda \) (deuxième argument du maximum et \( \puiss \ge \genre \)).
+    \Lambda \) (deuxième argument du maximum et \( m \ge g \)).
   Enfin, on remarque que
   \begin{equation}
     \sum\fctrange \lgr{\dermp*}
@@ -3557,7 +3557,7 @@ des propriétés suivantes.
   le dernier terme par
   \begin{equation}
     2 \delta \wts[1] \epsi \sigma^{-1}
-    \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     \pmm.
   \end{equation}
   Il ne reste plus qu'à prendre la somme, en utilisant le fait que \( \epsi
@@ -3568,7 +3568,7 @@ des propriétés suivantes.
     \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition puis en utilisant les
   hypothèses :
   \begin{equation}
-    \inda* \bigl( P_\place \bigr)
+    \inda* \bigl( P_v \bigr)
     \ge
     \inda*(\fauxv) - \wtsum(\dermp)
     \ge
@@ -3583,15 +3583,15 @@ Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
 fonction en deux facteurs :
 \begin{equation}
   \ratfv1 =
-  \frac{ P_\place(\vmp) }{
+  \frac{ P_v(\vmp) }{
     \prod\fctrange
     \pden*^{2\lgr{\dermp*}}
     (\vmp*[\indv*])^{ 2\lgr{\dermp*}(\vdeg* + 1) + \Dir* }
   }
   =
   \underbrace{
-    \frac{ P_\place(\vmp) }{
-      \prod\fctrange (\vmp*[\indv*])^{\deg_\fct P_\place }
+    \frac{ P_v(\vmp) }{
+      \prod\fctrange (\vmp*[\indv*])^{\deg_\fct P_v }
     }
   }_{\textstyle \ratfv{1'}}
   \cdot
@@ -3608,7 +3608,7 @@ Pour le second facteur, on commence par remarquer que le dénominateur ne
 s'annulle pas en \( \cexa* \)
 d'après le deuxième point du scolie~\vref{s:part-cases} et qu'on a donc
 \begin{equation}
-  \prod_\place
+  \prod_v
   \frac{
     \av{ \cexa*[\indv] }^{ 2 \deg \pden* \lgr{\dermp*} \degv }
   }{
@@ -3635,19 +3635,19 @@ En adaptant la démonstration de~\eqref{e:sum-h-cexa} on a facilement
   \sum\fctrange \wtw* \wts* \hautl\infty{ \cexa* }
   \le
   2 \wts[1] \bigl(
-    2(\puiss-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
+    2(m-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
   \bigr)
 \end{equation}
-en remarquant que \( \sum\fctrange \wtw* = 2(\puiss-1) \). Au final, on a donc
+en remarquant que \( \sum\fctrange \wtw* = 2(m-1) \). Au final, on a donc
 \begin{align}
   \ratfh{1''}
   & \le
   4 \delta \wts[1] B \epsi \sigma^{-1} \bigl(
-    2(\puiss-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
+    2(m-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
   \bigr)
   \\ & \le \label{e:ratfh1b}
   \delta \wts[1] \bigl(
-    8(\puiss-1) B \epsi \sigma^{-1} \hautn{\ex[1]} + \frac32\cst{vs-ht} + \ln B
+    8(m-1) B \epsi \sigma^{-1} \hautn{\ex[1]} + \frac32\cst{vs-ht} + \ln B
   \bigr)
   \pmm.
 \end{align}
@@ -3660,17 +3660,17 @@ Pour l'autre partie, on écrit
 \begin{equation}
   \ratfv{1'}(\cexa)
   =
-  P_\place \Biggl(
+  P_v \Biggl(
     \frac{ \cexa[1] } { \cexa[1][{\indv[1]}] }, \dots,
-    \frac{ \cexa[\puiss] } { \cexa[\puiss][{\indv[\puiss]}] }
+    \frac{ \cexa[m] } { \cexa[m][{\indv[m]}] }
   \Biggr)
   =
-  \sum_{\imp} p_{\place, \imp} \Biggl(
+  \sum_{\imp} p_{v, \imp} \Biggl(
     \frac{ \cexa } { \cexa[][\indv] }
   \Biggr)^{\imp}
 \end{equation}
 où la dernière somme est prise sur les multiindices \( \imp \) tels que \(
-  \lgr{\imp*} = \deg_\fct P_\place \) et \( \wtsum*(\imp) \ge \frac34 \epsi
+  \lgr{\imp*} = \deg_\fct P_v \) et \( \wtsum*(\imp) \ge \frac34 \epsi
   \delta \). Étudions de plus près les valeurs
 absolues des monômes intervenant dans cette écriture ; d'après le
 lemme~\vref{l:coord-norm} on a :
@@ -3688,11 +3688,11 @@ lemme~\vref{l:coord-norm} on a :
   \prod\fctrange \Bigl(
     \nv1{ \varfc* }
     \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
-  \Bigr)^{\deg_\fct P_\place}
+  \Bigr)^{\deg_\fct P_v}
   \pmm.
 \end{align}
 Il est clair que le premier facteur est inférieur à \( 1 \) pour tout \(
-  \place \). Cependant, si \( \place \in \placesapx \) on peut dire mieux en se
+  v \). Cependant, si \( v \in \placesapx \) on peut dire mieux en se
 concentrant sur la partie
 \begin{equation} \label{e:apx-temp}
   \prod\fctrange
@@ -3707,7 +3707,7 @@ pour minorer le dénominateur, puis une comparaison classique de normes donne
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   \le
   \frac{ \av{ \cexa*[0] } }{ \nv2{ \cex* } }
-  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
+  \cdot (n+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
   \pmm.
 \end{equation}
 Par construction de \( \vadapt* \) (lemme~\vref{l:adapt-gen}) on a \(
@@ -3717,22 +3717,22 @@ permet d'exploiter~\eqref{e:Vapx} :
 \begin{align}
   \frac{ \av{ \cexa*[0] } }{ \nv\infty{ \cexa* } }
   & \le
-  \hautm2{\ex*}^{-\wtapx \expapx}
-  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
+  \hautm2{\ex*}^{-\wtapx \eps}
+  \cdot (n+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
   \\ & \le
-  \expb^{ -\wtapx \expapx \hautn{\ex*} }
-  \cdot \expb^{\wtapx \expapx \htcmp}
-  \cdot (\dimp+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
+  \expb^{ -\wtapx \eps \hautn{\ex*} }
+  \cdot \expb^{\wtapx \eps \htcmp}
+  \cdot (n+1)^{3\dv/2} \, \nv\infty{\vadapt*^{-1}}
 \end{align}
 où la dernière ligne découle comme d'habitude de~\eqref{e:comp-h-hn}.
 
-En utilisant le fait que \( \imp*[0] \le \lgr{\imp*} = \deg_\fct P_\place \),
+En utilisant le fait que \( \imp*[0] \le \lgr{\imp*} = \deg_\fct P_v \),
 on peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
-  - \wtapx\expapx \sum\fctrange \imp*[0] \hautn{\ex*}
-  + \sum\fctrange \deg_\fct P_\place \left(
-    \frac{3\dv}2 \ln(\dimp+1) + \ln \nv\infty{\vadapt*^{-1}}
-    + \wtapx\expapx \htcmp
+  - \wtapx\eps \sum\fctrange \imp*[0] \hautn{\ex*}
+  + \sum\fctrange \deg_\fct P_v \left(
+    \frac{3\dv}2 \ln(n+1) + \ln \nv\infty{\vadapt*^{-1}}
+    + \wtapx\eps \htcmp
   \right)
 \end{align}
 et pour majorer le premier terme de cette somme on écrit en utilisant
@@ -3755,39 +3755,39 @@ où la dernière estimation découle du quatrième point du lemme~\vref{l:ratfv1
 et de la définition de l'indice.
 
 En regroupant tous les termes qui constituent \( \ratfv{1'}( \cex ) \) puis en
-sommant sur \( \place \), on majore la hauteur logarithmique de ce facteur par
-la quantité suivante, où l'on note \( \wtapx = 0 \) si \( \place \notin
+sommant sur \( v \), on majore la hauteur logarithmique de ce facteur par
+la quantité suivante, où l'on note \( \wtapx = 0 \) si \( v \notin
   \placesapx \) :
 \begin{multline}
-  \sum_\place \degv \Biggl(
-    - \frac38 \delta \wts[1] \hautn{\ex[1]} \wtapx \expapx \epsi
-    + \ln \nv1{P_\place}
-    + \sum\fctrange \deg_\fct P_\place
+  \sum_v \degv \Biggl(
+    - \frac38 \delta \wts[1] \hautn{\ex[1]} \wtapx \eps \epsi
+    + \ln \nv1{P_v}
+    + \sum\fctrange \deg_\fct P_v
     \biggl(
-      \frac{3\dv}2 \ln(\dimp+1)
+      \frac{3\dv}2 \ln(n+1)
       \\
       + \ln \nv\infty{\vadapt*^{-1}}
-      + \wtapx\expapx \htcmp
+      + \wtapx\eps \htcmp
       + \ln \nv1{ \varfc* }
-      + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* (\dimp+1) )
+      + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* (n+1) )
     \biggl)
   \Biggr)
 \end{multline}
-puis en se souvenant que \( \sum_\place \degv \wtapx = 1 \) et en
+puis en se souvenant que \( \sum_v \degv \wtapx = 1 \) et en
 utilisant~\eqref{e:vadapt-ht} et le lemme~\vref{l:ratfv1} :
 \begin{align}
   \ratfh{1'}
   & \le
-  - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
-  + 15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  - \frac38 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
+  + 15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + 3\delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
   \\ & \quad
   + 3\delta \Bigl(
-    \frac{3}2 \ln(\dimp+1)
-    + \dimp \ln(B\dimp)
-    + \expapx \htcmp
-    + B (\genre + 1) \ln (B (\dimp+1))
+    \frac{3}2 \ln(n+1)
+    + n \ln(Bn)
+    + \eps \htcmp
+    + B (g + 1) \ln (B (n+1))
   \Bigr)
   \sum\fctrange \wtw* \wts*
 \end{align}
@@ -3796,8 +3796,8 @@ l'estimation~\eqref{e:ratfh1a-adhoc} pour conclure :
 \begin{equation}
   \ratfh{1'}
   \le
-  - \frac38 \delta \wts[1] \hautn{\ex[1]} \expapx \epsi
-  + 19 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  - \frac38 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
+  + 19 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + o(\delta)
   \pmm.
 \end{equation}
@@ -3816,108 +3816,108 @@ avec : % reporter dans la section « ajustement » !
 \begin{align}
   \alpha
   & =
-  2 \puiss \epsz
-  + 3 (\puiss - 1) \Vcos
-  + \frac{8 (\puiss - 1) B \epsi}{\sigma}
-  - \frac38 \expapx \epsi
+  2 m \epsz
+  + 3 (m - 1) \Vcos
+  + \frac{8 (m - 1) B \epsi}{\sigma}
+  - \frac38 \eps \epsi
   \\
   \beta
   & =
-  19 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  19 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + (\frac72 + 3\epsz) \cst{vs-ht} + (5 + 2\epsz) \ln B
   \\ & \le
-  20 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  20 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
 \end{align}
 où la dernière majoration utilise~\eqref{e:extra-beta-adhoc} et le fait que \(
   2 \epsz \le 1 \).
 
 Montrons que \( \alpha \) est négatif et même
-inférieur à \( - \frac{3\expapx \epsi}{16} \). La définition~\eqref{e:def-epsz}
+inférieur à \( - \frac{3\eps \epsi}{16} \). La définition~\eqref{e:def-epsz}
 de \( \epsz \) assure que
 \begin{equation} \label{e:epsz-ct-extra}
-  2 \puiss \epsz
-  \le \frac{\expapx \epsi}{16}
+  2 m \epsz
+  \le \frac{\eps \epsi}{16}
   \pmm.
 \end{equation}
 Par ailleurs, en utilisant la définition~\eqref{e:def-epsi} de \( \epsi \)
 puis celle~\eqref{e:def-Vcos} de \( \Vcos \), on a
 \begin{align} \label{e:Vcos-ct-details}
-  \frac{ \expapx \epsi }{ 48 (\puiss - 1) }
+  \frac{ \eps \epsi }{ 48 (m - 1) }
   & \ge
   \frac{
-    \expapx^{ \frac{\puiss}{\puiss-\genre} }
+    \eps^{ \frac{m}{m-g} }
   }{
-    48 (\puiss - 1)
-    \, \nclmaps^{ \frac{\puiss-1}{\puiss-\genre} }
-    \, (85 \cdot 5^\puiss)^{ \frac{\genre}{\puiss-\genre} }
+    48 (m - 1)
+    \, \nclmaps^{ \frac{m-1}{m-g} }
+    \, (85 \cdot 5^m)^{ \frac{g}{m-g} }
   }
   \\ & \ge
   \frac{
-    \expapx^{ \frac{\puiss}{\puiss-\genre} }
+    \eps^{ \frac{m}{m-g} }
   }{
-    \puiss
-    \nclmaps^{ \frac{\puiss}{\puiss-\genre} }
-    \, (85 \cdot 5^\genre)^{ \frac{\puiss}{\puiss-\genre} }
+    m
+    \nclmaps^{ \frac{m}{m-g} }
+    \, (85 \cdot 5^g)^{ \frac{m}{m-g} }
   }
   =
   \Vcos
 \end{align}
-en remarquant que \( 48 \cdot 85^{ \frac{\genre}{\puiss-\genre} } \le 85^{
-    \frac{\puiss}{\puiss-\genre} } \). Ceci entraîne immédiatement que
+en remarquant que \( 48 \cdot 85^{ \frac{g}{m-g} } \le 85^{
+    \frac{m}{m-g} } \). Ceci entraîne immédiatement que
 \begin{equation} \label{e:Vcos-ct-extra}
-  3 (\puiss-1) \Vcos
-  \le \frac{\expapx \epsi}{16}
+  3 (m-1) \Vcos
+  \le \frac{\eps \epsi}{16}
   \pmm.
 \end{equation}
 Enfin, le choix de \( \sigma \) dans l'énoncé de la proposition~\vref{p:extra}
 assure que
 \begin{equation} \label{e:ct-sigma}
-  \frac{8 (\puiss - 1) B \epsi}{\sigma}
-  \le \frac{\expapx \epsi}{16}
+  \frac{8 (m - 1) B \epsi}{\sigma}
+  \le \frac{\eps \epsi}{16}
 \end{equation}
-et on a bien \( \alpha \le - \frac{3\expapx \epsi}{16} < 0 \) comme annoncé.
+et on a bien \( \alpha \le - \frac{3\eps \epsi}{16} < 0 \) comme annoncé.
 
-Ainsi on a, en remarquant que \( \vdim \ge \puiss \) et que \( f \) est
+Ainsi on a, en remarquant que \( \vdim \ge m \) et que \( f \) est
 décroissante :
 \begin{align} \label{e:Vbig-ct-extra}
   \alpha \hautn{\ex[1]} + \beta
   & \le
-  - \frac{3\expapx \epsi}{16} \hautn{\ex[1]}
-  + 20 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss)}
+  - \frac{3\eps \epsi}{16} \hautn{\ex[1]}
+  + 20 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m)}
   \\ & \le
-  - \frac{3\expapx \epsi}{16} \Bigl(
+  - \frac{3\eps \epsi}{16} \Bigl(
     \hautn{\ex[1]}
-    - \frac{320}{3\expapx \epsi}
-    \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss)}
+    - \frac{320}{3\eps \epsi}
+    \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m)}
   \Bigr)
   \pmm.
 \end{align}
-Or, en remarquant que \( \cst{vs-deg-prod} = 5 \puiss / \Vcos \) d'après les
+Or, en remarquant que \( \cst{vs-deg-prod} = 5 m / \Vcos \) d'après les
 définitions respectives~\eqref{e:def-Vcos} et~\eqref{e:cst-vs-deg-prod} de ces
 deux constantes, la comparaison~\eqref{e:Vcos-ct-details} entraîne
 \begin{equation}
-  \frac{320}{3\expapx \epsi}
+  \frac{320}{3\eps \epsi}
   \le
-  \frac{ 48(\puiss-1) \cdot 5\puiss }{ \expapx\epsi }
+  \frac{ 48(m-1) \cdot 5m }{ \eps\epsi }
   \le
   \cst{vs-deg-prod}
   \le
   \Lambda
 \end{equation}
 par définition~\eqref{e:def-Lambda} de \( \Lambda \). Par ailleurs,
-\( (1 + \frac1\puiss) f(\puiss) + 1 \le (1 + \frac1\puiss) f(\puiss-1) \)
+\( (1 + \frac1m) f(m) + 1 \le (1 + \frac1m) f(m-1) \)
 d'après la définition~\eqref{e:def-f} de \( f \), donc en utilisant le fait
-que \( \puiss \ge 2 \), il vient :
+que \( m \ge 2 \), il vient :
 \begin{align}
   \alpha \hautn{\ex[1]} + \beta
   & \le
-  - \frac{3\expapx \epsi}{16} \Bigl(
+  - \frac{3\eps \epsi}{16} \Bigl(
     \hautn{\ex[1]}
-    - \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
+    - \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)}
   \Bigr)
   \le
-  - \frac{9\expapx \epsi}{16}
-  \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\puiss-1)}
+  - \frac{9\eps \epsi}{16}
+  \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)}
   <
   0
 \end{align}
@@ -3937,48 +3937,48 @@ La section précédente a montré que \( \faux** \) était d'indice
 utilisant le fait suivant, conséquence du théorème du produit.
 
 \begin{fact} \label{f:thm-prod}
-  Soient \( (x_1, \dots, x_\puiss) \) un point rationnel de \( \proj{\vdim_1}
+  Soient \( (x_1, \dots, x_m) \) un point rationnel de \( \proj{\vdim_1}
     \times \dots \times \proj{\vdim**} \) et \( \vdim = \vdim_1 + \dots +
     \vdim** \). On considère une forme \( G \) de degré \( b \in (\N
-    \minusset 0)^\puiss \) et on suppose qu'il existe \( \alpha > 0 \) tel
+    \minusset 0)^m \) et on suppose qu'il existe \( \alpha > 0 \) tel
   que :
   \begin{enumthm}
     \item \( \indg b[x] G \ge \alpha \) ;
     \item \(
         \frac{b_\fcti}{b_{\fcti+1}}
         \ge
-        \left( \frac\puiss\alpha \right)^\vdim
+        \left( \frac m\alpha \right)^\vdim
       \)
-      pour tout \( \fcti \in \set{1, \dots, \puiss-1} \) ;
+      pour tout \( \fcti \in \set{1, \dots, m-1} \) ;
     \item \(
-        \frac\alpha\puiss < \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
+        \frac\alpha m < \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
       \).
   \end{enumthm}
-  Il existe alors un \( \fct \in \set{1, \dots, \puiss} \) et une forme
+  Il existe alors un \( \fct \in \set{1, \dots, m} \) et une forme
   \( T \in \cdn[ \vmp*[0], \dots, \vmp*[\vdim*] ] \) non nulle, telle que
   \begin{enumthm}
     \item \( x \in \zeros T  \) ;
     \item \( \deg T
         \le
-        \left( \frac\puiss\alpha \right)^\vdim
+        \left( \frac m\alpha \right)^\vdim
       \) ;
     \item la hauteur de \( T \) satisfait à
       \begin{align}
         b_\fct \, \hautl\infty T
         & \le
         \vdim*
-        \left( \frac\puiss\alpha \right)^\vdim
+        \left( \frac m\alpha \right)^\vdim
         \left(
           \hautl\infty G
-          + \sum_{\fcti=1}^\puiss \bigl(
+          + \sum_{\fcti=1}^m \bigl(
             b_\fcti (\stoll{\vdim[\fcti]} + \ln 2) + \sqrt{\vdim[\fcti]}
           \bigr)
           + \frac{\vdim-1}2 \ln \lgr b
         \right)
         \\ & \qquad
         + b_\fct
-        \left( \frac\puiss\alpha \right)^\vdim (\vdim* + 1)
-        \ln \left( \left( \frac\puiss\alpha \right)^\vdim (\vdim* + 1) \right)
+        \left( \frac m\alpha \right)^\vdim (\vdim* + 1)
+        \ln \left( \left( \frac m\alpha \right)^\vdim (\vdim* + 1) \right)
         + b_\fct \ln \binom{\deg T + \vdim*}{\vdim*}
       \end{align}
       où l'on a noté \( \stoll{\vdim[\fcti]} = \frac12
@@ -3995,7 +3995,7 @@ Pour appliquer ce fait, nous devons fabriquer à partir de \( \faux**
 \) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) qui
 conserve un indice comparable et dont on contrôlera degré et hauteur.
 On considère à cet effet la projection linéaire \( \pi \) de \(
-  (\projd)^\puiss \) sur cet espace obtenue en
+  (\projd)^m \) sur cet espace obtenue en
 conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur.
 Cette projection fait apparaître \( \var \), ou plus précisément son image par
 \( \vadapt* \circ \vaemb \), comme un revêtement ramifié de l'espace
@@ -4003,7 +4003,7 @@ d'arrivée, car ce plongement est adapté.  Algébriquement, ceci signifie que
 l'anneau des coordonnées homogènes de \( \var \) est une extension de type
 fini de \( \cdn[
   \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
-  \vmp[\puiss][0], \dots, \vmp[\puiss][{\vdim[\puiss]}]
+  \vmp[m][0], \dots, \vmp[m][{\vdim[m]}]
   ]
 \). Le fait suivant montre que la norme \( N(\faux**) \) de \( \faux** \) dans
 cette extension est une forme possédant les propriétés voulues.
@@ -4011,7 +4011,7 @@ cette extension est une forme possédant les propriétés voulues.
 \begin{fact} \label{f:nfaux}
   La forme \( N(\faux**) \in \cdn[
     \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
-    \vmp[\puiss][0], \dots, \vmp[\puiss][{\vdim[\puiss]}]
+    \vmp[m][0], \dots, \vmp[m][{\vdim[m]}]
     ] \) possède les propriétés suivantes :
   \begin{enumthm}
     \item \( \inda[\pi(\ex)] N(\faux**) \ge \inda** \faux** \) ;
@@ -4031,10 +4031,10 @@ cette extension est une forme possédant les propriétés voulues.
 On note désormais \( G = N(\faux**) \) puis \( \vdeg = \prod\fctrange \vdeg*
 \) et \( b_\fct = D \delta \wts* (2\wtw* + \epsz) \).
 On souhaite alors appliquer le fait~\vref{f:thm-prod} à \( G \) avec \( \alpha
-  = \puiss \Lambda^{-2f(u)} \) et \( x = \pi(\ex) \). Il s'agit tout d'abord
+  = m \Lambda^{-2f(u)} \) et \( x = \pi(\ex) \). Il s'agit tout d'abord
 de vérifier que les hypothèses sont bien satisfaites.
 
-Commençons avec l'indice : pour tout \( \imp \in (\N^{\dimp+1})^\puiss \) on a
+Commençons avec l'indice : pour tout \( \imp \in (\N^{n+1})^m \) on a
 \begin{align}
   \sum\fctrange \frac{ \lgr{\imp*} }{ b_\fct }
   & \ge
@@ -4052,28 +4052,28 @@ proposition~\vref{p:extra}, il vient :
   \ge
   \frac1{ 3 \delta \vdeg } \inda** \faux**
   \ge
-  \frac{ \expapx \epsi }{ 384 (\puiss-1) B D }
+  \frac{ \eps \epsi }{ 384 (m-1) B D }
   \pmm.
 \end{equation}
 On tire maintenant parti de la définition~\eqref{e:def-epsi} de \( \epsi
 \) puis de celle~\eqref{e:cst-vs-deg-prod} de \( \cst{vs-deg-prod} \) :
 \begin{align}
-  \frac{ 384 (\puiss-1) \puiss }{ \expapx \epsi }
+  \frac{ 384 (m-1) m }{ \eps \epsi }
   & =
   \frac{
-    384 (\puiss-1) \puiss
-    \cdot N^{ \frac{\puiss-1}{\puiss-\genre} }
-    \, (85 \cdot 5^\puiss)^{ \frac{\genre}{\puiss-\genre} }
+    384 (m-1) m
+    \cdot N^{ \frac{m-1}{m-g} }
+    \, (85 \cdot 5^m)^{ \frac{g}{m-g} }
   }{
-    \expapx^{ \frac{\puiss}{\puiss-\genre} }
+    \eps^{ \frac{m}{m-g} }
   }
   \\ & \le
   \frac{
-    5 \puiss^2
-    N^{ \frac{\puiss}{\puiss-\genre} }
-    \, (85 \cdot 5^\genre)^{ \frac{\puiss}{\puiss-\genre} }
+    5 m^2
+    N^{ \frac{m}{m-g} }
+    \, (85 \cdot 5^g)^{ \frac{m}{m-g} }
   }{
-    \expapx^{ \frac{\puiss}{\puiss-\genre} }
+    \eps^{ \frac{m}{m-g} }
   }
   =
   \cst{vs-deg-prod}
@@ -4086,9 +4086,9 @@ pour obtenir
 \begin{equation} \label{e:tp-ind}
   \indg b[x] G
   \ge
-  \frac{ \puiss }{ \cst{vs-deg-prod} B D }
+  \frac{ m }{ \cst{vs-deg-prod} B D }
   \ge
-  \frac{ \puiss }{ \Lambda^{2f(\vdim)} }
+  \frac{ m }{ \Lambda^{2f(\vdim)} }
   =
   \alpha
 \end{equation}
@@ -4106,19 +4106,19 @@ l'hypothèse~\eqref{e:Vfar}, on écrit
     (2\wtw[\fct+1] + \epsz) \wts[\fct+1]
   }
   \ge
-  \frac1\puiss \,
+  \frac1m \,
   \frac{ \wts* }{ \wts[\fct+1] }
   \ge
-  \frac1{4\puiss} \,
+  \frac1{4m} \,
   \frac{ \hautn{ \ex[\fct+1] } }{ \hautn{ \ex* } }
   \ge
-  \frac{ \Vfar }{ 4\puiss }
+  \frac{ \Vfar }{ 4m }
   \pmm.
 \end{equation}
-Par ailleurs, \( \bigl( \frac\puiss\alpha \bigr)^\vdim = \Lambda^{2\vdim
+Par ailleurs, \( \bigl( \frac m\alpha \bigr)^\vdim = \Lambda^{2\vdim
     f(\vdim)} \) d'après le choix de \( \alpha \). Pour \( \vdim \) compris
-entre \( \puiss \) et \( \puiss\genre \), cette quantité est majorée par \(
-  \Lambda^{2\puiss f(\puiss)} \) vu la définition de \( f \). La
+entre \( m \) et \( mg \), cette quantité est majorée par \(
+  \Lambda^{2m f(m)} \) vu la définition de \( f \). La
 définition~\eqref{e:def-Vfar} de \( \Vfar \) implique alors directement que la
 deuxième hypothèse est satisfaite.
 
@@ -4126,19 +4126,19 @@ Pour la troisième, on observe que l'expression
 \begin{equation}
   \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
 \end{equation}
-est décroissante en \( \vdim \) tandis que \( \alpha / \puiss =
+est décroissante en \( \vdim \) tandis que \( \alpha / m =
   \Lambda^{-2f(\vdim)} \) est croissante que \( \vdim \), de sorte qu'il
 suffit de vérifier que cette condition est satisfaite pour \( \vdim =
-  \puiss\genre \). C'est bien le cas puisque
+  mg \). C'est bien le cas puisque
 \begin{equation} \label{e:tp-3}
-  \left( \frac{\ln(\puiss\genre + 1)}{2(\puiss\genre)^2}\right)^{\puiss\genre}
+  \left( \frac{\ln(mg + 1)}{2(mg)^2}\right)^{mg}
   \ge
-  (\sqrt2 \puiss\genre)^{-2\puiss\genre}
+  (\sqrt2 mg)^{-2mg}
   \ge
   \Lambda^{-2}
 \end{equation}
 d'après la définition~\eqref{e:def-Lambda} de \( \Lambda \) (troisième
-argument du maximum) et \( f(\puiss\genre) = 1 \).
+argument du maximum) et \( f(mg) = 1 \).
 
 On peut donc appliquer le fait~\vref{f:thm-prod} comme annoncé, on note \( T \)
 la forme obtenue. On a alors \( \pi(\ex) \in \zeros T \), c'est-à-dire \(
@@ -4166,7 +4166,7 @@ choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
   \Lambda^{2\vdim f(\vdim)}
   \left(
     D \hautl\infty{ \faux** }
-    + \sum_{\fcti=1}^\puiss
+    + \sum_{\fcti=1}^m
     D \delta \wts[\fcti] (2\wtw[\fcti] + \epsz)
     (\stoll{\vdim[\fcti]} + \ln 2)
   \right)
@@ -4192,7 +4192,7 @@ On utilise alors l'estimation élémentaire
   \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
 \end{equation}
-et le fait que \( 2 \le 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
+et le fait que \( 2 \le 2\wtw* + \epsz \le 2m \), puis on simplifie par
 \( 2 \delta D \) et on met \( \vdim* \Lambda^{2\vdim f(\vdim)} \) en facteur
 (en majorant \( \vdim* + 1 \) par \( 2\vdim* \) le cas échéant) pour obtenir
 \begin{align*}
@@ -4203,8 +4203,8 @@ et le fait que \( 2 \le 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
   \Biggl(
     \frac1{2\delta} \hautl\infty{ \faux** }
     \\ & \qquad
-    + \puiss \biggl(
-      \sum_{\fcti=1}^\puiss \wts[\fcti] (\stoll{\vdim[\fcti]} + \ln 2)
+    + m \biggl(
+      \sum_{\fcti=1}^m \wts[\fcti] (\stoll{\vdim[\fcti]} + \ln 2)
       + \wts* \Bigl(
         2 \ln \bigl( \Lambda^{2\vdim f(\vdim)} (\vdim* + 1) \bigr) + 1
       \Bigr)
@@ -4213,15 +4213,15 @@ et le fait que \( 2 \le 2\wtw* + \epsz \le 2\puiss \), puis on simplifie par
   + o(1)
 \end{align*}
 On remarque alors que pour tout \( \fcti \) on a \( \stoll{\vdim[\fcti]} \le
-  \vdim[\fcti] \ln (1 + \vdim[\fcti]) \le \puiss \ln \puiss \) où la
+  \vdim[\fcti] \ln (1 + \vdim[\fcti]) \le m \ln m \) où la
 première majoration est classique et la deuxième utilise le fait que \(
-  \vdim[\fcti] \le \genre \le \puiss - 1 \). On utilise de plus le
+  \vdim[\fcti] \le g \le m - 1 \). On utilise de plus le
 lemme~\vref{l:sum-wts} et le fait que \( \wts* \le \wts[1] \) pour estimer le
 terme de la dernière ligne ci-dessus par
 \begin{align}
-  2\puiss \wts[1] \left(
-    \puiss \ln \puiss + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
-    + \ln \puiss + \frac12
+  2m \wts[1] \left(
+    m \ln m + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
+    + \ln m + \frac12
   \right)
 \end{align}
 puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
@@ -4231,7 +4231,7 @@ puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
     \frac1{2\delta} \hautl\infty{ \faux** }
-    + \frac14 \wts[1] \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    + \frac14 \wts[1] \Lambda^{(1 + \frac1m) f(\vdim)}
   \Biggr)
   + o(1)
 \end{align}
@@ -4245,15 +4245,15 @@ fonction de \( \sum\fctrange \wtw* \wts* \hautl1{\varfc*} \).
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-    + \frac54 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+    + \frac54 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \Biggr)
   + o(1)
   \\ & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-    + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+    + 2 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \Biggr)
   \label{e:ht-T-var}
 \end{align}
@@ -4269,14 +4269,14 @@ classiques de la hauteur, on a
   & \le
   \hautl\infty{ T }
   + \left(
-    \deg T \Bigl( \hautl\infty{ \vadapt* } + \ln(\dimp + 1) \Bigr)
-    + \ln \binom{ \deg T + \dimp + 1 }{ \dimp + 1 }
+    \deg T \Bigl( \hautl\infty{ \vadapt* } + \ln(n + 1) \Bigr)
+    + \ln \binom{ \deg T + n + 1 }{ n + 1 }
   \right)
   \\ & \le
   \hautl\infty{ T }
   + \left(
-    \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
-    + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+    \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(n + 1) \Bigr)
+    + 2\vdim (n + 1) \ln \Lambda^{f(\vdim)}
   \right)
   \pmm.
 \end{align*}
@@ -4288,7 +4288,7 @@ par \( \wts[1] \), il vient :
   \le
   \wtw* \wts* \hautl\infty{ T }
   +
-  \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 1 + \frac1\puiss) f(\vdim)}
+  \wts[1] \cst{vs-ht} \Lambda^{(2\vdim + 1 + \frac1m) f(\vdim)}
   \pmm.
 \end{equation}
 Il ne reste plus qu'à substituer~\eqref{e:ht-T-var} dans l'estimation
@@ -4298,13 +4298,13 @@ précédente pour avoir
   & \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
   \Biggl(
-    6 \sum_{\fcti=1}^\puiss \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
-    + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+    6 \sum_{\fcti=1}^m \wtw[\fcti] \wts[\fcti] \hautl1{\varfc[\fcti]}
+    + 3 \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \Biggr)
   \pmm,
 \end{align*}
 ce qui achève la preuve de la proposition~\vref{p:varset-notmin} en remarquant
-que \( \vdim* \le \genre \).
+que \( \vdim* \le g \).
 
 
 
@@ -4329,12 +4329,12 @@ regroupées ici pour ne pas perturber le cours des sections précédentes.
 
 \subsection{Méthode d'ajustement des paramètres}
 
-Tout d'abord, \( \expapx \) est fixé par l'énoncé, et la famille \( \ex \)
+Tout d'abord, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
 supposée contredire le théorème est fixée en premier, ainsi que la famille \(
   (\wt*)_\fct \) comme indiqué à la sous-section~\vref{sec:wt}.
 
 Nous arrivons maintenant aux conditions définissant \( \varset(\ex) \). En
-fait, celles-ci sont déterminées de façon à ce que \( \va^\puiss \in
+fait, celles-ci sont déterminées de façon à ce que \( \va^m \in
   \varset(\ex) \) et qu'on puisse, en coupant par des formes données par la
 proposition~\vref{p:varset-notmin} produire d'autres formes qui restent dans \(
   \varset(\ex) \). On peut voir cette partie comme la construction d'une
@@ -4376,10 +4376,10 @@ quantité \( \alpha \) soit négative. Rappelons sa valeur :
 \begin{equation}
   \alpha
   =
-  2 \puiss \epsz
-  + 3 (\puiss - 1) \Vcos
-  + \frac{8 (\puiss - 1) \dimp B \epsi}{\sigma}
-  - \frac38 \expapx \epsi
+  2 m \epsz
+  + 3 (m - 1) \Vcos
+  + \frac{8 (m - 1) n B \epsi}{\sigma}
+  - \frac38 \eps \epsi
 \end{equation}
 et essayons de la relier à la structure de la fonction auxiliaire (on
 considère ici la forme \( F \in \cdn[\vmp, \vmpi] \)). Le premier terme
@@ -4401,12 +4401,12 @@ suffisamment grand pour permettre la construction de la forme auxiliaire, mais
 suffisamment petit pour pouvoir extrapoler, plus précisément on veut
 avoir~\eqref{e:ct-eps*-siegel} et~\eqref{e:epsz-ct-extra}. Un calcul
 élémentaire montre qu'il est possible de satisfaire simultanément ces deux
-contraintes pour peu que \( \puiss > \max \vdim* = \genre \) (exposants
+contraintes pour peu que \( m > \max \vdim* = g \) (exposants
 apparaissant dans la première condition).  C'est uniquement pour répondre à
-cette exigence qu'on demande \( \puiss > \genre \) dans l'énoncé du théorème ;
+cette exigence qu'on demande \( m > g \) dans l'énoncé du théorème ;
 de même les deux conditions citées déterminent seules les définitions de \(
   \epsz \) et \( \epsi \) données en~\eqref{e:def-epsz} et~\eqref{e:def-epsi}.
-(On utilisera souvent par ailleurs le fait que \( \puiss \ge 2 \) et que \(
+(On utilisera souvent par ailleurs le fait que \( m \ge 2 \) et que \(
   \epsz < 1 \) pour simplifier certaines estimations, mais aucune de ces
 inégalités n'est cruciale pour la bonne marche de la preuve.)
 
@@ -4432,12 +4432,12 @@ et c'est ceci, plus précisément~\eqref{e:ct-cst-vs-deg}, qui détermine
 sa valeur. Il est plus naturel d'absorber
 les facteurs supplémentaires dans la majoration de \( B \) que celle de \( D
 \) car la première quantité est \lat{a priori} plus petite (ceci se vérifie
-sur leurs valeurs initiales : \( \deg \va \) et \( (\deg \va)^\puiss \)
+sur leurs valeurs initiales : \( \deg \va \) et \( (\deg \va)^m \)
 respectivement, ensuite les deux quantités seront multipliées à chaque cran
 par le même facteur, à savoir \( \deg T \)).
 
 Nous sommes maintenant en mesure de choisir \( \Lambda \) : les deux premiers
-arguments dans le maximum assurent que \( \va^\puiss \) satisfait bien les
+arguments dans le maximum assurent que \( \va^m \) satisfait bien les
 conditions~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod}. Le troisième a
 pour but de satisfaire la troisième hypothèse dans l'énoncé du théorème du
 produit, voir~\eqref{e:tp-3}.
@@ -4449,7 +4449,7 @@ contrainte sur \( \Vfar \).
 Penchons-nous à présent sur la démonstration du théorème à partir de la
 proposition~\vref{p:varset-notmin} ; elle explique la définition de la fonction
 \( f \) apparaissant en exposant dans les estimations, qui procède par
-récurrence décroissante en partant de \( f(\puiss\genre) = 1 \) et en
+récurrence décroissante en partant de \( f(mg) = 1 \) et en
 descendant avec la relation~\eqref{e:ct-f}. Nous avons à ce stade pleinement
 expliqué (forme générale et définition de chaque quantité intervenant) les
 estimations de degré~\eqref{e:varset-deg} et~\eqref{e:varset-deg-prod}.
@@ -4459,7 +4459,7 @@ intervenant dans les estimations de hauteur. On estime donc successivement la
 hauteur de la forme auxiliaire puis celle de la forme motrice en fonction
 des hauteurs de \( \var \), et au final on obtient la relation de
 récurrence~\eqref{e:vs-ht-rec}. Il ne reste plus qu'à dérouler cette
-récurrence (en partant rappelons-le de \( Z = \va^\puiss \)) pour obtenir la
+récurrence (en partant rappelons-le de \( Z = \va^m \)) pour obtenir la
 forme finale de~\eqref{e:varset-ht}.
 
 Enfin, de cette dernière relation on déduit~\eqref{e:ct-Vbig-final} qui
@@ -4476,27 +4476,27 @@ suivant~\eqref{e:Vbig-ct-extra}.
 \subsection{Estimations diverses}
 
 Commençons par quelques estimations générales ; on rappelle pour commencer que
-\( \dimp \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après la
-remarque~\vref{r:vaemb}, puis \( \genre \ge 1 \) et \( \puiss \ge \genre + 1
+\( n \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après la
+remarque~\vref{r:vaemb}, puis \( g \ge 1 \) et \( m \ge g + 1
   \ge 2 \). Ainsi, le dernier argument du maximum dans la
 définition~\eqref{e:cst-vs-ht} de \( \cst{vs-ht} \) donne
-\( \cst{vs-ht} \ge \dimp \ln 3 \ge 2 \).
+\( \cst{vs-ht} \ge n \ln 3 \ge 2 \).
 De plus, la définition~\eqref{e:def-Lambda} de \( \Lambda \) implique
 immédiatement, en considérant le deuxième argument du maximum, que
 \begin{equation}
   \Lambda
   \ge
-  5 \cdot \puiss^2 \cdot 85 \cdot 3 \cdot 5^\genre \cdot 3
+  5 \cdot m^2 \cdot 85 \cdot 3 \cdot 5^g \cdot 3
   \ge
-  3\,825 \, \puiss^2 \, 5^\genre
+  3\,825 \, m^2 \, 5^g
   \ge
-  19\,125 \, \puiss^2
+  19\,125 \, m^2
   \ge
   76\,500
   \pmm.
 \end{equation}
 Remarquons au passage que si le deuxième argument dans le maximum domine
-largement pour \( \puiss \) et \( \genre \) petits, le troisième croît en
+largement pour \( m \) et \( g \) petits, le troisième croît en
 revanche bien plus vite quand ces deux quantités augmentent.
 
 On fera fréquemment usage des deux estimations suivantes :
@@ -4505,13 +4505,13 @@ On fera fréquemment usage des deux estimations suivantes :
   \le
   \ln(\Lambda^{f(\vdim)})
   \le
-  \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
+  m \Lambda^{\frac1m\,f(\vdim)}
   \qquad\text{et}\qquad
   \ln B
   \le
   B
   \le
-  \frac{ \Lambda^{f(\vdim)} }{ 1\,275 \cdot \puiss^2 \cdot 5^\genre }
+  \frac{ \Lambda^{f(\vdim)} }{ 1\,275 \cdot m^2 \cdot 5^g }
   \pmm,
 \end{equation}
 qui découlent de~\eqref{e:varset-deg} et dont la première utilise l'inégalité
@@ -4521,16 +4521,16 @@ qui découlent de~\eqref{e:varset-deg} et dont la première utilise l'inégalit�
 Avant de passer aux différentes estimations \lat{ad hoc}, établissons encore
 une estimation qui nous sera utile plusieurs fois :
 \begin{align}
-  B (\genre + 1) \ln (B (\dimp+1))
+  B (g + 1) \ln (B (n+1))
   & \le
-  B (\genre + 1) \bigl(
-    \puiss \Lambda^{\frac1\puiss\,f(\vdim)}
+  B (g + 1) \bigl(
+    m \Lambda^{\frac1m\,f(\vdim)}
     + \cst{vs-ht}
   \bigr)
   \\ & \le
-  \puiss^2 B \cst{vs-ht} \Lambda^{\frac1\puiss\,f(\vdim)}
+  m^2 B \cst{vs-ht} \Lambda^{\frac1m\,f(\vdim)}
   \\ & \le \label{e:adhoc-gen}
-  \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \pmm.
 \end{align}
 Signalons enfin qu'en général on ne cherchera pas à obtenir la plus grande
@@ -4541,17 +4541,17 @@ utile pour chacune des situations considérées.
 
 Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
 \begin{equation} \label{e:B-siegel}
-  \cst{vs-ht}/2 + \ln((\dimp+1)!) + \dimp \ln B
-  + 3 \ln(B) \bigl( B(\genre+1) + 1 \bigr) + 3 \ln(2)
+  \cst{vs-ht}/2 + \ln((n+1)!) + n \ln B
+  + 3 \ln(B) \bigl( B(g+1) + 1 \bigr) + 3 \ln(2)
   \le
-  \frac14 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac14 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \pmm.
 \end{equation}
 Pour le deuxième terme, on a par définition :
 \(
-  \ln((\dimp+1)!)
+  \ln((n+1)!)
   \le
-  \dimp \ln (\dimp+1)
+  n \ln (n+1)
   \le
   \cst{vs-ht}
 \)
@@ -4559,11 +4559,11 @@ de sorte que la somme des deux premiers termes est au plus \( \frac32
   \cst{vs-ht} \).
 En utilisant de plus l'estimation~\eqref{e:adhoc-gen} ci-dessus, il vient :
 \begin{align}
-  & \cst{vs-ht}/2 + \ln((\dimp+1)!)
-  + 3 \ln(B) B(\genre+1) + \dimp \ln B + 3\ln B + 3 \ln(2)
+  & \cst{vs-ht}/2 + \ln((n+1)!)
+  + 3 \ln(B) B(g+1) + n \ln B + 3\ln B + 3 \ln(2)
   \\ & \qquad \le
   \frac{3\Lambda}{2\cdot1\,275} \cst{vs-ht}
-  + \frac3{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \frac3{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + \cst{vs-ht} \cdot \frac{ \Lambda^{f(\vdim)} }{ 1\,275 }
   + 3 \cdot \frac{ \Lambda^{f(\vdim)} }{ 1\,275 }
   + \frac{ \Lambda }{ 1\,275 }
@@ -4574,57 +4574,57 @@ qui implique largement l'estimation annoncée.
 
 La prochaine majoration \lat{ad hoc} que nous montrons est
 \begin{equation} \label{e:ht-T-adhoc}
-  2\puiss \left(
-    \puiss \ln \puiss + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
-    + \ln \puiss + \frac12
+  2m \left(
+    m \ln m + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
+    + \ln m + \frac12
   \right)
   \le
-  \frac14 \Lambda^{ (1 + \frac1\puiss) f(\vdim) }
+  \frac14 \Lambda^{ (1 + \frac1m) f(\vdim) }
   \pmm.
 \end{equation}
 On commence par utiliser le fait que \( \Lambda \ge (\sqrt2
-  \puiss\genre)^{\puiss\genre} \) pour écrire
+  mg)^{mg} \) pour écrire
 \begin{equation}
-  \puiss \ln \Lambda
+  m \ln \Lambda
   \ge
-  \puiss^2 \genre \ln( \sqrt2 \puiss \genre )
+  m^2 g \ln( \sqrt2 m g )
   \ge
-  \puiss^2 \ln \puiss + \frac{ \puiss^2 }2 \ln 2
+  m^2 \ln m + \frac{ m^2 }2 \ln 2
   \ge
-  \puiss \ln \puiss + \ln \puiss + \frac12 + \ln 2
+  m \ln m + \ln m + \frac12 + \ln 2
 \end{equation}
-où l'on utilise le fait que \( \puiss \ge 2 \) pour la dernière minoration.
-Comme de plus \( \vdim \ge \puiss \), la parenthèse dans~\eqref{e:ht-T-adhoc}
+où l'on utilise le fait que \( m \ge 2 \) pour la dernière minoration.
+Comme de plus \( \vdim \ge m \), la parenthèse dans~\eqref{e:ht-T-adhoc}
 est majorée par \( 3\vdim \ln \Lambda^{f(\vdim)} \) et comme de plus \( \vdim
-  \le \puiss\genre \) le membre de gauche de~\eqref{e:ht-T-adhoc} est majoré
+  \le mg \) le membre de gauche de~\eqref{e:ht-T-adhoc} est majoré
 successivement par
 \begin{equation}
-  6 \puiss^2 \genre \ln \Lambda^{f(\vdim)}
+  6 m^2 g \ln \Lambda^{f(\vdim)}
   \le
-  6 \puiss^3 \genre \Lambda^{\frac1\puiss f(\vdim)}
+  6 m^3 g \Lambda^{\frac1m f(\vdim)}
   \le
-  \frac14 \Lambda^{(1 + \frac1\puiss) f(\vdim)}
-  \cdot \frac{ 24 \puiss^4 }{ \Lambda }
+  \frac14 \Lambda^{(1 + \frac1m) f(\vdim)}
+  \cdot \frac{ 24 m^4 }{ \Lambda }
 \end{equation}
 qui implique l'estimation annoncée pour peu que le dernier facteur soit
-inférieur à \( 1 \). Or on a vu que \( \Lambda \ge 19\,125 \puiss^2 \) et un
-simple calcul montre que cette quantité est supérieure à \( 24 \puiss^4 \)
-tant que \( \puiss \le 28 \) ; par ailleurs pour \( \puiss > 28 \) on a
-immédiatement \( (\sqrt2 \, \puiss)^\puiss \ge \puiss^5 \ge 24 \puiss^4 \).
+inférieur à \( 1 \). Or on a vu que \( \Lambda \ge 19\,125 m^2 \) et un
+simple calcul montre que cette quantité est supérieure à \( 24 m^4 \)
+tant que \( m \le 28 \) ; par ailleurs pour \( m > 28 \) on a
+immédiatement \( (\sqrt2 \, m)^m \ge m^5 \ge 24 m^4 \).
 
 \medskip
 
 Prouvons maintenant que
 \begin{equation} \label{e:ht-T'-adhoc}
-  \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(\dimp + 1) \Bigr)
-  + 2\vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+  \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(n + 1) \Bigr)
+  + 2\vdim (n + 1) \ln \Lambda^{f(\vdim)}
   \le
   \cst{vs-ht} \Lambda^{(2\vdim + 1) f(\vdim)}
   \pmm.
 \end{equation}
 Pour commencer, on a
 \begin{align} \label{e:extra-beta-adhoc}
-  \ln B + \ln(\dimp + 1)
+  \ln B + \ln(n + 1)
   \le
   \ln B + \cst{vs-ht}
   \le
@@ -4636,11 +4636,11 @@ Pour commencer, on a
 \end{align}
 Par ailleurs
 \begin{equation}
-  2 \vdim (\dimp + 1) \ln \Lambda^{f(\vdim)}
+  2 \vdim (n + 1) \ln \Lambda^{f(\vdim)}
   \le
-  4 \cst{vs-ht} \puiss^2 \genre \Lambda^{\frac1\puiss f(\vdim)}
+  4 \cst{vs-ht} m^2 g \Lambda^{\frac1m f(\vdim)}
   \le
-  \frac12 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac12 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
 \end{equation}
 qui aboutit largement à l'estimation annoncée.
 
@@ -4648,31 +4648,31 @@ qui aboutit largement à l'estimation annoncée.
 
 On a également, en utilisant~\eqref{e:adhoc-gen} :
 \begin{align}
-  & 2 \genre B ( \ln B + \ln( \dimp + 1 ) ) + \ln(8\genre) + 3 \ln B
+  & 2 g B ( \ln B + \ln( n + 1 ) ) + \ln(8g) + 3 \ln B
   \\ & \qquad \le
-  \frac2{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac2{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + \frac{ 4 \Lambda^{f(\vdim)} }{1\,275}
   \\ & \qquad \le \label{e:ht-Pv-adhoc}
-  \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \pmm.
 \end{align}
 Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
 \begin{align}
-  & \frac32 \ln(\dimp+1)
-  + \dimp \ln(B\dimp)
+  & \frac32 \ln(n+1)
+  + n \ln(Bn)
   + \htcmp
-  + B (\genre + 1) \ln (B (\dimp+1))
+  + B (g + 1) \ln (B (n+1))
   \\ & \qquad \le
   \frac32 \cst{vs-ht}
   + \cst{vs-ht} + \cst{vs-ht} \ln B
   + \cst{vs-ht} 
-  + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \\ & \qquad \le
   4 \cst{vs-ht} \cdot \frac\Lambda{1\,275}
   + \cst{vs-ht} \frac{ \Lambda^{f(\vdim)} }{ 1\,275 }
-  + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \\ & \qquad \le \label{e:ratfh1a-adhoc}
-  \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1\puiss) f(\vdim)}
+  \frac16 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \pmm.
 \end{align}
 
@@ -4707,31 +4707,31 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \( \vp[0] = 0 \) comme équation et tel que :
   \begin{enumthm}
     \item \(
-        \distv[\place, \vaemb']{x}{\divi}
+        \distv[v, \vaemb']{x}{\divi}
         \le
-        \distv[\place, \vaemb]{x}{\divi}
-        \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
-        \, (\dimp + 1)^{\dv/2}
+        \distv[v, \vaemb]{x}{\divi}
+        \cdot \distv[v, \vaemb]{\divi}{p_0}^{-2}
+        \, (n + 1)^{\dv/2}
       \) ; \label{i:plin-dv}
     \item \(
         \hautm{2, \vaemb'}{x}
         \le
         \hautm{2, \vaemb}{x}
         \cdot \hautm{2, \vaemb}{E}
-        \sqrt{\dimp + 1}
+        \sqrt{n + 1}
       \) ; \label{i:plin-ht-pt}
     \item \(
         \hautl{1, \vaemb'}{\va}
         \le
         \hautl{1, \vaemb}{\va}
-        + \hautl{1, \vaemb}{ E } (\genre+1) \deg \va
+        + \hautl{1, \vaemb}{ E } (g+1) \deg \va
       \). \label{i:plin-ht-va}
     \item \(
         \htcmp[\vaemb']
         =
         \htcmp[\vaemb]
         + \hautl{2, \vaemb} E
-        + \frac12 \ln(\dimp + 1)
+        + \frac12 \ln(n + 1)
       \) ; \label{i:plin-htcmp}
     \item \(
         \hlclab[\vaemb']
@@ -4746,12 +4746,12 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
 
 \begin{proof}
   Notons \( L \) une équation de \( E \), qu'on peut supposer de la forme
-  \( L(\vp) = \vp[0] + l_1 \vp[1] + \dots + l_\dimp \vp[\dimp] \). Remarquons
-  de suite que \( \distv[\place, \vaemb]{\divi}{p_0} = \nv2 L ^{-1} \).
+  \( L(\vp) = \vp[0] + l_1 \vp[1] + \dots + l_n \vp[n] \). Remarquons
+  de suite que \( \distv[v, \vaemb]{\divi}{p_0} = \nv2 L ^{-1} \).
   Par ailleurs,
   \begin{equation}
     M = \begin{pmatrix}
-      1      & -l_1   & -l_2   & \dots  & -l_\dimp \\
+      1      & -l_1   & -l_2   & \dots  & -l_n \\
       0      & 1      & 0      & \dots  & 0 \\
       \vdots & \ddots & \ddots & \ddots & \vdots \\
       \vdots &        & \ddots & 1      & 0 \\
@@ -4759,7 +4759,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \end{pmatrix}
     \quad\text{soit}\quad
     M^{-1} = \begin{pmatrix}
-      1      & l_1    & l_2    & \dots   & l_\dimp \\
+      1      & l_1    & l_2    & \dots   & l_n \\
       0      & 1      & 0      & \dots  & 0 \\
       \vdots & \ddots & \ddots & \ddots & \vdots \\
       \vdots &        & \ddots & 1      & 0 \\
@@ -4768,12 +4768,12 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \end{equation}
   de sorte que toutes les colonnes de \( M \) sauf la première sont les
   coordonnées homogènes (dans le plongement \( \Theta \)) de
-  points de \( \divi \). Plus précisément, en relevant dans \( \cdn^{\dimp+1}
+  points de \( \divi \). Plus précisément, en relevant dans \( \cdn^{n+1}
   \), ces vecteurs constituent une base du relevé de \( \divi \). On remarque
   que les normes des lignes et des colonnes de \( M \) comme de \( M^{-1} \)
   sont majorées par la norme de \( L \).
 
-  On note alors \( \chi \in \GL_{\dimp+1}(\cdn) \) la transformation linéaire
+  On note alors \( \chi \in \GL_{n+1}(\cdn) \) la transformation linéaire
   associée à \( M^{-1} \) (dans la base canonique) et on note de même la
   transformation linéaire de \( \projd \) qui en découle en passant au
   quotient. On pose alors \( \Theta' = \chi \circ \Theta \). On
@@ -4782,7 +4782,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   satisfait donc à la première condition.
 
   Soit maintenant \( x \) un point de \( \va \), dont on note \( C_x \in
-    \Qbar^{\dimp+1} \) les coordonnées dans le plongement \( \Theta \) et \(
+    \Qbar^{n+1} \) les coordonnées dans le plongement \( \Theta \) et \(
     C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \Theta' \). Vu
   les expressions de \( M \) et \( M^{-1} \) on a immédiatement
   \begin{align} \label{e:plin-norm1}
@@ -4800,7 +4800,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   Par ailleurs, en appliquant la définition de la distance d'un point à un
   hyperplan, il vient
   \[
-    \distv[\place, \Theta']{x}{\divi}
+    \distv[v, \Theta']{x}{\divi}
     =
     \frac{
       \av{ L'( C'_x ) }
@@ -4808,7 +4808,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
       \nv2{ L' } \nv2{ C'_x }
     }
     =
-    \distv[\place, \Theta]{x}{\divi}
+    \distv[v, \Theta]{x}{\divi}
     \frac{ \nv2 L }{ \nv2{ L' } }
     \frac{ \nv2{ C_x } }{ \nv2{ C'_x } }
   \]
@@ -4819,8 +4819,8 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   Par ailleurs, si \( \chow\va \) est une forme de \bsc{Chow} de \( \va \)
   dans le plongement \( \vaemb \), on obtient une forme de \bsc{Chow} \(
     \chow\va' \) de \( \va \) dans \( \vaemb' \) en composant \( \chow\va \)
-  avec (la transposée de) \( M^{-1} \) sur chacun des \( \genre + 1 \)
-  groupes de \( \dimp + 1 \) variables, de sorte que,
+  avec (la transposée de) \( M^{-1} \) sur chacun des \( g + 1 \)
+  groupes de \( n + 1 \) variables, de sorte que,
   si \( \deg \va \) désigne le degré de \( \va \) en tant que sous-variété de
   \( \projd \) (qui est évidemment le même dans les plongements \( \vaemb \)
   et \( \vaemb' \)) c'est-à-dire le degré de \( \chow\va \) en chacun des
@@ -4829,7 +4829,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \nv1{ \chow\va' }
     \le
     \nv1{ \chow\va }
-    \nv1{ L }^{(\genre+1) \deg \va}
+    \nv1{ L }^{(g+1) \deg \va}
   \end{equation}
   qui établit~\vref{i:plin-ht-va}.
 
@@ -4837,19 +4837,19 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \begin{equation}
     \abs{ \hautl{2, \vaemb} x - \hautl{2, \vaemb'} x }
     \le
-    \hautl2 L + \frac12 \ln(\dimp + 1)
+    \hautl2 L + \frac12 \ln(n + 1)
   \end{equation}
   d'où, en constatant que les hauteurs normalisées sont les mêmes dans \(
     \vaemb \) et \( \vaemb' \)
   \begin{equation}
     \abs{ \hautl{2, \vaemb'} x - \hautn x }
     \le
-    \htcmp[\vaemb] + \hautl2 L + \frac12 \ln(\dimp + 1)
+    \htcmp[\vaemb] + \hautl2 L + \frac12 \ln(n + 1)
   \end{equation}
   qui donne directement~\vref{i:plin-htcmp}.
 
   Enfin, si \( (\rmclab{a}{b}{\clmap}[\vaemb])_{\clmap \in \clmaps} \) est
-  une famille de \( (\dimp+1) \)-uplets de formes comme au point~\vref{i:clab}
+  une famille de \( (n+1) \)-uplets de formes comme au point~\vref{i:clab}
   de la section~\vref{sec:vaemb}, on pose
   \begin{equation}
     \rmclab{a}{b}{\clmap}[\vaemb']
@@ -4913,7 +4913,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
 
   Enfin, il est clair que \( N = \card \clmaps \) reste inchangé car
   l'ensemble de cartes considéré est le même (les cartes sont des ouverts de
-  \( \va^2 \), pas de son image dans un plongement) ; par ailleurs \( \dimp \)
+  \( \va^2 \), pas de son image dans un plongement) ; par ailleurs \( n \)
   n'est bien évidemment pas modifié par un changement de coordonnées linéaire.
 \end{proof}
 
@@ -4922,52 +4922,52 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
 \begin{coro} \label{c:vojta-div-dv}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \divi \) un hyperplan de \( \projd \), \( p_0 \) le point de \( \projd \)
-  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \expapx < 1
+  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \eps < 1
   \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes, où les notions de distance et de
   hauteur sont relatives au plongement \( \vaemb \) :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & <
     \frac{ \distv{p_0}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > 4\cst{ht-v-div-dv} \Lambda_1^{(1 + \frac1\puiss)
-      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    & > 4\cst{ht-v-div-dv} \Lambda_1^{(1 + \frac1m)
+      \prod_{i=m}^{mg} (2i + 1)}
     \\
     \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
-    4 \puiss \Lambda_1^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    4 m \Lambda_1^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
     \cos(\ex*, \ex[\fcti]) & > 1 -
-    \frac1{ \puiss }
+    \frac1{ m }
     \left(
-      \frac{ \expapx }{ 86 \nclmaps \cdot 5^\genre }
-    \right)^{ \frac{\puiss}{\puiss-\genre} }
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^g }
+    \right)^{ \frac{m}{m-g} }
   \end{align}
   avec
   \begin{align}
     \Lambda_1
     & = \max \bigl(
-      (\deg \va)^\puiss,
-      5 \puiss^2
+      (\deg \va)^m,
+      5 m^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot \expapx^{-1}
-      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+        86 \nclmaps \cdot 5^g \cdot \eps^{-1}
+      \bigr)^{ \frac{m}{m-g} }
       \deg \va,
-      (\sqrt2 \puiss \genre)^{\puiss\genre}
+      (\sqrt2 m g)^{mg}
     \bigr)
     \\
     \newcst[\Theta]{ht-v-div-dv}
     & = \max \bigl(
-      \hautl1{\va} + \hautl1{ E } (\genre+1) \deg \va,
+      \hautl1{\va} + \hautl1{ E } (g+1) \deg \va,
       \hlclab + \frac52 \hautl1 E,
       \\ & \qquad
-      \htcmp + \hautl2 E + \frac12 \ln(\dimp + 1),
-      \dimp\ln(\dimp + 1)
+      \htcmp + \hautl2 E + \frac12 \ln(n + 1),
+      n\ln(n + 1)
     \bigr)
     \pmm.
   \end{align}
@@ -4981,7 +4981,7 @@ Les seuls autres changements concernent les valeurs des constantes :
 \( \cst{vs-ht} \) est remplacée par \( \cst{ht-v-div-dv} \) avec une
 définition différente faisant intervenir la hauteur de \( E \), et le nombre
 \( 85 \) est remplacé par \( 86 \) partout où il apparaît en même temps que \(
-  \expapx \).
+  \eps \).
 
 \begin{proof}
   On remarque pour commencer que le résultat est vide dans le cas où \( p_0
@@ -4989,38 +4989,38 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   contraire, on considère le plongement \( \vaemb' \) donné par le
   lemme~\vref{l:plin}
   précédent et on prévoit d'appliquer le théorème~\vref{t:vojta-div} à \( E \)
-  et \( \vaemb' \) avec \( \expapx' = 85 \expapx / 86 \) pour une raison qui
+  et \( \vaemb' \) avec \( \eps' = 85 \eps / 86 \) pour une raison qui
   deviendra bientôt claire. Il s'agit de vérifier que les hypothèses du
   corollaire impliquent bien celles du théorème.
 
   Pour l'hypothèse principale~\eqref{e:Vapx}, on utilise d'abord le
   point~\vref{i:plin-dv} du lemme, puis l'hypothèse principale du présent
-  corollaire, la définition de \( \expapx' \) et enfin le
+  corollaire, la définition de \( \eps' \) et enfin le
   point~\vref{i:plin-ht-pt} du lemme :
   \begin{align}
-    \distv[\place, \vaemb']{\ex*}{\divi}
+    \distv[v, \vaemb']{\ex*}{\divi}
     & \le
-    \distv[\place, \vaemb]{\ex*}{\divi}
-    \cdot \distv[\place, \vaemb]{\divi}{p_0}^{-2}
-    \, (\dimp + 1)^{\dv/2}
+    \distv[v, \vaemb]{\ex*}{\divi}
+    \cdot \distv[v, \vaemb]{\divi}{p_0}^{-2}
+    \, (n + 1)^{\dv/2}
     \\ & \le
-    \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx}
+    \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps}
     =
-    \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx'}
-    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx/86}
+    \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps'}
+    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps/86}
     \\ & \le
-    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \expapx'}
-    \cdot \hautm{2, \vaemb}{E}^{\wtapx \expapx'}
-    (\dimp + 1)^{\wtapx \expapx'/2}
-    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx/86}
+    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \eps'}
+    \cdot \hautm{2, \vaemb}{E}^{\wtapx \eps'}
+    (n + 1)^{\wtapx \eps'/2}
+    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps/86}
     \\ & \le
-    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \expapx'}
+    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \eps'}
     \Bigl(
       \hautm{2, \vaemb}{E}^{85}
-      (\dimp + 1)^{85/2}
+      (n + 1)^{85/2}
       /
       \hautm{2, \vaemb}{\ex*}
-    \Bigr)^{\wtapx \expapx/86}
+    \Bigr)^{\wtapx \eps/86}
     \pmm,
   \end{align}
   qui donne le résultat voulu pour peu que la quantité dans la dernière
@@ -5031,7 +5031,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \ge
     2 \cst{ht-v-div-dv} \Lambda_1
     \ge
-    85 ( \hautl{1, \vaemb}{E} + \frac12 \ln (\dimp + 1) )
+    85 ( \hautl{1, \vaemb}{E} + \frac12 \ln (n + 1) )
   \)
   en utilisant de diverses façon la définition de \( \cst{ht-v-div-dv} \) et
   le fait que \( \Lambda_1 \ge 85 \).
@@ -5042,7 +5042,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   s'écrivant dans cet espace sont donc inchangées en passant de \( \vaemb \) à
   \( \vaemb' \).  Ainsi, les hypothèses~\eqref{e:Vcos} et~\eqref{e:Vfar} sont
   satisfaites car les hypothèses correspondantes du corollaire sont les mêmes,
-  compte tenu du changement de \( \expapx \). Il en est de même
+  compte tenu du changement de \( \eps \). Il en est de même
   pour~\eqref{e:Vbig} en remarquant de plus que \( \cst{ht-v-div-dv} >
     \cst{vs-ht}[\vaemb'] \) par définition et en utilisant les points restants
   du lemme précédent.
@@ -5057,58 +5057,58 @@ d'autant plus forte (et donc le résultat d'autant plus faible) que \( p_0 \)
 est proche de \( \divi \), jusqu'à obtenir un hypothèse impossible à
 satisfaire (donc un résultat vide) lorsque \( p_0 \in \divi \). Le corollaire
 suivant évite ce problème en considérant des permutations de coordonnées ;
-ceci a en revanche un coût, qui consiste à remplacer \( \expapx \) par \(
-  \expapx / (\dimp + 1) \) dans les autres hypothèses, comme nous le verrons
+ceci a en revanche un coût, qui consiste à remplacer \( \eps \) par \(
+  \eps / (n + 1) \) dans les autres hypothèses, comme nous le verrons
 au cours de la preuve.
 
 \begin{coro} \label{c:vojta-div-any}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( \divi \) un hyperplan de \( \projd \) et \( 0 < \expapx < 1 \) un nombre réel.
+  \( \divi \) un hyperplan de \( \projd \) et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{\divi}
     & <
     (n + 1)^{-3\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > 4\cst{ht-v-div-dv} \Lambda_2^{(1 + \frac1\puiss)
-      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    & > 4\cst{ht-v-div-dv} \Lambda_2^{(1 + \frac1m)
+      \prod_{i=m}^{mg} (2i + 1)}
     \\
     \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
-    4 \puiss \Lambda_2^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    4 m \Lambda_2^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
     \cos(\ex*, \ex[\fcti]) & > 1 -
-    \frac1{ \puiss }
+    \frac1{ m }
     \left(
-      \frac{ \expapx }{ 86 \nclmaps \cdot 5^\genre (\dimp+1) }
-    \right)^{ \frac{\puiss}{\puiss-\genre} }
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^g (n+1) }
+    \right)^{ \frac{m}{m-g} }
   \end{align}
   avec \( \cst{ht-v-div-dv} \) comme en~\eqref{e:cst-ht-v-div-dv} et
   \begin{align}
     \Lambda_2
     & = \max \bigl(
-      (\deg \va)^\puiss,
-      5 \puiss^2
+      (\deg \va)^m,
+      5 m^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre \cdot \expapx^{-1} (\dimp + 1)
-      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+        86 \nclmaps \cdot 5^g \cdot \eps^{-1} (n + 1)
+      \bigr)^{ \frac{m}{m-g} }
       \deg \va,
-      (\sqrt2 \puiss \genre)^{\puiss\genre}
+      (\sqrt2 m g)^{mg}
     \bigr)
   \end{align}
 \end{coro}
 
 \begin{proof}
-  Soit \( L = l_0 \vp[0] + \dots + l_\dimp \vp[\dimp] \) une équation de \(
-    \divi \). Pour chaque place \( \place \), on note \( i_\place \) un indice
-  tel que \( \av{ l_{i_\place} } \) soit maximal, de sorte que \( \av{
-      l_{i_\place} } \ge \nv2 L (\dimp + 1)^{-\dv/2} \).  On considère alors
+  Soit \( L = l_0 \vp[0] + \dots + l_n \vp[n] \) une équation de \(
+    \divi \). Pour chaque place \( v \), on note \( i_v \) un indice
+  tel que \( \av{ l_{i_v} } \) soit maximal, de sorte que \( \av{
+      l_{i_v} } \ge \nv2 L (n + 1)^{-\dv/2} \).  On considère alors
   les points \( p_i \) définis comme \( p_0 \) mais avec le \( 1 \) en \( i
-  \)-ème position ; on a \( \distv{\divi}{p_{i_\place}} \ge (\dimp +
+  \)-ème position ; on a \( \distv{\divi}{p_{i_v}} \ge (n +
     1)^{-\dv/2} \).
 
   On définit maintenant pour chaque \( i \) un ensemble de places
@@ -5116,42 +5116,42 @@ au cours de la preuve.
     \placesapx_i
     =
     \set{
-      \place \in \placesapx \text{ telle que }
-      \distv{\divi}{p_{i_\place}} \ge (\dimp + 1)^{-\dv/2}
+      v \in \placesapx \text{ telle que }
+      \distv{\divi}{p_{i_v}} \ge (n + 1)^{-\dv/2}
     }
     \pmm.
   \end{equation}
   Le paragraphe précédent montre que \( \placesapx = \placesapx_0 \cup
-    \cdots \cup \placesapx_\dimp \). (Cette réunion n'est pas nécessairement
+    \cdots \cup \placesapx_n \). (Cette réunion n'est pas nécessairement
   disjointe, mais il n'est pas utile qu'elle le soit.) On associe à chacun de
-  ces ensembles le nombre réel \( \sigma_i = \sum_{\place \in \placesapx_i}
+  ces ensembles le nombre réel \( \sigma_i = \sum_{v \in \placesapx_i}
     \wtapx \degv \) où \( \degv \) désigne comme d'habitude le degré local en
-  \( \place \) divisé par le degré global. Par hypothèse, on a
-  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^\dimp \sigma_i \)
+  \( v \) divisé par le degré global. Par hypothèse, on a
+  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^n \sigma_i \)
   et il existe donc (au moins) un indice \( i \) tel que \( \sigma_i \ge
-    1/(\dimp + 1) \). On fixe un tel indice, désormais désigné par \( i \).
+    1/(n + 1) \). On fixe un tel indice, désormais désigné par \( i \).
 
-  On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( \place \in
+  On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( v \in
     \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \) pour avoir \(
-    \sum_{\place \in \placesapx'} \wtapx' \degv = 1 \).  Enfin, on pose \(
-    \expapx' = \expapx \sigma_i \) de sorte qu'on a
+    \sum_{v \in \placesapx'} \wtapx' \degv = 1 \).  Enfin, on pose \(
+    \eps' = \eps \sigma_i \) de sorte qu'on a
   \begin{equation}
     (n + 1)^{-3\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
+    \hautm2{\ex*}^{-\wtapx \eps}
     \le
-    \frac{ \distv{p_{i_\place}}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm2{\ex*}^{-\wtapx' \expapx'}
-    \quad \forall \place \in \placesapx'
+    \frac{ \distv{p_{i_v}}{\divi}^2 }{ (n + 1)^{\dv/2} }
+    \hautm2{\ex*}^{-\wtapx' \eps'}
+    \quad \forall v \in \placesapx'
     \pmm.
   \end{equation}
   On considère pour finir le plongement \( \vaemb' \) obtenu à partir de \(
     \vaemb \) en échangeant les coordonnées d'indices \( i \) et \( 0 \), ce
   qui n'a aucune incidence sur la distance ni la hauteur. On peut alors
   appliquer le corollaire~\vref{c:vojta-div-dv} avec le plongement \( \vaemb'
-  \), le réel \( \expapx' \), l'ensemble de places \( \placesapx' \) et les
+  \), le réel \( \eps' \), l'ensemble de places \( \placesapx' \) et les
   poids \( \wtapx' \), car ses hypothèses sont impliquées par celle du présent
   corollaire compte tenu de la comparaison ci-dessus et du fait que \(
-    \expapx' \ge \expapx / (\dimp + 1) \).
+    \eps' \ge \eps / (n + 1) \).
 \end{proof}
 
 
@@ -5161,12 +5161,12 @@ Pour se ramener au cas précédent, on utilise un plongement de \bsc{Veronese}
 remodelé, tel que défini dans \cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp},
 dont on rappelle la définition (sur les coordonnées homogènes) :
 \begin{align}
-  \chi_\Delta \colon \projd & \to \prod{\dimp'} \\
-  (x_0 : \dots : x_\dimp) & \mapsto 
+  \chi_\Delta \colon \projd & \to \prod{n'} \\
+  (x_0 : \dots : x_n) & \mapsto 
   ({\textstyle \binom\Delta\alpha} x^\alpha)_\alpha
 \end{align}
-où \( \dimp' = \binom{\dimp + \Delta}{\Delta} - 1 \) et \( \alpha \) parcourt
-l'ensemble des \( (\dimp+1) \)-uplets d'entiers de longueur \( \Delta \).
+où \( n' = \binom{n + \Delta}{\Delta} - 1 \) et \( \alpha \) parcourt
+l'ensemble des \( (n+1) \)-uplets d'entiers de longueur \( \Delta \).
 L'intérêt de ce plongement par rapport au plongement de \bsc{Veronese}
 classique réside dans le fait qu'on a, aux places archimédiennes :
 \begin{equation}
@@ -5186,31 +5186,31 @@ de \( \chi_\Delta(x) \) qui est aussi de valeur absolue maximale. On a ainsi
   \nv2{ \chi_\Delta(x) }
   =
   \nv2{ x }^\Delta
-  \quad \forall \place
+  \quad \forall v
   \pmm.
 \end{equation}
 Dans les estimations de normes et hauteurs à venir, on aura aussi besoin du
 lemme suivant.
 
 \begin{lem} \label{l:norm-mn}
-  Soient \( \dimp \) et \( \Delta \) deux entiers et \( \alpha \in
-    \N^{\dimp+1} \) tel que \( \alpha_0 + \dots + \alpha_\dimp = \Delta \).
-  Pour toute place \( \place \) d'un corps de nombres contenant \(
-    \binom\Delta\alpha^{-1/2} \), on pose \( \dpv = 1 \) si \( \place \)
+  Soient \( n \) et \( \Delta \) deux entiers et \( \alpha \in
+    \N^{n+1} \) tel que \( \alpha_0 + \dots + \alpha_n = \Delta \).
+  Pour toute place \( v \) d'un corps de nombres contenant \(
+    \binom\Delta\alpha^{-1/2} \), on pose \( \dpv = 1 \) si \( v \)
   divise un premier inférieur ou égal à \( \Delta \) et \( 0 \) sinon. On a
   alors
   \begin{equation}
     \av*{ \binom\Delta\alpha^{-1/2} }
     \le
-    \Delta^{\dpv \dimp / 2}
+    \Delta^{\dpv n / 2}
   \end{equation}
-  De plus, cette valeur absolue vaut \( 1 \) si \( \place \) divise un premier
+  De plus, cette valeur absolue vaut \( 1 \) si \( v \) divise un premier
   strictement supérieur à \( \Delta \).
 
-  Par ailleurs, on a \( \sum_\place \degv \dpv \le 1.26 \Delta / \ln \Delta
+  Par ailleurs, on a \( \sum_v \degv \dpv \le 1.26 \Delta / \ln \Delta
   \).  En particulier si on note \( b \) le vecteur dont les composantes sont
   les \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a
-  \( \hautl\infty b \le \Delta\dimp \).
+  \( \hautl\infty b \le \Delta n \).
 \end{lem}
 
 \begin{proof}
@@ -5245,7 +5245,7 @@ sur les différents paramètres en jeu dans notre situation.
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( F \)
   une hypersurface de \( \projd \), de degré \( \Delta \). On note \( \chi \)
   le plongement de \bsc{Veronese} remodelé de degré \( \Delta \), qui va donc
-  de \( \projd \) dans \( \proj{\dimp'} \) où \( \dimp' = \binom{\dimp +
+  de \( \projd \) dans \( \proj{n'} \) où \( n' = \binom{n +
       \Delta}{\Delta} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
   plongement, l'image de \( F \) est découpée par un hyperplan \( \divi \) et
   on a :
@@ -5254,12 +5254,12 @@ sur les différents paramètres en jeu dans notre situation.
         \hautl{1, \vaemb'} \divi
         \le
         \hautl{1, \vaemb} F
-        + \Delta\dimp
+        + \Delta n
       \) ;
     \item \(
-        \distv[\place, \vaemb']{x}{\divi}
+        \distv[v, \vaemb']{x}{\divi}
         \le
-        \distv[\place, \vaemb]{x}{F}
+        \distv[v, \vaemb]{x}{F}
         \cdot \Delta^{\dv/2}
       \) ; \label{i:hs-vero-dv}
     \item \(
@@ -5272,13 +5272,13 @@ sur les différents paramètres en jeu dans notre situation.
         \deg_{\vaemb'} \va
         =
         \deg_{\vaemb} \va
-        \cdot \Delta^\genre
+        \cdot \Delta^g
       \) ; \label{i:hs-vero-deg-va}
     \item \(
         \hautl{1, \vaemb'}{\va}
         \le
-        \Delta^{\genre+1} \hautl{1, \vaemb}{\va}
-        + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+        \Delta^{g+1} \hautl{1, \vaemb}{\va}
+        + \Delta^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
     \item \(
         \htcmp[\vaemb']
@@ -5291,7 +5291,7 @@ sur les différents paramètres en jeu dans notre situation.
         =
         \hlclab[\vaemb]
         \cdot \Delta
-        + 2 \Delta\dimp
+        + 2 \Delta n
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
@@ -5310,7 +5310,7 @@ sur les différents paramètres en jeu dans notre situation.
   point~\vref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier
   (pour lequel ou pouvait aussi utiliser~\eqref{e:vero-norm} en fait). Par
   ailleurs, la référence citée donne \( \hautl{\htpph, \vaemb'} \va =
-    \Delta^{\genre+1} \hautl{\htpph, \vaemb} \va \) (en notant \(
+    \Delta^{g+1} \hautl{\htpph, \vaemb} \va \) (en notant \(
     \Hautl\htpph \) la hauteur utilisée dans cette référence), dont on
   déduit le point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
   comme en~\eqref{e:ht-pph-1} :
@@ -5318,38 +5318,38 @@ sur les différents paramètres en jeu dans notre situation.
     \hautl{1, \vaemb'} \va
     & \le
     \hautl{\htpph, \vaemb'} \va
-    + \frac12 \ln(\dimp' + 1) (\genre + 1) \deg_{\vaemb'} \va
+    + \frac12 \ln(n' + 1) (g + 1) \deg_{\vaemb'} \va
     \\ & \le
-    \Delta^{\genre+1} \hautl{\htpph, \vaemb} \va
-    + \frac12 \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+    \Delta^{g+1} \hautl{\htpph, \vaemb} \va
+    + \frac12 \Delta^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
     \\ & \le
-    \Delta^{\genre+1} \hautl{1, \vaemb} \va
-    + \Delta^{\genre+1} \ln(\dimp + 1) (\genre + 1) \deg_{\vaemb} \va
+    \Delta^{g+1} \hautl{1, \vaemb} \va
+    + \Delta^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
 
   Pour~\vref{i:hs-vero-dv}, pour chaque place, introduisons un point
-  \( y_\place \in F \) tel que \( \distv[\place, \vaemb] x F = \distv[\place,
-    \vaemb] x{y_\place} \) ; par définition on a \( \distv[\place, \vaemb'] x
-    \divi \le \distv[\place, \vaemb'] x{y_\place} \). Pour majorer cette
+  \( y_v \in F \) tel que \( \distv[v, \vaemb] x F = \distv[v,
+    \vaemb] x{y_v} \) ; par définition on a \( \distv[v, \vaemb'] x
+    \divi \le \distv[v, \vaemb'] x{y_v} \). Pour majorer cette
   dernière quantité, aux places infinies on utilise la première
   formule en haut de la page~89 de~\cite{phidg} qu'on interprète ainsi :
   \begin{equation}
-    \distv[\place, \vaemb'] x{y_\place}
+    \distv[v, \vaemb'] x{y_v}
     =
-    \sqrt{ 1 - \bigl( 1 - \distv[\place, \vaemb] x{y_\place}^2 \bigr)^\Delta }
+    \sqrt{ 1 - \bigl( 1 - \distv[v, \vaemb] x{y_v}^2 \bigr)^\Delta }
     \pmm.
   \end{equation}
   On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\Delta \le
-    \Delta z \) avec \( z = \distv[\place, \vaemb] x{y_\place}^2 \). Aux places
+    \Delta z \) avec \( z = \distv[v, \vaemb] x{y_v}^2 \). Aux places
   finies, on se base sur la définition de la distance : aux dénominateurs on
   utilise~\eqref{e:vero-norm} et au numérateur on voit facilement par le
   même type d'argument que \( \nv{}{ \chi(x) \wedge \chi(y) } \le \nv{}{ x
       \wedge y } \) de sorte que
   \(
-    \distv[\place, \vaemb'] x{y_\place}
+    \distv[v, \vaemb'] x{y_v}
     \le
-    \distv[\place, \vaemb] x{y_\place}
+    \distv[v, \vaemb] x{y_v}
   \) comme annoncé.
 
   Pour la hauteur de \( \divi \), on remarque pour commencer que les résultats
@@ -5357,9 +5357,9 @@ sur les différents paramètres en jeu dans notre situation.
   dernier n'est pas l'image de \( F \) dans le plongement ; en fait on a \(
     \chi(F) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( F
   \) dans le plongement initial : c'est un polynômes homogène de degré \(
-    \Delta \) en \( X = (X_0, \dots, X_\dimp) \) mais on peut aussi le voir
+    \Delta \) en \( X = (X_0, \dots, X_n) \) mais on peut aussi le voir
   comme une forme linéaire en \( Z = (Z_\alpha)_\alpha \) (où \( \alpha \)
-  parcourt l'ensemble des \( (\dimp + 1) \)-uplets de longueur \( \Delta \)),
+  parcourt l'ensemble des \( (n + 1) \)-uplets de longueur \( \Delta \)),
   en faisant le changement de variable \( Z_\alpha = X^\alpha \). On note \( L
     = \sum l_\alpha Z_\alpha \) la forme linéaire obtenue, puis \( L' =
     l_\alpha \binom\Delta\alpha^{-1/2} Z_\alpha \). Par construction, \( L' \)
@@ -5369,7 +5369,7 @@ sur les différents paramètres en jeu dans notre situation.
 
   Pour chaque \( (a, b, \clmap) \) on considère la famille
   \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par la
-  section~\vref{sec:vaemb}. Pour tout \( \beta \in \N^{\dimp+1} \) de longueur
+  section~\vref{sec:vaemb}. Pour tout \( \beta \in \N^{n+1} \) de longueur
   \( \Delta \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
   bihomogène de bidegré \( (2\Delta a^2, 2\Delta b^2) \) en \( (\vmp[1],
@@ -5392,25 +5392,25 @@ sur les différents paramètres en jeu dans notre situation.
     \cdot
     \nnv1{ \rmclab ab\clmap }^\Delta
     \cdot
-    \Delta^{\dimp (a^2 + b^2) \dpv}
+    \Delta^{n (a^2 + b^2) \dpv}
   \end{equation}
   puis en sommant sur \( \beta \) :
   \begin{equation}
     \nnv1{ \rmclab ab\clmap[\vaemb'] }
     \le
-    (\dimp + 1)^{\Delta \, \dv}
+    (n + 1)^{\Delta \, \dv}
     \cdot
     \nnv1{ \rmclab ab\clmap }^\Delta
     \cdot
-    \Delta^{\dimp (a^2 + b^2) \dpv}
+    \Delta^{n (a^2 + b^2) \dpv}
     \le
     \hmclab[\vaemb']*^{a^2 + b^2}
   \end{equation}
   en posant
   \(
     \hmclab[\vaemb']* = \hmclab*^\Delta
-    \cdot (\dimp + 1)^{5\Delta \dv/4} \cdot \Delta^{\dimp \dpv}
-  \) (l'exposant de \( \dimp + 1 \) n'est pas optimal ici mais sera utile au
+    \cdot (n + 1)^{5\Delta \dv/4} \cdot \Delta^{n \dpv}
+  \) (l'exposant de \( n + 1 \) n'est pas optimal ici mais sera utile au
   paragraphe suivant).
 
   Par ailleurs, on sait que si \( x \) désigne des coordonnées homogènes d'un
@@ -5445,7 +5445,7 @@ sur les différents paramètres en jeu dans notre situation.
     }{
       \nv2{ x' }^{2a^2} \nv2{ y' }^{2b^2}
     }
-    \, (\dimp' + 1)^{-(a^2 + b^2)\dv}
+    \, (n' + 1)^{-(a^2 + b^2)\dv}
     \\ & \ge
     \left(
       \frac{
@@ -5453,7 +5453,7 @@ sur les différents paramètres en jeu dans notre situation.
       }{
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
-      (\dimp + 1)^{-(a^2 + b^2)\dv}
+      (n + 1)^{-(a^2 + b^2)\dv}
     \right)^\Delta
     \\ & \ge
     \left(
@@ -5462,10 +5462,10 @@ sur les différents paramètres en jeu dans notre situation.
       }{
         \nv1 x ^{2a^2} \nv1 y ^{2b^2}
       }
-      (\dimp + 1)^{-(a^2 + b^2 + 1/2)\dv}
+      (n + 1)^{-(a^2 + b^2 + 1/2)\dv}
     \right)^\Delta
     \\ & \ge
-    \bigl( \hmclab[\vaemb]* (\dimp + 1)^{5\dv / 4} \bigr)^{-\Delta(a^2 + b^2)}
+    \bigl( \hmclab[\vaemb]* (n + 1)^{5\dv / 4} \bigr)^{-\Delta(a^2 + b^2)}
     \ge
     \hmclab[\vaemb']*^{-(a^2 + b^2)}
     \pmm.
@@ -5475,65 +5475,65 @@ sur les différents paramètres en jeu dans notre situation.
     \hlclab[\vaemb']
     =
     \hlclab[\vaemb] \cdot \Delta
-    + \frac54\Delta \ln(\dimp + 1) + 1.26 \Delta\dimp
+    + \frac54\Delta \ln(n + 1) + 1.26 \Delta n
   \end{equation}
-  dont le dernier point se déduit en remarquant que \( \frac54 \ln(\dimp +
-    1) / \dimp \le \frac58 \ln 3 \le 0.69 \) car \( \dimp \ge 2 \).
+  dont le dernier point se déduit en remarquant que \( \frac54 \ln(n +
+    1) / n \le \frac58 \ln 3 \le 0.69 \) car \( n \ge 2 \).
 \end{proof}
 
 \begin{coro} \label{c:vojta-hs}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( F \) une hypersurface de \( \projd \) de
-  degré \( \Delta \) et \( 0 < \expapx < 1 \) un nombre réel.
+  degré \( \Delta \) et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*}{F}
     & <
-    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > \frac4\Delta \cst{ht-v-hs} \Lambda_3^{(1 + \frac1\puiss)
-      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    & > \frac4\Delta \cst{ht-v-hs} \Lambda_3^{(1 + \frac1m)
+      \prod_{i=m}^{mg} (2i + 1)}
     \\
     \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
-    4 \puiss \Lambda_3^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    4 m \Lambda_3^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
     \cos(\ex*, \ex[\fcti]) & > 1 -
-    \frac1{ \puiss }
+    \frac1{ m }
     \left(
-      \frac{ \expapx }{
-        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
+      \frac{ \eps }{
+        86 \nclmaps \cdot 5^g \Delta \sbin{n + \Delta}{\Delta}
       }
-    \right)^{ \frac{\puiss}{\puiss-\genre} }
+    \right)^{ \frac{m}{m-g} }
   \end{align}
   avec
   \begin{align}
     \Lambda_3 \label{e:deg-v-hs}
     & = \max \bigl(
-      (\Delta^\genre \deg \va)^\puiss,
-      5 \puiss^2
+      (\Delta^g \deg \va)^m,
+      5 m^2
       \bigl(
-        86 \nclmaps \cdot 5^\genre
-        \Delta \sbin{\dimp + \Delta}{\Delta} \, \expapx^{-1}
-      \bigr)^{ \frac{\puiss}{\puiss-\genre} }
-      \Delta^\genre \deg \va,
-      (\sqrt2 \puiss \genre)^{\puiss\genre}
+        86 \nclmaps \cdot 5^g
+        \Delta \sbin{n + \Delta}{\Delta} \, \eps^{-1}
+      \bigr)^{ \frac{m}{m-g} }
+      \Delta^g \deg \va,
+      (\sqrt2 m g)^{mg}
     \bigr)
     \qquad\null
     \\
     \newcst[\Theta]{ht-v-hs}
     & =
     \Delta \max \bigl(
-      \Delta^\genre \hautl1{\va}, \hlclab, \htcmp
+      \Delta^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
-    + (\genre + 1) \deg \va
+    + (g + 1) \deg \va
     \bigl(
-      \Delta^\genre \hautl1 F
-      + \Delta^\dimp \ln(\Delta) \dimp
+      \Delta^g \hautl1 F
+      + \Delta^n \ln(\Delta) n
     \bigr)
   \end{align}
 \end{coro}
@@ -5541,76 +5541,76 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{proof}
   On considère le plongement \( \vaemb' \) et l'hyperplan \( \divi \) fournis
   par le lemme~\vref{l:hs-vero} précédent et on prévoit d'appliquer le
-  corollaire~\vref{c:vojta-div-any} dans ce cadre avec \( \expapx' =
-    \expapx/\Delta \) comme exposant d'approximation. Il s'agit donc de
+  corollaire~\vref{c:vojta-div-any} dans ce cadre avec \( \eps' =
+    \eps/\Delta \) comme exposant d'approximation. Il s'agit donc de
   vérifier que nos conditions impliquent celles du corollaire en question.
 
   Concernant l'hypothèse d'approximation, on
   \begin{align}
-    \distv[\place, \vaemb']{ \ex* }{\divi}
+    \distv[v, \vaemb']{ \ex* }{\divi}
     \le
-    \distv[\place, \vaemb]{ \ex* }{F}
+    \distv[v, \vaemb]{ \ex* }{F}
     \cdot \Delta^{\dv/2}
     & \le
-    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm{2, \vaemb}{\ex*}^{-\wtapx \expapx}
+    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps}
     \cdot \Delta^{\dv/2}
     \\ & \le
     (n' + 1)^{-3\dv/2}
-    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \expapx'}
+    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \eps'}
   \end{align}
-  ce qui justifie le choix fait pour \( \expapx' \).
+  ce qui justifie le choix fait pour \( \eps' \).
 
   On adapte alors les constantes pour tenir compte des variations de degrés,
-  hauteurs et dimension ambiante ainsi que du choix de \( \expapx \).
+  hauteurs et dimension ambiante ainsi que du choix de \( \eps \).
   Détaillons le cas de \( \cst{ht-v-hs} \). En utilisant abondamment le lemme
   précédent, on a
   \begin{align}
     & \hautl{1, \vaemb'}{\va}
-    + \hautl{1, \vaemb'}{ \divi } (\genre+1) \deg_{\vaemb'} \va
+    + \hautl{1, \vaemb'}{ \divi } (g+1) \deg_{\vaemb'} \va
     \\ & \quad \le
-    \Delta^{\genre+1} \hautl{1, \vaemb}{\va}
-    + (\genre + 1) \deg_{\vaemb} \va \Bigl(
-      \Delta^{\genre+1} \ln(\dimp + 1)
-      + \Delta^\genre \bigl( \hautl{1, \vaemb} F + \Delta\dimp \bigr)
+    \Delta^{g+1} \hautl{1, \vaemb}{\va}
+    + (g + 1) \deg_{\vaemb} \va \Bigl(
+      \Delta^{g+1} \ln(n + 1)
+      + \Delta^g \bigl( \hautl{1, \vaemb} F + \Delta n \bigr)
     \Bigr)
   \end{align}
   puis
   \begin{equation}
     \hlclab[\vaemb'] + \frac52 \hautl{1, \vaemb'} E
     \le
-    \Delta \hlclab[\vaemb] + 2 \Delta\dimp
-    + \frac52 ( \hautl{1, \vaemb} F + \Delta\dimp)
+    \Delta \hlclab[\vaemb] + 2 \Delta n
+    + \frac52 ( \hautl{1, \vaemb} F + \Delta n)
   \end{equation}
   et
   \begin{equation}
-    \htcmp[\vaemb'] + \hautl{2, \vaemb'} E + \frac12 \ln(\dimp' + 1)
+    \htcmp[\vaemb'] + \hautl{2, \vaemb'} E + \frac12 \ln(n' + 1)
     \le
     \Delta \htcmp[\vaemb]
-    + \hautl{1, \vaemb} F + \Delta\dimp
-    + \frac12 \Delta \ln\dimp
+    + \hautl{1, \vaemb} F + \Delta n
+    + \frac12 \Delta \ln n
   \end{equation}
   ce qui prouve que
   \begin{align}
     \cst{ht-v-div-dv}[\vaemb']
     & \le \max \Bigl(
-      \Delta^{\genre+1} \hautl{1, \vaemb}{\va}
-      + \Delta^\genre (\genre + 1) \deg_{\vaemb} \va
-      \bigl( \hautl{1, \vaemb} F + 2\Delta\dimp \bigr),\
+      \Delta^{g+1} \hautl{1, \vaemb}{\va}
+      + \Delta^g (g + 1) \deg_{\vaemb} \va
+      \bigl( \hautl{1, \vaemb} F + 2\Delta n \bigr),\
       \\ & \qquad
       \Delta \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} F
-      + \frac94 \Delta\dimp,\
-      \Delta \htcmp[\vaemb] + \hautl{1, \vaemb} F + \frac32 \Delta\dimp,\
-      \Delta^\dimp \ln(\Delta) \dimp
+      + \frac94 \Delta n,\
+      \Delta \htcmp[\vaemb] + \hautl{1, \vaemb} F + \frac32 \Delta n,\
+      \Delta^n \ln(\Delta) n
     \Bigr)
     \\ & \le
     \Delta \max \bigl(
-      \Delta^\genre \hautl{1, \vaemb}{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
+      \Delta^g \hautl{1, \vaemb}{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
     \bigr)
-    + (\genre + 1) \deg_{\vaemb} \va
+    + (g + 1) \deg_{\vaemb} \va
     \bigl(
-      \Delta^\genre \hautl{1, \vaemb} F
-      + \Delta^\dimp \ln(\Delta) \dimp
+      \Delta^g \hautl{1, \vaemb} F
+      + \Delta^n \ln(\Delta) n
     \bigr)
   \end{align}
   en prenant le maximum terme par terme, assez largement pour le dernier.
@@ -5633,7 +5633,7 @@ contrôlés.
 
 \begin{lem} \label{l:hs-choice}
   Soient \( V \) une sous-variété de \( \projd \) de degré \( \Delta \) et de
-  dimension \( u \), et \( \ex[1], \dots, \ex[\puiss] \) des points dans \(
+  dimension \( u \), et \( \ex[1], \dots, \ex[m] \) des points dans \(
     \projd(\Qbar) \setminus V(\Qbar) \). Il existe une hypersurface \( F \) de
   \( \projd \) contenant \( V \) mais aucun des \( \ex* \), de degré \( \deg V
   \) et de hauteur
@@ -5641,8 +5641,8 @@ contrôlés.
     \hautl1 F
     \le
     \hautl1 V
-    + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
-    + \ln(\puiss/2)
+    + (u + 2) \ln (\Delta + 1) ( \Delta + n + 1 )
+    + \ln(m/2)
     \pmm.
   \end{equation}
 \end{lem}
@@ -5655,7 +5655,7 @@ contrôlés.
   l'ensemble des matrices dont les coefficients sont \( 0 \) ou \( 1 \), de
   sorte que pour tout \( \Delta \) on a
   \begin{equation}
-    s = \card \mathcal M_2 \le (\Delta + 1)^{(u+2)(\dimp+1)}
+    s = \card \mathcal M_2 \le (\Delta + 1)^{(u+2)(n+1)}
     \pmm.
   \end{equation}
   Par ailleurs, on utilisera plutôt les hauteurs \( \Hautl1 \), pour
@@ -5670,10 +5670,10 @@ contrôlés.
     \Hautm1 \) au plus \( \Delta + 1 \) : au plus deux coefficients non
   nuls, tous deux dans \( I_\Delta \).
 
-  Si \( \puiss = 1 \), il suffit de choisir un \( P_i \) ne s'annulant pas en
-  \( \ex[1] \). On suppose donc désormais que \( \puiss \ge 2 \).
+  Si \( m = 1 \), il suffit de choisir un \( P_i \) ne s'annulant pas en
+  \( \ex[1] \). On suppose donc désormais que \( m \ge 2 \).
 
-  Pour chaque \( \fct \in \set{1, \dots, \puiss} \) on fixe un \( \fcti_\fct
+  Pour chaque \( \fct \in \set{1, \dots, m} \) on fixe un \( \fcti_\fct
   \) tel que \( P_{\fcti_\fct}(\ex*) \neq 0 \). On considère alors le polynôme
   \( \mathcal P \in \Qbar[T_1, \dots, T_s] \) défini par
   \begin{equation}
@@ -5681,24 +5681,24 @@ contrôlés.
     =
     \prod\fctrange \bigl( P_1(\ex*) T_1 + \dots + P_s(\ex*) T_s \bigr)
   \end{equation}
-  qui est donc homogène de degré \( \puiss \), et n'est pas le polynôme nul,
+  qui est donc homogène de degré \( m \), et n'est pas le polynôme nul,
   car un de ses coefficients est \( \prod\fctrange P_{\fcti_\fct}(\ex*) \) qui
   n'est pas nul. On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
-    \abs{\lambda_\fcti} \le \puiss/2 \) en lequel \( \mathcal P \) ne
+    \abs{\lambda_\fcti} \le m/2 \) en lequel \( \mathcal P \) ne
   s'annule pas.
 
   On pose alors \( Q = \lambda_1 P_1 + \dots + \lambda_s P_s \) et \( F =
     \zeros Q \). Par construction, il est clair que \( F \) est de degré \(
     \Delta \) et contient \( V \) mais aucun des \( \ex* \) (en effet, \(
     \prod\fctrange Q(\ex*) = \mathcal P(\lambda) \neq 0 \)).  Par ailleurs, \(
-    \hautl1{\lambda} \le \ln s + \ln(\puiss/2) \), ce qui donne
+    \hautl1{\lambda} \le \ln s + \ln(m/2) \), ce qui donne
   immédiatement
   \begin{equation}
     \hautl1 F
     \le
     \hautl1 V + (u + 1) \Delta \ln(\Delta + 1)
-    + (u+2)(\dimp+1) \ln (\Delta + 1)
-    + \ln(\puiss/2)
+    + (u+2)(n+1) \ln (\Delta + 1)
+    + \ln(m/2)
   \end{equation}
   qui implique l'estimation annoncée.
 \end{proof}
@@ -5706,47 +5706,47 @@ contrôlés.
 \begin{coro} \label{c:vojta-gen1}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
-    u \), et \( 0 < \expapx < 1 \) un nombre réel.
+    u \), et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > \frac4\Delta \cst{ht-v-gen1} \Lambda_3^{(1 + \frac1\puiss)
-      \prod_{i=\puiss}^{\puiss\genre} (2i + 1)}
+    & > \frac4\Delta \cst{ht-v-gen1} \Lambda_3^{(1 + \frac1m)
+      \prod_{i=m}^{mg} (2i + 1)}
     \\
     \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
-    4 \puiss \Lambda_3^{2\puiss \prod_{i=\puiss+1}^{\puiss\genre} (2i + 1)}
+    4 m \Lambda_3^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
     \cos(\ex*, \ex[\fcti]) & > 1 -
-    \frac1{ \puiss }
+    \frac1{ m }
     \left(
-      \frac{ \expapx }{
-        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
+      \frac{ \eps }{
+        86 \nclmaps \cdot 5^g \Delta \sbin{n + \Delta}{\Delta}
       }
-    \right)^{ \frac{\puiss}{\puiss-\genre} }
+    \right)^{ \frac{m}{m-g} }
   \end{align}
   avec \( \Lambda_3 \) comme en~\eqref{e:deg-v-hs} et
   \begin{align}
     \newcst[\Theta]{ht-v-gen1}
     & =
     \Delta \max \bigl(
-      \Delta^\genre \hautl1{\va}, \hlclab, \htcmp
+      \Delta^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
-    + (\genre + 1) \deg \va
+    + (g + 1) \deg \va
     \Bigl(
-      \Delta^\dimp \ln(\Delta) \dimp
+      \Delta^n \ln(\Delta) n
     \\ & \qquad
-      + \Delta^\genre \bigl (
+      + \Delta^g \bigl (
         \hautl1 V
-        + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
-        + \ln(\puiss/2)
+        + (u + 2) \ln (\Delta + 1) ( \Delta + n + 1 )
+        + \ln(m/2)
       \bigr)
     \Bigr)
   \end{align}
@@ -5763,53 +5763,53 @@ légèrement simplifiées.
 \begin{coro} \label{c:vojta-gen2}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
-    u \), et \( 0 < \expapx < 1 \) un nombre réel.
+    u \), et \( 0 < \eps < 1 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[\puiss] \) avec \( \puiss \ge \genre + 1 \) satisfaisant
+    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{\ex*} V
     & <
-    \bigl( \Delta \sbin{\Delta+\dimp}{\dimp}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \expapx}
-    \quad \forall \place \in \placesapx
+    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{\ex*}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
     \\
     \hautn{\ex[1]}
-    & > \cst{ht-v-gen1} \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \\
     \hautn{\ex*} & > \hautn{\ex[\fct-1]}
-    \cdot \Lambda_4^{(2\puiss\genre)^{\puiss\genre}}
+    \cdot \Lambda_4^{(2mg)^{mg}}
     \\
     \cos(\ex*, \ex[\fcti]) & > 1 -
-    \frac1{ \puiss \, \cst{v-gen} }
+    \frac1{ m \, \cst{v-gen} }
   \end{align}
   avec
   \begin{align}
     \newcst[]{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^\genre \Delta \sbin{\dimp + \Delta}{\Delta}
-        \, \expapx^{-1}
-    \bigr)^{ \frac{\puiss}{\puiss-\genre} }
+        86 \nclmaps \cdot 5^g \Delta \sbin{n + \Delta}{\Delta}
+        \, \eps^{-1}
+    \bigr)^{ \frac{m}{m-g} }
     \\
     \Lambda_4
     & =
     \cst{v-gen}
-    \bigl( (\sqrt2 \puiss \genre\Delta)^\genre \deg \va \bigr)^\puiss
+    \bigl( (\sqrt2 m g\Delta)^g \deg \va \bigr)^m
     \\
     \cst{ht-v-gen1}
     & =
     \Delta \max \bigl(
-      \Delta^\genre \hautl1{\va}, \hlclab, \htcmp
+      \Delta^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
-    + (\genre + 1) \deg \va
+    + (g + 1) \deg \va
     \Bigl(
-      \Delta^\dimp \ln(\Delta) \dimp
+      \Delta^n \ln(\Delta) n
     \\ & \qquad
-      + \Delta^\genre \bigl (
+      + \Delta^g \bigl (
         \hautl1 V
-        + (u + 2) \ln (\Delta + 1) ( \Delta + \dimp + 1 )
-        + \ln(\puiss/2)
+        + (u + 2) \ln (\Delta + 1) ( \Delta + n + 1 )
+        + \ln(m/2)
       \bigr)
     \Bigr)
     \pmm.
@@ -5820,25 +5820,25 @@ légèrement simplifiées.
   La définition de \( \cst{ht-v-gen1} \) n'a pas changé, elle est simplement
   rappelée pour référence, et l'apparition de \( \cst{v-gen} \) ne change
   rien. La définition du \( \Lambda \) a été simplifié en observant que \(
-    5\puiss^2 \deg \va \le (\deg \va)^\puiss (\sqrt2
-    \puiss\genre)^{\puiss\genre} \) compte tenu du fait que \( \puiss \ge 2 \)
-  et \( \deg \va \ge 3 \) (c'est évident pour \( \puiss \) assez grand et on
+    5m^2 \deg \va \le (\deg \va)^m (\sqrt2
+    mg)^{mg} \) compte tenu du fait que \( m \ge 2 \)
+  et \( \deg \va \ge 3 \) (c'est évident pour \( m \) assez grand et on
   le vérifie numériquement pour les petites valeurs).
 
-  On montre maintenant que \( \prod_{i=\puiss}^{\puiss\genre} (2i + 1) \le
-    \frac12 (2\puiss\genre)^{\puiss\genre} \). C'est clair si \( \genre = 1 \)
+  On montre maintenant que \( \prod_{i=m}^{mg} (2i + 1) \le
+    \frac12 (2mg)^{mg} \). C'est clair si \( g = 1 \)
   et dans le cas contraire on remarque qu'il s'agit d'un produit de \(
-    \puiss\genre - \puiss + 1 \) facteurs tous inférieurs à \( \puiss\genre \)
-  sauf le dernier qu'on regroupe avec le premier car \( (2\puiss +
-    1)(2\puiss\genre + 1) \le (2\puiss\genre)^2 \) pour \( \genre \ge 2 \) (et
-  donc \( \puiss \ge 3 \)).
+    mg - m + 1 \) facteurs tous inférieurs à \( mg \)
+  sauf le dernier qu'on regroupe avec le premier car \( (2m +
+    1)(2mg + 1) \le (2mg)^2 \) pour \( g \ge 2 \) (et
+  donc \( m \ge 3 \)).
 
   On en déduit que la deuxième condition ci-dessus implique celle du
   corollaire précédent en remarquant que \( \frac4\delta \le \Lambda_4^{1/4}
-  \) puis que \( (1 + \frac1\puiss) \prod_{i=\puiss}^{\puiss\genre} (2i + 1) +
-    \frac14 \le (2\puiss\genre)^{\puiss\genre} \). On procède de façon
+  \) puis que \( (1 + \frac1m) \prod_{i=m}^{mg} (2i + 1) +
+    \frac14 \le (2mg)^{mg} \). On procède de façon
   similaire pour la troisième condition en remarquant que cette fois le
-  produit dans l'exposant commence à \( i = \puiss + 1 \).
+  produit dans l'exposant commence à \( i = m + 1 \).
 \end{proof}
 
 

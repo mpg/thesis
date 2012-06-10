@@ -503,9 +503,9 @@ l'espace de \MoW de \( \va \), défini comme
 Plus précisément, la partie \( \MW\cdn = \va(\cdn) \otimes_\Z \R \)
 définie sur un corps de nombres \( \cdn \) est un espace euclidien de
 dimension (finie) égale au rang de \( \va \) sur \( \cdn \). Par extension, si
-\( \Gamma \) est un sous-groupe de \( \va(\Qbar) \), on note \( \MW\Gamma \)
-le sous-espace de \( \MW\Qbar \) engendré par l'image de \( \Gamma \) ; cet
-espace est de dimension finie si et seulement si \( \Gamma \) est de rang
+\( \grp \) est un sous-groupe de \( \va(\Qbar) \), on note \( \MW\grp \)
+le sous-espace de \( \MW\Qbar \) engendré par l'image de \( \grp \) ; cet
+espace est de dimension finie si et seulement si \( \grp \) est de rang
 fini.
 
 
@@ -650,13 +650,13 @@ on a \( \distv x V = 0 \Leftrightarrow x \in V(\Cv) \).
 Soient \( \cdn \) un corps de nombres, \( \placesapx \) un ensemble fini de
 places de \( \cdn \) et \( (\wtapx)\placerange \) une famille de réels telle
 que \( \sum\placerange \wtapx \degv = 1 \). On considère de plus une famille
-de constantes \( (c_v) \), un réel \( \expapx > 0 \) et on associe à toutes
+de constantes \( (c_v) \), un réel \( \eps > 0 \) et on associe à toutes
 ces données la condition d'approximation suivante.
 \begin{equation} \label{e:ha-sys}
   \distv x \avar
   \le
   c_v
-  \hautm2{x}^{-\wtapx\expapx}
+  \hautm2{x}^{-\wtapx\eps}
   \quad \forall v \in \placesapx
   \pmm.
 \end{equation}
@@ -676,7 +676,7 @@ et il est clair que la condition~\eqref{e:ha-sys} est équivalente à
   \distv[w] x \avar
   \le
   c_w
-  \hautm2{x}^{-\wtapx[w]\expapx}
+  \hautm2{x}^{-\wtapx[w]\eps}
   \quad \forall w \in \placesapx'
   \pmm.
 \end{equation}
@@ -689,7 +689,7 @@ Enfin, on considérera aussi des conditions d'approximation de la forme
   \distv x \avar ^\degv
   \le
   c
-  \hautm2{x}^{-\expapx}
+  \hautm2{x}^{-\eps}
   \pmm.
 \end{equation}
 Il est clair qu'une telle condition a également un sens sur \( \Qbar \). Par
@@ -880,6 +880,8 @@ montre que c'est possible.
 \end{lem}
 
 \begin{proof}
+  \newcommand*\hatxs {\smash{\hat x}}
+  \newcommand*\hatys {\smash{\hat y}}
   Pour le premier point, il suffit de choisir \( i \in \set{ 0, \dots, n } \)
   maximisant \( \av{x_i} \). Afin d'alléger les notations, on supposera par
   la suite \( i = 0 \). Pour chaque \( z = (z_0, \dots, z_n) \) on notera \(

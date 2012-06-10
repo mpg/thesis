@@ -21,10 +21,10 @@ On écrira ainsi $\coa_{(a, l)} = \Delta_{a, l}(\coa)  = \Delta_{(a,
   l)}^{(2)}(\coa) = \coa_{\fibre^{\otimes 4}}(a, l)$. Par ailleurs, bien que
 les coordonnées soient naturellement indexées (\lat{ibid.} p. 651) par
 $\mathcal{Z}_2 \times \widehat{K_2(4)}$, on les indexera souvent par $\{0,
-  \dots, \dimp\}$ pour alléger l'écriture, où \( \dimp = 16^\genre \deg
-  \fibrei - 1 \) ; ainsi on écrira $\coa = (\coa_0, \dots \coa_\dimp)$ des
+  \dots, n\}$ pour alléger l'écriture, où \( n = 16^g \deg
+  \fibrei - 1 \) ; ainsi on écrira $\coa = (\coa_0, \dots \coa_n)$ des
 coordonnées de l'origine. On rappelle que le degré de \( \Theta(\va) \) en
-tant que variété projective est égal à \( \dimp + 1 \).  Par ailleurs, le
+tant que variété projective est égal à \( n + 1 \).  Par ailleurs, le
 corollaire~6.9 page~698 du même article donne une comparaison explicite entre
 \( \hautl2{\coa} \) et la hauteur de \bsc{Faltings} de \( \va \).
 \nomuse \coa {Coordonnées de l'origine de \( \va \) dans le plongement de
@@ -48,10 +48,10 @@ précisément, le fait suivant est une reformulation de la proposition~3.9 de
 \emph{loc. cit} et de la remarque subséquente.
 
 \begin{fact} \label{f:comp-h-hn}
-  Pour tout point \( \pp \in \va(\Qbar) \), on a \(
-    \abs{\hautn\pp - \hautl2\pp} \le \htcmp \) avec
+  Pour tout point \( x \in \va(\Qbar) \), on a \(
+    \abs{\hautn x - \hautl2 x} \le \htcmp \) avec
   \begin{equation}
-    \htcmp = (4^\genre - 1) \hautl2{\coa} + 3\genre \ln2
+    \htcmp = (4^g - 1) \hautl2{\coa} + 3g \ln2
     \pmm.
   \end{equation}
 \end{fact}
@@ -123,12 +123,12 @@ Par exemple, \( \clab[+] 11 \) est le morphisme d'addition.
 \label{sec:form-ab-cl}
 
 On regarde \( \va \times \va \) plongée dans \( \projd \times \projd \) par \(
-  \Theta^2 \) et on note \( V_0, \dots, V_\dimp \) les coordonnées sur le
-premier facteur \( \projd \) et \( W_0, \dots, W_\dimp \) celles sur le
-second. On peut ensuite plonger \( (\projd)^2 \) dans \( \proj\dimpi \) par un
-plongement de \bsc{Segre}, c'est-à-dire qu'un système de coordonnées sur cet
-espace est donné par la famille \( V_l W_{l'} \) où \( (l, l') \) parcourt \(
-  \set{0, \dots, \dimp}^2 \).
+  \Theta^2 \) et on note \( V_0, \dots, V_n \) les coordonnées sur le
+premier facteur \( \projd \) et \( W_0, \dots, W_n \) celles sur le
+second. On peut ensuite plonger \( (\projd)^2 \) dans \( \proj{n^2 + 2n} \)
+par un plongement de \bsc{Segre}, c'est-à-dire qu'un système de coordonnées
+sur cet espace est donné par la famille \( V_l W_{l'} \) où \( (l, l') \)
+parcourt \( \set{0, \dots, n}^2 \).
 
 Le résultat fondamental est le fait suivant, qui est une simple reformulation
 de la proposition~3.6 de \cite{daphimhva2} en utilisant les notations
@@ -150,26 +150,26 @@ du reste de l'article cité.
     \zeta_{p, p', q, q'} V_p V_{p'} W_q W_{q'}
     \pmm,
   \end{equation}
-  où \( E \) est un sous-ensemble à \( 4^\genre \) éléments de \( \{0, \dots,
-      \dimp\} \), les \( \zeta_{p, p', q, q'} \) sont des racines quatrièmes
-  de l'unité, et \( \xi \) est une certaine fonction \( \{0, \dots, \dimp\}
-    \to \{0, \dots, \dimp\} \) telle que pour tout \( p \), \(
+  où \( E \) est un sous-ensemble à \( 4^g \) éléments de \( \{0, \dots,
+      n\} \), les \( \zeta_{p, p', q, q'} \) sont des racines quatrièmes
+  de l'unité, et \( \xi \) est une certaine fonction \( \{0, \dots, n\}
+    \to \{0, \dots, n\} \) telle que pour tout \( p \), \(
     \coi^{-1}_{\xi(p)} \) est une coordonnée (non nulle) de \( \oa \) (voir le
   paragraphe précédent cette sous-section).
 
   En particulier, on peut estimer les normes locales :
-  \( \nv1{S_{l, l'}} \le 4^{\genre\dv} \nv1{\coi}^2 \)
+  \( \nv1{S_{l, l'}} \le 4^{g\dv} \nv1{\coi}^2 \)
   pour tout \( (l, l') \) et
   \(
     \nnv1{S}
     \le
-    \bigl( 4^\genre (\dimp+1)^2 \bigr)^\dv \nv1{\coi}^2
+    \bigl( 4^g (n+1)^2 \bigr)^\dv \nv1{\coi}^2
   \)
   pour la famille.
 \end{fact}
 
 Cette représentation suppose \( \va^2 \) plongée dans un espace projectif
-\( \proj{\dimp^2 + 2\dimp} \). Si l'on veut en déduire simplement, par
+\( \proj{n^2 + 2n} \). Si l'on veut en déduire simplement, par
 projection sur un facteur, des représentations de l'addition et de la
 soustraction, on doit d'abord « redescendre » \( \va^2 \) dans \( (\projd)^2
 \) : ceci se fait simplement par des projections linéaires. Or celles-ci ont
@@ -184,16 +184,16 @@ on note également \( x \) et \( y \) des coordonnées homogènes) , la famille
   y))_{l'} \) est un système de coordonnées homogènes de \( x - y \) à la même
 condition. Autrement dit, si l'on note \( \opdefi_{l} \) (resp. \(
   \opdefi'_{l'} \)) l'ouvert \( V_{l} \neq 0 \) (resp. \( W_{l'} \neq 0 \)) et,
-que par abus, on note de même leurs images dans \( \proj\dimpi \), on voit que
-la famille \( (S_{l, l'})_l \) fournit des formules d'addition valables sur \(
-  \clab[-]11^{-1}(\opdefi'_{l'}) \), et de même pour la soustraction.
+que par abus, on note de même leurs images dans \( \proj{n^2 + 2n} \), on voit
+que la famille \( (S_{l, l'})_l \) fournit des formules d'addition valables
+sur \( \clab[-]11^{-1}(\opdefi'_{l'}) \), et de même pour la soustraction.
 
 En remarquant de plus qu'on peut dans chacune de ces familles simplifier par
 \( \coi_{\xi(l')} \) puisqu'on travaille à \( l' \) fixé, on a donc le résultat
 suivant.
 
 \begin{coro} \label{c:addsub-form}
-  Il existe des ensembles de \( \dimp + 1 \) ouverts recouvrant \( \va^2 \),
+  Il existe des ensembles de \( n + 1 \) ouverts recouvrant \( \va^2 \),
   notés \( \clmaps_+ \) et \( \clmaps_- \), tels que pour tout ouvert \(
     \clmap \) dans \( \clmaps_+ \) (resp. dans \( \clmaps_- \)) il existe une
   famille de formes biquadratiques \( (S\pexp{+,\clmap}[l])_l \) (resp. \(
@@ -202,8 +202,8 @@ suivant.
   \begin{equation}
     \norm{S^{\bullet, \clmap}_l}_{v,1}
     \le
-    4^{\genre\dv} \norm{\coi}_{v, 1}
-    \quad \forall l \in \{0, \dots, \dimp\}
+    4^{g\dv} \norm{\coi}_{v, 1}
+    \quad \forall l \in \{0, \dots, n\}
     \pmm,
   \end{equation}
   où \( \bullet \in \set{ +, - } \).
@@ -217,7 +217,7 @@ page~126 de \cite{remivds}, dont on reformule l'énoncé dans le fait suivant.
 
 \begin{fact} \label{f:clab}
   Posons \( f(a) = \lfloor (a^2 - 1)/8 \rfloor \) pour tout entier \( a \).
-  Il existe un ensemble de \( (\dimp + 1)^2 \) ouverts recouvrant \( \va^2 \),
+  Il existe un ensemble de \( (n + 1)^2 \) ouverts recouvrant \( \va^2 \),
   noté \( \clmaps' \) et, pour tout \( \clmap \in \clmaps' \) et tout couple
   d'entiers naturels \( a \) et \( b \), une famille de formes \(
     (L\pexp{\clmap, a, b}[l,l'])_{l,l'} \) représentant \( \clab ab \) sur \(
@@ -232,7 +232,7 @@ page~126 de \cite{remivds}, dont on reformule l'énoncé dans le fait suivant.
     \item \(
         \hautl\infty{ (L\pexp{\clmap, a, b}[l,l'])_{l,l'} }
         \le
-        (a^2 + b^2) (2 (4^\genre-1) \hautl2{\coa} + 6\dimp)
+        (a^2 + b^2) (2 (4^g-1) \hautl2{\coa} + 6n)
       \).
   \end{enumthm}
 \end{fact}
@@ -243,7 +243,7 @@ page~126 de \cite{remivds}, dont on reformule l'énoncé dans le fait suivant.
   notations de la proposition de \bsc{Rémond}, alors que le membre de droite
   est la famille donnée par le fait~\vref{f:addsub}, qui n'était pas disponible
   au moment de la rédaction de \cite{remivds}. On constate par ailleurs que \(
-    \hautl2{(S_{l, l'})_{l, l'}} \le 2(4^\genre-1) \hautl2{\coa} \)
+    \hautl2{(S_{l, l'})_{l, l'}} \le 2(4^g-1) \hautl2{\coa} \)
   d'après la proposition~3.7 de~\cite{daphimhva2} (la hauteur considérée
   dans cette référence étant celle que nous notons \( \Hautl2 \), voir en
   bas de la page~644 de l'article) et que la hauteur considérée par
@@ -404,7 +404,7 @@ notre preuve de l'inégalité de \bsc{Vojta}.
     \cdn \), représentant globalement la multiplication par \( \gamma \) sur
   \( \va \), de degré \( \gamma^2 \) et de hauteur multiplicative majorée par
   \( C_{2, 3}^{\gamma^2} \), telle que pour tout \( x \in \va \) et toutes
-  place \( \place \) de \( \cdn \), on a :
+  place \( v \) de \( \cdn \), on a :
   \begin{equation}
     \av{r_{2, 3}}^{\gamma^2} C_{2, 3}^{-\dv \gamma^2}
     \le
@@ -432,15 +432,15 @@ notre preuve de l'inégalité de \bsc{Vojta}.
   biquadratiques représentant la soustraction sur \( \clmap \).  Il existe un
   réel \( C_s \ge 1 \) et un entier \( r_s \in \cdn^* \), ne dépendant que de
   ces données ce plongement, et, pour tout couple de points \( (x, y) \in
-    \va^2 \) et toute place \( \place \) de \( \cdn \), un ouvert \(
-    \clmap_{x, y, \place} \in \clmaps \) tel que
+    \va^2 \) et toute place \( v \) de \( \cdn \), un ouvert \(
+    \clmap_{x, y, v} \in \clmaps \) tel que
   \begin{equation}
     \av{r_s} C_s^{-\dv}
     \le
     \frac{
-      \nv1{ S\pexp{\clmap_{x, y, \place}}(x, y) }
+      \nv1{ S\pexp{\clmap_{x, y, v}}(x, y) }
     }{
-      \nnv1{ S\pexp{\clmap_{x, y, \place}} } \nv1 x ^2 \nv1 y ^2
+      \nnv1{ S\pexp{\clmap_{x, y, v}} } \nv1 x ^2 \nv1 y ^2
     }
     \le
     C_s^{\dv}
@@ -459,26 +459,26 @@ notre preuve de l'inégalité de \bsc{Vojta}.
 \begin{lem} \label{l:hclab}
   Il existe une famille (ne dépendant que de \( \va \) et \( \Theta \)) de
   réels \( \hmclab* \) presque tous égaux à \( 1 \) (de sorte que \(
-    \hmclab = \prod_\place \hmclab*^{\degv} \) est bien défini) possédant la
+    \hmclab = \prod_v \hmclab*^{\degv} \) est bien défini) possédant la
   propriété suivante.
 
   Dans le plongement \( \Theta \), il existe un ensemble \( \clmaps \) de \(
-    \dimp+1 \) ouverts recouvrant \( \va^2 \) et, pour tout \( \clmap \in
+    n+1 \) ouverts recouvrant \( \va^2 \) et, pour tout \( \clmap \in
     \clmaps \) et tout couple d'entiers \( a, b \) n'admettant que \( 2 \) et
   \( 3 \) comme diviseurs premiers, une famille \( (L\pexp{a, b, \clmap}[l])_l
   \) de formes bihomogènes de degré \( (2a^2, 2b^2) \) et de hauteur majorée
   par \( \hmclab^{a^2 + b^2} \), représentant \(
     \clab[-] ab \) sur \( \clmap \). De plus, pour
-  tout couple de points \( (x, y) \in \va^2 \), toute place \( \place
+  tout couple de points \( (x, y) \in \va^2 \), toute place \( v
   \) de \( \cdn \) et tous entiers \( a \) et \( b \) comme ci-dessus, il
-  existe une carte \( \clmap_{a, b, x, y, \place} \in \clmaps \) telle que
+  existe une carte \( \clmap_{a, b, x, y, v} \in \clmaps \) telle que
   \begin{equation}
     \hmclab*^{-(a^2 + b^2)}
     \le
     \frac{
-      \nv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} }(x, y) }
+      \nv1{ L\pexp{ a, b, \clmap_{a, b, x, y, v} }(x, y) }
     }{
-      \nnv1{ L\pexp{ a, b, \clmap_{a, b, x, y, \place} } }
+      \nnv1{ L\pexp{ a, b, \clmap_{a, b, x, y, v} } }
       \nv1 x ^{2a^2} \nv1 y ^{2b^2}
     }
     \le

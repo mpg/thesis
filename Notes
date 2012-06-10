@@ -19,19 +19,10 @@ Notations {{{2
 (B) Approximations : on garde \ex pour la partie technique de Vojta, partout
 ailleurs on utilise x (voire x et y dans Mumford simple).
 
-Liste des notations "en dur" "globales" :
-- \eps l'exposant d'approximation
-- v une place
-- n la dimension ambiante
-- g la dimention de \va
-- m un nombre de points ou d'approximations
-- x, y, z des points quelconques ou des approximations
-- \Gamma un groupe, r son rang
-
 Macros {{{2
 ------
 
-(D) Passer en dur les notations en dur
+cf XXX et FIXME dans le cls
 
 Biblio {{{2
 ------
