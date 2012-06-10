@@ -11,11 +11,11 @@ Notations {{{2
 ---------
 
 (B) Utiliser \avar etc de façon consistante :
-    - chapitre décomptes
     - param dans Vojta
 
 (B) Approximations : on garde \ex pour la partie technique de Vojta, partout
 ailleurs on utilise x (voire x et y dans Mumford simple).
+    - reste à faire : c-union
 
 Macros {{{2
 ------

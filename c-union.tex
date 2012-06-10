@@ -31,22 +31,22 @@ exceptionnelles si \( \eps \) est trop grand, en vertu de l'inégalité de
 \bsc{Liouville}.
 
 \begin{sco} \label{s:nobig-liouville}
-  Soit \( V \) une sous-variété de \( \projd \), de dimension \( u \) et de
-  degré \( d \). Il n'existe aucun point \( x \in \projd(\Qbar) \)
+  Soit \( \avar \) une sous-variété de \( \projd \), de dimension \( \adim \) et de
+  degré \( \adeg \). Il n'existe aucun point \( x \in \projd(\Qbar) \)
   tel que
   \begin{align}
     \label{e:nobig-ha}
-    0 < \prod\placerange \distv x V ^\degv
+    0 < \prod\placerange \distv x \avar ^\degv
     & <
     \hautm2 x ^{-\eps}
     \\ \label{e:nobig-big}
     \hautm2 x
     & >
     (n+1)^{3/2}
-    (3d)^{d (u+1)}
-    \, \hautm1{ \chow V }
+    (3\adeg)^{\adeg (\adim+1)}
+    \, \hautm1{ \chow \avar }
   \end{align}
-  pour \( \eps \ge d + 1 \).
+  pour \( \eps \ge \adeg + 1 \).
 \end{sco}
 
 \begin{proof}
@@ -57,17 +57,17 @@ exceptionnelles si \( \eps \) est trop grand, en vertu de l'inégalité de
 On commence par majorer le nombre de points dans chaque cône tronqué.
 
 \begin{lem} \label{l:big-by-cone}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
   on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
   \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
   conditions suivantes :
   \begin{align}
     \label{e:big-ha}
-    0 < \distv{\ex*} V
+    0 < \distv{\ex*} \avar
     & <
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \hautm2{\ex*}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\ \label{e:big-big}
@@ -82,27 +82,27 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \cst{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \\
     \Lambda_4
     & =
     \cst{v-gen}
-    \bigl( (\sqrt2 m g d)^g \deg \va \bigr)^m
+    \bigl( (\sqrt2 m g \adeg)^g \deg \va \bigr)^m
     \\
     \cst{ht-v-gen1}
     & =
-    d \max \bigl(
-      d^g \hautl1{\va}, \hlclab, \htcmp
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      d^n \ln(d) n
+      \adeg^n \ln(\adeg) n
     \\ & \qquad
-      + d^g \bigl (
-        \hautl1 V
-        + (u + 2) \ln (d + 1) ( d + n + 1 )
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
         + \ln(m/2)
       \bigr)
     \Bigr)
@@ -112,7 +112,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   \begin{equation}
     p
     \le
-    \sqrt{\frac d \eps}
+    \sqrt{\frac \adeg \eps}
     (4mg)^{mg}
     \ln \Lambda_4
     \pmm.
@@ -120,7 +120,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 \end{lem}
 
 \begin{proof}
-  Pour commencer, remarquons qu'on peut supposer \( \eps < d + 1 \). En effet,
+  Pour commencer, remarquons qu'on peut supposer \( \eps < \adeg + 1 \). En effet,
   sinon le scolie~\vref{s:nobig-liouville} s'applique, car~\eqref{e:big-ha}
   implique immédiatement~\eqref{e:nobig-ha} et~\eqref{e:big-big} implique
   assez largement~\eqref{e:nobig-big} vu la définition de \( \cst{ht-v-gen1}
@@ -129,8 +129,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   Soit \( x_1, \dots, x_p \) une famille comme dans l'énoncé, qu'on suppose de
   plus ordonnée par hauteur normalisée croissante. On pose
   \( \phi =( m \, \cst{v-gen})^{-1} \) et
-  \( \rho = \sqrt{ \eps / d } \).  On constate facilement que
-  \( \phi \le \eps / (2580 d) \) de sorte que ce couple \( (\rho, \phi) \)
+  \( \rho = \sqrt{ \eps / \adeg } \).  On constate facilement que
+  \( \phi \le \eps / (2580 \adeg) \) de sorte que ce couple \( (\rho, \phi) \)
   satisfait à~\eqref{e:rho-phi-grp}. Par ailleurs, il est assez facile de voir
   que la condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig} : en
   effet \( \cst{v-gen} \ge 2/\eps \cdot \adeg (\adim+1) \) et la parenthèse
@@ -138,21 +138,21 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \cst{ht-v-gen1} \).
 
   On peut donc appliquer le théorème~\vref{t:mumford-grp} et conclure que
-  \( \hautn{ x_{i+1} } > (1 + \sqrt{\eps / d}) \hautn{ x_i } \) pour tout
+  \( \hautn{ x_{i+1} } > (1 + \sqrt{\eps / \adeg}) \hautn{ x_i } \) pour tout
   \( i \le p-1 \). On pose alors
   \begin{equation}
     \eta
     =
     \left\lceil
       (2mg)^{mg}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / d}) }
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
     \right\rceil
   \end{equation}
   de sorte que, pour tout \( i \le p - \eta \), on a
   \begin{equation}
     \hautn{ x_{i+\eta} }
     >
-    (1 + \sqrt{\eps / d})^\eta
+    (1 + \sqrt{\eps / \adeg})^\eta
     \hautn{ x_i }
     \ge
     \Lambda_4^{(2mg)^{mg}}
@@ -171,24 +171,24 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     (m - 1)
     \left(
       (2mg)^{mg}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / d}) }
+      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
       + 1
     \right)
     \le
     m
     (2mg)^{mg}
-    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / d}) }
+    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
     \pmm.
   \end{equation}
   On remarque alors que la fonction \( x \mapsto \ln(1+x)/x \) est
   décroissante pour \( x > 0 \) pour minorer le dénominateur par \( \ln(2)
-    \sqrt{\eps / d} \) compte tenu de l'hypothèse sur \( \eps \) ; on
+    \sqrt{\eps / \adeg} \) compte tenu de l'hypothèse sur \( \eps \) ; on
   obtient alors, en remarquant de plus que \( \ln 2 \ge 1/2 \) :
   \begin{equation}
     p
     \le
     m (2mg)^{mg}
-    \cdot 2 \sqrt{\frac d \eps}
+    \cdot 2 \sqrt{\frac \adeg \eps}
     \cdot \ln \Lambda_4
   \end{equation}
   qui donne aisément le résultat annoncé.
@@ -203,32 +203,32 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   %     \ln 86
   %     + \ln \nclmaps
   %     + g \ln 5
-  %     + \ln d
-  %     + {\textstyle \ln \binom{n+d}d}
+  %     + \ln \adeg
+  %     + {\textstyle \ln \binom{n+\adeg}\adeg}
   %     - \ln \eps
   %   \right)
   %   \\ & \qquad
   %   + m \bigl(
-  %     \deg\va + g (\ln2/2 + \ln(mg) + \ln d)
+  %     \deg\va + g (\ln2/2 + \ln(mg) + \ln \adeg)
   %   \bigr)
   %   \\ & \le
   %   2 \bigl(
   %     9/2
   %     + \ln \nclmaps
   %     + g \ln 5
-  %     + (n+1) \ln(d+1)
+  %     + (n+1) \ln(\adeg+1)
   %     - \ln \eps
   %   \bigr)
   %   \\ & \qquad
   %   + m \deg\va
   %   + mg (\ln(mg) + \ln2/2)
-  %   + mg \ln d
+  %   + mg \ln \adeg
   %   \\ & \le
   %   - \ln \eps
   %   + 9
   %   + 2 \ln \nclmaps
   %   + m \deg\va
-  %   + \ln(d+1) (n+1 + mg)
+  %   + \ln(\adeg+1) (n+1 + mg)
   %   + mg (\ln(mg) + 2)
   % \end{align}
 
@@ -245,20 +245,20 @@ On utilise ensuite le fait suivant.
 \end{proof}
 
 \begin{prop} \label{p:big-gen}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
   Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
-    \sqrt{\frac d \eps}
+    \sqrt{\frac \adeg \eps}
     (4mg)^{mg}
     \ln \Lambda_4
     \left(
       3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -266,9 +266,9 @@ On utilise ensuite le fait suivant.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*} V
+    0 < \distv{\ex*} \avar
     & <
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \hautm2{\ex*}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
@@ -288,7 +288,7 @@ On utilise ensuite le fait suivant.
     \left(
       1 + \sqrt{8 m}
       \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -296,7 +296,7 @@ On utilise ensuite le fait suivant.
     \left(
       3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -390,7 +390,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
   Dans l'application prévue, les paramètres seront choisis de la façon
   suivante.  L'ensemble \( A \) sera l'intersection d'un système complet de
   représentants modulo \( \vai \) dans un sous-groupe de rang fini (voire de
-  type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus V(\Qbar) \) et
+  type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus \avar(\Qbar) \) et
   \( H \) la hauteur induite sur cet ensemble par le choix d'un plongement
   projectif de \( \va \). L'ensemble \( M \) sera l'ensemble des places d'un
   corps de nombres \( \cdn \) suffisamment gros et en chaque place
@@ -517,21 +517,21 @@ considérées, on utilisera donc le scolie suivant.
 \end{proof}
 
 \begin{coro}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
   Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
-    \sqrt{ \frac{d}\eps }
+    \sqrt{ \frac{\adeg}\eps }
     (4mg)^{mg}
     \ln \Lambda_4
     \left(
       3 \sqrt m
       \bigl(
-        172 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        172 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -539,9 +539,9 @@ considérées, on utilisera donc le scolie suivant.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
-    0 < \prod\placerange \distv{\ex*} V ^\degv
+    0 < \prod\placerange \distv{\ex*} \avar ^\degv
     & <
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-1/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2}
     \hautm2{\ex*}^{-\eps}
     \\
     \hautn{\ex[1]}
@@ -572,21 +572,21 @@ On peut alors simplifier légèrement la condition d'approximation en absorbant
 la constante ; on aboutit au résultat suivant.
 
 \begin{thm} \label{t:big-gen-prod}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
   Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
-    \sqrt{ \frac{d}\eps }
+    \sqrt{ \frac{\adeg}\eps }
     (4mg)^{mg}
     \ln \Lambda_5
     \left(
       3 \sqrt m
       \bigl(
-        174 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        174 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -594,7 +594,7 @@ la constante ; on aboutit au résultat suivant.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
-    0 < \prod\placerange \distv{\ex*} V ^\degv
+    0 < \prod\placerange \distv{\ex*} \avar ^\degv
     & <
     \hautm2{\ex*}^{-\eps}
     \\
@@ -606,23 +606,23 @@ la constante ; on aboutit au résultat suivant.
     \Lambda_5
     & =
     \bigl(
-        87 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        87 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
-    \bigl( (\sqrt2 m g d)^g \deg \va \bigr)^m
+    \bigl( (\sqrt2 m g \adeg)^g \deg \va \bigr)^m
     \\
     \cst{ht-v-gen1}
     & =
-    d \max \bigl(
-      d^g \hautl1{\va}, \hlclab, \htcmp
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      d^n \ln(d) n
+      \adeg^n \ln(\adeg) n
     \\ & \qquad
-      + d^g \bigl (
-        \hautl1 V
-        + (u + 2) \ln (d + 1) ( d + n + 1 )
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
         + \ln(m/2)
       \bigr)
     \Bigr)
@@ -633,9 +633,9 @@ la constante ; on aboutit au résultat suivant.
 \begin{proof}
   On constate pour commencer que
   \begin{equation}
-    \frac12 \ln \bigl( d \sbin{d+n}{n}^3 \bigr)
+    \frac12 \ln \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)
     \le
-    \frac32 d \sbin{d+n}{n}^3
+    \frac32 \adeg \sbin{\adeg+n}{n}^3
     \le
     \frac{ \Lambda_4^{(2mg)^{mg}} }{ 87 \eps }
   \end{equation}
@@ -643,7 +643,7 @@ la constante ; on aboutit au résultat suivant.
   \begin{equation}
     \hautm2{ \ex* }^{\eps/87}
     \ge
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-1/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2}
   \end{equation}
   puis que les hypothèses du présent énoncé impliquent celles de l'énoncé
   précédent en remplaçant \( \eps \) par \( 86\eps / 87 \).
@@ -733,17 +733,17 @@ On en déduit pour finir un résultat de décompte complet (petits et grands
 points) des approximations exceptionnelles.
 
 \begin{thm} \label{t:inc-small}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de type
   fini ; on note \( r \) son rang et \( \hmin \) le minimum de \( \hautn x \)
   quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \grp \).
   Le nombre de points de \( \grp \) distincts modulo \( \vai \) et
   satisfaisant à
   \begin{equation}
-    0 < \distv x V
+    0 < \distv x \avar
     <
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \hautm2 x ^{-\wtapx \eps}
     \quad \forall v \in \placesapx
   \end{equation}
@@ -755,7 +755,7 @@ points) des approximations exceptionnelles.
         5 \cst{ht-m=g+1}
         \Bigl(
           \eps^{-1}
-          \, d \sbin{n + d}{d}
+          \, \adeg \sbin{n + \adeg}{\adeg}
           \, \cst{lambda}
         \Bigr)^{(\sqrt2(g+1))^{2g(g+1)}}
       }{
@@ -767,16 +767,16 @@ points) des approximations exceptionnelles.
   \begin{align}
     \newcst[]{ht-m=g+1}
     & =
-    d \max \bigl(
-      d^g \hautl1{\va}, \hlclab, \htcmp
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      d^n \ln(d) n
+      \adeg^n \ln(\adeg) n
     \\ & \qquad
-      + d^g \bigl (
-        \hautl1 V
-        + (u + 2) \ln (d + 1) ( d + n + 1 )
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
         + \ln((g+1)\/2)
       \bigr)
     \Bigr)
@@ -796,7 +796,7 @@ points) des approximations exceptionnelles.
     \Lambda_4^{(2mg)^{mg}} \), on voit que le nombre de
   points en question est au plus
   \begin{equation}
-    \sqrt{\frac d \eps}
+    \sqrt{\frac \adeg \eps}
     2 m
     (2mg)^{mg}
     \ln \Lambda_4
@@ -814,7 +814,7 @@ points) des approximations exceptionnelles.
   On voit facilement que le premier terme est majoré par \( \Lambda_4^{3r} \)
   : en effet, on a
   \begin{align}
-    6 \sqrt{\frac d \eps}
+    6 \sqrt{\frac \adeg \eps}
     \cdot \sqrt{ \cst{v-gen} }
     & \le
     \cst{v-gen}
@@ -874,7 +874,7 @@ points) des approximations exceptionnelles.
     & =
     \left(
       \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
       \bigr)^{ g + 1 }
       \bigl( (\sqrt2 g(g+1)\Delta)^g \deg \va \bigr)^{g+1}
@@ -882,7 +882,7 @@ points) des approximations exceptionnelles.
     \\ & \le
     \Bigl(
       \eps^{-1}
-      \, d \sbin{n + d}{d}
+      \, \adeg \sbin{n + \adeg}{\adeg}
       \, \cst{lambda}
     \Bigr)^{(g+1) (2g(g+1))^{g(g+1)}}
   \end{align}
@@ -911,14 +911,14 @@ d'approximation pour éliminer les petits grâce à l'inégalité de
 le suivant.
 
 \begin{lem}
-  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
-  \( d \). Si \( R \) et \( F \) sont deux réels positifs,
+  Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et de degré
+  \( \adeg \). Si \( R \) et \( F \) sont deux réels positifs,
   l'ensemble des points \( x \in \va(\Qbar) \) tels que
   \begin{equation}
     0
     <
     \prod\placerange
-    \distv x V ^\degv
+    \distv x \avar ^\degv
     \le
     \expb^{-F}
     \hautm2{x}^{-\eps}
@@ -928,11 +928,11 @@ le suivant.
   est vide dès que
   \( F
     >
-    (d-\eps) R
-    + \hautl1{ \chow V }
-    + d (u+1) \ln(3d)
+    (\adeg-\eps) R
+    + \hautl1{ \chow \avar }
+    + \adeg (\adim+1) \ln(3\adeg)
     + \frac32 \ln(n+1)
-    + (d-\eps) \htcmp
+    + (\adeg-\eps) \htcmp
   \).
 \end{lem}
 
@@ -943,13 +943,13 @@ le suivant.
   \begin{equation}
     \frac1{
       (n+1)^{3/2}
-      (3d)^{d (u+1)}
-      \, \hautm1{ \chow V }
-      \, \hautm2 x ^d
+      (3\adeg)^{\adeg (\adim+1)}
+      \, \hautm1{ \chow \avar }
+      \, \hautm2 x ^\adeg
     }
     \le
     \prod\placerange
-    \distv x V ^\degv
+    \distv x \avar ^\degv
     \le
     \expb^{-F}
     \hautm2{x}^{-\eps}
@@ -958,16 +958,16 @@ le suivant.
   \begin{align}
     F
     & \le
-    (d-\eps) \hautl2 x
-    + \hautl1{ \chow V }
-    + d (u+1) \ln(3d)
+    (\adeg-\eps) \hautl2 x
+    + \hautl1{ \chow \avar }
+    + \adeg (\adim+1) \ln(3\adeg)
     + \frac32 \ln(n+1)
     \\ & \le
-    (d-\eps) R
-    + \hautl1{ \chow V }
-    + d (u+1) \ln(3d)
+    (\adeg-\eps) R
+    + \hautl1{ \chow \avar }
+    + \adeg (\adim+1) \ln(3\adeg)
     + \frac32 \ln(n+1)
-    + (d-\eps) \htcmp
+    + (\adeg-\eps) \htcmp
     \pmm.
   \end{align}
   Par contraposée, l'ensemble considéré est vide si cette inégalité est
@@ -977,14 +977,14 @@ le suivant.
 On en déduit immédiatement le corollaire pratique suivant.
 
 \begin{coro} \label{c:kill-small}
-  Soit \( V \) une sous-variété de \( \va \), de dimension \( u \) et de degré
-  \( d \). Si \( R \) est un réel supérieur ou égal à
+  Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et de degré
+  \( \adeg \). Si \( R \) est un réel supérieur ou égal à
   \begin{equation}
     \frac1\eps \left(
-      \hautl1{ \chow V }
-      + d (u+1) \ln(3d)
+      \hautl1{ \chow \avar }
+      + \adeg (\adim+1) \ln(3\adeg)
       + \frac32 \ln(n+1)
-      + d \htcmp
+      + \adeg \htcmp
     \right)
     \pmm,
   \end{equation}
@@ -993,9 +993,9 @@ On en déduit immédiatement le corollaire pratique suivant.
     0
     <
     \prod\placerange
-    \distv x V ^\degv
+    \distv x \avar ^\degv
     \le
-    \expb^{- d R}
+    \expb^{- \adeg R}
     \hautm2{x}^{-\eps}
     \quad\text{et}\quad
     \hautn x \le R
@@ -1004,27 +1004,27 @@ On en déduit immédiatement le corollaire pratique suivant.
 \end{coro}
 
 \begin{proof}
-  Application immédiate du lemme précédent avec \( F = d R \).
+  Application immédiate du lemme précédent avec \( F = \adeg R \).
 \end{proof}
 
 On peut alors renforcer la condition d'approximation pour interdire
 l'existence de petits points, ce qui donne la proposition suivante.
 
 \begin{prop} \label{p:all-gen}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
   Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
   il existe au plus
   \begin{equation}
-    \sqrt{\frac d \eps}
+    \sqrt{\frac \adeg \eps}
     (4mg)^{mg}
     \ln \Lambda_4
     \left(
       3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -1032,11 +1032,11 @@ l'existence de petits points, ce qui donne la proposition suivante.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   à la condition suivante :
   \begin{align}
-    0 < \distv{\ex*} V
+    0 < \distv{\ex*} \avar
     & <
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
-      - \wtapx d \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
+      - \wtapx \adeg \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \right)
     \hautm2{\ex*}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
@@ -1050,10 +1050,10 @@ l'existence de petits points, ce qui donne la proposition suivante.
   \begin{equation}
     0
     <
-    \prod\placerange \distv{\ex*} V ^\degv
+    \prod\placerange \distv{\ex*} \avar ^\degv
     <
     \exp\left(
-      - d \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
+      - \adeg \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \right)
     \hautm2{\ex*}^{-\eps}
   \end{equation}
@@ -1071,24 +1071,24 @@ ou bien le décompte le plus précis possible. Dans le premier sens, on obtient
 le résultat suivant.
 
 \begin{coro}
-  Soient \( V \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( d \) et de dimension \( u \).
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
   On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
   fini \( r \).
   Pour tout réel \( \eps > 0 \), le nombre de points de \( \grp \)
   distincts modulo \( \vai \) et satisfaisant à la condition
   \begin{align}
-    0 < \distv{\ex*} V
+    0 < \distv{\ex*} \avar
     & <
     \hautm2{\ex*}^{-\wtapx\eps}
     \\ & \qquad \cdot
-    \bigl( d \sbin{d+n}{n}^3 \bigr)^{-\dv/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
-      - \wtapx 2 d
+      - \wtapx 2 \adeg
       \cst{ht-m=g+1}
       \Bigl(
         \eps^{-1}
-        d \sbin{n + d}{d}
+        \adeg \sbin{n + \adeg}{\adeg}
         \cst{lambda}
       \Bigr)^{(\sqrt2(g+1))^{2g(g+1)}}
     \right)
@@ -1097,7 +1097,7 @@ le résultat suivant.
   avec \( \cst{ht-m=g+1} \) et \( \cst{lambda} \) comme au
   théorème~\vref{t:inc-small} est au plus
   \begin{equation}
-    \sqrt{\frac d \eps}
+    \sqrt{\frac \adeg \eps}
     (4g(g+1))^{g(g+1)}
     \bigl(
       - \ln \eps
@@ -1106,7 +1106,7 @@ le résultat suivant.
     \left(
       3 \sqrt{g+1}
       \bigl(
-        86 \nclmaps \cdot 5^g d \sbin{n + d}{d}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
         \bigr)^{ \frac{g+1}{2} }
     \right)^r
@@ -1117,7 +1117,7 @@ le résultat suivant.
     =
     9
     + 2 \ln \nclmaps
-    + \ln(d+1) (n+1 + g(g+1))
+    + \ln(\adeg+1) (n+1 + g(g+1))
     + (g+1) \left( \deg\va + 4g \ln(g+1) \right)
     \pmm.
   \end{equation}
