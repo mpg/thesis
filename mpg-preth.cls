@@ -671,7 +671,10 @@
   \@ifnotmtarg{#1}{%
     \protected@write\@auxout{}{\global\string\@namedef{cst@@#2}{, #1}}%
   }%
-  \if@display \label{e:cst-#2}\noeqref{e:cst-#2}\fi
+  \if@display
+    \label{e:cst-#2}%
+    %\noeqref{e:cst-#2}%
+  \fi
   \begingroup \edef\x{\endgroup
     \noexpand\nomdirect{c}{\alph{cst}}{\unexpanded{\cst{#2}}}{%
       \if@display \unexpanded{définie par~\protect\refeq{e:cst-#2}}\fi}%
