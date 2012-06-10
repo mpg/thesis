@@ -231,10 +231,10 @@ Les estimations de la deuxième ligne sont un peu larges mais suffiront
 amplement en pratique.
 
 Jusqu'à présent nous n'avons exploité que l'hypothèse~\eqref{e:Vcos},
-pour~\eqref{e:hautn-wt-diff}. En tenant compte de l'hypothèse~\eqref{e:Vfar}, on
-voit de plus que la suite \( \wts[1], \dots, \wts** \) décroît
-au moins comme une suite géométrique de raison inférieure à \( 1 \). Plus
-précisément, dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
+pour~\eqref{e:hautn-wt-diff}. En tenant compte de l'hypothèse~\eqref{e:Vfar},
+on voit de plus que la suite \( \wts[1], \dots, \wts** \) décroît au moins
+comme une suite géométrique de raison inférieure à \( 1 \). Plus précisément,
+dès que \( \ex \) satisfait~\eqref{e:Vfar}, on a
 \begin{equation} \label{e:wt-geom}
   \wts*
   \le
@@ -382,11 +382,11 @@ construction itérative dans la démonstration ci-dessus.
     + \deg T \cdot \hautl\htpph{ \varfc* }
   \end{equation}
   où \( \Hautl{\mathrm{m}} \) est la hauteur désignée par \( h_1 \) dans la
-  référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2 assure
-  par ailleurs que \( \hautl{\mathrm{m}} T \le \hautl\infty T + \sqrt n
-  \). Rappelons comment \( \Hautl\htpph \) se compare à \( \Hautl1 \)
-  dans le cas particulier de la forme de \bsc{Chow} \( \chow V \) d'une
-  variété projective \( V \) :
+  référence citée et par \( h_m \) dans \cite{remstp}, dont le lemme~5.2
+  assure par ailleurs que \( \hautl{\mathrm{m}} T \le \hautl\infty T + \sqrt n
+  \). Rappelons comment \( \Hautl\htpph \) se compare à \( \Hautl1 \) dans le
+  cas particulier de la forme de \bsc{Chow} \( \chow V \) d'une variété
+  projective \( V \) :
   \begin{equation} \label{e:ht-pph-1}
     \abs{ \hautl\htpph{ \chow V } - \hautl1{ \chow V } }
     \le
@@ -823,11 +823,11 @@ homogène.
 
 L'idée générale est la suivante : on peut exploiter les relations de
 dépendance des dernières variables sur les premières données par le
-fait~\vref{f:plong-adapt-dep} pour réduire le degré en les dernières variables,
-et le deuxième point de la définition~\vref{d:plong-adapt} permet même
-d'éliminer totalement les variables d'indice strictement supérieur à \( \vdim*
-  + 1 \), à condition de multiplier par un certain dénominateur intervenant
-dans ces relations de dépendance rationnelles.
+fait~\vref{f:plong-adapt-dep} pour réduire le degré en les dernières
+variables, et le deuxième point de la définition~\vref{d:plong-adapt} permet
+même d'éliminer totalement les variables d'indice strictement supérieur à \(
+  \vdim* + 1 \), à condition de multiplier par un certain dénominateur
+intervenant dans ces relations de dépendance rationnelles.
 
 Il sera essentiel par la suite que ce dénominateur puisse être choisi
 indépendamment du degré considéré ; pour cela l'application \( \rfull \)
@@ -1118,8 +1118,8 @@ la construction de \( \rfull^\alpha \) à partir des briques précédentes.
     M_2 \) sont deux matrices, la norme \( \nv\infty\truc \) de leur produit
   est majorée par \( \nv\infty{M_1} \max(\nv1{c}) \) où \( c \) parcourt les
   colonnes de \( M_2 \). On absorbe par ailleurs les constantes ne dépendant
-  pas de \( \alpha \), à savoir le \( r \) et la norme de \( \relim \), dans le
-  \( o(\alpha) \).
+  pas de \( \alpha \), à savoir le \( r \) et la norme de \( \relim \), dans
+  le \( o(\alpha) \).
 
   Pour le noyau, considérons une forme \( H \) de multidegré \( \alpha \). On
   constate d'une part que si \( \rfull^\alpha(H) = 0 \), alors \( R H \in
@@ -1326,7 +1326,8 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \bigr) ^{2 \delta \wts[1]}
     \pmm,
   \end{align}
-  où l'on rappelle que \( \hmclab \) est donné par la section~\vref{sec:vaemb}.
+  où l'on rappelle que \( \hmclab \) est donné par la
+  section~\vref{sec:vaemb}.
 \end{lem}
 
 \begin{proof}
@@ -1930,8 +1931,8 @@ lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
   \pmm.
 \end{align}
 On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
-  \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\vref{l:sum-wts} implique alors
-que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
+  \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\vref{l:sum-wts} implique
+alors que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
 définition~\eqref{e:cst-vs-ht} pour écrire
 \begin{align}
   \hautl\infty{ M_{\sigma'_\clmap} }
@@ -2102,8 +2103,8 @@ propriétés de ces formes dont nous aurons besoin.
 \begin{proof}
   Les trois premiers points ne font que résumer la construction. Plus
   précisément, le premier découle de la définition de \( \faux* \), du
-  lemme~\vref{l:rfull} et de la définition~\eqref{e:def-wemba} de \( \wemba* \)
-  ; le deuxième est imposé par la construction et le troisième découle du
+  lemme~\vref{l:rfull} et de la définition~\eqref{e:def-wemba} de \( \wemba*
+  \) ; le deuxième est imposé par la construction et le troisième découle du
   lemme~\vref{l:deg-wemba} et des définitions~\eqref{e:d-dp-def} de
   \( d \) et \( d' \).
 
@@ -3020,10 +3021,10 @@ représente à peu de chose près la norme de \( \cexa* \).
   \end{equation}
   pour tout \( \ind \). D'après la note~\vref{fn:varfc}
   page~\pageref{fn:varfc}, on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
-  est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui est
-  le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons donc
-  \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } < \av{ \cexa**
-    } \).
+  est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui
+  est le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons
+  donc \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } < \av{
+      \cexa** } \).
 
   On utilise alors le fait qu'on connaît, dans un plongement adapté, des
   relations \( \poldep** \) liant chacune des dernières coordonnées aux
@@ -4893,25 +4894,25 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
   \( \divi \) un hyperplan de \( \projd \), \( p_0 \) le point de \( \projd \)
   de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \eps < 1
   \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
+    \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes, où les notions de distance et de
   hauteur sont relatives au plongement \( \vaemb \) :
   \begin{align}
-    0 < \distv{\ex*}{\divi}
+    0 < \distv{x_i}{\divi}
     & <
     \frac{ \distv{p_0}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > 4\cst{ht-v-div-dv} \Lambda_1^{(1 + \frac1m)
       \prod_{i=m}^{mg} (2i + 1)}
     \\
-    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
     4 m \Lambda_1^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
-    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \cos(x_i, x_j) & > 1 -
     \frac1{ m }
     \left(
       \frac{ \eps }{ 86 \nclmaps \cdot 5^g }
@@ -4967,28 +4968,28 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   corollaire, la définition de \( \eps' \) et enfin le
   point~\vref{i:plin-ht-pt} du lemme :
   \begin{align}
-    \distv[v, \vaemb']{\ex*}{\divi}
+    \distv[v, \vaemb']{x_i}{\divi}
     & \le
-    \distv[v, \vaemb]{\ex*}{\divi}
+    \distv[v, \vaemb]{x_i}{\divi}
     \cdot \distv[v, \vaemb]{\divi}{p_0}^{-2}
     \, (n + 1)^{\dv/2}
     \\ & \le
-    \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps}
+    \hautm{2, \vaemb}{x_i}^{-\wtapx \eps}
     =
-    \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps'}
-    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps/86}
+    \hautm{2, \vaemb}{x_i}^{-\wtapx \eps'}
+    \cdot \hautm{2, \vaemb}{x_i}^{-\wtapx \eps/86}
     \\ & \le
-    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \eps'}
+    \hautm{2, \vaemb'}{x_i}^{-\wtapx \eps'}
     \cdot \hautm{2, \vaemb}{E}^{\wtapx \eps'}
     (n + 1)^{\wtapx \eps'/2}
-    \cdot \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps/86}
+    \cdot \hautm{2, \vaemb}{x_i}^{-\wtapx \eps/86}
     \\ & \le
-    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \eps'}
+    \hautm{2, \vaemb'}{x_i}^{-\wtapx \eps'}
     \Bigl(
       \hautm{2, \vaemb}{E}^{85}
       (n + 1)^{85/2}
       /
-      \hautm{2, \vaemb}{\ex*}
+      \hautm{2, \vaemb}{x_i}
     \Bigr)^{\wtapx \eps/86}
     \pmm,
   \end{align}
@@ -4996,7 +4997,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   parenthèse soit inférieure à \( 1 \). Or, la deuxième hypothèse entraîne
   largement cette inégalité, par exemple :
   \(
-    \hautl{2, \vaemb}{\ex*}
+    \hautl{2, \vaemb}{x_i}
     \ge
     2 \cst{ht-v-div-dv} \Lambda_1
     \ge
@@ -5033,24 +5034,24 @@ au cours de la preuve.
 \begin{coro} \label{c:vojta-div-any}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \divi \) un hyperplan de \( \projd \) et \( 0 < \eps < 1 \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
+    \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*}{\divi}
+    0 < \distv{x_i}{\divi}
     & <
     (n + 1)^{-3\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > 4\cst{ht-v-div-dv} \Lambda_2^{(1 + \frac1m)
       \prod_{i=m}^{mg} (2i + 1)}
     \\
-    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
     4 m \Lambda_2^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
-    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \cos(x_i, x_j) & > 1 -
     \frac1{ m }
     \left(
       \frac{ \eps }{ 86 \nclmaps \cdot 5^g (n+1) }
@@ -5106,10 +5107,10 @@ au cours de la preuve.
     \eps' = \eps \sigma_i \) de sorte qu'on a
   \begin{equation}
     (n + 1)^{-3\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \hautm2{x_i}^{-\wtapx \eps}
     \le
     \frac{ \distv{p_{i_v}}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm2{\ex*}^{-\wtapx' \eps'}
+    \hautm2{x_i}^{-\wtapx' \eps'}
     \quad \forall v \in \placesapx'
     \pmm.
   \end{equation}
@@ -5130,31 +5131,32 @@ Pour se ramener au cas précédent, on utilise un plongement de \bsc{Veronese}
 remodelé, tel que défini dans \cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp},
 dont on rappelle la définition (sur les coordonnées homogènes) :
 \begin{align}
-  \chi_\Delta \colon \projd & \to \prod{n'} \\
+  \chi_\adeg \colon \projd & \to \prod{n'} \\
   (x_0 : \dots : x_n) & \mapsto 
-  ({\textstyle \binom\Delta\alpha} x^\alpha)_\alpha
+  ({\textstyle \binom\adeg\alpha} x^\alpha)_\alpha
 \end{align}
-où \( n' = \binom{n + \Delta}{\Delta} - 1 \) et \( \alpha \) parcourt
-l'ensemble des \( (n+1) \)-uplets d'entiers de longueur \( \Delta \).
+où \( n' = \binom{n + \adeg}{\adeg} - 1 \) et \( \alpha \) parcourt
+l'ensemble des \( (n+1) \)-uplets d'entiers de longueur \( \adeg \).
 L'intérêt de ce plongement par rapport au plongement de \bsc{Veronese}
 classique réside dans le fait qu'on a, aux places archimédiennes :
 \begin{equation}
-  \nv2{ \chi_\Delta(x) }
+  \nv2{ \chi_\adeg(x) }
   =
   \left(
-    \sum_\alpha \binom\Delta\alpha \av{x}^{2\alpha}
+    \sum_\alpha \binom\adeg\alpha \av{x}^{2\alpha}
   \right)^{1/2}
   =
-  \nv2{ x }^\Delta
+  \nv2{ x }^\adeg
 \end{equation}
-d'après la formule multinomiale. Par ailleurs, pour chaque place ultramétrique, si
-l'on choisit un indice \( \indv \) tel que \( \av{ x_\indv } \) soit maximale,
-il n'est pas difficile de constater que \( x_\indv^\Delta \) est une coordonnée
-de \( \chi_\Delta(x) \) qui est aussi de valeur absolue maximale. On a ainsi
+d'après la formule multinomiale. Par ailleurs, pour chaque place
+ultramétrique, si l'on choisit un indice \( \indv \) tel que \( \av{ x_\indv }
+\) soit maximale, il n'est pas difficile de constater que \( x_\indv^\adeg \)
+est une coordonnée de \( \chi_\adeg(x) \) qui est aussi de valeur absolue
+maximale. On a ainsi
 \begin{equation} \label{e:vero-norm}
-  \nv2{ \chi_\Delta(x) }
+  \nv2{ \chi_\adeg(x) }
   =
-  \nv2{ x }^\Delta
+  \nv2{ x }^\adeg
   \quad \forall v
   \pmm.
 \end{equation}
@@ -5162,24 +5164,24 @@ Dans les estimations de normes et hauteurs à venir, on aura aussi besoin du
 lemme suivant.
 
 \begin{lem} \label{l:norm-mn}
-  Soient \( n \) et \( \Delta \) deux entiers et \( \alpha \in
-    \N^{n+1} \) tel que \( \alpha_0 + \dots + \alpha_n = \Delta \).
+  Soient \( n \) et \( \adeg \) deux entiers et \( \alpha \in
+    \N^{n+1} \) tel que \( \alpha_0 + \dots + \alpha_n = \adeg \).
   Pour toute place \( v \) d'un corps de nombres contenant \(
-    \binom\Delta\alpha^{-1/2} \), on pose \( \dpv = 1 \) si \( v \)
-  divise un premier inférieur ou égal à \( \Delta \) et \( 0 \) sinon. On a
+    \binom\adeg\alpha^{-1/2} \), on pose \( \dpv = 1 \) si \( v \)
+  divise un premier inférieur ou égal à \( \adeg \) et \( 0 \) sinon. On a
   alors
   \begin{equation}
-    \av*{ \binom\Delta\alpha^{-1/2} }
+    \av*{ \binom\adeg\alpha^{-1/2} }
     \le
-    \Delta^{\dpv n / 2}
+    \adeg^{\dpv n / 2}
   \end{equation}
   De plus, cette valeur absolue vaut \( 1 \) si \( v \) divise un premier
-  strictement supérieur à \( \Delta \).
+  strictement supérieur à \( \adeg \).
 
-  Par ailleurs, on a \( \sum_v \degv \dpv \le 1.26 \Delta / \ln \Delta
+  Par ailleurs, on a \( \sum_v \degv \dpv \le 1.26 \adeg / \ln \adeg
   \).  En particulier si on note \( b \) le vecteur dont les composantes sont
-  les \( \binom\Delta\alpha^{-1/2} \) quand \( \alpha \) varie, on a
-  \( \hautl\infty b \le \Delta n \).
+  les \( \binom\adeg\alpha^{-1/2} \) quand \( \alpha \) varie, on a
+  \( \hautl\infty b \le \adeg n \).
 \end{lem}
 
 \begin{proof}
@@ -5188,22 +5190,22 @@ lemme suivant.
   utilise la définition du multinomial en terme de factorielles et la formule
   (de \bsc{Legendre}) donnant la valuation d'une factorielle :
   \begin{equation}
-    v_p( \binom\Delta\alpha )
+    v_p( \binom\adeg\alpha )
     =
-    \sum_{i = 1}^{\floor{\ln_p\Delta}}
-    \floor*{ \frac{\Delta}{p^i} }
+    \sum_{i = 1}^{\floor{\ln_p\adeg}}
+    \floor*{ \frac{\adeg}{p^i} }
     - \floor*{ \frac{\alpha_0}{p^i} }
     - \dots
     - \floor*{ \frac{\alpha_n}{p^i} }
   \end{equation}
   qui donne immédiatement le cas d'égalité, car la somme est vide si \(
-    p > \Delta \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
-  en sommant sur \( i \) on a \( v_p( \binom\Delta\alpha ) \le n \ln_p(\Delta)
+    p > \adeg \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
+  en sommant sur \( i \) on a \( v_p( \binom\adeg\alpha ) \le n \ln_p(\adeg)
   \) qui donne bien l'estimation de valeur absolue annoncée.
 
   La somme pondérée des \( \dpv \) est par définition le nombre de premiers
-  inférieurs ou égaux à \( \Delta \), qui est au plus
-  \( 1.25506 \Delta / \ln \Delta \) d'après le corollaire~1, page~69
+  inférieurs ou égaux à \( \adeg \), qui est au plus
+  \( 1.25506 \adeg / \ln \adeg \) d'après le corollaire~1, page~69
   de~\cite{rosch}. L'estimation de hauteur annoncée en découle immédiatement.
 \end{proof}
 
@@ -5211,56 +5213,56 @@ Le lemme suivant précise l'effet d'un plongement de \bsc{Veronese} remodelé
 sur les différents paramètres en jeu dans notre situation.
 
 \begin{lem} \label{l:hs-vero}
-  Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( F \)
-  une hypersurface de \( \projd \), de degré \( \Delta \). On note \( \chi \)
-  le plongement de \bsc{Veronese} remodelé de degré \( \Delta \), qui va donc
+  Soient \( \vaemb \colon \va \to \projd \) un plongement projectif et \( \hs \)
+  une hypersurface de \( \projd \), de degré \( \adeg \). On note \( \chi \)
+  le plongement de \bsc{Veronese} remodelé de degré \( \adeg \), qui va donc
   de \( \projd \) dans \( \proj{n'} \) où \( n' = \binom{n +
-      \Delta}{\Delta} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
-  plongement, l'image de \( F \) est découpée par un hyperplan \( \divi \) et
+      \adeg}{\adeg} - 1 \), et \( \vaemb' = \chi \circ \vaemb \). Dans ce
+  plongement, l'image de \( \hs \) est découpée par un hyperplan \( \divi \) et
   on a :
   \begin{enumthm}
     \item \(
         \hautl{1, \vaemb'} \divi
         \le
-        \hautl{1, \vaemb} F
-        + \Delta n
+        \hautl{1, \vaemb} \hs
+        + \adeg n
       \) ;
     \item \(
         \distv[v, \vaemb']{x}{\divi}
         \le
-        \distv[v, \vaemb]{x}{F}
-        \cdot \Delta^{\dv/2}
+        \distv[v, \vaemb]{x}{\hs}
+        \cdot \adeg^{\dv/2}
       \) ; \label{i:hs-vero-dv}
     \item \(
         \hautl{2, \vaemb'}{x}
         =
         \hautl{2, \vaemb}{x}
-        \cdot \Delta
+        \cdot \adeg
       \) ; \label{i:hs-vero-ht-pt}
     \item \(
         \deg_{\vaemb'} \va
         =
         \deg_{\vaemb} \va
-        \cdot \Delta^g
+        \cdot \adeg^g
       \) ; \label{i:hs-vero-deg-va}
     \item \(
         \hautl{1, \vaemb'}{\va}
         \le
-        \Delta^{g+1} \hautl{1, \vaemb}{\va}
-        + \Delta^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+        \adeg^{g+1} \hautl{1, \vaemb}{\va}
+        + \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
     \item \(
         \htcmp[\vaemb']
         =
         \htcmp[\vaemb]
-        \cdot \Delta
+        \cdot \adeg
       \) ; \label{i:hs-vero-htcmp}
     \item \(
         \hlclab[\vaemb']
         =
         \hlclab[\vaemb]
-        \cdot \Delta
-        + 2 \Delta n
+        \cdot \adeg
+        + 2 \adeg n
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
@@ -5270,7 +5272,7 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{proof}
   On utilise la remarque de~\cite[p.  102]{remgdmp} pour interpréter les
   distances et hauteurs dans le plongement de \bsc{Veronese} remodelé comme
-  des distances et hauteurs d'indice \( (\Delta, \dots, \Delta) \) dans le
+  des distances et hauteurs d'indice \( (\adeg, \dots, \adeg) \) dans le
   plongement initial.
 
   On trouve alors les comparaisons de degré et de hauteurs qui nous
@@ -5279,7 +5281,7 @@ sur les différents paramètres en jeu dans notre situation.
   point~\vref{i:hs-vero-htcmp} est une conséquence immédiate de ce dernier
   (pour lequel ou pouvait aussi utiliser~\eqref{e:vero-norm} en fait). Par
   ailleurs, la référence citée donne \( \hautl{\htpph, \vaemb'} \va =
-    \Delta^{g+1} \hautl{\htpph, \vaemb} \va \) (en notant \(
+    \adeg^{g+1} \hautl{\htpph, \vaemb} \va \) (en notant \(
     \Hautl\htpph \) la hauteur utilisée dans cette référence), dont on
   déduit le point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées
   comme en~\eqref{e:ht-pph-1} :
@@ -5289,16 +5291,16 @@ sur les différents paramètres en jeu dans notre situation.
     \hautl{\htpph, \vaemb'} \va
     + \frac12 \ln(n' + 1) (g + 1) \deg_{\vaemb'} \va
     \\ & \le
-    \Delta^{g+1} \hautl{\htpph, \vaemb} \va
-    + \frac12 \Delta^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+    \adeg^{g+1} \hautl{\htpph, \vaemb} \va
+    + \frac12 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
     \\ & \le
-    \Delta^{g+1} \hautl{1, \vaemb} \va
-    + \Delta^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+    \adeg^{g+1} \hautl{1, \vaemb} \va
+    + \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
 
   Pour~\vref{i:hs-vero-dv}, pour chaque place, introduisons un point
-  \( y_v \in F \) tel que \( \distv[v, \vaemb] x F = \distv[v,
+  \( y_v \in \hs \) tel que \( \distv[v, \vaemb] x \hs = \distv[v,
     \vaemb] x{y_v} \) ; par définition on a \( \distv[v, \vaemb'] x
     \divi \le \distv[v, \vaemb'] x{y_v} \). Pour majorer cette
   dernière quantité, aux places infinies on utilise la première
@@ -5306,11 +5308,11 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{equation}
     \distv[v, \vaemb'] x{y_v}
     =
-    \sqrt{ 1 - \bigl( 1 - \distv[v, \vaemb] x{y_v}^2 \bigr)^\Delta }
+    \sqrt{ 1 - \bigl( 1 - \distv[v, \vaemb] x{y_v}^2 \bigr)^\adeg }
     \pmm.
   \end{equation}
-  On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\Delta \le
-    \Delta z \) avec \( z = \distv[v, \vaemb] x{y_v}^2 \). Aux places
+  On conclut en appliquant l'inégalité élémentaire \( 1 - (1 - z)^\adeg \le
+    \adeg z \) avec \( z = \distv[v, \vaemb] x{y_v}^2 \). Aux places
   finies, on se base sur la définition de la distance : aux dénominateurs on
   utilise~\eqref{e:vero-norm} et au numérateur on voit facilement par le
   même type d'argument que \( \nv{}{ \chi(x) \wedge \chi(y) } \le \nv{}{ x
@@ -5323,27 +5325,27 @@ sur les différents paramètres en jeu dans notre situation.
 
   Pour la hauteur de \( \divi \), on remarque pour commencer que les résultats
   de~\cite[p. 85-86]{phidg} utilisés ci-dessus ne s'appliquent pas, car ce
-  dernier n'est pas l'image de \( F \) dans le plongement ; en fait on a \(
-    \chi(F) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( F
+  dernier n'est pas l'image de \( \hs \) dans le plongement ; en fait on a \(
+    \chi(\hs) = \divi \cap \chi(\projd) \). Fixons plutôt une équation de \( \hs
   \) dans le plongement initial : c'est un polynômes homogène de degré \(
-    \Delta \) en \( X = (X_0, \dots, X_n) \) mais on peut aussi le voir
+    \adeg \) en \( X = (X_0, \dots, X_n) \) mais on peut aussi le voir
   comme une forme linéaire en \( Z = (Z_\alpha)_\alpha \) (où \( \alpha \)
-  parcourt l'ensemble des \( (n + 1) \)-uplets de longueur \( \Delta \)),
+  parcourt l'ensemble des \( (n + 1) \)-uplets de longueur \( \adeg \)),
   en faisant le changement de variable \( Z_\alpha = X^\alpha \). On note \( L
     = \sum l_\alpha Z_\alpha \) la forme linéaire obtenue, puis \( L' =
-    l_\alpha \binom\Delta\alpha^{-1/2} Z_\alpha \). Par construction, \( L' \)
+    l_\alpha \binom\adeg\alpha^{-1/2} Z_\alpha \). Par construction, \( L' \)
   est bien l'équation dans le nouveau plongement d'un hyperplan \( \divi \)
-  contenant \( \chi(F) \). Par ailleurs, le lemme précédent donne l'estimation
+  contenant \( \chi(\hs) \). Par ailleurs, le lemme précédent donne l'estimation
   de hauteur annoncée.
 
   Pour chaque \( (a, b, \clmap) \) on considère la famille
   \( (\rmclab{a}{b}{\vaemb, \clmap}[\ind])\indrange \) donnée par la
   section~\vref{sec:vaemb}. Pour tout \( \beta \in \N^{n+1} \) de longueur
-  \( \Delta \), on regarde \( \prod\indrange
+  \( \adeg \), on regarde \( \prod\indrange
     (\rmclab{a}{b}{\clmap}[\ind])^{\beta_\ind} \), qui est une forme
-  bihomogène de bidegré \( (2\Delta a^2, 2\Delta b^2) \) en \( (\vmp[1],
+  bihomogène de bidegré \( (2\adeg a^2, 2\adeg b^2) \) en \( (\vmp[1],
     \vmp[2]) \), comme une forme bihomogène de \( (2a^2, 2b^2) \) en la
-  famille des monômes de bidegré \( (\Delta, \Delta) \) en \( (\vmp[1], \vmp[2])
+  famille des monômes de bidegré \( (\adeg, \adeg) \) en \( (\vmp[1], \vmp[2])
   \), image qu'on note provisoirement \( K_\beta \). La famille \(
     (K_\beta)_\beta \) représente le morphisme \( (x, y) \mapsto ax - by \)
   sur l'ouvert \( \clmap \) dans le plongement \( \vaemb' \).
@@ -5351,40 +5353,40 @@ sur les différents paramètres en jeu dans notre situation.
   La famille correspondante dans le plongement remodelé, notée \( (\rmclab
     ab\clmap[\vaemb', \beta])_\beta \),  s'en déduit en
   multipliant chacun des coefficients de \( K_\beta \) par un monôme de degré
-  \( 2(a^2 + b^2) \) en les \( \binom\Delta\alpha^{-1/2} \) puis en
-  multipliant la forme obtenue par \( \binom\Delta\beta^{1/2} \).
+  \( 2(a^2 + b^2) \) en les \( \binom\adeg\alpha^{-1/2} \) puis en
+  multipliant la forme obtenue par \( \binom\adeg\beta^{1/2} \).
   D'après le lemme précédent, on a donc
   \begin{equation}
     \nv1{ \rmclab ab\clmap[\vaemb', \beta] }
     \le
-    \av{ \textstyle \binom\Delta\beta^{1/2} }
+    \av{ \textstyle \binom\adeg\beta^{1/2} }
     \cdot
-    \nnv1{ \rmclab ab\clmap }^\Delta
+    \nnv1{ \rmclab ab\clmap }^\adeg
     \cdot
-    \Delta^{n (a^2 + b^2) \dpv}
+    \adeg^{n (a^2 + b^2) \dpv}
   \end{equation}
   puis en sommant sur \( \beta \) :
   \begin{equation}
     \nnv1{ \rmclab ab\clmap[\vaemb'] }
     \le
-    (n + 1)^{\Delta \, \dv}
+    (n + 1)^{\adeg \, \dv}
     \cdot
-    \nnv1{ \rmclab ab\clmap }^\Delta
+    \nnv1{ \rmclab ab\clmap }^\adeg
     \cdot
-    \Delta^{n (a^2 + b^2) \dpv}
+    \adeg^{n (a^2 + b^2) \dpv}
     \le
     \hmclab[\vaemb']*^{a^2 + b^2}
   \end{equation}
   en posant
   \(
-    \hmclab[\vaemb']* = \hmclab*^\Delta
-    \cdot (n + 1)^{5\Delta \dv/4} \cdot \Delta^{n \dpv}
+    \hmclab[\vaemb']* = \hmclab*^\adeg
+    \cdot (n + 1)^{5\adeg \dv/4} \cdot \adeg^{n \dpv}
   \) (l'exposant de \( n + 1 \) n'est pas optimal ici mais sera utile au
   paragraphe suivant).
 
   Par ailleurs, on sait que si \( x \) désigne des coordonnées homogènes d'un
   point de \( \projd \) et \( x' \) l'image de ces coordonnées par \( \chi \),
-  on a en toute place \( \nv2{ x' } = \nv2{ x }^\Delta \). Ainsi, vu les
+  on a en toute place \( \nv2{ x' } = \nv2{ x }^\adeg \). Ainsi, vu les
   définitions ci-dessus, on a
   \begin{equation}
     \frac{
@@ -5399,7 +5401,7 @@ sur les différents paramètres en jeu dans notre situation.
       }{
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
-    \right)^\Delta
+    \right)^\adeg
   \end{equation}
   puis, en utilisant des comparaisons classiques de normes :
   \begin{align}
@@ -5423,7 +5425,7 @@ sur les différents paramètres en jeu dans notre situation.
         \nv2 x ^{2a^2} \nv2 y ^{2b^2}
       }
       (n + 1)^{-(a^2 + b^2)\dv}
-    \right)^\Delta
+    \right)^\adeg
     \\ & \ge
     \left(
       \frac{
@@ -5432,9 +5434,9 @@ sur les différents paramètres en jeu dans notre situation.
         \nv1 x ^{2a^2} \nv1 y ^{2b^2}
       }
       (n + 1)^{-(a^2 + b^2 + 1/2)\dv}
-    \right)^\Delta
+    \right)^\adeg
     \\ & \ge
-    \bigl( \hmclab[\vaemb]* (n + 1)^{5\dv / 4} \bigr)^{-\Delta(a^2 + b^2)}
+    \bigl( \hmclab[\vaemb]* (n + 1)^{5\dv / 4} \bigr)^{-\adeg(a^2 + b^2)}
     \ge
     \hmclab[\vaemb']*^{-(a^2 + b^2)}
     \pmm.
@@ -5443,8 +5445,8 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{equation}
     \hlclab[\vaemb']
     =
-    \hlclab[\vaemb] \cdot \Delta
-    + \frac54\Delta \ln(n + 1) + 1.26 \Delta n
+    \hlclab[\vaemb] \cdot \adeg
+    + \frac54\adeg \ln(n + 1) + 1.26 \adeg n
   \end{equation}
   dont le dernier point se déduit en remarquant que \( \frac54 \ln(n +
     1) / n \le \frac58 \ln 3 \le 0.69 \) car \( n \ge 2 \).
@@ -5452,30 +5454,30 @@ sur les différents paramètres en jeu dans notre situation.
 
 \begin{coro} \label{c:vojta-hs}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( F \) une hypersurface de \( \projd \) de
-  degré \( \Delta \) et \( 0 < \eps < 1 \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
+  \( \hs \) une hypersurface de \( \projd \) de
+  degré \( \adeg \) et \( 0 < \eps < 1 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
+    \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*}{F}
+    0 < \distv{x_i}{\hs}
     & <
-    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{\ex[1]}
-    & > \frac4\Delta \cst{ht-v-hs} \Lambda_3^{(1 + \frac1m)
+    \hautn{x_1}
+    & > \frac4\adeg \cst{ht-v-hs} \Lambda_3^{(1 + \frac1m)
       \prod_{i=m}^{mg} (2i + 1)}
     \\
-    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
     4 m \Lambda_3^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
-    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \cos(x_i, x_j) & > 1 -
     \frac1{ m }
     \left(
       \frac{ \eps }{
-        86 \nclmaps \cdot 5^g \Delta \sbin{n + \Delta}{\Delta}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
       }
     \right)^{ \frac{m}{m-g} }
   \end{align}
@@ -5483,26 +5485,26 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{align}
     \Lambda_3 \label{e:deg-v-hs}
     & = \max \bigl(
-      (\Delta^g \deg \va)^m,
+      (\adeg^g \deg \va)^m,
       5 m^2
       \bigl(
         86 \nclmaps \cdot 5^g
-        \Delta \sbin{n + \Delta}{\Delta} \, \eps^{-1}
+        \adeg \sbin{n + \adeg}{\adeg} \, \eps^{-1}
       \bigr)^{ \frac{m}{m-g} }
-      \Delta^g \deg \va,
+      \adeg^g \deg \va,
       (\sqrt2 m g)^{mg}
     \bigr)
     \qquad\null
     \\
     \newcst[\Theta]{ht-v-hs}
     & =
-    \Delta \max \bigl(
-      \Delta^g \hautl1{\va}, \hlclab, \htcmp
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (g + 1) \deg \va
     \bigl(
-      \Delta^g \hautl1 F
-      + \Delta^n \ln(\Delta) n
+      \adeg^g \hautl1 \hs
+      + \adeg^n \ln(\adeg) n
     \bigr)
   \end{align}
 \end{coro}
@@ -5511,22 +5513,22 @@ sur les différents paramètres en jeu dans notre situation.
   On considère le plongement \( \vaemb' \) et l'hyperplan \( \divi \) fournis
   par le lemme~\vref{l:hs-vero} précédent et on prévoit d'appliquer le
   corollaire~\vref{c:vojta-div-any} dans ce cadre avec \( \eps' =
-    \eps/\Delta \) comme exposant d'approximation. Il s'agit donc de
+    \eps/\adeg \) comme exposant d'approximation. Il s'agit donc de
   vérifier que nos conditions impliquent celles du corollaire en question.
 
   Concernant l'hypothèse d'approximation, on
   \begin{align}
-    \distv[v, \vaemb']{ \ex* }{\divi}
+    \distv[v, \vaemb']{ x_i }{\divi}
     \le
-    \distv[v, \vaemb]{ \ex* }{F}
-    \cdot \Delta^{\dv/2}
+    \distv[v, \vaemb]{ x_i }{\hs}
+    \cdot \adeg^{\dv/2}
     & \le
-    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm{2, \vaemb}{\ex*}^{-\wtapx \eps}
-    \cdot \Delta^{\dv/2}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm{2, \vaemb}{x_i}^{-\wtapx \eps}
+    \cdot \adeg^{\dv/2}
     \\ & \le
     (n' + 1)^{-3\dv/2}
-    \hautm{2, \vaemb'}{\ex*}^{-\wtapx \eps'}
+    \hautm{2, \vaemb'}{x_i}^{-\wtapx \eps'}
   \end{align}
   ce qui justifie le choix fait pour \( \eps' \).
 
@@ -5538,54 +5540,54 @@ sur les différents paramètres en jeu dans notre situation.
     & \hautl{1, \vaemb'}{\va}
     + \hautl{1, \vaemb'}{ \divi } (g+1) \deg_{\vaemb'} \va
     \\ & \quad \le
-    \Delta^{g+1} \hautl{1, \vaemb}{\va}
+    \adeg^{g+1} \hautl{1, \vaemb}{\va}
     + (g + 1) \deg_{\vaemb} \va \Bigl(
-      \Delta^{g+1} \ln(n + 1)
-      + \Delta^g \bigl( \hautl{1, \vaemb} F + \Delta n \bigr)
+      \adeg^{g+1} \ln(n + 1)
+      + \adeg^g \bigl( \hautl{1, \vaemb} \hs + \adeg n \bigr)
     \Bigr)
   \end{align}
   puis
   \begin{equation}
     \hlclab[\vaemb'] + \frac52 \hautl{1, \vaemb'} E
     \le
-    \Delta \hlclab[\vaemb] + 2 \Delta n
-    + \frac52 ( \hautl{1, \vaemb} F + \Delta n)
+    \adeg \hlclab[\vaemb] + 2 \adeg n
+    + \frac52 ( \hautl{1, \vaemb} \hs + \adeg n)
   \end{equation}
   et
   \begin{equation}
     \htcmp[\vaemb'] + \hautl{2, \vaemb'} E + \frac12 \ln(n' + 1)
     \le
-    \Delta \htcmp[\vaemb]
-    + \hautl{1, \vaemb} F + \Delta n
-    + \frac12 \Delta \ln n
+    \adeg \htcmp[\vaemb]
+    + \hautl{1, \vaemb} \hs + \adeg n
+    + \frac12 \adeg \ln n
   \end{equation}
   ce qui prouve que
   \begin{align}
     \cst{ht-v-div-dv}[\vaemb']
     & \le \max \Bigl(
-      \Delta^{g+1} \hautl{1, \vaemb}{\va}
-      + \Delta^g (g + 1) \deg_{\vaemb} \va
-      \bigl( \hautl{1, \vaemb} F + 2\Delta n \bigr),\
+      \adeg^{g+1} \hautl{1, \vaemb}{\va}
+      + \adeg^g (g + 1) \deg_{\vaemb} \va
+      \bigl( \hautl{1, \vaemb} \hs + 2\adeg n \bigr),\
       \\ & \qquad
-      \Delta \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} F
-      + \frac94 \Delta n,\
-      \Delta \htcmp[\vaemb] + \hautl{1, \vaemb} F + \frac32 \Delta n,\
-      \Delta^n \ln(\Delta) n
+      \adeg \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} \hs
+      + \frac94 \adeg n,\
+      \adeg \htcmp[\vaemb] + \hautl{1, \vaemb} \hs + \frac32 \adeg n,\
+      \adeg^n \ln(\adeg) n
     \Bigr)
     \\ & \le
-    \Delta \max \bigl(
-      \Delta^g \hautl{1, \vaemb}{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
+    \adeg \max \bigl(
+      \adeg^g \hautl{1, \vaemb}{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
     \bigr)
     + (g + 1) \deg_{\vaemb} \va
     \bigl(
-      \Delta^g \hautl{1, \vaemb} F
-      + \Delta^n \ln(\Delta) n
+      \adeg^g \hautl{1, \vaemb} \hs
+      + \adeg^n \ln(\adeg) n
     \bigr)
   \end{align}
   en prenant le maximum terme par terme, assez largement pour le dernier.
 
   La condition suivante vient alors en remarquant que la hauteur normalisée
-  est multipliée par \( \Delta \) en changeant de plongement.  Enfin, les
+  est multipliée par \( \adeg \) en changeant de plongement.  Enfin, les
   rapports de hauteurs normalisés et les angles dans l'espace de \MoW étant
   invariants sous le changement de plongement considéré, les deux dernières
   conditions sont inchangées.  On peut dont appliquer le
@@ -5601,16 +5603,16 @@ lemme suivant donne un choix possible d'hypersurface de degré et hauteur
 contrôlés.
 
 \begin{lem} \label{l:hs-choice}
-  Soient \( V \) une sous-variété de \( \projd \) de degré \( \Delta \) et de
-  dimension \( u \), et \( \ex[1], \dots, \ex[m] \) des points dans \(
-    \projd(\Qbar) \setminus V(\Qbar) \). Il existe une hypersurface \( F \) de
-  \( \projd \) contenant \( V \) mais aucun des \( \ex* \), de degré \( \deg V
-  \) et de hauteur
+  Soient \( \avar \) une sous-variété de \( \projd \) de degré \( \adeg \) et de
+  dimension \( \adim \), et \( x_1, \dots, x_m \) des points dans \(
+    \projd(\Qbar) \setminus \avar(\Qbar) \). Il existe une hypersurface \( \hs
+  \) de \( \projd \) contenant \( \avar \) mais aucun des \( x_i \), de degré
+  \( \deg \avar \) et de hauteur
   \begin{equation}
-    \hautl1 F
+    \hautl1 \hs
     \le
-    \hautl1 V
-    + (u + 2) \ln (\Delta + 1) ( \Delta + n + 1 )
+    \hautl1 \avar
+    + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
     + \ln(m/2)
     \pmm.
   \end{equation}
@@ -5618,13 +5620,13 @@ contrôlés.
 
 \begin{proof}
   On se base sur la proposition~6.1 (p. 543) de~\cite{remdcl}, qui fournit une
-  famille de formes \( P_1, \dots, P_s \) de degré \( \Delta \) définissant \(
-    V \) (ensemblistement), avec une variante : si \( \Delta = 1 \) on choisit
-  pour \( \mathcal M_2 \) (dans les notations de la preuve de \lat{loc. cit.})
-  l'ensemble des matrices dont les coefficients sont \( 0 \) ou \( 1 \), de
-  sorte que pour tout \( \Delta \) on a
+  famille de formes \( P_1, \dots, P_s \) de degré \( \adeg \) définissant \(
+    \avar \) (ensemblistement), avec une variante : si \( \adeg = 1 \) on
+  choisit pour \( \mathcal M_2 \) (dans les notations de la preuve de
+  \lat{loc. cit.}) l'ensemble des matrices dont les coefficients sont \( 0 \)
+  ou \( 1 \), de sorte que pour tout \( \adeg \) on a
   \begin{equation}
-    s = \card \mathcal M_2 \le (\Delta + 1)^{(u+2)(n+1)}
+    s = \card \mathcal M_2 \le (\adeg + 1)^{(\adim+2)(n+1)}
     \pmm.
   \end{equation}
   Par ailleurs, on utilisera plutôt les hauteurs \( \Hautl1 \), pour
@@ -5632,41 +5634,41 @@ contrôlés.
   \begin{equation}
     \hautl1{ P_i }
     \le
-    \hautl1 V + (u + 1) \Delta \ln(\Delta + 1)
+    \hautl1 \avar + (\adim + 1) \adeg \ln(\adeg + 1)
   \end{equation}
   en remarquant que les \( P_i \) sont une spécialisation de la forme de
-  \bsc{Chow} de \( V \) en des points (formes linéaires) de hauteur \(
-    \Hautm1 \) au plus \( \Delta + 1 \) : au plus deux coefficients non
-  nuls, tous deux dans \( I_\Delta \).
+  \bsc{Chow} de \( \avar \) en des points (formes linéaires) de hauteur \(
+    \Hautm1 \) au plus \( \adeg + 1 \) : au plus deux coefficients non
+  nuls, tous deux dans \( I_\adeg \).
 
   Si \( m = 1 \), il suffit de choisir un \( P_i \) ne s'annulant pas en
-  \( \ex[1] \). On suppose donc désormais que \( m \ge 2 \).
+  \( x_1 \). On suppose donc désormais que \( m \ge 2 \).
 
-  Pour chaque \( \fct \in \set{1, \dots, m} \) on fixe un \( \fcti_\fct
-  \) tel que \( P_{\fcti_\fct}(\ex*) \neq 0 \). On considère alors le polynôme
+  Pour chaque \( i \in \set{1, \dots, m} \) on fixe un \( j_i
+  \) tel que \( P_{j_i}(x_i) \neq 0 \). On considère alors le polynôme
   \( \mathcal P \in \Qbar[T_1, \dots, T_s] \) défini par
   \begin{equation}
     \mathcal P
     =
-    \prod\fctrange \bigl( P_1(\ex*) T_1 + \dots + P_s(\ex*) T_s \bigr)
+    \prod\fctrange \bigl( P_1(x_i) T_1 + \dots + P_s(x_i) T_s \bigr)
   \end{equation}
   qui est donc homogène de degré \( m \), et n'est pas le polynôme nul,
-  car un de ses coefficients est \( \prod\fctrange P_{\fcti_\fct}(\ex*) \) qui
+  car un de ses coefficients est \( \prod\fctrange P_{j_i}(x_i) \) qui
   n'est pas nul. On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
-    \abs{\lambda_\fcti} \le m/2 \) en lequel \( \mathcal P \) ne
+    \abs{\lambda_j} \le m/2 \) en lequel \( \mathcal P \) ne
   s'annule pas.
 
-  On pose alors \( Q = \lambda_1 P_1 + \dots + \lambda_s P_s \) et \( F =
-    \zeros Q \). Par construction, il est clair que \( F \) est de degré \(
-    \Delta \) et contient \( V \) mais aucun des \( \ex* \) (en effet, \(
-    \prod\fctrange Q(\ex*) = \mathcal P(\lambda) \neq 0 \)).  Par ailleurs, \(
+  On pose alors \( Q = \lambda_1 P_1 + \dots + \lambda_s P_s \) et \( \hs =
+    \zeros Q \). Par construction, il est clair que \( \hs \) est de degré \(
+    \adeg \) et contient \( \avar \) mais aucun des \( x_i \) (en effet, \(
+    \prod\fctrange Q(x_i) = \mathcal P(\lambda) \neq 0 \)).  Par ailleurs, \(
     \hautl1{\lambda} \le \ln s + \ln(m/2) \), ce qui donne
   immédiatement
   \begin{equation}
-    \hautl1 F
+    \hautl1 \hs
     \le
-    \hautl1 V + (u + 1) \Delta \ln(\Delta + 1)
-    + (u+2)(n+1) \ln (\Delta + 1)
+    \hautl1 \avar + (\adim + 1) \adeg \ln(\adeg + 1)
+    + (\adim+2)(n+1) \ln (\adeg + 1)
     + \ln(m/2)
   \end{equation}
   qui implique l'estimation annoncée.
@@ -5674,30 +5676,29 @@ contrôlés.
 
 \begin{coro} \label{c:vojta-gen1}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
-    u \), et \( 0 < \eps < 1 \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
-  simultanément aux conditions suivantes :
+  \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
+  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+    \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_m \) avec \(
+    m \ge g + 1 \) satisfaisant simultanément aux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*} V
+    0 < \distv{x_i} \avar
     & <
-    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{\ex[1]}
-    & > \frac4\Delta \cst{ht-v-gen1} \Lambda_3^{(1 + \frac1m)
+    \hautn{x_1}
+    & > \frac4\adeg \cst{ht-v-gen1} \Lambda_3^{(1 + \frac1m)
       \prod_{i=m}^{mg} (2i + 1)}
     \\
-    \hautn{\ex*} & > \hautn{\ex[\fct-1]} \cdot
+    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
     4 m \Lambda_3^{2m \prod_{i=m+1}^{mg} (2i + 1)}
     \\
-    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \cos(x_i, x_j) & > 1 -
     \frac1{ m }
     \left(
       \frac{ \eps }{
-        86 \nclmaps \cdot 5^g \Delta \sbin{n + \Delta}{\Delta}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
       }
     \right)^{ \frac{m}{m-g} }
   \end{align}
@@ -5705,16 +5706,16 @@ contrôlés.
   \begin{align}
     \newcst[\Theta]{ht-v-gen1}
     & =
-    \Delta \max \bigl(
-      \Delta^g \hautl1{\va}, \hlclab, \htcmp
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \Delta^n \ln(\Delta) n
+      \adeg^n \ln(\adeg) n
     \\ & \qquad
-      + \Delta^g \bigl (
-        \hautl1 V
-        + (u + 2) \ln (\Delta + 1) ( \Delta + n + 1 )
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
         + \ln(m/2)
       \bigr)
     \Bigr)
@@ -5731,25 +5732,24 @@ légèrement simplifiées.
 
 \begin{coro} \label{c:vojta-gen2}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( V \) une variété de \( \projd \) de degré \( \Delta \) et de dimension \(
-    u \), et \( 0 < \eps < 1 \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( \ex[1],
-    \dots, \ex[m] \) avec \( m \ge g + 1 \) satisfaisant
-  simultanément aux conditions suivantes :
+  \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
+  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+    \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_m \) avec \(
+    m \ge g + 1 \) satisfaisant simultanément aux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*} V
+    0 < \distv{x_i} \avar
     & <
-    \bigl( \Delta \sbin{\Delta+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \\
-    \hautn{\ex*} & > \hautn{\ex[\fct-1]}
+    \hautn{x_i} & > \hautn{x_{i-1}}
     \cdot \Lambda_4^{(2mg)^{mg}}
     \\
-    \cos(\ex*, \ex[\fcti]) & > 1 -
+    \cos(x_i, x_j) & > 1 -
     \frac1{ m \, \cst{v-gen} }
   \end{align}
   avec
@@ -5757,27 +5757,27 @@ légèrement simplifiées.
     \newcst[]{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^g \Delta \sbin{n + \Delta}{\Delta}
+        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
         \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \\
     \Lambda_4
     & =
     \cst{v-gen}
-    \bigl( (\sqrt2 m g\Delta)^g \deg \va \bigr)^m
+    \bigl( (\sqrt2 m g\adeg)^g \deg \va \bigr)^m
     \\
     \cst{ht-v-gen1}
     & =
-    \Delta \max \bigl(
-      \Delta^g \hautl1{\va}, \hlclab, \htcmp
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \Delta^n \ln(\Delta) n
+      \adeg^n \ln(\adeg) n
     \\ & \qquad
-      + \Delta^g \bigl (
-        \hautl1 V
-        + (u + 2) \ln (\Delta + 1) ( \Delta + n + 1 )
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
         + \ln(m/2)
       \bigr)
     \Bigr)

@@ -524,10 +524,7 @@
 \newcommand*\wtapx [1][v] { \lambda\ssub{#1} }
 \newcommand*\degv  [1][v] { \Delta \ssub{#1} }
 
-\newcommand \varapx { E } % XXX utiliser \avar en général et \divi sinon
-
-\newcommand \grp { \Gamma }
-% rang : r
+\newcommand \grp { \Gamma } % sous-groupe de rang r
 
 % archimedian norms and measures [[2
 %
@@ -688,7 +685,8 @@
 
 % general situation [[2
 %
-\newcommand \divi {E}
+\newcommand \divi {E} % diviseur linéaire
+\newcommand \hs   {F} % hypersurface (coro)
 
 \newcommand \Excep { e }
 \newcommand \cex   { \gmp\Excep }
