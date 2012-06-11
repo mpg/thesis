@@ -25,9 +25,9 @@ cf XXX et FIXME dans le cls
 Biblio {{{2
 ------
 
-Siegel : citer Bombieri-Vaaler plutôt ?
+(D) Siegel : citer Bombieri-Vaaler plutôt ?
 
-LNM : citer directement l'ouvrage, pas les chapitres (?)
+(D) LNM : citer directement l'ouvrage, pas les chapitres (?)
 
 Maths {{{1
 =====
@@ -43,22 +43,7 @@ Vojta {{{2
 
 (B) vérifier les hypothèses type \eps \le 1 etc dans les coro
 
-(D) Coro : cas de Fahri (comp. thm 2.9.2 p. 102-103)
-
-(D) Mettre les plongement adaptés en annexe : sections 2.2.3 et 2.2.4 plus
-2.4.1 et lemme 2.4.9 (env. 14 pages), à voir avec pph
-
-(D) Modifier le plongement éclatant pour avoir \wtw* = 1 ou 2 ? On remplace un
-\puiss par un 2 dans \Vfar comme ça, en principe sans perte à côté.
-
-(D) Virer le 4 dans \Vbig ?
-
-(D) Voir si dans la hauteur de \rfull on ne peut pas faire une estimation plus
-fine pour le deuxième \rdiv
-
 (D) Degré des formules en c a^2 au lieu de 2a^2 ?
-
-(D) Virer le m dans \Vcos comme dans Farhi ?
 
 Mumford {{{2
 -------
