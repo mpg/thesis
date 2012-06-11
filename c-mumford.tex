@@ -576,11 +576,12 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
 \section{Étude du morphisme des différences}
 
 Comme dans l'énoncé du théorème, on choisit \( \avar \) une sous-variété de \(
-  \va \) ; on note \( \adeg = \adeg \) et \( \adim = \adim \). Remarquons de
-suite que le degré de \( \avar \) est nécessairement au moins \( 2 \), car si
-\( \avar \) était linéaire, elle contiendrait une droite projective,
-c'est-à-dire une courbe de genre \( 0 \), or il est impossible de plonger une
-telle courbe dans une variété abélienne.
+  \va \) ; on note \( \adeg = \deg\avar \) et \( \adim = \dim\avar \).
+Remarquons de suite que le degré de \( \avar \) est nécessairement au moins \(
+  2 \), car si \( \avar \) était linéaire, elle contiendrait une droite
+projective, c'est-à-dire une courbe de genre \( 0 \), or il est impossible de
+plonger une telle courbe dans une variété abélienne. On supposera de plus
+\( \adim \ge 1 \) car l'étude qui suit est sans intérêt sinon.
 
 Dans le cas des translatés de sous-variétés abéliennes, la preuve reposait sur
 le morphisme
@@ -606,189 +607,94 @@ et on note \( Z = s_m(\avar^m) \) plongée dans \( \proj N \), où
 section est de contrôler le degré et la hauteur de \( Z \) dans ce plongement
 en fonction du degré et de la hauteur de \( \avar \).
 
-On commence par étudier la forme des fibres du morphisme restreint à \( \avar
-\).  Dans l'énoncé suivant, \( S_\avar \) désigne le stabilisateur de \( \avar
-\).
+On commence par représenter localement le morphisme \( s_m \) par une famille
+de formes de degrés et hauteur contrôlées.
 
-\begin{lem}
-  Pour tous \( m \ge 2 \) et \( x \in \avar^m \), on a
+\begin{lem} \label{l:repr-sm}
+  Pour tout \( x \in \avar^m \), il existe une famille de \( N + 1 \) formes
+  multihomogènes de multidegré \( (2, \dots, 2, 2(m-1)) \) et telle que \(
+    \nnv1 S \le \hmclab* ^{m-1} \) en toute place \( v \).
+\end{lem}
+
+\begin{proof}
+  La section~\vref{sec:vaemb} fournit, pour chaque \( i \in \set{1, \dots,
+      m-1} \) une famille de formes bihomogènes de bidegré \( (2, 2) \)
+  représentant la soustraction de \( \va^2 \) dans \( \va \) au voisinage de
+  \( (x_i, x_m) \), que l'on notera \( (L\pexp i[k])_{k \in \set{0,
+        \dots, n}} \), telle que \( \nnv1{ L\pexp i } \le \hmclab* \).
+  Pour chaque \( l \in \set{0, \dots, n}^{m-1} \) on pose
   \begin{equation}
-    x + \delta(S_\avar)
-    \subset
-    s_m^{-1} ( s_m(x) ) \cap \avar^m
-    \subset
-    x + \delta(\bigcap_{i=1}^m \avar - x_i)
+    S_l(\vmp[1], \dots, \vmp[m-1])
+    =
+    \prod_{i=1}^m L\pexp i[l_i]( \vmp[i], \vmp[m] )
   \end{equation}
-  où \( \delta \colon \avar \to \avar^m \) est le plongement diagonal. En
-  particulier, si \( S_\avar = \bigcap_{i=1}^m \avar - x_i \), ces inclusions
-  sont des égalités.
-\end{lem}
-
-\begin{proof}
-  Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
-    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_\avar \) donne
-  clairement \( x + \delta(S_\avar) \subset \avar \), ce qui établit
-  l'inclusion annoncée.
-
-  Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
-  \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
-    \delta(y_m - x_m) \). Si de plus \( y \in \avar^m \) on a \( y_m - x_m \in
-    \bigcap_{i=1}^m \avar - x_i \).
-\end{proof}
-
-Étudions dans quel cas l'égalité peut être obtenue. Par définition du
-stabilisateur, on a (ensemblistement) :
-\begin{equation}
-  S_\avar = \bigcap_{x \in \avar(\Qbar)} \avar - x
-  \pmm.
-\end{equation}
-Par noethérieneté, il est clair qu'on peut en fait prendre
-une intersection finie ; le lemme suivant précise ce résultat.
-
-\begin{lem}
-  Posons \( M = 2 \adeg^{\adim+1} - 2 \) ; pour tout \( m \ge M \) il existe
-  \( (x_1, \dots, x_m) \in \avar^m(\Qbar) \) tel que
-  \( S_\avar = \bigcap_{i=1}^m \avar - x_i \).
-\end{lem}
-
-\begin{proof}
-  En partant d'un \( \avar - x_1 \) pour \( x_1 \) quelconque, on va couper
-  successivement par des \( \avar - x_i \) choisis de sorte à faire chuter la
-  dimension d'au moins une des composantes de dimension maximale de
-  l'intersection partielle qui n'est pas une composante de \( S_\avar \).
-  Clairement, ce processus se termine et l'intersection obtenue est \( S_\avar
+  de sorte que la famille \( (S_l)_l \) représente \( s_m \) au voisinage de
+  \( x \) et que \( \deg S_l = (2, \dots, 2, 2(m-1)) \).  On a de plus \(
+    \nnv1{ S } \le \hmclab* ^{m-1} \) par les propriétés de la norme \( L_1
   \).
-
-  Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le
-  fermé de \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider
-  à compter les composantes à chaque étape, on considère la quantité :
-  \begin{equation}
-    SH(Y, d)
-    =
-    \sum_Z \deg Z d^{\dim Z}
-  \end{equation}
-  où la somme est prise sur l'ensemble des composantes de \( Y \). Cette
-  définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi (*)
-  p.~362) ; on est ici dans le cas homogène c'est-à-dire \( p = 1 \) dans les
-  notations de cette référence.
-
-  Il est clair que \( SH(Y_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \).
-  Par ailleurs, comme chaque \( Y_j \) peut être défini (ensemblistement) par
-  des équations de degré au plus \( \adeg \), on peut appliquer à ces
-  équations la proposition~3.3 de la référence citée, ce qui garantit que \(
-    SH(Y_{j+1}, \adeg) \le SH(Y_j, \adeg) \) et donne immédiatement par
-  récurrence \( SH(Y_j, \adeg) \le \adeg^{\adim+1} \).
-
-  Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
-  composantes de \( Y_j \) de dimension \( \adim - k \) est au plus \(
-    \adeg^{k+1} \).  On peut être un peu plus précis pour \( Y_1 \) et voir
-  que toutes ses composantes sont de dimension au plus \( \adim - 1 \) car \(
-    \avar - x_1 \) n'a qu'une composante. Ainsi, en choisissant successivement
-  les \( x_i \) de façon à ce que \( \avar - x_{j+2} \) coupe strictement une
-  des composantes de \( Y_j \) de dimension maximale parmi celles qui ne sont
-  pas composantes de \( S_\avar \), on voit qu'il existe un \( j_1 \le 1 +
-    \adeg^2 \) tel que \( Y_j \) n'ai plus de composante de dimension \( \adim
-    - 1 \) à part celles de \( S_\avar \), et en continuant jusqu'à avoir
-  éliminé les composantes indésirables de dimension \( 0 \), qu'il existe un
-  \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots + \adeg^{\adim+1} \) tel que \(
-    Y_{j_\adim} \) n'ait plus aucune composante autre que celles de \( S_\avar
-  \), c'est-à-dire tel que \( Y_{j_\adim} = S_\avar \).
-
-  Le nombre de points utilisés est alors
-  \begin{equation}
-    j_\adim + 1
-    \le
-    2 + \adeg^2 \sum_{l=0}^{\adim-1} \adeg^l
-    =
-    2 + \frac{\adeg}{\adeg+1} (\adeg^{\adim+1} - \adeg)
-    \le
-    2 + 2 (\adeg^{\adim+1} - \adeg)
-    \le M
-    \pmm,
-  \end{equation}
-  en utilisant le fait que \( \adeg \ge 2 \).
-
-  Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
-    x_{j_\adim+1} \) tels que \( Y_{j_\adim} = S_\avar \), on peut rajouter
-  des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \(
-    S_\avar = \bigcap_i \avar - x_i \). Ainsi, pour tout \( m \ge M \) il
-  existe une famille \( (x_i)_i \in \avar^m \) possédant la propriété voulue.
 \end{proof}
 
-On note désormais \( M \) l'entier introduit par le lemme précédent et on
-suppose \( m \ge M \) jusqu'à la fin de cette section. Sous cette hypothèse,
-on peut calculer la dimension de \( Z = s_m(\avar^m) \) puis estimer son degré
-et sa hauteur.
+On en déduit immédiatement l'action de \( s_m \) sur la hauteur des points.
 
-\begin{coro} \label{c:gen-fiber}
-  Il existe un ouvert dense de \( Z \) où les fibres de
-  \( {s_m}_{|\avar} \) sont de dimension \( \dim S_\avar \). En particulier,
-  \( \dim s_m(\avar^m) = m \adim - \dim S_\avar \)
+\begin{coro}
+  Pour tout \( x \in \avar^m \), on a
+  \begin{equation}
+    \hautl2{ s_m(x) }
+    \le
+    4 (m-1) \max_{1 \le i \le m} \bigl( \hautl2{ x_i } \bigr)
+    + (m-1) \hlclab
+    \pmm.
+  \end{equation}
 \end{coro}
 
 \begin{proof}
-  On choisit un point \( (x_1, \dots, x_m) \in \avar^m \) tel que
-  \( S_\avar = \bigcap_{i=1}^m \avar - x_i \), ce qui est possible d'après le
-  choix de \( m \). La fibre de \( {s_m}_{|\avar} \) en \( s_m(x) \) est alors
-  isomorphe à \( S_\avar \) et en particulier, de même dimension.
-
-  Par ailleurs, toutes les fibres sont de dimension au moins \( \dim S_\avar
-  \).  Par semi-continuité supérieure de la dimension des fibres, l'ensemble
-  des points où elle est égale à \( \dim S_\avar \) est donc un ouvert.
-  D'après le paragraphe précédent, cet ouvert n'est pas vide, il est donc
-  dense.
+  Vu le lemme précédent, les propriétés de la norme euclidienne donnent
+  \begin{equation}
+    \hautl2{ S(x) }
+    \le
+    \hautl2{ S }
+    + 2 \hautl2{ x_1 } + \dots + 2 \hautl2{ x_{m-1} }
+    + 2 (m-1) \hautl2{ x_m }
+  \end{equation}
+  qui implique le résultat annoncé.
 \end{proof}
 
-On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
-\( Z \embedin \proj N \) évoqué précédemment.
+Ce corollaire sera utile pour estimer la hauteur de \( Z \) en passant par le
+minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
 
 \begin{lem}
-  On a \( \deg Z \le \adeg^m (2m)^{ (m+1)\adim } \).
+  On a \( \deg Z \le \adeg^m \, 2^{mu} \, m^{(m+1)u - 1} \).
 \end{lem}
 
 \begin{proof}
-  On note \( \adim' = \dim Z = mu - \dim S_\avar \) et on choisit des
-  hyperplans de \( \proj N \) qu'on notera \( H_1, \dots, H_{\adim'} \) et
-  qu'on supposera en position générale, de sorte que \( F = \bigcap_i H_i \)
-  est un ensemble fini de points, de cardinal \( \deg Z \). On peut même
-  supposer que \( F \) est inclus dans l'ouvert donné par le
-  corollaire~\vref{c:gen-fiber} car ce dernier est dense.
+  On note \( \adim' = \dim Z \le m \adim \) et on choisit des hyperplans de \(
+    \proj N \) en position générale, qu'on notera \( E_1, \dots, E_{\adim'} \)
+  de sorte que \( F = \bigcap_i E_i \) est un ensemble fini de points, de
+  cardinal \( \deg Z \).  On note donc \( F = \set{y_1, \dots, y_p} \) et
+  notre but est de majorer \( p = \deg Z \).
 
-  On note donc \( F = \set{y_1, \dots, y_p} \) ; pour chaque \( y_j \) on
-  choisit un point \( x_j \in s_m^{-1}(y_j) \cap \avar^m \). Pour tout \( j
-    \in \set{1, \dots, p} \) et tout \( k \in \set{1, \dots, m} \), le
-  morphisme \( \pi_k s_m \), où \( \pi_k \) est la projection sur le \( k
-  \)-ième facteur, qui est en fait la différence de \( \va \), est représenté
-  sur un voisinage de \( x_j \) par une famille de \( n + 1 \) formes
-  multihomogènes de multidegré \( (0, \dots, 0, 2, 0, \dots, 0, 2) \) où le
-  premier \( 2 \) est en \( k \)-ième position. On en déduit aisément que \(
-    s_m \) est représenté sur un voisinage de \( x_j \) par une famille de \(
-    N + 1 \) formes multihomogènes de multidegré \( (2, \dots, 2, 2(m-1)) \).
-  On a \lat{a priori} une telle famille par point \( x_j \), mais quitte à
-  prendre une combinaison linéaire de toutes ces familles, on voit qu'il
-  existe une famille de formes de multidegré \( (2, \dots, 2, 2(m-1)) \)
-  représentant \( s_m \) sur un ouvert contenant tous les \( x_j \).
-
-  Maintenant, pour chaque \( i \in \set{1, \dots, \adim'} \), on choisit une
-  équation \( E_i \) de \( H_i \). Dans cette forme linéaire, on substitue aux
-  variables les éléments de la famille du paragraphe précédent et on note \(
-    \tilde E_i \) la forme multihomogène obtenue, qui est de multidegré \( (2,
-    \dots, 2, 2(m-1)) \), puis on note \( \tilde H_i \) l'hypersurface de \(
-    (\projd)^m \) définie par \( \tilde E_i \).
+  Pour chaque \( j \in \set{1, \dots, p} \), on choisit un point \( x_j \in
+    s_m^{-1}(y_j) \cap \avar^m \) et une famille de formes \( (S_{j,l})_l \)
+  représentant \( s_m \) au voisinage de \( x_j \) donnée par le
+  lemme~\vref{l:repr-sm}. Clairement, il existe une combinaison linéaire de
+  ces familles qui représente \( s_m \) sur un ouvert contenant tous les \(
+    x_j \) : on la note \( S \). Maintenant, pour chaque \( i \in \set{1,
+      \dots, \adim'} \), on choisit une équation \( L_i \) de \( E_i \), on
+  pose \( \tilde L_i = L_i(S) \) puis on note \( \tilde E_i \) l'hypersurface
+  de \( (\projd)^m \) définie par \( \tilde L_i \).
 
   Par construction, il est clair que pour tout \( j \in \set{1, \dots, p} \),
-  la fibre \( s_m^{-1}(y_j) \cap \avar^m \) est un translaté de \(
-    \delta(S_\avar) \) et est une composante isolée de l'intersection \(
-    \avar^m \cap \bigcap_i \tilde H_i \) : en effet, les fibres sont deux à
-  deux d'intersection vide et les autres composantes éventuelles de
-  l'intersection sont celles provenant du lieu des zéros commun des formes
-  choisies pour représenter \( s_m \), qui ne contient aucune des fibres en
-  question grâce au choix de cette famille.
+  la fibre \( s_m^{-1}(y_j) \cap \avar^m \) est une composante isolée de
+  l'intersection \( \avar^m \cap \bigcap_i \tilde E_i \) : en effet, les
+  fibres sont deux à deux d'intersection vide et les autres composantes
+  éventuelles de l'intersection sont celles provenant du lieu des zéros commun
+  des formes de \( S \), qui ne contient aucune des fibres en question grâce
+  au choix de cette famille.
 
   On invoque alors la proposition~3.3, p.~365 de \cite{philz} dont on reprend
   les notations (voir p.~364 et p.~362) :
   \begin{equation}
-    SH( \avar^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
+    SH( \avar^m \cap \bigcap_i \tilde E_i \, ; 2, \dots, 2, 2(m-1) )
     \le
     SH( \avar^m ; 2, \dots, 2, 2(m-1) )
     \pmm.
@@ -808,75 +714,18 @@ On rappelle que dans l'énoncé suivant, le degré est relatif au plongement
   \end{equation}
   en majorant le coefficient multinomial qui apparaît dans cette expression
   par \( m^{mu-1} \). Par ailleurs, on a
-  \begin{align}
-    SH( \avar^m \cap \bigcap_i \tilde H_i \, ; 2, \dots, 2, 2(m-1) )
+  \begin{align} \label{e:sh-inter}
+    SH( \avar^m \cap \bigcap_i \tilde E_i \, ; 2, \dots, 2, 2(m-1) )
     \ge
-    p \cdot H( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
+    \sum_{j=1}^p H( s_m^{-1}(y_j) \cap \avar ; 2, \dots, 2, 2(m-1) )
+    \ge
+    p
   \end{align}
-  d'après le paragraphe précédent. De plus, on voit assez facilement que tous
-  les multidegrés de \( \delta(S_\avar) \) sont égaux à \( \deg S_\avar \), ce
-  qui donne
-  \begin{align}
-    H( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
-    & =
-    \ \sum_{ \mathclap{\alpha_1 + \dots + \alpha_m = \dim S_\avar} } \
-    \deg S_\avar
-    \, \frac{ (\dim S_\avar)! }{ \alpha_1! \cdots \alpha_m! }
-    \, 2^{m\dim S_\avar} (m-1)^{\dim S_\avar}
-    \\ & =
-    \deg S_\avar
-    (2m)^{m\dim S_\avar} (m-1)^{\dim S_\avar}
-  \end{align}
-  d'après la formule multinomiale. Ainsi, on a
-  \begin{equation} \label{e:deg-img-good}
-    \deg Z = p
-    \le
-    \frac{ \adeg^m }{ \deg S_\avar }
-    (2m)^{m(\adim-\dim S_\avar)} (m-1)^{\adim - \dim S_\avar - 1}
-  \end{equation}
-  qui est un peu plus précis que la majoration annoncée.
+  d'après le paragraphe précédent, ce qui achève la preuve.
 \end{proof}
 
-Dans le lemme suivant, on rappelle que \( \hautl2{ s_m(x) } \) est la
-hauteur donnée par le plongement dans \( \proj N \).
-
-\begin{lem}
-  Pour tout \( x \in \avar^m \), on a
-  \begin{equation}
-    \hautl2{ s_m(x) }
-    \le
-    4 (m-1) \max_{1 \le i \le m} \bigl( \hautl2{ x_i } \bigr)
-    + (m-1) \hlclab
-    \pmm.
-  \end{equation}
-\end{lem}
-
-\begin{proof}
-  On reprend la construction faite dans la démonstration du lemme précédent
-  pour exhiber une famille de formes représentant \( s_m \) au voisinage de \(
-    x \), en détaillant la construction pour bien contrôler la hauteur de
-  cette famille.
-
-  La section~\vref{sec:vaemb} fournit, pour chaque \( i \in \set{1, \dots,
-      m-1} \) une famille de formes bihomogènes de bidegré \( (2, 2) \)
-  représentant la soustraction de \( \va^2 \) dans \( \va \) au voisinage de
-  \( (x_i, x_m) \), que l'on notera \( (L\pexp i[k])_{k \in \set{0,
-        \dots, n}} \), telle que \( \nnv1{ L\pexp i } \le \hmclab* \).
-  Pour chaque \( l \in \set{0, \dots, n}^{m-1} \) on pose
-  \begin{equation}
-    S_l(\vmp[1], \dots, \vmp[m-1])
-    =
-    \prod_{i=1}^m L\pexp i[l_i]( \vmp[i], \vmp[m] )
-  \end{equation}
-  de sorte que la famille \( (S_l)_l \) représente \( s_m \) au voisinage de
-  \( x \). On a alors \( \nnv1{ S } \le \hmclab* ^{m-1} \) par les propriétés
-  de la norme \( L_1 \). Par ailleurs, les propriétés de la norme euclidienne
-  donnent \( \nv2{ S(x) } \le \nnv2{ S } \nv2{ x_1 }^2 \dots \nv2{ x_{m-1} }^2
-    \nv2{ x_m }^{2(m-1)} \) compte tenu du multidegré des formes \( S_l \).
-
-  Le résultat annoncé vient en prenant le logarithme puis la somme sur toutes
-  les places.
-\end{proof}
+On déduit assez aisément des deux résultats précédents une majoration de la
+hauteur de \( Z \).
 
 \begin{coro}
   On a \(
@@ -936,13 +785,165 @@ hauteur donnée par le plongement dans \( \proj N \).
   qui donne bien la majoration annoncée.
 \end{proof}
 
+Nous avons maintenant tous les ingrédients utiles pour continuer la preuve de
+l'inégalité de \bsc{Mumford}. Néanmoins, nous concluons cette section par une
+étude des fibres de \( s_m \), qui pourrait être utile pour pour discuter
+d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \(
+  S_\avar \) le stabilisateur de \( \avar \).
+
+\begin{lem}
+  Pour tous \( m \ge 2 \) et \( x \in \avar^m \), on a
+  \begin{equation}
+    x + \delta(S_\avar)
+    \subset
+    s_m^{-1} ( s_m(x) ) \cap \avar^m
+    \subset
+    x + \delta(\bigcap_{i=1}^m \avar - x_i)
+  \end{equation}
+  où \( \delta \colon \avar \to \avar^m \) est le plongement diagonal. En
+  particulier, si \( S_\avar = \bigcap_{i=1}^m \avar - x_i \), ces inclusions
+  sont des égalités.
+\end{lem}
+
+\begin{proof}
+  Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
+    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_\avar \) donne
+  clairement \( x + \delta(S_\avar) \subset \avar \), ce qui établit
+  l'inclusion annoncée.
+
+  Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
+  \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
+    \delta(y_m - x_m) \). Si de plus \( y \in \avar^m \) on a \( y_m - x_m \in
+    \bigcap_{i=1}^m \avar - x_i \).
+\end{proof}
+
+Étudions dans quel cas l'égalité peut être obtenue. Par définition du
+stabilisateur, on a (ensemblistement) :
+\begin{equation}
+  S_\avar = \bigcap_{x \in \avar(\Qbar)} \avar - x
+  \pmm.
+\end{equation}
+Par noethérieneté, il est clair qu'on peut en fait prendre une intersection
+finie ; le lemme suivant précise ce résultat.
+
+\begin{lem}
+  Posons \( M = 2 \adeg^{\adim+1} - 2 \) ; pour tout \( m \ge M \) il existe
+  \( (x_1, \dots, x_m) \in \avar^m(\Qbar) \) tel que
+  \( S_\avar = \bigcap_{i=1}^m \avar - x_i \).
+\end{lem}
+
+\begin{proof}
+  En partant d'un \( \avar - x_1 \) pour \( x_1 \) quelconque, on va couper
+  successivement par des \( \avar - x_i \) choisis de sorte à faire chuter la
+  dimension d'au moins une des composantes de dimension maximale de
+  l'intersection partielle qui n'est pas une composante de \( S_\avar \).
+  Clairement, ce processus se termine et l'intersection obtenue est \( S_\avar
+  \).
+
+  Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le
+  fermé de \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider
+  à compter les composantes à chaque étape, on considère la quantité :
+  \begin{equation}
+    SH(Y, d)
+    =
+    \sum_Z \deg Z \, d^{\dim Z}
+  \end{equation}
+  où la somme est prise sur l'ensemble des composantes de \( Y \). Cette
+  définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi
+  ($*$) p.~362) ; on est ici dans le cas homogène c'est-à-dire \( p = 1 \)
+  dans les notations de cette référence.
+
+  Il est clair que \( SH(Y_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \).
+  Par ailleurs, comme chaque \( Y_j \) peut être défini (ensemblistement) par
+  des équations de degré au plus \( \adeg \), on peut appliquer à ces
+  équations la proposition~3.3 de la référence citée, ce qui garantit que \(
+    SH(Y_{j+1}, \adeg) \le SH(Y_j, \adeg) \) et donne immédiatement par
+  récurrence \( SH(Y_j, \adeg) \le \adeg^{\adim+1} \).
+
+  Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
+  composantes de \( Y_j \) de dimension \( \adim - k \) est au plus \(
+    \adeg^{k+1} \).  On peut être un peu plus précis pour \( Y_1 \) et voir
+  que toutes ses composantes sont de dimension au plus \( \adim - 1 \) car \(
+    \avar - x_1 \) n'a qu'une composante. Ainsi, en choisissant successivement
+  les \( x_i \) de façon à ce que \( \avar - x_{j+2} \) coupe strictement une
+  des composantes de \( Y_j \) de dimension maximale parmi celles qui ne sont
+  pas composantes de \( S_\avar \), on voit qu'il existe un \( j_1 \le 1 +
+    \adeg^2 \) tel que \( Y_j \) n'ai plus de composante de dimension \( \adim
+    - 1 \) à part celles de \( S_\avar \), et en continuant jusqu'à avoir
+  éliminé les composantes indésirables de dimension \( 0 \), qu'il existe un
+  \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots + \adeg^{\adim+1} \) tel que \(
+    Y_{j_\adim} \) n'ait plus aucune composante autre que celles de \( S_\avar
+  \), c'est-à-dire tel que \( Y_{j_\adim} = S_\avar \).
+
+  Le nombre de points utilisés est alors
+  \begin{equation}
+    j_\adim + 1
+    \le
+    2 + \adeg^2 \sum_{l=0}^{\adim-1} \adeg^l
+    =
+    2 + \frac{\adeg}{\adeg+1} (\adeg^{\adim+1} - \adeg)
+    \le
+    2 + 2 (\adeg^{\adim+1} - \adeg)
+    \le M
+    \pmm,
+  \end{equation}
+  en utilisant le fait que \( \adeg \ge 2 \).
+
+  Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
+    x_{j_\adim+1} \) tels que \( Y_{j_\adim} = S_\avar \), on peut rajouter
+  des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \(
+    S_\avar = \bigcap_i \avar - x_i \). Ainsi, pour tout \( m \ge M \) il
+  existe une famille \( (x_i)_i \in \avar^m \) possédant la propriété voulue.
+\end{proof}
+
+On suppose désormais \( m \ge 2 \adeg^{\adim+1} - 2 \) jusqu'à la fin de cette
+section.  On peut voir que pout tout \( m \ge 2 \adeg^{\adim+1} - 2
+\), il existe un ouvert dense de \( \avar^m \) où \( (x_1, \dots, x_m) \) «
+définissent le stabilisateur » au sens ci-dessus, car la condition
+correspondante est ouverte et le lemme précédent affirme que l'ouvert n'est
+pas vide. On en déduit immédiatement que les fibres de \( {s_m}_{|\avar} \)
+sont génériquement des translatés de \( \delta(S_\avar) \) ; en particulier,
+\( \dim s_m(\avar^m) = m \adim - \dim S_\avar \).
+
+On peut alors préciser précider l'estimation du degré de l'image :
+\begin{equation}
+  \deg Z
+  \le
+  \frac{ \adeg^m }{ \deg S_\avar }
+  (2m)^{m(\adim-\dim S_\avar)} (m-1)^{\adim - \dim S_\avar - 1}
+\end{equation}
+En effet, on peut s'arranger pour que les \( s_m^{-1}(y_j) \cap \avar \)
+apparaissant dans~\eqref{e:sh-inter} soient tous des translatés de \(
+  \delta(S_\avar) \) et on voit assez facilement que tous les multidegrés de
+\( \delta(S_\avar) \) sont égaux à \( \deg S_\avar \), ce qui donne
+\begin{align}
+  E( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
+  & =
+  \ \sum_{ \mathclap{\alpha_1 + \dots + \alpha_m = \dim S_\avar} } \
+  \deg S_\avar
+  \, \frac{ (\dim S_\avar)! }{ \alpha_1! \cdots \alpha_m! }
+  \, 2^{m\dim S_\avar} (m-1)^{\dim S_\avar}
+  \\ & =
+  \deg S_\avar
+  (2m)^{m\dim S_\avar} (m-1)^{\dim S_\avar}
+\end{align}
+d'après la formule multinomiale.
+
+Cette estimation ne sera \lat{a priori} pas utile pour la suite mais est
+moralement satisfaisante dans le sens suivant : dans le cas où \( \avar = z +
+  \vai \) est un translaté de sous-variété abélienne, en substituant \( m = 2
+\) et \( \dim S_\avar = \adim \) dans l'estimation précédente, on obtient
+\( \deg Z \le \adeg \) qui est en fait une égalité.
+
 
 
 \section{Cas général}
 
-Dans toute cette section, on continue de supposer que \( m \ge M \) et on fixe
-une famille \( x = (x_1, \dots, x_m) \in \va(\Qbar)^m \) (et non plus \(
-  \avar^m \)) et on note \( z = s_m(x) \). Les trois premiers énoncés sont des
+Dans toute cette section, on fixe \( m \ge 2 \) et une famille \( x = (x_1,
+  \dots, x_m) \in \va(\Qbar)^m \) (et non pas \( \avar^m \)) et on note \( z =
+  s_m(x) \). On suppose de plus \( \adim \ge 1 \) car sinon le
+théorème~\vref{t:mumford-gen} est une conséquence directe du
+théorème~\vref{t:mumford-grp}.  Les trois premiers énoncés sont des
 conséquences ou analogues directs de ceux de la
 section~\vref{sec:mumford-grp}.
 
