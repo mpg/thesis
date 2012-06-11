@@ -636,7 +636,7 @@ de formes de degrés et hauteur contrôlées.
 
 On en déduit immédiatement l'action de \( s_m \) sur la hauteur des points.
 
-\begin{coro}
+\begin{coro} \label{c:ht-sm-p}
   Pour tout \( x \in \avar^m \), on a
   \begin{equation}
     \hautl2{ s_m(x) }
@@ -662,7 +662,7 @@ On en déduit immédiatement l'action de \( s_m \) sur la hauteur des points.
 Ce corollaire sera utile pour estimer la hauteur de \( Z \) en passant par le
 minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
 
-\begin{lem}
+\begin{lem} \label{l:sm-deg}
   On a \( \deg Z \le \adeg^m \, 2^{mu} \, m^{(m+1)u - 1} \).
 \end{lem}
 
@@ -732,7 +732,7 @@ hauteur de \( Z \).
     \hautl\htpph Z
     \le
     \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
-    (2m)^{ (m+2)\adim }
+    (2m)^{ (m+1)\adim }
   \).
 \end{coro}
 
@@ -743,11 +743,11 @@ hauteur de \( Z \).
   \worknote{Recopié depuis \cite{daphimht}, à vérifier directement dans la
     réf. citée quand même.}
   \begin{equation}
-    \miness(V) \deg V
+    \miness(Z) \deg Z
     \le
-    \hautl\htpph V
+    \hautl\htpph Z
     \le
-    \miness(V) \deg V (\dim V + 1)
+    \miness(Z) \deg Z (\dim Z + 1)
   \end{equation}
   où \( \miness \) désigne le minimum essentiel, défini en utilisant la
   hauteur \( \Hautl2 \) pour les points. (On rappelle que \( \Hautl\htpph
@@ -757,8 +757,8 @@ hauteur de \( Z \).
   Notons \( F \) l'ensemble des points de \( x \in \avar \) tels que \(
     \hautl2 x \le 2 \miness(\avar) \) ; par définition \( F \) est dense
   dans \( \avar \), donc \( F^m \) est dense dans \( \avar^m \) et \( s_m(F^m)
-  \) est dense dans \( Z \). On applique alors le lemme précédent pour majorer
-  la hauteur des points de \( s_m(F^m) \) et obtenir
+  \) est dense dans \( Z \). On applique alors le corollaire~\ref{c:ht-sm-p}
+  pour majorer la hauteur des points de \( s_m(F^m) \) et obtenir
   \begin{equation}
     \miness(Z)
     \le
@@ -767,20 +767,19 @@ hauteur de \( Z \).
   \end{equation}
 
   Il est alors aisé de passer aux hauteurs grâce à l'encadrement rappelé
-  ci-dessus, en utilisant les informations déjà obtenues sous la forme suivant
-  : \( \dim Z \le mu \) et \( \deg Z \le \adeg^m (2m)^{ mu } (m-1)^{\adim-1}
-  \) par~\eqref{e:deg-img-good} :
+  ci-dessus, en utilisant le fait que \( \dim Z \le mu \) et le
+  lemme~\ref{l:sm-deg}
   \begin{align}
     \hautl\htpph Z
     & \le
     \miness(Z) \deg Z (\dim Z + 1)
     \\ & \le
     (8 (m-1) \miness(\avar) + (m-1) \hlclab)
-    \adeg^m (2m)^{ mu } (m-1)^{\adim-1}
-    mu
+    \, \adeg^m \, 2^{mu} \, m^{(m+1)u - 1}
+    \, mu
     \\ & \le
     (8  \hautl\htpph \avar / \adeg +  \hlclab)
-    \adeg^m (2m)^{ (m+2)\adim }
+    \adeg^m (2m)^{ (m+1)\adim }
   \end{align}
   qui donne bien la majoration annoncée.
 \end{proof}
