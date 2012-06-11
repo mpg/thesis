@@ -77,7 +77,6 @@ Pour le cas général, l'énoncé est le suivant.
     \bigl(
     2^{34} \cdot h_0(\va) \cdot \adeg
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
-    + 1
     \pmm.
   \end{equation}
   On choisit alors \( \eps > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \)
@@ -85,7 +84,7 @@ Pour le cas général, l'énoncé est le suivant.
   \begin{equation} \label{e:rho-phi-gen}
     \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
     \le
-    \frac{ \eps }{ 2 \adeg^m (2m)^{(m+1)\adim} }
+    \frac{ \eps }{ \adeg^m (2m)^{(m+1)\adim} }
     \pmm.
   \end{equation}
   Si \( x_1, \dots, x_m \) est une famille de points de \( \grp \)
@@ -102,10 +101,10 @@ Pour le cas général, l'énoncé est le suivant.
     \hautn{ x_m }
     & \ge
     \frac2\eps
-    \adeg^{m-1} (2m)^{ (m+2)\adim }
+    \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
     \Bigl(
-      \hautl\htpph X
-      + 4 \adeg m^2 \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+      \hautl\htpph \avar
+      + 4 \adeg m^2 \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
     \Bigr)
     \quad
     \label{e:Mbig-gen}
@@ -837,40 +836,41 @@ finie ; le lemme suivant précise ce résultat.
   Clairement, ce processus se termine et l'intersection obtenue est \( S_\avar
   \).
 
-  Plus précisément, on note \( Y_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le
+  Plus précisément, on note \( X_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le
   fermé de \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider
-  à compter les composantes à chaque étape, on considère la quantité :
+  à compter les composantes à chaque étape, on considère la quantité définie
+  pour tout fermé \( X \) et tout entier \( D \) par :
   \begin{equation}
-    SH(Y, d)
+    SH(X, D)
     =
-    \sum_Z \deg Z \, d^{\dim Z}
+    \sum_Y \deg Y \, D^{\dim Z}
   \end{equation}
-  où la somme est prise sur l'ensemble des composantes de \( Y \). Cette
+  où la somme est prise sur l'ensemble des composantes de \( X \). Cette
   définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi
   ($*$) p.~362) ; on est ici dans le cas homogène c'est-à-dire \( p = 1 \)
   dans les notations de cette référence.
 
-  Il est clair que \( SH(Y_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \).
-  Par ailleurs, comme chaque \( Y_j \) peut être défini (ensemblistement) par
+  Il est clair que \( SH(X_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \).
+  Par ailleurs, comme chaque \( X_j \) peut être défini (ensemblistement) par
   des équations de degré au plus \( \adeg \), on peut appliquer à ces
   équations la proposition~3.3 de la référence citée, ce qui garantit que \(
-    SH(Y_{j+1}, \adeg) \le SH(Y_j, \adeg) \) et donne immédiatement par
-  récurrence \( SH(Y_j, \adeg) \le \adeg^{\adim+1} \).
+    SH(X_{j+1}, \adeg) \le SH(X_j, \adeg) \) et donne immédiatement par
+  récurrence \( SH(X_j, \adeg) \le \adeg^{\adim+1} \).
 
   Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
-  composantes de \( Y_j \) de dimension \( \adim - k \) est au plus \(
-    \adeg^{k+1} \).  On peut être un peu plus précis pour \( Y_1 \) et voir
+  composantes de \( X_j \) de dimension \( \adim - k \) est au plus \(
+    \adeg^{k+1} \).  On peut être un peu plus précis pour \( X_1 \) et voir
   que toutes ses composantes sont de dimension au plus \( \adim - 1 \) car \(
     \avar - x_1 \) n'a qu'une composante. Ainsi, en choisissant successivement
   les \( x_i \) de façon à ce que \( \avar - x_{j+2} \) coupe strictement une
-  des composantes de \( Y_j \) de dimension maximale parmi celles qui ne sont
+  des composantes de \( X_j \) de dimension maximale parmi celles qui ne sont
   pas composantes de \( S_\avar \), on voit qu'il existe un \( j_1 \le 1 +
-    \adeg^2 \) tel que \( Y_j \) n'ai plus de composante de dimension \( \adim
+    \adeg^2 \) tel que \( X_j \) n'ai plus de composante de dimension \( \adim
     - 1 \) à part celles de \( S_\avar \), et en continuant jusqu'à avoir
   éliminé les composantes indésirables de dimension \( 0 \), qu'il existe un
   \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots + \adeg^{\adim+1} \) tel que \(
-    Y_{j_\adim} \) n'ait plus aucune composante autre que celles de \( S_\avar
-  \), c'est-à-dire tel que \( Y_{j_\adim} = S_\avar \).
+    X_{j_\adim} \) n'ait plus aucune composante autre que celles de \( S_\avar
+  \), c'est-à-dire tel que \( X_{j_\adim} = S_\avar \).
 
   Le nombre de points utilisés est alors
   \begin{equation}
@@ -887,7 +887,7 @@ finie ; le lemme suivant précise ce résultat.
   en utilisant le fait que \( \adeg \ge 2 \).
 
   Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
-    x_{j_\adim+1} \) tels que \( Y_{j_\adim} = S_\avar \), on peut rajouter
+    x_{j_\adim+1} \) tels que \( X_{j_\adim} = S_\avar \), on peut rajouter
   des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \(
     S_\avar = \bigcap_i \avar - x_i \). Ainsi, pour tout \( m \ge M \) il
   existe une famille \( (x_i)_i \in \avar^m \) possédant la propriété voulue.
@@ -1062,21 +1062,22 @@ section~\vref{sec:mumford-grp}.
   multihomogène de degré \( \deg Z \) en \( \dim Z + 1 \) groupes de \( N + 1
   \) variables, puis en utilisant les estimations de la section précédente, il
   vient :
-  \begin{align} \label{e:liou-h1-img}
+  \begin{align}
     \hautl1 Z
     & \le
     \hautl\htpph Z
     + (\deg Z) (\dim Z + 1) \ln(N+1)
     \\ & \le
     \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
-    (2m)^{ (m+2)\adim }
+    (2m)^{ (m+1)\adim }
     \\ & \qquad
-    + \adeg^m (2m)^{mu} (m-1)^{\adim-1} (m \adim + 1) (m-1)\ln(n+1)
+    + \adeg^m \, 2^{mu} \, m^{(m+1)u - 1} (m \adim + 1) (m-1)\ln(n+1)
     \\ & \le
-    (2m)^{ (m+2)\adim } \Bigl(
+    (2m)^{ (m+1)\adim + 1} \Bigl(
     \adeg^{m-1} \hautl\htpph \avar
     + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
+    \label{e:liou-h1-img}
     \pmm.
   \end{align}
 
@@ -1084,24 +1085,35 @@ section~\vref{sec:mumford-grp}.
   \begin{align}
     (\dim Z + 1) \ln(3 \deg Z)
     & \le
-    (m \adim + 1) \bigl( (m+1) \adim \ln(2m) + \ln 3 \bigr)
+    (m \adim + 1) \bigl(
+    m\ln \adeg + m \adim \ln 2 + (m+1) \adim \ln m + \ln 3
+    \bigr)
     \\ & \le
-    \adim^2 (m+1) \bigl( (m+1) \ln(2m) + \ln 3 \bigr)
+    \adim^2 (m+1) \bigl(
+    m \ln 2 + (m+1) \ln m + \ln 3
+    \bigr)
+    + m^2 (\adim + 1) \ln \adeg
+    \notag
     \\ & \le
     2^{\adim+2} m^3
+    + 2^\adim m^2 \ln \adeg
+    \pmm,
   \end{align}
-  où, la dernière ligne utilise le fait que \( \adim^2 \le 2^{\adim+1} \) et,
-  pour majorer le facteur en \( m \), une vérification numérique pour les
-  petites valeurs. Au final on a
-  \begin{equation} \label{e:liou-cst2}
+  où la dernière ligne utilise le fait que \( \adim^2 \le 2^{\adim+1} \) et
+  que la partie en \( m \) est majorée par \( 2m^3 \) (vérification numérique
+  pour les petites valeurs). Au final on a
+  \begin{align}
     (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
-    \le
-    2^{mu} m^{(m+1)\adim - 1}
-    \cdot 2^{\adim+2} m^3
-    \le
+    & \le
+    \adeg^m 2^{mu} m^{(m+1)\adim - 1}
+    \cdot \bigl( 2^{\adim+2} m^3 + 2^\adim m^2 \ln \adeg \bigr)
+    \\ & \le
     \adeg^m (2m)^{(m+1)\adim + 2}
+    \\ & \le
+    \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
+    \label{e:liou-cst2}
     \pmm.
-  \end{equation}
+  \end{align}
 
   Enfin, le lemme~\vref{l:img-small} et l'hypothèse~\eqref{e:rho-phi-gen}
   donnent
@@ -1121,19 +1133,19 @@ section~\vref{sec:mumford-grp}.
     - \frac\eps2 \hautn{ x_m }
     - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
-    - (2m)^{ (m+2)\adim } \Bigl(
+    - (2m)^{ (m+1)\adim + 1 } \Bigl(
     \adeg^{m-1} \hautl\htpph \avar
     + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \\ & \qquad
     - 2(m-1) \ln(n+1)
-    - \adeg^m (2m)^{(m+1)\adim + 2}
+    - \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
     \\ & \ge
     - \frac\eps2 \hautn{ x_m }
-    - \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl\htpph \avar
+    - \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl\htpph \avar
     \\ & \qquad
-    - \adeg^m (2m)^{ (m+2)\adim + 1}
-    \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+    - \adeg^m (2m)^{ (m+1)\adim + 2}
+    \bigl( 2\ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
     \pmm.
   \end{align}
 
@@ -1149,8 +1161,9 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
-    \adeg^{m-1} (2m)^{ (m+2)\adim } \, \hautl\htpph \avar
-    + \adeg^m (2m)^{ (m+2)\adim + 2} \bigl( \hlclab + \htcmp + \ln(n+1) \bigr)
+    \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl\htpph \avar
+    + \adeg^m (2m)^{ (m+1)\adim + 3}
+    \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
   \end{equation}
   qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.
 \end{proof}
@@ -1159,13 +1172,12 @@ On rappelle la version effective de l'ex-conjecture de \bsc{Mordell-Lang}
 obtenue par \bsc{Rémond}.
 
 \begin{fact}
-  \worknote{On doit pouvoir mettre une inégalité stricte, non ?}
   Soient \( \avar \subset \va \) une sous-variété et \( \grp \subset
     \va(\Qbar) \) un sous-groupe de rang fini \( r \). Alors il existe un
   entier naturel
   \begin{equation}
     S
-    \le
+    <
     \bigl(
     2^{34} \cdot h_0(\va) \cdot \adeg
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
@@ -1187,7 +1199,9 @@ obtenue par \bsc{Rémond}.
     plongement.}
   C'est une version du théorème de~2.1, p.~517 de \cite{remdcl} où la fonction
   notée \( f \) dans ledit énoncé est explicitée, citée dans \cite{daphimhva2}
-  p.~643.
+  p.~643. Par ailleurs, il est clair qu'en simplifiant l'expression pour
+  passer de la version précise de \cite{remdcl} à la version énoncée, au moins
+  une inégalité est stricte.
 \end{proof}
 
 Nous sommes maintenant prêts à conclure.
