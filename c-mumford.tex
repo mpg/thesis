@@ -623,7 +623,7 @@ de formes de degrés et hauteur contrôlées.
   \begin{equation}
     S_l(\vmp[1], \dots, \vmp[m-1])
     =
-    \prod_{i=1}^m L\pexp i[l_i]( \vmp[i], \vmp[m] )
+    \prod_{i=1}^{m-1} L\pexp i[l_i]( \vmp[i], \vmp[m] )
   \end{equation}
   de sorte que la famille \( (S_l)_l \) représente \( s_m \) au voisinage de
   \( x \) et que \( \deg S_l = (2, \dots, 2, 2(m-1)) \).  On a de plus \(
@@ -804,8 +804,8 @@ d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \
 \begin{proof}
   Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
     s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_\avar \) donne
-  clairement \( x + \delta(S_\avar) \subset \avar \), ce qui établit
-  l'inclusion annoncée.
+  clairement \( x + \delta(S_\avar) \subset \avar \), ce qui établit la
+  première inclusion annoncée.
 
   Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
   \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
@@ -830,15 +830,15 @@ finie ; le lemme suivant précise ce résultat.
 
 \begin{proof}
   En partant d'un \( \avar - x_1 \) pour \( x_1 \) quelconque, on va couper
-  successivement par des \( \avar - x_i \) choisis de sorte à faire chuter la
-  dimension d'au moins une des composantes de dimension maximale de
-  l'intersection partielle qui n'est pas une composante de \( S_\avar \).
-  Clairement, ce processus se termine et l'intersection obtenue est \( S_\avar
-  \).
+  successivement par des \( \avar - x_i \) choisis de sorte à faire chuter à
+  chaque fois la dimension d'au moins une des composantes de dimension
+  maximale de l'intersection partielle qui n'est pas une composante de \(
+    S_\avar \).  Clairement, ce processus se termine et l'intersection obtenue
+  est \( S_\avar \).
 
   Plus précisément, on note \( X_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le
   fermé de \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider
-  à compter les composantes à chaque étape, on considère la quantité définie
+  à compter les composantes à chaque étape, on introduit la quantité définie
   pour tout fermé \( X \) et tout entier \( D \) par :
   \begin{equation}
     SH(X, D)
@@ -847,8 +847,8 @@ finie ; le lemme suivant précise ce résultat.
   \end{equation}
   où la somme est prise sur l'ensemble des composantes de \( X \). Cette
   définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi
-  ($*$) p.~362) ; on est ici dans le cas homogène c'est-à-dire \( p = 1 \)
-  dans les notations de cette référence.
+  ($*$) p.~362 de cette référence) ; on est ici dans le cas homogène
+  c'est-à-dire \( p = 1 \) dans les notations de cette référence.
 
   Il est clair que \( SH(X_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \).
   Par ailleurs, comme chaque \( X_j \) peut être défini (ensemblistement) par
@@ -857,20 +857,20 @@ finie ; le lemme suivant précise ce résultat.
     SH(X_{j+1}, \adeg) \le SH(X_j, \adeg) \) et donne immédiatement par
   récurrence \( SH(X_j, \adeg) \le \adeg^{\adim+1} \).
 
-  Par définition de \( SH \), on voit donc que pour tout \( k \), le nombre de
-  composantes de \( X_j \) de dimension \( \adim - k \) est au plus \(
-    \adeg^{k+1} \).  On peut être un peu plus précis pour \( X_1 \) et voir
+  Par définition de \( SH \), cette inégalité montre que pour tout \( k \), le
+  nombre de composantes de \( X_j \) de dimension \( \adim - k \) est au plus
+  \( \adeg^{k+1} \).  On peut être un peu plus précis pour \( X_1 \) et voir
   que toutes ses composantes sont de dimension au plus \( \adim - 1 \) car \(
     \avar - x_1 \) n'a qu'une composante. Ainsi, en choisissant successivement
   les \( x_i \) de façon à ce que \( \avar - x_{j+2} \) coupe strictement une
   des composantes de \( X_j \) de dimension maximale parmi celles qui ne sont
   pas composantes de \( S_\avar \), on voit qu'il existe un \( j_1 \le 1 +
-    \adeg^2 \) tel que \( X_j \) n'ai plus de composante de dimension \( \adim
-    - 1 \) à part celles de \( S_\avar \), et en continuant jusqu'à avoir
-  éliminé les composantes indésirables de dimension \( 0 \), qu'il existe un
-  \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots + \adeg^{\adim+1} \) tel que \(
-    X_{j_\adim} \) n'ait plus aucune composante autre que celles de \( S_\avar
-  \), c'est-à-dire tel que \( X_{j_\adim} = S_\avar \).
+    \adeg^2 \) tel que \( X_j \) n'ait plus de composante de dimension \(
+    \adim - 1 \) à part celles de \( S_\avar \), et en continuant jusqu'à
+  avoir éliminé les composantes indésirables de dimension \( 0 \), qu'il
+  existe un \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots + \adeg^{\adim+1} \)
+  tel que \( X_{j_\adim} \) n'ait plus aucune composante autre que celles de
+  \( S_\avar \), c'est-à-dire tel que \( X_{j_\adim} = S_\avar \).
 
   Le nombre de points utilisés est alors
   \begin{equation}
@@ -881,7 +881,6 @@ finie ; le lemme suivant précise ce résultat.
     2 + \frac{\adeg}{\adeg+1} (\adeg^{\adim+1} - \adeg)
     \le
     2 + 2 (\adeg^{\adim+1} - \adeg)
-    \le M
     \pmm,
   \end{equation}
   en utilisant le fait que \( \adeg \ge 2 \).
@@ -889,8 +888,7 @@ finie ; le lemme suivant précise ce résultat.
   Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
     x_{j_\adim+1} \) tels que \( X_{j_\adim} = S_\avar \), on peut rajouter
   des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \(
-    S_\avar = \bigcap_i \avar - x_i \). Ainsi, pour tout \( m \ge M \) il
-  existe une famille \( (x_i)_i \in \avar^m \) possédant la propriété voulue.
+    S_\avar = \bigcap_i \avar - x_i \).
 \end{proof}
 
 On suppose désormais \( m \ge 2 \adeg^{\adim+1} - 2 \) jusqu'à la fin de cette
@@ -916,7 +914,7 @@ apparaissant dans~\eqref{e:sh-inter} soient tous des translatés de \(
 \begin{align}
   E( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
   & =
-  \ \sum_{ \mathclap{\alpha_1 + \dots + \alpha_m = \dim S_\avar} } \
+  \ \sum_{ \mathclap{\lgr\alpha = \dim S_\avar} } \
   \deg S_\avar
   \, \frac{ (\dim S_\avar)! }{ \alpha_1! \cdots \alpha_m! }
   \, 2^{m\dim S_\avar} (m-1)^{\dim S_\avar}
