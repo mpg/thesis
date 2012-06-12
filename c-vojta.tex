@@ -61,7 +61,7 @@ général.
     \\ \label{e:def-f}
     f(\vdim) & = \prod_{i=\vdim+1}^{mg} (2i + 1)
     \\
-    \newcst[\Theta]{vs-ht}
+    \newcst[\vaemb]{vs-ht}
     & = \max( \hautl1{ \chow\va }, \hlclab, \htcmp, n\ln(n + 1) )
   \end{align}
 \end{thm}
@@ -4747,7 +4747,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
     \end{pmatrix}
   \end{equation}
   de sorte que toutes les colonnes de \( M \) sauf la première sont les
-  coordonnées homogènes (dans le plongement \( \Theta \)) de
+  coordonnées homogènes (dans le plongement \( \vaemb \)) de
   points de \( \divi \). Plus précisément, en relevant dans \( \cdn^{n+1}
   \), ces vecteurs constituent une base du relevé de \( \divi \). On remarque
   que les normes des lignes et des colonnes de \( M \) comme de \( M^{-1} \)
@@ -4756,14 +4756,14 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   On note alors \( \chi \in \GL_{n+1}(\cdn) \) la transformation linéaire
   associée à \( M^{-1} \) (dans la base canonique) et on note de même la
   transformation linéaire de \( \projd \) qui en découle en passant au
-  quotient. On pose alors \( \Theta' = \chi \circ \Theta \). On
+  quotient. On pose alors \( \vaemb' = \chi \circ \vaemb \). On
   note \( L'(\vp) = L(M(\vp)) = \vp[0] \) ; par construction, \( L' \)
   est une équation de \( \divi \) dans ce nouveau plongement, lequel
   satisfait donc à la première condition.
 
   Soit maintenant \( x \) un point de \( \va \), dont on note \( C_x \in
-    \Qbar^{n+1} \) les coordonnées dans le plongement \( \Theta \) et \(
-    C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \Theta' \). Vu
+    \Qbar^{n+1} \) les coordonnées dans le plongement \( \vaemb \) et \(
+    C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \vaemb' \). Vu
   les expressions de \( M \) et \( M^{-1} \) on a immédiatement
   \begin{align} \label{e:plin-norm1}
     \nv1{ C _x } & \le \nv1{ L } \nv1{ C'_x }
@@ -4780,7 +4780,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   Par ailleurs, en appliquant la définition de la distance d'un point à un
   hyperplan, il vient
   \[
-    \distv[v, \Theta']{x}{\divi}
+    \distv[v, \vaemb']{x}{\divi}
     =
     \frac{
       \av{ L'( C'_x ) }
@@ -4788,7 +4788,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
       \nv2{ L' } \nv2{ C'_x }
     }
     =
-    \distv[v, \Theta]{x}{\divi}
+    \distv[v, \vaemb]{x}{\divi}
     \frac{ \nv2 L }{ \nv2{ L' } }
     \frac{ \nv2{ C_x } }{ \nv2{ C'_x } }
   \]
@@ -4940,7 +4940,7 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
       (\sqrt2 m g)^{mg}
     \bigr)
     \\
-    \newcst[\Theta]{ht-v-div-dv}
+    \newcst[\vaemb]{ht-v-div-dv}
     & = \max \bigl(
       \hautl1{\va} + \hautl1{ E } (g+1) \deg \va,
       \hlclab + \frac52 \hautl1 E,
@@ -5551,7 +5551,7 @@ sur les différents paramètres en jeu dans notre situation.
     \bigr)
     \qquad\null
     \\
-    \newcst[\Theta]{ht-v-hs}
+    \newcst[\vaemb]{ht-v-hs}
     & =
     \adeg \max \bigl(
       \adeg^g \hautl1{\va}, \hlclab, \htcmp
@@ -5791,7 +5791,7 @@ contrôlés.
   \end{align}
   avec \( \Lambda_3 \) comme en~\eqref{e:deg-v-hs},
   \begin{align}
-    \newcst[\Theta]{ht-v-gen1}
+    \newcst[\vaemb]{ht-v-gen1}
     & =
     \adeg \max \bigl(
       \adeg^g \hautl1{\va}, \hlclab, \htcmp
