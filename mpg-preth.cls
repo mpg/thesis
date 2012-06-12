@@ -613,11 +613,6 @@
 \newcommand \adim {u}
 \newcommand \adeg {d}
 
-% random variety, when needing to distinguish it from \avar
-\newcommand \anyvar {U}
-\newcommand \anydim {s}
-\newcommand \anydeg {\Delta}
-
 \newcommand*\lgr [1] {\abs{#1}}
 
 \newcommand*\ncoef  [1] {\mathcal N(#1)}
@@ -810,8 +805,12 @@
 \newcommand \relim { \rho\sb{\mathrm{elim}} }
 \newcommand \rfull { \rho }
 
-% Parametrisation [[2
+% Parametrisation and adapted embeddings [[2
 %
+\newcommand \anyvar {V}
+\newcommand \anydim {s}
+\newcommand \anydeg {\Delta}
+
 \newcommand \psmp   {\gmp t} % paramètre
 \newcommand \psp    {\gp  t}
 \newcommand \dermp  {\gmp\kappa} % ordre de dérivation
