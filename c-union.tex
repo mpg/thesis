@@ -12,15 +12,16 @@ d'approximation sous la forme d'un produit sur les places, plus naturelle que
 l'hypothèse technique avec un système d'inégalités. Cette forme constitue le
 résultat principal de la thèse.
 
-Enfin, pour les petits points, après avoir rappelé une méthode de décompte
-grossière ne tenant pas compte de l'hypothèse d'approximation, on présente une
-méthode pour les éliminer en renforçant ladite hypothèse, puis on discute de
-choix possibles pour la valeur d'un paramètre laissé libre jusque là, afin
-d'optimiser l'hypothèse et/ou le décompte obtenu.
+On discute alors des choix possibles pour la valeur d'un paramètre laissé
+libre jusque là, afin d'optimiser l'hypothèse et/ou le décompte obtenu.
+Enfin, concernant les petits points, après avoir rappelé une méthode de
+décompte grossière ne tenant pas compte de l'hypothèse d'approximation, on
+présente une méthode pour les éliminer en renforçant ladite hypothèse.
 
 \section{Obstruction au décompte absolu}
 \label{sec:obstruction}
 
+\todo (À écrire.)
 
 
 \section{Décomptes des grands points}
@@ -31,8 +32,8 @@ exceptionnelles si \( \eps \) est trop grand, en vertu de l'inégalité de
 \bsc{Liouville}.
 
 \begin{sco} \label{s:nobig-liouville}
-  Soit \( \avar \) une sous-variété de \( \projd \), de dimension \( \adim \) et de
-  degré \( \adeg \). Il n'existe aucun point \( x \in \projd(\Qbar) \)
+  Soit \( \avar \) une sous-variété de \( \projd \), de dimension \( \adim \)
+  et de degré \( \adeg \). Il n'existe aucun point \( x \in \projd(\Qbar) \)
   tel que
   \begin{align}
     \label{e:nobig-ha}
@@ -58,8 +59,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 
 \begin{lem} \label{l:big-by-cone}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
   on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
   \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
   conditions suivantes :
@@ -74,7 +75,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \hautn{\ex[1]}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \\ \label{e:big-cos}
-    \cos(\ex*, \ex[\fcti])
+    \cos(\ex*, \ex[j])
     & > 1 - \frac1{ m \, \cst{v-gen} }
   \end{align}
   avec
@@ -82,8 +83,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \cst{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
+      86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+      \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \\
     \Lambda_4
@@ -120,11 +121,11 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 \end{lem}
 
 \begin{proof}
-  Pour commencer, remarquons qu'on peut supposer \( \eps < \adeg + 1 \). En effet,
-  sinon le scolie~\vref{s:nobig-liouville} s'applique, car~\eqref{e:big-ha}
-  implique immédiatement~\eqref{e:nobig-ha} et~\eqref{e:big-big} implique
-  assez largement~\eqref{e:nobig-big} vu la définition de \( \cst{ht-v-gen1}
-  \).
+  Pour commencer, remarquons qu'on peut supposer \( \eps < \adeg + 1 \). En
+  effet, sinon le scolie~\vref{s:nobig-liouville} s'applique,
+  car~\eqref{e:big-ha} implique immédiatement~\eqref{e:nobig-ha}
+  et~\eqref{e:big-big} implique assez largement~\eqref{e:nobig-big} vu la
+  définition de \( \cst{ht-v-gen1} \).
 
   Soit \( x_1, \dots, x_p \) une famille comme dans l'énoncé, qu'on suppose de
   plus ordonnée par hauteur normalisée croissante. On pose
@@ -160,8 +161,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \pmm.
   \end{equation}
   Supposons alors que \( p \ge (m - 1) \eta + 1 \) contrairement à la
-  conclusion du lemme : on pourrait alors poser \( \ex* = x_{1 + (\fct-1)
-      \eta} \) pour \( i \in {1, m} \) et la famille \( (\ex*)_\fct \)
+  conclusion du lemme : on pourrait alors poser \( \ex* = x_{1 + (i-1)
+      \eta} \) pour \( i \in {1, m} \) et la famille \( (\ex*)_i \)
   contredirait alors le corollaire~\vref{c:vojta-gen2}, ce qui est absurde.
 
   Ainsi, on a
@@ -194,44 +195,6 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   qui donne aisément le résultat annoncé.
 \end{proof}
 
-
-  % \begin{align}
-  %   \ln \Lambda_4
-  %   & =
-  %   \frac m{m-g}
-  %   \left(
-  %     \ln 86
-  %     + \ln \nclmaps
-  %     + g \ln 5
-  %     + \ln \adeg
-  %     + {\textstyle \ln \binom{n+\adeg}\adeg}
-  %     - \ln \eps
-  %   \right)
-  %   \\ & \qquad
-  %   + m \bigl(
-  %     \deg\va + g (\ln2/2 + \ln(mg) + \ln \adeg)
-  %   \bigr)
-  %   \\ & \le
-  %   2 \bigl(
-  %     9/2
-  %     + \ln \nclmaps
-  %     + g \ln 5
-  %     + (n+1) \ln(\adeg+1)
-  %     - \ln \eps
-  %   \bigr)
-  %   \\ & \qquad
-  %   + m \deg\va
-  %   + mg (\ln(mg) + \ln2/2)
-  %   + mg \ln \adeg
-  %   \\ & \le
-  %   - \ln \eps
-  %   + 9
-  %   + 2 \ln \nclmaps
-  %   + m \deg\va
-  %   + \ln(\adeg+1) (n+1 + mg)
-  %   + mg (\ln(mg) + 2)
-  % \end{align}
-
 On utilise ensuite le fait suivant.
 
 \begin{fact}
@@ -246,11 +209,10 @@ On utilise ensuite le fait suivant.
 
 \begin{prop} \label{p:big-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
-  fini \( r \).
-  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
-  il existe au plus
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
+    \ge g + 1 \), il existe au plus
   \begin{equation}
     \sqrt{\frac \adeg \eps}
     (4mg)^{mg}
@@ -518,11 +480,10 @@ considérées, on utilisera donc le scolie suivant.
 
 \begin{coro}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
-  fini \( r \).
-  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
-  il existe au plus
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
+    \ge g + 1 \), il existe au plus
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
     \sqrt{ \frac{\adeg}\eps }
@@ -573,11 +534,10 @@ la constante ; on aboutit au résultat suivant.
 
 \begin{thm} \label{t:big-gen-prod}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
-  fini \( r \).
-  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
-  il existe au plus
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
+    \ge g + 1 \), il existe au plus
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
     \sqrt{ \frac{\adeg}\eps }
@@ -734,12 +694,12 @@ points) des approximations exceptionnelles.
 
 \begin{thm} \label{t:inc-small}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de type
-  fini ; on note \( r \) son rang et \( \hmin \) le minimum de \( \hautn x \)
-  quand \( x \) parcourt l'ensemble des points d'ordre infini de \( \grp \).
-  Le nombre de points de \( \grp \) distincts modulo \( \vai \) et
-  satisfaisant à
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de type fini ; on note \( r \) son rang et \( \hmin \) le minimum de \(
+    \hautn x \) quand \( x \) parcourt l'ensemble des points d'ordre infini de
+  \( \grp \).  Le nombre de points de \( \grp \) distincts modulo \( \vai \)
+  et satisfaisant à
   \begin{equation}
     0 < \distv x \avar
     <
@@ -911,9 +871,10 @@ d'approximation pour éliminer les petits grâce à l'inégalité de
 le suivant.
 
 \begin{lem}
-  Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et de degré
-  \( \adeg \). Si \( R \) et \( F \) sont deux réels positifs,
-  l'ensemble des points \( x \in \va(\Qbar) \) tels que
+  Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et
+  de degré
+  \( \adeg \). Si \( R \) et \( F \) sont deux réels positifs, l'ensemble des
+  points \( x \in \va(\Qbar) \) tels que
   \begin{equation}
     0
     <
@@ -977,8 +938,8 @@ le suivant.
 On en déduit immédiatement le corollaire pratique suivant.
 
 \begin{coro} \label{c:kill-small}
-  Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et de degré
-  \( \adeg \). Si \( R \) est un réel supérieur ou égal à
+  Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et
+  de degré \( \adeg \). Si \( R \) est un réel supérieur ou égal à
   \begin{equation}
     \frac1\eps \left(
       \hautl1{ \chow \avar }
@@ -1012,11 +973,10 @@ l'existence de petits points, ce qui donne la proposition suivante.
 
 \begin{prop} \label{p:all-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
-  fini \( r \).
-  Pour tout réel \( \eps > 0 \) et tout entier \( m \ge g + 1 \),
-  il existe au plus
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
+    \ge g + 1 \), il existe au plus
   \begin{equation}
     \sqrt{\frac \adeg \eps}
     (4mg)^{mg}
@@ -1072,11 +1032,10 @@ le résultat suivant.
 
 \begin{coro}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \( \adim \).
-  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar) \) de rang
-  fini \( r \).
-  Pour tout réel \( \eps > 0 \), le nombre de points de \( \grp \)
-  distincts modulo \( \vai \) et satisfaisant à la condition
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \), le nombre de points
+  de \( \grp \) distincts modulo \( \vai \) et satisfaisant à la condition
   \begin{align}
     0 < \distv{\ex*} \avar
     & <
