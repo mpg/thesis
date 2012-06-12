@@ -4,24 +4,8 @@
 Références intro :
 - Théorème de Siegel et ses versions quantitatives
 
-Rédaction {{{1
-=========
-
-Notations {{{2
----------
-
-(D) Dans la param et les plongements adaptés de Vojta, remplacer \anyvar par
-\avar etc. (ou changer les défs de \anyvar, si c'est pas extrait)
-
-Biblio {{{2
-------
-
-(D) Siegel : citer Bombieri-Vaaler plutôt ?
-
-(D) LNM : citer directement l'ouvrage, pas les chapitres (?)
-
-Maths {{{1
-=====
+Maths et rédaction {{{1
+==================
 
 Vojta {{{2
 -----
@@ -31,6 +15,21 @@ Mumford {{{2
 
 (C) Ouverture sur ce qu'on ferait si les fibres étaient toutes égales au
 stabilisateur ?
+
+Décomptes {{{2
+---------
+
+(B) Faire l'intro avec la condition de différence modulo B-petit
+
+(B) Le groupe de rf dans Mumford est-il indispensable ?
+
+(C) Rédiger la pseudo-minimisation pénible
+
+(C) inégalités strictes vs larges à vérifier
+
+(C) Réf à trouver (demander à pph) :
+- majorer le cardinal de la torsion rationnelle (Ratazzi ?)
+- minorer \hmin (?? Pour les courbes, c'est Hindry-Silverman)
 
 Plongements et formulaires {{{2
 --------------------------
@@ -51,28 +50,8 @@ duplication :
   proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à
   un cas particulier de l'hypothèse~\eqref{e:clab-loc}.
 
-Décomptes {{{2
----------
+Réf : pour l'annexe de Serre avec les formules de multiplication : walntga
 
-(B) Faire l'intro avec la condition de différence modulo B-petit
-
-(B) Le groupe de rf dans Mumford est-il indispensable ?
-
-(C) Rédiger la pseudo-minimisation pénible
-
-(C) inégalités strictes vs larges à vérifier
-
-Références {{{1
-==========
-
-Pour l'annexe de Serre avec les formules de multiplication : walntga
-
-À trouver : des trucs pour :
-- majorer le cardinal de la torsion rationnelle (Ratazzi ?)
-- minorer \hmin (?? Pour les courbes, c'est Hindry-Silverman)
-
-Pourquoi le Z_X de Rémond est un fermé de X : Hindry 92 ; LNM 1566 Oort p.
-117-122
 
 Aide-mémoire {{{1
 ============
