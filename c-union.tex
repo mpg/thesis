@@ -68,7 +68,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \label{e:big-ha}
     0 < \distv{x_i} \avar
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \alpha_v^{-1}
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\ \label{e:big-big}
@@ -83,8 +83,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \cst{v-gen}
     & =
     \bigl(
-      86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-      \, \eps^{-1}
+      86 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \\
     \Lambda_4
@@ -94,21 +93,29 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \\
     \cst{ht-v-gen1}
     & =
-    \adeg \max \bigl(
-      \adeg^g \hautl1{\va}, \hlclab, \htcmp
-    \bigr)
+    \adeg \max \bigl( \adeg^g \hautl1{\va}, \hlclab, \htcmp \bigr)
     + (g + 1) \deg \va
     \Bigl(
       \adeg^n \ln(\adeg) n
     \\ & \qquad
       + \adeg^g \bigl (
-        \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln(m/2)
+        \hautl1 \avar + (\adim + 2) \ln(\adeg + 1) (\adeg + n+1) + \ln(m/2)
       \bigr)
     \Bigr)
-    \pmm.
   \end{align}
+  et au choix :
+  \begin{enumthm}
+  \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et \( \alpha_v =
+      \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2} \) ; ou bien
+  \item \( s = 1 \) et \( (\alpha_v)_v \) une certaine famille de réels tous
+    supérieurs ou égaux à \( 1 \), satisfaisant \(
+      \prod\placerange \alpha_v
+      \le
+      \hautm1 \avar ^2
+      \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
+      \cdot \expb^{\adeg n} \adeg \sbin{\adeg+n}{n}^{1/2}
+    \).
+  \end{enumthm}
   On a alors nécessairement
   \begin{equation}
     p
@@ -230,14 +237,14 @@ On utilise ensuite le fait suivant.
   \begin{align}
     0 < \distv{x_i} \avar
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \alpha_v^{-1}
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
     \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
-  avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
+  avec \( \Lambda_4 \), \( \cst{ht-v-gen1} \) et \( \alpha_v \) comme au
   lemme~\vref{l:big-by-cone}.
 \end{prop}
 
