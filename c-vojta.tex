@@ -5169,7 +5169,7 @@ l'on changera de plongement, on utilisera l'énoncé suivant.
       \frac{ \eps }{ 86 \nclmaps \cdot 5^g }
     \right)^{ \frac{m}{m-g} }
   \end{align}
-  avec \( \Lambda_1 \) et \( \newcst[\Theta]{ht-v-div-dv} \) comme au
+  avec \( \Lambda_1 \) et \( \cst{ht-v-div-dv} \) comme au
   corollaire~\vref{c:vojta-div-any-s} et \( (\alpha_v)\placerange \) une
   certaine famille de réels supérieurs ou égaux à \( 1 \), satisfaisant
   \( \prod\placerange \alpha_v \le \hautm2 \divi ^2 \cdot \sqrt{n+1} \).
@@ -5653,7 +5653,7 @@ sur les différents paramètres en jeu dans notre situation.
     \(
       \prod\placerange \alpha_v
       \le
-      \hautm{1, \vaemb} \hs ^2 \expb^{\adeg n}
+      \hautm1 \hs ^2 \expb^{\adeg n}
       \adeg
       \sbin{\adeg+n}{n}^{1/2}
     \).
@@ -5851,12 +5851,12 @@ contrôlés.
   \begin{align}
     0 < \distv{x_i} \avar
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \alpha_v^{-1}
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
     \hautn{x_1}
-    & > \frac4\adeg \cst{ht-v-gen1} \Lambda_3^{(1 + \frac1m)
+    & > \frac4\adeg \cst{ht-v-hs} \Lambda_3^{(1 + \frac1m)
       \prod_{i=m}^{mg} (2i + 1)}
     \\
     \hautn{x_i} & > \hautn{x_{i-1}} \cdot
@@ -5866,11 +5866,11 @@ contrôlés.
     \frac1{ m }
     \left(
       \frac{ \eps }{
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+        86 \nclmaps \cdot 5^g \adeg s
       }
     \right)^{ \frac{m}{m-g} }
   \end{align}
-  avec \( \Lambda_3 \) comme en~\eqref{e:deg-v-hs} et
+  avec \( \Lambda_3 \) comme en~\eqref{e:deg-v-hs},
   \begin{align}
     \newcst[\Theta]{ht-v-gen1}
     & =
@@ -5888,6 +5888,24 @@ contrôlés.
       \bigr)
     \Bigr)
   \end{align}
+  et au choix :
+  \begin{enumthm}
+  \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et
+    \( \alpha_v = \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2} \) ;  ou
+    bien
+  \item \( s = 1 \) et \( (\alpha_v)_v \) une certaine famille de réels tous
+    supérieurs ou égaux à \( 1 \), satisfaisant
+    \(
+      \prod\placerange \alpha_v
+      \le
+      \hautm1 \avar ^2
+      \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
+      \cdot
+      \expb^{\adeg n}
+      \adeg
+      \sbin{\adeg+n}{n}^{1/2}
+    \).
+  \end{enumthm}
 \end{coro}
 
 \begin{proof}
@@ -5907,7 +5925,7 @@ légèrement simplifiées.
   \begin{align}
     0 < \distv{x_i} \avar
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \alpha_v^{-1}
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
@@ -5925,7 +5943,7 @@ légèrement simplifiées.
     \newcst[]{v-gen}
     & =
     \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+        86 \nclmaps \cdot 5^g \adeg s
         \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \\
@@ -5949,8 +5967,25 @@ légèrement simplifiées.
         + \ln(m/2)
       \bigr)
     \Bigr)
-    \pmm.
   \end{align}
+  et au choix :
+  \begin{enumthm}
+  \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et
+    \( \alpha_v = \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2} \) ;  ou
+    bien
+  \item \( s = 1 \) et \( (\alpha_v)_v \) une certaine famille de réels tous
+    supérieurs ou égaux à \( 1 \), satisfaisant
+    \(
+      \prod\placerange \alpha_v
+      \le
+      \hautm1 \avar ^2
+      \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
+      \cdot
+      \expb^{\adeg n}
+      \adeg
+      \sbin{\adeg+n}{n}^{1/2}
+    \).
+  \end{enumthm}
 \end{coro}
 
 \begin{proof}
@@ -5971,7 +6006,7 @@ légèrement simplifiées.
   donc \( m \ge 3 \)).
 
   On en déduit que la deuxième condition ci-dessus implique celle du
-  corollaire précédent en remarquant que \( \frac4\delta \le \Lambda_4^{1/4}
+  corollaire précédent en remarquant que \( \frac4\adeg \le \Lambda_4^{1/4}
   \) puis que \( (1 + \frac1m) \prod_{i=m}^{mg} (2i + 1) +
     \frac14 \le (2mg)^{mg} \). On procède de façon
   similaire pour la troisième condition en remarquant que cette fois le
