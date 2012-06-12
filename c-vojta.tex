@@ -5598,7 +5598,7 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{align}
     0 < \distv{x_i}{\hs}
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
+    \alpha_v^{-1}
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
@@ -5613,7 +5613,7 @@ sur les différents paramètres en jeu dans notre situation.
     \frac1{ m }
     \left(
       \frac{ \eps }{
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+        86 \nclmaps \cdot 5^g \adeg s
       }
     \right)^{ \frac{m}{m-g} }
   \end{align}
@@ -5625,7 +5625,7 @@ sur les différents paramètres en jeu dans notre situation.
       5 m^2
       \bigl(
         86 \nclmaps \cdot 5^g
-        \adeg \sbin{n + \adeg}{\adeg} \, \eps^{-1}
+        \adeg s \, \eps^{-1}
       \bigr)^{ \frac{m}{m-g} }
       \adeg^g \deg \va,
       (\sqrt2 m g)^{mg}
@@ -5643,6 +5643,21 @@ sur les différents paramètres en jeu dans notre situation.
       + \adeg^n \ln(\adeg) n
     \bigr)
   \end{align}
+  et au choix :
+  \begin{enumthm}
+  \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et
+    \( \alpha_v = \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2} \) ;  ou
+    bien
+  \item \( s = 1 \) et \( (\alpha_v)_v \) une certaine famille de réels tous
+    supérieurs ou égaux à \( 1 \), satisfaisant
+    \(
+      \prod\placerange \alpha_v
+      \le
+      \hautm{1, \vaemb} \hs ^2 \expb^{\adeg n}
+      \adeg
+      \sbin{\adeg+n}{n}^{1/2}
+    \).
+  \end{enumthm}
 \end{coro}
 
 \begin{proof}
@@ -5652,7 +5667,8 @@ sur les différents paramètres en jeu dans notre situation.
     \eps/\adeg \) comme exposant d'approximation. Il s'agit donc de
   vérifier que nos conditions impliquent celles du corollaire en question.
 
-  Concernant l'hypothèse d'approximation, on
+  Concernant l'hypothèse d'approximation, avec le premier choix pour \( (s,
+    \alpha) \), on a
   \begin{align}
     \distv[v, \vaemb']{ x_i }{\divi}
     \le
@@ -5667,6 +5683,22 @@ sur les différents paramètres en jeu dans notre situation.
     \hautm{2, \vaemb'}{x_i}^{-\wtapx \eps'}
   \end{align}
   ce qui justifie le choix fait pour \( \eps' \).
+
+  Avec le deuxième choix, si l'on note \( \alpha' \) la famille du
+  corollaire~\ref{c:vojta-div-any}, on voit qu'il s'agit de poser \( \alpha_v
+    = \alpha'_v \cdot \adeg^{\dv/2} \). On a alors
+  \begin{equation}
+    \prod\placerange \alpha_v
+    \le
+    \adeg \prod\placerange \alpha'_v
+    \le
+    \adeg \hautm{2, \vaemb'} \divi ^2 (n' + 1)^{1/2}
+    \le
+    \adeg
+    \hautm{1, \vaemb} \hs ^2 \expb^{\adeg n}
+    \sbin{\adeg+n}{n}^{1/2}
+    \pmm.
+  \end{equation}
 
   On adapte alors les constantes pour tenir compte des variations de degrés,
   hauteurs et dimension ambiante ainsi que du choix de \( \eps \).
