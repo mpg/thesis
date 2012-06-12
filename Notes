@@ -41,8 +41,6 @@ Vojta {{{2
 
 (B) Dans les résultats actuels, remplacer n par max(n, card S)
 
-(B) vérifier les hypothèses type \eps \le 1 etc dans les coro
-
 (D) Degré des formules en c a^2 au lieu de 2a^2 ?
 
 Mumford {{{2
@@ -58,6 +56,10 @@ Plongements et formulaires {{{2
 (C) (intro + annexe) hypothèses précises :
 - image projectivement normale pour phiha1 p. 275
 - hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi)
+
+(C) Vojta corollaires : dans « soit \vaemb un plongement », ajouter «
+convenable » et expliquer pourquoi les changements de plongement conservent
+cette hypothèse.
 
 (B) Compléter les preuves (cf. notes manuscriptes en partie)
 

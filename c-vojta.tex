@@ -6,14 +6,14 @@
 \label{sec:vojta-main}
 
 Nous établissons d'abord une inégalité de \bsc{Vojta} effective dans le cas
-particulier où la variété à approcher est, dans un plongement fixé \( \vaemb
-\) fixé (\lat{cf.} section~\vref{sec:vaemb}) l'hyperplan \( \vp[0] = 0 \) ;
-nous verrons plus tard (section~\vref{sec:vojta-coro}) que ce cas implique le
-cas général.
+particulier où la variété à approcher est, dans un plongement \( \vaemb \)
+fixé (\lat{cf.} section~\vref{sec:vaemb}) l'hyperplan \( \vp[0] = 0 \) ; nous
+verrons plus tard (section~\vref{sec:vojta-coro}) que ce cas implique le cas
+général.
 
 \begin{thm} \label{t:vojta-div}
   Soient \( \divi \) l'hyperplan défini par \( \vp[0] = 0 \) dans le
-  plongement fixé et \( 0 < \eps < 1 \) un nombre réel.  Pour tout
+  plongement fixé et \( \eps > 0 \) un nombre réel.  Pour tout
   \( m \ge g + 1 \), il n'existe dans \( \va(\Qbar) \) aucune famille
   de points \( \ex[1], \dots, \ex[m] \) satisfaisant simultanément aux
   conditions suivantes :
@@ -4647,7 +4647,8 @@ Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
 \end{align}
 
 
-\section{Corollaires} \label{sec:vojta-coro}
+\section{Déduction du cas général}
+\label{sec:vojta-coro}
 
 Le théorème~\vref{t:vojta-div} fait l'hypothèse que la variété dont on étudie
 les approximations exceptionnelles est l'hyperplan \( \vp[0] = 0 \) dans le
@@ -4892,10 +4893,9 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
 \begin{coro} \label{c:vojta-div-dv}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \divi \) un hyperplan de \( \projd \), \( p_0 \) le point de \( \projd \)
-  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( 0 < \eps < 1
-  \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
-    \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
+  de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \) et \( \eps > 0 \)
+  un nombre réel.  Il n'existe dans \( \va(\Qbar) \) aucune famille de points
+  \( x_1, \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes, où les notions de distance et de
   hauteur sont relatives au plongement \( \vaemb \) :
   \begin{align}
@@ -5033,7 +5033,7 @@ au cours de la preuve.
 
 \begin{coro} \label{c:vojta-div-any}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( \divi \) un hyperplan de \( \projd \) et \( 0 < \eps < 1 \) un nombre réel.
+  \( \divi \) un hyperplan de \( \projd \) et \( \eps > 0 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
     \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
@@ -5455,7 +5455,7 @@ sur les différents paramètres en jeu dans notre situation.
 \begin{coro} \label{c:vojta-hs}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \hs \) une hypersurface de \( \projd \) de
-  degré \( \adeg \) et \( 0 < \eps < 1 \) un nombre réel.
+  degré \( \adeg \) et \( \eps > 0 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
     \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
   simultanément aux conditions suivantes :
@@ -5677,7 +5677,7 @@ contrôlés.
 \begin{coro} \label{c:vojta-gen1}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
-  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+  \( \adim \), et \( \eps > 0 \) un nombre réel.  Il n'existe dans \(
     \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_m \) avec \(
     m \ge g + 1 \) satisfaisant simultanément aux conditions suivantes :
   \begin{align}
