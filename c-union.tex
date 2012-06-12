@@ -675,7 +675,7 @@ aucune hypothèse d'approximation.
 
 \begin{coro} \label{c:small-va}
   Soit \( \grp \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
-  \( r \) le rang de \( \grp \) et \( \hmin \) le minimum de \(
+  \( r \) le rang de \( \grp \) et \( \hmin(\grp) \) le minimum de \(
     \hautn x \) quand \( x \) parcourt l'ensemble des points d'ordre infini de
   \( \grp \).  Pour tout réel positif \( R \), on a
   \begin{equation}
@@ -685,35 +685,35 @@ aucune hypothèse d'approximation.
       \hautn x \le R
     }
     \le
-    \card \Gamma_\torsion
+    \card \grp_\torsion
     \cdot
-    \left( 1 + 2\sqrt{R / \hmin} \right)^r
+    \left( 1 + 2\sqrt{R / \hmin(\grp)} \right)^r
   \end{equation}
-  où \( \Gamma_\torsion \) désigne l'ensemble des points de torsion de \(
-    \grp \).
+  où \( \grp_\torsion \) désigne l'ensemble des points de torsion de \( \grp
+  \).
 \end{coro}
 
 \begin{proof}
   Dans \( \grp \otimes_\Z \R \) muni de la structure euclidienne induite par
   la hauteur normalisée, on applique le fait précédent avec \( \rho = \sqrt R
-  \) et \( \mu = \sqrt{\hmin} \) puis on remarque que la préimage dans \(
+  \) et \( \mu = \sqrt{\hmin(\grp)} \) puis on remarque que la préimage dans \(
     \grp \) de chacune des boules ouvertes de rayon \( \mu \) est composée
-  de points qui sont tous égaux modulo \( \Gamma_\torsion \).
+  de points qui sont tous égaux modulo \( \grp_\torsion \).
 \end{proof}
 
 \begin{rem}
   Si dans l'énoncé précédent on prend \( \grp = \va(\cdn) \), on retrouve le
   lemme~2.11.1, p.~117 de~\cite{farhith}. On rappelle par ailleurs que dans ce
-  cas (\todo??) donne une estimation de \( \card \Gamma_\torsion \) et
-  (\todo??) une estimation de \( \hmin \).
+  cas (\todo??) donne une estimation de \( \card \grp_\torsion \) et
+  (\todo??) une estimation de \( \hmin(\grp) \).
 \end{rem}
 
 Si l'on applique le résultat précédent en conjonction avec le
 théorème~\vref{t:big-gen-prod}, on constate assez facilement que le décompte
 obtenu pour les petits points est largement supérieur à celui obtenu pour les
-grands poins (à moins que \( \hmin \) ne soit particulièrement grand), ce qui
-n'est pas très satisfaisant. Nous établissons donc un résultat, basé sur
-l'inégalité de \bsc{Liouville}, permettant de supprimer les petits points
+grands poins (à moins que \( \hmin(\grp) \) ne soit particulièrement grand),
+ce qui n'est pas très satisfaisant. Nous établissons donc un résultat, basé
+sur l'inégalité de \bsc{Liouville}, permettant de supprimer les petits points
 quitte à renforcer l'hypothèse d'approximation.
 
 \begin{lem}
