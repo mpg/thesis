@@ -646,7 +646,7 @@ rapidement. La section suivante discute du choix de la valeur de \( m \).
 \todo (À écrire.)
 
 
-\section{Décompte grossier des petits points}
+\section{Options pour les petits points}
 \label{sec:small-points}
 
 Il ne semble pas évident d'exploiter l'hypothèse d'approximation dans le
@@ -708,186 +708,13 @@ aucune hypothèse d'approximation.
   (\todo??) une estimation de \( \hmin \).
 \end{rem}
 
-On en déduit pour finir un résultat de décompte complet (petits et grands
-points) des approximations exceptionnelles.
-
-\begin{thm} \label{t:inc-small}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de type fini ; on note \( r \) son rang et \( \hmin \) le minimum de \(
-    \hautn x \) quand \( x \) parcourt l'ensemble des points d'ordre infini de
-  \( \grp \).  Le nombre de points de \( \grp \) distincts modulo \( \vai \)
-  et satisfaisant à
-  \begin{equation}
-    0 < \distv x \avar
-    <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm2 x ^{-\wtapx \eps}
-    \quad \forall v \in \placesapx
-  \end{equation}
-  est majoré par
-  \begin{equation}
-    \card \Gamma_\torsion
-    \left(
-      \frac{
-        5 \cst{ht-m=g+1}
-        \Bigl(
-          \eps^{-1}
-          \, \adeg \sbin{n + \adeg}{\adeg}
-          \, \cst{lambda}
-        \Bigr)^{(\sqrt2(g+1))^{2g(g+1)}}
-      }{
-        \min(1, \hmin)
-      }
-    \right)^{r/2}
-  \end{equation}
-  avec
-  \begin{align}
-    \newcst[]{ht-m=g+1}
-    & =
-    \adeg \max \bigl(
-      \adeg^g \hautl1{\va}, \hlclab, \htcmp
-    \bigr)
-    + (g + 1) \deg \va
-    \Bigl(
-      \adeg^n \ln(\adeg) n
-    \\ & \qquad
-      + \adeg^g \bigl (
-        \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln((g+1)\/2)
-      \bigr)
-    \Bigr)
-    \\
-    \newcst[]{lambda}
-    & =
-    86 \nclmaps \deg \va
-    \bigl( 8 g (g+1) \bigr)^g
-    \pmm.
-  \end{align}
-\end{thm}
-
-\begin{proof}
-  Remarquons qu'on peut supposer \( r \ge 1 \) car sinon le résultat est
-  banal.  En combinant la proposition~\vref{p:big-gen} et le
-  corollaire~\vref{c:small-va} appliqué avec \( R = \cst{ht-v-gen1}
-    \Lambda_4^{(2mg)^{mg}} \), on voit que le nombre de
-  points en question est au plus
-  \begin{equation}
-    \sqrt{\frac \adeg \eps}
-    2 m
-    (2mg)^{mg}
-    \ln \Lambda_4
-    \left( 3 \sqrt{ m \cst{v-gen} } \right)^r
-    +
-    \card \Gamma_\torsion
-    \cdot
-    \left( 1 + \frac2{\sqrt{\hmin}}
-      \left(
-        \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
-      \right)^{1/2}
-    \right)^r
-    \pmm.
-  \end{equation}
-  On voit facilement que le premier terme est majoré par \( \Lambda_4^{3r} \)
-  : en effet, on a
-  \begin{align}
-    6 \sqrt{\frac \adeg \eps}
-    \cdot \sqrt{ \cst{v-gen} }
-    & \le
-    \cst{v-gen}
-    \\
-    \ln \Lambda_4
-    & \le
-    \Lambda_4
-    \\
-    m \sqrt m
-    (2mg)^{mg}
-    & \le
-    (\sqrt2 m g)^{2mg}
-  \end{align}
-  qui donne bien le résultat voulu en prenant le produit vu la définition de
-  \( \Lambda_4 \). En particulier, comme \( (2mg)^{mg} /
-    2 \ge 8 \), le premier terme est largement majoré par \( \Lambda_4^{ \frac
-      r2 (2mg)^{mg} } / \Lambda_4 \).
-
-  Par ailleurs, le deuxième terme est majoré par
-  \begin{equation}
-    \card \Gamma_\torsion
-    \left(
-      \frac{
-        (2 + \frac1{\Lambda_4})
-      }{
-        \min(1, \sqrt{\hmin})
-      }
-      \left(
-        \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
-      \right)^{1/2}
-    \right)^r
-    \pmm.
-  \end{equation}
-  Il ne reste alors qu'à remarquer que \( \card \Gamma_\torsion \ge 1 \) et
-  que \( (2 + \frac1{\Lambda_4})^r + \frac1{\Lambda_4} \le 5^{r/2} \) pour
-  majorer la somme par
-  \begin{equation}
-    \card \Gamma_\torsion
-    \left(
-      \frac{
-        5 \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
-      }{
-        \min(1, \hmin)
-      }
-    \right)^{r/2}
-    \pmm.
-  \end{equation}
-  Cette majoration est valable pour tout \( m > g \) ;
-  on remarque par ailleurs que cette quantité est croissante en \( m \) :
-  en effet, la seule partie qui ne l'est pas est l'exposant \( m /
-    (m - g) \) dans la définition de \( \cst{v-gen} \) mais celui-ci
-  est largement composé par le \( (2mg)^{mg} \) en
-  exposant de \( \Lambda_4 \).  On pose donc \( m = g + 1 \) pour
-  obtenir la meilleure estimation possible, ce qui donne
-  \begin{align}
-    \Lambda_4^{(2mg)^{mg}}
-    & =
-    \left(
-      \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
-      \bigr)^{ g + 1 }
-      \bigl( (\sqrt2 g(g+1)\Delta)^g \deg \va \bigr)^{g+1}
-    \right)^{(2g(g+1))^{g(g+1)}}
-    \\ & \le
-    \Bigl(
-      \eps^{-1}
-      \, \adeg \sbin{n + \adeg}{\adeg}
-      \, \cst{lambda}
-    \Bigr)^{(g+1) (2g(g+1))^{g(g+1)}}
-  \end{align}
-  puis on note que
-  \(
-    (g+1) g^{g(g+1)}
-    \le
-    (g+1)^{2g(g+1)}
-  \) pour conclure.
-\end{proof}
-
-Ce résultat n'est pas particulièrement satisfaisant dans le sens où la
-majoration est essentiellement donnée par celle provenant des petits points et
-ne tenant donc pas compte de l'hypothèse d'approximation. La section suivante
-présente une autre approche possible : éliminer les petits points.
-
-
-
-\section{Élimination des petits points}
-\label{sec:no-small-points}
-
-On établit ici une variante du résultat principal où l'on se dispense de
-l'hypothèse que les points sont grands en renforçant l'hypothèse
-d'approximation pour éliminer les petits grâce à l'inégalité de
-\bsc{Liouville}. Le résultat fondamental d'élimination des petits points est
-le suivant.
+Si l'on applique le résultat précédent en conjonction avec le
+théorème~\vref{t:big-gen-prod}, on constate assez facilement que le décompte
+obtenu pour les petits points est largement supérieur à celui obtenu pour les
+grands poins (à moins que \( \hmin \) ne soit particulièrement grand), ce qui
+n'est pas très satisfaisant. Nous établissons donc un résultat, basé sur
+l'inégalité de \bsc{Liouville}, permettant de supprimer les petits points
+quitte à renforcer l'hypothèse d'approximation.
 
 \begin{lem}
   Soit \( \avar \) une sous-variété de \( \va \), de dimension \( \adim \) et
@@ -987,8 +814,9 @@ On en déduit immédiatement le corollaire pratique suivant.
   Application immédiate du lemme précédent avec \( F = \adeg R \).
 \end{proof}
 
-On peut alors renforcer la condition d'approximation pour interdire
-l'existence de petits points, ce qui donne la proposition suivante.
+On en déduit à titre d'exemple une variante du théorème~\vref{t:big-gen-prod}
+; le lecteur en déduira sans peine des variantes similaires des autres
+résultats de décompte.
 
 \begin{prop} \label{p:all-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
@@ -997,13 +825,14 @@ l'existence de petits points, ce qui donne la proposition suivante.
   \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
     \ge g + 1 \), il existe au plus
   \begin{equation}
-    \sqrt{\frac \adeg \eps}
+    2 \cdot 5^{\card \placesapx} \cdot
+    \sqrt{ \frac{\adeg}\eps }
     (4mg)^{mg}
-    \ln \Lambda_4
+    \ln \Lambda_5
     \left(
       3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+        174 \nclmaps \cdot 5^g \adeg s
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -1011,106 +840,27 @@ l'existence de petits points, ce qui donne la proposition suivante.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   à la condition suivante :
   \begin{align}
-    0 < \distv{x_i} \avar
+    0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
-      - \wtapx \adeg \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
+      - \adeg \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}}
     \right)
-    \hautm2{x_i}^{-\wtapx \eps}
-    \quad \forall v \in \placesapx
+    \hautm2{x_i}^{-\eps}
   \end{align}
-  avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
-  lemme~\vref{l:big-by-cone}.
+  avec \( \Lambda_5 \) et \( \cst{ht-v-gen1} \) comme au
+  théorème~\vref{t:big-gen-prod}.
 \end{prop}
 
 \begin{proof}
-  La condition d'approximation considérée implique en particulier
-  \begin{equation}
-    0
-    <
-    \prod\placerange \distv{x_i} \avar ^\degv
-    <
-    \exp\left(
-      - \adeg \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
-    \right)
-    \hautm2{x_i}^{-\eps}
-  \end{equation}
-  de sorte qu'on peut appliquer le corollaire~\vref{c:kill-small} avec
-  \( R = \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}} \)
-  car cette quantité satisfait amplement l'hypothèse du corollaire. Ainsi, on
-  voit que tous les points satisfaisant cette condition d'approximation
-  satisfont aussi \( \hautn{x_1} \ge R \) et on peut appliquer la
-  proposition~\vref{p:big-gen} pour aboutir au résultat annoncé.
+  La condition d'approximation considérée permet d'appliquer le
+  corollaire~\vref{c:kill-small} avec
+  \( R = \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}} \),
+  quantité qui satisfait amplement l'hypothèse du corollaire. Ainsi, on voit
+  que tous les points satisfaisant cette condition d'approximation satisfont
+  aussi \( \hautn{x_i} \ge R \) et on peut appliquer le
+  théorème~\vref{t:big-gen-prod} pour conclure.
 \end{proof}
 
-On peut alors choisir \( m \) de façon à optimiser ce résultat dans une
-des deux directions suivantes : obtenir la condition la plus faible possible,
-ou bien le décompte le plus précis possible. Dans le premier sens, on obtient
-le résultat suivant.
-
-\begin{coro}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \), le nombre de points
-  de \( \grp \) distincts modulo \( \vai \) et satisfaisant à la condition
-  \begin{align}
-    0 < \distv{x_i} \avar
-    & <
-    \hautm2{x_i}^{-\wtapx\eps}
-    \\ & \qquad \cdot
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
-    \exp\left(
-      - \wtapx 2 \adeg
-      \cst{ht-m=g+1}
-      \Bigl(
-        \eps^{-1}
-        \adeg \sbin{n + \adeg}{\adeg}
-        \cst{lambda}
-      \Bigr)^{(\sqrt2(g+1))^{2g(g+1)}}
-    \right)
-  \end{align}
-  pour tout \( v \in \placesapx \)
-  avec \( \cst{ht-m=g+1} \) et \( \cst{lambda} \) comme au
-  théorème~\vref{t:inc-small} est au plus
-  \begin{equation}
-    \sqrt{\frac \adeg \eps}
-    (4g(g+1))^{g(g+1)}
-    \bigl(
-      - \ln \eps
-      + \cst{ln-lambda}
-    \bigr)
-    \left(
-      3 \sqrt{g+1}
-      \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
-        \bigr)^{ \frac{g+1}{2} }
-    \right)^r
-  \end{equation}
-  avec
-  \begin{equation}
-    \newcst[]{ln-lambda}
-    =
-    9
-    + 2 \ln \nclmaps
-    + \ln(\adeg+1) (n+1 + g(g+1))
-    + (g+1) \left( \deg\va + 4g \ln(g+1) \right)
-    \pmm.
-  \end{equation}
-\end{coro}
-
-\begin{proof}
-  L'énoncé de la proposition~\vref{p:all-gen} est valable pour tout \( m
-    \ge g + 1 \).  Comme dans la preuve du
-  théorème~\vref{t:inc-small}, on remarque la quantité \(
-    \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
-  \) est minimale pour \( m = g + 1 \) et on spécialise donc
-  la proposition~\vref{p:all-gen} avec cette valeur.
-\end{proof}
-
-\textcolor{out}{\todo Dans l'autre sens, discussion et proposition de choix}
 
 \cleardoublepage
 \endinput
