@@ -61,21 +61,21 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
     \adim \).  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
-  on considère une famille de points \( \ex[1], \dots, \ex[p] \in \va(\Qbar)
+  on considère une famille de points \( x_1, \dots, x_p \in \va(\Qbar)
   \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
   conditions suivantes :
   \begin{align}
     \label{e:big-ha}
-    0 < \distv{\ex*} \avar
+    0 < \distv{x_i} \avar
     & <
     \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\ \label{e:big-big}
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \\ \label{e:big-cos}
-    \cos(\ex*, \ex[j])
+    \cos(x_i, x_j)
     & > 1 - \frac1{ m \, \cst{v-gen} }
   \end{align}
   avec
@@ -161,8 +161,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \pmm.
   \end{equation}
   Supposons alors que \( p \ge (m - 1) \eta + 1 \) contrairement à la
-  conclusion du lemme : on pourrait alors poser \( \ex* = x_{1 + (i-1)
-      \eta} \) pour \( i \in {1, m} \) et la famille \( (\ex*)_i \)
+  conclusion du lemme : on pourrait alors poser \( y_i = x_{1 + (i-1)
+      \eta} \) pour \( i \in {1, m} \) et la famille \( (y_i)_i \)
   contredirait alors le corollaire~\vref{c:vojta-gen2}, ce qui est absurde.
 
   Ainsi, on a
@@ -228,13 +228,13 @@ On utilise ensuite le fait suivant.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*} \avar
+    0 < \distv{x_i} \avar
     & <
     \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
@@ -500,12 +500,12 @@ considérées, on utilisera donc le scolie suivant.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
-    0 < \prod\placerange \distv{\ex*} \avar ^\degv
+    0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
     \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2}
-    \hautm2{\ex*}^{-\eps}
+    \hautm2{x_i}^{-\eps}
     \\
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
@@ -554,11 +554,11 @@ la constante ; on aboutit au résultat suivant.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   aux deux conditions suivantes :
   \begin{align}
-    0 < \prod\placerange \distv{\ex*} \avar ^\degv
+    0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
-    \hautm2{\ex*}^{-\eps}
+    \hautm2{x_i}^{-\eps}
     \\
-    \hautn{\ex[1]}
+    \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}}
   \end{align}
   avec
@@ -601,7 +601,7 @@ la constante ; on aboutit au résultat suivant.
   \end{equation}
   où la dernière inégalité est très large. On en déduit immédiatement que
   \begin{equation}
-    \hautm2{ \ex* }^{\eps/87}
+    \hautm2{ x_i }^{\eps/87}
     \ge
     \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2}
   \end{equation}
@@ -992,13 +992,13 @@ l'existence de petits points, ce qui donne la proposition suivante.
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
   à la condition suivante :
   \begin{align}
-    0 < \distv{\ex*} \avar
+    0 < \distv{x_i} \avar
     & <
     \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
       - \wtapx \adeg \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \right)
-    \hautm2{\ex*}^{-\wtapx \eps}
+    \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
@@ -1010,18 +1010,18 @@ l'existence de petits points, ce qui donne la proposition suivante.
   \begin{equation}
     0
     <
-    \prod\placerange \distv{\ex*} \avar ^\degv
+    \prod\placerange \distv{x_i} \avar ^\degv
     <
     \exp\left(
       - \adeg \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \right)
-    \hautm2{\ex*}^{-\eps}
+    \hautm2{x_i}^{-\eps}
   \end{equation}
   de sorte qu'on peut appliquer le corollaire~\vref{c:kill-small} avec
   \( R = \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}} \)
   car cette quantité satisfait amplement l'hypothèse du corollaire. Ainsi, on
   voit que tous les points satisfaisant cette condition d'approximation
-  satisfont aussi \( \hautn{\ex[1]} \ge R \) et on peut appliquer la
+  satisfont aussi \( \hautn{x_1} \ge R \) et on peut appliquer la
   proposition~\vref{p:big-gen} pour aboutir au résultat annoncé.
 \end{proof}
 
@@ -1037,9 +1037,9 @@ le résultat suivant.
   \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \), le nombre de points
   de \( \grp \) distincts modulo \( \vai \) et satisfaisant à la condition
   \begin{align}
-    0 < \distv{\ex*} \avar
+    0 < \distv{x_i} \avar
     & <
-    \hautm2{\ex*}^{-\wtapx\eps}
+    \hautm2{x_i}^{-\wtapx\eps}
     \\ & \qquad \cdot
     \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2}
     \exp\left(
