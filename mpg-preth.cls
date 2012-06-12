@@ -641,7 +641,7 @@
   % cannot say \pexp{\sfirst{#2}#3}[{#4}] cause it checks if #1 is empty
   \@ifmtarg{#2}{\pexp{#3}[{#4}]}{\pexp{#2\slast{#3}}[{#4}]}
 }
-\newcommand \mexp {\gmp{}} % FIXME: p\mexp usage is stupid, use \gmp p
+\newcommand \mexp {\gmp{}} % compat: p\mexp usage is stupid, use \gmp p
 % ]]
 
 \newcommand \fct      {i}

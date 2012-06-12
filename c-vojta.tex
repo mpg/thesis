@@ -5037,10 +5037,10 @@ est proche de \( \divi \), jusqu'à obtenir une hypothèse impossible à
 satisfaire (donc un résultat vide) lorsque \( p_0 \in \divi \). Le corollaire
 suivant évite ce problème en considérant des permutations de coordonnées ;
 ceci a en revanche un coût, qui consiste à remplacer \( \eps \) par \(
-  \eps / (n + 1) \) dans les autres hypothèses, comme nous le verrons
-au cours de la preuve.
+  \eps / \min(n + 1, \card \placesapx) \) dans les autres hypothèses, comme
+nous le verrons au cours de la preuve.
 
-\begin{coro} \label{c:vojta-div-any}
+\begin{coro} \label{c:vojta-div-any-s}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \divi \) un hyperplan de \( \projd \) et \( \eps > 0 \) un nombre réel.
   Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
@@ -5063,17 +5063,18 @@ au cours de la preuve.
     \cos(x_i, x_j) & > 1 -
     \frac1{ m }
     \left(
-      \frac{ \eps }{ 86 \nclmaps \cdot 5^g (n+1) }
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^g s }
     \right)^{ \frac{m}{m-g} }
   \end{align}
-  avec \( \cst{ht-v-div-dv} \) comme en~\eqref{e:cst-ht-v-div-dv} et
+  avec \( \cst{ht-v-div-dv} \) comme en~\eqref{e:cst-ht-v-div-dv}, \( s =
+    \min(n+1, \card \placesapx) \) et
   \begin{align}
     \Lambda_2
     & = \max \bigl(
       (\deg \va)^m,
       5 m^2
       \bigl(
-        86 \nclmaps \cdot 5^g \cdot \eps^{-1} (n + 1)
+        86 \nclmaps \cdot 5^g \cdot \eps^{-1} s
       \bigr)^{ \frac{m}{m-g} }
       \deg \va,
       (\sqrt2 m g)^{mg}
@@ -5106,9 +5107,10 @@ au cours de la preuve.
   ces ensembles le nombre réel \( \sigma_i = \sum_{v \in \placesapx_i}
     \wtapx \degv \) où \( \degv \) désigne comme d'habitude le degré local en
   \( v \) divisé par le degré global. Par hypothèse, on a
-  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^n \sigma_i \)
-  et il existe donc (au moins) un indice \( i \) tel que \( \sigma_i \ge
-    1/(n + 1) \). On fixe un tel indice, désormais désigné par \( i \).
+  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^n \sigma_i \), or cette
+  somme comporte au plus \( s = \min(n+1, \card \placesapx) \) termes non
+  suls, donc il existe donc (au moins) un indice \( i \) tel que \( \sigma_i
+    \ge 1 / s \). On fixe un tel indice, désormais désigné par \( i \).
 
   On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( v \in
     \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \) pour avoir \(
@@ -5130,8 +5132,133 @@ au cours de la preuve.
   \), le réel \( \eps' \), l'ensemble de places \( \placesapx' \) et les
   poids \( \wtapx' \), car ses hypothèses sont impliquées par celle du présent
   corollaire compte tenu de la comparaison ci-dessus et du fait que \(
-    \eps' \ge \eps / (n + 1) \).
+    \eps' \ge \eps / s \).
 \end{proof}
+
+Une autre approche consiste à ne pas se débarasser du facteur \(
+  \distv{p_0}\divi \) pour l'instant en prévision du fait que l'on déduira en
+section~\vref{sec:ha-prod} des énoncés où l'on prendra le produit sur toutes
+les places de \( \placesapx \), et où ce facteur disparaîtra plus
+naturellement. Cependant, pour simplifier l'énoncé des corollaires suivants où
+l'on changera de plongement, on utilisera l'énoncé suivant.
+
+\begin{coro} \label{c:vojta-div-any-p}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( \divi \) un hyperplan de \( \projd \) et \( \eps > 0 \)
+  un nombre réel.  Il n'existe dans \( \va(\Qbar) \) aucune famille de points
+  \( x_1, \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
+  simultanément aux conditions suivantes, où les notions de distance et de
+  hauteur sont relatives au plongement \( \vaemb \) :
+  \begin{align}
+    0 < \distv{x_i}{\divi}
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{x_1}
+    & > 4\cst{ht-v-div-dv} \Lambda_1^{(1 + \frac1m)
+      \prod_{i=m}^{mg} (2i + 1)}
+    \\
+    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
+    4 m \Lambda_1^{2m \prod_{i=m+1}^{mg} (2i + 1)}
+    \\
+    \cos(x_i, x_j) & > 1 -
+    \frac1{ m }
+    \left(
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^g }
+    \right)^{ \frac{m}{m-g} }
+  \end{align}
+  avec \( \Lambda_1 \) et \( \newcst[\Theta]{ht-v-div-dv} \) comme au
+  corollaire~\vref{c:vojta-div-any-s} et \( (\alpha_v)\placerange \) une
+  certaine famille de réels supérieurs ou égaux à \( 1 \), satisfaisant
+  \( \prod\placerange \alpha_v \le \hautm2 \divi ^2 \cdot \sqrt{n+1} \).
+\end{coro}
+
+\begin{proof}
+  En reprenant les notations de la preuve du corollaire précédent, on chosit
+  cette fois-ci un \( i \) tel que \( p_i \not\in \divi \), ce qui est
+  toujours possible. On pose alors
+  \begin{equation}
+    \alpha_v
+    =
+    \frac{ (n + 1)^{\dv/2} }{ \distv{p_i}{\divi}^2 }
+    \quad \forall v \in \placesapx
+    \pmm,
+  \end{equation}
+  ce qui a un sens car le dénominateur n'est pas nul, et on a bien \( \alpha_v
+    \ge 1 \). Par ailleurs, on a
+  \begin{equation}
+    \prod\placerange  \distv{p_i}{\divi}
+    \le
+    \prod_{v \in M_\cdn} \distv{p_i}{\divi}
+    =
+    \hautm2 \divi ^{-1}
+  \end{equation}
+  vu l'expression de la distance à une hyperplan.
+\end{proof}
+
+Pour éviter de dupliquer les corollaires des sections suivantes, on regroupe
+les deux énoncés précédents en un seul, où l'on rappelle de plus les valeurs
+de toutes les constantes pour en faciliter l'usage.
+
+\begin{coro} \label{c:vojta-div-any}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( \divi \) un hyperplan de \( \projd \) et \( \eps > 0 \) un nombre réel.
+  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
+    \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
+  simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{x_i}{\divi}
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{x_1}
+    & > 4\cst{ht-v-div-dv} \Lambda_2^{(1 + \frac1m)
+      \prod_{i=m}^{mg} (2i + 1)}
+    \\
+    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
+    4 m \Lambda_2^{2m \prod_{i=m+1}^{mg} (2i + 1)}
+    \\
+    \cos(x_i, x_j) & > 1 -
+    \frac1{ m }
+    \left(
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^g s }
+    \right)^{ \frac{m}{m-g} }
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda_2
+    & = \max \bigl(
+      (\deg \va)^m,
+      5 m^2
+      \bigl(
+        86 \nclmaps \cdot 5^g \cdot \eps^{-1} s
+      \bigr)^{ \frac{m}{m-g} }
+      \deg \va,
+      (\sqrt2 m g)^{mg}
+    \bigr)
+    \\
+    \cst{ht-v-div-dv}
+    & = \max \bigl(
+      \hautl1{\va} + \hautl1{ E } (g+1) \deg \va,
+      \hlclab + \frac52 \hautl1 E,
+      \\ & \qquad
+      \htcmp + \hautl2 E + \frac12 \ln(n + 1),
+      n\ln(n + 1)
+    \bigr)
+  \end{align}
+  et au choix :
+  \begin{enumthm}
+  \item \( s = \min(n+1, \card \placesapx) \) et \( \alpha_v = (n+1)^{3\dv/2}
+    \) ;  ou bien
+  \item \( s = 1 \) et \( (\alpha_v)_v \) une certaine famille de réels tous
+    supérieurs ou égaux à \( 1 \), satisfaisant
+    \( \prod\placerange \alpha_v \le \hautm2 \divi ^2 \cdot \sqrt{n+1} \).
+  \end{enumthm}
+\end{coro}
 
 
 \subsection{Hypersurfaces}
