@@ -227,8 +227,7 @@ On utilise ensuite le fait suivant.
     \left(
       3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
+        86 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
@@ -244,8 +243,8 @@ On utilise ensuite le fait suivant.
     \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
-  avec \( \Lambda_4 \), \( \cst{ht-v-gen1} \) et \( \alpha_v \) comme au
-  lemme~\vref{l:big-by-cone}.
+  avec \( \Lambda_4 \), \( \cst{ht-v-gen1} \), \( s \)  et \( \alpha_v \)
+  comme au lemme~\vref{l:big-by-cone}.
 \end{prop}
 
 \begin{proof}
@@ -257,16 +256,14 @@ On utilise ensuite le fait suivant.
     \left(
       1 + \sqrt{8 m}
       \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
+        86 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
     \le
     \left(
       3 \sqrt m
       \bigl(
-        86 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
+        86 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
@@ -499,9 +496,8 @@ considérées, on utilisera donc le scolie suivant.
     \left(
       3 \sqrt m
       \bigl(
-        172 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
-        \, \eps^{-1}
-        \bigr)^{ \frac{m}{2(m-g)} }
+        172 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
+      \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
   \end{equation}
   points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
@@ -509,14 +505,23 @@ considérées, on utilisera donc le scolie suivant.
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2}
+    \alpha^{-1}
     \hautm2{x_i}^{-\eps}
     \\
     \hautn{x_1}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
-  lemme~\vref{l:big-by-cone}.
+  lemme~\vref{l:big-by-cone} et au choix :
+  \begin{enumthm}
+  \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et \( \alpha =
+      \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2} \) ; ou bien
+  \item \( s = 1 \) et \( \alpha =
+      \hautm1 \avar ^2
+      \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
+      \cdot \expb^{\adeg n} \adeg \sbin{\adeg+n}{n}^{1/2}
+    \).
+  \end{enumthm}
 \end{coro}
 
 \begin{proof}
@@ -530,10 +535,7 @@ considérées, on utilisera donc le scolie suivant.
     \sqrt 2 \ln \Lambda_4
     \pmm;
   \end{equation}
- les autres changements dans le décompte sont évidents. Pour la condition
- d'approximation, on observe que \( \sum_\placerange \dv\degv \le 1 \), le cas
- le plus défavorable étant celui où \( S \) contient toutes les places
- archimédiennes.
+ les autres changements dans le décompte sont évidents.
 \end{proof}
 
 On peut alors simplifier légèrement la condition d'approximation en absorbant
@@ -546,14 +548,14 @@ la constante ; on aboutit au résultat suivant.
   \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
     \ge g + 1 \), il existe au plus
   \begin{equation}
-    2 \cdot 5^{\card S} \cdot
+    2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (4mg)^{mg}
     \ln \Lambda_5
     \left(
       3 \sqrt m
       \bigl(
-        174 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+        174 \nclmaps \cdot 5^g \adeg s
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -573,7 +575,7 @@ la constante ; on aboutit au résultat suivant.
     \Lambda_5
     & =
     \bigl(
-        87 \nclmaps \cdot 5^g \adeg \sbin{n + \adeg}{\adeg}
+        87 \nclmaps \cdot 5^g \adeg s
         \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \bigl( (\sqrt2 m g \adeg)^g \deg \va \bigr)^m
@@ -598,28 +600,32 @@ la constante ; on aboutit au résultat suivant.
 \end{thm}
 
 \begin{proof}
-  On constate pour commencer que
-  \begin{equation}
-    \frac12 \ln \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)
+  On constate pour commencer que, quel que soit le choix pour \( (s, \alpha)
+  \) dans le corollaire précédent, on a assez largement
+  \(
+    \ln \alpha
     \le
-    \frac32 \adeg \sbin{\adeg+n}{n}^3
-    \le
-    \frac{ \Lambda_4^{(2mg)^{mg}} }{ 87 \eps }
-  \end{equation}
-  où la dernière inégalité est très large. On en déduit immédiatement que
-  \begin{equation}
+    \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}} / (87 \eps)
+  \)
+  dont on déduit immédiatement que
+  \(
     \hautm2{ x_i }^{\eps/87}
     \ge
-    \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2}
-  \end{equation}
+    \alpha
+  \)
   puis que les hypothèses du présent énoncé impliquent celles de l'énoncé
-  précédent en remplaçant \( \eps \) par \( 86\eps / 87 \).
+  précédent en remplaçant \( \eps \) par \( 86\eps / 87 \). Il est alors clair
+  qu'on a intérêt à prendre l'option \( s = 1 \) pour minimiser les
+  différentes constantes.
 \end{proof}
 
-L'énoncé précédent laisse libre le choix du paramètre \( m \) qui peut être
-n'importe quel entier supérieur ou égal à \( g + 1 \). Il est clair que la
-condition sur la hauteur est d'autant plus forte que \( m \) est grande : en
-effet, 
+\begin{rem}
+  Dans le cas où \( \card \placesapx = 1 \), on aura plutôt intérêt à utiliser
+  la proposition~\ref{p:big-gen} et prendre \( s = \card \placesapx \) puis
+  supprimer le \( \alpha_v \) éventuel (si l'unique place de \( \placesapx \)
+  est archimédienne) comme ci-dessus en remplaçant \( 86 \) par \( 87 \) dans
+  le décompte et la définition de \( \Lambda_4 \).
+\end{rem}
 
 La dépendance en \( \eps \) dans le décompte précédent est en
 \begin{equation}
@@ -628,10 +634,16 @@ La dépendance en \( \eps \) dans le décompte précédent est en
   \pmm.
 \end{equation}
 L'exposant du premier facteur tend donc vers \( (r+1) / 2 \) lorsque \( m \)
-tend vers l'infini. Cependant, quand \( m \) grandit, le facteur \(
-  (4mg)^{mg} \) dans le décompte croît rapidement et par ailleurs la condition
-de hauteur croît rapidement.
+tend vers l'infini. Cependant, quand \( m \) grandit, le facteur \( (4mg)^{mg}
+\) dans le décompte croît rapidement et la condition de hauteur aussi croît
+rapidement. La section suivante discute du choix de la valeur de \( m \).
 
+
+
+\section{Choix du paramètre \( m \)}
+\label{sec:opti-m}
+
+\todo (À écrire.)
 
 
 \section{Décompte grossier des petits points}
