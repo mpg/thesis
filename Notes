@@ -35,20 +35,15 @@ Maths {{{1
 Vojta {{{2
 -----
 
-(B) Expliquer que V est une sous-var de P^n et pas de A
-
-(B) Écrire les variantes prévues pour le produit
-
 (B) Dans les résultats actuels, remplacer n par max(n, card S)
 
-(D) Degré des formules en c a^2 au lieu de 2a^2 ?
+(B) Écrire les variantes prévues pour le produit
 
 Mumford {{{2
 -------
 
-(B) Refaire l'étude du morphisme, simplifiée
-
-(C) Ouverture sur ce qu'on ferait si les fibres étaient finies ?
+(C) Ouverture sur ce qu'on ferait si les fibres étaient toutes égales au
+stabilisateur ?
 
 Plongements et formulaires {{{2
 --------------------------
