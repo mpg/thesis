@@ -10,8 +10,8 @@ Rédaction {{{1
 Notations {{{2
 ---------
 
-(B) Utiliser \avar etc de façon consistante :
-    - param dans Vojta
+(D) Dans la param et les plongements adaptés de Vojta, remplacer \anyvar par
+\avar etc.
 
 (B) Approximations : on garde \ex pour la partie technique de Vojta, partout
 ailleurs on utilise x (voire x et y dans Mumford simple).
@@ -29,10 +29,6 @@ Maths {{{1
 
 Vojta {{{2
 -----
-
-(B) Dans les résultats actuels, remplacer n par max(n, card S)
-
-(B) Écrire les variantes prévues pour le produit
 
 Mumford {{{2
 -------
