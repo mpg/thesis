@@ -5035,172 +5035,15 @@ Le défaut du résultat précédent et que l'hypothèse d'approximation est
 d'autant plus forte (et donc le résultat d'autant plus faible) que \( p_0 \)
 est proche de \( \divi \), jusqu'à obtenir une hypothèse impossible à
 satisfaire (donc un résultat vide) lorsque \( p_0 \in \divi \). Le corollaire
-suivant évite ce problème en considérant des permutations de coordonnées ;
-ceci a en revanche un coût, qui consiste à remplacer \( \eps \) par \(
-  \eps / \min(n + 1, \card \placesapx) \) dans les autres hypothèses, comme
-nous le verrons au cours de la preuve.
-
-\begin{coro} \label{c:vojta-div-any-s}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( \divi \) un hyperplan de \( \projd \) et \( \eps > 0 \) un nombre réel.
-  Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1,
-    \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
-  simultanément aux conditions suivantes :
-  \begin{align}
-    0 < \distv{x_i}{\divi}
-    & <
-    (n + 1)^{-3\dv/2}
-    \hautm2{x_i}^{-\wtapx \eps}
-    \quad \forall v \in \placesapx
-    \\
-    \hautn{x_1}
-    & > 4\cst{ht-v-div-dv} \Lambda_2^{(1 + \frac1m)
-      \prod_{i=m}^{mg} (2i + 1)}
-    \\
-    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
-    4 m \Lambda_2^{2m \prod_{i=m+1}^{mg} (2i + 1)}
-    \\
-    \cos(x_i, x_j) & > 1 -
-    \frac1{ m }
-    \left(
-      \frac{ \eps }{ 86 \nclmaps \cdot 5^g s }
-    \right)^{ \frac{m}{m-g} }
-  \end{align}
-  avec \( \cst{ht-v-div-dv} \) comme en~\eqref{e:cst-ht-v-div-dv}, \( s =
-    \min(n+1, \card \placesapx) \) et
-  \begin{align}
-    \Lambda_2
-    & = \max \bigl(
-      (\deg \va)^m,
-      5 m^2
-      \bigl(
-        86 \nclmaps \cdot 5^g \cdot \eps^{-1} s
-      \bigr)^{ \frac{m}{m-g} }
-      \deg \va,
-      (\sqrt2 m g)^{mg}
-    \bigr)
-  \end{align}
-\end{coro}
-
-\begin{proof}
-  Soit \( L = l_0 \vp[0] + \dots + l_n \vp[n] \) une équation de \(
-    \divi \). Pour chaque place \( v \), on note \( i_v \) un indice
-  tel que \( \av{ l_{i_v} } \) soit maximal, de sorte que \( \av{
-      l_{i_v} } \ge \nv2 L (n + 1)^{-\dv/2} \).  On considère alors
-  les points \( p_i \) définis comme \( p_0 \) mais avec le \( 1 \) en \( i
-  \)-ème position ; on a \( \distv{\divi}{p_{i_v}} \ge (n +
-    1)^{-\dv/2} \).
-
-  On définit maintenant pour chaque \( i \) un ensemble de places
-  \begin{equation}
-    \placesapx_i
-    =
-    \set{
-      v \in \placesapx \text{ telle que }
-      \distv{\divi}{p_{i_v}} \ge (n + 1)^{-\dv/2}
-    }
-    \pmm.
-  \end{equation}
-  Le paragraphe précédent montre que \( \placesapx = \placesapx_0 \cup
-    \cdots \cup \placesapx_n \). (Cette réunion n'est pas nécessairement
-  disjointe, mais il n'est pas utile qu'elle le soit.) On associe à chacun de
-  ces ensembles le nombre réel \( \sigma_i = \sum_{v \in \placesapx_i}
-    \wtapx \degv \) où \( \degv \) désigne comme d'habitude le degré local en
-  \( v \) divisé par le degré global. Par hypothèse, on a
-  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^n \sigma_i \), or cette
-  somme comporte au plus \( s = \min(n+1, \card \placesapx) \) termes non
-  suls, donc il existe donc (au moins) un indice \( i \) tel que \( \sigma_i
-    \ge 1 / s \). On fixe un tel indice, désormais désigné par \( i \).
-
-  On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( v \in
-    \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \) pour avoir \(
-    \sum_{v \in \placesapx'} \wtapx' \degv = 1 \).  Enfin, on pose \(
-    \eps' = \eps \sigma_i \) de sorte qu'on a
-  \begin{equation}
-    (n + 1)^{-3\dv/2}
-    \hautm2{x_i}^{-\wtapx \eps}
-    \le
-    \frac{ \distv{p_{i_v}}{\divi}^2 }{ (n + 1)^{\dv/2} }
-    \hautm2{x_i}^{-\wtapx' \eps'}
-    \quad \forall v \in \placesapx'
-    \pmm.
-  \end{equation}
-  On considère pour finir le plongement \( \vaemb' \) obtenu à partir de \(
-    \vaemb \) en échangeant les coordonnées d'indices \( i \) et \( 0 \), ce
-  qui n'a aucune incidence sur la distance ni la hauteur. On peut alors
-  appliquer le corollaire~\vref{c:vojta-div-dv} avec le plongement \( \vaemb'
-  \), le réel \( \eps' \), l'ensemble de places \( \placesapx' \) et les
-  poids \( \wtapx' \), car ses hypothèses sont impliquées par celle du présent
-  corollaire compte tenu de la comparaison ci-dessus et du fait que \(
-    \eps' \ge \eps / s \).
-\end{proof}
-
-Une autre approche consiste à ne pas se débarasser du facteur \(
-  \distv{p_0}\divi \) pour l'instant en prévision du fait que l'on déduira en
-section~\vref{sec:ha-prod} des énoncés où l'on prendra le produit sur toutes
-les places de \( \placesapx \), et où ce facteur disparaîtra plus
-naturellement. Cependant, pour simplifier l'énoncé des corollaires suivants où
-l'on changera de plongement, on utilisera l'énoncé suivant.
-
-\begin{coro} \label{c:vojta-div-any-p}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( \divi \) un hyperplan de \( \projd \) et \( \eps > 0 \)
-  un nombre réel.  Il n'existe dans \( \va(\Qbar) \) aucune famille de points
-  \( x_1, \dots, x_m \) avec \( m \ge g + 1 \) satisfaisant
-  simultanément aux conditions suivantes, où les notions de distance et de
-  hauteur sont relatives au plongement \( \vaemb \) :
-  \begin{align}
-    0 < \distv{x_i}{\divi}
-    & <
-    \alpha_v^{-1}
-    \hautm2{x_i}^{-\wtapx \eps}
-    \quad \forall v \in \placesapx
-    \\
-    \hautn{x_1}
-    & > 4\cst{ht-v-div-dv} \Lambda_1^{(1 + \frac1m)
-      \prod_{i=m}^{mg} (2i + 1)}
-    \\
-    \hautn{x_i} & > \hautn{x_{i-1}} \cdot
-    4 m \Lambda_1^{2m \prod_{i=m+1}^{mg} (2i + 1)}
-    \\
-    \cos(x_i, x_j) & > 1 -
-    \frac1{ m }
-    \left(
-      \frac{ \eps }{ 86 \nclmaps \cdot 5^g }
-    \right)^{ \frac{m}{m-g} }
-  \end{align}
-  avec \( \Lambda_1 \) et \( \cst{ht-v-div-dv} \) comme au
-  corollaire~\vref{c:vojta-div-any-s} et \( (\alpha_v)\placerange \) une
-  certaine famille de réels supérieurs ou égaux à \( 1 \), satisfaisant
-  \( \prod\placerange \alpha_v \le \hautm2 \divi ^2 \cdot \sqrt{n+1} \).
-\end{coro}
-
-\begin{proof}
-  En reprenant les notations de la preuve du corollaire précédent, on chosit
-  cette fois-ci un \( i \) tel que \( p_i \not\in \divi \), ce qui est
-  toujours possible. On pose alors
-  \begin{equation}
-    \alpha_v
-    =
-    \frac{ (n + 1)^{\dv/2} }{ \distv{p_i}{\divi}^2 }
-    \quad \forall v \in \placesapx
-    \pmm,
-  \end{equation}
-  ce qui a un sens car le dénominateur n'est pas nul, et on a bien \( \alpha_v
-    \ge 1 \). Par ailleurs, on a
-  \begin{equation}
-    \prod\placerange  \distv{p_i}{\divi}
-    \le
-    \prod_{v \in M_\cdn} \distv{p_i}{\divi}
-    =
-    \hautm2 \divi ^{-1}
-  \end{equation}
-  vu l'expression de la distance à une hyperplan.
-\end{proof}
-
-Pour éviter de dupliquer les corollaires des sections suivantes, on regroupe
-les deux énoncés précédents en un seul, où l'on rappelle de plus les valeurs
-de toutes les constantes pour en faciliter l'usage.
+suivant propose deux options pour contourner ce problème : la première
+consiste à considérer des permutations de coordonnées pour éviter que cette
+condition ne devienne trop restrictive, mais a un coût sur les autres
+constantes (sauf si \( \card \placesapx = 1 \)) ; la deuxième consiste à
+remarquer que les différentes distances en question, dès qu'elles sont non
+nulles, sont liées à la hauteur de \( \divi \) -- cette version prendra
+plus de sens lorsque l'hypothèse d'approximation sera modifiée en utilisant un
+produit sur toutes les places de \( \placesapx \) à la
+section~\vref{sec:ha-prod}.
 
 \begin{coro} \label{c:vojta-div-any}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
@@ -5259,6 +5102,82 @@ de toutes les constantes pour en faciliter l'usage.
     \( \prod\placerange \alpha_v \le \hautm2 \divi ^2 \cdot \sqrt{n+1} \).
   \end{enumthm}
 \end{coro}
+
+\begin{proof}
+  Commençons par la deuxième option, qui est la plus simple.  On considère les
+  points \( p_i \) définis comme \( p_0 \) mais avec le \( 1 \) en \( i \)-ème
+  position ; on peut certainement choisir un \( i \) tel que \( p_i \not\in
+    \divi \).  On pose alors
+  \begin{equation}
+    \alpha_v
+    =
+    \frac{ (n + 1)^{\dv/2} }{ \distv{p_i}{\divi}^2 }
+    \quad \forall v \in \placesapx
+    \pmm,
+  \end{equation}
+  ce qui a un sens car le dénominateur n'est pas nul, et on a bien \( \alpha_v
+    \ge 1 \). Par ailleurs, on a
+  \begin{equation}
+    \prod\placerange  \distv{p_i}{\divi}
+    \le
+    \prod_{v \in M_\cdn} \distv{p_i}{\divi}
+    =
+    \hautm2 \divi ^{-1}
+  \end{equation}
+  vu l'expression de la distance à un hyperplan. On applique alors le
+  corollaire précédent au plongement déduit de \( \vaemb \) en échangeant les
+  coordonnées d'indices \( i \) et \( 0 \), ce qui ne change aucune des
+  quantité en jeu.
+
+  Pour la première option, soit \( L = l_0 \vp[0] + \dots + l_n \vp[n] \) une
+  équation de \( \divi \). Pour chaque place \( v \), on note \( i_v \) un
+  indice tel que \( \av{ l_{i_v} } \) soit maximal, de sorte que
+  \( \av{ l_{i_v} } \ge \nv2 L (n + 1)^{-\dv/2} \).  On a immédiatement
+  \( \distv{\divi}{p_{i_v}} \ge (n + 1)^{-\dv/2} \).
+
+  On définit maintenant pour chaque \( i \) un ensemble de places
+  \begin{equation}
+    \placesapx_i
+    =
+    \set{
+      v \in \placesapx \text{ telle que }
+      \distv{\divi}{p_{i_v}} \ge (n + 1)^{-\dv/2}
+    }
+    \pmm.
+  \end{equation}
+  Le paragraphe précédent montre que \( \placesapx = \placesapx_0 \cup
+    \cdots \cup \placesapx_n \). (Cette réunion n'est pas nécessairement
+  disjointe, mais il n'est pas utile qu'elle le soit.) On associe à chacun de
+  ces ensembles le nombre réel \( \sigma_i = \sum_{v \in \placesapx_i}
+    \wtapx \degv \) où \( \degv \) désigne comme d'habitude le degré local en
+  \( v \) divisé par le degré global. Par hypothèse, on a
+  \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^n \sigma_i \), or cette
+  somme comporte au plus \( s = \min(n+1, \card \placesapx) \) termes non
+  suls, donc il existe donc (au moins) un indice \( i \) tel que \( \sigma_i
+    \ge 1 / s \). On fixe un tel indice, désormais désigné par \( i \).
+
+  On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( v \in
+    \placesapx' \), on pose \( \wtapx' = \wtapx / \sigma_i \) pour avoir \(
+    \sum_{v \in \placesapx'} \wtapx' \degv = 1 \).  Enfin, on pose \(
+    \eps' = \eps \sigma_i \) de sorte qu'on a
+  \begin{equation}
+    (n + 1)^{-3\dv/2}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \le
+    \frac{ \distv{p_{i_v}}{\divi}^2 }{ (n + 1)^{\dv/2} }
+    \hautm2{x_i}^{-\wtapx' \eps'}
+    \quad \forall v \in \placesapx'
+    \pmm.
+  \end{equation}
+  On considère pour finir le plongement \( \vaemb' \) obtenu à partir de \(
+    \vaemb \) en échangeant les coordonnées d'indices \( i \) et \( 0 \), ce
+  qui n'a aucune incidence sur la distance ni la hauteur. On peut alors
+  appliquer le corollaire~\vref{c:vojta-div-dv} avec le plongement \( \vaemb'
+  \), le réel \( \eps' \), l'ensemble de places \( \placesapx' \) et les
+  poids \( \wtapx' \), car ses hypothèses sont impliquées par celle du présent
+  corollaire compte tenu de la comparaison ci-dessus et du fait que \(
+    \eps' \ge \eps / s \).
+\end{proof}
 
 
 \subsection{Hypersurfaces}
