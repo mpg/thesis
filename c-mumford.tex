@@ -75,10 +75,11 @@ Pour le cas général, l'énoncé est le suivant.
     m
     =
     \bigl(
-    2^{34} \cdot h_0(\va) \cdot \adeg
+    2^{34} \cdot [\cdn : \Q] \hlclab \cdot \adeg
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
-    \pmm.
+    + 1
   \end{equation}
+  où \( \cdn \) est un corps de définition de \( \va \).
   On choisit alors \( \eps > 0 \) puis \( \phi > 0 \) et \( \rho > 0 \)
   tels que
   \begin{equation} \label{e:rho-phi-gen}
@@ -103,7 +104,7 @@ Pour le cas général, l'énoncé est le suivant.
     \frac2\eps
     \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
     \Bigl(
-      \hautl\htpph \avar
+      8 \hautl\htpph \avar
       + 4 \adeg m^2 \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
     \Bigr)
     \quad
@@ -621,7 +622,7 @@ de formes de degrés et hauteur contrôlées.
         \dots, n}} \), telle que \( \nnv1{ L\pexp i } \le \hmclab* \).
   Pour chaque \( l \in \set{0, \dots, n}^{m-1} \) on pose
   \begin{equation}
-    S_l(\vmp[1], \dots, \vmp[m-1])
+    S_l(\vmp[1], \dots, \vmp[m])
     =
     \prod_{i=1}^{m-1} L\pexp i[l_i]( \vmp[i], \vmp[m] )
   \end{equation}
@@ -664,11 +665,11 @@ minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
 \end{lem}
 
 \begin{proof}
-  On note \( \adim' = \dim Z \le m \adim \) et on choisit des hyperplans de \(
-    \proj N \) en position générale, qu'on notera \( E_1, \dots, E_{\adim'} \)
-  de sorte que \( F = \bigcap_i E_i \) est un ensemble fini de points, de
-  cardinal \( \deg Z \).  On note donc \( F = \set{y_1, \dots, y_p} \) et
-  notre but est de majorer \( p = \deg Z \).
+  On note \( \adim' = \dim Z \le m \adim \) et on choisit \( u' \) hyperplans
+  de \( \proj N \) en position générale, qu'on notera \( E_1, \dots,
+    E_{\adim'} \) de sorte que \( F = \bigcap_i E_i \) est un ensemble fini de
+  points, de cardinal \( \deg Z \).  On note donc \( F = \set{y_1, \dots, y_p}
+  \) et notre but est de majorer \( p = \deg Z \).
 
   Pour chaque \( j \in \set{1, \dots, p} \), on choisit un point \( x_j \in
     s_m^{-1}(y_j) \cap \avar^m \) et une famille de formes \( (S_{j,l})_l \)
@@ -688,8 +689,26 @@ minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
   des formes de \( S \), qui ne contient aucune des fibres en question grâce
   au choix de cette famille.
 
-  On invoque alors la proposition~3.3, p.~365 de \cite{philz} dont on reprend
-  les notations (voir p.~364 et p.~362) :
+  On introduit alors les notations suivantes (voir p.~364 et p.~362 de
+  \cite{philz}), pour tout fermé \( X \) de \( (\projd)^m \) et tout
+  multidegré \( d_1, \dots, d_m \) :
+  \begin{equation}
+    SH(X ; d_1, \dots, d_m)
+    =
+    \sum_Y H(Y ; d_1, \dots, d_m)
+  \end{equation}
+  où la somme est prise sur l'ensemble des composantes de \( X \) et
+  \begin{equation}
+    H(Y ; d_1, \dots, d_m)
+    =
+    \sum_{\lgr\alpha = \dim Y}
+    \deg_\alpha Y
+    \, \frac{(\dim Y)!}{ \alpha_1 ! \dots \alpha_m ! }
+    d_1^{\alpha_1} \cdots d_m^{\alpha_m}
+    \pmm.
+  \end{equation}
+  On invoque alors la proposition~3.3, p.~365 de la référence citée pour
+  obtenir
   \begin{equation}
     SH( \avar^m \cap \bigcap_i \tilde E_i \, ; 2, \dots, 2, 2(m-1) )
     \le
@@ -711,13 +730,13 @@ minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
   \end{equation}
   en majorant le coefficient multinomial qui apparaît dans cette expression
   par \( m^{mu-1} \). Par ailleurs, on a
-  \begin{align} \label{e:sh-inter}
+  \begin{equation} \label{e:sh-inter}
     SH( \avar^m \cap \bigcap_i \tilde E_i \, ; 2, \dots, 2, 2(m-1) )
     \ge
     \sum_{j=1}^p H( s_m^{-1}(y_j) \cap \avar ; 2, \dots, 2, 2(m-1) )
     \ge
     p
-  \end{align}
+  \end{equation}
   d'après le paragraphe précédent, ce qui achève la preuve.
 \end{proof}
 
@@ -729,7 +748,7 @@ hauteur de \( Z \).
     \hautl\htpph Z
     \le
     \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
-    (2m)^{ (m+1)\adim }
+    (2m)^{ (m+1)\adim + 1}
   \).
 \end{coro}
 
@@ -737,8 +756,6 @@ hauteur de \( Z \).
   Il suffit de savoir majorer le minimum essentiel de \( Z \) en fonction de
   celui de \( \avar \), en vertu des comparaison suivantes, données par le
   théorème 3.1 de \cite{daphimhva1} :
-  \worknote{Recopié depuis \cite{daphimht}, à vérifier directement dans la
-    réf. citée quand même.}
   \begin{equation}
     \miness(Z) \deg Z
     \le
@@ -747,9 +764,8 @@ hauteur de \( Z \).
     \miness(Z) \deg Z (\dim Z + 1)
   \end{equation}
   où \( \miness \) désigne le minimum essentiel, défini en utilisant la
-  hauteur \( \Hautl2 \) pour les points. (On rappelle que \( \Hautl\htpph
-  \) est la hauteur obtenue en utilisant la mesure de \bsc{Philippon} aux
-  places archimédiennes.)
+  hauteur \( \Hautl2 \) pour les points et \( \Hautl\htpph \) est la hauteur
+  projective.
 
   Notons \( F \) l'ensemble des points de \( x \in \avar \) tels que \(
     \hautl2 x \le 2 \miness(\avar) \) ; par définition \( F \) est dense
@@ -776,14 +792,14 @@ hauteur de \( Z \).
     \, mu
     \\ & \le
     (8  \hautl\htpph \avar / \adeg +  \hlclab)
-    \adeg^m (2m)^{ (m+1)\adim }
+    \adeg^m (2m)^{ (m+1)\adim + 1}
   \end{align}
   qui donne bien la majoration annoncée.
 \end{proof}
 
 Nous avons maintenant tous les ingrédients utiles pour continuer la preuve de
 l'inégalité de \bsc{Mumford}. Néanmoins, nous concluons cette section par une
-étude des fibres de \( s_m \), qui pourrait être utile pour pour discuter
+étude des fibres de \( s_m \), qui pourrait être utile pour discuter
 d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \(
   S_\avar \) le stabilisateur de \( \avar \).
 
@@ -794,10 +810,10 @@ d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \
     \subset
     s_m^{-1} ( s_m(x) ) \cap \avar^m
     \subset
-    x + \delta(\bigcap_{i=1}^m \avar - x_i)
+    x + \delta\Bigl( \bigcap_{i=1}^m (\avar - x_i) \Bigr)
   \end{equation}
   où \( \delta \colon \avar \to \avar^m \) est le plongement diagonal. En
-  particulier, si \( S_\avar = \bigcap_{i=1}^m \avar - x_i \), ces inclusions
+  particulier, si \( S_\avar = \bigcap_{i=1}^m (\avar - x_i) \), ces inclusions
   sont des égalités.
 \end{lem}
 
@@ -810,22 +826,22 @@ d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \
   Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
   \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
     \delta(y_m - x_m) \). Si de plus \( y \in \avar^m \) on a \( y_m - x_m \in
-    \bigcap_{i=1}^m \avar - x_i \).
+    \bigcap_{i=1}^m (\avar - x_i) \).
 \end{proof}
 
 Étudions dans quel cas l'égalité peut être obtenue. Par définition du
 stabilisateur, on a (ensemblistement) :
 \begin{equation}
-  S_\avar = \bigcap_{x \in \avar(\Qbar)} \avar - x
+  S_\avar = \bigcap_{x \in \avar(\Qbar)} (\avar - x)
   \pmm.
 \end{equation}
 Par noethérieneté, il est clair qu'on peut en fait prendre une intersection
 finie ; le lemme suivant précise ce résultat.
 
 \begin{lem}
-  Posons \( M = 2 \adeg^{\adim+1} - 2 \) ; pour tout \( m \ge M \) il existe
-  \( (x_1, \dots, x_m) \in \avar^m(\Qbar) \) tel que
-  \( S_\avar = \bigcap_{i=1}^m \avar - x_i \).
+  Posons \( M = 2 \adeg^{\adim+1} - \adeg \) ; pour tout \( m \ge M \) il
+  existe \( (x_1, \dots, x_m) \in \avar^m(\Qbar) \) tel que
+  \( S_\avar = \bigcap_{i=1}^m (\avar - x_i) \).
 \end{lem}
 
 \begin{proof}
@@ -836,14 +852,14 @@ finie ; le lemme suivant précise ce résultat.
     S_\avar \).  Clairement, ce processus se termine et l'intersection obtenue
   est \( S_\avar \).
 
-  Plus précisément, on note \( X_j = \bigcap_{i=1}^{j+1} \avar - x_i \) le
+  Plus précisément, on note \( X_j = \bigcap_{i=1}^{j+1} (\avar - x_i) \) le
   fermé de \bsc{Zarisiki} obtenu après \( j \) intersections.  Pour nous aider
   à compter les composantes à chaque étape, on introduit la quantité définie
   pour tout fermé \( X \) et tout entier \( D \) par :
   \begin{equation}
     SH(X, D)
     =
-    \sum_Y \deg Y \, D^{\dim Z}
+    \sum_Y \deg Y \, D^{\dim Y}
   \end{equation}
   où la somme est prise sur l'ensemble des composantes de \( X \). Cette
   définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi
@@ -855,7 +871,7 @@ finie ; le lemme suivant précise ce résultat.
   des équations de degré au plus \( \adeg \), on peut appliquer à ces
   équations la proposition~3.3 de la référence citée, ce qui garantit que \(
     SH(X_{j+1}, \adeg) \le SH(X_j, \adeg) \) et donne immédiatement par
-  récurrence \( SH(X_j, \adeg) \le \adeg^{\adim+1} \).
+  récurrence \( SH(X_j, \adeg) \le \adeg^{\adim+1} \) pour tout \( j \).
 
   Par définition de \( SH \), cette inégalité montre que pour tout \( k \), le
   nombre de composantes de \( X_j \) de dimension \( \adim - k \) est au plus
@@ -865,11 +881,12 @@ finie ; le lemme suivant précise ce résultat.
   les \( x_i \) de façon à ce que \( \avar - x_{j+2} \) coupe strictement une
   des composantes de \( X_j \) de dimension maximale parmi celles qui ne sont
   pas composantes de \( S_\avar \), on voit qu'il existe un \( j_1 \le 1 +
-    \adeg^2 \) tel que \( X_j \) n'ait plus de composante de dimension \(
-    \adim - 1 \) à part celles de \( S_\avar \), et en continuant jusqu'à
-  avoir éliminé les composantes indésirables de dimension \( 0 \), qu'il
-  existe un \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots + \adeg^{\adim+1} \)
-  tel que \( X_{j_\adim} \) n'ait plus aucune composante autre que celles de
+    \adeg^2 \) tel que \( X_{j_1} \) n'ait plus de composante de dimension \(
+    \adim - 1 \) à part peut-être celles de \( S_\avar \), et en continuant
+  jusqu'à avoir éliminé les composantes indésirables de dimension \( 0 \),
+  qu'il existe un \( j_\adim \le 1 + \adeg^2 + \adeg^3 + \dots +
+    \adeg^{\adim+1} \) tel que \( X_{j_\adim} \) n'ait plus aucune composante
+  autre que celles de
   \( S_\avar \), c'est-à-dire tel que \( X_{j_\adim} = S_\avar \).
 
   Le nombre de points utilisés est alors
@@ -878,7 +895,7 @@ finie ; le lemme suivant précise ce résultat.
     \le
     2 + \adeg^2 \sum_{l=0}^{\adim-1} \adeg^l
     =
-    2 + \frac{\adeg}{\adeg+1} (\adeg^{\adim+1} - \adeg)
+    2 + \frac{\adeg}{\adeg-1} (\adeg^{\adim+1} - \adeg)
     \le
     2 + 2 (\adeg^{\adim+1} - \adeg)
     \pmm,
@@ -888,48 +905,40 @@ finie ; le lemme suivant précise ce résultat.
   Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
     x_{j_\adim+1} \) tels que \( X_{j_\adim} = S_\avar \), on peut rajouter
   des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \(
-    S_\avar = \bigcap_i \avar - x_i \).
+    S_\avar = \bigcap_i (\avar - x_i) \).
 \end{proof}
 
-On suppose désormais \( m \ge 2 \adeg^{\adim+1} - 2 \) jusqu'à la fin de cette
-section.  On peut voir que pout tout \( m \ge 2 \adeg^{\adim+1} - 2
-\), il existe un ouvert dense de \( \avar^m \) où \( (x_1, \dots, x_m) \) «
-définissent le stabilisateur » au sens ci-dessus, car la condition
-correspondante est ouverte et le lemme précédent affirme que l'ouvert n'est
-pas vide. On en déduit immédiatement que les fibres de \( {s_m}_{|\avar} \)
-sont génériquement des translatés de \( \delta(S_\avar) \) ; en particulier,
-\( \dim s_m(\avar^m) = m \adim - \dim S_\avar \).
+On suppose désormais \( m \ge 2 \adeg^{\adim+1} - \adeg \) jusqu'à la fin de
+cette section.  On peut voir qu'il existe un ouvert dense de \( \avar^m \) où
+\( (x_1, \dots, x_m) \) « définissent le stabilisateur » au sens ci-dessus,
+car la condition correspondante est ouverte et le lemme précédent affirme que
+l'ouvert n'est pas vide. On en déduit immédiatement que les fibres de \(
+  {s_m}_{|\avar} \) sont génériquement des translatés de \( \delta(S_\avar) \)
+; en particulier, \( \dim s_m(\avar^m) = m \adim - \dim S_\avar \).
 
-On peut alors préciser précider l'estimation du degré de l'image :
+On peut alors préciser l'estimation du degré de l'image :
 \begin{equation}
   \deg Z
   \le
   \frac{ \adeg^m }{ \deg S_\avar }
-  (2m)^{m(\adim-\dim S_\avar)} (m-1)^{\adim - \dim S_\avar - 1}
+  2^{m\adim - 2\dim S_\avar} m^{(m+1)\adim - 1 - \dim S_\avar}
 \end{equation}
 En effet, on peut s'arranger pour que les \( s_m^{-1}(y_j) \cap \avar \)
 apparaissant dans~\eqref{e:sh-inter} soient tous des translatés de \(
   \delta(S_\avar) \) et on voit assez facilement que tous les multidegrés de
 \( \delta(S_\avar) \) sont égaux à \( \deg S_\avar \), ce qui donne
 \begin{align}
-  E( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
+  H( \delta(S_\avar); 2, \dots, 2, 2(m-1) )
   & =
   \ \sum_{ \mathclap{\lgr\alpha = \dim S_\avar} } \
   \deg S_\avar
   \, \frac{ (\dim S_\avar)! }{ \alpha_1! \cdots \alpha_m! }
-  \, 2^{m\dim S_\avar} (m-1)^{\dim S_\avar}
+  \, 2^{\dim S_\avar} (m-1)^{\alpha_m}
   \\ & =
   \deg S_\avar
-  (2m)^{m\dim S_\avar} (m-1)^{\dim S_\avar}
+  (2)^{2\dim S_\avar} (m-1)^{\dim S_\avar}
 \end{align}
 d'après la formule multinomiale.
-
-Cette estimation ne sera \lat{a priori} pas utile pour la suite mais est
-moralement satisfaisante dans le sens suivant : dans le cas où \( \avar = z +
-  \vai \) est un translaté de sous-variété abélienne, en substituant \( m = 2
-\) et \( \dim S_\avar = \adim \) dans l'estimation précédente, on obtient
-\( \deg Z \le \adeg \) qui est en fait une égalité.
-
 
 
 \section{Cas général}
@@ -969,7 +978,7 @@ section~\vref{sec:mumford-grp}.
     \prod_\placerange \distv z Z ^\degv
     \le
     \expb^{-\eps \hautn{ x_m }}
-    \cdot \hmclab \expb^\htcmp
+    \cdot \expb^{\eps\htcmp} \hmclab
     \cdot 5 \sqrt{2m-2} \, (n + 1)^3
   \end{equation}
 \end{lem}
@@ -977,14 +986,14 @@ section~\vref{sec:mumford-grp}.
 \begin{proof}
   C'est une variante du lemme~\vref{l:diff-apx} ; la démonstration est
   identique sauf pour l'étape finale.  Pour chaque \( i \in \set{1, \dots,
-      m-1} \) et chaque \( v \in \placesapx \), la définition de la distance
+      m} \) et chaque \( v \in \placesapx \), la définition de la distance
   permet de choisir un point \( y_{i, v} \in \avar(\Cv) \) tel que
   \begin{equation}
     \distv{ x_i }{ y_{i, v} }
     =
     \distv{ x_i }\avar
     \le
-    \exp(-\wtapx \eps \hautn{ x_m } + \htcmp)
+    \exp(-\wtapx \eps \hautn{ x_m } + \wtapx\eps \htcmp)
   \end{equation}
   où l'inégalité découle directement des hypothèses et d'une comparaison entre
   hauteurs.
@@ -992,7 +1001,7 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \max_i \distv{ x_i - x_m }{ y_{i, v} - y_{m, v} }
     \le
-    \exp(-\wtapx \eps \hautn{ x_m } + \htcmp)
+    \exp(-\wtapx \eps \hautn{ x_m } + \wtapx\eps \htcmp)
     \cdot \hmclab* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
     \pmm.
   \end{equation}
@@ -1067,12 +1076,12 @@ section~\vref{sec:mumford-grp}.
     + (\deg Z) (\dim Z + 1) \ln(N+1)
     \\ & \le
     \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
-    (2m)^{ (m+1)\adim }
+    (2m)^{ (m+1)\adim + 1}
     \\ & \qquad
     + \adeg^m \, 2^{mu} \, m^{(m+1)u - 1} (m \adim + 1) (m-1)\ln(n+1)
     \\ & \le
     (2m)^{ (m+1)\adim + 1} \Bigl(
-    \adeg^{m-1} \hautl\htpph \avar
+    8 \adeg^{m-1} \hautl\htpph \avar
     + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \label{e:liou-h1-img}
@@ -1106,7 +1115,7 @@ section~\vref{sec:mumford-grp}.
     \adeg^m 2^{mu} m^{(m+1)\adim - 1}
     \cdot \bigl( 2^{\adim+2} m^3 + 2^\adim m^2 \ln \adeg \bigr)
     \\ & \le
-    \adeg^m (2m)^{(m+1)\adim + 2}
+    \adeg^m (2m)^{(m+1)\adim + 2} (1 + \ln\adeg / 8)
     \\ & \le
     \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
     \label{e:liou-cst2}
@@ -1132,7 +1141,7 @@ section~\vref{sec:mumford-grp}.
     - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
     - (2m)^{ (m+1)\adim + 1 } \Bigl(
-    \adeg^{m-1} \hautl\htpph \avar
+    8 \adeg^{m-1} \hautl\htpph \avar
     + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
     \Bigr)
     \\ & \qquad
@@ -1140,7 +1149,7 @@ section~\vref{sec:mumford-grp}.
     - \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
     \\ & \ge
     - \frac\eps2 \hautn{ x_m }
-    - \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl\htpph \avar
+    - 8 \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl\htpph \avar
     \\ & \qquad
     - \adeg^m (2m)^{ (m+1)\adim + 2}
     \bigl( 2\ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
@@ -1152,32 +1161,35 @@ section~\vref{sec:mumford-grp}.
     \sum\placerange \degv \ln\distv z Z
     \le
     -\eps \hautn{ x_m }
-    + \hlclab + \htcmp
+    + \hlclab + \eps\htcmp
     + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
   \end{equation}
-  Les deux dernières égalités mises ensemble donnent
+  Les deux dernières égalités mises ensemble, en supposant \( \eps < 2\adeg \)
+  (ce qu'on peut faire car sinon l'inégalité de \bsc{Liouville} implique
+  qu'aucun point ne satisfait les hypothèses~\eqref{e:Mapx-gen}
+  et~\eqref{e:Mbig-gen}), donnent
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
-    \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl\htpph \avar
+    8 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl\htpph \avar
     + \adeg^m (2m)^{ (m+1)\adim + 3}
     \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
   \end{equation}
   qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.
 \end{proof}
 
-On rappelle la version effective de l'ex-conjecture de \bsc{Mordell-Lang}
+On rappelle la version quantitative de l'ex-conjecture de \bsc{Mordell-Lang}
 obtenue par \bsc{Rémond}.
 
 \begin{fact}
-  Soient \( \avar \subset \va \) une sous-variété et \( \grp \subset
-    \va(\Qbar) \) un sous-groupe de rang fini \( r \). Alors il existe un
-  entier naturel
+  Soient \( \avar \subset \va \) une sous-variété, \( \grp \subset
+    \va(\Qbar) \) un sous-groupe de rang fini \( r \) et \( \cdn \) un corps
+  de définition de \( \va \).  Alors il existe un entier naturel
   \begin{equation}
     S
-    <
+    \le
     \bigl(
-    2^{34} \cdot h_0(\va) \cdot \adeg
+    2^{34} \cdot [\cdn : \Q] \hlclab \cdot \adeg
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
     \pmm,
   \end{equation}
@@ -1193,22 +1205,24 @@ obtenue par \bsc{Rémond}.
 \end{fact}
 
 \begin{proof}
-  \worknote{Introduire \( h_0(\va) \) et vérifier les hypothèses sur le
-    plongement.}
   C'est une version du théorème de~2.1, p.~517 de \cite{remdcl} où la fonction
   notée \( f \) dans ledit énoncé est explicitée, citée dans \cite{daphimhva2}
-  p.~643. Par ailleurs, il est clair qu'en simplifiant l'expression pour
-  passer de la version précise de \cite{remdcl} à la version énoncée, au moins
-  une inégalité est stricte.
+  p.~643. Par ailleurs, la quantité notée \( h_0(\va) \) dans cette dernière
+  référence y est définie (théorème~1.4 p.~641) comme \( [\cdn:\Q] \max(1,
+    h(\va) \), où la quantité notée \( h(\va) \) (qui n'est pas celle que nous
+  notons \( \hautl{}\va \)) est utilisée pour contrôler la hauteur des
+  formules d'addition, duplication, etc. de \( \va \) : on peut donc la
+  remplacer par la quantité que nous notons \( \hlclab \), que nous avons
+  supposée supérieure ou égale à \( 1 \).
 \end{proof}
 
 Nous sommes maintenant prêts à conclure.
 
 \begin{proof}[\proofname{} du théorème~\vref{t:mumford-gen}.]
   Soit \( x = (x_1, \dots, x_m) \) une famille de points comme dans l'énoncé.
-  D'après le lemme précédent, il existe un point \( y \in \avar(\Qbar) \)
-  tel que \( x_i - x_m = y_i - y_m \) pour tout \( i \). En particulier, pour
-  tout \( i \) on a
+  D'après le lemme précédent, il existe un point \( y \in \avar^m(\Qbar) \)
+  tel que \( s_m(x) = s_m(y) \), c'est-à-dire \( x_i - x_m = y_i - y_m \) pour
+  tout \( i \). En particulier, pour tout \( i \) on a
   \begin{equation}
     y_i - y_m
     \in
@@ -1216,9 +1230,10 @@ Nous sommes maintenant prêts à conclure.
     =
     \bigcup_{k=1}^{S} (z_k + \vai_k)(\Qbar) \cap \grp
   \end{equation}
-  où l'égalité de droite découle du fait précédent, avec \( z_k \in \avar -
-    y_m \) et \( z_k + \vai_k \in \avar \), où \( \vai_k \subset \va \) est
-  une sous-variété abélienne, pour tout \( k \), et \( S < m \).
+  où l'égalité de droite découle du fait précédent appliqué à \( \avar - y_m
+  \), avec \( z_k \in \avar - y_m \) et \( z_k + \vai_k \subset \avar - y_m
+  \), où \( \vai_k \subset \va \) est une sous-variété abélienne, pour tout \(
+    k \), et \( S < m \).
 
   Ainsi, il existe un indice \( k \in \set{1, \dots, S} \) et deux indices
   distincts \( i \) et \( j \) tels que \( y_i - y_m \in z_k + \vai_k \) et \(
