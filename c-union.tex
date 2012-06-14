@@ -601,12 +601,39 @@ la constante ; on aboutit au résultat suivant.
 \end{thm}
 
 \begin{proof}
-  On constate pour commencer que, quel que soit le choix pour \( (s, \alpha)
-  \) dans le corollaire précédent, on a assez largement
+  On commencer par majorer chacun des deux choix possibles pour \( \alpha \)
+  dans le corollaire précédent. Pour le premier, on a immédiatement
+  \begin{equation}
+    \ln \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{1/2}
+    \le
+    \frac12 \ln d + \frac32 n \ln(d+1)
+    \le
+    \cst{ht-v-gen1}
+    \pmm.
+  \end{equation}
+  Pour le deuxième choix, on a
+  \begin{align}
+    \ln \alpha
+    & =
+    2 \hautl1 \avar
+    + 2 (\adim+2) (\adeg + n+1) \ln (\adeg+1)
+    + 2 \ln(\tfrac m 2)
+    + \adeg n + \ln \adeg + \frac \adeg 2 \ln(n+1)
+    \notag
+    \\ & \le
+    \adeg \bigl(
+    \hautl1 \avar + (\adim+2) (\adeg + n+1) \ln (\adeg+1) + \ln(\tfrac m 2)
+    \bigr)
+    + 2 \adeg n
+    \le
+    \cst{ht-v-gen1}
+  \end{align}
+  Ainsi, quel que soit le choix pour \( (s, \alpha) \) dans le corollaire
+  précédent, on a assez largement
   \(
     \ln \alpha
     \le
-    \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}} / (87 \eps)
+    \cst{ht-v-gen1} \Lambda_5 \cdot \eps / 87
   \)
   dont on déduit immédiatement que
   \(
@@ -614,10 +641,14 @@ la constante ; on aboutit au résultat suivant.
     \ge
     \alpha
   \)
-  puis que les hypothèses du présent énoncé impliquent celles de l'énoncé
-  précédent en remplaçant \( \eps \) par \( 86\eps / 87 \). Il est alors clair
-  qu'on a intérêt à prendre l'option \( s = 1 \) pour minimiser les
-  différentes constantes.
+  puis que les hypothèses du présent énoncé impliquent celles du corollaire
+  précédent en remplaçant \( \eps \) par \( 86\eps / 87 \). On applique donc
+  le corollaire en question pour aboutir au résultat annoncé.
+
+  Par ailleurs, comme les deux valeurs possibles de \( \alpha \) peuvent être
+  absorbées à un coût équivalent, il est clair qu'on a intérêt à choisir la
+  deuxième option pour le choix de \( (s, \alpha) \) afin d'avoir \( s = 1 \)
+  qui minimise les différentes constantes.
 \end{proof}
 
 \begin{rem}
