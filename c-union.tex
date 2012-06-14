@@ -106,7 +106,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   et au choix :
   \begin{enumthm}
   \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et \( \alpha_v =
-      \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-\dv/2} \) ; ou bien
+      \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{\dv/2} \) ; ou bien
   \item \( s = 1 \) et \( (\alpha_v)_v \) une certaine famille de réels tous
     supérieurs ou égaux à \( 1 \), satisfaisant \(
       \prod\placerange \alpha_v
@@ -121,7 +121,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     p
     \le
     \sqrt{\frac \adeg \eps}
-    (4mg)^{mg}
+    (2mg)^{mg+1}
     \ln \Lambda_4
     \pmm.
   \end{equation}
@@ -145,7 +145,8 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   dans le membre de droite de~\eqref{e:Mbig} est largement majorée par \( 5
     \cst{ht-v-gen1} \).
 
-  On peut donc appliquer le théorème~\vref{t:mumford-grp} et conclure que
+  On peut donc appliquer le théorème~\vref{t:mumford-grp} avec \( x = x_i \)
+  et \( y = x_{i+1} \) et conclure que
   \( \hautn{ x_{i+1} } > (1 + \sqrt{\eps / \adeg}) \hautn{ x_i } \) pour tout
   \( i \le p-1 \). On pose alors
   \begin{equation}
@@ -155,51 +156,50 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
       (2mg)^{mg}
       \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
     \right\rceil
-  \end{equation}
-  de sorte que, pour tout \( i \le p - \eta \), on a
-  \begin{equation}
-    \hautn{ x_{i+\eta} }
-    >
-    (1 + \sqrt{\eps / \adeg})^\eta
-    \hautn{ x_i }
-    \ge
-    \Lambda_4^{(2mg)^{mg}}
-    \hautn{ x_i }
     \pmm.
   \end{equation}
-  Supposons alors que \( p \ge (m - 1) \eta + 1 \) contrairement à la
-  conclusion du lemme : on pourrait alors poser \( y_i = x_{1 + (i-1)
-      \eta} \) pour \( i \in {1, m} \) et la famille \( (y_i)_i \)
-  contredirait alors le corollaire~\vref{c:vojta-gen2}, ce qui est absurde.
+  On suppose que \( p \ge (m-1) \eta + 1 \) : on peut alors poser
+  \( y_i = x_{1 + (i-1) \eta} \) pour tout \( i \in \set{1, \dots, m} \) de
+  sorte que, pour tout \( i \le m-1 \), on a
+  \begin{equation}
+    \hautn{ y_{i+1} }
+    >
+    (1 + \sqrt{\eps / \adeg})^\eta
+    \hautn{ y_i }
+    \ge
+    \Lambda_4^{(2mg)^{mg}}
+    \hautn{ y_i }
+  \end{equation}
+  et la famille \( (y_i)_i \) contredit le corollaire~\vref{c:vojta-gen2}, ce
+  qui est absurde.
 
-  Ainsi, on a
+  Ainsi, on a \( p \le (m-1) \eta \). On remarque que la fonction \( t
+    \mapsto t / \ln(1+t) \) est croissante pour \( t > 0 \) et, comme on a
+  supposé \( \eps \le d+1 \le 2d \), on a
+  \begin{equation}
+    \frac1{ \ln(1 + \sqrt{\eps/d}) }
+    \le
+    \frac{ \sqrt2 }{ \ln(1 + \sqrt2) }
+    \sqrt{ \frac d \eps }
+    \le
+    2 \sqrt{ \frac d \eps }
+  \end{equation}
+  en vérifiant numériquement pour la dernière inégalité. On a alors
   \begin{equation}
     p
     \le
     (m - 1)
     \left(
-      (2mg)^{mg}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
+      (2mg)^{mg} \ln \Lambda_4
+      \cdot 2 \sqrt{ \frac d \eps }
       + 1
     \right)
     \le
-    m
-    (2mg)^{mg}
-    \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
-    \pmm.
+    2 m
+    (2mg)^{mg} \ln \Lambda_4
+    \sqrt{ \frac d \eps }
   \end{equation}
-  On remarque alors que la fonction \( x \mapsto \ln(1+x)/x \) est
-  décroissante pour \( x > 0 \) pour minorer le dénominateur par \( \ln(2)
-    \sqrt{\eps / \adeg} \) compte tenu de l'hypothèse sur \( \eps \) ; on
-  obtient alors, en remarquant de plus que \( \ln 2 \ge 1/2 \) :
-  \begin{equation}
-    p
-    \le
-    m (2mg)^{mg}
-    \cdot 2 \sqrt{\frac \adeg \eps}
-    \cdot \ln \Lambda_4
-  \end{equation}
-  qui donne aisément le résultat annoncé.
+  qui donne directement le résultat annoncé.
 \end{proof}
 
 On utilise ensuite le fait suivant.
@@ -222,7 +222,7 @@ On utilise ensuite le fait suivant.
     \ge g + 1 \), il existe au plus
   \begin{equation}
     \sqrt{\frac \adeg \eps}
-    (4mg)^{mg}
+    (2mg)^{mg+1}
     \ln \Lambda_4
     \left(
       3 \sqrt m
@@ -248,10 +248,11 @@ On utilise ensuite le fait suivant.
 \end{prop}
 
 \begin{proof}
-  En utilisant le fait précédent, on recouvre l'espace euclidien \( \grp
-    \otimes_\Z \R \) muni du produit scalaire donné par la hauteur de \NT par
-  des ensembles dans lesquels deux points quelconques
-  satisfont~\eqref{e:big-cos}. Le nombre d'ensembles nécessaires est au plus
+  En utilisant le fait précédent avec \( \gamma = m \cst{v-gen} \) , on
+  recouvre l'espace euclidien \( \grp \otimes_\Z \R \) muni du produit
+  scalaire donné par la hauteur de \NT par des ensembles dans lesquels deux
+  points quelconques satisfont~\eqref{e:big-cos}. Le nombre d'ensembles
+  nécessaires est au plus
   \begin{equation}
     \left(
       1 + \sqrt{8 m}
@@ -491,7 +492,7 @@ considérées, on utilisera donc le scolie suivant.
   \begin{equation}
     2 \cdot 5^{\card S} \cdot
     \sqrt{ \frac{\adeg}\eps }
-    (4mg)^{mg}
+    (2mg)^{mg+1}
     \ln \Lambda_4
     \left(
       3 \sqrt m
@@ -515,7 +516,7 @@ considérées, on utilisera donc le scolie suivant.
   lemme~\vref{l:big-by-cone} et au choix :
   \begin{enumthm}
   \item \( s = \min(\sbin{\adeg+n}{n}, \card \placesapx) \) et \( \alpha =
-      \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{-1/2} \) ; ou bien
+      \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{1/2} \) ; ou bien
   \item \( s = 1 \) et \( \alpha =
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
@@ -550,12 +551,12 @@ la constante ; on aboutit au résultat suivant.
   \begin{equation}
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
-    (4mg)^{mg}
+    (2mg)^{mg+1}
     \ln \Lambda_5
     \left(
       3 \sqrt m
       \bigl(
-        174 \nclmaps \cdot 5^g \adeg s
+        174 \nclmaps \cdot 5^g \adeg
         \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
@@ -575,7 +576,7 @@ la constante ; on aboutit au résultat suivant.
     \Lambda_5
     & =
     \bigl(
-        87 \nclmaps \cdot 5^g \adeg s
+        87 \nclmaps \cdot 5^g \adeg
         \, \eps^{-1}
     \bigr)^{ \frac{m}{m-g} }
     \bigl( (\sqrt2 m g \adeg)^g \deg \va \bigr)^m
@@ -634,7 +635,7 @@ La dépendance en \( \eps \) dans le décompte précédent est en
   \pmm.
 \end{equation}
 L'exposant du premier facteur tend donc vers \( (r+1) / 2 \) lorsque \( m \)
-tend vers l'infini. Cependant, quand \( m \) grandit, le facteur \( (4mg)^{mg}
+tend vers l'infini. Cependant, quand \( m \) grandit, le facteur \( (2mg)^{mg+1}
 \) dans le décompte croît rapidement et la condition de hauteur aussi croît
 rapidement. La section suivante discute du choix de la valeur de \( m \).
 
@@ -703,9 +704,7 @@ aucune hypothèse d'approximation.
 
 \begin{rem}
   Si dans l'énoncé précédent on prend \( \grp = \va(\cdn) \), on retrouve le
-  lemme~2.11.1, p.~117 de~\cite{farhith}. On rappelle par ailleurs que dans ce
-  cas (\todo??) donne une estimation de \( \card \grp_\torsion \) et
-  (\todo??) une estimation de \( \hmin(\grp) \).
+  lemme~2.11.1, p.~117 de~\cite{farhith}.
 \end{rem}
 
 Si l'on applique le résultat précédent en conjonction avec le
@@ -795,7 +794,7 @@ On en déduit immédiatement le corollaire pratique suivant.
     \right)
     \pmm,
   \end{equation}
-  il n'existe aucun point \( x \in \va(\Qbar) \) tels que
+  il n'existe aucun point \( x \in \va(\Qbar) \) tel que
   \begin{equation}
     0
     <
@@ -827,7 +826,7 @@ résultats de décompte.
   \begin{equation}
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
-    (4mg)^{mg}
+    (2mg)^{mg+1}
     \ln \Lambda_5
     \left(
       3 \sqrt m
