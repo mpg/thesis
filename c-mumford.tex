@@ -230,6 +230,32 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
     (\adeg+1)^2 \le (3\adeg)^2 \) pour conclure.
 \end{proof}
 
+On déduit de l'inégalité de \bsc{Liouville} le corollaire suivant, qui montre
+que dans notre étude des approximations exceptionnelles de hauteur assez
+grande, on pourra supposer \( \eps < \adeg + 1 \).
+
+\begin{coro} \label{c:nobig-liouville}
+  Soit \( \avar \) une sous-variété de \( \projd \), de dimension \( \adim \)
+  et de degré \( \adeg \). Il n'existe aucun point \( x \in \projd(\Qbar) \)
+  tel que
+  \begin{align}
+    \label{e:nobig-ha}
+    0 < \prod\placerange \distv x \avar ^\degv
+    & <
+    \hautm2 x ^{-\eps}
+    \\ \label{e:nobig-big}
+    \hautm2 x
+    & >
+    (n+1)^{3/2}
+    (3\adeg)^{\adeg (\adim+1)}
+    \, \hautm1{ \chow \avar }
+  \end{align}
+  pour \( \eps \ge \adeg + 1 \).
+\end{coro}
+
+\begin{proof}
+  Un tel point contredirait directement la proposition~\vref{p:liouville}.
+\end{proof}
 
 
 \section{Comportement métrique des opérations}
@@ -1043,6 +1069,7 @@ section~\vref{sec:mumford-grp}.
   On va maintenant estimer une par une les quantités apparaissant dans le
   membre de droite.
 
+  % XXX à déplacer dans l'intro
   Dans la démonstration du lemme~3.3, p. 111 de \cite{remgdmp}, il est établit
   que si \( P \) est une forme multihomogène de multidegré \( \delta \) en
   plusieurs groupes de \( n + 1 \) variables, dont on note \( p_\alpha \)
@@ -1165,9 +1192,8 @@ section~\vref{sec:mumford-grp}.
     + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
   \end{equation}
   Les deux dernières égalités mises ensemble, en supposant \( \eps < 2\adeg \)
-  (ce qu'on peut faire car sinon l'inégalité de \bsc{Liouville} implique
-  qu'aucun point ne satisfait les hypothèses~\eqref{e:Mapx-gen}
-  et~\eqref{e:Mbig-gen}), donnent
+  (ce qu'on peut faire car sinon le corollaire~\vref{c:nobig-liouville}
+  s'applique et permet de conclure), donnent % XXX détailler
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
