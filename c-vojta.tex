@@ -3952,9 +3952,7 @@ utilisant le fait suivant, conséquence du théorème du produit.
         \ln \left( \left( \frac m\alpha \right)^\vdim (\vdim* + 1) \right)
         + b_\fct \ln \binom{\deg T + \vdim*}{\vdim*}
       \end{align}
-      où l'on a noté \( \stoll{\vdim[\fcti]} = \frac12
-        \sum_{\ind=1}^{\vdim[\fcti]} \sum_{\indi=1}^{\ind} \frac1\indi \) le
-      nombre de \bsc{Stoll}.
+      où le nombre de \bsc{Stoll} et défini par~\eqref{e:def-stoll}.
   \end{enumthm}
 \end{fact}
 
@@ -4183,10 +4181,9 @@ et le fait que \( 2 \le 2\wtw* + \epsz \le 2m \), puis on simplifie par
   \Biggr)
   + o(1)
 \end{align*}
-On remarque alors que pour tout \( \fcti \) on a \( \stoll{\vdim[\fcti]} \le
-  \vdim[\fcti] \ln (1 + \vdim[\fcti]) \le m \ln m \) où la
-première majoration est classique et la deuxième utilise le fait que \(
-  \vdim[\fcti] \le g \le m - 1 \). On utilise de plus le
+On utilise alors~\eqref{e:maj-stoll} et
+le fait que \( \vdim[\fcti] \le g \le m - 1 \) pour écrire
+\( \stoll{\vdim[\fcti]} \le m \ln m \).  On utilise de plus le
 lemme~\vref{l:sum-wts} et le fait que \( \wts* \le \wts[1] \) pour estimer le
 terme de la dernière ligne ci-dessus par
 \begin{align}
