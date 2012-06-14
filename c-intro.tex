@@ -379,44 +379,34 @@ utilisera les normes usuelles suivantes :
   \pmm.
 \end{align}
 On définit alors la norme d'un polynôme comme celle de la famille de ses
-coefficients. Pour les polynômes (multi)homogènes, on sera également amené à
-utiliser la variante suivante de la norme euclidienne :
-\begin{equation}
-  \nv\nh P
-  =
-  \bigl(
-  \sum_\alpha \av{P_\alpha}^2
-  \cdot {\textstyle \binom{\delta}{\alpha}^{-1} }
-  \bigr)^{1/2}
-  \quad\text{où }
-  P = \sum_\alpha P_\alpha X^\alpha
-  \text{ et }
-  \delta = \deg P
-\end{equation}
-avec les notations de la sous-section précédente concernant les puissances et
-coefficients multinomiaux. Cette norme est utilisée par exemple
-dans~\cite{nesphilnm} p. 111, dont le lemme~3.3 (et sa démonstration) rappelle
-ou établi quelques comparaison entre cette norme et d'autres quantités
-usuelles.
+coefficients.  Si \( \mathcal F = (F_1, \dots, F_p) \) est une famille de
+polynômes, on définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la
+norme \( \nv\star\truc \) du vecteur des \( \nv\star{ F_i } \).
 
 Aux places archimédiennes, on dispose également de deux notions de mesure pour
-les polynômes. La première est la classique mesure de Mahler, définie par
+les polynômes. La première est la classique mesure de Mahler, définie pour \(
+  v \) archimédienne par :
 \begin{equation}
-  \ln \mahler P
+  \ln \mvm P
   =
   \int_0^1 \Diff t_1 \dots \int_0^1 \Diff t_n
   \ln \av{ P(\expb^{2\pi i t_1}, \dots, \expb^{2\pi i t_n}) }
 \end{equation}
-si \( P \neq 0 \) et \( \mahler(0) = 0 \). La seconde est une variante
-introduite par \bsc{Philippon} pour les formes multihomogènes en intégrant sur
-un produit de sphères et non de cercles ainsi qu'en ajoutant un facteur
-correctif. Plus précisément :
+si \( P \neq 0 \) et \( \mahler0 = 0 \) ; aux places ultramétriques on notera
+\( \mvm P = \nv\infty P \).
+
+La seconde, que nous appellerons
+mesure projective, est une variante introduite par \bsc{Philippon} pour les
+formes multihomogènes en intégrant sur un produit de sphères et non de cercles
+ainsi qu'en ajoutant un facteur correctif. On conservera \( \mvp P = \nv\infty
+  P \) aux places finies, et aux places infinies, si \( P \) est multihomogène
+de multidegré \( \delta \) en \( l \) groupes de \( n_k + 1 \) variables :
 \begin{equation}
-  \log \mespph F
+  \log \mvp P
   =
   \bigl(
     \int_{S_{1}\times\cdots\times S_{l}}
-    \log\av F\ \mu_1 \wedge \cdots \wedge \mu_l
+    \log\av P\ \mu_1 \wedge \cdots \wedge \mu_l
   \bigr)
   + \sum_{k=1}^l \delta_k \cdot \gamma_{n_k}
   \pmm,
@@ -430,8 +420,8 @@ enfin
   \gamma_n = \frac12 \sum_{q=1}^{n} \frac1q
   \pmm.
 \end{equation}
-On renvoie
-à~\cite{nesphilnm} p.~86 pour un rappel des propriétés essentielles.
+On renvoie à~\cite{nesphilnm} p.~86 pour un rappel des propriétés
+essentielles.
 
 On rappelle au passage la définition du nombre de \bsc{Stoll}
 \begin{equation} \label{e:def-stoll}
@@ -443,20 +433,47 @@ On rappelle au passage la définition du nombre de \bsc{Stoll}
 \end{equation}
 et les majorations élémentaires
 \begin{align}
-  \gamma_n & \le \frac{1 + \ln n}2
+  \gamma_n & \le \frac{1 + \ln n}2 \le \ln(n+1)
   &
   \stoll n & \le \frac{(n+1) \ln(n+1)}2 \le n \ln(n+1)
 \end{align}
 obtenues en comparant avec des intégrales, par exemple.
 
-On notera \( \nv\star\truc \) la norme locale en \( v \) correspondant à
-la norme \( \star \) si \( v \) est archimédienne et à celle du maximum
-sinon. De même, \( \mvp{} \) et \( \mvm{} \) désignent respectivement la
-mesure de \bsc{Philippon} et de \bsc{Mahler} si \( v \) est archimédienne
-et la norme du maximum (de la famille des coefficients) sinon.
-Si \( \mathcal F = (F_1, \dots, F_p) \) est une famille de polynômes, on
-définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la norme \(
-  \nv\star\truc \) du vecteur des \( \nv\star{ F_i } \).
+Parmi les comparaisons de normes et mesures qui nous seront utiles, rappelons
+celles entre mesure projective et norme euclidienne ou longueur.  Dans la
+démonstration du lemme~3.3, p.~111 de \cite{remgdmp}, il est établit que si \(
+  P \) est une forme multihomogène de multidegré \( \delta \) en plusieurs
+groupes de \( n + 1 \) variables, dont on note \( p_\alpha \) les
+coefficients, on a
+\begin{equation}
+  \abs{ p_\alpha }
+  \le
+  \binom \delta \alpha
+  \mahler P
+  \le
+  \binom \delta \alpha
+  \mespph P
+\end{equation}
+ce qui en sommant sur les multimultiindices \( \alpha \) tels que \(
+  \vlg\alpha = \delta \), donne immédiatement, par la formule multinomiale :
+\begin{equation} \label{e:l1<mespph}
+  \normlun P
+  \le
+  (n+1)^{\lgr\delta}
+  \mespph P
+  \pmm.
+\end{equation}
+Dans l'autre sens, la définition de la mesure projective donne immédiatement
+\begin{equation} \label{e:mespph<l2}
+  \mespph P
+  \le
+  \normeuc P
+  \exp( \sum_k \delta_k \cdot \gamma_{n} )
+  \le
+  \normeuc P
+  (n+1)^{\lgr\delta}
+  \pmm.
+\end{equation}
 
 \subsection{Hauteurs}
 
@@ -472,8 +489,10 @@ d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
 \end{equation}
 où \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \),
 la somme est prise sur l'ensemble des places de \( \cdn \) et \( \star \)
-désigne l'une des normes ou mesures introduites ci-dessus.  On note également
-\( \Hautm\star = \exp(\Hautl\star) \) la hauteur multiplicative.
+désigne l'une des normes ci-dessus ; de même, on notera \( \Hautl\htpph \)
+(resp. \( \Hautl\htmah \)) la hauteur obtenue en utilisant la mesure \(
+  \mvp{} \) (resp. \( \mvm{} \)) au lieu de la norme.  On note
+également \( \Hautm\star = \exp \Hautl\star \) la hauteur multiplicative.
 
 La hauteur d'une famille, ainsi définie, est invariante par multiplication de
 cette famille par un scalaire, et ne dépend pas non plus du corps de nombres.
@@ -486,6 +505,25 @@ formes de \bsc{Chow} associées à certains indices de la façon rappelée dans
 que la forme d'indice \( (1, \dots, 1) \), que nous noterons \( \chow \avar \).
 Cette forme est bien définie à multiplication par un scalaire près, la
 définition \( \hautl\star \avar = \hautl\star{ \chow \avar } \) a donc un sens.
+
+Parmi les différentes hauteurs définies pour les points, \( \Hautl\infty \)
+est la hauteur de \bsc{Weil} et \( \Hautl2 \) est la hauteur projective ;
+pour les variétés, la hauteur projective est \( \Hautl\htpph \).
+Dans le cas où \( \avar = \set x \) est réduite à un point, on a \(
+  \hautl\htpph V = \hautl2 x \), ce qui justifie la terminologie.
+
+Nous utiliserons principalement la hauteur projective, pour ses propriétés
+géométriques, et la hauteur \( \Hautl1 \), pour les propriétés agréables de la
+norme \( L_1 \) (longueur) aux places archimédiennes. Rappelons donc comment
+ces hauteurs se comparent dans le cas d'une variété : cette comparaison
+découle directement de~\eqref{e:l1<mespph} et~\eqref{e:mespph<l2} appliqués au
+cas particulier d'une forme de \bsc{Chow} :
+\begin{equation} \label{e:ht-pph-1}
+  \abs{ \hautl\htpph{ \avar } - \hautl1{ \avar } }
+  \le
+  \frac12 \ln(n + 1) (\dim \avar + 1) \deg \avar
+  \pmm.
+\end{equation}
 
 Par ailleurs, si l'on fixe un plongement \( \vaemb \colon \va \to \projd \),
 on a des notions de hauteurs sur \( \va(\Qbar) \) associées à ce plongement.
@@ -1095,7 +1133,7 @@ montre que c'est possible.
     \mvp{\md f}
     \cdot (n(n+1)^2/2)^{ld\dv}
   \end{equation}
-  d'après \cite[dém. du lemme~3.3]{remgdmp}. Pour la dernière, on utilise le
+  d'après~\eqref{e:l1<mespph}. Pour la dernière, on utilise le
   fait que la distance est bornée par \( 1 \), autrement dit que
   \( \mvp{\md_x f} \le \mvp f \) dès que \( \nv2 x = 1 \) : en reportant ceci
   dans la définition de \( \mvp\truc \) et en intégrant, il vient facilement
@@ -1232,7 +1270,7 @@ nous sera utile par exemple pour démontrer une inégalité de \bsc{Liouville}
     \right)^\dv
     \pmm.
   \end{equation}
-  On utilise à nouveau~\cite[démonstration. du lemme~3.3]{remgdmp}, qui donne
+  On utilise à nouveau~\eqref{e:l1<mespph}, qui donne
   \( \nv2 G \le \mvp G (n+1)^\adeg \), pour conclure.
 \end{proof}
 

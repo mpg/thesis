@@ -543,7 +543,7 @@
 \newdelimcommandx \av  [3][3=v] {\abs#1   {#2}\ssub{#3}}
 \newdelimcommandx \nv  [4][4=v] {\norm#1  {#3}\sb{\sfirst{#2} #4}}
 \newdelimcommandx \nnv [4][4=v] {\nnorm#1 {#3}\sb{\sfirst{#2} #4}}
-\newcommand \nh {\mathrm h} % usage : \nv\nh P
+% \newcommand \nh {\mathrm h} % usage : \nv\nh P
 
 \newcommand* \mvp [2][v] {\mespph[#1]{#2}}
 \newcommand* \mvm [2][v] {\mahler[#1]{#2}}
