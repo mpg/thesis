@@ -101,13 +101,13 @@ Pour le cas général, l'énoncé est le suivant.
     \\
     \hautn{ x_m }
     & \ge
-    \frac2\eps
+    \frac8\eps
     \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
     \Bigl(
-      8 \hautl\htpph \avar
-      + 4 \adeg m^2 \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
+      \hautl1 \avar
+      + \adeg m^2 \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
     \Bigr)
-    \quad
+    \quad\ \
     \label{e:Mbig-gen}
     \\
     \cos(x_i, x_j)
@@ -769,7 +769,7 @@ minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
 On déduit assez aisément des deux résultats précédents une majoration de la
 hauteur de \( Z \).
 
-\begin{coro}
+\begin{coro} \label{c:sm-ht}
   On a \(
     \hautl1 Z
     \le
@@ -1085,32 +1085,7 @@ section~\vref{sec:mumford-grp}.
     \pmm.
   \end{align}
   On va maintenant estimer une par une les quantités apparaissant dans le
-  membre de droite.
-
-  En appliquant ceci à la forme de \bsc{Chow} de \( Z \), qui est
-  multihomogène de degré \( \deg Z \) en \( \dim Z + 1 \) groupes de \( N + 1
-  \) variables, puis en utilisant les estimations de la section précédente, il
-  vient :
-  \begin{align}
-    \hautl1 Z
-    & \le
-    \hautl\htpph Z
-    + (\deg Z) (\dim Z + 1) \ln(N+1)
-    \\ & \le
-    \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
-    (2m)^{ (m+1)\adim + 1}
-    \\ & \qquad
-    + \adeg^m \, 2^{mu} \, m^{(m+1)u - 1} (m \adim + 1) (m-1)\ln(n+1)
-    \\ & \le
-    (2m)^{ (m+1)\adim + 1} \Bigl(
-    8 \adeg^{m-1} \hautl\htpph \avar
-    + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
-    \Bigr)
-    \label{e:liou-h1-img}
-    \pmm.
-  \end{align}
-
-  Par ailleurs, ces mêmes estimations donnent :
+  membre de droite. Le lemme~\ref{l:sm-deg} donne
   \begin{align}
     (\dim Z + 1) \ln(3 \deg Z)
     & \le
@@ -1143,8 +1118,7 @@ section~\vref{sec:mumford-grp}.
     \label{e:liou-cst2}
     \pmm.
   \end{align}
-
-  Enfin, le lemme~\vref{l:img-small} et l'hypothèse~\eqref{e:rho-phi-gen}
+  Par ailleurs, le lemme~\vref{l:img-small} et l'hypothèse~\eqref{e:rho-phi-gen}
   donnent
   \begin{align}
     (\deg Z) \hautl2 z
@@ -1153,8 +1127,9 @@ section~\vref{sec:mumford-grp}.
     + \adeg^m (2m)^{(m+1)\adim} \htcmp
     \pmm.
   \end{align}
-  On peut maintenant substituer cette estimation ainsi
-  que~\eqref{e:liou-h1-img} et~\eqref{e:liou-cst2} dans l'inégalité de
+
+  On peut maintenant substituer cette estimation ainsi que~\eqref{e:liou-cst2}
+  et le résultat du corollaire~\eqref{c:sm-ht} dans l'inégalité de
   \bsc{Liouville} écrite en~\eqref{e:liou} :
   \begin{align}
     \sum\placerange \degv \ln\distv z Z
@@ -1162,37 +1137,33 @@ section~\vref{sec:mumford-grp}.
     - \frac\eps2 \hautn{ x_m }
     - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
-    - (2m)^{ (m+1)\adim + 1 } \Bigl(
-    8 \adeg^{m-1} \hautl\htpph \avar
-    + \adeg^m \bigl( \hlclab + \ln(n+1) \bigr)
-    \Bigr)
+    - \bigl( 4 \hautl1 \avar / \adeg + 5 \ln(n+1) + \hlclab \bigr)
+    \adeg^m (2m)^{ (m+1)\adim + 1}
     \\ & \qquad
     - 2(m-1) \ln(n+1)
     - \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
     \\ & \ge
     - \frac\eps2 \hautn{ x_m }
-    - 8 \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl\htpph \avar
+    - 8 \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl1 \avar
     \\ & \qquad
     - \adeg^m (2m)^{ (m+1)\adim + 2}
-    \bigl( 2\ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
+    \bigl( 2\ln \adeg + \hlclab + \htcmp + 5\ln(n+1)/4 \bigr)
     \pmm.
   \end{align}
-
-  Par ailleurs, le lemme~\vref{l:img-apx} dit que
+  Dans l'autre sens, le lemme~\vref{l:img-apx} dit que
   \begin{equation}
     \sum\placerange \degv \ln\distv z Z
     \le
     -\eps \hautn{ x_m }
-    + \hlclab + \eps\htcmp
+    + \hlclab + 2\adeg \htcmp
     + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
   \end{equation}
-  Les deux dernières égalités mises ensemble, en supposant \( \eps < 2\adeg \)
-  (ce qu'on peut faire car sinon le corollaire~\vref{c:nobig-liouville}
-  s'applique et permet de conclure), donnent % XXX détailler
+  vu l'hypothèse sur \( \eps \). En confrontant ces deux inégalités, il vient
+  % \vref{c:nobig-liouville}
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
-    8 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl\htpph \avar
+    4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl\htpph \avar
     + \adeg^m (2m)^{ (m+1)\adim + 3}
     \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
   \end{equation}
