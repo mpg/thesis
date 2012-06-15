@@ -771,10 +771,10 @@ hauteur de \( Z \).
 
 \begin{coro}
   On a \(
-    \hautl\htpph Z
+    \hautl1 Z
     \le
-    \bigl( 8 \adeg^{m-1}\hautl\htpph \avar + \adeg^m \hlclab)
-    (2m)^{ (m+1)\adim + 1}
+    \bigl( 4 \hautl1 \avar / \adeg + 5 \ln(n+1) + \hlclab \bigr)
+    \adeg^m (2m)^{ (m+1)\adim + 1}
   \).
 \end{coro}
 
@@ -805,22 +805,40 @@ hauteur de \( Z \).
     \pmm.
   \end{equation}
 
-  Il est alors aisé de passer aux hauteurs grâce à l'encadrement rappelé
-  ci-dessus, en utilisant le fait que \( \dim Z \le mu \) et le
-  lemme~\ref{l:sm-deg}
+  Il est alors aisé de passer aux hauteurs projectives grâce à l'encadrement
+  rappelé ci-dessus ; on passe de plus aux hauteurs \( \Hautl1 \) en
+  utilisant~\eqref{e:ht-pph-1} :
   \begin{align}
-    \hautl\htpph Z
+    \hautl1 Z
     & \le
-    \miness(Z) \deg Z (\dim Z + 1)
+    \hautl\htpph Z + \frac12 \ln(N+1) (\dim Z + 1) \deg Z
     \\ & \le
-    (8 (m-1) \miness(\avar) + (m-1) \hlclab)
-    \, \adeg^m \, 2^{mu} \, m^{(m+1)u - 1}
-    \, mu
+    \Bigl( \miness(Z) + \frac12 (m-1) \ln(n+1) \Bigr)
+    (\dim Z + 1) \deg Z
     \\ & \le
-    (8  \hautl\htpph \avar / \adeg +  \hlclab)
-    \adeg^m (2m)^{ (m+1)\adim + 1}
+    \Bigl( 8 \miness(\avar) + \hlclab + \frac12 \ln(n+1) \Bigr)
+    (m-1) (\adim m + 1) \deg Z
+    \\ & \le
+    \Bigl( \frac8\adeg \hautl\htpph \avar + \frac12 \ln(n+1) + \hlclab \Bigr)
+    \adim m^2 \deg Z
+    \\ & \le
+    \Bigl(
+    \frac8\adeg \hautl1 \avar + 4 \ln(n+1) (\adim+1)
+    + \frac12 \ln(n+1)
+    + \hlclab
+    \Bigr)
+    \adim m^2 \deg Z
+    \\ & \le
+    \Bigl(
+    \frac4\adeg \hautl1 \avar
+    + 4 \ln(n+1) + \frac14 \ln(n+1)
+    + \frac12 \hlclab
+    \Bigr)
+    \adim(\adim+1) m^2 \deg Z
+    \pmm.
   \end{align}
-  qui donne bien la majoration annoncée.
+  La majoration annoncée s'en déduit en utilisant le lemme~\ref{l:sm-deg} et
+  en remarquant que \( \adim(\adim+1) \le 2^{\adim+1} \).
 \end{proof}
 
 Nous avons maintenant tous les ingrédients utiles pour continuer la preuve de
@@ -1069,7 +1087,6 @@ section~\vref{sec:mumford-grp}.
   On va maintenant estimer une par une les quantités apparaissant dans le
   membre de droite.
 
-  % XXX
   En appliquant ceci à la forme de \bsc{Chow} de \( Z \), qui est
   multihomogène de degré \( \deg Z \) en \( \dim Z + 1 \) groupes de \( N + 1
   \) variables, puis en utilisant les estimations de la section précédente, il
