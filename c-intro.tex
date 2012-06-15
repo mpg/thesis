@@ -243,20 +243,24 @@ directe au cas des courbes.
 \subsection{Le théorème de \bsc{Siegel} et une ex-conjecture de \bsc{Lang}}
 \label{s:siegel}
 
-% XXX citations
-Le théorème de \bsc{Siegel}, démontré en 1929, affirme qu'une courbe de genre
+Le théorème de \bsc{Siegel} \cite{siegel} affirme qu'une courbe de genre
 supérieur ou égal à \( 1 \) ne possède qu'on nombre fini de points entiers. Sa
 démonstration repose sur le théorème de \bsc{Roth} énoncé plus haut, et avait
 été obtenu par \bsc{Siegel} avec la version faible de cet énoncé dont il
-disposait en 1929.  Une généralisation du théorème a été conjecturée par
-\bsc{Lang}, de façon analogue à sa généralisation de la conjecture de
-\bsc{Mordell} : si \( \divi \) est un diviseur ample d'une variété abélienne
-\( \va \), alors \( \va \setminus \divi \) ne possède qu'un nombre fini de
-points entiers. Le théorème original s'en déduit là aussi en considérant la
-courbe dans sa jacobienne (à cette différence qu'ici la courbe peut être sa
-jacobienne, dans le cas \( g = 1 \)).
+disposait en 1929. Pour les courbes de genre supérieur ou égal à \( 2 \), ce
+théorème est en quelque sorte surpassé par l'ex-conjecture de \bsc{Mordell},
+mais il conserve un intérêt pour les courbes elliptiques. La généralisation
+suivante du théorème avait été conjecturée par \bsc{Lang}, de façon analogue à
+sa généralisation de la conjecture de \bsc{Mordell}.
 
-Cette conjecture de \bsc{Lang} est en fait un corollaire du théorème
+\begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Lang}]
+  Soit \( \va \) une variété abélienne plongée dans \( \projd \) et \( \divi
+  \) un hyperplan de \( \projd \), considéré comme hyperplan à l'infini. Alors
+  la partie affine \( \va \setminus \divi \) ne possède qu'un nombre fini de
+  points entiers.
+\end{thm}
+
+C'est en fait un corollaire \cite[cor.~6.2, p.~576]{faldaav} du théorème
 d'approximation de \bsc{Faltings} : on remarque que la hauteur (relative à \(
   \divi \)) d'un point entier \( x \) est essentiellement donné par le produit
 des inverse des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
@@ -264,33 +268,21 @@ des inverse des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
 minorées par \( \hautm{}{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
 nombre fini de points. Ceci est bien sûr contradictoire dès que \( \eps < 1
 \), ce qui prouve que seules les approximations exceptionnelles de \( \divi \)
-peuvent donner des points entiers. Dénombrer ces dernières donne donc
-immédiatement une version quantitative de cette ex-conjecture de \bsc{Lang}.
-C'est pour ce type d'applications qu'il devient essentiel dans l'énoncé
+peuvent donner des points entiers.
+
+C'est pour ce type d'applications qu'il devient essentiel dans le théorème
 d'approximation de pouvoir prendre \( \eps \) petit, au moins inférieur à \( 1
 \), alors que l'exposant de l'inégalité de \bsc{Liouville} ne suffit en aucun
 cas.
 
 Signalons qu'on connaît des versions quantitatives du théorème de \bsc{Siegel}
-(\todo??). Par contre, à ma connaissance, la seule démonstration connue de sa
-généralisation est celle de \bsc{Faltings} : en particulier on ne connaît pas
-de version quantitative de cette ex-conjecture de \bsc{Lang}.
+dans certains cas \cite{silqs, biluqs}.  Par contre, à ma connaissance, la
+seule démonstration connue de sa généralisation est celle de \bsc{Faltings} :
+en particulier on ne connaît pas de version quantitative de cette ex-conjecture
+de \bsc{Lang}. Malheureusement, les résultats obtenus ici comportent une
+limitation qui ne permet pas d'en déduire de version quantitative explicite de
+cette extension du théorème de \bsc{Siegel}.
 
-Enfin, en un sens, on peut avoir l'impression que le théorème de
-\bsc{Faltings} (ex-conjecture de \bsc{Mordell-Lang}) rend obsolète le théorème
-de \bsc{Siegel} et sa généralisation conjecturée par \bsc{Lang} : en effet,
-n'avoir qu'un nombre fini de point rationnels implique de n'avoir qu'un nombre
-fini de points entiers. En fait, les énoncés de type \bsc{Siegel} conservent
-un intérêt essentiellement grâce à la restriction « ne pas contenir de
-sous-variété abélienne » dans \bsc{Mordell-Lang} : si on prend le cas extrême
-d'une variété abélienne, il est clair que (sur un corps de nombres pas trop
-petit) elle possède une infinité de points rationnels, alors qu'elle n'a qu'un
-nombre fini de points entiers.
-
-
-\subsection{Formes linéaires de logarithmes abéliens}
-
-\todo (Ou pas, finalement ?)
 
 
 \section{Énoncés des résultats principaux}

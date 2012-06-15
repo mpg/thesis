@@ -1,9 +1,6 @@
 À voir avec pph
 ===============
 
-Références intro :
-- Théorème de Siegel et ses versions quantitatives
-
 Maths et rédaction {{{1
 ==================
 
@@ -13,34 +10,23 @@ Vojta {{{2
 Mumford {{{2
 -------
 
-(C) Ouverture sur ce qu'on ferait si les fibres étaient toutes égales au
-stabilisateur ?
+(B) Donner l'énoncé conjectural.
+
+(C) Discuter si le groupe de rang fini est indispensable ?
 
 Décomptes {{{2
 ---------
 
 (B) Faire l'intro avec la condition de différence modulo B-petit
 
-(B) Le groupe de rf dans Mumford est-il indispensable ?
-
 (C) Rédiger la pseudo-minimisation pénible
-
-(C) inégalités strictes vs larges à vérifier
-
-(C) Réf à trouver (demander à pph) :
-- majorer le cardinal de la torsion rationnelle (Ratazzi ?)
-- minorer \hmin (?? Pour les courbes, c'est Hindry-Silverman)
 
 Plongements et formulaires {{{2
 --------------------------
 
-(C) (intro + annexe) hypothèses précises :
-- image projectivement normale pour phiha1 p. 275
-- hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi)
-
-(C) Vojta corollaires : dans « soit \vaemb un plongement », ajouter «
-convenable » et expliquer pourquoi les changements de plongement conservent
-cette hypothèse.
+(C) (intro + annexe) :
+hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi) (implique
+projectivement normal)
 
 (B) Compléter les preuves (cf. notes manuscriptes en partie)
 
