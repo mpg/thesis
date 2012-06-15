@@ -984,6 +984,13 @@ apparaissant dans~\eqref{e:sh-inter} soient tous des translatés de \(
 \end{align}
 d'après la formule multinomiale.
 
+En revanche, notons que, même en prenant \( m \) extrêmement grand, il y aura
+toujours des fibres contenant strictement le stabilisteur : par exemple, il
+est clair que \( s_m^{-1}(0) = \delta(\avar) \). Un autre exemple est celui où
+\( \avar \) contient la somme de deux courbes \( C_1 \) et \( C_2 \) : alors
+tous les points de \( \delta(C_1) + C_2^m \) ont la même image.
+
+
 
 \section{Cas général}
 
@@ -1240,6 +1247,59 @@ Nous sommes maintenant prêts à conclure.
   \end{equation}
   et \( z_k + y_m + \vai_k \subset \avar \), ce qui achève la preuve.
 \end{proof}
+
+
+
+\section{Énoncé conjectural}
+\label{sec:mum-conj}
+
+L'énoncé donné pour le cas des translatés de sous-variétés abéliennes est
+\lat{a priori} optimal dans sa forme (par opposition aux valeurs des
+constantes) au vu de la section~\vref{sec:obstruction}. En revanche, dans le
+cas général, on pourrait espérer démontrer l'énoncé suivant.
+
+\begin{conj} \label{j:mum}
+  Soient \( \avar \) une sous-variété d'une variété abélienne \( \va \) et \(
+    \grp \subset \va(\Qbar) \) un sous-groupe de rang fini. On fixe \( \eps >
+    0 \) ; il existe alors un entier \( m \) et des constantes \( \rho \), \(
+    \phi \), \( \alpha \) et \( \beta \) telles que si \( x_1, \dots, x_m \)
+  est une famille de point de \( \grp \) telle que, pour tous \( i \) et \( j
+  \) entre \( 1 \) et \( m \) :
+  \begin{align}
+    0
+    & <
+    \distv{ x_i }\avar
+    \le
+    \hautm2{ x_i }^{-\wtapx\eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{ x_m }
+    & \ge
+    \alpha
+    \\
+    \cos(x_i, x_j)
+    & \ge
+    1 - \phi
+    \\
+    \hautn{ x_m }
+    & \le
+    \hautn{ x_i }
+    \le
+    (1+\rho) \hautn{ x_m }
+  \end{align}
+  alors il existe deux indices distinct \( i \) et \( k \) et deux familles \(
+    (z_v)\placerange \) et \( (\vai_v)\placerange \) telles que
+  \begin{enumthm}
+    \item \( z_v \in \avar(\Cv) \) ;
+    \item \( \vai_v \) est une sous-variété abélienne de \( \va \) telle que
+      \( z_v + \vai_v \subset \avar \) ;
+    \item \( \distv{ x_i }{ z_v + \vai_v }
+        \le
+        \beta \cdot \hautm2{ x_i }^{-\wtapx\eps} \)
+      pour tout \( v \in \placesapx \) ;
+    \item \( x_i - x_j \in \bigcap\placerange \vai_v \).
+  \end{enumthm}
+\end{conj}
 
 
 \cleardoublepage

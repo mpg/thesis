@@ -219,6 +219,7 @@
 \newtheorem {fact} [thm] {Fait}
 \newtheorem {sco}  [thm] {Scolie}
 \newtheorem {hypo} [thm] {Hypothèses}
+\newtheorem {conj} [thm] {Conjecture}
 
 \theoremstyle{definition}
 \newtheorem {tdef} [thm] {Définition}
