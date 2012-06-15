@@ -15,21 +15,21 @@ général.
   Soient \( \divi \) l'hyperplan défini par \( \vp[0] = 0 \) dans le
   plongement fixé et \( \eps > 0 \) un nombre réel.  Pour tout
   \( m \ge g + 1 \), il n'existe dans \( \va(\Qbar) \) aucune famille
-  de points \( \ex[1], \dots, \ex[m] \) satisfaisant simultanément aux
+  de points \( x_1, \dots, x_m \) satisfaisant simultanément aux
   conditions suivantes :
   \begin{align}
-    0 < \distv{\ex*}{\divi}
-    & < \hautm2{\ex*}^{-\wtapx \eps}
+    0 < \distv{x_\fct}{\divi}
+    & < \hautm2{x_\fct}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \label{e:Vapx}
     \\
-    \hautn{\ex[1]} & > \Vbig
+    \hautn{x_1} & > \Vbig
     \label{e:Vbig}
     \\
-    \cos(\ex*, \ex[\fcti]) & > 1 - \Vcos
+    \cos(x_\fct, x_\fcti) & > 1 - \Vcos
     \label{e:Vcos}
     \\
-    \hautn{\ex*} & > \Vfar \hautn{\ex[\fct-1]}
+    \hautn{x_\fct} & > \Vfar \hautn{x_{\fct-1}}
     \label{e:Vfar}
   \end{align}
   avec
@@ -74,8 +74,8 @@ de \( \va \), cependant il est clair que si dans la condition~\eqref{e:Vapx}
 on remplace \( \divi \) par \( \divi \cap \va \), on obtient une condition
 plus forte : \( \distv x \divi \le \distv x{ \divi\cap\va } \) et \( x \not\in
   \divi\cap\va \Leftrightarrow x \not\in \divi \) pour \( x \in \va \). Ainsi,
-l'énoncé ci-dessus est légèrement plus fort que le même énoncé en remplaçant
-\( \divi \) par \( \divi\cap\va \) dans la condition d'approximation.
+l'énoncé ci-dessus est légèrement plus fort que le même énoncé en remplaçant \( \divi \)
+par \( \divi\cap\va \) dans la condition d'approximation.
 
 
 
