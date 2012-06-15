@@ -1070,6 +1070,12 @@ section~\vref{sec:mumford-grp}.
 \end{lem}
 
 \begin{proof}
+  Avant de commencer, remarquons qu'on peut supposer \( \eps < \adeg + 1 \).
+  En effet, dans le cas contraire, le corollaire~\vref{c:nobig-liouville}
+  s'applique car~\eqref{e:Mapx-gen} implique directement~\eqref{e:nobig-ha}
+  et~\eqref{e:Mbig-gen} implique très largement~\eqref{e:nobig-big}, donc il
+  n'existe aucune famille satisfaisant aux hypothèses du théorème.
+
   On procède comme en page~\pageref{page:demo-mumgrp} pour la preuve du
   théorème~\ref{t:mumford-grp}. Si \( z \not\in Z \), l'inégalité de
   \bsc{Liouville} (proposition~\vref{p:liouville}) appliquée à \( z \) et \( Z
@@ -1159,7 +1165,6 @@ section~\vref{sec:mumford-grp}.
     + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
   \end{equation}
   vu l'hypothèse sur \( \eps \). En confrontant ces deux inégalités, il vient
-  % \vref{c:nobig-liouville}
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
