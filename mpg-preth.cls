@@ -465,6 +465,7 @@
 \newcommand \torsion {\mathrm{tor}}
 
 \newcommand \miness {\mu^{\mathrm{ess}}}
+\newcommand \minessn{\hat\mu^{\mathrm{ess}}}
 
 % automatic constants [[2
 %

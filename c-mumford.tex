@@ -127,6 +127,10 @@ Pour le cas général, l'énoncé est le suivant.
   et \( j \) tels que \( x_i - x_j \in \vai \).
 \end{thm}
 
+La conclusion de cet énoncé n'est peut-être pas la plus forte qu'on puisse
+obtenir, voir la section~\vref{sec:mum-conj} pour un énoncé conjectural plus
+fort.
+
 Avant d'attaquer les preuves proprement dites, on démontre une inégalité de
 \bsc{Liouville}, qui est intéressante en elle-même et sera un ingrédient
 crucial dans les inégalités de \bsc{Mumford}, puis on explicite quelques
@@ -1300,6 +1304,32 @@ cas général, on pourrait espérer démontrer l'énoncé suivant.
     \item \( x_i - x_j \in \bigcap\placerange \vai_v \).
   \end{enumthm}
 \end{conj}
+
+Remarquons qu'il ne semble pas possible d'enlever la condition \( x_i \in \grp
+\) dans l'énoncé précédent (ou dans le théorème~\vref{t:mumford-gen}). En
+effet, notons
+\begin{equation}
+  E(\avar, \eps)
+  =
+  \set{
+    x \in \va(\Qbar) \text{ tel que }
+    0 < \distv x \avar \le
+    \hautm2{ x_i }^{-\wtapx\eps}
+    \quad \forall v \in \placesapx
+  }
+\end{equation}
+et soit \( C \subset \va \) une courbe non elliptique ; pour tout \( \eps \)
+il existerait un \( \gamma \) tel pour tout \( x \) de hauteur assez grande,
+\begin{equation}
+  \card E(\avar, \eps) \cap B(x, \gamma \hautn x) < \infty
+\end{equation}
+où \( B(x, R) \) désigne la boule centrée en \( x \) et de rayon \( R^2 \)
+dans l'espace de \MoW. On prend alors \( x \in E(\set0, \eps') \) de hauteur
+assez grande\footnote{Peut-on ?} et en particulier \( \hautn x > 2 \gamma^{-1}
+  \minessn(C) \). Il existe par définition une infinité de points \( y \in
+  C(\Qbar) \) tels que \( \hautn y \le 2 \minessn(C) \). Pour chacun de ces
+points, \( x + y \in B(x, \gamma \hautn x) \) et, si \( \eps' \) a été choisi
+assez petit, \( x + y \in E(C, \eps) \), ce qui donne une contradiction.
 
 
 \cleardoublepage
