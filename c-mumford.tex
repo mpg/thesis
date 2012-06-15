@@ -1306,30 +1306,55 @@ cas général, on pourrait espérer démontrer l'énoncé suivant.
 \end{conj}
 
 Remarquons qu'il ne semble pas possible d'enlever la condition \( x_i \in \grp
-\) dans l'énoncé précédent (ou dans le théorème~\vref{t:mumford-gen}). En
-effet, notons
-\begin{equation}
+\) dans l'énoncé précédent (ou dans le théorème~\vref{t:mumford-gen}). Plus
+précisément, introduisons les notations
+\begin{align}
   E(\avar, \eps)
-  =
+  & =
   \set{
     x \in \va(\Qbar) \text{ tel que }
     0 < \distv x \avar \le
-    \hautm2{ x_i }^{-\wtapx\eps}
+    \hautm2{ x }^{-\wtapx\eps}
     \quad \forall v \in \placesapx
   }
-\end{equation}
-et soit \( C \subset \va \) une courbe non elliptique ; pour tout \( \eps \)
-il existerait un \( \gamma \) tel pour tout \( x \) de hauteur assez grande,
+  \\
+  B(x, \gamma)
+  & =
+  \set{
+    z \in \va(\Qbar) \text{ tel que }
+    \hautn{ z - x } \le \gamma \hautn x
+  }
+  \pmm.
+\end{align}
+Si l'inégalité de \bsc{Mumford} était vraie pour une courbe
+\( C \subset \va \) non elliptique avec \( \Gamma = \va(\Qbar) \), alors il
+existerait \( \gamma > 0 \) tel que
 \begin{equation}
-  \card E(\avar, \eps) \cap B(x, \gamma \hautn x) < \infty
+  \card \Bigl( E(C, \eps) \cap B(x, \gamma) \Bigl)
+  \le
+  m
 \end{equation}
-où \( B(x, R) \) désigne la boule centrée en \( x \) et de rayon \( R^2 \)
-dans l'espace de \MoW. On prend alors \( x \in E(\set0, \eps') \) de hauteur
-assez grande\footnote{Peut-on ?} et en particulier \( \hautn x > 2 \gamma^{-1}
-  \minessn(C) \). Il existe par définition une infinité de points \( y \in
-  C(\Qbar) \) tels que \( \hautn y \le 2 \minessn(C) \). Pour chacun de ces
-points, \( x + y \in B(x, \gamma \hautn x) \) et, si \( \eps' \) a été choisi
-assez petit, \( x + y \in E(C, \eps) \), ce qui donne une contradiction.
+dès que \( \hautn x \ge \alpha + \gamma \) (en reprenant les notations de la
+conjecture). Supposons alors qu'il existe dans \( E(\set0, \eps') \) (pour une
+valeur de \( \eps' \) à préciser) un point \( x \) tel que
+\begin{equation}
+  \hautn x
+  \ge
+  \max(
+  2 \gamma^{-1} \minessn(C),
+  \alpha + \gamma
+  )
+  \pmm.
+\end{equation}
+Il existe par définition une infinité de points \( y \in C(\Qbar) \) tels que
+\( \hautn y \le 2 \minessn(C) \) et pour chacun de ces points, \( x + y \in
+  B(x, \gamma) \) par définition. De plus, si \( \eps' \) a été choisi assez
+petit, \( x + y \in E(C, \eps) \), ce qui donne une contradiction.
+
+Par contraposée, une inégalité de \bsc{Mumford} (explicite) pour les
+approximations d'une courbe non elliptique avec \( \Gamma = \va(\Qbar) \)
+montrerait qu'il existe une borne (explicite) à la hauteur des points de \(
+  E(\set0, \eps) \) pour \( \eps \) assez petit, ce qui semble peu réaliste.
 
 
 \cleardoublepage
