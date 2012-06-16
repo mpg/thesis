@@ -420,6 +420,7 @@
 
 % integer parts [[3
 \DeclarePairedDelimiter \floor {\lfloor} {\rfloor}
+\DeclarePairedDelimiter \ceil  {\lceil } {\rceil }
 
 % scalar product [[3
 \DeclarePairedDelimiter \scal \langle \rangle

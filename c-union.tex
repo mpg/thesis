@@ -647,7 +647,102 @@ rapidement. La section suivante discute du choix de la valeur de \( m \).
 \section{Choix du paramètre \( m \)}
 \label{sec:opti-m}
 
-\todo (À écrire.)
+On utilisera le lemme suivant.
+
+\begin{lem}
+  Soient \( a \ge 0 \) et \( b \ge 2 \) deux réels et \( c \ge 1 \) un entier
+  ; on pose \( f(x) = x \ln x + bx + ac / (x-c) \). Si \( ac \le 1 + b +
+    \ln(1+c) \), la fonction \( f \) est croissante sur \( [c+1, +\infty
+    \mathclose[ \). Sinon, il existe un entier \( x_0 \ge c + 1 \) tel que \(
+    f(x_0) \le 2 ac + (c+1) \bigl( 1+b + \ln(1+c) \bigr) \).
+\end{lem}
+
+\begin{proof}
+  On a \( f'(x) = \ln x + 1 + b - a / (x-c)^2 \) ; cette fonction est
+  croissante pour \( x > c \). De plus, \( f'(c+1) = \ln(c+1) + 1+b - a \) est
+  positif si et seulement si \( ac \le 1 + b + \ln(1+c) \) ; dans ce cas \( f
+  \) est bien croissante sur \( [c+1, +\infty \mathclose[ \).
+
+  Posons \( d = 1 + b + \ln(1+c) \) et supposons donc \( ac \ge d \) désormais.
+  Une vague analogie avec le lemme~2.14.7 page~150 de \cite{farhith} nous
+  amène à poser \( t = \sqrt{ac/d} + c \) à considérer \( x_0 = \ceil t \).
+  Par hypothèse, on a bien \( x_0 \ge c + 1 \) entier et
+  \begin{align}
+    f(x_0)
+    & \le
+    (t+1) \ln(t+1)
+    + b (t+1)
+    + ac / (t-c)
+    \\ & \le
+    (\sqrt{ac/d} + c+1) \ln(\sqrt{ac/d} + c+1)
+    + b (\sqrt{ac/d} + c+1)
+    + \sqrt{acd}
+    \pmm.
+  \end{align}
+  On écrit alors
+  \begin{equation}
+    \ln(\sqrt{ac/d} + c+1)
+    =
+    \ln(\sqrt{a/dc} + 1 + 1/c) + \ln c
+    \le
+    \sqrt{a/dc} + 1/c + \ln c
+  \end{equation}
+  puis, en développant et en utilisant la définition de \( d \) ainsi que les
+  hypothèses \( b \ge 2 \) et \( c \ge 1 \) entier :
+  \begin{align}
+    f(x_0)
+    & \le
+    (\sqrt{ac/d} + c+1) (\sqrt{a/dc} + 1/c + \ln c)
+    + \sqrt{ac} (\sqrt d + b/\sqrt d)
+    + b (c+1)
+    \\ & \le
+    a/d + \sqrt{a/dc} + \sqrt{ac/d} \ln c
+    + \sqrt{ac/d}
+    + \sqrt{a/dc}
+    + \sqrt{ac} (\sqrt d + b/\sqrt d)
+    \\ & \qquad
+    + (c+1) (b + 1/c + \ln c)
+    \\ & \le
+    a/d
+    + \sqrt{ac} \bigl( \sqrt d + (b + 2/c + 1 + \ln c) /\sqrt d \bigr)
+    + (c+1) d
+    \\ & \le
+    a/d
+    + \sqrt{ac} \bigl( \sqrt d + 5\sqrt d / 3 \bigr)
+    + (c+1) d
+    \pmm.
+  \end{align}
+  On utilise alors l'hypothèse \( ac \ge d \) pour majorer le deuxième terme
+  par \( 5ac/ 3 \), puis on remarque que \( 1/d \le c/3 \) pour conclure.
+\end{proof}
+
+\begin{rem}
+  Dans le cas \( c = 1 \) et \( b = \ln 2904 \), on peut comparer avec le
+  lemme~2.14.7 page~150 de \cite{farhith}. Remarquons que les notations sont
+  différentes : nous notons \( a \) la quantité qu'il note \( \ln a \) et
+  notre fonction \( f \) diffère de sa fonction \( g \) d'un terme \( a \)
+  (dans nos notations).
+
+  Compte tenu de ces différentes et dans nos notations, \bsc{Farhi} trouve un
+  entier \( m_0 \) tel que \( f(m_0) \le 183 a / \ln a \) alors que le lemme
+  précédent donne un entier \( x_0 \) tel que \( f(x_0) \le 2 (a + 10) \) ;
+  les deux sous la condition \( a \ge \ln 15788 \approx 10 \).  Notre résultat
+  est évidemment moins fin pour les grandes valeurs de \( a \), mais il est
+  meilleur tant que \( a \) reste petit (inférieur à \( \expb^{91} \) par
+  exemple).
+
+  Le \( m_0 \) de \bsc{Farhi} est essentiellement optimal, comme le montre son
+  lemme ; c'est donc dans son estimation de \( f(m_0) \) qu'a lieu la perte
+  pour les petites valeurs de \( a \). Le gain pour les grandes valeurs peut
+  en revanche provenir du fait que \( m_0 \) est plus proche du réel
+  minimiseur que \( x_0 \), de la méthode utilisée pour estimer son image, ou
+  plus probablement des deux. Par ailleurs, les calculs de \bsc{Farhi}
+  semblent difficiles à généraliser, d'une part car certaines de ses
+  estimations reposent sur des vérifications numériques, d'autre par parce que
+  si \( c \neq 1 \), la fonction ne semble plus satisfaire d'équation
+  différentielle du même type que celle de sa page~153.
+\end{rem}
+
 
 
 \section{Options pour les petits points}
