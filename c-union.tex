@@ -520,7 +520,7 @@ la constante ; on aboutit au résultat suivant.
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
   \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
     \ge g + 1 \), il existe au plus
-  \begin{equation}
+  \begin{equation} \label{e:bgp-val}
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (2mg)^{mg+1}
@@ -647,14 +647,34 @@ rapidement. La section suivante discute du choix de la valeur de \( m \).
 \section{Choix du paramètre \( m \)}
 \label{sec:opti-m}
 
-On utilisera le lemme suivant.
+Notons \( N(m) \) la quantité donnée par~\eqref{e:bgp-val} et \( C(m) =
+  \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}} \). Pour optimiser le
+théorème~\ref{t:big-gen-prod}, on peut chercher à minimiser \( C(m) \) ou \(
+  N(m) \), ou idéalement les deux, ce qui ne sera possible que dans certains
+cas, nous allons le voir.
 
-\begin{lem}
+Le cas de \( C(m) \) est assez clair : cette quantité est croissante en \( m
+\). En effet, la seule partie dans sa définition qui ne soit pas croissante en
+\( m \) est le \( m / (m-g) \) en exposant du premier facteur de \( \Lambda_5
+\), mais elle est largement compensée par l'exposant \( (2mg)^{mg} \). Pour
+minimiser \( C(m) \), il suffit donc de poser \( m = g+1 \). On obtient le
+résultat suivant.
+
+\begin{coro} \label{c:big-dec}
+  \todo (À écrire.)
+\end{coro}
+
+Attachons-nous maintenant à minimiser \( N(m) \) ou du moins à trouver une
+valeur de \( m \) qui rend cette quantité relativement petite. On utilisera
+le lemme suivant.
+
+\begin{lem} \label{l:minifun}
   Soient \( a \ge 0 \) et \( b \ge 2 \) deux réels et \( c \ge 1 \) un entier
-  ; on pose \( f(x) = x \ln x + bx + ac / (x-c) \). Si \( ac \le 1 + b +
-    \ln(1+c) \), la fonction \( f \) est croissante sur \( [c+1, +\infty
-    \mathclose[ \). Sinon, il existe un entier \( x_0 \ge c + 1 \) tel que \(
-    f(x_0) \le 2 ac + (c+1) \bigl( 1+b + \ln(1+c) \bigr) \).
+  ; on pose \( f(x) = x \ln x + bx + ac / (x-c) \) et \( d = 1 + b + \ln(1+c)
+  \). Si \( a \le d/c \), la fonction \( f \) est croissante sur \( [c+1,
+    +\infty \mathclose[ \).  Sinon, il existe un entier \( x_0 \ge c + 1 \)
+  tel que \( f(x_0) \le 2 ac + (c+1) d \) ; on peut prendre
+  \( x_0 = \sqrt{ac/d} \).
 \end{lem}
 
 \begin{proof}
@@ -742,6 +762,80 @@ On utilisera le lemme suivant.
   si \( c \neq 1 \), la fonction ne semble plus satisfaire d'équation
   différentielle du même type que celle de sa page~153.
 \end{rem}
+
+Voyons comment ce lemme s'applique à notre situation. En notant \( \alpha =
+  87 \nclmaps \cdot 5^g \adeg / \eps \), on a
+\begin{align}
+  \ln\Lambda_5
+  & =
+  \frac{m \ln\alpha}{m-g}
+  + m \ln \bigl( (\sqrt2 m g \adeg)^g \deg\va \bigr)
+  \le
+  m^2
+  (g+1) \ln(\alpha) \ln \bigl( (\sqrt2 g \adeg)^g \deg\va \bigr)
+  \pmm.
+\end{align}
+On note alors \( \gamma_1 \) le facteur indépendant de \( m \) dans cette
+majoration, de sorte que
+\begin{align}
+  N(m)
+  & \le
+  2 \cdot 5^{\card \placesapx} \cdot
+  (\adeg / \eps)^{1/2}
+  (2mg)^{mg+1}
+  m^2 \gamma_1
+  \left(
+    3 \sqrt m (2\alpha)^{ \frac{m}{2(m-g)} }
+  \right)^r
+  \\ & \le
+  \underbrace{
+    4 g \cdot 5^{\card \placesapx}
+    (\adeg / \eps)^{1/2}
+    \gamma_1 3^r
+  }_{\displaystyle \gamma_2}
+  \cdot
+  \underbrace{
+    m^{mg} (2g)^{mg} m^{3 + r/2} (2\alpha)^{ \frac{rm}{2(m-g)} }
+  }_{\displaystyle N_1(m)}
+\end{align}
+où \( \gamma_2 \) ne dépend pas de \( m \). On écrit alors
+\begin{align}
+  \ln N_1(m)
+  & =
+  gm \ln m +
+  gm \ln(2g)
+  + (3 + r/2) \ln m
+  + \frac{m}{m-g} (r/2) \ln(2\alpha)
+  \\ & \le
+  gm \ln m +
+  m \bigl( g \ln(2g) + \frac32 + \frac r4 \bigr)
+  + \frac r2 \ln(2\alpha)
+  + \frac{g}{m-g} \frac r2 \ln(2\alpha)
+  \pmm.
+\end{align}
+En posant \( b = \ln(2g) + 3/(2g) + r/(4g) \) et \( a = r \ln(2\alpha) / (2g) \)
+ainsi que \( c = g \), on a \( \ln N_1(m) \le g \, ( f(m) + a) \) où \( f \)
+est la fonction du lemme~\ref{l:minifun}. On vérifie aisément que \( b \ge 2
+\) et \( a \ge 0 \), de sorte qu'on peut appliquer le lemme. On pose donc
+\begin{equation}
+  d
+  =
+  1 + \ln(2g) + 3/(2g) + r/(4g) + \ln(1+g)
+  \le
+  2 \ln(2g) + 1 + \frac{ 6 + r }{ 4g }
+\end{equation}
+puis \( x_0 = \sqrt{ac/d} \). En supposant que \( ac \ge d \) (hypothèse sur
+laquelle nous reviendrons),  le lemme cité dit alors que
+\begin{equation}
+  N_1(m)
+  \le
+  2ac + (c+1) d
+  =
+  \dots % XXX
+\end{equation}
+
+
+
 
 
 
