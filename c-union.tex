@@ -514,7 +514,7 @@ considérées, on utilisera donc le scolie suivant.
 On peut alors simplifier légèrement la condition d'approximation en absorbant
 la constante ; on aboutit au résultat suivant.
 
-\begin{thm} \label{t:big-gen-prod}
+\begin{coro} \label{c:big-gen-prod}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
@@ -570,7 +570,7 @@ la constante ; on aboutit au résultat suivant.
     \Bigr)
     \pmm.
   \end{align}
-\end{thm}
+\end{coro}
 
 \begin{proof}
   On commencer par majorer chacun des deux choix possibles pour \( \alpha \)
@@ -599,6 +599,7 @@ la constante ; on aboutit au résultat suivant.
     + 2 \adeg n
     \le
     \cst{ht-v-gen1}
+    \label{e:maj-ht-alpha}
   \end{align}
   Ainsi, quel que soit le choix pour \( (s, \alpha) \) dans le corollaire
   précédent, on a assez largement
@@ -833,6 +834,124 @@ laquelle nous reviendrons),  le lemme cité dit alors que
   =
   \dots % XXX
 \end{equation}
+
+
+
+\section{Cas général}
+\label{sec:any}
+
+Commençons par comparer les conditions des inégalités de \bsc{Mumford}
+(théorème~\vref{t:mumford-gen}) et de \bsc{Vojta}
+(corollaire~\vref{c:vojta-gen2}) concernant la largeur des secteurs de cône.
+Posons pour commencer
+\begin{align}
+  M
+  & =
+  \bigl(
+  2^{34} \cdot [\cdn : \Q] \hlclab \cdot \adeg
+  \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
+  + 1
+  \\
+  \phi
+  & =
+  \frac{ \eps }{ 4 \adeg^M (2M)^{(M+1)\adim} }
+  \\
+  \rho
+  & =
+  \frac{ \sqrt\eps }{ \adeg^{M/2} (2M)^{(M+1)\adim/2} }
+\end{align}
+de sorte que \( (\rho, \phi) \) satisfait bien la
+condition~\eqref{e:rho-phi-gen} (on peut de nouveau supposer \( \eps < 2\adeg
+\) en vertu du corollaire~\vref{c:nobig-liouville} vu la condition de hauteur
+qu'on imposera bientôt). Par ailleurs, à un facteur \( 2 \) près, chacune de
+ces deux quantités est aussi grande au possible sous cette condition.
+
+Les conditions d'angle à satisfaire pour pouvoir appliquer simultanément les
+inégalités de \bsc{Mumford} et \bsc{Vojta} sont donc
+\begin{equation}
+  \cos(x, y) \ge 1 - \phi
+  \quad\text{et}\quad
+  \cos(x, y) \ge 1 -
+  \frac1m
+  \left(
+    \frac{ \eps }{ 86 \nclmaps \cdot 5^g \adeg }
+  \right)^{ \frac{m}{m-g} }
+\end{equation}
+\worknote{Et \( N \) ?}
+où l'on voit facilement, vu la définition de \( M \), que la première de ces
+deux conditions est en général la plus restrictive, sauf évidemment si \( m \)
+est extrêmement grand. On n'a bien entendu aucun intérêt à rendre la deuxième
+condition plus restrictive, d'autant plus que prendre \( m \) grand rend les
+autres conditions de l'inégalité de \bsc{Vojta} encore plus restrictives. Il
+est donc avantageux de fixer \( m = g+1 \) dans l'inégalité de \bsc{Vojta}.
+
+Par ailleurs, comme on l'a vu dans la démonstration du
+corollaire~\vref{c:big-gen-prod}, on a tout intérêt à choisir l'option \( s =
+  1 \) dans l'énoncé du corollaire~\vref{c:vojta-gen2}. Nous énonçons donc
+ici la version de ce corollaire que nous utiliserons.
+
+% XXX revoir et simplifier
+\begin{coro} \label{c:vojta-gen3}
+  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
+  \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
+  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+    \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_{g+1} \)
+  satisfaisant simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{x_i} \avar
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{x_1}
+    & > \cst{ht-v-gen1} \Lambda_6^{(4g)^{4g^2}}
+    \\
+    \hautn{x_i} & > \hautn{x_{i-1}}
+    \cdot \Lambda_6^{(4g)^{4g^2}}
+    \\
+    \cos(x_i, x_j) & > 1 -
+    \frac1{ (g+1) \cst{v-gen2} }
+  \end{align}
+  avec
+  \begin{align}
+    \newcst[]{v-gen2}
+    & =
+    \bigl(
+      86 \nclmaps \cdot 5^g \adeg \, \eps^{-1}
+    \bigr)^{ g+1 }
+    \\
+    \Lambda_6
+    & =
+    \cst{v-gen2}
+    \bigl( (\sqrt2 g(g+1) \adeg)^g \deg \va \bigr)^{g+1}
+    \\
+    \newcst[\vaemb]{ht-v-gen2}
+    & =
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
+    \bigr)
+    + (g + 1) \deg \va
+    \Bigl(
+      \adeg^n \ln(\adeg) n
+    \\ & \qquad
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
+        + \ln g
+      \bigr)
+    \Bigr)
+  \end{align}
+  et \( (\alpha_v)_v \) une certaine famille de réels tous supérieurs ou égaux
+  à \( 1 \), avec \( \sum\placerange \degv\alpha_v \le \cst{ht-v-gen2}
+  \).
+\end{coro}
+
+\begin{proof}
+  C'est le corollaire~\vref{c:vojta-gen2} avec \( m = g+1 \) et l'option \( s
+    = 1 \), où on a simplifié la majoration de la « hauteur » de \( \alpha \)
+  en tenant compte de~\eqref{e:maj-ht-alpha}.
+\end{proof}
 
 
 
