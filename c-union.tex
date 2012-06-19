@@ -384,7 +384,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
 
 On utilise ensuite le fait suivant.
 
-\begin{fact}
+\begin{fact} \label{f:nb-cones}
   Soient \( r \) un entier et \( \gamma > 0 \) un réel. On peut recouvrir \(
     \R^r \) par \( \floor{(1 + \sqrt{8/\gamma})^r} \) ensembles dans chacun
   desquels deux points quelconques satisfont \( \cos(x, y) \ge 1 - \gamma \).
@@ -880,7 +880,7 @@ inégalités de \bsc{Mumford} et \bsc{Vojta} sont donc
     \frac{ \eps }{ 86 \nclmaps \cdot 5^g \adeg }
   \right)^{ \frac{m}{m-g} }
 \end{equation}
-\worknote{Et \( N \) ?}
+\worknote{Et \( N \) ?}%
 où l'on voit facilement, vu la définition de \( M \), que la première de ces
 deux conditions est en général la plus restrictive, sauf évidemment si \( m \)
 est extrêmement grand. On n'a bien entendu aucun intérêt à rendre la deuxième
@@ -1033,6 +1033,81 @@ dans chaque cône tronqué.
   que cette fois-ci il peut y avoir jusqu'à \( M-1 \) points par lunule.
 \end{proof}
 
+On en déduit un décompte complet des grands points.
+
+\begin{coro}
+  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
+    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
+    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( \eps > 0 \).
+  On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
+  satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
+  \begin{align}
+    0 < \distv{x_i} \avar
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{x_1}
+    & > \mu
+  \end{align}
+  avec \( \mu \), \( \phi \) et \( M \) comme ci-dessus. Alors on a
+  \begin{equation}
+    p
+    \le
+    M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    \cdot \eps^{-r/2 - 1}
+  \end{equation}
+  avec \( \rho \) et \( \Lambda_6 \) comme ci-dessus.
+\end{coro}
+
+\begin{proof}
+  On applique le fait~\vref{f:nb-cones} avec \( \gamma = \phi \) pour
+  recouvrir l'espace euclidien \( \grp \otimes_\Z \R \) muni du produit
+  scalaire donné par la hauteur de \NT par des ensembles dans lesquels deux
+  points quelconques satisfont~\eqref{e:big-cos}. Le nombre d'ensembles
+  nécessaires est au plus
+  \begin{equation}
+    \bigl( 1 + \sqrt{ 8 / \phi } \bigr)^r
+    \le
+    \bigl( 1 + (4\sqrt 2 / \rho ) \bigr)^r
+    \le
+    \bigl( 6 / \rho \bigr)^r
+  \end{equation}
+  en utilisant le fait que \( \phi = \rho^2 / 4 \) d'après leurs définitions.
+  Le lemme précédent donne le nombre de points dans chaque ensemble, on a donc
+  \begin{equation}
+    p
+    \le
+    2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 \, 6^r }{ \rho^{r+1} }
+    \pmm.
+  \end{equation}
+  On remarque maintenant que \( \ln x \le \sqrt x \) pour tout \( x \) et que
+  \( \Lambda_6 \le M / \eps \), de sorte que \( \ln \Lambda_6 \le
+    \sqrt{M/\eps} \). Par ailleurs, on remarque que
+  \begin{equation}
+    2 g (4g)^{4g^2}
+    \le
+    (4g)^{4g^2+1}
+    \le
+    2^{4(g+1)g^2 + 1}
+    \le
+    (2^9)^{g^3}
+  \end{equation}
+  de sorte que \( 2 g (4g)^{4g^2} 6^r \le \sqrt M \) soit au final
+  \begin{equation}
+    p
+    \le
+    \frac{ M^2 }{ \rho^{r+1} \sqrt\eps }
+    \le
+    \frac{
+      M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    }{
+      \eps^{r/2 + 1}
+    }
+  \end{equation}
+  compte tenu de la définition de \( \rho \).
+\end{proof}
 
 
 
