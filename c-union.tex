@@ -4,27 +4,235 @@
 Nous déduisons ici des deux chapitres précédents des décomptes
 d'approximations exceptionnelles. Plus précisément, on donne un décompte des
 points de hauteur assez grande (au sens de~\eqref{e:Vbig} et~\eqref{e:Mbig}),
-que nous appellerons grands points, en combinant les inégalités de \bsc{Vojta}
-et de \bsc{Mumford} obtenues précédemment.
+que nous appellerons grands points, en combinant l'inégalité de \bsc{Vojta} à
+chacune des deux inégalités de \bsc{Mumford} obtenues précédemment.
 
-On en déduit ensuite un décompte des grands points avec une hypothèse
-d'approximation sous la forme d'un produit sur les places, plus naturelle que
-l'hypothèse technique avec un système d'inégalités. Cette forme constitue le
-résultat principal de la thèse.
+Auparavant, on introduit des conditions sur les ensembles d'approximations
+exceptionnelles considérés et on discute de leur caractère nécessaire. On
+introduit également un résultat permettant de passer d'une condition
+d'approximation avec un système d'inégalités à la forme plus naturelle d'un
+produit sur les places. Enfin, on conclut ce chapitre par l'évocation de deux
+méthodes de traitement des petits points : un décompte trivial, et une façon
+de les éliminer.
 
-On discute alors des choix possibles pour la valeur d'un paramètre laissé
-libre jusque là, afin d'optimiser l'hypothèse et/ou le décompte obtenu.
-Enfin, concernant les petits points, après avoir rappelé une méthode de
-décompte grossière ne tenant pas compte de l'hypothèse d'approximation, on
-présente une méthode pour les éliminer en renforçant ladite hypothèse.
 
 \section{Obstruction au décompte absolu}
 \label{sec:obstruction}
 
 \todo (À écrire.)
 
+
 
-\section{Décomptes des grands points}
+\section{Hypothèse d'approximation produit}
+\label{sec:ha-prod}
+
+Comme annoncé dans l'introduction (page~\pageref{e:ha-prod}), on montre ici
+comment transformer un énoncé où la condition d'approximation fait apparaître
+une inégalité par place en une version où l'hypothèse d'approximation fait
+apparaître un produit sur l'ensemble des places.
+
+Pour cela, on utilise le lemme suivant, qui n'est rien d'autre qu'une version
+plus abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}. Par ailleurs, par
+rapport à cette référence, on a fixé \( \eps'(T) = \eps/2 \), d'où \( A(T) =
+  \card T \), car c'est la valeur qui a le plus de sens pour les applications,
+afin de simplifier légèrement l'énoncé et sa preuve. L'énoncé ci-dessous est
+volontairement aussi abstrait que possible afin de mettre en lumière le
+caractère purement combinatoire de la preuve et d'être utilisable dans le plus
+grand nombre de situations ; immédiatement après l'énoncé on détaille la
+correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
+
+\begin{lem}
+  Soit \( A \) un ensemble et \( H \) une fonction de \( A \) dans \( [1,
+    +\infty \mathclose[ \). Soit par ailleurs \( M \) un autre ensemble et,
+  pour chaque élément \( v \) de \( M \) :
+  \begin{itemize}
+    \item une fonction \( d_v \colon A \to [0, 1] \) ;
+    \item deux réels \( 0 < \degv < 1 \) et \( c_v > 0 \).
+  \end{itemize}
+  Pour tout réel \( \eps > 0 \) et tout partie finie \( S \) de \( M \), on
+  définit
+  \[
+    E(\eps, S)
+    =
+    \set*{
+      x \in A
+      \text{ tel que }
+      \prod_{v \in S} d_v(x)^\degv
+      \le
+      \bigl( \prod_{v \in S} c_v^\degv \bigr)
+      H(x)^{-\eps}
+    }
+    \pmm.
+  \]
+  De plus, pour toute famille de réels \( (\lambda_v)_{v\in S} \), on définit
+  \[
+    E'(\eps, S, \lambda)
+    =
+    \set*{
+      x \in A
+      \text{ tel que }
+      d_v(x)
+      \le
+      c_v H(x)^{-\lambda_v \eps}
+      \quad \forall v \in S
+    }
+    \pmm.
+  \]
+  On note enfin \( \parts M \) l'ensemble des parties finies de \( M \) et on
+  suppose qu'il existe une fonction \( g \colon \R_{>0} \times \parts M \to \N
+  \) telle que pour tout \( \eps > 0 \), tout \( S \in \parts M \) non vide et
+  toute famille \( (\lambda_v)_{v\in S} \) de réels positifs telle que \(
+    \sum_{v\in S} \lambda_v \degv = 1 \), on ait
+  \[
+    \card E'(\eps, S, \lambda)
+    \le
+    g(\eps, S)
+    \pmm.
+  \]
+  Alors, pour tout \( \eps > 0 \) et tout \( S \in \parts M \) on a
+  \[
+    \card E(\eps, S)
+    \le
+    \sum_{T \in \parts S \minusset\emptyset}
+    \binom{2\card T - 1}{\card T - 1}
+    g(\eps/2, T)
+    \pmm.
+  \]
+\end{lem}
+
+\begin{rem} \label{r:app-prod}
+  Dans l'application prévue, les paramètres seront choisis de la façon
+  suivante.  L'ensemble \( A \) sera l'intersection d'un système complet de
+  représentants modulo \( \vai \) dans un sous-groupe de rang fini (voire de
+  type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus \avar(\Qbar) \) et
+  \( H \) la hauteur induite sur cet ensemble par le choix d'un plongement
+  projectif de \( \va \). L'ensemble \( M \) sera l'ensemble des places d'un
+  corps de nombres \( \cdn \) suffisamment gros et en chaque place
+  \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local divisé par le
+  degré global. En revanche, le choix des constantes \( c_v \) dépendra de
+  l'application envisagée. On reconnaît la condition sur la famille
+  \( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés
+  de la section précédente.
+\end{rem}
+
+\begin{proof}
+  On suppose \( S \) et \( \eps \) fixés. On remarque que pour toute famille
+  \( \lambda \) telle que que \( \sum_{v \in S} \lambda_v \degv = 1 \) on a \(
+    E'(\eps, S, \lambda) \subset E(\eps, S) \) ; à l'inverse on aimerait bien
+  recouvrir \( E(\eps, S) \) par de tels ensembles, en nombre fini. Dans ce
+  but, pour tout \( x \in A \) (tel que \( H(x) > 1 \) pour simplifier pour
+  l'instant), on introduit une famille de réels \( \lambda(x) \) telle que
+  \begin{equation} \label{e:x2wt}
+    d_v(x)
+    =
+    c_v H(x)^{-\lambda_v(x) \eps}
+    \quad \forall v \in S
+  \end{equation}
+  de sorte que \( x \in E'(\eps, S, \lambda(x)) \). De plus, si \( x \in E(\eps,
+    S) \) on a \( \sum_{v \in S} \lambda_v(x) \degv \ge 1 \). Ainsi, on a
+  recouvert \( E(\eps, S) \) par des ensembles de la forme \( E'(\eps, S,
+    \lambda(x)) \) mais ceux-ci ne sont \lat{a priori} pas en nombre fini ;
+  par ailleurs les familles \( \lambda(x) \) obtenues ne sont pas
+  nécessairement composées que de nombres positifs. (Le fait que leur somme
+  pondérée ne soit pas exactement \( 1 \) n'est en revanche pas gênant, il
+  suffirait de choisir une famille \( \lambda'(x) \) plus petite (pour l'ordre
+  produit) sommant à \( 1 \), car la fonction \( \lambda \mapsto E'(\eps, S,
+    \lambda) \) est décroissante.)
+
+  Pour forcer les \( \lambda_v(x) \) à être positifs\footnote{Ce qui n'est en
+    soi pas indispensable (on pourrait en fait se dispenser de cette hypothèse
+    dans les résultats de décompte précédents en considérant un ensemble de
+    places plus petit) mais sera utile pour assurer la finitude et contrôler
+    le cardinal de l'ensemble \( C \) ci-dessous.} on introduit la fonction \(
+    \pi \colon E(\eps, S) \to \parts S \) définie par
+  \begin{equation}
+    \pi(x)
+    =
+    \set{
+      v \in S
+      \text{ tel que }
+      d_v(x) \le c_v
+    }
+    \pmm.
+  \end{equation}
+  On remarque que \( \pi \) prend en fait ses valeurs dans \( \parts S
+    \minusset\emptyset \).  Par ailleurs, pour toute partie non vide \( T \)
+  de \( S \), on introduit l'ensemble
+  \begin{equation}
+    C
+    =
+    \set{
+      (\lambda_v)_{v \in T}
+      \text{ tel que }
+      \lambda_v \degv \card T \in \N
+      \text{ et }
+      \sum_{v \in T} \lambda_v \degv = 1
+    }
+  \end{equation}
+  qui est fini et de cardinal \( \binom{2\card T - 1}{\card T - 1} \) car il
+  est en bijection avec l'ensemble des familles de \( \card T \) entiers
+  naturels dont la somme est \( \card T \). Pour obtenir la conclusion du
+  lemme, il suffit donc de montrer que
+  \begin{equation}
+    \pi^{-1}(T)
+    =
+    \bigcup_{\lambda \in C} E(\eps/2, T, \lambda)
+  \end{equation}
+  (où l'on a noté \( \pi^{-1}(T) = \pi^{-1}(\set T) \) pour alléger) car les
+  \( \pi^{-1}(T) \) pour \( T \) parcourant l'ensemble des parties non vides
+  de \( S \) forment une évidemment partition de \( E(\eps, S) \).
+
+  Fixons donc \( \emptyset \neq T \in \parts S \) et \( x \in \pi^{-1}(T)
+  \). Par définition de \( E(\eps, S) \) et de \( \pi \) on a
+  \begin{align}
+    \bigl( \prod_{v \in S} c_v^\degv \bigr)
+    H(x)^{-\eps}
+    \ge
+    \prod_{v \in S} d_v(x)^\degv
+    \ge
+    \prod_{v \in T} d_v(x)^\degv
+    \prod_{v \in S \setminus T} c_v^\degv
+  \end{align}
+  d'où \( x \in E(\eps, T) \). Par ailleurs, si \( H(x) = 1 \) il est clair
+  que \( x \in E'(\eps, S, \lambda) \) pour n'importe quelle famille \(
+    \lambda \in C \), on suppose donc \( H(x) > 1 \) et on associe à \( x \)
+  une famille \( \lambda(x) \) comme en~\eqref{e:x2wt}. Cette fois-ci, les \(
+    \lambda_v(x) \) sont tous positifs ou nuls. Par ailleurs, on a
+  successivement
+  \begin{align}
+    2 \card T
+    \sum_{v \in T} \lambda_v(x) \degv
+    & \ge
+    2 \card T
+    \\
+    \sum_{v \in T} \floor{ 2 \lambda_v(x) \degv \card T }
+    & \ge
+    \card T
+  \end{align}
+  donc il existe des entiers naturels \( a_v(x) \) inférieurs ou égaux à
+  \( 2 \lambda_v(x) \degv \card T \) et dont la somme est exactement
+  \( \card T \). On pose alors \( \lambda'(x) = a_v(x) / (\degv \card T) \) de
+  sorte que \( \lambda'(x) \in C \) et \( \lambda'_v(x) \le 2 \lambda_v(x) \),
+  ce qui implique que \( x \in E'(\eps/2, T, \lambda'(x)) \), achevant ainsi
+  la preuve.
+\end{proof}
+
+En pratique, la fonction de comptage ne dépend pas de l'ensemble de places
+considérées, on utilisera donc le scolie suivant.
+
+\begin{sco}
+  Dans la situation du lemme précédent, si l'on suppose de plus que la
+  fonction \( g \) ne dépend pas de son deuxième argument, alors on a
+  \( \card E(\eps, S) \le 5^{\card S} g(\eps/2) \).
+\end{sco}
+
+\begin{proof}
+  C'est un calcul élémentaire, fait page~125 de \cite{farhith}.
+\end{proof}
+
+
+
+\section{Grands points, cas des sous-groupes}
 \label{sec:big-points}
 
 On commence par majorer le nombre de points dans chaque cône tronqué.
@@ -247,213 +455,8 @@ On utilise ensuite le fait suivant.
   ensembles pour conclure.
 \end{proof}
 
-
-
-\section{Hypothèse d'approximation produit}
-\label{sec:ha-prod}
-
-Comme annoncé dans l'introduction (page~\pageref{e:ha-prod}), on déduit ici de
-l'énoncé précédent une version où l'hypothèse d'approximation fait apparaître
-un produit sur l'ensemble des places plutôt qu'une inégalité par place.
-
-Pour cela, on utilise le lemme suivant, qui n'est rien d'autre qu'une version
-plus abstraite du lemme~2.12.1, p. 120 de~\cite{farhith}. Par ailleurs, par
-rapport à cette référence, on a fixé \( \eps'(T) = \eps/2 \), d'où \( A(T) =
-  \card T \), car c'est la valeur qui a le plus de sens pour les applications,
-afin de simplifier légèrement l'énoncé et sa preuve. L'énoncé ci-dessous est
-volontairement aussi abstrait que possible afin de mettre en lumière le
-caractère purement combinatoire de la preuve et d'être utilisable dans le plus
-grand nombre de situations ; immédiatement après l'énoncé on détaille la
-correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
-
-\begin{lem}
-  Soit \( A \) un ensemble et \( H \) une fonction de \( A \) dans \( [1,
-    +\infty \mathclose[ \). Soit par ailleurs \( M \) un autre ensemble et,
-  pour chaque élément \( v \) de \( M \) :
-  \begin{itemize}
-    \item une fonction \( d_v \colon A \to [0, 1] \) ;
-    \item deux réels \( 0 < \degv < 1 \) et \( c_v > 0 \).
-  \end{itemize}
-  Pour tout réel \( \eps > 0 \) et tout partie finie \( S \) de \( M \), on
-  définit
-  \[
-    E(\eps, S)
-    =
-    \set*{
-      x \in A
-      \text{ tel que }
-      \prod_{v \in S} d_v(x)^\degv
-      \le
-      \bigl( \prod_{v \in S} c_v^\degv \bigr)
-      H(x)^{-\eps}
-    }
-    \pmm.
-  \]
-  De plus, pour toute famille de réels \( (\lambda_v)_{v\in S} \), on définit
-  \[
-    E'(\eps, S, \lambda)
-    =
-    \set*{
-      x \in A
-      \text{ tel que }
-      d_v(x)
-      \le
-      c_v H(x)^{-\lambda_v \eps}
-      \quad \forall v \in S
-    }
-    \pmm.
-  \]
-  On note enfin \( \parts M \) l'ensemble des parties finies de \( M \) et on
-  suppose qu'il existe une fonction \( g \colon \R_{>0} \times \parts M \to \N
-  \) telle que pour tout \( \eps > 0 \), tout \( S \in \parts M \) non vide et
-  toute famille \( (\lambda_v)_{v\in S} \) de réels positifs telle que \(
-    \sum_{v\in S} \lambda_v \degv = 1 \), on ait
-  \[
-    \card E'(\eps, S, \lambda)
-    \le
-    g(\eps, S)
-    \pmm.
-  \]
-  Alors, pour tout \( \eps > 0 \) et tout \( S \in \parts M \) on a
-  \[
-    \card E(\eps, S)
-    \le
-    \sum_{T \in \parts S \minusset\emptyset}
-    \binom{2\card T - 1}{\card T - 1}
-    g(\eps/2, T)
-    \pmm.
-  \]
-\end{lem}
-
-\begin{rem} \label{r:app-prod}
-  Dans l'application prévue, les paramètres seront choisis de la façon
-  suivante.  L'ensemble \( A \) sera l'intersection d'un système complet de
-  représentants modulo \( \vai \) dans un sous-groupe de rang fini (voire de
-  type fini) de \( \va(\Qbar) \) avec \( \va(\Qbar) \setminus \avar(\Qbar) \) et
-  \( H \) la hauteur induite sur cet ensemble par le choix d'un plongement
-  projectif de \( \va \). L'ensemble \( M \) sera l'ensemble des places d'un
-  corps de nombres \( \cdn \) suffisamment gros et en chaque place
-  \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local divisé par le
-  degré global. En revanche, le choix des constantes \( c_v \) dépendra de
-  l'application envisagée. On reconnaît la condition sur la famille
-  \( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés
-  de la section précédente.
-\end{rem}
-
-\begin{proof}
-  On suppose \( S \) et \( \eps \) fixés. On remarque que pour toute famille
-  \( \lambda \) telle que que \( \sum_{v \in S} \lambda_v \degv = 1 \) on a \(
-    E'(\eps, S, \lambda) \subset E(\eps, S) \) ; à l'inverse on aimerait bien
-  recouvrir \( E(\eps, S) \) par de tels ensembles, en nombre fini. Dans ce
-  but, pour tout \( x \in A \) (tel que \( H(x) > 1 \) pour simplifier pour
-  l'instant), on introduit une famille de réels \( \lambda(x) \) telle que
-  \begin{equation} \label{e:x2wt}
-    d_v(x)
-    =
-    c_v H(x)^{-\lambda_v(x) \eps}
-    \quad \forall v \in S
-  \end{equation}
-  de sorte que \( x \in E'(\eps, S, \lambda(x)) \). De plus, si \( x \in E(\eps,
-    S) \) on a \( \sum_{v \in S} \lambda_v(x) \degv \ge 1 \). Ainsi, on a
-  recouvert \( E(\eps, S) \) par des ensembles de la forme \( E'(\eps, S,
-    \lambda(x)) \) mais ceux-ci ne sont \lat{a priori} pas en nombre fini ;
-  par ailleurs les familles \( \lambda(x) \) obtenues ne sont pas
-  nécessairement composées que de nombres positifs. (Le fait que leur somme
-  pondérée ne soit pas exactement \( 1 \) n'est en revanche pas gênant, il
-  suffirait de choisir une famille \( \lambda'(x) \) plus petite (pour l'ordre
-  produit) sommant à \( 1 \), car la fonction \( \lambda \mapsto E'(\eps, S,
-    \lambda) \) est décroissante.)
-
-  Pour forcer les \( \lambda_v(x) \) à être positifs\footnote{Ce qui n'est en
-    soi pas indispensable (on pourrait en fait se dispenser de cette hypothèse
-    dans les résultats de décompte précédents en considérant un ensemble de
-    places plus petit) mais sera utile pour assurer la finitude et contrôler
-    le cardinal de l'ensemble \( C \) ci-dessous.} on introduit la fonction \(
-    \pi \colon E(\eps, S) \to \parts S \) définie par
-  \begin{equation}
-    \pi(x)
-    =
-    \set{
-      v \in S
-      \text{ tel que }
-      d_v(x) \le c_v
-    }
-    \pmm.
-  \end{equation}
-  On remarque que \( \pi \) prend en fait ses valeurs dans \( \parts S
-    \minusset\emptyset \).  Par ailleurs, pour toute partie non vide \( T \)
-  de \( S \), on introduit l'ensemble
-  \begin{equation}
-    C
-    =
-    \set{
-      (\lambda_v)_{v \in T}
-      \text{ tel que }
-      \lambda_v \degv \card T \in \N
-      \text{ et }
-      \sum_{v \in T} \lambda_v \degv = 1
-    }
-  \end{equation}
-  qui est fini et de cardinal \( \binom{2\card T - 1}{\card T - 1} \) car il
-  est en bijection avec l'ensemble des familles de \( \card T \) entiers
-  naturels dont la somme est \( \card T \). Pour obtenir la conclusion du
-  lemme, il suffit donc de montrer que
-  \begin{equation}
-    \pi^{-1}(T)
-    =
-    \bigcup_{\lambda \in C} E(\eps/2, T, \lambda)
-  \end{equation}
-  (où l'on a noté \( \pi^{-1}(T) = \pi^{-1}(\set T) \) pour alléger) car les
-  \( \pi^{-1}(T) \) pour \( T \) parcourant l'ensemble des parties non vides
-  de \( S \) forment une évidemment partition de \( E(\eps, S) \).
-
-  Fixons donc \( \emptyset \neq T \in \parts S \) et \( x \in \pi^{-1}(T)
-  \). Par définition de \( E(\eps, S) \) et de \( \pi \) on a
-  \begin{align}
-    \bigl( \prod_{v \in S} c_v^\degv \bigr)
-    H(x)^{-\eps}
-    \ge
-    \prod_{v \in S} d_v(x)^\degv
-    \ge
-    \prod_{v \in T} d_v(x)^\degv
-    \prod_{v \in S \setminus T} c_v^\degv
-  \end{align}
-  d'où \( x \in E(\eps, T) \). Par ailleurs, si \( H(x) = 1 \) il est clair
-  que \( x \in E'(\eps, S, \lambda) \) pour n'importe quelle famille \(
-    \lambda \in C \), on suppose donc \( H(x) > 1 \) et on associe à \( x \)
-  une famille \( \lambda(x) \) comme en~\eqref{e:x2wt}. Cette fois-ci, les \(
-    \lambda_v(x) \) sont tous positifs ou nuls. Par ailleurs, on a
-  successivement
-  \begin{align}
-    2 \card T
-    \sum_{v \in T} \lambda_v(x) \degv
-    & \ge
-    2 \card T
-    \\
-    \sum_{v \in T} \floor{ 2 \lambda_v(x) \degv \card T }
-    & \ge
-    \card T
-  \end{align}
-  donc il existe des entiers naturels \( a_v(x) \) inférieurs ou égaux à
-  \( 2 \lambda_v(x) \degv \card T \) et dont la somme est exactement
-  \( \card T \). On pose alors \( \lambda'(x) = a_v(x) / (\degv \card T) \) de
-  sorte que \( \lambda'(x) \in C \) et \( \lambda'_v(x) \le 2 \lambda_v(x) \),
-  ce qui implique que \( x \in E'(\eps/2, T, \lambda'(x)) \), achevant ainsi
-  la preuve.
-\end{proof}
-
-En pratique, la fonction de comptage ne dépend pas de l'ensemble de places
-considérées, on utilisera donc le scolie suivant.
-
-\begin{sco}
-  Dans la situation du lemme précédent, si l'on suppose de plus que la
-  fonction \( g \) ne dépend pas de son deuxième argument, alors on a
-  \( \card E(\eps, S) \le 5^{\card S} g(\eps/2) \).
-\end{sco}
-
-\begin{proof}
-  C'est un calcul élémentaire, fait page~125 de \cite{farhith}.
-\end{proof}
+Il ne reste maintenant plus qu'à passer à une hypothèse d'approximation sous
+sa forme produit.
 
 \begin{coro}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
@@ -837,7 +840,7 @@ laquelle nous reviendrons),  le lemme cité dit alors que
 
 
 
-\section{Cas général}
+\section{Grands points, cas général}
 \label{sec:any}
 
 Commençons par comparer les conditions des inégalités de \bsc{Mumford}
@@ -952,8 +955,6 @@ ici la version de ce corollaire que nous utiliserons.
     = 1 \), où on a simplifié la majoration de la « hauteur » de \( \alpha \)
   en tenant compte de~\eqref{e:maj-ht-alpha}.
 \end{proof}
-
-
 
 
 
