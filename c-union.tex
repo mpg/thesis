@@ -966,6 +966,73 @@ ici la version de ce corollaire que nous utiliserons.
   pour simplifier l'écriture de \( \Lambda_6 \) et de son exposant.
 \end{proof}
 
+Nous sommes maintenant prêts à suivre le plan de la
+section~\vref{sec:big-points} en commençant par majorer le nombre de points
+dans chaque cône tronqué.
+
+\begin{lem}
+  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
+    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
+    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( \eps > 0 \).
+  On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
+  satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
+  \begin{align}
+    \label{e:big-any-ha}
+    0 < \distv{x_i} \avar
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\ \label{e:big-any-big}
+    \hautn{x_1}
+    & > \mu
+    \\ \label{e:big-any-cos}
+    \cos(x_i, x_j)
+    & > 1 - \phi
+  \end{align}
+  avec
+  \begin{equation}
+    \mu =
+    \frac8{ \eps^{(4g)^{4g^2}} }
+    \adeg^{M-1} (2M)^{ (M+1)\adim + 1}
+    \Bigl(
+      \hautl1 \avar
+      + \adeg M^2 \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
+    \Bigr)
+  \end{equation}
+  et \( \phi \) et \( M \) comme ci-dessus. Alors on a
+  \begin{equation}
+    p
+    \le
+    2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
+  \end{equation}
+  avec \( \rho \) et \( \Lambda_6 \) comme ci-dessus.
+\end{lem}
+
+\begin{proof}
+  D'après les discussions précédentes, les conditions~\eqref{e:big-any-ha}
+  et~\eqref{e:big-any-cos} impliquent les conditions correspondantes du
+  théorème~\vref{t:mumford-gen} et du corollaire~\vref{c:vojta-gen3}. On voit
+  facilement que c'est également le cas pour l'hypothèse~\eqref{e:big-any-big}
+  : en effet, la condition~\eqref{e:Mbig-gen} est visiblement celle qui a la
+  plus forte dépendance en chacun des paramètres sauf \( \eps \), où on a donc
+  pris l'exposant du corollaire précédent.
+
+  On peut donc appliquer simultanément ces deux résultats et en conclure comme
+  dans la preuve du lemme~\vref{l:big-by-cone} que
+  \begin{equation}
+    p
+    \le
+    g (M-1) \left(
+      \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \ln(1+\rho) } + 1
+    \right)
+    \le
+    2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
+  \end{equation}
+  où \( \rho \) et \( \Lambda_6 \) sont comme ci-dessus, compte tenu du fait
+  que cette fois-ci il peut y avoir jusqu'à \( M-1 \) points par lunule.
+\end{proof}
+
 
 
 
