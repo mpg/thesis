@@ -893,7 +893,6 @@ corollaire~\vref{c:big-gen-prod}, on a tout intérêt à choisir l'option \( s =
   1 \) dans l'énoncé du corollaire~\vref{c:vojta-gen2}. Nous énonçons donc
 ici la version de ce corollaire que nous utiliserons.
 
-% XXX revoir et simplifier
 \begin{coro} \label{c:vojta-gen3}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
@@ -914,20 +913,16 @@ ici la version de ce corollaire que nous utiliserons.
     \cdot \Lambda_6^{(4g)^{4g^2}}
     \\
     \cos(x_i, x_j) & > 1 -
-    \frac1{ (g+1) \cst{v-gen2} }
+    \frac1{ g+1 }
+    \left(
+      \frac{ \eps }{ 86 \nclmaps \cdot 5^g \adeg }
+    \right)^{ g+1 }
   \end{align}
   avec
   \begin{align}
-    \newcst[]{v-gen2}
-    & =
-    \bigl(
-      86 \nclmaps \cdot 5^g \adeg \, \eps^{-1}
-    \bigr)^{ g+1 }
-    \\
     \Lambda_6
     & =
-    \cst{v-gen2}
-    \bigl( (\sqrt2 g(g+1) \adeg)^g \deg \va \bigr)^{g+1}
+    86 (\deg\va) \adeg \, \eps^{-1} (15 g^2 \adeg)^g
     \\
     \newcst[\vaemb]{ht-v-gen2}
     & =
@@ -952,8 +947,23 @@ ici la version de ce corollaire que nous utiliserons.
 
 \begin{proof}
   C'est le corollaire~\vref{c:vojta-gen2} avec \( m = g+1 \) et l'option \( s
-    = 1 \), où on a simplifié la majoration de la « hauteur » de \( \alpha \)
-  en tenant compte de~\eqref{e:maj-ht-alpha}.
+    = 1 \), où l'on a simplifié la majoration de la « hauteur » de \( \alpha
+  \) en tenant compte de~\eqref{e:maj-ht-alpha}. On a par ailleurs utilisé les
+  majorations suivantes :
+  \begin{gather}
+    86 \nclmaps \cdot 5^g \adeg \, \eps^{-1}
+    (\sqrt2 g(g+1) \adeg)^g \deg \va
+    \le
+    86 (\deg\va) \adeg \, \eps^{-1} (15 g^2 \adeg)^g
+    \\
+    (g+1) (2g(g+1))^{g(g+1)}
+    \le
+    2^{g(g+2)}
+    (2g^2)^{2g^2}
+    \le
+    (4g)^{4g^2}
+  \end{gather}
+  pour simplifier l'écriture de \( \Lambda_6 \) et de son exposant.
 \end{proof}
 
 
@@ -1129,7 +1139,7 @@ On en déduit à titre d'exemple une variante du
 corollaire~\vref{c:big-gen-prod} ; le lecteur en déduira sans peine des
 variantes similaires des autres résultats de décompte.
 
-\begin{prop} \label{p:all-gen}
+\begin{coro} \label{c:all-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
@@ -1160,7 +1170,7 @@ variantes similaires des autres résultats de décompte.
   \end{align}
   avec \( \Lambda_5 \) et \( \cst{ht-v-gen1} \) comme au
   corollaire~\vref{c:big-gen-prod}.
-\end{prop}
+\end{coro}
 
 \begin{proof}
   La condition d'approximation considérée permet d'appliquer le
