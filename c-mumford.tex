@@ -630,8 +630,8 @@ Dans le cas général, pour tout entier \( m \ge 2 \), on définit un morphisme
   s_m \colon \va^m & \to \va^{m-1} \\
   (x_1, \dots, x_m) & \mapsto (x_1 - x_m, \dots, x_{m-1} - x_m)
 \end{align}
-et on note \( Z = s_m(\avar^m) \) plongée dans \( \proj N \), où
-\( N = (n+1)^{m-1} - 1 \) par un plongement de \bsc{Segre}. Le but de cette
+et on note \( Z = s_m(\avar^m) \) plongée dans \( \proj{n'} \), où
+\( n' = (n+1)^{m-1} - 1 \) par un plongement de \bsc{Segre}. Le but de cette
 section est de contrôler le degré et la hauteur de \( Z \) dans ce plongement
 en fonction du degré et de la hauteur de \( \avar \).
 
@@ -639,7 +639,7 @@ On commence par représenter localement le morphisme \( s_m \) par une famille
 de formes de degrés et hauteur contrôlées.
 
 \begin{lem} \label{l:repr-sm}
-  Pour tout \( x \in \avar^m \), il existe une famille de \( N + 1 \) formes
+  Pour tout \( x \in \avar^m \), il existe une famille de \( n' + 1 \) formes
   multihomogènes de multidegré \( (2, \dots, 2, 2(m-1)) \) et telle que \(
     \nnv1 S \le \hmclab* ^{m-1} \) en toute place \( v \).
 \end{lem}
@@ -696,7 +696,7 @@ minimum essentiel ; pour l'instant nous devons commencer par estimer le degré.
 
 \begin{proof}
   On note \( \adim' = \dim Z \le m \adim \) et on choisit \( u' \) hyperplans
-  de \( \proj N \) en position générale, qu'on notera \( E_1, \dots,
+  de \( \proj{n'} \) en position générale, qu'on notera \( E_1, \dots,
     E_{\adim'} \) de sorte que \( F = \bigcap_i E_i \) est un ensemble fini de
   points, de cardinal \( \deg Z \).  On note donc \( F = \set{y_1, \dots, y_p}
   \) et notre but est de majorer \( p = \deg Z \).
@@ -815,7 +815,7 @@ hauteur de \( Z \).
   \begin{align}
     \hautl1 Z
     & \le
-    \hautl\htpph Z + \frac12 \ln(N+1) (\dim Z + 1) \deg Z
+    \hautl\htpph Z + \frac12 \ln(n'+1) (\dim Z + 1) \deg Z
     \\ & \le
     \Bigl( \miness(Z) + \frac12 (m-1) \ln(n+1) \Bigr)
     (\dim Z + 1) \deg Z
@@ -1097,7 +1097,7 @@ section~\vref{sec:mumford-grp}.
     - (\deg Z) \hautl2 z
     - \hautl1{ Z }
     \\ & \qquad
-    - \frac32 \ln(N + 1)
+    - \frac32 \ln(n' + 1)
     - (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
     \pmm.
   \end{align}
