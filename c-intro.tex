@@ -67,21 +67,22 @@ conditions suivantes :
 \end{enumthm}
 où l'angle est relatif à la structure euclidienne de l'espace. Nous
 appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
-conditions \vref{i:grand} et \vref{i:proche}. Il est clair que l'espace privé
-d'une boule de rayon \( \sqrt{\alpha} \) peut être recouvert par un nombre
-fini de tels cônes tronqués dès qu'il est de dimension finie (ce qui est le
-cas si on se place sur un corps de nombres). L'inégalité de \bsc{Vojta} assure
-qu'il n'y a qu'un nombre fini de points sous la condition (C) dans chaque
-cône, et permet donc de conclure à la finitude de l'ensemble des points
-satisfaisant (C).
+conditions \ref{i:grand} et \ref{i:proche} ci-dessus. Il est clair que
+l'espace privé d'une boule de rayon \( \sqrt{\alpha} \) peut être recouvert
+par un nombre fini de tels cônes tronqués dès qu'il est de dimension finie (ce
+qui est le cas si on se place sur un corps de nombres). L'inégalité de
+\bsc{Vojta} assure que, sous la condition (C), il n'y a qu'un nombre fini de
+points dans chaque cône, et permet donc de conclure à la finitude de
+l'ensemble des points satisfaisant (C).
 
 L'inégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle dit
 qu'il n'existe pas de suite \( x_1, \dots, x_m \) de points satisfaisant
 simultanément à la condition (C) et aux trois conditions suivantes :
 \begin{enumthm}
-  \item $\hautn{x_1} > \alpha'$ ;
-  \item $\cos(x_i, x_j) > 1 - \beta'$ pour tous $i$ et $j$ ;
-  \item $\abs{ \hautn y - \hautn x } < \delta$.
+  \item \( \hautn{x_i} > \alpha' \) pour tout \( i \) ;
+  \item \( \cos(x_i, x_j) > 1 - \beta' \) pour tous \( i \) et \( j \) ;
+  \item \( \abs{ \hautn{x_i} - \hautn{x_j} } < \delta \) pour tous \( i \) et
+    \( j \).
 \end{enumthm}
 Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
 constantes apparaissant dans ces deux inégalités soient effectives, elle
@@ -104,8 +105,8 @@ quelconques par \bsc{Ridout} \cite{ripgtsrt}, peut s'énoncer de la façon
 suivante.
 
 \begin{thm}[\bsc{Roth}]
-  Soit \( \xi \in \Qbar \) un algébrique. Soient par ailleurs \( \cdn \) un
-  corps de nombres et \( v \) une place de \( \cdn \), étendue de façon
+  Soit \( \xi \in \Qbar \) un nombre algébrique. Soient par ailleurs \( \cdn
+  \) un corps de nombres et \( v \) une place de \( \cdn \), étendue de façon
   arbitraire à \( \cdn(\xi) \). Pour tout \( \eps > 0 \), il n'existe qu'un
   nombre fini de points \( x \in \cdn \) tels que
   \begin{equation}
