@@ -5,12 +5,13 @@
 ] {mpg-preth}
 
 \includeonly {%
-  % title+toc,
+  title,
+  toc,
   %
   % c-intro,
   % c-vojta,
   % c-mumford,
-  c-union,
+  % c-union,
   %
   % a-plong,
   %
@@ -21,10 +22,9 @@
 
 \begin{document}
 
-\inlineinclude{title+toc}{%
-  \maketitle
-  \setcounter{tocdepth}{1}
-  \listoftoc*{toc}
+\include{title}
+\inlineinclude{toc}{%
+  \tableofcontents
   \cleardoublepage
 }
 

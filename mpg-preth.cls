@@ -23,8 +23,7 @@
 
 % use Koma with custom encoding and fonts and colors [[2
 %
-\RequirePackage{pdf14} % be maximally portable
-\LoadClass[a4paper, twoside, BCOR=1cm, 11pt, titlepage=false]{scrbook}
+\LoadClass[a4paper, twoside, BCOR=1cm, 11pt]{scrbook}
 % add french to global options
 \edef\@classoptionslist{\@classoptionslist,french}
 \usepackage[utf8]{inputenc}
