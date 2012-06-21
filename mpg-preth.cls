@@ -70,6 +70,7 @@
 \usepackage{varioref} % to get a working \vref
 \usepackage[colorlinks=true, bookmarks=false]{hyperref}
 \hypersetup{urlcolor=black, linkcolor=black, citecolor=black}
+\newcommand\oref{\ref} % for explicite non-\vref
 
 % equation number in headers [[2
 %

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+GREP='grep -n --color=auto'
+ECHO='/bin/echo'
+
+$ECHO '===> devrait être \eqref <==='
+$GREP '\\ref{e:' *.tex
+$GREP '\\vref{e:' *.tex
+
+$ECHO ""
+$ECHO '===> devrait être \ref <==='
+$GREP '\\eqref{[^e]:' *.tex
+
+$ECHO ""
+$ECHO '===> devrait être \vref ou \oref <==='
+$GREP '\\ref{[^e]:' *.tex
+
+$ECHO ""
+$ECHO '===> doit disparaître <==='
+$GREP -B2 '\\todo\|\\worknote\|XXX' *.tex
