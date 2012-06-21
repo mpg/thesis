@@ -543,106 +543,164 @@ fini.
 \subsection{Plongement projectif de la variété abélienne} \label{sec:vaemb}
 
 On supposera en général fixé un plongement \( \vaemb \colon \va \to \projd \)
-associé à un fibré symétrique \( \fibre \) et tel que l'application \(
-  \Gamma(\projd, \mathcal O(d)) \to \Gamma(\va, \fibre^{\otimes d}) \) soit
-surjective pour tout \( d \ge 1 \) (en particulier, l'image de \( \va \) dans
-ce plongement est projectivement normale). On introduit alors quelques
-constantes et notations associées à ce plongement, ainsi que des indications
-concernant leurs valeurs explicites dans certains cas.
+associé à un fibré symétrique \( \fibre \). On supposera de plus le plongement
+projectivement normal (c'est-à-dire tel que l'application
+\( \Gamma(\projd, \mathcal O(i)) \to \Gamma(\va, \fibre^{\otimes i}) \) soit
+surjective pour tout \( i \ge 1 \)) ; cette condition n'est pas restrictive car
+si \( \fibrei \) est in fibré ample, alors \( \fibrei^{\otimes l} \) est très
+ample et satisfait la condition dès que \( l \ge 3 \).
 
-Pour commencer, on note \( \htcmp \) une constante réelle telle que pour toute
-sous-variété \( \avar \) de \( \va \) on ait
-\begin{equation} \label{e:comp-h-hn-var}
-  \abs{ \hautl2 \avar - \hautn \avar }
-  \le
-  \htcmp (\dim \avar + 1) \deg \avar
-\end{equation}
-où \( \Hautn \) est la hauteur normalisée telle que définie dans \cite{phiha1}
-pour les variétés, dont les principales propriétés sont résumées par la
-proposition~9 de cette même référence. En particulier on a
-\begin{equation} \label{e:comp-h-hn}
-  \abs{ \hautl2x - \hautn x } \le \htcmp
-  \qquad \forall x \in \va(\Qbar)
-  \pmm.
-\end{equation}
+On introduit alors quelques constantes et notations associées à ce plongement,
+dont on prouve ou rappelle l'existence sous ces hypothèses. On discutera
+ensuite de la possibilité d'expliciter certaines d'entre elles dans certains
+cas.
 
-On introduit une paire de constantes \( \hmclab \) et \( \hlclab = \ln \hmclab
-\), dont la première se décompose en \( \hmclab = \prod_v \hmclab*^\degv
-\) où les \( \hmclab* \) sont des réels tous supérieurs et presque tous égaux
-à \( 1 \), possédant les propriétés suivantes.
+, avant d'en donner
+parfois des valeurs explicites dans le cas particulier où d'un plongement de
+\bsc{Mumford} modifié tel que défini dans~\cite{daphimhva2}.
 
-\begin{enumerate}
-  \item \label{i:clab}
-    Il existe un entier \( \nclmaps \) et un ensemble \( \clmaps \) de \(
-      \nclmaps \) ouverts recouvrant \( \va^2 \), possédant la propriété
-    suivante. Pour tout couple d'entiers \( (a, b) \) n'admettant que \( 2
-    \) et \( 3 \) comme diviseurs premiers, il existe une famille \(
-      (\rmclab{a}{b}{\clmap})_{\clmap \in \clmaps} \) de \( (n+1)
-    \)-uplets de formes telle que :
-    \begin{enumerate}
-      \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
-        le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \(
-          \vaemb \) sur (l'image de) \( \clmap \) ;
-      \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
-        bidegré \( (2a^2, 2b^2) \) ;
-      \item pour tout place \( v \) et toute carte \( \clmap \), on a
-        \begin{equation} \label{e:clab-norm}
-          \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2}
-          \pmm;
-        \end{equation}
-      \item pour tout couple de points \( (x, y) \in \va^2 \) et tout place
-        \( v \) il existe une carte \( \clmap \in \clmaps \) telle que
-        \begin{equation} \label{e:clab-loc}
-          \frac{
-            \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
-          }{
-            \nv1 x ^{2a^2} \nv1 y ^{2b^2}
-          }
-          \ge
-          \hmclab*^{-(a^2 + b^2)}
-          \pmm.
-        \end{equation}
-    \end{enumerate}
-  \item \label{i:addsub}
-    Il existe une famille \( F \) de formes homogènes de degré \( 2 \)
-    représentant globalement le morphisme \( (x, y) \mapsto (x+y, x-y) \) dans
-    le plongement \(
-      \va^2
-      \stackrel{\vaemb^2}{\longrightarrow}
-      (\projd)^2
-      \stackrel{s}{\longrightarrow}
-      \proj{n^2 + 2n}
-    \) (où la seconde flèche est le plongement de \bsc{Segre}) telle que
-    \begin{enumerate}
-      \item \( \nnv1 F \le \hmclab* \) ;
-      \item Pour tout \( z \in s \circ \vaemb^2 (\va) \) on a
-        \begin{equation} \label{e:addsub-loc}
-          \frac{
-            \nv2{ F(z) }
-          }{
-            \nnv2 F \nv2 z ^2
-          }
-          \ge
-          \hmclab*^{-1}
-        \end{equation}
-        en toute place \( v \).
-    \end{enumerate}
-\end{enumerate}
+\begin{fact} \label{f:htcmp}
+  Il existe une constante réelle \( \htcmp \) telle que pour toute
+  sous-variété \( \avar \) de \( \va \) on ait
+  \begin{equation} \label{e:comp-h-hn-var}
+    \abs{ \hautl\htpph \avar - \hautn \avar }
+    \le
+    \htcmp (\dim \avar + 1) \deg \avar
+  \end{equation}
+  où \( \Hautn \) est la hauteur normalisée telle que définie dans \cite{phiha1}
+  pour les variétés.  En particulier on a
+  \begin{equation} \label{e:comp-h-hn}
+    \abs{ \hautl2x - \hautn x } \le \htcmp
+  \end{equation}
+  pour tout \( x \in \va(\Qbar) \).
+\end{fact}
 
-\begin{rem} \label{r:vaemb}
-  \worknote{On pourrait en fait dissocier \( \hmclab \) en deux (les deux
-    points ci-dessus). À voir une fois les relations réellement établies.}
-  L'annexe~\vref{chap:plong-mm} établit en fait des relations entre \( \htcmp
-  \) et \( \hlclab \) (ainsi que \( \hautl2{ \chow\va } \)) ; on formulera
-  néanmoins les énoncés suivants avec une dépendance explicite en chacune de
-  ces constantes pour des raisons de clarté et d'optimalité pour les cas où
-  l'une serait mieux contrôlée que les autres.
+\begin{proof}
+  Inclus dans la proposition~9 page~281 de~\cite{phiha1}.
+\end{proof}
 
-  Par ailleurs, dans tous les cas considérés, on aura \( n \ge 2 \) et \(
-    N \ge 3 \), et le degré de (l'image de) \( \va \) dans le plongement sera
-  au moins \( 3 \). On exploitera ces hypothèses pour simplifier quelques
-  estimations.
+\begin{lem} \label{l:hmclab}
+  Il existe un entier \( \nclmaps \), un ensemble \( \clmaps \) de \( \nclmaps
+  \) ouverts recouvrant \( \va^2 \), et une paire de constantes \( \hmclab \)
+  et \( \hlclab = \ln \hmclab \), dont la première se décompose en \( \hmclab
+    = \prod_v \hmclab*^\degv \) où les \( \hmclab* \) sont des réels tous
+  supérieurs et presque tous égaux à \( 1 \), possédant la propriété suivante.
+
+  Pour tout couple d'entiers naturels \( (a, b) \) n'admettant que \( 2 \) et
+  \( 3 \) comme diviseurs premiers, il existe une famille \(
+    (\rmclab{a}{b}{\clmap})_{\clmap \in \clmaps} \) de \( (n+1) \)-uplets de
+  formes telle que :
+  \begin{enumerate}
+    \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
+      le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \(
+        \vaemb \) sur (l'image de) \( \clmap \) ;
+    \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
+      bidegré \( (2a^2, 2b^2) \) ;
+    \item pour tout place \( v \) et toute carte \( \clmap \), on a
+      \begin{equation} \label{e:clab-norm}
+        \nnv1{ \rmclab{a}{b}{\clmap} } \le \hmclab*^{a^2 + b^2}
+        \pmm;
+      \end{equation}
+    \item pour tout \( (x, y) \in \va^2 \) et toute place
+      \( v \) il existe une carte \( \clmap \in \clmaps \) telle que
+      \begin{equation} \label{e:clab-loc}
+        \frac{
+          \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
+        }{
+          \nv1 x ^{2a^2} \nv1 y ^{2b^2}
+        }
+        \ge
+        \hmclab*^{-(a^2 + b^2)}
+        \pmm.
+      \end{equation}
+      (Par ailleurs, cette quantité est majorée par \( \hmclab*^{a^2 + b^2} \)
+      d'après le point précédent et les propriétés de la norme utilisée.)
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  Le fait~3 page~276 de~\cite{phiha1}, appliqué à \( S = \set{2, 3} \),
+  donne\footnote{À quelques différences de normes et notations près, qui sont
+    sans incidence vu qu'on ne donne pas de valeur explicite.} pour tout
+  entier naturel \( a \) n'ayant que \( 2 \) et \( 3 \) comme facteurs
+  premiers, une famille de \( n+1 \) formes \( F\pexp a \) de degré
+  \( a^2 \) représentant globalement la multiplication par \( a \) dans le
+  plongement fixées, et une famille de constantes \( (C_{2,3,v})_v \) presque
+  toutes égales à \( 1 \), telles que, pour toute place \( v \),
+  \begin{align}
+    \nnv1{ F\pexp a }
+    \le
+    C_{2, 3, v}
+    \qquad\text{et, pour tout \( x \in \va(\Qbar) \),}\quad
+    \frac{ \nv1{ F\pexp a (x) } }{ \nv1{ x }^{a^2} }
+    \ge
+    C_{2, 3, v}^{-1}
+    \pmm.
+  \end{align}
+  On conclut directement en composant avec le système complet de formes
+  représentant la soustraction et les constantes \( \hmpm* \) associée,
+  données par le lemme suivant.
+\end{proof}
+
+\begin{lem} \label{l:hmpm}
+  Il existe un entier \( \nclmaps \), un ensemble \( \clmaps \) de \( \nclmaps
+  \) ouverts recouvrant \( \va^2 \), une paire de constantes \( \hmpm \)
+  et \( \hlpm = \ln \hmpm \), dont la première se décompose en \( \hmpm
+    = \prod_v (\hmpm*)^\degv \) où les \( \hmpm* \) sont des réels tous
+  supérieurs et presque tous égaux à \( 1 \), et enfin une famille \(
+    (D\pexp\clmap)_{\clmap \in \clmaps} \) de formes bihomogènes de bidegré \(
+    (2, 2) \) telles que
+  \begin{enumerate}
+    \item la famille \( (D\pexp\clmap[\ind])\indrange \) représente le
+      morphisme de soustraction dans le plongement \( \vaemb \) sur (l'image
+      de) \( \clmap \) ;
+    \item pour toute place \( v \) et toute carte \( \clmap \), on a
+      \( \nnv1{ D\pexp\clmap } \le \hmpm* \) ;
+    \item pour tout \( (x, y) \in \va^2 \) et toute place
+      \( v \) il existe une carte \( \clmap \in \clmaps \) telle que
+      \begin{equation} \label{e:clab-loc}
+        \frac{
+          \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
+        }{
+          \nv1 x ^2 \nv1 y ^2
+        }
+        \ge
+        (\hmpm*)^{-1}
+        \pmm.
+      \end{equation}
+      (Par ailleurs, cette quantité est majorée par \( \hmpm* \) d'après le
+      point précédent et les propriétés de la norme utilisée.)
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  Vu les hypothèses sur le plongement, \cite{larucsal} assure qu'il existe un
+  système complet de formules de bidegré \( (2, 2) \) représentant l'addition.
+  On en déduit aisément un système complet de formules de même degré en
+  composant avec une famille de formules linéaires représentant globalement la
+  multiplication. Cette famille répond à toutes les exigences du lemme (à
+  condition de choisir \( \hmpm* \) en conséquence) sauf peut-être le dernier
+  point, pour lequel on utilise le même argument que pour la fin de la preuve
+  du fait~3 page~276 de~\cite{phiha1} cité précédemment, mais appliqué cette
+  fois à la famille \( (D\pexp\clmap[\ind])^{\clmap\in\clmaps}_{\ind\in\set{0,
+        \dots, n}} \).
+\end{proof}
+
+\begin{rem} \label{r:hm-clab-pm}
+  On peut évidemment supposer que \( \hmclab* \ge \hmpm* \) pour tout \( v \)
+  car le lemme~\vref{l:hmpm} n'est qu'un cas particulier du
+  lemme~\vref{l:hmclab}.
 \end{rem}
+
+\begin{nota} \label{n:vaemb}
+  On fixe désormais des constantes et formes telles que données par les deux
+  lemmes précédent et le fait~\ref{f:htcmp}. De plus, on supposera que
+  \( n \ge 2 \) et \( N \ge 3 \), et le degré de (l'image de) \( \va \) dans
+  le plongement est au moins \( 3 \), ce qui est le cas dans les plongements
+  usuels : plongement de \bsc{Weierstrass} pour une courbe elliptique ou en
+  général, plongement de \bsc{Mumford} modifié (voir ci-dessous).
+\end{nota}
+
 
 
 \subsection{Distances et conditions d'approximations}
