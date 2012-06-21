@@ -644,199 +644,68 @@ La dépendance en \( \eps \) dans le décompte précédent est en
 L'exposant du premier facteur tend donc vers \( (r+1) / 2 \) lorsque \( m \)
 tend vers l'infini. Cependant, quand \( m \) grandit, le facteur \( (2mg)^{mg+1}
 \) dans le décompte croît rapidement et la condition de hauteur aussi croît
-rapidement. La section suivante discute du choix de la valeur de \( m \).
+rapidement. Il n'est pas évident de déterminer la valeur de \( m \) réellement
+optimale, mais la valeur \( m = 2g \) semble être un bon compromis : elle
+ramène le facteur devant \( r \) dans l'exposant de \( \eps \) à une constante
+absolue, sans pour autant coûter beaucoup plus cher que \( g+1 \) sur les
+autres facteurs.
 
-
-
-\section{Choix du paramètre \( m \)}
-\label{sec:opti-m}
-
-Notons \( N(m) \) la quantité donnée par~\eqref{e:bgp-val} et \( C(m) =
-  \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}} \). Pour optimiser le
-corollaire~\ref{c:big-gen-prod}, on peut chercher à minimiser \( C(m) \) ou \(
-  N(m) \), ou idéalement les deux, ce qui ne sera possible que dans certains
-cas, nous allons le voir.
-
-Le cas de \( C(m) \) est assez clair : cette quantité est croissante en \( m
-\). En effet, la seule partie dans sa définition qui ne soit pas croissante en
-\( m \) est le \( m / (m-g) \) en exposant du premier facteur de \( \Lambda_5
-\), mais elle est largement compensée par l'exposant \( (2mg)^{mg} \). Pour
-minimiser \( C(m) \), il suffit donc de poser \( m = g+1 \). On obtient le
-résultat suivant.
-
-\begin{coro} \label{c:big-dec}
-  \todo (À écrire.)
+\begin{coro} \label{c:big-m=2g}
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
+    \ge g + 1 \), il existe au plus
+  \begin{equation} \label{e:bgp-val}
+    2 \cdot 5^{\card \placesapx} \cdot
+    \sqrt{ \frac{\adeg}\eps }
+    (4g)^{4g^2+1}
+    \ln \Lambda_5'
+    \left(
+        739 \nclmaps \cdot 7^g \adeg
+        \, \eps^{-1}
+    \right)^r
+  \end{equation}
+  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
+  aux deux conditions suivantes :
+  \begin{align}
+    0 < \prod\placerange \distv{x_i} \avar ^\degv
+    & <
+    \hautm2{x_i}^{-\eps}
+    \\
+    \hautn{x_1}
+    & > \cst{ht-v-gen1} (\Lambda_5')^{(4g)^{4g^2}}
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda_5'
+    & =
+    \bigl( 87 \nclmaps \adeg \, \eps^{-1} \bigr)^2
+    \bigl( 5 (\deg \va) (2\sqrt2 g^2 \adeg)^g \bigr)^{2g}
+    \\
+    \cst{ht-v-gen1}'
+    & =
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
+    \bigr)
+    + (g + 1) \deg \va
+    \Bigl(
+      \adeg^n \ln(\adeg) n
+    \\ & \qquad
+      + \adeg^g \bigl (
+        \hautl1 \avar
+        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
+        + \ln(g)
+      \bigr)
+    \Bigr)
+    \pmm.
+  \end{align}
 \end{coro}
 
-Attachons-nous maintenant à minimiser \( N(m) \) ou du moins à trouver une
-valeur de \( m \) qui rend cette quantité relativement petite. On utilisera
-le lemme suivant.
-
-\begin{lem} \label{l:minifun}
-  Soient \( a \ge 0 \) et \( b \ge 2 \) deux réels et \( c \ge 1 \) un entier
-  ; on pose \( f(x) = x \ln x + bx + ac / (x-c) \) et \( d = 1 + b + \ln(1+c)
-  \). Si \( a \le d/c \), la fonction \( f \) est croissante sur \( [c+1,
-    +\infty \mathclose[ \).  Sinon, il existe un entier \( x_0 \ge c + 1 \)
-  tel que \( f(x_0) \le 2 ac + (c+1) d \) ; on peut prendre
-  \( x_0 = \sqrt{ac/d} \).
-\end{lem}
-
 \begin{proof}
-  On a \( f'(x) = \ln x + 1 + b - a / (x-c)^2 \) ; cette fonction est
-  croissante pour \( x > c \). De plus, \( f'(c+1) = \ln(c+1) + 1+b - a \) est
-  positif si et seulement si \( ac \le 1 + b + \ln(1+c) \) ; dans ce cas \( f
-  \) est bien croissante sur \( [c+1, +\infty \mathclose[ \).
-
-  Posons \( d = 1 + b + \ln(1+c) \) et supposons donc \( ac \ge d \) désormais.
-  Une vague analogie avec le lemme~2.14.7 page~150 de \cite{farhith} nous
-  amène à poser \( t = \sqrt{ac/d} + c \) à considérer \( x_0 = \ceil t \).
-  Par hypothèse, on a bien \( x_0 \ge c + 1 \) entier et
-  \begin{align}
-    f(x_0)
-    & \le
-    (t+1) \ln(t+1)
-    + b (t+1)
-    + ac / (t-c)
-    \\ & \le
-    (\sqrt{ac/d} + c+1) \ln(\sqrt{ac/d} + c+1)
-    + b (\sqrt{ac/d} + c+1)
-    + \sqrt{acd}
-    \pmm.
-  \end{align}
-  On écrit alors
-  \begin{equation}
-    \ln(\sqrt{ac/d} + c+1)
-    =
-    \ln(\sqrt{a/dc} + 1 + 1/c) + \ln c
-    \le
-    \sqrt{a/dc} + 1/c + \ln c
-  \end{equation}
-  puis, en développant et en utilisant la définition de \( d \) ainsi que les
-  hypothèses \( b \ge 2 \) et \( c \ge 1 \) entier :
-  \begin{align}
-    f(x_0)
-    & \le
-    (\sqrt{ac/d} + c+1) (\sqrt{a/dc} + 1/c + \ln c)
-    + \sqrt{ac} (\sqrt d + b/\sqrt d)
-    + b (c+1)
-    \\ & \le
-    a/d + \sqrt{a/dc} + \sqrt{ac/d} \ln c
-    + \sqrt{ac/d}
-    + \sqrt{a/dc}
-    + \sqrt{ac} (\sqrt d + b/\sqrt d)
-    \\ & \qquad
-    + (c+1) (b + 1/c + \ln c)
-    \\ & \le
-    a/d
-    + \sqrt{ac} \bigl( \sqrt d + (b + 2/c + 1 + \ln c) /\sqrt d \bigr)
-    + (c+1) d
-    \\ & \le
-    a/d
-    + \sqrt{ac} \bigl( \sqrt d + 5\sqrt d / 3 \bigr)
-    + (c+1) d
-    \pmm.
-  \end{align}
-  On utilise alors l'hypothèse \( ac \ge d \) pour majorer le deuxième terme
-  par \( 5ac/ 3 \), puis on remarque que \( 1/d \le c/3 \) pour conclure.
+  C'est le corollaire précédent appliqué avec \( m = 2g \) et en opérant
+  quelques simplifications d'écriture et majorations.
 \end{proof}
-
-\begin{rem}
-  Dans le cas \( c = 1 \) et \( b = \ln 2904 \), on peut comparer avec le
-  lemme~2.14.7 page~150 de \cite{farhith}. Remarquons que les notations sont
-  différentes : nous notons \( a \) la quantité qu'il note \( \ln a \) et
-  notre fonction \( f \) diffère de sa fonction \( g \) d'un terme \( a \)
-  (dans nos notations).
-
-  Compte tenu de ces différentes et dans nos notations, \bsc{Farhi} trouve un
-  entier \( m_0 \) tel que \( f(m_0) \le 183 a / \ln a \) alors que le lemme
-  précédent donne un entier \( x_0 \) tel que \( f(x_0) \le 2 (a + 10) \) ;
-  les deux sous la condition \( a \ge \ln 15788 \approx 10 \).  Notre résultat
-  est évidemment moins fin pour les grandes valeurs de \( a \), mais il est
-  meilleur tant que \( a \) reste petit (inférieur à \( \expb^{91} \) par
-  exemple).
-
-  Le \( m_0 \) de \bsc{Farhi} est essentiellement optimal, comme le montre son
-  lemme ; c'est donc dans son estimation de \( f(m_0) \) qu'a lieu la perte
-  pour les petites valeurs de \( a \). Le gain pour les grandes valeurs peut
-  en revanche provenir du fait que \( m_0 \) est plus proche du réel
-  minimiseur que \( x_0 \), de la méthode utilisée pour estimer son image, ou
-  plus probablement des deux. Par ailleurs, les calculs de \bsc{Farhi}
-  semblent difficiles à généraliser, d'une part car certaines de ses
-  estimations reposent sur des vérifications numériques, d'autre par parce que
-  si \( c \neq 1 \), la fonction ne semble plus satisfaire d'équation
-  différentielle du même type que celle de sa page~153.
-\end{rem}
-
-Voyons comment ce lemme s'applique à notre situation. En notant \( \alpha =
-  87 \nclmaps \cdot 5^g \adeg / \eps \), on a
-\begin{align}
-  \ln\Lambda_5
-  & =
-  \frac{m \ln\alpha}{m-g}
-  + m \ln \bigl( (\sqrt2 m g \adeg)^g \deg\va \bigr)
-  \le
-  m^2
-  (g+1) \ln(\alpha) \ln \bigl( (\sqrt2 g \adeg)^g \deg\va \bigr)
-  \pmm.
-\end{align}
-On note alors \( \gamma_1 \) le facteur indépendant de \( m \) dans cette
-majoration, de sorte que
-\begin{align}
-  N(m)
-  & \le
-  2 \cdot 5^{\card \placesapx} \cdot
-  (\adeg / \eps)^{1/2}
-  (2mg)^{mg+1}
-  m^2 \gamma_1
-  \left(
-    3 \sqrt m (2\alpha)^{ \frac{m}{2(m-g)} }
-  \right)^r
-  \\ & \le
-  \underbrace{
-    4 g \cdot 5^{\card \placesapx}
-    (\adeg / \eps)^{1/2}
-    \gamma_1 3^r
-  }_{\displaystyle \gamma_2}
-  \cdot
-  \underbrace{
-    m^{mg} (2g)^{mg} m^{3 + r/2} (2\alpha)^{ \frac{rm}{2(m-g)} }
-  }_{\displaystyle N_1(m)}
-\end{align}
-où \( \gamma_2 \) ne dépend pas de \( m \). On écrit alors
-\begin{align}
-  \ln N_1(m)
-  & =
-  gm \ln m +
-  gm \ln(2g)
-  + (3 + r/2) \ln m
-  + \frac{m}{m-g} (r/2) \ln(2\alpha)
-  \\ & \le
-  gm \ln m +
-  m \bigl( g \ln(2g) + \frac32 + \frac r4 \bigr)
-  + \frac r2 \ln(2\alpha)
-  + \frac{g}{m-g} \frac r2 \ln(2\alpha)
-  \pmm.
-\end{align}
-En posant \( b = \ln(2g) + 3/(2g) + r/(4g) \) et \( a = r \ln(2\alpha) / (2g) \)
-ainsi que \( c = g \), on a \( \ln N_1(m) \le g \, ( f(m) + a) \) où \( f \)
-est la fonction du lemme~\ref{l:minifun}. On vérifie aisément que \( b \ge 2
-\) et \( a \ge 0 \), de sorte qu'on peut appliquer le lemme. On pose donc
-\begin{equation}
-  d
-  =
-  1 + \ln(2g) + 3/(2g) + r/(4g) + \ln(1+g)
-  \le
-  2 \ln(2g) + 1 + \frac{ 6 + r }{ 4g }
-\end{equation}
-puis \( x_0 = \sqrt{ac/d} \). En supposant que \( ac \ge d \) (hypothèse sur
-laquelle nous reviendrons),  le lemme cité dit alors que
-\begin{equation}
-  N_1(m)
-  \le
-  2ac + (c+1) d
-  =
-  \dots % XXX
-\end{equation}
 
 
 
