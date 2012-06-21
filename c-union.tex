@@ -843,22 +843,22 @@ laquelle nous reviendrons),  le lemme cité dit alors que
 \section{Grands points, cas général}
 \label{sec:any}
 
-Comme on l'a vu dans la section précédente, on aura intérêt dans l'inégalité
-de \bsc{Vojta} (corollaire~\vref{c:vojta-gen2}) à toujours prendre l'option \(
-  s = 1 \) et à poser \( m = 2g \). Par ailleurs, pour appliquer notre
-inégalité de \bsc{Mumford} pour le cas général (théorème~\vref{t:mumford-gen})
-nous devons nous restreindre au cas où \( \va \) est plongée dans \( \projd \)
+Dans toute cette section, on suppose (sans nécessairement le rappeler à chaque
+énoncé) que \( \va \) est plongée dans \( \projd \)
 par un plongement de \bsc{Mumford} modifié associé à une polarisation
-principale ; dans ce cas nous avons \( \deg \va = N = n+1 = 16^g \).
+principale, ce qui est nécessaire pour appliquer le
+théorème~\vref{t:mumford-gen}. Cette hypothèse implique en particulier que
+\( \deg \va = N = n+1 = 16^g \).
 
-Commençons par énoncer l'inégalité de \bsc{Vojta} sous ces conditions.
+Par ailleurs, comme on l'a vu dans la section précédente, on aura intérêt dans
+l'inégalité de \bsc{Vojta} (corollaire~\vref{c:vojta-gen2}) à toujours prendre
+l'option \( s = 1 \) et à poser \( m = 2g \).  Commençons par énoncer
+l'inégalité de \bsc{Vojta} sous ces conditions.
 
 \begin{coro} \label{c:vojta-gen3}
-  Supposons \( \va \) plongée dans \( \projd \) par un plongement de
-  \bsc{Mumford} modifié associé à une polarisation principale ; soit
-  \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
-  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
-    \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_{2g} \)
+  Soit \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de
+  dimension \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe
+  dans \( \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_{2g} \)
   satisfaisant simultanément aux conditions suivantes :
   \begin{align}
     0 < \distv{x_i} \avar
@@ -929,12 +929,7 @@ Commençons par énoncer l'inégalité de \bsc{Vojta} sous ces conditions.
   pour simplifier l'expression de \( \cst{ht-v-gen2} \).
 \end{proof}
 
-\clearpage
-
-Commençons par comparer les conditions des inégalités de \bsc{Mumford}
-(théorème~\vref{t:mumford-gen}) et de \bsc{Vojta}
-(corollaire~\vref{c:vojta-gen2}) concernant la largeur des secteurs de cône.
-Posons pour commencer
+Posons maintenant et pour le reste de cette section
 \begin{align}
   M
   & =
@@ -957,26 +952,32 @@ condition~\eqref{e:rho-phi-gen} (on peut de nouveau supposer \( \eps < 2\adeg
 qu'on imposera bientôt). Par ailleurs, à un facteur \( 2 \) près, chacune de
 ces deux quantités est aussi grande au possible sous cette condition.
 
-Les conditions d'angle à satisfaire pour pouvoir appliquer simultanément les
-inégalités de \bsc{Mumford} et \bsc{Vojta} sont donc
+De plus, on observe les relations suivantes entre \( M \) et les différentes
+quantités apparaissant dans l'inégalité de \bsc{Vojta} ci-dessus :
 \begin{equation}
-  \cos(x, y) \ge 1 - \phi
+  \eps^2 \Lambda_6
+  \le
+  M
   \quad\text{et}\quad
-  \cos(x, y) \ge 1 -
-  \frac1m
-  \left(
-    \frac{ \eps }{ 86 \nclmaps \cdot 5^g \adeg }
-  \right)^{ \frac{m}{m-g} }
+  (4g)^{4g^2}
+  \le
+  \sqrt M
+  \le
+  M
 \end{equation}
-\worknote{Et \( N \) ?}%
-où l'on voit facilement, vu la définition de \( M \), que la première de ces
-deux conditions est en général la plus restrictive, sauf évidemment si \( m \)
-est extrêmement grand. On n'a bien entendu aucun intérêt à rendre la deuxième
-condition plus restrictive, d'autant plus que prendre \( m \) grand rend les
-autres conditions de l'inégalité de \bsc{Vojta} encore plus restrictives. Il
-est donc avantageux de fixer \( m = g+1 \) dans l'inégalité de \bsc{Vojta}.
-
-% XXX
+puis, en posant
+\begin{equation}
+  \newcst[\vaemb, \avar]{ht-comb}
+  =
+  \hautl1 \avar + \max \bigl( \hautl1{\va}, \hlclab, \htcmp \bigr)
+\end{equation}
+on a aisément
+\begin{equation}
+  \cst{ht-v-gen2}
+  \le
+  \cst{ht-comb} \, \adeg^{M-1} (2M)^{ (M+1)\adim}
+  \pmm.
+\end{equation}
 
 Nous sommes maintenant prêts à suivre le plan de la
 section~\vref{sec:big-points} en commençant par majorer le nombre de points
@@ -1000,38 +1001,31 @@ dans chaque cône tronqué.
     & > \mu
     \\ \label{e:big-any-cos}
     \cos(x_i, x_j)
-    & > 1 - \phi
+    & > 1 - \eps \phi
   \end{align}
-  avec
+  avec \( (\alpha)_v \) comme ci-dessus et
   \begin{equation}
     \mu =
-    \frac8{ \eps^{(4g)^{4g^2}} }
-    \adeg^{M-1} (2M)^{ (M+1)\adim + 1}
-    \Bigl(
-      \hautl1 \avar
-      + \adeg M^2 \bigl( \ln \adeg + \hlclab + \htcmp + \ln(n+1) \bigr)
-    \Bigr)
+    \cst{ht-comb}
+    \, \eps^{-(4g)^{4g^2}}
+    \adeg^{M-1} (2M)^{ (M+1)\adim + 4}
+    \pmm.
   \end{equation}
-  et \( \phi \) et \( M \) comme ci-dessus. Alors on a
+  Alors on a
   \begin{equation}
     p
     \le
     2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
   \end{equation}
-  avec \( \rho \) et \( \Lambda_6 \) comme ci-dessus.
+  avec \( \Lambda_6 \) comme ci-dessus.
 \end{lem}
 
 \begin{proof}
-  D'après les discussions précédentes, les conditions~\eqref{e:big-any-ha}
-  et~\eqref{e:big-any-cos} impliquent les conditions correspondantes du
-  théorème~\vref{t:mumford-gen} et du corollaire~\vref{c:vojta-gen3}. On voit
-  facilement que c'est également le cas pour l'hypothèse~\eqref{e:big-any-big}
-  : en effet, la condition~\eqref{e:Mbig-gen} est visiblement celle qui a la
-  plus forte dépendance en chacun des paramètres sauf \( \eps \), où on a donc
-  pris l'exposant du corollaire précédent.
-
-  On peut donc appliquer simultanément ces deux résultats et en conclure comme
-  dans la preuve du lemme~\vref{l:big-by-cone} que
+  D'après les remarques et majorations précédentes, il est assez clair que les
+  conditions du présent énoncé impliquent les conditions correspondantes du
+  théorème~\vref{t:mumford-gen} et du corollaire~\vref{c:vojta-gen3}.  On peut
+  donc appliquer simultanément ces deux résultats et en conclure comme dans la
+  preuve du lemme~\vref{l:big-by-cone} que
   \begin{equation}
     p
     \le
@@ -1041,9 +1035,11 @@ dans chaque cône tronqué.
     \le
     2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
   \end{equation}
-  où \( \rho \) et \( \Lambda_6 \) sont comme ci-dessus, compte tenu du fait
-  que cette fois-ci il peut y avoir jusqu'à \( M-1 \) points par lunule.
+  compte tenu du fait que cette fois-ci il peut y avoir jusqu'à \( M-1 \)
+  points par lunule de larguer \( 1 + \rho \).
 \end{proof}
+
+\cleardoublepage
 
 On en déduit un décompte complet des grands points.
 
@@ -1119,6 +1115,18 @@ On en déduit un décompte complet des grands points.
     }
   \end{equation}
   compte tenu de la définition de \( \rho \).
+
+
+  De plus, on observe que
+  \begin{equation}
+    \ln \Lambda_6
+    \le
+    \ln M + 2 \ln(1/\eps)
+    \le
+    \sqrt M \ln(1/\eps)
+  \end{equation}
+  dès que \( \eps \le \expb^{-1} \) (on rappelle que \( a + b \le ab \) dès
+  que les deux sont supérieurs ou égaux ) \( 2 \)).
 \end{proof}
 
 
