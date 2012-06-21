@@ -843,6 +843,94 @@ laquelle nous reviendrons),  le lemme cité dit alors que
 \section{Grands points, cas général}
 \label{sec:any}
 
+Comme on l'a vu dans la section précédente, on aura intérêt dans l'inégalité
+de \bsc{Vojta} (corollaire~\vref{c:vojta-gen2}) à toujours prendre l'option \(
+  s = 1 \) et à poser \( m = 2g \). Par ailleurs, pour appliquer notre
+inégalité de \bsc{Mumford} pour le cas général (théorème~\vref{t:mumford-gen})
+nous devons nous restreindre au cas où \( \va \) est plongée dans \( \projd \)
+par un plongement de \bsc{Mumford} modifié associé à une polarisation
+principale ; dans ce cas nous avons \( \deg \va = N = n+1 = 16^g \).
+
+Commençons par énoncer l'inégalité de \bsc{Vojta} sous ces conditions.
+
+\begin{coro} \label{c:vojta-gen3}
+  Supposons \( \va \) plongée dans \( \projd \) par un plongement de
+  \bsc{Mumford} modifié associé à une polarisation principale ; soit
+  \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
+  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+    \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_{2g} \)
+  satisfaisant simultanément aux conditions suivantes :
+  \begin{align}
+    0 < \distv{x_i} \avar
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{x_1}
+    & > \cst{ht-v-gen2} \Lambda_6^{(4g)^{4g^2}}
+    \\
+    \hautn{x_i} & > \hautn{x_{i-1}}
+    \cdot \Lambda_6^{(4g)^{4g^2}}
+    \\
+    \cos(x_i, x_j) & > 1 -
+    \frac{ \eps^2 }{ 2^{15g + 14} \adeg^2 }
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda_6
+    & =
+    2^{35g^3} \, \adeg^{2g^2 + 2} \, \eps^{-2}
+    \\
+    \newcst[\vaemb]{ht-v-gen2}
+    & =
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
+    \bigr)
+    + 32^g \Bigl(
+      \adeg^{16^g + 1} 16^g
+      + \adeg^g \bigl ( \hautl1 \avar + 32^g \adeg^2 \bigr)
+    \Bigr)
+  \end{align}
+  et \( (\alpha_v)_v \) une certaine famille de réels tous supérieurs ou égaux
+  à \( 1 \), avec \( \sum\placerange \degv\alpha_v \le \cst{ht-v-gen2}
+  \).
+\end{coro}
+
+\begin{proof}
+  C'est le corollaire~\vref{c:vojta-gen2} avec \( m = 2g \) et l'option \( s
+    = 1 \), où l'on a simplifié la majoration de la « hauteur » de \( \alpha
+  \) en tenant compte de~\eqref{e:maj-ht-alpha}. On a par ailleurs utilisé les
+  majorations suivantes :
+  \begin{gather}
+    \frac1{2g}
+    \left( \frac{ \eps }{ 86 \cdot 16^g \cdot 5^g \cdot d } \right)^2
+    \le
+    \frac{ \eps^2 }{ 2^g \bigl( 2^7 \cdot 2^{7g} d \bigr)^2 }
+    \\
+    86^2 \cdot 40^{2g} \adeg^2 \, \eps^{-2}
+    (32\sqrt2 g^2 \adeg)^{2g^2}
+    \le
+    86^2 \, 40^{2g} \, 2^{11g^2} g^{4g^2}
+    \cdot \adeg^{2g^2 + 2} \, \eps^{-2}
+    \le
+    2^{35g^3} \, \adeg^{2g^2 + 2} \, \eps^{-2}
+  \end{gather}
+  où la dernière majoration provient d'une vérification numérique pour \( g =
+    1 \). De plus, on a remarqué que
+  \begin{align}
+    (\adim + 2) \ln (\adeg + 1) ( \adeg + 16^g )
+    + \ln g
+    \le
+    (g + 1) \adeg ( \adeg + 16^g + 1)
+    \le
+    2^g \adeg^2 \cdot 16^g
+  \end{align}
+  pour simplifier l'expression de \( \cst{ht-v-gen2} \).
+\end{proof}
+
+\clearpage
+
 Commençons par comparer les conditions des inégalités de \bsc{Mumford}
 (théorème~\vref{t:mumford-gen}) et de \bsc{Vojta}
 (corollaire~\vref{c:vojta-gen2}) concernant la largeur des secteurs de cône.
@@ -888,83 +976,7 @@ condition plus restrictive, d'autant plus que prendre \( m \) grand rend les
 autres conditions de l'inégalité de \bsc{Vojta} encore plus restrictives. Il
 est donc avantageux de fixer \( m = g+1 \) dans l'inégalité de \bsc{Vojta}.
 
-Par ailleurs, comme on l'a vu dans la démonstration du
-corollaire~\vref{c:big-gen-prod}, on a tout intérêt à choisir l'option \( s =
-  1 \) dans l'énoncé du corollaire~\vref{c:vojta-gen2}. Nous énonçons donc
-ici la version de ce corollaire que nous utiliserons.
-
-\begin{coro} \label{c:vojta-gen3}
-  Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
-  \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
-  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
-    \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_{g+1} \)
-  satisfaisant simultanément aux conditions suivantes :
-  \begin{align}
-    0 < \distv{x_i} \avar
-    & <
-    \alpha_v^{-1}
-    \hautm2{x_i}^{-\wtapx \eps}
-    \quad \forall v \in \placesapx
-    \\
-    \hautn{x_1}
-    & > \cst{ht-v-gen1} \Lambda_6^{(4g)^{4g^2}}
-    \\
-    \hautn{x_i} & > \hautn{x_{i-1}}
-    \cdot \Lambda_6^{(4g)^{4g^2}}
-    \\
-    \cos(x_i, x_j) & > 1 -
-    \frac1{ g+1 }
-    \left(
-      \frac{ \eps }{ 86 \nclmaps \cdot 5^g \adeg }
-    \right)^{ g+1 }
-  \end{align}
-  avec
-  \begin{align}
-    \Lambda_6
-    & =
-    86 (\deg\va) \adeg \, \eps^{-1} (15 g^2 \adeg)^g
-    \\
-    \newcst[\vaemb]{ht-v-gen2}
-    & =
-    \adeg \max \bigl(
-      \adeg^g \hautl1{\va}, \hlclab, \htcmp
-    \bigr)
-    + (g + 1) \deg \va
-    \Bigl(
-      \adeg^n \ln(\adeg) n
-    \\ & \qquad
-      + \adeg^g \bigl (
-        \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln g
-      \bigr)
-    \Bigr)
-  \end{align}
-  et \( (\alpha_v)_v \) une certaine famille de réels tous supérieurs ou égaux
-  à \( 1 \), avec \( \sum\placerange \degv\alpha_v \le \cst{ht-v-gen2}
-  \).
-\end{coro}
-
-\begin{proof}
-  C'est le corollaire~\vref{c:vojta-gen2} avec \( m = g+1 \) et l'option \( s
-    = 1 \), où l'on a simplifié la majoration de la « hauteur » de \( \alpha
-  \) en tenant compte de~\eqref{e:maj-ht-alpha}. On a par ailleurs utilisé les
-  majorations suivantes :
-  \begin{gather}
-    86 \nclmaps \cdot 5^g \adeg \, \eps^{-1}
-    (\sqrt2 g(g+1) \adeg)^g \deg \va
-    \le
-    86 (\deg\va) \adeg \, \eps^{-1} (15 g^2 \adeg)^g
-    \\
-    (g+1) (2g(g+1))^{g(g+1)}
-    \le
-    2^{g(g+2)}
-    (2g^2)^{2g^2}
-    \le
-    (4g)^{4g^2}
-  \end{gather}
-  pour simplifier l'écriture de \( \Lambda_6 \) et de son exposant.
-\end{proof}
+% XXX
 
 Nous sommes maintenant prêts à suivre le plan de la
 section~\vref{sec:big-points} en commençant par majorer le nombre de points
