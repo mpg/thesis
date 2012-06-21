@@ -11,14 +11,18 @@
 % booleans for options, default values [[2
 %
 \newif\if@private       \@privatetrue
-\newif\if@showbad       \@showbadtrue
 \newif\if@domark        \@domarktrue
+\setlength{\overfullrule}{5pt}
 
 % option declarations [[2
 %
 \DeclareOption {full}   {\let\includeonly\@gobble}
 \DeclareOption {pph}    {\@privatefalse}
 \DeclareOption {nomark} {\@domarkfalse}
+\DeclareOption {final}  {
+  \let\includeonly\@gobble \@privatefalse \@domarkfalse
+  \setlength{\overfullrule}{0pt}
+}
 \ProcessOptions \relax
 
 % use Koma with custom encoding and fonts and colors [[2
@@ -93,10 +97,6 @@
     \normalfont\scriptsize\ttfamily #1%
   }
 \fi
-
-% overfullrule (implement 'nobad' option) [[2
-%
-\setlength{\overfullrule}{\if@showbad 5\else 0\fi pt}
 
 % use git information (implement 'nomark' option) [[2
 %
