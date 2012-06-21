@@ -13,8 +13,6 @@
   % c-mumford,
   % c-union,
   %
-  % a-plong,
-  %
   % biblio,
 }
 
@@ -22,25 +20,25 @@
 
 \begin{document}
 
+\frontmatter
+
 \include{title}
 \inlineinclude{toc}{%
+  \setcounter{tocdepth}{1}
   \tableofcontents
   \cleardoublepage
 }
+
+\mainmatter
 
 \include{c-intro}
 \include{c-vojta}
 \include{c-mumford}
 \include{c-union}
 
-\appendix
-
-\include{a-plong}
-
 \inlineinclude{biblio}{%
-  \chapter{Références bibliographiques}
+  \addchap{Références bibliographiques}
   {\sloppy \printbibliography[heading=bibempty]}
-  \cleardoublepage
 }
 
 \end{document}
