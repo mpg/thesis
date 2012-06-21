@@ -220,7 +220,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
 En pratique, la fonction de comptage ne dépend pas de l'ensemble de places
 considérées, on utilisera donc le scolie suivant.
 
-\begin{sco}
+\begin{sco} \label{s:ha-prod}
   Dans la situation du lemme précédent, si l'on suppose de plus que la
   fonction \( g \) ne dépend pas de son deuxième argument, alors on a
   \( \card E(\eps, S) \le 5^{\card S} g(\eps/2) \).
@@ -394,7 +394,7 @@ On utilise ensuite le fait suivant.
   C'est le corollaire~6.1, p.~542 de~\cite{remdcl}.
 \end{proof}
 
-\begin{prop} \label{p:big-gen}
+\begin{coro} \label{c:big-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
@@ -425,7 +425,7 @@ On utilise ensuite le fait suivant.
   \end{align}
   avec \( \Lambda_4 \), \( \cst{ht-v-gen1} \), \( s \)  et \( \alpha_v \)
   comme au lemme~\vref{l:big-by-cone}.
-\end{prop}
+\end{coro}
 
 \begin{proof}
   En utilisant le fait précédent avec \( \gamma = m \cst{v-gen} \) , on
@@ -501,7 +501,7 @@ sa forme produit.
 \end{coro}
 
 \begin{proof}
-  On applique le scolie précédent à la proposition~\vref{p:big-gen} comme
+  On applique le scolie~\vref{s:ha-prod} au corollaire~\vref{c:big-gen} comme
   prévu à la remarque~\vref{r:app-prod}. On constate que vu la définition de
   \( \Lambda_4 \), en y remplaçant \( \eps \) par \( \eps / 2 \), on
   ajoute \( \ln(2) m / (m-g) \) à son logarithme et que
@@ -1121,6 +1121,62 @@ On en déduit un décompte complet des grands points.
     \, \eps^{-r - 1/2} \ln(1/\eps)
   \end{equation}
   compte tenu de la définition de \( \rho \).
+\end{proof}
+
+\begin{coro}
+  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
+    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
+    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( 0 < \eps <
+    \expb^{-1} \).
+  On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
+  satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
+  \begin{align}
+    0
+    & < \prod\placerange \distv{x_i} \avar^\degv
+    < \hautm2{x_i}^{-\eps}
+    \\
+    \hautn{x_1}
+    & >
+    \cst{ht-comb}
+    \, \eps^{-(4g)^{4g^2}}
+    \adeg^{M-1} (3M)^{ (M+1)\adim + 4}
+  \end{align}
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    5^{\card\placesapx}
+    M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    \, \eps^{-r - 1/2} \ln(1/\eps)
+  \end{equation}
+  avec
+  \begin{align}
+    \cst{ht-comb}
+    & =
+    \hautl1 \avar + \max \bigl( \hautl1{\va}, \hlclab, \htcmp \bigr)
+    \\
+    M
+    & =
+    \bigl(
+    2^{34} \cdot [\cdn : \Q] \hlclab \cdot \adeg
+    \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
+    + 1
+  \end{align}
+\end{coro}
+
+\begin{proof}
+  Ce résultat se déduit du corollaire précédent de la même façon que le
+  corollaire~\vref{c:big-gen-prod} se déduit du corollaire~\vref{c:big-gen} :
+  on commence par appliquer le scolie~\vref{s:ha-prod}, ce qui a pour coût,
+  dans le décompte, de remplacer \( \eps \) par \( \eps/2 \) et d'ajouter un
+  facteur \( 5^{\card\placesapx} \). Ensuite, pour absorber le \( \alpha \)
+  restant dans la condition d'approximation, il suffit de diviser encore \(
+    \eps \) par \( 2 \), cette fois non seulement dans le décompte mais aussi
+  dans la condition de hauteur.
+
+  On constate ensuite que les constantes apparues près des \( \eps \) sont
+  facilement absorbées dans les autres facteurs en remplaçant \( 2M \) par \(
+    3M \) comme ci-dessus.
 \end{proof}
 
 
