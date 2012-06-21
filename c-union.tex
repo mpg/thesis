@@ -1036,17 +1036,16 @@ dans chaque cône tronqué.
     2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
   \end{equation}
   compte tenu du fait que cette fois-ci il peut y avoir jusqu'à \( M-1 \)
-  points par lunule de larguer \( 1 + \rho \).
+  points par lunule de largeur \( 1 + \rho \).
 \end{proof}
-
-\cleardoublepage
 
 On en déduit un décompte complet des grands points.
 
 \begin{coro}
   Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
     \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
-    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( \eps > 0 \).
+    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( 0 < \eps <
+    \expb^{-1} \).
   On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
   satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
   \begin{align}
@@ -1059,28 +1058,28 @@ On en déduit un décompte complet des grands points.
     \hautn{x_1}
     & > \mu
   \end{align}
-  avec \( \mu \), \( \phi \) et \( M \) comme ci-dessus. Alors on a
+  avec \( (\alpha_v)_v \) et \( \mu \) comme ci-dessus. Alors on a
   \begin{equation}
     p
     \le
     M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
-    \cdot \eps^{-r/2 - 1}
+    \, \eps^{-r - 1/2} \ln(1/\eps)
+    \pmm.
   \end{equation}
-  avec \( \rho \) et \( \Lambda_6 \) comme ci-dessus.
 \end{coro}
 
 \begin{proof}
-  On applique le fait~\vref{f:nb-cones} avec \( \gamma = \phi \) pour
+  On applique le fait~\vref{f:nb-cones} avec \( \gamma = \eps\phi \) pour
   recouvrir l'espace euclidien \( \grp \otimes_\Z \R \) muni du produit
   scalaire donné par la hauteur de \NT par des ensembles dans lesquels deux
   points quelconques satisfont~\eqref{e:big-cos}. Le nombre d'ensembles
   nécessaires est au plus
   \begin{equation}
-    \bigl( 1 + \sqrt{ 8 / \phi } \bigr)^r
+    \left( 1 + \sqrt{ \frac{ 8 }{ \eps\phi } } \right)^r
     \le
-    \bigl( 1 + (4\sqrt 2 / \rho ) \bigr)^r
+    \left( 1 + \frac{ 4\sqrt 2 }{ \rho \sqrt\eps } \right)^r
     \le
-    \bigl( 6 / \rho \bigr)^r
+    \left( \frac{ 6 }{ \rho \sqrt\eps } \right)^r
   \end{equation}
   en utilisant le fait que \( \phi = \rho^2 / 4 \) d'après leurs définitions.
   Le lemme précédent donne le nombre de points dans chaque ensemble, on a donc
@@ -1088,11 +1087,20 @@ On en déduit un décompte complet des grands points.
     p
     \le
     2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 \, 6^r }{ \rho^{r+1} }
+    \, \eps^{-r/2}
     \pmm.
   \end{equation}
-  On remarque maintenant que \( \ln x \le \sqrt x \) pour tout \( x \) et que
-  \( \Lambda_6 \le M / \eps \), de sorte que \( \ln \Lambda_6 \le
-    \sqrt{M/\eps} \). Par ailleurs, on remarque que
+  On remarque maintenant que
+  \begin{equation}
+    \ln \Lambda_6
+    \le
+    \ln M + 2 \ln(1/\eps)
+    \le
+    \sqrt M \ln(1/\eps)
+  \end{equation}
+  dès que \( \eps \le \expb^{-1} \) (on rappelle que \( a + b \le ab \) dès
+  que les deux sont supérieurs ou égaux ) \( 2 \)).  Par ailleurs, on remarque
+  que
   \begin{equation}
     2 g (4g)^{4g^2}
     \le
@@ -1106,27 +1114,13 @@ On en déduit un décompte complet des grands points.
   \begin{equation}
     p
     \le
-    \frac{ M^2 }{ \rho^{r+1} \sqrt\eps }
+    \frac{ M^2 }{ \rho^{r+1} }
+    \, \eps^{-r/2} \ln(1/\eps)
     \le
-    \frac{
-      M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
-    }{
-      \eps^{r/2 + 1}
-    }
+    M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    \, \eps^{-r - 1/2} \ln(1/\eps)
   \end{equation}
   compte tenu de la définition de \( \rho \).
-
-
-  De plus, on observe que
-  \begin{equation}
-    \ln \Lambda_6
-    \le
-    \ln M + 2 \ln(1/\eps)
-    \le
-    \sqrt M \ln(1/\eps)
-  \end{equation}
-  dès que \( \eps \le \expb^{-1} \) (on rappelle que \( a + b \le ab \) dès
-  que les deux sont supérieurs ou égaux ) \( 2 \)).
 \end{proof}
 
 
