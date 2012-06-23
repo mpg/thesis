@@ -68,6 +68,8 @@ la section~\vref{sec:obstruction}.
 Pour le cas général, l'énoncé est le suivant.
 
 \begin{thm} \label{t:mumford-gen}
+  On suppose \( \va \) plongée dans \( \projd \) par un plongement de
+  \bsc{Mumford} modifié associé à une polarisation principale.
   Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
     \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
     \subset \va(\Qbar) \) de rang fini \( r \), puis on pose
@@ -105,7 +107,7 @@ Pour le cas général, l'énoncé est le suivant.
     \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
     \Bigl(
       \hautl1 \avar
-      + \adeg m^2 \bigl( \ln \adeg + \hlpm + \htcmp + \ln(n+1) \bigr)
+      + 2 \adeg m \bigl( \ln \adeg + \hlpm + \htcmp \bigr)
     \Bigr)
     \quad\ \
     \label{e:Mbig-gen}
@@ -1013,7 +1015,7 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \hautl2 z
     \le
-    (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m }
+    (m-1) (\rho^2/4 + 2\phi + \rho\phi) \hautn{ x_m }
     + (m-1) \htcmp
     \pmm.
   \end{equation}
@@ -1136,11 +1138,18 @@ section~\vref{sec:mumford-grp}.
     \label{e:liou-cst2}
     \pmm.
   \end{align}
-  Par ailleurs, le lemme~\vref{l:img-small} et l'hypothèse~\eqref{e:rho-phi-gen}
-  donnent
+  Par ailleurs, le lemme~\vref{l:img-small} et
+  l'hypothèse~\eqref{e:rho-phi-gen} donnent
   \begin{align}
     (\deg Z) \hautl2 z
     & \le
+    \adeg^m \, 2^{mu} \, m^{(m+1)u - 1}
+    \left(
+      \frac{ \eps }{ \adeg^m (2m)^{(m+1)\adim} }
+      (m-1) \hautn{ x_m }
+      + (m-1) \htcmp
+    \right)
+    \\ & \le
     \frac\eps2 \hautn{ x_m }
     + \adeg^m (2m)^{(m+1)\adim} \htcmp
     \pmm.
@@ -1148,7 +1157,9 @@ section~\vref{sec:mumford-grp}.
 
   On peut maintenant substituer cette estimation ainsi que~\eqref{e:liou-cst2}
   et le résultat du corollaire~\vref{c:sm-ht} dans l'inégalité de
-  \bsc{Liouville} écrite en~\eqref{e:liou} :
+  \bsc{Liouville} écrite en~\eqref{e:liou}, puis simplifier l'expression
+  notamment en remarquant que, vu l'hypothèse sur le plongement, on a \( n+1 =
+    16^g \) :
   \begin{align}
     \sum\placerange \degv \ln\distv z Z
     & \ge
@@ -1162,10 +1173,10 @@ section~\vref{sec:mumford-grp}.
     - \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
     \\ & \ge
     - \frac\eps2 \hautn{ x_m }
-    - 8 \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl1 \avar
+    - 4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl1 \avar
     \\ & \qquad
     - \adeg^m (2m)^{ (m+1)\adim + 2}
-    \bigl( 2\ln \adeg + \hlpm + \htcmp + 5\ln(n+1)/4 \bigr)
+    \bigl( 2\ln \adeg + \hlpm + \htcmp \bigr)
     \pmm.
   \end{align}
   Dans l'autre sens, le lemme~\vref{l:img-apx} dit que
@@ -1174,15 +1185,15 @@ section~\vref{sec:mumford-grp}.
     \le
     -\eps \hautn{ x_m }
     + \hlpm + 2\adeg \htcmp
-    + \ln 5 + \frac12 \ln(2m-2) + 3 \ln(n+1)
+    + \ln 5 + \frac12 \ln(2m-2) + 3g \ln(16)
   \end{equation}
-  vu l'hypothèse sur \( \eps \). En confrontant ces deux inégalités, il vient
+  vu l'hypothèse sur \( \eps \).  En confrontant ces deux inégalités, il vient
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
-    4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl\htpph \avar
-    + \adeg^m (2m)^{ (m+1)\adim + 3}
-    \bigl( \ln \adeg + \hlpm + \htcmp + \ln(n+1) \bigr)
+    4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl1 \avar
+    + 4 \adeg^m (2m)^{ (m+1)\adim + 2}
+    \bigl( \ln \adeg + \hlpm + \htcmp \bigr)
   \end{equation}
   qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.
 \end{proof}
@@ -1191,6 +1202,8 @@ On rappelle la version quantitative de l'ex-conjecture de \bsc{Mordell-Lang}
 obtenue par \bsc{Rémond}.
 
 \begin{fact}
+  On suppose \( \va \) plongée dans \( \projd \) par un plongement de
+  \bsc{Mumford} modifié associé à une polarisation principale.
   Soient \( \avar \subset \va \) une sous-variété, \( \grp \subset
     \va(\Qbar) \) un sous-groupe de rang fini \( r \) et \( \cdn \) un corps
   de définition de \( \va \).  Alors il existe un entier naturel
