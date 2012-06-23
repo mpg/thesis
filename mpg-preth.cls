@@ -583,6 +583,10 @@
 \newcommand \hlpm [1][\vaemb] {%
   \@ifstar{ c'\sb{#1, v} }{ c'\sb{#1} }}
 
+\newcommand \vaht  { h_\va }
+\newcommand \vacdn { \cdn_\va }
+\newcommand \vahtr { h_{0, \va} }
+
 \newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
 \newcommand*\multab [1] { [#1] }
 \newcommand \rmclab [3] { L\pexp{#1, #2, #3}} % représentation de \clab-

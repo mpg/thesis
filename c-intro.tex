@@ -325,7 +325,6 @@ rappelés par exemple dans \cite[chap.~5 à~7]{nesphilnm}.
 \todo (À écrire.)
 
 
-\clearpage % XXX provisoire
 \section{Définitions et notations}
 
 \subsection{Formes homogènes et multihomogènes}
@@ -370,9 +369,9 @@ autrement dit \( \av p = p^{-1} \) si \( v \) divise un premier \( p \)
 et \( \av 2 = 2 \) si \( v \) est archimédienne.
 
 Si \( v \) est une place finie de \( \cdn \), on définit la norme \(
-  v \)-adique d'une famille finie comme le maximum des valeurs absolues
-\( v \)-adiques de ses éléments. Si \( v \) est archimédienne, on
-utilisera les normes usuelles suivantes :
+  v \)-adique d'une famille finie d'éléments de \( \cdn \) comme le maximum
+des valeurs absolues \( v \)-adiques de ses éléments. Si \( v \) est
+archimédienne, on utilisera les normes usuelles suivantes :
 \begin{align}
   \nv\infty x & = \max_i{ \av{ x_i } } &
   \nv1 x & = \sum_i{ \av{ x_i } } &
@@ -393,7 +392,7 @@ pour \( v \) archimédienne par :
   \int_0^1 \Diff t_1 \dots \int_0^1 \Diff t_n
   \ln \av{ P(\expb^{2\pi i t_1}, \dots, \expb^{2\pi i t_n}) }
 \end{equation}
-si \( P \neq 0 \) et \( \mahler0 = 0 \) ; aux places ultramétriques on notera
+si \( P \neq 0 \) et \( \mvm0 = 0 \) ; aux places ultramétriques on notera
 \( \mvm P = \nv\infty P \).
 
 La seconde, que nous appellerons
@@ -447,39 +446,40 @@ démonstration du lemme~3.3, p.~111 de \cite{remgdmp}, il est établit que si \(
 groupes de \( n + 1 \) variables, dont on note \( p_\alpha \) les
 coefficients, on a
 \begin{equation}
-  \abs{ p_\alpha }
+  \av{ p_\alpha }
   \le
-  \binom \delta \alpha
-  \mahler P
+  \binom \delta \alpha ^\dv
+  \mvm P
   \le
-  \binom \delta \alpha
-  \mespph P
+  \binom \delta \alpha ^\dv
+  \mvp P
 \end{equation}
 ce qui en sommant sur les multimultiindices \( \alpha \) tels que \(
   \vlg\alpha = \delta \), donne immédiatement, par la formule multinomiale :
 \begin{equation} \label{e:l1<mespph}
-  \normlun P
+  \nv1 P
   \le
-  (n+1)^{\lgr\delta}
-  \mespph P
+  (n+1)^{\lgr\delta \dv}
+  \mvp P
   \pmm.
 \end{equation}
 Dans l'autre sens, la définition de la mesure projective donne immédiatement
 \begin{equation} \label{e:mespph<l2}
-  \mespph P
+  \mvp P
   \le
-  \normeuc P
-  \exp( \sum_k \delta_k \cdot \gamma_{n} )
+  \nv2 P
+  \exp( \dv \sum_k \delta_k \cdot \gamma_{n} )
   \le
-  \normeuc P
-  (n+1)^{\lgr\delta}
+  \nv2 P
+  (n+1)^{\lgr\delta \dv}
   \pmm.
 \end{equation}
 
 \subsection{Hauteurs}
 
-On définit la hauteur additive d'une famille finie d'éléments de \( \cdn \),
-d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
+On définit la hauteur additive d'une famille finie d'éléments de \( \cdn \)
+(en particulier, d'un vecteur ou d'un polynôme \lat{via} la famille de ses
+coefficients) comme
 \begin{equation}
   \hautl\star\truc
   =
@@ -490,10 +490,10 @@ d'un polynôme ou d'une forme (multi)homogène sur \( \cdn \) comme
 \end{equation}
 où \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \),
 la somme est prise sur l'ensemble des places de \( \cdn \) et \( \star \)
-désigne l'une des normes ci-dessus ; de même, on notera \( \Hautl\htpph \)
-(resp. \( \Hautl\htmah \)) la hauteur obtenue en utilisant la mesure \(
-  \mvp{} \) (resp. \( \mvm{} \)) au lieu de la norme.  On note
-également \( \Hautm\star = \exp \Hautl\star \) la hauteur multiplicative.
+désigne l'une des normes ci-dessus ; pour une forme (multi)homogène, on notera
+\( \Hautl\htpph \) la hauteur obtenue en utilisant la mesure \( \mvp{} \) au
+lieu de la norme dans la formule ci-dessus.  On note également \( \Hautm\star
+  = \exp \Hautl\star \) la hauteur multiplicative.
 
 La hauteur d'une famille, ainsi définie, est invariante par multiplication de
 cette famille par un scalaire, et ne dépend pas non plus du corps de nombres.
@@ -585,19 +585,20 @@ cas.
 
 \begin{lem} \label{l:hmclab}
   Il existe un entier \( \nclmaps \), un ensemble \( \clmaps \) de \( \nclmaps
-  \) ouverts recouvrant \( \va^2 \), et une paire de constantes \( \hmclab \)
-  et \( \hlclab = \ln \hmclab \), dont la première se décompose en \( \hmclab
-    = \prod_v \hmclab*^\degv \) où les \( \hmclab* \) sont des réels tous
-  supérieurs et presque tous égaux à \( 1 \), possédant la propriété suivante.
+  \) ouverts recouvrant \( \va^2 \), et une constante \( \hmclab \) qui
+  se décompose en \( \hmclab = \prod_v \hmclab*^\degv \) où les \( \hmclab* \)
+  sont des réels tous supérieurs et presque tous égaux à \( 1 \), possédant la
+  propriété suivante.
 
   Pour tout couple d'entiers naturels \( (a, b) \) n'admettant que \( 2 \) et
   \( 3 \) comme diviseurs premiers, il existe une famille \(
     (\rmclab{a}{b}{\clmap})_{\clmap \in \clmaps} \) de \( (n+1) \)-uplets de
   formes telle que :
   \begin{enumerate}
-    \item la famille \( (\rmclab{a}{b}{\clmap}[\ind])\indrange \) représente
-      le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \(
-        \vaemb \) sur (l'image de) \( \clmap \) ;
+    \item la famille
+      \( (\rmclab{a}{b}{\clmap}[\ind])_{\ind\in\set{0, \dots n}} \) représente
+      le morphisme \( (x, y) \mapsto ax - by \) dans le plongement \( \vaemb
+      \) sur (l'image de) \( \clmap \) ;
     \item chaque forme \( \rmclab{a}{b}{\clmap}[\ind] \) est bihomogène de
       bidegré \( (2a^2, 2b^2) \) ;
     \item pour tout place \( v \) et toute carte \( \clmap \), on a
@@ -629,7 +630,7 @@ cas.
   entier naturel \( a \) n'ayant que \( 2 \) et \( 3 \) comme facteurs
   premiers, une famille de \( n+1 \) formes \( F\pexp a \) de degré
   \( a^2 \) représentant globalement la multiplication par \( a \) dans le
-  plongement fixées, et une famille de constantes \( (C_{2,3,v})_v \) presque
+  plongement fixé, et une famille de constantes \( (C_{2,3,v})_v \) presque
   toutes égales à \( 1 \), telles que, pour toute place \( v \),
   \begin{align}
     \nnv1{ F\pexp a }
@@ -642,18 +643,16 @@ cas.
     \pmm.
   \end{align}
   On conclut directement en composant avec le système complet de formes
-  représentant la soustraction et les constantes \( \hmpm* \) associée,
-  données par le lemme suivant.
+  représentant la soustraction donné par le lemme suivant.
 \end{proof}
 
 \begin{lem} \label{l:hmpm}
   Il existe un entier \( \nclmaps \), un ensemble \( \clmaps \) de \( \nclmaps
-  \) ouverts recouvrant \( \va^2 \), une paire de constantes \( \hmpm \)
-  et \( \hlpm = \ln \hmpm \), dont la première se décompose en \( \hmpm
-    = \prod_v (\hmpm*)^\degv \) où les \( \hmpm* \) sont des réels tous
-  supérieurs et presque tous égaux à \( 1 \), et enfin une famille \(
-    (D\pexp\clmap)_{\clmap \in \clmaps} \) de formes bihomogènes de bidegré \(
-    (2, 2) \) telles que
+  \) ouverts recouvrant \( \va^2 \), une constante \( \hmpm \) qui se
+  décompose en \( \hmpm = \prod_v (\hmpm*)^\degv \) où les \( \hmpm* \) sont
+  des réels tous supérieurs et presque tous égaux à \( 1 \), et enfin une
+  famille \( (D\pexp\clmap)_{\clmap \in \clmaps} \) de formes bihomogènes de
+  bidegré \( (2, 2) \) telles que
   \begin{enumerate}
     \item la famille \( (D\pexp\clmap[\ind])\indrange \) représente le
       morphisme de soustraction dans le plongement \( \vaemb \) sur (l'image
@@ -662,9 +661,9 @@ cas.
       \( \nnv1{ D\pexp\clmap } \le \hmpm* \) ;
     \item pour tout \( (x, y) \in \va^2 \) et toute place
       \( v \) il existe une carte \( \clmap \in \clmaps \) telle que
-      \begin{equation} \label{e:clab-loc}
+      \begin{equation} \label{e:pm-loc}
         \frac{
-          \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
+          \nv1{ D\pexp\clmap (x, y) }
         }{
           \nv1 x ^2 \nv1 y ^2
         }
@@ -698,24 +697,33 @@ cas.
 
 \begin{nota} \label{n:vaemb}
   On fixe désormais des constantes et formes telles que données par les deux
-  lemmes précédent et le fait~\ref{f:htcmp}. De plus, on supposera que
-  \( n \ge 2 \) et \( N \ge 3 \), et le degré de (l'image de) \( \va \) dans
-  le plongement est au moins \( 3 \), ce qui est le cas dans les plongements
-  usuels : plongement de \bsc{Weierstrass} pour une courbe elliptique ou en
-  général, plongement de \bsc{Mumford} modifié (voir ci-dessous).
+  lemmes précédent et le fait~\vref{f:htcmp}. On note de plus \( \hlclab = \ln
+    \hmclab \) et \( \hlpm = \ln \hmpm \).
 \end{nota}
+
+\begin{rem} \label{r:vaemb}
+  On supposera que \( n \ge 2 \) et \( N \ge 3 \), et le degré de (l'image de)
+  \( \va \) dans le plongement est au moins \( 3 \), ce qui est le cas dans
+  les plongements usuels : plongement de \bsc{Weierstrass} pour une courbe
+  elliptique ou en général, plongement de \bsc{Mumford} modifié (voir
+  ci-dessous).
+\end{rem}
 
 Discutons maintenant des valeurs explicites qu'on peut donner à certains des
 ces constantes pour des plongements bien choisi. On considère principalement
 les plongements de \bsc{Mumford} modifiés tels que définis dans
-\cite{daphimhva2}. Nous noterons \( \hautl2(\oa) \) la quantité notée \(
+\cite{daphimhva2}. Nous noterons \( \vaht \) la quantité notée \(
   \hautl{}\va \) dans cette référence, car dans nos notations, \( \hautl{}\va
 \) désigne plutôt la hauteur de la forme de \bsc{Chow} de \( \va \) dans ce
-plongement.
+plongement. On notera aussi
+\begin{equation} \label{e:vahtr}
+  \vahtr = [\vacdn : \Q] \, \vaht
+\end{equation}
+où \( \vacdn \) est un corps de définition de \( \va \) plongée.
 
 La proposition~3.9 page~665 de la référence citée dit alors qu'on peut choisir
 \begin{equation}
-  \htcmp = 4^{g+1} \hautl2(\oa) + 3g \ln 2
+  \htcmp = 4^{g+1} \vaht + 3g \ln 2
   \pmm.
 \end{equation}
 Par ailleurs, leur proposition~3.7 page~662 donne une famille totalement
@@ -727,12 +735,12 @@ cartes (qui sont plus précisément les préimages des hyperplans standard
 par le morphisme de soustraction ou d'addition).
 
 De plus, leur lemme~3.11 page~666 donne une famille représentant globalement
-le multiplication par \( 2 \) et possédant des propriétés analogues à celles
+la multiplication par \( 2 \) et possédant des propriétés analogues à celles
 exigées par le lemme~\vref{l:hmclab}. En rapprochant ces formules de celles
 représentant le morphisme d'addition-soustraction (dont le carré est la
 multiplication par deux sur les deux facteurs), il est possible d'expliciter
-\( \hmpm* \) en fonction des constantes (explicites) données par le lemme en
-question.
+\( \hmpm* \) en fonction des constantes (explicites) données par le lemme~3.11
+de la référence citée.
 
 Le point d'achoppement pour finir d'expliciter \( \hmclab \) est donc
 l'existence de formules globales pour la multiplication par \( 3 \) qui soient
@@ -749,6 +757,17 @@ un \emph{nullstellensatz} effectif, une valeur totalement explicite de \(
   \hmclab \). Par ailleurs, \bsc{Farhi} donne une valeur explicite de \(
   \htcmp \) à partir de ces formules (théorème~2.13.3 page~141).
 
+\medskip
+
+Pour conclure cette section, remarquons que, si \( \htcmp \) est utilisée
+assez abondamment dans tous les contextes, en revanche seule la démonstration
+de l'inégalité de \bsc{Vojta} utilise \( \hlclab \) et \( N \) : l'inégalité
+de \bsc{Mumford} repose uniquement sur \( \hlpm \) et n'utilise pas la valeur
+de \( N \). En particulier, les constantes de l'inégalité de \bsc{Mumford}
+liées à la hauteur de \( \va \) peuvent être explicitées totalement, alors que
+celles de l'inégalité de \bsc{Vojta} dépendent de formules globales de
+multiplication par \( 3 \), qui ne semblent pas explicites à ce jour (en
+revanche, une valeur explicite de \( N \) est donnée ci-dessus).
 
 
 \subsection{Distances et conditions d'approximations}

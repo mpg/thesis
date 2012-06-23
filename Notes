@@ -11,11 +11,7 @@ Intro {{{2
 
 (A) Siegel et conjectures de Lang à revoir
 
-(A) Introduire \cdn_\va et \vahtr
-
-(B) Remarque sur l'utilisation des constantes du plongement par les
-différentes parties.
-
+(A) Adapter le reste pour : \vahtr, \hmpm.
 
 Vojta {{{2
 -----
@@ -24,6 +20,8 @@ Mumford {{{2
 -------
 
 (A) Parler polarisation principale
+
+(A) Adapter la prop sur la distance pour \hmpm
 
 (C) Discuter si le groupe de rang fini est indispensable ?
 
