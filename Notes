@@ -1,15 +1,13 @@
-À voir avec pph
-===============
-
 Maths et rédaction {{{1
 ==================
 
 Intro {{{2
 -----
 
-(A) S vs S_0 et l'hypothèse d'approx, etc.
+(A') S vs S_0 et l'hypothèse d'approx, etc.
 
 (B) Siegel et conjectures de Lang à revoir
+(+ remarque sur l'exposant de Liouville)
 
 (B) Reporter les résultats principaux
 
@@ -23,7 +21,7 @@ Vojta {{{2
 Mumford {{{2
 -------
 
-(A) Intégrer relecture
+(B) Faire le lien entre l'énoncé conjectural et l'obstruction
 
 (C) Discuter si le groupe de rang fini est indispensable ?
 
@@ -32,7 +30,7 @@ Décomptes {{{2
 
 (A) Intégrer relecture
 
-(A) Être plus précis sur \card \placesapx
+(A') Être plus précis sur \card \placesapx
 
 (B) Faire l'intro avec la condition de différence modulo B-petit
 

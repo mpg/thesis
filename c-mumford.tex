@@ -152,20 +152,23 @@ On établit ici l'analogue suivant de la classique inégalité de
 \bsc{Liouville}.
 
 \begin{prop} \label{p:liouville}
-  Soit \( V \) une sous-variété de \( \projd \), de dimension \( \adim \) et
-  de degré \( \adeg \). Pour tout point \( x \in \projd(\Qbar) \), on a soit
-  \( x \in V(\Qbar) \) soit
+  Soit \( \avar \) une sous-variété de \( \projd \), de dimension \( \adim \)
+  et de degré \( \adeg \). Pour tout point \( x \in \projd(\Qbar) \), on a
+  soit \( x \in \avar(\Qbar) \) soit
   \begin{equation}
-    \prod_{v \in \placesapx} \distv x V ^\degv
+    \prod_{v \in \placesapx} \distv x \avar ^\degv
     \ge
     \frac1{
       (n+1)^{3/2}
       (3\adeg)^{\adeg (\adim+1)}
-      \, \hautm1{ \chow V }
+      \, \hautm1 \avar
       \, \hautm2 x ^\adeg
     }
-    \pmm.
+    \pmm,
   \end{equation}
+  où \( \placesapx \) est un ensemble fini quelconque de places d'un corps de
+  nombres \( \cdn \) contenant \( x \), et \( \degv = [\cdn_v : \Q_v] / [\cdn
+    : \Q_v] \).
 \end{prop}
 
 Ce type d'inégalité se prouve de façon naturelle avec la distance algébrique
@@ -181,11 +184,11 @@ le lemme~\vref{l:hs-vero}, mais on obtient en fait de meilleurs constantes en
 utilisant la propriété~\vref{p:dv-p2alg-hs}.
 
 \begin{lem} \label{l:liou-hs}
-  Soit \( V \) une hypersurface de \( \projd \), d'équation \( F \) et de
+  Soit \( \avar \) une hypersurface de \( \projd \), d'équation \( F \) et de
   degré \( \adeg \). Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x
-    \in V(\Qbar) \) soit
+    \in \avar(\Qbar) \) soit
   \begin{equation}
-    \prod_{v \in \placesapx} \distv x V ^\degv
+    \prod_{v \in \placesapx} \distv x \avar ^\degv
     \ge
     \frac1{
       (17/8)^\adeg (n+1)^{3/2}
@@ -203,10 +206,10 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
   peut supposer \( m = 1 \) dans cette comparaison. On a alors :
   \begin{align}
     \prod_{v \in \placesapx}
-    \distv x V ^\degv
+    \distv x \avar ^\degv
     & \ge
     \prod_{v \in M(\cdn)}
-    \distv x V ^\degv
+    \distv x \avar ^\degv
     \\ & \ge
     \prod_{v \in M(\cdn)}
     \left(
@@ -222,13 +225,13 @@ utilisant la propriété~\vref{p:dv-p2alg-hs}.
 \end{proof}
 
 \begin{proof}[\proofname{} de la proposition~\vref{p:liouville}]
-  Si \( x \not\in V(\Qbar) \), la proposition~6.1 de~\cite{remdcl}
-  donne une forme \( F \) homogène de degré \( \adeg \), contenant \( V \)
+  Si \( x \not\in \avar(\Qbar) \), la proposition~6.1 de~\cite{remdcl}
+  donne une forme \( F \) homogène de degré \( \adeg \), contenant \( \avar \)
   mais pas \( x \), telle que
   \begin{equation}
     \hautm1 F
     \le
-    \hautm1 V \cdot (\adeg + 1)^{ \adeg (\adim + 1) }
+    \hautm1 \avar \cdot (\adeg + 1)^{ \adeg (\adim + 1) }
   \end{equation}
   en tenant compte des différences de hauteurs utilisées, comme observé dans
   la preuve du lemme~\vref{l:hs-choice}. Il suffit alors d'appliquer le
@@ -674,7 +677,7 @@ section est de contrôler le degré et la hauteur de \( Z \) dans ce plongement
 en fonction du degré et de la hauteur de \( \avar \).
 
 On commence par représenter localement le morphisme \( s_m \) par une famille
-de formes de degrés et hauteur contrôlées.
+de formes de degrés et hauteur contrôlés.
 
 \begin{lem} \label{l:repr-sm}
   Pour tout \( x \in \avar^m \), il existe une famille de \( n' + 1 \) formes
@@ -886,16 +889,13 @@ hauteur de \( Z \).
 Nous avons maintenant tous les ingrédients utiles pour continuer la preuve de
 l'inégalité de \bsc{Mumford}. Néanmoins, nous concluons cette section par une
 étude des fibres de \( s_m \), qui pourrait être utile pour discuter
-d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \(
-  S_\avar \) le stabilisateur de \( \avar \).
+d'améliorations éventuelles de l'inégalité de \bsc{Mumford}.
 
 \begin{lem}
   Pour tous \( m \ge 2 \) et \( x \in \avar^m \), on a
   \begin{equation}
-    x + \delta(S_\avar)
-    \subset
     s_m^{-1} ( s_m(x) ) \cap \avar^m
-    \subset
+    =
     x + \delta\Bigl( \bigcap_{i=1}^m (\avar - x_i) \Bigr)
   \end{equation}
   où \( \delta \colon \avar \to \avar^m \) est le plongement diagonal. En
@@ -904,25 +904,23 @@ d'améliorations éventuelles de l'inégalité de \bsc{Mumford}. Nous noterons \
 \end{lem}
 
 \begin{proof}
-  Par définition de \( s_m \), il est clair que \( x + \delta(A) \subset
-    s_m^{-1} ( s_m(x) ) \). Par ailleurs, la définition de \( S_\avar \) donne
-  clairement \( x + \delta(S_\avar) \subset \avar \), ce qui établit la
-  première inclusion annoncée.
-
-  Dans l'autre sens, pour tout \( y \in s_m^{-1} ( s_m(x) ) \), on a
-  \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x +
-    \delta(y_m - x_m) \). Si de plus \( y \in \avar^m \) on a \( y_m - x_m \in
-    \bigcap_{i=1}^m (\avar - x_i) \).
+  Soit \( y \in s_m^{-1} ( s_m(x) ) \), on a
+  \( y_m - x_m = y_i - x_i \) pour tout \( i \) donc \( y = x + \delta(y_m -
+    x_m) \). Si de plus \( y \in \avar^m \) on a \( y_m - x_m \in
+    \bigcap_{i=1}^m (\avar - x_i) \). Réciproquement, si \( z \in
+    \bigcap_{i=1}^m (\avar - x_i) \), il est clair que \( x + \delta(z) \)
+  appartient à \( \avar^m \) et a la même image que \( x \) par \( s_m \).
 \end{proof}
 
-Étudions dans quel cas l'égalité peut être obtenue. Par définition du
-stabilisateur, on a (ensemblistement) :
+Notons \( S_\avar \) le stabilisateur de \( \avar \), qui peut être défini
+(ensemblistement) par
 \begin{equation}
   S_\avar = \bigcap_{x \in \avar(\Qbar)} (\avar - x)
   \pmm.
 \end{equation}
-Par noethérieneté, il est clair qu'on peut en fait prendre une intersection
-finie ; le lemme suivant précise ce résultat.
+Ainsi, il est clair que chaque fibre contient \( S_V \) ; le lemme suivant
+montre que l'égalité est atteinte pour certains points dès que \( m \) est
+assez grand.
 
 \begin{lem}
   Posons \( M = 2 \adeg^{\adim+1} - \adeg \) ; pour tout \( m \ge M \) il
@@ -948,9 +946,9 @@ finie ; le lemme suivant précise ce résultat.
     \sum_Y \deg Y \, D^{\dim Y}
   \end{equation}
   où la somme est prise sur l'ensemble des composantes de \( X \). Cette
-  définition coïncide avec celle donnée p.~364 de \cite{philz} (voir aussi
-  ($*$) p.~362 de cette référence) ; on est ici dans le cas homogène
-  c'est-à-dire \( p = 1 \) dans les notations de cette référence.
+  définition coïncide avec celle donnée p.~364 de \cite{philz} et rappelée
+  dans le démonstration du lemme~\ref{l:sm-deg} ; on est ici dans le cas
+  homogène c'est-à-dire \( p = 1 \) dans les notations de la référence citée.
 
   Il est clair que \( SH(X_1, \adeg) = SH(\avar, \adeg) = \adeg^{\adim+1} \).
   Par ailleurs, comme chaque \( X_j \) peut être défini (ensemblistement) par
@@ -990,8 +988,8 @@ finie ; le lemme suivant précise ce résultat.
 
   Par ailleurs, on constate qu'une fois qu'on a choisi \( x_1, \dots,
     x_{j_\adim+1} \) tels que \( X_{j_\adim} = S_\avar \), on peut rajouter
-  des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on aura toujours \(
-    S_\avar = \bigcap_i (\avar - x_i) \).
+  des \( x_i \) arbitraires pour \( i > j_\adim + 1 \) et on conserve
+  l'égalité \( S_\avar = \bigcap_i (\avar - x_i) \).
 \end{proof}
 
 On suppose désormais \( m \ge 2 \adeg^{\adim+1} - \adeg \) jusqu'à la fin de
@@ -1022,12 +1020,12 @@ apparaissant dans~\eqref{e:sh-inter} soient tous des translatés de \(
   \, 2^{\dim S_\avar} (m-1)^{\alpha_m}
   \\ & =
   \deg S_\avar
-  (2)^{2\dim S_\avar} (m-1)^{\dim S_\avar}
+  2^{2\dim S_\avar} (m-1)^{\dim S_\avar}
 \end{align}
 d'après la formule multinomiale.
 
 En revanche, notons que, même en prenant \( m \) extrêmement grand, il y aura
-toujours des fibres contenant strictement le stabilisteur : par exemple, il
+toujours des fibres contenant strictement le stabilisateur : par exemple, il
 est clair que \( s_m^{-1}(0) = \delta(\avar) \). Un autre exemple est celui où
 \( \avar \) contient la somme de deux courbes \( C_1 \) et \( C_2 \) : alors
 tous les points de \( \delta(C_1) + C_2^m \) ont la même image.
@@ -1109,8 +1107,8 @@ section~\vref{sec:mumford-grp}.
     \, \max_i \distv{ x_i - x_m }{ y_{i, v} - y_{m, v} }
     \pmm.
   \end{equation}
-  Or par définition le membre de gauche majore \( \distv{ z, Z } \). Il suffit
-  alors de prendre le produit sur \( v \) pour conclure.
+  Or, par définition, le membre de gauche majore \( \distv z Z \). On prend
+  le produit sur \( v \) pour conclure.
 \end{proof}
 
 \begin{lem}
@@ -1335,7 +1333,7 @@ cas général, on pourrait espérer démontrer l'énoncé suivant.
     \le
     (1+\rho) \hautn{ x_m }
   \end{align}
-  alors il existe deux indices distinct \( i \) et \( k \) et deux familles \(
+  alors il existe deux indices distincts \( i \) et \( j \) et deux familles \(
     (z_v)\placerange \) et \( (\vai_v)\placerange \) telles que
   \begin{enumthm}
     \item \( z_v \in \avar(\Cv) \) ;
@@ -1348,6 +1346,10 @@ cas général, on pourrait espérer démontrer l'énoncé suivant.
     \item \( x_i - x_j \in \bigcap\placerange \vai_v \).
   \end{enumthm}
 \end{conj}
+
+
+\cleardoublepage
+\endinput
 
 Remarquons qu'il ne semble pas possible d'enlever la condition \( x_i \in \grp
 \) dans l'énoncé précédent (ou dans le théorème~\vref{t:mumford-gen}). Plus
@@ -1400,8 +1402,5 @@ approximations d'une courbe non elliptique avec \( \Gamma = \va(\Qbar) \)
 montrerait qu'il existe une borne (explicite) à la hauteur des points de \(
   E(\set0, \eps) \) pour \( \eps \) assez petit, ce qui semble peu réaliste.
 
-
-\cleardoublepage
-\endinput
 
 % vim: spell spelllang=fr
