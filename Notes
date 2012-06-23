@@ -4,40 +4,35 @@
 Maths et rédaction {{{1
 ==================
 
+Intro {{{2
+-----
+
+(A) S vs S_0 et l'hypothèse d'approx, etc.
+
+(A) Siegel et conjectures de Lang à revoir
+
+(A) Introduire \cdn_\va et \vahtr
+
+(B) Remarque sur l'utilisation des constantes du plongement par les
+différentes parties.
+
+
 Vojta {{{2
 -----
 
 Mumford {{{2
 -------
 
-(B) Donner l'énoncé conjectural.
+(A) Parler polarisation principale
 
 (C) Discuter si le groupe de rang fini est indispensable ?
 
 Décomptes {{{2
 ---------
 
-(B) Faire l'intro avec la condition de différence modulo B-petit
+(A) Faire l'intro avec la condition de différence modulo B-petit
 
-(C) Rédiger la pseudo-minimisation pénible
-
-Plongements et formulaires {{{2
---------------------------
-
-(C) (intro + annexe) :
-hypothèse de surjectivité p. 104 de Rémond (cf p. 105 aussi) (implique
-projectivement normal)
-
-(B) Compléter les preuves (cf. notes manuscriptes en partie)
-
-(B) Majoration de la constante de comparaison en fonction des formules de
-duplication :
-  méthode utilisée dans~\cite{daphimhva2} pour déduire la
-  proposition~3.9 (p.~665) du lemme~3.11, lequel correspond essentiellement à
-  un cas particulier de l'hypothèse~\eqref{e:clab-loc}.
-
-Réf : pour l'annexe de Serre avec les formules de multiplication : walntga
-
+(A) écrire l'application à l'ex-conjecture de Lang
 
 Aide-mémoire {{{1
 ============

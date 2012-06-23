@@ -100,9 +100,12 @@ L'objectif consiste donc à rendre effective cette inégalité de \bsc{Vojta} et
 
 \subsection{Le théorème de \bsc{Roth}}
 
-Le théorème de \bsc{Roth} \cite{daroraan}, dans sa version étendue aux places
-quelconques par \bsc{Ridout} \cite{ripgtsrt}, peut s'énoncer de la façon
-suivante.
+Le théorème de \bsc{Roth} \cite{daroraan}, concernant l'approximation des
+algébriques par les rationnels, a d'abord été démontré pour la place
+archimédienne de \( \Q \), puis étendu aux places quelconques par \bsc{Ridout}
+\cite{ripgtsrt} ; en voici un énoncé moderne (cas particulier du
+théorème~D.2.1 page~304 de \cite{hinsidgi}, en tenant compte des différences
+de normalisation).
 
 \begin{thm}[\bsc{Roth}]
   Soit \( \xi \in \Qbar \) un nombre algébrique. Soient par ailleurs \( \cdn
@@ -110,18 +113,21 @@ suivante.
   arbitraire à \( \cdn(\xi) \). Pour tout \( \eps > 0 \), il n'existe qu'un
   nombre fini de points \( x \in \cdn \) tels que
   \begin{equation}
-    \av{x - \xi}
+    \av{x - \xi}^\degv
     <
     \hautm2 x ^{-2-\eps}
-    \pmm.
   \end{equation}
+  où \( \degv = [\cdn(\xi)_v : \Q_v] / [\cdn(\xi) : \Q] \) et la valeur
+  absolue est normalisée de façon à prolonger une des valeurs absolues
+  usuelles de \( \Q \).
 \end{thm}
 
 Le lien avec le théorème qui nous occupe ici est clair : on passe de l'un à
 l'autre en remplaçant \( \xi \) par \( \avar \) et \( \cdn = \aff1(\cdn) \)
 par \( \va(\cdn) \), la distance locale étant bien sûr représentée par \(
   \av{x - \xi} \). Le théorème~2 de \cite{faldaav} est donc aux variétés
-abéliennes ce que le théorème de \bsc{Roth} est à la droite.
+abéliennes ce que le théorème de \bsc{Roth} est à la droite, avec l'exposant
+\( 2 + \eps \) remplacé par \( \eps \).
 
 Très rapidement après la démonstration initiale de \bsc{Roth}, on a su établir
 des versions quantitatives du théorème. Plus précisément, la démonstration de
@@ -143,8 +149,8 @@ grande.
 
 Rappelons aussi que le théorème de \bsc{Roth} a été l'aboutissement d'une
 longue série de théorèmes d'approximations moins précis, en ce sens que
-l'exposant optimal \( 2+\eps \) n'était pas atteint. Ce série a débuté avec le
-théorème de \bsc{Liouville}. Dans le cadre des espaces projectifs
+l'exposant optimal \( 2+\eps \) n'était pas atteint. Cette série a débuté avec
+le théorème de \bsc{Liouville}. Dans le cadre des espaces projectifs
 l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
 
 \begin{prop}
@@ -187,7 +193,7 @@ Dès 1922, \bsc{Mordell} avait conjecturé l'énoncé suivant.
 \end{thm}
 
 Ce résultat a d'abord été prouvé par \bsc{Faltings} en 1983 comme conséquence
-d'une conjecture de \bsc{Shafarevitch} \cite{faldaav}. La preuve fait
+d'une conjecture de \bsc{Shafarevitch} \cite{falmor}. La preuve fait
 intervenir des espaces de modules de variétés abéliennes, et c'est à cette
 occasion que \bsc{Faltings} a introduit la hauteur qui porte désormais son
 nom, sur ces espaces. Néanmoins, cette preuve reste assez éloignée des
@@ -215,10 +221,9 @@ de notre problème d'approximation dans le sens suivant : il consiste à montrer
 la finitude des points rationnels \emph{sur} une sous-variété de variété
 abélienne, alors que nous nous intéressons aux points \emph{proches} d'une
 telle sous-variété. Il est d'ailleurs significatif que \bsc{Faltings} a prouvé
-ces deux théorèmes (la conjecture de \bsc{Mordell-Lang} et celui dont une
-version quantitative faite l'objet de ce mémoire cherche à rendre quantitatif)
-dans le même article : une bonne partie des outils sont commun aux deux
-preuves.
+ces deux théorèmes (la conjecture de \bsc{Mordell-Lang} et celui que ce
+mémoire cherche à rendre quantitatif) dans le même article : une bonne partie
+des outils est commune aux deux preuves.
 
 Une différence notable entre les deux situations est toutefois la suivante :
 pour étudier les points qui sont proches d'une sous-variété, sans appartenir
@@ -264,7 +269,7 @@ sa généralisation de la conjecture de \bsc{Mordell}.
 C'est en fait un corollaire \cite[cor.~6.2, p.~576]{faldaav} du théorème
 d'approximation de \bsc{Faltings} : on remarque que la hauteur (relative à \(
   \divi \)) d'un point entier \( x \) est essentiellement donné par le produit
-des inverse des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
+des inverses des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
 \) parcourt les places archimédiennes de \( \cdn \). Or ces distances sont
 minorées par \( \hautm{}{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
 nombre fini de points. Ceci est bien sûr contradictoire dès que \( \eps < 1
@@ -276,13 +281,16 @@ d'approximation de pouvoir prendre \( \eps \) petit, au moins inférieur à \( 1
 \), alors que l'exposant de l'inégalité de \bsc{Liouville} ne suffit en aucun
 cas.
 
-Signalons qu'on connaît des versions quantitatives du théorème de \bsc{Siegel}
-dans certains cas \cite{silqs, biluqs}.  Par contre, à ma connaissance, la
-seule démonstration connue de sa généralisation est celle de \bsc{Faltings} :
-en particulier on ne connaît pas de version quantitative de cette ex-conjecture
-de \bsc{Lang}. Malheureusement, les résultats obtenus ici comportent une
-limitation qui ne permet pas d'en déduire de version quantitative explicite de
-cette extension du théorème de \bsc{Siegel}.
+Signalons qu'on connaît des versions quantitatives (\lat{a priori} pas
+explicites) du théorème de \bsc{Siegel}
+\cite{silqs}.
+\worknote{Mentionner l'autre conjecture de Lang}
+Par contre, à ma connaissance, la seule démonstration connue de sa
+généralisation est celle de \bsc{Faltings} : en particulier on ne connaît pas
+de version quantitative de cette ex-conjecture de \bsc{Lang}. Les résultat
+obtenus ici permettent de donner un décompte explicite des points entiers,
+malheureusement pas dans le cas général, mais au moins dans un certain nombre
+de cas, par exemple si \( \va \) est simple.
 
 
 
@@ -345,7 +353,7 @@ utilisera les notations
 Introduisons maintenant quelques notations pour les formes multihomogènes ;
 nous travaillerons principalement avec des formes sur des puissances d'espaces
 projectifs, nous nous limitons donc à ce cas pour alléger un peu. On notera
-\( \vmp = (\vmp[1], \dots, \vmp[m]) \) un groupe de groupe de variables, où \(
+\( \vmp = (\vmp[1], \dots, \vmp[m]) \) un groupe de groupes de variables, où \(
   \vmp[i] = (\vmp[i][0], \dots, \vmp[i][n]) \). On étend naturellement les
 notations projectives : pour \( \imp \in \N^{(n+1)m} \) on note \( \vmp^\imp =
   (\vmp[1])^{\imp[1]} \cdots (\vmp[m])^{\imp[m]} \) ; on procède de même pour
@@ -377,8 +385,8 @@ polynômes, on définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la
 norme \( \nv\star\truc \) du vecteur des \( \nv\star{ F_i } \).
 
 Aux places archimédiennes, on dispose également de deux notions de mesure pour
-les polynômes. La première est la classique mesure de Mahler, définie pour \(
-  v \) archimédienne par :
+les polynômes. La première est la classique mesure de \bsc{Mahler}, définie
+pour \( v \) archimédienne par :
 \begin{equation}
   \ln \mvm P
   =
@@ -490,10 +498,10 @@ désigne l'une des normes ci-dessus ; de même, on notera \( \Hautl\htpph \)
 La hauteur d'une famille, ainsi définie, est invariante par multiplication de
 cette famille par un scalaire, et ne dépend pas non plus du corps de nombres.
 Ceci permet de définir la hauteur d'un point de \( \projd(\Qbar) \) comme
-celle de ses coordonnées homogène.
+celle de ses coordonnées homogènes.
 
 Si \( \avar \) est une sous-variété de \( \projd \) on peut lui associer des
-formes de \bsc{Chow} associées à certains indices de la façon rappelée dans
+formes de \bsc{Chow} relatives à certains indices de la façon rappelée dans
 \cite{nesphilnm} au début du chapitre~6. Nous ne considérerons généralement
 que la forme d'indice \( (1, \dots, 1) \), que nous noterons \( \chow \avar \).
 Cette forme est bien définie à multiplication par un scalaire près, la
@@ -897,18 +905,18 @@ des objets obtenus.
 
   Par ailleurs, l'égalité qu'on cherche à montrer est banale si \( x \in
     E(\Cv) \). On peut donc supposer que ce n'est pas le cas, et même
-  choisir \( (1, x_1, \dots, x_n) \) comme représentant que \( x \). Le membre
+  choisir \( (1, x_1, \dots, x_n) \) comme représentant de \( x \). Le membre
   de droite est alors égal à \( \nv2 x ^{-1} \).
 
   Soit maintenant \( y = (0, y_1, \dots, y_n) \in E(\Cv) \). On a
-  \( x \wedge y = (-y_1, \dots, -y_n, x_1 y_2 - x_2 y_1, \dots) \), donc ce
-  \( \nv2{ x \wedge y } \ge \nv2 y \), avec égalité si et seulement si \( y \)
-  est colinéaire à \( (0, x_1, \dots, x_n) \).  Ainsi, pour tout \( y \in
-    E(\Cv) \) on a \( \distv x y \ge \nv2 x ^{-1} \), où l'égalité est
-  possible, ce qui achève la preuve.
+  \( x \wedge y = (y_1, \dots, y_n, x_1 y_2 - x_2 y_1, \dots) \) et donc
+  \( \nv2{ x \wedge y } \ge \nv2 y \), avec égalité si et seulement si \(
+    (y_1, \dots, y_n) \) est colinéaire à \( (x_1, \dots, x_n) \).  Ainsi,
+  pour tout \( y \in E(\Cv) \) on a \( \distv x y \ge \nv2 x ^{-1} \) et
+  l'égalité est atteinte, ce qui achève la preuve.
 \end{proof}
 
-Remarquons que le distance entre points et variété définie ici ne dépend en
+Remarquons que la distance entre points et variétés définie ici ne dépend en
 fait que de l'ensemble des points de la variété mais pas de la structure
 géométrique (multiplicités) de celle-ci. Une autre notion de distance,
 développée dans \cite{jadotth} et \cite{phidg} pour le cas projectif, et
