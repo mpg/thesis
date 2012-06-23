@@ -401,20 +401,20 @@ construction itérative dans la démonstration ci-dessus.
     \deg \var* \bigl( \hautl\infty T + \sqrt n \bigr)
     + \deg T \Bigl(
       \hautl1{ \varfc* }
-      + \frac12 \ln(n + 1) (\vdim* + 1) \deg \var*
+      + \ln(n + 1) (\vdim* + 1) \deg \var*
     \Bigr)
     \\ & \quad
-    + \frac12 \ln(n + 1) \vdim* \deg \var*'
+    + \ln(n + 1) \vdim* \deg \var*'
     \\ & \le
     B \bigl( \hautl\infty T + n \bigr)
     + \deg T \Bigl(
-      \hautl1{ \varfc* } + \frac12 ng B
+      \hautl1{ \varfc* } + ng B
     \Bigr)
-    + \frac12 ng B \deg T
+    + ng B \deg T
     \\ & \le
     \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
     + B \hautl\infty T
-    + 2 n g B \Lambda^{2\vdim f(\vdim)}
+    + 3 n g B \Lambda^{2\vdim f(\vdim)}
   \end{align}
   et finalement, en multipliant par \( \wtw* \wts* \) et en majorant dans le
   dernier terme cette quantité par \( \wts[1] \), puis en utilisant
@@ -423,11 +423,11 @@ construction itérative dans la démonstration ci-dessus.
     \wtw* \wts* \hautl1{ \chow{\var*'} }
     & \le
     \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
-    + 2 \wts[1] n g B \Lambda^{2\vdim f(\vdim)}
-    + \wtw* \wts* B \hautl1 T
+    + 3 \wts[1] n g B \Lambda^{2\vdim f(\vdim)}
+    + \wtw* \wts* B \hautl\infty T
     \\ & \le
     \wtw* \wts* \Lambda^{2\vdim f(\vdim)} \hautl1{ \varfc* }
-    + 2 \wts[1] n g B \Lambda^{2\vdim f(\vdim)}
+    + 3 \wts[1] n g B \Lambda^{2\vdim f(\vdim)}
     \\ & \qquad
     + B g \Lambda^{2\vdim f(\vdim)}
     \Biggl(
@@ -444,7 +444,7 @@ construction itérative dans la démonstration ci-dessus.
       \Bigr)
     \Biggr)
   \end{align}
-  en remarquant que \( 2n \le \cst{vs-ht} \Lambda \) pour intégrer le
+  en remarquant que \( 3n \le \cst{vs-ht} \Lambda \) pour intégrer le
   deuxième terme de la deuxième ligne dans celui en \( \cst{vs-ht} \).
 
   Nous pouvons maintenant substituer cette estimation dans la somme pondérée
@@ -5293,7 +5293,7 @@ sur les différents paramètres en jeu dans notre situation.
         \hautl{1, \vaemb'}{\va}
         \le
         \adeg^{g+1} \hautl{1, \vaemb}{\va}
-        + \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+        + 2 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
       \). \label{i:hs-vero-ht-va}
     \item \(
         \htcmp[\vaemb']
@@ -5327,19 +5327,19 @@ sur les différents paramètres en jeu dans notre situation.
   fait). Par ailleurs, la référence citée donne \( \hautl{\htpph, \vaemb'} \va
     = \adeg^{g+1} \hautl{\htpph, \vaemb} \va \) (en notant \( \Hautl\htpph \)
   la hauteur utilisée dans cette référence), dont on déduit le
-  point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées comme
-  en~\eqref{e:ht-pph-1} :
+  point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées grace
+  à~\eqref{e:ht-pph-1} :
   \begin{align}
     \hautl{1, \vaemb'} \va
     & \le
     \hautl{\htpph, \vaemb'} \va
-    + \frac12 \ln(n' + 1) (g + 1) \deg_{\vaemb'} \va
+    + \ln(n' + 1) (g + 1) \deg_{\vaemb'} \va
     \\ & \le
     \adeg^{g+1} \hautl{\htpph, \vaemb} \va
-    + \frac12 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+    + \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
     \\ & \le
     \adeg^{g+1} \hautl{1, \vaemb} \va
-    + \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+    + 2 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
 
@@ -5637,7 +5637,7 @@ sur les différents paramètres en jeu dans notre situation.
     \le
     \adeg \htcmp[\vaemb]
     + \hautl{1, \vaemb} \hs + \adeg n
-    + \frac12 \adeg \ln n
+    + \frac12 \adeg \ln(n+1)
   \end{equation}
   ce qui prouve que
   \begin{align}
@@ -5645,10 +5645,10 @@ sur les différents paramètres en jeu dans notre situation.
     & \le \max \Bigl(
       \adeg^{g+1} \hautl{1, \vaemb}{\va}
       + \adeg^g (g + 1) \deg_{\vaemb} \va
-      \bigl( \hautl{1, \vaemb} \hs + 2\adeg n \bigr),\
+      \bigl( \hautl{1, \vaemb} \hs + 3\adeg n \bigr),\
       \\ & \qquad
       \adeg \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} \hs
-      + \frac94 \adeg n,\
+      + \frac92 \adeg n,\
       \adeg \htcmp[\vaemb] + \hautl{1, \vaemb} \hs + \frac32 \adeg n,\
       (\adeg+1)^n \ln(\adeg+1) n
     \Bigr)
