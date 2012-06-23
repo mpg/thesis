@@ -4709,14 +4709,14 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
       \).
   \end{enumthm}
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
-  à la section\vref{sec:vaemb} et la dimension ambiante sont inchangées.
+  à la section\vref{sec:vaemb} et la dimension ambiante sont inchangés.
 \end{lem}
 
 \begin{proof}
   Notons \( L \) une équation de \( E \), qu'on peut supposer de la forme
   \( L(\vp) = \vp[0] + l_1 \vp[1] + \dots + l_n \vp[n] \). Remarquons
   de suite que \( \distv[v, \vaemb]{\divi}{p_0} = \nv2 L ^{-1} \).
-  Par ailleurs,
+  Par ailleurs, posons
   \begin{equation}
     M = \begin{pmatrix}
       1      & -l_1   & -l_2   & \dots  & -l_n \\
@@ -4745,7 +4745,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   associée à \( M^{-1} \) (dans la base canonique) et on note de même la
   transformation linéaire de \( \projd \) qui en découle en passant au
   quotient. On pose alors \( \vaemb' = \chi \circ \vaemb \). On
-  note \( L'(\vp) = L(M(\vp)) = \vp[0] \) ; par construction, \( L' \)
+  note \( L'(\vp) = L(M(\vp)) = \vp[0] \) ; par construction \( L' \)
   est une équation de \( \divi \) dans ce nouveau plongement, lequel
   satisfait donc à la première condition.
 
@@ -4972,7 +4972,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \, (n + 1)^{\dv/2}
     \\ & \le
     \hautm{2, \vaemb}{x_i}^{-\wtapx \eps}
-    =
+    \\ & \le
     \hautm{2, \vaemb}{x_i}^{-\wtapx \eps'}
     \cdot \hautm{2, \vaemb}{x_i}^{-\wtapx \eps/86}
     \\ & \le
@@ -5141,7 +5141,7 @@ section~\vref{sec:ha-prod}.
   \( v \) divisé par le degré global. Par hypothèse, on a
   \( 1 = \sum\placerange \wtapx \degv \le \sum_{i=0}^n \sigma_i \), or cette
   somme comporte au plus \( s = \min(n+1, \card \placesapx) \) termes non
-  suls, donc il existe donc (au moins) un indice \( i \) tel que \( \sigma_i
+  nuls, donc il existe (au moins) un indice \( i \) tel que \( \sigma_i
     \ge 1 / s \). On fixe un tel indice, désormais désigné par \( i \).
 
   On note alors \( \placesapx' = \placesapx_i \) et, pour tout \( v \in
@@ -5174,9 +5174,9 @@ Pour se ramener au cas précédent, on utilise un plongement de \bsc{Veronese}
 remodelé, tel que défini dans \cite[p. 14]{jadotth} ou \cite[p. 102]{remgdmp},
 dont on rappelle la définition (sur les coordonnées homogènes) :
 \begin{align}
-  \chi_\adeg \colon \projd & \to \prod{n'} \\
-  (x_0 : \dots : x_n) & \mapsto 
-  ({\textstyle \binom\adeg\alpha} x^\alpha)_\alpha
+  \chi_\adeg \colon \projd & \to \proj{n'} \\
+  (x_0 : \dots : x_n) & \mapsto
+  \bigl( \sbin\adeg\alpha^{1/2} x^\alpha \bigr)_\alpha
 \end{align}
 où \( n' = \binom{n + \adeg}{\adeg} - 1 \) et \( \alpha \) parcourt
 l'ensemble des \( (n+1) \)-uplets d'entiers de longueur \( \adeg \).
@@ -5491,7 +5491,7 @@ sur les différents paramètres en jeu dans notre situation.
     \hlclab[\vaemb] \cdot \adeg
     + \frac54\adeg \ln(n + 1) + 1.26 \adeg n
   \end{equation}
-  dont le dernier point se déduit en remarquant que \( \frac54 \ln(n +
+  dont le dernier terme se déduit en remarquant que \( \frac54 \ln(n +
     1) / n \le \frac58 \ln 3 \le 0.69 \) car \( n \ge 2 \).
 \end{proof}
 
