@@ -28,3 +28,5 @@ pdftotext $MEM.pdf - | grep --color=auto '()'
 $ECHO ""
 texloganalyser -wou $MEM.log | sed 's/^\(\[[0-9]\+]\)*//' | \
     grep --color=auto '^.*\(box\|arning\)\>'
+
+exit 0

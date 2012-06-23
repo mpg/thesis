@@ -60,7 +60,9 @@
 \usepackage{enumitem}
 \usepackage{git-info, eso-pic}
 \usepackage{csquotes}
-\usepackage[style=alphabetic, sorting=nyt, sortcites=true, firstinits=true,
+\usepackage[
+  bibencoding=ascii,
+  style=alphabetic, sorting=nyt, sortcites=true, firstinits=true,
   autopunct=true, babel=hyphen,
   hyperref=true, backref=false]{biblatex}
 \usepackage[expansion=false, babel=true]{microtype}
