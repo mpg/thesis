@@ -11,8 +11,6 @@ Intro {{{2
 
 (A) Siegel et conjectures de Lang à revoir
 
-(A) Adapter le reste pour : \vahtr, \hmpm.
-
 (B) Reporter les résultats principaux
 
 (B) Expliquer les stratégies
@@ -25,7 +23,7 @@ Vojta {{{2
 Mumford {{{2
 -------
 
-(A) Parler polarisation principale
+(A) Parler polarisation principale et du coup simplifier n+1 = 16^g
 
 (A) Adapter la prop sur la distance pour \hmpm
 
