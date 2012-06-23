@@ -2,6 +2,7 @@
 
 GREP='grep -n --color=auto'
 ECHO='/bin/echo'
+MEM='memoire'
 
 $ECHO '===> devrait être \eqref <==='
 $GREP '\\ref{e:' *.tex
@@ -18,3 +19,12 @@ $GREP '\\ref{[^e]:' *.tex
 $ECHO ""
 $ECHO '===> doit disparaître <==='
 $GREP -B2 '\\todo\|\\worknote\|XXX' *.tex
+
+$ECHO ""
+$ECHO "Making $MEM.pdf"
+make $MEM.pdf >/dev/null 2>&1
+pdftotext $MEM.pdf - | grep --color=auto '()'
+
+$ECHO ""
+texloganalyser -wou $MEM.log | sed 's/^\(\[[0-9]\+]\)*//' | \
+    grep --color=auto '^.*\(box\|arning\)\>'
