@@ -273,19 +273,23 @@ plongée, une géométrie métrique, locale, en chaque place de \( \placesapx \)
 On s'attend à ce que les métriques locales sur \( \va \) se comportent de
 façon agréable vis-à-vis des structures géométrique et arithmétique, par
 exemple que les opérations soient uniformément continues, voire
-lipschitziennes. On montre ici que c'est bien le cas et on explicite une
-valeur admissible pour la constante de \bsc{Lipschitz}.
+lipschitziennes.
+
+On montre ici que c'est bien le cas et on explicite une valeur admissible pour
+la constante de \bsc{Lipschitz} en fonction des constantes introduites à la
+section~\vref{sec:vaemb}.  L'énoncé suivant concerne la soustraction, mais il
+est clair qu'un résultat identique pour l'addition peut être obtenu de la même
+façon.
 
 \begin{prop} \label{p:addsub-dv}
   Pour tous \( x \), \( x' \), \( y \), \( y' \) dans \( \va(\C_v) \), on a :
   \begin{equation}
-  \Distv(x \pm y, x' \pm y')
+  \Distv(x - y, x' - y')
   \le
   \max \bigl( \Distv(x, x'), \Distv(y, y') \bigr)
-  \cdot \hmpm* \bigl( 5 \sqrt2 (n + 1)^3 \bigr)^\dv
-  \pmm,
+  \cdot (\hmpm*)^2 \bigl( 5 \sqrt2 (n + 1)^5 \bigr)^\dv
+  \pmm.
   \end{equation}
-  où dans le membre de gauche il faut prendre le même signe des deux côtés.
 \end{prop}
 
 \begin{proof}
@@ -310,32 +314,48 @@ valeur admissible pour la constante de \bsc{Lipschitz}.
   dans le cas où le dénominateur est différent de zéro (dans le cas contraire,
   on a \( x = x' \) et \( y = y' \) et le résultat est immédiat).
 
-  On considère alors le morphisme
-  \( \xi : \va^2 \to \va^2,\ (x, y) \mapsto (x + y, x - y) \), qui
-  présente l'avantage de pouvoir être représenté globalement
-  par une famille \( F \) de formes de degré \( 2 \) dans le plongement de
-  \bsc{Segre} (voir section~\vref{sec:vaemb}). Si l'on note \( z = s(x, y) \)
-  et \( z' = s(x', y') \) les images dans ce plongement, on est ainsi ramené à
+  Si l'on note \( z = s(x, y) \) et \( z' = s(x', y') \) les images dans ce
+  plongement, et \( \xi \) le morphisme de soustraction, on est ainsi ramené à
   montrer que
   \begin{equation} \label{e:addsub-dv}
     \Distv(\xi z, \xi z')
     \le
     \Distv(z, z')
-    \cdot \hmpm* \bigl( 5 (n + 1)^3 \bigr)^\dv
+    \cdot (\hmpm*)^2 \bigl( 5 (n + 1)^5 \bigr)^\dv
   \end{equation}
-  en appliquant deux fois~\eqref{e:dv-segre}. On peut donc supposer
-  \( \Distv( z, z') \le \bigl( 5 (n + 1)^3 \bigr)^{-\dv} \), car sinon
+  en appliquant~\eqref{e:dv-segre}. On peut donc supposer
+  \( \Distv( z, z') \le \bigl( 5 (n + 1)^5 \bigr)^{-\dv} \), car sinon
   l'inégalité précédente est banale.
 
-  On va utiliser un développement de \bsc{Taylor} au voisinage de \( z \) des
-  formes représentant \( \xi \) pour montrer que \( \nv2{F(z')} \) n'est pas
-  trop petit devant \( \nv2 {F(z)} \) puis que \( \nv2{F(z) \wedge F(z')} \)
-  n'est pas trop grand devant \( \nv2 {F(z)}^2 \). L'hypothèse faite sur la
-  distance permet d'appliquer le lemme~\vref{l:dv-common-i} à \( z \) et \( z'
-  \) (en remplaçant \( n \) par \( n' = n^2 + 2n \)) et donc de supposer,
-  quitte à renuméroter les coordonnées, que \( z_0 = z'_0 = 1 \) et \( \nv2{
-      z' } \le (n')^{\dv/2} \).  Le développement de
-  \bsc{Taylor} de \( F \) s'écrit alors :
+  On note alors \( F \) une famille de formes représentant la soustraction au
+  voisinage de \( z \), donnée par le lemme~\vref{l:hmpm}, mais on regarde
+  chaque élément de cette famille non pas comme une forme sur \( (\projd)^2
+  \), mais comme une forme sur \( \proj{n'} \), qui est donc de degré \( 2 \).
+  Ceci ne change évidemment aucune des autres propriétés données par le lemme
+  cité en particulier~\eqref{e:pm-loc} donne immédiatement
+  \begin{equation} \label{e:pm-loc2}
+    \frac{ \nv2{ F(z) } }{ \nv2 z ^2 }
+    \ge
+    \frac{ \nv1{ F(z) } }{ \nv1 z ^2 }
+    (n'+1)^{-\dv}
+    \ge
+    \hmpm* (n'+1)^{-\dv}
+    \pmm.
+  \end{equation}
+
+  On va utiliser un développement de \bsc{Taylor} au voisinage de \( z \) de
+  chacune des formes de la famille \( F \) pour montrer que \( \nv2{F(z')} \)
+  n'est pas trop petit devant \( \nv2 {F(z)} \) (donc en particulier, que \( F
+  \) représente également la soustraction au voisinage de \( z' \)), puis que
+  \( \nv2{F(z) \wedge F(z')} \) n'est pas trop grand devant \( \nv2 {F(z)}^2
+  \).
+
+  L'hypothèse faite sur la distance permet d'appliquer le
+  lemme~\vref{l:dv-common-i} à \( z \) et \( z' \) (en remplaçant \( n \) par
+  \( n' = n^2 + 2n \)) et donc de supposer, quitte à renuméroter les
+  coordonnées, que \( z_0 = z'_0 = 1 \) et \( \nv2{ z' } \le (n'+1)^{\dv/2} \)
+  ainsi que \( \nv2{ z } \le \bigl( 2 \sqrt{n'+1} \bigr)^{\dv} \).
+  Le développement de \bsc{Taylor} de \( F \) s'écrit alors :
   \begin{equation}
     F(z')
     =
@@ -361,7 +381,8 @@ valeur admissible pour la constante de \bsc{Lipschitz}.
     \nv2 z \nv2{z'}
     \distv{ z }{ z' }
   \)
-  pour estimer \( R_i \) en utilisant de plus~\eqref{e:pm-loc} :
+  pour estimer \( R_i \) en utilisant~\eqref{e:pm-loc2} et l'hypothèse faite
+  sur \( \nv2{ z' } \) :
   \begin{align}
     \nv2{R_i}
     & \le
@@ -369,36 +390,50 @@ valeur admissible pour la constante de \bsc{Lipschitz}.
     \cdot \nv2 z \nv2{ z' }
     \distv{ z }{ z' }
     \\ & \le
-    \hmpm* \nv2{ F(z) }
-    (2 \sqrt{n'})^\dv
+    2^\dv (\hmpm*)^2 (n'+1)^\dv \nv2{ F(z) }
+    (n'+1)^{\dv/2}
     \distv{ z }{ z' }
     \pmm.
   \end{align}
-  On obtient de même
-  \(
-    \nv2{R_{ij}}
+  En sommant et en se souvenant que \( n' + 1 = (n+1)^2 \),  il vient
+  immédiatement
+  \begin{equation}
+    \nv2{ \sum R_i }
     \le
-    \hmpm* \nv2{ F(z) }
-    (n')^\dv
-    \distv{ z }{ z' }^2
+    (\hmpm*)^2 \bigl( 2 (n+1)^5 \bigr)^\dv
+    \nv2{ F(z) }
+    \distv{ z }{ z' }
     \pmm.
-  \)
-  En prenant la somme, on obtient un facteur \( (n')^\dv \) supplémentaire
-  pour les \( R_i \), et son carré pour les \( R_{ij} \). Au final on a :
+  \end{equation}
+  De même (en utilisant de plus l'hypothèse sur \( \nv2 z \)), on obtient
+  successivement :
+  \begin{align}
+    \nv2{R_{ij}}
+    & \le
+    (\hmpm*)^2 \bigl( 2 (n+1)^5 \bigr)^\dv
+    \nv2{ F(z) } \distv{ z }{ z' }^2
+    \\
+    \nv2{ \sum R_{ij} }
+    & \le
+    (\hmpm*)^2 \bigl( 2 (n+1)^9 \bigr)^\dv
+    \nv2{ F(z) } \distv{ z }{ z' }^2
+    \\ & \le
+    (\hmpm*)^2 \bigl( 2 (n+1)^4 / 5 \bigr)^\dv
+    \nv2{ F(z) } \distv{ z }{ z' }
+  \end{align}
+  en utilisant l'hypothèse sur la distance pour la dernière ligne.
+  Au final, en utilisant à nouveau cette hypothèse, on a :
   \begin{align}
     \nv*2{\sum R_i + \sum R_{ij}}
-     & \le
+    & \le
     \nv2{F(z)}
-    \cdot \hmpm* \left( \frac52 \cdot (n')^{3/2} \right)^\dv
+    \cdot (\hmpm*)^2 \left( \frac{12}5 \cdot (n+1)^5 \right)^\dv
     \distv{ z }{ z' }
-     <
+    \\ & <
     \left( \frac12 \right)^\dv
     \nv2{F(z)}
+    \pmm.
   \end{align}
-  en remarquant aux places archimédiennes que \( 2t + t^2 \le 5t/2 \) pour \(
-    0 \le t \le 1/2 \), ce qui est le cas de \( t = (n')^{3/2}
-    \distv{ z }{ z' } \) vu l'hypothèse sur la distance et le fait que \( n'
-    < (n+1)^2 \).
 
   Les inégalités triangulaire aux places infinies et ultramétrique aux places
   finies donnent alors \( \nv2{F(z')} \ge (1/2)^\dv \nv2{F(z)} \).
@@ -417,7 +452,7 @@ valeur admissible pour la constante de \bsc{Lipschitz}.
       \nv2{F(z)} \nv2{F(z)} \cdot 2^{-\dv}
     }
     \\ & \le
-    \hmpm* \bigl( 5 (n')^{3/2} \bigr)^\dv
+    (\hmpm*)^2 \left( \frac{24}5 \cdot (n+1)^5 \right)^\dv
     \distv{ z }{ z' }
   \end{align}
   qui donne bien~\eqref{e:addsub-dv} et achève la preuve.
