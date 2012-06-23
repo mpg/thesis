@@ -5547,7 +5547,7 @@ sur les différents paramètres en jeu dans notre situation.
     + (g + 1) \deg \va
     \bigl(
       \adeg^g \hautl1 \hs
-      + \adeg^n \ln(\adeg) n
+      + (\adeg+1)^n \ln(\adeg+1) n
     \bigr)
   \end{align}
   et au choix :
@@ -5560,9 +5560,8 @@ sur les différents paramètres en jeu dans notre situation.
     \(
       \prod\placerange \alpha_v^\degv
       \le
-      \hautm1 \hs ^2 \expb^{\adeg n}
-      \adeg
-      \sbin{\adeg+n}{n}^{1/2}
+      \hautm1 \hs ^2 \expb^{2 \adeg n}
+      \bigl( \adeg \sbin{\adeg+n}{n} \bigr)^{1/2}
     \).
   \end{enumthm}
 \end{coro}
@@ -5575,7 +5574,7 @@ sur les différents paramètres en jeu dans notre situation.
   vérifier que nos conditions impliquent celles du corollaire en question.
 
   Concernant l'hypothèse d'approximation, avec le premier choix pour \( (s,
-    \alpha) \), on a
+    \alpha) \),
   \begin{align}
     \distv[v, \vaemb']{ x_i }{\divi}
     \le
@@ -5597,12 +5596,12 @@ sur les différents paramètres en jeu dans notre situation.
   \begin{equation}
     \prod\placerange \alpha_v^\degv
     \le
-    \adeg \prod\placerange \alpha'_v
+    \adeg^{1/2} \prod\placerange \alpha'_v
     \le
-    \adeg \hautm{2, \vaemb'} \divi ^2 (n' + 1)^{1/2}
+    \adeg^{1/2} \hautm{2, \vaemb'} \divi ^2 (n' + 1)^{1/2}
     \le
-    \adeg
-    \hautm{1, \vaemb} \hs ^2 \expb^{\adeg n}
+    \adeg^{1/2}
+    \hautm{1, \vaemb} \hs ^2 \expb^{2\adeg n}
     \sbin{\adeg+n}{n}^{1/2}
     \pmm.
   \end{equation}
@@ -5647,16 +5646,17 @@ sur les différents paramètres en jeu dans notre situation.
       \adeg \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} \hs
       + \frac94 \adeg n,\
       \adeg \htcmp[\vaemb] + \hautl{1, \vaemb} \hs + \frac32 \adeg n,\
-      \adeg^n \ln(\adeg) n
+      (\adeg+1)^n \ln(\adeg+1) n
     \Bigr)
     \\ & \le
     \adeg \max \bigl(
       \adeg^g \hautl{1, \vaemb}{\va}, \hlclab[\vaemb], \htcmp[\vaemb]
     \bigr)
+    \\ & \qquad
     + (g + 1) \deg_{\vaemb} \va
     \bigl(
       \adeg^g \hautl{1, \vaemb} \hs
-      + \adeg^n \ln(\adeg) n
+      + (\adeg+1)^n \ln(\adeg+1) n
     \bigr)
   \end{align}
   en prenant le maximum terme par terme, assez largement pour le dernier.
@@ -5786,7 +5786,7 @@ contrôlés.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \adeg^n \ln(\adeg) n
+      (\adeg+1)^n \ln(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
@@ -5807,10 +5807,7 @@ contrôlés.
       \le
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
-      \cdot
-      \expb^{\adeg n}
-      \adeg
-      \sbin{\adeg+n}{n}^{1/2}
+      \cdot \expb^{2 \adeg n} \bigl( \adeg \sbin{\adeg+n}{n} \bigr)^{1/2}
     \).
   \end{enumthm}
 \end{coro}
@@ -5865,7 +5862,7 @@ légèrement simplifiées.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \adeg^n \ln(\adeg) n
+      (\adeg+1)^n \ln(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
@@ -5884,7 +5881,7 @@ légèrement simplifiées.
       \le
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
-      \cdot \expb^{\adeg n} \adeg \sbin{\adeg+n}{n}^{1/2}
+      \cdot \expb^{2 \adeg n} \bigl( \adeg \sbin{\adeg+n}{n} \bigr)^{1/2}
     \).
   \end{enumthm}
 \end{coro}
