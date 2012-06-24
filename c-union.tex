@@ -739,8 +739,7 @@ par un plongement de \bsc{Mumford} modifié associé à une polarisation
 principale, ce qui est nécessaire pour appliquer le
 théorème~\vref{t:mumford-gen}. Cette hypothèse implique en particulier que
 \( \deg \va = n+1 = 16^g \) et qu'on peut prendre \( N = n+1 \). Par ailleurs,
-on supposera toujours (au moins) \( \eps \le 1 \) pour simplifier certaines
-estimations.
+on supposera toujours \( \eps \le 1 \) pour simplifier certaines comparaisons.
 
 Par ailleurs, comme on l'a vu dans la section précédente, on aura intérêt dans
 l'inégalité de \bsc{Vojta} (corollaire~\vref{c:vojta-gen2}) à toujours prendre
@@ -749,7 +748,7 @@ l'inégalité de \bsc{Vojta} sous ces conditions.
 
 \begin{coro} \label{c:vojta-gen3}
   Soit \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de
-  dimension \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe
+  dimension \( \adim \), et \( 0 < \eps \le 1 \) un nombre réel.  Il n'existe
   dans \( \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_{2g} \)
   satisfaisant simultanément aux conditions suivantes :
   \begin{align}
@@ -880,7 +879,7 @@ Par ailleurs, on a
 \begin{lem}
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
-    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps < 1 \).  Soit
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).  Soit
   enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \) satisfaisant
   à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
@@ -936,7 +935,7 @@ On en déduit un décompte complet des grands points.
 \begin{coro}
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
-    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps < \expb^{-1} \).
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
   Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
   satisfaisant à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
@@ -954,7 +953,7 @@ On en déduit un décompte complet des grands points.
     p
     \le
     M^2 (M')^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(1/\eps)
+    \, \eps^{-r - 1/2} \ln(\expb/\eps)
     \pmm.
   \end{equation}
 \end{coro}
@@ -985,13 +984,17 @@ On en déduit un décompte complet des grands points.
   \begin{equation}
     \ln \Lambda_6
     \le
-    \ln M + 2 \ln(1/\eps)
+    2 \ln M + 2 \ln(\expb/\eps)
     \le
-    \sqrt M \ln(1/\eps)
+    4 \ln M \ln(\expb/\eps)
+    \le
+    \sqrt M \ln(\expb/\eps)
   \end{equation}
-  dès que \( \eps \le \expb^{-1} \) (on rappelle que \( a + b \le ab \) dès
-  que les deux sont supérieurs ou égaux ) \( 2 \)).  Par ailleurs, on remarque
-  que
+  car on a supposé\footnote{On aurait pu supposer \( \eps \le \expb^{-1} \)
+    mais on aurait été gêné pour établir le corollaire~\vref{c:lang} ; on a
+    donc préféré rajouter ce \( \expb \) un peu gratuit.} que \( \eps \le 1 \)
+  (on rappelle que \( a + b \le ab \) dès que les deux sont supérieurs ou
+  égaux à \( 2 \)).  Par ailleurs, on remarque que
   \begin{equation}
     2 g (4g)^{4g^2}
     \le
@@ -1006,10 +1009,10 @@ On en déduit un décompte complet des grands points.
     p
     \le
     \frac{ M^2 }{ \rho^{r+1} }
-    \, \eps^{-r/2} \ln(1/\eps)
+    \, \eps^{-r/2} \ln(\expb/\eps)
     \le
     M^2 (M')^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(1/\eps)
+    \, \eps^{-r - 1/2} \ln(\expb/\eps)
   \end{equation}
   compte tenu de la définition de \( \rho \).
 \end{proof}
@@ -1017,7 +1020,7 @@ On en déduit un décompte complet des grands points.
 \begin{coro}
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
-    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps < \expb^{-1} \).
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
   Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
   satisfaisant à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
@@ -1052,7 +1055,7 @@ On en déduit un décompte complet des grands points.
     \le
     5^{\card\placesapx}
     M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(1/\eps)
+    \, \eps^{-r - 1/2} \ln(\expb/\eps)
     \pmm.
   \end{equation}
 \end{coro}
@@ -1075,7 +1078,7 @@ On en déduit un décompte complet des grands points.
 On en déduit immédiatement un décompte des points entiers d'un ouvert affine,
 dans le cas où \( \va \) est simple.
 
-\begin{coro}
+\begin{coro} \label{c:lang}
   Soient \( \cdn \) un corps de nombres, \( r \) le rang de \( \va(\cdn) \) et
   \( \placesapx \) un ensemble fini de places de
   \( \cdn \), contenant toutes les places archimédiennes. Le nombre de points
