@@ -33,15 +33,18 @@ d'approximation \eqref{e:has}. Ainsi que le fait remarquer \bsc{Faltings}
 dans l'introduction de son article : « \eng{As far as I can see, everything
   here is ineffective beyond hope.} »
 
-Il semble néanmoins raisonnable de vouloir majorer le nombre de points
-rationnels satisfaisant à \eqref{e:has} (que nous appellerons à l'occasion
-les approximations exceptionnelles).  Pour les courbes
-elliptiques, ce travail a été accompli par \bsc{Farhi} \cite[chap.~2]{farhith}
-et \cite{faraetr}.
+Il semble néanmoins raisonnable de vouloir majorer explicitement le nombre de
+points rationnels satisfaisant à \eqref{e:has} (que nous appellerons à
+l'occasion les approximations exceptionnelles).  Pour les courbes elliptiques,
+ce travail a été accompli dans \cite{grosiipec} pour les courbes de hauteur
+assez grandes, puis de façon indépendante par \bsc{Farhi}
+(\cite[chap.~2]{farhith} ou \cite{faraetr}) pour toutes les courbes, avec des
+constantes d'apparence assez différente.
 
-L'objet du présent mémoire est de généraliser ces résultats en dimension
-supérieure, c'est-à-dire d'obtenir, autant que possible, une version
-quantitative explicite du théorème d'approximation de \bsc{Faltings}.
+L'objet du présent mémoire, qui s'inscrit dans la lignée des travaux de
+\bsc{Farhi}, est de généraliser ce résultat en dimension supérieure,
+c'est-à-dire d'obtenir, autant que possible, une version quantitative
+explicite du théorème d'approximation de \bsc{Faltings}.
 
 \medskip
 
@@ -158,28 +161,40 @@ l'équivalent de l'inégalité de \bsc{Liouville} peut s'énoncer ainsi :
   \( x \in \projd(\Qbar) \) un point algébrique. Si \( x \) n'appartient pas à
   \( \avar \), on a
   \begin{equation}
-    \distv x \avar
+    \distv x \avar ^\degv
     \ge
     c(\avar) \cdot \hautm{}{x}^{-\adeg}
-    \pmm.
   \end{equation}
+  où \( \degv \) est le degré local, divisé par le degré global, d'un corps de
+  définition de \( x \).
 \end{prop}
 
 Nous établirons (proposition~\vref{p:liouville}) une version explicite de cette
 inégalité qui, outre son intérêt propre, joue un rôle crucial dans la preuve de
-nos inégalités à la \bsc{Mumford}.
+nos inégalités à la \bsc{Mumford}. Un corollaire immédiat de l'inégalité de
+\bsc{Liouville} est le suivant.
+
+\begin{coro}
+  Soient \( \avar \) une sous variété de \( \projd \) de degré \( \adeg \) et
+  \( \eps > 0 \) un réel. Alors l'ensemble des points \( x \in \projd(\Qbar)
+  \) tels que
+  \begin{equation}
+    \distv x \avar ^\degv
+    \ge
+    \hautm{}{x}^{-\adeg-\eps}
+  \end{equation}
+  est de hauteur bornée explicitement ; en particulier cet ensemble est fini
+  si l'on exige que \( x \) appartienne à un corps de nombres de degré borné.
+\end{coro}
 
 On peut relever les différences suivantes entre cet énoncé et le théorème
-d'approximation de \bsc{Faltings} :
-\begin{itemize}
-  \item l'inégalité de \bsc{Liouville} prend place dans un espace projectif,
-    il n'y pas besoin d'une variété abélienne ambiante ;
-  \item elle n'admet pas d'exceptions, contre un nombre fini d'approximations
-    exceptionnelles pour \bsc{Faltings} ;
-  \item en revanche, l'exposant de \( \hautm{} x \) est nettement plus mauvais.
-\end{itemize}
-Comme on le verra en \vref{s:siegel}, il est intéressant pour certaines
-applications de disposer d'un exposant strictement inférieur à \( 1 \).
+d'approximation de \bsc{Faltings} : l'inégalité de \bsc{Liouville} prend place
+dans un espace projectif, il n'y pas besoin d'une variété abélienne ambiante ;
+on sait expliciter la borne sur la hauteur des approximation exceptionnelles ;
+en revanche, l'exposant de \( \hautm{} x \) n'est pas aussi fin.  Comme on le
+verra en \vref{s:siegel}, il est intéressant pour certaines applications de
+disposer d'un exposant inférieur ou égal à \( 1 \), ce qui n'est jamais le cas
+dans le corollaire précédent, même si \( \avar \) est linéaire.
 
 
 \subsection{L'ex-conjecture de \bsc{Mordell-Lang}}
@@ -256,40 +271,33 @@ démonstration repose sur le théorème de \bsc{Roth} énoncé plus haut, et ava
 disposait en 1929. Pour les courbes de genre supérieur ou égal à \( 2 \), ce
 théorème est en quelque sorte surpassé par l'ex-conjecture de \bsc{Mordell},
 mais il conserve un intérêt pour les courbes elliptiques. La généralisation
-suivante du théorème avait été conjecturée par \bsc{Lang}, de façon analogue à
-sa généralisation de la conjecture de \bsc{Mordell}.
+suivante du théorème avait été conjecturée par \bsc{Lang} \cite{laipc}.
 
 \begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Lang}]
   Soit \( \va \) une variété abélienne plongée dans \( \projd \) et \( \divi
-  \) un hyperplan de \( \projd \), considéré comme hyperplan à l'infini. Alors
-  la partie affine \( \va \setminus \divi \) ne possède qu'un nombre fini de
-  points entiers.
+  \) un hyperplan de \( \projd \). Alors \( \va \setminus \divi \) ne possède
+  qu'un nombre fini de points entiers.
 \end{thm}
 
 C'est en fait un corollaire \cite[cor.~6.2, p.~576]{faldaav} du théorème
 d'approximation de \bsc{Faltings} : on remarque que la hauteur (relative à \(
-  \divi \)) d'un point entier \( x \) est essentiellement donné par le produit
-des inverses des distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v
-\) parcourt les places archimédiennes de \( \cdn \). Or ces distances sont
-minorées par \( \hautm{}{x}^{-\eps} \) pour tout \( \eps>0 \), sauf pour un
-nombre fini de points. Ceci est bien sûr contradictoire dès que \( \eps < 1
-\), ce qui prouve que seules les approximations exceptionnelles de \( \divi \)
-peuvent donner des points entiers.
+  \divi \)) d'un point entier \( x \) est égale au produit des inverses des
+distances \( v \)-adiques de \( x \) à \( \divi \) quand \( v \) parcourt les
+places archimédiennes de \( \cdn \). Ainsi, les points entiers de \( \va
+  \setminus \divi \) sont des approximations exceptionnelles de \( \divi \) au
+sens du théorème~\vref{t:fal2} pour \( \eps = 1 \), elles sont donc en nombre
+fini.
 
 C'est pour ce type d'applications qu'il devient essentiel dans le théorème
-d'approximation de pouvoir prendre \( \eps \) petit, au moins inférieur à \( 1
-\), alors que l'exposant de l'inégalité de \bsc{Liouville} ne suffit en aucun
-cas.
+d'approximation de pouvoir prendre \( \eps \le 1 \) et que l'inégalité de
+\bsc{Liouville} (corollaire~\vref{c:liou-intro}) ne suffit pas.
 
-Signalons qu'on connaît des versions quantitatives (\lat{a priori} pas
-explicites) du théorème de \bsc{Siegel}
-\cite{silqs}.
-Par contre, à ma connaissance, la seule démonstration connue de sa
-généralisation est celle de \bsc{Faltings} : en particulier on ne connaît pas
-de version quantitative de cette ex-conjecture de \bsc{Lang}. Les résultat
-obtenus ici permettent de donner un décompte explicite des points entiers,
-malheureusement pas dans le cas général, mais au moins dans un certain nombre
-de cas, par exemple si \( \va \) est simple.
+À notre connaissance, à ce jour, la seule démonstration de l'ex-conjecture de
+\bsc{Lang} énoncé ci-dessus est celle de \bsc{Faltings} : en particulier on
+n'en connaît pas de version quantitative explicite. Les résultats obtenus ici
+permettent de donner un décompte explicite des points entiers, malheureusement
+pas dans le cas général, mais au moins dans un certain nombre de cas, par
+exemple si \( \va \) est simple.
 
 
 
