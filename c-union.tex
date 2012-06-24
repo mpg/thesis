@@ -239,12 +239,12 @@ considérées, on utilisera donc le scolie suivant.
 On commence par majorer le nombre de points dans chaque cône tronqué.
 
 \begin{lem} \label{l:big-by-cone}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
   on considère une famille de points \( x_1, \dots, x_p \in \va(\Qbar)
-  \) deux à deux distincts modulo \( \vai \) et satisfaisant simultanément aux
-  conditions suivantes :
+  \) satisfaisant à XXX et aux conditions suivantes, pour tous \( i \) et \( j
+  \) :
   \begin{align}
     \label{e:big-ha}
     0 < \distv{x_i} \avar
@@ -253,7 +253,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\ \label{e:big-big}
-    \hautn{x_1}
+    \hautn{x_i}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
     \\ \label{e:big-cos}
     \cos(x_i, x_j)
@@ -313,7 +313,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   effet, sinon le corollaire~\vref{c:nobig-liouville} s'applique,
   car~\eqref{e:big-ha} implique immédiatement~\eqref{e:nobig-ha}
   et~\eqref{e:big-big} implique assez largement~\eqref{e:nobig-big} vu la
-  définition de \( \cst{ht-v-gen1} \).
+  définition de \( \cst{ht-v-gen1} \) et la remarque~\vref{r:hm-clab-pm}.
 
   Soit \( x_1, \dots, x_p \) une famille comme dans l'énoncé, qu'on suppose de
   plus ordonnée par hauteur normalisée croissante. On pose
@@ -322,7 +322,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
   \( \phi \le \eps / (2580 \adeg) \) de sorte que ce couple \( (\rho, \phi) \)
   satisfait à~\eqref{e:rho-phi-grp}. Par ailleurs, il est assez facile de voir
   que la condition~\eqref{e:big-big} est plus forte que~\eqref{e:Mbig} : en
-  effet \( \cst{v-gen} \ge 2/\eps \cdot \adeg (\adim+1) \) et la parenthèse
+  effet \( \cst{v-gen} \ge (2/\eps) \cdot \adeg (\adim+1) \) et la parenthèse
   dans le membre de droite de~\eqref{e:Mbig} est largement majorée par \( 5
     \cst{ht-v-gen1} \).
 
@@ -396,12 +396,28 @@ On utilise ensuite le fait suivant.
 \end{proof}
 
 \begin{coro} \label{c:big-gen}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
-    \ge g + 1 \), il existe au plus
+  \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
+    \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
+    \grp \) satisfaisant à XXX et aux conditions suivantes, pour tout \( i \)
+  :
+  \begin{align}
+    0 < \distv{x_i} \avar
+    & <
+    \alpha_v^{-1}
+    \hautm2{x_i}^{-\wtapx \eps}
+    \quad \forall v \in \placesapx
+    \\
+    \hautn{x_i}
+    & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
+  \end{align}
+  avec \( \Lambda_4 \), \( \cst{ht-v-gen1} \), \( s \)  et \( \alpha_v \)
+  comme au lemme~\vref{l:big-by-cone}. Alors on a
   \begin{equation}
+    p
+    \le
     \sqrt{\frac \adeg \eps}
     (2mg)^{mg+1}
     \ln \Lambda_4
@@ -411,21 +427,8 @@ On utilise ensuite le fait suivant.
         86 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
         \bigr)^{ \frac{m}{2(m-g)} }
     \right)^r
+    \pmm.
   \end{equation}
-  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
-  aux deux conditions suivantes :
-  \begin{align}
-    0 < \distv{x_i} \avar
-    & <
-    \alpha_v^{-1}
-    \hautm2{x_i}^{-\wtapx \eps}
-    \quad \forall v \in \placesapx
-    \\
-    \hautn{x_1}
-    & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
-  \end{align}
-  avec \( \Lambda_4 \), \( \cst{ht-v-gen1} \), \( s \)  et \( \alpha_v \)
-  comme au lemme~\vref{l:big-by-cone}.
 \end{coro}
 
 \begin{proof}
@@ -460,32 +463,21 @@ Il ne reste maintenant plus qu'à passer à une hypothèse d'approximation sous
 sa forme produit.
 
 \begin{coro}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
-    \ge g + 1 \), il existe au plus
-  \begin{equation}
-    2 \cdot 5^{\card S} \cdot
-    \sqrt{ \frac{\adeg}\eps }
-    (2mg)^{mg+1}
-    \ln \Lambda_4
-    \left(
-      3 \sqrt m
-      \bigl(
-        172 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
-      \bigr)^{ \frac{m}{2(m-g)} }
-    \right)^r
-  \end{equation}
-  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
-  aux deux conditions suivantes :
+  \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
+    \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
+    \grp \) et\( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
+    x_p) \) ; on suppose que cette famille satisfait à XXX et aux conditions
+  suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
     \alpha^{-1}
     \hautm2{x_i}^{-\eps}
     \\
-    \hautn{x_1}
+    \hautn{x_i}
     & > \cst{ht-v-gen1} \Lambda_4^{(2mg)^{mg}}
   \end{align}
   avec \( \Lambda_4 \) et \( \cst{ht-v-gen1} \) comme au
@@ -499,52 +491,58 @@ sa forme produit.
       \cdot \expb^{\adeg n} \adeg \sbin{\adeg+n}{n}^{1/2}
     \).
   \end{enumthm}
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    2 \cdot 5^{\card S} \cdot
+    \sqrt{ \frac{\adeg}\eps }
+    (2mg)^{mg+1}
+    \ln \Lambda_4
+    \left(
+      3 \sqrt m
+      \bigl(
+        172 \nclmaps \cdot 5^g \adeg s \, \eps^{-1}
+      \bigr)^{ \frac{m}{2(m-g)} }
+    \right)^r
+    \pmm.
+  \end{equation}
 \end{coro}
 
 \begin{proof}
-  On applique le scolie~\vref{s:ha-prod} au corollaire~\vref{c:big-gen} comme
-  prévu à la remarque~\vref{r:app-prod}. On constate que vu la définition de
-  \( \Lambda_4 \), en y remplaçant \( \eps \) par \( \eps / 2 \), on
-  ajoute \( \ln(2) m / (m-g) \) à son logarithme et que
+  On applique le scolie~\vref{s:ha-prod} au corollaire~\vref{c:big-gen}, comme
+  prévu à la remarque~\vref{r:app-prod}, avec \( A = \set{x_1, \dots, x_p} \).
+  Ceci a pour effet, dans le décompte, de rajouter un facteur \(
+    5^{\card\placesapx} \) et remplacer \( \eps \) par \( \eps/2 \).  On
+  constate que vu la définition de \( \Lambda_4 \), en effectuant cette
+  opération, on ajoute \( \ln(2) m / (m-g) \) à son logarithme et que
   \begin{equation}
     \ln \Lambda_4 + \ln(2) m / (m-g)
     \le
     \sqrt 2 \ln \Lambda_4
-    \pmm;
+    \pmm.
   \end{equation}
- les autres changements dans le décompte sont évidents.
+  Les autres modifications sont évidentes.
 \end{proof}
 
 On peut alors simplifier légèrement la condition d'approximation en absorbant
 la constante ; on aboutit au résultat suivant.
 
 \begin{coro} \label{c:big-gen-prod}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \), de \( \va \) de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
-    \ge g + 1 \), il existe au plus
-  \begin{equation}
-    2 \cdot 5^{\card \placesapx} \cdot
-    \sqrt{ \frac{\adeg}\eps }
-    (2mg)^{mg+1}
-    \ln \Lambda_5
-    \left(
-      3 \sqrt m
-      \bigl(
-        174 \nclmaps \cdot 5^g \adeg
-        \, \eps^{-1}
-        \bigr)^{ \frac{m}{2(m-g)} }
-    \right)^r
-  \end{equation}
-  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
-  aux deux conditions suivantes :
+  \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
+    \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
+    \grp \) et\( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
+    x_p) \) ; on suppose que cette famille satisfait à XXX et aux conditions
+  suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
     \hautm2{x_i}^{-\eps}
     \\
-    \hautn{x_1}
+    \hautn{x_i}
     & > \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}}
   \end{align}
   avec
@@ -574,10 +572,27 @@ la constante ; on aboutit au résultat suivant.
     \Bigr)
     \pmm.
   \end{align}
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    2 \cdot 5^{\card \placesapx} \cdot
+    \sqrt{ \frac{\adeg}\eps }
+    (2mg)^{mg+1}
+    \ln \Lambda_5
+    \left(
+      3 \sqrt m
+      \bigl(
+        174 \nclmaps \cdot 5^g \adeg
+        \, \eps^{-1}
+        \bigr)^{ \frac{m}{2(m-g)} }
+    \right)^r
+    \pmm.
+  \end{equation}
 \end{coro}
 
 \begin{proof}
-  On commencer par majorer chacun des deux choix possibles pour \( \alpha \)
+  On commence par majorer chacun des deux choix possibles pour \( \alpha \)
   dans le corollaire précédent. Pour le premier, on a immédiatement
   \begin{equation}
     \ln \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{1/2}
@@ -624,7 +639,7 @@ la constante ; on aboutit au résultat suivant.
 
   Par ailleurs, comme les deux valeurs possibles de \( \alpha \) peuvent être
   absorbées à un coût équivalent, il est clair qu'on a intérêt à choisir la
-  deuxième option pour le choix de \( (s, \alpha) \) afin d'avoir \( s = 1 \)
+  deuxième option pour le couple \( (s, \alpha) \) afin d'avoir \( s = 1 \)
   qui minimise les différentes constantes.
 \end{proof}
 
@@ -652,29 +667,19 @@ absolue, sans pour autant coûter beaucoup plus cher que \( g+1 \) sur les
 autres facteurs.
 
 \begin{coro} \label{c:big-m=2g}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
-    \ge g + 1 \), il existe au plus
-  \begin{equation}
-    2 \cdot 5^{\card \placesapx} \cdot
-    \sqrt{ \frac{\adeg}\eps }
-    (4g)^{4g^2+1}
-    \ln \Lambda_5'
-    \left(
-        739 \nclmaps \cdot 7^g \adeg
-        \, \eps^{-1}
-    \right)^r
-  \end{equation}
-  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
-  aux deux conditions suivantes :
+  \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
+  \( x_1, \dots, x_p \) de points de \( \grp \) et\( \placesapx \) un ensemble
+  fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
+  satisfait à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
     \hautm2{x_i}^{-\eps}
     \\
-    \hautn{x_1}
+    \hautn{x_i}
     & > \cst{ht-v-gen1} (\Lambda_5')^{(4g)^{4g^2}}
   \end{align}
   avec
@@ -682,7 +687,7 @@ autres facteurs.
     \Lambda_5'
     & =
     \bigl( 87 \nclmaps \adeg \, \eps^{-1} \bigr)^2
-    \bigl( 5 (\deg \va) (2\sqrt2 g^2 \adeg)^g \bigr)^{2g}
+    \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g}
     \\
     \cst{ht-v-gen1}'
     & =
@@ -701,6 +706,20 @@ autres facteurs.
     \Bigr)
     \pmm.
   \end{align}
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    2 \cdot 5^{\card \placesapx} \cdot
+    \sqrt{ \frac{\adeg}\eps }
+    (4g)^{4g^2+1}
+    \ln \Lambda_5'
+    \left(
+        739 \nclmaps \cdot 7^g \adeg
+        \, \eps^{-1}
+    \right)^r
+    \pmm.
+  \end{equation}
 \end{coro}
 
 \begin{proof}
@@ -718,7 +737,9 @@ Dans toute cette section, on suppose (sans nécessairement le rappeler à chaque
 par un plongement de \bsc{Mumford} modifié associé à une polarisation
 principale, ce qui est nécessaire pour appliquer le
 théorème~\vref{t:mumford-gen}. Cette hypothèse implique en particulier que
-\( \deg \va = N = n+1 = 16^g \).
+\( \deg \va = n+1 = 16^g \) et qu'on peut prendre \( N = n+1 \). Par ailleurs,
+on supposera toujours (au moins) \( \eps \le 1 \) pour simplifier certaines
+estimations.
 
 Par ailleurs, comme on l'a vu dans la section précédente, on aura intérêt dans
 l'inégalité de \bsc{Vojta} (corollaire~\vref{c:vojta-gen2}) à toujours prendre
@@ -807,20 +828,23 @@ Posons maintenant et pour le reste de cette section
     2^{34} \, \vahtr \, \adeg
   \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
   + 1
+  &
+  M'
+  & =
+  \adeg^M (2M)^{(M+1)\adim}
   \\
   \phi
   & =
-  \frac{ \eps }{ 4 \adeg^M (2M)^{(M+1)\adim} }
-  \\
+  \frac{ \eps }{ 4 M' }
+  &
   \rho
   & =
-  \frac{ \sqrt\eps }{ \adeg^{M/2} (2M)^{(M+1)\adim/2} }
+  \left( \frac{ \eps }{ M' } \right)^{1/2}
 \end{align}
 de sorte que \( (\rho, \phi) \) satisfait bien la
-condition~\eqref{e:rho-phi-gen} (on peut de nouveau supposer \( \eps < 2\adeg
-\) en vertu du corollaire~\vref{c:nobig-liouville} vu la condition de hauteur
-qu'on imposera bientôt). Par ailleurs, à un facteur \( 2 \) près, chacune de
-ces deux quantités est aussi grande au possible sous cette condition.
+condition~\eqref{e:rho-phi-gen}. Par ailleurs, à un facteur \( 2 \) près,
+chacune de ces deux quantités est aussi grande que possible sous cette
+condition.
 
 De plus, on observe les relations suivantes entre \( M \) et les différentes
 quantités apparaissant dans l'inégalité de \bsc{Vojta} ci-dessus :
@@ -854,11 +878,11 @@ section~\vref{sec:big-points} en commençant par majorer le nombre de points
 dans chaque cône tronqué.
 
 \begin{lem}
-  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
-    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
-    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( \eps > 0 \).
-  On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
-  satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
+  Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
+  dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps < 1 \).  Soit
+  enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \) satisfaisant
+  à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     \label{e:big-any-ha}
     0 < \distv{x_i} \avar
@@ -867,7 +891,7 @@ dans chaque cône tronqué.
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\ \label{e:big-any-big}
-    \hautn{x_1}
+    \hautn{x_i}
     & > \mu
     \\ \label{e:big-any-cos}
     \cos(x_i, x_j)
@@ -912,12 +936,11 @@ dans chaque cône tronqué.
 On en déduit un décompte complet des grands points.
 
 \begin{coro}
-  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
-    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
-    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( 0 < \eps <
-    \expb^{-1} \).
-  On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
-  satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
+  Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
+  dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps < \expb^{-1} \).
+  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
+  satisfaisant à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \distv{x_i} \avar
     & <
@@ -925,7 +948,7 @@ On en déduit un décompte complet des grands points.
     \hautm2{x_i}^{-\wtapx \eps}
     \quad \forall v \in \placesapx
     \\
-    \hautn{x_1}
+    \hautn{x_i}
     & > \mu
   \end{align}
   avec \( (\alpha_v)_v \) et \( \mu \) comme ci-dessus. Alors on a
@@ -994,24 +1017,24 @@ On en déduit un décompte complet des grands points.
 \end{proof}
 
 \begin{coro}
-  Soit \( \avar \) une sous-variété de \( \va \) ; on note \( \adeg = \deg
-    \avar \) et \( \adim = \dim\avar \). On fixe un sous-groupe \( \grp
-    \subset \va(\Qbar) \) de rang fini \( r \), puis un réel \( 0 < \eps <
-    \expb^{-1} \).
-  On considère une famille \( x_1, \dots, x_p \) de points de \( \va \)
-  satisfaisant à la condition \( (*) \) ainsi qu'aux conditions suivantes :
+  Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
+  dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps < \expb^{-1} \).
+  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
+  satisfaisant à XXX et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     0
     & < \prod\placerange \distv{x_i} \avar^\degv
     < \hautm2{x_i}^{-\eps}
     \\
-    \hautn{x_1}
+    \hautn{x_i}
     & >
     \cst{ht-comb}
     \, \eps^{-(4g)^{4g^2}}
     \adeg^{M-1} (3M)^{ (M+1)\adim + 4}
   \end{align}
-  Alors on a
+  où \( \placesapx \) est un ensemble fini de places de \( \Q(x_1, \dots, x_p)
+  \). Alors on a
   \begin{equation}
     p
     \le
@@ -1069,7 +1092,7 @@ en géométrie euclidienne, que l'on commence par rappeler.
 
 \begin{proof}
   C'est le lemme~6.1, p.~541 de \cite{remdcl}, où l'on a par ailleurs effectué
-  le changement de notations \( \mu = \rho / \gamma \).  L'énonce donné dans
+  le changement de notations \( \mu = \rho / \gamma \).  L'énoncé donné dans
   la référence citée ne précise pas si les boules sont ouvertes ou fermées,
   mais on constate facilement que la preuve qui y est proposée fonctionne
   parfaitement pour la variante la plus forte, énoncée ci-dessus.
@@ -1220,6 +1243,7 @@ On en déduit immédiatement le corollaire pratique suivant.
 On en déduit à titre d'exemple une variante du
 corollaire~\vref{c:big-gen-prod} ; le lecteur en déduira sans peine des
 variantes similaires des autres résultats de décompte.
+\worknote{À revoir}
 
 \begin{coro} \label{c:all-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
