@@ -821,7 +821,10 @@ l'inégalité de \bsc{Vojta} sous ces conditions.
   pour simplifier l'expression de \( \cst{ht-v-gen2} \).
 \end{proof}
 
-Posons maintenant et pour le reste de cette section
+À partir de maintenant et pour le reste de cette section, on fixe un
+sous-groupe \( \grp \subset \va(\Qbar) \) de rang fini \( r \ge 1 \) (car les
+résultats établis ici sont évidents si \( r = 0 \)) ainsi que les
+constantes suivantes
 \begin{align}
   M
   & =
@@ -847,36 +850,32 @@ condition~\eqref{e:rho-phi-gen}. Par ailleurs, à un facteur \( 2 \) près,
 chacune de ces deux quantités est aussi grande que possible sous cette
 condition.
 
-De plus, on observe les relations suivantes entre \( M \) et les différentes
-quantités apparaissant dans l'inégalité de \bsc{Vojta} ci-dessus :
-\begin{equation}
-  \eps^2 \Lambda_6
-  \le
-  M
-  \quad\text{et}\quad
-  (4g)^{4g^2}
-  \le
-  \sqrt M
-  \le
-  M
-\end{equation}
-puis, en posant
+On remarque alors que \( M \ge 2^{68 g^5} d^{2g^5} \) pour majorer en fonction
+de \( M \) les différentes constantes apparaissant dans l'inégalité de
+\bsc{Vojta} ci-dessus. Pour commencer, on a \( \eps^2 \Lambda_6 \le M^2 \) et
+\( (4g)^{4g^2} \le M/2 \) puis, en posant
 \begin{equation}
   \newcst[\vaemb, \avar]{ht-comb}
   =
   \hautl1 \avar + \max \bigl( \hautl1{\va}, \hlclab, \htcmp \bigr)
 \end{equation}
-on a aisément
+on a aisément \( \cst{ht-v-gen2} \le \cst{ht-comb} \adeg^M \) soit au final
 \begin{equation}
-  \cst{ht-v-gen2}
+  \cst{ht-v-gen2} \Lambda_6^{(4g)^{4g^2}}
   \le
-  \cst{ht-comb} \, \adeg^{M-1} (2M)^{ (M+1)\adim}
+  \eps^{(4g)^{4g^2}} \cst{ht-comb} (\adeg M)^M
+  \le
+  \eps^{(4g)^{4g^2}} \cst{ht-comb} M'
   \pmm.
 \end{equation}
 
-Nous sommes maintenant prêts à suivre le plan de la
-section~\vref{sec:big-points} en commençant par majorer le nombre de points
-dans chaque cône tronqué.
+Par ailleurs, on a
+\(
+  \hautl1 \avar + 2 \adeg M \bigl( \ln \adeg + \hlpm + \htcmp \bigr)
+  \le
+  4 \adeg^2 M \cst{ht-comb}
+\). Nous sommes maintenant prêts combiner les inégalités de \bsc{Vojta} et de
+\bsc{Mumford} pour majorer le nombre de points dans chaque cône tronqué.
 
 \begin{lem}
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
@@ -899,13 +898,11 @@ dans chaque cône tronqué.
     & > 1 - \eps \phi
   \end{align}
   avec \( (\alpha)_v \) comme ci-dessus et
-  \begin{equation}
-    \mu =
-    \cst{ht-comb}
-    \, \eps^{-(4g)^{4g^2}}
-    \adeg^{M-1} (2M)^{ (M+1)\adim + 4}
-    \pmm.
-  \end{equation}
+  \(
+    \mu
+    =
+    \cst{ht-comb} M' M^3 \, \eps^{-(4g)^{4g^2}}
+  \).
   Alors on a
   \begin{equation}
     p
@@ -956,7 +953,7 @@ On en déduit un décompte complet des grands points.
   \begin{equation}
     p
     \le
-    M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    M^2 (M')^{(r+1)/2}
     \, \eps^{-r - 1/2} \ln(1/\eps)
     \pmm.
   \end{equation}
@@ -1011,7 +1008,7 @@ On en déduit un décompte complet des grands points.
     \frac{ M^2 }{ \rho^{r+1} }
     \, \eps^{-r/2} \ln(1/\eps)
     \le
-    M^2 \Bigl( \adeg^{M} (2M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    M^2 (M')^{(r+1)/2}
     \, \eps^{-r - 1/2} \ln(1/\eps)
   \end{equation}
   compte tenu de la définition de \( \rho \).
@@ -1032,18 +1029,10 @@ On en déduit un décompte complet des grands points.
     & >
     \cst{ht-comb}
     \, \eps^{-(4g)^{4g^2}}
-    \adeg^{M-1} (3M)^{ (M+1)\adim + 4}
+    \adeg^M (3M)^{ (M+1)\adim + 3}
   \end{align}
   où \( \placesapx \) est un ensemble fini de places de \( \Q(x_1, \dots, x_p)
-  \). Alors on a
-  \begin{equation}
-    p
-    \le
-    5^{\card\placesapx}
-    M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(1/\eps)
-  \end{equation}
-  avec
+  \) et
   \begin{align}
     \cst{ht-comb}
     & =
@@ -1055,7 +1044,17 @@ On en déduit un décompte complet des grands points.
     2^{34} \, \vahtr \, \adeg
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
     + 1
+    \pmm.
   \end{align}
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    5^{\card\placesapx}
+    M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    \, \eps^{-r - 1/2} \ln(1/\eps)
+    \pmm.
+  \end{equation}
 \end{coro}
 
 \begin{proof}
