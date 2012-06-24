@@ -1,5 +1,5 @@
 \documentclass[
-full,
+% full,
 % pph,
 % nomark,
 ] {mpg-preth}
@@ -22,7 +22,11 @@ full,
 
 \frontmatter
 
-\include{title}
+\inlineinclude{title}{%
+  \input{i-title}
+  \cleardoublepage
+}
+
 \inlineinclude{toc}{%
   \setcounter{tocdepth}{1}
   \tableofcontents

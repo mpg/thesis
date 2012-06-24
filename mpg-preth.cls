@@ -12,6 +12,7 @@
 %
 \newif\if@private       \@privatetrue
 \newif\if@domark        \@domarktrue
+\newif\if@cover         \@coverfalse
 \setlength{\overfullrule}{5pt}
 
 % option declarations [[2
@@ -19,6 +20,7 @@
 \DeclareOption {full}   {\let\includeonly\@gobble}
 \DeclareOption {pph}    {\@privatefalse}
 \DeclareOption {nomark} {\@domarkfalse}
+\DeclareOption {cover}  {\@covertrue}
 \DeclareOption {final}  {
   \let\includeonly\@gobble \@privatefalse \@domarkfalse
   \setlength{\overfullrule}{0pt}
@@ -27,7 +29,12 @@
 
 % use Koma with custom encoding and fonts and colors [[2
 %
-\LoadClass[a4paper, twoside, BCOR=1cm, 11pt]{scrbook}
+\if@cover
+\PassOptionsToClass{oneside}{scrbook}
+\else
+\PassOptionsToClass{twoside, BCOR=1cm}{scrbook}
+\fi
+\LoadClass[a4paper, 11pt]{scrbook}
 % add french to global options
 \edef\@classoptionslist{\@classoptionslist,french}
 \usepackage[utf8]{inputenc}

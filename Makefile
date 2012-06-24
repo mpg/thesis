@@ -1,10 +1,12 @@
 all: memoire.pdf front.pdf back.pdf
 
-memoire.pdf: *.tex these.bib mpg-preth.cls
-	latexmk memoire.tex
+CLS = mpg-preth.cls
 
-front.pdf: memoire.pdf
-	pdftk $< cat 1 output $@
+memoire.pdf: memoire.tex main.tex ?-*.tex these.bib $(CLS)
+	latexmk $<
 
-back.pdf: back.tex mpg-preth.cls
+front.pdf: front.tex i-title.tex $(CLS)
+	latexmk $<
+
+back.pdf: back.tex $(CLS)
 	latexmk $<
