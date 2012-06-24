@@ -174,7 +174,7 @@ inégalité qui, outre son intérêt propre, joue un rôle crucial dans la preuv
 nos inégalités à la \bsc{Mumford}. Un corollaire immédiat de l'inégalité de
 \bsc{Liouville} est le suivant.
 
-\begin{coro}
+\begin{coro} \label{c:liou-intro}
   Soient \( \avar \) une sous variété de \( \projd \) de degré \( \adeg \) et
   \( \eps > 0 \) un réel. Alors l'ensemble des points \( x \in \projd(\Qbar)
   \) tels que
@@ -812,11 +812,50 @@ hypersurface. Évidemment, on a \( \distv x \avar = 0 \Leftrightarrow x \in
 \medskip
 
 Soient \( \cdn \) un corps de nombres, \( \placesapx \) un ensemble fini de
-places de \( \cdn \) et \( (\wtapx)\placerange \) une famille de réels telle
-que \( \sum\placerange \wtapx \degv = 1 \). On considère de plus une famille
-de constantes \( (c_v) \), un réel \( \eps > 0 \) et on associe à toutes
-ces données la condition d'approximation suivante.
+places de \( \cdn \) et \( \eps > 0 \) un réel. Le but est d'étudier les
+points satisfaisant à la condition condition d'approximation
+\begin{equation} \label{e:ha-prod}
+  \prod\placerange
+  \distv x \avar ^\degv
+  \le
+  c
+  \hautm2{x}^{-\eps}
+\end{equation}
+où \( c \) est une constante réelle et \( \degv = [\cdn_v : \Q_v] / [\cdn :
+  \Q] \), de sorte que le membre de droite ne dépend pas du corps de nombre
+(contenant \( x \)) utilisé pour le calculer. Autrement dit, une telle
+condition a un sens sur \( \Qbar \).
+
+Malheureusement, cette condition n'est pas facile à exploiter techniquement.
+On introduit donc, comme il est d'usage, un autre type de condition faisant
+apparaître une inégalité par place. Plus précisément, soient
+\( \cdn_0 \) un corps de nombres,  \( \placesapx_0 \) un ensemble fini de
+places de \( \cdn \) et \( (\wtapx)_{v \in \placesapx_0} \) une famille de
+réels telle que \( \sum_{v\in\placesapx_0} \wtapx \degv(\cdn_0) = 1 \). On
+utilisera des conditions d'approximations du type
 \begin{equation} \label{e:ha-sys}
+  \distv x \avar
+  \le
+  c_v
+  \hautm2{x}^{-\wtapx\eps}
+  \quad \forall v \in \placesapx_0
+\end{equation}
+où les \( c_v \) sont des constantes réelles. Il est clair
+que~\eqref{e:ha-sys} est une hypothèse plus forte que~\eqref{e:ha-prod}, mais
+on verra à la section~\vref{sec:ha-prod} qu'il suffit qu'un décompte sous
+l'hypothèse forte implique en fait un décompte sous l'hypothèse plus faible.
+
+Par ailleurs, il est facile de donner à cette condition un sens sur \( \Qbar
+\), de la façon suivante. Si \( \cdn \) est une extension finie de \( \cdn_0
+\), on note \( \placesapx
+\) l'ensemble des places \( v \) de \( \cdn \) qui sont au-dessus d'un
+élément \( v_0 \) de \( \placesapx_0 \) et on pose \( \wtapx[v] = \wtapx[v_0] \)
+ainsi que \( c_v = c_{v_0} \). On a toujours
+\begin{equation} \label{e:wtapx-1}
+  \sum\placerange \wtapx \degv = 1
+\end{equation}
+et il est clair que la condition~\eqref{e:ha-sys} est équivalente à
+\begin{equation} \label{e:ha-sys-ext}
   \distv x \avar
   \le
   c_v
@@ -824,57 +863,20 @@ ces données la condition d'approximation suivante.
   \quad \forall v \in \placesapx
   \pmm.
 \end{equation}
-Si \( \cdn' \) est une extension finie de \( \cdn \), on note \( \placesapx'
-\) l'ensemble des places \( w \) de \( \cdn' \) qui sont au-dessus d'un
-élément \( v \) de \( \placesapx \) et on pose \( \wtapx[w] = \wtapx \)
-ainsi que \( c_w = c_v \). On a toujours
-\begin{equation}
-  \sum_{w \in \placesapx'}
-  \wtapx[w]
-  \frac{ [\cdn'_w : \Q_v] }{ [\cdn' : \Q] }
-  =
-  1
-\end{equation}
-et il est clair que la condition~\eqref{e:ha-sys} est équivalente à
-\begin{equation} \label{e:ha-sys-ext}
-  \distv[w] x \avar
-  \le
-  c_w
-  \hautm2{x}^{-\wtapx[w]\eps}
-  \quad \forall w \in \placesapx'
-  \pmm.
-\end{equation}
-Autrement dit, une condition comme~\eqref{e:ha-sys} a un sens naturel pour
-tout \( x \in \projd(\Qbar) \).
 
-Enfin, on considérera aussi des conditions d'approximation de la forme
-\begin{equation} \label{e:ha-prod}
-  \prod\placerange
-  \distv x \avar ^\degv
-  \le
-  c
-  \hautm2{x}^{-\eps}
-  \pmm.
-\end{equation}
-Il est clair qu'une telle condition a également un sens sur \( \Qbar \). Par
-ailleurs, si \( c = \prod\placerange c_v \), la condition~\eqref{e:ha-sys}
-implique immédiatement~\eqref{e:ha-prod}. Autrement dit, un énoncé formulé
-avec une condition de type~\eqref{e:ha-prod} est plus fort que le même énoncé
-avec une condition de type~\eqref{e:ha-sys}. Cependant, on verra
-(section~\vref{sec:ha-prod}) que l'énoncé plus faible implique en fait l'énoncé
-fort, quitte à introduire le cardinal de \( \placesapx \) dans le décompte.
+\begin{rem} \label{r:ha-cdn}
+  Vu que toutes les conditions considérées ont un sens sur \( \Qbar \), dans
+  la suite on se préoccupera en général assez peu du corps de nombres utilisé.
+  La notation \( \cdn \) désignera n'importe quel corps de nombres « assez
+  grand », contenant en particulier un corps de définition des approximations
+  exceptionnelles considérées. Les notations \( \placesapx \) et \( \wtapx \)
+  auront toujours le sens ci-dessus ; en particulier on supposera toujours
+  que~\eqref{e:wtapx-1} est satisfait sans que cela soit rappelé.
 
-\medskip
-
-Vu que toutes les conditions considérées ont un sens sur \( \Qbar \), dans les
-chapitres~\vref{chap:vojta} et~\vref{chap:mumford} on se préoccupera assez peu
-du corps de nombres sur lequel on travaille. La notation \( \cdn \) désignera
-n'importe quel corps de nombres « assez grand », c'est-à-dire contenant un
-corps de définition de tous les objets en jeu, mais aussi, par exemple, des
-racines carrées de coefficients multinomiaux quand c'est utile pour travailler
-avec un plongement de \bsc{Veronese} remodelé.  En particulier, tous les
-objets considérés (points, variétés, etc.) sont supposés définis sur \( \Qbar
-\) sauf mention explicite du contraire.
+  En particulier, dans l'ensemble de ce mémoire, tous les objets considérés
+  (points, variétés, etc.) sont supposés définis sur \( \Qbar \) sauf mention
+  explicite du contraire.
+\end{rem}
 
 
 \section{Compléments sur les distances} \label{sec:distv-cmp}
