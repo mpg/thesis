@@ -1072,6 +1072,86 @@ On en déduit un décompte complet des grands points.
     3M \) comme ci-dessus.
 \end{proof}
 
+On en déduit immédiatement un décompte des points entiers d'un ouvert affine,
+dans le cas où \( \va \) est simple.
+
+\begin{coro}
+  Soient \( \cdn \) un corps de nombres, \( r \) le rang de \( \va(\cdn) \) et
+  \( \placesapx \) un ensemble fini de places de
+  \( \cdn \), contenant toutes les places archimédiennes. Le nombre de points
+  \( \placesapx \)-entiers sur \( \cdn \) de \( \va \setminus \zeros{\vp[0]} \)
+  de hauteur normalisée au moins
+  \begin{equation}
+    \max \bigl( \hautl1{\va}, \hlclab, \htcmp \bigr)
+    (48 M_1)^{g M_1}
+  \end{equation}
+  avec
+  \(
+    M_1
+    =
+    \bigl( 2^{39} \, \vahtr \bigr)^{ (r+1) g^{ 6g^2 } }
+  \)
+  est au plus
+  \begin{equation}
+    5^{\card\placesapx}
+    (48 M_1)^{g M_1 (r+1)/2}
+    \pmm.
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  Notons \( \divi = \zeros{\vp[0]} \) et
+  soit \( x \) un point \( \placesapx \)-entier de \( \va \setminus \divi \),
+  c'est-à-dire que \( x \) admet un système de cordonnées homogènes de la
+  forme \( (1 : x_1 : \dots : x_n) \) avec \( \av{ x_i } \le 1 \) dès que \( v
+    \not\in \placesapx \). En une telle place, on a donc \( \nv2 x = 1 \). Par
+  ailleurs, en tout place, la proposition~\vref{p:dv-hp} montre que \( \distv
+    x \divi = \nv2 x ^{-1} \). Ainsi, on a
+  \begin{equation}
+    \prod_{v \in \placesapx}
+    \distv x \divi ^\degv
+    =
+    \prod_{v \in M_\cdn}
+    \nv2 x ^{-\degv}
+    =
+    \hautm2 x ^{-1}
+    \pmm,
+  \end{equation}
+  autrement dit \( x \) est une approximation exceptionnelle de \( \divi \),
+  d'exposant \( 1 \). On applique donc le corollaire précédent avec \( \avar =
+    \divi \) et \( \eps = 1 \) ainsi que \( \grp = \va(\cdn) \), en remarquant
+  que comme \( \va \) est simple, la condition XXX est automatiquement
+  satisfaite.
+
+  En particulier, on a \( \adim = g-1 \) et \( \adeg = \deg \va = 16^g \) vu
+  le plongement de \( \va \) choisi, et bien sûr \( \hautl1 \divi = 0 \). On
+  utilise ces informations pour écrire
+  \begin{equation}
+    \bigl(
+    2^{34} \, \vahtr \, \adeg
+    \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
+    + 1
+    =
+    \bigl(
+    2^{34} \, \vahtr \, 16^g
+    \bigr)^{ (r+1) g^{ 5g^2 } }
+    + 1
+    \le
+    \bigl( 2^{39} \, \vahtr \bigr)^{ (r+1) g^{ 6g^2 } }
+    \pmm.
+  \end{equation}
+  On remarque ensuite que \( (M_1+1)(g-1) \le g M_1 - 3 \) pour écrire
+  \begin{equation}
+    \adeg^{M_1} (3M_1)^{ (M_1+1)(g-1) + 3}
+    \le
+    16^{g M_1}
+    (3 M_1)^{g M_1}
+    =
+    (48 M_1)^{g M_1}
+  \end{equation}
+  et conclure.
+\end{proof}
+
 
 
 \section{Options pour les petits points}
@@ -1287,13 +1367,6 @@ variantes similaires des autres résultats de décompte.
   aussi \( \hautn{x_i} \ge R \) et on peut appliquer le
   corollaire~\vref{c:big-gen-prod} pour conclure.
 \end{proof}
-
-
-
-\section{Une ex-conjecture de \bsc{Lang}}
-\label{sec:lang}
-
-(À écrire.)
 
 
 \cleardoublepage
