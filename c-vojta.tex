@@ -5564,8 +5564,7 @@ sur les différents paramètres en jeu dans notre situation.
     \(
       \prod\placerange \alpha_v^\degv
       \le
-      \hautm1 \hs ^2 \expb^{2 \adeg n}
-      \bigl( \adeg \sbin{\adeg+n}{n} \bigr)^{1/2}
+      \hautm1 \hs ^2 \, \expb^{3 \adeg n}
     \).
   \end{enumthm}
 \end{coro}
@@ -5607,8 +5606,8 @@ sur les différents paramètres en jeu dans notre situation.
     \adeg^{1/2}
     \hautm{1, \vaemb} \hs ^2 \expb^{2\adeg n}
     \sbin{\adeg+n}{n}^{1/2}
-    \pmm.
   \end{equation}
+  qui donne bien la majoration annoncée.
 
   On adapte alors les constantes pour tenir compte des variations de degrés,
   hauteurs et dimension ambiante ainsi que du choix de \( \eps \).
@@ -5811,7 +5810,7 @@ contrôlés.
       \le
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
-      \cdot \expb^{2 \adeg n} \bigl( \adeg \sbin{\adeg+n}{n} \bigr)^{1/2}
+      \cdot \expb^{3 \adeg n}
     \).
   \end{enumthm}
 \end{coro}
@@ -5885,7 +5884,7 @@ légèrement simplifiées.
       \le
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
-      \cdot \expb^{2 \adeg n} \bigl( \adeg \sbin{\adeg+n}{n} \bigr)^{1/2}
+      \cdot \expb^{3 \adeg n}
     \).
   \end{enumthm}
 \end{coro}
@@ -5893,11 +5892,10 @@ légèrement simplifiées.
 \begin{proof}
   La définition de \( \cst{ht-v-gen1} \) n'a pas changé, elle est simplement
   rappelée pour référence, et l'apparition de \( \cst{v-gen} \) ne change
-  rien. La définition du \( \Lambda \) a été simplifié en observant que \(
-    5m^2 \deg \va \le (\deg \va)^m (\sqrt2
-    mg)^{mg} \) compte tenu du fait que \( m \ge 2 \)
-  et \( \deg \va \ge 3 \) (c'est évident pour \( m \) assez grand et on
-  le vérifie numériquement pour les petites valeurs).
+  rien. La définition de \( \Lambda_4 \) a été simplifiée en observant que \(
+    5m^2 \deg \va \le (\deg \va)^m (\sqrt2 mg)^{mg} \) compte tenu du fait que
+  \( m \ge 2 \) et \( \deg \va \ge 3 \) (c'est évident pour \( m \) assez
+  grand et on le vérifie numériquement pour les petites valeurs).
 
   On montre maintenant que \( \prod_{i=m}^{mg} (2i + 1) \le
     \frac12 (2mg)^{mg} \). C'est clair si \( g = 1 \)

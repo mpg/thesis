@@ -277,7 +277,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
     \adeg \max \bigl( \adeg^g \hautl1{\va}, \hlclab, \htcmp \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \adeg^n \ln(\adeg) n
+      (\adeg+1)^n \ln(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar + (\adim + 2) \ln(\adeg + 1) (\adeg + n+1) + \ln(m/2)
@@ -294,7 +294,7 @@ On commence par majorer le nombre de points dans chaque cône tronqué.
       \le
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
-      \cdot \expb^{\adeg n} \adeg \sbin{\adeg+n}{n}^{1/2}
+      \cdot \expb^{3 \adeg n}
     \).
   \end{enumthm}
   On a alors nécessairement
@@ -488,7 +488,7 @@ sa forme produit.
   \item \( s = 1 \) et \( \alpha =
       \hautm1 \avar ^2
       \cdot (\adeg+1)^{ 2 (\adim+2) (\adeg + n+1) } \cdot \frac{m^2}4
-      \cdot \expb^{\adeg n} \adeg \sbin{\adeg+n}{n}^{1/2}
+      \cdot \expb^{3 \adeg n}
     \).
   \end{enumthm}
   Alors on a
@@ -562,7 +562,7 @@ la constante ; on aboutit au résultat suivant.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \adeg^n \ln(\adeg) n
+      (\adeg+1)^n \ln(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
@@ -609,13 +609,14 @@ la constante ; on aboutit au résultat suivant.
     2 \hautl1 \avar
     + 2 (\adim+2) (\adeg + n+1) \ln (\adeg+1)
     + 2 \ln(\tfrac m 2)
-    + \adeg n + \ln \adeg + \frac \adeg 2 \ln(n+1)
+    + 3 \adeg n
     \notag
     \\ & \le
-    \adeg \bigl(
-    \hautl1 \avar + (\adim+2) (\adeg + n+1) \ln (\adeg+1) + \ln(\tfrac m 2)
-    \bigr)
-    + 2 \adeg n
+    \adeg \Bigl(
+    \hautl1 \avar
+    + (\adim+2) (\adeg + n+1) \ln (\adeg+1) + \ln(\tfrac m 2)
+    + 3 n
+    \Bigr)
     \le
     \cst{ht-v-gen1}
     \label{e:maj-ht-alpha}
@@ -696,7 +697,7 @@ autres facteurs.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      \adeg^n \ln(\adeg) n
+      (\adeg+1)^n \ln(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
@@ -779,7 +780,7 @@ l'inégalité de \bsc{Vojta} sous ces conditions.
       \adeg^g \hautl1{\va}, \hlclab, \htcmp
     \bigr)
     + 32^g \Bigl(
-      \adeg^{16^g + 1} 16^g
+      (2\adeg)^{16^g + 1} 16^g
       + \adeg^g \bigl ( \hautl1 \avar + 32^g \adeg^2 \bigr)
     \Bigr)
   \end{align}
