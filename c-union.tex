@@ -17,10 +17,68 @@ méthodes de traitement des petits points : un décompte trivial, et une façon
 de les éliminer.
 
 
-\section{Obstruction au décompte absolu}
+\section{Conditions pour les décomptes}
 \label{sec:obstruction}
 
-(À écrire.)
+Soient \( \avar \subset \va \) une sous-variété, \( F \) un sous-ensemble de
+\( \va(\Qbar) \) et \( \xi > 0 \) un réel. On introduit une condition sur
+\( F \), associée à \( \xi \), de la façon suivante.
+
+\begin{tdef} \label{d:cond}
+  On dit que \( F \) satisfait \( \overline C(\xi) \) s'il existe
+  une sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est
+  contenu dans \( \avar \) et deux points distincts \( x \) et \( y \) dans \(
+    F \), tels que \( x - y \in \vai \) et \( \hautn{ x-y } \le \xi \hautn x
+  \).
+
+  On dit que \( F \) satisfait la condition \( C(\xi) \) si \( F \) ne
+  satisfait pas \( \overline C(\xi) \).
+\end{tdef}
+
+Remarquons que dans le cas particulier où \( \avar = z + \vai_0 \) est un
+translaté d'un sous-variété abélienne \( \vai_0 \), on peut toujours prendre
+\( \vai = \vai_0 \) dans l'énonce de la condition. À l'inverse, si \( V \) ne
+contient aucun translaté de sous-variété abélienne non nulle (ce qui est le
+cas de toute sous-variété stricte si \( \va \) est simple, par exemple), la
+condition \( C(\xi) \) est vide, c'est-à-dire qu'elle est satisfaite par tout
+ensemble.
+
+Donnons alors une reformulation des inégalités de \bsc{Mumford} du chapitre
+précédent. On appelle \emph{lunule} associée aux paramètres \( (\rho, \phi,
+  \beta) \) un sous-ensemble de l'espace de \MoW dans lequel deux points
+quelconques \( x \) et \( y \) satisfont les conditions suivantes :
+\begin{align}
+  \cos(x, y) & \ge 1 - \phi
+  &
+  \abs{ \hautn x - \hautn y } & \le \rho \hautn x
+  &
+  \hautn x & \ge \beta
+  \pmm.
+\end{align}
+
+Le théorème~\vref{t:mumford-grp} dit alors que si \( F \) satisfait \(
+  C(\eps/2d) \), son intersection avec chaque lunule (de paramètres donnés
+par l'énoncé) contient au plus une approximation exceptionnelle : en effet, on
+a vu au cours de la démonstration du lemme~\vref{l:diff-small} que si \( x \)
+et \( y \) sont dans une même lunule, alors \( \hautn{ x - y } \le (\rho^2/4 +
+  2\phi + \rho\phi) \hautn x \) et l'hypothèse~\eqref{e:rho-phi-gen} permet de
+conclure.
+
+De même, le théorème~\vref{t:mumford-gen} affirme que si \( F \) est un
+sous-ensemble de \( \grp \) satisfaisant \( C(\eps / \adeg^m
+  (2m)^{(m+1)\adim}) \), alors son intersection avec une lunule associée aux
+paramètre donnés contient au plus \( m - 1 \) approximations exceptionnelles,
+dans les notations de cet énoncé.
+
+\medskip
+
+\textcolor{out}{%
+  À faire : énoncer la condition \( C'(\xi) \), expliquer pourquoi elle est
+  plus faible que \( C(\xi) \) et pourquoi on ne peut guère espérer majorer le
+  cardinal d'un ensemble d'approximations exceptionnelles sous une condition
+  plus faible que \( C'(\xi) \) à moins de savoir majorer la hauteur des
+  approximations exceptionnelles.
+}
 
 
 
@@ -236,15 +294,17 @@ considérées, on utilisera donc le scolie suivant.
 \section{Grands points, cas des sous-groupes}
 \label{sec:big-points}
 
-On commence par majorer le nombre de points dans chaque cône tronqué.
+On commence par majorer le nombre de points dans chaque cône tronqué ; on
+rappelle la définition~\vref{d:cond} pour la notation~\( C(\eps/2d \) dans
+l'énoncé suivant.
 
 \begin{lem} \label{l:big-by-cone}
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
   on considère une famille de points \( x_1, \dots, x_p \in \va(\Qbar)
-  \) satisfaisant à XXX et aux conditions suivantes, pour tous \( i \) et \( j
-  \) :
+  \) satisfaisant à \( C(\eps/2d) \) et aux conditions suivantes, pour tous \(
+    i \) et \( j \) :
   \begin{align}
     \label{e:big-ha}
     0 < \distv{x_i} \avar
@@ -401,8 +461,8 @@ On utilise ensuite le fait suivant.
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
   \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
     \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
-    \grp \) satisfaisant à XXX et aux conditions suivantes, pour tout \( i \)
-  :
+    \grp \) satisfaisant à \( C(\eps/2d) \) et aux conditions suivantes, pour
+  tout \( i \) :
   \begin{align}
     0 < \distv{x_i} \avar
     & <
@@ -469,8 +529,8 @@ sa forme produit.
   \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
     \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
     \grp \) et\( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
-    x_p) \) ; on suppose que cette famille satisfait à XXX et aux conditions
-  suivantes, pour tout \( i \) :
+    x_p) \) ; on suppose que cette famille satisfait à \( C(\eps/2d) \) et aux
+  conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -535,8 +595,8 @@ la constante ; on aboutit au résultat suivant.
   \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
     \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
     \grp \) et\( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
-    x_p) \) ; on suppose que cette famille satisfait à XXX et aux conditions
-  suivantes, pour tout \( i \) :
+    x_p) \) ; on suppose que cette famille satisfait à \( C(\eps/2d) \) et aux
+  conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -674,7 +734,7 @@ autres facteurs.
   \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
   \( x_1, \dots, x_p \) de points de \( \grp \) et\( \placesapx \) un ensemble
   fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
-  satisfait à XXX et aux conditions suivantes, pour tout \( i \) :
+  satisfait à \( C(\eps/2d) \) et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -881,7 +941,7 @@ Par ailleurs, on a
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).  Soit
   enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \) satisfaisant
-  à XXX et aux conditions suivantes, pour tout \( i \) :
+  à \( C(\eps/M') \) et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     \label{e:big-any-ha}
     0 < \distv{x_i} \avar
@@ -937,7 +997,8 @@ On en déduit un décompte complet des grands points.
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
   Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
-  satisfaisant à XXX et aux conditions suivantes, pour tout \( i \) :
+  satisfaisant à \( C(\eps/M') \) et aux conditions suivantes, pour tout \( i
+  \) :
   \begin{align}
     0 < \distv{x_i} \avar
     & <
@@ -1022,7 +1083,8 @@ On en déduit un décompte complet des grands points.
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
   Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
-  satisfaisant à XXX et aux conditions suivantes, pour tout \( i \) :
+  satisfaisant à \( C(\eps/M') \) et aux conditions suivantes, pour tout \( i
+  \) :
   \begin{align}
     0
     & < \prod\placerange \distv{x_i} \avar^\degv
@@ -1123,8 +1185,8 @@ dans le cas où \( \va \) est simple.
   autrement dit \( x \) est une approximation exceptionnelle de \( \divi \),
   d'exposant \( 1 \). On applique donc le corollaire précédent avec \( \avar =
     \divi \) et \( \eps = 1 \) ainsi que \( \grp = \va(\cdn) \), en remarquant
-  que comme \( \va \) est simple, la condition XXX est automatiquement
-  satisfaite.
+  que comme \( \va \) est simple, la condition \( C(\eps/M') \) est
+  automatiquement satisfaite.
 
   En particulier, on a \( \adim = g-1 \) et \( \adeg = \deg \va = 16^g \) vu
   le plongement de \( \va \) choisi, et bien sûr \( \hautl1 \divi = 0 \). On
@@ -1326,7 +1388,7 @@ On en déduit immédiatement le corollaire pratique suivant.
 On en déduit à titre d'exemple une variante du
 corollaire~\vref{c:big-gen-prod} ; le lecteur en déduira sans peine des
 variantes similaires des autres résultats de décompte.
-\worknote{À revoir}
+\worknote{À choisir en fonction de ce qu'on veut présenter dans l'intro ?}
 
 \begin{coro} \label{c:all-gen}
   Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
