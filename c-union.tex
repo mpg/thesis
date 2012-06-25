@@ -115,11 +115,7 @@ en revanche fausse).
 
 Il est clair que \( \overline C'(\xi) \) est une condition plus forte que \(
   \overline C(\xi) \), autrement dit que \( C'(\xi) \) est une condition plus
-faible que \( C(\xi) \). Nous allons maintenant essayer de convaincre le
-lecteur qu'on ne peut guère espérer majorer le cardinal d'un ensemble
-d'approximations exceptionnelles sous une condition plus faible que \( C'(\xi)
-\) à moins de savoir majorer la hauteur de certaines approximations
-exceptionnelles. Auparavant nous introduisons les notations commodes
+faible que \( C(\xi) \). Notons
 \begin{equation}
   \apx(\avar, \eps)
   =
@@ -132,8 +128,19 @@ exceptionnelles. Auparavant nous introduisons les notations commodes
     \hautm2 x^{-\eps}
   }
 \end{equation}
-et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \). On
-supposera de plus \( \eps \le 1 \) pour simplifier certaines estimations.
+et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \). On remarque
+que, dans le cas particulier où \( F \) est un sous-ensemble de \(
+  \apx'(\avar, \eps) \) et \( \avar \) est un translaté de sous-variété
+abélienne, les conditions \( C'(\xi) \) et \( C(\xi) \) sont équivalentes pour
+\( F \).
+
+\medskip
+
+Nous allons maintenant essayer de convaincre le lecteur qu'on ne peut guère
+espérer majorer le cardinal d'un ensemble d'approximations exceptionnelles
+sous une condition plus faible que \( C'(\xi) \) à moins de savoir majorer la
+hauteur de certaines (voire toutes les) approximations exceptionnelles. On
+supposera \( \eps \le 1 \) pour simplifier certaines estimations.
 
 \begin{lem}
   Soient \( x \in \apx'(\avar, \eps) \), \( \vai \) associée à \( x \) et \( y
@@ -196,9 +203,49 @@ supposera de plus \( \eps \le 1 \) pour simplifier certaines estimations.
   \( \eps \le 1 \).
 \end{proof}
 
-Ainsi, on peut construire plusieurs approximations exceptionnelles à partir
-d'une approximation exceptionnelle ayant une variété associée non nulle. Le
-corollaire suivant donne une précision quantitative.
+Ainsi, on peut construire de nouvelles approximations exceptionnelles à partir
+d'une approximation exceptionnelle ayant une variété associée non nulle et de
+points de cette variété. Le corollaire suivant donne une précision
+quantitative.
+
+\begin{coro}
+  Soient \( x \in \apx'(\avar, \eps) \cap \grp \) et \( \vai \) une variété
+  associée à \( x \). On suppose que
+  \begin{equation}
+    \hautl2 x
+    >
+    \frac1\eps \bigl( 11 \hlclab + 37 \ln(n+1) \bigr) + \htcmp
+  \end{equation}
+  et on note \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) où \( y
+  \) parcourt l'ensemble des points d'ordre infini de \( \vai(\Qbar) \cap \grp
+  \), ou bien \( +\infty \) si cet ensemble est vide. On a alors
+  \begin{equation}
+    \card \bigl( \apx'(\avar, \eps/5) \cap \grp \bigr)
+    \ge
+    \card \bigl( \vai(\Qbar)_\torsion \cap \grp \bigr)
+    + 2 \bigl( \hautn x / \hmin(\vai \cap \grp) \bigr)^{1/2} - 1
+    \pmm.
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  D'après le lemme précédent, la translation par \( x \) est une application
+  de
+  \begin{equation}
+    \set{
+      y \in \vai(\Qbar)
+      \text{ tel que }
+      \hautl2 y \le \hautl2 x
+    }
+    \cap \grp
+  \end{equation}
+  vers \( \apx'(\avar, \eps/5) \cap \grp \), qui est évidemment injective. Vu
+  l'hypothèse sur \( x \), l'ensemble de départ contient \( \vai(\Qbar) \). De
+  plus, si \( z \) est un point de \( \vai(\Qbar) \cap \grp \) tel que \(
+    \hautn z = \hmin(\vai \cap \grp) \), alors \( m z \) est dans l'ensemble
+  de départ tant que \( m^2 \) est inférieur à \( \hautn x / \hautn z \).
+\end{proof}
+
 
 
 
