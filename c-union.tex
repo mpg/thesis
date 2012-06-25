@@ -45,6 +45,10 @@ cas de toute sous-variété stricte si \( \va \) est simple, par exemple), la
 condition \( C(\xi) \) est vide, c'est-à-dire qu'elle est satisfaite par tout
 ensemble.
 
+Par ailleurs, la condition \( \overline C(\xi) \) est d'autant plus forte que
+\( \xi \) est petit, autrement dit, plus \( \xi \) est petit, moins la
+condition \( C(\xi) \) est restrictive.
+
 Donnons alors une reformulation des inégalités de \bsc{Mumford} du chapitre
 précédent. On appelle \emph{lunule} associée aux paramètres \( (\rho, \phi,
   \beta) \) un sous-ensemble de l'espace de \MoW dans lequel deux points
@@ -102,7 +106,7 @@ en revanche fausse).
 \begin{tdef}
   On dit que \( F \) satisfait \( \overline C'(\xi) \) s'il existe deux points
   distincts \( x \) et \( y \) dans \( F \) et une sous-variété abélienne
-  \( vai \) associée à \( x \) telle que \( x - y \in \vai \) et
+  \( \vai \) associée à \( x \) telle que \( x - y \in \vai \) et
   \( \hautn{ x-y } \le \xi \hautn x \).
 
   On dit que \( F \) satisfait la condition \( C'(\xi) \) si \( F \) ne
@@ -114,8 +118,8 @@ Il est clair que \( \overline C'(\xi) \) est une condition plus forte que \(
 faible que \( C(\xi) \). Nous allons maintenant essayer de convaincre le
 lecteur qu'on ne peut guère espérer majorer le cardinal d'un ensemble
 d'approximations exceptionnelles sous une condition plus faible que \( C'(\xi)
-\) à moins de savoir majorer la hauteur des approximations exceptionnelles.
-Auparavant nous introduisons les notations commodes
+\) à moins de savoir majorer la hauteur de certaines approximations
+exceptionnelles. Auparavant nous introduisons les notations commodes
 \begin{equation}
   \apx(\avar, \eps)
   =
@@ -128,9 +132,73 @@ Auparavant nous introduisons les notations commodes
     \hautm2 x^{-\eps}
   }
 \end{equation}
-et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \).
+et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \). On
+supposera de plus \( \eps \le 1 \) pour simplifier certaines estimations.
 
+\begin{lem}
+  Soient \( x \in \apx'(\avar, \eps) \), \( \vai \) associée à \( x \) et \( y
+    \in \vai(\Qbar) \), tels que
+  \begin{align}
+    \hautl2 x
+    & >
+    \frac1\eps \bigl( 11 \hlclab + 37 \ln(n+1) \bigr)
+    \label{e:cont-big}
+    \\
+    \hautl2 y
+    & \le
+    \hautl2 x
+    \pmm.
+  \end{align}
+  Alors \( x + y \in \apx'(\avar, \eps/5) \).
+\end{lem}
 
+\begin{proof}
+  Soit \( (z_v)_v \) telle que \( \bigl( \vai, (z_v)_v \bigr) \) soit associée
+  à \( x \). Pour chaque \( v \in \placesapx \), il existe un point
+  \( p_v \in (z_v + \vai)(\Cv) \) tel que \( \distv x{ p_v } = \distv x{ z_v +
+      \vai } \). La proposition~\vref{p:addsub-dv} donne alors (en remarquant
+  que \( 5\sqrt2 \le (n+1)^2 \)) :
+  \begin{equation}
+    \distv{ x+y }{ p_v + y }
+    \le
+    \distv{ x }{ p_v }
+    \cdot \hmclab*^2 (n + 1)^{7\dv}
+    \pmm.
+  \end{equation}
+  En remarquant alors que \( p_v + y \in z_v + \vai \subset \avar \), puis en
+  prenant le produit sur les places, il vient
+  \begin{align}
+    \prod\placerange \distv{ x+y }{ \avar } ^\degv
+    & \le
+    \prod\placerange \distv{ x }{ z_v + \vai } ^\degv
+    \cdot \hmclab*^{2\degv} (n + 1)^{7\dv\degv}
+    \\ & \le
+    \hautm2 x ^{-\eps} \cdot \hmclab^2 (n + 1)^7
+  \end{align}
+  On observe maintenant, en utilisant des formules d'addition puis l'hypothèse
+  sur \( \hautm2 y \), que
+  \begin{equation}
+    \hautm2{ x+y }
+    \le
+    \hmclab \hautm2 x ^2 \hautm2 y ^2
+    \le
+    \hmclab \hautm2 x ^4
+  \end{equation}
+  ce qui donne immédiatement
+  \begin{equation}
+    \hautm2 x ^{-\eps} \cdot \hmclab^2 (n + 1)^7
+    \le
+    \hautm2{ x+y }^{-\eps/5} \hmclab^{\eps/5} \hautm2 x ^{-\eps/5}
+    \cdot \hmclab^2 (n + 1)^7
+    \pmm.
+  \end{equation}
+  L'hypothèse sur \( \hautm2 x \) permet alors de conclure, car on a supposé
+  \( \eps \le 1 \).
+\end{proof}
+
+Ainsi, on peut construire plusieurs approximations exceptionnelles à partir
+d'une approximation exceptionnelle ayant une variété associée non nulle. Le
+corollaire suivant donne une précision quantitative.
 
 
 
