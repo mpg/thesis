@@ -20,9 +20,11 @@ de les éliminer.
 \section{Conditions pour les décomptes}
 \label{sec:obstruction}
 
-Soient \( \avar \subset \va \) une sous-variété, \( F \) un sous-ensemble de
-\( \va(\Qbar) \) et \( \xi > 0 \) un réel. On introduit une condition sur
-\( F \), associée à \( \xi \), de la façon suivante.
+Dans cette section, on suppose fixés une sous-variété \( \avar \subset \va \),
+un réel \( \eps \) et un sous-groupe \( \grp \subset \va \) de rang fini \( r
+\).  Si \( F \) est un sous-ensemble de \( \va(\Qbar) \) et \( \xi > 0 \) un
+réel, on introduit une condition sur \( F \), associée à \( \xi \), de la
+façon suivante.
 
 \begin{tdef} \label{d:cond}
   On dit que \( F \) satisfait \( \overline C(\xi) \) s'il existe
@@ -37,7 +39,7 @@ Soient \( \avar \subset \va \) une sous-variété, \( F \) un sous-ensemble de
 
 Remarquons que dans le cas particulier où \( \avar = z + \vai_0 \) est un
 translaté d'un sous-variété abélienne \( \vai_0 \), on peut toujours prendre
-\( \vai = \vai_0 \) dans l'énonce de la condition. À l'inverse, si \( V \) ne
+\( \vai = \vai_0 \) dans l'énoncé de la condition. À l'inverse, si \( V \) ne
 contient aucun translaté de sous-variété abélienne non nulle (ce qui est le
 cas de toute sous-variété stricte si \( \va \) est simple, par exemple), la
 condition \( C(\xi) \) est vide, c'est-à-dire qu'elle est satisfaite par tout
@@ -72,13 +74,63 @@ dans les notations de cet énoncé.
 
 \medskip
 
-\textcolor{out}{%
-  À faire : énoncer la condition \( C'(\xi) \), expliquer pourquoi elle est
-  plus faible que \( C(\xi) \) et pourquoi on ne peut guère espérer majorer le
-  cardinal d'un ensemble d'approximations exceptionnelles sous une condition
-  plus faible que \( C'(\xi) \) à moins de savoir majorer la hauteur des
-  approximations exceptionnelles.
-}
+Pour introduire l'autre condition considérée, nous aurons besoin de la
+définition suivante.
+
+\begin{tdef}
+  On appelle \emph{famille de translatés associée} à \( x \) la donnée d'une
+  sous-variété abélienne \( \vai \) et d'une famille de points \(
+    (z_v)\placerange \) telle que \( z_v + \vai \subset \avar \) et
+  \begin{equation}
+    \prod\placerange \distv x {z_v + \vai} ^\degv
+    \le
+    \hautm2 x^{-\eps}
+    \pmm.
+  \end{equation}
+  On dit qu'une sous-variété abélienne \( \vai \) est \emph{associée} à \( x
+  \) s'il existe une famille de translatés \( \bigl( \vai, (z_v)_v \bigr) \)
+  associée à \( x \).
+\end{tdef}
+
+Tout point admet au moins une variété associée : le stabilisateur de \( \avar
+\), que nous noterons \( S_\avar \). Par ailleurs, si l'on note \( Z_\avar \)
+l'union des translatés de sous-variétés abéliennes non nulles inclus dans \(
+  \avar \), il est clair que tout point possédant une variété associée non
+nulle est une approximation exceptionnelle de \( Z_\avar \) (la réciproque est
+en revanche fausse).
+
+\begin{tdef}
+  On dit que \( F \) satisfait \( \overline C'(\xi) \) s'il existe deux points
+  distincts \( x \) et \( y \) dans \( F \) et une sous-variété abélienne
+  \( vai \) associée à \( x \) telle que \( x - y \in \vai \) et
+  \( \hautn{ x-y } \le \xi \hautn x \).
+
+  On dit que \( F \) satisfait la condition \( C'(\xi) \) si \( F \) ne
+  satisfait pas \( \overline C'(\xi) \).
+\end{tdef}
+
+Il est clair que \( \overline C'(\xi) \) est une condition plus forte que \(
+  \overline C(\xi) \), autrement dit que \( C'(\xi) \) est une condition plus
+faible que \( C(\xi) \). Nous allons maintenant essayer de convaincre le
+lecteur qu'on ne peut guère espérer majorer le cardinal d'un ensemble
+d'approximations exceptionnelles sous une condition plus faible que \( C'(\xi)
+\) à moins de savoir majorer la hauteur des approximations exceptionnelles.
+Auparavant nous introduisons les notations commodes
+\begin{equation}
+  \apx(\avar, \eps)
+  =
+  \set{
+    x \in \va(\Qbar)
+    \text{ tel que }
+    0 <
+    \prod\placerange \distv x \avar ^\degv
+    \le
+    \hautm2 x^{-\eps}
+  }
+\end{equation}
+et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \).
+
+
 
 
 

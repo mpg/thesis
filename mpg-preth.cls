@@ -538,6 +538,8 @@
 
 \newcommand \grp { \Gamma } % sous-groupe de rang r
 
+\newcommand \apx { \mathcal E } % ensemble d'approx exceptionnelles
+
 % archimedian norms and measures [[2
 %
 \newcommand*\normsup [1]   {\norm{#1}\sb\infty}
