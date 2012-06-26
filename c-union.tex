@@ -259,17 +259,25 @@ quantitative.
 
 \begin{coro}
   Soient \( x \in \apx'(\avar, \eps) \cap \grp \)
-  satisfaisant~\eqref{e:cont-big} et \( \vai \) une variété associée à \( x
-  \). On note \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) où \( y
-  \) parcourt l'ensemble des points d'ordre infini de \( \vai(\Qbar) \cap \grp
-  \), ou bien \( +\infty \) si cet ensemble est vide. On a alors
+  satisfaisant~\eqref{e:cont-big}, \( \eps' \) comme au lemme précédent et \(
+    \vai \) une variété associée à \( x \). De plus, on note
+  \( \hmin(\vai \cap \grp \) le minimum de \( \hautn y \) lorsque \( y \)
+  parcourt l'ensemble des points d'ordre infini de
+  \( \vai(\Qbar) \cap \grp \), ou \( +\infty \) si cet ensemble est vide.
+
+  Alors l'ensemble
+  \(
+    \card \bigl( \apx'(\avar, \eps') \cap \grp \bigr)
+  \) contient au moins
   \begin{equation}
-    \card \bigl( \apx'(\avar, \eps/5) \cap \grp \bigr)
-    \ge
     \card \bigl( \vai(\Qbar)_\torsion \cap \grp \bigr)
-    + 2 \bigl( \hautn x / \hmin(\vai \cap \grp) \bigr)^{1/2} - 1
-    \pmm.
+    \left(
+      2 \floor*{ \sqrt{ \tau \hautn x / \hmin(\vai \cap \grp) } } + 1
+    \right)
   \end{equation}
+  points de hauteur normalisée supérieure ou égale à
+  \( (1-\sqrt\tau)^{2} \, \hautn x \) (avec la convention \( (+\infty)^{-1} =
+    0 \)).
 \end{coro}
 
 \begin{proof}
@@ -279,15 +287,20 @@ quantitative.
     \set{
       y \in \vai(\Qbar)
       \text{ tel que }
-      \hautn y \le \hautn x
+      \hautn y \le \tau \hautn x
     }
     \cap \grp
   \end{equation}
-  vers \( \apx'(\avar, \eps/5) \cap \grp \), qui est évidemment injective. Vu
-  l'hypothèse sur \( x \), l'ensemble de départ contient \( \vai(\Qbar) \). De
-  plus, si \( z \) est un point de \( \vai(\Qbar) \cap \grp \) tel que \(
-    \hautn z = \hmin(\vai \cap \grp) \), alors \( m z \) est dans l'ensemble
-  de départ tant que \( m^2 \) est inférieur à \( \hautn x / \hautn z \).
+  vers \( \apx'(\avar, \eps') \cap \grp \), qui est évidemment injective. Il
+  s'agit donc de minorer le cardinal de cet ensemble. Clairement, il contient
+  tous les points de torsion, ce qui donne la conclusion annoncée dans le cas
+  où \( \hmin(\vai \cap \grp) = + \infty \).
+
+  Par ailleurs, si \( z \) est un point d'ordre infini de
+  \( \vai(\Qbar) \cap \grp \), que \( t \) est un point de torsion de ce même
+  ensemble et \( m \) un entier relatif, alors \( m z + t \) est dans
+  l'ensemble de départ tant que \( m^2 \) est inférieur à
+  \( \tau \hautn x / \hautn z \).
 \end{proof}
 
 
