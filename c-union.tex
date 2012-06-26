@@ -148,8 +148,10 @@ pour \( F \).
 
 Nous allons maintenant essayer de convaincre le lecteur qu'on ne peut guère
 espérer majorer le cardinal des ensembles \( \apx(\avar, \eps) \cap \grp \)
-sous une condition plus faible que \( C_1(\tau) \) à moins de savoir majorer la
-hauteur de certaines (voire toutes les) approximations exceptionnelles.
+sous une condition plus faible que \( C'(\tau) \) à moins de savoir majorer la
+hauteur de certaines (voire toutes les) approximations exceptionnelles. Par
+ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1 \) pour simplifier
+certaines estimations.
 
 \begin{lem}
   Soient \( x \in \apx'(\avar, \eps) \), \( \vai \) associée à \( x \) et \( y
@@ -162,10 +164,11 @@ hauteur de certaines (voire toutes les) approximations exceptionnelles.
     \\
     \hautn y
     & \le
-    \hautn x
+    \tau \hautn x
     \pmm.
   \end{align}
-  Alors \( x + y \in \apx'(\avar, \eps/5) \).
+  Alors \( x + y \in \apx'(\avar, \eps') \) avec
+  \( \eps' = \eps (1 + \sqrt\tau)^{-2} \).
 \end{lem}
 
 \begin{proof}
@@ -193,14 +196,15 @@ hauteur de certaines (voire toutes les) approximations exceptionnelles.
     \pmm.
   \end{align}
   Il s'agit donc de montrer que cette dernière quantité est majorée par \(
-    \hautm2 y ^{-\eps/5} \).  Si l'on note \( \nnt\truc \) la norme de
-  l'espace de \MoW, on a
+    \hautm2 y ^{-\eps'} \).
+
+  Si l'on note \( \nnt\truc \) la norme de l'espace de \MoW, on a
   \(
     \nnt{ x+y }
     \le
     \nnt x + \nnt y
     \le
-    2 \nnt x
+    (1 + \sqrt\tau) \nnt x
   \)
   vu l'hypothèse sur \( \hautn y \). On en déduit alors
   \begin{equation}
@@ -208,21 +212,44 @@ hauteur de certaines (voire toutes les) approximations exceptionnelles.
     \le
     \hautn{ x+y } + \htcmp
     \le
-    4 \hautn x + \htcmp
+    (1 + \sqrt\tau)^2 \hautn x + \htcmp
     \le
-    4 \hautl2 x + 5 \htcmp
+    (1 + \sqrt\tau)^2 \hautl2 x + 5 \htcmp
   \end{equation}
   puis
-  \( - \frac45 \eps \hautl2 x \le - \frac\eps5 \hautl2{ x+y } + \eps \htcmp \)
-  ce qui donne immédiatement
-  \begin{equation}
-    \hautm2 x ^{-\eps} \cdot \hmclab^2 (n + 1)^7
-    \le
-    \hautm2{ x+y }^{-\eps/5} \expb^{\eps \htcmp} \hautm2 x ^{-\eps/5}
-    \cdot \hmclab^2 (n + 1)^7
+  \begin{align}
+    - \eps \frac{ (1 + \sqrt\tau)^2 }{ (1 + 2\sqrt\tau)^2 } \hautl2 x
+    & \le
+    - \eps' \hautl2{ x+y } + 5 \eps' \htcmp
+    \\
+    - \eps \hautl2 x
+    & \le
+    - \eps' \hautl2{ x+y } + 5 \eps' \htcmp
+    - \eps \left(
+      1 - \frac{ (1 + \sqrt\tau)^2 }{ (1 + 2\sqrt\tau)^2 }
+    \right) \hautl2 x
     \pmm.
+  \end{align}
+  On observe alors que, pour tout \( 0 < t \le 1 \), on a
+  \begin{equation}
+    1 - \frac{ (1 + t)^2 }{ (1 + 2t)^2 }
+    =
+    t \, \frac{ 2 + 3t }{ (1 + 2t)^2 }
+    \le
+    \frac59 t
   \end{equation}
-  L'hypothèse sur \( \hautn x \) permet alors de conclure.
+  où l'inégalité vient en remarquant que la fraction du milieu est
+  décroissante en \( t \). Au final,
+  \begin{equation}
+    - \eps \hautl2 x
+    + 2 \hlclab + 7 \ln(n+1)
+    \le
+    - \eps' \hautl2{ x+y } + 5 \eps \htcmp
+    - \frac{ \eps \tau }2 \hautl2 x
+    + 2 \hlclab + 7 \ln(n+1)
+    \notag
+  \end{equation}
+  et l'hypothèse sur \( \hautn x \) permet alors de conclure.
 \end{proof}
 
 Ainsi, on peut construire de nouvelles approximations exceptionnelles à partir
