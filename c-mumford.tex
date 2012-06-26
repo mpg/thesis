@@ -283,9 +283,7 @@ lipschitziennes.
 
 On montre ici que c'est bien le cas et on explicite une valeur admissible pour
 la constante de \bsc{Lipschitz} en fonction des constantes introduites à la
-section~\vref{sec:vaemb}.  L'énoncé suivant concerne la soustraction, mais il
-est clair qu'un résultat identique pour l'addition peut être obtenu de la même
-façon.
+section~\vref{sec:vaemb}.
 
 \begin{prop} \label{p:addsub-dv}
   Pour tous \( x \), \( x' \), \( y \), \( y' \) dans \( \va(\C_v) \), on a :
@@ -462,6 +460,17 @@ façon.
     \distv{ z }{ z' }
   \end{align}
   qui donne bien~\eqref{e:addsub-dv} et achève la preuve.
+\end{proof}
+
+\begin{sco} \label{s:addsub-dv}
+  La proposition~\vref{p:addsub-dv} reste vraie en remplaçant la soustraction
+  par l'addition et \( \hmpm \) par \( \hmclab \).
+\end{sco}
+
+\begin{proof}
+  Au lieu des formules de soustraction données par le lemme~\vref{l:hmpm}, on
+  utilise les formules d'addition données par le lemme~\vref{l:hmclab}
+  appliqué avec \( (a, b) = (1, -1) \). Le reste de la preuve est inchangé.
 \end{proof}
 
 
