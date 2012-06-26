@@ -27,14 +27,14 @@ réel, on introduit une condition sur \( F \), associée à \( \tau \), de la
 façon suivante.
 
 \begin{tdef} \label{d:cond}
-  On dit que \( F \) satisfait \( \overline C(\tau) \) s'il existe
+  On dit que \( F \) satisfait \( \cond*\tau \) s'il existe
   une sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est
   contenu dans \( \avar \) et deux points distincts \( x \) et \( y \) dans \(
     F \), tels que \( x - y \in \vai \) et \( \hautn{ x-y } \le \tau \hautn x
   \).
 
-  On dit que \( F \) satisfait la condition \( C(\tau) \) si \( F \) ne
-  satisfait pas \( \overline C(\tau) \).
+  On dit que \( F \) satisfait la condition \( \cond\tau \) si \( F \) ne
+  satisfait pas \( \cond*\tau \).
 \end{tdef}
 
 Remarquons que dans le cas particulier où \( \avar = z + \vai_0 \) est un
@@ -42,7 +42,7 @@ translaté d'un sous-variété abélienne \( \vai_0 \), on peut toujours prendre
 \( \vai = \vai_0 \) dans l'énoncé de la condition. À l'inverse, si \( V \) ne
 contient aucun translaté de sous-variété abélienne non nulle (ce qui est le
 cas de toute sous-variété stricte si \( \va \) est simple, par exemple), la
-condition \( C(\tau) \) est vide, c'est-à-dire qu'elle est satisfaite par tout
+condition \( \cond\tau \) est vide, c'est-à-dire qu'elle est satisfaite par tout
 ensemble.
 
 Donnons alors une reformulation des inégalités de \bsc{Mumford} du chapitre
@@ -59,7 +59,7 @@ quelconques \( x \) et \( y \) satisfont les conditions suivantes :
 \end{align}
 
 Le théorème~\vref{t:mumford-grp} dit alors que si \( F \) satisfait \(
-  C(\eps/2d) \), son intersection avec chaque lunule (de paramètres donnés
+  \cond{\eps/2d} \), son intersection avec chaque lunule (de paramètres donnés
 par l'énoncé) contient au plus une approximation exceptionnelle : en effet, on
 a vu au cours de la démonstration du lemme~\vref{l:diff-small} que si \( x \)
 et \( y \) sont dans une même lunule, alors \( \hautn{ x - y } \le (\rho^2/4 +
@@ -67,16 +67,16 @@ et \( y \) sont dans une même lunule, alors \( \hautn{ x - y } \le (\rho^2/4 +
 conclure.
 
 De même, le théorème~\vref{t:mumford-gen} affirme que si \( F \) est un
-sous-ensemble de \( \grp \) satisfaisant \( C(\eps / \adeg^m
-  (2m)^{(m+1)\adim}) \), alors son intersection avec une lunule associée aux
-paramètre donnés contient au plus \( m - 1 \) approximations exceptionnelles,
-dans les notations de cet énoncé.
+sous-ensemble de \( \grp \) satisfaisant
+\( \cond{ \eps / \adeg^m (2m)^{(m+1)\adim} } \), alors son intersection avec
+une lunule associée aux paramètre donnés contient au plus \( m - 1 \)
+approximations exceptionnelles, dans les notations de cet énoncé.
 
-Plus précisément, on remarque que la condition \( \overline C(\tau) \) est
+Plus précisément, on remarque que la condition \( \cond*\tau \) est
 d'autant plus forte que \( \tau \) est petit, autrement dit, plus \( \tau \)
-est petit, moins la condition \( C(\tau) \) est restrictive. On remarque que
+est petit, moins la condition \( \cond\tau \) est restrictive. On remarque que
 les inégalités de \bsc{Mumford} du chapitre précédent disent en fait que
-l'ensemble de points considéré satisfait \( C(\tau) \) avec
+l'ensemble de points considéré satisfait \( \cond\tau \) avec
 \( \tau = \rho^2/4 + 2\phi + \rho\phi \), quantité qui peut être rendu
 arbitrairement petite à condition de réduire la taille des lunules
 considérées.
@@ -114,18 +114,18 @@ nulle est une approximation exceptionnelle de \( Z_\avar \) (la réciproque est
 en revanche fausse).
 
 \begin{tdef}
-  On dit que \( F \) satisfait \( \overline C_1(\tau) \) s'il existe deux points
+  On dit que \( F \) satisfait \( \condi*\tau \) s'il existe deux points
   distincts \( x \) et \( y \) dans \( F \) et une sous-variété abélienne
   \( \vai \) associée à \( x \) tels que \( x - y \in \vai \) et
   \( \hautn{ x-y } \le \tau \hautn x \).
 
-  On dit que \( F \) satisfait la condition \( C_1(\tau) \) si \( F \) ne
-  satisfait pas \( \overline C_1(\tau) \).
+  On dit que \( F \) satisfait la condition \( \condi\tau \) si \( F \) ne
+  satisfait pas \( \condi*\tau \).
 \end{tdef}
 
-Il est clair qu'en général \( \overline C_1(\tau) \) est une condition plus
-forte que \( \overline C(\tau) \), autrement dit que \( C_1(\tau) \) est une
-condition plus faible que \( C(\tau) \). Notons
+Il est clair qu'en général \( \condi*\tau \) est une condition plus
+forte que \( \cond*\tau \), autrement dit que \( \condi\tau \) est une
+condition plus faible que \( \cond\tau \). Notons
 \begin{equation}
   \apx(\avar, \eps)
   =
@@ -141,14 +141,14 @@ condition plus faible que \( C(\tau) \). Notons
 et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \). On remarque
 que, dans le cas particulier où \( F \) est un sous-ensemble de \(
   \apx'(\avar, \eps) \) et \( \avar \) est un translaté de sous-variété
-abélienne, les conditions \( C_1(\tau) \) et \( C(\tau) \) sont équivalentes
+abélienne, les conditions \( \condi\tau \) et \( \cond\tau \) sont équivalentes
 pour \( F \).
 
 \medskip
 
 Nous allons maintenant essayer de convaincre le lecteur qu'on ne peut guère
 espérer majorer le cardinal des ensembles \( \apx(\avar, \eps) \cap \grp \)
-sous une condition plus faible que \( C'(\tau) \) à moins de savoir majorer la
+sous une condition plus faible que \( \condi\tau \) à moins de savoir majorer la
 hauteur de certaines (voire toutes les) approximations exceptionnelles. Par
 ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1 \) pour simplifier
 certaines estimations.
@@ -306,14 +306,14 @@ quantitative.
 
 On est donc face à un phénomène de multiplication des approximations
 exceptionnelles, quitte à changer un peu l'exposant. Il est clair qu'une
-condition du type \( C_1(\tau) \) est la plus faible qu'on puisse mettre sur
+condition du type \( \condi\tau \) est la plus faible qu'on puisse mettre sur
 les ensembles d'approximations exceptionnelles considérés pour empêcher les
 effets de ce phénomène.
 
 \medskip
 
 Examinons maintenant quelques conséquences de ce phénomène sur ce qu'on peut
-espérer comme résultats de décomptes sans condition de type \( C_1(\tau) \) :
+espérer comme résultats de décomptes sans condition de type \( \condi\tau \) :
 sous certaines hypothèses, on prouve que l'ensemble des approximations
 exceptionnelles est de hauteur bornée explicitement (en fonction des
 hypothèses), ce qui montre que ces hypothèses sont peu réalistes.
@@ -665,7 +665,7 @@ considérées, on utilisera donc le scolie suivant.
 \label{sec:big-grp}
 
 On commence par majorer le nombre de points dans chaque cône tronqué ; on
-rappelle la définition~\vref{d:cond} pour la notation~\( C(\eps/2d \) dans
+rappelle la définition~\vref{d:cond} pour la notation~\( C(\eps/2d) \) dans
 l'énoncé suivant.
 
 \begin{lem} \label{l:big-by-cone}
@@ -673,8 +673,8 @@ l'énoncé suivant.
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On fixe un réel \( 0 < \eps \), un entier \( m \ge g + 1 \) et
   on considère une famille de points \( x_1, \dots, x_p \in \va(\Qbar)
-  \) satisfaisant à \( C(\eps/2d) \) et aux conditions suivantes, pour tous \(
-    i \) et \( j \) :
+  \) satisfaisant à \( \cond{\eps/2d} \) et aux conditions suivantes, pour
+  tous \( i \) et \( j \) :
   \begin{align}
     \label{e:big-ha}
     0 < \distv{x_i} \avar
@@ -831,8 +831,8 @@ On utilise ensuite le fait suivant.
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
   \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
     \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
-    \grp \) satisfaisant à \( C(\eps/2d) \) et aux conditions suivantes, pour
-  tout \( i \) :
+    \grp \) satisfaisant à \( \cond{\eps/2d} \) et aux conditions suivantes,
+  pour tout \( i \) :
   \begin{align}
     0 < \distv{x_i} \avar
     & <
@@ -899,8 +899,8 @@ sa forme produit.
   \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
     \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
     \grp \) et\( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
-    x_p) \) ; on suppose que cette famille satisfait à \( C(\eps/2d) \) et aux
-  conditions suivantes, pour tout \( i \) :
+    x_p) \) ; on suppose que cette famille satisfait à \( \cond{\eps/2d} \) et
+  aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -965,8 +965,8 @@ la constante ; on aboutit au résultat suivant.
   \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
     \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
     \grp \) et\( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
-    x_p) \) ; on suppose que cette famille satisfait à \( C(\eps/2d) \) et aux
-  conditions suivantes, pour tout \( i \) :
+    x_p) \) ; on suppose que cette famille satisfait à \( \cond{\eps/2d} \) et
+  aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -1104,7 +1104,8 @@ autres facteurs.
   \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
   \( x_1, \dots, x_p \) de points de \( \grp \) et\( \placesapx \) un ensemble
   fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
-  satisfait à \( C(\eps/2d) \) et aux conditions suivantes, pour tout \( i \) :
+  satisfait à \( \cond{\eps/2d} \) et aux conditions suivantes, pour tout \( i
+  \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -1311,7 +1312,7 @@ Par ailleurs, on a
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).  Soit
   enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \) satisfaisant
-  à \( C(\eps/M') \) et aux conditions suivantes, pour tout \( i \) :
+  à \( \cond{\eps/M'} \) et aux conditions suivantes, pour tout \( i \) :
   \begin{align}
     \label{e:big-any-ha}
     0 < \distv{x_i} \avar
@@ -1367,8 +1368,8 @@ On en déduit un décompte complet des grands points.
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
   Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
-  satisfaisant à \( C(\eps/M') \) et aux conditions suivantes, pour tout \( i
-  \) :
+  satisfaisant à \( \cond{\eps/M'} \) et aux conditions suivantes, pour tout
+  \( i \) :
   \begin{align}
     0 < \distv{x_i} \avar
     & <
@@ -1453,8 +1454,8 @@ On en déduit un décompte complet des grands points.
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
   Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
-  satisfaisant à \( C(\eps/M') \) et aux conditions suivantes, pour tout \( i
-  \) :
+  satisfaisant à \( \cond{\eps/M'} \) et aux conditions suivantes, pour tout
+  \( i \) :
   \begin{align}
     0
     & < \prod\placerange \distv{x_i} \avar^\degv
@@ -1555,7 +1556,7 @@ dans le cas où \( \va \) est simple.
   autrement dit \( x \) est une approximation exceptionnelle de \( \divi \),
   d'exposant \( 1 \). On applique donc le corollaire précédent avec \( \avar =
     \divi \) et \( \eps = 1 \) ainsi que \( \grp = \va(\cdn) \), en remarquant
-  que comme \( \va \) est simple, la condition \( C(\eps/M') \) est
+  que comme \( \va \) est simple, la condition \( \cond{\eps/M'} \) est
   automatiquement satisfaite.
 
   En particulier, on a \( \adim = g-1 \) et \( \adeg = \deg \va = 16^g \) vu
