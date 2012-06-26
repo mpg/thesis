@@ -848,6 +848,9 @@
 
 \newcommand \opdefi {\mathcal D}
 
+\newcommand \cond  { \@ifstar{ \cond@gen\overline{ } }{ \cond@gen{}{ } }}
+\newcommand \condi { \@ifstar{ \cond@gen\overline{1} }{ \cond@gen{}{1} }}
+\newcommand \cond@gen [3] { #1 C\ssub{#2} (#3) }
 
 % [[1
 % vim: ft=tex fdm=marker fmr=[[,]] fdl=1 spell spelllang=fr,en

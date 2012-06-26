@@ -1299,21 +1299,31 @@ Nous sommes maintenant prêts à conclure.
 
 
 
-\section{Énoncé conjectural}
+\section{Questions d'optimalité et énoncé conjectural}
 \label{sec:mum-conj}
 
-L'énoncé donné pour le cas des translatés de sous-variétés abéliennes est
-\lat{a priori} optimal dans sa forme (par opposition aux valeurs des
-constantes) au vu de la section~\vref{sec:obstruction}. En revanche, dans le
-cas général, on pourrait espérer démontrer l'énoncé suivant.
+Comme on l'a vu, la conclusion du théorème~\vref{t:mumford-grp} n'est pas
+celle qu'on attend naturellement, à savoir \( x = y \). La
+section~\vref{sec:obstruction} montrera que la conclusion obtenue est
+probablement ce qu'on peut espérer de mieux à l'heure actuelle. En effet, si
+dans cet énoncé on pouvait remplacer la conclusion par \( x = y \), alors en
+suivant la méthode de la section~\vref{sec:big-grp} on aboutirait à un
+décompte explicite des points de hauteur assez grande. Or, en vertu du
+corollaire~\vref{c:count2ht}, ceci donnerait immédiatement une borne explicite
+sur la hauteur des approximations exceptionnelles, résultat qui ne semble pas
+vraiment accessible dans l'immédiat.
+
+En revanche, dans le cas général, il ne semble \lat{a priori} pas exclu dans
+un futur proche d'améliorer le théorème~\vref{t:mumford-gen} de la façon
+suivante.
 
 \begin{conj} \label{j:mum}
   Soient \( \avar \) une sous-variété d'une variété abélienne \( \va \) et \(
     \grp \subset \va(\Qbar) \) un sous-groupe de rang fini. On fixe \( \eps >
     0 \) ; il existe alors un entier \( m \) et des constantes \( \rho \), \(
-    \phi \), \( \alpha \) et \( \beta \) telles que si \( x_1, \dots, x_m \)
-  est une famille de point de \( \grp \) telle que, pour tous \( i \) et \( j
-  \) entre \( 1 \) et \( m \) :
+    \phi \) et \( R \) telles que si \( x_1, \dots, x_m \) est une famille de
+  point de \( \grp \) telle que, pour tous \( i \) et \( j \) entre \( 1 \) et
+  \( m \) :
   \begin{align}
     0
     & <
@@ -1324,7 +1334,7 @@ cas général, on pourrait espérer démontrer l'énoncé suivant.
     \\
     \hautn{ x_m }
     & \ge
-    \beta
+    R
     \\
     \cos(x_i, x_j)
     & \ge
@@ -1336,19 +1346,26 @@ cas général, on pourrait espérer démontrer l'énoncé suivant.
     \le
     (1+\rho) \hautn{ x_m }
   \end{align}
-  alors il existe deux indices distincts \( i \) et \( j \) et deux familles \(
-    (z_v)\placerange \) et \( (\vai_v)\placerange \) telles que
+  alors il existe deux indices distincts \( i \) et \( j \), une sous-variété
+  abélienne \( \vai \) de \( \va \) et une famille de points de \( V \)
+  \( (z_v)\placerange \) tels que :
   \begin{enumthm}
-    \item \( z_v \in \avar(\Cv) \) ;
-    \item \( \vai_v \) est une sous-variété abélienne de \( \va \) telle que
-      \( z_v + \vai_v \subset \avar \) ;
-    \item \( \distv{ x_i }{ z_v + \vai_v }
+    \item \( z_v + \vai \subset \avar \) pour tout \( v \in \placesapx \) ;
+    \item \( \distv{ x_i }{ z_v + \vai }
         \le
-        \alpha \cdot \hautm2{ x_i }^{-\wtapx\eps} \)
+        \cdot \hautm2{ x_i }^{-\wtapx\eps} \)
       pour tout \( v \in \placesapx \) ;
-    \item \( x_i - x_j \in \bigcap\placerange \vai_v \).
+    \item \( x_i - x_j \in \vai \).
   \end{enumthm}
 \end{conj}
+
+Autrement dit, dans les notations de la section~\vref{sec:obstruction}, la
+conclusion serait que l'ensemble \( \set{x_1, \dots, x_m} \) satisfait \(
+  \condi*\tau \) pour un certain \( \tau \), plutôt que \( \cond*\tau \)
+pour le théorème que nous démontrons. On renvoie à la section citée pour plus
+de détails sur les notations et pourquoi il semblerait ambitieux dans un futur
+proche de démontrer mieux que l'énoncé conjecturé ci-dessus (avec des
+constantes explicites).
 
 
 \cleardoublepage

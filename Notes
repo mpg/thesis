@@ -6,7 +6,7 @@ Intro {{{2
 
 (B) Reporter les résultats principaux
 
-(B) Expliquer les stratégies
+(A) Expliquer les stratégies
 
 (C) Parler de la conjecture Siegel-uniforme de Lang ?
 Voir Silverman 3 dans DGI
@@ -17,14 +17,12 @@ Vojta {{{2
 Mumford {{{2
 -------
 
-(A) Faire le lien entre l'énoncé conjectural et l'obstruction
-
 (C) Discuter si le groupe de rang fini est indispensable ?
 
 Décomptes {{{2
 ---------
 
-(A) Finir la section 1
+(C) Pour les sous-groupes, donner un énoncé de décompte en fonction de \hmax ?
 
 Aide-mémoire {{{1
 ============
