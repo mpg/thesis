@@ -321,15 +321,82 @@ polynômes plutôt que fibrés (métrisés) et sections globales. Les outils
 techniques essentiels sont ceux de la théorie de l'élimination tels que
 rappelés par exemple dans \cite[chap.~5 à~7]{nesphilnm}.
 
-
-\subsection {Inégalité de \bsc{Vojta}}
+Le plan de la thèse est le suivant :
+\begin{itemize}
+  \item les sections suivantes du présent chapitre introduisent les
+    principales notations et le cadre général dans lequel on se place, en
+    rappelant les propriétés essentielles des notions utilisée ainsi qu'en
+    prouvant au besoin quelque propriétés nouvelles mais assez simples ;
+  \item le chapitre deux établit une inégalité de \bsc{Vojta}, en commençant
+    par un cas particulier avant d'en déduire le cas général ;
+  \item le chapitre trois établit une inégalité de \bsc{Liouville} et deux
+    inégalités de \bsc{Mumford} : la première concerne un cas particulier mais
+    présente de bien meilleures constantes que la seconde, traitant le cas
+    général ;
+  \item enfin, le chapitre quatre déduit de ces inégalités des décomptes de
+    grands points avec certaines restrictions, après avoir détaillé les
+    obstructions qui nous obligent à imposer lesdites restrictions.
+\end{itemize}
+Présentons maintenant un peu plus en détail les stratégies mises en œuvre pour
+établir les résultats techniques principaux que sont les inégalités de
+\bsc{Vojta} et \bsc{Mumford}, en commençant par cette dernière, qui est la
+plus directe.
 
-(À écrire.)
+\medskip
 
-
-\subsection{Inégalité de \bsc{Mumford}}
+Le remarque essentielle pour l'inégalité de \bsc{Mumford} est que si deux
+points satisfont à ses hypothèses, leur différence sera de hauteur très petite
+relativement aux points initiaux. Une proposition clé contrôle l'action de la
+soustraction sur la distance ; on voit alors que cette différence est ainsi
+très proche d'une nouvelle variété : dans la cas où la variété approchée est
+un translaté de sous-variété abélienne, il s'agit de la sous-variété abélienne
+en question, dans le cas général on contrôle le degré et la hauteur de la
+variété projective obtenue.
 
-(À écrire.)
+Ainsi, la différence est une approximation exceptionnelle d'une nouvelle
+variété et comme sa hauteur a chuté, elle est en fait tellement exceptionnelle
+que l'inégalité de \bsc{Liouville} la contraint à être sur cette variété. Dans
+le cas d'une sous-variété abélienne, c'est la conclusion voulue ; dans le cas
+général, on doit invoquer la version quantitative de l'ex-conjecture de
+\bsc{Mordell}-\bsc{Lang} donnée par \bsc{Rémond} pour conclure.
+
+\medskip
+
+Pour l'inégalité de \bsc{Vojta}, on se ramène au cas particulier où la variété
+approchée est un hyperplan standard de la façon suivante. Si \( \avar \) est
+une variété quelconque, on choisit une hypersurface qui la contient, puis par
+un plongement de \bsc{Veronese} on transforme cette hypersurface en hyperplan,
+et un changement de coordonnées linéaire transforme ce dernier en l'hyperplan
+standard \( \vp[0] = 0 \). À chaque étape on contrôle explicitement l'action
+sur la distance, le degré et la hauteur des objets en jeu, et les différentes
+constantes associées au plongement.
+
+L'idée principale de cette partie est alors la suivante : en supposant qu'il
+existe un \( m \)-uplet d'approximations exceptionnelles satisfaisant aux
+hypothèses du théorème, on le regarde comme un point dans \( \va^m \) et on
+l'enferme dans des sous-variétés produit de \( \va^m \) de dimension
+décroissante et de degrés et hauteurs contrôlés. Au final, l'un des facteurs
+de cette variété sera réduit à un point, et le contrôle obtenu sur sa hauteur
+contredira les hypothèses achevant la preuve.
+
+Pour cela, il s'agit, étant donné une telle variété, de produire une forme sur
+un des facteurs, s'annulant au point étudié, par laquelle couper pour faire
+décroître la dimension de la variété dans laquelle on l'a enfermé ; nous
+l'appellerons \emph{forme motrice}. Si cette forme est suffisamment bien
+contrôlée, le théorème de \bsc{Bézout}, dans ses versions géométrique et
+arithmétique, permet alors de contrôler le degré et la hauteur de
+l'intersection.
+
+Le cœur technique de la preuve est donc la construction de cette forme
+motrice, pour laquelle on utilise la méthode de \bsc{Thue}. De façon
+classique, on commence par utiliser un lemme de \bsc{Siegel} pour produire une
+forme auxiliaire de multidegré prescrit (et étagé sur les différents facteurs)
+et de hauteur contrôlé, qui s'annule avec un indice (lui aussi étagé) élevé le
+long de l'hyperplan approché. L'étape d'extrapolation montre alors que la
+forme auxiliaire s'annule au point étudié, puis un lemme de zéros (en
+l'occurrence, une variante du théorème du produit) permet de conclure à
+l'existence de la forme motrice, ce qui clôt la preuve.
+
 
 
 \section{Définitions et notations}

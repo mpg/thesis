@@ -213,11 +213,13 @@
 %
 \mathtoolsset{showonlyrefs,showmanualtags}
 
-% lists for theorems [[2
+% lists [[2
 %
 \newenvironment{enumthm}
   {\begin{enumerate}[label=(\textit{\roman*})]}
   {\end{enumerate}}
+
+\setlist[itemize]{nosep}
 
 % theorem-like environments [[2
 %
