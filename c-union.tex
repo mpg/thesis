@@ -258,7 +258,7 @@ d'une approximation exceptionnelle ayant une variété associée non nulle et de
 points de cette variété. Le corollaire suivant donne une précision
 quantitative.
 
-\begin{coro}
+\begin{coro} \label{c:factory}
   Soient \( x \in \apx'(\avar, \eps) \cap \grp \)
   satisfaisant~\eqref{e:cont-big}, \( \eps' \) comme au lemme précédent et \(
     \vai \) une variété associée à \( x \). De plus, on note
@@ -342,17 +342,17 @@ suivent.
 
 \begin{coro}
   Supposons que pour tout \( \eps > 0 \), il existe \( R(\eps) \) tel que,
-  pour tout groupe \( \grp \) de rang au plus \( 1 \), l'ensemble
+  pour tout \( \grp \) de rang au plus \( 1 \), l'ensemble
   \begin{equation}
     \set{
       x \in \apx(\avar, \eps)
       \text{ tel que }
-      \hautn x \ge R(\eps, r)
+      \hautn x \ge R(\eps)
     }
     \cap \grp
   \end{equation}
   soit fini. Alors les points de \( \apx(\avar, \eps) \) sont de hauteur
-  majorée par \( \max \bigl( R(\eps/3, B(\eps, 1) \bigr) \).
+  majorée par \( \max \bigl( R(\eps/3), B(\eps) \bigr) \).
 \end{coro}
 
 \begin{proof}
@@ -363,6 +363,90 @@ suivent.
   ci-dessus, \( \apx(\avar, \eps/3) \cap \grp \) contient au moins
   \( \vai(\Qbar)_\torsion \) points de hauteur égale à \( \hautn x \), ce qui
   contredit l'hypothèse.
+\end{proof}
+
+\begin{coro}
+  Supposons que pour tout \( \eps > 0 \) il existe \( R(\eps) \) et \( N(\eps)
+  \) tels que pour tout \( \grp \) de \emph{type} fini et de rang au plus \( 1
+  \), on ait
+  \begin{equation}
+    \card
+    \set{
+      x \in \apx(\avar, \eps)
+      \text{ tel que }
+      \hautn x \ge R(\eps)
+    }
+    \cap \grp
+    \le
+    N(\eps)
+    \pmm.
+  \end{equation}
+  Alors les points de \( \apx(\avar, \eps) \) sont de hauteur majorée par
+  \( \max \bigl( 4 R(\eps/3), B(\eps) \bigr) \).
+\end{coro}
+
+\begin{proof}
+  On procède à nouveau par l'absurde et on choisit \( x_0 \in \apx(\avar, \eps)
+  \) de hauteur supérieure à la borne annoncée. On choisit \( \grp \) engendré
+  par un point de \( m \)-division de \( x_0 \) et, d'après le
+  corollaire~\vref{c:factory}, le cardinal de
+  \(
+    \set{
+      x \in \apx(\avar, \eps)
+      \text{ tel que }
+      \hautn x \ge R(\eps)
+    }
+    \cap \grp
+  \)
+  tend vers l'infini quand \( m \) tend vers l'infini, ce qui contredit les
+  hypothèses.
+\end{proof}
+
+\begin{coro}
+  Supposons que pour tout \( \eps > 0 \) et tout \( \grp \) de type
+  fini, il existe \( R(\eps, \grp) \) et \( N(\eps, \grp) \) tels que
+  \begin{equation}
+    \card
+    \set{
+      x \in \apx(\avar, \eps)
+      \text{ tel que }
+      \hautn x \ge R(\eps, \grp)
+    }
+    \cap \grp
+    \le
+    N(\eps, \grp)
+    \pmm.
+  \end{equation}
+  Alors les points de \( \apx(\avar, \eps) \cap \grp \) sont tous de hauteur
+  normalisée inférieure ou égale à
+  \begin{equation}
+    \max \Bigl(
+      \bigl( N(\eps/3, \grp) + 1 \bigr)^2 \hmin(\vai \cap \grp),\
+      4 R(\eps/3),\
+      B(\eps)
+    \Bigr)
+    \pmm.
+  \end{equation}
+\end{coro}
+
+\begin{proof}
+  À nouveau, supposons qu'il existe un point \( x_0 \) de hauteur normalisée
+  strictement plus grande que la borne annoncée ; l'hypothèse et le
+  corollaire~\vref{c:factory} impliquent que
+  \begin{align}
+    N(\eps/3, \grp)
+    & \ge
+    \card
+    \set{
+      x \in \apx(\avar, \eps/3)
+      \text{ tel que }
+      \hautn x \ge R(\eps/3, \grp)
+    }
+    \cap \grp
+    \\ & \ge
+    \sqrt{ \hautn x / \hmin(\vai \cap \grp) } - 1
+  \end{align}
+  ce qui est absurde.
 \end{proof}
 
 
