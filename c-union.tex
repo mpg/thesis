@@ -159,7 +159,8 @@ certaines estimations.
   \begin{align}
     \hautn x
     & >
-    \frac5\eps \bigl( 2 \hlclab + 7 \ln(n+1) \bigr) + 6\htcmp
+    \frac2{\eps\tau} \bigl( 2 \hlclab + 7 \ln(n+1) \bigr)
+    + \frac{11}\tau \htcmp
     \label{e:cont-big}
     \\
     \hautn y
@@ -301,6 +302,67 @@ quantitative.
   ensemble et \( m \) un entier relatif, alors \( m z + t \) est dans
   l'ensemble de départ tant que \( m^2 \) est inférieur à
   \( \tau \hautn x / \hautn z \).
+\end{proof}
+
+On est donc face à un phénomène de multiplication des approximations
+exceptionnelles, quitte à changer un peu l'exposant. Il est clair qu'une
+condition du type \( C_1(\tau) \) est la plus faible qu'on puisse mettre sur
+les ensembles d'approximations exceptionnelles considérés pour empêcher les
+effets de ce phénomène.
+
+\medskip
+
+Examinons maintenant quelques conséquences de ce phénomène sur ce qu'on peut
+espérer comme résultats de décomptes sans condition de type \( C_1(\tau) \) :
+sous certaines hypothèses, on prouve que l'ensemble des approximations
+exceptionnelles est de hauteur bornée explicitement (en fonction des
+hypothèses), ce qui montre que ces hypothèses sont peu réalistes.
+
+Pour simplifier, on se place dans le cas où \( \avar = z + \vai \) est un
+translaté de sous-variété abélienne de dimension au moins \( 1 \) : ceci
+assure que toute approximation exceptionnelle admet une variété associée non
+nulle, mais surtout, on a la propriété suivante : si \( x \not\in \avar \) et
+\( y \in \vai \), alors \( x+y \not\in \avar \). Cette propriété est utile
+pour donner des résultats concernant bien \( \apx(\avar, \eps) \) et pas
+\( \apx'(\avar, \eps) \). On pourrait bien sûr utiliser l'ex-conjecture de
+\bsc{Mordell}-\bsc{Lang} pour contrôler la différence, mais il nous semble
+préférable de nous concentrer sur le cas \( \avar = z + \vai \) qui donne des
+énoncés plus clairs.
+
+Par ailleurs, toujours dans un souci de simplification, on fixera \( \tau =
+  1/4 \), donc \( (1 + \sqrt\tau)^{-2} \le 3 \) et \( (1 - \sqrt\tau)^2 = 1/4
+\). De plus, on notera
+\begin{equation}
+  B(\eps)
+  =
+  \frac8\eps \bigl( 2 \hlclab + 7 \ln(n+1) \bigr) + 44 \htcmp
+\end{equation}
+(c'est-à-dire le membre de droite de~\eqref{e:cont-big}) dans les énoncés qui
+suivent.
+
+\begin{coro}
+  Supposons que pour tout \( \eps > 0 \), il existe \( R(\eps) \) tel que,
+  pour tout groupe \( \grp \) de rang au plus \( 1 \), l'ensemble
+  \begin{equation}
+    \set{
+      x \in \apx(\avar, \eps)
+      \text{ tel que }
+      \hautn x \ge R(\eps, r)
+    }
+    \cap \grp
+  \end{equation}
+  soit fini. Alors les points de \( \apx(\avar, \eps) \) sont de hauteur
+  majorée par \( \max \bigl( R(\eps/3, B(\eps, 1) \bigr) \).
+\end{coro}
+
+\begin{proof}
+  Procédons par l'absurde et supposons qu'il existe un point \( x \in
+    \apx(\avar, \eps) \) de hauteur normalisée supérieure à la borne
+  annoncée.  On pose \( \grp = \Z x + \vai(\Qbar)_\torsion \) qui est
+  clairement de rang \( 1 \). D'après le corollaire précédent et la remarque
+  ci-dessus, \( \apx(\avar, \eps/3) \cap \grp \) contient au moins
+  \( \vai(\Qbar)_\torsion \) points de hauteur égale à \( \hautn x \), ce qui
+  contredit l'hypothèse.
 \end{proof}
 
 
