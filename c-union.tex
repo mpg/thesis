@@ -27,14 +27,14 @@ réel, on introduit une condition sur \( F \), associée à \( \xi \), de la
 façon suivante.
 
 \begin{tdef} \label{d:cond}
-  On dit que \( F \) satisfait \( \overline C(\xi) \) s'il existe
+  On dit que \( F \) satisfait \( \bar C(\xi) \) s'il existe
   une sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est
   contenu dans \( \avar \) et deux points distincts \( x \) et \( y \) dans \(
     F \), tels que \( x - y \in \vai \) et \( \hautn{ x-y } \le \xi \hautn x
   \).
 
   On dit que \( F \) satisfait la condition \( C(\xi) \) si \( F \) ne
-  satisfait pas \( \overline C(\xi) \).
+  satisfait pas \( \bar C(\xi) \).
 \end{tdef}
 
 Remarquons que dans le cas particulier où \( \avar = z + \vai_0 \) est un
@@ -44,10 +44,6 @@ contient aucun translaté de sous-variété abélienne non nulle (ce qui est le
 cas de toute sous-variété stricte si \( \va \) est simple, par exemple), la
 condition \( C(\xi) \) est vide, c'est-à-dire qu'elle est satisfaite par tout
 ensemble.
-
-Par ailleurs, la condition \( \overline C(\xi) \) est d'autant plus forte que
-\( \xi \) est petit, autrement dit, plus \( \xi \) est petit, moins la
-condition \( C(\xi) \) est restrictive.
 
 Donnons alors une reformulation des inégalités de \bsc{Mumford} du chapitre
 précédent. On appelle \emph{lunule} associée aux paramètres \( (\rho, \phi,
@@ -75,6 +71,20 @@ sous-ensemble de \( \grp \) satisfaisant \( C(\eps / \adeg^m
   (2m)^{(m+1)\adim}) \), alors son intersection avec une lunule associée aux
 paramètre donnés contient au plus \( m - 1 \) approximations exceptionnelles,
 dans les notations de cet énoncé.
+
+Plus précisément, on remarque que la condition \( \bar C(\xi) \) est d'autant
+plus forte que \( \xi \) est petit, autrement dit, plus \( \xi \) est petit,
+moins la condition \( C(\xi) \) est restrictive. On remarque que les
+inégalités de \bsc{Mumford} du chapitre précédent disent en fait que
+l'ensemble de points considéré satisfait \( C(\xi) \) avec,
+\( \xi = \rho^2/4 + 2\phi + \rho\phi \), quantité qui peut être rendu
+arbitrairement petite à condition de réduire la taille des lunules
+considérées.
+
+Ainsi, dans les résultats de décompte des sections suivantes, on pourrait
+faire une hypothèse plus faible sur l'ensemble d'approximations considérées,
+au prix d'un décompte moins précis.  Néanmoins, on formulera les résultats
+avec la valeur « naturelle » de \( \xi \) pour éviter d'alourdir le texte.
 
 \medskip
 
@@ -104,17 +114,17 @@ nulle est une approximation exceptionnelle de \( Z_\avar \) (la réciproque est
 en revanche fausse).
 
 \begin{tdef}
-  On dit que \( F \) satisfait \( \overline C'(\xi) \) s'il existe deux points
+  On dit que \( F \) satisfait \( \bar C'(\xi) \) s'il existe deux points
   distincts \( x \) et \( y \) dans \( F \) et une sous-variété abélienne
-  \( \vai \) associée à \( x \) telle que \( x - y \in \vai \) et
+  \( \vai \) associée à \( x \) tels que \( x - y \in \vai \) et
   \( \hautn{ x-y } \le \xi \hautn x \).
 
   On dit que \( F \) satisfait la condition \( C'(\xi) \) si \( F \) ne
-  satisfait pas \( \overline C'(\xi) \).
+  satisfait pas \( \bar C'(\xi) \).
 \end{tdef}
 
-Il est clair que \( \overline C'(\xi) \) est une condition plus forte que \(
-  \overline C(\xi) \), autrement dit que \( C'(\xi) \) est une condition plus
+Il est clair qu'en général \( \bar C'(\xi) \) est une condition plus forte que \(
+  \bar C(\xi) \), autrement dit que \( C'(\xi) \) est une condition plus
 faible que \( C(\xi) \). Notons
 \begin{equation}
   \apx(\avar, \eps)
@@ -137,23 +147,22 @@ abélienne, les conditions \( C'(\xi) \) et \( C(\xi) \) sont équivalentes pour
 \medskip
 
 Nous allons maintenant essayer de convaincre le lecteur qu'on ne peut guère
-espérer majorer le cardinal d'un ensemble d'approximations exceptionnelles
+espérer majorer le cardinal des ensembles \( \apx(\avar, \eps) \cap \grp \)
 sous une condition plus faible que \( C'(\xi) \) à moins de savoir majorer la
-hauteur de certaines (voire toutes les) approximations exceptionnelles. On
-supposera \( \eps \le 1 \) pour simplifier certaines estimations.
+hauteur de certaines (voire toutes les) approximations exceptionnelles.
 
 \begin{lem}
   Soient \( x \in \apx'(\avar, \eps) \), \( \vai \) associée à \( x \) et \( y
     \in \vai(\Qbar) \), tels que
   \begin{align}
-    \hautl2 x
+    \hautn x
     & >
-    \frac1\eps \bigl( 11 \hlclab + 37 \ln(n+1) \bigr)
+    \frac5\eps \bigl( 2 \hlclab + 7 \ln(n+1) \bigr) + 6\htcmp
     \label{e:cont-big}
     \\
-    \hautl2 y
+    \hautn y
     & \le
-    \hautl2 x
+    \hautn x
     \pmm.
   \end{align}
   Alors \( x + y \in \apx'(\avar, \eps/5) \).
@@ -181,26 +190,39 @@ supposera \( \eps \le 1 \) pour simplifier certaines estimations.
     \cdot \hmclab*^{2\degv} (n + 1)^{7\dv\degv}
     \\ & \le
     \hautm2 x ^{-\eps} \cdot \hmclab^2 (n + 1)^7
+    \pmm.
   \end{align}
-  On observe maintenant, en utilisant des formules d'addition puis l'hypothèse
-  sur \( \hautm2 y \), que
+  Il s'agit donc de montrer que cette dernière quantité est majorée par \(
+    \hautm2 y ^{-\eps/5} \).  Si l'on note \( \nnt\truc \) la norme de
+  l'espace de \MoW, on a
+  \(
+    \nnt{ x+y }
+    \le
+    \nnt x + \nnt y
+    \le
+    2 \nnt x
+  \)
+  vu l'hypothèse sur \( \hautn y \). On en déduit alors
   \begin{equation}
-    \hautm2{ x+y }
+    \hautl2{ x+y }
     \le
-    \hmclab \hautm2 x ^2 \hautm2 y ^2
+    \hautn{ x+y } + \htcmp
     \le
-    \hmclab \hautm2 x ^4
+    4 \hautn x + \htcmp
+    \le
+    4 \hautl2 x + 5 \htcmp
   \end{equation}
+  puis
+  \( - \frac45 \eps \hautl2 x \le - \frac\eps5 \hautl2{ x+y } + \eps \htcmp \)
   ce qui donne immédiatement
   \begin{equation}
     \hautm2 x ^{-\eps} \cdot \hmclab^2 (n + 1)^7
     \le
-    \hautm2{ x+y }^{-\eps/5} \hmclab^{\eps/5} \hautm2 x ^{-\eps/5}
+    \hautm2{ x+y }^{-\eps/5} \expb^{\eps \htcmp} \hautm2 x ^{-\eps/5}
     \cdot \hmclab^2 (n + 1)^7
     \pmm.
   \end{equation}
-  L'hypothèse sur \( \hautm2 x \) permet alors de conclure, car on a supposé
-  \( \eps \le 1 \).
+  L'hypothèse sur \( \hautn x \) permet alors de conclure.
 \end{proof}
 
 Ainsi, on peut construire de nouvelles approximations exceptionnelles à partir
@@ -209,14 +231,9 @@ points de cette variété. Le corollaire suivant donne une précision
 quantitative.
 
 \begin{coro}
-  Soient \( x \in \apx'(\avar, \eps) \cap \grp \) et \( \vai \) une variété
-  associée à \( x \). On suppose que
-  \begin{equation}
-    \hautl2 x
-    >
-    \frac1\eps \bigl( 11 \hlclab + 37 \ln(n+1) \bigr) + \htcmp
-  \end{equation}
-  et on note \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) où \( y
+  Soient \( x \in \apx'(\avar, \eps) \cap \grp \)
+  satisfaisant~\eqref{e:cont-big} et \( \vai \) une variété associée à \( x
+  \). On note \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) où \( y
   \) parcourt l'ensemble des points d'ordre infini de \( \vai(\Qbar) \cap \grp
   \), ou bien \( +\infty \) si cet ensemble est vide. On a alors
   \begin{equation}
@@ -235,7 +252,7 @@ quantitative.
     \set{
       y \in \vai(\Qbar)
       \text{ tel que }
-      \hautl2 y \le \hautl2 x
+      \hautn y \le \hautn x
     }
     \cap \grp
   \end{equation}
