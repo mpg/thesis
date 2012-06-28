@@ -599,6 +599,7 @@
 \newcommand \vaht  { h_{\!\va} }
 \newcommand \vacdn { \cdn_{\!\va} }
 \newcommand \vahtr { h^{0}_{\!\va} }
+\newcommand \vacst { c_{\!\va} } % intro
 
 \newcommand*\clab [3][] { [#2, #3]\ssub{#1} }
 \newcommand*\multab [1] { [#1] }

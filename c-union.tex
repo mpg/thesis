@@ -20,30 +20,15 @@ de les éliminer.
 \section{Conditions pour les décomptes}
 \label{sec:obstruction}
 
+La définition~\vref{d:cond} présente la condition qui sera utilisée pour
+dénombrer les ensembles d'approximations exceptionnelles. On discute ici du
+phénomène qui rend ce type de condition nécessaire, et on présente une autre
+condition, plus faible en général, qui devrait être suffisante pour l'éviter.
+
 Dans cette section, on suppose fixés une sous-variété \( \avar \subset \va \),
 un réel \( \eps \) et un sous-groupe \( \grp \subset \va \) de rang fini \( r
-\).  Si \( F \) est un sous-ensemble de \( \va(\Qbar) \) et \( \tau > 0 \) un
-réel, on introduit une condition sur \( F \), associée à \( \tau \), de la
-façon suivante.
-
-\begin{tdef} \label{d:cond}
-  On dit que \( F \) satisfait \( \cond*\tau \) s'il existe
-  une sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est
-  contenu dans \( \avar \) et deux points distincts \( x \) et \( y \) dans \(
-    F \), tels que \( x - y \in \vai \) et \( \hautn{ x-y } \le \tau \hautn x
-  \).
-
-  On dit que \( F \) satisfait la condition \( \cond\tau \) si \( F \) ne
-  satisfait pas \( \cond*\tau \).
-\end{tdef}
-
-Remarquons que dans le cas particulier où \( \avar = z + \vai_0 \) est un
-translaté d'une sous-variété abélienne \( \vai_0 \), on peut toujours prendre
-\( \vai = \vai_0 \) dans l'énoncé de la condition. À l'inverse, si \( V \) ne
-contient aucun translaté de sous-variété abélienne non nulle (ce qui est le
-cas de toute sous-variété stricte si \( \va \) est simple, par exemple), la
-condition \( \cond\tau \) est vide, c'est-à-dire qu'elle est satisfaite par tout
-ensemble.
+\).  On considère de plus un sous-ensemble \( F \) de \( \va(\Qbar) \) et un
+réel \( \tau \ge 0 \).
 
 Donnons alors une reformulation des inégalités de \bsc{Mumford} du chapitre
 précédent. On appelle \emph{lunule} associée aux paramètres \( (\rho, \phi,
@@ -1328,7 +1313,7 @@ On en déduit un décompte complet des grands points.
   compte tenu de la définition de \( \rho \).
 \end{proof}
 
-\begin{coro}
+\begin{coro} \label{c:big-any}
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
   dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
     \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).

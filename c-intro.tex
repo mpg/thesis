@@ -33,11 +33,11 @@ d'approximation \eqref{e:has}. Ainsi que le fait remarquer \bsc{Faltings}
 dans l'introduction de son article : « \eng{As far as I can see, everything
   here is ineffective beyond hope.} »
 
-Il semble néanmoins raisonnable de vouloir majorer explicitement le nombre de
-points rationnels satisfaisant à \eqref{e:has} (que nous appellerons à
-l'occasion les approximations exceptionnelles).  Pour les courbes elliptiques,
-ce travail a été accompli dans \cite{grosiipec} pour les courbes de hauteur
-assez grandes, puis de façon indépendante par \bsc{Farhi}
+Néanmoins, il semble \lat{a priori} raisonnable de vouloir majorer
+explicitement le nombre de points rationnels satisfaisant à \eqref{e:has} (que
+nous appellerons à l'occasion les approximations exceptionnelles).  Pour les
+courbes elliptiques, ce travail a été accompli dans \cite{grosiipec} pour les
+courbes de hauteur assez grandes, puis de façon indépendante par \bsc{Farhi}
 (\cite[chap.~2]{farhith} ou \cite{faraetr}) pour toutes les courbes, avec des
 constantes d'apparence assez différente.
 
@@ -297,13 +297,193 @@ points entiers, malheureusement pas dans le cas général, mais au moins dans
 le \( \va \) est simple (et principalement polarisée). À notre connaissance,
 une telle version quantitative explicite de cette ex-conjecture de \bsc{Lang},
 même dans un cas particulier, est nouvelle pour une variété abélienne de
-dimension au moins \( 2 \).
+dimension au moins \( 2 \) ; néanmoins, les constantes que nous obtenons ne
+sont pas satisfaisantes (corollaire~\vref{c:lang}).
 
 
 
 \section{Énoncés des résultats principaux}
 
-(À écrire.)
+Comme on l'a mentionné précédemment, il semble \lat{a priori} difficile de
+borner la hauteur des approximations exceptionnelles, mais plus réaliste de
+borner leur nombre. En fait, il apparaît que dans notre situation, ces deux
+questions sont en général intimement liées : en effet, comme le montrera en
+détails le corollaire~\vref{c:factory}, certains approximations
+exceptionnelles n'arrivent pas seule mais engendrent en fait une « grappe »
+d'approximations de qualité semblable, dont le cardinal est minoré en fonction
+de la hauteur de l'approximation qui engendre cette grappe. Ce phénomène est
+directement lié à l'existence possible de translatés de sous-variétés
+abéliennes contenus dans la variété approchée.
+
+Ainsi, majorer le cardinal de l'ensemble des approximations exceptionnelles,
+donc de chaque grappe, reviendrait à majorer la hauteur de certains
+approximations exceptionnelles, voire de toutes les approximations
+exceptionnelles, résultat qui ne semble pas accessible à l'heure actuelle.
+
+Par contre, on peut compter les grappes d'approximations exceptionnelles ou,
+autrement dit majorer le cardinal d'ensembles d'approximations exceptionnelles
+ne contenant qu'un point dans chaque grappe. On introduit dans ce but la
+définition suivante.
+
+\begin{tdef} \label{d:cond}
+  Soient \( F \) un sous-ensemble de \( \va(\Qbar) \) et \( \tau \) un réel
+  positif. On dit que \( F \) satisfait \( \cond*\tau \) s'il existe une
+  sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est contenu
+  dans \( \avar \) et deux points distincts \( x \) et \( y \) dans \( F \),
+  tels que \( x - y \in \vai \) et \( \hautn{ x-y } \le \tau \hautn x \).
+
+  On dit que \( F \) satisfait la condition \( \cond\tau \) si \( F \) ne
+  satisfait pas \( \cond*\tau \).
+\end{tdef}
+
+Nous allons donc nous attacher à contrôler le cardinal d'ensemble
+d'approximations exceptionnelles satisfaisant \( \cond\tau \) pour un certain
+\( \tau \) explicite. La section~\vref{sec:obstruction} discute plus en
+détails ce phénomène de grappe et le choix de la condition utilisée pour
+le mettre de côté. Signalons tout de même avant de continuer que, si \( \va
+\) est simple, il n'y a pas de grappes, la condition ci-dessus est vide et
+les résultats ci-dessous donnent donc des décomptes complets de toutes les
+approximations exceptionnelles.
+
+\medskip
+
+Le premier résultat de décompte que nous donnons concerne le cas particulier
+où la variété approchée est un translaté d'une sous-variété abélienne de \(
+  \va \).
+
+Pour simplifier, on note \( \vacst \) une constant ne dépendant que de la
+hauteur de \( \va \), qui peut être explicitée totalement, et \( N \) le
+cardinal d'un système complet de formes représentant l'addition de \( \va \)
+(voir la section~\vref{sec:vaemb}).
+
+\begin{thm}[corollaire~\vref{c:all-gen}]
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
+    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
+  \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
+  \( x_1, \dots, x_p \) de points de \( \grp \) et \( \placesapx \) un ensemble
+  fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
+  satisfait à \( \cond{\eps/2d} \) et que, pour tout \( i \) :
+  \begin{align}
+    0 < \prod\placerange \distv{x_i} \avar ^\degv
+    & <
+    \hautm2{x_i}^{-\eps}
+    \exp(- \adeg \alpha \Lambda^{(4g)^{4g^2}})
+  \end{align}
+  avec
+  \begin{align}
+    \Lambda
+    & =
+    \bigl( 87 \nclmaps \adeg \, \eps^{-1} \bigr)^2
+    \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g}
+    \\
+    \alpha
+    & =
+    \adeg^{g+1} \vacst
+    + (g + 1) (\deg \va) \adeg^g \hautl1 \avar
+    \\ & \qquad
+    + (g + 1) (\deg \va)
+    \bigl(
+      (4\adeg)^{n+1}
+      + \adeg^{g+1} (g + 2) ( \adeg + n + 1 )
+    \bigr)
+    \pmm.
+  \end{align}
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    2 \cdot 5^{\card \placesapx} \cdot
+    \sqrt{ \frac{\adeg}\eps }
+    (4g)^{4g^2+1}
+    \ln \Lambda
+    \left(
+        739 \nclmaps \cdot 7^g \adeg
+        \, \eps^{-1}
+    \right)^r
+    \pmm.
+  \end{equation}
+\end{thm}
+
+Comme on le constate, la condition d'approximation a été renforcée (facteur \(
+  \exp(- \dots) \)). Ceci a pour but d'éliminer les points de petite hauteur
+afin de fournir un décompte complet. Sous l'hypothèse d'approximation plus
+naturelle (sans ce dernier facteur), on obtient un décompte seulement pour les
+points de grande hauteur (corollaire~\vref{c:big-m=2g}).
+
+Signalons une interprétation possible de ce type d'énoncé : on a
+\begin{equation}
+  \sum\placerange \degv \ln \distv{x} \avar
+  \ge
+  - \eps \hautl2{x}
+  - \adeg \alpha \Lambda^{(4g)^{4g^2}}
+\end{equation}
+sauf pour un nombre fini de \( x \) (les approximations exceptionnelles).
+Dans l'inégalité ci-dessus, dans le cas où \( \avar \) est une sous-variété
+abélienne de \( \va \), le membre de gauche peut être interprété comme une
+forme linéaire de logarithmes abéliens. La minoration obtenue présente alors
+la particularité de séparer \( \hautl2 x \) de \( d \), qui représente la
+hauteur des formes linéaires. Cependant, la dépendant en \( d \) est nettement
+moins bonne que celle obtenue dans les minorations usuelles de formes
+linéaires de logarithmes et surtout, l'inégalité admet des exceptions, bien
+qu'elles soient en nombre fini et que ce nombre soit en partie contrôlé.
+
+\medskip
+
+Le deuxième décompte que nous donnons concerne le cas général. On suppose que
+\( \va \) est principalement polarisée et plongée dans \( \projd \) par un
+plongement de \bsc{Mumford} modifié (section~\vref{sec:vaemb}).
+
+\begin{thm}[corollaire~\vref{c:big-any}]
+  Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
+  dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
+    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
+  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
+  satisfaisant à \( \cond{ \eps / \adeg^M (2M)^{ (M+1)\adim} } \) et aux
+  conditions suivantes, pour tout \( i \) :
+  \begin{align}
+    0
+    & < \prod\placerange \distv{x_i} \avar^\degv
+    < \hautm2{x_i}^{-\eps}
+    \\
+    \hautn{x_i}
+    & >
+    ( \hautl1 \avar + \vacst )
+    \, \eps^{-2(4g)^{4g^2}}
+    \adeg^M (3M)^{ (M+1)\adim + 3}
+  \end{align}
+  où \( \placesapx \) est un ensemble fini de places de \( \Q(x_1, \dots, x_p)
+  \) et
+  \(
+    M
+    =
+    \bigl(
+    2^{34} \, \vacst \, \adeg
+    \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
+    + 1
+    \pmm.
+  \)
+  Alors on a
+  \begin{equation}
+    p
+    \le
+    5^{\card\placesapx}
+    M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+    \, \eps^{-r - 1/2} \ln(\expb/\eps)
+    \pmm.
+  \end{equation}
+\end{thm}
+
+On constate que la dépendance en les différents paramètres est
+significativement moins bonne que celle qu'on pourrait attendre (et en
+particulier que celle obtenue dans le cas précédent). Ceci semble être une
+faiblesse de la méthode utilisée pour prouver l'inégalité de \bsc{Mumford}
+dans ce cas.
+
+Signalons enfin qu'on peut déduire du résultat précédent un décompte
+explicite, quoi que peu satisfaisant, des points entiers d'un ouvert affine
+d'une variété abélienne simple : c'est le corollaire~\vref{c:lang}.
+
 
 
 \section{Stratégie générale}
