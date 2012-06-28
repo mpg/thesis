@@ -629,7 +629,7 @@ associé à un fibré symétrique \( \fibre \). On supposera de plus le plongeme
 projectivement normal (c'est-à-dire tel que l'application
 \( \Gamma(\projd, \mathcal O(i)) \to \Gamma(\va, \fibre^{\otimes i}) \) soit
 surjective pour tout \( i \ge 1 \)) ; cette condition n'est pas restrictive car
-si \( \fibrei \) est in fibré ample, alors \( \fibrei^{\otimes l} \) est très
+si \( \fibrei \) est un fibré ample, alors \( \fibrei^{\otimes l} \) est très
 ample et satisfait la condition dès que \( l \ge 3 \).
 
 On introduit alors quelques constantes et notations associées à ce plongement,
@@ -712,11 +712,11 @@ cas.
   \begin{align}
     \nnv1{ F\pexp a }
     \le
-    C_{2, 3, v}
+    C_{2, 3, v}^{a^2}
     \qquad\text{et, pour tout \( x \in \va(\Qbar) \),}\quad
     \frac{ \nv1{ F\pexp a (x) } }{ \nv1{ x }^{a^2} }
     \ge
-    C_{2, 3, v}^{-1}
+    C_{2, 3, v}^{-a^2}
     \pmm.
   \end{align}
   On conclut directement en composant avec le système complet de formes
@@ -756,14 +756,14 @@ cas.
 \begin{proof}
   Vu les hypothèses sur le plongement, \cite{larucsal} assure qu'il existe un
   système complet de formules de bidegré \( (2, 2) \) représentant l'addition.
-  On en déduit aisément un système complet de formules de même degré en
-  composant avec une famille de formules linéaires représentant globalement la
-  multiplication. Cette famille répond à toutes les exigences du lemme (à
-  condition de choisir \( \hmpm* \) en conséquence) sauf peut-être le dernier
-  point, pour lequel on utilise le même argument que pour la fin de la preuve
-  du fait~3 page~276 de~\cite{phiha1} cité précédemment, mais appliqué cette
-  fois à la famille \( (D\pexp\clmap[\ind])^{\clmap\in\clmaps}_{\ind\in\set{0,
-        \dots, n}} \).
+  On en déduit aisément un système complet de formules pour la soustraction de
+  même degré en composant sur le deuxième facteur avec une famille de formules
+  linéaires représentant globalement la multiplication par \( -1 \). Cette
+  famille répond à toutes les exigences du lemme (à condition de choisir \(
+    \hmpm* \) en conséquence) sauf peut-être le dernier point, pour lequel on
+  utilise le même argument que pour la fin de la preuve du fait~3 page~276
+  de~\cite{phiha1} cité précédemment, mais appliqué cette fois à la famille \(
+    (D\pexp\clmap[\ind])^{\clmap\in\clmaps}_{\ind\in\set{0, \dots, n}} \).
 \end{proof}
 
 \begin{rem} \label{r:hm-clab-pm}
@@ -774,7 +774,7 @@ cas.
 
 \begin{nota} \label{n:vaemb}
   On fixe désormais des constantes et formes telles que données par les deux
-  lemmes précédent et le fait~\vref{f:htcmp}. On note de plus \( \hlclab = \ln
+  lemmes précédents et le fait~\vref{f:htcmp}. On note de plus \( \hlclab = \ln
     \hmclab \) et \( \hlpm = \ln \hmpm \).
 \end{nota}
 
@@ -786,8 +786,8 @@ cas.
   ci-dessous).
 \end{rem}
 
-Discutons maintenant des valeurs explicites qu'on peut donner à certains des
-ces constantes pour des plongements bien choisi. On considère principalement
+Discutons maintenant des valeurs explicites qu'on peut donner à certaines de
+ces constantes pour des plongements bien choisis. On considère principalement
 les plongements de \bsc{Mumford} modifiés tels que définis dans
 \cite{daphimhva2}. Nous noterons \( \vaht \) la quantité notée \(
   \hautl{}\va \) dans cette référence, car dans nos notations, \( \hautl{}\va
@@ -824,17 +824,21 @@ de la référence citée.
 Le point d'achoppement pour finir d'expliciter \( \hmclab \) est donc
 l'existence de formules globales pour la multiplication par \( 3 \) qui soient
 suffisamment bien contrôlées. À notre connaissance, on ne dispose pas à ce
-jour de telles formules pour les variétés abéliennes quelconques.
+jour de formules explicites comme pour la multiplication par \( 2 \) ; il
+serait néanmoins possible de majorer la hauteur d'un famille représentant
+globalement la multiplication par \( 3 \), puis, grâce à un
+\emph{nullstellensatz} effectif, d'en déduire une constante telle que la
+minoration voulue soit satisfaite.
 
 Dans le cas particulier des courbes elliptiques, si l'on choisit de les
 plonger dans \( \proj2 \) par un plongement de \bsc{Weierstrass}, on dispose
 alors de formules globales totalement explicites pour la multiplication par
 n'importe quel entier, ainsi que d'un système complet de \( 3 \) familles de
 formes de bidegré \( (2,2) \) représentant l'addition, données par la
-section~2.13 (pages 126 à 142) de \cite{farhith}. On pourrait en déduire, avec
-un \emph{nullstellensatz} effectif, une valeur totalement explicite de \(
-  \hmclab \). Par ailleurs, \bsc{Farhi} donne une valeur explicite de \(
-  \htcmp \) à partir de ces formules (théorème~2.13.3 page~141).
+section~2.13 (pages 126 à 142) de \cite{farhith}. On pourrait en déduire
+une valeur totalement explicite de \( \hmclab \) pour les plongement de
+\bsc{Weierstrass}. Par ailleurs, \bsc{Farhi} donne une valeur explicite de
+\( \htcmp \) à partir de ces formules (théorème~2.13.3 page~141).
 
 \medskip
 
@@ -842,11 +846,7 @@ Pour conclure cette section, remarquons que, si \( \htcmp \) est utilisée
 assez abondamment dans tous les contextes, en revanche seule la démonstration
 de l'inégalité de \bsc{Vojta} utilise \( \hlclab \) et \( N \) : l'inégalité
 de \bsc{Mumford} repose uniquement sur \( \hlpm \) et n'utilise pas la valeur
-de \( N \). En particulier, les constantes de l'inégalité de \bsc{Mumford}
-liées à la hauteur de \( \va \) peuvent être explicitées totalement, alors que
-celles de l'inégalité de \bsc{Vojta} dépendent de formules globales de
-multiplication par \( 3 \), qui ne semblent pas explicites à ce jour (en
-revanche, une valeur explicite de \( N \) est donnée ci-dessus).
+de \( N \).
 
 
 \subsection{Distances et conditions d'approximations}
