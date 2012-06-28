@@ -76,8 +76,8 @@ Plus précisément, on remarque que la condition \( \cond*\tau \) est
 d'autant plus forte que \( \tau \) est petit, autrement dit, plus \( \tau \)
 est petit, moins la condition \( \cond\tau \) est restrictive. On remarque que
 les inégalités de \bsc{Mumford} du chapitre précédent disent en fait que
-l'ensemble de points considéré satisfait \( \cond\tau \) avec
-\( \tau = \rho^2/4 + 2\phi + \rho\phi \), quantité qui peut être rendu
+l'ensemble de points considéré satisfait \( \cond*\tau \) avec
+\( \tau = \rho^2/4 + 2\phi + \rho\phi \), quantité qui peut être rendue
 arbitrairement petite à condition de réduire la taille des lunules
 considérées.
 
@@ -138,7 +138,7 @@ condition plus faible que \( \cond\tau \). Notons
     \hautm2 x^{-\eps}
   }
 \end{equation}
-et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cap \avar(\Qbar) \). On remarque
+et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cup \avar(\Qbar) \). On remarque
 que, dans le cas particulier où \( F \) est un sous-ensemble de \(
   \apx'(\avar, \eps) \) et \( \avar \) est un translaté de sous-variété
 abélienne, les conditions \( \condi\tau \) et \( \cond\tau \) sont équivalentes
@@ -159,8 +159,8 @@ certaines estimations.
   \begin{align}
     \hautn x
     & >
-    \frac2{\eps\tau} \bigl( 2 \hlclab + 7 \ln(n+1) \bigr)
-    + \frac{11}\tau \htcmp
+    \frac2{\eps \sqrt\tau} \bigl( 2 \hlclab + 7 \ln(n+1) \bigr)
+    + \frac{11}{ \sqrt\tau } \htcmp
     \label{e:cont-big}
     \\
     \hautn y
@@ -169,7 +169,7 @@ certaines estimations.
     \pmm.
   \end{align}
   Alors \( x + y \in \apx'(\avar, \eps') \) avec
-  \( \eps' = \eps (1 + \sqrt\tau)^{-2} \).
+  \( \eps' = \eps (1 + 2 \sqrt\tau)^{-2} \).
 \end{lem}
 
 \begin{proof}
@@ -236,7 +236,7 @@ certaines estimations.
     1 - \frac{ (1 + t)^2 }{ (1 + 2t)^2 }
     =
     t \, \frac{ 2 + 3t }{ (1 + 2t)^2 }
-    \le
+    \ge
     \frac59 t
   \end{equation}
   où l'inégalité vient en remarquant que la fraction du milieu est
@@ -246,7 +246,7 @@ certaines estimations.
     + 2 \hlclab + 7 \ln(n+1)
     \le
     - \eps' \hautl2{ x+y } + 5 \eps \htcmp
-    - \frac{ \eps \tau }2 \hautl2 x
+    - \frac{ \eps \sqrt\tau }2 \hautl2 x
     + 2 \hlclab + 7 \ln(n+1)
     \notag
   \end{equation}
@@ -262,14 +262,11 @@ quantitative.
   Soient \( x \in \apx'(\avar, \eps) \cap \grp \)
   satisfaisant~\eqref{e:cont-big}, \( \eps' \) comme au lemme précédent et \(
     \vai \) une variété associée à \( x \). De plus, on note
-  \( \hmin(\vai \cap \grp \) le minimum de \( \hautn y \) lorsque \( y \)
+  \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) lorsque \( y \)
   parcourt l'ensemble des points d'ordre infini de
   \( \vai(\Qbar) \cap \grp \), ou \( +\infty \) si cet ensemble est vide.
 
-  Alors l'ensemble
-  \(
-    \card \bigl( \apx'(\avar, \eps') \cap \grp \bigr)
-  \) contient au moins
+  Alors l'ensemble \( \apx'(\avar, \eps') \cap \grp \) contient au moins
   \begin{equation}
     \card \bigl( \vai(\Qbar)_\torsion \cap \grp \bigr)
     \left(
@@ -329,79 +326,7 @@ pour donner des résultats concernant bien \( \apx(\avar, \eps) \) et pas
 préférable de nous concentrer sur le cas \( \avar = z + \vai \) qui donne des
 énoncés plus clairs.
 
-Par ailleurs, toujours dans un souci de simplification, on fixera \( \tau =
-  1/4 \), donc \( (1 + \sqrt\tau)^{-2} \le 3 \) et \( (1 - \sqrt\tau)^2 = 1/4
-\). De plus, on notera
-\begin{equation}
-  B(\eps)
-  =
-  \frac8\eps \bigl( 2 \hlclab + 7 \ln(n+1) \bigr) + 44 \htcmp
-\end{equation}
-(c'est-à-dire le membre de droite de~\eqref{e:cont-big}) dans les énoncés qui
-suivent.
-
-\begin{coro}
-  Supposons que pour tout \( \eps > 0 \), il existe \( R(\eps) \) tel que,
-  pour tout \( \grp \) de rang au plus \( 1 \), l'ensemble
-  \begin{equation}
-    \set{
-      x \in \apx(\avar, \eps)
-      \text{ tel que }
-      \hautn x \ge R(\eps)
-    }
-    \cap \grp
-  \end{equation}
-  soit fini. Alors les points de \( \apx(\avar, \eps) \) sont de hauteur
-  majorée par \( \max \bigl( R(\eps/3), B(\eps) \bigr) \).
-\end{coro}
-
-\begin{proof}
-  Procédons par l'absurde et supposons qu'il existe un point \( x \in
-    \apx(\avar, \eps) \) de hauteur normalisée supérieure à la borne
-  annoncée.  On pose \( \grp = \Z x + \vai(\Qbar)_\torsion \) qui est
-  clairement de rang \( 1 \). D'après le corollaire précédent et la remarque
-  ci-dessus, \( \apx(\avar, \eps/3) \cap \grp \) contient au moins
-  \( \vai(\Qbar)_\torsion \) points de hauteur égale à \( \hautn x \), ce qui
-  contredit l'hypothèse.
-\end{proof}
-
-\begin{coro}
-  Supposons que pour tout \( \eps > 0 \) il existe \( R(\eps) \) et \( N(\eps)
-  \) tels que pour tout \( \grp \) de \emph{type} fini et de rang au plus \( 1
-  \), on ait
-  \begin{equation}
-    \card
-    \set{
-      x \in \apx(\avar, \eps)
-      \text{ tel que }
-      \hautn x \ge R(\eps)
-    }
-    \cap \grp
-    \le
-    N(\eps)
-    \pmm.
-  \end{equation}
-  Alors les points de \( \apx(\avar, \eps) \) sont de hauteur majorée par
-  \( \max \bigl( 4 R(\eps/3), B(\eps) \bigr) \).
-\end{coro}
-
-\begin{proof}
-  On procède à nouveau par l'absurde et on choisit \( x_0 \in \apx(\avar, \eps)
-  \) de hauteur supérieure à la borne annoncée. On choisit \( \grp \) engendré
-  par un point de \( m \)-division de \( x_0 \) et, d'après le
-  corollaire~\vref{c:factory}, le cardinal de
-  \(
-    \set{
-      x \in \apx(\avar, \eps)
-      \text{ tel que }
-      \hautn x \ge R(\eps)
-    }
-    \cap \grp
-  \)
-  tend vers l'infini quand \( m \) tend vers l'infini, ce qui contredit les
-  hypothèses.
-\end{proof}
-
+% revoir avec un eps, un gamma et tau non fixé
 \begin{coro} \label{c:count2ht}
   Supposons que pour tout \( \eps > 0 \) et tout \( \grp \) de type
   fini, il existe \( R(\eps, \grp) \) et \( N(\eps, \grp) \) tels que
@@ -422,7 +347,7 @@ suivent.
   \begin{equation}
     \max \Bigl(
       \bigl( N(\eps/3, \grp) + 1 \bigr)^2 \hmin(\vai \cap \grp),\
-      4 R(\eps/3),\
+      4 R(\eps/3, \grp),\
       B(\eps)
     \Bigr)
     \pmm.
