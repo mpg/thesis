@@ -978,7 +978,7 @@ autres facteurs.
 
 \begin{coro} \label{c:big-m=2g}
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
   \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
   \( x_1, \dots, x_p \) de points de \( \grp \) et \( \placesapx \) un ensemble
@@ -991,7 +991,7 @@ autres facteurs.
     \hautm2{x_i}^{-\eps}
     \\
     \hautn{x_i}
-    & > \cst{ht-v-gen1} (\Lambda_5')^{(4g)^{4g^2}}
+    & > \cst{ht-v-gen1}' (\Lambda_5')^{(4g)^{4g^2}}
   \end{align}
   avec
   \begin{align}
@@ -1638,49 +1638,46 @@ On en déduit immédiatement le corollaire pratique suivant.
 On en déduit à titre d'exemple une variante du
 corollaire~\vref{c:big-gen-prod} ; le lecteur en déduira sans peine des
 variantes similaires des autres résultats de décompte.
-\worknote{À choisir en fonction de ce qu'on veut présenter dans l'intro ?}
 
 \begin{coro} \label{c:all-gen}
-  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \) de \( \va \) de degré \( \adeg \) et de dimension \(
+  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \).  Pour tout réel \( \eps > 0 \) et tout entier \( m
-    \ge g + 1 \), il existe au plus
-  \begin{equation}
-    2 \cdot 5^{\card \placesapx} \cdot
-    \sqrt{ \frac{\adeg}\eps }
-    (2mg)^{mg+1}
-    \ln \Lambda_5
-    \left(
-      3 \sqrt m
-      \bigl(
-        174 \nclmaps \cdot 5^g \adeg s
-        \, \eps^{-1}
-        \bigr)^{ \frac{m}{2(m-g)} }
-    \right)^r
-  \end{equation}
-  points de \( \grp \) distincts modulo \( \vai \) et satisfaisant
-  à la condition suivante :
+  \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
+  \( x_1, \dots, x_p \) de points de \( \grp \) et \( \placesapx \) un ensemble
+  fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
+  satisfait à \( \cond{\eps/2d} \) et que, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
-    \exp\left(
-      - \adeg \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}}
-    \right)
     \hautm2{x_i}^{-\eps}
+    \exp(- \adeg \cst{ht-v-gen1}' (\Lambda_5')^{(4g)^{4g^2}})
   \end{align}
-  avec \( \Lambda_5 \) et \( \cst{ht-v-gen1} \) comme au
-  corollaire~\vref{c:big-gen-prod}.
+  avec \( \Lambda_5' \) et \( \cst{ht-v-gen1}' \) comme au
+  corollaire~\vref{c:big-m=2g}. Alors on a
+  \begin{equation}
+    p
+    \le
+    2 \cdot 5^{\card \placesapx} \cdot
+    \sqrt{ \frac{\adeg}\eps }
+    (4g)^{4g^2+1}
+    \ln \Lambda_5'
+    \left(
+        739 \nclmaps \cdot 7^g \adeg
+        \, \eps^{-1}
+    \right)^r
+    \pmm.
+  \end{equation}
 \end{coro}
 
 \begin{proof}
   La condition d'approximation considérée permet d'appliquer le
   corollaire~\vref{c:kill-small} avec
-  \( R = \cst{ht-v-gen1} \Lambda_5^{(2mg)^{mg}} \),
+  \( R = \cst{ht-v-gen1}' (\Lambda_5')^{(2mg)^{mg}} \),
   quantité qui satisfait amplement l'hypothèse du corollaire. Ainsi, on voit
   que tous les points satisfaisant cette condition d'approximation satisfont
   aussi \( \hautn{x_i} \ge R \) et on peut appliquer le
-  corollaire~\vref{c:big-gen-prod} pour conclure.
+  corollaire~\vref{c:big-m=2g} pour conclure.
 \end{proof}
 
 
