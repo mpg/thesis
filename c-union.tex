@@ -302,78 +302,26 @@ quantitative.
 \end{proof}
 
 On est donc face à un phénomène de multiplication des approximations
-exceptionnelles, quitte à changer un peu l'exposant. Il est clair qu'une
-condition du type \( \condi\tau \) est la plus faible qu'on puisse mettre sur
-les ensembles d'approximations exceptionnelles considérés pour empêcher les
-effets de ce phénomène.
+exceptionnelles, quitte à changer un peu l'exposant. En quelque sorte, les
+approximations exceptionnelles arrivent par « grappes » : pour chaque
+approximation exceptionnelle d'exposant légèrement meilleur que celui exigé,
+de hauteur assez grande et possédant une variété associée non nulle, on a une
+grappe d'approximations exceptionnelles, dont le cardinal dépend de la hauteur
+(et de la qualité) de la première.
 
-\medskip
+Ainsi, le seul moyen de contrôler le cardinal de l'ensemble des approximations
+exceptionnelles est de borner la hauteur de celles qui ont une variété
+associée non nulle ; dans le cas particulier où \( \avar \) est un translaté
+de sous-variété abélienne de dimension positive, il s'agirait donc de majorer
+la hauteur de toutes les approximations.
 
-Examinons maintenant quelques conséquences de ce phénomène sur ce qu'on peut
-espérer comme résultats de décomptes sans condition de type \( \condi\tau \) :
-sous certaines hypothèses, on prouve que l'ensemble des approximations
-exceptionnelles est de hauteur bornée explicitement (en fonction des
-hypothèses), ce qui montre que ces hypothèses sont peu réalistes.
-
-Pour simplifier, on se place dans le cas où \( \avar = z + \vai \) est un
-translaté de sous-variété abélienne de dimension au moins \( 1 \) : ceci
-assure que toute approximation exceptionnelle admet une variété associée non
-nulle, mais surtout, on a la propriété suivante : si \( x \not\in \avar \) et
-\( y \in \vai \), alors \( x+y \not\in \avar \). Cette propriété est utile
-pour donner des résultats concernant bien \( \apx(\avar, \eps) \) et pas
-\( \apx'(\avar, \eps) \). On pourrait bien sûr utiliser l'ex-conjecture de
-\bsc{Mordell}-\bsc{Lang} pour contrôler la différence, mais il nous semble
-préférable de nous concentrer sur le cas \( \avar = z + \vai \) qui donne des
-énoncés plus clairs.
-
-% revoir avec un eps, un gamma et tau non fixé
-\begin{coro} \label{c:count2ht}
-  Supposons que pour tout \( \eps > 0 \) et tout \( \grp \) de type
-  fini, il existe \( R(\eps, \grp) \) et \( N(\eps, \grp) \) tels que
-  \begin{equation}
-    \card
-    \set{
-      x \in \apx(\avar, \eps)
-      \text{ tel que }
-      \hautn x \ge R(\eps, \grp)
-    }
-    \cap \grp
-    \le
-    N(\eps, \grp)
-    \pmm.
-  \end{equation}
-  Alors les points de \( \apx(\avar, \eps) \cap \grp \) sont tous de hauteur
-  normalisée inférieure ou égale à
-  \begin{equation}
-    \max \Bigl(
-      \bigl( N(\eps/3, \grp) + 1 \bigr)^2 \hmin(\vai \cap \grp),\
-      4 R(\eps/3, \grp),\
-      B(\eps)
-    \Bigr)
-    \pmm.
-  \end{equation}
-\end{coro}
-
-\begin{proof}
-  À nouveau, supposons qu'il existe un point \( x_0 \) de hauteur normalisée
-  strictement plus grande que la borne annoncée ; l'hypothèse et le
-  corollaire~\vref{c:factory} impliquent que
-  \begin{align}
-    N(\eps/3, \grp)
-    & \ge
-    \card
-    \set{
-      x \in \apx(\avar, \eps/3)
-      \text{ tel que }
-      \hautn x \ge R(\eps/3, \grp)
-    }
-    \cap \grp
-    \\ & \ge
-    \sqrt{ \hautn x / \hmin(\vai \cap \grp) } - 1
-  \end{align}
-  ce qui est absurde.
-\end{proof}
-
+Ce type de résultat (borne explicite sur la hauteur) étant un peu trop
+ambitieux à l'heure actuelle, il faut donc se résoudre à compter non pas
+toutes les approximations exceptionnelles, mais seulement les grappes, sans
+tenir compte du cardinal de ces grappes, trop directement relié à la hauteur.
+Une condition du type \( \condi\tau \) semble la plus faible qu'on puisse
+mettre sur les ensembles d'approximations exceptionnelles considérés pour
+n'inclure qu'un point par grappe.
 
 
 
