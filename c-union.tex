@@ -311,6 +311,74 @@ Une condition du type \( \condi\tau\eps \) semble la plus faible qu'on puisse
 mettre sur les ensembles d'approximations exceptionnelles considérés pour
 n'inclure qu'un point par grappe.
 
+Pour conclure cette discussion, énonçons de façon explicite comment une borne
+sur la hauteur des approximations exceptionnelles se déduit d'une borne sur
+leur nombre (plus précisément, une borne sur le nombre de grands points
+suffit), dans le cas particulier des translatés de sous-variétés abéliennes
+non nulles.
+
+\begin{coro} \label{c:count2ht}
+  Soit \( \avar = z + \vai \) un translaté d'une sous-variété abélienne non
+  nulle de \( \va \).  Supposons que pour un certain \( \eps_0 > 0 \) et un
+  certain \( \grp \) de type fini, il existe \( R \) et \( N \) tels que
+  \begin{equation}
+    \card
+    \set{
+      x \in \apx(\avar, \eps_0) \cap \grp
+      \text{ tel que }
+      \hautn x \ge R
+    }
+    \le
+    N
+    \pmm.
+  \end{equation}
+  Alors, pour tout \( \eps > \eps_0 \) les points de \( \apx(\avar, \eps) \cap
+    \grp \) sont tous de hauteur normalisée inférieure ou égale à
+  \begin{equation}
+    \max \Bigl(
+      \bigl( (N + 1)/2 \bigr)^2 \hmin(\vai \cap \grp) \tau^{-1},\
+      R \cdot (1 - \sqrt\tau)^{-2},\
+      B(\eps, \tau)
+    \Bigr)
+  \end{equation}
+  avec
+  \begin{align}
+    \tau
+    & =
+    \frac{ \bigl( (\eps/\eps_0) - 1 \bigr)^2 }{ 4 }
+    &
+    B(\eps, \tau)
+    & =
+    \frac2{\eps \sqrt\tau} \bigl( 2 \hlclab + 7 \ln(n+1) \bigr)
+    + \frac{11}{ \sqrt\tau } \htcmp
+    \pmm.
+  \end{align}
+\end{coro}
+
+\begin{proof}
+  Par l'absurde, supposons qu'il existe un point
+  \( x_0 \in \apx(\avar, \eps) \cap \grp \) de hauteur
+  normalisée strictement plus grande que la borne annoncée ; en particulier,
+  \( \hautn{ x_0 } \) est assez grand pour appliquer le
+  corollaire~\vref{c:factory}. Par ailleurs, \( \vai \) est une sous-variété
+  abélienne \( \eps \)-associée à \( x_0 \) et le choix de \( \tau \) donne
+  \( \eps' = \eps_0 \) dans les notations de ce corollaire, qui s'applique
+  donc et donne
+  \begin{align}
+    N
+    & \ge
+    \card
+    \set{
+      x \in \apx(\avar, \eps_0) \cap \grp
+      \text{ tel que }
+      \hautn x \ge R
+    }
+    \\ & \ge
+    2 \sqrt{ \tau \hautn x / \hmin(\vai \cap \grp) } - 1
+  \end{align}
+  ce qui est absurde.
+\end{proof}
+
 
 
 \section{Hypothèse d'approximation produit}
