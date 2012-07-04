@@ -77,8 +77,8 @@ Pour introduire l'autre condition que nous proposons, nous aurons besoin de la
 définition suivante.
 
 \begin{tdef}
-  On appelle \emph{famille de translatés associée} à \( x \) la donnée d'une
-  sous-variété abélienne \( \vai \) et d'une famille de points \(
+  On appelle \emph{famille de translatés \( \eps \)-associée} à \( x \) la
+  donnée d'une sous-variété abélienne \( \vai \) et d'une famille de points \(
     (z_v)\placerange \) telle que \( z_v + \vai \subset \avar \) et
   \begin{equation}
     \prod\placerange \distv x {z_v + \vai} ^\degv
@@ -86,30 +86,31 @@ définition suivante.
     \hautm2 x^{-\eps}
     \pmm.
   \end{equation}
-  On dit qu'une sous-variété abélienne \( \vai \) est \emph{associée} à \( x
-  \) s'il existe une famille de translatés \( \bigl( \vai, (z_v)_v \bigr) \)
-  associée à \( x \).
+  On dit qu'une sous-variété abélienne \( \vai \) est \emph{\( \eps
+    \)-associée} à \( x \) s'il existe une famille de translatés \( \bigl(
+    \vai, (z_v)_v \bigr) \) qui est \( \eps \)-associée à \( x \).
 \end{tdef}
 
-Toute approximation exceptionnelle admet au moins une variété associée : le
-stabilisateur de \( \avar \), que nous noterons \( S_\avar \). Par ailleurs,
-si l'on note \( Z_\avar \) l'union des translatés de sous-variétés abéliennes
-non nulles inclus dans \( \avar \), il est clair que tout point possédant une
-variété associée non nulle est une approximation exceptionnelle de \( Z_\avar
-\) (la réciproque est en revanche fausse).
+Toute approximation \( \eps \)-exceptionnelle admet au moins une variété \(
+  \eps \)-associée : le stabilisateur de \( \avar \), que nous noterons \(
+  S_\avar \). Par ailleurs, si l'on note \( Z_\avar \) l'union des translatés
+de sous-variétés abéliennes non nulles inclus dans \( \avar \), il est clair
+que tout point possédant une variété \( \eps \)-associée non nulle est une
+approximation \( \eps \)-exceptionnelle de \( Z_\avar \) (la réciproque est en
+revanche fausse).
 
 \begin{tdef}
-  On dit que \( F \) satisfait \( \condi*\tau \) s'il existe deux points
-  distincts \( x \) et \( y \) dans \( F \) et une sous-variété abélienne
-  \( \vai \) associée à \( x \) tels que \( x - y \in \vai \) et
+  On dit que \( F \) satisfait \( \condi*\tau\eps \) s'il existe deux points
+  distincts \( x \) et \( y \) dans \( F \) et \( \vai \) une sous-variété
+  abélienne \( \eps \)-associée à \( x \) tels que \( x - y \in \vai \) et
   \( \hautn{ x-y } \le \tau \hautn x \).
 
-  On dit que \( F \) satisfait la condition \( \condi\tau \) si \( F \) ne
-  satisfait pas \( \condi*\tau \).
+  On dit que \( F \) satisfait la condition \( \condi\tau\eps \) si \( F \) ne
+  satisfait pas \( \condi*\tau\eps \).
 \end{tdef}
 
-Il est clair qu'en général \( \condi*\tau \) est une condition plus
-forte que \( \cond*\tau \), autrement dit que \( \condi\tau \) est une
+Il est clair qu'en général \( \condi*\tau\eps \) est une condition plus
+forte que \( \cond*\tau \), autrement dit que \( \condi\tau\eps \) est une
 condition plus faible que \( \cond\tau \). Notons
 \begin{equation}
   \apx(\avar, \eps)
@@ -126,23 +127,23 @@ condition plus faible que \( \cond\tau \). Notons
 et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cup \avar(\Qbar) \). On remarque
 que, dans le cas particulier où \( F \) est un sous-ensemble de \(
   \apx'(\avar, \eps) \) et \( \avar \) est un translaté de sous-variété
-abélienne, les conditions \( \condi\tau \) et \( \cond\tau \) sont équivalentes
-pour \( F \).  Évidemment, si \( Z_\avar = \emptyset \) (ce qui est le cas
-pour tout \( \avar \) si \( \va \) est simple), tout ensemble \( F \)
-satisfait \( \condi\tau \) (et \( \cond\tau \)).
+abélienne, les conditions \( \condi\tau\eps \) et \( \cond\tau \) sont
+équivalentes pour \( F \).  Évidemment, si \( Z_\avar = \emptyset \) (ce qui
+est le cas pour tout \( \avar \) si \( \va \) est simple), tout ensemble \( F
+\) satisfait \( \condi\tau\eps \) (et \( \cond\tau \)).
 
 \medskip
 
 Nous allons maintenant essayer de convaincre le lecteur qu'on ne peut guère
 espérer majorer le cardinal des ensembles \( \apx(\avar, \eps) \cap \grp \)
-sous une condition plus faible que \( \condi\tau \) à moins de savoir majorer la
-hauteur de certaines (voire toutes les) approximations exceptionnelles. Par
-ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1 \) pour simplifier
-certaines estimations.
+sous une condition plus faible que \( \condi\tau\eps \) à moins de savoir
+majorer la hauteur de certaines (voire toutes les) approximations
+exceptionnelles. Par ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1
+\) pour simplifier certaines estimations.
 
 \begin{lem}
-  Soient \( x \in \apx'(\avar, \eps) \), \( \vai \) associée à \( x \) et \( y
-    \in \vai(\Qbar) \), tels que
+  Soient \( x \in \apx'(\avar, \eps) \), \( \vai \) une sous-variété abélienne
+  \( \eps \)-associée à \( x \), et \( y \in \vai(\Qbar) \) tels que
   \begin{align}
     \hautn x
     & >
@@ -160,10 +161,10 @@ certaines estimations.
 \end{lem}
 
 \begin{proof}
-  Soit \( (z_v)_v \) telle que \( \bigl( \vai, (z_v)_v \bigr) \) soit associée
-  à \( x \). Pour chaque \( v \in \placesapx \), il existe un point
-  \( p_v \in (z_v + \vai)(\Cv) \) tel que \( \distv x{ p_v } = \distv x{ z_v +
-      \vai } \). Le scolie~\vref{s:addsub-dv} donne alors (en remarquant
+  Soit \( (z_v)_v \) telle que \( \bigl( \vai, (z_v)_v \bigr) \) soit \( \eps
+  \)-associée à \( x \). Pour chaque \( v \in \placesapx \), il existe un
+  point \( p_v \in (z_v + \vai)(\Cv) \) tel que \( \distv x{ p_v } = \distv x{
+      z_v + \vai } \). Le scolie~\vref{s:addsub-dv} donne alors (en remarquant
   que \( 5\sqrt2 \le (n+1)^2 \)) :
   \begin{equation}
     \distv{ x+y }{ p_v + y }
@@ -241,14 +242,14 @@ certaines estimations.
 \end{proof}
 
 Ainsi, on peut construire de nouvelles approximations exceptionnelles à partir
-d'une approximation exceptionnelle ayant une variété associée non nulle et de
-points de cette variété. Le corollaire suivant donne une précision
+d'une approximation exceptionnelle ayant une variété \( \eps \)-associée non
+nulle et de points de cette variété. Le corollaire suivant donne une précision
 quantitative.
 
 \begin{coro} \label{c:factory}
   Soient \( x \in \apx'(\avar, \eps) \cap \grp \)
   satisfaisant~\eqref{e:cont-big}, \( \eps' \) comme au lemme précédent et \(
-    \vai \) une variété associée à \( x \). De plus, on note
+    \vai \) une variété \( \eps \)-associée à \( x \). De plus, on note
   \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) lorsque \( y \)
   parcourt l'ensemble des points d'ordre infini de
   \( \vai(\Qbar) \cap \grp \), ou \( +\infty \) si cet ensemble est vide.
@@ -306,7 +307,7 @@ Ce type de résultat (borne explicite sur la hauteur) étant un peu trop
 ambitieux à l'heure actuelle, il faut donc se résoudre à compter non pas
 toutes les approximations exceptionnelles, mais seulement les grappes, sans
 tenir compte du cardinal de ces grappes, trop directement relié à la hauteur.
-Une condition du type \( \condi\tau \) semble la plus faible qu'on puisse
+Une condition du type \( \condi\tau\eps \) semble la plus faible qu'on puisse
 mettre sur les ensembles d'approximations exceptionnelles considérés pour
 n'inclure qu'un point par grappe.
 
