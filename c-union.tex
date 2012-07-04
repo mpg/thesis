@@ -32,7 +32,7 @@ réel \( \tau \ge 0 \).
 
 Donnons alors une reformulation des inégalités de \bsc{Mumford} du chapitre
 précédent. On appelle \emph{lunule} associée aux paramètres \( (\rho, \phi,
-  \beta) \) un sous-ensemble de l'espace de \MoW dans lequel deux points
+  \beta) \) un sous-ensemble de \( \va(\Qbar) \) dans lequel deux points
 quelconques \( x \) et \( y \) satisfont les conditions suivantes :
 \begin{align}
   \cos(x, y) & \ge 1 - \phi
@@ -48,7 +48,7 @@ Le théorème~\vref{t:mumford-grp} dit alors que si \( F \) satisfait \(
 par l'énoncé) contient au plus une approximation exceptionnelle : en effet, on
 a vu au cours de la démonstration du lemme~\vref{l:diff-small} que si \( x \)
 et \( y \) sont dans une même lunule, alors \( \hautn{ x - y } \le (\rho^2/4 +
-  2\phi + \rho\phi) \hautn x \) et l'hypothèse~\eqref{e:rho-phi-gen} permet de
+  2\phi + \rho\phi) \hautn x \) et l'hypothèse~\eqref{e:rho-phi-grp} permet de
 conclure.
 
 De même, le théorème~\vref{t:mumford-gen} affirme que si \( F \) est un
@@ -73,7 +73,7 @@ avec la valeur « naturelle » de \( \tau \) pour éviter d'alourdir le texte.
 
 \medskip
 
-Pour introduire l'autre condition considérée, nous aurons besoin de la
+Pour introduire l'autre condition que nous proposons, nous aurons besoin de la
 définition suivante.
 
 \begin{tdef}
@@ -91,12 +91,12 @@ définition suivante.
   associée à \( x \).
 \end{tdef}
 
-Tout point admet au moins une variété associée : le stabilisateur de \( \avar
-\), que nous noterons \( S_\avar \). Par ailleurs, si l'on note \( Z_\avar \)
-l'union des translatés de sous-variétés abéliennes non nulles inclus dans \(
-  \avar \), il est clair que tout point possédant une variété associée non
-nulle est une approximation exceptionnelle de \( Z_\avar \) (la réciproque est
-en revanche fausse).
+Toute approximation exceptionnelle admet au moins une variété associée : le
+stabilisateur de \( \avar \), que nous noterons \( S_\avar \). Par ailleurs,
+si l'on note \( Z_\avar \) l'union des translatés de sous-variétés abéliennes
+non nulles inclus dans \( \avar \), il est clair que tout point possédant une
+variété associée non nulle est une approximation exceptionnelle de \( Z_\avar
+\) (la réciproque est en revanche fausse).
 
 \begin{tdef}
   On dit que \( F \) satisfait \( \condi*\tau \) s'il existe deux points
@@ -127,7 +127,9 @@ et \( \apx'(\avar, \eps) = \apx(\avar, \eps) \cup \avar(\Qbar) \). On remarque
 que, dans le cas particulier où \( F \) est un sous-ensemble de \(
   \apx'(\avar, \eps) \) et \( \avar \) est un translaté de sous-variété
 abélienne, les conditions \( \condi\tau \) et \( \cond\tau \) sont équivalentes
-pour \( F \).
+pour \( F \).  Évidemment, si \( Z_\avar = \emptyset \) (ce qui est le cas
+pour tout \( \avar \) si \( \va \) est simple), tout ensemble \( F \)
+satisfait \( \condi\tau \) (et \( \cond\tau \)).
 
 \medskip
 
@@ -182,7 +184,7 @@ certaines estimations.
     \pmm.
   \end{align}
   Il s'agit donc de montrer que cette dernière quantité est majorée par \(
-    \hautm2 y ^{-\eps'} \).
+    \hautm2{ x+y }^{-\eps'} \).
 
   Si l'on note \( \nnt\truc \) la norme de l'espace de \MoW, on a
   \(

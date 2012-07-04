@@ -104,9 +104,9 @@ L'objectif consiste donc à rendre effective cette inégalité de \bsc{Vojta} et
 \subsection{Le théorème de \bsc{Roth}}
 
 Le théorème de \bsc{Roth} \cite{daroraan}, concernant l'approximation des
-algébriques par les rationnels, a d'abord été démontré pour la place
-archimédienne de \( \Q \), puis étendu aux places quelconques par \bsc{Ridout}
-\cite{ripgtsrt} ; en voici un énoncé moderne (cas particulier du
+nombres algébriques par les nombres rationnels, a d'abord été démontré pour la
+place archimédienne de \( \Q \), puis étendu aux places quelconques par
+\bsc{Ridout} \cite{ripgtsrt} ; en voici un énoncé moderne (cas particulier du
 théorème~D.2.1 page~304 de \cite{hinsidgi}, en tenant compte des différences
 de normalisation).
 
@@ -180,7 +180,7 @@ nos inégalités à la \bsc{Mumford}. Un corollaire immédiat de l'inégalité d
   \) tels que
   \begin{equation}
     \distv x \avar ^\degv
-    \ge
+    <
     \hautm{}{x}^{-\adeg-\eps}
   \end{equation}
   est de hauteur bornée explicitement ; en particulier cet ensemble est fini
@@ -226,7 +226,7 @@ généralisant celle de \bsc{Mordell}, et qui s'énonce ainsi.
   \label{t:fal1} ~\\
   Soit \( \avar \) une sous-variété d'une variété abélienne \( \va \), définie
   sur un corps de nombres \( \cdn \). Si \( \avar \) ne contient pas de
-  translaté de sous-variété abélienne stricte, alors \( \avar(\cdn) \) est
+  translaté de sous-variété abélienne non nulle, alors \( \avar(\cdn) \) est
   fini.
 \end{thm}
 
@@ -265,7 +265,7 @@ directe au cas des courbes.
 \label{s:siegel}
 
 Le théorème de \bsc{Siegel} \cite{siegel} affirme qu'une courbe de genre
-supérieur ou égal à \( 1 \) ne possède qu'on nombre fini de points entiers. Sa
+supérieur ou égal à \( 1 \) ne possède qu'un nombre fini de points entiers. Sa
 démonstration repose sur le théorème de \bsc{Roth} énoncé plus haut, et avait
 été obtenu par \bsc{Siegel} avec la version faible de cet énoncé dont il
 disposait en 1929. Pour les courbes de genre supérieur ou égal à \( 2 \), ce
@@ -293,8 +293,8 @@ d'approximation de pouvoir prendre \( \eps \le 1 \) et que l'inégalité de
 \bsc{Liouville} (corollaire~\vref{c:liou-intro}) ne suffit pas.
 
 Les résultats obtenus ici permettent de donner un décompte explicite des
-points entiers, malheureusement pas dans le cas général, mais au moins dans
-le \( \va \) est simple (et principalement polarisée). À notre connaissance,
+points entiers, malheureusement pas dans le cas général, mais au moins lorsque
+\( \va \) est simple (et principalement polarisée). À notre connaissance,
 une telle version quantitative explicite de cette ex-conjecture de \bsc{Lang},
 même dans un cas particulier, est nouvelle pour une variété abélienne de
 dimension au moins \( 2 \) ; néanmoins, les constantes que nous obtenons ne
@@ -308,8 +308,8 @@ Comme on l'a mentionné précédemment, il semble \lat{a priori} difficile de
 borner la hauteur des approximations exceptionnelles, mais plus réaliste de
 borner leur nombre. En fait, il apparaît que dans notre situation, ces deux
 questions sont en général intimement liées : en effet, comme le montrera en
-détails le corollaire~\vref{c:factory}, certains approximations
-exceptionnelles n'arrivent pas seule mais engendrent en fait une « grappe »
+détails le corollaire~\vref{c:factory}, certaines approximations
+exceptionnelles n'arrivent pas seules mais engendrent en fait une « grappe »
 d'approximations de qualité semblable, dont le cardinal est minoré en fonction
 de la hauteur de l'approximation qui engendre cette grappe. Ce phénomène est
 directement lié à l'existence possible de translatés de sous-variétés
@@ -351,7 +351,7 @@ Le premier résultat de décompte que nous donnons concerne le cas particulier
 où la variété approchée est un translaté d'une sous-variété abélienne de \(
   \va \).
 
-Pour simplifier, on note \( \vacst \) une constant ne dépendant que de la
+Pour simplifier, on note \( \vacst \) une constante ne dépendant que de la
 hauteur de \( \va \), qui peut être explicitée totalement, et \( N \) le
 cardinal d'un système complet de formes représentant l'addition de \( \va \)
 (voir la section~\vref{sec:vaemb}).
@@ -420,13 +420,14 @@ Signalons une interprétation possible de ce type d'énoncé : on a
 \end{equation}
 sauf pour un nombre fini de \( x \) (les approximations exceptionnelles).
 Dans l'inégalité ci-dessus, dans le cas où \( \avar \) est une sous-variété
-abélienne de \( \va \), le membre de gauche peut être interprété comme une
+abélienne de \( \va \), chaque terme du membre de gauche peut être interprété
+comme la valeur absolue \( v \)-adique d'une
 forme linéaire de logarithmes abéliens. La minoration obtenue présente alors
 la particularité de séparer \( \hautl2 x \) de \( d \), qui représente la
-hauteur des formes linéaires. Cependant, la dépendant en \( d \) est nettement
+hauteur des formes linéaires. Cependant, la dépendance en \( d \) est nettement
 moins bonne que celle obtenue dans les minorations usuelles de formes
 linéaires de logarithmes et surtout, l'inégalité admet des exceptions, bien
-qu'elles soient en nombre fini et que ce nombre soit en partie contrôlé.
+qu'elles soient en nombre fini et contrôlées.
 
 \medskip
 
@@ -972,7 +973,8 @@ les plongements de \bsc{Mumford} modifiés tels que définis dans
 \cite{daphimhva2}. Nous noterons \( \vaht \) la quantité notée \(
   \hautl{}\va \) dans cette référence, car dans nos notations, \( \hautl{}\va
 \) désigne plutôt la hauteur de la forme de \bsc{Chow} de \( \va \) dans ce
-plongement, et
+plongement. On introduit au passage la quantité suivante, qui sera utilisée
+dans l'énoncé du fait~\vref{f:remond} :
 \begin{equation} \label{e:vahtr}
   \vahtr = [\vacdn : \Q] \max( \vaht, 1 )
 \end{equation}
@@ -1005,7 +1007,7 @@ Le point d'achoppement pour finir d'expliciter \( \hmclab \) est donc
 l'existence de formules globales pour la multiplication par \( 3 \) qui soient
 suffisamment bien contrôlées. À notre connaissance, on ne dispose pas à ce
 jour de formules explicites comme pour la multiplication par \( 2 \) ; il
-serait néanmoins possible de majorer la hauteur d'un famille représentant
+est néanmoins possible de majorer la hauteur d'une famille représentant
 globalement la multiplication par \( 3 \), puis, grâce à un
 \emph{nullstellensatz} effectif, d'en déduire une constante telle que la
 minoration voulue soit satisfaite.
@@ -1065,7 +1067,7 @@ hypersurface. Évidemment, on a \( \distv x \avar = 0 \Leftrightarrow x \in
 
 Soient \( \cdn \) un corps de nombres, \( \placesapx \) un ensemble fini de
 places de \( \cdn \) et \( \eps > 0 \) un réel. Le but est d'étudier les
-points satisfaisant à la condition condition d'approximation
+points satisfaisant à la condition d'approximation
 \begin{equation} \label{e:ha-prod}
   \prod\placerange
   \distv x \avar ^\degv
