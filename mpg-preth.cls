@@ -167,15 +167,22 @@
 \bibliography{these}
 \defbibheading{bibempty}{}
 
-% frenchb settings [[2
+% frenchb (+xspace) settings [[2
 %
 \frenchbsetup{og=«,fg=»,
   AutoSpacePunctuation=false,
   ThinColonSpace=true,
   SuppressWarning=true,
 }
+
 % nbsp treated as a normal space (to let frenchb do its job)
 \DeclareUnicodeCharacter{00A0}{ }
+
+% don't eat space before high punctuation
+\xspaceremoveexception{:}
+\xspaceremoveexception{;}
+\xspaceremoveexception{?}
+\xspaceremoveexception{!}
 
 % marginal notes and todos [[2
 %

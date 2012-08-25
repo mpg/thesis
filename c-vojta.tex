@@ -175,7 +175,7 @@ désigne la norme de \NT. Cette inégalité nous sera utile pour démontrer le
 lemme suivant.
 
 \begin{lem}
-  Soit \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
+  Soient \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
   à~\eqref{e:wt-ratio-gen}. Si de plus la famille \( (\ex*) \) satisfait
   à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, m} \) on a
   \begin{equation}
@@ -323,7 +323,7 @@ par la condition \( \ex \in \var \) et les rapports entre les \( \wt* \).
 Pour commencer, remarquons que cet ensemble n'est pas vide puisqu'il contient
 \( \va^m \). En effet, la définition de \( \Lambda \) (deux premiers
 arguments du maximum) assure que~\eqref{e:varset-deg}
-et~\eqref{e:varset-deg-prod} sont satisfait ; le fait que \( \cst{vs-ht} \ge
+et~\eqref{e:varset-deg-prod} sont satisfaits ; le fait que \( \cst{vs-ht} \ge
   \hautl1\va \), que \( \Lambda > 2 \) et le lemme~\vref{l:sum-wts}
 garantissent que la condition~\eqref{e:varset-ht} l'est aussi.
 
@@ -705,6 +705,7 @@ variables ; il est alors clair que
 \begin{equation} \label{e:nv-varfca}
   \nv1{\varfca*} \le \nv1{\varfc*}
   \cdot \bigl( (n+1) \vdegp* \bigr)^{\vdeg* (\vdim* + 1) \dv}
+  \pmm.
 \end{equation}
 
 Par ailleurs, pour \( \indi \in \set{\vdim*, \dots, n} \), on notera \(
@@ -728,7 +729,7 @@ cette quantité apparaît déjà par ailleurs.
 \begin{nota} \label{n:pden-cexa}
   On note \( \pden* \) la dérivée de \( \poldep*[\vdim*+1] \) par rapport à la
   dernière variable.  Par ailleurs, on fixe \( (\cex**)_\ind \) un système de
-  coordonnées multihomogène de \( \ex* \) dans le plongement \( \vaemb \) et
+  coordonnées multihomogènes de \( \ex* \) dans le plongement \( \vaemb \) et
   on note \( (\cexa**)_\ind \) l'image de ce dernier par \( \vadapt* \).
 \end{nota}
 
@@ -766,7 +767,7 @@ démonstration de la proposition~\vref{p:varset-notmin}.
 \label{sec:rfull}
 
 Les propriétés des plongements adaptés permettent d'associer à chaque forme
-homogène, à peu de chose près, une représentation canonique modulo \( \varida
+homogène, à peu de choses près, une représentation canonique modulo \( \varida
 \), définie par des restrictions de degrés en certaines variables.
 Introduisons pour cela quelques notations : pour chaque \( C \in (\N \cup
   \set{ +\infty }) ^{m(n+1)} \), on notera
@@ -1371,7 +1372,8 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \bigr( (n+1)! \, (\vdegp[m])^n) \bigl)^{2 \wts[m]}
     \\ & \le
     \prod\fctirange
-    \bigr( \hmclab ((n+1)!)^2 \, B^{2n} \bigr)^{\wtis* + \wts**} \,
+    \bigr( \hmclab ((n+1)!)^2 \, B^{2n} \bigr)^{\wtis* + \wts**}
+    \pmm.
   \end{align}
   Le résultat annoncé suit en invoquant le lemme~\vref{l:sum-wts}.
 \end{proof}
@@ -1379,7 +1381,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 Énonçons de suite une variante qui nous sera utile par la suite.
 
 \begin{coro} \label{c:ht-wemba}
-  Soient \( (\clmapv)_v \) est une famille de cartes indexée
+  Soient \( (\clmapv)_v \) une famille de cartes indexée
   par les places de \( \cdn \) et \( F \in \cdn[\vmp, \vmpi] \) une forme
   homogène. Alors
   \begin{equation}
@@ -1389,6 +1391,7 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
     \bigl(
       \hmclab ((n+1)!)^2 \, B^{2n}
     \bigr) ^{2 \delta \wts[1]}
+    \pmm.
   \end{equation}
 \end{coro}
 
@@ -1419,7 +1422,7 @@ appliquant un lemme de \TS.
 \label{sec:siegel-plan}
 
 Commençons par définir l'indice d'annulation (par rapport à un vecteur de
-poids \( b \in \N^m \)) d'une forme la long de \( \divi \) . (Une autre
+poids \( b \in \N^m \)) d'une forme le long de \( \divi \) . (Une autre
 notion d'indice, en un point cette fois-ci, sera définie de façon similaire au
 début de la sous-section~\vref{sec:vojta-extrap-core}.) Pour tout \( \imp \in
   \N^{m(n+1)} \), notons
@@ -1438,7 +1441,7 @@ pose
   \sum_{\wtsum[b]*( \imp ) < \beta}
   h_\imp \vmp^\imp
 \end{equation}
-et on défini l'indice par
+et on définit l'indice par
 \begin{equation} \label{e:inda-def}
   \indg{b}* H
   =
@@ -1737,6 +1740,7 @@ et \( \ftarget \) est somme directe de tels espaces.
     & \le
     \frac {(d'_\fct)^{\vdim* - 1}} {(\vdim* - 1)!} \delta^{\vdim* - 1}
     + o( \delta^{\vdim* - 1} )
+    \pmm.
   \end{align}
   On prend alors le produit :
   \begin{align}
@@ -2964,7 +2968,7 @@ où l'indice est infini.
   prouve que les deux fonctions ont le même indice en \( x \).
 \end{proof}
 
-Si \( G \) est une forme multihomogène, on défini \( \indg b[x] G =
+Si \( G \) est une forme multihomogène, on définit \( \indg b[x] G =
   \indg b[x] G/H \) où \( H \) est n'importe quelle forme multihomogène de
 même degré ne s'annulant pas en \( x \). Le deuxième point du lemme
 précédent montre que cette définition a bien un sens. On s'intéressera
@@ -3020,8 +3024,8 @@ représente à peu de chose près la norme de \( \cexa* \).
     \cdot \nv1{ \varfc* }
     \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
   \end{equation}
-  pour tout \( \ind \). D'après la note~\vref{fn:varfc}
-  page~\pageref{fn:varfc}, on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
+  pour tout \( \ind \). D'après la note~\vref{fn:varfc},
+  on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
   est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui
   est le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons
   donc \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } < \av{
@@ -3112,7 +3116,7 @@ que par définition on a \( \inda** \faux** = \inda** \ratf \).
 Pour minorer cet indice, nous allons commencer par décomposer cette fonction
 en des facteurs dont nous aurons un bon contrôle en chaque place.
 
-Pour tout place \( v \) et tout indice \( \fcti \) on note désormais
+Pour toute place \( v \) et tout indice \( \fcti \) on note désormais
 \( \clmapv* \) la carte donnée par la section~\vref{sec:vaemb} avec \( (a, b,
   x, y) = (\wt*, \wt**, \ex*, \ex**) \), puis \( \clmapv = (\clmapv[1], \dots,
   \clmapv**) \) la carte correspondante dans \( \clmaps^{m-1} \).  On
@@ -3241,6 +3245,7 @@ est majoré en fonction de \( n \), \( m \) et \( \nclmaps \)).  La
 formule du produit donne alors
 \begin{equation} \label{e:prod-lem}
   0 = \ratfh1 + \ratfh2 + \ratfh3 + \ratfh4
+  \pmm.
 \end{equation}
 Supposons maintenant que, contrairement à la conclusion de la proposition, on
 ait
@@ -3289,6 +3294,7 @@ nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
   \sum\fctrange \wts* \bigl(
     \hautn{ \ex* } + \htcmp + \frac12\ln(n+1) + \hautl\infty{\vadapt*}
   \bigr)
+  \pmm.
 \end{align}
 On remarque alors que \( \hautl\infty{\vadapt*} \le \ln B \)
 d'après~\eqref{e:vadapt-ht} et~\eqref{e:varset-deg}. On regroupe alors les
@@ -3952,7 +3958,7 @@ utilisant le fait suivant, conséquence du théorème du produit.
         \ln \left( \left( \frac m\alpha \right)^\vdim (\vdim* + 1) \right)
         + b_\fct \ln \binom{\deg T + \vdim*}{\vdim*}
       \end{align}
-      où le nombre de \bsc{Stoll} et défini par~\eqref{e:def-stoll}.
+      où le nombre de \bsc{Stoll} est défini par~\eqref{e:def-stoll}.
   \end{enumthm}
 \end{fact}
 
@@ -4282,9 +4288,9 @@ que \( \vdim* \le g \).
 Les sections précédentes suivent l'ordre logique de la démonstration :
 réduction du théorème à l'existence d'une forme motrice, puis construction
 de celle-ci par la méthode de \TS : construction d'une forme auxiliaire,
-extrapolation et application d'un théorème multiplicité. Cependant, cet ordre
-n'est pas celui dans lequel les valeurs des différents paramètres sont
-déterminés ; la présente section a pour but de clarifier la façon de choisir
+extrapolation et application d'un théorème de multiplicité. Cependant, cet
+ordre n'est pas celui dans lequel les valeurs des différents paramètres sont
+déterminées ; la présente section a pour but de clarifier la façon de choisir
 ces valeurs qui autrement risquent de paraître un peu « magiques » au moment
 où elles sont introduites dans les sections précédentes.
 
@@ -4694,7 +4700,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         \le
         \hautl{1, \vaemb}{\va}
         + \hautl{1, \vaemb}{ E } (g+1) \deg \va
-      \). \label{i:plin-ht-va}
+      \) ; \label{i:plin-ht-va}
     \item \(
         \htcmp[\vaemb']
         =
@@ -4956,7 +4962,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \in E \), car la première condition n'est jamais satisfaite. Dans le cas
   contraire, on considère le plongement \( \vaemb' \) donné par le
   lemme~\vref{l:plin}
-  précédent et on prévoit d'appliquer le théorème~\vref{t:vojta-div} à \( E \)
+  et on prévoit d'appliquer le théorème~\vref{t:vojta-div} à \( E \)
   et \( \vaemb' \) avec \( \eps' = 85 \eps / 86 \) pour une raison qui
   deviendra bientôt claire. Il s'agit de vérifier que les hypothèses du
   corollaire impliquent bien celles du théorème.
@@ -5020,7 +5026,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
   du présent énoncé.
 \end{proof}
 
-Le défaut du résultat précédent et que l'hypothèse d'approximation est
+Le défaut du résultat précédent est que l'hypothèse d'approximation est
 d'autant plus forte (et donc le résultat d'autant plus faible) que \( p_0 \)
 est proche de \( \divi \), jusqu'à obtenir une hypothèse impossible à
 satisfaire (donc un résultat vide) lorsque \( p_0 \in \divi \). Le corollaire
@@ -5219,6 +5225,7 @@ lemme suivant.
     \av*{ \binom\adeg\alpha^{-1/2} }
     \le
     \adeg^{\dpv n / 2}
+    \pmm.
   \end{equation}
   De plus, cette valeur absolue vaut \( 1 \) si \( v \) divise un premier
   strictement supérieur à \( \adeg \).
@@ -5232,7 +5239,7 @@ lemme suivant.
 \begin{proof}
   Le cas des places archimédiennes est clair. Pour les places finies, on note
   \( p \) tel que \( \av\truc \) prolonge \( \av\truc[p] \) et on
-  utilise la définition du multinomial en terme de factorielles et la formule
+  utilise la définition du multinomial en termes de factorielles et la formule
   (de \bsc{Legendre}) donnant la valuation d'une factorielle :
   \begin{equation}
     v_p( \binom\adeg\alpha )
@@ -5295,7 +5302,7 @@ sur les différents paramètres en jeu dans notre situation.
         \le
         \adeg^{g+1} \hautl{1, \vaemb}{\va}
         + 2 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
-      \). \label{i:hs-vero-ht-va}
+      \) ; \label{i:hs-vero-ht-va}
     \item \(
         \htcmp[\vaemb']
         =
@@ -5667,9 +5674,9 @@ sur les différents paramètres en jeu dans notre situation.
 
   La condition suivante vient alors en remarquant que la hauteur normalisée
   est multipliée par \( \adeg \) en changeant de plongement.  Enfin, les
-  rapports de hauteurs normalisés et les angles dans l'espace de \MoW étant
+  rapports de hauteurs normalisées et les angles dans l'espace de \MoW étant
   invariants sous le changement de plongement considéré, les deux dernières
-  conditions sont inchangées.  On peut dont appliquer le
+  conditions sont inchangées.  On peut donc appliquer le
   corollaire~\vref{c:vojta-div-any} comme prévu et conclure.
 \end{proof}
 
