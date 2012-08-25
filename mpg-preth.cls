@@ -70,6 +70,7 @@
 \usepackage[
   bibencoding=ascii,
   style=alphabetic, sorting=nyt, sortcites=true, firstinits=true,
+  doi=false, isbn=false, url=true,
   autopunct=true, babel=hyphen,
   hyperref=true, backref=false]{biblatex}
 \usepackage[expansion=false, babel=true]{microtype}
