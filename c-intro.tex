@@ -203,7 +203,7 @@ Dès 1922, \bsc{Mordell} avait conjecturé l'énoncé suivant.
 
 \begin{thm}[\bsc{Faltings}, ex-conjecture de \bsc{Mordell}]
   Soit \( C \) une courbe projective lisse de genre \( g \ge 2 \), définie sur
-  un corps de nombre \( \cdn \). L'ensemble \( C(\cdn) \) des points
+  un corps de nombres \( \cdn \). L'ensemble \( C(\cdn) \) des points
   rationnels de \( C \) est fini.
 \end{thm}
 
@@ -624,9 +624,11 @@ autrement dit \( \av p = p^{-1} \) si \( v \) divise un premier \( p \)
 et \( \av 2 = 2 \) si \( v \) est archimédienne.
 
 Si \( v \) est une place finie de \( \cdn \), on définit la norme \(
-  v \)-adique d'une famille finie d'éléments de \( \cdn \) comme le maximum
-des valeurs absolues \( v \)-adiques de ses éléments. Si \( v \) est
-archimédienne, on utilisera les normes usuelles suivantes :
+  v \)-adique d'une famille\footnote{Au sens de « suite non nécessairement
+  ordonnée » : les répétitions d'éléments sont possibles.} finie d'éléments de
+\( \cdn \) comme le maximum des valeurs absolues \( v \)-adiques de ses
+éléments. Si \( v \) est archimédienne, on utilisera les normes usuelles
+suivantes :
 \begin{align}
   \nv\infty x & = \max_i{ \av{ x_i } } &
   \nv1 x & = \sum_i{ \av{ x_i } } &
@@ -635,8 +637,9 @@ archimédienne, on utilisera les normes usuelles suivantes :
 \end{align}
 On définit alors la norme d'un polynôme comme celle de la famille de ses
 coefficients.  Si \( \mathcal F = (F_1, \dots, F_p) \) est une famille de
-polynômes, on définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme la
-norme \( \nv\star\truc \) du vecteur des \( \nv\star{ F_i } \).
+polynômes, on définit de plus sa norme \( \nnv\star{ \mathcal F } \) comme
+pour la norme \( \nv\star\truc \) ci-dessus, mais en remplaçant \( \av{ x_i }
+\) par \( \nv\star{ F_i } \) dans le membre de droite.
 
 Aux places archimédiennes, on dispose également de deux notions de mesure pour
 les polynômes. La première est la classique mesure de \bsc{Mahler}, définie
@@ -694,27 +697,40 @@ et les majorations élémentaires
 \end{align}
 obtenues en comparant avec des intégrales, par exemple.
 
+Pour traiter les cas archimédien et ultramétrique de façon unifiée, on notera
+donc \( \nv2\truc = \nv1\truc = \nv\infty\truc \) si \( v \) est
+ultramétriques. On note de plus
+\begin{equation}
+  \delta_v =
+  \begin{cases*}
+    1 & si \( v \) est archimédienne \\
+    0 & sinon
+  \end{cases*}
+\end{equation}
+ce qui permet d'écrire par exemple \( \nv1 x \le \nv\infty x (n+1)^\dv \) pour
+toute place \( v \) si \( x \) est un vecteur à \( n+1 \) composantes.
+
 Parmi les comparaisons de normes et mesures qui nous seront utiles, rappelons
 celles entre mesure projective et norme euclidienne ou longueur.  Dans la
 démonstration du lemme~3.3, p.~111 de~\cite{remgdmp}, il est établi que si \(
-  P \) est une forme multihomogène de multidegré \( \delta \) en plusieurs
+  P \) est une forme multihomogène de multidegré \( d \) en plusieurs
 groupes de \( n + 1 \) variables, dont on note \( p_\alpha \) les
 coefficients, on a
 \begin{equation}
   \av{ p_\alpha }
   \le
-  \binom \delta \alpha ^\dv
+  \binom d \alpha ^\dv
   \mvm P
   \le
-  \binom \delta \alpha ^\dv
+  \binom d \alpha ^\dv
   \mvp P
 \end{equation}
 ce qui en sommant sur les multimultiindices \( \alpha \) tels que \(
-  \vlg\alpha = \delta \), donne immédiatement, par la formule multinomiale :
+  \vlg\alpha = d \), donne immédiatement, par la formule multinomiale :
 \begin{equation} \label{e:l1<mespph}
   \nv1 P
   \le
-  (n+1)^{\lgr\delta \dv}
+  (n+1)^{\lgr d \dv}
   \mvp P
   \pmm.
 \end{equation}
@@ -723,13 +739,14 @@ Dans l'autre sens, la définition de la mesure projective donne immédiatement
   \mvp P
   \le
   \nv2 P
-  \exp( \dv \sum_k \delta_k \cdot \gamma_{n} )
+  \exp( \dv \sum_k d_k \cdot \gamma_{n} )
   \le
   \nv2 P
-  (n+1)^{\lgr\delta \dv}
+  (n+1)^{\lgr d \dv}
   \pmm.
 \end{equation}
 
+
 \subsection{Hauteurs}
 
 On définit la hauteur additive d'une famille finie d'éléments de \( \cdn \)
@@ -789,18 +806,8 @@ peut définir de façon classique une hauteur normalisée \( \Hautn \) (dite de
 plongement particulier associé à ce fibré, ni de la norme ou mesure utilisée
 aux places archimédiennes pour définir la hauteur projective.
 
-Cette hauteur normalisée induit une forme quadratique définie positive sur
-l'espace de \MoW de \( \va \), défini comme
-\(
-  \MW\Qbar = \va(\Qbar) \otimes_\Z \R
-\).
-Plus précisément, la partie \( \MW\cdn = \va(\cdn) \otimes_\Z \R \)
-définie sur un corps de nombres \( \cdn \) est un espace euclidien de
-dimension (finie) égale au rang de \( \va \) sur \( \cdn \). Par extension, si
-\( \grp \) est un sous-groupe de \( \va(\Qbar) \), on note \( \MW\grp \)
-le sous-espace de \( \MW\Qbar \) engendré par l'image de \( \grp \) ; cet
-espace est de dimension finie si et seulement si \( \grp \) est de rang
-fini.
+Si le fibré \( \fibre \) est symétrique, cette hauteur normalisée induit une
+forme quadratique définie positive sur l'espace de \MoW de \( \va \).
 
 
 \subsection{Plongement projectif de la variété abélienne} \label{sec:vaemb}
@@ -862,7 +869,8 @@ cas.
         \pmm;
       \end{equation}
     \item pour tout \( (x, y) \in \va^2 \) et toute place
-      \( v \) il existe une carte \( \clmap \in \clmaps \) telle que
+      \( v \) il existe une carte \( \clmap \in \clmaps \) telle que \( (x, y)
+        \in \clmap \) et
       \begin{equation} \label{e:clab-loc}
         \frac{
           \nv1{ \rmclab{a}{b}{ \clmap }(x, y) }
@@ -918,7 +926,8 @@ cas.
     \item pour toute place \( v \) et toute carte \( \clmap \), on a
       \( \nnv1{ D\pexp\clmap } \le \hmpm* \) ;
     \item pour tout \( (x, y) \in \va^2 \) et toute place
-      \( v \) il existe une carte \( \clmap \in \clmaps \) telle que
+      \( v \) il existe une carte \( \clmap \in \clmaps \) telle que \( (x, y)
+        \in \clmap \) et
       \begin{equation} \label{e:pm-loc}
         \frac{
           \nv1{ D\pexp\clmap (x, y) }
@@ -1076,7 +1085,7 @@ points satisfaisant à la condition d'approximation
   \hautm2{x}^{-\eps}
 \end{equation}
 où \( c \) est une constante réelle et \( \degv = [\cdn_v : \Q_v] / [\cdn :
-  \Q] \), de sorte que le membre de droite ne dépend pas du corps de nombre
+  \Q] \), de sorte que le membre de gauche ne dépend pas du corps de nombres
 (contenant \( x \)) utilisé pour le calculer. Autrement dit, une telle
 condition a un sens sur \( \Qbar \).
 
@@ -1084,7 +1093,7 @@ Malheureusement, cette condition n'est pas facile à exploiter techniquement.
 On introduit donc, comme il est d'usage, un autre type de condition faisant
 apparaître une inégalité par place. Plus précisément, soient
 \( \cdn_0 \) un corps de nombres,  \( \placesapx_0 \) un ensemble fini de
-places de \( \cdn \) et \( (\wtapx)_{v \in \placesapx_0} \) une famille de
+places de \( \cdn_0 \) et \( (\wtapx)_{v \in \placesapx_0} \) une famille de
 réels telle que \( \sum_{v\in\placesapx_0} \wtapx \degv(\cdn_0) = 1 \). On
 utilisera des conditions d'approximations du type
 \begin{equation} \label{e:ha-sys}
@@ -1094,10 +1103,11 @@ utilisera des conditions d'approximations du type
   \hautm2{x}^{-\wtapx\eps}
   \quad \forall v \in \placesapx_0
 \end{equation}
-où les \( c_v \) sont des constantes réelles. Il est clair
-que~\eqref{e:ha-sys} est une hypothèse plus forte que~\eqref{e:ha-prod}, mais
-on verra à la section~\vref{sec:ha-prod} qu'il suffit qu'un décompte sous
-l'hypothèse forte implique en fait un décompte sous l'hypothèse plus faible.
+où les \( c_v \) sont des constantes réelles.  Si l'on choisit \( c = \prod_{v
+    \in \placesapx_0} c_v^\degv \), Il est clair que~\eqref{e:ha-sys} est une
+hypothèse plus forte que~\eqref{e:ha-prod}, mais on verra à la
+section~\vref{sec:ha-prod} qu'un décompte sous l'hypothèse forte implique en
+fait un décompte sous l'hypothèse plus faible.
 
 Par ailleurs, il est facile de donner à cette condition un sens sur \( \Qbar
 \), de la façon suivante. Si \( \cdn \) est une extension finie de \( \cdn_0
