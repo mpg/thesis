@@ -42,10 +42,10 @@ la condition d'approximation dans les énoncés suivants.
     \frac2\eps
     \adeg (\adim + 1)
     \Bigl(
-      \ln(\adeg)
+      \log(\adeg)
       + (2 + \frac\eps\adeg) \htcmp
       + 2 \hlpm
-      + 10 \ln(n+1)
+      + 10 \log(n+1)
     \Bigr)
     \quad
     \label{e:Mbig}
@@ -110,7 +110,7 @@ Pour le cas général, l'énoncé est le suivant.
     \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
     \Bigl(
       \hautl1 \avar
-      + 2 \adeg m \bigl( \ln \adeg + \hlpm + \htcmp \bigr)
+      + 2 \adeg m \bigl( \log \adeg + \hlpm + \htcmp \bigr)
     \Bigr)
     \quad\ \
     \label{e:Mbig-gen}
@@ -570,11 +570,11 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   que \( 5\sqrt2 \le 9 \le (n+1)^2 \) :
   \begin{equation} \label{e:close-log}
     \sum\placerange
-    \degv \ln\Distv(z, \vai)
+    \degv \log\Distv(z, \vai)
     \le
     - \eps \hautn x
     + \eps \htcmp
-    + 7 \ln(n + 1) + 2 \hlpm
+    + 7 \log(n + 1) + 2 \hlpm
     \pmm.
   \end{equation}
   Par ailleurs, le lemme~\vref{l:diff-small} et
@@ -597,18 +597,18 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
   (proposition~\vref{p:liouville}) appliquée à \( z \) et \( \vai \) donne
   \begin{align}
     \sum\placerange
-    \degv \ln\Distv(z, \vai)
+    \degv \log\Distv(z, \vai)
     & \ge
     - \adeg \hautl2 z
     - \hautl1{ \vai }
-    - \frac32 \ln(n + 1)
-    - (\adim + 1)\adeg \ln(3\adeg)
+    - \frac32 \log(n + 1)
+    - (\adim + 1)\adeg \log(3\adeg)
     \\ & \ge
     - \frac{ \eps }{ 2 } \hautn x
     - \adeg \htcmp
     - \hautl1{ \chow\vai }
-    - \frac32 \ln(n + 1)
-    - (\adim + 1)\adeg \ln(3\adeg)
+    - \frac32 \log(n + 1)
+    - (\adim + 1)\adeg \log(3\adeg)
   \end{align}
   où la deuxième ligne vient en substituant~\eqref{e:h2-diff}.
   En comparant avec~\eqref{e:close-log}, il vient :
@@ -616,10 +616,10 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \frac\eps2 \hautn x
     \le
     \hautl1{ \vai }
-    + (\adim + 1)\adeg \ln(3\adeg)
+    + (\adim + 1)\adeg \log(3\adeg)
     + (\adeg + \eps) \htcmp
     + 2 \hlpm
-    + 9 \ln(n + 1)
+    + 9 \log(n + 1)
     \pmm.
   \end{equation}
   Comme \( \vai \) est une sous-variété abélienne de \( \va \), sa hauteur
@@ -630,10 +630,10 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \hautl1{ \vai }
     \le
     \hautl\htpph \vai
-    + \adeg (\adim + 1) \ln(n+1)
+    + \adeg (\adim + 1) \log(n+1)
     \le
     \htcmp \adeg (\adim + 1)
-    + \adeg (\adim + 1) \ln(n+1)
+    + \adeg (\adim + 1) \log(n+1)
     \pmm.
   \end{equation}
   En substituant dans l'inégalité précédente, il vient :
@@ -641,14 +641,14 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
     \frac\eps2 \hautn x
     \le
     \adeg (\adim + 1) \Bigl(
-      \ln(\adeg)
+      \log(\adeg)
       + (2 + \frac\eps\adeg) \htcmp
       + 2 \hlpm
-      + 9 \ln(n+1)
-      + \ln(3)
+      + 9 \log(n+1)
+      + \log(3)
     \Bigl)
   \end{equation}
-  qui, en observant de plus que \( \ln(3) \le \ln(n+1) \),
+  qui, en observant de plus que \( \log(3) \le \log(n+1) \),
   contredit bien~\eqref{e:Mbig}, achevant ainsi la preuve.
 \end{proof}
 
@@ -833,7 +833,7 @@ hauteur de \( Z \).
   On a \(
     \hautl1 Z
     \le
-    \bigl( 4 \hautl1 \avar / \adeg + 5 \ln(n+1) + \hlpm \bigr)
+    \bigl( 4 \hautl1 \avar / \adeg + 5 \log(n+1) + \hlpm \bigr)
     \adeg^m (2m)^{ (m+1)\adim + 1}
   \).
 \end{coro}
@@ -871,27 +871,27 @@ hauteur de \( Z \).
   \begin{align}
     \hautl1 Z
     & \le
-    \hautl\htpph Z + \ln(n'+1) (\dim Z + 1) \deg Z
+    \hautl\htpph Z + \log(n'+1) (\dim Z + 1) \deg Z
     \\ & \le
-    \Bigl( \miness(Z) + (m-1) \ln(n+1) \Bigr)
+    \Bigl( \miness(Z) + (m-1) \log(n+1) \Bigr)
     (\dim Z + 1) \deg Z
     \\ & \le
-    \Bigl( 8 \miness(\avar) + \hlpm + \ln(n+1) \Bigr)
+    \Bigl( 8 \miness(\avar) + \hlpm + \log(n+1) \Bigr)
     (m-1) (\adim m + 1) \deg Z
     \\ & \le
-    \Bigl( \frac8\adeg \hautl\htpph \avar + \ln(n+1) + \hlpm \Bigr)
+    \Bigl( \frac8\adeg \hautl\htpph \avar + \log(n+1) + \hlpm \Bigr)
     \adim m^2 \deg Z
     \\ & \le
     \Bigl(
-    \frac8\adeg \hautl1 \avar + 4 \ln(n+1) (\adim+1)
-    + \ln(n+1)
+    \frac8\adeg \hautl1 \avar + 4 \log(n+1) (\adim+1)
+    + \log(n+1)
     + \hlpm
     \Bigr)
     \adim m^2 \deg Z
     \\ & \le
     \Bigl(
     \frac4\adeg \hautl1 \avar
-    + 4 \ln(n+1) + \frac12 \ln(n+1)
+    + 4 \log(n+1) + \frac12 \log(n+1)
     + \frac12 \hlpm
     \Bigr)
     \adim(\adim+1) m^2 \deg Z
@@ -1142,46 +1142,46 @@ section~\vref{sec:mumford-grp}.
   \bsc{Liouville} (proposition~\vref{p:liouville}) appliquée à \( z \) et \( Z
   \) donne, en prenant les logarithmes :
   \begin{align} \label{e:liou}
-    \sum\placerange \degv \ln\distv z Z
+    \sum\placerange \degv \log\distv z Z
     & \ge
     - (\deg Z) \hautl2 z
     - \hautl1{ Z }
     \\ & \qquad
-    - \frac32 \ln(n' + 1)
-    - (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
+    - \frac32 \log(n' + 1)
+    - (\dim Z + 1) (\deg Z) \log(3 \deg Z)
     \pmm.
   \end{align}
   On va maintenant estimer une par une les quantités apparaissant dans le
   membre de droite. Le lemme~\vref{l:sm-deg} donne
-  \begin{align}
-    (\dim Z + 1) \ln(3 \deg Z)
+  \begin{align*}
+    (\dim Z + 1) \log(3 \deg Z)
     & \le
     (m \adim + 1) \bigl(
-    m\ln \adeg + m \adim \ln 2 + (m+1) \adim \ln m + \ln 3
+    m\log \adeg + m \adim \log 2 + (m+1) \adim \log m + \log 3
     \bigr)
     \\ & \le
     \adim^2 (m+1) \bigl(
-    m \ln 2 + (m+1) \ln m + \ln 3
+    m \log 2 + (m+1) \log m + \log 3
     \bigr)
-    + m^2 (\adim + 1) \ln \adeg
-    \notag
+    \\ & \qquad
+    + m^2 (\adim + 1) \log \adeg
     \\ & \le
     2^{\adim+2} m^3
-    + 2^\adim m^2 \ln \adeg
+    + 2^\adim m^2 \log \adeg
     \pmm,
-  \end{align}
+  \end{align*}
   où la dernière ligne utilise le fait que \( \adim^2 \le 2^{\adim+1} \) et
   que la partie en \( m \) est majorée par \( 2m^3 \) (vérification numérique
   pour les petites valeurs). Au final on a
   \begin{align}
-    (\dim Z + 1) (\deg Z) \ln(3 \deg Z)
+    (\dim Z + 1) (\deg Z) \log(3 \deg Z)
     & \le
     \adeg^m 2^{mu} m^{(m+1)\adim - 1}
-    \cdot \bigl( 2^{\adim+2} m^3 + 2^\adim m^2 \ln \adeg \bigr)
+    \cdot \bigl( 2^{\adim+2} m^3 + 2^\adim m^2 \log \adeg \bigr)
     \\ & \le
-    \adeg^m (2m)^{(m+1)\adim + 2} (1 + \ln\adeg / 8)
+    \adeg^m (2m)^{(m+1)\adim + 2} (1 + \log\adeg / 8)
     \\ & \le
-    \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
+    \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \log \adeg
     \label{e:liou-cst2}
     \pmm.
   \end{align}
@@ -1208,31 +1208,31 @@ section~\vref{sec:mumford-grp}.
   notamment en remarquant que, vu l'hypothèse sur le plongement, on a \( n+1 =
     16^g \) :
   \begin{align}
-    \sum\placerange \degv \ln\distv z Z
+    \sum\placerange \degv \log\distv z Z
     & \ge
     - \frac\eps2 \hautn{ x_m }
     - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
-    - \bigl( 4 \hautl1 \avar / \adeg + 5 \ln(n+1) + \hlpm \bigr)
+    - \bigl( 4 \hautl1 \avar / \adeg + 5 \log(n+1) + \hlpm \bigr)
     \adeg^m (2m)^{ (m+1)\adim + 1}
     \\ & \qquad
-    - 2(m-1) \ln(n+1)
-    - \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \ln \adeg
+    - 2(m-1) \log(n+1)
+    - \adeg^{m} (2m)^{(m+1)\adim + 2} \cdot 2 \log \adeg
     \\ & \ge
     - \frac\eps2 \hautn{ x_m }
     - 4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1} \, \hautl1 \avar
     \\ & \qquad
     - \adeg^m (2m)^{ (m+1)\adim + 2}
-    \bigl( 2\ln \adeg + \hlpm + \htcmp \bigr)
+    \bigl( 2\log \adeg + \hlpm + \htcmp \bigr)
     \pmm.
   \end{align}
   Dans l'autre sens, le lemme~\vref{l:img-apx} dit que
   \begin{equation}
-    \sum\placerange \degv \ln\distv z Z
+    \sum\placerange \degv \log\distv z Z
     \le
     -\eps \hautn{ x_m }
     + 2 \hlpm + 2\adeg \htcmp
-    + \ln 5 + \frac12 \ln(2m-2) + 5g \ln(16)
+    + \log 5 + \frac12 \log(2m-2) + 5g \log(16)
   \end{equation}
   vu l'hypothèse sur \( \eps \).  En confrontant ces deux inégalités, il vient
   \begin{equation}
@@ -1240,7 +1240,7 @@ section~\vref{sec:mumford-grp}.
     \le
     4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl1 \avar
     + 4 \adeg^m (2m)^{ (m+1)\adim + 2}
-    \bigl( \ln \adeg + \hlpm + \htcmp \bigr)
+    \bigl( \log \adeg + \hlpm + \htcmp \bigr)
   \end{equation}
   qui contredit précisément~\eqref{e:Mbig-gen}, achevant ainsi la preuve.
 \end{proof}

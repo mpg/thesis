@@ -63,7 +63,7 @@ la condition~\eqref{e:Vapx} dans l'énoncé suivant.
     f(\vdim) & = \prod_{i=\vdim+1}^{mg} (2i + 1)
     \\
     \newcst[\vaemb]{vs-ht}
-    & = \max( \hautl1{ \chow\va }, \hlclab, \htcmp, n\ln(n + 1) )
+    & = \max( \hautl1{ \chow\va }, \hlclab, \htcmp, n\log(n + 1) )
   \end{align}
 \end{thm}
 
@@ -410,10 +410,10 @@ construction itérative dans la démonstration ci-dessus.
     \deg \var* \bigl( \hautl\infty T + \sqrt n \bigr)
     + \deg T \Bigl(
       \hautl1{ \varfc* }
-      + \ln(n + 1) (\vdim* + 1) \deg \var*
+      + \log(n + 1) (\vdim* + 1) \deg \var*
     \Bigr)
     \\ & \quad
-    + \ln(n + 1) \vdim* \deg \var*'
+    + \log(n + 1) \vdim* \deg \var*'
     \\ & \le
     B \bigl( \hautl\infty T + n \bigr)
     + \deg T \Bigl(
@@ -1936,12 +1936,12 @@ lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
   & \le
   2 \delta \wts[1]
   \bigl(
-    \hlclab + 2\ln((n+1)!) + 2n \ln B
+    \hlclab + 2\log((n+1)!) + 2n \log B
   \bigr)
   \\ & \qquad +
   \sum\fctrange 2\Di* \Bigl(
     \hautl1{ \varfc* }
-    + \bigl( B(g+1) + 1 \bigr) \ln(B) + \ln(2)
+    + \bigl( B(g+1) + 1 \bigr) \log(B) + \log(2)
   \Bigr)
   + o(\delta)
   \pmm.
@@ -1949,14 +1949,14 @@ lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
 On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
   \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\vref{l:sum-wts} implique
 alors que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
-définition~\eqref{e:cst-vs-ht} pour écrire
+définition~\eqref{e:cst-vs-ht} pour majorer
+\( \hautl\infty{ M_{\sigma'_\clmap} } \) par
 \begin{align}
-  \hautl\infty{ M_{\sigma'_\clmap} }
-  & \le
+  &
   4 \delta \wts[1]
   \Bigl(
-    \cst{vs-ht}/2 + \ln((n+1)!) + n \ln B
-    + 3 \ln(B) \bigl( B(g+1) + 1 \bigr) + 3 \ln(2)
+    \cst{vs-ht}/2 + \log((n+1)!) + n \log B
+    + 3 \log(B) \bigl( B(g+1) + 1 \bigr) + 3 \log(2)
   \Bigr)
   \\ & \qquad
   + 6 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
@@ -1998,7 +1998,7 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
   \begin{equation}
     \hautl\infty x
     \le
-    \frac p{q-p} \bigl( \hautl\infty M + \ln q \bigr)
+    \frac p{q-p} \bigl( \hautl\infty M + \log q \bigr)
     + \frac q{q-p} c_\cdn
     \pmm,
   \end{equation}
@@ -2054,7 +2054,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
     \pmm.
   \end{equation}
   De même, \( \frac q {q-p} c_\cdn = o(\delta) \) ;
-  en remarquant de plus que \( \ln q = o(\delta) \), on voit qu'il existe une
+  en remarquant de plus que \( \log q = o(\delta) \), on voit qu'il existe une
   forme \( \faux \) satisfaisant aux conditions de l'énoncé mais de hauteur
   majorée par \( \hautl\infty{M_\sigma} + o(\delta) \).  Il ne reste plus
   qu'à invoquer~\eqref{e:hmat-sigma} pour conclure au résultat annoncé.
@@ -2108,7 +2108,7 @@ propriétés de ces formes dont nous aurons besoin.
   De plus, si \( (\clmapv)_v \) est une famille de cartes indexée
   par les places de \( \cdn \), on a
   \begin{equation} \label{e:aux-co-htv}
-    \sum_v \degv \ln \nv1{ \faux[\clmapv] }
+    \sum_v \degv \log \nv1{ \faux[\clmapv] }
     \le
     14 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + o(\delta)
@@ -2147,7 +2147,7 @@ propriétés de ces formes dont nous aurons besoin.
   la place du lemme~\vref{l:hmat-wemba}, ce qui donne une majoration identique
   à la précédente :
   \begin{align}
-    \sum_v \degv \ln \nv1{ \faux[\clmapv] }
+    \sum_v \degv \log \nv1{ \faux[\clmapv] }
     \le
     2 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
     + 12 \delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
@@ -3253,7 +3253,7 @@ Remarquons que chacun des facteurs du membre de droite dépend de \( v \),
 mais pas leur produit.
 
 Pour \( p \in \set{1, 2, 3, 4} \), posons alors \( \ratfh{p} = \sum_v
-  \degv \ln \av{\ratfv{p}(\cexa)} \) où \( \degv \) désigne le degré local
+  \degv \log \av{\ratfv{p}(\cexa)} \) où \( \degv \) désigne le degré local
 divisé en \( v \) ; cette somme converge car chaque \( \ratfv p \)
 appartient à un ensemble fini fixe de nombres algébriques (dont le cardinal
 est majoré en fonction de \( n \), \( m \) et \( \nclmaps \)).  La
@@ -3307,11 +3307,11 @@ nouveau en évaluant \( \ratfv1(\cexa) \).  On utilise le fait que \( \cexa* =
   \bigr)
   \\ & \le
   \sum\fctrange \wts* \bigl(
-    \hautn{ \ex* } + \htcmp + \frac12\ln(n+1) + \hautl\infty{\vadapt*}
+    \hautn{ \ex* } + \htcmp + \frac12\log(n+1) + \hautl\infty{\vadapt*}
   \bigr)
   \pmm.
 \end{align}
-On remarque alors que \( \hautl\infty{\vadapt*} \le \ln B \)
+On remarque alors que \( \hautl\infty{\vadapt*} \le \log B \)
 d'après~\eqref{e:vadapt-ht} et~\eqref{e:varset-deg}. On regroupe alors les
 termes avant d'utiliser d'une part~\eqref{e:wt-ratio} et d'autre part le
 lemme~\vref{l:sum-wts} :
@@ -3319,10 +3319,10 @@ lemme~\vref{l:sum-wts} :
   \sum\fctrange \wts* \hautl\infty{ \cexa* }
   & \le
   \sum\fctrange \bigl( \wts* \hautn{ \ex* } \bigr)
-  + \bigl( \htcmp + \frac12\ln(n+1) + \ln B \bigr) \sum\fctrange \wts*
+  + \bigl( \htcmp + \frac12\log(n+1) + \log B \bigr) \sum\fctrange \wts*
   \\ & \le
     2 m \wts[1] \hautn{ \ex[1] }
-    + 2 \wts[1] \bigl( \frac32\cst{vs-ht} + \ln B \bigr)
+    + 2 \wts[1] \bigl( \frac32\cst{vs-ht} + \log B \bigr)
   \pmm.
   \label{e:sum-h-cexa}
 \end{align}
@@ -3331,7 +3331,7 @@ Au final on a donc
   \ratfh4
   \le
   2 \epsz \delta \wts[1]
-  \bigl( m \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B \bigr)
+  \bigl( m \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \log B \bigr)
   \pmm.
 \end{equation}
 
@@ -3399,7 +3399,7 @@ alors plus qu'à prendre le logarithme dans l'estimation précédente, multiplie
 par \( \delta \) puis sommer sur \( v \) et sur \( \fcti \) pour avoir
 \begin{equation} \label{e:ratfh2}
   \ratfh2 \le
-  \delta \bigl( 2 \wts[1] (\cst{vs-ht} + 2 \ln B) + o(\wts[1]) \bigr)
+  \delta \bigl( 2 \wts[1] (\cst{vs-ht} + 2 \log B) + o(\wts[1]) \bigr)
 \end{equation}
 en utilisant encore le lemme~\vref{l:sum-wts}.
 
@@ -3448,7 +3448,7 @@ des propriétés suivantes.
   \(
     \hautl1{ (P_v)_v }
     =
-    \sum_v \degv \ln \nv1{ P_v }
+    \sum_v \degv \log \nv1{ P_v }
   \).
 \end{lem}
 
@@ -3492,18 +3492,18 @@ des propriétés suivantes.
     \\ & \qquad
     + \sum\fctrange \bigl(
       2 \lgr{\dermp*} \hautl1{ \varfca* }
-      + \lgr{\dermp*} ( \ln(8g) + 3 \ln B )
-      + g (\Dir*) \ln 2
+      + \lgr{\dermp*} ( \log(8g) + 3 \log B )
+      + g (\Dir*) \log 2
     \bigr)
   \\ & \le
     \hautl1{ (\fauxv)_v }
     + 2 \bigl( \sum\fctrange \lgr{\dermp*} \hautl1{ \varfc* } \bigr)
-    + \delta g \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
+    + \delta g \log 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
     + o(\delta)
     \\ & \qquad
     + \bigl(
-      2 g B ( \ln B + \ln( n + 1 ) )
-      + \ln(8g) + 3 \ln B
+      2 g B ( \log B + \log( n + 1 ) )
+      + \log(8g) + 3 \log B
     \bigr)
     \sum\fctrange \lgr{\dermp*}
   \end{align}
@@ -3525,11 +3525,11 @@ des propriétés suivantes.
 
   On écrit ensuite
   \begin{equation}
-    g \ln 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
+    g \log 2 \sum\fctrange \wts* (2 \wtw* + \epsz)
     \le
-    3 g \ln 2 \sum\fctrange \wts* \wtw*
+    3 g \log 2 \sum\fctrange \wts* \wtw*
     \le
-    6 g \ln 2 \, \wts[1]
+    6 g \log 2 \, \wts[1]
     \le
     \frac14 \Lambda \wts[1]
   \end{equation}
@@ -3627,7 +3627,7 @@ En adaptant la démonstration de~\eqref{e:sum-h-cexa} on a facilement
   \sum\fctrange \wtw* \wts* \hautl\infty{ \cexa* }
   \le
   2 \wts[1] \bigl(
-    2(m-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
+    2(m-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \log B
   \bigr)
 \end{equation}
 en remarquant que \( \sum\fctrange \wtw* = 2(m-1) \). Au final, on a donc
@@ -3635,11 +3635,11 @@ en remarquant que \( \sum\fctrange \wtw* = 2(m-1) \). Au final, on a donc
   \ratfh{1''}
   & \le
   4 \delta \wts[1] B \epsi \sigma^{-1} \bigl(
-    2(m-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \ln B
+    2(m-1) \hautn{ \ex[1] } + \frac32\cst{vs-ht} + \log B
   \bigr)
   \\ & \le \label{e:ratfh1b}
   \delta \wts[1] \bigl(
-    8(m-1) B \epsi \sigma^{-1} \hautn{\ex[1]} + \frac32\cst{vs-ht} + \ln B
+    8(m-1) B \epsi \sigma^{-1} \hautn{\ex[1]} + \frac32\cst{vs-ht} + \log B
   \bigr)
   \pmm.
 \end{align}
@@ -3723,7 +3723,7 @@ on peut alors majorer le logarithme de~\eqref{e:apx-temp} par
 \begin{align}
   - \wtapx\eps \sum\fctrange \imp*[0] \hautn{\ex*}
   + \sum\fctrange \deg_\fct P_v \left(
-    \frac{3\dv}2 \ln(n+1) + \ln \nv\infty{\vadapt*^{-1}}
+    \frac{3\dv}2 \log(n+1) + \log \nv\infty{\vadapt*^{-1}}
     + \wtapx\eps \htcmp
   \right)
 \end{align}
@@ -3753,21 +3753,21 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( v \notin
 \begin{multline}
   \sum_v \degv \Biggl(
     - \frac38 \delta \wts[1] \hautn{\ex[1]} \wtapx \eps \epsi
-    + \ln \nv1{P_v}
+    + \log \nv1{P_v}
     + \sum\fctrange \deg_\fct P_v
     \biggl(
-      \frac{3\dv}2 \ln(n+1)
+      \frac{3\dv}2 \log(n+1)
       \\
-      + \ln \nv\infty{\vadapt*^{-1}}
+      + \log \nv\infty{\vadapt*^{-1}}
       + \wtapx\eps \htcmp
-      + \ln \nv1{ \varfc* }
-      + (\vdeg* (\vdim* + 1) \dv) \ln( 2 \vdegp* (n+1) )
+      + \log \nv1{ \varfc* }
+      + (\vdeg* (\vdim* + 1) \dv) \log( 2 \vdegp* (n+1) )
     \biggl)
   \Biggr)
 \end{multline}
 puis en se souvenant que \( \sum_v \degv \wtapx = 1 \) et en
 utilisant~\eqref{e:vadapt-ht} et le lemme~\vref{l:ratfv1} :
-\begin{align}
+\begin{align*}
   \ratfh{1'}
   & \le
   - \frac38 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
@@ -3776,13 +3776,13 @@ utilisant~\eqref{e:vadapt-ht} et le lemme~\vref{l:ratfv1} :
   + o(\delta)
   \\ & \quad
   + 3\delta \Bigl(
-    \frac{3}2 \ln(n+1)
-    + n \ln(Bn)
+    \frac{3}2 \log(n+1)
+    + n \log(Bn)
     + \eps \htcmp
-    + B (g + 1) \ln (B (n+1))
+    + B (g + 1) \log (B (n+1))
   \Bigr)
-  \sum\fctrange \wtw* \wts*
-\end{align}
+  \sum\fctrange \! \wtw* \wts*
+\end{align*}
 On utilise alors l'hypothèse~\eqref{e:varset-ht}, le lemme~\vref{l:sum-wts} et
 l'estimation~\eqref{e:ratfh1a-adhoc} pour conclure :
 \begin{equation}
@@ -3816,7 +3816,7 @@ avec : % reporter dans la section « ajustement » !
   \beta
   & =
   19 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
-  + (\frac72 + 3\epsz) \cst{vs-ht} + (5 + 2\epsz) \ln B
+  + (\frac72 + 3\epsz) \cst{vs-ht} + (5 + 2\epsz) \log B
   \\ & \le
   20 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
 \end{align}
@@ -3943,7 +3943,7 @@ utilisant le fait suivant, conséquence du théorème du produit.
       \)
       pour tout \( \fcti \in \set{1, \dots, m-1} \) ;
     \item \(
-        \frac\alpha m < \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
+        \frac\alpha m < \left( \frac{\log(\vdim+1)}{2\vdim^2}\right)^\vdim
       \).
   \end{enumthm}
   Il existe alors un \( \fct \in \set{1, \dots, m} \) et une forme
@@ -3963,15 +3963,15 @@ utilisant le fait suivant, conséquence du théorème du produit.
         \left(
           \hautl\infty G
           + \sum_{\fcti=1}^m \bigl(
-            b_\fcti (\stoll{\vdim[\fcti]} + \ln 2) + \sqrt{\vdim[\fcti]}
+            b_\fcti (\stoll{\vdim[\fcti]} + \log 2) + \sqrt{\vdim[\fcti]}
           \bigr)
-          + \frac{\vdim-1}2 \ln \lgr b
+          + \frac{\vdim-1}2 \log \lgr b
         \right)
         \\ & \qquad
         + b_\fct
         \left( \frac m\alpha \right)^\vdim (\vdim* + 1)
-        \ln \left( \left( \frac m\alpha \right)^\vdim (\vdim* + 1) \right)
-        + b_\fct \ln \binom{\deg T + \vdim*}{\vdim*}
+        \log \left( \left( \frac m\alpha \right)^\vdim (\vdim* + 1) \right)
+        + b_\fct \log \binom{\deg T + \vdim*}{\vdim*}
       \end{align}
       où le nombre de \bsc{Stoll} est défini par~\eqref{e:def-stoll}.
   \end{enumthm}
@@ -4114,14 +4114,14 @@ deuxième hypothèse est satisfaite.
 
 Pour la troisième, on observe que l'expression
 \begin{equation}
-  \left( \frac{\ln(\vdim+1)}{2\vdim^2}\right)^\vdim
+  \left( \frac{\log(\vdim+1)}{2\vdim^2}\right)^\vdim
 \end{equation}
 est décroissante en \( \vdim \) tandis que \( \alpha / m =
   \Lambda^{-2f(\vdim)} \) est croissante que \( \vdim \), de sorte qu'il
 suffit de vérifier que cette condition est satisfaite pour \( \vdim =
   mg \). C'est bien le cas puisque
 \begin{equation} \label{e:tp-3}
-  \left( \frac{\ln(mg + 1)}{2(mg)^2}\right)^{mg}
+  \left( \frac{\log(mg + 1)}{2(mg)^2}\right)^{mg}
   \ge
   (\sqrt2 mg)^{-2mg}
   \ge
@@ -4147,7 +4147,7 @@ qui est bien la majoration annoncée.
 Concernant la hauteur, on commence par majorer \( \hautl\infty T \) en
 fonction de \( \hautl\infty{ \faux** } \) ; le fait~\vref{f:thm-prod} donne
 immédiatement la majoration suivante, compte tenu du fait~\vref{f:nfaux} et du
-choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
+choix de \( \alpha \), et en remarquant que \( \log \lgr b \) et \(
   \sqrt{\vdim*} \) sont négligeables devant \( \delta \) :
 \begin{align}
   D \delta \wts* (2\wtw* + \epsz) \hautl\infty T
@@ -4158,27 +4158,27 @@ choix de \( \alpha \), et en remarquant que \( \ln \lgr b \) et \(
     D \hautl\infty{ \faux** }
     + \sum_{\fcti=1}^m
     D \delta \wts[\fcti] (2\wtw[\fcti] + \epsz)
-    (\stoll{\vdim[\fcti]} + \ln 2)
+    (\stoll{\vdim[\fcti]} + \log 2)
   \right)
   \\ & \qquad
   + D \delta \wts* (2\wtw* + \epsz)
   \Lambda^{2\vdim f(\vdim)}
   (\vdim* + 1)
-  \ln \left(
+  \log \left(
     \Lambda^{2\vdim f(\vdim)}
     (\vdim* + 1)
   \right)
   \\ & \qquad
   + D \delta \wts* (2\wtw* + \epsz)
-  \ln \binom{\Lambda^{2\vdim f(\vdim)} + \vdim*}{\vdim*}
+  \log \binom{\Lambda^{2\vdim f(\vdim)} + \vdim*}{\vdim*}
   + o(\delta)
   \pmm.
 \end{align}
 On utilise alors l'estimation élémentaire
 \begin{equation}
-  \ln \binom{\Lambda^{2\vdim f(\vdim)} + \vdim*}{\vdim*}
+  \log \binom{\Lambda^{2\vdim f(\vdim)} + \vdim*}{\vdim*}
   \le
-  \vdim* \ln(\Lambda^{2\vdim f(\vdim)} + 1)
+  \vdim* \log(\Lambda^{2\vdim f(\vdim)} + 1)
   \le
   \vdim* \Lambda^{2\vdim f(\vdim)}
 \end{equation}
@@ -4192,11 +4192,11 @@ et le fait que \( 2 \le 2\wtw* + \epsz \le 2m \), puis on simplifie par
   \Lambda^{2\vdim f(\vdim)}
   \Biggl(
     \frac1{2\delta} \hautl\infty{ \faux** }
-    \\ & \qquad
+    \\ & \quad
     + m \biggl(
-      \sum_{\fcti=1}^m \wts[\fcti] (\stoll{\vdim[\fcti]} + \ln 2)
+      \sum_{\fcti=1}^m \wts[\fcti] (\stoll{\vdim[\fcti]} + \log 2)
       + \wts* \Bigl(
-        2 \ln \bigl( \Lambda^{2\vdim f(\vdim)} (\vdim* + 1) \bigr) + 1
+        2 \log \bigl( \Lambda^{2\vdim f(\vdim)} (\vdim* + 1) \bigr) + 1
       \Bigr)
     \biggr)
   \Biggr)
@@ -4204,13 +4204,13 @@ et le fait que \( 2 \le 2\wtw* + \epsz \le 2m \), puis on simplifie par
 \end{align*}
 On utilise alors~\eqref{e:maj-stoll} et
 le fait que \( \vdim[\fcti] \le g \le m - 1 \) pour écrire
-\( \stoll{\vdim[\fcti]} \le m \ln m \).  On utilise de plus le
+\( \stoll{\vdim[\fcti]} \le m \log m \).  On utilise de plus le
 lemme~\vref{l:sum-wts} et le fait que \( \wts* \le \wts[1] \) pour estimer le
 terme de la dernière ligne ci-dessus par
 \begin{align}
   2m \wts[1] \left(
-    m \ln m + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
-    + \ln m + \frac12
+    m \log m + \log 2 + 2\vdim \log \Lambda^{f(\vdim)}
+    + \log m + \frac12
   \right)
 \end{align}
 puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
@@ -4258,14 +4258,14 @@ classiques de la hauteur, on a
   & \le
   \hautl\infty{ T }
   + \left(
-    \deg T \Bigl( \hautl\infty{ \vadapt* } + \ln(n + 1) \Bigr)
-    + \ln \binom{ \deg T + n + 1 }{ n + 1 }
+    \deg T \Bigl( \hautl\infty{ \vadapt* } + \log(n + 1) \Bigr)
+    + \log \binom{ \deg T + n + 1 }{ n + 1 }
   \right)
   \\ & \le
   \hautl\infty{ T }
   + \left(
-    \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(n + 1) \Bigr)
-    + 2\vdim (n + 1) \ln \Lambda^{f(\vdim)}
+    \Lambda^{2\vdim f(\vdim)} \Bigl( \log B + \log(n + 1) \Bigr)
+    + 2\vdim (n + 1) \log \Lambda^{f(\vdim)}
   \right)
   \pmm.
 \end{align*}
@@ -4473,7 +4473,7 @@ Commençons par quelques estimations générales ; on rappelle pour commencer qu
 remarque~\vref{r:vaemb}, puis \( g \ge 1 \) et \( m \ge g + 1
   \ge 2 \). Ainsi, le dernier argument du maximum dans la
 définition~\eqref{e:cst-vs-ht} de \( \cst{vs-ht} \) donne
-\( \cst{vs-ht} \ge n \ln 3 \ge 2 \).
+\( \cst{vs-ht} \ge n \log 3 \ge 2 \).
 De plus, la définition~\eqref{e:def-Lambda} de \( \Lambda \) implique
 immédiatement, en considérant le deuxième argument du maximum, que
 \begin{equation}
@@ -4494,13 +4494,13 @@ revanche bien plus vite quand ces deux quantités augmentent.
 
 On fera fréquemment usage des deux estimations suivantes :
 \begin{equation}
-  \ln B
+  \log B
   \le
-  \ln(\Lambda^{f(\vdim)})
+  \log(\Lambda^{f(\vdim)})
   \le
   m \Lambda^{\frac1m\,f(\vdim)}
   \qquad\text{et}\qquad
-  \ln B
+  \log B
   \le
   B
   \le
@@ -4508,13 +4508,13 @@ On fera fréquemment usage des deux estimations suivantes :
   \pmm,
 \end{equation}
 qui découlent de~\eqref{e:varset-deg} et dont la première utilise l'inégalité
-élémentaire \( \ln(x) \le \alpha \, x^{1/\alpha} \), valable pour tout
+élémentaire \( \log(x) \le \alpha \, x^{1/\alpha} \), valable pour tout
 \( \alpha > 0 \).
 
 Avant de passer aux différentes estimations \lat{ad hoc}, établissons encore
 une estimation qui nous sera utile plusieurs fois :
 \begin{align}
-  B (g + 1) \ln (B (n+1))
+  B (g + 1) \log (B (n+1))
   & \le
   B (g + 1) \bigl(
     m \Lambda^{\frac1m\,f(\vdim)}
@@ -4534,17 +4534,17 @@ utile pour chacune des situations considérées.
 
 Intéressons-nous maintenant à notre première estimation \lat{ad hoc} :
 \begin{equation} \label{e:B-siegel}
-  \cst{vs-ht}/2 + \ln((n+1)!) + n \ln B
-  + 3 \ln(B) \bigl( B(g+1) + 1 \bigr) + 3 \ln(2)
+  \frac{\cst{vs-ht}}2 + \log((n+1)!) + n \log B
+  + 3 \log(B) \bigl( B(g+1) + 1 \bigr) + 3 \log 2
   \le
   \frac14 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \pmm.
 \end{equation}
 Pour le deuxième terme, on a par définition :
 \(
-  \ln((n+1)!)
+  \log((n+1)!)
   \le
-  n \ln (n+1)
+  n \log (n+1)
   \le
   \cst{vs-ht}
 \)
@@ -4552,8 +4552,8 @@ de sorte que la somme des deux premiers termes est au plus \( \frac32
   \cst{vs-ht} \).
 En utilisant de plus l'estimation~\eqref{e:adhoc-gen} ci-dessus, il vient :
 \begin{align}
-  & \cst{vs-ht}/2 + \ln((n+1)!)
-  + 3 \ln(B) B(g+1) + n \ln B + 3\ln B + 3 \ln(2)
+  & \cst{vs-ht}/2 + \log((n+1)!)
+  + 3 \log(B) B(g+1) + n \log B + 3\log B + 3 \log(2)
   \\ & \qquad \le
   \frac{3\Lambda}{2\cdot1\,275} \cst{vs-ht}
   + \frac3{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
@@ -4568,8 +4568,8 @@ qui implique largement l'estimation annoncée.
 La prochaine majoration \lat{ad hoc} que nous montrons est
 \begin{equation} \label{e:ht-T-adhoc}
   2m \left(
-    m \ln m + \ln 2 + 2\vdim \ln \Lambda^{f(\vdim)}
-    + \ln m + \frac12
+    m \log m + \log 2 + 2\vdim \log \Lambda^{f(\vdim)}
+    + \log m + \frac12
   \right)
   \le
   \frac14 \Lambda^{ (1 + \frac1m) f(\vdim) }
@@ -4578,21 +4578,21 @@ La prochaine majoration \lat{ad hoc} que nous montrons est
 On commence par utiliser le fait que \( \Lambda \ge (\sqrt2
   mg)^{mg} \) pour écrire
 \begin{equation}
-  m \ln \Lambda
+  m \log \Lambda
   \ge
-  m^2 g \ln( \sqrt2 m g )
+  m^2 g \log( \sqrt2 m g )
   \ge
-  m^2 \ln m + \frac{ m^2 }2 \ln 2
+  m^2 \log m + \frac{ m^2 }2 \log 2
   \ge
-  m \ln m + \ln m + \frac12 + \ln 2
+  m \log m + \log m + \frac12 + \log 2
 \end{equation}
 où l'on utilise le fait que \( m \ge 2 \) pour la dernière minoration.
 Comme de plus \( \vdim \ge m \), la parenthèse dans~\eqref{e:ht-T-adhoc}
-est majorée par \( 3\vdim \ln \Lambda^{f(\vdim)} \) et comme de plus \( \vdim
+est majorée par \( 3\vdim \log \Lambda^{f(\vdim)} \) et comme de plus \( \vdim
   \le mg \) le membre de gauche de~\eqref{e:ht-T-adhoc} est majoré
 successivement par
 \begin{equation}
-  6 m^2 g \ln \Lambda^{f(\vdim)}
+  6 m^2 g \log \Lambda^{f(\vdim)}
   \le
   6 m^3 g \Lambda^{\frac1m f(\vdim)}
   \le
@@ -4609,17 +4609,17 @@ immédiatement \( (\sqrt2 \, m)^m \ge m^5 \ge 24 m^4 \).
 
 Prouvons maintenant que
 \begin{equation} \label{e:ht-T'-adhoc}
-  \Lambda^{2\vdim f(\vdim)} \Bigl( \ln B + \ln(n + 1) \Bigr)
-  + 2\vdim (n + 1) \ln \Lambda^{f(\vdim)}
+  \Lambda^{2\vdim f(\vdim)} \Bigl( \log B + \log(n + 1) \Bigr)
+  + 2\vdim (n + 1) \log \Lambda^{f(\vdim)}
   \le
   \cst{vs-ht} \Lambda^{(2\vdim + 1) f(\vdim)}
   \pmm.
 \end{equation}
 Pour commencer, on a
 \begin{align} \label{e:extra-beta-adhoc}
-  \ln B + \ln(n + 1)
+  \log B + \log(n + 1)
   \le
-  \ln B + \cst{vs-ht}
+  \log B + \cst{vs-ht}
   \le
   \frac{\Lambda^{f(\vdim)}}{1\,275}
   + \cst{vs-ht} \frac\Lambda{1\,275}
@@ -4629,7 +4629,7 @@ Pour commencer, on a
 \end{align}
 Par ailleurs
 \begin{equation}
-  2 \vdim (n + 1) \ln \Lambda^{f(\vdim)}
+  2 \vdim (n + 1) \log \Lambda^{f(\vdim)}
   \le
   4 \cst{vs-ht} m^2 g \Lambda^{\frac1m f(\vdim)}
   \le
@@ -4641,7 +4641,7 @@ qui aboutit largement à l'estimation annoncée.
 
 On a également, en utilisant~\eqref{e:adhoc-gen} :
 \begin{align}
-  & 2 g B ( \ln B + \ln( n + 1 ) ) + \ln(8g) + 3 \ln B
+  & 2 g B ( \log B + \log( n + 1 ) ) + \log(8g) + 3 \log B
   \\ & \qquad \le
   \frac2{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + \frac{ 4 \Lambda^{f(\vdim)} }{1\,275}
@@ -4651,13 +4651,13 @@ On a également, en utilisant~\eqref{e:adhoc-gen} :
 \end{align}
 Par ailleurs, en utilisant à nouveau~\eqref{e:adhoc-gen} :
 \begin{align}
-  & \frac32 \ln(n+1)
-  + n \ln(Bn)
+  & \frac32 \log(n+1)
+  + n \log(Bn)
   + \htcmp
-  + B (g + 1) \ln (B (n+1))
+  + B (g + 1) \log (B (n+1))
   \\ & \qquad \le
   \frac32 \cst{vs-ht}
-  + \cst{vs-ht} + \cst{vs-ht} \ln B
+  + \cst{vs-ht} + \cst{vs-ht} \log B
   + \cst{vs-ht} 
   + \frac1{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   \\ & \qquad \le
@@ -4727,7 +4727,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         =
         \htcmp[\vaemb]
         + \hautl{2, \vaemb} E
-        + \frac12 \ln(n + 1)
+        + \frac12 \log(n + 1)
       \) ; \label{i:plin-htcmp}
     \item \(
         \hlclab[\vaemb']
@@ -4835,14 +4835,14 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   \begin{equation}
     \abs{ \hautl{2, \vaemb} x - \hautl{2, \vaemb'} x }
     \le
-    \hautl2 L + \frac12 \ln(n + 1)
+    \hautl2 L + \frac12 \log(n + 1)
   \end{equation}
   d'où, en constatant que les hauteurs normalisées sont les mêmes dans \(
     \vaemb \) et \( \vaemb' \)
   \begin{equation}
     \abs{ \hautl{2, \vaemb'} x - \hautn x }
     \le
-    \htcmp[\vaemb] + \hautl2 L + \frac12 \ln(n + 1)
+    \htcmp[\vaemb] + \hautl2 L + \frac12 \log(n + 1)
   \end{equation}
   qui donne directement~\vref{i:plin-htcmp}.
 
@@ -4963,8 +4963,8 @@ On en déduit une version un peu plus générale du théorème~\vref{t:vojta-div
       \hautl1{\va} + \hautl1{ E } (g+1) \deg \va,
       \hlclab + \frac52 \hautl1 E,
       \\ & \qquad
-      \htcmp + \hautl2 E + \frac12 \ln(n + 1),
-      n\ln(n + 1)
+      \htcmp + \hautl2 E + \frac12 \log(n + 1),
+      n\log(n + 1)
     \bigr)
     \pmm.
   \end{align}
@@ -5028,7 +5028,7 @@ définition différente faisant intervenir la hauteur de \( E \), et le nombre
     \ge
     2 \cst{ht-v-div-dv} \Lambda_1
     \ge
-    85 ( \hautl{1, \vaemb}{E} + \frac12 \ln (n + 1) )
+    85 ( \hautl{1, \vaemb}{E} + \frac12 \log (n + 1) )
   \)
   en utilisant de diverses façon la définition de \( \cst{ht-v-div-dv} \) et
   le fait que \( \Lambda_1 \ge 85 \).
@@ -5107,8 +5107,8 @@ section~\vref{sec:ha-prod}.
       \hautl1{\va} + \hautl1{ E } (g+1) \deg \va,
       \hlclab + \frac52 \hautl1 E,
       \\ & \qquad
-      \htcmp + \hautl2 E + \frac12 \ln(n + 1),
-      n\ln(n + 1)
+      \htcmp + \hautl2 E + \frac12 \log(n + 1),
+      n\log(n + 1)
     \bigr)
   \end{align}
   et au choix :
@@ -5252,7 +5252,7 @@ lemme suivant.
   De plus, cette valeur absolue vaut \( 1 \) si \( v \) divise un premier
   strictement supérieur à \( \adeg \).
 
-  Par ailleurs, on a \( \sum_v \degv \dpv \le 1.26 \adeg / \ln \adeg
+  Par ailleurs, on a \( \sum_v \degv \dpv \le 1.26 \adeg / \log \adeg
   \).  En particulier si on note \( b \) le vecteur dont les composantes sont
   les \( \binom\adeg\alpha^{-1/2} \) quand \( \alpha \) varie, on a
   \( \hautl\infty b \le \adeg n \).
@@ -5266,7 +5266,7 @@ lemme suivant.
   \begin{equation}
     v_p( \binom\adeg\alpha )
     =
-    \sum_{i = 1}^{\floor{\ln_p\adeg}}
+    \sum_{i = 1}^{\floor{\log_p\adeg}}
     \floor*{ \frac{\adeg}{p^i} }
     - \floor*{ \frac{\alpha_0}{p^i} }
     - \dots
@@ -5274,12 +5274,12 @@ lemme suivant.
   \end{equation}
   qui donne immédiatement le cas d'égalité, car la somme est vide si \(
     p > \adeg \). Par ailleurs, chacun des termes vaut au plus \( n \) donc
-  en sommant sur \( i \) on a \( v_p( \binom\adeg\alpha ) \le n \ln_p(\adeg)
+  en sommant sur \( i \) on a \( v_p( \binom\adeg\alpha ) \le n \log_p(\adeg)
   \) qui donne bien l'estimation de valeur absolue annoncée.
 
   La somme pondérée des \( \dpv \) est par définition le nombre de premiers
   inférieurs ou égaux à \( \adeg \), qui est au plus
-  \( 1.25506 \adeg / \ln \adeg \) d'après le corollaire~1 page~69
+  \( 1.25506 \adeg / \log \adeg \) d'après le corollaire~1 page~69
   de~\cite{rosch}. L'estimation de hauteur annoncée en découle immédiatement.
 \end{proof}
 
@@ -5323,7 +5323,7 @@ sur les différents paramètres en jeu dans notre situation.
         \hautl{1, \vaemb'}{\va}
         \le
         \adeg^{g+1} \hautl{1, \vaemb}{\va}
-        + 2 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+        + 2 \adeg^{g+1} \log(n + 1) (g + 1) \deg_{\vaemb} \va
       \) ; \label{i:hs-vero-ht-va}
     \item \(
         \htcmp[\vaemb']
@@ -5365,13 +5365,13 @@ sur les différents paramètres en jeu dans notre situation.
     \hautl{1, \vaemb'} \va
     & \le
     \hautl{\htpph, \vaemb'} \va
-    + \ln(n' + 1) (g + 1) \deg_{\vaemb'} \va
+    + \log(n' + 1) (g + 1) \deg_{\vaemb'} \va
     \\ & \le
     \adeg^{g+1} \hautl{\htpph, \vaemb} \va
-    + \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+    + \adeg^{g+1} \log(n + 1) (g + 1) \deg_{\vaemb} \va
     \\ & \le
     \adeg^{g+1} \hautl{1, \vaemb} \va
-    + 2 \adeg^{g+1} \ln(n + 1) (g + 1) \deg_{\vaemb} \va
+    + 2 \adeg^{g+1} \log(n + 1) (g + 1) \deg_{\vaemb} \va
     \pmm.
   \end{align}
 
@@ -5525,10 +5525,10 @@ sur les différents paramètres en jeu dans notre situation.
     \hlclab[\vaemb']
     =
     \hlclab[\vaemb] \cdot \adeg
-    + \frac54\adeg \ln(n + 1) + 1.26 \adeg n
+    + \frac54\adeg \log(n + 1) + 1.26 \adeg n
   \end{equation}
-  dont le dernier terme se déduit en remarquant que \( \frac54 \ln(n +
-    1) / n \le \frac58 \ln 3 \le 0.69 \) car \( n \ge 2 \).
+  dont le dernier terme se déduit en remarquant que \( \frac54 \log(n +
+    1) / n \le \frac58 \log 3 \le 0.69 \) car \( n \ge 2 \).
 \end{proof}
 
 \begin{coro} \label{c:vojta-hs}
@@ -5583,7 +5583,7 @@ sur les différents paramètres en jeu dans notre situation.
     + (g + 1) \deg \va
     \bigl(
       \adeg^g \hautl1 \hs
-      + (\adeg+1)^n \ln(\adeg+1) n
+      + (\adeg+1)^n \log(\adeg+1) n
     \bigr)
   \end{align}
   et au choix :
@@ -5651,7 +5651,7 @@ sur les différents paramètres en jeu dans notre situation.
     \\ & \quad \le
     \adeg^{g+1} \hautl{1, \vaemb}{\va}
     + (g + 1) \deg_{\vaemb} \va \Bigl(
-      \adeg^{g+1} \ln(n + 1)
+      \adeg^{g+1} \log(n + 1)
       + \adeg^g \bigl( \hautl{1, \vaemb} \hs + \adeg n \bigr)
     \Bigr)
   \end{align}
@@ -5664,11 +5664,11 @@ sur les différents paramètres en jeu dans notre situation.
   \end{equation}
   et
   \begin{equation}
-    \htcmp[\vaemb'] + \hautl{2, \vaemb'} E + \frac12 \ln(n' + 1)
+    \htcmp[\vaemb'] + \hautl{2, \vaemb'} E + \frac12 \log(n' + 1)
     \le
     \adeg \htcmp[\vaemb]
     + \hautl{1, \vaemb} \hs + \adeg n
-    + \frac12 \adeg \ln(n+1)
+    + \frac12 \adeg \log(n+1)
   \end{equation}
   ce qui prouve que
   \begin{align}
@@ -5681,7 +5681,7 @@ sur les différents paramètres en jeu dans notre situation.
       \adeg \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} \hs
       + \frac92 \adeg n,\
       \adeg \htcmp[\vaemb] + \hautl{1, \vaemb} \hs + \frac32 \adeg n,\
-      (\adeg+1)^n \ln(\adeg+1) n
+      (\adeg+1)^n \log(\adeg+1) n
     \Bigr)
     \\ & \le
     \adeg \max \bigl(
@@ -5691,7 +5691,7 @@ sur les différents paramètres en jeu dans notre situation.
     + (g + 1) \deg_{\vaemb} \va
     \bigl(
       \adeg^g \hautl{1, \vaemb} \hs
-      + (\adeg+1)^n \ln(\adeg+1) n
+      + (\adeg+1)^n \log(\adeg+1) n
     \bigr)
   \end{align}
   en prenant le maximum terme par terme, assez largement pour le dernier.
@@ -5722,8 +5722,8 @@ contrôlés.
     \hautl1 \hs
     \le
     \hautl1 \avar
-    + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-    + \ln(m/2)
+    + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+    + \log(m/2)
     \pmm.
   \end{equation}
 \end{lem}
@@ -5744,7 +5744,7 @@ contrôlés.
   \begin{equation}
     \hautl1{ P_i }
     \le
-    \hautl1 \avar + (\adim + 1) \adeg \ln(\adeg + 1)
+    \hautl1 \avar + (\adim + 1) \adeg \log(\adeg + 1)
   \end{equation}
   en remarquant que les \( P_i \) sont une spécialisation de la forme de
   \bsc{Chow} de \( \avar \) en des points (formes linéaires) de hauteur \(
@@ -5773,14 +5773,14 @@ contrôlés.
     \zeros Q \). Par construction, il est clair que \( \hs \) est de degré \(
     \adeg \) et contient \( \avar \) mais aucun des \( x_i \) (en effet, \(
     \prod\fctrange Q(x_i) = \mathcal P(\lambda) \neq 0 \)).  Par ailleurs, \(
-    \hautl1{\lambda} \le \ln s + \ln(m/2) \), ce qui donne
+    \hautl1{\lambda} \le \log s + \log(m/2) \), ce qui donne
   immédiatement
   \begin{equation}
     \hautl1 \hs
     \le
-    \hautl1 \avar + (\adim + 1) \adeg \ln(\adeg + 1)
-    + (\adim+2)(n+1) \ln (\adeg + 1)
-    + \ln(m/2)
+    \hautl1 \avar + (\adim + 1) \adeg \log(\adeg + 1)
+    + (\adim+2)(n+1) \log (\adeg + 1)
+    + \log(m/2)
   \end{equation}
   qui implique l'estimation annoncée.
 \end{proof}
@@ -5822,12 +5822,12 @@ contrôlés.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \ln(\adeg+1) n
+      (\adeg+1)^n \log(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln(m/2)
+        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + \log(m/2)
       \bigr)
     \Bigr)
   \end{align}
@@ -5898,12 +5898,12 @@ légèrement simplifiées.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \ln(\adeg+1) n
+      (\adeg+1)^n \log(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln(m/2)
+        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + \log(m/2)
       \bigr)
     \Bigr)
   \end{align}

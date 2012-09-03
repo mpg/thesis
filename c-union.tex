@@ -147,7 +147,7 @@ exceptionnelles. Par ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1
   \begin{align}
     \hautn x
     & >
-    \frac2{\eps \sqrt\tau} \bigl( 2 \hlclab + 7 \ln(n+1) \bigr)
+    \frac2{\eps \sqrt\tau} \bigl( 2 \hlclab + 7 \log(n+1) \bigr)
     + \frac{11}{ \sqrt\tau } \htcmp
     \label{e:cont-big}
     \\
@@ -231,12 +231,9 @@ exceptionnelles. Par ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1
   décroissante en \( t \). Au final,
   \begin{equation}
     - \eps \hautl2 x
-    + 2 \hlclab + 7 \ln(n+1)
     \le
     - \eps' \hautl2{ x+y } + 5 \eps \htcmp
     - \frac{ \eps \sqrt\tau }2 \hautl2 x
-    + 2 \hlclab + 7 \ln(n+1)
-    \notag
   \end{equation}
   et l'hypothèse sur \( \hautn x \) permet alors de conclure.
 \end{proof}
@@ -349,7 +346,7 @@ non nulles.
     &
     B(\eps, \tau)
     & =
-    \frac2{\eps \sqrt\tau} \bigl( 2 \hlclab + 7 \ln(n+1) \bigr)
+    \frac2{\eps \sqrt\tau} \bigl( 2 \hlclab + 7 \log(n+1) \bigr)
     + \frac{11}{ \sqrt\tau } \htcmp
     \pmm.
   \end{align}
@@ -644,10 +641,10 @@ l'énoncé suivant.
     \adeg \max \bigl( \adeg^g \hautl1{\va}, \hlclab, \htcmp \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \ln(\adeg+1) n
+      (\adeg+1)^n \log(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
-        \hautl1 \avar + (\adim + 2) \ln(\adeg + 1) (\adeg + n+1) + \ln(m/2)
+        \hautl1 \avar + (\adim + 2) \log(\adeg + 1) (\adeg + n+1) + \log(m/2)
       \bigr)
     \Bigr)
   \end{align}
@@ -670,7 +667,7 @@ l'énoncé suivant.
     \le
     \sqrt{\frac \adeg \eps}
     (2mg)^{mg+1}
-    \ln \Lambda_4
+    \log \Lambda_4
     \pmm.
   \end{equation}
 \end{lem}
@@ -702,7 +699,7 @@ l'énoncé suivant.
     =
     \left\lceil
       (2mg)^{mg}
-      \frac{ \ln \Lambda_4 }{ \ln (1 + \sqrt{\eps / \adeg}) }
+      \frac{ \log \Lambda_4 }{ \log (1 + \sqrt{\eps / \adeg}) }
     \right\rceil
     \pmm.
   \end{equation}
@@ -722,12 +719,12 @@ l'énoncé suivant.
   qui est absurde.
 
   Ainsi, on a \( p \le (m-1) \eta \). On remarque que la fonction \( t
-    \mapsto t / \ln(1+t) \) est croissante pour \( t > 0 \) et, comme on a
+    \mapsto t / \log(1+t) \) est croissante pour \( t > 0 \) et, comme on a
   supposé \( \eps \le d+1 \le 2d \), on a
   \begin{equation}
-    \frac1{ \ln(1 + \sqrt{\eps/d}) }
+    \frac1{ \log(1 + \sqrt{\eps/d}) }
     \le
-    \frac{ \sqrt2 }{ \ln(1 + \sqrt2) }
+    \frac{ \sqrt2 }{ \log(1 + \sqrt2) }
     \sqrt{ \frac d \eps }
     \le
     2 \sqrt{ \frac d \eps }
@@ -738,13 +735,13 @@ l'énoncé suivant.
     \le
     (m - 1)
     \left(
-      (2mg)^{mg} \ln \Lambda_4
+      (2mg)^{mg} \log \Lambda_4
       \cdot 2 \sqrt{ \frac d \eps }
       + 1
     \right)
     \le
     2 m
-    (2mg)^{mg} \ln \Lambda_4
+    (2mg)^{mg} \log \Lambda_4
     \sqrt{ \frac d \eps }
   \end{equation}
   qui donne directement le résultat annoncé.
@@ -787,7 +784,7 @@ On utilise ensuite le fait suivant.
     \le
     \sqrt{\frac \adeg \eps}
     (2mg)^{mg+1}
-    \ln \Lambda_4
+    \log \Lambda_4
     \left(
       3 \sqrt m
       \bigl(
@@ -865,7 +862,7 @@ sa forme produit.
     2 \cdot 5^{\card S} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (2mg)^{mg+1}
-    \ln \Lambda_4
+    \log \Lambda_4
     \left(
       3 \sqrt m
       \bigl(
@@ -882,11 +879,11 @@ sa forme produit.
   Ceci a pour effet, dans le décompte, de rajouter un facteur \(
     5^{\card\placesapx} \) et remplacer \( \eps \) par \( \eps/2 \).  On
   constate que vu la définition de \( \Lambda_4 \), en effectuant cette
-  opération, on ajoute \( \ln(2) m / (m-g) \) à son logarithme et que
+  opération, on ajoute \( \log(2) m / (m-g) \) à son logarithme et que
   \begin{equation}
-    \ln \Lambda_4 + \ln(2) m / (m-g)
+    \log \Lambda_4 + \log(2) m / (m-g)
     \le
-    \sqrt 2 \ln \Lambda_4
+    \sqrt 2 \log \Lambda_4
     \pmm.
   \end{equation}
   Les autres modifications sont évidentes.
@@ -929,12 +926,12 @@ la constante ; on aboutit au résultat suivant.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \ln(\adeg+1) n
+      (\adeg+1)^n \log(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln(m/2)
+        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + \log(m/2)
       \bigr)
     \Bigr)
     \pmm.
@@ -946,7 +943,7 @@ la constante ; on aboutit au résultat suivant.
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (2mg)^{mg+1}
-    \ln \Lambda_5
+    \log \Lambda_5
     \left(
       3 \sqrt m
       \bigl(
@@ -962,26 +959,26 @@ la constante ; on aboutit au résultat suivant.
   On commence par majorer chacun des deux choix possibles pour \( \alpha \)
   dans le corollaire précédent. Pour le premier, on a immédiatement
   \begin{equation}
-    \ln \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{1/2}
+    \log \bigl( \adeg \sbin{\adeg+n}{n}^3 \bigr)^{1/2}
     \le
-    \frac12 \ln d + \frac32 n \ln(d+1)
+    \frac12 \log d + \frac32 n \log(d+1)
     \le
     \cst{ht-v-gen1}
     \pmm.
   \end{equation}
   Pour le deuxième choix, on a
   \begin{align}
-    \ln \alpha
+    \log \alpha
     & =
     2 \hautl1 \avar
-    + 2 (\adim+2) (\adeg + n+1) \ln (\adeg+1)
-    + 2 \ln(\tfrac m 2)
+    + 2 (\adim+2) (\adeg + n+1) \log (\adeg+1)
+    + 2 \log(\tfrac m 2)
     + 3 \adeg n
     \notag
     \\ & \le
     \adeg \Bigl(
     \hautl1 \avar
-    + (\adim+2) (\adeg + n+1) \ln (\adeg+1) + \ln(\tfrac m 2)
+    + (\adim+2) (\adeg + n+1) \log (\adeg+1) + \log(\tfrac m 2)
     + 3 n
     \Bigr)
     \le
@@ -991,7 +988,7 @@ la constante ; on aboutit au résultat suivant.
   Ainsi, quel que soit le choix pour \( (s, \alpha) \) dans le corollaire
   précédent, on a assez largement
   \(
-    \ln \alpha
+    \log \alpha
     \le
     \cst{ht-v-gen1} \Lambda_5 \cdot \eps / 87
   \)
@@ -1022,7 +1019,7 @@ la constante ; on aboutit au résultat suivant.
 La dépendance en \( \eps \) dans le décompte précédent est en
 \begin{equation}
   \left( \frac1\eps \right)^{\frac12 + \frac r2 \cdot \frac m{m-g}}
-  \ln \left( \frac1\eps \right)
+  \log \left( \frac1\eps \right)
   \pmm.
 \end{equation}
 L'exposant du premier facteur tend donc vers \( (r+1) / 2 \) lorsque \( m \)
@@ -1065,12 +1062,12 @@ autres facteurs.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \ln(\adeg+1) n
+      (\adeg+1)^n \log(\adeg+1) n
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \ln (\adeg + 1) ( \adeg + n + 1 )
-        + \ln(g)
+        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + \log(g)
       \bigr)
     \Bigr)
     \pmm.
@@ -1082,7 +1079,7 @@ autres facteurs.
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (4g)^{4g^2+1}
-    \ln \Lambda_5'
+    \log \Lambda_5'
     \left(
         739 \nclmaps \cdot 7^g \adeg
         \, \eps^{-1}
@@ -1178,8 +1175,8 @@ l'inégalité de \bsc{Vojta} sous ces conditions.
   où la dernière majoration provient d'une vérification numérique pour \( g =
     1 \). De plus, on a remarqué que
   \begin{align}
-    (\adim + 2) \ln (\adeg + 1) ( \adeg + 16^g )
-    + \ln g
+    (\adim + 2) \log (\adeg + 1) ( \adeg + 16^g )
+    + \log g
     \le
     (g + 1) \adeg ( \adeg + 16^g + 1)
     \le
@@ -1238,7 +1235,7 @@ on a aisément \( \cst{ht-v-gen2} \le \cst{ht-comb} \adeg^M \) soit au final
 
 Par ailleurs, on a
 \(
-  \hautl1 \avar + 2 \adeg M \bigl( \ln \adeg + \hlpm + \htcmp \bigr)
+  \hautl1 \avar + 2 \adeg M \bigl( \log \adeg + \hlpm + \htcmp \bigr)
   \le
   4 \adeg^2 M \cst{ht-comb}
 \). Nous sommes maintenant prêts à combiner les inégalités de \bsc{Vojta} et
@@ -1274,7 +1271,7 @@ de \bsc{Mumford} pour majorer le nombre de points dans chaque cône tronqué.
   \begin{equation}
     p
     \le
-    2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
+    2 g (M-1) \frac{ (4g)^{4g^2} \log \Lambda_6 }{ \rho }
   \end{equation}
   avec \( \Lambda_6 \) comme ci-dessus.
 \end{lem}
@@ -1289,10 +1286,10 @@ de \bsc{Mumford} pour majorer le nombre de points dans chaque cône tronqué.
     p
     \le
     g (M-1) \left(
-      \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \ln(1+\rho) } + 1
+      \frac{ (4g)^{4g^2} \log \Lambda_6 }{ \log(1+\rho) } + 1
     \right)
     \le
-    2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 }{ \rho }
+    2 g (M-1) \frac{ (4g)^{4g^2} \log \Lambda_6 }{ \rho }
   \end{equation}
   compte tenu du fait que cette fois-ci il peut y avoir jusqu'à \( M-1 \)
   points par lunule de largeur \( 1 + \rho \).
@@ -1322,7 +1319,7 @@ On en déduit un décompte complet des grands points.
     p
     \le
     M^2 (M')^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(\expb/\eps)
+    \, \eps^{-r - 1/2} \log(\expb/\eps)
     \pmm.
   \end{equation}
 \end{coro}
@@ -1345,19 +1342,19 @@ On en déduit un décompte complet des grands points.
   \begin{equation}
     p
     \le
-    2 g (M-1) \frac{ (4g)^{4g^2} \ln \Lambda_6 \, 6^r }{ \rho^{r+1} }
+    2 g (M-1) \frac{ (4g)^{4g^2} \log \Lambda_6 \, 6^r }{ \rho^{r+1} }
     \, \eps^{-r/2}
     \pmm.
   \end{equation}
   On remarque maintenant que
   \begin{equation}
-    \ln \Lambda_6
+    \log \Lambda_6
     \le
-    2 \ln M + 2 \ln(\expb/\eps)
+    2 \log M + 2 \log(\expb/\eps)
     \le
-    4 \ln M \ln(\expb/\eps)
+    4 \log M \log(\expb/\eps)
     \le
-    \sqrt M \ln(\expb/\eps)
+    \sqrt M \log(\expb/\eps)
   \end{equation}
   car on a supposé\footnote{On aurait pu supposer \( \eps \le \expb^{-1} \)
     mais on aurait été gêné pour établir le corollaire~\vref{c:lang} ; on a
@@ -1378,10 +1375,10 @@ On en déduit un décompte complet des grands points.
     p
     \le
     \frac{ M^2 }{ \rho^{r+1} }
-    \, \eps^{-r/2} \ln(\expb/\eps)
+    \, \eps^{-r/2} \log(\expb/\eps)
     \le
     M^2 (M')^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(\expb/\eps)
+    \, \eps^{-r - 1/2} \log(\expb/\eps)
   \end{equation}
   compte tenu de la définition de \( \rho \).
 \end{proof}
@@ -1425,7 +1422,7 @@ On en déduit un décompte complet des grands points.
     \le
     5^{\card\placesapx}
     M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(\expb/\eps)
+    \, \eps^{-r - 1/2} \log(\expb/\eps)
     \pmm.
   \end{equation}
 \end{coro}
@@ -1617,8 +1614,8 @@ quitte à renforcer l'hypothèse d'approximation.
     >
     (\adeg-\eps) R
     + \hautl1{ \chow \avar }
-    + \adeg (\adim+1) \ln(3\adeg)
-    + \frac32 \ln(n+1)
+    + \adeg (\adim+1) \log(3\adeg)
+    + \frac32 \log(n+1)
     + (\adeg-\eps) \htcmp
   \).
 \end{lem}
@@ -1647,13 +1644,13 @@ quitte à renforcer l'hypothèse d'approximation.
     & \le
     (\adeg-\eps) \hautl2 x
     + \hautl1{ \chow \avar }
-    + \adeg (\adim+1) \ln(3\adeg)
-    + \frac32 \ln(n+1)
+    + \adeg (\adim+1) \log(3\adeg)
+    + \frac32 \log(n+1)
     \\ & \le
     (\adeg-\eps) R
     + \hautl1{ \chow \avar }
-    + \adeg (\adim+1) \ln(3\adeg)
-    + \frac32 \ln(n+1)
+    + \adeg (\adim+1) \log(3\adeg)
+    + \frac32 \log(n+1)
     + (\adeg-\eps) \htcmp
     \pmm.
   \end{align}
@@ -1669,8 +1666,8 @@ On en déduit immédiatement le corollaire pratique suivant.
   \begin{equation}
     \frac1\eps \left(
       \hautl1{ \chow \avar }
-      + \adeg (\adim+1) \ln(3\adeg)
-      + \frac32 \ln(n+1)
+      + \adeg (\adim+1) \log(3\adeg)
+      + \frac32 \log(n+1)
       + \adeg \htcmp
     \right)
     \pmm,
@@ -1720,7 +1717,7 @@ variantes similaires des autres résultats de décompte.
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (4g)^{4g^2+1}
-    \ln \Lambda_5'
+    \log \Lambda_5'
     \left(
         739 \nclmaps \cdot 7^g \adeg
         \, \eps^{-1}

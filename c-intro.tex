@@ -400,7 +400,7 @@ l'addition de \( \va \) (voir la section~\vref{sec:vaemb}).
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (4g)^{4g^2+1}
-    \ln \Lambda
+    \log \Lambda
     \left(
         739 \nclmaps \cdot 7^g \adeg
         \, \eps^{-1}
@@ -417,7 +417,7 @@ points de grande hauteur (corollaire~\vref{c:big-m=2g}).
 
 Signalons une interprétation possible de ce type d'énoncés : on a
 \begin{equation}
-  \sum\placerange \degv \ln \distv{x} \avar
+  \sum\placerange \degv \log \distv{x} \avar
   \ge
   - \eps \hautl2{x}
   - \adeg \alpha \Lambda^{(4g)^{4g^2}}
@@ -468,13 +468,13 @@ plongement de \bsc{Mumford} modifié (section~\vref{sec:vaemb}).
     + 1
     \pmm.
   \)
-  Alors on a
+  Alors on a \vspace{-10pt}
   \begin{equation}
     p
     \le
     5^{\card\placesapx}
     M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
-    \, \eps^{-r - 1/2} \ln(\expb/\eps)
+    \, \eps^{-r - 1/2} \log(\expb/\eps)
     \pmm.
   \end{equation}
 \end{thm}
@@ -649,10 +649,10 @@ Aux places archimédiennes, on dispose également de deux notions de mesure pour
 les polynômes. La première est la classique mesure de \bsc{Mahler}, définie
 pour \( v \) archimédienne par :
 \begin{equation}
-  \ln \mvm P
+  \log \mvm P
   =
   \int_0^1 \Diff t_1 \dots \int_0^1 \Diff t_n
-  \ln \av{ P(\expb^{2\pi i t_1}, \dots, \expb^{2\pi i t_n}) }
+  \log \av{ P(\expb^{2\pi i t_1}, \dots, \expb^{2\pi i t_n}) }
 \end{equation}
 si \( P \neq 0 \) et \( \mvm0 = 0 \) ; aux places ultramétriques on notera
 \( \mvm P = \nv\infty P \).
@@ -695,9 +695,9 @@ On rappelle au passage la définition du nombre de \bsc{Stoll}
 \end{equation}
 et les majorations élémentaires
 \begin{align} \label{e:maj-stoll}
-  \gamma_n & \le \frac{1 + \ln n}2 \le \ln(n+1)
+  \gamma_n & \le \frac{1 + \log n}2 \le \log(n+1)
   &
-  \stoll n & \le \frac{(n+1) \ln(n+1)}2 \le n \ln(n+1)
+  \stoll n & \le \frac{(n+1) \log(n+1)}2 \le n \log(n+1)
 \end{align}
 obtenues en comparant avec des intégrales, par exemple.
 
@@ -762,7 +762,7 @@ coefficients) comme
   =
   \sum_{v}
   \degv
-  \ln \nv\star\truc
+  \log \nv\star\truc
   \pmm,
 \end{equation}
 où \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \),
@@ -799,7 +799,7 @@ cas particulier d'une forme de \bsc{Chow} :
 \begin{equation} \label{e:ht-pph-1}
   \abs{ \hautl\htpph{ \avar } - \hautl1{ \avar } }
   \le
-  \ln(n + 1) (\dim \avar + 1) \deg \avar
+  \log(n + 1) (\dim \avar + 1) \deg \avar
   \pmm.
 \end{equation}
 
@@ -969,8 +969,8 @@ cas.
 
 \begin{nota} \label{n:vaemb}
   On fixe désormais des constantes et formes telles que données par les deux
-  lemmes précédents et le fait~\vref{f:htcmp}. On note de plus \( \hlclab = \ln
-    \hmclab \) et \( \hlpm = \ln \hmpm \).
+  lemmes précédents et le fait~\vref{f:htcmp}. On note de plus \( \hlclab = \log
+    \hmclab \) et \( \hlpm = \log \hmpm \).
 \end{nota}
 
 \begin{rem} \label{r:vaemb}
@@ -998,7 +998,7 @@ quantité est celle notée \( h_0(\va) \) dans la référence en question
 
 La proposition~3.9 page~665 de la référence citée dit alors qu'on peut choisir
 \begin{equation}
-  \htcmp = 4^{g+1} \vaht + 3g \ln 2
+  \htcmp = 4^{g+1} \vaht + 3g \log 2
   \pmm.
 \end{equation}
 Par ailleurs, leur proposition~3.7 page~662 donne une famille totalement
@@ -1542,7 +1542,7 @@ montre que c'est possible.
   \end{equation}
 
   On met alors ces estimations bout à bout et on utilise la majoration
-  classique \( \gamma_n \le (1 + \ln n)/2 \) pour obtenir
+  classique \( \gamma_n \le (1 + \log n)/2 \) pour obtenir
   \begin{align}
     \distalgv x \avar
     & \le
