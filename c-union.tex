@@ -460,7 +460,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
 
 \begin{rem} \label{r:app-prod}
   Dans l'application prévue, les paramètres seront choisis de la façon
-  suivante.  L'ensemble \( A \) un sous-ensemble de
+  suivante.  L'ensemble \( A \) sera un sous-ensemble fini de
   \( \bigl( \va(\Qbar) \setminus \avar(\Qbar) \bigr) \cap \grp \) avec \( \grp
   \) un sous-groupe de rang fini de \( \va(\Qbar) \) et
   \( H \) la hauteur induite sur cet ensemble par le choix d'un plongement
@@ -469,8 +469,9 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
   \( \degv = [\cdn_v : \Q_v] / [\cdn : \Q] \) est le degré local divisé par le
   degré global. En revanche, le choix des constantes \( c_v \) dépendra de
   l'application envisagée. On reconnaît la condition sur la famille
-  \( \lambda \), et la fonction \( g \) est alors donnée par l'un des énoncés
-  de la section précédente.
+  \( \lambda \), et la fonction \( g \) sera alors donnée par l'un des énoncés
+  majorant le cardinal d'ensembles du type \( E'(\eps, S, \lambda) \)
+  que nous aurons établi.
 \end{rem}
 
 \begin{proof}
@@ -531,6 +532,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
       (\lambda_v)_{v \in T}
       \text{ tel que }
       \lambda_v \degv \card T \in \N
+      \ \forall v \in T
       \text{ et }
       \sum_{v \in T} \lambda_v \degv = 1
     }
@@ -558,7 +560,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
     \prod_{v \in S \setminus T} c_v^\degv
   \end{align}
   d'où \( x \in E(\eps, T) \). Par ailleurs, si \( H(x) = 1 \) il est clair
-  que \( x \in E'(\eps, S, \lambda) \) pour n'importe quelle famille \(
+  que \( x \in E'(\eps, T, \lambda) \) pour n'importe quelle famille \(
     \lambda \in C \), on suppose donc \( H(x) > 1 \) et on associe à \( x \)
   une famille \( \lambda(x) \) comme en~\eqref{e:x2wt}. Cette fois-ci, les \(
     \lambda_v(x) \) pour \( v \in T \) sont tous positifs ou nuls. Par
@@ -1447,7 +1449,8 @@ On en déduit immédiatement un décompte des points entiers d'un ouvert affine,
 dans le cas où \( \va \) est simple.
 
 \begin{coro} \label{c:lang}
-  Soient \( \cdn \) un corps de nombres, \( r \) le rang de \( \va(\cdn) \) et
+  Supposons que \( \va \) est simple et
+  soient \( \cdn \) un corps de nombres, \( r \) le rang de \( \va(\cdn) \) et
   \( \placesapx \) un ensemble fini de places de
   \( \cdn \), contenant toutes les places archimédiennes. Le nombre de points
   \( \placesapx \)-entiers sur \( \cdn \) de \( \va \setminus \zeros{\vp[0]} \)
