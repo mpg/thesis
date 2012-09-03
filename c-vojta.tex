@@ -114,8 +114,9 @@ convenables des formes linéaires abéliennes associées
 satisfaisant~\eqref{e:clab-norm} et~\eqref{e:clab-loc}.
 
 \begin{lem} \label{l:wt-choose-gen}
-  Soit \( \zeta \) un réel positif. Il existe des entiers \( \wt* \in 2^\N
-    3^\N \) tels que, pour tout \( \fct \in \set{1, \dots, m} \) :
+  Soit \( \zeta > 0 \) un réel et supposons qu'aucun des \( \ex* \) n'est de
+  torsion. Il existe des entiers \( \wt* \in 2^\N 3^\N \) tels que, pour tout
+  \( \fct \in \set{1, \dots, m} \) :
   \begin{equation} \label{e:wt-ratio-gen}
     \frac1{1 + \zeta}
     \le
@@ -127,7 +128,9 @@ satisfaisant~\eqref{e:clab-norm} et~\eqref{e:clab-loc}.
 \end{lem}
 
 \begin{proof}
-  On commence par choisir des rationnels \( b_\fct = 2^{b_{\fct2}}
+  L'hypothèse qu'aucun des \( \ex* \) n'est de torsion garanti que le quotient
+  des \( \hautn{ \ex* } / \hautn{ \ex[1] } \) est bien défini et n'est jamais
+  nul.  On commence par choisir des rationnels \( b_\fct = 2^{b_{\fct2}}
     3^{b_{\fct3}} \) tels que
   \begin{equation}
     \frac1{1 + \zeta}
@@ -141,7 +144,7 @@ satisfaisant~\eqref{e:clab-norm} et~\eqref{e:clab-loc}.
   \begin{equation}
     \abs*{
       b_{\fct2} \log 2 + b_{\fct3} \log 3
-      - \frac12 \log \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
+      + \frac12 \log \frac{ \hautn{\ex*} }{ \hautn{\ex[1]} }
     }
     \le
     \frac12 \log (1 + \zeta)
@@ -176,16 +179,16 @@ lemme suivant.
 
 \begin{lem}
   Soient \( \zeta > 0 \) et \( (\wt*) \) une famille d'entiers satisfaisant
-  à~\eqref{e:wt-ratio-gen}. Si de plus la famille \( (\ex*) \) satisfait
-  à~\eqref{e:Vcos}, alors pour tout \( \fct \in \set{1, \dots, m} \) on a
-  \begin{equation}
+  à~\eqref{e:wt-ratio-gen} (on suppose qu'aucun \( \ex* \) n'est de torsion).
+  Si de plus la famille \( (\ex*) \) satisfait à~\eqref{e:Vcos}, alors pour
+  tout \( \fct \in \set{1, \dots, m} \) on a
+  \(
     \hautn{\wt* \ex* - \wt** \ex**}
     \le
     \wts[1] \hautn{\ex[1]} \left(
       \zeta^2 + 2 \Vcos (1 + \zeta)
     \right)
-    \pmm.
-  \end{equation}
+  \).
 \end{lem}
 
 \begin{proof}
@@ -219,10 +222,11 @@ lemme suivant.
 \begin{nota} \label{n:wt-choose}
   On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
   donnée par l'application du lemme~\vref{l:wt-choose-gen} avec \( \zeta =
-    \sqrt{\Vcos} / 2 \).
+    \sqrt{\Vcos} / 2 \) (en effet, \eqref{e:Vbig} et \eqref{e:Vfar}
+  garantissent qu'aucun \( \ex* \) n'est de torsion).
 \end{nota}
 
-En remarquant que \( \Vcos < 1 \), le lemme précédent et la
+En remarquant que \( \Vcos < 1/2 \), le lemme précédent et la
 relation~\eqref{e:wt-ratio-gen} donnent immédiatement les relations :
 \begin{gather} \label{e:hautn-wt-diff}
   \hautn{\wt* \ex* - \wt** \ex**}
@@ -239,7 +243,7 @@ relation~\eqref{e:wt-ratio-gen} donnent immédiatement les relations :
 Les estimations de la deuxième ligne sont un peu larges mais suffiront
 amplement en pratique.
 
-Jusqu'à présent nous n'avons exploité que l'hypothèse~\eqref{e:Vcos},
+Jusqu'à présent nous avons surtout exploité l'hypothèse~\eqref{e:Vcos},
 pour~\eqref{e:hautn-wt-diff}. En tenant compte de l'hypothèse~\eqref{e:Vfar},
 on voit de plus que la suite \( \wts[1], \dots, \wts** \) décroît au moins
 comme une suite géométrique de raison inférieure à \( 1 \). Plus précisément,
@@ -598,7 +602,8 @@ une version plus précise de la mise en position de \bsc{Noether}.
     \frac{\anyvp[\anydim]}{\anyvp[0]} ) \).
 
   La projection linéaire \( \anyvar \to \proj\anydim \) obtenue en ne gardant
-  que les \( \anydim + 1 \) premières variables est un revêtement ramifié.
+  que les \( \anydim + 1 \) premières variables est un revêtement fini,
+  éventuellement ramifié.
 \end{fact}
 
 On contrôle en fait des relations de dépendance intégrale des dernières
@@ -657,7 +662,7 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
     \varfc(L_0, \truc, \dots, \truc) \) est multihomogène de degré \( \anydeg
   \) en chaque variable ; vu l'hypothèse sur \( \anyvar \), il est non nul
   grâce au théorème fondamental de l'élimination. On peut donc choisir \( L_1,
-    \dots L_\anydim \) comme dans \cite{remivg} puis continuer la preuve sans
+    \dots L_\anydim \) comme dans \cite{remivds} puis continuer la preuve sans
   autre modification.
 \end{proof}
 
@@ -671,7 +676,9 @@ Nous aurons également besoin de contrôler \( \chi^{-1} \). Le lemme suivant
 \end{lem}
 
 \begin{proof}
-  On utilise les formules de \bsc{Cramer}. On constate d'abord que la
+  On peut supposer que les coefficients de \( M \) sont premiers entre eux,
+  de sorte qu'ils sont tous majorés en valeur absolue par \( \hautm\infty M \).
+  On utilise alors les formules de \bsc{Cramer}. On constate d'abord que la
   contribution de l'inverse du déterminant s'élimine en prenant le produit sur
   toutes les places, de sorte qu'il s'agit d'estimer la hauteur de la
   comatrice. Cette dernière est à coefficients entiers, donc de norme
@@ -852,7 +859,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
 
 \begin{lem}
   Pour \( \fct \in \{ 1, \dots, m \} \) et \( \ind \in \{ \vdim* + 1,
-  \dots n \} \), on se donne :
+  \dots, n \} \), on se donne :
   \begin{enumthm}
     \item \( \Delta_\fct \in \N^* \) ;
     \item \( P\mexp*[\ind]
@@ -897,7 +904,7 @@ peu générale avant de l'appliquer au cas qui nous intéresse.
     P\mexp*[\ind, \alpha] \cdot (\vmp*[\ind])^{\Delta_\fct - \alpha}
     \pmm,
   \end{equation}
-  où \( P\mexp*[\ind] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
+  où \( P\mexp*[\ind, \alpha] \in \cdn [ \vmp*[0], \dots, \vmp*[\vdim*] ] \).
   On a alors \(
     (\vmp**)^{\Delta_\fct}
     \equiv
@@ -1446,7 +1453,7 @@ et on définit l'indice par
   \indg{b}* H
   =
   \inf \set{
-    \beta \text{ tel que } \pi_\beta (H) \neq 0
+    \beta \text{ tel que } \pi_\beta^b (H) \neq 0
   }
   \pmm,
 \end{equation}
@@ -1593,7 +1600,7 @@ tout ce qu'on aura besoin de savoir sur le degré.
   \) n'ayant pas d'influence sur le degré, il suffit de regarder l'action de
   la multiplication par \( \wt* \). Or, celle-ci pouvant être représentée
   globalement par des formes de degré \( \wts* \), en tirant en arrière par
-  \( \wemb[\wt*, p]''(\var*) \) une famille de \( \vdim* \) hyperplans
+  \( \wemb[\wt*, p]'' \) une famille de \( \vdim* \) hyperplans
   génériques sur le second facteur, on obtient des hypersurfaces génériques de
   degré \( \wts* \) qui coupent donc \( \var* \) en \( \vdeg* \wt*^{2\vdim*}
   \) points.
@@ -1695,13 +1702,13 @@ et \( \ftarget \) est somme directe de tels espaces.
 
 \begin{proof}
   Pour choisir un indice \( \imp \) dans \( \stairs \), on peut commencer par
-  choisir \( \imp*[\vdim*+1] \) entre \( 0 \) et \( \vdeg* \) pour tout \(
+  choisir \( \imp*[\vdim*+1] \) entre \( 0 \) et \( \vdeg* - 1 \) pour tout \(
     \fct \), ce qui représente \( \prod\fctrange \vdeg* \) possibilités.
 
   On peut ensuite choisir des entiers \( \imp[1][0], \dots \imp[m][0] \)
   sujets à la seule condition
   \begin{equation}
-    \wtsum*(\lambda) \le \delta \epsi \pmm.
+    \wtsum*(\lambda) < \delta \epsi \pmm.
   \end{equation}
   Le lemme~2.14.5 de \cite{farhith} donne le nombre de choix possibles, qui
   est
@@ -1995,10 +2002,10 @@ Commençons par rappeler la version que nous utiliserons du classique lemme de
 \end{fact}
 
 \begin{proof}
-  C'est le lemme de \bsc{Siegel} de \bsc{Bombieri} et \bsc{Vaaler} tel
-  qu'énoncé dans~\cite{bogf}. Notons que des versions plus précises
-  existent, mais les améliorations ne concernent que des termes qui sont
-  négligeables dans notre situation et n'ont donc pas d'intérêt ici.
+  C'est le lemme de \bsc{Siegel} de \bsc{Bombieri} tel qu'énoncé
+  dans~\cite{bogf}. Notons que des versions plus précises sont disponibles,
+  mais les améliorations ne concernent que des termes qui sont négligeables
+  dans notre situation et n'ont donc pas d'intérêt ici.
 \end{proof}
 
 Nous sommes maintenant en mesure de construire la forme auxiliaire.
@@ -2211,7 +2218,7 @@ des raisons techniques, on construira en fait deux représentations, dont
 on contrôlera respectivement les normes aux places finies ou infinies.
 
 Pour l'application considérée, on peut se restreindre au cas où \( f \) est de
-la forme \( P / \vp* \) avec \( 0 \le \vp* \le \anydim \) et \( P \in
+la forme \( P / \vp*^{\deg P} \) avec \( 0 \le \vp* \le \anydim \) et \( P \in
   \cdn[ \vp[0], \dots, \vp[\anydim+1] ] \). Par linéarité et en utilisant la
 règle de \bsc{Leibniz}, il suffit pour commencer de considérer les fonctions
 de la forme \( \vp[\indi] / \vp* \) pour \( 0 \le \indi \le \anydim+1 \) et \(
@@ -2916,9 +2923,9 @@ indice en \( x \) comme
   \indg{b}[x] \ratfi
   =
   \inf \set{
-    \wtsum[b](\imp)
+    \wtsum[b](\dermp)
     \text{ pour }
-    \imp \text{ tel que } \der[\imp] \ratfi(x) \neq 0
+    \dermp \text{ tel que } \der[\dermp] \ratfi(x) \neq 0
   }
   \pmm,
 \end{equation}
@@ -2927,10 +2934,12 @@ où l'indice est infini.
 
 \begin{rem} \label{r:ind-basis}
   La définition ci-dessus fait usage d'une base de dérivations de \(
-    \cdn(\var*) \) \lat{via} les applications \( \der[\imp] \) (voir le début
+    \cdn(\var*) \) \lat{via} les applications \( \der[\dermp] \) (voir le début
   de la sous-section~\vref{sec:vojta-param}). Cependant, elle ne dépend pas de
-  la base choisie car chaque \( \lgr{\dermp*} \), et donc \(
-    \wtsum[b](\dermp) \), est bien sûr invariant par changement de base.
+  la base choisie, car seul compte l'ordre des opérateur différentiels sur
+  chaque facteur (correspondant à \( \lgr{\dermp*} \) ci-dessus), ordre qui
+  est indépendant de l'expression de ces opérateurs en fonction de telle ou
+  telle base de dérivations.
 \end{rem}
 
 \begin{lem} \label{l:indice-inversible}
@@ -3973,7 +3982,7 @@ On considère à cet effet la projection linéaire \( \pi \) de \(
   (\projd)^m \) sur cet espace obtenue en
 conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur.
 Cette projection fait apparaître \( \var \), ou plus précisément son image par
-\( \vadapt* \circ \vaemb \), comme un revêtement ramifié de l'espace
+\( \vadapt* \circ \vaemb \), comme un revêtement (ramifié) de l'espace
 d'arrivée, car ce plongement est adapté.  Algébriquement, ceci signifie que
 l'anneau des coordonnées homogènes de \( \var \) est une extension de type
 fini de \( \cdn[

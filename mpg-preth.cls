@@ -836,7 +836,7 @@
 % misc (ok) [[2
 %
 \newcommand \rdiv  { \rho\sb{\mathrm{div }} }
-\newcommand \relim { \rho\sb{\mathrm{elim}} }
+\newcommand \relim { \rho\sb{\mathrm{\acute elim}} }
 \newcommand \rfull { \rho }
 
 % Parametrisation and adapted embeddings [[2
