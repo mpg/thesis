@@ -223,7 +223,11 @@ lemme suivant.
   On choisit désormais et jusqu'à la fin du chapitre une famille \( (\wt*) \)
   donnée par l'application du lemme~\vref{l:wt-choose-gen} avec \( \zeta =
     \sqrt{\Vcos} / 2 \) (en effet, \eqref{e:Vbig} et \eqref{e:Vfar}
-  garantissent qu'aucun \( \ex* \) n'est de torsion).
+  garantissent qu'aucun \( \ex* \) n'est de torsion) et \( \wt[1] \) assez
+  grand\footnote{Ce qui sera utilisé à la section~\vref{sec:vojta-extrap-core},
+    voir en particulier~\eqref{e:prod-lem-final} et le dernier paragraphe de
+    la section citée.} (ce qui est possible car seuls les rapports entre les
+  différents \( \wt* \) importent).
 \end{nota}
 
 En remarquant que \( \Vcos < 1/2 \), le lemme précédent et la
@@ -2336,7 +2340,7 @@ relations.
   \begin{enumthm}
     \item \( \der[\derp] \omega
         = \pi\left(
-          \dfrac{ P_\dv^\derp }{ R^{2\lgr\dermp - 1} }
+          \dfrac{ P_\alpha^\derp }{ R^{2\lgr\dermp - 1} }
         \right)
       \) ;
     \item \( \deg_\vaf P_\alpha^\derp \le (2\lgr\derp - 1) \deg_\vaf S \) ;
@@ -2345,9 +2349,10 @@ relations.
         \le
         \nv1 S ^{2\lgr\derp - 1}
         \cdot \left(
-          (8\anydim)^{\lgr\derp - 1} D^{3\lgr\derp -2}
-        \right)^\dv \) où \( D = \max(\deg_\vaf S, \deg_\vafi S) \).
+          (8\anydim)^{\lgr\derp} D^{3\lgr\derp -2}
+        \right)^\dv \) où \( D = \max(\deg_\vaf S, \deg_\vafi S) \)
   \end{enumthm}
+  où le dernier point est valable en toute place \( v \).
 \end{lem}
 
 \begin{proof}
@@ -2447,13 +2452,13 @@ relations.
   \begin{align}
     \deg_\vaf P^\derp
     & \le
-    \deg_\vaf S - \lgr\ip + (2\lgr\derp - 2) \deg_\vaf S
+    \deg_\vaf S + (2\lgr\derp - 2) \deg_\vaf S
     \le
     (2\lgr\derp - 1) \deg_\vaf S
     \\
     \deg_\vafi P^\derp
     & \le
-    \deg_\vafi S - \mu + (2\lgr\derp - 2) \deg_\vafi S
+    \deg_\vafi S + (2\lgr\derp - 2) \deg_\vafi S
     \le
     (2\lgr\derp - 1) \deg_\vafi S
     \pmm.
@@ -2505,7 +2510,7 @@ relations.
   \) ;
   ceci implique le résultat annoncé vu la définition de \( Q_\derp \)
   ci-dessus et le fait que \( \binom{\lgr\derp}{\derp} \le
-    \anydim^{\lgr\derp-1} \).
+    \anydim^{\lgr\derp} \).
 \end{proof}
 
 \begin{nota} \label{n:pden-gen}
@@ -2517,17 +2522,17 @@ relations.
 \end{nota}
 
 \begin{lem} \label{l:param-any+1}
-  Avec la définition précédente, pour tous \( \ind \in \set{0, \dots, \anydim}
-  \) et \( \derp \in \N^\anydim \minusset0 \), il existe des formes
-  homogènes \( P_{\ind, \dv}^\derp \) telles que :
+  Avec la définition précédente, pour tout \( \ind \in \set{0, \dots, \anydim}
+  \), tout \( \derp \in \N^\anydim \minusset0 \) et \( \alpha \in \set{0, 1}
+  \), il existe des formes homogènes \( P_{\ind, \alpha}^\derp \) telles que :
   \begin{enumthm}
     \item \(
         \der[\derp] \frac{ \vp[\anydim+1] }{ \vp* }
         =
-        \frac{ P_{\ind, \dv}^\derp }{ (\vp*^{\anydeg+1} Q)^{2\lgr\derp} }
+        \frac{ P_{\ind, \alpha}^\derp }{ (\vp*^{\anydeg+1} Q)^{2\lgr\derp} }
       \) dans \( \cdn(\anyvar) \) ;
     \item \(
-        \deg P_{\ind, \dv}^\derp
+        \deg P_{\ind, \alpha}^\derp
         =
         4\anydeg \lgr\derp
       \) ;
@@ -2536,7 +2541,7 @@ relations.
         \le
         \nv1{ \chow\anyvar }^{2\lgr\derp}
         \cdot (8 \anydim \anydeg^3)^{\lgr\derp \dv}
-      \).
+      \) en toute place \( v \).
   \end{enumthm}
 \end{lem}
 
@@ -2588,7 +2593,7 @@ relations.
     \right)^{(2\lgr\derp-1)\anydeg}
     \\ & =
     \frac{
-      \bar P_{\ind, \dv}^\derp (\vp[0], \dots, \vp[\anydim+1])
+      \overline P_{\ind, \dv}^{\,\derp} (\vp[0], \dots, \vp[\anydim+1])
     }{
       \bigl(
         \vp*^{\anydeg+1} Q(\vp[0], \dots, \vp[\anydim+1])
@@ -2603,10 +2608,11 @@ relations.
       \bigr)^{2\lgr\derp}
     }
   \end{align}
-  où \( \bar P_{\ind, \dv}^\derp \) est l'homogénéisé de \( \tilde P_{\ind,
-      \dv}^\derp \) par rapport à \( \vp[0] \vp* \), de degré \(
-    2\anydeg(2\lgr\derp-1) \),
-  et \( P_{\ind, \dv}^\derp = \bar P_{\ind, \dv}^\derp \vp*^{\anydeg+1} Q \).
+  où \( \overline P_{\ind, \dv}^{\,\derp} \) est l'homogénéisé de
+  \( \tilde P_{\ind, \dv}^\derp \) par rapport à \( \vp[0] \vp* \), de degré
+  \( 2\anydeg(2\lgr\derp-1) \),
+  et \( P_{\ind, \dv}^\derp
+    = \overline P_{\ind, \dv}^{\,\derp} \vp*^{\anydeg+1} Q \).
   Cette dernière opération n'a pour but que de simplifier les calculs
   ultérieurs en rendant le degré exactement linéaire en \( \lgr\dermp \).
 
@@ -2617,7 +2623,7 @@ relations.
     & \le
     \nv1{ \chow\anyvar }^{2\lgr\derp - 1}
     \cdot \left(
-      (8\anydim)^{\lgr\derp - 1} \anydeg^{3\lgr\derp -2}
+      (8\anydim)^{\lgr\derp} \anydeg^{3\lgr\derp - 2}
     \right)^\dv
     \cdot
     \nv1{ \chow\anyvar } \cdot \anydeg^\dv
@@ -2638,17 +2644,17 @@ qui font l'objet du lemme suivant.
 \begin{lem} \label{l:par-anyvar-mono}
   Soient \( \ip \in \N^{\anydim+1} \) et \( M_\ind^\ip \) comme ci-dessus,
   pour \( \ind \in \set{0, \dots, \anydim} \). En conservant les notations
-  ci-dessus, pour tout \( \derp \in \N^\anydim \), il existe des formes
-  homogènes \( P^\derp_{\ip, \dv} \) telles que
+  ci-dessus, pour tous \( \derp \in \N^\anydim \) et \( \alpha \in \set{0, 1}
+  \), il existe des formes homogènes \( P^\derp_{\ip, \alpha} \) telles que
   \begin{enumthm}
     \item \( \der^\derp M_\ind^\ip
         = \frac{
-          P^\derp_{\ip, \ind, \dv}
+          P^\derp_{\ip, \ind, \alpha}
         }{
           Q_\ind^{2\lgr\derp} \vp*^{2\lgr\derp(\anydeg+1) + \lgr\ip}
         }
       \) dans \( \cdn(\anyvar) \) ;
-    \item \( \deg P^\derp_{\ip, \ind, \dv}
+    \item \( \deg P^\derp_{\ip, \ind, \alpha}
         =
         \lgr\ip + 4 \anydeg \lgr\derp
       \) ;
@@ -2659,9 +2665,9 @@ qui font l'objet du lemme suivant.
           \bigl( 8 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp }
           \cdot 2^{ \anydim \lgr\ip }
         \right)^\dv
-      \).
+      \) en toute place \( v \).
   \end{enumthm}
-  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \ind, \dv} \bigr)
+  De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \ind, \alpha} \bigr)
     \ge \ip[0]  - \derp[0] \).
 \end{lem}
 
@@ -2834,14 +2840,14 @@ appliquée successivement à chaque facteur \( \var* \).
   multidegré \(
     \alpha = (\alpha_1, \dots, \alpha_m ) \) et \( g = G /
     \prod\fctrange (\vmp*[\indt*])^{\alpha_\fct} \) avec \( \indt \in
-    \prod\fctrange \set{0, \dots, \vdim*} \). Alors, pour tout \( \dermp \in
-    \prod\fctrange \N^{\vdim*} \), il existe une forme \( P_{G, \ind,
-      \dv}^\dermp \) telle que
+    \prod\fctrange \set{0, \dots, \vdim*} \). Alors, pour tous \( \dermp \in
+    \prod\fctrange \N^{\vdim*} \) et \( \beta \in \set{0, 1} \), il existe une
+  forme \( P_{G, \ind, \dv}^\dermp \) telle que
   \begin{enumthm}
     \item \(
         \der^\dermp g
         = \frac{
-          P^\dermp_{G, \ind, \dv}
+          P^\dermp_{G, \ind, \beta}
         }{
           \prod\fctrange
           \pden*^{2\lgr{\dermp*}}
@@ -2849,10 +2855,10 @@ appliquée successivement à chaque facteur \( \var* \).
         }
       \) dans \( \cdn(\var) \) ;
     \item \(
-        \deg_\fct P^\dermp_{G, \ind, \dv}
+        \deg_\fct P^\dermp_{G, \ind, \beta}
         =
         \alpha_\fct + 4\vdeg* \lgr{\dermp*}
-      \) ;
+      \) pour tout \( \fct \) ;
     \item \(
         \nv1{ P^\dermp_{G, \ind, \dv} }
         \le
@@ -2863,9 +2869,9 @@ appliquée successivement à chaque facteur \( \var* \).
           \bigl( 8 \vdim* \vdeg*^{3} \bigr) ^{ \lgr{\dermp*} }
           \cdot 2^{ \vdim* \alpha_\fct }
         \right)^\dv
-      \).
+      \) pour tout \( v \).
   \end{enumthm}
-  De plus, \( \inda* \bigl( P^\dermp_{G, \ind, \dv} \bigr) \ge \inda*(G) -
+  De plus, \( \inda* \bigl( P^\dermp_{G, \ind, \beta} \bigr) \ge \inda*(G) -
     \wtsum*(\dermp) \).
 \end{lem}
 
@@ -3041,9 +3047,9 @@ représente à peu de chose près la norme de \( \cexa* \).
       \cexa** } \).
 
   On utilise alors le fait qu'on connaît, dans un plongement adapté, des
-  relations \( \poldep** \) liant chacune des dernières coordonnées aux
+  relations \( \poldep*[\ind] \) liant chacune des dernières coordonnées aux
   premières,  unitaires en la dernière variable (voir
-  page~\pageref{p:def-poldep}). En décomposant \( \poldep**
+  page~\pageref{p:def-poldep}). En décomposant \( \poldep*[\ind]
   \) suivant les puissances de \( \vmp** \), on voit qu'il existe des
   polynômes \( \poldep*[\ind, \alpha] \in \cdn[ \vmp*[0], \dots, \vmp*[\vdim*]
     ] \) tels que :
@@ -3978,15 +3984,15 @@ utilisant le fait suivant, conséquence du théorème du produit.
 Pour appliquer ce fait, nous devons fabriquer à partir de \( \faux**
 \) une forme sur \( \proj{\vdim_1} \times \dots \times \proj{\vdim**} \) qui
 conserve un indice comparable et dont on contrôlera degré et hauteur.
-On considère à cet effet la projection linéaire \( \pi \) de \(
-  (\projd)^m \) sur cet espace obtenue en
+On considère à cet effet la projection linéaire \( \pi \) d'un ouvert dense de
+\( (\projd)^m \) sur cet espace obtenue en
 conservant les \( \vdim* + 1 \) premières coordonnées sur chaque facteur.
 Cette projection fait apparaître \( \var \), ou plus précisément son image par
 \( \vadapt* \circ \vaemb \), comme un revêtement (ramifié) de l'espace
 d'arrivée, car ce plongement est adapté.  Algébriquement, ceci signifie que
-l'anneau des coordonnées homogènes de \( \var \) est une extension de type
-fini de \( \cdn[
-  \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
+l'anneau des coordonnées homogènes de \( \var \) est une extension finie de
+\(
+  \cdn[ \vmp[1][0], \dots, \vmp[1][{\vdim[1]}]; \dots;
   \vmp[m][0], \dots, \vmp[m][{\vdim[m]}]
   ]
 \). Le fait suivant montre que la norme \( N(\faux**) \) de \( \faux** \) dans
@@ -4314,7 +4320,11 @@ regroupées ici pour ne pas perturber le cours des sections précédentes.
 
 Tout d'abord, \( \eps \) est fixé par l'énoncé, et la famille \( \ex \)
 supposée contredire le théorème est fixée en premier, ainsi que la famille \(
-  (\wt*)_\fct \) comme indiqué à la sous-section~\vref{sec:wt}.
+  (\wt*)_\fct \) comme indiqué à la sous-section~\vref{sec:wt}. Plus
+précisément, cette famille est fixée à un facteur entier près : on prendra
+ensuite \( \wt[1] \) assez grand pour que dans~\eqref{e:prod-lem-final} la
+partie en \( \delta \, o(\wts[1]) \), qui provient de~\eqref{e:ratfh3}
+et~\eqref{e:ratfh2}, soit négligeable devant le terme en \( \delta \wts[1] \).
 
 Nous arrivons maintenant aux conditions définissant \( \varset(\ex) \). En
 fait, celles-ci sont déterminées de façon à ce que \( \va^m \in
@@ -4687,8 +4697,10 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   Soient \( \vaemb \colon \va \to \projd \) un plongement projectif,
   \( p_0 \) le point de coordonnées homogènes \( (1 {:} 0 {:} \cdots {:} 0) \)
   et \( \divi \) un hyperplan ne contenant pas \( p_0 \).  Il existe un
-  plongement \( \vaemb' \colon \va \to \projd \) dans lequel \( \divi \) admet
-  \( \vp[0] = 0 \) comme équation et tel que :
+  automorphisme \( \chi \) de \( \projd \) tel que \( \chi(\divi) \)
+  admet \( \vp[0] = 0 \) comme équation et que, si l'on note \( \vaemb' = \chi
+    \circ \vaemb \) le nouveau plongement \( \va \to \projd \) obtenu par
+  composition, on a :
   \begin{enumthm}
     \item \(
         \distv[v, \vaemb']{x}{\divi}
@@ -4722,8 +4734,10 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
         =
         \hlclab[\vaemb]
         + \frac52 \hautl{1, \vaemb} E
-      \).
+      \)
   \end{enumthm}
+  où les deux derniers points signifient qu'il s'agit de valeurs acceptables
+  pour pour ces constantes (les valeurs optimales pouvant être plus petites).
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
   à la section\vref{sec:vaemb} et la dimension ambiante sont inchangés.
 \end{lem}
@@ -4766,8 +4780,8 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   satisfait donc à la première condition.
 
   Soit maintenant \( x \) un point de \( \va \), dont on note \( C_x \in
-    \Qbar^{n+1} \) les coordonnées dans le plongement \( \vaemb \) et \(
-    C'_x = M^{-1} C_x \) les coordonnées dans le plongement \( \vaemb' \). Vu
+    \Qbar^{n+1} \) des coordonnées dans le plongement \( \vaemb \) et \(
+    C'_x = M^{-1} C_x \) des coordonnées dans le plongement \( \vaemb' \). Vu
   les expressions de \( M \) et \( M^{-1} \) on a immédiatement
   \begin{align} \label{e:plin-norm1}
     \nv1{ C _x } & \le \nv1{ L } \nv1{ C'_x }
@@ -5122,9 +5136,9 @@ section~\vref{sec:ha-prod}.
   ce qui a un sens car le dénominateur n'est pas nul, et on a bien \( \alpha_v
     \ge 1 \). Par ailleurs, on a
   \begin{equation}
-    \prod\placerange  \distv{p_i}{\divi}
+    \prod\placerange  \distv{p_i}{\divi}^\degv
     \le
-    \prod_{v \in M_\cdn} \distv{p_i}{\divi}
+    \prod_{v \in M_\cdn} \distv{p_i}{\divi}^\degv
     =
     \hautm2 \divi ^{-1}
   \end{equation}
@@ -5323,8 +5337,10 @@ sur les différents paramètres en jeu dans notre situation.
         \hlclab[\vaemb]
         \cdot \adeg
         + 2 \adeg n
-      \).
+      \)
   \end{enumthm}
+  où les deux derniers points signifient qu'il s'agit de valeurs acceptables
+  pour pour ces constantes (les valeurs optimales pouvant être plus petites).
   Par ailleurs le cardinal \( \nclmaps \) de l'ensemble de cartes introduit
   à la section~\vref{sec:vaemb} est inchangé.
 \end{lem}
@@ -5916,7 +5932,7 @@ légèrement simplifiées.
   On montre maintenant que \( \prod_{i=m}^{mg} (2i + 1) \le
     \frac12 (2mg)^{mg} \). C'est clair si \( g = 1 \)
   et dans le cas contraire on remarque qu'il s'agit d'un produit de \(
-    mg - m + 1 \) facteurs tous inférieurs à \( mg \)
+    mg - m + 1 \) facteurs tous inférieurs à \( 2mg \)
   sauf le dernier qu'on regroupe avec le premier car \( (2m +
     1)(2mg + 1) \le (2mg)^2 \) pour \( g \ge 2 \) (et
   donc \( m \ge 3 \)).
