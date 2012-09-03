@@ -351,10 +351,12 @@ Le premier résultat de décompte que nous donnons concerne le cas particulier
 où la variété approchée est un translaté d'une sous-variété abélienne de \(
   \va \).
 
-Pour simplifier, on note \( \vacst \) une constante ne dépendant que de la
-hauteur de \( \va \), qui peut être explicitée totalement, et \( N \) le
-cardinal d'un système complet de formes représentant l'addition de \( \va \)
-(voir la section~\vref{sec:vaemb}).
+Pour simplifier, on note \( \vacst \) une constante ne dépendant que de
+\( \va \) plongée, qui peut être explicitée totalement dans certains
+plongements (voir l'énoncé complet~\oref{c:all-gen} pour la valeur en fonction
+de constantes liées au plongement et la section~\vref{sec:vaemb} pour ces
+constantes) et \( N \) le cardinal d'un système complet de formes représentant
+l'addition de \( \va \) (voir la section~\vref{sec:vaemb}).
 
 \begin{thm}[corollaire~\vref{c:all-gen}]
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
@@ -387,8 +389,10 @@ cardinal d'un système complet de formes représentant l'addition de \( \va \)
       (4\adeg)^{n+1}
       + \adeg^{g+1} (g + 2) ( \adeg + n + 1 )
     \bigr)
-    \pmm.
   \end{align}
+  où \( \hautl1 \avar \) est la hauteur logarithmique d'une forme de
+  \bsc{Chow} de \( \avar \) (en utilisant la longueur aux places
+  archimédiennes, voir section~\vref{sec:ht}).
   Alors on a
   \begin{equation}
     p
@@ -748,6 +752,7 @@ Dans l'autre sens, la définition de la mesure projective donne immédiatement
 
 
 \subsection{Hauteurs}
+\label{sec:ht}
 
 On définit la hauteur additive d'une famille finie d'éléments de \( \cdn \)
 (en particulier, d'un vecteur ou d'un polynôme \lat{via} la famille de ses
