@@ -5749,7 +5749,8 @@ contrôlés.
   en remarquant que les \( P_i \) sont une spécialisation de la forme de
   \bsc{Chow} de \( \avar \) en des points (formes linéaires) de hauteur \(
     \Hautm1 \) au plus \( \adeg + 1 \) : au plus deux coefficients non
-  nuls, tous deux dans \( I_\adeg \).
+  nuls, tous deux entiers et de valeur absolue au plus
+  \( \max(1, \adeg/2) \).
 
   Si \( m = 1 \), il suffit de choisir un \( P_i \) ne s'annulant pas en
   \( x_1 \). On suppose donc désormais que \( m \ge 2 \).
@@ -5762,9 +5763,9 @@ contrôlés.
     =
     \prod\fctrange \bigl( P_1(x_i) T_1 + \dots + P_s(x_i) T_s \bigr)
   \end{equation}
-  qui est donc homogène de degré \( m \), et n'est pas le polynôme nul,
-  car un de ses coefficients est \( \prod\fctrange P_{j_i}(x_i) \) qui
-  n'est pas nul. On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
+  qui est donc homogène de degré \( m \) et n'est pas le polynôme nul,
+  car aucun des facteurs n'est nul et l'anneau ambiant est intègre.
+  On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
     \abs{\lambda_j} \le m/2 \) en lequel \( \mathcal P \) ne
   s'annule pas.
 
