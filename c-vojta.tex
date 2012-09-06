@@ -4592,7 +4592,7 @@ est majorée par \( 3\vdim \log(\Lambda^{f(\vdim)}) \) et comme de plus \( \vdim
   \le mg \) le membre de gauche de~\eqref{e:ht-T-adhoc} est majoré
 successivement par
 \begin{equation}
-  6 m^2 g \log \Lambda^{f(\vdim)}
+  6 m^2 g \log(\Lambda^{f(\vdim)})
   \le
   6 m^3 g \Lambda^{\frac1m f(\vdim)}
   \le
@@ -4610,7 +4610,7 @@ immédiatement \( (\sqrt2 \, m)^m \ge m^5 \ge 24 m^4 \).
 Prouvons maintenant que
 \begin{equation} \label{e:ht-T'-adhoc}
   \Lambda^{2\vdim f(\vdim)} \Bigl( \log B + \log(n + 1) \Bigr)
-  + 2\vdim (n + 1) \log \Lambda^{f(\vdim)}
+  + 2\vdim (n + 1) \log(\Lambda^{f(\vdim)})
   \le
   \cst{vs-ht} \Lambda^{(2\vdim + 1) f(\vdim)}
   \pmm.
@@ -4629,7 +4629,7 @@ Pour commencer, on a
 \end{align}
 Par ailleurs
 \begin{equation}
-  2 \vdim (n + 1) \log \Lambda^{f(\vdim)}
+  2 \vdim (n + 1) \log(\Lambda^{f(\vdim)})
   \le
   4 \cst{vs-ht} m^2 g \Lambda^{\frac1m f(\vdim)}
   \le
@@ -5323,7 +5323,7 @@ sur les différents paramètres en jeu dans notre situation.
         \hautl{1, \vaemb'}{\va}
         \le
         \adeg^{g+1} \hautl{1, \vaemb}{\va}
-        + 2 \adeg^{g+1} \log(n + 1) (g + 1) \deg_{\vaemb} \va
+        + 2 \adeg^{g+1} (g + 1) (\deg_{\vaemb} \va) \log(n + 1)
       \) ; \label{i:hs-vero-ht-va}
     \item \(
         \htcmp[\vaemb']
@@ -5359,19 +5359,19 @@ sur les différents paramètres en jeu dans notre situation.
   fait). Par ailleurs, la référence citée donne \( \hautl{\htpph, \vaemb'} \va
     = \adeg^{g+1} \hautl{\htpph, \vaemb} \va \) (en notant \( \Hautl\htpph \)
   la hauteur utilisée dans cette référence), dont on déduit le
-  point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées grace
+  point~\vref{i:hs-vero-ht-va} en comparant les hauteurs utilisées grâce
   à~\eqref{e:ht-pph-1} :
   \begin{align}
     \hautl{1, \vaemb'} \va
     & \le
     \hautl{\htpph, \vaemb'} \va
-    + \log(n' + 1) (g + 1) \deg_{\vaemb'} \va
+    + (g + 1) (\deg_{\vaemb'} \va) \log(n' + 1)
     \\ & \le
     \adeg^{g+1} \hautl{\htpph, \vaemb} \va
-    + \adeg^{g+1} \log(n + 1) (g + 1) \deg_{\vaemb} \va
+    + \adeg^{g+1} (g + 1) (\deg_{\vaemb} \va) \log(n + 1)
     \\ & \le
     \adeg^{g+1} \hautl{1, \vaemb} \va
-    + 2 \adeg^{g+1} \log(n + 1) (g + 1) \deg_{\vaemb} \va
+    + 2 \adeg^{g+1} (g + 1) (\deg_{\vaemb} \va) \log(n + 1)
     \pmm.
   \end{align}
 
@@ -5583,7 +5583,7 @@ sur les différents paramètres en jeu dans notre situation.
     + (g + 1) \deg \va
     \bigl(
       \adeg^g \hautl1 \hs
-      + (\adeg+1)^n \log(\adeg+1) n
+      + (\adeg+1)^n n \log(\adeg+1)
     \bigr)
   \end{align}
   et au choix :
@@ -5681,7 +5681,7 @@ sur les différents paramètres en jeu dans notre situation.
       \adeg \hlclab[\vaemb] + \frac52 \hautl{1, \vaemb} \hs
       + \frac92 \adeg n,\
       \adeg \htcmp[\vaemb] + \hautl{1, \vaemb} \hs + \frac32 \adeg n,\
-      (\adeg+1)^n \log(\adeg+1) n
+      (\adeg+1)^n n \log(\adeg+1)
     \Bigr)
     \\ & \le
     \adeg \max \bigl(
@@ -5691,7 +5691,7 @@ sur les différents paramètres en jeu dans notre situation.
     + (g + 1) \deg_{\vaemb} \va
     \bigl(
       \adeg^g \hautl{1, \vaemb} \hs
-      + (\adeg+1)^n \log(\adeg+1) n
+      + (\adeg+1)^n n \log(\adeg+1)
     \bigr)
   \end{align}
   en prenant le maximum terme par terme, assez largement pour le dernier.
@@ -5722,7 +5722,7 @@ contrôlés.
     \hautl1 \hs
     \le
     \hautl1 \avar
-    + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+    + (\adim + 2) ( \adeg + n + 1 ) \log (\adeg + 1)
     + \log(m/2)
     \pmm.
   \end{equation}
@@ -5822,11 +5822,11 @@ contrôlés.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \log(\adeg+1) n
+      (\adeg+1)^n n \log(\adeg+1)
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + (\adim + 2) ( \adeg + n + 1 ) \log (\adeg + 1)
         + \log(m/2)
       \bigr)
     \Bigr)
@@ -5898,11 +5898,11 @@ légèrement simplifiées.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \log(\adeg+1) n
+      (\adeg+1)^n n \log(\adeg+1)
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + (\adim + 2) ( \adeg + n + 1 ) \log (\adeg + 1)
         + \log(m/2)
       \bigr)
     \Bigr)
