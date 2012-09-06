@@ -106,11 +106,11 @@ Pour le cas général, l'énoncé est le suivant.
     \\
     \hautn{ x_m }
     & \ge
-    \frac8\eps
+    \frac4\eps
     \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
     \Bigl(
       \hautl1 \avar
-      + 2 \adeg m \bigl( \log \adeg + \hlpm + \htcmp \bigr)
+      + 4 \adeg m \bigl( \log \adeg + \hlpm + \htcmp \bigr)
     \Bigr)
     \quad\ \
     \label{e:Mbig-gen}
@@ -833,7 +833,7 @@ hauteur de \( Z \).
   On a \(
     \hautl1 Z
     \le
-    \bigl( 4 \hautl1 \avar / \adeg + 9 \log(n+1) + \hlpm \bigr)
+    \bigl( 2 \hautl1 \avar / \adeg + 5 \log(n+1) + \hlpm \bigr)
     \adeg^m (2m)^{ (m+1)\adim + 1}
   \).
 \end{coro}
@@ -853,15 +853,18 @@ hauteur de \( Z \).
   hauteur \( \Hautl2 \) pour les points et \( \Hautl\htpph \) est la hauteur
   projective.
 
-  Notons \( F \) l'ensemble des points de \( x \in \avar \) tels que \(
-    \hautl2 x \le 2 \miness(\avar) \) ; par définition \( F \) est dense
+  Soit \( \eta > 0 \) un réel et notons \( F \) l'ensemble des points de \( x
+    \in \avar(\Qbar) \) tels que \(
+    \hautl2 x \le \miness(\avar) + \eta \) ; par définition \( F \) est dense
   dans \( \avar \), donc \( F^m \) est dense dans \( \avar^m \) et \( s_m(F^m)
   \) est dense dans \( Z \). On applique alors le corollaire~\vref{c:ht-sm-p}
-  pour majorer la hauteur des points de \( s_m(F^m) \) et obtenir
+  pour majorer la hauteur des points de \( s_m(F^m) \) par
+  \( 4 (m-1) \bigl( \miness(\avar) + \eta \bigr) + (m-1) \hlpm \) et, cette
+  majoration étant valable quel pour tout \( \eta > 0 \), on a
   \begin{equation}
     \miness(Z)
     \le
-    8 (m-1) \miness(\avar) + (m-1) \hlpm
+    4 (m-1) \miness(\avar) + (m-1) \hlpm
     \pmm.
   \end{equation}
 
@@ -876,22 +879,22 @@ hauteur de \( Z \).
     \Bigl( \miness(Z) + (m-1) \log(n+1) \Bigr)
     (\dim Z + 1) \deg Z
     \\ & \le
-    \Bigl( 8 \miness(\avar) + \hlpm + \log(n+1) \Bigr)
+    \Bigl( 4 \miness(\avar) + \hlpm + \log(n+1) \Bigr)
     (m-1) (\adim m + 1) \deg Z
     \\ & \le
-    \Bigl( \frac8\adeg \hautl\htpph \avar + \log(n+1) + \hlpm \Bigr)
+    \Bigl( \frac4\adeg \hautl\htpph \avar + \log(n+1) + \hlpm \Bigr)
     \adim m^2 \deg Z
     \\ & \le
     \Bigl(
-    \frac8\adeg \hautl1 \avar + 8 \log(n+1) (\adim+1)
+    \frac4\adeg \hautl1 \avar + 4 \log(n+1) (\adim+1)
     + \log(n+1)
     + \hlpm
     \Bigr)
     \adim m^2 \deg Z
     \\ & \le
     \Bigl(
-    \frac4\adeg \hautl1 \avar
-    + 8 \log(n+1) + \frac12 \log(n+1)
+    \frac2\adeg \hautl1 \avar
+    + 4 \log(n+1) + \frac12 \log(n+1)
     + \frac12 \hlpm
     \Bigr)
     \adim(\adim+1) m^2 \deg Z
@@ -1213,7 +1216,7 @@ section~\vref{sec:mumford-grp}.
     - \frac\eps2 \hautn{ x_m }
     - \adeg^m (2m)^{(m+1)\adim} \htcmp
     \\ & \qquad
-    - \bigl( 4 \hautl1 \avar / \adeg + 9 \log(n+1) + \hlpm \bigr)
+    - \bigl( 2 \hautl1 \avar / \adeg + 5 \log(n+1) + \hlpm \bigr)
     \adeg^m (2m)^{ (m+1)\adim + 1}
     \\ & \qquad
     - 2(m-1) \log(n+1)
@@ -1238,7 +1241,7 @@ section~\vref{sec:mumford-grp}.
   \begin{equation}
     \frac\eps2 \hautn{ x_m }
     \le
-    4 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl1 \avar
+    2 \adeg^{m-1} (2m)^{ (m+1)\adim + 1 } \, \hautl1 \avar
     + 4 \adeg^m (2m)^{ (m+1)\adim + 2}
     \bigl( \log \adeg + \hlpm + \htcmp \bigr)
   \end{equation}
