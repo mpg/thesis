@@ -862,7 +862,7 @@
 \newcommand \cond  { \@ifstar{ \cond@ \overline }{ \cond@ {} }}
 \newcommand \condi { \@ifstar{ \condi@\overline }{ \condi@{} }}
 \newcommand \cond@  [2] { #1 C (#2) }
-\newcommand \condi@ [3] { #1 C (#2, #3) }
+\newcommand \condi@ [3] { #1 C_1 (#2, #3) }
 
 \newcommand*\utrans [2] {(#1\colon#2)}
 

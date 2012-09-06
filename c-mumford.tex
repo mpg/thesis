@@ -1371,17 +1371,16 @@ suivante.
     \le
     (1+\rho) \hautn{ x_m }
   \end{align}
-  alors il existe deux indices distincts \( i \) et \( j \), une sous-variété
-  abélienne \( \vai \) de \( \va \) et une famille de points \(
-    (z_v)\placerange \) dans \( V \) tels que :
-  \begin{enumthm}
-    \item \( z_v + \vai \subset \avar \) pour tout \( v \in \placesapx \) ;
-    \item \( \distv{ x_i }{ z_v + \vai }
-        \le
-        \hautm2{ x_i }^{-\wtapx\eps/2} \)
-      pour tout \( v \in \placesapx \) ;
-    \item \( x_i - x_j \in \vai \).
-  \end{enumthm}
+  alors il existe deux indices distincts \( i \) et \( j \) ainsi qu'une
+  sous-variété abélienne \( \vai \) de \( \va \) tels que
+  \( x_i - x_j \in \vai \) et
+  \begin{equation}
+    \prod\placerange \distv x {\utrans\avar\vai} ^\degv
+    \le
+    \hautm2 x^{-\eps/2}
+  \end{equation}
+  où \( \utrans\avar\vai \) désigne l'union des translatés de \( \vai \)
+  inclus dans \( \avar \).
 \end{conj}
 
 Autrement dit, dans les notations de la section~\vref{sec:obstruction}, la
