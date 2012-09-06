@@ -260,7 +260,8 @@ quantitative.
   \end{equation}
   points de hauteur normalisée supérieure ou égale à
   \( (1-\sqrt\tau)^{2} \, \hautn x \) (avec la convention \( (+\infty)^{-1} =
-    0 \)).
+    0 \)). En particulier, cet ensemble contient une infinité de grands points
+  (au sens précédent) dès que \( \vai(\Qbar)_\torsion \cap \grp \) est infini.
 \end{coro}
 
 \begin{proof}
@@ -286,8 +287,27 @@ quantitative.
   \( \tau \hautn x / \hautn z \).
 \end{proof}
 
+Remarquons qu'en général, les nouvelles approximations construites sont dans \(
+  \apx'(\avar, \eps') \), mais pas forcément dans \( \apx(\avar, \eps') \). On
+ne voit pas en général comment prouver que ces approximations ne tombent pas
+sur \( \avar \) (et à l'inverse, on imagine mal comment prouver qu'elles y
+sont toutes sauf un nombre contrôlé d'exceptions). Cependant, dans certains
+cas la situation est plus claire.
+
+\begin{sco} \label{s:factory-part}
+  Si \( \vai \) est une sous-variété abélienne de \( \va \) telle que \(
+    \avar = \utrans \avar \vai \), alors dans le corollaire précédent, si l'on
+  remplace \( \apx'(\avar, \eps) \) par \( \apx(\avar, \eps) \) dans
+  l'hypothèse (où il devient inutile de supposer de plus que \( \vai \) est \(
+    \eps \)-associée à \( x \) car c'est nécessairement le cas), on peut
+  également remplacer \( \apx'(\avar, \eps') \) par \( \apx(\avar, \eps') \)
+  dans la conclusion.
+\end{sco}
+
 On est donc face à un phénomène de multiplication des approximations
-exceptionnelles, quitte à changer un peu l'exposant. En quelque sorte, les
+exceptionnelles, quitte à changer un peu l'exposant, phénomène présent au
+moins dans le cas \( \avar = \utrans\avar\vai \) et dont on voit mal pourquoi
+il disparaîtrait totalement dans le cas général.  En quelque sorte, les
 approximations exceptionnelles arrivent par « grappes » : pour chaque
 approximation exceptionnelle d'exposant légèrement meilleur que celui exigé,
 de hauteur assez grande et possédant une variété associée non nulle, on a une
@@ -311,13 +331,15 @@ n'inclure qu'un point par grappe.
 Pour conclure cette discussion, énonçons de façon explicite comment une borne
 sur la hauteur des approximations exceptionnelles se déduit d'une borne sur
 leur nombre (plus précisément, une borne sur le nombre de grands points
-suffit), dans le cas particulier des translatés de sous-variétés abéliennes
-non nulles.
+suffit), dans le cas particulier où \( \avar = \utrans\avar\vai \), qui inclut
+le cas où \( \avar \) est un translaté de \( \vai \), ou plus généralement
+la somme de \( \vai \) et d'une sous-variété non abélienne, par exemple.
 
 \begin{coro} \label{c:count2ht}
-  Soit \( \avar = z + \vai \) un translaté d'une sous-variété abélienne non
-  nulle de \( \va \).  Supposons que pour un certain \( \eps_0 > 0 \) et un
-  certain \( \grp \) de type fini, il existe \( R \) et \( N \) tels que
+  Soient \( \avar \) une sous-variété de \( \va \) et \( \vai \) une
+  sous-variété abéliennes de \( \va \), telles que \( \avar = \utrans\avar\vai
+  \). Supposons que pour un certain \( \eps_0 > 0 \) et un certain \( \grp \)
+  de type fini, il existe \( R \) et \( N \) tels que
   \begin{equation}
     \card
     \set{
@@ -329,8 +351,9 @@ non nulles.
     N
     \pmm.
   \end{equation}
-  Alors, pour tout \( \eps > \eps_0 \) les points de \( \apx(\avar, \eps) \cap
-    \grp \) sont tous de hauteur normalisée inférieure ou égale à
+  Alors, pour tout \( \eps_0 < \eps \le \max(1, 3\eps_0) \),  les points de
+  \( \apx(\avar, \eps) \cap \grp \) sont tous de hauteur normalisée inférieure
+  ou égale à
   \begin{equation}
     \max \Bigl(
       \bigl( (N + 1)/2 \bigr)^2 \hmin(\vai \cap \grp) \tau^{-1},\
@@ -360,7 +383,8 @@ non nulles.
   corollaire~\vref{c:factory}. Par ailleurs, \( \vai \) est une sous-variété
   abélienne \( \eps \)-associée à \( x_0 \) et le choix de \( \tau \) donne
   \( \eps' = \eps_0 \) dans les notations de ce corollaire, qui s'applique
-  donc et donne
+  donc (car de plus \( \tau \le 1 \) et \( \eps \le 1 \)) et donne, compte
+  tenu du scolie~\vref{s:factory-part} :
   \begin{align}
     N
     & \ge

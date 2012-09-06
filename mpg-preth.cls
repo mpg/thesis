@@ -864,5 +864,7 @@
 \newcommand \cond@  [2] { #1 C (#2) }
 \newcommand \condi@ [3] { #1 C (#2, #3) }
 
+\newcommand*\utrans [2] {(#1\colon#2)}
+
 % [[1
 % vim: ft=tex fdm=marker fmr=[[,]] fdl=1 spell spelllang=fr,en
