@@ -641,10 +641,10 @@ l'énoncé suivant.
     \adeg \max \bigl( \adeg^g \hautl1{\va}, \hlclab, \htcmp \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \log(\adeg+1) n
+      n (\adeg+1)^n \log(\adeg+1)
     \\ & \qquad
       + \adeg^g \bigl (
-        \hautl1 \avar + (\adim + 2) \log(\adeg + 1) (\adeg + n+1) + \log(m/2)
+        \hautl1 \avar + (\adim + 2) (\adeg + n+1) \log(\adeg + 1) + \log(m/2)
       \bigr)
     \Bigr)
   \end{align}
@@ -735,13 +735,13 @@ l'énoncé suivant.
     \le
     (m - 1)
     \left(
-      (2mg)^{mg} \log \Lambda_4
+      (2mg)^{mg} (\log \Lambda_4)
       \cdot 2 \sqrt{ \frac d \eps }
       + 1
     \right)
     \le
     2 m
-    (2mg)^{mg} \log \Lambda_4
+    (2mg)^{mg} (\log \Lambda_4)
     \sqrt{ \frac d \eps }
   \end{equation}
   qui donne directement le résultat annoncé.
@@ -784,7 +784,7 @@ On utilise ensuite le fait suivant.
     \le
     \sqrt{\frac \adeg \eps}
     (2mg)^{mg+1}
-    \log \Lambda_4
+    (\log \Lambda_4)
     \left(
       3 \sqrt m
       \bigl(
@@ -862,7 +862,7 @@ sa forme produit.
     2 \cdot 5^{\card S} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (2mg)^{mg+1}
-    \log \Lambda_4
+    (\log \Lambda_4)
     \left(
       3 \sqrt m
       \bigl(
@@ -926,11 +926,11 @@ la constante ; on aboutit au résultat suivant.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \log(\adeg+1) n
+      n (\adeg+1)^n \log(\adeg+1)
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + (\adim + 2) ( \adeg + n + 1 ) \log (\adeg + 1)
         + \log(m/2)
       \bigr)
     \Bigr)
@@ -943,7 +943,7 @@ la constante ; on aboutit au résultat suivant.
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (2mg)^{mg+1}
-    \log \Lambda_5
+    (\log \Lambda_5)
     \left(
       3 \sqrt m
       \bigl(
@@ -1062,11 +1062,11 @@ autres facteurs.
     \bigr)
     + (g + 1) \deg \va
     \Bigl(
-      (\adeg+1)^n \log(\adeg+1) n
+      n (\adeg+1)^n \log(\adeg+1)
     \\ & \qquad
       + \adeg^g \bigl (
         \hautl1 \avar
-        + (\adim + 2) \log (\adeg + 1) ( \adeg + n + 1 )
+        + (\adim + 2) ( \adeg + n + 1 ) \log (\adeg + 1)
         + \log(g)
       \bigr)
     \Bigr)
@@ -1079,7 +1079,7 @@ autres facteurs.
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (4g)^{4g^2+1}
-    \log \Lambda_5'
+    (\log \Lambda_5')
     \left(
         739 \nclmaps \cdot 7^g \adeg
         \, \eps^{-1}
@@ -1175,7 +1175,7 @@ l'inégalité de \bsc{Vojta} sous ces conditions.
   où la dernière majoration provient d'une vérification numérique pour \( g =
     1 \). De plus, on a remarqué que
   \begin{align}
-    (\adim + 2) \log (\adeg + 1) ( \adeg + 16^g )
+    (\adim + 2) ( \adeg + 16^g ) \log (\adeg + 1)
     + \log g
     \le
     (g + 1) \adeg ( \adeg + 16^g + 1)
@@ -1342,7 +1342,7 @@ On en déduit un décompte complet des grands points.
   \begin{equation}
     p
     \le
-    2 g (M-1) \frac{ (4g)^{4g^2} \log \Lambda_6 \, 6^r }{ \rho^{r+1} }
+    2 g (M-1) \frac{ (4g)^{4g^2} (\log \Lambda_6) \, 6^r }{ \rho^{r+1} }
     \, \eps^{-r/2}
     \pmm.
   \end{equation}
@@ -1717,7 +1717,7 @@ variantes similaires des autres résultats de décompte.
     2 \cdot 5^{\card \placesapx} \cdot
     \sqrt{ \frac{\adeg}\eps }
     (4g)^{4g^2+1}
-    \log \Lambda_5'
+    (\log \Lambda_5')
     \left(
         739 \nclmaps \cdot 7^g \adeg
         \, \eps^{-1}
