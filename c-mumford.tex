@@ -1014,7 +1014,7 @@ cette section.  On peut voir qu'il existe un ouvert dense de \( \avar^m \) où
 car la condition correspondante est ouverte et le lemme précédent affirme que
 l'ouvert n'est pas vide. On en déduit immédiatement que les fibres de \(
   {s_m}_{|\avar} \) sont génériquement des translatés de \( \delta(S_\avar) \)
-; en particulier, \( \dim s_m(\avar^m) = m \adim - \dim S_\avar \).
+; en particulier \( \dim s_m(\avar^m) = m \adim - \dim S_\avar \).
 
 On peut alors préciser l'estimation du degré de l'image :
 \begin{equation}
@@ -1040,11 +1040,21 @@ apparaissant dans~\eqref{e:sh-inter} soient tous des translatés de \(
 \end{align}
 d'après la formule multinomiale.
 
+Remarquons que les estimations ci-dessus peuvent être obtenues sous une
+hypothèse plus faible : en utilisant un argument analogue à la démonstration
+de la proposition~3.3 de \cite{remdcl}, on peut montrer que la composante
+neutre de \( S_V \) est la seule composante contenant \( 0 \) de \(
+  \cap_{i=1}^{m} (V - x_i) \) sur un ouvert dense de \( V^m \) dès que \( m
+  \ge u \). L'hypothèse plus forte du lemme précédent donne par contre un
+renseignement plus précis sur les fibres.
+
 En revanche, notons que, même en prenant \( m \) extrêmement grand, il y aura
-toujours des fibres contenant strictement le stabilisateur : par exemple, il
-est clair que \( s_m^{-1}(0) = \delta(\avar) \). Un autre exemple est celui où
-\( \avar \) contient la somme de deux courbes \( C_1 \) et \( C_2 \) : alors
-tous les points de \( \delta(C_1) + C_2^m \) ont la même image.
+toujours des fibres de dimension plus grande que le stabilisateur : par
+exemple, il est clair que \( s_m^{-1}(0) = \delta(\avar) \). Un autre exemple
+est celui où \( \avar \) contient la somme de deux courbes (non elliptiques)
+\( C_1 \) et \( C_2 \) : alors, pour tous \( x \in C_1 \) et \( y \in C_2^m
+\), on a \( s_m^{-1}(s_m(\delta(x) + y)) \cap V^m \supset \delta(C_1) + y \),
+qui en général peut être de dimension plus grande que le stabilisateur.
 
 
 
