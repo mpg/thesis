@@ -847,17 +847,20 @@ On utilise ensuite le fait suivant.
 \end{proof}
 
 Il ne reste maintenant plus qu'à passer à une hypothèse d'approximation sous
-sa forme produit.
+sa forme produit. Pour que la condition écrite sous cette forme ait un sens,
+on fixe un corps de nombres \( \cdn \) (contenant un corps de définition des
+variétés considérées et du plongement projectif utilisé) sur lequel on exigera
+que tous les \( x_i \) soient définis ; ceci fixe l'ensemble de places \(
+  \placesapx \) utilisé. On fixe également \( \grp = \va(\cdn) \) et on
+continue à noter \( r \) son rang.
 
 \begin{coro}
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
-    \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
-    \grp \) et \( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
-    x_p) \) ; on suppose que cette famille satisfait à \( \cond{\eps/2d} \) et
-  aux conditions suivantes, pour tout \( i \) :
+    \adim \).  On fixe un réel \( \eps > 0 \) et un entier \( m \ge g + 1 \).
+  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \va(\cdn) \)
+  satisfaisant à \( \cond{\eps/2d} \) et aux conditions suivantes, pour tout
+  \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -917,13 +920,11 @@ la constante ; on aboutit au résultat suivant.
 
 \begin{coro} \label{c:big-gen-prod}
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
-  abélienne \( \vai \), de \( \va \) de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \), un réel \( \eps > 0 \) et un entier \( m
-    \ge g + 1 \). Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
-    \grp \) et \( \placesapx \) un ensemble fini de places de \( \Q(x_1, \dots,
-    x_p) \) ; on suppose que cette famille satisfait à \( \cond{\eps/2d} \) et
-  aux conditions suivantes, pour tout \( i \) :
+  abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
+    \adim \).  On fixe un réel \( \eps > 0 \) et un entier \( m \ge g + 1 \).
+  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \va(\cdn) \)
+  satisfaisant à \( \cond{\eps/2d} \) et aux conditions suivantes, pour tout
+  \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -1055,14 +1056,12 @@ absolue, sans pour autant coûter beaucoup plus cher que \( g+1 \) sur les
 autres facteurs.
 
 \begin{coro} \label{c:big-m=2g}
-  Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
+  Soient \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
-  \( x_1, \dots, x_p \) de points de \( \grp \) et \( \placesapx \) un ensemble
-  fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
-  satisfait à \( \cond{\eps/2d} \) et aux conditions suivantes, pour tout \( i
-  \) :
+    \adim \).
+  Soient de plus un réel \( \eps > 0 \) et une famille \( x_1, \dots, x_p \)
+  de points de \( \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et aux
+  conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
@@ -1408,11 +1407,10 @@ On en déduit un décompte complet des grands points.
 
 \begin{coro} \label{c:big-any}
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
-  dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
-    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
-  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
-  satisfaisant à \( \cond{\eps/M'} \) et aux conditions suivantes, pour tout
-  \( i \) :
+  dimension \( \adim \).
+  Soient de plus un réel \( \eps > 0 \) et une famille \( x_1, \dots, x_p \)
+  de points de \( \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et aux
+  conditions suivantes, pour tout \( i \) :
   \begin{align}
     0
     & < \prod\placerange \distv{x_i} \avar^\degv
@@ -1721,11 +1719,10 @@ variantes similaires des autres résultats de décompte.
 \begin{coro} \label{c:all-gen}
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
-  \( x_1, \dots, x_p \) de points de \( \grp \) et \( \placesapx \) un ensemble
-  fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
-  satisfait à \( \cond{\eps/2d} \) et que, pour tout \( i \) :
+    \adim \).
+  Soient de plus un réel \( \eps > 0 \) et une famille \( x_1, \dots, x_p \)
+  de points de \( \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et aux
+  conditions suivantes, pour tout \( i \) :
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
