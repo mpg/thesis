@@ -1,0 +1,60 @@
+
+Warning: page and line numbers at the start of a line (before the colon) are
+references to the original list; page and line numbers in the replies (after
+the colon), however, refer to the *new* version of the manuscript!
+
+----- BEGIN new p/l numbers need updating -----
+
+p10 l-4: see p12 l1 to l5.
+
+p11 l11: done.
+
+p11 l-1: see p12 l3.
+
+p17 l12: done (l-7 now).
+
+p25 l8: I tend to disagree. Theorem 2.1.1 is trivial if \eps \ge 1, as
+observed on p26 l7-9. Corollaires 2.7.6 and 2.7.9 are correct for any \eps
+since Theorem 2.1.1 is. Or did I miss something?
+
+p25 l10: in general, x_i means any point, while e_i means the points
+contradicting theorem 2.1.1 that are fixed from section 2.2 to section 2.6
+included, to distinguish them from random points denoted by x_i (eg at the
+beginning of section 2.2.5).
+
+p53 l-6 and -5: removed them, there presence was a mistake.
+
+p57 l1: that's not what I really meant, corrected (p56 l-6 now).
+
+p59 l-10: note means footnote here; removed the superflous instance.
+
+p80 l11&12: done, p79 l-4 & -5 now.
+
+p96 l-8: done.
+
+p96 l-1: done.
+
+p97 l13: fixed.
+
+p97 l11: fixed by adapting the result (which is meant to be used with the
+normalized height in (3.16)).
+
+p97 l-7 & l-4: done.
+
+p102 l12&13: done.
+
+p102 l-2: ok.
+
+p103 l9: removed this sentence (it belonged to a previous version of the
+lemma).
+
+p114 l8: you're right, in general it doesn't. I modified these paragraphs. Now
+I only state that *in some particular cases* it does imply what I said, and
+also add some heuristic comments regarding the general case.
+
+p115 l-5: an argument was missing from my proof, however in the case
+considered here, I believe the result was correct, see the corrected argument.
+
+p132: fixed.
+
+----- END new p/l numbers need updating -----
