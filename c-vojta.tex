@@ -2643,10 +2643,10 @@ Nous sommes maintenant prêts à étudier les dérivées des monômes de la form
 qui font l'objet du lemme suivant.
 
 \begin{lem} \label{l:par-anyvar-mono}
-  Soient \( \ip \in \N^{\anydim+1} \) et \( M_\ind^\ip \) comme ci-dessus,
+  Soient \( \ip \in \N^{\anydim+2} \) et \( M_\ind^\ip \) comme ci-dessus,
   pour \( \ind \in \set{0, \dots, \anydim} \). En conservant les notations
   ci-dessus, pour tous \( \derp \in \N^\anydim \) et \( \alpha \in \set{0, 1}
-  \), il existe des formes homogènes \( P^\derp_{\ip, \alpha} \) telles que
+  \), il existe des formes homogènes \( P^\derp_{\ip, \ind, \alpha} \) telles que
   \begin{enumthm}
     \item \( \der^\derp M_\ind^\ip
         = \frac{
@@ -2663,7 +2663,7 @@ qui font l'objet du lemme suivant.
         \le
         \nv1{ \chow\anyvar }^{2\lgr\derp}
         \left(
-          \bigl( 8 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp }
+          \bigl( 16 \anydim \anydeg^{3} \bigr) ^{ \lgr\derp }
           \cdot 2^{ \anydim \lgr\ip }
         \right)^\dv
       \) en toute place \( v \).
@@ -2734,18 +2734,21 @@ qui font l'objet du lemme suivant.
     \pmm,
   \end{align}
   où la somme est prise sur l'ensemble
-  \begin{equation}
-    \sumset' = \left\{
+  \begin{align*}
+    \sumset' = \Bigl\{
       \gmp\nu \in \sumset
+      &
       \text{ tel que }
-      \gmp\nu[\ind][\alpha_\ind] = 0
-      \text{ et, \( \forall (\indi, \alpha_\indi) \), }
+      \gmp\nu[\indi, \alpha_\indi][\indi] = 0
+      \\
+      &
+      \text{ et, pour tout \( (\indi, \alpha_\indi) \) avec \( l \le s \) : }
       \supp\indl \subset \set{\ind, \indi}
       \text{ et }
       \indl[\indi] \le 1
-    \right\}
+    \Bigr\}
     \pmm.
-  \end{equation}
+  \end{align*}
 
   On remarque alors que
   \(
@@ -2797,8 +2800,10 @@ qui font l'objet du lemme suivant.
     \cdot (8 \anydim \anydeg^3)^{\lgr\derp \dv}
   \end{align}
   d'après le lemme précédent et le fait que
-  \( \nv1 Q ^{2\lgr{\gmp\nu}} \le \nv1{ P_{\ind, \dv}^{\gmp\nu} } \) pour tout
-  \( \gmp\nu \).  On remarque alors que l'ensemble de sommation \( \sumset' \)
+  \( \nv1 Q ^{2\lgr{\gmp\nu}} \) admet le même majorant que celui donné par le
+  lemme en question pour \( \nv1{ P_{\ind, \dv}^{\gmp\nu} } \)
+  pour tout \( \gmp\nu \).
+  On remarque alors que l'ensemble de sommation \( \sumset' \)
   est contenu dans \( \sumset \) qui s'écrit aussi
   \begin{equation}
     \prod_{p = 1}^{\anydim} \left\{
@@ -2866,7 +2871,7 @@ appliquée successivement à chaque facteur \( \var* \).
         \prod\fctrange
         \nv1{ \varfca* }^{2\lgr{\dermp*}}
         \left(
-          \bigl( 8 \vdim* \vdeg*^{3} \bigr) ^{ \lgr{\dermp*} }
+          \bigl( 16 \vdim* \vdeg*^{3} \bigr) ^{ \lgr{\dermp*} }
           \cdot 2^{ \vdim* \alpha_\fct }
         \right)^\dv
       \) pour tout \( v \).
@@ -3494,7 +3499,7 @@ des propriétés suivantes.
     \\ & \qquad
     + \sum\fctrange \bigl(
       2 \lgr{\dermp*} \hautl1{ \varfca* }
-      + \lgr{\dermp*} ( \log(8g) + 3 \log B )
+      + \lgr{\dermp*} ( \log(16g) + 3 \log B )
       + g (\Dir*) \log 2
     \bigr)
   \\ & \le
@@ -3505,7 +3510,7 @@ des propriétés suivantes.
     \\ & \qquad
     + \bigl(
       2 g B ( \log B + \log( n + 1 ) )
-      + \log(8g) + 3 \log B
+      + \log(16g) + 3 \log B
     \bigr)
     \sum\fctrange \lgr{\dermp*}
   \end{align}
@@ -4630,7 +4635,7 @@ qui aboutit largement à l'estimation annoncée.
 
 On a également, en utilisant~\eqref{e:adhoc-gen} :
 \begin{align}
-  & 2 g B ( \log B + \log( n + 1 ) ) + \log(8g) + 3 \log B
+  & 2 g B ( \log B + \log( n + 1 ) ) + \log(16g) + 3 \log B
   \\ & \qquad \le
   \frac2{1\,275} \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + \frac{ 4 \Lambda^{f(\vdim)} }{1\,275}
