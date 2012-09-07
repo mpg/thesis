@@ -2231,8 +2231,9 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
   \cdn[X]_{\ideal\anyvar} \) que dans \( \cdn(\var) \).
 
 \begin{lem} \label{l:param-any-easy}
-  Soit \( \derp \in \N^\anydim \) ; on note \( \supp \derp \) l'ensemble des
-  indices \( \alpha \) tels que \( \derp[\alpha] \neq 0 \). Alors, pour tout
+  Soit \( \derp = (\derp[1], \dots, \derp[\anydim]) \in \N^\anydim \) et
+  posons \( \derp[0] = 0 \) ; on note \( \supp \derp \) l'ensemble des indices
+  \( \alpha \) tels que \( \derp[\alpha] \neq 0 \). Alors, pour tout
   \( (\ind, \indi) \in \set{0, \dots, \anydim}^2 \) tel que  \( \ind \neq
     \indi \) on a
   \begin{equation}
@@ -2295,7 +2296,7 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
     = \diff_\indi \frac{ \vp[0] }{ \vp* }
     = 0
   \).
-  Ceci donne le premier cas ; pour le deuxième, on écrit
+  Ceci donne le premier cas ; pour le deuxième, si \( l \neq 0 \) on écrit
   \begin{align}
     \der[\derp] \frac{ \vp[\indi] }{ \vp[\ind] }
     & =
@@ -2313,7 +2314,7 @@ et fait l'objet du lemme suivant, valable aussi bien dans \(
     \left( \frac{ \vp[\indi] }{ \vp[\ind] } \right)^{1 - \derp_\indi}
     \left( \frac{ \vp[0] }{ \vp* } \right)^{\derp[\ind] + \derp[\indi]}
   \end{align}
-  qui donne bien le résultat annoncé.
+  qui donne bien le résultat annoncé. Le cas \( l = 0 \) est direct.
 \end{proof}
 
 Pour le cas \( \indi = \anydim + 1 \), on utilisera des relations de
@@ -2668,7 +2669,7 @@ qui font l'objet du lemme suivant.
       \) en toute place \( v \).
   \end{enumthm}
   De plus, \( \ord_{\vp[0]} \bigl( P^\derp_{\ip, \ind, \alpha} \bigr)
-    \ge \ip[0]  - \derp[0] \).
+    \ge \ip[0] \).
 \end{lem}
 
 \begin{proof}
@@ -2711,8 +2712,9 @@ qui font l'objet du lemme suivant.
     \frac{ P_{\ind, \dv}^\derp }{ (\vp*^{\anydeg+1} Q)^{2\lgr\derp} }
     \cdot \left( \frac{ \vp[\anydim+1] }{ \vp* } \right)^{\indic0(\derp)}
   \end{equation}
-  pour tout \( \derp \), même nul. En appliquant de plus le
-  lemme~\vref{l:param-any-easy}, il vient :
+  pour tout \( \derp \), même nul. On pose enfin \( \indl[0] = 0 \) pour
+  tout \( \indi \) ; en appliquant le lemme~\vref{l:param-any-easy}, il vient
+  alors :
   \begin{align}
     \der^\derp M_\ind^\ip
     =
@@ -2822,12 +2824,9 @@ qui font l'objet du lemme suivant.
   la forme
   \(
     \prod_{\alpha_0 = 1}^{\ip[0]} \vp[0] ^{1-\gmp\nu[0, \alpha_0][0]}
-  \). De plus, on a \( \sum_{\alpha_0 = 1}^{\ip[0]} \gmp\nu[0, \alpha_0][0]
-    \le \derp[0] \). Ainsi, il y a au moins \( \ip[0] - \derp[0] \) termes
-  nuls dans cette somme, soit autant de facteurs égaux à \( \vp[0] \) dans le
-  produit précédent. Ainsi, \( \vp[0]^{\ip[0] - \derp[0]} \) est en facteur de
-  chaque terme de la somme définissant \( P^\derp_{\ip, \ind, \dv} \), ce qui
-  prouve l'assertion sur l'ordre.
+    =
+    \vp[0]^{\ip[0]}
+  \),  ce qui prouve l'assertion sur l'ordre.
 \end{proof}
 
 Transposons maintenant ce résultat à notre situation multiprojective. On
@@ -2858,7 +2857,8 @@ appliquée successivement à chaque facteur \( \var* \).
         \deg_\fct P^\dermp_{G, \ind, \beta}
         =
         \alpha_\fct + 4\vdeg* \lgr{\dermp*}
-      \) pour tout \( \fct \) ;
+      \) pour tout \( \fct \), où \( \deg_\fct \) est le degré partiel en \(
+        \vmp* \) ;
     \item \(
         \nv1{ P^\dermp_{G, \ind, \dv} }
         \le
@@ -2871,8 +2871,8 @@ appliquée successivement à chaque facteur \( \var* \).
         \right)^\dv
       \) pour tout \( v \).
   \end{enumthm}
-  De plus, \( \inda* \bigl( P^\dermp_{G, \ind, \beta} \bigr) \ge \inda*(G) -
-    \wtsum*(\dermp) \).
+  De plus, \( \inda* \bigl( P^\dermp_{G, \ind, \beta} \bigr) \ge \inda*(G)
+    \).
 \end{lem}
 
 \begin{proof}
@@ -2897,10 +2897,11 @@ appliquée successivement à chaque facteur \( \var* \).
 
   Seul le point sur l'indice reste à vérifier. Pour cela, considérons \(
     \vmp^\imp \) un monôme apparaissant dans l'écriture \( G \), puis \(
-    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \ind, \dv}
-  \).  D'après le lemme cité, on alors \( \gmp\nu*[0] \ge \imp*[0] -
-    \dermp*[0] \) d'où, en sommant, \( \wtsum*(\gmp\nu) \ge \wtsum*(\imp) -
-    \wtsum*(\dermp) \) qui est équivalent à l'estimation annoncée vu la
+    \vmp^{\gmp\nu} \) un monôme apparaissant dans \( P^\dermp_{G, \ind, \beta}
+  \) : c'est-à-dire que \( (\vmp*)^{\gmp\nu*} \) apparaît dans \(
+    P^\dermp_{\imp*, \ind, \beta}(\vmp*) \). D'après le lemme cité, on alors
+  \( \gmp\nu*[0] \ge \imp*[0] \) d'où, en sommant, \( \wtsum*(\gmp\nu) \ge
+    \wtsum*(\imp) \) qui est équivalent à l'estimation annoncée vu la
   définition de l'indice.
 \end{proof}
 
@@ -3441,7 +3442,7 @@ des propriétés suivantes.
     \item \(
         \inda* \bigl( P_v \bigr)
         \ge
-        \frac34 \epsi \delta
+        \epsi \delta
       \) ; \label{i:ind-p-der}
   \end{enumthm}
   où l'on a noté
@@ -3457,7 +3458,8 @@ des propriétés suivantes.
   tenant compte des informations connues sur \( \fauxv \) (voir le
   scolie~\vref{s:aux-co}) et \( \dermp \) (voir~\eqref{e:extra-dermp}). Le
   premier est immédiat d'après la définition~\eqref{e:def-ratfv1} de \(
-    \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \).
+    \ratfv1 \) et le fait que \( \deg_\fct \fauxv = \Dir* \). Le point sur
+  l'indice est également clair.
 
   Avant de passer au degré, remarquons que l'hypothèse~\eqref{e:extra-dermp}
   implique que
@@ -3555,20 +3557,6 @@ des propriétés suivantes.
   Il ne reste plus qu'à prendre la somme, en utilisant le fait que \( \epsi
     \sigma^{-1} \le 1/8 \) (majoration très large mais suffisante) pour
   aboutir à l'estimation annoncée.
-
-  Enfin, le point sur l'indice est immédiat en remarquant que \(
-    \wtsum*(\dermp) \le \wtsum(\dermp) \) par définition puis en utilisant les
-  hypothèses :
-  \begin{equation}
-    \inda* \bigl( P_v \bigr)
-    \ge
-    \inda*(\fauxv) - \wtsum(\dermp)
-    \ge
-    \epsi \delta (1 - \sigma^{-1})
-    \ge
-    \frac34 \epsi \delta
-  \end{equation}
-  en utilisant la minoration large mais suffisante \( \sigma \ge 4 \).
 \end{proof}
 
 Pour estimer \( \ratfh1 \), commençons par scinder une nouvelle fois notre
@@ -3740,7 +3728,7 @@ encore~\eqref{e:wt-ratio}
   \sum\fctrange
   \frac{ \imp*[0] }{ \wts* }
   \ge
-  \frac38 \wts[1] \hautn{ \ex[1] }
+  \frac12 \wts[1] \hautn{ \ex[1] }
   \, \delta \epsi
 \end{equation}
 où la dernière estimation découle du quatrième point du lemme~\vref{l:ratfv1}
@@ -3752,7 +3740,7 @@ la quantité suivante, où l'on note \( \wtapx = 0 \) si \( v \notin
   \placesapx \) :
 \begin{multline}
   \sum_v \degv \Biggl(
-    - \frac38 \delta \wts[1] \hautn{\ex[1]} \wtapx \eps \epsi
+    - \frac12 \delta \wts[1] \hautn{\ex[1]} \wtapx \eps \epsi
     + \log \nv1{P_v}
     + \sum\fctrange \deg_\fct P_v
     \biggl(
@@ -3770,7 +3758,7 @@ utilisant~\eqref{e:vadapt-ht} et le lemme~\vref{l:ratfv1} :
 \begin{align*}
   \ratfh{1'}
   & \le
-  - \frac38 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
+  - \frac12 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
   + 15 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + 3\delta \sum\fctrange \wtw* \wts* \hautl1{ \varfc* }
   + o(\delta)
@@ -3788,7 +3776,7 @@ l'estimation~\eqref{e:ratfh1a-adhoc} pour conclure :
 \begin{equation}
   \ratfh{1'}
   \le
-  - \frac38 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
+  - \frac12 \delta \wts[1] \hautn{\ex[1]} \eps \epsi
   + 19 \delta \wts[1] \cst{vs-ht} \Lambda^{(1 + \frac1m) f(\vdim)}
   + o(\delta)
   \pmm.
@@ -3811,7 +3799,7 @@ avec : % reporter dans la section « ajustement » !
   2 m \epsz
   + 3 (m - 1) \Vcos
   + \frac{8 (m - 1) B \epsi}{\sigma}
-  - \frac38 \eps \epsi
+  - \frac12 \eps \epsi
   \\
   \beta
   & =
@@ -3824,7 +3812,7 @@ où la dernière majoration utilise~\eqref{e:extra-beta-adhoc} et le fait que \(
   2 \epsz \le 1 \).
 
 Montrons que \( \alpha \) est négatif et même
-inférieur à \( - \frac{3\eps \epsi}{16} \). La définition~\eqref{e:def-epsz}
+inférieur à \( - \frac14 \eps \epsi \). La définition~\eqref{e:def-epsz}
 de \( \epsz \) assure que
 \begin{equation} \label{e:epsz-ct-extra}
   2 m \epsz
@@ -3867,19 +3855,20 @@ assure que
   \frac{8 (m - 1) B \epsi}{\sigma}
   \le \frac{\eps \epsi}{16}
 \end{equation}
-et on a bien \( \alpha \le - \frac{3\eps \epsi}{16} < 0 \) comme annoncé.
+et on a bien \( \alpha \le \frac3{16} \eps\epsi - \frac12 \eps\epsi \le -
+  \frac14 \eps\epsi < 0 \) comme annoncé.
 
 Ainsi on a, en remarquant que \( \vdim \ge m \) et que \( f \) est
 décroissante :
 \begin{align} \label{e:Vbig-ct-extra}
   \alpha \hautn{\ex[1]} + \beta
   & \le
-  - \frac{3\eps \epsi}{16} \hautn{\ex[1]}
+  - \frac14\eps \epsi \hautn{\ex[1]}
   + 20 \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m)}
   \\ & \le
-  - \frac{3\eps \epsi}{16} \Bigl(
+  - \frac14\eps \epsi \Bigl(
     \hautn{\ex[1]}
-    - \frac{320}{3\eps \epsi}
+    - \frac{80}{\eps \epsi}
     \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m)}
   \Bigr)
   \pmm.
@@ -3888,7 +3877,7 @@ Or, en remarquant que \( \cst{vs-deg-prod} = 5 m / \Vcos \) d'après les
 définitions respectives~\eqref{e:def-Vcos} et~\eqref{e:cst-vs-deg-prod} de ces
 deux constantes, la comparaison~\eqref{e:Vcos-ct-details} entraîne
 \begin{equation}
-  \frac{320}{3\eps \epsi}
+  \frac{80}{\eps \epsi}
   \le
   \frac{ 48(m-1) \cdot 5m }{ \eps\epsi }
   \le
@@ -3903,12 +3892,12 @@ que \( m \ge 2 \), il vient :
 \begin{align}
   \alpha \hautn{\ex[1]} + \beta
   & \le
-  - \frac{3\eps \epsi}{16} \Bigl(
+  - \frac14\eps \epsi \Bigl(
     \hautn{\ex[1]}
     - \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)}
   \Bigr)
   \le
-  - \frac{9\eps \epsi}{16}
+  - \frac34\eps \epsi
   \cst{vs-ht} \Lambda^{(1 + \frac1m) f(m-1)}
   <
   0
