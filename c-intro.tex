@@ -353,26 +353,27 @@ où la variété approchée est un translaté d'une sous-variété abélienne de
 
 Pour simplifier, on note \( \vacst \) une constante ne dépendant que de
 \( \va \) plongée, qui peut être explicitée totalement dans certains
-plongements (voir l'énoncé complet~\oref{c:all-gen} pour la valeur en fonction
-de constantes liées au plongement et la section~\vref{sec:vaemb} pour ces
-constantes) et \( N \) le cardinal d'un système complet de formes représentant
-l'addition de \( \va \) (voir la section~\vref{sec:vaemb}).
+plongements (voir l'énoncé complet pour la valeur en fonction de constantes
+liées au plongement et la section~\vref{sec:vaemb} pour ces constantes) et \(
+  N \) le cardinal d'un système complet de formes représentant l'addition de
+\( \va \) (voir la section~\vref{sec:vaemb}).
 
 \begin{thm}[corollaire~\vref{c:all-gen}]
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
-    \adim \).  On considère de plus un sous-groupe \( \grp \subset \va(\Qbar)
-  \) de rang fini \( r \) et un réel \( \eps > 0 \).  Soit enfin une famille
-  \( x_1, \dots, x_p \) de points de \( \grp \) et \( \placesapx \) un ensemble
-  fini de places de \( \Q(x_1, \dots, x_p) \) ; on suppose que cette famille
-  satisfait à \( \cond{\eps/2d} \) et que, pour tout \( i \) :
+    \adim \). Soit de plus \( \cdn \) un corps de nombres sur lequel sont
+  définis \( \va \) (et son plongement dans un espace projectif) et \( \avar
+  \) ; on note \( r \) le rang de \( \va(\cdn) \). On fixe de plus un ensemble
+  fini \( \placesapx \) de places de \( \cdn \) et un réel \( \eps > 0 \).
+  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \va(\cdn) \)
+  satisfaisant à \( \cond{\eps/2d} \) et telle que
   \begin{align}
     0 < \prod\placerange \distv{x_i} \avar ^\degv
     & <
     \hautm2{x_i}^{-\eps}
     \exp(- \adeg \alpha \Lambda^{(4g)^{4g^2}})
   \end{align}
-  avec
+  pour tout \( i \), avec
   \begin{align}
     \Lambda
     & =
@@ -437,15 +438,19 @@ qu'elles soient en nombre fini et contrôlées.
 
 Le deuxième décompte que nous donnons concerne le cas général. On suppose que
 \( \va \) est principalement polarisée et plongée dans \( \projd \) par un
-plongement de \bsc{Mumford} modifié (section~\vref{sec:vaemb}).
+plongement de \bsc{Mumford} modifié (section~\vref{sec:vaemb}) ; on note de
+plus \( \vacst' \) une constante dépendant du degré d'un corps de définition
+de \( \va \), en plus des éléments dont dépend déjà \( \vacst \) (à nouveau,
+voir l'énoncé complet et la section~\vref{sec:vaemb} pour les détails).
 
 \begin{thm}[corollaire~\vref{c:big-any}]
   Soit \( \avar \) une sous-variété de \( \va \), de degré \( \adeg \) et de
-  dimension \( \adim \). On considère de plus un sous-groupe \( \grp \subset
-    \va(\Qbar) \) de rang fini \( r \) et un réel \( 0 < \eps \le 1 \).
-  Soit enfin une famille \( x_1, \dots, x_p \) de points de \( \grp \)
-  satisfaisant à \( \cond{ \eps / \adeg^M (2M)^{ (M+1)\adim} } \) et aux
-  conditions suivantes, pour tout \( i \) :
+  dimension \( \adim \).  Soit de plus \( \cdn \) un corps de nombres sur
+  lequel sont définis \( \va \) (et son plongement dans un espace projectif)
+  et \( \avar \) ; on note \( r \) le rang de \( \va(\cdn) \). On fixe de plus
+  un ensemble fini \( \placesapx \) de places de \( \cdn \) et un réel \( \eps
+    > 0 \).  Soit enfin une famille \( x_1, \dots, x_p \) de points de \(
+    \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et telle que
   \begin{align}
     0
     & < \prod\placerange \distv{x_i} \avar^\degv
@@ -457,18 +462,16 @@ plongement de \bsc{Mumford} modifié (section~\vref{sec:vaemb}).
     \, \eps^{-2(4g)^{4g^2}}
     \adeg^M (3M)^{ (M+1)\adim + 3}
   \end{align}
-  où \( \placesapx \) est un ensemble fini de places de \( \Q(x_1, \dots, x_p)
-  \) et
+  pour tout \( i \), avec
   \(
     M
     =
     \bigl(
-    2^{34} \, \vacst \, \adeg
+    2^{34} \, \vacst' \, \adeg
     \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
     + 1
-    \pmm.
-  \)
-  Alors on a \vspace{-10pt}
+  \).
+  Alors on a
   \begin{equation}
     p
     \le
