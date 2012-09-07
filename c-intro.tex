@@ -63,15 +63,15 @@ L'inégalité de \bsc{Vojta} affirme qu'il n'existe pas de suite \( x_1, \dots,
   x_m \) de points satisfaisant simultanément à la condition (C) et aux trois
 conditions suivantes :
 \begin{enumthm}
-  \item \( \hautn{x_1} > \alpha \) ; \label{i:grand}
-  \item \( \cos(x_i, x_j) > 1 - \beta \) pour tous \( i \) et \( j \) ;
+  \item \( \hautn{x_1} > \Vbig \) ; \label{i:grand}
+  \item \( \hautn{x_i} > \Vfar \hautn{x_{i-1}} \) pour \( i > 1 \) ;
+  \item \( \cos(x_i, x_j) > 1 - \Vcos \) pour tous \( i \) et \( j \) ;
     \label{i:proche}
-  \item \( \hautn{x_i} > \gamma \hautn{x_{i-1}} \) pour \( i > 1 \) ;
 \end{enumthm}
 où l'angle est relatif à la structure euclidienne de l'espace. Nous
 appellerons \emph{cône tronqué} une partie de l'espace délimitée par les
 conditions \oref{i:grand} et \oref{i:proche} ci-dessus. Il est clair que
-l'espace privé d'une boule de rayon \( \sqrt{\alpha} \) peut être recouvert
+l'espace privé d'une boule de rayon \( \sqrt{\Vbig} \) peut être recouvert
 par un nombre fini de tels cônes tronqués dès qu'il est de dimension finie (ce
 qui est le cas si on se place sur un corps de nombres). L'inégalité de
 \bsc{Vojta} assure que, sous la condition (C), il n'y a qu'un nombre fini de
@@ -82,10 +82,11 @@ L'inégalité de \bsc{Mumford} peut s'énoncer de façon très similaire. Elle d
 qu'il n'existe pas de suite \( x_1, \dots, x_m \) de points satisfaisant
 simultanément à la condition (C) et aux trois conditions suivantes :
 \begin{enumthm}
-  \item \( \hautn{x_i} > \alpha' \) pour tout \( i \) ;
-  \item \( \cos(x_i, x_j) > 1 - \beta' \) pour tous \( i \) et \( j \) ;
-  \item \( \abs{ \hautn{x_i} - \hautn{x_j} } < \delta \) pour tous \( i \) et
+  \newcommand\mum{_{\mathrm M}}
+  \item \( \hautn{x_i} > \alpha\mum \) pour tout \( i \) ;
+  \item \( \abs{ \hautn{x_i} - \hautn{x_j} } < \beta\mum \) pour tous \( i \) et
     \( j \).
+  \item \( \cos(x_i, x_j) > 1 - \gamma\mum \) pour tous \( i \) et \( j \) ;
 \end{enumthm}
 Utilisée conjointement avec l'inégalité de \bsc{Vojta}, et à condition que les
 constantes apparaissant dans ces deux inégalités soient effectives, elle
@@ -1068,6 +1069,10 @@ Pour chaque place \( v \) de \( \cdn \), on pose
   \distv x y
   =
   \frac{ \nv2{ x \wedge y } }{ \nv2 x \nv2 y }
+  \quad\text{où }
+  x \wedge y
+  =
+  (x_i y_j - y_j x_i)_{0 \le i < j \le n}
   \pmm.
 \end{equation}
 Cette définition correspond, pour les points, à la distance d'indice \( 1 \)
@@ -1078,11 +1083,13 @@ ailleurs, il est évident à partir de la définition que la distance est
 toujours majorée par \( 1 \).
 
 Pour la distance entre un point et une variété, on s'écarte par contre
-légèrement des références citées, en posant
+légèrement des références citées, en posant\footnote{Si \( v \) est finie, \(
+    \Cv \) n'est pas localement compact et l'infemum n'est pas nécessairement
+  atteint.}
 \begin{equation}
   \distv x \avar
   =
-  \min_{y \in \avar(\Cv)} \distv x y
+  \inf_{y \in \avar(\Cv)} \distv x y
   \pmm.
 \end{equation}
 Les deux notions sont en fait très comparables, voir la section suivante. La
@@ -1096,7 +1103,7 @@ hypersurface. Évidemment, on a \( \distv x \avar = 0 \Leftrightarrow x \in
 
 Soient \( \cdn \) un corps de nombres, \( \placesapx \) un ensemble fini de
 places de \( \cdn \) et \( \eps > 0 \) un réel. Le but est d'étudier les
-points satisfaisant à la condition d'approximation
+points \( x \in \va(\cdn) \) satisfaisant à la condition d'approximation
 \begin{equation} \label{e:ha-prod}
   \prod\placerange
   \distv x \avar ^\degv
@@ -1125,9 +1132,9 @@ utilisera des conditions d'approximations du type
 \end{equation}
 où les \( c_v \) sont des constantes réelles.  Si l'on choisit \( c = \prod_{v
     \in \placesapx_0} c_v^\degv \), il est clair que~\eqref{e:ha-sys} est une
-hypothèse plus forte que~\eqref{e:ha-prod}, mais on verra à la
-section~\vref{sec:ha-prod} qu'un décompte sous l'hypothèse forte implique en
-fait un décompte sous l'hypothèse plus faible.
+hypothèse plus forte que~\eqref{e:ha-prod}, mais on verra qu'un décompte sous
+l'hypothèse forte implique en fait un décompte sous l'hypothèse plus faible
+(section~\vref{sec:ha-prod}).
 
 Par ailleurs, il est facile de donner à cette condition un sens sur \( \Qbar
 \), de la façon suivante. Si \( \cdn \) est une extension finie de \( \cdn_0
@@ -1285,7 +1292,8 @@ Dans le cas général, on a la comparaison suivante.
   mesure par la norme du sup).
 \end{proof}
 
-Dans l'autre sens, on a le résultat suivant.
+Dans l'autre sens, on a le résultat suivant, où la notion de multiplicité
+utilisée est celle définie dans~\cite[p. 151]{phitzee}.
 \begin{prop} \label{p:dv-p2alg}
   Pour toute variété \( \avar \subset \projd \) et tous points \( x \in
     \projd(\Cv) \) et \( y \in \avar(\Cv) \), on a
@@ -1407,7 +1415,7 @@ montre que c'est possible.
 \end{proof}
 
 \begin{proof}[\proofname{} de la proposition~\vref{p:dv-p2alg}.]
-  Notons pour commencer qu'on peut supposer \( \dim \avar \ge 1 \) (donc \( n
+  Notons déjà qu'on peut supposer \( \dim \avar \ge 1 \) (donc \( n
     \ge 2 \)) car on sait que les deux distances sont égales si \( \avar \)
   est un point. On peut de plus supposer que \( \distv x y  < (n+1)^{-9\dv/2}
   \) car sinon la conclusion du lemme est vide, la distance étant de toutes
@@ -1425,11 +1433,12 @@ montre que c'est possible.
     (n+1)^{-4} \le 82/81 \).
 
   On reprend les notations de la section~4 (page 117) de~\cite{remgdmp}
-  concernant le morphisme \( \md \).  On regarde \( \md f \) comme un polynôme
+  concernant le morphisme \( \md \).  On regarde \( \md \chow\avar \) comme un
+  polynôme
   en \( s \) à coefficients dans \( k[X] \) et on appelle \( \mathcal G \) la
   famille de ses coefficients ; chacun d'entre eux est homogène de degré \( ld
   \) et s'annule en \( y \).  Plus précisément, d'après
-  \cite[prop.~3]{phitzee}, la multiplicité de \( \avar \) en \( y \) est le plus
+  \cite[p. 151]{phitzee}, la multiplicité de \( \avar \) en \( y \) est le plus
   grand entier \( k \) tel que les dérivées d'ordre total \( k-1 \) de toutes
   les formes de la famille \( \mathcal G \) soient nulles en \( y \). Le
   développement d'une forme \( G \in \mathcal G \) autour du point \( y \)
@@ -1510,7 +1519,8 @@ montre que c'est possible.
     \pmm.
   \end{equation}
   La fin de la démonstration consiste alors en des comparaisons de normes et
-  mesures, qu'on peut résumer ainsi :
+  mesures, qu'on peut résumer ainsi (les constantes sont explicitées
+  ci-dessous) :
   \begin{equation}
     \frac{ \mvp{\md_x f} }{ \nv2 x ^{ld} }
     \ll

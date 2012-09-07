@@ -3,15 +3,29 @@ Warning: page and line numbers at the start of a line (before the colon) are
 references to the original list; page and line numbers in the replies (after
 the colon), however, refer to the *new* version of the manuscript!
 
------ BEGIN new p/l numbers need updating -----
-
 p10 l-4: see p12 l1 to l5.
 
 p11 l11: done.
 
 p11 l-1: see p12 l3.
 
-p17 l12: done (l-7 now).
+p16 l-11: added a definition (now p17 l4).
+
+p16 l-3: Oops, you're right, using \inf now.
+        XXX: proofs of L341 & L413
+
+p17 l5: it is. Now stated explicitly (the line before (1.13)).
+
+p17 l12: done (l-5 now).
+
+p19 l-1: added a reference (the line before prop 1.6.3, p20 now)
+
+p21 l18: it is, fixed the notation (p22 l6 now)
+
+p22 l12: the constants are computed just below (added a sentence about that
+hping to make it clearer, now p23 l2).
+
+----- BEGIN new p/l numbers need updating -----
 
 p25 l8: I tend to disagree. Theorem 2.1.1 is trivial if \eps \ge 1, as
 observed on p26 l7-9. Corollaires 2.7.6 and 2.7.9 are correct for any \eps
@@ -21,6 +35,11 @@ p25 l10: in general, x_i means any point, while e_i means the points
 contradicting theorem 2.1.1 that are fixed from section 2.2 to section 2.6
 included, to distinguish them from random points denoted by x_i (eg at the
 beginning of section 2.2.5).
+
+p25 l16: the subscript V is meant as a reference to Vojta (to be really
+nitpicky, it's an upright V, while the variety is an italic V). Originally the
+idea was to have the same letters with subscript M for Mumford's inequality.
+I restored this idea on page 2, so maybe it makes a little bit more sense now.
 
 p53 l-6 and -5: removed them, there presence was a mistake.
 
