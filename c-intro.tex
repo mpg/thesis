@@ -355,11 +355,9 @@ où la variété approchée est un translaté d'une sous-variété abélienne de
 Pour simplifier, on note \( \vacst \) une constante ne dépendant que de
 \( \va \) plongée, qui peut être explicitée totalement dans certains
 plongements (voir l'énoncé complet pour la valeur en fonction de constantes
-liées au plongement et la section~\vref{sec:vaemb} pour ces constantes) et \(
-  N \) le cardinal d'un système complet de formes représentant l'addition de
-\( \va \) (voir la section~\vref{sec:vaemb}).
+liées au plongement et la section~\vref{sec:vaemb} pour ces constantes).
 
-\begin{thm}[corollaire~\vref{c:all-gen}]
+\begin{thm}[corollaire~\oref{c:all-intro} et scolie~\vref{s:all-intro}]
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \). Soit de plus \( \cdn \) un corps de nombres sur lequel sont
@@ -378,8 +376,7 @@ liées au plongement et la section~\vref{sec:vaemb} pour ces constantes) et \(
   \begin{align}
     \Lambda
     & =
-    \bigl( 87 \nclmaps \adeg \, \eps^{-1} \bigr)^2
-    \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g}
+    34 \eps^{-2} \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g+2}
     \\
     \alpha
     & =
@@ -404,8 +401,7 @@ liées au plongement et la section~\vref{sec:vaemb} pour ces constantes) et \(
     (4g)^{4g^2+1}
     (\log \Lambda)
     \left(
-        739 \nclmaps \cdot 7^g \adeg
-        \, \eps^{-1}
+      120760 (\deg \va) \adeg \, \eps^{-1}
     \right)^r
     \pmm.
   \end{equation}
@@ -893,6 +889,9 @@ cas.
       (Par ailleurs, cette quantité est majorée par \( \hmclab*^{a^2 + b^2} \)
       d'après le point précédent et les propriétés de la norme utilisée.)
   \end{enumerate}
+
+  De plus, on peut prendre \( \nclmaps = \deg\va / g! \) où \( \deg \va \) est
+  le degré de l'image de \( \va \) dans le plongement projectif considéré.
 \end{lem}
 
 \begin{proof}
@@ -950,6 +949,9 @@ cas.
       (Par ailleurs, cette quantité est majorée par \( \hmpm* \) d'après le
       point précédent et les propriétés de la norme utilisée.)
   \end{enumerate}
+
+  De plus, on peut prendre \( \nclmaps = \deg\va / g! \) où \( \deg \va \) est
+  le degré de l'image de \( \va \) dans le plongement projectif considéré.
 \end{lem}
 
 \begin{proof}
@@ -963,6 +965,22 @@ cas.
   utilise le même argument que pour la fin de la preuve du fait~3 page~276
   de~\cite{phiha1} cité précédemment, mais appliqué cette fois à la famille \(
     (D\pexp\clmap[\ind])^{\clmap\in\clmaps}_{\ind\in\set{0, \dots, n}} \).
+
+  De plus, le lemme~2.1 page~607 de la référence citée et le paragraphe le
+  précédant montrent qu'on peut choisir un système complet de lois d'addition
+  en bijection avec l'espace des sections globales du faisceau
+  \( m^* \fibre^{-1} \otimes p^*_1 \fibre^2 \otimes p^*_2 \fibre^2 \) dans les
+  notations de la référence, où en particulier \( m \colon \va^2 \to \va \)
+  est le morphisme d'addition. Or, \( \fibre \) étant symétrique, ce faisceau
+  est isomorphe à \( d^* \fibre \) si l'on note \( d \colon \va^2 \to \va \)
+  le morphisme de soustraction. Par ailleurs, on voit que \( \Gamma(\va^2, d^*
+    \fibre) = \Gamma(\va, \fibre) \) de la même façon que l'égalité analogue
+  pour \( m^* \fibre \) obtenue page~607 de la référence.
+
+  Ainsi, on peut prendre \( \nclmaps = h^0(\fibre) = \chi(\fibre) \), où la
+  dernière égalité provient du fait que \( \fibre \) est ample. Le théorème de
+  \bsc{Riemann}-\bsc{Roch} abélien entraîne alors l'assertion faite sur \(
+    \nclmaps \).
 \end{proof}
 
 \begin{rem} \label{r:hm-clab-pm}
@@ -1042,16 +1060,10 @@ une valeur totalement explicite de \( \hmclab \) pour les plongement de
 
 \medskip
 
-Pour conclure cette section, remarquons que, si \( \htcmp \) est utilisée
-assez abondamment dans tous les contextes, en revanche seule la démonstration
-de l'inégalité de \bsc{Vojta} utilise \( \hlclab \) et \( N \) : l'inégalité
-de \bsc{Mumford} repose uniquement sur \( \hlpm \) et n'utilise pas la valeur
-de \( N \).
-
-Par ailleurs, les différentes constantes introduites ici, ainsi que la
-quantité \( \hautl1 \va \) qui sera utilisée plusieurs fois, ne sont pas
-exemptes de liens entre elles : par exemple, il est facile de majorer \(
-  \hautl1 \va \) en fonction de \( \htcmp \) en
+Pour conclure cette section, remarquons que les différentes constantes
+introduites ici, ainsi que la quantité \( \hautl1 \va \) qui sera utilisée
+plusieurs fois, ne sont pas exemptes de liens entre elles : par exemple, il
+est facile de majorer \( \hautl1 \va \) en fonction de \( \htcmp \) en
 utilisant~\eqref{e:comp-h-hn-var} puis~\eqref{e:ht-pph-1} ; en reprenant les
 arguments utilisés dans~\cite{daphimhva2} pour déduire la proposition~3.9 du
 lemme~3.11, on pourrait majorer \( \htcmp \) en fonction de \( \hlclab \),
@@ -1059,6 +1071,14 @@ etc. Néanmoins, nous avons choisi de laisser ces différentes constantes telles
 qu'elle apparaissent naturellement, laissant au lecteur le choix (et le soin)
 d'effectuer les estimations les plus appropriées en fonction de la situation
 considérée.
+
+Par ailleurs, si \( \htcmp \) est utilisée assez abondamment dans tous les
+contextes, en revanche seule la démonstration de l'inégalité de \bsc{Vojta}
+utilise \( \hlclab \) et \( \nclmaps \) : l'inégalité de \bsc{Mumford} repose
+uniquement sur \( \hlpm \) et n'utilise pas la valeur de \( \nclmaps \). Nous
+laisserons \( \nclmaps \) telle quelle dans tous les résultats techniques et
+n'utiliserons l'estimation donnée ci-dessus que lors de la déduction des
+résultats principaux.
 
 
 \subsection{Distances et conditions d'approximations}

@@ -1713,10 +1713,10 @@ On en déduit immédiatement le corollaire pratique suivant.
 \end{proof}
 
 On en déduit à titre d'exemple une variante du
-corollaire~\vref{c:big-gen-prod} ; le lecteur en déduira sans peine des
+corollaire~\vref{c:big-m=2g} ; le lecteur en déduira sans peine des
 variantes similaires des autres résultats de décompte.
 
-\begin{coro} \label{c:all-gen}
+\begin{coro} \label{c:all-intro}
   Soit \( \avar \) un translaté par un point algébrique d'une sous-variété
   abélienne \( \vai \) de \( \va \), de degré \( \adeg \) et de dimension \(
     \adim \).
@@ -1754,6 +1754,27 @@ variantes similaires des autres résultats de décompte.
   que tous les points satisfaisant cette condition d'approximation satisfont
   aussi \( \hautn{x_i} \ge R \) et on peut appliquer le
   corollaire~\vref{c:big-m=2g} pour conclure.
+\end{proof}
+
+\begin{sco} \label{s:all-intro}
+  Dans le corollaire précédent, on peut en fait prendre
+  \begin{equation}
+    \Lambda_5'
+    =
+    34 \eps^{-2}
+    \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g+2}
+  \end{equation}
+  et remplacer \( 739 \nclmaps \cdot 7^g \) par \( 120760 \deg \va \) dans la
+  majoration donnée pour \( p \).
+\end{sco}
+
+\begin{proof}
+  On utilise le dernier point du lemme~\vref{l:hmclab} pour estimer \(
+    \nclmaps \) par \( \deg \va / g! \). Pour \( \Lambda_5' \), on effectue
+  alors quelques regroupements en remarquant que \( 87/15 \le 34 \) et pour la
+  majoration de \( p \), on voit que \( 739 \cdot 7^g / g! \le 120760 \)
+  pour tout \( g \) en constatant que le maximum de \( 7^g / g! \) est atteint
+  pour \( g = 7 \) (et \( g = 6 \)).
 \end{proof}
 
 
