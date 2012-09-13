@@ -1765,7 +1765,19 @@ variantes similaires des autres résultats de décompte.
     \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g+2}
   \end{equation}
   et remplacer \( 739 \nclmaps \cdot 7^g \) par \( 120760 \deg \va \) dans la
-  majoration donnée pour \( p \).
+  majoration donnée pour \( p \). De plus, on peut prendre
+  \begin{equation}
+    \cst{ht-v-gen1}'
+    =
+    \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
+    \bigr)
+    + (g + 1) \deg \va \Bigl(
+      \adeg^g \hautl1 \avar
+      + 2 \bigl( 2 (\adeg+1) \bigr)^{n+1}
+    \Bigr)
+    \pmm.
+  \end{equation}
 \end{sco}
 
 \begin{proof}
@@ -1775,6 +1787,22 @@ variantes similaires des autres résultats de décompte.
   majoration de \( p \), on voit que \( 739 \cdot 7^g / g! \le 120760 \)
   pour tout \( g \) en constatant que le maximum de \( 7^g / g! \) est atteint
   pour \( g = 7 \) (et \( g = 6 \)).
+
+  Enfin, en remarquant que \( \vdim + 2 \le g + 1 \le n \), on a
+  \begin{equation*}
+    \adeg^g \bigl(
+      (\adim + 2) ( \adeg + n + 1 ) \log (\adeg + 1)
+      + \log(g)
+    \bigr)
+    \le
+    \adeg^{g+1}
+    n ( \adeg + n + 2 )
+    \le
+    \adeg^{n+1}
+    n ( n + 3 )
+  \end{equation*}
+  qui entraîne facilement le résultat annoncé en remarquant que \( n (n+4) \le
+    2^{n+2} \).
 \end{proof}
 
 
