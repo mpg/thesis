@@ -60,6 +60,9 @@
 % theorems & Co [[2
 %
 \newtheorem{thm}{Théorème}
+\newtheorem{prop}{Proposition}
+\newtheorem{coro}{Corollaire}
+\newtheorem{tdef}{Définition}
 
 % numbering [[2
 %

@@ -104,14 +104,91 @@
       \pmm.
     \end{equation}
   \end{thm}
+
+  \begin{coro}[Ex-conjecture de Lang]
+    Soit \( \va \) une variété abélienne plongée dans \( \projd \) et \( \divi
+    \) un hyperplan de \( \projd \). Alors \( \va \setminus \divi \) ne possède
+    qu'un nombre fini de points entiers.
+  \end{coro}
+
   \begin{itemize}
     \item Version quantitative (partielle) : MPG 2012
   \end{itemize}
 \end{frame}
 
+
 
 \section[Grappes]{Grappes et conditions de décompte}
 \frame{\tableofcontents[currentsection]}
+
+\begin{frame}{Multiplication des approximations exceptionnelles}
+  \begin{prop}
+    Soit \( \vai \) une sous-variété abélienne et \( \var = \var' + \vai \).
+    On considère \( \eps > 0 \) et \( x \in \apx(\avar, \eps) \cap \grp \).
+    De plus, on note \( \hinf(\vai \cap \grp) \) l'infemum de \( \hautn y \)
+    lorsque \( y \) parcourt l'ensemble des points d'ordre infini de
+    \( \vai(\Qbar) \cap \grp \), ou \( +\infty \) si cet ensemble est vide.
+
+    Pour tout \( 0 < \tau \le 1 \), il existe \( \eps' > 0 \) explicite tel que
+    l'ensemble \( \apx(\avar, \eps') \cap \grp \) contient au moins
+    \begin{equation}
+      \card \bigl( \vai(\Qbar)_\torsion \cap \grp \bigr)
+      \left(
+        2 \floor*{ \sqrt{ \tau \hautn x / \hinf(\vai \cap \grp) } } + 1
+      \right)
+    \end{equation}
+    points de hauteur normalisée supérieure ou égale à
+    \( (1-\sqrt\tau)^{2} \, \hautn x \) (avec la convention \( (+\infty)^{-1} =
+      0 \)).
+  \end{prop}
+\end{frame}
+
+\begin{frame}{Obstruction au décompte explicite}
+  \begin{coro}
+    Soit \( \vai \) une sous-variété abélienne et \( \var = \var' + \vai \).
+    Supposons que pour un certain \( \eps_0 > 0 \) et un certain \( \grp \) de
+    type fini, il existe \( R \) et \( N \) tels que
+    \begin{equation}
+      \card
+      \set{
+        x \in \apx(\avar, \eps_0) \cap \grp
+        \text{ tel que }
+        \hautn x \ge R
+      }
+      \le
+      N
+      \pmm.
+    \end{equation}
+    Alors, pour tout \( \eps > \eps_0 \), il existe \( B = B(\eps_0, R, N,
+      \hmin(\vai \cap \grp) \) explicite tel que les points de \( \apx(\avar,
+      \eps) \cap \grp \) sont tous de hauteur normalisée inférieure à \( B \).
+  \end{coro}
+\end{frame}
+
+\begin{frame}{Conditions pour le décompte}
+  Soient \( F \subset \va(\Qbar) \) un sous-ensemble et \( \tau > 0 \) un
+  réel.
+  \begin{tdef}
+    On dit que \( F \) satisfait \( \condi*\tau\eps \) s'il existe deux points
+    distincts \( x \) et \( y \) dans \( F \) et \( \vai \) une sous-variété
+    abélienne telle que \( x \in \apx(\utrans\avar\vai, \eps) \) avec \( x - y
+      \in \vai \) et \( \hautn{ x-y } \le \tau \hautn x \).
+
+    On dit que \( F \) satisfait \( \condi\tau\eps \) si \( F \)
+    ne satisfait pas \( \condi*\tau\eps \).
+  \end{tdef}
+  
+  \begin{tdef}
+    On dit que \( F \) satisfait \( \cond*\tau \) s'il existe une
+    sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est contenu
+    dans \( \avar \) et deux points distincts \( x \) et \( y \) dans \( F \),
+    tels que \( x - y \in \vai \) et \( \hautn{ x-y } \le \tau \hautn x \).
+
+    On dit que \( F \) satisfait la condition \( \cond\tau \) si \( F \) ne
+    satisfait pas \( \cond*\tau \).
+  \end{tdef}
+\end{frame}
+
 
 
 \section[Résultats]{Énoncé des résultats principaux}
