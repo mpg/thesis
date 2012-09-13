@@ -57,6 +57,14 @@
 \xspaceremoveexception{?}
 \xspaceremoveexception{!}
 
+% theorems & Co [[2
+%
+\newtheorem{thm}{Théorème}
+
+% numbering [[2
+%
+\mathtoolsset{showonlyrefs,showmanualtags}
+
 % input macros [[2
 \input macros
 

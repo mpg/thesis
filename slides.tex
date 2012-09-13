@@ -11,21 +11,121 @@
 
 \frame{\tableofcontents}
 
+
 \section[Intro]{Introduction : rappels historiques}
 \frame{\tableofcontents[currentsection]}
 
+\begin{frame}{Théorème de Roth}
+  \begin{thm}
+    Soient \( \xi \in \R \) un nombre algébrique et \( \eps > 0 \) un réel.
+    Il n'existe qu'un nombre fini d'entiers \( p \) et \( q \) tels que
+    \begin{equation}
+      \abs[\Big]{\frac pq - \xi}
+      <
+      \abs{q}^{-2-\eps}
+      \pmm.
+    \end{equation}
+  \end{thm}
+\end{frame}
+
+\begin{frame}{Théorème de Roth étendu}
+  \begin{thm}[Ridout]
+    Soit \( \xi \in \Qbar \) un nombre algébrique. Soient par ailleurs \( \cdn
+    \) un corps de nombres et \( \placesapx \) un ensemble fini de places de
+    \( \cdn \), étendues de façon arbitraire à \( \cdn(\xi) \). Pour tout \(
+      \eps > 0 \), il n'existe qu'un nombre fini de points \( x \in \cdn \)
+    tels que
+    \begin{equation}
+      \prod\placerange \av{x - \xi}^\degv
+      <
+      \hautm2 x ^{-2-\eps}
+    \end{equation}
+    où \( \degv = [\cdn(\xi)_v : \Q_v] / [\cdn(\xi) : \Q] \) et chaque valeur
+    absolue est normalisée de façon à prolonger une des valeurs absolues
+    usuelles de \( \Q \).
+  \end{thm}
+  % Version quantitative ???
+\end{frame}
+
+\begin{frame}{Théorème du sous-espace}
+  \begin{thm}[Schmidt, Schlickewei]
+    Soient \( n \) un entier et \( L_0, \dots, L_n \in \Qbar[X_0, \dots, X_n]
+    \) des formes linéaires indépendantes.  Soient par ailleurs \( \cdn \) un
+    corps de nombres et \( \placesapx \) un ensemble fini de places de \( \cdn
+    \), étendues de façon arbitraire à \( \cdn(L_0, \dots, L_n) \). Pour tout
+    \( \eps > 0 \), l'ensemble des points \( x \in \projd(\cdn) \) tels que
+    \begin{equation}
+      \prod\placerange
+      \prod_{i=0}^n
+      \left( \frac{ \av{L_i(x)} }{ \nv{}{x} } \right)^\degv
+      <
+      \hautm2 x ^{-n-1-\eps}
+    \end{equation}
+    est contenue dans une union finie de sous-variété linéaires strictes de \(
+      \projd \).
+  \end{thm}
+  % Version quantitative : Sclickewei ???
+\end{frame}
+
+\begin{frame}{Ex-conjecture de Mordell}
+  \begin{thm}[Faltings 1983]
+    Soient \( C \) une courbe projective de genre \( g \le 2 \) et \( \cdn \)
+    un corps de nombres. Alors \( C(\cdn) \) est fini.
+  \end{thm}
+  \begin{itemize}
+    \item Autre démonstration indépendante : Vojta 1991.
+    \item Versions quantitatives : Rémond 2002, Farhi 2003.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Ex-conjecture de Mordell-Lang}
+  \begin{thm}[Faltings 1991, théorème I]
+    Soit \( \avar \) une sous-variété d'une variété abélienne \( \va \)
+    définie sur un corps de nombres \( \cdn \).
+    Si \( \avar \) ne contient pas de translaté de sous-variété abélienne non
+    nulle, alors \( \avar(\cdn) \) est fini.
+  \end{thm}
+  \begin{itemize}
+    \item Version quantitative : Rémond 2002.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Approximation sur les variété abéliennes}
+  \begin{thm}[Faltings 1991, théorème I]
+    Soit \( \avar \) une sous-variété quelconque de \( \va \), \( v \)
+    une place de \( \cdn \), et \( \eps > 0 \). Il n'existe qu'un nombre fini de
+    points \( x \) dans \( \va(\cdn) \) tels que
+    \begin{equation} \label{e:has}
+      0
+      <
+      \distv x \avar ^\degv
+      \le
+      \hautm{} x ^{-\eps}
+      \pmm.
+    \end{equation}
+  \end{thm}
+  \begin{itemize}
+    \item Version quantitative (partielle) : MPG 2012
+  \end{itemize}
+\end{frame}
+
+
 \section[Grappes]{Grappes et conditions de décompte}
 \frame{\tableofcontents[currentsection]}
 
+
 \section[Résultats]{Énoncé des résultats principaux}
 \frame{\tableofcontents[currentsection]}
 
+
 \section[Stratégie]{Stratégie générale}
 \frame{\tableofcontents[currentsection]}
 
+
 \section[Inégalités]{Inégalités de Vojta et Mumford}
 \frame{\tableofcontents[currentsection]}
 
+
 \section[Décomptes]{Résultats de décompte}
 \frame{\tableofcontents[currentsection]}
 
