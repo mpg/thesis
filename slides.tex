@@ -301,9 +301,68 @@
 \section[Stratégie]{Stratégie générale}
 \tocsect
 
+\begin{frame}{Idée rayonnante de Vojta}
+  \begin{itemize}
+    \item Séparation en petits points et grands points.
+    \item Séparation des grands points en cônes.
+    \item Inégalité de Vojta pour la finitude.
+    \item Inégalités de Vojta et Mumford explicites pour le décompte.
+  \end{itemize}
+\end{frame}
+
+
 
 \section[Inégalités]{Inégalités de Vojta et Mumford}
 \tocsect
+
+\begin{frame}{Inégalité de Vojta}
+  \begin{thm}
+    Il n'existe dans \( \va(\Qbar) \) aucune famille de points \( x_1, \dots,
+      x_m \) avec \( m \ge g + 1 \) satisfaisant simultanément aux conditions
+    suivantes :
+    \begin{align}
+      0 < \distv{x_i} \avar
+      & <
+      \alpha_v^{-1}
+      \hautm2{x_i}^{-\wtapx \eps}
+      \quad \forall v \in \placesapx
+      \\
+      \hautn{x_1}
+      & > \alpha \Lambda_4^{(2mg)^{mg}}
+      \\
+      \hautn{x_i} & > \hautn{x_{i-1}}
+      \cdot \Lambda_4^{(2mg)^{mg}}
+      \\
+      \cos(x_i, x_j) & > 1 - ( m \, \gamma )^{-1}
+    \end{align}
+    avec certains \( \alpha_v \) tels que \( \prod \alpha_v \le \alpha \) et
+    \begin{align*}
+      \gamma
+      & =
+      \bigl(
+      86 \nclmaps \cdot 5^g \adeg \eps^{-1}
+      \bigr)^{ \frac{m}{m-g} }
+      \hspace*{4em}
+      \Lambda_4
+      =
+      \gamma
+      \bigl( (\sqrt2 m g\adeg)^g \deg \va \bigr)^m
+      \\
+      \alpha
+      & =
+      \adeg \max \bigl(
+      \adeg^g \hautl1{\va}, \hlclab, \htcmp
+      \bigr)
+    + (g + 1) \deg \va \Bigl(
+      \adeg^g \hautl1 \avar
+      + \bigl( 4 \adeg \bigr)^{n+2}
+    \Bigr)
+    \end{align*}
+  \end{thm}
+\end{frame}
+
+
+
 
 
 \section[Décomptes]{Résultats de décompte}
