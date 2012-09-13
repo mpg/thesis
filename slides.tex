@@ -177,7 +177,7 @@
     On dit que \( F \) satisfait \( \condi\tau\eps \) si \( F \)
     ne satisfait pas \( \condi*\tau\eps \).
   \end{tdef}
-  
+
   \begin{tdef}
     On dit que \( F \) satisfait \( \cond*\tau \) s'il existe une
     sous-variété abélienne \( \vai \) de \( \va \) dont un translaté est contenu
@@ -193,6 +193,109 @@
 
 \section[Résultats]{Énoncé des résultats principaux}
 \frame{\tableofcontents[currentsection]}
+
+\begin{frame}{Cas d'un translaté de sous-variété abélienne}
+  \begin{thm}
+  Soient \( \avar = z + \vai \) et une famille \( x_1, \dots, x_p \) de points
+  de \( \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et telle que pour
+  tout \( i \),
+  \begin{overprint}
+  \begin{align}
+    0 <
+    \only<2->{\prod\placerange}
+    \distv{x_i} \avar
+    \only<2->{^\degv}
+    & <
+    \only<1>{
+      \alpha_v
+    }
+    \hautm2{x_i}^{- \only<1>{\wtapx} \eps}
+    \only<1>{\ \forall v}
+    \only<-2>{
+      \quad\text{et }
+      \hautn{x_i} > \alpha \Lambda^{(4g)^{4g^2}}
+    }
+    \only<3>{
+      \exp(- \adeg \alpha \Lambda^{(4g)^{4g^2}})
+    }
+  \end{align}
+  \end{overprint}
+  \begin{overprint}
+    \par\vspace*{-1em}
+    avec
+    \only<1>{%
+      \( \sum \wtapx \degv = 1 \) et certains \( \alpha_v \) tels que
+      \( \prod \alpha_v \le \alpha \), ainsi que
+    }
+    \par\vspace*{-3em}
+  \end{overprint}
+  \begin{align}
+    \Lambda
+    & =
+    34 \eps^{-2} \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g+2}
+    \\
+    \alpha
+    & =
+    \adeg^{g+1} \vacst
+    + (g + 1) \deg \va \Bigl(
+      \adeg^g \hautl1 \avar
+      + 2 \bigl( 2 (\adeg+1) \bigr)^{n+1}
+    \Bigr)
+  \end{align}
+  Alors on a
+  \begin{overprint}
+    \begin{equation}
+      p
+      \le
+      2 \only<2->{\cdot 5^{\card \placesapx}} \cdot
+      \sqrt{ \frac{\adeg}\eps }
+      (4g)^{4g^2+1}
+      (\log \Lambda)
+      \left(
+        120760 (\deg \va) \adeg \, \eps^{-1}
+      \right)^r
+      \pmm.
+    \end{equation}
+  \end{overprint}
+\end{thm}
+\end{frame}
+
+\begin{frame}{Cas général}
+  \begin{thm}
+    Soit une famille \( x_1, \dots, x_p \) de points de \(
+      \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et telle que
+    \begin{align}
+      0
+      & < \prod\placerange \distv{x_i} \avar^\degv
+      < \hautm2{x_i}^{-\eps}
+      \\
+      \hautn{x_i}
+      & >
+      ( \hautl1 \avar + \vacst )
+      \, \eps^{-2(4g)^{4g^2}}
+      \adeg^M (3M)^{ (M+1)\adim + 3}
+    \end{align}
+    pour tout \( i \), avec
+    \(
+      M
+      =
+      \bigl(
+      2^{34} \, \vacst' \, \adeg
+      \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
+      + 1
+    \).
+    Alors on a
+    \begin{equation}
+      p
+      \le
+      5^{\card\placesapx}
+      M^2 \Bigl( \adeg^{M} (3M)^{(M+1)\adim} \Bigr)^{(r+1)/2}
+      \, \eps^{-r - 1/2} \log(\expb/\eps)
+      \pmm.
+    \end{equation}
+  \end{thm}
+\end{frame}
+
 
 
 \section[Stratégie]{Stratégie générale}

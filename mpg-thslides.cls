@@ -24,7 +24,7 @@
 %
 \usetheme[compress]{Singapore}
 \usefonttheme[onlymath]{serif}
-%\usefonttheme{professionalfonts}
+\usefonttheme{professionalfonts}
 \setbeamercolor{structure}{fg=mstruct}
 \setbeamertemplate{navigation symbols}{}
 % pour avoir les vignettes de Singapore sans sous-sections
