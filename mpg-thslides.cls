@@ -57,6 +57,61 @@
 \xspaceremoveexception{?}
 \xspaceremoveexception{!}
 
+% déclaration du format 3 pages sur une [[2
+%
+\usepackage{pgfpages}
+\pgfpagesdeclarelayout{3 on 1}{%
+  \def\pgfpageoptionborder{0pt}%
+  }{%
+  \pgfpagesphysicalpageoptions{%
+    logical pages=3,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth}
+  \pgfpageslogicalpageoptions{1}{%
+    resized width=.66\pgfphysicalwidth,%
+    resized height=.33\pgfphysicalheight,%
+    border shrink=\pgfpageoptionborder,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.83\pgfphysicalheight}}%
+  \pgfpageslogicalpageoptions{2}{%
+    resized width=.66\pgfphysicalwidth,%
+    resized height=.33\pgfphysicalheight,%
+    border shrink=\pgfpageoptionborder,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.50\pgfphysicalheight}}%
+  \pgfpageslogicalpageoptions{3}{%
+    resized width=.66\pgfphysicalwidth,%
+    resized height=.33\pgfphysicalheight,%
+    border shrink=\pgfpageoptionborder,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.17\pgfphysicalheight}}}
+
+% choix du format [[2
+%
+\makeatletter
+\@ifundefined{nup}{\def\nup{1}}{%
+  \colorlet{mspecial}{black}
+  \colorlet{mstruct}{black}
+  \colorlet{mcode}{black}
+  \newlength\hackpaperwidth \hackpaperwidth210mm
+  \newlength\hackpaperheight \hackpaperheight297mm
+  \RequirePackage{everyshi}
+  \ifnum\nup=4
+    \EveryShipout{%
+      \special{papersize=\the\hackpaperheight,\the\hackpaperwidth}}
+  \else
+    \EveryShipout{%
+      \special{papersize=\the\hackpaperwidth,\the\hackpaperheight}}
+  \fi
+  }
+\makeatother
+\ifcase\nup \or % 1
+\or
+  \pgfpagesuselayout{2 on 1}[a4paper, border shrink=1cm]
+\or
+  \pgfpagesuselayout{3 on 1}[a4paper, border shrink=1cm]
+\or 
+  \pgfpagesuselayout{4 on 1}[a4paper, border shrink=1cm, landscape]
+\fi
+
+
 % theorems & Co [[2
 %
 \newtheorem{thm}{Théorème}
