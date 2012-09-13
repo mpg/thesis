@@ -68,6 +68,16 @@
 %
 \mathtoolsset{showonlyrefs,showmanualtags}
 
+% tocs [[2
+%
+\newcommand \tocsect {%
+  \frame{\tableofcontents[currentsection]}
+}
+\newcommand \toc {%
+  \frame{\tableofcontents}
+}
+
+
 % input macros [[2
 \input macros
 
