@@ -211,16 +211,16 @@
     \only<2->{^\degv}
     & <
     \only<1>{
-      \alpha_v
+      \omega_v
     }
     \hautm2{x_i}^{- \only<1>{\wtapx} \eps}
     \only<1>{\ \forall v}
     \only<-2>{
       \quad\text{et }
-      \hautn{x_i} > \alpha \Lambda^{(4g)^{4g^2}}
+      \hautn{x_i} > \omega \Lambda^{(4g)^{4g^2}}
     }
     \only<3>{
-      \exp(- \adeg \alpha \Lambda^{(4g)^{4g^2}})
+      \exp(- \adeg \omega \Lambda^{(4g)^{4g^2}})
     }
   \end{align}
   \end{overprint}
@@ -228,8 +228,8 @@
     \par\vspace*{-1em}
     avec
     \only<1>{%
-      \( \sum \wtapx \degv = 1 \) et certains \( \alpha_v \) tels que
-      \( \prod \alpha_v \le \alpha \), ainsi que
+      \( \sum \wtapx \degv = 1 \) et certains \( \omega_v \) tels que
+      \( \prod \omega_v \le \omega \), ainsi que
     }
     \par\vspace*{-3em}
   \end{overprint}
@@ -238,7 +238,7 @@
     & =
     34 \eps^{-2} \bigl( 5 (\deg \va) (3 g^2 \adeg)^g \bigr)^{2g+2}
     \\
-    \alpha
+    \omega
     & =
     \adeg^{g+1} \vacst
     + (g + 1) \deg \va \Bigl(
@@ -349,21 +349,21 @@
     \begin{align}
       0 < \distv{x_i} \avar
       & <
-      \alpha_v^{-1}
+      \omega_v^{-1}
       \hautm2{x_i}^{-\wtapx \eps}
       \quad \forall v \in \placesapx
       \\
       \hautn{x_1}
-      & > \alpha \Lambda_4^{(2mg)^{mg}}
+      & > \omega \Lambda_4^{(2mg)^{mg}}
       \\
       \hautn{x_i} & > \hautn{x_{i-1}}
       \cdot \Lambda_4^{(2mg)^{mg}}
       \\
-      \cos(x_i, x_j) & > 1 - ( m \, \gamma )^{-1}
+      \cos(x_i, x_j) & > 1 - ( m \, \eta )^{-1}
     \end{align}
-    avec certains \( \alpha_v \) tels que \( \prod \alpha_v \le \alpha \) et
+    avec certains \( \omega_v \) tels que \( \prod \omega_v \le \omega \) et
     \begin{align*}
-      \gamma
+      \eta
       & =
       \bigl(
       86 \nclmaps \cdot 5^g \adeg \eps^{-1}
@@ -371,10 +371,10 @@
       \hspace*{4em}
       \Lambda_4
       =
-      \gamma
+      \eta
       \bigl( (\sqrt2 m g\adeg)^g \deg \va \bigr)^m
       \\
-      \alpha
+      \omega
       & =
       \adeg \max \bigl(
       \adeg^g \hautl1{\va}, \hlclab, \htcmp
@@ -520,9 +520,9 @@
 
 \begin{frame}{Tous les grands points}
   \begin{fact} \label{f:nb-cones}
-    Soient \( r \) un entier et \( \gamma > 0 \) un réel. On peut recouvrir \(
-      \R^r \) par \( \floor{(1 + \sqrt{8/\gamma})^r} \) ensembles dans chacun
-    desquels deux points quelconques satisfont \( \cos(x, y) \ge 1 - \gamma \).
+    Soient \( r \) un entier et \( \Bcos > 0 \) un réel. On peut recouvrir \(
+      \R^r \) par \( \floor{(1 + \sqrt{8/\Bcos})^r} \) ensembles dans chacun
+    desquels deux points quelconques satisfont \( \cos(x, y) \ge 1 - \Bcos \).
   \end{fact}
   \begin{lem}
     Soit \( x_1, \dots, x_p \) une famille de points de \( \grp \)
@@ -544,7 +544,7 @@
       p
       \le
       (m-1) \ceil*{ \frac{ \ln \Vfar }{ \ln \Mfar } }
-      (1 + \sqrt{8/\gamma})^r
+      (1 + \sqrt{8/\Bcos})^r
       \pmm.
     \end{equation}
   \end{lem}
