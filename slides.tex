@@ -465,8 +465,137 @@
 \section[Décomptes]{Résultats de décompte}
 \tocsect
 
-\begin{frame}{}
+\begin{frame}{Par cône tronqué}
+  \begin{lem}
+    Soit \( x_1, \dots, x_p \) une famille de points de \( \grp \)
+    satisfaisant \( \cond\tau \) et
+    \begin{align*}
+      0
+      <
+      \distv{ x_i }\avar
+      & \le
+      \hautm2{ x_i }^{-\wtapx\eps}
+      \quad \forall v \in \placesapx
+      \\
+      \hautn{ x_i }
+      & \ge
+      \Bbig
+      \\
+      \cos(x_i, x_j)
+      & \ge
+      1 - \Bcos
+    \end{align*}
+    avec \( \Bbig = \max(\Vbig, \Mbig) \) et \( \Bcos = \min(\Vcos, \Bcos) \).
+    Alors on a
+    \begin{equation}
+      p
+      \le
+      (m-1) \ceil*{ \frac{ \ln \Vfar }{ \ln \Mfar } }
+      \pmm.
+    \end{equation}
+  \end{lem}
 \end{frame}
 
+\begin{frame}{Tous les grands points}
+  \begin{fact} \label{f:nb-cones}
+    Soient \( r \) un entier et \( \gamma > 0 \) un réel. On peut recouvrir \(
+      \R^r \) par \( \floor{(1 + \sqrt{8/\gamma})^r} \) ensembles dans chacun
+    desquels deux points quelconques satisfont \( \cos(x, y) \ge 1 - \gamma \).
+  \end{fact}
+  \begin{lem}
+    Soit \( x_1, \dots, x_p \) une famille de points de \( \grp \)
+    satisfaisant \( \cond\tau \) et
+    \begin{align*}
+      0
+      <
+      \distv{ x_i }\avar
+      & \le
+      \hautm2{ x_i }^{-\wtapx\eps}
+      \quad \forall v \in \placesapx
+      \\
+      \hautn{ x_i }
+      & \ge
+      \Bbig
+    \end{align*}
+    Alors on a
+    \begin{equation}
+      p
+      \le
+      (m-1) \ceil*{ \frac{ \ln \Vfar }{ \ln \Mfar } }
+      (1 + \sqrt{8/\gamma})^r
+      \pmm.
+    \end{equation}
+  \end{lem}
+\end{frame}
+
+\begin{frame}{Décompte trivial des petits points}
+  \begin{fact}
+    Soient \( E \) un espace euclidien de dimension \( r \) et deux réels \(
+      \rho \) et \( \mu \). On peut recouvrir toute boule (fermée) de rayon \(
+      \rho \) par des boules (ouvertes) de rayon \( \mu \) en nombre inférieur
+    à \( ( 2 \, \frac\rho\mu + 1 )^r \).
+  \end{fact}
+  \begin{coro}
+    Soit \( \grp \) un sous-groupe de type fini de \( \va(\Qbar) \) ; on note
+    \( r \) le rang de \( \grp \) et \( \hmin(\grp) \) le minimum de \(
+      \hautn x \) quand \( x \) parcourt l'ensemble des points d'ordre infini de
+    \( \grp \).  Pour tout réel positif \( R \), on a
+    \begin{equation}
+      \card \set*{
+        x \in \grp
+        \text{ tel que }
+        \hautn x \le R
+      }
+      \le
+      \card \grp_\torsion
+      \left( 1 + 2\sqrt{R / \hmin(\grp)} \right)^r
+    \end{equation}
+    où \( \grp_\torsion \) désigne l'ensemble des points de torsion de \( \grp
+    \).
+  \end{coro}
+\end{frame}
+
+\begin{frame}{Inégalité de Liouville}
+  \begin{prop} \label{p:liouville}
+    Pour tout point \( x \in \projd(\Qbar) \), on a soit \( x \in \avar(\Qbar)
+    \) soit
+    \begin{equation}
+      \prod_{v \in \placesapx} \distv x \avar ^\degv
+      \ge
+      \frac1{
+        (n+1)^{3/2}
+        (3\adeg)^{\adeg (\adim+1)}
+        \, \hautm1 \avar
+        \, \hautm2 x ^\adeg
+      }
+      \pmm.
+    \end{equation}
+  \end{prop}
+  \begin{coro} \label{c:kill-small}
+    Si \( R \) est un réel supérieur ou égal à
+    \begin{equation}
+      \frac1\eps \left(
+        \hautl1{ \chow \avar }
+        + \adeg (\adim+1) \log(3\adeg)
+        + \frac32 \log(n+1)
+        + \adeg \htcmp
+      \right)
+      \pmm,
+    \end{equation}
+    il n'existe aucun point \( x \in \va(\Qbar) \) tel que
+    \begin{equation}
+      0
+      <
+      \prod\placerange
+      \distv x \avar ^\degv
+      \le
+      \expb^{- \adeg R}
+      \hautm2{x}^{-\eps}
+      \quad\text{et}\quad
+      \hautn x \le R
+      \pmm.
+    \end{equation}
+  \end{coro}
+\end{frame}
 
 \end{document}

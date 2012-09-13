@@ -63,6 +63,9 @@
 \newtheorem{prop}{Proposition}
 \newtheorem{coro}{Corollaire}
 \newtheorem{tdef}{Définition}
+\let\fact\relax
+\newtheorem{fact}{Fait}
+\newtheorem{lem}{Lemme}
 
 % numbering [[2
 %
