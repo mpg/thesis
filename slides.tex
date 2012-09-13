@@ -111,9 +111,13 @@
     qu'un nombre fini de points entiers.
   \end{coro}
 
-  \begin{itemize}
-    \item Version quantitative (partielle) : MPG 2012
-  \end{itemize}
+  \begin{block}{Versions quantitatives}
+    \begin{itemize}
+      \item Cas des courbes elliptiques : Gross-Silverman 1995, Farhi 2003,
+        Wagener 2012.
+      \item Cas général (avec restrictions) : MPG 2012.
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 
@@ -361,11 +365,108 @@
   \end{thm}
 \end{frame}
 
+\begin{frame}{Inégalité de Mumford \\
+    Cas des translatés de sous-variété abélienne}
+  \begin{thm}
+    Soient \( \phi > 0 \) et \( \rho > 0 \) tels que
+    \begin{equation}
+      \frac{ \rho^2 }{ 4 } + \rho\phi + 2\phi
+      \le
+      \frac{ \eps }{ 2\adeg }
+      \pmm.
+    \end{equation}
+    Si \( x \) et \( y \) sont deux points de \( \va(\Qbar) \) tels que
+    \begin{align*}
+      0
+      & <
+      \distv z \avar
+      \le
+      \hautm2 z ^{-\wtapx\eps}
+      \quad \forall v \in \placesapx
+      \quad \text{où \( z \) est \( x \) ou \( y \)}
+      \\
+      \hautn x
+      & >
+      \frac2\eps
+      \adeg (\adim + 1)
+      \Bigl(
+      \log(\adeg)
+      + (2 + \frac\eps\adeg) \htcmp
+      + 2 \hlpm
+      + 11 \log(n+1)
+      \Bigr)
+      \quad
+      \\
+      \cos(x, y)
+      & \ge
+      1 - \phi
+      \\
+      \hautn x
+      & \le
+      \hautn y \le (1+\rho) \hautn x
+    \end{align*}
+    alors \( x - y \in \vai(\Qbar) \).
+  \end{thm}
+\end{frame}
 
+\begin{frame}{Inégalité de Mumford --- Cas général}
+  \begin{thm}
+    Soient \( \phi > 0 \) et \( \rho > 0 \), on note \( \tau =
+      \rho^2 / 4 + \rho\phi + 2\phi \) et on suppose
+    \vspace{-1em}
+    \begin{equation}
+      \tau
+      \le
+      \frac{ \eps }{ \adeg^m (2m)^{(m+1)\adim} }
+      \quad\text{avec }
+      m
+      =
+      \bigl(
+      2^{34} \, \vahtr \, \adeg
+      \bigr)^{ (r+1) g^{ 5(\adim + 1)^2 } }
+      + 1
+      \pmm.
+    \end{equation}
+    Si \( x_1, \dots, x_m \) est une famille de points de \( \grp \)
+    telle que
+    \begin{align*}
+      0
+      & <
+      \distv{ x_i }\avar
+      \le
+      \hautm2{ x_i }^{-\wtapx\eps}
+      \quad \forall v \in \placesapx
+      \\
+      \hautn{ x_m }
+      & \ge
+      \frac4\eps
+      \adeg^{m-1} (2m)^{ (m+1)\adim + 1}
+      \Bigl(
+      \hautl1 \avar
+      + 4 \adeg m \bigl( \log \adeg + \hlpm + \htcmp \bigr)
+      \Bigr)
+      \\
+      \cos(x_i, x_j)
+      & \ge
+      1 - \phi
+      \\
+      \hautn{ x_m }
+      & \le
+      \hautn{ x_i }
+      \le
+      (1+\rho) \hautn{ x_m }
+    \end{align*}
+    alors \( \set{x_1, \dots, x_m} \) satisfait \( \cond*\tau \).
+  \end{thm}
+\end{frame}
 
 
 
 \section[Décomptes]{Résultats de décompte}
 \tocsect
+
+\begin{frame}{}
+\end{frame}
+
 
 \end{document}

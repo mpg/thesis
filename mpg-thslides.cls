@@ -71,7 +71,7 @@
 % tocs [[2
 %
 \newcommand \tocsect {%
-  \frame{\tableofcontents[currentsection]}
+  %\frame{\tableofcontents[currentsection]}
 }
 \newcommand \toc {%
   \frame{\tableofcontents}
