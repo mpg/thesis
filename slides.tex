@@ -69,7 +69,7 @@
 
 \begin{frame}{Ex-conjecture de Mordell}
   \begin{thm}[Faltings 1983]
-    Soient \( C \) une courbe projective de genre \( g \le 2 \) et \( \cdn \)
+    Soient \( C \) une courbe projective de genre \( g \ge 2 \) et \( \cdn \)
     un corps de nombres. Alors \( C(\cdn) \) est fini.
   \end{thm}
   \begin{itemize}
@@ -91,14 +91,14 @@
 \end{frame}
 
 \begin{frame}{Approximation sur les variété abéliennes}
-  \begin{thm}[Faltings 1991, théorème I]
+  \begin{thm}[Faltings 1991, théorème II]
     Soit \( \avar \) une sous-variété quelconque de \( \va \), \( v \)
     une place de \( \cdn \), et \( \eps > 0 \). Il n'existe qu'un nombre fini de
     points \( x \) dans \( \va(\cdn) \) tels que
     \begin{equation} \label{e:has}
       0
       <
-      \distv x \avar ^\degv
+      \distv x \avar
       \le
       \hautm{} x ^{-\eps}
       \pmm.
@@ -316,25 +316,25 @@
   \begin{block}{Inégalité de \dots}
     Il n'existe pas de famille d'approximations exceptionnelles \( (x_1,
       \dots, x_m) \), pour \( m \) assez grand, telle que
-  \begin{columns}
-    \column{.4\linewidth}
-    \begin{block}{Vojta}
-      \begin{itemize}
-        \item \( \hautn{x_1} > \Vbig \)
-        \item \( \cos(x_i, x_j) > 1 - \Vcos \)
-        \item \( \hautn{x_i} > \Vfar \hautn{x_{i-1}} \)
-      \end{itemize}
-    \end{block}
-    \column{.4\linewidth}
-    \begin{block}{Mumford}
-      \begin{itemize}
-        \item \( \hautn{x_1} > \Mbig \)
-        \item \( \cos(x_i, x_j) > 1 - \Mcos \)
-        \item \( \abs{ \hautn{x_i} - \hautn{x_j} } < \Mfar \)
-      \end{itemize}
-    \end{block}
-  \end{columns}
-\end{block}
+    \begin{columns}
+      \column{.4\linewidth}
+      \begin{block}{Vojta}
+        \begin{itemize}
+          \item \( \hautn{x_i} > \Vbig \)
+          \item \( \cos(x_i, x_j) > 1 - \Vcos \)
+          \item \( \hautn{x_i} > \Vfar \hautn{x_{i-1}} \)
+        \end{itemize}
+      \end{block}
+      \column{.4\linewidth}
+      \begin{block}{Mumford}
+        \begin{itemize}
+          \item \( \hautn{x_i} > \Mbig \)
+          \item \( \cos(x_i, x_j) > 1 - \Mcos \)
+          \item \( \abs{ \hautn{x_1} - \hautn{x_i} } < \Mfar \hautn{x_1} \)
+        \end{itemize}
+      \end{block}
+    \end{columns}
+  \end{block}
 \end{frame}
 
 
@@ -366,9 +366,7 @@
     \begin{align*}
       \eta
       & =
-      \bigl(
-      86 \nclmaps \cdot 5^g \adeg \eps^{-1}
-      \bigr)^{ \frac{m}{m-g} }
+      \bigl( 86 \nclmaps \cdot 5^g \adeg \eps^{-1} \bigr)^{ \frac{m}{m-g} }
       \hspace*{4em}
       \Lambda_4
       =
