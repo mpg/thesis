@@ -106,25 +106,29 @@ and the dn appearing after h_{...}(F).
 p90 l-6: I think it is enough since P is homogeneous. Added a reference for
 that. (p92 l-13)
 
+p96 l-8: done (p98 l-5)
+
+p96 l-1: done (p99 l3)
+
+p97 l-13: fixed (p100 l-7)
+
+p97 l-11: fixed by adapting the result (which is meant to be used with the
+normalized height in (3.16)) (p100 l-5)
+
+p97 l-7 & l-4: done (p101 l4 & l6)
+
+p102 l14: XXX
+
+p102 l12&13: done (p105 l1)
+
+p102 l-2: ok
+
+p103 l9: removed this sentence, which belonged to a previous version of the
+lemma (p105 l-7)
+
+p113 l1:
+
 ----- BEGIN new p/l numbers need updating -----
-
-p96 l-8: done.
-
-p96 l-1: done.
-
-p97 l13: fixed.
-
-p97 l11: fixed by adapting the result (which is meant to be used with the
-normalized height in (3.16)).
-
-p97 l-7 & l-4: done.
-
-p102 l12&13: done.
-
-p102 l-2: ok.
-
-p103 l9: removed this sentence (it belonged to a previous version of the
-lemma).
 
 p114 l8: you're right, in general it doesn't. I modified these paragraphs. Now
 I only state that *in some particular cases* it does imply what I said, and
