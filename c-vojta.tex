@@ -403,7 +403,7 @@ construction itérative dans la démonstration ci-dessus.
   assure par ailleurs que \( \hautl{\mathrm{m}} T \le \hautl\infty T + \sqrt n
   \). En utilisant~\eqref{e:ht-pph-1} pour se ramener aux hauteurs qui nous
   intéressent, le théorème de \bsc{Bézout} arithmétique s'écrit donc, dans
-  notre cas :
+  notre cas (en notant \( \vdim* = \dim \var* \)) :
   \begin{align}
     \hautl1{ \chow{\var*'} }
     & \le
@@ -625,7 +625,8 @@ variables sur la base de transcendance choisie.
         \cap \ideal\anyvar \) ;
     \item \( \poldep[][\ind] \) est unitaire en \( \anyvp[\ind] \), de degré
       \( \anydeg \) ;
-    \item \( \nv1{ \poldep[][\ind] } \le \nv1{ \chow\anyvar } \) ;
+    \item \( \nv1{ \poldep[][\ind] } \le \nv1{ \chow\anyvar } \) pour tous \(
+        v \) et \( \ind \) ;
   \end{enumthm}
   où \( \anydeg \) est le degré de \( \anyvar \) dans ce plongement.
 \end{fact}
@@ -645,14 +646,13 @@ Nous établissons maintenant une variante de la proposition~4.1, de
 donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
 
 \begin{lem} \label{l:adapt-gen}
-  Soit \( \iota \colon \anyvar \embedin \projd \) un sous-schéma fermé intègre
-  de degré \( \anydeg \), non contenu dans l'hyperplan d'équation \( \anyvp[0]
+  Soit \( \iota \colon \anyvar \embedin \projd \) une sous-variété
+  de degré \( \anydeg \), non contenue dans l'hyperplan d'équation \( \anyvp[0]
     = 0 \).  Il existe une transformation linéaire \( \chi \in
     \GL_{n+1}(\Q) \), représentable par une matrice à coefficients entiers
   de valeur absolue (archimédienne) majorée par \( \max(\frac\anydeg2, 1) \),
   telle que \( \chi \circ \iota \) est un plongement adapté à \( \anyvar \) et
-  que
-  \( \anyvp[0] \) soit invariant par ce changement de coordonnées.
+  que \( \anyvp[0] \) soit invariant par ce changement de coordonnées.
 \end{lem}
 
 \begin{proof}
@@ -665,7 +665,8 @@ donné tout en gardant fixe le diviseur \( \divi \), à peu de frais.
   on commence en fait par fixer \( L_0 = \anyvp[0] \). Le polynôme \(
     \varfc(L_0, \truc, \dots, \truc) \) est multihomogène de degré \( \anydeg
   \) en chaque variable ; vu l'hypothèse sur \( \anyvar \), il est non nul
-  grâce au théorème fondamental de l'élimination. On peut donc choisir \( L_1,
+  grâce au théorème fondamental de l'élimination (\eng{Elimilnation theorem},
+  page~84 de \cite{phidg}). On peut donc choisir \( L_1,
     \dots L_\anydim \) comme dans \cite{remivds} puis continuer la preuve sans
   autre modification.
 \end{proof}
@@ -1042,6 +1043,9 @@ Intéressons-nous maintenant au morphisme \( \relim \).
   que l'estimation de norme annoncée.
 \end{proof}
 
+Dans l'énoncé suivant, on rappelle que \( C' = C'_\vdeg \), comme indiqué
+en-dessous de~\eqref{e:C-i-iii}.
+
 \begin{coro} \label{c:hmat-relim}
   Il existe une forme \( R \in \cdn [\vmp]^{C''} \) ne dépendant que de \(
     \var \) et n'appartenant pas à \( \varida \), et une application linéaire
@@ -1051,6 +1055,7 @@ Intéressons-nous maintenant au morphisme \( \relim \).
     \to
     \cdn [\vmp]_{\alpha+r}^{C''}
   \end{equation}
+  où \( r = \deg R \),
   qui est la multiplication par \( R \) modulo \( \varida \).  De plus, les
   colonnes de la matrice de \( \relim^\alpha \) dans les bases monomiales
   canoniques ont leur norme \( \nv1\truc \) majorée par
@@ -1208,7 +1213,7 @@ encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
   \clmap_\fcti ) \) où \( p_\fcti \) désigne la projection sur les facteurs \(
   \fcti \) et \( m \). On vérifie sans peine qu'on obtient ainsi un
 atlas de \( \va^m \), qu'on notera encore \( \clmaps^{m-1} \).
-On introduit alors pour chaque \( \fcti \) la forme
+On introduit alors pour chaque \( \fcti \) la famille de formes
 \begin{equation} \label{e:def-wembclm}
   \wembclm*
   =
@@ -1273,7 +1278,7 @@ et un rationnel \( \epsz \) tel que :
   \frac{\eps \epsi}{32m}
   \pmm,
 \end{equation}
-et enfin un entier \( \delta \) (destiné à tendre vers l'infini) tel que \(
+et enfin un entier \( \delta \) (qui sera choisi assez grand) tel que \(
   \epsz \delta \) soit également entier. On pose alors
 \begin{equation} \label{e:d-dp-def}
   \begin{aligned}
@@ -1407,13 +1412,34 @@ application linéaire de \( \cdn [\vmp, \vmpi]_\Dz \) dans \( \cdn [\vmp]_\Di
 \end{coro}
 
 \begin{proof}
-  Pour le cas où \( F \) est un monôme, on reprend point par point la preuve
+  Dans le cas d'un monôme, on reprend point par point le début de la preuve
   précédente, en remplaçant simplement \( \wembclp{\clmap}{\fcti}[\ind] \) par
   \( \wembclp{\clmapv}{\fcti}[\ind] \) au début, différence qui disparaît au
   moment où l'on majore la norme de ces formes par \( \hmclab* \), car cette
-  majoration ne dépend pas de la carte utilisée.
-
-  Le cas général se déduit de celui des monômes par linéarité.
+  majoration ne dépend pas de la carte utilisée ; on obtient ainsi
+  \begin{equation}
+    \nv1{ \wemba[\clmapv](\vmp^p \vmpi^q) }
+    \le
+    \prod\fctirange \left(
+      \hmclab*^{\wtis* + \wts**} \,
+      \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
+      \nv1{ \vadapt**^{-1} }^{2\wts**}
+    \right) ^\delta
+  \end{equation}
+  puis, \( F \) étant une combinaison linéraire de monômes :
+  \begin{equation}
+    \nv1{ \wemba[\clmapv](F) }
+    \le
+    \nv1 F
+    \prod\fctirange \left(
+      \hmclab*^{\wtis* + \wts**} \,
+      \nv1{ \vadapt[\fcti]^{-1} }^{2\wtis*} \,
+      \nv1{ \vadapt**^{-1} }^{2\wts**}
+    \right) ^\delta
+    \pmm.
+  \end{equation}
+  La suite de la preuve est inchangée à par un facteur \( \hautm1 F \)
+  supplémentaire.
 \end{proof}
 
 
@@ -1502,7 +1528,7 @@ Choisissons donc dans \( \cdn[\vmp, \vmpi]_\Dz \) un supplémentaire de \(
   (\idealim)_\Dz \) engendré par des monômes, que l'on notera \( \fspace \) et
 dans lequel on cherchera \( \faux \).  L'entier \( \delta \) sera choisi assez
 grand pour que la dimension de \( \fspace \) coïncide avec la valeur du
-polynôme de \bsc{Hilbert} de \( \idealim \) en \( \Dz \).
+polynôme de \bsc{Hilbert}-\bsc{Samuel} de \( \idealim \) en \( \Dz \).
 
 Reformulons l'objectif en introduisant un morphisme \( \sigma \) défini par
 \begin{align} \label{e:def-ftarget}
@@ -1537,11 +1563,12 @@ d'équivalents quand \( \delta \) tend vers l'infini.
 
 \subsection{Deux calculs de dimension} \label{sec:comp-dim}
 
-La dimension de \( \fspace \) est donnée par le théorème de \bsc{Hilbert}
-multihomogène dès qu'on connaît les différents multidegrés de
-\( \wemb(\var) \). Il est \lat{a priori} difficile de tous les calculer, mais
-comme il suffit en fait de minorer la dimension, le lemme suivant nous donne
-tout ce qu'on aura besoin de savoir sur le degré.
+La dimension de \( \fspace \) est donnée par le théorème de
+\bsc{Hilbert}-\bsc{Samuel} multihomogène (voir~\cite[§ 3]{philz} par exemple)
+dès qu'on connaît les différents multidegrés de \( \wemb(\var) \). Il est
+\lat{a priori} difficile de tous les calculer, mais comme il suffit en fait de
+minorer la dimension, le lemme suivant nous donne tout ce qu'on aura besoin de
+savoir sur le degré.
 
 \begin{lem}
   Avec les notations précédentes, on a
@@ -1627,9 +1654,9 @@ tout ce qu'on aura besoin de savoir sur le degré.
 \end{lem}
 
 \begin{proof}
-  Il suffit d'appliquer le théorème de \bsc{Hilbert} multihomogène en
-  utilisant le lemme précédent, car une somme de nombre positifs est minorée
-  par chacun de ses termes. Il vient
+  Il suffit d'appliquer le théorème de \bsc{Hilbert}-\bsc{Samuel}
+  multihomogène en utilisant le lemme précédent, car une somme de nombre
+  positifs est minorée par chacun de ses termes. Il vient
   \begin{align}
     \dim \fspace
     & =
@@ -1862,7 +1889,16 @@ Prouvons maintenant notre assertion~\eqref{e:ct-eps*-siegel} :
 on utilise la définition \eqref{e:def-epsz} de \( \epsz \) et la minoration
 classique \( m! \ge m^m \expb^{-m} \) pour écrire
 \begin{align}
-  \frac {\dim \ftarget} {\dim \fspace}
+  \frac {
+    \epsi^m
+    \, \nclmaps^{m-1}
+    \, m ^{g}
+    \, 3 ^{m (g-1)}
+    \, g^m
+  }{
+    \epsz^g
+    \, m!
+  }
   & \le
   \frac {
     \epsi^{m-g}
@@ -1876,7 +1912,6 @@ classique \( m! \ge m^m \expb^{-m} \) pour écrire
     \eps^g
     \, m^m
   }
-  + o(1)
   \\ & \le
   \frac 1 { m^{m-g} }
   \cdot
@@ -1889,7 +1924,6 @@ classique \( m! \ge m^m \expb^{-m} \) pour écrire
   }{
     \eps^g
   }
-  + o(1)
   \\ & \le
   \frac 1 { m^{m-g} }
   \cdot
@@ -1900,7 +1934,6 @@ classique \( m! \ge m^m \expb^{-m} \) pour écrire
   }{
     \eps^g
   }
-  + o(1)
 \end{align}
 où l'on a utilisé les faits élémentaires (quitte à vérifier numériquement pour
 les petites valeurs) \( g \cdot 3^g \le (13/3)^g \) puis \( 33
@@ -1946,8 +1979,8 @@ lemmes~\vref{l:rfull} et~\vref{l:hmat-wemba} pour obtenir
   + o(\delta)
   \pmm.
 \end{align}
-On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = 2\wtw*
-  \wts* + \epsz \le 3 \wtw* \wts* \) ; le lemme~\vref{l:sum-wts} implique
+On remarque pour commencer que, comme \( \epsz < 1 \) on a \( d'_\fct = \wts*
+  (2\wtw* + \epsz) \le 3 \wtw* \wts* \) ; le lemme~\vref{l:sum-wts} implique
 alors que \( \sum_\fct d'_\fct \le 6 \wts[1] \). On utilise de plus la
 définition~\eqref{e:cst-vs-ht} pour majorer
 \( \hautl\infty{ M_{\sigma'_\clmap} } \) par
@@ -1963,7 +1996,12 @@ définition~\eqref{e:cst-vs-ht} pour majorer
   + o(\delta)
   \pmm.
 \end{align}
-On invoque alors~\eqref{e:B-siegel} pour conclure :
+On invoque alors~\eqref{e:B-siegel}\footnote{\label{fn:adhoc}%
+  La section~\vref{sec:estimations} regroupe quelques estimations plus ou
+  moins fastidieuses ou inintéressantes pour ne pas perturber le cours du
+  texte ; elle est parfaitement indépendante des sections précédentes sauf
+  bien sûr pour les définitions de différents paramètres en jeu.} pour
+conclure :
 \begin{equation} \label{e:hmat-sigma-p}
   \hautl\infty{ M_{\sigma'_\clmap} }
   \le
@@ -2045,7 +2083,7 @@ Nous sommes maintenant en mesure de construire la forme auxiliaire.
   que \( p < q \) et que
   \begin{equation}
     \frac p {q-p}
-    \le
+    =
     \frac 1 {\frac qp - 1}
     \le
     \frac 1 {1 - o(1)}
@@ -3552,7 +3590,8 @@ des propriétés suivantes.
     2 \delta \wts[1] \epsi \sigma^{-1}
   \end{equation}
   en utilisant à nouveau la remarque précédente sur \( \dermp \) et le
-  lemme~\vref{l:sum-wts}. On invoque alors~\eqref{e:ht-Pv-adhoc} pour majorer
+  lemme~\vref{l:sum-wts}. On invoque alors~\eqref{e:ht-Pv-adhoc}\footnote{Voir
+    note~\oref{fn:adhoc} en bas de \vpageref{fn:adhoc}} pour majorer
   le dernier terme par
   \begin{equation}
     2 \delta \wts[1] \epsi \sigma^{-1}
@@ -4207,7 +4246,8 @@ terme de la dernière ligne ci-dessus par
     + \log m + \frac12
   \right)
 \end{align}
-puis on invoque~\eqref{e:ht-T-adhoc} pour obtenir
+puis on invoque~\eqref{e:ht-T-adhoc}\footnote{Voir note~\oref{fn:adhoc} en bas
+  de \vpageref{fn:adhoc}} pour obtenir
 \begin{align}
   \wtw* \wts* \hautl\infty T
   & \le
@@ -4461,6 +4501,7 @@ suivant~\eqref{e:Vbig-ct-extra}.
 
 
 \subsection{Estimations diverses}
+\label{sec:estimations}
 
 Commençons par quelques estimations générales ; on rappelle pour commencer que
 \( n \ge 2 \), \( N \ge 3 \) et \( \deg \va \ge 3 \) d'après la
@@ -5853,7 +5894,7 @@ légèrement simplifiées.
 \begin{coro} \label{c:vojta-gen2}
   Soient \( \vaemb \colon \va \embedin \projd \) un plongement projectif,
   \( \avar \) une variété de \( \projd \) de degré \( \adeg \) et de dimension
-  \( \adim \), et \( 0 < \eps < 1 \) un nombre réel.  Il n'existe dans \(
+  \( \adim \), et \( 0 < \eps \) un nombre réel.  Il n'existe dans \(
     \va(\Qbar) \) aucune famille de points \( x_1, \dots, x_m \) avec \(
     m \ge g + 1 \) satisfaisant simultanément aux conditions suivantes :
   \begin{align}

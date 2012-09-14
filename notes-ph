@@ -28,11 +28,11 @@ p21 l18: it is, fixed the notation (p22 l18 now)
 p22 l12: the constants are computed just below (added a sentence about that
 hoping to make it clearer, now p23 l11).
 
------ BEGIN new p/l numbers need updating -----
-
 p25 l8: I tend to disagree. Theorem 2.1.1 is trivial if \eps \ge 1, as
 observed on p26 l7-9. Corollaires 2.7.6 and 2.7.9 are correct for any \eps
 since Theorem 2.1.1 is. Or did I miss something?
+(By the way, I removed the hypothesis \eps < 1 in corollaire 2.7.9 for
+consistency.)
 
 p25 l10: in general, x_i means any point, while e_i means the points
 contradicting theorem 2.1.1 that are fixed from section 2.2 to section 2.6
@@ -43,6 +43,40 @@ p25 l16: the subscript V is meant as a reference to Vojta (to be really
 nitpicky, it's an upright V, while the variety is an italic V). Originally the
 idea was to have the same letters with subscript M for Mumford's inequality.
 I restored this idea on page 2, so maybe it makes a little bit more sense now.
+
+p30 l5: fixed (p32 l5)
+
+p32 l-4: yes, now stated explicitly (p34 l-4)
+
+p33 l7: right, changed to "sous-variété" (p35 l7)
+
+p33 l17: reference added (p35 l17)
+
+p38 l9: C' is a shorcut for C'_D; added a reminder (p40 l7)
+stated r = \deg R too (p40 l12)
+
+p40, eq 2.27: changed "la forme" to "la famille de formes" just before the
+equation, to make it clear(er) it is an equality of vectors (whose components
+are polynomials) (p42 eq 2.27)
+
+p41 l5: changed that to "qui sera choisi assez grand" (p43 l5)
+
+p42 l5: right, linearity is used at the middle of the proof actually. I
+changed the proof to make it explicit (p44 l11 to l18).
+
+p45 l7: reference added (p46 l17), changed Hilbert to Hibert-Samuel too (3x)
+
+p47 l8-10: right, fixed (p49 l14-16)
+
+p48 l1: fixed (p50 l7)
+
+p48 l6: I chose to add a footnote here (p50 l12) and a reminder (again as a
+footnote, refering to the first footnote) when the first forward reference is
+made in section 2.4.2 (p66, ref to 2.65) and section 2.5 (p73, ref to 2.62)
+
+p49 l9: right (p51 l14)
+
+----- BEGIN new p/l numbers need updating -----
 
 p53 l-6 and -5: removed them, there presence was a mistake.
 
