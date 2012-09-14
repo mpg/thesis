@@ -161,17 +161,22 @@ exceptionnelles. Par ailleurs, on supposera \( \eps \le 1 \) et \( \tau \le 1
 \end{lem}
 
 \begin{proof}
-  Pour chaque \( v \in \placesapx \), il existe un point \( p_v \in
-    \utrans\avar\vai(\Cv) \) tel que \( \distv x{ p_v } = \distv x{
-      \utrans\avar\vai } \). Le scolie~\vref{s:addsub-dv} donne alors (en
-  remarquant que \( 5\sqrt2 \le (n+1)^2 \)) :
-  \begin{equation}
+  Soit \( \eta > 0 \) un réel ; pour chaque \( v \in \placesapx \), il existe
+  un point \( p_v \in \utrans\avar\vai(\Cv) \) tel que \( \distv x{ p_v } =
+    \distv x{ \utrans\avar\vai } + \eta \). Le scolie~\vref{s:addsub-dv} donne
+  alors (en remarquant que \( 5\sqrt2 \le (n+1)^2 \)) :
+  \begin{align}
     \distv{ x+y }{ p_v + y }
-    \le
+    & \le
     \distv{ x }{ p_v }
     \cdot \hmclab*^2 (n + 1)^{7\dv}
+    \\ & \le
+    \bigl( \distv{ x }{ \utrans\avar\vai } + \eta \bigr)
+    \cdot \hmclab*^2 (n + 1)^{7\dv}
     \pmm.
-  \end{equation}
+  \end{align}
+  Cette inégalité étant valable pour tout \( \eta > 0 \), elle l'est aussi
+  avec \( \eta = 0 \).
   En remarquant alors que \( p_v + y \in \utrans\avar\vai \subset \avar \),
   puis en prenant le produit sur les places, il vient
   \begin{align}

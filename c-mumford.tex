@@ -502,23 +502,33 @@ approximation de \( \vai \) de qualité telle qu'elle contredit l'inégalité de
 \end{lem}
 
 \begin{proof}
-  En chaque place \( v \), il existe des points \( x'_v \) et \( y'_v \) dans
-  \( \avar(\Cv) \) tels que \( \distv x \avar = \distv{ x }{ x'_v } \) et
-  \( \distv y \avar = \distv{ y }{ y'_v } \). Les hypothèses et une
+  Soit \( \eta > 0 \) un réel ; en chaque place \( v \), il existe des points
+  \( x'_v \) et \( y'_v \) dans
+  \( \avar(\Cv) \) tels que \( \distv x \avar = \distv{ x }{ x'_v } + \eta \) et
+  \( \distv y \avar = \distv{ y }{ y'_v } + \eta \). Les hypothèses et une
   comparaison de hauteur donnent alors
   \begin{equation}
     \max \bigl( \Distv(x, x'_v), \Distv(y, y'_v) \bigr)
     \le
     \exp(-\wtapx \eps \hautn{ x } + \wtapx \eps \htcmp)
+    + \eta
     \pmm.
   \end{equation}
   Comme \( \avar \) est translaté d'un sous-groupe \( \vai \), on a
   \( x'_v - y'_v \in \vai(\Cv) \), donc la proposition~\vref{p:addsub-dv}
   donne
+  \begin{align}
+    \distv z \vai
+    & \le
+    \distv z {x'_v - y'_v}
+    \\ & \le
+    \bigl( \exp(-\wtapx \eps \hautn{ x } + \wtapx \eps \htcmp) + \eta \bigr)
+    \cdot (\hmpm*)^2 \bigl( 5 \sqrt2 (n + 1)^5 \bigr)^\dv
+    \pmm.
+  \end{align}
+  Cette inégalité étant valable pour tout \( \eta > 0 \), on a en fait
   \begin{equation}
     \distv z \vai
-    \le
-    \distv z {x'_v - y'_v}
     \le
     \exp(-\wtapx \eps \hautn{ x } + \wtapx \eps \htcmp)
     \cdot (\hmpm*)^2 \bigl( 5 \sqrt2 (n + 1)^5 \bigr)^\dv
