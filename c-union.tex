@@ -129,8 +129,8 @@ que, dans le cas particulier où \( F \) est un sous-ensemble de \(
   \apx'(\avar, \eps) \) et \( \avar \) est un translaté de sous-variété
 abélienne, les conditions \( \condi\tau\eps \) et \( \cond\tau \) sont
 équivalentes pour \( F \).  Évidemment, si \( Z_\avar = \emptyset \) (ce qui
-est le cas pour tout \( \avar \) si \( \va \) est simple), tout ensemble \( F
-\) satisfait \( \condi\tau\eps \) (et \( \cond\tau \)).
+est le cas pour tout \( \avar \neq \va \) si \( \va \) est simple), tout
+ensemble \( F \) satisfait \( \condi\tau\eps \) (et \( \cond\tau \)).
 
 \medskip
 
@@ -251,7 +251,7 @@ quantitative.
   Soient \( x \in \apx'(\avar, \eps) \cap \grp \)
   satisfaisant~\eqref{e:cont-big}, \( \eps' \) comme au lemme précédent et \(
     \vai \) une variété \( \eps \)-associée à \( x \). De plus, on note
-  \( \hmin(\vai \cap \grp) \) le minimum de \( \hautn y \) lorsque \( y \)
+  \( \hinf(\vai \cap \grp) \) l'infemum de \( \hautn y \) lorsque \( y \)
   parcourt l'ensemble des points d'ordre infini de
   \( \vai(\Qbar) \cap \grp \), ou \( +\infty \) si cet ensemble est vide.
 
@@ -259,13 +259,14 @@ quantitative.
   \begin{equation}
     \card \bigl( \vai(\Qbar)_\torsion \cap \grp \bigr)
     \left(
-      2 \floor*{ \sqrt{ \tau \hautn x / \hmin(\vai \cap \grp) } } + 1
+      2 \floor*{ \sqrt{ \tau \hautn x / \hinf(\vai \cap \grp) } } + 1
     \right)
   \end{equation}
   points de hauteur normalisée supérieure ou égale à
-  \( (1-\sqrt\tau)^{2} \, \hautn x \) (avec la convention \( (+\infty)^{-1} =
-    0 \)). En particulier, cet ensemble contient une infinité de grands points
-  (au sens précédent) dès que \( \vai(\Qbar)_\torsion \cap \grp \) est infini.
+  \( (1-\sqrt\tau)^{2} \, \hautn x \) (avec les conventions \( (+\infty)^{-1} =
+    0 \) et \( 0^{-1} = +\infty \)).  En particulier, cet ensemble contient
+  une infinité de grands points (au sens précédent) dès que \( \vai(\Qbar)
+    \cap \grp \) n'est pas de type fini.
 \end{coro}
 
 \begin{proof}
@@ -544,7 +545,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
   \begin{equation}
     E(\eps, S)
     =
-    \bigcup_{T \in \parts S \setminus\emptyset}
+    \bigcup_{T \in \parts S \minusset\emptyset}
     \pi^{-1}(T)
     \pmm.
   \end{equation}
@@ -585,7 +586,7 @@ correspondance avec la situation étudiée ici afin d'en éclaircir le sens.
     \prod_{v \in S \setminus T} c_v^\degv
   \end{align}
   d'où \( x \in E(\eps, T) \). Par ailleurs, si \( H(x) = 1 \) il est clair
-  que \( x \in E'(\eps, T, \lambda) \) pour n'importe quelle famille \(
+  que \( x \in E'(\eps/2, T, \lambda) \) pour n'importe quelle famille \(
     \lambda \in C \), on suppose donc \( H(x) > 1 \) et on associe à \( x \)
   une famille \( \lambda(x) \) comme en~\eqref{e:x2wt}. Cette fois-ci, les \(
     \lambda_v(x) \) pour \( v \in T \) sont tous positifs ou nuls. Par
@@ -824,7 +825,7 @@ On utilise ensuite le fait suivant.
 \end{coro}
 
 \begin{proof}
-  En utilisant le fait précédent avec \( \gamma = m \cst{v-gen} \) , on
+  En utilisant le fait précédent avec \( \gamma = (m \cst{v-gen})^{-1} \), on
   recouvre l'espace euclidien \( \grp \otimes_\Z \R \) muni du produit
   scalaire donné par la hauteur de \NT par des ensembles dans lesquels deux
   points quelconques satisfont~\eqref{e:big-cos}. Le nombre d'ensembles
@@ -1176,7 +1177,7 @@ l'inégalité de \bsc{Vojta} sous ces conditions.
     \Bigr)
   \end{align}
   et \( (\alpha_v)_v \) une certaine famille de réels tous supérieurs ou égaux
-  à \( 1 \), avec \( \sum\placerange \degv\alpha_v \le \cst{ht-v-gen2}
+  à \( 1 \), avec \( \sum\placerange \degv \log\alpha_v \le \cst{ht-v-gen2}
   \).
 \end{coro}
 
@@ -1754,7 +1755,7 @@ variantes similaires des autres résultats de décompte.
 \begin{proof}
   La condition d'approximation considérée permet d'appliquer le
   corollaire~\vref{c:kill-small} avec
-  \( R = \cst{ht-v-gen1}' (\Lambda_5')^{(2mg)^{mg}} \),
+  \( R = \cst{ht-v-gen1}' (\Lambda_5')^{(4g)^{4g^2}} \),
   quantité qui satisfait amplement l'hypothèse du corollaire. Ainsi, on voit
   que tous les points satisfaisant cette condition d'approximation satisfont
   aussi \( \hautn{x_i} \ge R \) et on peut appliquer le

@@ -126,17 +126,26 @@ p102 l-2: ok
 p103 l9: removed this sentence, which belonged to a previous version of the
 lemma (p105 l-7)
 
-p113 l1:
+p113 l1: of course (p114 l-2)
 
------ BEGIN new p/l numbers need updating -----
+p114 l8: you're right, in general it doesn't. I modified these paragraphs
+quite extensively (more precisely, almost everything from corollaire 4.1.4 to
+the proof of corollaire 4.1.6 (previously 4.1.5) has been rewritten, with a
+new scolie): this should cover the 2 next comments too.
 
-p114 l8: you're right, in general it doesn't. I modified these paragraphs. Now
-I only state that *in some particular cases* it does imply what I said, and
-also add some heuristic comments regarding the general case.
+p114 l9: right, fixed
 
 p115 l-5: an argument was missing from my proof, however in the case
 considered here, I believe the result was correct, see the corrected argument.
 
-p132: fixed.
+p117 l18: sure (p119 l-6)
 
------ END new p/l numbers need updating -----
+p117 l-2: right (p120 l7)
+
+p120 l12: right (p122 l-8)
+
+p123 l-1: yes, that's what I meant (p126 l9)
+
+p130 l2: done (p132 l12)
+
+p132: fixed (p134)
