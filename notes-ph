@@ -76,15 +76,37 @@ made in section 2.4.2 (p66, ref to 2.65) and section 2.5 (p73, ref to 2.62)
 
 p49 l9: right (p51 l14)
 
+p53 l-6 and -5: removed them, there presence was a mistake (p55 l-1 & l-2)
+
+p57 l1: that's not what I really meant, corrected (p59 l1-2)
+
+p59 l5: done (p61 l5)
+
+p59 l-10: note means footnote here; removed the superflous instance (p61 l-10)
+
+p61 l1: reference added (p62 l-2)
+
+p64 l11: I do think so, it's where the various r_i disappeared (p66 l11)
+
+p71 l4: made the first inaquality strict (p72 l-6)
+
+p79 l20 & l21: added an explicit quantification (p81 l11)
+It would be true for x \in P^n, but the notation make sense only
+for x \in A, since \Theta and \Theta' are embedings of A.
+
+p80 l11&12: done (p82 l3&4)
+
+p85 l-14: done (p87 l11)
+
+p89 l15: added the factor 2 which was missing indeed (p91 l6)
+This doesn't have any impact later since the the inequality chain starting
+with c_{3, \Theta'} 6 lines below already uses 3dn to account for this term
+and the dn appearing after h_{...}(F).
+
+p90 l-6: I think it is enough since P is homogeneous. Added a reference for
+that. (p92 l-13)
+
 ----- BEGIN new p/l numbers need updating -----
-
-p53 l-6 and -5: removed them, there presence was a mistake.
-
-p57 l1: that's not what I really meant, corrected (p56 l-6 now).
-
-p59 l-10: note means footnote here; removed the superflous instance.
-
-p80 l11&12: done, p79 l-4 & -5 now.
 
 p96 l-8: done.
 

@@ -40,6 +40,7 @@ t:  thm
 h:  hypo
 n:  nota
 j:  conj
+pg: page
 
 chap:   chapter
 sec:    section, (sub)*section

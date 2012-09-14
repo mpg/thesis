@@ -1212,7 +1212,8 @@ Soit \( \clmap = (\clmap_1, \dots, \clmap_{m-1}) \in \clmaps^{m-1}
 encore \( \clmap \), défini par \( \bigcap\fctirange p_\fcti^{-1}(
   \clmap_\fcti ) \) où \( p_\fcti \) désigne la projection sur les facteurs \(
   \fcti \) et \( m \). On vérifie sans peine qu'on obtient ainsi un
-atlas de \( \va^m \), qu'on notera encore \( \clmaps^{m-1} \).
+atlas de \( \va^m \), qu'on notera encore \( \clmaps^{m-1}
+\).\phantomsection\label{pg:clmaps-m}
 On introduit alors pour chaque \( \fcti \) la famille de formes
 \begin{equation} \label{e:def-wembclm}
   \wembclm*
@@ -2492,13 +2493,13 @@ relations.
     \deg_\vaf P^\derp
     & \le
     \deg_\vaf S + (2\lgr\derp - 2) \deg_\vaf S
-    \le
+    =
     (2\lgr\derp - 1) \deg_\vaf S
     \\
     \deg_\vafi P^\derp
     & \le
     \deg_\vafi S + (2\lgr\derp - 2) \deg_\vafi S
-    \le
+    =
     (2\lgr\derp - 1) \deg_\vafi S
     \pmm.
   \end{align}
@@ -3037,10 +3038,10 @@ désormais à l'indice pondéré par \( \wtw \wts = (\wts[1], \dots,
 \medskip
 
 On choisit dans l'atlas \( \clmaps^{m-1} \) présenté en
-sous-section~\vref{sec:wemb} une carte \( \clmape \) contenant \( \ex \), et
-on considère la forme multihomogène \( \faux** \) donnée par le
-scolie~\vref{s:aux-co}. Le but de cette section est alors de montrer la
-proposition suivante.
+sous-section~\oref{sec:wemb}, \vpageref{pg:clmaps-m} une carte \( \clmape \)
+contenant \( \ex \), et on considère la forme multihomogène \( \faux** \)
+donnée par le scolie~\vref{s:aux-co}. Le but de cette section est alors de
+montrer la proposition suivante.
 
 \begin{prop} \label{p:extra}
   On a \( \inda** \faux** \ge \frac{ \epsi \delta }{ \sigma } \) avec
@@ -3083,8 +3084,8 @@ représente à peu de chose près la norme de \( \cexa* \).
     \cdot \nv1{ \varfc* }
     \cdot ( 2 \vdegp* )^{\vdeg* (\vdim* + 1) \dv}
   \end{equation}
-  pour tout \( \ind \). D'après la note~\vref{fn:varfc},
-  on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
+  pour tout \( \ind \). D'après la note~\oref{fn:varfc} en bas
+  de~\vpageref{fn:varfc} on a \( \nv1{ \varfc* } \ge 1 \), donc le résultat
   est acquis dès que \( \av{ \cexa** } \le \av{ \cexa*[\indv*] } \), ce qui
   est le cas pour \( \ind \le \vdim* \) par définition de \( \indv* \). Notons
   donc \( \ind > \vdim* \) un indice tel que \( \av{ \cexa*[\indv*] } < \av{
@@ -3222,7 +3223,9 @@ par homogénéité de \( \faux \). On introduit alors nos indices locaux \( \ind
     \frac{ \vmp*[\indv*] }{ \vmp*[0] }
   \right) ^{ \epsz \wts* \delta + r_\fct }
 \end{align}
-puis on utilise la définition de \( \Dir \) en scindant le premier facteur et
+puis on utilise la définition de \( \Dir \) (voir~\eqref{e:d-dp-def}
+\vpageref{e:d-dp-def} pour \( d' \) ; pour \( r \) il suffit de se souvenir
+qu'il ne dépend pas de \( \delta \)) en scindant le premier facteur et
 de nouveau la remarque sur les \( \wembclv* \) pour simplifier le second :
 \begin{align}
   \ratf
@@ -4155,7 +4158,7 @@ suffit de vérifier que cette condition est satisfaite pour \( \vdim =
   mg \). C'est bien le cas puisque
 \begin{equation} \label{e:tp-3}
   \left( \frac{\log(mg + 1)}{2(mg)^2}\right)^{mg}
-  \ge
+  >
   (\sqrt2 mg)^{-2mg}
   \ge
   \Lambda^{-2}
@@ -4735,7 +4738,7 @@ dans le cas favorable et estime son coût sur les différentes quantités en jeu
   automorphisme \( \chi \) de \( \projd \) tel que \( \chi(\divi) \)
   admet \( \vp[0] = 0 \) comme équation et que, si l'on note \( \vaemb' = \chi
     \circ \vaemb \) le nouveau plongement \( \va \to \projd \) obtenu par
-  composition, on a :
+  composition, on a, pour tout \( x \in \va(\Qbar) \) :
   \begin{enumthm}
     \item \(
         \distv[v, \vaemb']{x}{\divi}
@@ -5279,7 +5282,7 @@ lemme suivant.
   divise un premier inférieur ou égal à \( \adeg \) et \( 0 \) sinon. On a
   alors
   \begin{equation}
-    \av*{ \binom\adeg\alpha^{-1/2} }
+    \av*{ \binom\adeg\alpha }^{-1/2}
     \le
     \adeg^{\dpv n / 2}
     \pmm.
@@ -5686,7 +5689,7 @@ sur les différents paramètres en jeu dans notre situation.
     \\ & \quad \le
     \adeg^{g+1} \hautl{1, \vaemb}{\va}
     + (g + 1) \deg_{\vaemb} \va \Bigl(
-      \adeg^{g+1} \log(n + 1)
+      2 \adeg^{g+1} \log(n + 1)
       + \adeg^g \bigl( \hautl{1, \vaemb} \hs + \adeg n \bigr)
     \Bigr)
   \end{align}
@@ -5801,8 +5804,8 @@ contrôlés.
   qui est donc homogène de degré \( m \) et n'est pas le polynôme nul,
   car aucun des facteurs n'est nul et l'anneau ambiant est intègre.
   On peut donc choisir un point \( \lambda \in \Z^s \) avec \(
-    \abs{\lambda_j} \le m/2 \) en lequel \( \mathcal P \) ne
-  s'annule pas.
+    \abs{\lambda_j} \le m/2 \) en lequel \( \mathcal P \), qui est homogène,
+  ne s'annule pas (voir~\cite{remivds} avant la proposition~4.1 page~115).
 
   On pose alors \( Q = \lambda_1 P_1 + \dots + \lambda_s P_s \) et \( \hs =
     \zeros Q \). Par construction, il est clair que \( \hs \) est de degré \(
