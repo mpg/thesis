@@ -10,3 +10,8 @@ front.pdf: front.tex i-title.tex $(CLS)
 
 back.pdf: back.tex $(CLS)
 	latexmk $<
+
+.PHONY: clean
+
+clean:
+	latexmk -c front back slides handout
