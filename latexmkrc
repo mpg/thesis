@@ -7,3 +7,6 @@ push @generated_exts, 'nlo', 'nls';
 
 # more biblatex cleanup
 push @generated_exts, '%-blx.bib', 'run.xml';
+
+# more beamer cleanup
+push @generated_exts, 'nav', 'snm';
