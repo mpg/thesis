@@ -5,13 +5,14 @@
 ] {mpg-preth}
 
 \includeonly {%
-  % title,
-  % toc,
+  title,
+  toc,
+  thanks
   %
   % c-intro,
   % c-vojta,
   % c-mumford,
-  c-union,
+  % c-union,
   %
   % biblio,
 }
@@ -25,13 +26,23 @@
 \inlineinclude{title}{%
   \input{i-title}
   \cleardoublepage
+
+  \thispagestyle{empty}
+  \vspace*{\stretch{1}}
+  \hfill \textit{À Marion} \par
+  \vspace*{\stretch{2}}
+  \cleardoublepage
 }
 
 \inlineinclude{toc}{%
   \setcounter{tocdepth}{1}
-  \tableofcontents
+  \chapter*{Table des matières}
+  \vspace*{-1em} % tricherie pour tenir sur une page
+  \listoftoc*{toc}
   \cleardoublepage
 }
+
+\include{thanks}
 
 \mainmatter
 
