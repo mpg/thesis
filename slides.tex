@@ -1,9 +1,9 @@
 \documentclass{mpg-thslides}
 
 \author[MPG]{Manuel Pégourié-Gonnard}
-\institute[UPMC]{Université Pierre et Marie Curie}
+\institute[UPMC]{\normalsize Université Pierre et Marie Curie}
 \title{Approximation diophantienne \\ dans les variétés abéliennes}
-\date{13 septembre 2012 \\ GÉPBD}
+\date{Soutenance de thèse \\ 22 octobre 2012}
 
 \begin{document}
 
@@ -26,6 +26,10 @@
       \pmm.
     \end{equation}
   \end{thm}
+  \begin{itemize}
+    \item Version quantitative : connues.
+    \item Version effective : problème ouvert.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Théorème de Roth étendu}
@@ -320,17 +324,17 @@
       \column{.4\linewidth}
       \begin{block}{Vojta}
         \begin{itemize}
-          \item \( \hautn{x_i} > \Vbig \)
-          \item \( \cos(x_i, x_j) > 1 - \Vcos \)
-          \item \( \hautn{x_i} > \Vfar \hautn{x_{i-1}} \)
+          \item \( \hautn{x_1} \ge \Vbig \)
+          \item \( \cos(x_i, x_j) \ge 1 - \Vcos \)
+          \item \( \hautn{x_i} \ge \Vfar \hautn{x_{i-1}} \)
         \end{itemize}
       \end{block}
-      \column{.4\linewidth}
+      \column{.5\linewidth}
       \begin{block}{Mumford}
         \begin{itemize}
-          \item \( \hautn{x_i} > \Mbig \)
-          \item \( \cos(x_i, x_j) > 1 - \Mcos \)
-          \item \( \abs{ \hautn{x_1} - \hautn{x_i} } < \Mfar \hautn{x_1} \)
+          \item \( \hautn{x_1} \ge \Mbig \)
+          \item \( \cos(x_i, x_j) \ge 1 - \Mcos \)
+          \item \( \hautn{x_1} \le \hautn{x_i} \le \Mfar \hautn{x_1} \)
         \end{itemize}
       \end{block}
     \end{columns}
