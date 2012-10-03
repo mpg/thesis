@@ -18,7 +18,7 @@
 % option declarations [[2
 %
 \DeclareOption {full}   {\let\includeonly\@gobble}
-\DeclareOption {pph}    {\@privatefalse}
+\DeclareOption {pph}    {\@privatefalse \setlength{\overfullrule}{0pt}}
 \DeclareOption {nomark} {\@domarkfalse}
 \DeclareOption {cover}  {\@covertrue}
 \DeclareOption {final}  {

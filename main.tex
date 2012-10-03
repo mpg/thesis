@@ -1,20 +1,21 @@
 \documentclass[
 % full,
-% pph,
-% nomark,
+pph,
+nomark,
 ] {mpg-preth}
 
 \includeonly {%
   title,
+  % dedic,
   toc,
-  thanks
+  % thanks
   %
-  % c-intro,
-  % c-vojta,
-  % c-mumford,
-  % c-union,
+  c-intro,
+  c-vojta,
+  c-mumford,
+  c-union,
   %
-  % biblio,
+  biblio,
 }
 
 \title{Approximation diophantienne \\ sur les variétés abéliennes}
@@ -26,7 +27,9 @@
 \inlineinclude{title}{%
   \input{i-title}
   \cleardoublepage
+}
 
+\inlineinclude{dedic}{%
   \thispagestyle{empty}
   \vspace*{\stretch{1}}
   \hfill \textit{À Marion} \par
