@@ -2,7 +2,7 @@ all: memoire.pdf front.pdf back.pdf
 
 CLS = mpg-preth.cls
 
-memoire.pdf: memoire.tex main.tex ?-*.tex these.bib $(CLS)
+memoire.pdf: memoire.tex main.tex ?-*.tex thanks.tex these.bib $(CLS)
 	latexmk $<
 
 front.pdf: front.tex i-title.tex $(CLS)
