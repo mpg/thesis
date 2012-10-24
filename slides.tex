@@ -3,7 +3,8 @@
 \author[MPG]{Manuel Pégourié-Gonnard}
 \institute[UPMC]{\normalsize Université Pierre et Marie Curie}
 \title{Approximation diophantienne \\ dans les variétés abéliennes}
-\date{Soutenance de thèse \\ 22 octobre 2012}
+\date{Soutenance de thèse \\ 22 octobre 2012
+ \\ \normalsize (version corrigée)}
 
 \begin{document}
 
@@ -131,7 +132,7 @@
 
 \begin{frame}{Multiplication des approximations exceptionnelles}
   \begin{prop}
-    Soit \( \vai \) une sous-variété abélienne et \( \var = \var' + \vai \).
+    Soit \( \vai \) une sous-variété abélienne et \( \avar = Z + \vai \).
     On considère \( \eps > 0 \) et \( x \in \apx(\avar, \eps) \cap \grp \).
     De plus, on note \( \hinf(\vai \cap \grp) \) l'infemum de \( \hautn y \)
     lorsque \( y \) parcourt l'ensemble des points d'ordre infini de
@@ -153,7 +154,7 @@
 
 \begin{frame}{Obstruction au décompte explicite}
   \begin{coro}
-    Soit \( \vai \) une sous-variété abélienne et \( \var = \var' + \vai \).
+    Soit \( \vai \) une sous-variété abélienne et \( \avar = Z + \vai \).
     Supposons que pour un certain \( \eps_0 > 0 \) et un certain \( \grp \) de
     type fini, il existe \( R \) et \( N \) tels que
     \begin{equation}
@@ -272,7 +273,9 @@
 \begin{frame}{Cas général}
   \begin{thm}
     Soit une famille \( x_1, \dots, x_p \) de points de \(
-      \va(\cdn) \) satisfaisant à \( \cond{\eps/2d} \) et telle que
+      \va(\cdn) \) satisfaisant à \( \cond{
+      \frac{ \eps }{ \adeg^M (2M)^{(M+1)\adim} }
+    } \) et telle que
     \begin{align}
       0
       & < \prod\placerange \distv{x_i} \avar^\degv
